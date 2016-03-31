@@ -6,22 +6,19 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\app-screenshots-and-images.md](https://github.com/Microsoft/windows-apps/blob/e18345554673eada3e2cbde8442d7976882118cf/windows-apps-src/publish/app-screenshots-and-images.md) | OutofSyncHandedBackSuccess | [Details](#d76a2b222a9b3541e2cfdb3a0e2871a24d7a640a3344)
+ [windows-apps-src\xbox-apps\devkit-deactivation.md](https://github.com/Microsoft/windows-apps/blob/e4a0c366326ec7b4d2bd7e3e538c45954ee9e094/windows-apps-src/xbox-apps/devkit-deactivation.md) | HandedOffSuccess | [Details](#fe856eed79151ce9f5fce10640fbe23215d9a3223652)
 
 ## Item Details
-##### <a name='d76a2b222a9b3541e2cfdb3a0e2871a24d7a640a3344'></a> Source: [windows-apps-src\publish\app-screenshots-and-images.md](https://github.com/Microsoft/windows-apps/blob/e18345554673eada3e2cbde8442d7976882118cf/windows-apps-src/publish/app-screenshots-and-images.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='fe856eed79151ce9f5fce10640fbe23215d9a3223652'></a> Source: [windows-apps-src\xbox-apps\devkit-deactivation.md](https://github.com/Microsoft/windows-apps/blob/e4a0c366326ec7b4d2bd7e3e538c45954ee9e094/windows-apps-src/xbox-apps/devkit-deactivation.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [app-screenshots-and-images.c7fc56a8ad97c50e5d147b844b499b01e8366e0e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/2ca831a92aa2fa60c083de383f16eabf8db4c26c/ol-handoff/Microsoft/windows-apps.fr-fr/master/app-screenshots-and-images.c7fc56a8ad97c50e5d147b844b499b01e8366e0e.fr-fr.xlf)
-* Handoff Datetime: 2016-03-31 17:20:47
+* Handoff File: [devkit-deactivation.803081fa0e1b79fb529f2a31e9460932158677ef.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/0d6ff55a924693ec4fccddaed7594ae77e9b5e34/ol-handoff/Microsoft/windows-apps.fr-fr/master/devkit-deactivation.803081fa0e1b79fb529f2a31e9460932158677ef.fr-fr.xlf)
+* Handoff Datetime: 2016-03-31 18:19:32
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\app-screenshots-and-images.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/d925ec27afa641e8d526ea3738d32f93df24b09a/windows-apps-src/publish/app-screenshots-and-images.md)
-* Current Handback File: [app-screenshots-and-images.c7fc56a8ad97c50e5d147b844b499b01e8366e0e.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/dfbbfb09fb303eb1fe2891114943a590e70b77ba/ol-handback/Microsoft/windows-apps.fr-fr/master/app-screenshots-and-images.c7fc56a8ad97c50e5d147b844b499b01e8366e0e.fr-fr.xlf)
-* Current Handback Datetime: 2016-03-31 06:39:32
 * [Back to Top](#report-top)
 
 
