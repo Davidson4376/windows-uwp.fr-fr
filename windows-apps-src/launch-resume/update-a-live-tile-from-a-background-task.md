@@ -1,0 +1,268 @@
+---
+title: Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
+description: Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.
+Search.SourceType : vidéo
+ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
+---
+
+
+# Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
+
+
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
+
+**API importantes**
+
+-   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+
+Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.
+
+La vidéo suivante montre comment ajouter des vignettes dynamiques à vos applications.
+
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">La minute du développeur - Mise à jour d’une vignette dynamique à partir d’une tâche en arrière-plan</iframe>
+
+## Créer le projet de tâche en arrière-plan
+
+
+Pour activer une vignette dynamique pour votre application, ajoutez un nouveau projet de composant Windows Runtime à votre solution. Il s’agit d’un assembly distinct que le système d’exploitation charge et exécute en arrière-plan lorsqu’un utilisateur installe votre application.
+
+1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution, pointez sur **Ajouter**, puis cliquez ou appuyez sur **Nouveau projet**.
+2.  Dans la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez le modèle **Composant Windows Runtime** dans la section **Visual C\# &gt; Windows Store**.
+3.  Nommez le projet BackgroundTasks, puis cliquez ou appuyez sur **OK**. Microsoft Visual Studio ajoute le nouveau projet à la solution.
+4.  Dans le projet principal, ajoutez une référence au projet BackgroundTasks.
+
+## Implémenter la tâche en arrière-plan
+
+
+Implémentez l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) pour créer une classe qui met à jour la vignette dynamique de votre application. Votre tâche en arrière-plan va dans la méthode Run. Dans ce cas, la tâche obtient un flux de syndication pour les blogs MSDN. Pour éviter la fermeture prématurée de la tâche lorsque du code asynchrone est encore en cours d’exécution, obtenez un report.
+
+1.  Dans l’Explorateur de solutions, renommez le fichier généré automatiquement, Class1.cs, sous la forme BlogFeedBackgroundTask.cs.
+2.  Dans BlogFeedBackgroundTask.cs, remplacez le code généré automatiquement par le code stub pour la classe **BlogFeedBackgroundTask**.
+3.  Dans l’implémentation de la méthode Run, ajoutez du code pour les méthodes **GetMSDNBlogFeed** et **UpdateTile**.
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+// Added during quickstart
+using Windows.ApplicationModel.Background;
+using Windows.Data.Xml.Dom;
+using Windows.UI.Notifications;
+using Windows.Web.Syndication;
+
+namespace BackgroundTasks
+{
+    public sealed class BlogFeedBackgroundTask  : IBackgroundTask
+    {
+        public async void Run( IBackgroundTaskInstance taskInstance )
+        {
+            // Get a deferral, to prevent the task from closing prematurely 
+            // while asynchronous code is still running.
+            BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
+
+            // Download the feed.
+            var feed = await GetMSDNBlogFeed();
+
+            // Update the live tile with the feed items.
+            UpdateTile( feed );
+
+            // Inform the system that the task is finished.
+            deferral.Complete();
+        }
+
+        private static async Task<SyndicationFeed> GetMSDNBlogFeed()
+        {
+            SyndicationFeed feed = null;
+
+            try
+            {
+                // Create a syndication client that downloads the feed.  
+                SyndicationClient client = new SyndicationClient();
+                client.BypassCacheOnRetrieve = true;
+                client.SetRequestHeader( customHeaderName, customHeaderValue );
+
+                // Download the feed. 
+                feed = await client.RetrieveFeedAsync( new Uri( feedUrl ) );
+            }
+            catch( Exception ex )
+            {
+                Debug.WriteLine( ex.ToString() );
+            }
+
+            return feed;
+        }
+
+        private static void UpdateTile( SyndicationFeed feed )
+        {
+            // Create a tile update manager for the specified syndication feed.
+            var updater = TileUpdateManager.CreateTileUpdaterForApplication();
+            updater.EnableNotificationQueue( true );
+            updater.Clear();
+
+            // Keep track of the number feed items that get tile notifications. 
+            int itemCount = 0;
+
+            // Create a tile notification for each feed item.
+            foreach( var item in feed.Items )
+            {
+                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWideText03 );
+
+                var title = item.Title;
+                string titleText = title.Text == null ? String.Empty : title.Text;
+                tileXml.GetElementsByTagName( textElementName )[0].InnerText = titleText;
+
+                // Create a new tile notification. 
+                updater.Update( new TileNotification( tileXml ) );
+
+                // Don't create more than 5 notifications.
+                if( itemCount++ > 5 ) break;
+            }
+        }
+
+        // Although most HTTP servers do not require User-Agent header, others will reject the request or return 
+        // a different response if this header is missing. Use SetRequestHeader() to add custom headers. 
+        static string customHeaderName = "User-Agent";
+        static string customHeaderValue = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+
+        static string textElementName = "text";
+        static string feedUrl = @"http://blogs.msdn.com/b/MainFeed.aspx?Type=BlogsOnly";
+    }
+}
+```
+
+## Configurer le manifeste du package
+
+
+Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle déclaration de tâche en arrière-plan. Affectez au point d’entrée de la tâche le nom de la classe, y compris son espace de noms.
+
+1.  Dans l’Explorateur de solutions, ouvrez Package.appxmanifest.
+2.  Cliquez ou appuyez sur l’onglet **Déclarations**.
+3.  Sous **Déclarations disponibles**, sélectionnez **BackgroundTasks**, puis cliquez sur **Ajouter**. Visual Studio ajoute **BackgroundTasks** sous **Déclarations prises en charge**.
+4.  Sous **Types de tâches pris en charge**, vérifiez que la case **Minuterie** est cochée.
+5.  Sous **Paramètres de l’application**, affectez **BackgroundTasks.BlogFeedBackgroundTask** au point d’entrée.
+6.  Cliquez ou appuyez sur l’onglet **Interface utilisateur de l’application**.
+7.  Affectez à **Notifications de verrouillage de l’écran** la valeur **Badge et texte de mosaïque**.
+8.  Définissez un chemin d’accès à une icône de 24 x 24 pixels dans le champ **Logo du badge**.
+    **Important** Cette icône doit uniquement utiliser des pixels monochromes et transparents.
+9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30 x 30 pixels.
+10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150 pixels.
+
+## Inscrire la tâche en arrière-plan
+
+
+Créez un élément [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) pour inscrire votre tâche.
+
+> **Remarque** À compter de Windows 8.1, les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
+ 
+
+Dans la page principale de votre application, ajoutez la méthode **RegisterBackgroundTask** et appelez-la dans le gestionnaire d’événements **OnNavigatedTo**.
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Windows.ApplicationModel.Background;
+using Windows.Data.Xml.Dom;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+using Windows.Web.Syndication;
+
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
+
+namespace ContosoApp
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+        }
+
+        /// <summary>
+        /// Invoked when this page is about to be displayed in a Frame.
+        /// </summary>
+        /// <param name="e">Event data that describes how this page was reached.  The Parameter
+        /// property is typically used to configure the page.</param>
+        protected override void OnNavigatedTo( NavigationEventArgs e )
+        {
+            this.RegisterBackgroundTask();
+        }
+
+
+        private async void RegisterBackgroundTask()
+        {
+            var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
+                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity )
+            {
+                foreach( var task in BackgroundTaskRegistration.AllTasks )
+                {
+                    if( task.Value.Name == taskName )
+                    {
+                        task.Value.Unregister( true );
+                    }
+                }
+
+                BackgroundTaskBuilder taskBuilder = new BackgroundTaskBuilder();
+                taskBuilder.Name = taskName;
+                taskBuilder.TaskEntryPoint = taskEntryPoint;
+                taskBuilder.SetTrigger( new TimeTrigger( 15, false ) );
+                var registration = taskBuilder.Register();
+            }
+        }
+
+        private const string taskName = "BlogFeedBackgroundTask";
+        private const string taskEntryPoint = "BackgroundTasks.BlogFeedBackgroundTask";
+    }
+}
+```
+
+## Déboguer la tâche en arrière-plan
+
+
+Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans la méthode Run de la tâche. Dans la barre d’outils **Emplacement de débogage**, sélectionnez votre tâche en arrière-plan. Le système appelle immédiatement la méthode Run.
+
+1.  Définissez un point d’arrêt dans la méthode Run de la tâche.
+2.  Appuyez sur F5 ou sur **Déboguer &gt; Démarrer le débogage** pour déployer et exécuter l’application.
+3.  Une fois l’application lancée, revenez à Visual Studio.
+4.  Vérifiez que la barre d’outils **Emplacement de débogage** est visible. Elle est accessible à partir du menu **Affichage &gt; Barres d’outils**.
+5.  Dans la barre d’outils **Emplacement de débogage**, cliquez sur la liste déroulante **Interrompre** et sélectionnez **BlogFeedBackgroundTask**.
+6.  Visual Studio interrompt l’exécution au niveau du point d’arrêt.
+7.  Appuyez sur F5 ou sur **Déboguer &gt; Continuer** pour poursuivre l’exécution de l’application.
+8.  Appuyez sur Maj+F5 ou sur **Déboguer &gt; Arrêter le débogage** pour mettre fin au débogage.
+9.  Revenez à la vignette de l’application sur l’écran d’accueil. Après quelques secondes, les notifications par vignette apparaissent sur la vignette de votre application.
+
+## Rubriques connexes
+
+
+* [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+* [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
+* [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
+* [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)
+* [Recommandations et liste de vérification sur les vignettes et les badges](https://msdn.microsoft.com/library/windows/apps/hh465403)
+
+ 
+
+ 
+
+
+
+<!--HONumber=Mar16_HO1-->

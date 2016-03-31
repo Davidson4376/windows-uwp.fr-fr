@@ -1,0 +1,164 @@
+---
+Description: Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour le pavé tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
+title: Interactions du pavé tactile
+ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
+label: Interactions du pavé tactile
+template: detail.hbs
+---
+
+# Recommandations en matière de conception pour le pavé tactile
+
+
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
+Concevez votre application de façon que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Grâce à cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
+
+ 
+
+![Pavé tactile](images/input-patterns/input-touchpad.jpg)
+
+
+Les interactions de pavé tactile nécessitent trois éléments :
+
+-   Un pavé tactile standard ou un pavé tactile de précision Windows.
+
+    Les pavés tactiles de précision sont optimisés pour les périphériques de plateforme Windows universelle (UWP). Ils permettent au système de gérer certains aspects de l’expérience de pavé tactile en mode natif, comme le suivi du doigt et la détection de la paume, pour une expérience plus cohérente sur tous les périphériques.
+
+-   Le contact direct d’un ou plusieurs doigts sur le pavé tactile.
+-   Déplacement des contacts tactiles (ou absence de déplacement, basé sur un seuil de temps).
+
+Les données d’entrée fournies par le capteur du pavé tactile peuvent :
+
+-   Être interprétées comme un mouvement physique de manipulation directe d’un ou plusieurs éléments d’interface utilisateur (par exemple, mouvement panoramique, rotation, redimensionnement ou déplacement). En revanche, l’interaction avec un élément par le biais de sa fenêtre de propriétés ou d’une autre boîte de dialogue est considérée comme étant une manipulation indirecte.
+-   Faire office de méthode d’entrée alternative, à la manière d’une souris ou d’un stylet.
+-   Compléter ou modifier des aspects d’autres méthodes d’entrée, par exemple en maculant un trait d’encre dessiné avec un stylet.
+
+Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité, généralement plus petites, et à l’environnement de bureau. Optimisez la conception de votre application du Windows Store pour l’entrée tactile et tirez parti de la prise en charge par défaut du pavé tactile.
+
+Outre la prise en charge intégrée de l’entrée tactile, nous vous recommandons d’utiliser l’événement [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) pour fournir des commandes d’interface utilisateur accessibles par la souris grâce à la convergence des expériences d’interaction prises en charge par les pavés tactiles. Par exemple, utilisez les boutons Précédent et Suivant pour permettre aux utilisateurs de tourner les pages de contenu ou d’effectuer un mouvement panoramique de ce contenu.
+
+Les mouvements et les instructions abordés ici permettent de vérifier que votre application prend en charge les entrées du pavé tactile de façon transparente, et avec un minimum de code.
+
+## <span id="The_touchpad_language"> </span> <span id="the_touchpad_language"> </span> <span id="THE_TOUCHPAD_LANGUAGE"> </span>Langue du pavé tactile
+
+
+Un ensemble concis d’interactions du pavé tactile est utilisé de façon uniforme dans l’ensemble du système. Optimisez votre application pour les entrées tactiles et de la souris. Ce langage confère un aspect familier à votre application, qui sera plus facile à appréhender. Les utilisateurs n’en seront que plus confiants.
+
+Le pavé tactile de précision permet aux utilisateurs de définir bien plus de mouvements et de comportements d’interaction que le pavé tactile standard. Ces deux images illustrent les différents paramètres disponibles dans Paramètres &gt; Périphériques &gt; Souris et pavé tactile pour un pavé tactile standard et un pavé tactile de précision, respectivement.
+
+![Paramètres du pavé tactile standard](images/mouse-touchpad-settings-standard.png)
+
+<sup>Paramètres\\ du pavé tactile\\ standard</sup>
+
+![Paramètres du pavé tactile de précision Windows](images/mouse-touchpad-settings-ptp.png)
+
+<sup>Paramètres\\ du pavé tactile\\ de précision\\ Windows</sup>
+
+Voici quelques exemples de mouvements optimisés pour le pavé tactile qui permettent d’effectuer des tâches courantes.
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Terme</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>Appui avec trois doigts</p></td>
+<td align="left"><p>Préférence de l’utilisateur pour effectuer une recherche avec <strong>Cortana</strong> ou pour afficher le <strong>centre de notifications</strong>.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>Glissement avec trois doigts</p></td>
+<td align="left"><p>Préférence de l’utilisateur pour ouvrir les applications actives sur le bureau virtuel, afficher le bureau, ou basculer entre des applications ouvertes.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>Appui avec un seul doigt pour l’action principale</p></td>
+<td align="left"><p>Appuyez avec un seul doigt sur un élément pour appeler son action principale (par exemple, le lancement d’une application ou l’exécution d’une commande).</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>Appui avec deux doigts pour effectuer un clic droit</p></td>
+<td align="left"><p>Appuyez avec deux doigts simultanément sur un élément pour le sélectionner et afficher les commandes contextuelles.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>Glissement avec deux doigts pour effectuer un mouvement panoramique</p></td>
+<td align="left"><p>Le glissement est principalement utilisé pour les interactions de type panoramique mais peut également l’être pour le déplacement, le dessin ou l’écriture.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>Pincer et étirer pour agrandir</p></td>
+<td align="left"><p>Les mouvements de pincement et d’étirement sont souvent utilisés pour le redimensionnement et le zoom sémantique.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>Appuyer avec un seul doigt et faire glisser pour réorganiser</p></td>
+<td align="left"><p>Faites glisser un élément.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>Appuyer avec un seul doigt et faites-le glisser pour sélectionner du texte</p></td>
+<td align="left"><p>Appuyez sur le texte à sélectionner et faites glisser le doigt pour le sélectionner. Appuyez deux fois pour sélectionner un mot.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>Zone de clic avec les boutons gauche et droit</p></td>
+<td align="left"><p>Émulez la fonctionnalité de boutons gauche et droit d’un dispositif de pointage.</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+## <span id="Hardware"> </span> <span id="hardware"> </span> <span id="HARDWARE"> </span>Matériel
+
+
+Interrogez les fonctionnalités de la souris ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) pour identifier les aspects de l’interface utilisateur de votre application auxquels le pavé tactile peut accéder directement. Nous vous conseillons de fournir une interface utilisateur pour les entrées tactiles et de la souris.
+
+Pour plus d’informations concernant l’interrogation des fonctionnalités du périphérique, voir [Identifier des périphériques d’entrée](identify-input-devices.md).
+
+## <span id="Visual_feedback"> </span> <span id="visual_feedback"> </span> <span id="VISUAL_FEEDBACK"> </span>Retour visuel
+
+
+-   Quand des événements de déplacement ou de pointage permettent de détecter un curseur de pavé tactile, affichez une interface utilisateur propre à la souris pour indiquer la fonctionnalité exposée par l’élément. Si le curseur de pavé tactile ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur du pavé tactile. Cela maintient l’interface utilisateur propre et aérée.
+-   N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir la section [Curseurs](#Cursors), ci-dessous).
+-   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
+-   N’utilisez pas de rectangles de sélection avec les interactions de pavé tactile. Réservez ceux-ci aux interactions avec le clavier.
+-   Affichez un retour visuel simultanément pour tous les éléments qui représentent la même cible d’entrée.
+
+Pour obtenir des conseils plus généraux concernant le retour visuel, voir [Recommandations en matière de retour visuel](https://msdn.microsoft.com/library/windows/apps/hh465342).
+
+## <span id="Cursors"> </span> <span id="cursors"> </span> <span id="CURSORS"> </span>Curseurs
+
+
+Plusieurs curseurs standard sont utilisables en tant que pointeurs de pavé tactile. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
+
+Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications du Windows Store spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
+
+Si vous avez besoin de personnaliser le curseur de la souris :
+
+-   Utilisez toujours le curseur en forme de flèche (![Curseur en forme de flèche](images/cursor-arrow.png)) pour les éléments interactifs. N’utilisez pas le curseur en forme de main (![Curseur en forme de main](images/cursor-pointinghand.png)) pour les liens ou pour d’autres éléments interactifs. À la place, utilisez les effets de pointage (décrits précédemment).
+-   Utilisez le curseur texte (![Curseur texte](images/cursor-text.png)) pour le texte sélectionnable.
+-   Utilisez le curseur de déplacement (![Curseur de déplacement](images/cursor-move.png)) lorsque l’action principale correspond à un déplacement (par exemple, un glisser-déplacer ou un rognage). N’utilisez pas le curseur de déplacement pour les éléments lorsque l’action principale correspond à une navigation (par exemple, les vignettes de l’écran d’accueil).
+-   Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
+-   Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
+
+## <span id="related_topics"> </span>Articles connexes
+
+
+* [Gérer les entrées du pointeur](handle-pointer-input.md)
+* [Identifier des périphériques d’entrée](identify-input-devices.md)
+**Exemples**
+* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Exemples d’archive**
+* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+ 
+
+
+
+<!--HONumber=Mar16_HO1-->

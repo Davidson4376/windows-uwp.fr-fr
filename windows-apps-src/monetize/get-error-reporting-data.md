@@ -1,0 +1,326 @@
+---
+ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
+description: Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs.
+title: Obtenir les données de rapport d’erreurs
+---
+
+# Obtenir les données de rapport d’erreurs
+
+
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
+Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
+
+## Prérequis
+
+
+Pour utiliser cette méthode, procédez comme suit :
+
+-   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
+
+-   Obtenez un jeton d’accès Azure AD pour votre application.
+
+Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md).
+
+## Requête
+
+
+### Syntaxe de la requête
+
+| Méthode | URI de la requête                                                          |
+|--------|----------------------------------------------------------------------|
+| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits |
+
+ 
+
+### En-tête de requête
+
+| En-tête        | Type   | Description                                                                 |
+|---------------|--------|-----------------------------------------------------------------------------|
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*token*&gt;. |
+
+ 
+
+### Corps de demande
+
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Paramètre</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Requis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">applicationId</td>
+<td align="left">chaîne</td>
+<td align="left">L’ID produit de l’application pour laquelle vous souhaitez récupérer des données de rapport d’erreurs. L’ID produit est intégré dans le lien de la description de l’application, disponible sur la [App identity page](https://msdn.microsoft.com/library/windows/apps/mt148561) du tableau de bord du Centre de développement. Exemple d’ID produit : 9WZDNCRFJ3Q8.</td>
+<td align="left">Oui</td>
+</tr>
+<tr class="even">
+<td align="left">startDate</td>
+<td align="left">date</td>
+<td align="left">Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs. La valeur par défaut est la date actuelle.</td>
+<td align="left">Non</td>
+</tr>
+<tr class="odd">
+<td align="left">endDate</td>
+<td align="left">date</td>
+<td align="left">Dans la plage de dates, la date de fin de la récupération des données de rapports d’erreurs. La valeur par défaut est la date actuelle.</td>
+<td align="left">Non</td>
+</tr>
+<tr class="even">
+<td align="left">top</td>
+<td align="left">entier</td>
+<td align="left">Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données.</td>
+<td align="left">Non</td>
+</tr>
+<tr class="odd">
+<td align="left">skip</td>
+<td align="left">entier</td>
+<td align="left">Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite.</td>
+<td align="left">Non</td>
+</tr>
+<tr class="even">
+<td align="left">filter</td>
+<td align="left">chaîne</td>
+<td align="left">Une ou plusieurs instructions qui filtrent les lignes de la réponse. Pour plus d’informations, consultez la section [filter fields](#filter-fields) ci-dessous.</td>
+<td align="left">Non</td>
+</tr>
+<tr class="odd">
+<td align="left">aggregationLevel</td>
+<td align="left">chaîne</td>
+<td align="left">Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong>, ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. Si vous spécifiez <strong>week</strong> ou <strong>month</strong>, les valeurs <em>failureName</em> et <em>failureHash</em> sont limitées à 1 000 compartiments.</td>
+<td align="left">Non</td>
+</tr>
+<tr class="even">
+<td align="left">groupby</td>
+<td align="left">chaîne</td>
+<td align="left">Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants :
+<ul>
+<li><strong>failureName</strong></li>
+<li><strong>failureHash</strong></li>
+<li><strong>symbol</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>eventType</strong></li>
+<li><strong>market</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>packageName</strong></li>
+<li><strong>packageVersion</strong></li>
+</ul>
+<p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>deviceCount</strong></li>
+<li><strong>eventCount</strong></li>
+</ul>
+<p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Par exemple : <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">orderby</td>
+<td align="left">chaîne</td>
+<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque acquisition. La syntaxe est <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter les chaînes suivantes :
+<ul>
+<li><strong>date</strong></li>
+<li><strong>failureName</strong></li>
+<li><strong>failureHash</strong></li>
+<li><strong>symbol</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>eventType</strong></li>
+<li><strong>market</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>packageName</strong></li>
+<li><strong>packageVersion</strong></li>
+</ul>
+<p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre ascendant ou descendant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p>
+<p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
+<td align="left">Non</td>
+</tr>
+</tbody>
+</table>
+
+ 
+### Champs de filtrage
+
+Le paramètre *filter* du corps de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter* :
+
+-   *filter=market eq ’US’ and gender eq ’m’*
+-   *filter=(market ne ’US’) and (gender ne ’Unknown’) and (gender ne ’m’) and (market ne ’NO’) and (ageGroup ne ’greater than 55’ or ageGroup ne ‘less than 13’)*
+
+Pour obtenir la liste des champs pris en charge, consultez le tableau suivant : Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Champs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">failureName</td>
+<td align="left">Le nom de l’erreur.</td>
+</tr>
+<tr class="even">
+<td align="left">failureHash</td>
+<td align="left">L’identificateur unique de l’erreur.</td>
+</tr>
+<tr class="odd">
+<td align="left">symbol</td>
+<td align="left">Le symbole affecté à cette erreur.</td>
+</tr>
+<tr class="even">
+<td align="left">osVersion</td>
+<td align="left">Une des chaînes suivantes :
+<ul>
+<li><strong>Windows Phone 7.5</strong></li>
+<li><strong>Windows Phone 8</strong></li>
+<li><strong>Windows Phone 8.1</strong></li>
+<li><strong>Windows Phone 10</strong></li>
+<li><strong>Windows 8</strong></li>
+<li><strong>Windows 8.1</strong></li>
+<li><strong>Windows 10</strong></li>
+<li><strong>Unknown</strong></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td align="left">eventType</td>
+<td align="left">Une des chaînes suivantes :
+<ul>
+<li><strong>crash</strong></li>
+<li><strong>hang</strong></li>
+<li><strong>memory</strong></li>
+<li><strong>jse</strong></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td align="left">market</td>
+<td align="left">Chaîne contenant le code pays ISO 3166 du marché des appareils.</td>
+</tr>
+<tr class="odd">
+<td align="left">deviceType</td>
+<td align="left">Une des chaînes suivantes :
+<ul>
+<li><strong>PC</strong></li>
+<li><strong>Tablet</strong></li>
+<li><strong>Phone</strong></li>
+<li><strong>IoT</strong></li>
+<li><strong>Wearable</strong></li>
+<li><strong>Server</strong></li>
+<li><strong>Collaborative</strong></li>
+<li><strong>Other</strong></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td align="left">packageName</td>
+<td align="left">Nom unique du package applicatif associé à cette erreur.</td>
+</tr>
+<tr class="odd">
+<td align="left">packageVersion</td>
+<td align="left">Version du package applicatif associé à cette erreur.</td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+### Exemple de requête
+
+Les exemples suivants fournissent font figurer plusieurs requêtes de récupération des données de rapport d’erreurs. Remplacez la valeur *applicationId* par l’ID produit de votre application.
+
+```
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0 HTTP/1.1
+Authorization: Bearer <your access token>
+
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&amp;startDate=8/1/2015&amp;endDate=8/31/2015&amp;skip=0&amp;$filter=market eq &#39;US&#39; and deviceType eq &#39;phone’ HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+## Réponse
+
+
+### Corps de la réponse
+
+| Valeur      | Type    | Description                                                                                                                                                                                                                                                                    |
+|------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Value      | tableau   | Tableau d’objets comportant les données agrégées de rapport d’erreurs. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs des erreurs](#error-values) ci-dessous.                                                                                                          |
+| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que plus de 10 000 lignes d’erreurs sont associées à la requête. |
+| TotalCount | nombre entier | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                     |
+
+ 
+### Valeurs des erreurs
+
+Les éléments du tableau *Value* comportent les valeurs suivantes :
+
+| Value           | Type    | Description                                                                                                                                                                                                                              |
+|-----------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| date            | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
+| applicationId   | chaîne  | L’ID produit de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
+| applicationName | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
+| failureName     | chaîne  | Le nom de l’erreur.                                                                                                                                                                                                                 |
+| failureHash     | chaîne  | L’identificateur unique de l’erreur.                                                                                                                                                                                                   |
+| symbol          | chaîne  | Le symbole affecté à cette erreur.                                                                                                                                                                                                       |
+| osVersion       | chaîne  | La version de système d’exploitation sur laquelle l’erreur s’est produite. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                       |
+| eventType       | chaîne  | Le type d’événement d’erreur. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                                          |
+| market          | chaîne  | Code pays ISO 3166 du marché des appareils.                                                                                                                                                                                          |
+| deviceType      | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
+| packageName     | chaîne  | Nom unique du package applicatif associé à cette erreur.                                                                                                                                                                 |
+| packageVersion  | chaîne  | Version du package applicatif associé à cette erreur.                                                                                                                                                                     |
+| eventCount      | nombre entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.                                                                                                                                            |
+| deviceCount     | nombre entier | Le nombre d’appareils uniques correspondant à cette erreur pour le niveau d’agrégation spécifié.                                                                                                                                        |
+
+ 
+
+### Exemple de réponse
+
+L’exemple suivant représente un corps de réponse JSON pour cette requête.
+
+```json
+{
+  "Value": [
+    {
+      "date": "2015-03-09",
+      "applicationId": "9NBLGGGZ5QDR",
+      "applicationName": "Contoso Demo",
+      "failureName": "APPLICATION_FAULT_8013150a_StoreWrapper.ni.DLL!70475e55",
+      "failureHash": "5a6b2170-1661-ed47-24d7-230fed0077af",
+      "symbol": "storewrapper_ni!70475e55",
+      "osVersion": "Windows Phone 8",
+      "eventType": "crash",
+      "market": "US",
+      "deviceType": "mobile",
+      "packageName": "",
+      "packageVersion": "0.0.0.0",
+      "deviceCount": 0.0,
+      "eventCount": 1.0
+    }
+  ],
+  "@nextLink": "failurehits?applicationId=9NBLGGGZ5QDR&amp;aggregationLevel=week&amp;startDate=2015/03/01&amp;endDate=2016/02/01&amp;top=1&amp;skip=1",
+  "TotalCount": 191753
+}
+
+```
+
+## Rubriques connexes
+
+* [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
+* [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
+* [Obtenir les acquisitions de produits in-app](get-in-app-acquisitions.md)
+* [Obtenir les classifications des applications](get-app-ratings.md)
+* [Obtenir les avis sur les applications](get-app-reviews.md)
+<!--HONumber=Mar16_HO1-->
