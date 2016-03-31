@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "62d40bbeb6684fc6be6e0868b210d3bbb324ed49",
+  "LastProcessedCommit": "e18345554673eada3e2cbde8442d7976882118cf",
   "LastTranslatedCommit": "8d2292b8cc5a84fe0aa1b188062ae18ab280e3b8",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -59165,6 +59165,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf",
       "HandoffFileCommit": "aa3224f28b2b4f47f7cacb14fdd5c10c27d8d502",
       "HandoffDateTime": "2016-03-31T15:52:31.0079718Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "d76a2b222a9b3541e2cfdb3a0e2871a24d7a640a": {
+      "FileHash": "d76a2b222a9b3541e2cfdb3a0e2871a24d7a640a",
+      "SourceFileCommit": "e18345554673eada3e2cbde8442d7976882118cf",
+      "SourceFilePath": "windows-apps-src\\publish\\app-screenshots-and-images.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\publish\\app-screenshots-and-images.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\app-screenshots-and-images.c7fc56a8ad97c50e5d147b844b499b01e8366e0e.fr-fr.xlf",
+      "HandoffFileCommit": "2ca831a92aa2fa60c083de383f16eabf8db4c26c",
+      "HandoffDateTime": "2016-03-31T17:20:47.0194818Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
