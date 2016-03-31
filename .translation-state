@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "753a917c0ecbf445560203dbc1406acae52e5265",
-  "LastTranslatedCommit": "f0b610857e6101111e19d3aa4ebe7badd24eda4c",
+  "LastTranslatedCommit": "336257132a9429b2b6b37cb7f265a4d9be308887",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
       "FileHash": "e5a3ba81407e65db2addcb6fb7b6485ee12b97de",
@@ -430,7 +430,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-03-31T07:48:10.4056743Z",
+      "HandbackDateTime": "2016-03-31T08:16:36.7955375Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\WDG.handback\\e0cdf7\\ol-handback\\Microsoft\\windows-apps.fr-fr\\master\\guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.fr-fr.xlf failed.",
@@ -440,7 +440,7 @@
         "stack_trace": "   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)\r\n   at Microsoft.OpenLocalization.Transformer.MarkdownJavascriptTransformer.XliffToMarkdownCore(Stream xliffStream, Stream skeletonStream, Stream targetStream)\r\n   at Microsoft.OpenLocalization.Transformer.XliffTransformerExtensions.XliffToMarkdown(IMarkdownTransformer markdownTransformer, Stream xliffStream, Stream skeletonStream, Stream targetStream)\r\n   at Microsoft.OpenLocalization.Transformer.XliffTransformerExtensions.XliffToMarkdown(IMarkdownTransformer markdownTransformer, String xliffFile, String skeletonFile, String markdownFile)\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in D:\\DevEnlistments\\Source\\OpenLocalization\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 41\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in D:\\DevEnlistments\\Source\\OpenLocalization\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 407",
         "extended_information": null
       },
-      "HandbackFailureTimes": 4,
+      "HandbackFailureTimes": 5,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
