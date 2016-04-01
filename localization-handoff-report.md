@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/1dbef34613db39a8508bf22bbcb7b3f50e0d84f6/windows-apps-src/xbox-apps/known-issues.md) | HandedOffSuccess | [Details](#236ad62b6b114b04f8a23c1d75513f55f4509d053699)
+ [windows-apps-src\publish\create-app-descriptions.md](https://github.com/Microsoft/windows-apps/blob/1b2d564edee79b0ac4807519a8458e7c5d840bff/windows-apps-src/publish/create-app-descriptions.md) | OutofSyncHandedBackSuccess | [Details](#77c61acd49e41ed3d7edb02318fdf971b5afcb763354)
 
 ## Item Details
-##### <a name='236ad62b6b114b04f8a23c1d75513f55f4509d053699'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/1dbef34613db39a8508bf22bbcb7b3f50e0d84f6/windows-apps-src/xbox-apps/known-issues.md)
-* Status: HandedOffSuccess
+##### <a name='77c61acd49e41ed3d7edb02318fdf971b5afcb763354'></a> Source: [windows-apps-src\publish\create-app-descriptions.md](https://github.com/Microsoft/windows-apps/blob/1b2d564edee79b0ac4807519a8458e7c5d840bff/windows-apps-src/publish/create-app-descriptions.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/46d02f25040b2ebde2adbe6d85491b89dbcf08d6/ol-handoff/Microsoft/windows-apps.fr-fr/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf)
-* Handoff Datetime: 2016-04-01 16:18:41
+* Handoff File: [create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/abdbf33b514184b4f443b312909182b8b21effb2/ol-handoff/Microsoft/windows-apps.fr-fr/master/create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.fr-fr.xlf)
+* Handoff Datetime: 2016-04-01 19:48:24
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\create-app-descriptions.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/d925ec27afa641e8d526ea3738d32f93df24b09a/windows-apps-src/publish/create-app-descriptions.md)
+* Current Handback File: [create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/dfbbfb09fb303eb1fe2891114943a590e70b77ba/ol-handback/Microsoft/windows-apps.fr-fr/master/create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.fr-fr.xlf)
+* Current Handback Datetime: 2016-03-31 06:39:32
 * [Back to Top](#report-top)
 
 
