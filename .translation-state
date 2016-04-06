@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "be2153a346a7e0bf96ac90c78c5fe599fcc9a39e",
+  "LastProcessedCommit": "f5c6bac498de9d93f2513b532b0ecc2c6fa7a7a9",
   "LastTranslatedCommit": "8d2292b8cc5a84fe0aa1b188062ae18ab280e3b8",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -60609,6 +60609,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\432353da052ac7e9e4f304cf03536a8d738e5202.png",
       "HandoffFileCommit": "ec3a7b1401a00fd6681cb5b558c688433e265b7f",
       "HandoffDateTime": "2016-04-05T21:35:48.8536267Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "ab30691583a785a05deff8021ef479bb47e193df": {
+      "FileHash": "ab30691583a785a05deff8021ef479bb47e193df",
+      "SourceFileCommit": "f5c6bac498de9d93f2513b532b0ecc2c6fa7a7a9",
+      "SourceFilePath": "windows-apps-src\\graphics\\composition-effects.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\graphics\\composition-effects.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\composition-effects.edede44d930f977b680649c1d498ceca2c092923.fr-fr.xlf",
+      "HandoffFileCommit": "3b3f2d40b2bcdb20a9c87c63b6959997fcd6a50b",
+      "HandoffDateTime": "2016-04-06T17:35:27.8920488Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
