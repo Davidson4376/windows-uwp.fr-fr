@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "1848f0dc5813ad060fdd8dec0b9a98c01032a34d",
+  "LastProcessedCommit": "19b171c056659bba30970778f3eeb8ef0933d747",
   "LastTranslatedCommit": "8d2292b8cc5a84fe0aa1b188062ae18ab280e3b8",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -61104,6 +61104,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.fr-fr.xlf",
       "HandoffFileCommit": "273ad26635175fd4630d72d4eaebc475a92ff5c2",
       "HandoffDateTime": "2016-04-08T20:11:38.7312883Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "65a9a4ffb229a5babed2763ebfd3fc770ab98a57": {
+      "FileHash": "65a9a4ffb229a5babed2763ebfd3fc770ab98a57",
+      "SourceFileCommit": "19b171c056659bba30970778f3eeb8ef0933d747",
+      "SourceFilePath": "windows-apps-src\\security\\companion-device-unlock.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\security\\companion-device-unlock.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf",
+      "HandoffFileCommit": "4b0bd3936dd396d585b9856c28282c8e5ce777d1",
+      "HandoffDateTime": "2016-04-08T21:36:26.0429686Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
