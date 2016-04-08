@@ -1,45 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal.md) | HandedOffSuccess | [Details](#20b909ee22b8dc714579c1c0a8d28f83099a0d1d1893)
- [windows-apps-src\debug-test-perf\device-portal-desktop.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal-desktop.md) | HandedOffSuccess | [Details](#6e2bdc86eecfbba5858faa451f0f603ed7074a6d1889)
- [windows-apps-src\debug-test-perf\device-portal-xbox.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal-xbox.md) | HandedOffSuccess | [Details](#235deea8371b0652e1332418447c934fafeaf3a21892)
+ [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/ec3ba5402ab4dc42e9f584e6956fe23487a36f3e/windows-apps-src/security/companion-device-unlock.md) | HandedOffSuccess | [Details](#e073ddda47d9461a687bdf277e60a20dc103e3fd3449)
 
 ## Item Details
-##### <a name='20b909ee22b8dc714579c1c0a8d28f83099a0d1d1893'></a> Source: [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal.md)
+##### <a name='e073ddda47d9461a687bdf277e60a20dc103e3fd3449'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/ec3ba5402ab4dc42e9f584e6956fe23487a36f3e/windows-apps-src/security/companion-device-unlock.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/7966d99bc7930f7e1e331581f69dd24599b897d3/ol-handoff/Microsoft/windows-apps.fr-fr/master/device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.fr-fr.xlf)
-* Handoff Datetime: 2016-04-08 22:38:15
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='6e2bdc86eecfbba5858faa451f0f603ed7074a6d1889'></a> Source: [windows-apps-src\debug-test-perf\device-portal-desktop.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal-desktop.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [device-portal-desktop.fd7534db4bc282ba12485780a908bce2871720e5.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/7966d99bc7930f7e1e331581f69dd24599b897d3/ol-handoff/Microsoft/windows-apps.fr-fr/master/device-portal-desktop.fd7534db4bc282ba12485780a908bce2871720e5.fr-fr.xlf)
-* Handoff Datetime: 2016-04-08 22:38:15
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='235deea8371b0652e1332418447c934fafeaf3a21892'></a> Source: [windows-apps-src\debug-test-perf\device-portal-xbox.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal-xbox.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [device-portal-xbox.99bf4955fdefdf6b9c5dfab22556e4df4c7dd8b6.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/7966d99bc7930f7e1e331581f69dd24599b897d3/ol-handoff/Microsoft/windows-apps.fr-fr/master/device-portal-xbox.99bf4955fdefdf6b9c5dfab22556e4df4c7dd8b6.fr-fr.xlf)
-* Handoff Datetime: 2016-04-08 22:38:15
+* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/d9b1704c8340ba473aeeee0443108ade658c9d3e/ol-handoff/Microsoft/windows-apps.fr-fr/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf)
+* Handoff Datetime: 2016-04-08 23:08:48
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
