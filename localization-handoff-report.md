@@ -6,39 +6,32 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\images\universalapps-overview.png](https://github.com/Microsoft/windows-apps/blob/73cda4f697120f9851344680d1a18910ca3a33f3/windows-apps-src/get-started/images/universalapps-overview.png) | OutofSyncHandedBackSuccess | [Details](#ef5e5d3d444ca57a8ae13980cb4a45d0a51d488e2376)
- [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/73cda4f697120f9851344680d1a18910ca3a33f3/windows-apps-src/get-started/universal-application-platform-guide.md) | OutofSyncHandedBackSuccess | [Details](#67b2137f8ffeffc6428047583736dbf9e82307662532)
+ [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps/blob/b7bd5d5167744e34ad3a54b0c18cc50a383f248b/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md) | HandedOffSuccess | [Details](#54cae8648626a792137f18399c97c8459288f8803272)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/b7bd5d5167744e34ad3a54b0c18cc50a383f248b/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#01825e1c029e989199a4a1984efff6acd47dd6fa3274)
 
 ## Item Details
-##### <a name='ef5e5d3d444ca57a8ae13980cb4a45d0a51d488e2376'></a> Source: [windows-apps-src\get-started\images\universalapps-overview.png](https://github.com/Microsoft/windows-apps/blob/73cda4f697120f9851344680d1a18910ca3a33f3/windows-apps-src/get-started/images/universalapps-overview.png)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='54cae8648626a792137f18399c97c8459288f8803272'></a> Source: [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps/blob/b7bd5d5167744e34ad3a54b0c18cc50a383f248b/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [ef5e5d3d444ca57a8ae13980cb4a45d0a51d488e.png](https://github.com/Microsoft/WDG.handoff/blob/9782c3f7eadd6cc8c1d31da6a0f5328814008613/ol-handoff/Microsoft/windows-apps.fr-fr/master/ef5e5d3d444ca57a8ae13980cb4a45d0a51d488e.png)
-* Handoff Datetime: 2016-04-11 21:06:17
-* Handoff Reason: IsDependency
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\images\universalapps-overview.png](https://github.com/Microsoft/windows-apps.fr-fr/blob/d925ec27afa641e8d526ea3738d32f93df24b09a/windows-apps-src/get-started/images/universalapps-overview.png)
-* Current Handback File: [b2ca7d04ca3c349f42c21b15c57678d9f5319bb5.png](https://github.com/Microsoft/WDG.handback/blob/dfbbfb09fb303eb1fe2891114943a590e70b77ba/ol-handback/Microsoft/windows-apps.fr-fr/master/b2ca7d04ca3c349f42c21b15c57678d9f5319bb5.png)
-* Current Handback Datetime: 2016-03-31 06:39:32
-* Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
-* [Back to Top](#report-top)
-
-##### <a name='67b2137f8ffeffc6428047583736dbf9e82307662532'></a> Source: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/73cda4f697120f9851344680d1a18910ca3a33f3/windows-apps-src/get-started/universal-application-platform-guide.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/9782c3f7eadd6cc8c1d31da6a0f5328814008613/ol-handoff/Microsoft/windows-apps.fr-fr/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.fr-fr.xlf)
-* Handoff Datetime: 2016-04-11 21:06:17
+* Handoff File: [desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/1a421f2070c57a053785075663d290ee74979923/ol-handoff/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.fr-fr.xlf)
+* Handoff Datetime: 2016-04-11 21:36:58
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/d925ec27afa641e8d526ea3738d32f93df24b09a/windows-apps-src/get-started/universal-application-platform-guide.md)
-* Current Handback File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/dfbbfb09fb303eb1fe2891114943a590e70b77ba/ol-handback/Microsoft/windows-apps.fr-fr/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.fr-fr.xlf)
-* Current Handback Datetime: 2016-03-31 06:39:32
+* [Back to Top](#report-top)
+
+##### <a name='01825e1c029e989199a4a1984efff6acd47dd6fa3274'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/b7bd5d5167744e34ad3a54b0c18cc50a383f248b/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/1a421f2070c57a053785075663d290ee74979923/ol-handoff/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf)
+* Handoff Datetime: 2016-04-11 21:36:58
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
