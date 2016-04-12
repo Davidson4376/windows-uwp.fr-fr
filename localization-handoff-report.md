@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/08d8644dd31c0d93884d4c24891fe86cfd9156a2/windows-apps-src/get-started/universal-application-platform-guide.md) | OutofSyncHandedBackSuccess | [Details](#08f62d3a4ec9bda97cd485bf0f3f5c80d2f4b5e22532)
+ [windows-apps-src\porting\ios-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/ea0dd7891441fa82025655460565f464af44958f/windows-apps-src/porting/ios-to-uwp-root.md) | OutofSyncHandedBackSuccess | [Details](#a46f8c17bf494a54bbfcb1d4f0a06ebcf2b3b3c23340)
 
 ## Item Details
-##### <a name='08f62d3a4ec9bda97cd485bf0f3f5c80d2f4b5e22532'></a> Source: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/08d8644dd31c0d93884d4c24891fe86cfd9156a2/windows-apps-src/get-started/universal-application-platform-guide.md)
+##### <a name='a46f8c17bf494a54bbfcb1d4f0a06ebcf2b3b3c23340'></a> Source: [windows-apps-src\porting\ios-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/ea0dd7891441fa82025655460565f464af44958f/windows-apps-src/porting/ios-to-uwp-root.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/50f59ca9a0bbd2a2f98dc520a03f978012c250d9/ol-handoff/Microsoft/windows-apps.fr-fr/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.fr-fr.xlf)
-* Handoff Datetime: 2016-04-11 23:04:24
+* Handoff File: [ios-to-uwp-root.87a35694c4f6e0feb66756c0d37df4fcf851e01d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/970253b787ec4b862d0321a6dd8aed1836fa85da/ol-handoff/Microsoft/windows-apps.fr-fr/master/ios-to-uwp-root.87a35694c4f6e0feb66756c0d37df4fcf851e01d.fr-fr.xlf)
+* Handoff Datetime: 2016-04-12 18:09:52
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/d925ec27afa641e8d526ea3738d32f93df24b09a/windows-apps-src/get-started/universal-application-platform-guide.md)
-* Current Handback File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/dfbbfb09fb303eb1fe2891114943a590e70b77ba/ol-handback/Microsoft/windows-apps.fr-fr/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.fr-fr.xlf)
+* Current Target File: [windows-apps-src\porting\ios-to-uwp-root.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/d925ec27afa641e8d526ea3738d32f93df24b09a/windows-apps-src/porting/ios-to-uwp-root.md)
+* Current Handback File: [ios-to-uwp-root.87a35694c4f6e0feb66756c0d37df4fcf851e01d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/dfbbfb09fb303eb1fe2891114943a590e70b77ba/ol-handback/Microsoft/windows-apps.fr-fr/master/ios-to-uwp-root.87a35694c4f6e0feb66756c0d37df4fcf851e01d.fr-fr.xlf)
 * Current Handback Datetime: 2016-03-31 06:39:32
 * [Back to Top](#report-top)
 
