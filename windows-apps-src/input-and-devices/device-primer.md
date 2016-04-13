@@ -2,7 +2,7 @@
 Description: Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
 title: Notions fondamentales sur les appareils pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
-label: Notions fondamentales sur les appareils
+label: Device primer
 template: detail.hbs
 ---
 
@@ -139,7 +139,7 @@ Utilisation type
 -   Les appareils Surface Hub sont généralement fixes et sont rarement déplacés.
 
 Considérations relatives à l’interface utilisateur
--   Les applications installées sur Surface Hub peuvent présenter quatre états : remplissage (affichage fixe occupant tout l’espace disponible à l’écran), complet (affichage plein écran standard), ancré (affichage variable occupant le côté gauche ou droit de l’écran) et arrière-plan (masqué lorsque l’application est en cours d’exécution, disponible dans le sélecteur de tâches).
+-   Les applications installées sur Surface Hub peuvent présenter quatre états : complet (affichage plein écran standard), arrière-plan (masqué lorsque l’application est en cours d’exécution, disponible dans le sélecteur de tâches) remplissage (affichage fixe occupant tout l’espace disponible à l’écran) et ancré (affichage variable occupant le côté gauche ou droit de l’écran).
 -   En mode ancré ou en mode remplissage, le système affiche la barre latérale Skype et réduit l’application horizontalement.
 -   L’arrière-plan système est facultatif. Lorsqu’un développeur d’application choisit de l’afficher, celui-ci apparaît dans la barre de titre de l’application.
 
@@ -147,7 +147,7 @@ Entrées
 -   Commandes tactiles
 -   Stylet
 -   Voix
--   Clavier
+-   Clavier (à l’écran/distant)
 -   Pavé tactile (à distance)
 
 Fonctionnalités classiques d’appareil
@@ -193,6 +193,6 @@ Fonctionnalités de l’appareil type
  
 
 
+<!--HONumber=Mar16_HO4-->
 
 
-<!--HONumber=Mar16_HO1-->

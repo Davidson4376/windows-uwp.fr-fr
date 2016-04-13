@@ -1,6 +1,6 @@
 ---
-title: Distribution d’un composant Windows Runtime managé
-description: Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers.
+Distribution d’un composant Windows Runtime managé
+Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers.
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 ---
 
@@ -8,7 +8,7 @@ ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 # Distribution d’un composant Windows Runtime managé
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -50,7 +50,7 @@ Un composant complexe inclut généralement des ressources Windows, mais reporte
 **Pour créer un SDK d’extension**
 
 1.  Vérifiez que le SDK Visual Studio est installé. Vous pouvez télécharger le SDK Visual Studio depuis la page [Téléchargements Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs).
-2.  Créez un projet à l’aide du modèle Projet VSIX, qui se trouve sous Visual C\# ou Visual Basic dans la catégorie Extensibilité. Ce modèle est installé en même temps que le SDK Visual Studio. (L’article [Procédure pas à pas : création d’un kit de développement logiciel (SDK) en C# ou Visual Basic](https://msdn.microsoft.com/library/jj127119.aspx) ou [Procédure pas à pas : création d’un kit de développement logiciel (SDK) en C++](https://msdn.microsoft.com/library/jj127117.aspx) illustre l’utilisation de ce modèle dans un scénario très simple. )
+2.  Créez un projet à l’aide du modèle Projet VSIX, qui se trouve sous Visual C# ou Visual Basic dans la catégorie Extensibilité. Ce modèle est installé en même temps que le SDK Visual Studio. (L’article [Procédure pas à pas : création d’un kit de développement logiciel (SDK) en C# ou Visual Basic](https://msdn.microsoft.com/library/jj127119.aspx) ou [Procédure pas à pas : création d’un kit de développement logiciel (SDK) en C++](https://msdn.microsoft.com/library/jj127117.aspx) illustre l’utilisation de ce modèle dans un scénario très simple. )
 3.  Déterminez la structure de dossiers de votre SDK. La structure de dossiers commence au niveau racine de votre projet VSIX, avec les dossiers **Références**, **Package redistribuable** et **DesignTime**.
 
     -   **Références** correspond à l’emplacement des fichiers binaires que les utilisateurs peuvent programmer. Le SDK d’extension crée des références à ces fichiers dans les projets Visual Studio de vos utilisateurs.
@@ -72,4 +72,8 @@ Un composant complexe inclut généralement des ressources Windows, mais reporte
 * [Recherche et utilisation des extensions Visual Studio](https://msdn.microsoft.com/library/dd293638.aspx)
 * [Options de commande de MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

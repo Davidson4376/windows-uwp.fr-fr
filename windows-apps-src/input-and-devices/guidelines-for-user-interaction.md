@@ -1,8 +1,8 @@
 ---
-Description: Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
-title: Recommandations en matière de conception pour l’interface tactile
+Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
+Recommandations en matière de conception pour l’interface tactile
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
-label: Recommandations en matière de conception pour l’interface tactile
+Recommandations en matière de conception pour l’interface tactile
 template: detail.hbs
 ---
 
@@ -177,4 +177,8 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

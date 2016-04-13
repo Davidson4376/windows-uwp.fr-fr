@@ -1,7 +1,7 @@
 ---
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: Prise en main : Contrôles courants
-title: Prise en main : Contrôles courants
+Prise en main : Contrôles courants
+Prise en main : Contrôles courants
 ---
 
 # Prise en main : Contrôles courants
@@ -55,4 +55,8 @@ Pour obtenir d’autres contrôles, voir [Liste des contrôles](https://msdn.mic
 * [build 2014 : Le point sur l’interface utilisateur et les contrôles XAML](http://go.microsoft.com/fwlink/p/?LinkID=397897)
 * [build 2014 : Développement d’applications à l’aide de l’infrastructure d’interface utilisateur XAML commune](http://go.microsoft.com/fwlink/p/?LinkID=397898)
 * [build 2014 : Création d’applications convergées XAML à l’aide de Visual Studio](http://go.microsoft.com/fwlink/p/?LinkID=397876)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

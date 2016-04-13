@@ -1,6 +1,6 @@
 ---
-title: Ajouter du son
-description: Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée un objet pour la lecture audio avec les API XAudio2.
+Ajouter du son
+Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée un objet pour la lecture audio avec les API XAudio2.
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ---
 
@@ -556,4 +556,8 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -2,12 +2,13 @@
 title: Restrictions à l’exportation liées à l’utilisation du chiffrement
 description: Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le Windows Store.
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
+author: awkoren
 ---
 
 # Restrictions à l’exportation liées à l’utilisation du chiffrement
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le Windows Store.
 
@@ -53,11 +54,7 @@ Si votre application appelle, prend en charge, contient ou utilise un chiffremen
 
 Si vous ne possédez pas de numéro ECCN, consultez l’article [Questions et réponses sur les numéros ECCN](http://go.microsoft.com/fwlink/p/?LinkID=245646).
 
- 
 
- 
-
+<!--HONumber=Mar16_HO5-->
 
 
-
-<!--HONumber=Mar16_HO1-->

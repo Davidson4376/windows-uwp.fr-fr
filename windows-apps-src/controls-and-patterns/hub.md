@@ -1,115 +1,119 @@
 ---
-The hub control uses a hierarchical navigation pattern to support apps with a relational information architecture.
-Hub controls
+Le contrôle hub utilise un modèle de navigation hiérarchique pour prendre en charge les applications avec une architecture d’informations relationnelle.
+Contrôles hub
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 Hub
 template: detail.hbs
 ---
-# Hub control/pattern
+# Modèle/contrôle hub
 
 
-A hub control lets you organize app content into distinct, yet related, sections or categories. Sections in a hub are meant to be traversed in a preferred order, and can serve as the starting point for more detailed experiences.
+Un contrôle hub vous permet d’organiser le contenu de l’application en sections ou catégories, distinctes et pourtant liées. Les sections d’un hub sont censées être parcourues dans un ordre préféré et peuvent servir de point de départ pour des expériences plus détaillées.
 
-![Example of a hub](images/hub_example_tablet.png)
+![Exemple de hub](images/hub_example_tablet.png)
 
-Content in a hub can be displayed in a robust panning view that allows users to get a glimpse of what's new, what's available, and what's relevant. Hubs typically have a page header, while multiple content sections each get a section header.
+Le contenu d’un hub peut être affiché dans une vue panoramique robuste qui offre aux utilisateurs un aperçu des nouveautés, des éléments disponibles et du contenu pertinent. Les hubs ont généralement un en-tête de page, alors que plusieurs sections de contenu possèdent chacune un en-tête de section.
 
-The hub control has several features that make it work well for building a content navigation pattern.
+Le contrôle hub dispose de plusieurs fonctionnalités qui lui permettent de générer un modèle de navigation de contenu.
 
--   **Visual navigation**
+-   **Navigation visuelle**
 
-    A hub allows content to be displayed in a diverse, brief, easy-to-scan array.
+    Un hub permet d’afficher du contenu dans un tableau varié, simple et facile à analyser.
 
--   **Categorization**
+-   **Catégorisation**
 
-    Each hub section allows for its content to be arranged in a logical order.
+    Chaque section du hub permet d’organiser son contenu dans un ordre logique.
 
--   **Mixed content types**
+-   **Types de contenu mixte**
 
-    With mixed content types, variable asset sizes and ratios are common. A hub allows each content type to be uniquely and neatly laid out in each hub section.
+    Les types de contenu mixte utilisent fréquemment des proportions et des tailles de ressources variables. Un hub permet de disposer chaque type de contenu de façon unique et précise dans chaque section de hub.
 
--   **Variable page and content widths**
+-   **Largeurs de page et de contenu variables**
 
-    Being a panoramic model, the hub allows for variability in its section widths. This is great for content of different depths, and allows a small-to-high number of items to format equally well.
+    Grâce à son statut de modèle panoramique, le hub peut prendre en charge des largeurs de section variables. Il constitue donc la solution idéale pour les contenus de profondeurs différentes et permet de formater correctement n’importe quel nombre d’éléments.
 
--   **Flexible architecture**
+-   **Architecture flexible**
 
-    If you'd prefer to keep your app architecture shallow, you can fit all channel content into a hub section summary.
+    Si vous préférez conserver l’architecture de votre application avec peu de niveaux, vous pouvez ajuster tout le contenu du canal dans un résumé de section du hub.
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
--   [**Hub class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**HubSection class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251845)
--   [**Hub object (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn255137)
+-   [**Classe Hub (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251843)
+-   [**Classe HubSection (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+-   [**Objet Hub (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn255137)
 
 
-## Is this the right control?
+## Est-ce le contrôle approprié ?
 
-The hub control works well for displaying large amounts of content that is arranged in a hierarchy. Hubs prioritize the browsing and discovery of new content, making them useful for displaying items in a store or a media collection.
+Le contrôle hub fonctionne bien pour afficher de grandes quantités de contenu organisé dans une hiérarchie. Les hubs hiérarchisent la navigation et la découverte de nouveau contenu, et sont utiles pour afficher des éléments dans un magasin ou une collection multimédia.
 
-A hub is just one of several navigation elements you can use; to learn more about navigation patterns and the other navigation elements, see the [Navigation design basics for Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/dn958438).
+Un hub fait partie des éléments de navigation que vous pouvez utiliser. Pour en savoir plus sur les modèles de navigation et sur les autres éléments de navigation, voir [Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/dn958438).
 
-## Hub architecture
+## Architecture du hub
 
-The hub control has a hierarchical navigation pattern that support apps with a relational information architecture. A hub consists of different categories of content, each of which maps to the app's section pages. Section pages can be displayed in any form that best represents the scenario and content that the section contains.
+Le contrôle hub utilise un modèle de navigation hiérarchique qui prend en charge les applications avec une architecture d’informations relationnelle. Un hub comprend différentes catégories de contenu dont chacune est mappée sur les pages de section de l’application. Les pages de section peuvent s’afficher sous la forme qui représente le mieux le scénario et le contenu de la section.
 
-![wireframe of a hierarchical Food with Friends app](images/navigation_diagram_food_with_friends_app_new.png)
+![Maquette conceptuelle d’une application hiérarchique Food with Friends](images/navigation_diagram_food_with_friends_app_new.png)
 
-## Layouts and panning/scrolling
+## Dispositions et panoramique/défilement
 
-There are a number of ways to lay out and navigate content in a hub; just be sure that content lists in a hub always pan in a direction perpendicular to the direction in which the hub scrolls.
+Plusieurs méthodes permettent de présenter et de parcourir le contenu d’un hub. Assurez-vous simplement que les listes de contenu d’un hub effectuent toujours un mouvement panoramique dans une direction perpendiculaire à sa direction de défilement.
 
-**Horizontal panning**
+**Mouvement panoramique horizontal**
 
-![Example of a horizontally panning hub](images/controls_hub_horizontal_pan.png)
-**Vertical panning**
+![Exemple de hub à mouvement panoramique horizontal](images/controls_hub_horizontal_pan.png)
+**Mouvement panoramique vertical**
 
-![Example of a vertically panning hub](images/controls_hub_vertical_pan.png)
-**Horizontal panning with vertically scrolling list/grid**
+![Exemple de hub à mouvement panoramique vertical](images/controls_hub_vertical_pan.png)
+**Mouvement panoramique horizontal avec une liste/grille à défilement vertical**
 
-![Example of a horizontally panning hub with a vertically scrolling list](images/controls_hub_horizontal_vertical_scroll.png)
-**Vertical panning with horizontally scrolling list/grid**
+![Exemple de hub à mouvement panoramique horizontal avec une liste à défilement vertical](images/controls_hub_horizontal_vertical_scroll.png)
+**Mouvement panoramique vertical avec une liste/grille à défilement horizontal**
 
-![Example of a horizontally panning hub](images/controls_hub_vertical_horizontal_scroll.png)
+![Exemple de hub à mouvement panoramique horizontal](images/controls_hub_vertical_horizontal_scroll.png)
 
-## Examples
+## Exemples
 
-The hub provides a great deal of design flexibility. This lets you design apps that have a wide variety of compelling and visually rich experiences. You can use a hero image or content section for the first group; a large image for the hero can be cropped both vertically and horizontally without losing the center of interest. Here is an example of a single hero image and how that image may be cropped for landscape, portrait, and narrow width.
+Le Hub permet une grande flexibilité lors de la conception. Il vous permet de concevoir des applications offrant un large éventail d’expériences visuelles riches et attractives. Vous pouvez utiliser une image Hero ou une section de contenu pour le premier groupe ; une grande image pour la zone Hero peut être rognée verticalement et horizontalement sans perte du centre d’intérêt. Voici un exemple d’image Hero simple qui peut être rognée en mode portrait, paysage ou largeur étroite.
 
-![hero image cropped for different window sizes](images/hub_hero_cropped2.png)
+![Image Hero rognée pour différentes tailles de fenêtre](images/hub_hero_cropped2.png)
 
-On mobile devices, one hub section is visible at a time.
+Sur les appareils mobiles, une seule section du hub est visible à la fois.
 
-![Example of a hub pattern on a small screen](images/phone_hub_example.png)
+![Exemple de modèle de hub sur un petit écran](images/phone_hub_example.png)
 
-## Recommendations
+## Recommandations
 
--   To let users know that there's more content in a hub section, we recommend clipping the content so that a certain amount of it peeks.
--   Based on the needs of your app, you can add several hub sections to the hub control, with each one offering its own functional purpose. For example, one section could contain a series of links and controls, while another could be a repository for thumbnails. A user can pan between these sections using the gesture support built into the hub control.
--   Having content dynamically reflow is the best way to accommodate different window sizes.
--   If you have many hub sections, consider adding semantic zoom. This also makes it easier to find sections when the app is resized to a narrow width.
--   We recommend not having an item in a hub section lead to another hub; instead, you can use interactive headers to navigate to another hub section or page.
--   The hub is a starting point and is meant to be customized to fit the needs of your app. You can change the following aspects of a hub:
-    -   Number of sections
-    -   Type of content in each section
-    -   Placement and order of sections
-    -   Size of sections
-    -   Spacing between sections
-    -   Spacing between a section and the top or bottom of the hub
-    -   Text style and size in headers and content
-    -   Color of the background, sections, section headers, and section content
+-   Pour permettre aux utilisateurs de savoir qu’une section du hub contient d’autres informations, nous vous recommandons de détourer le contenu afin qu’une partie dépasse.
+-   En fonction des besoins de votre application, vous pouvez ajouter plusieurs sections du hub au contrôle hub, disposant chacune de son propre objectif fonctionnel. Par exemple, une section peut contenir une série de liens et de contrôles, tandis qu’une autre peut servir de référentiel pour les miniatures. L’utilisateur peut faire un mouvement panoramique entre ces sections en utilisant les mouvements pris en charge dans le contrôle hub.
+-   Redisposer dynamiquement le contenu est la meilleure façon de l’adapter à différentes tailles de fenêtre.
+-   Si votre application comporte de nombreuses sections de hub, pensez à ajouter un zoom sémantique. Cela facilite la recherche des sections lorsque l’application est redimensionnée avec une largeur étroite.
+-   Nous recommandons de ne pas avoir d’élément de section de hub conduisant à un autre hub. Il est préférable d’utiliser des en-têtes interactifs pour naviguer vers une autre section ou page de hub.
+-   Conçu comme un point de départ, le hub est destiné à être personnalisé pour répondre aux besoins de votre application. Vous pouvez modifier les aspects suivants d’un hub :
+    -   Nombre de sections
+    -   Type de contenu de chaque section
+    -   Emplacements et ordre des sections
+    -   Taille des sections
+    -   Espacement entre les sections
+    -   Espacement entre une section et le haut ou le bas du Hub
+    -   Style du texte et taille des en-têtes et du contenu
+    -   Couleur de l’arrière-plan, des sections, des en-têtes de section et du contenu des sections
 
-\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[Cet article contient des informations propres aux applications UWP et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
-## Related articles
+## Articles connexes
 -----------------------------------------------
 
-**For designers**
-- [Navigation basics](https://msdn.microsoft.com/library/windows/apps/dn958438)
+**Pour les concepteurs**
+- [Notions de base sur la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438)
 
-**For developers (XAML)**
-- [Hierarchical navigation, start to finish](https://msdn.microsoft.com/library/windows/apps/xaml/dn440585)
-- [**Windows.UI.Xaml.Controls Hub class**](https://msdn.microsoft.com/library/windows/apps/dn251843)
-- [XAML Hub control sample](http://go.microsoft.com/fwlink/p/?LinkID=310072)
-- [Using a hub](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
+**Pour les développeurs (XAML)**
+- [Navigation hiérarchique de A à Z](https://msdn.microsoft.com/library/windows/apps/xaml/dn440585)
+- [**Classe Hub Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/dn251843)
+- [Exemple de contrôle hub XAML](http://go.microsoft.com/fwlink/p/?LinkID=310072)
+- [Utilisation d’un hub](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

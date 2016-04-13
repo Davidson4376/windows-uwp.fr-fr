@@ -1,6 +1,6 @@
 ---
-title: Informations de référence sur le passage de GLSL vers HLSL
-description: Si vous avez pour projet de créer un jeu pour UWP, vous allez porter votre architecture graphique OpenGL ES 2.0 sur Direct3D 11, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language).
+Informations de référence sur le passage de GLSL vers HLSL
+Si vous avez pour projet de créer un jeu pour UWP, vous allez porter votre architecture graphique OpenGL ES 2.0 sur Direct3D 11, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language).
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ---
 
@@ -565,4 +565,8 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

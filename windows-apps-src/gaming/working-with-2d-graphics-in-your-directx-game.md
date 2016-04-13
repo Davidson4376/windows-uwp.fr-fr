@@ -1,6 +1,6 @@
 ---
-title: Graphiques 2D pour jeux DirectX
-description: Nous allons découvrir comment utiliser les graphiques et les effets 2D, puis comment vous en servir dans votre jeu.
+Graphiques 2D pour jeux DirectX
+Nous allons découvrir comment utiliser les graphiques et les effets 2D, puis comment vous en servir dans votre jeu.
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ---
 
@@ -53,15 +53,19 @@ En ce qui concerne les visuels, un esthétisme soigné sera votre meilleur atout
 -   [Vue d’ensemble de l’interopérabilité entre Direct2D et Direct3D](https://msdn.microsoft.com/library/windows/desktop/dd370966)
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, consultez la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,6 +1,6 @@
 ---
-description: Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms Windows.Web.Syndication.
-title: Flux RSS/Atom
+Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms Windows.Web.Syndication.
+Flux RSS/Atom
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ---
 
@@ -253,4 +253,8 @@ Comme mentionné plus haut, le type de contenu représenté par un objet [**Synd
 }
 ```
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

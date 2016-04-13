@@ -1,6 +1,6 @@
 ---
-description: Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM.
-title: Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM
+Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM.
+Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM
 ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
 ---
 
@@ -8,7 +8,7 @@ ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM. La méthode recommandée consiste à créer un projet Windows 10 dans Visual Studio 2015 RTM et à y copier vos fichiers. Vous pouvez également vous reporter à la documentation avancée pour savoir comment modifier vos fichiers de projet existants et les convertir au nouveau format.
+Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM. La méthode recommandée consiste à créer un projet Windows 10 dans Visual Studio 2015 RTM et à y copier vos fichiers. Vous pouvez également vous reporter à la documentation avancée pour savoir comment modifier vos fichiers de projet existants et les convertir au nouveau format.
 
 ## Apparence d’un projet Visual Studio 2015 RC Windows 10 dans Visual Studio 2015 RTM
 
@@ -34,4 +34,8 @@ Une différence notable entre les formats de projet Windows 10 Visual Studio 201
 
 Si vous ne souhaitez pas mettre à jour manuellement votre projet, ou si vous souhaitez connaître les différences entre les formats de projet Visual Studio 2015 RC et Visual Studio 2015 RTM, voir [Migrer des applications vers la plateforme Windows universelle (UWP)](http://msdn.microsoft.com/library/mt148501.aspx).
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

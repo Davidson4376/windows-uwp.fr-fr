@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
-title: Propriétés d’informations d’appareil
-description: Chaque appareil a associé des propriétés DeviceInformation que vous pouvez utiliser lorsque vous avez besoin d’informations spécifiques ou lorsque vous créez un sélecteur d’appareil.
+Propriétés d’informations d’appareil
+Chaque appareil a associé des propriétés DeviceInformation que vous pouvez utiliser lorsque vous avez besoin d’informations spécifiques ou lorsque vous créez un sélecteur d’appareil.
 ---
 # Propriétés d’informations d’appareil
 
@@ -154,4 +154,8 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,11 +1,11 @@
 ---
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
-title: Obtenir des informations sur la batterie
-description: Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API dans l’espace de noms Windows.Devices.Power.
+Obtenir des informations sur la batterie
+Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API dans l’espace de noms Windows.Devices.Power.
 ---
 # Obtenir des informations sur la batterie
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -331,4 +331,8 @@ Enfin, pour exécuter cette application de batterie de base, dans le menu **Déb
 
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

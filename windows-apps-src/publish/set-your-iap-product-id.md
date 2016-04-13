@@ -1,32 +1,36 @@
 ---
-The first step in submitting an IAP (in-app product) in the Windows Dev Center dashboard.
-Set your IAP product ID
+Cette opération constitue la première étape de la soumission d’un produit in-app dans le tableau de bord du Centre de développement Windows.
+Définir l’ID produit d’un produit in-app
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ---
 
-# Set your IAP product ID
+# Définir l’ID produit d’un produit in-app
 
 
-The first step in submitting an IAP (in-app product) in the Windows Dev Center dashboard. This is the same identifier that you will need to reference in [your app's code to call the IAP](https://msdn.microsoft.com/library/windows/apps/mt219684).
+Cette opération constitue la première étape de la soumission d'un produit intégré à l'application dans le tableau de bord du Centre de développement Windows. Cet ID produit correspond à l’identificateur que vous devrez référencer dans le [code de votre application pour appeler le produit in-app](https://msdn.microsoft.com/library/windows/apps/mt219684).
 
-An IAP must be associated with an app that you've created in the dashboard already (even if you haven't submitted it yet). You can find the button to **Create a new IAP** on either your app's **Overview** page or its **IAPs** page.
+Un produit in-app doit être associé à une application que vous avez déjà créée dans le tableau de bord (même si vous ne l’avez pas encore soumise). Recherchez le bouton **Créer un produit in-app** sur la page **Vue d’ensemble** ou **Produits in-app** de votre application.
 
-Once you've clicked the button, you'll see the **Create IAP** page. Here, you'll type in the unique product ID that you'll use to refer to the offer in your code.
+Une fois que vous avez cliqué sur ce bouton, la page **Créer un produit in-app** s’affiche. Entrez sur cette page l'ID produit unique que vous utiliserez pour faire référence à l'offre dans votre code.
 
-Here are a few things to keep in mind when choosing a product ID:
+Voici quelques éléments à prendre en considération lors du choix d'un ID produit :
 
--   Customers won't see this product ID. (Later, you can enter a [title and description](create-iap-descriptions.md) to be displayed to customers.)
--   You can’t change or delete an IAP's product ID after it's been published.
--   A product ID can't be more than 100 characters in length.
--   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
--   To offer your IAP on all devices, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the IAP will not be available for purchase to customers running Windows Phone 8.1 or earlier.
--   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
+-   Les clients ne verront pas cet ID produit. (Par la suite, vous pourrez entrer un [titre et une description](create-iap-descriptions.md) qui seront visibles par les clients.)
+-   Vous ne pouvez plus modifier ni supprimer l'ID produit d'un produit intégré à l'application après la publication de ce dernier.
+-   Un ID produit ne peut pas comporter plus de 100 caractères.
+-   Un ID produit ne peut pas inclure les caractères suivants : **&lt; &gt; \* % & : \\ ? + ,**
+-   Pour offrir votre produit in-app sur tous les appareils, utilisez uniquement des caractères alphanumériques, des points et/ou des traits de soulignement. Si vous utilisez d'autres types de caractère, le produit intégré à l'application ne sera pas disponible à l'achat pour les clients utilisant Windows Phone 8.1 ou une version antérieure.
+-   Un ID produit ne doit pas nécessairement être unique dans le Windows Store, mais doit l'être dans votre compte de développeur.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,66 +1,66 @@
 ---
-Tabs and pivots are enable users to navigate between frequently accessed content.
-Tabs and pivots
+Les onglets et sélecteurs de vue permettent aux utilisateurs de naviguer entre les contenus fréquemment consultés.
+Onglets et sélecteurs de vue
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
-Tabs and pivots
+Onglets et sélecteurs de vue
 template: detail.hbs
 ---
-# Tabs and pivots
+# Onglets et sélecteurs de vue
 
-Tabs and pivots are used for navigating frequently accessed, distinct content categories. The tab/pivot pattern is made of two or more content panes that have corresponding category headers. The headers persist on-screen and have a selection state that's clearly shown, so users are always aware of which category they're in.
-![An examples of tabs](images/HIGSecOne_Tabs.png)
+Les onglets et sélecteurs de vue sont utilisés pour naviguer entre différentes catégories de contenu fréquemment consultées. Le modèle d’onglet/sélecteur de vue est constitué de plusieurs volets de contenu présentant les en-têtes de catégorie correspondants. Les en-têtes restent affichés à l’écran, et leur état de sélection est clairement indiqué. Les utilisateurs savent ainsi en permanence dans quelle catégorie ils se trouvent.
+![Exemples d’onglets](images/HIGSecOne_Tabs.png)
 
-Tabs and pivots are effectively the same pattern, and both are built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The basic functionality of the Pivot control is described later in this article.
+Les onglets et sélecteurs de vue reposent en fait sur le même modèle et sont créés à l’aide du contrôle [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx). Les fonctionnalités de base du contrôle Pivot sont décrites plus loin dans cet article.
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
--   [**Pivot class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn608241)
+-   [**Classe Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-## The tab/pivot pattern
+## Modèle d’onglet/sélecteur de vue
 
-When building an app with the tab/pivot pattern, there are a few key design variables to consider based on the pattern's configurable feature set.
+Lorsque vous créez une application avec le modèle d’onglet/sélecteur de vue, vous devez prendre en compte certaines variables de conception clés selon le jeu de fonctionnalités configurable du modèle.
 
-- **Header placement.**   Headers can be placed at the top or the bottom of the screen.
+- **Placement de l’en-tête.**   Les en-têtes peuvent être placés sur la partie supérieure ou inférieure de l’écran.
     
-    **Note**&nbsp;&nbsp;Placing headers at the bottom of the screen requires re-templating the Pivot control.
-- **Header labels.**  Headers can have an icon with text, text only, or icon only.
-- **Header alignment.**  Headers can be left-justified or centered.
-- **Top-level or sub-level navigation.**  Tabs/pivots can be used for either level of navigation, and can be stacked in a top-level/sub-level pattern. When there are two levels of tabs/pivots, the top-level and sub-level headers should have enough visual differentiation so that users can clearly separate the two.
-- **Touch gesture support.**  For devices that support touch gestures, you can use one of two interaction sets to navigate between content categories:
-    1. Tap on a tab/pivot header to navigate to that category, or swipe on the content area to navigate to the adjacent category.
-    2. Tap on a tab/pivot header to navigate to that category (no swipe).
+    **Remarque**&nbsp;&nbsp;Placer les en-têtes en bas de l’écran nécessite de recréer le modèle du contrôle Pivot.
+- **Étiquettes d’en-tête.**  Les en-têtes peuvent être associés à une icône, à du texte ou aux deux.
+- **Alignement de l’en-tête.**  Les en-têtes peuvent être alignés à gauche ou centrés.
+- **Navigation de niveau supérieur ou inférieur.**  Les onglets/sélecteurs de vue peuvent être utilisés pour les deux niveaux de navigation et peuvent être empilés dans un modèle de niveau supérieur/niveau inférieur. En présence de deux niveaux d’onglets/sélecteurs de vue, les en-têtes de niveau supérieur et de niveau inférieur doivent présenter une différenciation visuelle suffisante, de sorte que les utilisateurs puissent clairement les distinguer.
+- **Prise en charge des entrées tactiles**  Pour les appareils qui prennent en charge les entrées tactiles, vous pouvez utiliser un des deux ensembles d’interactions pour naviguer entre les catégories de contenu :
+    1. Appuyez sur un en-tête d’onglet/sélecteur de vue pour accéder à cette catégorie, ou effectuez un mouvement de balayage sur la zone de contenu pour accéder à la catégorie adjacente.
+    2. Appuyez sur un en-tête d’onglet/sélecteur de vue pour accéder à cette catégorie (aucun mouvement de balayage).
 
-### Pattern configurations
+### Configurations de modèle
 
-The optimal arrangement of the tab/pivot pattern depends on the interaction scenario and the device(s) on which your app will appear. This table outlines some of the top scenarios and pattern configurations.
+La disposition optimale du modèle d’onglet/sélecteur de vue dépend du scénario d’interaction et des périphériques sur lesquels votre application s’affiche. Le tableau suivant décrit certains scénarios et configurations de modèle clés.
 
-Interaction scenario|Recommended configuration
+Scénario d’interaction|Configuration recommandée
 --------------------|-------------------------
-Moving laterally between 2 to 5 top-level list or grid view content categories on a phone or phablet|Tab/pivots: Placed at the top of the screen, centered
-|Header labels: Icons + text
-|Swipe on content area: Enabled
-Moving between a range of content categories on a phone or phablet in which swiping on a content area isn't practical for navigation|Tab/pivots: Placed at the bottom of the screen, centered
-|Header labels: Icons + text
-|Swipe on content area: Disabled
-Top-level navigation with a mouse and keyboard|Tab/pivots: Placed at the top of the screen, left-aligned
- *or*|Header labels: Text-only
- Page-level navigation on a touch device|Swipe on content area: Disabled
+Déplacement latéral entre 2 à 5 catégories de contenu d’affichage de liste et de grille de niveau supérieur sur un téléphone ou une phablette|Onglet/sélecteurs de vue : placés sur la partie supérieure de l’écran, centrés
+|Étiquettes d’en-tête : icônes + texte
+|Balayage sur la zone de contenu : activé
+Déplacement entre une plage de catégories de contenu sur un téléphone ou une phablette, lorsque le balayage sur une zone de contenu n’est pas pratique pour la navigation|Onglet/sélecteurs de vue : placés sur la partie inférieure de l’écran, centrés
+|Étiquettes d’en-tête : icônes + texte
+|Balayage sur la zone de contenu : désactivé
+Navigation de niveau supérieur avec une souris et un clavier|Onglet/sélecteurs de vue : placés sur la partie supérieure de l’écran, alignés à gauche
+ *ou*|Étiquettes d’en-tête : texte uniquement
+ Navigation de niveau page sur un appareil tactile|Balayage sur la zone de contenu : désactivé
 
-## Examples
+## Exemples
 
-This design of a food truck app shows what placing tab/pivot headers on the top or bottom can look like. On mobile devices, placing them at the bottom works well for reachability.
+Cette conception d’une application pour camions-restaurants illustre le placement d’en-têtes d’onglets/sélecteurs de vue sur la partie supérieure ou inférieure. Sur les appareils mobiles, le fait de les placer sur la partie inférieure de l’écran permet de les rendre plus accessibles.
 
-![An example of tabs on a mobile device](images/uap_foodtruck_phone_320_tabsboth.png)
+![Exemple d’onglets sur un appareil mobile](images/uap_foodtruck_phone_320_tabsboth.png)
 
-The food truck app design on laptop/desktop features text-only headers. Using icons with text for headers helps with touch targeting, but for mouse and keyboard, text-only headers work well.
+La conception de l’application pour camions-restaurants sur ordinateur de bureau/portable comporte des en-têtes avec texte uniquement. L’utilisation d’icônes avec du texte pour les en-têtes favorise le ciblage tactile. Cependant, avec une souris et un clavier, les en-têtes avec texte uniquement fonctionnent correctement.
 
-![Example of tabs on desktop](images/uap_foodtruck_desktop_home_700.png)
+![Exemple d’onglets sur ordinateur de bureau](images/uap_foodtruck_desktop_home_700.png)
 
-## Create a pivot control
+## Créer un contrôle Pivot
 
-The tab/pivot navigation pattern is built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The control comes with the basic functionality described in this section.
+Le modèle de navigation onglet/sélecteur de vue est conçu à l’aide du contrôle [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx). Le contrôle est fourni avec les fonctionnalités de base décrites dans cette section.
 
-This XAML creates a basic pivot control with 3 sections of content.
+Ce code XAML crée un contrôle Pivot de base avec 3 sections de contenu.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="PIVOT TITLE">
@@ -79,50 +79,54 @@ This XAML creates a basic pivot control with 3 sections of content.
 </Pivot>
 ```
 
-**Pivot items**
+**Éléments du contrôle Pivot**
 
-Pivot is an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) collection directly with XAML UI elements. Or, you can set the [ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) and [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) to specify how the items are displayed.
+Le contrôle Pivot est un [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Il peut donc contenir une collection d’éléments de n’importe quel type. Tout élément que vous ajoutez au contrôle Pivot qui n’est pas explicitement un élément [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) est implicitement encapsulé dans un PivotItem. Un sélecteur de vue est souvent utilisé pour naviguer entre des pages de contenu. Il est donc courant de remplir la collection [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) directement avec des éléments d’interface utilisateur XAML. Vous pouvez également affecter à la propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) une source de données. Les éléments liés dans la propriété ItemsSource peuvent être de n’importe quel type. Cependant, s’il ne s’agit pas explicitement d’éléments PivotItem, vous devez définir un [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) et un [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) pour spécifier leur mode d’affichage.
 
-You can use the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) property to get or set the Pivot's active item. Use the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) property to get or set the index of the active item. 
+Vous pouvez utiliser la propriété [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) pour obtenir ou définir l’élément actif du sélecteur de vue. Utilisez la propriété [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) pour obtenir ou définir l’index de l’élément actif. 
 
-**Pivot headers**
+**En-têtes de sélecteur de vue**
 
-You can use the [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header. 
+Vous pouvez utiliser les propriétés [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) et [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) pour ajouter d’autres contrôles à l’en-tête du sélecteur de vue. 
 
-### Pivot interaction
+### Interaction avec le sélecteur de vue
 
-The control features these touch gesture interactions:
+Le contrôle offre les interactions d’entrée tactile suivantes :
 
--   Tapping on a header navigates to that header's section content.
--   Swiping left or right on a header navigates to the adjacent header/section.
--   Swiping left or right on section content navigates to the adjacent header/section.
+-   Un appui sur un en-tête permet d’accéder au contenu de la section de cet en-tête.
+-   Un mouvement de balayage sur un en-tête vers la gauche ou la droite permet d’accéder à la section/l’en-tête adjacent.
+-   Un mouvement de balayage sur une section vers la gauche ou la droite permet d’accéder à la section/l’en-tête adjacent.
 
-The control comes in two modes:
+Le contrôle est disponible en deux modes :
 
-**Stationary**
+**Stationnaire**
 
--   Pivots are stationary when all pivot headers fit within the allowed space.
--   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.
+-   Les sélecteurs de vue sont stationnaires lorsque l’espace autorisé est suffisant pour contenir tous les en-têtes de sélecteur de vue.
+-   Un appui sur une étiquette de sélecteur de vue permet d’accéder à la page correspondante, bien que le sélecteur de vue proprement dit ne bouge pas. Le sélecteur de vue actif est mis en surbrillance.
 
-**Carousel**
+**Carrousel**
 
--   Pivots carousel when all pivot headers don't fit within the allowed space.
--   Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
+-   Les sélecteurs de vue sont présentés sous forme de carrousel lorsque l’espace autorisé n’est pas suffisant pour contenir tous les en-têtes de sélecteur de vue.
+-   Un appui sur une étiquette de sélecteur de vue permet d’accéder à la page correspondante. L’étiquette du sélecteur de vue actif passe en première position par rotation.
 
-The control has built-in breakpoint functionality, which is based on the number of headers and the string length of the labels.
+Le contrôle possède des fonctionnalités de point d’arrêt intégrées, basées sur le nombre d’en-têtes et la longueur de chaîne des étiquettes.
 
-## Recommendations
+## Recommandations
 
--   Base the alignment of tab/pivot headers on screen size. For screen widths below 720 epx, center-aligning usually works better, while left-aligning for screen widths above 720 epx is recommended in most cases.
--   When scaling a window, once the number of tabs/pivot headers exceeds available real estate, start pushing headers into the overflow area.
--   Tabs/pivots can be used in either screen orientation, but be sure to maintain the same total number of headers (visible and hidden) in both landscape and portrait orientations.
--   Avoid using more than 5 headers when using carousel (round-trip) mode, as having more than 5 can cause the user to lose orientation.
--   On mobile devices, placing tabs/pivots at the bottom works well for reachability, if swiping is used in another part of the UI, and to avoid top-heavy UI.
--   When the on-screen keyboard is deployed, headers can move off-screen to preserve space.
+-   Définissez l’alignement des en-têtes d’onglet/sélecteur de vue selon la taille de l’écran. Pour les largeurs d’écran inférieures à 720 epx, l’alignement au centre est généralement plus efficace. Dans la plupart des cas, l’alignement à gauche est recommandé pour les largeurs d’écran supérieures à 720 epx.
+-   Lors de la mise à l’échelle d’une fenêtre, dès lors que l’espace disponible est insuffisant pour contenir tous les en-têtes d’onglet/sélecteur de vue, commencez à déplacer les en-têtes vers la zone de débordement.
+-   Les onglets/sélecteurs de vue peuvent être utilisés quelle que soit l’orientation de l’écran. Cependant, veillez à conserver le même nombre total d’en-têtes (visibles et masqués) dans les orientations paysage et portrait.
+-   Évitez d’utiliser plus de 5 en-têtes en mode carrousel (rotation), afin de ne pas désorienter l’utilisateur.
+-   Sur les appareils mobiles, le placement des onglets/sélecteurs de vue sur la partie inférieure de l’écran favorise l’accessibilité si le balayage est utilisé dans une autre partie de l’interface utilisateur. Ceci permet également d’alléger l’interface utilisateur.
+-   Lorsque le clavier visuel est déployé, les en-têtes peuvent être retirés de l’écran afin de gagner de la place.
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
-## Related topics
+## Rubriques connexes
 
-* [Navigation design basics](https://msdn.microsoft.com/library/windows/apps/dn958438)
+[Informations de base relatives à la conception de la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -28,10 +28,11 @@ L’application utilise des modèles qui exploitent des affichages et des modèl
 
 ## Téléchargements
 
+[Téléchargez l’application 8.1 universelle QuizGame](http://go.microsoft.com/fwlink/?linkid=532953). Il s’agit de l’état initial de l’application avant le portage. 
 
-[Téléchargez l’application 8.1 universelle QuizGame](http://go.microsoft.com/fwlink/?linkid=532953).
+[Téléchargez l’application Windows 10 QuizGame10](http://go.microsoft.com/fwlink/?linkid=532954). Il s’agit de l’état de l’application juste après le portage. 
 
-[Téléchargez l’application Windows 10 QuizGame10](http://go.microsoft.com/fwlink/?linkid=532954).
+[Voir la dernière version de cet exemple sur GitHub](https://github.com/Microsoft/Windows-appsample-quizgame).
 
 ## Solution WinRT 8.1
 
@@ -50,7 +51,6 @@ Application QuizGame cliente s’exécutant sur Windows Phone
 
 ## Procédure pas à pas de l’application QuizGame en cours d’utilisation
 
-
 Il s’agit d’un compte-rendu hypothétique de l’application en cours d’utilisation, qui fournit cependant des informations utiles si vous souhaitez tester l’application vous-même sur votre réseau sans fil.
 
 Un jeu-questionnaire amusant est diffusé dans un bar. Un immense écran de télévision est installé ; tous les clients peuvent le voir. L’animateur dispose d’un PC, dont la sortie est affichée sur l’écran de télévision. Sur ce PC s’exécute « l’application hôte ». Toute personne qui souhaite participer à ce questionnaire doit simplement installer « l’application cliente » sur son téléphone ou sur sa tablette Surface.
@@ -63,13 +63,11 @@ Le jeu se poursuit. Une question est posée et reçoit une réponse ; l’anima
 
 ## Mode test local
 
-
 Pour tester l’application et ses interactions sur un seul PC, et non sur des appareils distribués, vous pouvez générer l’application hôte en mode test local. Ce mode ne tient pas compte de l’utilisation du réseau. Au lieu de cela, l’interface utilisateur de l’application hôte affiche la partie hôte à gauche de la fenêtre et, à droite, deux copies de l’interface utilisateur d’application cliente empilées verticalement (dans cette version, l’interface utilisateur de mode test local est fixe pour un affichage PC ; il ne s’adapte pas aux appareils de petite taille). Dans la même application, ces segments de l’interface utilisateur communiquent entre eux par le biais d’une fonction Communicator de client fictive, qui simule des interactions survenant sur le réseau.
 
 Pour activer le mode test local, définissez l’élément **LOCALTESTMODEON** (dans les propriétés du projet) en tant que symbole de compilation conditionnelle, puis relancez la génération.
 
 ## Portage d’une application vers un projet Windows 10
-
 
 L’application QuizGame comporte les éléments suivants :
 
@@ -108,26 +106,12 @@ En nous appuyant sur ces options, nous allons porter l’élément QuizGame.Wind
 -   Au lieu de remplacer le fichier app.xaml.cs, nous allons conserver sa version dans le nouveau projet en lui apportant une seule modification ciblée afin d’assurer la prise en charge du mode test local. Dans le fichier app.xaml.cs, remplacez cette ligne de code :
 
 ```CSharp
-    rootFrame.Navigate(typeof(MainPage), e.Arguments);</code></pre></td>
-</tr>
-</tbody>
-</table>
+rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
 par :
 
-<span codelanguage="CSharp"></span>
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 #if LOCALTESTMODEON
     rootFrame.Navigate(typeof(TestView), e.Arguments);
 #else
@@ -152,7 +136,6 @@ Vous pourrez maintenant générer l’application et l’exécuter.
 
 ## Interface utilisateur adaptative
 
-
 L’application Windows 10 QuizGameHost apparaît correctement lorsqu’elle s’exécute dans une fenêtre large (ce qui n’est possible que sur un appareil doté d’un grand écran). Par contre, lorsque la fenêtre d’application est étroite (comme sur un appareil de petite taille, voire sur certains appareils plus grands), l’interface utilisateur est tellement écrasée qu’elle en devient illisible.
 
 Nous pouvons utiliser la fonction adaptative de gestionnaire d’état visuel pour remédier au problème, comme nous l’avons expliqué dans la section [Étude de cas : Bookstore2](w8x-to-uwp-case-study-bookstore2.md). Tout d’abord, définissez les propriétés sur les éléments visuels afin que, par défaut, l’interface utilisateur soit affichée selon une disposition étroite. Toutes ces modifications sont effectuées dans le fichier \\View\\HostView.xaml.
@@ -167,20 +150,20 @@ Nous pouvons utiliser la fonction adaptative de gestionnaire d’état visuel po
 -   Enfin, ajoutez le balisage du Gestionnaire d’état visuel approprié à l’élément **Grid** racine.
 
 ```xaml
-   <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup>
-            <VisualStatex:Name="WideState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTriggerMinWindowWidth="548"/>
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <SetterTarget="pageTitleGrid.Height"Value="140"/>
-                    <SetterTarget="pageTitle.Margin"Value="0,0,30,40"/>
-                    <SetterTarget="contentGrid.Margin"Value="40,40,0,0"/>
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
+<VisualStateManager.VisualStateGroups>
+    <VisualStateGroup>
+        <VisualState x:Name="WideState">
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="548"/>
+            </VisualState.StateTriggers>
+            <VisualState.Setters>
+                <Setter Target="pageTitleGrid.Height" Value="140"/>
+                <Setter Target="pageTitle.Margin" Value="0,0,30,40"/>
+                <Setter Target="contentGrid.Margin" Value="40,40,0,0"/>
+            </VisualState.Setters>
+        </VisualState>
+    </VisualStateGroup>
+</VisualStateManager.VisualStateGroups>
 ```
 
 ## Stylisation universelle
@@ -189,18 +172,15 @@ Nous pouvons utiliser la fonction adaptative de gestionnaire d’état visuel po
 Vous remarquerez que, dans Windows 10, le modèle des boutons ne présente pas le même remplissage de cible tactile. Deux petites modifications devraient résoudre le problème. Tout d’abord, ajoutez ce balisage dans le fichier app.xaml des projets QuizGameHost et QuizGameClient.
 
 ```xaml
-    <Style TargetType="Button">
-        <Setter Property="Margin" Value="12"/>
-    </Style>
+<Style TargetType="Button">
+    <Setter Property="Margin" Value="12"/>
+</Style>
 ```
 
 Ensuite, ajoutez cette méthode setter à l’élément `OptionButtonStyle` dans le fichier \\View\\ClientView.xaml.
 
 ```xaml
-    <Setter Property="Margin" Value="6"/></code></pre></td>
-</tr>
-</tbody>
-</table>
+<Setter Property="Margin" Value="6"/>
 ```
 
 Grâce à ce dernier ajustement, l’application se comportera comme auparavant et aura le même aspect qu’avant le portage, à une exception près : elle pourra s’exécuter sur tous les types d’appareils.
@@ -208,4 +188,8 @@ Grâce à ce dernier ajustement, l’application se comportera comme auparavant 
 ## Conclusion
 
 L’application que nous avons portée dans le cadre de cette étude de cas était relativement complexe, car elle impliquait plusieurs projets, une bibliothèque de classes, une interface utilisateur assez volumineuse et une grande quantité de code. Pourtant, son portage s’est révélé très simple. La simplicité de ce portage repose en partie sur la similarité entre la plate-forme de développement Windows 10 et les plates-formes Windows 8.1 et Windows Phone 8.1. Le mode de conception de l’application d’origine, qui séparait les modèles, les modèles d’affichage et les affichages, contribue également à simplifier cette opération.
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

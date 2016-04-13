@@ -1,105 +1,109 @@
 ---
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: This article discusses how to use camera profiles to discover and manage the capabilities of different video capture devices.
-title: Camera profiles
+Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo.
+Profils d’appareil photo
 ---
 
-# Camera profiles
+# Profils d’appareil photo
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-This article discusses how to use camera profiles to discover and manage the capabilities of different video capture devices.
+Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo.
 
-**Note**  
-This article builds on concepts and code discussed in [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
+**Remarque**  
+Cet article repose sur les concepts et sur le code décrits dans [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), qui détaille les étapes d’implémentation de capture photo et vidéo de base. Il est recommandé de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
 
  
 
-## About camera profiles
+## À propos des profils d’appareil photo
 
-Cameras on different devices support different capabilities including the set of supported capture resolutions, frame rate for video captures, and whether HDR or variable frame rate captures are supported. The Universal Windows Platform (UWP) media capture framework stores this set of capabilities in a [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695). A camera profile, represented by a [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) object, has three collections of media descriptions; one for photo capture, one for video capture, and another for video preview.
+Les appareils photo offrent différentes fonctionnalités, notamment l’ensemble des résolutions de capture, la fréquence d’images pour la capture vidéo, et si les vidéos HDR ou les captures de fréquence d’images variable sont prises en charge. L’infrastructure de capture multimédia de plateforme Windows universelle (UWP) stocke cet ensemble de fonctionnalités dans une [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695). Un profil d’appareil photo, représenté par un objet [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694), comporte trois ensembles de descriptions du média : un premier pour la capture photo, un deuxième pour la capture vidéo et un dernier pour l’aperçu vidéo.
 
-Before initializing your [MediaCapture](capture-photos-and-video-with-mediacapture.md) object, you can query the capture devices on the current device to see what profiles are supported. When you select a supported profile, you know that the capture device supports all of the capabilities in the profile's media descriptions. This eliminates the need for a trial and error approach to determining which combinations of capabilities are supported on a particular device.
+Avant d’initialiser votre objet [MediaCapture](capture-photos-and-video-with-mediacapture.md), vous pouvez interroger les appareils de capture de l’appareil actuel pour découvrir les profils pris en charge. Lorsque vous sélectionnez un profil pris en charge, vous savez que l’appareil de capture prend en charge toutes les fonctionnalités dans les descriptions du média du profil. Cela permet de ne pas tâtonner pour déterminer quelles combinaisons de fonctionnalités sont prises en charge sur un appareil particulier.
 
-In the article on basic media capture, [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md), the [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) used to initialize the media capture is created with only the capture device's ID string, the minimum amount of data required for initialization.
+Dans l’article sur la capture multimédia de base, [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), le [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) utilisé pour initialiser la capture multimédia est créé uniquement avec la chaîne d’ID de l’appareil de capture (quantité minimale de données requises pour l’initialisation).
 
 [!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
 
-The code examples in this article replace this minimal initialization with the discovery of camera profiles supporting various capabilities, which are then used to initialize the media capture device.
+Les exemples de code dans cet article remplacent cette initialisation minimale par la découverte de profils d’appareil photo prenant en charge différentes fonctionnalités, qui sont ensuite utilisées pour initialiser l’appareil de capture multimédia.
 
-## Find a video device that supports camera profiles
+## Trouver un appareil vidéo prenant en charge des profils d’appareil photo
 
-Before searching for supported camera profiles, you should find a capture device that supports the use of camera profiles. The **GetVideoProfileSupportedDeviceIdAsync** helper method defined in the example below uses the [**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) method to retrieve a list of all available video capture devices. It loops through all of the devices in the list, calling the static method, [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714), for each device to see if it supports video profiles. Also, the [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) property for each device, allowing you to specify wether you want a camera on the front or back of the device.
+Avant de rechercher des profils d’appareil photo pris en charge, vous devez trouver un appareil de capture qui prend en charge l’utilisation de profils d’appareil photo. La méthode d’assistance **GetVideoProfileSupportedDeviceIdAsync** définie dans l’exemple ci-dessous utilise la méthode [**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) pour récupérer la liste de tous les appareils de capture vidéo disponibles. Elle parcourt tous les appareils de la liste en appelant la méthode statique [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714) pour chaque appareil afin de déterminer s’il prend en charge les profils vidéo. En outre, la propriété [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) vous permet de spécifier pour chaque appareil si vous préférez que l’appareil photo se situe à l’avant ou à l’arrière.
 
-If a device that supports camera profiles is found on the specified panel, the [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) value, containing the device's ID string, is returned.
+Si un appareil prenant en charge des profils d’appareil photo est détecté dans le panneau de configuration spécifié, la valeur [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) contenant la chaîne d’ID de l’appareil, est renvoyée.
 
 [!code-cs[GetVideoProfileSupportedDeviceIdAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
 
-If the device ID returned from the **GetVideoProfileSupportedDeviceIdAsync** helper method is null or an empty string, there is no device on the specified panel that supports camera profiles. In this case, you should initialize your media capture device without using profiles.
+Si l’ID d’appareil renvoyé par la méthode d’assistance **GetVideoProfileSupportedDeviceIdAsync** est null ou une chaîne vide, il n’existe aucun appareil sur le panneau de configuration spécifié prenant en charge des profils d’appareil photo. Dans ce cas, vous devez initialiser votre appareil de capture multimédia sans utiliser de profils.
 
 [!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
 
-## Select a profile based on supported resolution and frame rate
+## Sélectionner un profil en fonction de la résolution et de la fréquence d’images prises en charge
 
-To select a profile with particular capabilities, such as with the ability to achieve a particular resolution and frame rate, you should first call the helper method defined above to get the ID of a capture device that supports using camera profiles.
+Pour sélectionner un profil avec des fonctionnalités particulières, comme la possibilité d’atteindre une résolution et une fréquence d’images données, vous devez d’abord appeler la méthode d’assistance définie ci-dessus pour obtenir l’ID d’un appareil de capture qui prend en charge l’utilisation des profils de l’appareil photo.
 
-Create a new [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) object, passing in the selected device ID. Next, call the static method [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) to get a list of all camera profiles supported by the device.
+Créez un objet [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573), en passant l’ID d’appareil sélectionné. Ensuite, appelez la méthode statique [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) pour obtenir la liste de tous les profils d’appareil photo pris en charge par l’appareil.
 
-This example uses a Linq query method, included in the using **System.Linq** namespace, to select a profile that contains a [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) object where the [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697), and [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) properties match the requested values. If a match is found, [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) and [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) of the **MediaCaptureInitializationSettings** are set to the values from the anonymous type returned from the Linq query. If no match is found, the default profile is used.
+Cet exemple utilise une méthode de requête Linq, incluse dans l’espace de noms using **System.Linq**, pour sélectionner un profil qui contient un objet [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) dans lequel les propriétés [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697) et [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) correspondent aux valeurs demandées. Si une correspondance est trouvée, [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) et [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) du **MediaCaptureInitializationSettings** sont définies sur les valeurs de type anonyme renvoyées par la requête Linq. Si aucune correspondance n’est trouvée, le profil par défaut est utilisé.
 
 [!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
 
-Once you populated the **MediaCaptureInitializationSettings** with your desired camera profile, you simply call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) on your media capture object to configure it to the desired profile.
+Une fois que vous avez rempli le **MediaCaptureInitializationSettings** avec le profil d’appareil photo souhaité, il vous suffit d’appeler [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) sur l’objet de capture multimédia pour le configurer sur le profil de votre choix.
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## Select a profile that supports concurrence
+## Sélectionner un profil prenant en charge la simultanéité
 
-You can use camera profiles to determine if a device supports video capture from multiple cameras concurrently. For this scenario, you will need to create two sets of capture objects, one for the front camera and one for the back. For each camera, create a **MediaCapture**, a **MediaCaptureInitializationSettings**, and a string to hold the capture device ID. Also, add a boolean variable that will track whether concurrence is supported.
+Vous pouvez utiliser des profils d’appareil photo pour déterminer si un appareil prend en charge la capture vidéo à partir de plusieurs appareils photo simultanément. Pour ce scénario, vous devez créer deux jeux d’objets de capture, un pour l’appareil photo avant et l’autre pour l’appareil photo arrière. Pour chaque appareil photo, créez une **MediaCapture**, un **MediaCaptureInitializationSettings** et une chaîne contenant l’ID d’appareil de capture. Ajoutez aussi une variable booléenne qui déterminera si la simultanéité est prise en charge.
 
 [!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
 
-The static method [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) returns a list of the camera profiles that are supported by the specified capture device that can also supports concurrence. Use a Linq query to find a profile that supports concurrence and that is supported by both the front and back camera. If a profile that meets theses requirements is found, set the profile on each of the **MediaCaptureInitializationSettings** objects and set the boolean concurrence tracking variable to true.
+La méthode statique [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) renvoie la liste des profils d’appareil photo pris en charge par l’appareil de capture spécifié prenant en charge la simultanéité. Utilisez une requête Linq pour rechercher un profil qui prend en charge la simultanéité et qui est pris en charge par l’appareil photo avant et arrière. Si un profil répondant à ces exigences est trouvé, définissez le profil sur chacun des objets **MediaCaptureInitializationSettings** et définissez la variable booléenne de suivi de simultanéité sur la valeur True.
 
 [!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
 
-Call **MediaCapture.InitializeAsync** for the primary camera for your app scenario. If concurrence is supported, initialize the second camera as well.
+Appelez **MediaCapture.InitializeAsync** pour l’appareil photo principal de votre scénario d’application. Si la simultanéité est prise en charge, initialisez également le deuxième appareil photo.
 
 [!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
 
-## Use known profiles to find a profile that supports HDR video
+## Utiliser des profils connus pour rechercher un profil qui prend en charge la vidéo HDR
 
-Selecting a profile that supports HDR begins like the other scenarios. Create a a **MediaCaptureInitializationSettings** and a string to hold the capture device ID. Add a boolean variable that will track whether HDR video is supported.
+La sélection d’un profil prenant en charge la vidéo HDR commence comme tous les autres scénarios. Créez un **MediaCaptureInitializationSettings** et une chaîne contenant l’ID d’appareil de capture. Ajoutez une variable booléenne qui déterminera si la vidéo HDR est prise en charge.
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
-Use the **GetVideoProfileSupportedDeviceIdAsync** helper method defined above to get the device ID for a capture device that supports camera profiles.
+Utilisez la méthode d’assistance **GetVideoProfileSupportedDeviceIdAsync** définie ci-dessus pour obtenir l’ID d’un appareil de capture prenant en charge les profils d’appareil photo.
 
 [!code-cs[FindDeviceHDR](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindDeviceHDR)]
 
-The static method [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) returns the camera profiles supported by the specified device that is categorized by the specified [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) value. For this scenario, the **VideoRecording** value is specified to limit the returned camera profiles to ones that support video recording.
+La méthode statique [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) renvoie les profils d’appareil photo pris en charge par l’appareil spécifié classé par la valeur [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) spécifiée. Pour ce scénario, la valeur **VideoRecording** est spécifiée de manière à limiter les profils d’appareil photo renvoyés à ceux prenant en charge l’enregistrement vidéo.
 
-Loop through the returned list of camera profiles. For each camera profile, loop through each [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) in the profile checking to see if the [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) property is true. Once a suitable media description is found, break out of the loop and assign the profile and description objects to the **MediaCaptureInitializationSettings** object.
+Parcourez la liste renvoyée des profils d’appareil photo. Pour chaque profil d’appareil photo, parcourez chaque [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) dans le profil pour vérifier si la propriété [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) est définie sur la valeur True. Une fois qu’une description du média appropriée est détectée, quittez la boucle et affectez le profil et les objets de description à l’objet **MediaCaptureInitializationSettings**.
 
 [!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
 
-## Determine if a device supports simultaneous photo and video capture
+## Déterminer si un appareil prend en charge la capture simultanée de photo et de vidéo
 
-Many devices support capturing photos and video simultaneously. To determine if a capture device supports this, call [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) to get all of the camera profiles supported by the device. Use a link query to find a profile that has at least one entry for both [**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) and [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) which means that the profile supports simultaneous capture.
+De nombreux appareils prennent en charge la capture simultanée de photos et de vidéos. Pour déterminer si un appareil de capture prend cette fonctionnalité en charge, appelez [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) pour obtenir tous les profils d’appareil photo pris en charge. Utilisez une requête Linq pour rechercher un profil comportant au moins une entrée pour [**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) et pour [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705), ce qui indiquera que le profil prend en charge la capture simultanée.
 
 [!code-cs[GetPhotoAndVideoSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPhotoAndVideoSupport)]
 
-You can refine this query to look for profiles that support specific resolutions or other capabilities in addition to simultaneous video record. You can also use the [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) and specify the [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) value to retrieve profiles that support simultaneous capture, but querying all profiles will provide more complete results.
+Vous pouvez affiner la requête pour rechercher des profils qui prennent en charge des résolutions spécifiques ou autres fonctionnalités en plus de l’enregistrement vidéo simultané. Vous pouvez également utiliser le [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) et spécifier la valeur [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) pour récupérer les profils prenant en charge la capture simultanée, mais vous obtiendrez des résultats plus complets en interrogeant tous les profils.
 
-## Related topics
+## Rubriques connexes
 
-* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

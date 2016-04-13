@@ -1,425 +1,448 @@
 ---
-Learn how a user can interact with a background app through the Cortana voice and canvas during the execution of a voice command.
-Interact with a background app
+Description: Découvrez comment un utilisateur peut interagir avec une application en arrière-plan via les fonctions vocales et le canevas de Cortana pendant l’exécution d’une commande vocale.
+title: Interagir avec une application en arrière-plan
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
-Interact with a background app
+label: Interact with a background app
 template: detail.hbs
 ---
 
-# Interact with a background app in Cortana
+# Interagir avec une application en arrière-plan dans Cortana
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**Voice Command Definition (VCD) elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-Learn how a user can interact with a background app through the **Cortana** voice and canvas during the execution of a voice command.
+Permettez l’interaction de l’utilisateur avec une application en arrière-plan, par le biais de la saisie vocale et de texte dans le canevas de **Cortana**, pendant l’exécution d’une commande vocale.
 
-Voice commands with **Cortana** can include a rich user experience and interaction flow within **Cortana** that is controlled by the background app. The app can specify a number of different types of screens to support functionality that includes:
+Cortana prend en charge un flux de travail complet étape par étape avec votre application. Ce flux de travail est défini par votre application et peut prendre en charge des fonctionnalités telles que les suivantes : 
 
--   Successful completion
--   Hand-off
--   Progress
+-   Réussite
+-   Relais
+-   Progression
 -   Confirmation
--   Disambiguation
--   Error
+-   Levée d’ambiguïté
+-   Erreur
 
-**Prerequisites:  **
+**Éléments requis :**
 
-This topic builds on [Launch a background app with voice commands in Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). We continue here to demonstrate features with a trip planning and management app named **Adventure Works**.
+Cette rubrique s’appuie sur l’article [Lancer une application en arrière-plan avec les commandes vocales de Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). Nous continuons ici à illustrer ces fonctionnalités avec une application de planification et de gestion de voyages nommée **Adventure Works**.
 
-If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
+Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
--   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**User experience guidelines:  **
+**Recommandations en matière d’expérience utilisateur : **
 
-See [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for info about how to integrate your app with **Cortana** and [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) for helpful tips on designing a useful and engaging speech-enabled app.
+Pour des informations sur la manière d’intégrer votre application à **Cortana**, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233). Pour obtenir de précieux conseils sur la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
-## <span id="Completion_screen"></span><span id="completion_screen"></span><span id="COMPLETION_SCREEN"></span>Completion screen
+## <span id="Feedback_strings"> </span> <span id="feedback_strings"> </span> <span id="FEEDBACK_STRINGS"> </span>Chaînes de commentaires
 
+Choisir les chaînes de commentaires qui sont affichées et dictées par **Cortana**.
 
-A completion screen provides the user with information about the completed voice command task.
+Les [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233) fournissent des conseils sur la composition de chaînes pour **Cortana**.
 
-Tasks that take less than 500 milliseconds for your app to respond, and require no additional information from the user, can be completed without further participation from **Cortana**, other than displaying the completion screen.
+## <span id="Feedback_strings"> </span> <span id="feedback_strings"> </span> <span id="FEEDBACK_STRINGS"> </span>Chaînes de commentaires
 
-Here, we show how **Cortana** can display a cancellation result from the **Adventure Works** app for an upcoming trip to Las Vegas.
+Les cartes de contenu peuvent fournir à l’utilisateur un contexte supplémentaire et aider à conserver des chaînes de commentaires concises.
 
-![cortana background app completion screen](images/cortana-completion-screen.png)
-
-1.  **Choose the feedback strings to be displayed and spoken by Cortana**
-
-    Follow the [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for recommendations on composing strings that **Cortana** shows and speaks.
-
-2.  **Choose content tiles based on the action performed (optional)**
-
-    Content tiles can provide additional context for the user and help keep the feedback strings concise.
-
-    **Cortana** supports the following content tile templates (only one template can be used on the completion screen):
+**Cortana** prend en charge les modèles de carte de contenu suivants (un seul modèle peut être utilisé dans l’écran d’achèvement) :
 
     -   Title only
     -   Title with up to three lines of text
-    -   Title with icon
-    -   Title with icon and up to three lines of text
+    -   Title with image
+    -   Title with image and up to three lines of text
 
-    The icon can be:
+L’image peut être :
 
     -   68w x 68h
     -   68w x 92h
     -   280w x 140h
 
-    You can also let users launch your app in the foreground by either tapping a tile or the text link to your app.
+Vous pouvez également permettre aux utilisateurs de lancer votre application au premier plan en cliquant sur une carte ou sur le lien de texte de votre application.
 
-3.  **Show the successful completion screen**
+## <span id="Completion_screen"> </span> <span id="completion_screen"> </span> <span id="COMPLETION_SCREEN"> </span>Écran d’achèvement
 
-    Here's an example of a successful completion screen with multiple content tiles.
+Un écran d’achèvement fournit à l’utilisateur des informations sur la tâche de commande vocale terminée.
 
-```    CSharp
-var userMessage = new VoiceCommandUserMessage();
-    userMessage.DisplayMessage = "Here are your trips.";
-    userMessage.SpokenMessage = 
-      "You have two trips to Vegas coming up.";
+Les tâches auxquelles l’application peut répondre en moins de 500 millisecondes et qui ne nécessitent pas d’informations supplémentaires de la part de l’utilisateur peuvent être effectuées sans aucune autre interaction avec **Cortana**. Cortana affiche simplement l’écran d’achèvement.
 
-    var destinationsContentTiles = new List<VoiceCommandContentTile>();
+Ici, nous utilisons l’application **Adventure Works** pour afficher l’écran d’achèvement d’une commande vocale pour afficher les prochains voyages à Londres. 
 
-    var destinationTile1 = new VoiceCommandContentTile();
-    destinationTile1.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-    destinationTile1.AppLaunchArgument = “id_Vegas_001";
-    destinationTile1.Title = "Las Vegas Tech Conference";
-    destinationTile1.TextLine1 = "May 15th 2015";
-    destinationsContentTiles.Add(destinationTile1);
+![Écran d’achèvement de l’application en arrière-plan de Cortana](images/cortana-completion-screen-upcomingtrip-small.png)
 
-    var destinationTile2 = new VoiceCommandContentTile();
-    destinationTile2.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-    destinationTile2.AppLaunchArgument = “id_Vegas_002";
-    destinationTile2.Title = "Fun in Vegas";
-    destinationTile2.TextLine1 = "August 24th 2015";
-    destinationsContentTiles.Add(destinationTile2);
-
-    var response = 
-      VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
-
-    response.AppLaunchArgument = “Las Vegas";
-        
-    await voiceServiceConnection.ReportSuccessAsync(response);
+La commande vocale est définie dans AdventureWorksCommands.xml :
+```
+<Command Name="whenIsTripToDestination">
+  <Example> When is my trip to Las Vegas?</Example>
+  <ListenFor RequireAppName="BeforeOrAfterPhrase"> when is [my] trip to {destination}</ListenFor>
+  <ListenFor RequireAppName="ExplicitlySpecified"> when is [my] {builtin:AppName} trip to {destination} </ListenFor>
+  <Feedback> Looking for trip to {destination}</Feedback>
+  <VoiceCommandService Target="AdventureWorksVoiceCommandService"/>
+</Command>
 ```
 
-## <span id="Hand-off_screen"></span><span id="hand-off_screen"></span><span id="HAND-OFF_SCREEN"></span>Hand-off screen
+AdventureWorksVoiceCommandService.cs contient la méthode de message d’achèvement :
 
+```csharp
+/// <summary>
+/// Show details for a single trip, if the trip can be found. 
+/// This demonstrates a simple response flow in Cortana.
+/// </summary>
+/// <param name="destination">The destination specified in the voice command.</param>
+private async Task SendCompletionMessageForDestination(string destination)
+{
+    // If this operation is expected to take longer than 0.5 seconds, the task must
+    // supply a progress response to Cortana before starting the operation, and
+    // updates must be provided at least every 5 seconds.
+    string loadingTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
+               destination);
+    await ShowProgressScreen(loadingTripToDestination);
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
 
-Once a voice command is recognized, **Cortana** must present feedback within approximately 500 milliseconds. If the app service cannot complete the action specified by the voice command within 500ms, **Cortana** presents a hand-off screen that is shown for up to 5 seconds.
+    // Query for the specified trip. 
+    // The destination should be in the phrase list. However, there might be  
+    // multiple trips to the destination. We pick the first.
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
 
-The app icon and name are displayed on the hand-off screen, and you must provide both GUI and text-to-speech (TTS) handoff strings to indicate that the voice command was correctly understood.
-
-Here's an example of a hand-off screen for the **Adventure Works** app. In this example, a user has queried **Cortana** for upcoming trips. The hand-off screen includes a message customized with the app service name, an icon, and the **Feedback** string declared in the VCD file.
-
-![cortana background app hand-off screen](images/cortana-backgroundapp-progress-result.png)
-
-## <span id="Progress_screen"></span><span id="progress_screen"></span><span id="PROGRESS_SCREEN"></span>Progress screen
-
-
-If the app service takes more than 500ms between steps, **Cortana** updates the user on what’s happening with a progress screen. The app icon is displayed, and you must provide both GUI and TTS progress strings to indicate that the task is being actively handled.
-
-**Cortana** shows a progress screen for a maximum of 5 seconds. After 5 seconds, **Cortana** presents the user with an error message and the app service is closed. If the app service needs more than 5 seconds to complete the action, it can continue to update **Cortana** with progress screens.
-
-Here's an example of a hand-off screen for the **Adventure Works** app. In this example, a user has canceled a trip to Las Vegas through **Cortana**. The progress screen includes a message customized for the action, an icon, and a content tile with information about the trip being canceled.
-
-![cortana background app progress screen ](images/cortana-progress-screen.png)
-
-1.  **Choose the feedback strings to be displayed and spoken by Cortana**
-
-    Follow the [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for recommendations on composing strings that **Cortana** shows and speaks.
-
-2.  **Choose content tiles based on the action performed (optional)**
-
-    Content tiles can provide additional context for the user and help keep the feedback strings concise.
-
-    **Cortana** supports the following content tile templates (only one template can be used on the completion screen):
-
-    -   Title only
-    -   Title with up to three lines of text
-    -   Title with icon
-    -   Title with icon and up to three lines of text
-
-    The icon can be:
-
-    -   68w x 68h
-    -   68w x 92h
-    -   280w x 140h
-
-    You can also let users launch your app in the foreground by either tapping a tile or the text link to your app.
-
-3.  **Build the response**
-
-    Call [**ReportProgressAsync**](https://msdn.microsoft.com/library/windows/apps/dn706579) to show the progress screen in **Cortana**.
-
-4.  **Show the progress screen**
-
-    Here's an example of a progress screen with a content tile.
-
-```    CSharp
-var userMessage = new VoiceCommandUserMessage();
-
+    var userMessage = new VoiceCommandUserMessage();
     var destinationsContentTiles = new List<VoiceCommandContentTile>();
-
-    destinationsContentTiles.Add(selectedDestination);
-
-    var response = 
-      VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
-
-    response.AppLaunchArgument = "destination=Las Vegas";
-    await voiceServiceConnection.ReportProgressAsync(response);
-```
-
-## <span id="Confirmation_screen"></span><span id="confirmation_screen"></span><span id="CONFIRMATION_SCREEN"></span>Confirmation screen
-
-
-When an action specified by a voice command is irreversible, has a significant impact, or the recognition confidence is not high, an app service can request confirmation.
-
-Here's an example of a confirmation screen for the **Adventure Works** app. In this example, a user has instructed the app service to cancel a trip to Las Vegas through **Cortana**. The app service has provided **Cortana** with a confirmation screen that prompts the user for a yes or no answer before canceling the trip.
-
-If the user says something other than "Yes" or "No", **Cortana** cannot determine the answer to the question. In this case, **Cortana** prompts the user with a similar question provided by the app service.
-
-On the second prompt, if the user still doesn’t say "Yes" or "No", **Cortana** prompts the user a third time with the same question prefixed with an apology. If the user still doesn’t say "Yes" or "No", **Cortana** stops listening for voice input and asks the user to tap one of the buttons instead.
-
-The confirmation screen includes a message customized for the action, an icon, and a content tile with information about the trip being canceled.
-
-![cortana background app confirmation screen](images/cortana-confirmation-screen.png)
-
-1.  **Choose the feedback strings to be displayed and spoken by Cortana**
-
-    Follow the [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for recommendations on composing strings that **Cortana** shows and speaks.
-
-2.  **Choose content tiles based on the action performed (optional)**
-
-    Content tiles can provide additional context for the user and help keep the feedback strings concise.
-
-    **Cortana** supports the following content tile templates (only one template can be used on the completion screen):
-
-    -   Title only
-    -   Title with up to three lines of text
-    -   Title with icon
-    -   Title with icon and up to three lines of text
-
-    The icon can be:
-
-    -   68w x 68h
-    -   68w x 92h
-    -   280w x 140h
-
-    You can also let users launch your app in the foreground by either tapping a tile or the text link to your app.
-
-3.  **Build the response**
-
-    Call [**RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) to show the confirmation screen in **Cortana**.
-
-4.  **Show the confirmation screen**
-
-    Here's an example of a confirmation screen with a content tile.
-
-```    CSharp
-var userPrompt = new VoiceCommandUserMessage();
-    userPrompt.DisplayMessage = userPrompt.SpokenMessage = 
-      "Are you sure you want to cancel the trip to Las Vegas?”;
-
-    var userReprompt = new VoiceCommandUserMessage();
-    userReprompt.DisplayMessage = 
-      userReprompt.SpokenMessage = "Do you want to cancel this trip to Las Vegas?"; 
-
-    userPrompt.DisplayMessage = “Cancel this trip?”;
-    userPrompt.SpokenMessage ="Do you wanna cancel this trip to Vegas?”;
-
-    var userReprompt = new VoiceCommandUserMessage();
-    userReprompt.DisplayMessage = “Did you want to cancel this trip?”;
-    userReprompt.SpokenMessage = "Did you wanna cancel this trip?"; 
-
-    var destinationsContentTiles = new List<VoiceCommandContentTile>();
-
-    var destinationTile = new VoiceCommandContentTile();
-    destinationTile.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-    destinationTile.Title = "Vegas Tech Conference";
-
-    destinationTile.TextLine1 = "May 15th";
-
-
-    destinationsContentTiles.Add(destinationTile);
-
-    var response = 
-      VoiceCommandResponse.CreateResponseForPrompt(
-        userPrompt, userReprompt, destinationsContentTiles);
-
-    var voiceCommandConfirmation = 
-      await voiceServiceConnection.RequestConfirmationAsync(response);
-
-    if (voiceCommandConfirmation != null)
+    if (trips.Count() == 0)
     {
-       // Use the voiceCommandConfirmation.Confirmed to take action.
-       // Call Cortana to present the next screen in .5 seconds 
-       // and avoid a transition screen.
+        string foundNoTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
+               destination);
+        userMessage.DisplayMessage = foundNoTripToDestination;
+        userMessage.SpokenMessage = foundNoTripToDestination;
     }
+    else
+    {
+        // Set plural or singular title.
+        string message = "";
+        if (trips.Count() > 1)
+        {
+            message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
+        }
+        else
+        {
+            message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
+        }
+        userMessage.DisplayMessage = message;
+        userMessage.SpokenMessage = message;
+
+        // Define a tile for each destination.
+        foreach (Model.Trip trip in trips)
+        {
+            int i = 1;
+            
+            var destinationTile = new VoiceCommandContentTile();
+
+            destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+            destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
+
+            destinationTile.AppLaunchArgument = trip.Destination;
+            destinationTile.Title = trip.Destination;
+            if (trip.StartDate != null)
+            {
+                destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+            }
+            else
+            {
+                destinationTile.TextLine1 = trip.Destination + " " + i;
+            }
+
+            destinationsContentTiles.Add(destinationTile);
+            i++;
+        }
+    }
+
+    var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+
+    if (trips.Count() > 0)
+    {
+        response.AppLaunchArgument = destination;
+    }
+
+    await voiceServiceConnection.ReportSuccessAsync(response);
+}
 ```
 
-## <span id="Disambiguation_screen"></span><span id="disambiguation_screen"></span><span id="DISAMBIGUATION_SCREEN"></span>Disambiguation screen
+## <span id="Hand-off_screen"> </span> <span id="hand-off_screen"> </span> <span id="HAND-OFF_SCREEN"> </span>Écran relais
+
+Lorsqu’une commande vocale est reconnue, **Cortana** doit appeler la méthode ReportSuccessAsync et afficher le commentaire dans un délai approximatif de 500 ms. Si le service d’application ne peut pas exécuter l’action spécifiée par la commande vocale pendant ce laps de temps, **Cortana** affiche un écran relais jusqu’à ce que votre application appelle la méthode ReportSuccessAsync ou pendant 5 secondes au plus.
+
+Si le service d’application n’appelle pas ReportSuccessAsync ni aucune des méthodes VoiceCommandServiceConnection, l’utilisateur reçoit un message d’erreur et l’appel du service d’application est annulé.
+
+Voici un exemple d’écran relais pour l’application **Adventure Works**. Dans cet exemple, un utilisateur a interrogé **Cortana** pour obtenir les prochains voyages. L’écran relais inclut un message personnalisé avec le nom du service d’application, une icône et la chaîne **Feedback** déclarée dans le fichier VCD.
+
+![Écran relais de l’application en arrière-plan de Cortana](images/cortana-backgroundapp-progress-result.png)
 
 
-When an action specified by a voice command has more than one possible outcome, an app service can request more info from the user.
+## <span id="Progress_screen"> </span> <span id="progress_screen"> </span> <span id="PROGRESS_SCREEN"> </span>Écran de progression
 
-Here's an example of a disambiguation screen for the **Adventure Works** app. In this example, a user has instructed the app service to cancel a trip to Las Vegas through **Cortana**. However, the user has two trips to Las Vegas on different dates and the app service cannot complete the action without the user selecting the intended trip.
 
-The app service provides **Cortana** with a disambiguation screen that prompts the user to make a selection from a list of matching trips, before it cancels any.
+Si le service d’application appelle ReportSuccessAsync après le délai de 500 ms, **Cortana** affiche un écran de progression à l’attention de l’utilisateur. L’icône de l’application s’affiche. Vous devez fournir les chaînes de progression de l’interface graphique utilisateur et de TTS permettant d’indiquer que la tâche est en cours de gestion.
 
-In this case, **Cortana** prompts the user with a similar question provided by the app service.
+**Cortana** affiche un écran de progression pendant 5 secondes au plus. Au terme de ces 5 secondes, **Cortana** présente à l’utilisateur un message d’erreur, et le service d’application est fermé. Si le service d’application a besoin de plus de 5 secondes pour effectuer l’action, il peut continuer à mettre à jour **Cortana** avec des écrans de progression.
 
-On the second prompt, if the user still doesn’t say something that can be used to identify the selection, **Cortana** prompts the user a third time with the same question prefixed with an apology. If the user still doesn’t say something that can be used to identify the selection, **Cortana** stops listening for voice input and asks the user to tap one of the buttons instead.
+Voici un exemple d’écran de progression pour l’application **Adventure Works**. Dans cet exemple, un utilisateur a annulé un voyage à Las Vegas. L’écran de progression inclut un message personnalisé pour l’action, une icône et une vignette de contenu avec des informations sur le voyage annulé.
 
-The disambiguation screen includes a message customized for the action, an icon, and a content tile with information about the trip being canceled.
+![Écran de progression de l’application en arrière-plan de Cortana ](images/cortana-progress-screen.png)
 
-![cortana background app disambiguation screen ](images/cortana-disambiguation-screen.png)
+AdventureWorksVoiceCommandService.cs contient la méthode de message de progression suivant, qui appelle [**ReportProgressAsync**](https://msdn.microsoft.com/library/windows/apps/dn706579) pour afficher l’écran de progression dans **Cortana**.
 
-1.  **Choose the feedback strings to be displayed and spoken by Cortana**
-
-    Follow the [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for recommendations on composing strings that **Cortana** shows and speaks.
-
-2.  **Choose content tiles based on the action performed (optional)**
-
-    Content tiles can provide additional context for the user and help keep the feedback strings concise.
-
-    **Cortana** supports the following content tile templates (only one template can be used on the completion screen):
-
-    -   Title only
-    -   Title with up to three lines of text
-    -   Title with icon
-    -   Title with icon and up to three lines of text
-
-    The icon can be:
-
-    -   68w x 68h
-    -   68w x 92h
-    -   280w x 140h
-
-    You can also let users launch your app in the foreground by either tapping a tile or the text link to your app.
-
-3.  **Build the response**
-
-    Call [**RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) to show the disambiguation screen in **Cortana**.
-
-4.  **Show the disambiguation screen**
-
-    Here's an example of a disambiguation screen with content tiles.
 
 ```    CSharp
-// Create a VoiceCommandUserMessage for the initial question.  
+/// <summary>
+/// Show a progress screen. These should be posted at least every 5 seconds for a 
+/// long-running operation.
+/// </summary>
+/// <param name="message">The message to display, relating to the task being performed.</param>
+/// <returns></returns>
+private async Task ShowProgressScreen(string message)
+{
+    var userProgressMessage = new VoiceCommandUserMessage();
+    userProgressMessage.DisplayMessage = userProgressMessage.SpokenMessage = message;
+
+    VoiceCommandResponse response = VoiceCommandResponse.CreateResponse(userProgressMessage);
+    await voiceServiceConnection.ReportProgressAsync(response);
+}
+```
+
+## <span id="Confirmation_screen"> </span> <span id="confirmation_screen"> </span> <span id="CONFIRMATION_SCREEN"> </span>Écran de confirmation
+
+
+Quand une action spécifiée par une commande vocale est irréversible, a un impact important ou bien encore lorsque la fiabilité de la reconnaissance est faible, un service d’application peut demander confirmation.
+
+Voici un exemple d’écran de confirmation pour l’application **Adventure Works**. Dans cet exemple, l’utilisateur a demandé au service d’application d’annuler un voyage à Las Vegas via **Cortana**. Le service d’application fournit à **Cortana** un écran de confirmation demandant à l’utilisateur une réponse positive ou négative avant d’annuler le voyage.
+
+Si l’utilisateur dit autre chose que Oui ou Non, **Cortana** ne peut pas déterminer la réponse à la question. Le cas échéant, **Cortana** invite l’utilisateur à répondre à une question similaire fournie par le service d’application.
+
+À la deuxième invite, si l’utilisateur ne répond toujours pas par Oui ou Non, **Cortana** interroge l’utilisateur une troisième fois en posant la même question précédée d’une excuse. Si l’utilisateur ne répond encore une fois ni par Oui ni par Non, **Cortana** cesse d’écouter l’entrée vocale et demande à l’utilisateur d’appuyer plutôt sur l’un des boutons.
+
+L’écran de confirmation inclut un message personnalisé pour l’action, une icône et une vignette de contenu avec des informations sur le voyage annulé.
+
+![Écran de confirmation de l’application en arrière-plan de Cortana](images/cortana-confirmation-screen.png)
+
+AdventureWorksVoiceCommandService.cs contient la méthode de message de progression suivant, qui appelle [**RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) pour afficher un écran de confirmation dans **Cortana**.
+
+```    CSharp
+/// <summary>
+/// Handle the Trip Cancellation task. This task demonstrates how to prompt a user
+/// for confirmation of an operation, show users a progress screen while performing
+/// a long-running task, and show a completion screen.
+/// </summary>
+/// <param name="destination">The name of a destination.</param>
+/// <returns></returns>
+private async Task SendCompletionMessageForCancellation(string destination)
+{
+    // Begin loading data to search for the target store. 
+    // Consider inserting a progress screen here, in order to prevent Cortana from timing out. 
+    string progressScreenString = string.Format(
+        cortanaResourceMap.GetValue("ProgressLookingForTripToDest", cortanaContext).ValueAsString,
+        destination);
+    await ShowProgressScreen(progressScreenString);
+
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
+
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+    Model.Trip trip = null;
+    if (trips.Count() > 1)
+    {
+        // If there is more than one trip, provide a disambiguation screen.
+        // However, if a significant number of items are returned, you might want to 
+        // just display a link to your app and provide a deeper search experience.
+        string disambiguationDestinationString = string.Format(
+            cortanaResourceMap.GetValue("DisambiguationWhichTripToDest", cortanaContext).ValueAsString,
+            destination);
+        string disambiguationRepeatString = cortanaResourceMap.GetValue("DisambiguationRepeat", cortanaContext).ValueAsString;
+        trip = await DisambiguateTrips(trips, disambiguationDestinationString, disambiguationRepeatString);
+    }
+    else
+    {
+        trip = trips.FirstOrDefault();
+    }
+
     var userPrompt = new VoiceCommandUserMessage();
-    userPrompt.DisplayMessage = "Which one do you want to cancel?";
-    userPrompt.SpokenMessage = 
-      “Which Vegas trip do you wanna cancel? Vegas Tech Conference or Fun in Vegas?”;
+    
+    VoiceCommandResponse response;
+    if (trip == null)
+    {
+        var userMessage = new VoiceCommandUserMessage();
+        string noSuchTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("NoSuchTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userMessage.DisplayMessage = userMessage.SpokenMessage = noSuchTripToDestination;
+
+        response = VoiceCommandResponse.CreateResponse(userMessage);
+        await voiceServiceConnection.ReportSuccessAsync(response);
+    }
+    else
+    {
+        // Prompt the user for confirmation that this is the correct trip to cancel.
+        string cancelTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("CancelTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userPrompt.DisplayMessage = userPrompt.SpokenMessage = cancelTripToDestination;
+        var userReprompt = new VoiceCommandUserMessage();
+        string confirmCancelTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("ConfirmCancelTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userReprompt.DisplayMessage = userReprompt.SpokenMessage = confirmCancelTripToDestination;
+        
+        response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt);
+
+        var voiceCommandConfirmation = await voiceServiceConnection.RequestConfirmationAsync(response);
+
+        // If RequestConfirmationAsync returns null, Cortana has likely been dismissed.
+        if (voiceCommandConfirmation != null)
+        {
+            if (voiceCommandConfirmation.Confirmed == true)
+            {
+                string cancellingTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("CancellingTripToDestination", cortanaContext).ValueAsString,
+               destination);
+                await ShowProgressScreen(cancellingTripToDestination);
+
+                // Perform the operation to remove the trip from app data. 
+                // As the background task runs within the app package of the installed app,
+                // we can access local files belonging to the app without issue.
+                await store.DeleteTrip(trip);
+
+                // Provide a completion message to the user.
+                var userMessage = new VoiceCommandUserMessage();
+                string cancelledTripToDestination = string.Format(
+                    cortanaResourceMap.GetValue("CancelledTripToDestination", cortanaContext).ValueAsString,
+                    destination);
+                userMessage.DisplayMessage = userMessage.SpokenMessage = cancelledTripToDestination;
+                response = VoiceCommandResponse.CreateResponse(userMessage);
+                await voiceServiceConnection.ReportSuccessAsync(response);
+            }
+            else
+            {
+                // Confirm no action for the user.
+                var userMessage = new VoiceCommandUserMessage();
+                string keepingTripToDestination = string.Format(
+                    cortanaResourceMap.GetValue("KeepingTripToDestination", cortanaContext).ValueAsString,
+                    destination);
+                userMessage.DisplayMessage = userMessage.SpokenMessage = keepingTripToDestination;
+
+                response = VoiceCommandResponse.CreateResponse(userMessage);
+                await voiceServiceConnection.ReportSuccessAsync(response);
+            }
+        }
+    }
+}
+```
+
+## <span id="Disambiguation_screen"> </span> <span id="disambiguation_screen"> </span> <span id="DISAMBIGUATION_SCREEN"> </span>Écran de levée d’ambiguïté
 
 
-    // Create a VoiceCommandUserMessage for the second question,
-    // in case Cortana needs to reprompt. 
+Lorsqu’une action spécifiée par une commande vocale peut avoir plusieurs résultats, un service d’application peut demander des informations supplémentaires à l’utilisateur.
+
+Voici un exemple d’écran de levée d’ambiguïté pour l’application **Adventure Works**. Dans cet exemple, l’utilisateur a demandé au service d’application d’annuler un voyage à Las Vegas via **Cortana**. Or, l’utilisateur a prévu deux voyages à Las Vegas à des dates différentes. Le service d’application ne peut pas effectuer l’action tant que l’utilisateur n’a pas sélectionné le voyage en question.
+
+Le service d’application fournit à **Cortana** un écran de levée d’ambiguïté qui invite l’utilisateur à effectuer une sélection dans la liste des voyages correspondants avant d’en annuler un.
+
+Le cas échéant, **Cortana** invite l’utilisateur à répondre à une question similaire fournie par le service d’application.
+
+À la deuxième invite, si la réponse de l’utilisateur ne permet toujours pas d’identifier la sélection, **Cortana** interroge l’utilisateur une troisième fois en posant la même question précédée d’une excuse. Si là encore, la réponse de l’utilisateur ne permet pas d’identifier la sélection, **Cortana** cesse d’écouter l’entrée vocale et demande à l’utilisateur d’appuyer plutôt sur l’un des boutons.
+
+L’écran de levée d’ambiguïté inclut un message personnalisé pour l’action, une icône et une vignette de contenu avec des informations sur le voyage annulé.
+
+![Écran de levée d’ambiguïté de l’application en arrière-plan de Cortana ](images/cortana-disambiguation-screen.png)
+
+AdventureWorksVoiceCommandService.cs contient la méthode de message de progression suivant, qui appelle [**RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) pour afficher l’écran de levée d’ambiguïté dans **Cortana**.
+
+```csharp
+/// <summary>
+/// Provide the user with a way to identify which trip to cancel. 
+/// </summary>
+/// <param name="trips">The set of trips</param>
+/// <param name="disambiguationMessage">The initial disambiguation message</param>
+/// <param name="secondDisambiguationMessage">Repeat prompt retry message</param>
+private async Task<Model.Trip> DisambiguateTrips(IEnumerable<Model.Trip> trips, string disambiguationMessage, string secondDisambiguationMessage)
+{
+    // Create the first prompt message.
+    var userPrompt = new VoiceCommandUserMessage();
+    userPrompt.DisplayMessage =
+        userPrompt.SpokenMessage = disambiguationMessage;
+
+    // Create a re-prompt message if the user responds with an out-of-grammar response.
     var userReprompt = new VoiceCommandUserMessage();
-    userReprompt.DisplayMessage = “Which one did you want to cancel?”;
-    userReprompt.SpokenMessage = "Which one did you wanna to cancel?";
+    userReprompt.DisplayMessage =
+        userReprompt.SpokenMessage = secondDisambiguationMessage;
 
-    // Create the list of content tiles to show the selection items.
-    var destinationsContentTiles = new List<VoiceCommandContentTile>();
+    // Create card for each item. 
+    var destinationContentTiles = new List<VoiceCommandContentTile>();
+    int i = 1;
+    foreach (Model.Trip trip in trips)
+    {
+        var destinationTile = new VoiceCommandContentTile();
 
-    var destinationTile = new VoiceCommandContentTile();
-    destinationTile.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-      
-    // The AppContext is optional. 
-    // Replace this value with something specific to your app. 
-    destinationTile.AppContext = "id_Vegas_001";
-    destinationTile.Title = "Vegas Tech Conference";
+        destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+        destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
+        
+        // The AppContext can be any arbitrary object.
+        destinationTile.AppContext = trip;
+        string dateFormat = "";
+        if (trip.StartDate != null)
+        {
+            dateFormat = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+        }
+        else
+        {
+            // The app allows a trip to have no date.
+            // However, the choices must be unique so they can be distinguished.
+            // Here, we add a number to identify them.
+            dateFormat = string.Format("{0}", i);
+        } 
 
-    destinationTile.TextLine1 = "May 15th";
+        destinationTile.Title = trip.Destination + " " + dateFormat;
+        destinationTile.TextLine1 = trip.Description;
 
+        destinationContentTiles.Add(destinationTile);
+        i++;
+    }
 
-    destinationsContentTiles.Add(destinationTile);
+    // Cortana handles re-prompting if no valid response.
+    var response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt, destinationContentTiles);
 
-    var destination2 = new VoiceCommandContentTile();
-    destination2.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-    // The AppContext is optional. 
-    // Replace this value with something specific to your app. 
-    destination2.AppContext = "id_LasVegas_002";
-
-    destination2.Title = "Fun in Vegas";
-
-    destination2.TextLine1 = "August 24th";
-
-    destinationsContentTiles.Add(destination2);
-
-    // Create the disambiguation response.
-    var response = 
-      VoiceCommandResponse.CreateResponseForPrompt(
-        userPrompt, userReprompt, destinationsContentTiles);
-
-    // Request that Cortana shows the Disambiguation screen.
-    var voiceCommandDisambiguationResult = 
-      await voiceServiceConnection.RequestDisambiguationAsync(response);
-
+    // If cortana is dismissed in this operation, null is returned.
+    var voiceCommandDisambiguationResult = await
+        voiceServiceConnection.RequestDisambiguationAsync(response);
     if (voiceCommandDisambiguationResult != null)
     {
-       // Use the voiceCommandDisambiguationResult.SelectedItem to take action.
-       // Call Cortana to present the next screen in .5 seconds   
-       // and avoid a transition screen. 
+        return (Model.Trip)voiceCommandDisambiguationResult.SelectedItem.AppContext;
     }
+
+    return null;
+}
 ```
 
-## <span id="Error_screen"></span><span id="error_screen"></span><span id="ERROR_SCREEN"></span>Error screen
+## <span id="Error_screen"> </span> <span id="error_screen"> </span> <span id="ERROR_SCREEN"> </span>Écran de notification d’erreur
 
 
-When an action specified by a voice command cannot be completed, an app service can provide an error screen.
+Si une action spécifiée par une commande vocale ne peut pas être effectuée, un service d’application peut fournir un écran de notification d’erreur.
 
-Here's an example of an error screen for the **Adventure Works** app. In this example, a user has instructed the app service to cancel a trip to Las Vegas through **Cortana**. However, the user does not have any trips scheduled to Las Vegas.
+Voici un exemple d’écran de notification d’erreur pour l’application **Adventure Works**. Dans cet exemple, l’utilisateur a demandé au service d’application d’annuler un voyage à Las Vegas via **Cortana**. Toutefois, l’utilisateur n’a planifié aucun voyage à Las Vegas.
 
-The app service provides **Cortana** with an error screen that includes a message customized for the action, an icon, and the specific error message.
+Le service d’application fournit à **Cortana** un écran de notification d’erreur qui inclut un message personnalisé pour l’action, une icône et le message d’erreur spécifique.
 
-1.  **Choose the feedback strings to be displayed and spoken by Cortana**
+Appelez [**ReportFailureAsync**](https://msdn.microsoft.com/library/windows/apps/dn706578) pour afficher l’écran de notification d’erreur dans **Cortana**.
 
-    Follow the [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for recommendations on composing strings that **Cortana** shows and speaks.
-
-2.  **Choose content tiles based on the action performed (optional)**
-
-    Content tiles can provide additional context for the user and help keep the feedback strings concise.
-
-    **Cortana** supports the following content tile templates (only one template can be used on the completion screen):
-
-    -   Title only
-    -   Title with up to three lines of text
-    -   Title with icon
-    -   Title with icon and up to three lines of text
-
-    The icon can be:
-
-    -   68w x 68h
-    -   68w x 92h
-    -   280w x 140h
-
-    You can also let users launch your app in the foreground by either tapping a tile or the text link to your app.
-
-3.  **Build the response**
-
-    Call [**ReportFailureAsync**](https://msdn.microsoft.com/library/windows/apps/dn706578) to show the error screen in **Cortana**.
-
-4.  **Show the error screen**
-
-    Here's an example of an error screen.
-
-```    CSharp
+```csharp
 var userMessage = new VoiceCommandUserMessage();
     userMessage.DisplayMessage = userMessage.SpokenMessage = 
-      "Sorry, you don&#39;t have any trips to Las Vegas";
+      "Sorry, you don't have any trips to Las Vegas";
                 
     var response = VoiceCommandResponse.CreateResponse(userMessage);
 
@@ -427,19 +450,19 @@ var userMessage = new VoiceCommandUserMessage();
     await voiceServiceConnection.ReportFailureAsync(response);
 ```
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"> </span>Articles connexes
 
 
-**Developers**
-* [Cortana interactions](cortana-interactions.md)
-* [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+**Développeurs**
+* [Interactions avec Cortana](cortana-interactions.md)
+* [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**Designers**
-* [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Concepteurs**
+* [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
 
-**Samples**
-* [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**Exemples**
+* [Exemple de commande vocale Cortana](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  
@@ -447,4 +470,8 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

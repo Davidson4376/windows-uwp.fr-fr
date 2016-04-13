@@ -50,8 +50,9 @@ Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplemen
 >     m_messageWebSocket->Control->MessageType = Windows::Networking::Sockets::SocketMessageType::Utf8;
 > 
 >     // Register callbacks for notifications of interest
->     m_messageWebSocket->MessageReceived += ref new TypedEventHandler<MessageWebSocket^, MessageWebSocketMessageReceivedEventArgs^>(this, &amp;Game:/:WebSocketMessageReceived);
->     m_messageWebSocket->Closed += ref new TypedEventHandler<IWebSocket^, WebSocketClosedEventArgs^>(this, &amp;Game::WebSocketClosed);
+>     m_messageWebSocket->MessageReceived += 
+>        ref new TypedEventHandler<MessageWebSocket^, MessageWebSocketMessageReceivedEventArgs^>(this, &Game::WebSocketMessageReceived);
+>     m_messageWebSocket->Closed += ref new TypedEventHandler<IWebSocket^, WebSocketClosedEventArgs^>(this, &Game::WebSocketClosed);
 > 
 >     // This test code uses the websocket.org echo service to illustrate sending a string and receiving the echoed string back
 >     // Note that wss: makes this an encrypted connection.
@@ -115,56 +116,56 @@ Avant d’établir une connexion et d’envoyer des données avec WebSocket, vot
 L’exemple de fonction suivant reçoit d’un serveur WebSocket connecté une chaîne qu’il affiche dans la fenêtre Sortie du débogueur.
 
 > [!div class="tabbedCodeSnippets"]
-```cpp
-void Game::WebSocketMessageReceived(MessageWebSocket^ sender, MessageWebSocketMessageReceivedEventArgs^ args)
-{
-    DataReader^ messageReader = args->GetDataReader();
-    messageReader->UnicodeEncoding = Windows::Storage::Streams::UnicodeEncoding::Utf8;
-
-    String^ readString = messageReader->ReadString(messageReader->UnconsumedBufferLength);
-    // Data has been read and is now available from the readString variable.
-    swprintf(m_debugBuffer, 511, L"WebSocket Message received: %s\n", readString->Data());
-    OutputDebugString(m_debugBuffer);
-}
-```
-```csharp
-//The MessageReceived event handler.
-private void WebSock_MessageReceived(MessageWebSocket sender, MessageWebSocketMessageReceivedEventArgs args)
-{
-    DataReader messageReader = args.GetDataReader();
-    messageReader.UnicodeEncoding = UnicodeEncoding.Utf8;
-    string messageString = messageReader.ReadString(messageReader.UnconsumedBufferLength);
-
-    //Add code here to do something with the string that is received.
-}
-```
+>```cpp
+>void Game::WebSocketMessageReceived(MessageWebSocket^ sender, MessageWebSocketMessageReceivedEventArgs^ args)
+>{
+>    DataReader^ messageReader = args->GetDataReader();
+>    messageReader->UnicodeEncoding = Windows::Storage::Streams::UnicodeEncoding::Utf8;
+>
+>    String^ readString = messageReader->ReadString(messageReader->UnconsumedBufferLength);
+>    // Data has been read and is now available from the readString variable.
+>    swprintf(m_debugBuffer, 511, L"WebSocket Message received: %s\n", readString->Data());
+>    OutputDebugString(m_debugBuffer);
+>}
+>```
+>```csharp
+>//The MessageReceived event handler.
+>private void WebSock_MessageReceived(MessageWebSocket sender, MessageWebSocketMessageReceivedEventArgs args)
+>{
+>    DataReader messageReader = args.GetDataReader();
+>    messageReader.UnicodeEncoding = UnicodeEncoding.Utf8;
+>    string messageString = messageReader.ReadString(messageReader.UnconsumedBufferLength);
+>
+>    //Add code here to do something with the string that is received.
+>}
+>```
 
 ###  Implémenter un rappel pour l’événement MessageWebSocket.Closed
 
 Avant d’établir une connexion et d’envoyer des données avec un WebSocket, votre application doit inscrire un rappel d’événement pour recevoir une notification lors de la fermeture du WebSocket par le serveur WebSocket. Quand l’événement [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) se produit, le rappel inscrit est appelé pour indiquer que le serveur WebSocket a fermé la connexion.
 
 > [!div class="tabbedCodeSnippets"]
-```cpp
-void Game::WebSocketClosed(IWebSocket^ sender, WebSocketClosedEventArgs^ args)
-{
-    // The method may be triggered remotely by the server sending unsolicited close frame or locally by Close()/delete operator.
-    // This method assumes we saved the connected WebSocket to a variable called m_messageWebSocket
-    if (m_messageWebSocket != nullptr)
-    {
-        delete m_messageWebSocket;
-        m_messageWebSocket = nullptr;
-        OutputDebugString(L"Socket was closed\n");
-    }
-    m_socketConnected = false;
- }
-```
-```csharp
-//The Closed event handler
-private void WebSock_Closed(IWebSocket sender, WebSocketClosedEventArgs args)
-{
-    //Add code here to do something when the connection is closed locally or by the server
-}
-```
+>```cpp
+>void Game::WebSocketClosed(IWebSocket^ sender, WebSocketClosedEventArgs^ args)
+>{
+>    // The method may be triggered remotely by the server sending unsolicited close frame or locally by Close()/delete operator.
+>    // This method assumes we saved the connected WebSocket to a variable called m_messageWebSocket
+>    if (m_messageWebSocket != nullptr)
+>    {
+>        delete m_messageWebSocket;
+>        m_messageWebSocket = nullptr;
+>        OutputDebugString(L"Socket was closed\n");
+>    }
+>    m_socketConnected = false;
+> }
+>```
+>```csharp
+>//The Closed event handler
+>private void WebSock_Closed(IWebSocket sender, WebSocketClosedEventArgs args)
+>{
+>    //Add code here to do something when the connection is closed locally or by the server
+>}
+>```
 
 ###  Envoyer un message sur un WebSocket
 
@@ -175,48 +176,48 @@ Une fois qu’une connexion est établie, le client WebSocket peut envoyer des d
 La fonction suivante envoie la chaîne donnée à un WebSocket connecté et affiche un message de vérification dans la fenêtre Sortie du débogueur.
 
 > [!div class="tabbedCodeSnippets"]
-```cpp
-void Game::SendWebSocketMessage(Windows::Networking::Sockets::MessageWebSocket^ sendingSocket, Platform::String^ message)
-{
-    if (m_socketConnected)
-    {
-        // WebSocket is connected, so send a message
-        m_messageWriter = ref new DataWriter(sendingSocket->OutputStream);
-
-        m_messageWriter->WriteString(message);
-
-        // Send the data as one complete message
-        create_task(m_messageWriter->StoreAsync()).then([this] (unsigned int)
-        {
-            // Send Completed
-            m_messageWriter->DetachStream();    // give the stream back to m_messageWebSocket
-            OutputDebugString(L"Sent websocket message\n");
-        })
-            .then([this] (task<void>> previousTask)
-        {
-            try
-            {
-                // Try getting all exceptions from the continuation chain above this point.
-                previousTask.get();
-            }
-            catch (Platform::COMException ^ex)
-            {
-                // Add code to handle the exception
-                // HandleException(exception);
-            }
-        });
-    }
-}
-```
-```csharp
-//Send a message to the server.
-private async Task WebSock_SendMessage(MessageWebSocket webSock, string message)
-{
-    DataWriter messageWriter = new DataWriter(webSock.OutputStream);
-    messageWriter.WriteString(message);
-    await messageWriter.StoreAsync();
-}
-```
+>```cpp
+>void Game::SendWebSocketMessage(Windows::Networking::Sockets::MessageWebSocket^ sendingSocket, Platform::String^ message)
+>{
+>    if (m_socketConnected)
+>    {
+>        // WebSocket is connected, so send a message
+>        m_messageWriter = ref new DataWriter(sendingSocket->OutputStream);
+>
+>        m_messageWriter->WriteString(message);
+>
+>        // Send the data as one complete message
+>        create_task(m_messageWriter->StoreAsync()).then([this] (unsigned int)
+>        {
+>            // Send Completed
+>            m_messageWriter->DetachStream();    // give the stream back to m_messageWebSocket
+>            OutputDebugString(L"Sent websocket message\n");
+>        })
+>            .then([this] (task<void>> previousTask)
+>        {
+>            try
+>            {
+>                // Try getting all exceptions from the continuation chain above this point.
+>                previousTask.get();
+>            }
+>            catch (Platform::COMException ^ex)
+>            {
+>                // Add code to handle the exception
+>                // HandleException(exception);
+>            }
+>        });
+>    }
+>}
+>```
+>```csharp
+>//Send a message to the server.
+>private async Task WebSock_SendMessage(MessageWebSocket webSock, string message)
+>{
+>    DataWriter messageWriter = new DataWriter(webSock.OutputStream);
+>    messageWriter.WriteString(message);
+>    await messageWriter.StoreAsync();
+>}
+>```
 
 ## Utilisation de contrôles avancés avec des WebSockets
 
@@ -253,7 +254,7 @@ Notez que toutes les propriétés des deux classes d’informations sont en lect
 
 ## Gestion des exceptions réseau
 
-Une erreur rencontrée dans une opération [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) ou [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) est renvoyée sous forme de valeur **HRESULT**. La méthode [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) sert à convertir une erreur réseau d’opération résultant d’une opération WebSocket en valeur d’énumération [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818). La plupart des valeurs d’énumération **WebErrorStatus** correspondent à une erreur renvoyée par l’opération cliente HTTP native. Votre application peut filtrer des valeurs d’énumération **WebErrorStatus** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
+Une erreur rencontrée dans une opération [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) ou [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) est renvoyée sous forme de valeur **HRESULT**. La méthode [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) sert à convertir une erreur réseau résultant d’une opération WebSocket en valeur d’énumération [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818). La plupart des valeurs d’énumération **WebErrorStatus** correspondent à une erreur renvoyée par l’opération cliente HTTP native. Votre application peut filtrer des valeurs d’énumération **WebErrorStatus** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 
 Pour les erreurs de validation de paramètre, une application peut également utiliser la valeur **HRESULT** à partir de l’exception pour obtenir des informations plus détaillées sur l’erreur à l’origine de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** renvoyée est **E\_INVALIDARG**.
 
@@ -342,4 +343,8 @@ L’exemple suivant crée une tâche qui se termine après un délai spécifié,
     }
 ```
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

@@ -1,28 +1,28 @@
 ---
-title: Handle app activation
-description: Learn how to handle app activation by overriding the OnLaunched method.
+Gérer l’activation d’une application
+Découvrez comment gérer l’activation d’une application en remplaçant la méthode OnLaunched.
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ---
 
-# Handle app activation
+# Gérer l’activation d’une application
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-Learn how to handle app activation by overriding the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method..
+Découvrez comment gérer l’activation d’une application en remplaçant la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
-## Override the launch handler
+## Remplacer le gestionnaire de lancement
 
-When an app is activated, for any reason, the system sends the [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event. For a list of activation types, see the [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) enumeration.
+Lorsqu’une application est activée, pour quelque raison que ce soit, le système envoie l’événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018). Pour obtenir la liste des types d’activation, voir l’énumération [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
 
-The [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class defines methods you can override to handle the various activation types. Several of the activation types have a specific method that you can override. For the other activation types, override the [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) method.
+La classe [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) définit des méthodes que vous pouvez remplacer pour traiter les différents types d’activation. Plusieurs types d’activation ont une méthode spécifique que vous pouvez remplacer. Pour les autres types d’activation, remplacez la méthode [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330).
 
-Define the class for your application.
+Définissez la classe pour votre application.
 
 ```xaml
 <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -30,9 +30,9 @@ Define the class for your application.
              x:Class="AppName.App" >
 ```
 
-Override the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method. This method is called whenever the user launches the app. The [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) parameter contains the previous state of your app and the activation arguments.
+Remplacez la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335). Cette méthode est appelée chaque fois que l’utilisateur lance l’application. Le paramètre [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) contient l’état précédent de votre application et les arguments d’activation.
 
-**Note**  For Windows Phone Store apps, this method is called each time the user launches the app from Start tile or app list, even when the app is currently suspended in memory. On Windows, launching a suspended app from Start tile or app list doesn’t call this method.
+**Remarque** Dans les applications du Windows Phone Store, cette méthode est appelée chaque fois que l’utilisateur lance l’application à partir de la vignette d’accueil ou de la liste d’applications, même lorsque l’application est actuellement suspendue en mémoire. Sous Windows, le lancement d’une application suspendue à partir de la vignette d’accueil ou de la liste d’applications n’appelle pas cette méthode.
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -96,10 +96,10 @@ void App::EnsurePageCreatedAndActivate()
 }
 ```
 
-## Restore application data if app was suspended then terminated
+## Restaurer les données d’application en cas de suspension puis d’arrêt de l’application
 
 
-When the user switches to your terminated app, the system sends the [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event, with [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) set to **Launch** and [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) set to **Terminated** or **ClosedByUser**. The app should load its saved application data and refresh its displayed content.
+Lorsque l’utilisateur bascule vers votre application arrêtée, le système envoie l’événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), avec [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) défini sur **Launch** et [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) sur **Terminated** ou **ClosedByUser**. L’application doit charger ses données d’application enregistrées et actualiser son contenu à l’écran.
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -154,20 +154,20 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-If the value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) is **NotRunning**, the app failed to save its application data successfully and the app should start over as if it were being initially launched.
+Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) est **NotRunning**, l’application n’a pas réussi à enregistrer ses données d’application et doit redémarrer de zéro.
 
-## Remarks
+## Notes
 
-> **Note**  For Windows Phone Store apps, the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is always followed by [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), even when your app is currently suspended and the user re-launches your app from a primary tile or app list. Apps can skip initialization if there is already content set on the current window. You can check the [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) property to determine if the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.
+> **Remarque** Dans les applications du Windows Phone Store, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications. Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.
 
-## Related topics
+## Rubriques connexes
 
-* [Handle app suspend](suspend-an-app.md)
-* [Handle app resume](resume-an-app.md)
-* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [App lifecycle](app-lifecycle.md)
+* [Gérer la suspension d’une application](suspend-an-app.md)
+* [Gérer la reprise d’une application](resume-an-app.md)
+* [Recommandations pour la suspension et la reprise d’une application](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [Cycle de vie de l’application](app-lifecycle.md)
 
-**Reference**
+**Référence**
 
 * [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
 * [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324)
@@ -178,4 +178,8 @@ If the value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

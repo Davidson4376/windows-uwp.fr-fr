@@ -1,7 +1,7 @@
 ---
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: Si vous disposez d’un catalogue d’applications et de produits intégrés à l’application (PIA), vous pouvez utiliser l’API de collection du Windows Store et l’API d’achat du Windows Store pour accéder aux informations de propriété de ces produits à partir de vos services.
-title: Afficher et octroyer des produits à partir d’un service
+Si vous disposez d’un catalogue d’applications et de produits intégrés à l’application (PIA), vous pouvez utiliser l’API de collection du Windows Store et l’API d’achat du Windows Store pour accéder aux informations de propriété de ces produits à partir de vos services.
+Afficher et octroyer des produits à partir d’un service
 ---
 
 # Afficher et octroyer des produits à partir d’un service
@@ -175,4 +175,8 @@ Voici un exemple de revendications de clé d’ID du Windows Store décodées.
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

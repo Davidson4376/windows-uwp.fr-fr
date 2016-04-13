@@ -1,60 +1,60 @@
 ---
-This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
-Search.Refinement.TopicID: 184
-Segoe MDL2 icon guidelines
+Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets.
+Search.Refinement.TopicID : 184
+Recommandations en matière d’icônes Segoe MDL2
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-Segoe MDL2 icons
+Icônes Segoe MDL2
 template: detail.hbs
 ---
 
-# Guidelines for Segoe MDL2 icons
+# Recommandations en matière d’icônes Segoe MDL2
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
--   [**Symbol enumeration (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
--   [**AppBarIcon enumeration (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
+-   [**Énumération Symbol (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
+-   [**Énumération AppBarIcon (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
 
-This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font. To obtain the font, you must install Windows 10.
+Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets. Pour obtenir la police, vous devez installer Windows 10.
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
-
-
--   Use these glyphs only when you can explicitly specify the **Segoe MDL2 Assets** font.
-
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>Recommandations
 
 
-The Windows 8/8.1 **Segoe UI Symbol** icon font has been replaced with the **Segoe MDL2 Assets** font effective with the release of Windows 10. It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline.
+-   Utilisez ces glyphes uniquement si vous pouvez spécifier explicitement la police **Segoe MDL2 Assets**.
 
-**Note**   An **Em** is a unit of measure in the font. 1 Em in the font is equal to 100% of the specified point value at 72ppi. For example 16pt is equal to 16px at 72ppi (aka 100% Plateau). The new MDL2 fonts are designed so that the footprint of the icon area is a square Em. So if you put 16px for Width and Height in the code, you get a 16x16px icon footprint. That does not always mean the icon will be the full dimension of the footprint.
+## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>Indications d’utilisation supplémentaires
+
+
+La police d’icône **Segoe UI Symbol** Windows 8/8.1 a été remplacée par la police **Segoe MDL2 Assets** dans la version Windows 10. Elle peut être utilisée de la même manière que l’ancienne police, mais de nombreux glyphes ont été redessinés dans le style d’icône Windows 10, les mesures de la police étant définies de façon à ce que les icônes s’inscrivent à l’intérieur du pica carré plutôt que sur une ligne de base typographique.
+
+**Remarque** Un **Em** est une unité de mesure typographique. 1 pica de la police équivaut à 100 % de la valeur de point spécifiée à 72 ppp. Par exemple, 16 pt est égal à 16 px à 72 ppp (également appelé Plateau 100 %). Les nouvelles polices MDL2 sont conçues afin que l’encombrement de la zone de l’icône soit d’un pica carré. Par conséquent, si vous définissez 16 px pour la largeur et la hauteur dans le code, vous obtenez un encombrement d’icône de 16 x 16 px. Cela ne signifie pas toujours que l’icône occupe entièrement la dimension de l’encombrement.
 
  
 
-The **Segoe UI Symbol** will still be available as a "legacy" resource. But it is advised that all applications be updated to use the new **Segoe MDL2 Assets**.
+La police **Segoe UI Symbol** est toujours disponible comme ressource « héritée ». Il est toutefois recommandé que toutes les applications soient mises à jour pour utiliser la nouvelle police **Segoe MDL2 Assets**.
 
-Most of the icons and UI controls included in the **Segoe MDL2 Assets** font are mapped to the Private Use Area of Unicode (PUA). The PUA allows font developers to assign private Unicode values to glyphs that don’t map to existing code points. This is useful when creating a symbol font, but it creates an interoperability problem. If the font is not available, the glyphs won’t show up. Only use these glyphs when you can specify the **Segoe MDL2 Assets** font.
+La plupart des icônes et des contrôles d’interface utilisateur inclus dans la police **Segoe MDL2 Assets** sont mappés à la zone d’utilisation privée d’Unicode. La zone d’utilisation privée permet aux développeurs de polices d’affecter des valeurs Unicode privées à des glyphes qui ne correspondent pas à des points de code existants. Cette opération peut s’avérer utile lors de la création d’une police de symboles, mais elle génère un problème d’interopérabilité. Si la police n’est pas disponible, les glyphes n’apparaissent pas. Utilisez ces glyphes uniquement lorsque vous pouvez spécifier la police **Segoe MDL2 Assets**.
 
-If you are working with tiles, you can't use these glyphs because you can't specify the tile font and PUA glyphs are not available via font-fallback.
+Si vous utilisez des vignettes, vous ne pouvez pas utiliser ces glyphes car vous ne pouvez pas spécifier la police des vignettes et les glyphes de la zone d’utilisation privée ne sont pas disponibles via font-fallback.
 
-Unlike with **Segoe UI Symbol**, the icons in the **Segoe MDL2 Assets** font are not intended for use in-line with text. This means that some older "tricks" like the progressive disclosure arrows no longer apply. Likewise, since all of the new icons are sized and positioned the same, they do not have to be made with zero width; we have just made sure they work as a set. Ideally, you can overlay two icons that were designed as a set and they will fall into place. We may do this to allow colorization in the code. For example, U+EA3A and U+EA3B were created for the Start tile Badge status. Because these are already centered the circle fill can be colored for different states.
+À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes « astuces » comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
 
-Segoe UI Symbol also relied on “zero width” glyphs for layering and colorization, as in this example, a black outline (U+E006) could be drawn on top of the zero-width red heart (U+E00B).
+La police Segoe UI Symbol utilisait également des glyphes de « chasse nulle » pour la superposition et la colorisation. Comme dans cet exemple, un contour noir (U+E006) pouvait être dessiné par-dessus le cœur rouge de chasse nulle (U+E00B).
 
-![using a zero-width glyph](images/segoe-ui-symbol-layering.png)
+![Utilisation d’un glyphe en largeur nulle](images/segoe-ui-symbol-layering.png)
 
-All glyphs in **Segoe MDL2 Assets** have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other.
+Tous les glyphes de la police **Segoe MDL2 Assets** ayant la même à largeur fixe avec une hauteur constante et un point d’origine à gauche, des effets de superposition et de colorisation peuvent être obtenus en dessinant des glyphes directement l’un par-dessus l’autre.
 
-Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
+De nombreuses icônes offrent également des formes en miroir utilisables dans des langues qui s’écrivent de droite à gauche, comme l’arabe, l’hébreu et le persan.
 
-If you are developing an app in C#/VB/C++ and XAML, you can choose to use the [**Symbol enumeration**](https://msdn.microsoft.com/library/windows/apps/dn252842) instead of the Unicode ID to specify glyphs from the Segoe MDL2 Assets font. If you are developing an app in JavaScript and HTML, you can choose to use the [**AppBarIcon enumeration**](https://msdn.microsoft.com/library/windows/apps/hh770557) instead of the Unicode ID to specify glyphs from the **Segoe MDL2 Assets** font.
+Si vous développez une application en C#/VB/C++ et XAML, vous pouvez utiliser l’[**énumération Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) à la place de l’ID Unicode pour spécifier des glyphes de la police Segoe MDL2 Assets. Si vous développez une application en JavaScript et HTML, vous pouvez utiliser l’[**énumération AppBarIcon**](https://msdn.microsoft.com/library/windows/apps/hh770557) à la place de l’ID Unicode pour spécifier des glyphes de la police **Segoe MDL2 Assets**.
 
-Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
+En outre, gardez à l’esprit que la police **Segoe MDL2 Assets** comprend beaucoup plus d’icônes que ce que nous pouvons afficher ici. Bon nombre de celles-ci sont destinées à un usage particulier et généralement non utilisées ailleurs.
 
-## <span id="Hearts"></span><span id="hearts"></span><span id="HEARTS"></span>Hearts
+## <span id="Hearts"> </span> <span id="hearts"> </span> <span id="HEARTS"> </span>Cœurs
 
 
 <table>
@@ -67,8 +67,8 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <thead>
 <tr class="header">
 <th align="left">Code</th>
-<th align="left">Symbol</th>
-<th align="left">Enum</th>
+<th align="left">Symbole</th>
+<th align="left">Énumération</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -77,38 +77,38 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E006</p></td>
 <td align="left"><img src="images/heartlegacy.png" alt="HeartLegacy" /></td>
 <td align="left"><p>HeartLegacy</p></td>
-<td align="left"><p>Outlined heart</p></td>
+<td align="left"><p>Cœur avec contour</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E0A5</p></td>
 <td align="left"><img src="images/heartfilllegacy.png" alt="HeartFillLegacy" /></td>
 <td align="left"><p>HeartFillLegacy</p></td>
-<td align="left"><p>Solid heart</p></td>
+<td align="left"><p>Cœur plein</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E007</p></td>
 <td align="left"><img src="images/heartbrokenlegacy.png" alt="HeartBrokenLegacy" /></td>
 <td align="left"><p>HeartBrokenLegacy</p></td>
-<td align="left"><p>Broken heart</p></td>
+<td align="left"><p>Cœur brisé</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E00B</p></td>
 <td align="left"><img src="images/heartfillzerowidthlegacy.png" alt="HeartFillZeroWidthLegacy" /></td>
 <td align="left"><p>HeartFillZeroWidthLegacy</p></td>
-<td align="left"><p>Solid heart (zero width)</p></td>
+<td align="left"><p>Cœur plein (chasse nulle)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E00C</p></td>
 <td align="left"><img src="images/heartbrokenzerowidthlegacy.png" alt="HeartBrokenZeroWidthLegacy" /></td>
 <td align="left"><p>HeartBrokenZeroWidthLegacy</p></td>
-<td align="left"><p>Broken heart (zero width)</p></td>
+<td align="left"><p>Cœur brisé (chasse nulle)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Rating_stars"></span><span id="rating_stars"></span><span id="RATING_STARS"></span>Rating stars
+## <span id="Rating_stars"> </span> <span id="rating_stars"> </span> <span id="RATING_STARS"> </span>Étoiles d’évaluation
 
 
 <table>
@@ -121,8 +121,8 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <thead>
 <tr class="header">
 <th align="left">Code</th>
-<th align="left">Symbol</th>
-<th align="left">Enum</th>
+<th align="left">Symbole</th>
+<th align="left">Énumération</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -131,73 +131,73 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left">U+E224</td>
 <td align="left"><img src="images/ratingstarlegacy.png" alt="RatingStarLegacy" /></td>
 <td align="left">RatingStarLegacy</td>
-<td align="left">Outlined star</td>
+<td align="left">Étoile avec contour</td>
 </tr>
 <tr class="even">
 <td align="left">U+E0B4</td>
 <td align="left"><img src="images/ratingstarfilllegacy.png" alt="RatingStarFillLegacy" /></td>
 <td align="left">RatingStarFillLegacy</td>
-<td align="left">Solid star</td>
+<td align="left">Étoile pleine</td>
 </tr>
 <tr class="odd">
 <td align="left">U+E00A</td>
 <td align="left"><img src="images/ratingstarfillzerowidthlegacy.png" alt="RatingStarFillZeroWidthLegacy" /></td>
 <td align="left">RatingStarFillZeroWidthLegacy</td>
-<td align="left">Solid star (zero width)</td>
+<td align="left">Étoile pleine (chasse nulle)</td>
 </tr>
 <tr class="even">
 <td align="left">U+E082</td>
 <td align="left"><img src="images/ratingstarfillreducedpaddinghtmllegacy.png" alt="RatingStarFillReducedPaddingHTMLLegacy" /></td>
 <td align="left">RatingStarFillReducedPaddingHTMLLegacy</td>
-<td align="left">Solid star (reduced padding for use in HTML)</td>
+<td align="left">Étoile pleine (remplissage réduit pour une utilisation en HTML)</td>
 </tr>
 <tr class="odd">
 <td align="left">U+E0B5</td>
 <td align="left"><img src="images/ratingstarfillsmalllegacy.png" alt="RatingStarFillSmallLegacy" /></td>
 <td align="left">RatingStarFillSmallLegacy</td>
-<td align="left">Small star</td>
+<td align="left">Petite étoile</td>
 </tr>
 <tr class="even">
 <td align="left">U+E7C6</td>
 <td align="left"><img src="images/halfstarleft.png" alt="HalfStarLeft" /></td>
 <td align="left">HalfStarLeft</td>
-<td align="left">Half star, left side</td>
+<td align="left">Demie étoile, côté gauche</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E7C7</p></td>
 <td align="left"><img src="images/halfstarright.png" alt="HalfStarRight" /></td>
 <td align="left">HalfStarRight</td>
-<td align="left">Half star, right side</td>
+<td align="left">Demi-étoile, côté droit</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Checkbox_components"></span><span id="checkbox_components"></span><span id="CHECKBOX_COMPONENTS"></span>Checkbox components
+## <span id="Checkbox_components"> </span> <span id="checkbox_components"> </span> <span id="CHECKBOX_COMPONENTS"> </span>Composants de case à cocher
 
 
 |        |                                                                                |                                 |                         |
 |--------|--------------------------------------------------------------------------------|---------------------------------|-------------------------|
-| Code   | Symbol                                                                         | Enum                            | Description             |
-| U+E001 | ![checkmarklegacy](images/checkmarklegacy.png)                                 | CheckMarkLegacy                 | Check mark              |
-| U+E002 | ![checkboxfilllegacy](images/checkboxfilllegacy.png)                           | CheckboxFillLegacy              | Filled checkbox         |
-| U+E003 | ![checkboxlegacy](images/checkboxlegacy.png)                                   | CheckboxLegacy                  | Checkbox                |
-| U+E004 | ![checkboxindeterminatelegacy](images/checkboxindeterminatelegacy.png)         | CheckboxIndeterminateLegacy     | Indeterminate state     |
-| U+E005 | ![checkboxcompositereversedlegacy](images/checkboxcompositereversedlegacy.png) | CheckboxCompositeReversedLegacy | Reversed                |
-| U+E008 | ![checkmarkzerowidthlegacy](images/checkmarkzerowidthlegacy.png)               | CheckMarkZeroWidthLegacy        | Check mark (zero width) |
-| U+E009 | ![checkboxfillzerowidthlegacy](images/checkboxfillzerowidthlegacy.png)         | CheckboxFillZeroWidthLegacy     | Fill (zero width)       |
+| Code   | Symbole                                                                         | Énumération                            | Description             |
+| U+E001 | ![checkmarklegacy](images/checkmarklegacy.png)                                 | CheckMarkLegacy                 | Coche              |
+| U+E002 | ![checkboxfilllegacy](images/checkboxfilllegacy.png)                           | CheckboxFillLegacy              | Case à cocher pleine         |
+| U+E003 | ![checkboxlegacy](images/checkboxlegacy.png)                                   | CheckboxLegacy                  | Case à cocher                |
+| U+E004 | ![checkboxindeterminatelegacy](images/checkboxindeterminatelegacy.png)         | CheckboxIndeterminateLegacy     | État indéterminé     |
+| U+E005 | ![checkboxcompositereversedlegacy](images/checkboxcompositereversedlegacy.png) | CheckboxCompositeReversedLegacy | Négatif                |
+| U+E008 | ![checkmarkzerowidthlegacy](images/checkmarkzerowidthlegacy.png)               | CheckMarkZeroWidthLegacy        | Coche (chasse nulle) |
+| U+E009 | ![checkboxfillzerowidthlegacy](images/checkboxfillzerowidthlegacy.png)         | CheckboxFillZeroWidthLegacy     | Remplissage (chasse nulle)       |
 | U+E0A2 | ![checkboxcompositelegacy](images/checkboxcompositelegacy.png)                 | CheckboxCompositeLegacy         | Composite               |
 | U+E739 | ![checkbox](images/checkbox.png)                                               | Checkbox                        | Checkbox                |
-| U+E73A | ![checkboxcomposite](images/checkboxcomposite.png)                             | CheckboxComposite               | Composite checkbox      |
-| U+E73B | ![checkboxfill](images/checkboxfill.png)                                       | CheckboxFill                    | Filled checkbox         |
-| U+E73C | ![checkboxindeterminate](images/checkboxindeterminate.png)                     | CheckboxIndeterminate           | Indeterminate state     |
-| U+E73D | ![checkboxcompositereversed](images/checkboxcompositereversed.png)             | CheckboxCompositeReversed       | Reversed composite      |
-| U+E73E | ![checkmark](images/checkmark.png)                                             | CheckMark                       | Check mark              |
+| U+E73A | ![checkboxcomposite](images/checkboxcomposite.png)                             | CheckboxComposite               | Case à cocher composite      |
+| U+E73B | ![checkboxfill](images/checkboxfill.png)                                       | CheckboxFill                    | Case à cocher pleine         |
+| U+E73C | ![checkboxindeterminate](images/checkboxindeterminate.png)                     | CheckboxIndeterminate           | État indéterminé     |
+| U+E73D | ![checkboxcompositereversed](images/checkboxcompositereversed.png)             | CheckboxCompositeReversed       | Composite négatif      |
+| U+E73E | ![checkmark](images/checkmark.png)                                             | CheckMark                       | Coche              |
 
  
 
-## <span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>Miscellaneous
+## <span id="Miscellaneous"> </span> <span id="miscellaneous"> </span> <span id="MISCELLANEOUS"> </span>Divers
 
 
 <table>
@@ -210,8 +210,8 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <thead>
 <tr class="header">
 <th align="left">Code</th>
-<th align="left">Symbol</th>
-<th align="left">Enum</th>
+<th align="left">Symbole</th>
+<th align="left">Énumération</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -220,7 +220,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E134</p></td>
 <td align="left"><img src="images/commentlegacy.png" alt="CommentLegacy" /></td>
 <td align="left">CommentLegacy</td>
-<td align="left">Comment</td>
+<td align="left">Commentaire</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E113</p></td>
@@ -238,7 +238,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E734</p></td>
 <td align="left"><img src="images/favoritestar.png" alt="FavoriteStar" /></td>
 <td align="left">FavoriteStar</td>
-<td align="left">Favorite outlined</td>
+<td align="left">Favori avec contour</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E735</p></td>
@@ -286,65 +286,65 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E20B</p></td>
 <td align="left"><img src="images/mailmessagelegacy.png" alt="MailMessageLegacy" /></td>
 <td align="left">MailMessageLegacy</td>
-<td align="left">Mail legacy</td>
+<td align="left">Message hérité</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E248</p></td>
 <td align="left"><img src="images/replylegacy.png" alt="ReplyLegacy" /></td>
 <td align="left">ReplyLegacy</td>
-<td align="left">Reply</td>
+<td align="left">Répondre</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E249</p></td>
 <td align="left"><img src="images/favorite2legacy.png" alt="Favorite2Legacy" /></td>
 <td align="left">Favorite2Legacy</td>
-<td align="left">Favorite filled</td>
+<td align="left">Favori rempli</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E24E</p></td>
 <td align="left"><img src="images/unfavorite2legacy.png" alt="Unfavorite2Legacy" /></td>
 <td align="left">Unfavorite2Legacy</td>
-<td align="left">Unfavorite</td>
+<td align="left">Non favori</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E25A</p></td>
 <td align="left"><img src="images/mobilecontactlegacy.png" alt="MobileContactLegacy" /></td>
 <td align="left">MobileContactLegacy</td>
-<td align="left">Mobile contact</td>
+<td align="left">Contact mobile</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E25B</p></td>
 <td align="left"><img src="images/blockedlegacy.png" alt="BlockedLegacy" /></td>
 <td align="left">BlockedLegacy</td>
-<td align="left">Blocked contact</td>
+<td align="left">Contact bloqué</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E25C</p></td>
 <td align="left"><img src="images/typingindicatorlegacy.png" alt="TypingIndicatorLegacy" /></td>
 <td align="left">TypingIndicatorLegacy</td>
-<td align="left">Typing indicator</td>
+<td align="left">Indicateur de saisie</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E25D</p></td>
 <td align="left"><img src="images/presencechickletvideolegacy.png" alt="PresenceChickletVideoLegacy" /></td>
 <td align="left">PresenceChickletVideoLegacy</td>
-<td align="left">Video presence chicklet</td>
+<td align="left">Icône de présence vidéo</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E25E</p></td>
 <td align="left"><img src="images/presencechickletlegacy.png" alt="PresenceChickletLegacy" /></td>
 <td align="left">PresenceChickletLegacy</td>
-<td align="left">Presence chicklet</td>
+<td align="left">Icône de présence</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Scroll_bar_arrows"></span><span id="scroll_bar_arrows"></span><span id="SCROLL_BAR_ARROWS"></span>Scroll bar arrows
+## <span id="Scroll_bar_arrows"> </span> <span id="scroll_bar_arrows"> </span> <span id="SCROLL_BAR_ARROWS"> </span>Flèches de barre de défilement
 
 
-| Code   | Symbol                                                                   | Enum                         |
+| Code   | Symbole                                                                   | Énumération                         |
 |--------|--------------------------------------------------------------------------|------------------------------|
 | U+E00E | ![scrollchevronleftlegacy](images/scrollchevronleftlegacy.png)           | ScrollChevronLeftLegacy      |
 | U+E00F | ![scrollchevronrightlegacy](images/scrollchevronrightlegacy.png)         | ScrollChevronRightLegacy     |
@@ -357,38 +357,38 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
  
 
-## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>Back buttons
+## <span id="Back_buttons"> </span> <span id="back_buttons"> </span> <span id="BACK_BUTTONS"> </span>Boutons Précédent
 
 
-Legacy glyphs for back buttons are available in 2 different sizes so that the weight of the outer ring is consistent at 20pt, and 42pt. Two new proportional chrome back buttons are also available. These glyphs are designed to support layering.
+Les glyphes hérités des boutons Précédent sont disponibles dans 2 tailles différentes afin que l’épaisseur de l’anneau extérieur soit homogène à 20 pt et à 42 pt. Deux nouveaux boutons Précédent de chrome proportionnels sont également disponibles. Ces glyphes sont conçus de sorte à prendre en charge la superposition.
 
-| Code   | Symbol                                                                     | Enum                          | Description                               |
+| Code   | Symbole                                                                     | Énumération                          | Description                               |
 |--------|----------------------------------------------------------------------------|-------------------------------|-------------------------------------------|
-| U+E0C4 | ![backbttnarrow20legacy](images/backbttnarrow20legacy.png)                 | BackBttnArrow20Legacy         | Back button arrow, 20pt                   |
-| U+E0A6 | ![backbttnarrow42legacy](images/backbttnarrow42legacy.png)                 | BackBttnArrow42Legacy         | Back button arrow, 42pt                   |
-| U+E0AD | ![backbttnmirroredarrow20legacy](images/backbttnmirroredarrow20legacy.png) | BackBttnMirroredArrow20Legacy | Mirrored back button arrow reversed, 20pt |
-| U+E0AB | ![backbttnmirroredarrow42legacy](images/backbttnmirroredarrow42legacy.png) | BackBttnMirroredArrow42Legacy | Mirrored back button arrow reversed, 42pt |
-| U+E830 | ![chromeback](images/chromeback.png)                                       | ChromeBack                    | Chrome back button                        |
-| U+EA47 | ![chromebackmirrored](images/chromebackmirrored.png)                       | ChromeBackMirrored            | Chrome back mirrored button               |
+| U+E0C4 | ![backbttnarrow20legacy](images/backbttnarrow20legacy.png)                 | BackBttnArrow20Legacy         | Flèche du bouton Précédent, 20 pt                   |
+| U+E0A6 | ![backbttnarrow42legacy](images/backbttnarrow42legacy.png)                 | BackBttnArrow42Legacy         | Flèche du bouton Précédent, 42 pt                   |
+| U+E0AD | ![backbttnmirroredarrow20legacy](images/backbttnmirroredarrow20legacy.png) | BackBttnMirroredArrow20Legacy | Flèche du bouton Précédent en miroir inversé, 20 pt |
+| U+E0AB | ![backbttnmirroredarrow42legacy](images/backbttnmirroredarrow42legacy.png) | BackBttnMirroredArrow42Legacy | Flèche du bouton Précédent en miroir inversé, 42 pt |
+| U+E830 | ![chromeback](images/chromeback.png)                                       | ChromeBack                    | Bouton Précédent Chrome                        |
+| U+EA47 | ![chromebackmirrored](images/chromebackmirrored.png)                       | ChromeBackMirrored            | Bouton Précédent en miroir Chrome               |
 
  
 
-## <span id="Back_arrows_for_HTML"></span><span id="back_arrows_for_html"></span><span id="BACK_ARROWS_FOR_HTML"></span>Back arrows for HTML
+## <span id="Back_arrows_for_HTML"> </span> <span id="back_arrows_for_html"> </span> <span id="BACK_ARROWS_FOR_HTML"> </span>Flèches Précédent en HTML
 
 
-Add additional code to create circles around these glyphs.
+Ajoutez du code supplémentaire pour créer des cercles autour de ces glyphes.
 
-| Code   | Symbol                                                         | Enum                    | Description                |
+| Code   | Symbole                                                         | Énumération                    | Description                |
 |--------|----------------------------------------------------------------|-------------------------|----------------------------|
-| U+E0D5 | ![arrowhtmllegacy](images/arrowhtmllegacy.png)                 | ArrowHTMLLegacy         | Arrow for HTML use         |
-| U+E0AE | ![arrowhtmlmirroredlegacy](images/arrowhtmlmirroredlegacy.png) | ArrowHTMLMirroredLegacy | Mirrored version of U+E0D5 |
+| U+E0D5 | ![arrowhtmllegacy](images/arrowhtmllegacy.png)                 | ArrowHTMLLegacy         | Flèche pour utiliser HTML         |
+| U+E0AE | ![arrowhtmlmirroredlegacy](images/arrowhtmlmirroredlegacy.png) | ArrowHTMLMirroredLegacy | Version en miroir de U+E0D5 |
 
  
 
-## <span id="AppBar_glyphs"></span><span id="appbar_glyphs"></span><span id="APPBAR_GLYPHS"></span>AppBar glyphs
+## <span id="AppBar_glyphs"> </span> <span id="appbar_glyphs"> </span> <span id="APPBAR_GLYPHS"> </span>Glyphes AppBar
 
 
-Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.com/library/windows/apps/br229670). By convention, they're referred to by their enum names. And they're designed as 20x20px icons with no circle.
+Utilisez les glyphes de la liste suivante pour une [**AppBar**](https://msdn.microsoft.com/library/windows/apps/br229670). Par convention, ils sont mentionnés par leurs noms d’énumération. Et ils sont conçus en tant qu’icônes 20 x 20 px sans cercle.
 
 <table>
 <colgroup>
@@ -400,8 +400,8 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <thead>
 <tr class="header">
 <th align="left">Code</th>
-<th align="left">Symbol</th>
-<th align="left">Enum</th>
+<th align="left">Symbole</th>
+<th align="left">Énumération</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -533,7 +533,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">U+E8BF</td>
+<td align="left">U + E8BF</td>
 <td align="left"><img src="images/calendarday.png" alt="Calendarday" /></td>
 <td align="left">CalendarDay</td>
 <td align="left"></td>
@@ -1551,10 +1551,10 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 
  
 
-## <span id="Battery_icons"></span><span id="battery_icons"></span><span id="BATTERY_ICONS"></span>Battery icons
+## <span id="Battery_icons"> </span> <span id="battery_icons"> </span> <span id="BATTERY_ICONS"> </span>Icônes de batterie
 
 
-| Code | Symbol                                             | Enum              | Code | Symbol                                                  | Enum                |
+| Code | Symbole                                             | Énumération              | Code | Symbole                                                  | Énumération                |
 |------|----------------------------------------------------|-------------------|------|---------------------------------------------------------|---------------------|
 | E996 | ![batteryunknown](images/batteryunknown.png)       | BatteryUnknown    | EC02 | ![mobbatteryunknown](images/mobbatteryunknown.png)      | MobBatteryUnknown   |
 | E850 | ![battery0](images/battery0.png)                   | Battery0          | EBA0 | ![mobbattery0](images/mobbattery0.png)                  | MobBattery0         |
@@ -1593,14 +1593,14 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 
  
 
-## Related topics
+## <span id="related_topics"> </span>Rubriques connexes
 
 
-**For designers**
-* [Guidelines for fonts](fonts.md)
-* [W3C on which languages are written right-to-left (RTL)?](http://www.i18nguy.com/temp/rtl.mdl)
-**For developers (XAML)**
-* [**Symbol enumeration**](https://msdn.microsoft.com/library/windows/apps/dn252842)
+**Pour les concepteurs**
+* [Recommandations en matière de polices](fonts.md)
+* [W3C sur les langues écrites de droite à gauche (DàG) ?](http://www.i18nguy.com/temp/rtl.mdl)
+**Pour les développeurs (XAML)**
+* [**Énumération Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
 
  
@@ -1608,4 +1608,8 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

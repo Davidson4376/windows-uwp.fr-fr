@@ -1,63 +1,67 @@
 ---
-Plan your DirectX port
-Plan your game porting project from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)-- upgrade your graphics code, and put your game in the Windows Runtime environment.
+Planifier votre portage DirectX
+Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la plateforme Windows universelle (UWP) : mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ---
 
-# Plan your DirectX port
+# Planifier votre portage DirectX
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Summary**
+**Récapitulatif**
 
--   Plan your DirectX port
--   [Important changes from Direct3D 9 to Direct3D 11](understand-direct3d-11-1-concepts.md)
--   [Feature mapping](feature-mapping.md)
-
-
-Plan your game porting project from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP): upgrade your graphics code, and put your game in the Windows Runtime environment.
-
-## Plan to port graphics code
+-   Planifier votre portage DirectX
+-   [Modifications importantes de Direct3D 9 à Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Mappage des fonctionnalités](feature-mapping.md)
 
 
-Before you begin porting your game to UWP, it's important to ensure that your game does not have any holdovers from Direct3D 8. Ensure that your game doesn't have any remnants of the fixed function pipeline. For a complete list of deprecated features, including fixed pipeline functionality, see [Deprecated Features](https://msdn.microsoft.com/library/windows/desktop/cc308047).
+Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la plateforme Windows universelle (UWP) : mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.
 
-Upgrading from Direct3D 9 to Direct3D 11 is more than a search-and-replace change. You need to know the difference between the Direct3D device, device context, and graphics infrastructure, and learn about other important changes since Direct3D 9. You can start this process by reading the other topics in this section.
-
-You must replace the D3DX and DXUT helper libraries with your own helper libraries, or with community tools. See the [Feature mapping](feature-mapping.md) section for more info.
-
-> **Note**   You can use the [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) or [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) to replace some functionality that was formerly provided by D3DX and DXUT.
-
- 
-
-Shaders written in assembly language should be upgraded to HLSL using shader model 4 level 9\_1 or 9\_3 functionality, and shaders written for the Effects library will need to be updated to a more recent version of HLSL syntax. See the [Feature mapping](feature-mapping.md) section for more info.
-
-Get familiar with the different [Direct3D feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876). Feature levels classify a wide range of video hardware by defining sets of known functionality. Each set roughly corresponds to versions of Direct3D, from 9.1 through 11.2. All feature levels use the DirectX 11 API.
-
-## Plan to port Win32 UI code to CoreWindow
+## Planifier le portage du code graphique
 
 
-UWP apps run in a window created for an app container, called a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Your game controls the window by inheriting from [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478), which requires less implementation details than a desktop window. Your game's main loop will be in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method.
+Avant de commencer le portage de votre jeu sur WPU, il est essentiel de vous assurer que ce jeu ne comporte plus d’éléments issus de Direct3D 8. Vérifiez notamment que votre jeu ne contient plus de références au pipeline de fonctions fixes. Pour obtenir la liste complète des fonctionnalités déconseillées, y compris le pipeline de fonctions fixes, voir [Fonctionnalités déconseillées](https://msdn.microsoft.com/library/windows/desktop/cc308047).
 
-The lifecycle of a UWP app is very different from a desktop app. You'll need to save the game often, because when a suspend event happens your app only has a limited amount of time to stop running code, and you want to make sure the player can get back to where they were right away when your app resumes. Games should save just often enough to maintain a continuous gameplay experience from resume, but not so often that the game saves impact framerate or cause the game to stutter. Your game will potentially need to load game state when the game resumes from a terminated state.
+La mise à niveau de Direct3D 9 vers Direct3D 11 ne se limite pas à une simple opération de recherche et remplacement. Vous devez savoir en quoi diffèrent ces versions sur le plan du périphérique Direct3D, du contexte de périphérique et de l’infrastructure graphique, mais aussi vous documenter sur les autres modifications majeures qui ont été apportées depuis la version Direct3D 9. Dans cette optique, nous vous recommandons de commencer par lire les autres rubriques de cette section.
 
-[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415571) can be used as a replacement for D3DXMath and XNAMath, and it can come in handy if you need a math library. DirectXMath has fast, portable data types, and types that are aligned and packed for use with shaders.
+Vous devez remplacer les bibliothèques d’applications auxiliaires D3DX et DXUT par vos propres bibliothèques d’applications auxiliaires ou par des outils de la communauté. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
-Native libraries such as the [Interlocked API](https://msdn.microsoft.com/library/windows/desktop/dd405529) have been expanded to support ARM intrinsics. If your game uses interlocked APIs, you can keep using them in DirectX 11 and UWP.
-
-Our templates and code samples use new C++ features that you might not be familiar with yet. For example, asynchronous methods are used with [**lambda expressions**](https://msdn.microsoft.com/library/windows/apps/dd293608.aspx) to load Direct3D resources without blocking the UI thread.
-
-There are two concepts you'll use often:
-
--   Managed references ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) and [**managed classes**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref classes) are a fundamental part of the Windows Runtime. You will need to use managed ref classes to interface with Windows Runtime components, for example [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (more on that in the walkthrough).
--   When working with Direct3D 11 COM interfaces, use the [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) template type to make COM pointers easier to use.
+> **Remarque** Vous pouvez utiliser [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) pour remplacer certaines fonctionnalités qui étaient auparavant fournies par D3DX et DXUT.
 
  
 
+Les nuanceurs écrits en langage assembleur doivent être mis à niveau vers HLSL avec le modèle de nuanceur 4 niveau de fonctionnalité 9\_1 ou 9\_3. Les nuanceurs conçus pour la bibliothèque d’effets doivent être mis à jour avec une version plus récente de la syntaxe HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
+
+Familiarisez-vous avec les différents [niveaux de fonctionnalité Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876). Ces niveaux de fonctionnalité permettent de classer les divers matériels vidéo selon des ensembles définis de fonctionnalités prises en charge. Chaque ensemble correspond globalement à une version de Direct3D (versions 9.1 à 11.2). Tous les niveaux de fonctionnalité s’appliquent à l’API DirectX 11.
+
+## Planifier le portage du code d’interface utilisateur Win32 sur CoreWindow
+
+
+Les applications UWP s’exécutent dans une fenêtre créée pour un conteneur d’application, appelée [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Votre jeu contrôle cette fenêtre en héritant d’[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478), qui nécessite moins d’informations d’implémentation détaillées qu’une fenêtre de bureau. La boucle principale de votre jeu sera définie dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505).
+
+Le cycle de vie d’une application UWP diffère de celui d’une application de bureau. Vous devez prévoir des enregistrements fréquents du jeu. En effet, durant le déclenchement d’un événement de suspension, votre application ne dispose que d’un court délai pour arrêter l’exécution du code, et vous voulez vous assurer que le joueur pourra revenir à l’endroit du jeu où il était initialement aussitôt après la reprise de l’application. Vous devez enregistrer votre jeu aussi souvent que nécessaire pour permettre au joueur de continuer sa partie normalement après la reprise, tout en limitant le nombre d’enregistrements afin de ne pas dégrader la fréquence d’images ni provoquer d’interruption de son dans le jeu. Votre jeu aura peut-être besoin de charger son état lorsqu’il quittera l’état « arrêté ».
+
+[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415571) peut avantageusement remplacer D3DXMath et XNAMath, en particulier si vous avez besoin d’une bibliothèque de fonctions mathématiques. DirectXMath fournit des types de données rapides et portables, ainsi que des types adaptés et groupés pour être utilisés avec des nuanceurs.
+
+Les bibliothèques natives, telles que l’[API Interlocked](https://msdn.microsoft.com/library/windows/desktop/dd405529), ont été étendues afin de prendre en charge les intrinsèques ARM. Si votre jeu fait appel à des API à blocage, vous pouvez continuer à les utiliser dans DirectX 11 et UWP.
+
+Nos modèles et exemples de code utilisent de nouvelles fonctionnalités C++ que vous ne connaissez peut-être pas encore. Citons, par exemple, les méthodes asynchrones que vous pouvez utiliser avec des [**lambda expressions**](https://msdn.microsoft.com/library/windows/apps/dd293608.aspx) pour charger les ressources Direct3D sans bloquer le thread d’interface utilisateur.
+
+Les deux concepts suivants vous seront souvent utiles :
+
+-   Les références managées ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) et les [**classes managées**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (classes de référence) sont des éléments fondamentaux du Windows Runtime. Vous aurez besoin d’utiliser des classes de référence managées pour assurer la communication avec les composants Windows Runtime, tels qu’[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (pour plus d’informations, voir la procédure pas à pas).
+-   Si vous travaillez avec des interfaces COM Direct3D 11, optez pour le type de modèle [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) afin de faciliter l’utilisation des pointeurs COM.
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,6 +1,6 @@
 ---
-Description: Vous pouvez générer des codes promotionnels pour une application ou un produit in-app que vous avez publiés dans le Windows Store.
-title: Générer des codes promotionnels
+Vous pouvez générer des codes promotionnels pour une application ou un produit in-app que vous avez publiés dans le Windows Store.
+Générer des codes promotionnels
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ---
 
@@ -90,7 +90,7 @@ Une fois l’URL donnant droit distribuée à un utilisateur, les étapes suivan
 
     Le navigateur s’ouvre sur une page authentifiée **Utiliser votre code** à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder.
 
-2.  L’utilisateur clique sur **Échanger**.
+2.  L’utilisateur clique sur **Échanger.**
 
     Le navigateur accède à une page **Merci** contenant un lien **Obtenir** ***&lt;your app name&gt;***.
 
@@ -127,4 +127,8 @@ Vous pouvez également télécharger une commande active à partir de ce tableau
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

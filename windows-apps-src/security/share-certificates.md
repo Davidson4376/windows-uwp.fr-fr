@@ -1,34 +1,35 @@
 ---
-Share certificates between apps
-Universal Windows Platform (UWP) apps that require secure authentication beyond a user Id and password combination can use certificates for authentication.
+title: Partager des certificats entre applications
+description: Les applications de plateforme Windows universelle (UWP) qui nécessitent une authentification sécurisée au-delà d’une combinaison identifiant utilisateur et mot de passe peuvent utiliser des certificats à des fins d’authentification.
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
+author: awkoren
 ---
 
-# Share certificates between apps
+# Partager des certificats entre applications
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Universal Windows Platform (UWP) apps that require secure authentication beyond a user Id and password combination can use certificates for authentication. Certificate authentication provides a high level of trust when authenticating a user. In some cases, a group of services will want to authenticate a user for multiple apps. This article shows how you can authenticate multiple apps using the same certificate, and how you can provide convenient code for a user to import a certificate that was provided to access secured web services.
+Les applications de plateforme Windows universelle (UWP) qui nécessitent une authentification sécurisée au-delà d’une combinaison identifiant utilisateur et mot de passe peuvent utiliser des certificats à des fins d’authentification. L’authentification par certificat permet d’authentifier un utilisateur avec un niveau de confiance élevé. Dans certains cas, un groupe de services peut authentifier un utilisateur pour plusieurs applications. Cet article montre comment authentifier plusieurs applications à l’aide du même certificat. Vous apprendrez également à écrire du code pour permettre à un utilisateur d’importer un certificat fourni pour accéder à des services web sécurisés.
 
-Apps can authenticate to a web service using a certificate, and multiple apps can use a single certificate from the certificate store to authenticate the same user. If a certificate does not exist in the store, you can add code to your app to import a certificate from a PFX file.
+Les applications peuvent s’authentifier auprès d’un service web à l’aide d’un certificat, et plusieurs applications peuvent utiliser un même certificat du magasin de certificats pour authentifier le même utilisateur. Si un certificat n’existe pas dans le magasin, vous pouvez ajouter du code à votre application pour importer un certificat à partir d’un fichier PFX.
 
-## Enable Microsoft Internet Information Services (IIS) and client certificate mapping
-
-
-This article uses Microsoft Internet Information Services (IIS) for example purposes. IIS is not enabled by default. You can enable IIS by using the Control Panel.
-
-1.  Open the Control Panel and select **Programs**.
-2.  Select **Turn Windows features on or off**.
-3.  Expand **Internet Information Services** and then expand **World Wide Web Services**. Expand **Application Development Features** and select **ASP.NET 3.5** and **ASP.NET 4.5**. Making these selections will automatically enable **Internet Information Services**.
-4.  Click **OK** to apply the changes.
-
-## Create and publish a secured web service
+## Activer Microsoft Internet Information Services (IIS) et le mappage des certificats clients
 
 
-1.  Run Microsoft Visual Studio as administrator and select **New Project** from the start page. Administrator access is required to publish a web service to an IIS server. In the New Project dialog, change the framework to **.NET Framework 3.5**. Select **Visual C#** -&gt; **Web** -&gt; **Visual Studio** -&gt; **ASP.NET Web Service Application**. Name the application "FirstContosoBank". Click **OK** to create the project.
-2.  In the **Service1.asmx.cs** file, replace the default **HelloWorld** web method with the following "Login" method.
+Cet article utilise Microsoft Internet Information Services (IIS) à titre d’exemple. IIS n’est pas activé par défaut. Vous pouvez activer IIS via le Panneau de configuration.
+
+1.  Ouvrez le Panneau de configuration, puis sélectionnez **Programmes**.
+2.  Sélectionnez **Activer ou désactiver des fonctionnalités Windows**.
+3.  Développez **Internet Information Services**, puis **Services World Wide Web**. Développez **Fonctionnalités de développement d’applications**, puis sélectionnez **ASP.NET 3.5** et **ASP.NET 4.5**. Ces sélections permettent d’activer automatiquement **Internet Information Services**.
+4.  Cliquez sur **OK** pour appliquer les modifications.
+
+## Créer et publier un service web sécurisé
+
+
+1.  Exécutez Microsoft Visual Studio en tant qu’administrateur et sélectionnez **Nouveau projet** dans la page de démarrage. Un accès administrateur est requis pour publier un service web sur un serveur IIS. Dans la boîte de dialogue Nouveau projet, sélectionnez **.NET Framework 3.5**. Sélectionnez **Visual C#** -&gt; **Web** -&gt; **Visual Studio** -&gt; **Application de service Web ASP.NET**. Nommez l’application « FirstContosoBank ». Cliquez sur **OK** pour créer le projet.
+2.  Dans le fichier **Service1.asmx.cs**, remplacez la méthode Web **HelloWorld** par défaut par la méthode « Login » suivante.
     ```cs
             [WebMethod]
             public string Login()
@@ -41,37 +42,37 @@ This article uses Microsoft Internet Information Services (IIS) for example purp
             }
     ```
 
-3.  Save the **Service1.asmx.cs** file.
-4.  In the **Solution Explorer**, right-click the "FirstContosoBank" app and select **Publish**.
-5.  In the **Publish Web** dialog, create a new profile and name it "ContosoProfile". Click **Next.**
-6.  On the next page, enter the server name for your IIS server, and specify a site name of "Default Web Site/FirstContosoBank". Click **Publish** to publish your web service.
+3.  Enregistrez le fichier **Service1.asmx.cs**.
+4.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’application « FirstContosoBank », puis sélectionnez **Publier**.
+5.  Dans la boîte de dialogue **Publier le site Web**, créez un profil et nommez-le « ContosoProfile ». Cliquez sur **Suivant**.
+6.  Dans la page suivante, entrez le nom de votre serveur IIS, puis spécifiez le nom de site « Default Web Site/FirstContosoBank ». Cliquez sur **Publier** pour publier votre service web.
 
-## Configure your web service to use client certificate authentication
-
-
-1.  Run the **Internet Information Services (IIS) Manager**.
-2.  Expand the sites for your IIS server. Under the **Default Web Site**, select the new "FirstContosoBank" web service. In the **Actions** section, select **Advanced Settings...**.
-3.  Set the **Application Pool** to **.NET v2.0** and click **OK**.
-4.  In the **Internet Information Services (IIS) Manager**, select your IIS server and then double-click **Server Certificates**. In the **Actions** section, select **Create Self-Signed Certificate...**. Enter "ContosoBank" as the friendly name for the certificate and click **OK**. This will create a new certificate for use by the IIS server in the form of "&lt;server-name&gt;.&lt;domain-name&gt;".
-5.  In the **Internet Information Services (IIS) Manager**, select the default web site. In the **Actions** section, select **Binding** and then click **Add...**. Select "https" as the type, set the port to "443", and enter the full host name for your IIS server ("&lt;server-name&gt;.&lt;domain-name&gt;"). Set the SSL certificate to "ContosoBank". Click **OK**. Click **Close** in the **Site Bindings** window.
-6.  In the **Internet Information Services (IIS) Manager**, select the "FirstContosoBank" web service. Double-click **SSL Settings**. Check **Require SSL**. Under **Client certificates**, select **Require**. In the **Actions** section, click **Apply**.
-7.  You can verify that the web service is configured correctly by opening your web browser and entering the following web address: "https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx". For example, "https://myserver.example.com/FirstContosoBank/Service1.asmx". If your web service is configured correctly, you will be prompted to select a client certificate in order to access the web service.
-
-You can repeat the previous steps to create multiple web services that can be accessed using the same client certificate.
-
-## Create a Windows Store app that uses certificate authentication
+## Configurer votre service web de manière à utiliser l’authentification par certificat client
 
 
-Now that you have one or more secured web services, your apps can use certificates to authenticate to those web services. When you make a request to an authenticated web service using the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) object, the initial request will not contain a client certificate. The authenticated web service will respond with a request for client authentication. When this occurs, the Windows client will automatically query the certificate store for available client certificates. Your user can select from these certificates to authenticate to the web service. Some certificates are password protected, so you will need to provide the user with a way to input the password for a certificate.
+1.  Exécutez le **Gestionnaire des services Internet (IIS)**.
+2.  Développez les sites pour votre serveur IIS. Sous **Site Web par défaut**, sélectionnez le nouveau service web « FirstContosoBank ». Dans la section **Actions**, sélectionnez **Paramètres avancés**.
+3.  Choisissez **.NET v2.0** comme **Pool d’applications**, puis cliquez sur **OK**.
+4.  Dans le **Gestionnaire des services Internet (IIS)**, sélectionnez votre serveur IIS, puis double-cliquez sur **Certificats de serveur**. Dans la section **Actions**, sélectionnez **Créer un certificat auto-signé**. Entrez « ContosoBank » comme nom convivial pour le certificat, puis cliquez sur **OK**. Un certificat est alors créé au format « &lt;nom-serveur&gt;.&lt;nom-domaine&gt; » pour le serveur IIS.
+5.  Dans le **Gestionnaire des services Internet (IIS)**, sélectionnez le site web par défaut. Dans la section **Actions**, sélectionnez **Liaison**, puis cliquez sur **Ajouter**. Sélectionnez « https » comme type, affectez au port la valeur « 443 », puis entrez le nom d’hôte complet de votre serveur IIS (« &lt;nom-serveur&gt;.&lt;nom-domaine&gt; »). Définissez « ContosoBank » comme certificat SSL. Cliquez sur **OK**. Cliquez sur **Fermer** dans la fenêtre **Liaisons de sites**.
+6.  Dans le **Gestionnaire des services Internet (IIS)**, sélectionnez le service web « FirstContosoBank ». Double-cliquez sur **Paramètres SSL**. Cochez **Exiger SSL**. Sous **Certificats clients**, sélectionnez **Demander**. Dans la section **Actions**, sélectionnez **Appliquer**.
+7.  Pour vérifier que le service web est configuré correctement, ouvrez votre navigateur et entrez l’adresse web suivante : « https://&lt;nom-serveur&gt;.&lt;nom-domaine&gt;/FirstContosoBank/Service1.asmx ». Par exemple, « https://myserver.example.com/FirstContosoBank/Service1.asmx ». Si votre service web est correctement configuré, vous êtes invité à sélectionner un certificat client pour accéder au service web.
 
-If there are no client certificates available, then the user will need to add a certificate to the certificate store. You can include code in your app that enables a user to select a PFX file that contains a client certificate and then import that certificate into the client certificate store.
+Vous pouvez répéter les étapes précédentes pour créer plusieurs services Web accessibles à l’aide du même certificat client.
 
-**Tip**  You can use makecert.exe to create a PFX file to use with this quickstart. For information on using makecert.exe, see [MakeCert.](https://msdn.microsoft.com/library/windows/desktop/aa386968)
+## Créer une application du Windows Store qui utilise l’authentification par certificat
+
+
+Maintenant que vous avez un ou plusieurs services web sécurisés, vos applications peuvent utiliser des certificats pour s’authentifier auprès de ces services web. Lorsque vous faites une demande à un service web authentifié à l’aide de l’objet [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639), la demande initiale ne contient pas de certificat client. Le service Web authentifié répond par une demande d’authentification du client. Lorsque cela se produit, le client Windows interroge automatiquement le magasin de certificats au sujet des certificats clients disponibles. Votre utilisateur peut choisir l’un de ces certificats pour s’authentifier auprès du service Web. Certains certificats étant protégés par mot de passe, vous devez fournir à l’utilisateur un moyen d’entrer le mot de passe associé à un certificat.
+
+Si aucun certificat client n’est disponible, l’utilisateur doit ajouter un certificat au magasin de certificats. Vous pouvez inclure dans votre application du code permettant à un utilisateur de sélectionner un fichier PFX contenant un certificat client, puis importer ce certificat dans le magasin de certificats clients.
+
+**Conseil** Vous pouvez utiliser makecert.exe pour créer un fichier PFX à utiliser avec ce guide de démarrage rapide. Pour plus d’informations sur l’utilisation de makecert.exe, voir [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968).
 
  
 
-1.  Open Visual Studio and create a new project from the start page. Name the new project "FirstContosoBankApp". Click **OK** to create the new project.
-2.  In the MainPage.xaml file, add the following XAML to the default **Grid** element. This XAML includes a button to browse for a PFX file to import, a text box to enter a password for a password-protected PFX file, a button to import a selected PFX file, a button to log in to the secured web service, and a text block to display the status of the current action.
+1.  Ouvrez Visual Studio et créez un projet à partir de la page de démarrage. Nommez le nouveau projet « FirstContosoBankApp ». Cliquez sur **OK** pour créer le projet.
+2.  Dans le fichier MainPage.xaml, ajoutez le code XAML suivant à l’élément **Grid** par défaut. Ce code XAML comprend un bouton pour rechercher un fichier PFX à importer, une zone de texte pour entrer un mot de passe pour un fichier PFX protégé par mot de passe, un bouton pour importer un fichier PFX sélectionné, un bouton pour se connecter au service web sécurisé, ainsi qu’un bloc de texte pour afficher l’état de l’action actuelle.
     ```xaml
     <Button x:Name="Import" Content="Import Certificate (PFX file)" HorizontalAlignment="Left" Margin="352,305,0,0" VerticalAlignment="Top" Height="77" Width="260" Click="Import_Click" FontSize="16"/>
     <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="611,305,0,0" VerticalAlignment="Top" Height="75" Width="240" Click="Login_Click" FontSize="16"/>
@@ -82,8 +83,8 @@ If there are no client certificates available, then the user will need to add a 
     <TextBlock HorizontalAlignment="Left" Margin="717,271,0,0" TextWrapping="Wrap" Text="(Optional)" VerticalAlignment="Top" Height="32" Width="83" FontSize="16"/>
     ```
     
-3.  Save the MainPage.xaml file.
-4.  In the MainPage.xaml.cs file, add the following using statements.
+3.  Enregistrez le fichier MainPage.xaml.
+4.  Dans le fichier MainPage.xaml.cs, ajoutez les instructions using suivantes :
     ```cs
     using Windows.Web.Http;
     using System.Text;
@@ -93,13 +94,13 @@ If there are no client certificates available, then the user will need to add a 
     using Windows.Storage.Streams;
     ```
 
-5.  In the MainPage.xaml.cs file, add the following variables to the **MainPage** class. They specify the address for the secured "Login" method of your "FirstContosoBank" web service, and a global variable that holds a PFX certificate to import into the certificate store. Update the &lt;server-name&gt; to the fully-qualified server name for your Microsoft Internet Information Server (IIS) server.
+5.  Dans le fichier MainPage.xaml.cs, ajoutez les variables suivantes à la classe **MainPage**. Celles-ci spécifient l’adresse de la méthode « Login » sécurisée de votre service web « FirstContosoBank ». Une variable globale détient aussi un certificat PFX à importer dans le magasin de certificats. Mettez à jour le &lt;nom-serveur&gt; à l’aide du nom complet de votre serveur Microsoft Internet Information Server (IIS).
     ```cs
     private Uri requestUri = new Uri("https://&lt;server-name&gt;/FirstContosoBank/Service1.asmx?op=Login");
     private string pfxCert = null;
     ```
 
-6.  In the MainPage.xaml.cs file, add the following click handler for the login button and method to access the secured web service.
+6.  Dans le fichier MainPage.xaml.cs, ajoutez le gestionnaire de clic suivant pour le bouton et la méthode de connexion afin d’accéder au service web sécurisé.
     ```cs
     private void Login_Click(object sender, RoutedEventArgs e)
     {
@@ -135,7 +136,7 @@ If there are no client certificates available, then the user will need to add a 
     }
     ```
 
-7.  In the MainPage.xaml.cs file, add the following click handlers for the button to browse for a PFX file and the button to import a selected PFX file into the certificate store.
+7.  Dans le fichier MainPage.xaml.cs, ajoutez les gestionnaires de clic suivants pour le bouton pour rechercher un fichier PFX et le bouton afin d’importer un fichier PFX sélectionné dans le magasin de certificats.
     ```cs
     private async void Import_Click(object sender, RoutedEventArgs e)
     {
@@ -195,15 +196,10 @@ If there are no client certificates available, then the user will need to add a 
     }
     ```
 
-8.  Run your app and log in to your secured web service as well as import a PFX file into the local certificate store.
+8.  Exécutez votre application et établissez une connexion à votre service web sécurisé, et importez un fichier PFX dans le magasin de certificats local.
 
-You can use these steps to create multiple apps that use the same user certificate to access the same or different secured web services.
+Vous pouvez utiliser ces étapes pour créer plusieurs applications utilisant le même certificat utilisateur pour accéder à des services web sécurisés identiques ou différents.
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

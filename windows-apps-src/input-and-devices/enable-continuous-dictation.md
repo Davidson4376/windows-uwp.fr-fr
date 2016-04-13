@@ -1,15 +1,15 @@
 ---
-Description: Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
-title: Activer la dictée continue
+Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
+Activer la dictée continue
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
-label: Dictée continue
+Dictée continue
 template: detail.hbs
 ---
 
 # Dictée continue
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
 
@@ -352,4 +352,8 @@ Si vous définissez tous les champs privés lors de l’annulation de la session
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

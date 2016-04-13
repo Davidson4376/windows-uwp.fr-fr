@@ -1,31 +1,31 @@
 ---
-Monitor background task progress and completion
-Learn how your app can recognize progress and completion reported by a background task.
+Surveiller la progression et l’achèvement des tâches en arrière-plan
+Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan.
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ---
 
-# Monitor background task progress and completion
+# Surveiller la progression et l’achèvement des tâches en arrière-plan
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)
 -   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Learn how your app can recognize progress and completion reported by a background task. Background tasks are decoupled from the app, and they run separately, but background task progress and completion can be monitored by app code. To make this happen, the app subscribes to events from the background task(s) it has registered with the system.
+Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan. Les tâches en arrière-plan sont découplées de l’application et sont exécutées séparément. Toutefois, la progression et l’achèvement des tâches en arrière-plan peuvent être surveillés par le code de l’application. Pour ce faire, l’application s’abonne aux événements des tâches en arrière-plan qu’elle a inscrites auprès du système.
 
--   This topic assumes that you have an app that registers background tasks. To get started quickly building a background task, see [Create and register a background task](create-and-register-a-background-task.md). For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+-   Cette rubrique suppose que vous disposez d’une application qui inscrit les tâches en arrière-plan. Pour vous lancer rapidement dans la génération d’une tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
 
-## Create an event handler to handle completed background tasks
+## Créer un gestionnaire d’événements pour gérer les tâches en arrière-plan achevées
 
 
-1.  Create an event handler function to handle completed background tasks. This code needs to follow a specific footprint, which takes in an [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) object and a [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) object.
+1.  Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778).
 
-    Use the following footprint for the OnCompleted background task event handler method:
+    Utilisez l’empreinte suivante pour la méthode de gestionnaire d’événements de tâche en arrière-plan OnCompleted :
 
 >  [!div class="tabbedCodeSnippets"]
 >  ```cs
@@ -41,9 +41,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
 >  };
 >  ```
     
-2.  Add code to the event handler that deals with the background task completion.
+2.  Ajoutez du code au gestionnaire d’événements qui traite l’achèvement des tâches en arrière-plan.
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) updates the UI.
+    Par exemple, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur.
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -59,12 +59,12 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     >     ```
 
-## Create an event handler function to handle background task progress
+## Créer une fonction de gestionnaire d’événements pour gérer la progression des tâches en arrière-plan
 
 
-1.  Create an event handler function to handle completed background tasks. This code needs to follow a specific footprint, which takes in an [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) object and a [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) object:
+1.  Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
-    Use the following footprint for the OnProgress background task event handler method:
+    Utilisez l’empreinte suivante pour la méthode de gestionnaire d’événements de tâche en arrière-plan OnProgress :
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -80,9 +80,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     >     ```
 
-2.  Add code to the event handler that deals with the background task completion.
+2.  Ajoutez du code au gestionnaire d’événements qui traite l’achèvement des tâches en arrière-plan.
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) updates the UI with the progress status passed in via the *args* parameter:
+    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args* :
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -104,12 +104,12 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     >     ```
 
-## Register the event handler functions with new and existing background tasks.
+## Inscrivez les fonctions de gestionnaire d’événements auprès des tâches en arrière-plan nouvelles et existantes.
 
 
-1.  When the app registers a background task for the first time, it should register to receive progress and completion updates for it, in case the task runs while the app is still active in the foreground.
+1.  Lorsque l’application inscrit une tâche en arrière-plan pour la première fois, elle doit s’inscrire pour recevoir les mises à jour de progression et d’achèvement de la tâche au cas où celle-ci s’exécuterait pendant que l’application est toujours active au premier plan.
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) calls the following function on each background task that it registers:
+    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) appelle la fonction suivante pour chaque tâche en arrière-plan qu’il inscrit :
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -141,9 +141,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     }
     >     ```
 
-2.  When the app launches, or navigates to a new page where background task status is relevant, it should get a list of background tasks currently registered and associate them with the progress and completion event handler functions. The list of background tasks currently registered by the application is kept in the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property.
+2.  Lorsque l’application se lance ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire d’événements de progression et d’achèvement. La liste des tâches en arrière-plan actuellement inscrites par l’application est conservée dans la propriété [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) uses the following code to attach event handlers when the SampleBackgroundTask page is navigated to:
+    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask :
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -190,31 +190,35 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     }
     >     ```
 
-## Related topics
+## Rubriques connexes
 
 
 ****
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
+* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
+* [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
+* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
+* [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 
 ****
 
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

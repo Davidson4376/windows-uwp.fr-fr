@@ -1,6 +1,6 @@
 ---
-description: Fournit un identificateur unique à des éléments de balisage. Pour le code XAML de plateforme Windows universelle (UWP), cet identificateur unique est utilisé par des processus ou outils de localisation XAML, comme l’utilisation des ressources d’un fichier de ressources .resw.
-title: Directive xUid
+Fournit un identificateur unique à des éléments de balisage. Pour le code XAML de plateforme Windows universelle (UWP), cet identificateur unique est utilisé par des processus ou outils de localisation XAML, comme l’utilisation des ressources d’un fichier de ressources .resw.
+Directive xUid
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ---
 
@@ -42,4 +42,8 @@ Dans certains cas, vous utiliserez un chemin d’accès aux ressources plutôt q
 
 Ne placez pas **x:Uid** sur des éléments propriétés ; cette opération n’est pas autorisée dans le langage XAML Windows Runtime.
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

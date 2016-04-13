@@ -1,150 +1,154 @@
 ---
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-The APIs in the Windows.Media.Editing namespace allow you to quickly develop apps that enable the users to create media compositions from audio and video source files.
-Media compositions and editing
+Les API de l’espace de noms Windows.Media.Editing vous permettent de développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo.
+Compositions multimédias et modification
 ---
 
-# Media compositions and editing
+# Compositions multimédias et modification
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-The APIs in the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) namespace allow you to quickly develop apps that enable the users to create media compositions from audio and video source files. Features of the framework include the ability to programmatically append multiple video clips together, add video and image overlays, add background audio, and apply both audio and video effects. Once created, media compositions can be rendered into a flat media file for playback or sharing, but compositions can also be serialized to and deserialized from disk, allowing the user to load and modify compositions that they have previously created. All of this functionality is provided in an easy-to-use Windows Runtime interface that dramatically reduces the amount and complexity of code required to perform these tasks when compared to the low-level [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) API.
+Les API de l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) vous permettent de développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo. Les fonctionnalités de l’infrastructure incluent la possibilité d’ajouter simultanément plusieurs clips vidéo, d’ajouter des superpositions d’images et de vidéos, d’ajouter du son en arrière-plan et d’appliquer des effets audio et vidéos, par programme. Une fois créées, les compositions multimédias peuvent être rendues dans un fichier multimédia plat pour lecture ou partage, mais il est également possible de les sérialiser et désérialiser à partir du disque en permettant à l’utilisateur de charger et de modifier les compositions précédemment créées. Toutes ces fonctionnalités sont proposées dans l’interface simple d’utilisation Windows Runtime, qui réduit considérablement la quantité de code requis et sa complexité pour effectuer ces tâches, en comparaison avec l’APi [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) de bas niveau.
 
-## Create a new media composition
+## Créer une composition multimédia
 
-The [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) class is the container for all of the media clips that make up the composition and is responsible for rendering the final composition, loading and saving compositions to disc, and providing a preview stream of the composition so that the user can view it in the UI. To use **MediaComposition** in your app, include the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) namespace as well as the [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) namespace that provides related APIs that you will need.
+La classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) est le conteneur de tous les clips multimédias qui constituent la composition et est responsable du rendu de la composition finale, du chargement et de l’enregistrement des compositions sur le disque et de fournir un flux d’aperçu de la composition afin que l’utilisateur puisse l’afficher dans l’interface utilisateur. Pour utiliser **MediaComposition** dans votre application, vous devez inclure l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565), ainsi que l’espace de noms [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) qui fournit les API associées dont vous aurez besoin.
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
-The **MediaComposition** object will be accessed from multiple points in your code, so typically you will declare a member variable in which to store it.
+L’objet **MediaComposition** est accessible à partir de plusieurs points dans votre code. Vous allez généralement déclarer une variable de membre qui permettra de le stocker.
 
 [!code-cs[DeclareMediaComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
 
-The constructor for **MediaComposition** takes no arguments.
+Le constructeur de **MediaComposition** ne prend pas d’arguments.
 
 [!code-cs[MediaCompositionConstructor](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
 
-## Add media clips to a composition
+## Ajouter des clips multimédias à une composition
 
-Media compositions typically contain one or more video clips. You can use a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369) to allow the user to select a video file. Once the file has been selected, create a new [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) object to contain the video clip by calling [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Then you add the clip to the **MediaComposition** object's [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) list.
+Les compositions multimédia contiennent généralement un ou plusieurs clips vidéo. Vous pouvez utiliser un élément [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369) pour permettre à l’utilisateur de sélectionner un fichier vidéo. Une fois le fichier sélectionné, créez un nouvel objet [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) destiné à contenir le clip vidéo en appelant [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Ajoutez ensuite le clip à la liste [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) de l’objet **MediaComposition**.
 
 [!code-cs[PickFileAndAddClip](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetPickFileAndAddClip)]
 
--   Media clips appear in the **MediaComposition** in the same order as they appear in [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) list.
+-   Les clips multimédias s’affichent dans l’élément **MediaComposition** dans l’ordre dans lequel ils apparaissent dans la liste [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648).
 
--   A **MediaClip** can only be included in a composition once. Attempting to add a **MediaClip** that is already being used by the composition will result in an error. To reuse a video clip multiple times in a composition, call [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) to create new **MediaClip** objects which can then be added to the composition.
+-   Un élément **MediaClip** ne peut être inclus qu’une seule fois dans une composition. L’ajout d’un élément **MediaClip** déjà utilisé par la composition se traduit par une erreur. Pour réutiliser un clip vidéo plusieurs fois dans une composition, appelez [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) pour créer de nouveaux objets **MediaClip**, qui peuvent ensuite être ajoutés à la composition.
 
--   Universal Windows apps do not have permission to access the entire file system. The [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) property of the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class allows your app to store a record of a file that has been selected by the user so that you can retain permissions to access the file. The **FutureAccessList** has a maxium of 1000 entries, so your app needs to manage the list to make sure it does not become full. This is especially important if you plan to support loading and modifying previously created compositions.
+-   Les applications Windows universelles ne sont pas autorisées à accéder à l’ensemble du système de fichiers. La propriété [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) de la classe [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) permet à votre application de stocker l’enregistrement d’un fichier qui a été sélectionné par l’utilisateur afin que vous puissiez conserver les autorisations d’accès au fichier. La propriété **FutureAccessList** comporte 1000 entrées maximum. Votre application a donc besoin de gérer la liste pour s’assurer qu’elle n’est pas complète. Cela est particulièrement important si vous envisagez de prendre en charge le chargement et la modification de compositions déjà créées.
 
--   A **MediaComposition** supports video clips in MP4 format.
+-   Un élément **MediaComposition** prend en charge les clips vidéo au format MP4.
 
--   If a video file contains multiple embedded audio tracks, you can select which audio track is used in the composition by setting the [**SelectedEmbeddedAudioTrackIndex**](https://msdn.microsoft.com/library/windows/apps/dn652627) property.
+-   Si un fichier vidéo contient plusieurs pistes audio intégrées, vous pouvez sélectionner la piste audio à utiliser dans la composition en définissant la propriété [**SelectedEmbeddedAudioTrackIndex**](https://msdn.microsoft.com/library/windows/apps/dn652627).
 
--   Create a **MediaClip** with a single color filling the entire frame by calling [**CreateFromColor**](https://msdn.microsoft.com/library/windows/apps/dn652605) and specifying a color and a duration for the clip.
+-   Créez un élément **MediaClip** avec une seule couleur de remplissage de la trame tout entière en appelant [**CreateFromColor**](https://msdn.microsoft.com/library/windows/apps/dn652605) et en spécifiant une couleur et une durée pour le clip.
 
--   Create a **MediaClip** from an image file by calling [**CreateFromImageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652610) and specifying an image file and a duration for the clip.
+-   Créez un élément **MediaClip** à partir d’un fichier image en appelant [**CreateFromImageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652610) et en spécifiant un fichier image et une durée pour le clip.
 
--   Create a **MediaClip** from a [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) by calling [**CreateFromSurface**](https://msdn.microsoft.com/library/dn764774) and specifying a surface and a duration from the clip.
+-   Créez un élément **MediaClip** à partir d’une [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) en appelant [**CreateFromSurface**](https://msdn.microsoft.com/library/dn764774) et en spécifiant une surface et une durée à partir du clip.
 
-## Preview the composition in a MediaElement
+## Afficher un aperçu de la composition dans un objet MediaElement
 
-To enable the user to view the media composition, add a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) to the XAML file that defines your UI.
+Pour permettre à l’utilisateur d’afficher la composition multimédia, ajoutez une classe [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) au fichier XAML qui définit votre interface utilisateur.
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
-Declare a member variable of type [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716).
+Déclarez une variable de membre de type [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716).
 
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
 
-Call the **MediaComposition** object's [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) method to create a **MediaStreamSource** for the composition and then call the [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) method of the **MediaElement**. Now the composition can be viewed in the UI.
+Appelez la méthode [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) de l’objet **MediaComposition** pour créer un élément **MediaStreamSource** pour la composition, puis appelez la méthode [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) de l’élément **MediaElement**. La composition peut désormais être affichée dans l’interface utilisateur.
 
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
--   The **MediaComposition** must contain at least one media clip before calling [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674), or the returned object will be null.
+-   L’élément **MediaComposition** doit contenir au moins un clip multimédia avant d’appeler [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674), sans quoi l’objet renvoyé sera null.
 
--   The **MediaElement** timeline is not automatically updated to reflect changes in the composition. It is recommended that you call both **GeneratePreviewMediaStreamSource** and **SetMediaStreamSource** every time you make a set of changes to the composition and want to update the UI.
+-   La chronologie de **MediaElement** n’est pas automatiquement mise à jour de manière à refléter les changements relatifs à la composition. Il est recommandé d’appeler à la fois **GeneratePreviewMediaStreamSource** et **SetMediaStreamSource** chaque fois que vous apportez des modifications à la composition et que vous voulez mettre à jour l’interface utilisateur.
 
-It is recommended that you set the **MediaStreamSource** object and the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of the **MediaElement** to null when the user navigates away from the page in order to release associated resources.
+Il est recommandé de définir l’objet **MediaStreamSource** et la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) de **MediaElement** sur null lorsque l’utilisateur quitte la page afin de libérer les ressources associées.
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-## Render the composition to a video file
+## Restituer la composition dans un fichier vidéo
 
-To render a media composition to a flat video file so that it can be shared and viewed on other devices, you will need to use APIs from the [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) namespace. To update the UI on the progress of the async operation, you will also need APIs from the [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383) namespace.
+Pour restituer une composition multimédia dans un fichier vidéo plat de manière à pouvoir la partager et la visualiser sur d’autres appareils, vous devrez utiliser les API de l’espace de noms [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105). Pour mettre à jour l’interface utilisateur en fonction de la progression de l’opération asynchrone, vous aurez également besoin des API de l’espace de noms [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383).
 
 [!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
-After allowing the user to select an output file with a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), render the composition to the selected file by calling the **MediaComposition** object's [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690). The rest of the code in the following example simply follows the pattern of handling an [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807).
+Après avoir autorisé l’utilisateur à sélectionner un fichier de sortie à l’aide d’une classe [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), restituez la composition dans le fichier sélectionné en appelant la méthode [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) de l’objet **MediaComposition**. Le reste du code de l’exemple suivant applique simplement le modèle de gestion d’une [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807).
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   The [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) allows you to prioritize speed of the transcoding operation versus the precision of trimming of adjacent media clips. **Fast** causes transcoding to be faster with lower-precision trimming, **Precise** causes transcoding to be slower but with more precise trimming.
+-   La préférence [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) vous permet de privilégier la vitesse de l’opération de transcodage par rapport à la précision de découpage des clips multimédias adjacents. **Fast** accélère le transcodage par un découpage moins précis et **Precise** le ralentit par une augmentation de la précision du découpage.
 
-## Trim a video clip
+## Découper un clip vidéo
 
-Trim the duration of a video clip in a composition by setting the [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) objects [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652637) property, the [**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) property, or both.
+Réduisez la durée d’un clip vidéo d’une composition en définissant la propriété [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652637) des objets [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596), la propriété [**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) ou les deux.
 
 [!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
--   Your can use any UI that you want to let the user specify the start and end trim values. The example above uses the [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) property of the **MediaElement** to first determine which MediaClip is playing back at the current position in the composition by checking the [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) and [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618). Then the **Position** and **StartTimeInComposition** properties are used again to calculate the amount of time to trim from the beginning of the clip. The **FirstOrDefault** method is an extension method from the **System.Linq** namespace that simplifies the code for selecting items from a list.
--   The [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) property of the **MediaClip** object lets you know the duration of the media clip without any clipping applied.
--   The [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) property lets you know the duration of the media clip after trimming is applied.
--   Specifying a trimming value that is larger than the original duration of the clip does not throw an error. However, if a composition contains only a single clip and that is trimmed to zero length by specifying a large trimming value, a subsequent call to [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) will return null, as if the composition has no clips.
+-   Vous pouvez utiliser l’interface utilisateur que vous souhaitez pour permettre à l’utilisateur de spécifier les valeurs de découpage de début et de fin. L’exemple ci-dessus utilise la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) de l’élément **MediaElement**, pour commencer par déterminer quel MediaClip est lu au niveau de la position actuelle de la composition en vérifiant les propriétés [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) et [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618). Les propriétés **Position** et **StartTimeInComposition** servent à nouveau pour calculer la durée à découper depuis le début du clip. La méthode **FirstOrDefault** est une méthode d’extension à partir de l’espace de noms **System.Linq** qui simplifie le code permettant de sélectionner les éléments d’une liste.
+-   La propriété [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) de l’objet **MediaClip** vous permet de connaître la durée du clip multimédia sans découpage.
+-   La propriété [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) vous permet de connaître la durée du clip multimédia après découpage.
+-   La spécification d’une valeur de découpage supérieure à la durée initiale du clip ne génère pas d’erreur. Toutefois, si une composition ne contient qu’un seul clip, et que celui-ci a subi un découpage complet le ramenant à une durée égale à zéro dû à la spécification d’une valeur de découpage importante, un appel ultérieur à [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) renvoie la valeur null, comme si la composition ne comportait aucun clip.
 
-## Add a background audio track to a composition
+## Ajouter une piste audio en arrière-plan à une composition
 
-To add a background track to a composition, load an audio file and then create a [**BackgroundAudioTrack**](https://msdn.microsoft.com/library/windows/apps/dn652544) object by calling the factory method [**BackgroundAudioTrack.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652561). Then, add the **BackgroundAudioTrack** to the composition's [**BackgroundAudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn652647) property.
+Pour ajouter une piste audio en arrière-plan à une composition, chargez un fichier audio, puis créez un objet [**BackgroundAudioTrack**](https://msdn.microsoft.com/library/windows/apps/dn652544) en appelant la méthode de fabrique [**BackgroundAudioTrack.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652561). Ajoutez ensuite l’élément **BackgroundAudioTrack** à la propriété [**BackgroundAudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn652647) de la composition.
 
 [!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   A **MediaComposition** supports background audio tracks in the following formats: MP3, WAV, FLAC
+-   Un élément **MediaComposition** prend en charge les pistes audio en arrière-plan aux formats suivants : MP3, WAV, FLAC.
 
--   A background audio track
+-   Une piste audio en arrière-plan
 
--   As with video files, you should use the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class to preserve access to files in the composition.
+-   Comme pour les fichiers vidéo, vous devez utiliser la classe [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) pour préserver l’accès aux fichiers de la composition.
 
--   As with **MediaClip**, a **BackgroundAudioTrack** can only be included in a composition once. Attempting to add a **BackgroundAudioTrack** that is already being used by the composition will result in an error. To reuse an audio track multiple times in a composition, call [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) to create new **MediaClip** objects which can then be added to the composition.
+-   Comme pour **MediaClip**, un élément **BackgroundAudioTrack** ne peut être inclus qu’une seule fois dans une composition. L’ajout d’un élément **BackgroundAudioTrack** déjà utilisé par la composition se traduit par une erreur. Pour réutiliser une piste audio plusieurs fois dans une composition, appelez [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) pour créer de nouveaux objets **MediaClip**, qui peuvent ensuite être ajoutés à la composition.
 
--   By default, background audio tracks begin playing at the start of the composition. If multiple background tracks are present, all of the tracks will begin playing at the start of the composition. To cause a background audio track to be begin playback at another time, set the [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn652563) property to the desired time offset.
+-   Par défaut, la lecture des pistes audio en arrière-plan commence au début de la composition. En présence de plusieurs pistes en arrière-plan, la lecture de toutes les pistes commence au début de la composition. Pour que la lecture d’une piste audio en arrière-plan se déclenche à un autre moment, définissez la propriété [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn652563) sur le décalage souhaité.
 
-## Add an overlay to a composition
+## Ajouter une superposition à une composition
 
-Overlays allow you to stack multiple layers of video on top of each other in a composition. A composition can contain multiple overlay layers, each of which can include multiple overlays. Create a [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) object by passing a **MediaClip** into its constructor. Set the position and opacity of the overlay, then create a new [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) and add the **MediaOverlay** to its [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) list. Finally, add the **MediaOverlayLayer** to the composition's [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) list.
+Les superpositions permettent d’empiler plusieurs couches de vidéos les unes sur les autres au sein d’une composition. Une composition peut contenir plusieurs couches de superposition, qui peuvent elles-mêmes inclure plusieurs superpositions. Créez un objet [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) en transmettant un élément **MediaClip** à son constructeur. Définissez la position et l’opacité de la superposition, puis créez une classe [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) et ajoutez l’élément **MediaOverlay** à sa liste [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411). Ajoutez enfin l’élément **MediaOverlayLayer** à la liste [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) de la composition.
 
 [!code-cs[AddOverlay](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddOverlay)]
 
--   Overlays within a layer are z-ordered based on their order in their containing layer's **Overlays** list. Higher indices within the list are rendered on top of lower indices. The same is true of overlay layers within a composition. A layer with higher index in the composition's **OverlayLayers** list will be rendered on top of lower indices.
+-   Les superpositions au sein d’une couche sont classées selon l’ordre-z en fonction de leur ordre dans la liste **Overlays** de la couche qui les contient. Les indices supérieurs de la liste sont restitués au-dessus des indices inférieurs. Il en va de même pour les couches de superposition d’une composition. Une couche dont l’indice est supérieur dans la liste **OverlayLayers** de la composition sera restituée au-dessus des couches à indice inférieur.
 
--   Because overlays are stacked on top of each other instead of being played sequentially, all overlays start playback at the beginning of the composition by default. To cause an overlay to be begin playback at another time, set the [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn764810) property to the desired time offset.
+-   Dans la mesure où les superpositions sont empilées les unes sur les autres au lieu d’être lues séquentiellement, toutes les superpositions commencent par défaut la lecture au début de la composition. Pour qu’une superposition commence la lecture à un autre moment, définissez la propriété [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn764810) sur le décalage souhaité.
 
-## Add effects to a media clip
+## Ajouter des effets à un clip multimédia
 
-Each **MediaClip** in a composition has a list of audio and video effects to which multiple effects can be added. The effects must implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) and [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047) respectively. The following example uses the current media element position to choose the currently viewed **MediaClip** and then creates a new instance of the [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) and appends it to the media clip's [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) list.
+Chaque **MediaClip** d’une composition possède une liste d’effets audio et vidéo auxquels plusieurs effets peuvent être ajoutés. Les effets doivent respectivement implémenter [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) et [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047). L’exemple suivant utilise la position actuelle de l’élément multimédia de manière à choisir l’élément **MediaClip** affiché actuellement, puis crée une nouvelle instance de la classe [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) et l’ajoute à la liste [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) du clip multimédia.
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
-## Save a composition to a file
+## Enregistrer une composition dans un fichier
 
-Media compositions can be serialized to a file to be modified at a later time. Pick an output file and then call the [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) method [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn640554) to save the composition.
+Les compositions multimédia peuvent être sérialisées dans un fichier pour être modifiées ultérieurement. Sélectionnez un fichier de sortie, puis appelez la méthode [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn640554) de la classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) pour enregistrer la composition.
 
 [!code-cs[SaveComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
 
-## Load a composition from a file
+## Charger une composition à partir d’un fichier
 
-Media compositions can be deserialized from a file to allow the user to view and modify the composition. Pick a composition file and then call the [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) method [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652684) to load the composition.
+Les compositions multimédia peuvent être désérialisées à partir d’un fichier pour permettre à l’utilisateur d’afficher et de modifier la composition. Sélectionnez un fichier de composition, puis appelez la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652684) de la classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) pour charger la composition.
 
 [!code-cs[OpenComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOpenComposition)]
 
--   If a media file in the composition is not in a location that can be accessed by your app and is not in the [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) property of the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class for your app, an error will be thrown when loading the composition.
+-   Si un fichier multimédia de la composition ne se trouve pas dans un emplacement auquel votre application a accès et ne se trouve pas dans la propriété [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) de la classe [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) pour votre application, une erreur sera générée lors du chargement de la composition.
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

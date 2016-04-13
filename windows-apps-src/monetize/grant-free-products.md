@@ -1,7 +1,7 @@
 ---
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit in-app gratuit à un utilisateur donné.
-title: Octroyer des produits gratuits
+Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit in-app gratuit à un utilisateur donné.
+Octroyer des produits gratuits
 ---
 
 # Octroyer des produits gratuits
@@ -43,7 +43,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
  
 
-### Corps de demande
+### Corps de la requête
 
 | Paramètre      | Type   | Description                                                                                                                                                                                                                                                                                                            | Obligatoire |
 |----------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -53,7 +53,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | language       | chaîne | Langue de l’utilisateur.                                                                                                                                                                                                                                                                                              | Oui      |
 | market         | chaîne | Marché de l’utilisateur.                                                                                                                                                                                                                                                                                                | Oui      |
 | orderId        | GUID   | GUID généré pour la commande. Cette valeur doit être propre à l’utilisateur, mais il n’est pas impératif qu’elle soit unique dans toutes les commandes.                                                                                                                                                                                              | Oui      |
-| productId      | chaîne | ID produit du catalogue du Windows Store. Pour obtenir votre ID produit, accédez à votre application dans le tableau de bord du Centre de développement Windows, puis à la page **Gestion des applications** &gt; **Identité des applications**, et récupérez le suffixe de la chaîne indiquée dans le champ **URL de Windows 10**. Exemple d’ID produit : 9WZDNCRFJ3Q8. | Oui      |
+| productId      | chaîne | ID produit du catalogue du Windows Store. Pour obtenir votre ID produit, accédez à votre application dans le tableau de bord du Centre de développement Windows, puis à la page **Gestion des applications** &gt; **Identité des applications**, et récupérez le suffixe de la chaîne indiquée dans le champ **URL de Windows 10**. Exemple d’ID produit : 9WZDNCRFJ3Q8. | Oui      |
 | quantity       | entier    | Quantité à acheter. Actuellement, la seule valeur prise en charge est 1. Si aucune valeur n’est spécifiée, la valeur par défaut est 1.                                                                                                                                                                                                                | Non       |
 | skuId          | chaîne | ID de référence du catalogue du Windows Store. Exemple d’ID de référence : 0010.                                                                                                                                                                                                                                                | Oui      |
 
@@ -240,4 +240,8 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

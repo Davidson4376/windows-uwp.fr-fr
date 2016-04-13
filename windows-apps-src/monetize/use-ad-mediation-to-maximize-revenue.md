@@ -1,26 +1,26 @@
 ---
 ms.assetid: 772DEBF2-1578-4330-9C14-70BCC6F55005
-description: Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos recettes publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires.
+description: Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos revenus publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires.
 title: Utiliser la médiation publicitaire pour optimiser les revenus
 ---
 
 #  Utiliser la médiation publicitaire pour optimiser les revenus
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos recettes publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires. Différents réseaux publicitaires peuvent avoir leurs propres points forts, certains ayant un coût supérieur par milliers de vues (eCPM) ou un taux de remplissage supérieur (pourcentage de publicités fournies lorsque votre application effectue une demande) dans certains marchés que d’autres. Avec un réseau publicitaire unique, vous risquez de vous retrouver avec des demandes de publicité non satisfaites, entraînant ainsi une perte de recettes potentielles. La médiation publicitaire vous permet d’optimiser la monétisation de vos publicités en vérifiant que l’annonce affichée est toujours active.
+Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos revenus publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires. Différents réseaux publicitaires peuvent avoir leurs propres points forts, certains ayant un coût supérieur par milliers de vues (eCPM) ou un taux de remplissage supérieur (pourcentage de publicités fournies lorsque votre application effectue une demande) dans certains marchés que d’autres. Avec un réseau publicitaire unique, vous risquez de vous retrouver avec des demandes de publicité non satisfaites, entraînant ainsi une perte de recettes potentielles. La médiation publicitaire vous permet d’optimiser la monétisation de vos publicités en vérifiant que vous avez toujours une publicité active.
 
-Le [Kit de développement logiciel (SDK) Microsoft Universal Ad Client](http://go.microsoft.com/fwlink/p/?LinkId=518026) permet la prise en charge de la médiation publicitaire. Une fois que vous avez installé le kit de développement logiciel (SDK) et ajouté le contrôle Ad Mediator à votre application, vous pouvez spécifier la fréquence à laquelle chaque réseau est utilisé en mettant à jour la configuration de la médiation dans le Centre de développement. Vous pouvez l’optimiser par marché. De cette façon, vous utilisez les réseaux publicitaires les plus efficaces dans les régions appropriées. Et vous pouvez apporter des modifications à l’utilisation de chaque réseau publicitaire sans avoir à publier à nouveau votre application.
+La prise en charge de la médiation publicitaire est disponible via le [SDK d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk). Une fois que vous avez installé le kit de développement logiciel (SDK) et ajouté le contrôle Ad Mediator à votre application, vous pouvez spécifier la fréquence à laquelle chaque réseau est utilisé en mettant à jour la configuration de la médiation dans le Centre de développement. Vous pouvez l’optimiser par marché. De cette façon, vous utilisez les réseaux publicitaires les plus efficaces dans les régions appropriées. Et vous pouvez apporter des modifications à l’utilisation de chaque réseau publicitaire sans avoir à publier à nouveau votre application.
 
 ## Prise en main de la médiation publicitaire
 
 
-Procédez comme suit pour installer et configurer la médiation publicitaire dans votre application :
+Procédez comme suit pour installer et configurer la médiation publicitaire dans votre application :
 
 1.  Passez en revue la liste des réseaux publicitaires et des types de projets pris en charge par la médiation publicitaire, configurez les comptes avec les réseaux publicitaires utilisés, et suivez les instructions de chaque réseau pour intégrer une application. Pour en savoir plus, voir [Sélectionner et gérer vos réseaux publicitaires](select-and-manage-your-ad-networks.md).
 
-2.  Installez le Kit de développement logiciel (SDK) Microsoft Universal Ad Client avec Visual Studio 2015 ou Visual Studio 2013. Pour plus d’informations, voir [Installer le Kit de développement logiciel (SDK) Microsoft Universal Ad Client](install-the-microsoft-universal-ad-client-sdk.md).
+2.  Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) avec Visual Studio 2015 ou Visual Studio 2013.
 
 3.  Dans Visual Studio, ouvrez votre projet ou créez-en un. Ouvrez la page dans laquelle vous voulez héberger les publicités, et faites glisser un élément **AdMediatorControl** dans la page. Si vous utilisez Microsoft Advertising, ajustez la hauteur et la largeur du contrôle pour l’adapter aux tailles de publicité prises en charge. Pour plus d’informations, voir [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md).
 
@@ -35,12 +35,11 @@ Procédez comme suit pour installer et configurer la médiation publicitaire dan
 ## Utilisation de Microsoft Advertising sans médiation publicitaire
 
 
-Si vous ne voulez pas utiliser de médiation publicitaire ou si votre type de projet n’est actuellement pas pris en charge par celle-ci, vous pouvez toujours fournir des bannières publicitaires à partir de Microsoft Advertising sans utiliser de médiation publicitaire. Pour plus d’informations, voir [AdControl et XAML et .NET](https://msdn.microsoft.com/library/mt313186.aspx) et [AdControl en HTML 5 et JavaScript](https://msdn.microsoft.com/library/mt313130.aspx).
+Si vous ne voulez pas utiliser de médiation publicitaire ou si votre type de projet n’est actuellement pas pris en charge par celle-ci, vous pouvez toujours fournir des bannières publicitaires à partir de Microsoft sans utiliser de médiation publicitaire. Pour plus d’informations, voir [AdControl et XAML et .NET](https://msdn.microsoft.com/library/mt313186.aspx) et [AdControl en HTML 5 et JavaScript](https://msdn.microsoft.com/library/mt313130.aspx).
 
 ## Rubriques connexes
 
 * [Sélectionner et gérer vos réseaux publicitaires](select-and-manage-your-ad-networks.md)
-* [Installer le Kit de développement logiciel (SDK) Microsoft Universal Ad Client](install-the-microsoft-universal-ad-client-sdk.md)
 * [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md)
 * [Tester l’implémentation de votre médiation publicitaire](test-your-ad-mediation-implementation.md)
 * [Soumettre votre application et configurer une médiation publicitaire](submit-your-app-and-configure-ad-mediation.md)
@@ -50,5 +49,6 @@ Si vous ne voulez pas utiliser de médiation publicitaire ou si votre type de pr
  
 
 
+<!--HONumber=Mar16_HO5-->
 
-<!--HONumber=Mar16_HO1-->
+

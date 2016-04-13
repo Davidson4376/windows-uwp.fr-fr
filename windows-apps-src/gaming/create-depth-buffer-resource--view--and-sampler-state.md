@@ -1,36 +1,36 @@
 ---
-title: Create depth buffer device resources
-description: Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.
+Créer des ressources de périphérique pour un tampon de profondeur
+Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre.
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ---
 
-# Create depth buffer device resources
+# Créer des ressources de périphérique pour un tampon de profondeur
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes. Part 1 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre. Partie 1 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Resources you'll need
-
-
-Rendering a depth map for shadow volumes requires the following Direct3D device-dependent resources:
-
--   A resource (buffer) for the depth map
--   A depth stencil view and shader resource view for the resource
--   A comparison sampler state object
--   Constant buffers for light POV matrices
--   A viewport for rendering the shadow map (typically a square viewport)
--   A rendering state object to enable front face culling
--   You will also need a rendering state object to switch back to back face culling, if you don't already use one.
-
-Note that creation of these resources needs to be included in a device-dependent resource creation routine, that way your renderer can recreate them if (for example) a new device driver is installed, or the user moves your app to a monitor attached to a different graphics adapter.
-
-## Check feature support
+## Ressources nécessaires
 
 
-Before creating the depth map, call the [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) method on the Direct3D device, request **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT**, and provide a [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) structure.
+Le rendu d’un plan de profondeur pour les volumes d’ombre nécessite les ressources suivantes liées aux périphériques Direct3D :
+
+-   une ressource (tampon) pour le plan de profondeur ;
+-   une vue de profondeur/gabarit et une vue de ressource de nuanceur pour la ressource ;
+-   un objet d’état de l’échantillonneur de comparaison ;
+-   des tampons constants pour matrices PdV légères ;
+-   une fenêtre d’affichage pour le rendu du plan d’ombres (généralement une fenêtre d’affichage carrée) ;
+-   un objet d’état de rendu pour activer l’élimination de la face avant.
+-   Vous aurez aussi besoin d’un objet d’état de rendu pour revenir à l’élimination de la face arrière, si ce n’est pas déjà le cas.
+
+Notez que la création de ces ressources doit être incluse dans une routine de création de ressources liées au périphérique. De cette façon, votre convertisseur peut les recréer si (par exemple) un nouveau pilote de périphérique est installé ou si l’utilisateur déplace votre application sur un moniteur associé à une autre carte graphique.
+
+## Vérifier la prise en charge des fonctionnalités
+
+
+Avant de créer le plan de profondeur, appelez la méthode [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) sur le périphérique Direct3D, demandez **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** et fournissez une structure [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569).
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -47,14 +47,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-If this feature is not supported, do not try to load shaders compiled for shader model 4 level 9\_x that call sample comparison functions. In many cases, lack of support for this feature means that the GPU is a legacy device with a driver that isn't updated to support at least WDDM 1.2. If the device supports at least feature level 10\_0 then you can load a sample comparison shader compiled for shader model 4\_0 instead.
+Si cette fonctionnalité n’est pas prise en charge, n’essayez pas de charger des nuanceurs compilés pour le modèle de nuanceur 4 niveau 9\_x, lesquels appellent des fonctions de comparaison d’exemples. Dans de nombreux cas, l’absence de prise en charge de cette fonctionnalité signifie que le GPU est un périphérique hérité doté d’un pilote qui n’est pas mis à jour pour prendre en charge au moins WDDM 1.2. Si le périphérique prend en charge au moins le niveau de fonctionnalité 10\_0, alors vous pouvez charger un nuanceur de comparaison d’exemples compilé pour le modèle de nuanceur 4\_0 à la place.
 
-## Create depth buffer
+## Créer un tampon de profondeur
 
 
-First, try creating the depth map with a higher-precision depth format. Set up matching shader resource view properties first. If the resource creation fails, for example due to low device memory or a format that the hardware doesn't support, try a lower-precision format and change properties to match.
+Pour commencer, essayez de créer le plan de profondeur dans un format de profondeur haute précision. Configurez d’abord les propriétés de la vue de ressource de nuanceur correspondantes. Si la création de ressource échoue, par exemple en raison d’un manque de mémoire du périphérique ou d’un format non pris en charge par le matériel, essayez un format de moindre précision et modifiez la correspondance des propriétés.
 
-This step is optional if you only need a low-precision depth format, for example when rendering on medium-resolution Direct3D feature level 9\_1 devices.
+Cette étape est facultative si vous avez seulement besoin d’un format de profondeur avec une faible précision, par exemple quand vous effectuez le rendu sur des périphériques Direct3D de résolution moyenne avec le niveau de fonctionnalité 9\_1.
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -74,7 +74,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-Then create the resource views. Set the mip slice to zero on the depth stencil view and set mip levels to 1 on the shader resource view. Both have a texture dimension of TEXTURE2D, and both need to use a matching [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Ensuite, créez les vues de ressource. Définissez la tranche MIP sur zéro dans la vue de profondeur/gabarit et les niveaux MIP sur 1 dans la vue de ressource du nuanceur. Les deux vues ont une dimension de texture TEXTURE2D et doivent utiliser un [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) correspondant.
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -102,14 +102,14 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## Create comparison state
+## Créer un état de comparaison
 
 
-Now create the comparison sampler state object. Feature level 9\_1 only supports D3D11\_COMPARISON\_LESS\_EQUAL. Filtering choices are explained more in [Supporting shadow maps on a range of hardware](target-a-range-of-hardware.md) - or you can just pick point filtering for faster shadow maps.
+À présent, créez l’objet d’état de l’échantillonneur de comparaison. Le niveau de fonctionnalité 9\_1 prend uniquement en charge D3D11\_COMPARISON\_LESS\_EQUAL. Les options de filtre sont expliquées plus en détail dans [Prise en charge des plans d’ombres sur une gamme de matériels](target-a-range-of-hardware.md) ou vous pouvez choisir le filtrage de points pour des plans d’ombres plus rapides.
 
-Note that you can specify the D3D11\_TEXTURE\_ADDRESS\_BORDER address mode and it will work on feature level 9\_1 devices. This applies to pixel shaders that don't test whether the pixel is in the light's view frustum before doing the depth test. By specifying 0 or 1 for each border, you can control whether pixels outside the light's view frustum pass or fail the depth test, and therefore whether they are lit or in shadow.
+Notez que vous pouvez spécifier le mode d’adresse D3D11\_TEXTURE\_ADDRESS\_BORDER pour qu’il fonctionne sur les périphériques de niveau de fonctionnalité 9\_1. Cela s’applique aux nuanceurs de pixels qui ne testent pas si le pixel figure dans le tronc de cône (frustrum) de vue de la lumière avant d’effectuer le test de profondeur. En définissant chaque bordure sur 0 ou 1, vous pouvez contrôler si les pixels en dehors du tronc de cône de vue de la lumière réussissent ou échouent au test de profondeur, et par conséquent s’ils sont éclairés ou dans l’ombre.
 
-On feature level 9\_1, the following required values must be set: **MinLOD** is set to zero, **MaxLOD** is set to **D3D11\_FLOAT32\_MAX**, and **MaxAnisotropy** is set to zero.
+Sur le niveau de fonctionnalité 9\_1, les valeurs requises suivantes doivent être définies comme suit : **MinLOD** sur zéro, **MaxLOD** sur **D3D11\_FLOAT32\_MAX** et **MaxAnisotropy** sur zéro.
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -141,10 +141,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## Create render states
+## Créer des états de rendu
 
 
-Now create a render state you can use to enable front face culling. Note that feature level 9\_1 devices require **DepthClipEnable** set to **true**.
+Créez maintenant un état de rendu servant à activer l’élimination des faces avant. Notez que les périphériques de niveau de fonctionnalité 9\_1 requièrent que **DepthClipEnable** soit défini sur **true**.
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;
@@ -160,7 +160,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Create a render state you can use to enable back face culling. If your rendering code already turns on back face culling, then you can skip this step.
+Créez un état de rendu servant à activer l’élimination des faces arrière. Si votre code de rendu active déjà l’élimination des faces arrière, vous pouvez ignorer cette étape.
 
 ```cpp
 D3D11_RASTERIZER_DESC shadowRenderStateDesc;
@@ -177,10 +177,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## Create constant buffers
+## Créer des tampons constants
 
 
-Don't forget to create a constant buffer for rendering from the light's point of view. You can also use this constant buffer to specify the light position to the shader. Use a perspective matrix for point lights, and use an orthogonal matrix for directional lights (such as sunlight).
+N’oubliez pas de créer un tampon constant pour le rendu du point de vue de la lumière. Vous pouvez aussi l’utiliser pour spécifier au nuanceur la position de la lumière. Utilisez une matrice de perspective pour les lumières à points et une matrice orthogonale pour les lumières directionnelles (comme les rayons du soleil).
 
 ```cpp
 DX::ThrowIfFailed(
@@ -192,7 +192,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Fill the constant buffer data. Update the constant buffers once during initialization, and again if the light values have changed since the previous frame.
+Renseignez les données de tampon constant. Mettez à jour les tampons constants une fois pendant l’initialisation, puis à nouveau si les valeurs de lumière ont changé depuis la trame précédente.
 
 ```cpp
 {
@@ -234,10 +234,10 @@ context->UpdateSubresource(
     );
 ```
 
-## Create a viewport
+## Créer une fenêtre d’affichage
 
 
-You need a separate viewport to render to the shadow map. The viewport isn't a device-based resource; you're free to create it elsewhere in your code. Creating the viewport along with the shadow map can help make it more convenient to keep the dimension of the viewport congruent with the shadow map dimension.
+Vous avez besoin d’une fenêtre d’affichage distincte pour restituer un plan d’ombres. La fenêtre d’affichage n’est pas une ressource basée sur un périphérique, vous êtes donc libre de la créer ailleurs dans votre code. La création de la fenêtre d’affichage avec le plan d’ombres peut faciliter la mise en relation de leurs dimensions respectives.
 
 ```cpp
 // Init viewport for shadow rendering
@@ -248,13 +248,17 @@ m_shadowViewport.MinDepth = 0.f;
 m_shadowViewport.MaxDepth = 1.f;
 ```
 
-In the next part of this walkthrough, learn how to create the shadow map by [rendering to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md).
+Dans la suite de cette procédure pas à pas, vous allez découvrir comment créer le plan d’ombres en [effectuant le rendu dans le tampon de profondeur](render-the-shadow-map-to-the-depth-buffer.md).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

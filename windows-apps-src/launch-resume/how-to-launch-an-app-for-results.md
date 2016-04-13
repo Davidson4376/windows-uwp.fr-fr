@@ -1,13 +1,13 @@
 ---
-title: Lancer une application pour obtenir des résultats
-description: Découvrez comment démarrer une application à partir d’une autre et échanger des données entre les deux. On parle de « démarrage d’une application pour afficher les résultats ».
+Lancer une application pour obtenir des résultats
+Découvrez comment démarrer une application à partir d’une autre et échanger des données entre les deux. On parle de « démarrage d’une application pour afficher les résultats ».
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ---
 
 # Lancer une application pour obtenir des résultats
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -199,4 +199,8 @@ transférez-le ensuite à l’application lancée via **LaunchUriForResultsAsync
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

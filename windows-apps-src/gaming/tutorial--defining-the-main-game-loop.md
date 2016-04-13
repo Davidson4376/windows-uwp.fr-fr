@@ -1,6 +1,6 @@
 ---
-title: Définir l’objet jeu principal
-description: Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
+Définir l’objet jeu principal
+Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ---
 
@@ -3601,7 +3601,7 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -3617,4 +3617,8 @@ Cet article s’adresse aux développeurs de Windows 10 qui créent des applica
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

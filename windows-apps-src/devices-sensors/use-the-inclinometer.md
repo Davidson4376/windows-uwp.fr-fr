@@ -1,11 +1,11 @@
 ---
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
-title: Utiliser l’inclinomètre
-description: Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
+Utiliser l’inclinomètre
+Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 ---
 # Utiliser l’inclinomètre
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -14,7 +14,7 @@ description: Découvrez comment utiliser l’inclinomètre pour déterminer le t
 
 Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 
-Certaines jeux 3D requièrent un inclinomètre en tant que périphérique d’entrée. Le simulateur de vol en est un exemple courant, qui mappe les trois axes de l’inclinomètre (x, y et z) aux entrées de la gouverne de profondeur, de l’aileron et du volet de dérive.
+Certaines jeux 3D requièrent un inclinomètre en tant que périphérique d’entrée. Le simulateur de vol en est un exemple courant, qui mappe les trois axes de l’inclinomètre (x, y et z) aux entrées de la gouverne de profondeur, de l’aileron et du volet de dérive.
 
  ## Prérequis
 
@@ -24,7 +24,7 @@ L’appareil ou émulateur que vous utilisez doit prendre en charge un inclinom�
 
  ## Créer une application simple d’inclinomètre
 
-Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’inclinomètre. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’inclinomètre. La sous-section suivante décrit l’application que vous venez de créer.
 
 ###  Instructions
 
@@ -169,4 +169,8 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 * [Exemple d’inclinomètre](http://go.microsoft.com/fwlink/p/?linkid=241380)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

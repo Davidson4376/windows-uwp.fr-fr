@@ -1,8 +1,8 @@
 ---
-Description: Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives.
-title: Modèles de vignette spéciaux
+Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives.
+Modèles de vignette spéciaux
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
-label: À déterminer
+À déterminer
 template: detail.hbs
 ---
 
@@ -280,4 +280,8 @@ Pour envoyer la notification, voir [Choisir une méthode de remise de notificati
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

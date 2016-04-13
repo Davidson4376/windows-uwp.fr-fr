@@ -1,6 +1,6 @@
 ---
-description: Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général.
-title: Attribut xName
+Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général.
+Attribut xName
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ---
 
@@ -63,4 +63,8 @@ Si **Name** est disponible en tant que propriété définissable sur un élémen
 
 **x:Name** peut être appliqué en tant qu’attribut à des éléments dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) pour agir en tant que substitut de l’[attribut x:Key](x-key-attribute.md). (En règle générale, tous les éléments d’une classe **ResourceDictionary** doivent avoir un attribut x:Key.) Cela est courant dans le cas des [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354). Pour plus d’informations, voir la section correspondante de [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

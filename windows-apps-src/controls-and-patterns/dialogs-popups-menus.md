@@ -2,7 +2,7 @@
 Description: Un menu volant est une fenêtre contextuelle légère utilisée pour afficher de manière temporaire des éléments de l’interface utilisateur qui sont liés à ce que l’utilisateur est en train de faire.
 title: Menus contextuels et boîtes de dialogue
 ms.assetid: 7CA2600C-A1DB-46AE-8F72-24C25E224417
-label: Menus, boîtes de dialogue et fenêtres contextuelles
+label: Menus, dialogs, and popups
 template: detail.hbs
 ---
 # Menus, boîtes de dialogue et fenêtres contextuelles
@@ -11,8 +11,8 @@ Les menus, boîtes de dialogue et fenêtres contextuelles affichent des élémen
 
 <span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
--   [Classe MenuFlyout (XAML)](https://msdn.microsoft.com/library/windows/apps/dn299030)
--   [Classe Flyout (XAML)](https://msdn.microsoft.com/library/windows/apps/dn279496)
+-   [Classe MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)
+-   [Classe Flyout](https://msdn.microsoft.com/library/windows/apps/dn279496)
 
 Un menu contextuel fournit les actions instantanées à l’utilisateur. Vous pouvez insérer des commandes personnalisées dans ce type de menu. Vous pouvez masquer un menu contextuel en appuyant ou en cliquant sur un élément à l’extérieur du menu.
 
@@ -41,7 +41,7 @@ Les boîtes de dialogue peuvent être utilisées pour les actions suivantes :
 - Les messages d’erreur qui s’appliquent au contexte global de l’application, liés par exemple à une erreur de connectivité.
 - Utilisez une boîte de dialogue à question pour indiquer que l’application doit poser à l’utilisateur une question bloquante, parce qu’elle ne peut pas choisir telle ou telle option à la place de l’utilisateur, par exemple. Une question bloquante ne peut pas être ignorée ni mise de côté, et doit offrir à l’utilisateur des options clairement définies.
 
-Les fenêtres contextuelles (menus volants) peuvent être utilisés pour les actions suivantes :
+Les fenêtres contextuelles (menus volants) peuvent être utilisées pour les actions suivantes :
 
 -   Interface utilisateur contextuelle, temporaire.
 -   Avertissements et confirmations, notamment ceux qui sont liés à des actions potentiellement destructrices.
@@ -83,7 +83,7 @@ Voici un exemple de boîte de dialogue à deux boutons qui présente à l’util
 -   Le titre de la boîte de dialogue correspond à l’instruction principale. Il est facultatif.
     -   Utilisez un titre court pour expliquer l’utilisation de cette boîte de dialogue. Les titres longs ne sont pas renvoyés à la ligne et sont tronqués.
     -   Si la boîte de dialogue est destinée à indiquer un message, une erreur ou une question simple, vous pouvez ne pas indiquer de titre. Appuyez-vous sur le texte du contenu pour fournir les informations essentielles.
-    -   Assurez-que le titre est directement lié aux options des boutons.
+    -   Assurez-vous que le titre est directement lié aux options des boutons.
 -   Le contenu de la boîte de dialogue inclut le texte descriptif. Il est requis.
     -   Présentez le message, l’erreur ou la question bloquante aussi simplement que possible.
     -   Si vous indiquez un titre dans la boîte de dialogue, la zone de contenu doit fournir des détails supplémentaires ou clarifier la terminologie utilisée. Ne répétez pas le titre en utilisant une formulation légèrement différente.
@@ -98,9 +98,9 @@ Voici un exemple de boîte de dialogue à deux boutons qui présente à l’util
     -   Spécifiez l’objet auquel vous souhaitez ancrer la fenêtre contextuelle, ainsi que le côté de l’objet sur lequel la fenêtre contextuelle s’affichera.
     -   Essayez de positionner la fenêtre contextuelle afin qu’elle ne bloque pas d’éléments importants de l’interface utilisateur.
 -   La fenêtre contextuelle doit être masquée dès qu’un élément qu’elle contient est sélectionné.
--   Les menus contextuels fonctionnement mieux avec un seul niveau. Les menus contextuels à plusieurs niveaux sont difficiles à parcourir et fournissent une expérience utilisateur médiocre.
+-   Les menus contextuels fonctionnent mieux avec un seul niveau. Les menus contextuels à plusieurs niveaux sont difficiles à parcourir et fournissent une expérience utilisateur médiocre.
 
-## Recommandations
+## Pratiques conseillées et déconseillées
 
 -   Faites en sorte que les commandes de menu contextuel soient courtes. Les commandes plus longues finissent par être tronquées.
 -   Mettez une majuscule au début de chaque nom de commande.
@@ -108,13 +108,14 @@ Voici un exemple de boîte de dialogue à deux boutons qui présente à l’util
 -   Si la manipulation directe d’un élément d’interface utilisateur est possible, évitez de placer cette commande dans un menu contextuel. Un menu contextuel doit être réservé pour les commandes contextuelles qui ne sont pas visibles à l’écran en conditions normales.
 
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
-## Rubriques connexes
-
-
+## Articles connexes
 
 **Pour les développeurs**
-* [**Classe MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-* [**Classe Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)
-<!--HONumber=Mar16_HO1-->
+- [**Classe MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [**Classe Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)
+
+
+<!--HONumber=Mar16_HO4-->
+
+

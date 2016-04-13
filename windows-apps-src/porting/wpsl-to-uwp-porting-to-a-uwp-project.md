@@ -1,6 +1,6 @@
 ---
-description: Commencez le processus de portage en créant un projet Windows 10 dans Visual Studio, puis en copiant vos fichiers dans ce dernier.
-title: Portage d’un projet Silverlight pour Windows Phone vers un projet UWP
+Commencez le processus de portage en créant un projet Windows 10 dans Visual Studio, puis en copiant vos fichiers dans ce dernier.
+Portage d’un projet Silverlight pour Windows Phone vers un projet UWP
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
 ---
 
@@ -17,7 +17,7 @@ Commencez le processus de portage en créant un projet Windows 10 dans Visual St
 1.  Lancez Microsoft Visual Studio 2015 et créez un projet d’application vide (Windows universelle). Pour en savoir plus, voir [Modèles de projet en C#, VB et C++ pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/hh768232). Votre nouveau projet génère un package d’application (fichier appx) exécutable sur toutes les familles d’appareils.
 2.  Dans votre projet d’application Silverlight pour Windows Phone, identifiez tous les fichiers de code source et fichiers de ressources visuelles que vous souhaitez réutiliser. Au moyen de l’Explorateur de fichiers, copiez les modèles de données, les modèles d’affichage, les ressources visuelles, les dictionnaires de ressources, la structure des dossiers et toute information que vous souhaitez réutiliser dans votre nouveau projet. Copiez ou créez des sous-dossiers sur le disque, si nécessaire.
 3.  Copiez également les affichages (par exemple, les fichiers MainPage.xaml et MainPage.xaml.cs) dans le nœud du nouveau projet. Là encore, créez autant de sous-dossiers que nécessaire, puis supprimez les affichages existants du projet. Toutefois, avant de remplacer ou de supprimer un affichage généré par Visual Studio, créez-en une copie, car vous pourrez avoir besoin de vous y référer ultérieurement. La première phase du portage d’une application Silverlight pour Windows Phone est axée sur l’obtention d’une application qui s’affiche et fonctionne correctement sur une famille d’appareils spécifique. Par la suite, vous ferez en sorte que les affichages s’adaptent bien à tous les facteurs de forme, et vous aurez la possibilité d’ajouter du code adaptatif pour tirer le meilleur parti d’une famille d’appareils donnée.
-4.  Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Sélectionnez les fichiers que vous avez copiés, cliquez dessus avec le bouton droit de la souris et sélectionnez **Inclure dans le projet**. Les dossiers conteneurs sont automatiquement inclus. Vous pouvez ensuite désactiver l’option **Afficher tous les fichiers**, si vous le souhaitez. Vous pouvez également opter pour un flux de travail alternatif, qui repose sur l’utilisation de la commande **Ajouter un élément existant** après la création des sous-dossiers requis dans l’**Explorateur de solutions** de Visual Studio. Pour les ressources visuelles, vérifiez que l’option **Action de génération** est bien définie sur **Contenu** et que l’option **Copier dans le répertoire de sortie** est bien définie sur **Ne pas copier**.
+4.  Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Sélectionnez les fichiers que vous avez copiés, cliquez dessus avec le bouton droit de la souris et sélectionnez **Inclure dans le projet**. Les dossiers conteneurs sont automatiquement inclus. Vous pouvez ensuite désactiver l’option **Afficher tous les fichiers**, si vous le souhaitez. Vous pouvez également opter pour un flux de travail alternatif, qui repose sur l’utilisation de la commande **Ajouter un élément existant** après la création des sous-dossiers requis dans l’**Explorateur de solutions** de Visual Studio. Pour les ressources visuelles, vérifiez que l’option **Action de génération** est bien définie sur **Contenu** et que l’option **Copier dans le répertoire de sortie** est bien définie sur **Ne pas copier**.
 5.  À ce stade, toute différence dans les noms de classe ou d’espace de noms peut entraîner un grand nombre d’erreurs de génération. Par exemple, si vous ouvrez les affichages générés par Visual Studio, vous verrez qu’ils sont de type [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), et non de type **PhoneApplicationPage**. Il existe un grand nombre de différences concernant le code impératif et le balisage XAML, que les rubriques suivantes de ce guide de portage étudient en détail. Toutefois, il vous suffit de suivre les étapes générales suivantes pour progresser rapidement : remplacez la commande « clr-namespace » par « using » dans les déclarations de préfixe d’espace de noms du balisage XML. Consultez la rubrique [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md) et utilisez la commande **Rechercher et remplacer** de Visual Studio pour apporter des modifications globales à votre code source (par exemple, remplacez l’élément « System.Windows » par « Windows.UI.Xaml »). Dans l’éditeur de code impératif de Visual Studio, utilisez les commandes **Résoudre** et **Organiser les instructions Using** du menu contextuel pour procéder à davantage de modifications ciblées.
 
 ## Kits de développement logiciel (SDK) d’extension
@@ -26,7 +26,7 @@ La plupart des API de plateforme Windows universelle (UWP) que votre application
 
 Si vous obtenez des erreurs de compilation à propos d’espaces de noms, de types ou de membres introuvables, cela en est probablement la cause. Ouvrez la rubrique concernant l’API dans la documentation de référence sur les API et accédez à la section Configuration requise pour connaître la famille d’appareils d’implémentation. Si celle-ci ne correspond pas à votre famille d’appareils cible, vous avez besoin d’ajouter une référence au SDK d’extension pour cette famille d’appareils afin que l’API soit disponible pour votre projet.
 
-Cliquez sur **Projet** &gt; **Ajouter une référence** &gt; **Applications universelles Windows** &gt; **Extensions** et cochez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version 10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
+Cliquez sur **Projet** &gt; **Ajouter une référence** &gt; **Windows universel** &gt; **Extensions** et sélectionnez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version 10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
 
 La référence suivante sera ajoutée à votre fichier de projet :
 
@@ -141,4 +141,8 @@ Voir [Référence du schéma de manifeste de package pour Windows 10](https://m
 
 Rubrique suivante : [Résolution des problèmes](wpsl-to-uwp-troubleshooting.md).
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

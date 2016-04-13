@@ -1,7 +1,7 @@
 ---
-title: Choix d’un langage de programmation
+Choix d’un langage de programmation
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-description: Choix d’un langage de programmation
+Choix d’un langage de programmation
 ---
 
 # Prise en main : Choix d’un langage de programmation
@@ -137,4 +137,8 @@ C# est un langage facile à comprendre. Il est fourni avec les nombreuses classe
 ## Étape suivante
 
 [Prise en main : Savoir maîtriser Visual Studio](getting-started-getting-around-in-visual-studio.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

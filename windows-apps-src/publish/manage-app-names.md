@@ -1,46 +1,50 @@
 ---
-You can view all of the names that you've reserved for your app, reserve additional names here, and delete names you don't need from the Manage app names page in the App management section for each of your apps in the Windows Dev Center dashboard.
-Manage app names
+Dans le tableau de bord du Centre de développement Windows, vous pouvez, pour chacune de vos applications, visualiser tous les noms que vous avez réservés pour votre application, réserver des noms supplémentaires et supprimer les noms inutiles à partir de la page Gérer les noms d’application de la section Gestion des applications.
+Gérer les noms d’application
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ---
 
-# Manage app names
+# Gérer les noms d’application
 
 
-You can view all of the names that you've reserved for your app, reserve additional names here, and delete names you don't need from the **Manage app names** page in the **App management** section for each of your apps in the Windows Dev Center dashboard.
+Dans le tableau de bord du Centre de développement Windows, vous pouvez, pour chacune de vos applications, visualiser tous les noms que vous avez réservés pour votre application, réserver des noms supplémentaires et supprimer les noms inutiles à partir de la page **Gérer les noms d'application** de la section **Gestion des applications**.
 
-## Reserve additional names for your app
-
-
-You can reserve multiple app names to use for the same app. This is especially useful if you are offering your app in multiple languages and want to use different names for different languages. You can also use this to change the name of an app which you haven't published yet.
-
-In the **Reserve more names** section of the **Manage app names** page, you'll see a text box. Enter the name you'd like to reserve, then click **Check availability**. If the name is available, click **Reserve name**.
-
-> **Note**  For more info about reserving app names, and why a certain name may not be available, see [Create your app by reserving a name](create-your-app-by-reserving-a-name.md).
-
-You can continue reserving additional app names here if desired.
-
-## Delete app names
+## Réserver des noms supplémentaires pour votre application
 
 
-If you no longer want to use a name you've previously reserved, you can release it by deleting it here. Make sure you're certain before you do so, since this means that the name will immediately become available for someone else to reserve and use.
+Vous pouvez réserver plusieurs noms pour une même application. Cette fonctionnalité est particulièrement utile si vous proposez une application en différentes langues pour lesquelles vous souhaitez utiliser des noms d'application distincts. Vous pouvez également utiliser cette fonction pour modifier le nom d'une application que vous n'avez pas encore publiée.
 
-To delete one of your app's reserved names, find the name you no longer want to use and then click **Delete**. In the confirmation dialog, click **Delete** again to confirm.
+La section **Réserver d’autres noms** de la page **Gérer les noms d’application** comporte une zone de texte. Entrez dans cette zone le nom que vous souhaitez réserver, puis cliquez sur **Vérifier la disponibilité**. Si le nom indiqué est disponible, cliquez sur **Réserver le nom**.
 
-Note that your app needs to have at least one reserved name. To completely remove an app from your dashboard (which also release all of the you've reserved for that app), you can click **Delete this app** from its **Overview** page.
+> **Remarque** Pour plus d’informations sur la réservation de noms d’application et sur les raisons pour lesquelles un nom peut ne pas être disponible, voir [Créer votre application en réservant un nom](create-your-app-by-reserving-a-name.md).
 
-## Rename an app that has already been published
+Si vous le souhaitez, vous pouvez continuer à réserver des noms d’application supplémentaires sur cette page.
+
+## Supprimer des noms d'application
 
 
-If your app is already in the Windows Store and you want to rename it, you can do so by reserving a new name for it (by following the steps described above) and then creating a new submission for the app. Note that you'll have to update your package to include the new name in order for the Store to display the app under the new name. Be sure to use the new name in the [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) element in the app manifest, and update any graphics or text that includes the app's name. You'll also want to review your app's description and change the name if you mention it anywhere there.
+Si vous ne voulez plus utiliser un nom que vous avez réservé précédemment, vous pouvez le libérer en le supprimant depuis cette page. Procédez avec précaution, car le nom que vous supprimez deviendra immédiatement utilisable par toute autre personne.
 
-Once your app has been published with the new name, you can delete the old name that you no longer need to use.
+Pour supprimer l’un des noms réservés de votre application, recherchez ce dernier, puis cliquez sur **Supprimer**. Dans la boîte de dialogue de confirmation, cliquez de nouveau sur **Supprimer** pour confirmer l'opération.
+
+Notez que votre application doit comporter au moins un nom réservé. Si vous souhaitez supprimer définitivement une application de votre tableau de bord (et libérer ainsi tous les noms que vous avez réservés pour cette dernière), cliquez sur **Supprimer cette application** sur la page **Vue d'ensemble**.
+
+## Renommer une application qui a déjà été publiée
+
+
+Si votre application figure déjà dans le Windows Store et que vous voulez la renommer, vous devez lui réserver un nouveau nom (en suivant la procédure décrite ci-dessus), puis créer une autre soumission pour l'application. Notez que vous devrez mettre à jour votre package en y incluant le nouveau nom afin que le Windows Store affiche l'application sous ce nom. Veillez à utiliser le nouveau nom dans l'élément [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) du manifeste de l'application et à mettre à jour l'ensemble des graphiques ou textes contenant le nom de l'application. Vous devrez également revoir la description de l'application et modifier les éventuelles occurrences de l'ancien nom dans le texte descriptif.
+
+Une fois votre application publiée sous le nouveau nom, vous pourrez supprimer l'ancien nom que vous n'utilisez plus.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

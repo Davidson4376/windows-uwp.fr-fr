@@ -1,37 +1,37 @@
 ---
-Port the game loop
-Shows how to implement a window for a Universal Windows Platform (UWP) game and how to bring over the game loop, including how to build an IFrameworkView to control a full-screen CoreWindow.
+Porter la boucle de jeu
+Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface IFrameworkView pour contrôler une classe CoreWindow en plein écran.
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ---
 
-# Port the game loop
+# Porter la boucle de jeu
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Summary**
+**Récapitulatif**
 
--   [Part 1: Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   [Part 2: Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   Part 3: Port the game loop
-
-
-Shows how to implement a window for a Universal Windows Platform (UWP) game and how to bring over the game loop, including how to build an [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) to control a full-screen [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Part 3 of the [Port a simple Direct3D 9 app to DirectX 11 and UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
-
-## Create a window
+-   [Partie 1 : initialiser Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   [Partie 2 : convertir l’infrastructure de rendu](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   Partie 3 : porter la boucle de jeu
 
 
-To set up a desktop window with a Direct3D 9 viewport, we had to implement the traditional windowing framework for desktop apps. We had to create an HWND, set the window size, provide a window processing callback, make it visible, and so on.
+Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) pour contrôler une classe [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) en plein écran. Partie 3 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-The UWP environment has a much simpler system. Instead of setting up a traditional window, a Windows Store game using DirectX implements [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). This interface exists for DirectX apps and games to run directly in a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) inside the app container.
+## Créer une fenêtre
 
-> **Note**   Windows supplies managed pointers to resources such as the source application object and the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). See [**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+
+Pour configurer une fenêtre de bureau avec une fenêtre d’affichage Direct3D 9, nous devions implémenter l’infrastructure de fenêtrage traditionnelle des applications de bureau. Nous devions créer un HWND, définir la taille de la fenêtre, fournir un rappel de traitement de fenêtre, le rendre visible, etc.
+
+L’environnement UWP possède un système beaucoup plus simple. Au lieu de configurer une fenêtre traditionnelle, un jeu du Windows Store qui utilise DirectX implémente l’interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Cette interface existe pour les applications et jeux DirectX pour s’exécuter directement dans une classe [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) à l’intérieur du conteneur d’application.
+
+> **Remarque** Windows fournit des pointeurs gérés aux ressources tels que l’objet d’application source et la classe [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Voir [**Handle sur l’opérateur Object (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
  
 
-Your "main" class needs to inherit from [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) and implement the five **IFrameworkView** methods: [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), and [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). In addition to creating the **IFrameworkView**, which is (essentially) where your game will reside, you need to implement a factory class that creates an instance of your **IFrameworkView**. Your game still has an executable with a method called **main()**, but all main can do is use the factory to create the **IFrameworkView** instance.
+Votre « principale » classe doit hériter de l’interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) et implémenter les cinq méthodes **IFrameworkView** : [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) et [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). En plus de créer l’interface **IFrameworkView**, qui correspond (essentiellement) à l’emplacement auquel votre jeu va résider, vous devez implémenter une classe de fabrique qui crée une instance de votre interface **IFrameworkView**. Votre jeu possède quand même un exécutable avec une méthode appelée **main()**, mais celle-ci peut uniquement utiliser la fabrique pour créer l’instance **IFrameworkView**.
 
-Main function
+Fonction main
 
 ```cpp
 //-----------------------------------------------------------------------------
@@ -47,7 +47,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-IFrameworkView factory
+Fabrique IFrameworkView
 
 ```cpp
 //-----------------------------------------------------------------------------
@@ -64,12 +64,12 @@ public:
 };
 ```
 
-## Port the game loop
+## Porter la boucle de jeu
 
 
-Let's look at the game loop from our Direct3D 9 implementation. This code exists in the app's main function. Each iteration of this loop processes a window message or renders a frame.
+Examinons la boucle de jeu de notre implémentation Direct3D 9. Ce code existe dans la fonction main de l’application. Chaque itération de cette boucle traite un message de fenêtre ou génère le rendu d’une image.
 
-Game loop in Direct3D 9 desktop game
+Boucle de jeu dans un jeu sur ordinateur Direct3D 9
 
 ```cpp
 while(WM_QUIT != msg.message)
@@ -93,13 +93,13 @@ while(WM_QUIT != msg.message)
 }
 ```
 
-The game loop is similar - but easier - in the UWP version of our game:
+La boucle de jeu est similaire, mais plus facile, dans la version UWP de notre jeu :
 
-The game loop goes in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method (instead of **main()**) because our game functions within the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) class.
+La boucle de jeu va dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) (plutôt que **main()**) car notre jeu fonctionne au sein de la classe [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478).
 
-Instead of implementing a message handling framework and calling [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), we can call the [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) method built in to our app window's [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). There's no need for the game loop to branch and handle messages - just call **ProcessEvents** and proceed.
+Au lieu d’implémenter une infrastructure de gestion des messages et d’appeler la fonction [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), nous pouvons appeler la méthode [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) intégrée dans la classe [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) de notre fenêtre d’application. La boucle de jeu n’a pas besoin de se ramifier et de gérer les messages : il suffit d’appeler la méthode **ProcessEvents** et de continuer.
 
-Game loop in Direct3D 11 Windows Store game
+Boucle de jeu dans un jeu du Windows Store Direct3D 11
 
 ```cpp
 // Windows Store apps should not exit. Use app lifecycle events instead.
@@ -114,26 +114,30 @@ while (true)
 }
 ```
 
-Now we have a UWP app that sets up the same basic graphics infrastructure, and renders the same colorful cube, as our DirectX 9 example.
+Nous avons à présent une application UWP qui configure la même infrastructure graphique de base, et génère le rendu du même cube haut en couleur que celui de notre exemple DirectX 9.
 
-## Where do I go from here?
+## Où aller à partir d’ici ?
 
 
-Bookmark the [DirectX 11 porting FAQ](directx-porting-faq.md).
+Marquez d’un signet le [Forum Aux Questions (FAQ) sur le portage DirectX 11](directx-porting-faq.md).
 
-The DirectX UWP templates include a robust Direct3D device infrastructure that's ready for use with your game. See [Create a DirectX game project from a template](user-interface.md) for guidance on picking the right template.
+Les modèles UWP DirectX incluent une infrastructure de périphérique Direct3D robuste prête à l’emploi avec votre jeu UWP. Pour obtenir des conseils sur la sélection du modèle approprié, voir [Créer un projet de jeu DirectX à partir d’un modèle](user-interface.md).
 
-Visit the following in-depth Windows Store game game development articles:
+Consultez les articles détaillés suivants sur le développement des jeux du Windows Store :
 
--   [Walkthrough: a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
--   [Audio for games](working-with-audio-in-your-directx-game.md)
--   [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md)
+-   [Procédure pas à pas : jeu UWP simple avec DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+-   [Audio pour les jeux](working-with-audio-in-your-directx-game.md)
+-   [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

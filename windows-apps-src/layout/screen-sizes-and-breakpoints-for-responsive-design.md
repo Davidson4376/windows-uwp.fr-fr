@@ -1,27 +1,26 @@
 ---
-'Screen sizes and break points for responsive design'
-.
+title: 'Tailles d’écran et points d’arrêt pour la conception réactive'
+description: .
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
-Screen sizes and break points
+label: Screen sizes and break points
 template: detail.hbs
 ---
 
-#  Screen sizes and break points for responsive design
+#  Tailles d’écran et points d’arrêt pour la conception réactive
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 
-The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key widths (also called "breakpoints"): 320, 720, and 1024 epx.
+Le nombre d’appareils cibles et de tailles d’écran dans l’écosystème Windows 10 est trop élevé pour pouvoir optimiser votre interface utilisateur pour chacun d’eux. À la place, nous vous recommandons de concevoir une application pour plusieurs largeurs principales (également appelées « points d’arrêt ») : 360, 640, 1024 et 1366 epx.
 
-**Tip**  When designing for specific breakpoints, design for the amount of screen space available to your app (the app's window). When the app is running full-screen, the app window is the same size of the screen, but in other cases, it's smaller.
-
+**Conseil** Lors de la conception pour des points d’arrêt spécifiques, pensez à la quantité d’espace d’écran disponible pour votre application (fenêtre de l’application). Lorsque l’application s’exécute en mode plein écran, sa fenêtre a la même taille que l’écran, mais dans les autres cas, elle est plus petite.
  
 
-This table describes the different size classes and provides general recommendations for tailoring for those size classes.
+Le tableau suivant décrit les différentes classes de taille et fournit des recommandations générales pour la personnalisation de ces classes de taille.
 
-![responsive design breakpoints](images/rsp-design/rspd-breakpoints.png)
+![Points d’arrêt de la conception réactive](images/rsp-design/rspd-breakpoints.png)
 
 <table>
 <colgroup>
@@ -32,68 +31,73 @@ This table describes the different size classes and provides general recommendat
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Size class</th>
-<th align="left">small</th>
-<th align="left">medium</th>
-<th align="left">large</th>
+<th align="left">Classe de taille</th>
+<th align="left">petite</th>
+<th align="left">moyenne</th>
+<th align="left">grande</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Width in effective pixels</td>
-<td align="left">320</td>
-<td align="left">720</td>
-<td align="left">1024</td>
+<td align="left">Taille d’écran standard (diagonale)</td>
+<td align="left">4&quot; à 6&quot;</td>
+<td align="left">7&quot; à 12&quot;, ou téléviseurs</td>
+<td align="left">13&quot; et supérieur</td>
 </tr>
 <tr class="even">
-<td align="left">Typical screen size (diagonal)</td>
-<td align="left">4' to 6'</td>
-<td align="left">6+&quot; to 12&quot;</td>
-<td align="left">13' and wider</td>
+<td align="left">Appareils standard</td>
+<td align="left">Téléphones</td>
+<td align="left">Phablettes, tablettes, téléviseurs</td>
+<td align="left">PC, ordinateurs portables, Surface Hub</td>
 </tr>
 <tr class="odd">
-<td align="left">Typical devices</td>
-<td align="left">Phones</td>
-<td align="left">Tablet, phones with large screen</td>
-<td align="left">PCs, laptops, Surface Hubs</td>
+<td align="left">Tailles de fenêtre normales en pixels effectifs</td>
+<td align="left">320 x 569, 360 x 640, 480 x 854</td>
+<td align="left">960 x 540, 1 024 x 640</td>
+<td align="left">1 366 x 768, 1 920 x 1 080</td>
 </tr>
 <tr class="even">
-<td align="left">General recommendations</td>
-<td align="left"><ul>
-<li>You can make navigation and interactions easier on hand-held devices by placing navigation and command elements at the bottom of the screen so that users can easily reach them with their thumbs.</li>
-<li>Center tab elements.</li>
-<li>Set left and right window margins to 12 px to create a visual separation between the left and right edges of the app window.</li>
-<li>Use 1 column/region at a time</li>
-<li>Use an icon to represent search (don't show a search box).</li>
-<li>Put the navigation pane in overlay mode to conserve screen space.</li>
-<li>If you're using the master detail element, use the stacked presentation mode to save screen space.</li>
-<li><p>With Continuum for Phones, a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor and even use a mouse and keyboard to make their phones work like a laptop. (For more info, see the [Continuum for Phone article](http://go.microsoft.com/fwlink/p/?LinkID=699431).)</p></li>
+<td align="left">Points d’arrêt de largeur de fenêtre en pixels effectifs</td>
+<td align="left">640 px maximum</td>
+<td align="left">641 px à 1 007 px</td>
+<td align="left">1 008 px ou plus</td>
+</tr>
+<tr class="odd">
+<td align="left" valign="top">Recommandations générales</td>
+<td align="left" valign="top"><ul>
+<li>Centrez les éléments d’onglet.</li>
+<li>Définissez une marge de 12 px de part et d’autre de la fenêtre afin de créer une séparation visuelle au niveau des bords gauche et droit de la fenêtre de l’application.</li>
+<li>Ancrez les [app bars](../controls-and-patterns/app-bars.md) en bas de la fenêtre pour faciliter l’accessibilité</li>
+<li>Utiliser une colonne/zone à la fois</li>
+<li>Utilisez une icône pour représenter la recherche (n’affichez pas de zone de recherche).</li>
+<li>Placez le [navigation pane](../controls-and-patterns/nav-pane.md) en mode Superposition pour économiser l’espace à l’écran.</li>
+<li>Si vous utilisez l’[master details pattern](../controls-and-patterns/master-details.md), utilisez le mode présentation empilée pour économiser l’espace d’écran.</li>
 </ul></td>
-<td align="left"><ul>
-<li>Make tab elements left-aligned.</li>
-<li><p>Set left and right window margins to 24 px.</p>
-<p>We recommend creating a visual separation between the left and right edges of the app window.</p></li>
-<li>Up to two columns/regions</li>
-<li>Show the search box.</li>
-<li>Put the navigation pane into docked mode so that it always shows.</li>
+<td align="left" valign="top"><ul>
+<li>Alignez les éléments d’onglet à gauche.</li>
+<li>Définissez une marge de 24 px de part et d’autre de la fenêtre afin de créer une séparation visuelle au niveau des bords gauche et droit de la fenêtre de l’application.</li>
+<li>Placez les éléments de commande comme les [app bars](../controls-and-patterns/app-bars.md) en haut de la fenêtre de l’application.</li>
+<li>Jusqu’à deux colonnes/zones</li>
+<li>Affichez la zone de recherche.</li>
+<li>Placez le [navigation pane](../controls-and-patterns/nav-pane.md) en mode partiel de manière à ce qu’une bande étroite d’icônes soit toujours affichée.</li>
+
 </ul></td>
-<td align="left"><ul>
-<li>Put navigation and command elements at the top of the app window.</li>
-<li>Make tab elements left-aligned.</li>
-<li><p>Set left and right window margins to 24 px.</p>
-<p>We recommend creating a visual separation between the left and right edges of the app window.</p></li>
-<li>Up to three columns/regions</li>
-<li>Show the search box.</li>
-<li>Put the navigation pane into docked mode so that it always shows.</li>
+<td align="left" valign="top"><ul>
+<li>Alignez les éléments d’onglet à gauche.</li>
+<li>Définissez une marge de 24 px de part et d’autre de la fenêtre afin de créer une séparation visuelle au niveau des bords gauche et droit de la fenêtre de l’application.</li>
+<li>Placez les éléments de commande comme les [app bars](../controls-and-patterns/app-bars.md) en haut de la fenêtre de l’application.</li>
+<li>Jusqu’à trois colonnes/zones</li>
+<li>Affichez la zone de recherche.</li>
+<li>Placez le [navigation pane](../controls-and-patterns/nav-pane.md) en mode ancré pour qu’il soit toujours affiché.</li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-
+Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un moniteur, une souris et un clavier pour les utiliser comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques : un téléphone mobile ne reste pas toujours dans la classe de petite taille.
  
 
 
+<!--HONumber=Mar16_HO4-->
 
 
-<!--HONumber=Mar16_HO1-->

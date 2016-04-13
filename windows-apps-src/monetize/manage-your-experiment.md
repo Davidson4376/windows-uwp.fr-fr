@@ -1,0 +1,57 @@
+---
+Description: Après avoir défini votre expérience dans le tableau de bord du Centre de développement et codé cette expérience dans votre application, vous voici prêt à activer l’expérience et à en visualiser les résultats dans le tableau de bord du Centre de développement.
+title: Gérer votre expérience dans le tableau de bord du Centre de développement
+ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
+---
+
+# Gérer votre expérience dans le tableau de bord du Centre de développement
+
+Après avoir [défini votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md) et [codé votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous voici prêt à activer l’expérience et à en visualiser les résultats dans le tableau de bord du Centre de développement. Après avoir obtenu toutes les données dont vous avez besoin, vous pourrez mettre fin à votre expérience et décider si vous souhaitez continuer à utiliser les paramètres de variante de contrôle dans toutes vos applications ou si vous voulez utiliser les paramètres dans l’une de vos variantes.
+
+> **Remarque** Lorsque vous activez une expérience, le Centre de développement lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. L’apparition des données de l’expérience dans le tableau de bord peut cependant prendre plusieurs heures.
+
+Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
+
+## Activer votre expérience
+
+Une fois que vous êtes satisfait des paramètres de votre expérience dans le tableau de bord et que vous avez mis à jour le code de votre application, vous êtes prêt à activer l’expérience afin de commencer à collecter les données correspondantes à partir de votre application. Lorsque l’expérience est active, votre application peut récupérer les paramètres de variante et signaler les événements d’affichage et de conversion au Centre de développement.
+
+1. Connectez-vous au [tableau de bord du Centre de développement](https://dev.windows.com/overview).
+2. Sous **Vos applications**, sélectionnez l’application présentant l’expérience que vous souhaitez activer.
+3. Dans le volet de navigation, sélectionnez **Services**, puis **Expérimentation**.
+4. La section **Expériences** répertorie les expériences à l’état de brouillon, actives et terminées concernant l’application actuelle. Cliquez sur le filtre **Brouillon**, puis sur **Activer** pour l’expérience que vous souhaitez activer.
+
+> **Important** Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf s’il s’agit d’une expérience de test (vous avez coché la case **Expérience de test** lorsque vous avez créé l’expérience). Nous vous recommandons de coder l’expérience dans votre application avant de l’activer.
+
+
+## Passer en revue les résultats de votre expérience
+
+1. Dans le Centre de développement, revenez à la page **Expérimentation** de votre application.
+2. Dans la section **Expériences**, cliquez sur le filtre **Actives**, puis cliquez sur le nom de votre expérience active pour accéder à la page correspondante.
+3. Dans le cas d’une expérience active ou terminée, les deux premières sections de cette page fournissent les résultats de votre expérience :
+  * La section **Résumé des résultats** répertorie les objectifs de votre expérience et le taux de conversion pour chaque variante.
+  * La section **Détails des résultats** fournit des informations supplémentaires sur chacun des objectifs de votre expérience, notamment les vues, les conversions, le taux de conversion, le pourcentage d’écart, la confiance et l’importance. La *confiance* est une mesure statistique de la fiabilité d’une estimation, qui calcule la marge d’erreur. L’*importance* est une mesure statistique, reposant sur la taille de l’échantillon, qui détermine la probabilité qu’un résultat ne soit pas dû au hasard, mais qu’il soit plutôt attribué à une cause spécifique.
+
+  >**Remarque** Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Cette approche est destinée à éviter qu’un utilisateur unique avec de nombreux événements de conversion ne fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
+
+
+## Terminer votre expérience
+
+1. Dans le tableau de bord, revenez à la page de votre expérience. Pour obtenir les instructions correspondantes, voir la section précédente.
+2. Dans la section **Résumé des résultats**, effectuez l’une des opérations suivantes :
+  * Si vous souhaitez mettre fin à l’expérience et continuer à utiliser les paramètres dans la variante de contrôle de votre application, cliquez sur **Conserver**.
+  * Si vous souhaitez mettre fin à l’expérience, mais utiliser les paramètres dans une autre variante de votre application, cliquez sur **Basculer** sous la variante vers laquelle vous voulez basculer.
+3. Cliquez sur **OK** pour confirmer que vous souhaitez mettre fin à l’expérience.
+
+
+## Rubriques connexes
+
+  * [Définir votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md)
+  * [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md)
+  * [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md)
+  * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
+
+
+<!--HONumber=Mar16_HO5-->
+
+

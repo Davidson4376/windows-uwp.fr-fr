@@ -1,65 +1,65 @@
 ---
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
-Sensor orientation
-Sensor data from the Accelerometer, Gyrometer, Compass, Inclinometer, and OrientationSensor classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it.
+Orientation de capteur
+Les données du capteur provenant des classes Accelerometer, Gyrometer, Compass, Inclinometer et OrientationSensor sont définies par leurs axes de référence. Ces axes sont définis par l’orientation paysage de l’appareil et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner.
 ---
-# Sensor orientation
+# Orientation de capteur
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-Sensor data from the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766), and [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
+Les données du capteur provenant des classes [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) et [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) sont définies par leurs axes de référence. Ces axes sont définis par l’orientation paysage de l’appareil, et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner. Si votre application prend en charge la rotation automatique et se réoriente pour s’adapter à l’appareil à mesure que l’utilisateur le fait pivoter, vous devez ajuster vos données du capteur par rapport à la rotation avant de l’utiliser.
 
-## Display orientation vs device orientation
+## Orientation de l’affichage et orientation de l’appareil
 
-In order to understand the reference axes for sensors, you need to distinguish display orientation from device orientation. Display orientation is the direction text and images are displayed on the screen whereas device orientation is the physical positioning of the device. In the following picture, both the device and display orientation are in **Landscape**.
+Pour comprendre les axes de référence pour les capteurs, vous devez distinguer l’orientation de l’affichage de l’orientation de l’appareil. L’orientation de l’affichage correspond au sens dans lequel le texte et les images sont affichés à l’écran, alors que l’orientation de l’appareil correspond au positionnement physique de l’appareil. Sur l’image suivante, l’orientation de l’affichage et celle de l’appareil ont la valeur **Landscape**.
 
-![Display and device orientation in Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
+![Orientation de l’affichage et de l’appareil en mode Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
 
-The following picture shows both the display and device orientation in **LandscapeFlipped**.
+L’image suivante montre l’orientation de l’affichage et de l’appareil en mode **LandscapeFlipped**.
 
-![Display and device orientation in LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
+![Orientation de l’affichage et de l’appareil en mode LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
 
-The next picture shows the display orientation in Landscape while the device orientation is LandscapeFlipped.
+L’image suivante montre l’orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.
 
-![Display orientation in Landscape while the device orientation is LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
+![Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
 
-You can query the orientation values through the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) class by using the [**GetForCurrentView**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) method with the [**CurrentOrientation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) property. Then you can create logic by comparing against the [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) enumeration. Remember that for every orientation you support, you have to support a conversion of the reference axes to that orientation.
+Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) à l’aide de la méthode [**GetForCurrentView**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) avec la propriété [**CurrentOrientation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx). Vous pouvez ensuite créer une logique en comparant ces valeurs avec l’énumération [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142). Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
 
-## Landscape-first vs portrait-first devices
+## Appareils à priorité Paysage ou à priorité Portrait
 
-Manufacturers produce both landscape-first and portrait-first devices. When manufacturers integrate components into devices, they do so in a unified and consistent way so that all devices operate within the same reference frame. The following table shows the sensor axes for both landscape-first and portrait first devices.
+Les fabricants produisent des appareils à priorité Paysage ou Portrait. Quand ils intègrent des composants dans des appareils, ils le font de manière cohérente et unifiée pour que tous les appareils opèrent dans le même cadre de référence. Le tableau suivant montre les axes de capteur pour les appareils à priorité Paysage et Portrait.
 
-| Orientation | Landscape-first | Portrait-first |
+| Orientation | Priorité Paysage | Priorité Portrait |
 |-------------|-----------------|----------------|
-| **Landscape** | ![Landscape-first device in Landscape orientation](images/accelerometer-axis-orientation-landscape.png) | ![Portrait-first device in Landscape orientation](images/accelerometer-axis-orientation-portrait-270.png) |
-| **Portrait** | ![Landscape-first device in Portrait orientation](images/accelerometer-axis-orientation-landscape-90.png) | ![Portrait-first device in Portrait orientation](images/accelerometer-axis-orientation-portrait.png) |
-| **LandscapeFlipped ** | ![Landscape-first device in LandscapeFlipped orientation](images/accelerometer-axis-orientation-landscape-180.png) | ![Portrait-first device in LandscapeFlipped orientation](images/accelerometer-axis-orientation-portrait-90.png) | 
-| **PortraitFlipped** | ![Landscape-first device in PortraitFlipped orientation](images/accelerometer-axis-orientation-landscape-270.png)| ![Portrait-first device in PortraitFlipped orientation](images/accelerometer-axis-orientation-portrait-180.png) |
+| **Paysage** | ![Appareil à priorité Paysage en mode d’orientation Landscape](images/accelerometer-axis-orientation-landscape.png) | ![Appareil à priorité Portrait en mode d’orientation Landscape](images/accelerometer-axis-orientation-portrait-270.png) |
+| **Portrait** | ![Appareil à priorité Paysage en mode d’orientation Portrait](images/accelerometer-axis-orientation-landscape-90.png) | ![Appareil à priorité Portrait en mode d’orientation Portrait](images/accelerometer-axis-orientation-portrait.png) |
+| **LandscapeFlipped ** | ![Appareil à priorité Paysage en mode d’orientation LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180.png) | ![Appareil à priorité Portrait en mode d’orientation LandscapeFlipped](images/accelerometer-axis-orientation-portrait-90.png) | 
+| **PortraitFlipped** | ![Appareil à priorité Paysage en mode d’orientation PortraitFlipped](images/accelerometer-axis-orientation-landscape-270.png)| ![Appareil à priorité Portrait en mode d’orientation PortraitFlipped](images/accelerometer-axis-orientation-portrait-180.png) |
 
-## Devices broadcasting display and headless devices
+## Appareils diffusant leur affichage et appareils sans affichage
 
-Some devices have the ability to broadcast the display to another device. For example, you could take a tablet and broadcast the display to a projector that will be in landscape orientation. In this scenario, it is important to keep in mind that the device orientation is based on the original device, not the one presenting the display. So an accelerometer would report data for the tablet.
+Certains appareils sont capables de diffuser leur affichage vers un autre appareil. Par exemple, vous pouvez avoir une tablette capable de diffuser son affichage vers un projecteur en orientation paysage. Dans cette situation, il est important de garder à l’esprit que l’orientation de l’appareil est basée sur celle de l’appareil d’origine et non sur celle de l’appareil qui affiche. Par conséquent, un accéléromètre indiquerait les données pour la tablette.
 
-Furthermore, some devices do not have a display. With these devices, the default orientation for these devices is portrait.
+En outre, certains appareils n’ont pas d’affichage. L’orientation par défaut de ces appareils est le mode Portrait.
 
-## Display orientation and compass heading
+## Orientation de l’affichage et orientation de la boussole
 
 
-Compass heading depends upon the reference axes and so it changes with the device orientation. You compensate based on the this table (assume the user is facing north).
+L’orientation de la boussole dépend des axes de référence. Elle change donc avec l’orientation de l’appareil. Vous compensez en vous appuyant sur le tableau suivant (en supposant que l’utilisateur est orienté au nord).
 
-| Display orientation | Reference axis for compass heading | API compass heading when facing north | Compass heading compensation | 
+| Orientation de l’affichage | Axe de référence pour l’orientation de la boussole | Orientation de la boussole de l’API avec une orientation au nord | Compensation de l’orientation de la boussole | 
 |---------------------|------------------------------------|---------------------------------------|------------------------------|
-| Landscape           | -Z | 0   | Heading               |
-| Portrait            |  Y | 90  | (Heading + 270) % 360 | 
-| LandscapeFlipped    |  Z | 180 | (Heading + 180) % 360 |
-| PortraitFlipped     |  Y | 270 | (Heading + 90) % 360  |
+| Paysage           | -Z | 0   | Orientation               |
+| Portrait            |  Y | 90  | (Orientation + 270) % 360 | 
+| LandscapeFlipped    |  Z | 180 | (Orientation + 180) % 360 |
+| PortraitFlipped     |  Y | 270 | (Orientation + 90) % 360  |
 
-Modify the compass heading as shown in the table in order to correctly display the heading. The following code snippet demonstrates how to do this.
+Modifiez le cap de la boussole tel qu’indiqué dans le tableau pour afficher correctement le cap. L’extrait de code suivant montre comment procéder.
 
 ```csharp
 private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
@@ -94,18 +94,18 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 }
 ```
 
-## Display orientation with the accelerometer and gyrometer
+## Orientation de l’affichage avec l’accéléromètre et le gyromètre
 
-This table converts accelerometer and gyrometer data for display orientation.
+Le tableau suivant convertit les données de l’accéléromètre et du gyromètre pour obtenir l’orientation de l’affichage.
 
-| Reference axes        |  X |  Y | Z |
+| Axes de référence        |  X |  Y | Z |
 |-----------------------|----|----|---|
-| **Landscape**         |  X |  Y | Z |
+| **Paysage**         |  X |  Y | Z |
 | **Portrait**          |  Y | -X | Z |
 | **LandscapeFlipped**  | -X | -Y | Z |
 | **PortraitFlipped**   | -Y |  X | Z |
 
-The following code example applies these conversions to the gyrometer.
+L’exemple de code suivant applique ces conversions au gyromètre.
 
 ```csharp
 private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
@@ -148,21 +148,25 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 }
 ```
 
-## Display orientation and device orientation
+## Orientation d’affichage et orientation d’appareil
 
-The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
+Les données [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) doivent être modifiées d’une autre façon. Considérez ces différentes orientations comme des rotations dans le sens inverse des aiguilles d’une montre appliquées à l’axe des Z. Nous devons donc inverser la rotation pour revenir à l’orientation de l’utilisateur. Pour les données de quaternion, nous pouvons utiliser la formule d’Euler pour définir une rotation avec un quaternion de référence. Nous pouvons également utiliser une matrice de rotation de référence.
 
-![Euler's formula](images/eulers-formula.png)
-To get the relative orientation you want, multiply the reference object against the absolute object. Note that this math is not commutative.
+![Formule d’Euler](images/eulers-formula.png)
+Pour obtenir l’orientation relative souhaitée, multipliez l’objet de référence par l’objet absolu. Notez que cette formule mathématique n’est pas commutative.
 
-![Multiply the reference object against the absolute object](images/orientation-formula.png)
-In the preceding expression, the absolute object is returned by the sensor data.
+![Multipliez l’objet de référence par l’objet absolu](images/orientation-formula.png)
+Dans l’expression précédente, l’objet absolu est retourné par les données du capteur.
 
-| Display orientation  | Counterclockwise rotation around Z | Reference quaternion (reverse rotation) | Reference rotation matrix (reverse rotation) | 
+| Orientation de l’affichage  | Rotation dans le sens inverse des aiguilles d’une montre autour de Z | Quaternion de référence (rotation inverse) | Matrice de rotation de référence (rotation inverse) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **Landscape**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **Paysage**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
 | **Portrait**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
-| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1 0 0<br/> 0 0 1]             |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

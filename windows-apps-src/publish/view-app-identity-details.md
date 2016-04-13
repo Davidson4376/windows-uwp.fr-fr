@@ -1,6 +1,6 @@
 ---
-Description: Quand vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l’identité unique qui lui est affectée par le Windows Store et obtenir un lien d’accès à la description de votre application dans le Windows Store.
-title: Visualiser les informations d’identité des applications
+Quand vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l’identité unique qui lui est affectée par le Windows Store et obtenir un lien d’accès à la description de votre application dans le Windows Store.
+Visualiser les informations d’identité des applications
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ---
 
@@ -49,4 +49,8 @@ Lorsqu’un client clique sur ce lien, il accède automatiquement à la page de 
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

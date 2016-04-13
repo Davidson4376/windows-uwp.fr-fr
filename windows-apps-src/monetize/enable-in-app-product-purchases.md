@@ -1,6 +1,6 @@
 ---
-Description: Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
-title: Activer les achats de produits dans l’application
+Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
+Activer les achats de produits dans l’application
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 mots-clés : offre dans l’application
 mots-clés : achat dans l’application
@@ -134,4 +134,8 @@ Si vous avez besoin de reçus pour vérifier que l’utilisateur a bien effectu�
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

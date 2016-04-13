@@ -1,45 +1,45 @@
 ---
-title: Complete code for BasicReaderWriter
-description: Complete code for a class and methods for reading and writing binary data files in general.
+Code complet de BasicReaderWriter
+Code complet pour une classe et des méthodes permettant de lire et écrire des fichiers de données binaires en général.
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ---
 
-# Complete code for BasicReaderWriter
+# Code complet de BasicReaderWriter
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Complete code for a class and methods for reading and writing binary data files in general. Used by the [BasicLoader](complete-code-for-basicloader.md) class.
+Code complet pour une classe et des méthodes permettant de lire et écrire des fichiers de données binaires en général. Utilisé par la classe [BasicLoader](complete-code-for-basicloader.md).
 
-This topic contains these sections:
+Cette rubrique contient les sections suivantes :
 
 -   [Technologies](#technologies)
--   [Requirements](#requirements)
--   [View the code (C++)](#view-the-code-c-)
+-   [Configuration requise](#requirements)
+-   [Afficher le code (C++)](#view-the-code-c-)
 
 
-## Download location
+## Emplacement de téléchargement
 
-This sample is not available for download.
+Cet exemple n’est pas disponible en téléchargement.
 
 
 ## Technologies
 
 |                       |                 |
 |-----------------------|-----------------|
-| Programming languages | C++             |
-| Programming models    | Windows Runtime |
+| Langages de programmation | C++             |
+| Modèles de programmation    | Windows Runtime |
 
 
-## Requirements
+## Configuration requise
 
-| Minimum supported client | Windows 10                            |
+| Client minimal pris en charge | Windows 10                            |
 |--------------------------|---------------------------------------|
-| Minimum supported server | Windows Server 2016 Technical Preview |
-| Minimum required SDK     |                                       |
+| Serveur minimal pris en charge | Windows Server 2016 Technical Preview |
+| Kit de développement logiciel (SDK) au minimum requis     |                                       |
 
 
-## View the code (C++)
+## Afficher le code (C++)
 
 
 ## BasicReaderWriter.h
@@ -263,4 +263,8 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

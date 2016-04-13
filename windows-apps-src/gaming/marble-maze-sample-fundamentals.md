@@ -1,93 +1,93 @@
 ---
-Marble Maze sample fundamentals
-This document describes the fundamental characteristics of the Marble Maze project, for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built.
+Notions de base de l’exemple Marble Maze
+Ce document présente les principales caractéristiques du projet Marble Maze, notamment la façon dont il utilise Visual C++ dans l’environnement Windows Runtime, mais également la façon dont il est créé, structuré et généré.
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ---
 
-# Marble Maze sample fundamentals
+# Notions de base de l’exemple Marble Maze
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-This document describes the fundamental characteristics of the Marble Maze project, for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built. The document also describes several of the conventions that are used in the code.
+Ce document présente les principales caractéristiques du projet Marble Maze, notamment, la façon dont il utilise Visual C++ dans l’environnement Windows Runtime, mais également la façon dont il est créé, structuré et généré. Ce document décrit également plusieurs des conventions utilisées dans le code.
 
-> **Note**   The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
+> **Remarque** L’exemple de code correspondant à ce document est disponible dans l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
 
  
 ## 
-Here are some of the key points that this document discusses for when you plan and develop your Universal Windows Platform (UWP) game.
+Ce document traite certains points importants relatifs à la planification et au développement de votre jeu de plateforme Windows universelle (UWP).
 
--   Use the **DirectX 11 App (Universal Windows)** template in a C++ application to create your DirectX UWP game. Use Visual Studio to build a UWP app project as you would build a standard project.
--   The Windows Runtime provides classes and interfaces so that you can develop UWP apps in a more modern, object-oriented manner.
--   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) to manage the lifetime of COM objects, and [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026.aspx) or [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601.aspx) to manage the lifetime of all other heap-allocated C++ objects.
--   In most cases, use exception handling, instead of result codes, to deal with unexpected errors.
--   Use SAL annotations together with code analysis tools to help discover errors in your app.
+-   Utilisez le modèle **Application DirectX 11 (Windows universelle)** dans une application C++ pour créer votre jeu UWP en DirectX. Utilisez Visual Studio pour générer un projet d’application pour UWP, comme vous le feriez pour générer un projet standard.
+-   Windows Runtime fournit des classes et des interfaces vous permettant de développer des applications UWP grâce à une approche orientée objet plus moderne.
+-   Utilisez des références d’objet comportant le symbole d’accent circonflexe (^) pour gérer la durée de vie des variables Windows Runtime, [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) pour gérer la durée de vie des objets COM et [**std::shared_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026.aspx) ou [**std::unique_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601.aspx) pour gérer la durée de vie de tous les autres objets C++ alloués par segment de mémoire.
+-   Dans la majorité des cas, utilisez la gestion des exceptions plutôt que les codes de résultats pour gérer les erreurs inattendues.
+-   Utilisez les annotations SAL et les outils d’analyse du code pour découvrir les erreurs présentes dans votre application.
 
-## Creating the Visual Studio project
+## Création du projet Visual Studio
 
 
-If you've downloaded and extracted the sample, you can open the MarbleMaze.sln solution file in Visual Studio, and you'll have the code in front of you. You can also view the source on the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN Samples Gallery page by selecting the **Browse Code** tab.
+Si vous avez téléchargé et extrait l’exemple, ouvrez le fichier solution MarbleMaze.sln dans Visual Studio pour visualiser le code. Vous pouvez également afficher la source sur la page de la galerie MSDN de l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011) sous l’onglet **Parcourir le code**.
 
-When we created the Visual Studio project for Marble Maze, we started with an existing project. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows)** template because it provides a basic working 3-D application.
+Nous sommes partis d’un projet existant pour la création du projet Visual Studio pour Marble Maze. Toutefois, si vous ne disposez pas déjà d’un projet offrant les fonctionnalités de base nécessaires à votre jeu pour UWP en DirectX, nous vous recommandons de créer un projet à partir du modèle Visual Studio **Application DirectX 11 (Windows universelle)** qui fournit une application 3D avec les fonctionnalités de base en question.
 
-One important project setting in the **DirectX 11 App (Universal Windows)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template.
+L’un des paramètres de projet importants du modèle **Application DirectX 11 (Windows universelle)** est l’option **/ZW** qui permet au programme d’utiliser les extensions de langage Windows Runtime. Cette option est activée par défaut lorsque vous utilisez le modèle Visual Studio.
 
-> **Caution**   The **/ZW** option is not compatible with options such as **/clr**.In the case of **/clr**, this means that you cannot target both the .NET Framework and the Windows Runtime from the same Visual C++ project.
+> **Attention** L’option **/ZW** n’est pas compatible avec les options telles que **/clr**. Dans le cas de l’option **/clr**, cela signifie qu’il n’est pas possible de cibler à la fois .NET Framework et Windows Runtime s’ils appartiennent à un même projet Visual C++.
 
  
 
-Every UWP app that you acquire from the Windows Store comes in the form of an app package. An app package contains a package manifest, which contains information about your app. For example, you can specify the capabilities (that is, the required access to protected system resources or user data) of your app. If you determine that your app requires certain capabilities, use the package manifest to declare the required capabilities. The manifest also lets you specify project properties such as supported device rotations, tile images, and the splash screen. For more info about app packages, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969).
+Chaque application UWP que vous achetez dans le Windows Store est fournie sous la forme d’un package d’application. Un package d’application comprend un manifeste de package qui contient des informations sur votre application. Par exemple, vous pouvez spécifier les capacités (autrement dit, l’accès requis aux ressources système ou aux données utilisateur protégées) de votre application. Si vous déterminez que votre application a besoin de certaines fonctionnalités, utilisez le manifeste du package pour les déclarer. Le manifeste vous permet également de spécifier des propriétés de projet telles que les rotations prises en charge de l’appareil, les images de la vignette et l’écran de démarrage. Pour plus d’informations sur les packages d’application, voir [Packaging d’applications](https://msdn.microsoft.com/library/windows/apps/mt270969).
 
-##  Building, deploying, and running the game
-
-
-Build a UWP app project as you would build a standard project. (On the menu bar, choose **Build, Build Solution**.) The build step compiles the code and also packages it for use as a UWP app.
-
-After you build the project, you must deploy it.(On the menu bar, choose **Build, Deploy Solution**.) Visual Studio also deploys the project when you run the game from the debugger.
-
-After you deploy the project, pick the Marble Maze tile to run the game. Alternatively, from Visual Studio, on the menu bar, choose **Debug, Start Debugging**.
-
-###  Controlling the game
-
-You can use touch, the accelerometer, the Xbox 360 controller, or the mouse to control Marble Maze.
-
--   Use the directional pad on the controller to change the active menu item.
--   Use touch, the A button, the Start button, or the mouse to pick a menu item.
--   Use touch, the accelerometer, the left thumbstick, or the mouse to tilt the maze.
--   Use touch, the A button, the Start button, or the mouse to close menus such as the high score table.
--   Use the Start button or the P key to pause or resume the game.
--   Use the Back button on the controller or the Home key on the keyboard to restart the game.
--   When the high-score table is visible, use the Back button or Home key to clear all scores.
-
-##  Code conventions
+##  Génération, déploiement et exécution du jeu
 
 
-The Windows Runtime is a programming interface that you can use to create UWP apps that run only in a special application environment. Such apps use authorized functions, data types, and devices, and are distributed from the Windows Store. At the lowest level, the Windows Runtime consists of an Application Binary Interface (ABI). The ABI is a low-level binary contract that makes Windows Runtime APIs accessible to multiple programming languages such as JavaScript, the .NET languages, and Visual C++.
+Générez un projet d’application UWP à la manière d’un projet standard. (Dans la barre de menus, sélectionnez **Générer, Générer la solution**.) Au cours de l’étape de génération, le code est compilé et ajouté dans un package prêt à être utilisé comme une application UWP.
 
-In order to call Windows Runtime APIs from JavaScript and .NET, those languages require projections that are specific to each language environment. When you call a Windows Runtime API from JavaScript or .NET, you are invoking the projection, which in turn calls the underlying ABI function. Although you can call the ABI functions directly in C++, Microsoft provides projections for C++ as well, because they make it much simpler to consume the Windows Runtime APIs, while still maintaining high performance. Microsoft also provides language extensions to Visual C++ that specifically support the Windows Runtime projections. Many of these language extensions resemble the syntax for the C++/CLI language. However, instead of targeting the common language runtime (CLR), native apps use this syntax to target the Windows Runtime. The object reference, or hat (^), modifier is an important part of this new syntax because it enables the automatic deletion of runtime objects by means of reference counting. Instead of calling methods such as **AddRef** and **Release** to manage the lifetime of a Windows Runtime object, the runtime deletes the object when no other component references it, for example, when it leaves scope or you set all references to **nullptr**. Another important part of using Visual C++ to create UWP apps is the **ref new** keyword. Use **ref new** instead of **new** to create reference-counted Windows Runtime objects. For more info, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822).
+Après avoir généré le projet, vous devez le déployer. (Dans la barre de menus, choisissez **Générer, Déployer la Solution**.) Visual Studio déploie aussi le projet lorsque vous exécutez le jeu à partir du débogueur.
+
+Après avoir déployé le projet, choisissez la vignette Marble Maze pour exécuter le jeu. Ou bien, à partir de Visual Studio, dans la barre de menus, choisissez **Déboguer, Démarrer le débogage**.
+
+###  Contrôle du jeu
+
+Vous pouvez utiliser les fonctions tactiles, l’accéléromètre, la manette Xbox 360 ou la souris pour contrôler le jeu Marble Maze.
+
+-   Utilisez la croix directionnelle de la manette pour modifier l’élément de menu actif.
+-   Utilisez les fonctions tactiles, le bouton A, le bouton Démarrer ou la souris pour sélectionner un élément de menu.
+-   Utilisez les fonctions tactiles, l’accéléromètre, le stick analogique gauche ou la souris pour incliner le jeu.
+-   Utilisez les fonctions tactiles, le bouton A, le bouton Démarrer ou la souris pour fermer les menus, tels que le tableau des scores.
+-   Utilisez le bouton Démarrer ou la touche P pour suspendre ou redémarrer le jeu.
+-   Utilisez le bouton Retour de la manette ou la touche Début du clavier pour redémarrer le jeu.
+-   Quand le tableau des scores est visible, utilisez le bouton Retour ou la touche Début pour effacer tous les scores.
+
+##  Conventions de code
+
+
+Windows Runtime est une interface de programmation permettant de créer des applications pour UWP qui ne peuvent être exécutées que dans un environnement d’application particulier. Ces applications utilisent des fonctionnalités, des types de données et des appareils autorisés, et sont distribuées par le biais du Windows Store. Au niveau le plus bas, Windows Runtime est composé d’une interface binaire d’application. L’interface binaire d’application est un contrat binaire de bas niveau qui rend les API Windows Runtime accessibles à plusieurs langages de programmation tels que les langages JavaScript, .NET et Visual C++.
+
+Afin d’appeler les API Windows Runtime à partir des langages JavaScript et .NET, ces langages nécessitent des projections spécifiques à chaque environnement de langage. Quand vous appelez une API Windows Runtime à partir du langage JavaScript ou .NET, vous invoquez la projection, laquelle appelle à son tour la fonction ABI sous-jacente. Bien que vous puissiez également appeler les fonctions ABI directement à partir du langage C++, Microsoft fournit également des projections pour C++, car elles permettent de consommer nettement plus facilement les API Windows Runtime, tout en maintenant de hautes performances. Microsoft fournit également des extensions de langage pour Visual C++ qui prennent en charge spécifiquement les projections Windows Runtime. Plusieurs de ces extensions de langage présentent une syntaxe similaire à celle du langage C++/CLI. Toutefois, au lieu de cibler l’environnement CLR (Common Langage Runtime), les applications natives utilisent cette syntaxe pour cibler Windows Runtime. Le modificateur de référence d’objet, ou accent circonflexe (^), est un élément important de cette nouvelle syntaxe, car il permet l’effacement automatique des objets d’exécution au moyen du décompte de références. Au lieu d’appeler des méthodes telles que **AddRef** et **Release** pour gérer la durée de vie d’un objet Windows Runtime, le runtime supprime l’objet quand aucun autre composant ne le référence, par exemple lorsqu’il quitte l’étendue ou que vous attribuez la valeur **nullptr** à toutes les références. Une autre partie importante de l’utilisation de Visual C++ pour créer des applications UWP correspond au mot-clé **ref new**. Utilisez **ref new** à la place de **new** pour créer des objets Windows Runtime avec décompte des références. Pour plus d’informations, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822).
 
 > **Important**  
-You only have to use **^** and **ref new** when you create Windows Runtime objects or create Windows Runtime components. You can use the standard C++ syntax when you write core application code that does not use the Windows Runtime.
+Vous devez uniquement utiliser **^** et **ref new** quand vous créez des objets ou des composants Windows Runtime. La syntaxe C++ standard peut vous servir à écrire du code de l’application principale qui n’utilise pas Windows Runtime.
 
-Marble Maze uses **^** together with [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) to manage heap-allocated objects and minimize memory leaks. We recommend that you use ^ to manage the lifetime of Windows Runtime variables, **ComPtr** to manage the lifetime of COM variables (such as when you use DirectX), and std::[**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026) or [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601) to manage the lifetime of all other heap-allocated C++ objects.
+Marble Maze utilise **^** et [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) pour gérer les objets alloués par segment de mémoire et limiter les fuites de mémoire. Nous vous conseillons d’utiliser ^ pour gérer la durée de vie des variables Windows Runtime, **ComPtr** pour gérer la durée de vie des variables COM (comme quand vous utilisez DirectX) et std::[**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026) ou [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601) pour gérer la durée de vie de tous les autres objets C++ alloués par segment de mémoire.
 
  
 
-For more info about the language extensions that are available to a C++ UWP app, see [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh699871).
+(Pour plus d’informations sur les extensions de langage qui sont à la disposition d’une application UWP en C++, voir [Informations de référence sur le langage Visual C++ (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh699871).)
 
-###  Error handling
+###  Gestion des erreurs
 
-Marble Maze uses exception handling as the primary way to deal with unexpected errors. Although game code traditionally uses logging or error codes, such as **HRESULT** values, to indicate errors, exception handling has two main advantages. First, it can make the code easier to read and maintain. From a code perspective, exception handling is a more efficient way to propagate an error to a routine that can handle that error. The use of error codes typically requires each function to explicitly propagate errors. A second advantage is that you can configure the Visual Studio debugger to break when an exception occurs so that you can stop immediately at the location and context of the error. The Windows Runtime also uses exception handling extensively. Therefore, by using exception handling in your code, you can combine all error handling into one model.
+Le jeu Marble Maze utilise la gestion des exceptions comme principal moyen de traiter les erreurs inattendues. Même si le code de jeu utilise généralement des codes de journalisation ou des codes d’erreur, tels que les valeurs **HRESULT** pour indiquer des erreurs, la gestion des exceptions présente deux principaux avantages. En premier lieu, elle facilite la lecture et la maintenance du code. Du point de vue du code, la gestion des exceptions constitue un moyen plus efficace de propager une erreur vers une routine qui se chargera de sa gestion. L’utilisation de codes d’erreur exige généralement que chaque fonction propage explicitement les erreurs. L’autre avantage est que vous pouvez configurer le débogueur Visual Studio de façon à s’arrêter immédiatement au niveau de l’emplacement et du contexte de l’erreur quand une exception est levée. Windows Runtime a largement recours à la gestion des exceptions. Par conséquent, en utilisant la gestion des exceptions dans votre code, vous pouvez combiner toute la gestion des exceptions en un seul modèle.
 
-We recommend that you use the following conventions in your error handling model:
+Nous vous recommandons d’utiliser les conventions suivantes dans votre modèle de gestion des erreurs :
 
--   Use exceptions to communicate unexpected errors.
--   Do not use exceptions to control the flow of code.
--   Catch only the exceptions that you can safely handle and recover from. Otherwise, do not catch the exception and allow the app to terminate.
--   When you call a DirectX routine that returns **HRESULT**, use the **DX::ThrowIfFailed** function. This function is defined in DirectXSample.h.**ThrowIfFailed** throws an exception if the provided **HRESULT** is an error code. For example, **E\_POINTER** causes **ThrowIfFailed** to throw [**Platform::NullReferenceException**](https://msdn.microsoft.com/library/windows/apps/hh755823.aspx).
+-   Utilisez des exceptions pour communiquer des erreurs inattendues.
+-   N’utilisez pas les exceptions pour contrôler le flux de code.
+-   Interceptez uniquement les exceptions que vous pouvez gérer sans risque et à partir desquelles une récupération est possible. Sinon, n’interceptez pas l’exception et laissez l’application s’arrêter.
+-   Quand vous appelez une routine DirectX qui renvoie **HRESULT**, utilisez la fonction **DX::ThrowIfFailed**. Cette fonction est définie dans DirectXSample.h. **ThrowIfFailed** lève une exception si la valeur **HRESULT** fournie est un code d’erreur. Par exemple, **E\_POINTER** provoque la levée de [**Platform::NullReferenceException**](https://msdn.microsoft.com/library/windows/apps/hh755823.aspx) par **ThrowIfFailed**.
 
-    When you use **ThrowIfFailed**, put the DirectX call on a separate line to help improve code readability, as shown in the following example.
+    Quand vous utilisez **ThrowIfFailed**, placez l’appel DirectX sur une ligne distincte pour améliorer la lisibilité du code, comme illustré dans l’exemple suivant.
 
     ```cpp
     // Identify the physical adapter (GPU or card) this device is running on.
@@ -97,15 +97,15 @@ We recommend that you use the following conventions in your error handling model
         );
     ```
 
--   Although we recommend that you avoid the use of **HRESULT** for unexpected errors , it is more important to avoid the use of exception handling to control the flow of code. Therefore, it is preferred to use an **HRESULT** return value when necessary to control the flow of code.
+-   Même si l’utilisation de **HRESULT** pour les erreurs inattendues est à éviter, il est encore plus important d’éviter celle de la gestion des exceptions pour contrôler le flux de code. Utilisez plutôt une valeur de retour **HRESULT**, si nécessaire, pour contrôler le flux de code.
 
-###  SAL annotations
+###  Annotations SAL
 
-Use SAL annotations together with code analysis tools to help discover errors in your app.
+Utilisez les annotations SAL et les outils d’analyse du code pour découvrir les erreurs présentes dans votre application.
 
-By using Microsoft source-code annotation language (SAL), you can annotate, or describe, how a function uses its parameters. SAL annotations also describe return values. SAL annotations work with the C/C++ Code Analysis tool to discover possible defects in C and C++ source code. Common coding errors reported by the tool include buffer overruns, uninitialized memory, null pointer dereferences, and memory and resource leaks.
+Le langage SAL de Microsoft vous permet d’annoter (ou décrire) la façon dont une fonction utilise ses paramètres. Les annotations SAL décrivent également des valeurs de retour. Les annotations SAL peuvent être utilisées conjointement à l’outil d’analyse du code C/C++ pour découvrir les éventuelles erreurs du code source C ou C++. Les erreurs de codage courantes signalées par l’outil sont notamment les dépassements de mémoire tampon, une mémoire non initialisée, les déréférencements du pointeur Null et les fuites de mémoire et de ressources.
 
-Consider the **BasicLoader::LoadMesh** method, which is declared in BasicLoader.h. This method uses \_In\_ to specify that *filename* is an input parameter (and therefore will only be read from), \_Out\_ to specify that *vertexBuffer* and *indexBuffer* are output parameters (and therefore will only be written to), and \_Out\_opt\_ to specify that *vertexCount* and *indexCount* are optional output parameters (and might be written to). Because *vertexCount* and *indexCount* are optional output parameters, they are allowed to be **nullptr**. The C/C++ Code Analysis tool examines calls to this method to ensure that the parameters it passes meet these criteria.
+Utilisez plutôt la méthode **BasicLoader::LoadMesh** qui est déclarée dans BasicLoader.h. Cette méthode utilise \_In\_ pour spécifier que *filename* est un paramètre d’entrée (et qu’il ne peut donc faire l’objet que d’une lecture), \_Out\_ pour indiquer que *vertexBuffer* et *indexBuffer* sont des paramètres de sortie (et qu’ils feront donc uniquement l’objet d’une écriture) et \_Out\_opt\_ pour spécifier que *vertexCount* et *indexCount* sont des paramètres de sortie facultatifs (pouvant faire l’objet d’une écriture). Étant donné que *vertexCount* et *indexCount* sont des paramètres de sortie optionnels, ils peuvent avoir la valeur **nullptr**. L’outil d’analyse du code C/C++ examine les appels à cette méthode pour s’assurer que les paramètres qu’elle transmet répondent à ces critères.
 
 ```cpp
 void LoadMesh(
@@ -117,26 +117,30 @@ void LoadMesh(
     );
 ```
 
-To perform code analysis on your app, on the menu bar, choose **Build, Run Code Analysis on Solution**. For more info about code analysis, see [Analyzing C/C++ Code Quality by Using Code Analysis](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx).
+Pour effectuer l’analyse du code de votre application, dans la barre de menus, sélectionnez **Générer, Exécuter l’analyse du code sur la solution**. Pour plus d’informations sur l’analyse de code, voir [Analyse de la qualité du code C/C++ à l’aide de l’analyse du code](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx).
 
-The complete list of available annotations is defined in sal.h. For more info, see [SAL Annotations](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx).
+La liste complète des annotations disponibles est définie dans le fichier sal.h. Pour plus d’informations, voir [Annotations SAL](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx).
 
-## Next steps
-
-
-Read [Marble Maze application structure](marble-maze-application-structure.md) for information about how the Marble Maze application code is structured and how the structure of a DirectX UWP app differs from that of a traditional desktop application.
-
-## Related topics
+## Étapes suivantes
 
 
-* [Marble Maze application structure](marble-maze-application-structure.md)
-* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+Pour plus d’informations sur la structure du code de l’application Marble Maze, ainsi que sur les différences entre la structure d’une application UWP en DirectX et celle d’une application de bureau classique, voir [Structure de l’application Marble Maze](marble-maze-application-structure.md).
+
+## Rubriques connexes
+
+
+* [Structure de l’application Marble Maze](marble-maze-application-structure.md)
+* [Développement de Marble Maze, jeu pour UW en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,12 +1,12 @@
 ---
-description: Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez C#, Visual Basic ou les extensions de composants Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur.
-title: Vue d’ensemble des événements et des événements routés
+Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez C#, Visual Basic ou les extensions de composants Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur.
+Vue d’ensemble des événements et des événements routés
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ---
 
 # Vue d’ensemble des événements et des événements routés
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **API importantes**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -259,7 +259,7 @@ Vous pouvez déterminer les éléments qui se trouvent à la même position qu�
 
 Un petit nombre d’éléments d’interface utilisateur prend en charge les *commandes*. Les commandes utilisent les événements routés associés à une entrée dans leur implémentation sous-jacente et permettent de traiter l’entrée d’interface utilisateur associée (une certaine action du pointeur, une touche d’accès rapide spécifique) en invoquant un seul gestionnaire de commandes. Si les commandes sont disponibles pour un élément d’interface utilisateur, envisagez d’utiliser ses API de commandes plutôt que les événements d’entrée discrets. Vous utilisez généralement une référence **Binding** dans les propriétés d’une classe qui définit le modèle d’affichage pour les données. Les propriétés contiennent des commandes nommées qui implémentent le modèle de commandes **ICommand** spécifique au langage. Pour plus d’informations, voir [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740).
 
-## Événement personnalisés dans Windows Runtime
+## Événements personnalisés dans Windows Runtime
 
 Dans le cadre de la définition d’événements personnalisés, la façon dont vous ajoutez l’événement et ce qu’il signifie pour votre conception de classe dépendent beaucoup du langage de programmation utilisé.
 
@@ -285,4 +285,8 @@ La définition d’un événement personnalisé s’effectue généralement dans
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,37 +1,45 @@
 ---
-Template settings classes
-Template settings classes
+Classes de paramètres du modèle
+Classes de paramètres du modèle
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ---
 
-# Template settings classes
+# Classes de paramètres du modèle
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Prerequisites
+## Prérequis
 
-We assume that you can add controls to your UI, set their properties, and attach event handlers. For instructions for adding controls to your app, see [Add controls and handle events](https://msdn.microsoft.com/library/windows/apps/mt228345). We also assume that you know the basics of how to define a custom template for a control by making a copy of the default template and editing it. For more info on this, see [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+Il est supposé que vous savez ajouter des contrôles à une interface utilisateur, définir leurs propriétés et joindre des gestionnaires d’événements. Pour obtenir des instructions sur l’ajout de contrôles à une application, voir [Ajouter des contrôles et gérer les événements](https://msdn.microsoft.com/library/windows/apps/mt228345). Nous partons également du principe que vous connaissez les bases de la définition d’un modèle personnalisé d’un contrôle en modifiant une copie du modèle par défaut. Pour plus d’informations, voir [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
-## The scenario for **TemplateSettings** classes
+## Scénario relatif aux classes **TemplateSettings**
 
-**TemplateSettings** classes provide a set of properties that are used when you define a new control template for a control. The properties have values such as pixel measurements for the size of certain UI element parts. The values are sometimes calculated values that come from control logic that isn't typically easy to override or even access. Some of the properties are intended as **From** and **To** values that control transitions and animations of parts, and thus the relevant **TemplateSettings** properties come in pairs.
+Les classes **TemplateSettings** fournissent un ensemble de propriétés qui sont utilisées lorsque vous définissez un nouveau modèle pour un contrôle. Les propriétés possèdent des valeurs, par exemple des mesures en pixels, correspondant à la taille de certains éléments d’interface utilisateur. Ces valeurs sont parfois des valeurs calculées qui proviennent de la logique de contrôle qui n’est généralement pas facile à remplacer ni même accessible. Certaines propriétés se veulent des valeurs **From** et **To** qui contrôlent les transitions et les animations des parties. Les propriétés **TemplateSettings** appropriées sont donc fournies par paires.
 
-There are several **TemplateSettings** classes. All of them are in the [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) namespace. Here's a list of the classes, and a link to the **TemplateSettings** property of the relevant control. This **TemplateSettings** property is how you access the **TemplateSettings** values for the control, and can establish template bindings to its properties:
+Voici plusieurs classes **TemplateSettings**. Elles figurent toutes dans l’espace de noms [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Voici une liste des classes et un lien vers la propriété **TemplateSettings** du contrôle approprié. Cette propriété **TemplateSettings** indique comment accéder aux valeurs **TemplateSettings** du contrôle et établir des liaisons de modèle à ses propriétés :
 
--   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): value of [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
--   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): value of [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
--   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): value of [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
--   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): value of [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
--   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): value of [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
--   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): value of [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
--   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): value of [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
--   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): value of [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
+-   [
+            **ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) : valeur [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [
+            **GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499) : valeur [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [
+            **ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948) : valeur [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [
+            **ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856) : valeur [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [
+            **ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248) : valeur [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [
+            **SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721) : valeur [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [
+            **ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804) : valeur [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [
+            **ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813) : valeur [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
-**TemplateSettings** properties are always intended to be used in XAML, not code. They are read-only sub-properties of a read-only **TemplateSettings** property of a parent control. For an advanced custom control scenario, where you're creating a new [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390)-based class and thus can influence the control logic, consider defining a custom **TemplateSettings** property on the control in order to communicate info that might be useful for anyone that is re-templating the control. As that property's read-only value, define a new **TemplateSettings** class related to your control that has read-only properties for each of the info items that are relevant for template measurements, animation positioning, and so on, and give callers the runtime instance of that class that's initialized using your control logic. **TemplateSettings** classes are derived from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), so that the properties can use the dependency property system for property-changed callbacks. But the dependency property identifiers for the properties aren't exposed as public API, because the **TemplateSettings** properties are meant to be read-only to callers.
+Les propriétés **TemplateSettings** sont toujours destinées à être utilisées en XAML. Ce sont des sous-propriétés en lecture seule d’une propriété **TemplateSettings** en lecture seule d’un contrôle parent. Pour un scénario de contrôle personnalisé avancé, lorsque vous créez une classe basée sur [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) et pouvez donc influer sur la logique de contrôle, pensez à définir une propriété **TemplateSettings** personnalisée sur le contrôle pour communiquer des informations pouvant être utiles à toute personne qui recrée le modèle du contrôle. Pour la valeur de cette propriété en lecture seule, définissez une nouvelle classe **TemplateSettings** liée à votre contrôle qui possède des propriétés en lecture seule pour chacune des informations qui sont pertinentes pour les mesures de modèle, le positionnement d’animation, etc. et qui donnent aux appelants l’instance d’exécution de cette classe, qui est initialisée à l’aide de votre logique de contrôle. Les classes **TemplateSettings** sont dérivées de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) afin que les propriétés puissent utiliser le système de propriétés de dépendance pour les rappels de modification de propriété. Mais les identificateurs de propriété de dépendance pour les propriétés ne sont pas exposés comme API publique, car les propriétés **TemplateSettings** sont censées être en lecture seule pour les appelants.
 
-## How to use **TemplateSettings** in a control template
+## Comment utiliser **TemplateSettings** dans un modèle de contrôle
 
-Here's an example that comes from the starting default XAML control templates. This particular one is from the default template of [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538):
+Voici un exemple qui provient des modèles de contrôles XAML par défaut de départ. Cet exemple particulier provient du modèle par défaut [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) :
 
 ```xaml
 <Ellipse
@@ -46,7 +54,7 @@ Here's an example that comes from the starting default XAML control templates. T
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-The full XAML for the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) template is hundreds of lines, so this is just a tiny excerpt. This XAML defines a control part that is one of 6 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) elements that portray the spinning animation for indeterminate progress. As a developer, you might not like the circles and might use a different graphics primitive or a different basic shape for how the animation progresses. For example, you might compose a **ProgressRing** that uses a set of [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) elements arranged in a square instead. If so, each individual **Rectangle** component of your new template might look like this:
+Comme le code XAML complet du modèle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) contient des centaines de lignes, il s’agit là d’un extrait minuscule. Ce code XAML définit une partie d’un contrôle qui est l’un des 6 éléments [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343), qui dépeignent l’animation de rotation de progression indéterminée. En tant que développeur, vous n’aimez peut-être pas les cercles et vous souhaitez peut-être utiliser une autre primitive graphique ou une autre forme de base pour la progression de l’animation. Par exemple, vous pouvez composer à la place un **ProgressRing** utilisant un ensemble d’éléments [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) organisés dans un carré. Si tel est le cas, chaque composant **Rectangle** individuel de votre nouveau modèle peut ressembler à ceci :
 
 ```xaml
 <Rectangle
@@ -60,9 +68,9 @@ The full XAML for the [**ProgressRing**](https://msdn.microsoft.com/library/wind
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-The reason that the **TemplateSettings** properties are useful here is because they are calculated values coming from the basic control logic of [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538). The calculation is dividing up the overall [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) and [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) of the **ProgressRing**, and allotting a calculated measurement for each of the motion elements in its templates so that the template parts can size to content.
+Les propriétés **TemplateSettings** sont utiles ici, car ce sont des valeurs calculées à partir de la logique de contrôle de base de [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538). Le calcul se divise en [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) et [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) de **ProgressRing**, et alloue une mesure calculée pour chacun des éléments de mouvement dans ses modèles pour que les composants de modèle puissent s’adapter au contenu.
 
-Here's another example usage from the default XAML control templates, this time showing one of the property sets that are the **From** and **To** of an animation. This is from the [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) default template:
+Voici un autre exemple d’utilisation des modèles de contrôles XAML par défaut, qui montre cette fois l’un des ensembles de propriétés qui sont le **From** et la **To** d’une animation. Il provient du modèle [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) par défaut :
 
 ```xaml
 <VisualStateGroup x:Name="DropDownStates">
@@ -85,13 +93,17 @@ Here's another example usage from the default XAML control templates, this time 
 </VisualStateGroup>
 ```
 
-Again there is lots of XAML in the template so we only show an excerpt. And this is only one of several states and theme animations that each use the same [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) properties. For [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348), use of the **ComboBoxTemplateSettings** values through bindings enforces that related animations in the template will stop and start at positions that are based on shared values, and thus transition smoothly.
+À nouveau, comme le code XAML contient de nombreuses lignes dans le modèle, il ne s’agit là que d’un extrait. Et ce n’est là que l’un des états et des animations de thème qui utilisent chacun les mêmes propriétés [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752). Pour [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348), l’utilisation des valeurs **ComboBoxTemplateSettings** par le biais des liaisons impose que les animations associées dans le modèle s’arrêteront et commenceront aux positions qui sont basées sur les valeurs partagées. La transition sera donc parfaite.
 
-**Note**  
-When you do use **TemplateSettings** values as part of your control template, make sure you're setting properties that match the type of the value. If not, you might need to create a value converter for the binding so that the target type of the binding can be converted from a different source type of the **TemplateSettings** value. For more info, see [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
+**Remarque**  
+Si vous utilisez les valeurs **TemplateSettings** dans le cadre de votre modèle de contrôle, assurez-vous de définir des propriétés qui correspondent au type de la valeur. Sinon, vous devrez peut-être créer un convertisseur de valeur pour la liaison afin que le type cible de la liaison puisse être converti à partir d’un type de source différent de la valeur **TemplateSettings**. Pour plus d’informations, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
-## Related topics
+## Rubriques connexes
 
-* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

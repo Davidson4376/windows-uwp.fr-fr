@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
-title: Quelle technologie de réseau ?
+Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
+Quelle technologie de réseau ?
 
 ---
 
@@ -130,4 +130,8 @@ L’API [**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/lib
 
 L’espace de noms [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) a trait aux SMS et aux messages similaires en tant qu’entités de bas niveau. Il est fourni à l’usage des opérateurs mobiles pour une utilisation des SMS orientée application, et est contrôlé par une fonctionnalité dont l’utilisation ne sera pas approuvée par la plupart des développeurs d’applications. Si vous écrivez une application pour traiter des messages, vous devez utiliser l’API [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) à la place, qui est conçue pour gérer non seulement les messages SMS, mais aussi les messages provenant d’autres sources telles que des applications de conversation en temps réel, en permettant une expérience de conversation/messagerie beaucoup plus riche.
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

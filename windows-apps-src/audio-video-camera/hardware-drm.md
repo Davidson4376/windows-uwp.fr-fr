@@ -1,7 +1,7 @@
 ---
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
-description: Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
-title: Gestion des droits numériques en fonction du matériel
+Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
+Gestion des droits numériques en fonction du matériel
 ---
 
 # Gestion des droits numériques en fonction du matériel
@@ -87,4 +87,8 @@ L’énumération [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/
 
 Vous pouvez également utiliser la propriété [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) pour obtenir le niveau de sécurité du certificat client afin de déterminer si la gestion des droits numériques en fonction du matériel est prise en charge. À moins que le niveau de sécurité renvoyé pour le certificat soit supérieur ou égal à 3 000, le client n’est pas individualisé ou configuré (auquel cas cette propriété renvoie 0) ou la gestion des droits numériques en fonction du matériel n’est pas utilisée (auquel cas cette propriété renvoie une valeur inférieure à 3 000).
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

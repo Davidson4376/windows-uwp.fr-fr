@@ -3,53 +3,58 @@ label: App bars/command bars
 template: detail.hbs
 ---
 
-# App bar and command bar
+# Barre de l’application et barre de commandes
 
-Command bars (also called "app bars") provide users with easy access to your app's most common tasks, and can be used to show commands or options that are specific to the user's context, such as a photo selection or drawing mode. They can also be used for navigation among app pages or between app sections. Command bars can be used with any navigation pattern.
+Les barres de commandes (également appelées « barres de l’application ») permettent aux utilisateurs d’accéder facilement aux actions les plus courantes de votre application. Elles peuvent également servir à afficher les commandes ou les options propres au contexte de l’utilisateur, par exemple celles relatives à la sélection de photos ou au mode dessin. Elles peuvent également être utilisées pour la navigation entre les pages ou les sections de l’application. Les barres de commandes peuvent être utilisées avec n’importe quel modèle de navigation.
 
-![Example of a command bar with icons](images/controls_appbar_icons.png)
+![Exemple d’une barre de commandes contenant des icônes](images/controls_appbar_icons.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
 -   [**CommandBar **](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)
 -   [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)
 -   [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)
 -   [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
-## Is this the right control
+## Est-ce le contrôle approprié ?
 
-The CommandBar control is a general-purpose, flexible, light-weight control that can display both complex content, such as images, progress bars, or text blocks, as well as simple commands such as [AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx), and [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx) controls.
+Le contrôle CommandBar est un contrôle à usage général, flexible et léger qui permet d’afficher du contenu complexe, comme des images, des barres de progression ou des blocs de texte, ainsi que des commandes simples, comme des contrôles [AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx), et [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx).
 
-XAML provides both the AppBar control and the CommandBar control. You should use the AppBar only when you are upgrading a Universal Windows 8 app that uses the AppBar, and need to minimize changes. For new apps in Windows 10, we recommend using the CommandBar control instead. This document assumes you are using the CommandBar control.
+XAML fournit les contrôles AppBar et CommandBar. Utilisez le contrôle AppBar uniquement lorsque vous mettez à niveau une application Windows 8 universelle qui utilise ce contrôle et si vous avez besoin de réduire les modifications. Pour les nouvelles applications dans Windows 10, nous vous recommandons plutôt d’utiliser le contrôle CommandBar. Ce document part du principe que vous utilisez le contrôle CommandBar.
 
-## Examples
+## Exemples
+Une barre de commandes développée dans l’application Photos Microsoft.
 
-![Example 1 of app bar placement](images/AppbarGuidelines_Placement1.png)
+![Barre de commandes dans l’application Photos Microsoft](images/control-examples/command-bar-photos.png)
 
-## Anatomy
+Une barre de commandes dans le Calendrier Outlook sur Windows Phone.
 
-By default, the command bar shows a row of icon buttons and a "see more" button, which is represented by an ellipsis \[•••\]. Here's the command bar created by the example code shown later. It's shown in its default, closed, compact state.
+![Barre de commandes dans l’application Calendrier Outlook](images/control-examples/command-bar-calendar-phone.png)
 
-![A closed command bar](images/command-bar-compact.png)
+## Anatomie
 
-The command bar can also be shown in a closed, minimal state that looks like this. See the [Open and closed states](#open-and-closed-states) section for more info. 
+Par défaut, la barre de commandes affiche une ligne de boutons d’icônes et un bouton « En savoir plus » facultatif, représentant des points de suspension \ [•••\]. Voici la barre de commandes créée par l’exemple de code présenté plus loin. Elle est présentée à l’état compact et fermé.
 
-![A closed command bar](images/command-bar-minimal.png)
+![Barre de commandes fermée](images/command-bar-compact.png)
 
-Here's the same command bar in its open state. The labels identify the main parts of the control.
+La barre de commandes peut également être affichée à l’état fermé minimal comme ce qui suit : Voir la section [États ouvert et fermé](#open-and-closed-states) pour plus d’informations.
 
-![A closed command bar](images/commandbar_anatomy_open.png)
+![Barre de commandes fermée](images/command-bar-minimal.png)
 
-The command bar is divided into 4 main areas:
-- The "see more" \[•••\] button is shown on the right of the bar, and is always visible. Pressing the "see more" \[•••\] button has 2 effects: it reveals the labels on the primary command buttons, and it opens the overflow menu if any secondary commands are present.
-- The content area is aligned to the left side of the bar. It is shown if the Content property is populated.
-- The primary command area is aligned to the right side of the bar, next to the "see more" \[•••\] button. It is shown if the PrimaryCommands property is populated.  
-- The overflow menu is shown only when the command bar is open and the SecondaryCommands property is populated.
+Voici la même barre de commandes à l’état ouvert. Les étiquettes identifient les principales parties du contrôle.
 
-The layout is reversed when the [FlowDirection]() is **RightToLeft**.
+![Barre de commandes fermée](images/commandbar_anatomy_open.png)
 
-## Create a command bar
-This example creates the command bar shown previously.
+La barre de commandes est divisée en 4 zones principales :
+- Le bouton « En savoir plus » \[•••\] apparaît à droite de la barre. Le fait d’appuyer sur « En savoir plus » \ [•••\] a 2 effets : cela fait apparaître les libellés sur les boutons de commande principaux, et ouvre le menu de dépassement en présence de commandes secondaires. 
+- La zone de contenu est alignée sur le côté gauche de la barre. Elle s’affiche si la propriété `Content` est remplie.
+- La zone de commande principale est alignée à droite de la barre, en regard du bouton « En savoir plus » \ [•••\]. Elle s’affiche si la propriété `PrimaryCommands` est remplie.  
+- Le menu de dépassement est visible uniquement quand la barre de commandes est ouverte et si la propriété `SecondaryCommands` est remplie. 
+
+La disposition est inversée lorsque [FlowDirection]() est défini sur **RightToLeft**.
+
+## Créer une barre de commandes
+Cet exemple permet de créer la barre de commandes illustrée précédemment.
 
 ```xaml
 <CommandBar>
@@ -72,65 +77,65 @@ This example creates the command bar shown previously.
 </CommandBar>
 ```
 
-## Commands and content
-The CommandBar control has 3 properties you can use to add commands and content: [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx), [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx), and [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx). 
+## Commandes et contenu
+Le contrôle CommandBar dispose de 3 propriétés qui vous permettent d’ajouter des commandes et du contenu :  [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx), [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx), et [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx).
 
-Give visiblity to the actions in the command bar based on their priority.
 
-### Primary actions and overflow
+### Actions principales et dépassement
 
-By default, items you add to the command bar are added to the **PrimaryCommands** collection. These commands are shown to the left of the "see more" \[•••\] button, in what we call the action space. Place the most important commands, the ones that you want to remain visible in the bar, in the action space. On the smallest screens (320 epx width), between 2-4 items will fit in the command bar's action space, depending on other on-screen UI.
+Par défaut, les éléments que vous ajoutez à la barre de commandes enrichissent la collection **PrimaryCommands**. Ces commandes apparaissent à gauche du bouton « En savoir plus » \ [•••\], dans ce que nous appelons l’espace d’action. Placez les commandes les plus importantes et celles que vous souhaitez laisser affichées, dans l’espace d’action. Sur les écrans plus petits (largeur de 320 epx), l’espace d’action de la barre de commandes peut contenir un maximum de 4 éléments.
 
-You can add commands to the **SecondaryCommands** collection, and these items are shown in the overflow area. Place less important commands within the overflow area.
+Vous pouvez ajouter des commandes à la collection **SecondaryCommands**. Ces éléments sont affichés dans la zone de dépassement. Placez les commandes les moins importantes dans la zone de dépassement.
 
-The default overflow area is styled to be distinct from the bar. You can adjust the styling by setting the [**CommandBarOverflowPresenterStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) property to a [Style](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) that targets the [**CommandBarOverflowPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx).
+Le style de la zone de dépassement par défaut est défini de manière à pouvoir être distingué de la barre. Vous pouvez ajuster les styles en définissant la propriété [**CommandBarOverflowPresenterStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) sur un [Style](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) qui cible [**CommandBarOverflowPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx).
 
-You can programmatically move commands between the PrimaryCommands and SecondaryCommands as needed. However, commands do not automatically move into or out of the overflow area as the command bar width changes.
+Vous pouvez déplacer par programme les commandes entre les propriétés PrimaryCommands et SecondaryCommands en fonction des besoins. 
 
-### App bar buttons
+### Boutons de la barre de l’application
 
-Both the PrimaryCommands and SecondaryCommands can be populated only with [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx), and [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) command elements. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is used in the action space or overflow area.
+Les propriétés PrimaryCommands et SecondaryCommands peuvent être remplies uniquement avec les éléments de commande [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx), et [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx). Ces contrôles sont optimisés pour une utilisation dans une barre de commandes, et leur apparence change selon que le contrôle est utilisé dans l’espace d’action ou la zone de dépassement.
 
-The app bar button controls are characterized by an icon and associated label. They have two sizes; normal and compact. By default, the text label is shown. When the [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) property is set to **true**, the text label is hidden. When used in a CommandBar control, the command bar sets the button's IsCompact property automatically as the command bar is opened and closed.
+Les contrôles des boutons de la barre de l’application sont caractérisés par une icône et un libellé associé. Ils ont deux tailles : normale et compacte. Par défaut, le texte du libellé s’affiche. Lorsque la propriété [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) est définie sur la valeur **true**, le libellé du texte est masqué. Lorsqu’elle est utilisée dans un contrôle CommandBar, la barre de commandes remplace automatiquement la propriété IsCompact du bouton lorsque la barre de commandes est ouverte et fermée.
 
-When you place an app bar button in the overflow menu (SecondaryCommands), it's shown as text only. Here's the same app bar toggle button shown in the action space as a primary command (top), and in the overflow area as a secondary command (bottom).
 
-![App bar button as primary and secondary command](images/app-bar-toggle-button-two-modes.png)
+Lorsque vous placez un bouton de barre de l’application dans le menu de dépassement (SecondaryCommands), il s’affiche sous forme de texte uniquement. Voici le même bouton bascule de la barre de l’application affiché dans l’espace action sous forme de commande principale (haut), et dans la zone de dépassement sous forme de commande secondaire (bas).
 
-- *If there is a command that would appear consistently across pages, it's best to keep that command in a consistent location.* 
-- *We recommended placing Accept, Yes, and OK commands to the left of Reject, No, and Cancel. Consistency gives users the confidence to move around the system and helps them transfer their knowledge of app navigation from app to app.*
+![Bouton de la barre de l’application sous forme de commande principale et secondaire](images/app-bar-toggle-button-two-modes.png)
 
-### Other content
+- *S’il existe une commande qui s’affiche de façon cohérente sur plusieurs pages, il est préférable de la laisser à un emplacement cohérent.*
+- *Nous recommandons de placer les commandes Accepter, Oui et OK à gauche des commandes Rejeter, Non et Annuler. La cohérence permet aux utilisateurs de se déplacer en toute confiance dans le système et de réutiliser leur connaissance de navigation d’une application à l’autre.*
 
-You can add any XAML elements to the content area by setting the **Content** property. If you want to add more than one element, you need to place them in a panel container and make the panel the single child of the Content property.
+### Libellé des boutons
 
-When there are both primary commands and content, the primary commands take precedence and may cause the content to be clipped.
-
-When the [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) is **Compact**, the content can be clipped if it is larger than the compact size of the command bar. You should handle the [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) and [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) events to show or hide parts of the UI in the content area so that they aren't clipped. See the [Open and closed states](#open-and-closed-states) section for more info.
-
-### Labels and tooltips
-
-If a text label for an app bar button is too long to fit on one line it will wrap to another line, increasing the overall height of the bar when it's opened. You can include a soft-hyphen character (0x00AD) in the text for a label to hint at the character boundary where a word break should occur. In XAML, you express this using an escape sequence, like this:
+Nous recommandons de créer des libellés courts pour les boutons de la barre de l’application, de préférence un seul mot. Les libellés longs placés sous l’icône du bouton de la barre de l’application s’étaleront sur plusieurs lignes, ce qui augmente la hauteur totale de la barre de commandes ouverte. Vous pouvez inclure un trait d’union conditionnel (0x00AD) dans le libellé pour indiquer l’endroit où une césure doit intervenir. En XAML, cela s’exprime par une séquence d’échappement, telle que celle qui suit :
 
 ```xaml
 <AppBarButton Icon="Back" Label="Areally&#x00AD;longlabel"/>
 ```
 
-When the label wraps at the hinted location, it looks like this.
+Lorsque le libellé est renvoyé à la ligne à l’emplacement indiqué, cela se présente comme suit.
 
-![App bar button with wrapping label](images/app-bar-button-label-wrap.png)
+![Bouton de la barre de l’application avec renvoi à la ligne du libellé](images/app-bar-button-label-wrap.png)
 
-Because text labels are hidden for command bar actions unless "see more" \[•••\] is pressed, consider using tooltips for action icons. This makes it easier for mouse users to discover your intent.
+### Autre contenu
 
-## Open and closed states
+Vous pouvez ajouter n’importe quel élément XAML à la zone de contenu en définissant la propriété **Content**. Si vous voulez ajouter plusieurs éléments, vous devez les placer dans un conteneur de panneaux et faire en sorte que le panneau soit le seul enfant de la propriété Content.
 
-The command bar can be open or closed. A user can switch between these states by pressing the "see more" \[•••\] button. You can switch between them programmatically by setting the [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) property. When open, the primary command buttons are shown with text labels and the overflow menu is open if secondary commands are present, as shown previously.
+En présence de commandes principales et de contenu, les commandes principales sont prioritaires et peuvent provoquer la troncature du contenu. 
 
-You can use the [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx), [**Opened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx), [**Closing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx), and [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) events to respond to the command bar being opened or closed.  
-- The Opening and Closing events occur before the transition animation begins.
-- The Opened and Closed events occur after the transition completes.
+Lorsque [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) est défini sur **Compact**, le contenu peut être tronqué s’il est plus grand que la taille compacte de la barre de commandes. Vous devez gérer les événements [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) et [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) pour afficher ou masquer des parties de l’interface utilisateur dans la zone de contenu afin qu’elles ne soient pas tronquées. Voir la section [États ouvert et fermé](#open-and-closed-states) pour plus d’informations.
 
-In this example, the Opening and Closing events are used to change the opacity of the command bar. When the command bar is closed, it's semi-transparent so the app background shows through. When the command bar is opened, the command bar is made opaque so the user can focus on the commands.
+
+
+## États ouvert et fermé
+
+La barre de commandes peut être ouverte ou fermée. Un utilisateur peut basculer entre ces états en appuyant sur le bouton « En savoir plus » \ [•••\]. Vous pouvez basculer d’un état à l’autre par programme en définissant la propriété [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx). Lorsque la barre de commandes est ouverte, les boutons de commandes principales s’affichent avec les libellés et le menu de dépassement est ouvert en présence de commandes secondaires, comme indiqué précédemment.
+
+Vous pouvez utiliser les événements [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx), [**Opened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx), [**Closing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx), et [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) pour répondre à l’ouverture et à la fermeture de la barre de commandes.  
+- Les événements Opening et Closing se produisent avant le début de l’animation de transition.
+- Les événements Opened et Closed se produisent après la transition.
+
+Dans cet exemple, les événements Opening et Closing permettent de modifier l’opacité de la barre de commandes. Lorsque la barre de commandes est fermée, celle-ci devient semi-transparente révélant l’arrière-plan de l’application. Lorsque la barre de commandes est ouverte, celle-ci devient opaque de sorte que l’utilisateur puisse se concentrer sur les commandes.
 
 ```xaml
 <CommandBar Opening="CommandBar_Opening"
@@ -148,7 +153,7 @@ private void CommandBar_Opening(object sender, object e)
     CommandBar cb = sender as CommandBar;
     if (cb != null) cb.Background.Opacity = 1.0;
 }
- 
+
 private void CommandBar_Closing(object sender, object e)
 {
     CommandBar cb = sender as CommandBar;
@@ -159,16 +164,16 @@ private void CommandBar_Closing(object sender, object e)
 
 ### ClosedDisplayMode
 
-You can control how the command bar is shown in its closed state by setting the [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) property. There are 3 closed display modes to choose from:
-- **Compact**: The default mode. Shows content, primary command icons without labels, and the "see more" \[•••\] button.
-- **Minimal**: Shows only a thin bar that acts as the "see more" \[•••\] button. The user can press anywhere on the bar to open it.
-- **Hidden**: The command bar is not shown when it's closed. This can be useful for showing contextual commands with an inline command bar. In this case, you must open the command bar programmatically by setting the **IsOpen** property or changing the ClosedDisplayMode to **Minimal** or **Compact**. 
+Vous pouvez contrôler la façon dont la barre de commandes est affichée à l’état fermé en définissant la propriété [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx). Vous avez le choix entre 3 modes d’affichage lorsque la barre est fermée :
+- **Compact** : mode par défaut. Affiche le contenu, les icônes de commande principale sans les libellés et le bouton e« En savoir plus » \ [•••\].
+- **Minimal** : affiche uniquement une fine barre qui agit comme le bouton « En savoir plus » \ [•••\]. L’utilisateur peut appuyer n’importe où sur la barre pour l’ouvrir.
+- **Hidden** : la barre de commandes ne s’affiche pas quand elle est fermée. Cela peut être utile pour afficher des commandes contextuelles avec une barre de commandes en ligne. Dans ce cas, vous devez ouvrir la barre de commandes par programme en définissant la propriété **IsOpen** ou en modifiant la propriété ClosedDisplayMode pour la définir sur **Minimal** ou **Compact**.
 
-Here, a command bar is used to hold simple formatting commands for a [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx). When the edit box doesn't have focus, the formatting commands can be distracting, so they're hidden. When the edit box is being used, the command bar's ClosedDisplayMode is changed to Compact so the formatting commands are visible.
+Ici, une barre de commandes est utilisée pour contenir des commandes de mise en forme simples pour un élément [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx). Lorsque la zone d’édition n’a pas le focus, les commandes de mise en forme peuvent devenir gênantes, c’est pourquoi elles sont masquées. Lorsque la zone d’édition est utilisée, la propriété ClosedDisplayMode de la barre de commandes est définie sur Compact afin que les commandes de mise en forme soient visibles.
 
 ```xaml
-<StackPanel Width="300" 
-            GotFocus="EditStackPanel_GotFocus" 
+<StackPanel Width="300"
+            GotFocus="EditStackPanel_GotFocus"
             LostFocus="EditStackPanel_LostFocus">
     <CommandBar x:Name="FormattingCommandBar" ClosedDisplayMode="Hidden">
         <AppBarButton Icon="Bold" Label="Bold" ToolTipService.ToolTip="Bold"/>
@@ -191,79 +196,78 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**Note**&nbsp;&nbsp;The implementation of the editing commands is beyond the scope of this example. For more info, see the [RichEditBox](rich-edit-box.md) article.
+>**Remarque** Cet exemple ne porte pas sur l’implémentation des commandes d’édition. Pour plus d’informations, voir l’article [RichEditBox](rich-edit-box.md).
 
-Although the Minimal and Hidden modes are useful in some situations, keep in mind that hiding all actions could confuse users.
+Bien que les modes Minimal et Hidden soient utiles dans certaines situations, n’oubliez pas que le masquage de toutes les actions peut prêter à confusion.
 
-Changing the ClosedDisplayMode to provide more or less of a hint to the user affects the layout of surrounding elements. In contrast, when the CommandBar transitions between closed and open, it does not affect the layout of other elements.
+La modification de la propriété ClosedDisplayMode pour fournir plus ou moins d’indications à l’utilisateur affecte la disposition des éléments environnants. En revanche, lorsque CommandBar passe de l’état closed à ouvert ou inversement, cela n’affecte pas la disposition des autres éléments.
 
 ### IsSticky
 
-After opening the command bar, if the user interacts with the app anywhere outside of the control then by default the overflow menu is dismissed and the labels are hidden. Closing it in this way is called *light dismiss*. You can control how the bar is dismissed by setting the [**IsSticky**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) property. When the bar is sticky (`IsSticky="true"`), it's not closed by a light dismiss gesture. The bar remains open until the user presses the "see more" \[•••\] button or, if present, selects an item from the overflow menu.
+Après l’ouverture de la barre de commandes, si l’utilisateur interagit avec l’application n’importe où en dehors du contrôle, le menu de dépassement se ferme et les libellés sont masqués par défaut. Une telle fermeture porte le nom d’*abandon interactif*. Vous pouvez contrôler la façon dont la barre est fermée en définissant la propriété [**IsSticky**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx). Si la barre est rémanente (`IsSticky="true"`), elle ne peut pas être fermée par un mouvement d’abandon interactif. La barre reste ouverte jusqu’à ce que l’utilisateur appuie sur le bouton « En savoir plus » \ [•••\] ou jusqu’à ce qu’il sélectionne un élément du menu de dépassement, si ce dernier est affiché.
 
-## Recommendations
+## Pratiques conseillées et déconseillées
 
 ### Placement
 
-Command bars can be placed at the top of the app window, at the bottom of the app window, and inline.
+Les barres de commandes peuvent être placées en haut et en bas de la fenêtre d’application et en ligne.
 
-![Example 1 of app bar placement](images/AppbarGuidelines_Placement1.png)
+![Exemple 1 de placement de la barre d’application](images/AppbarGuidelines_Placement1.png)
 
--   For mobile devices, if you're placing just one command bar in your app, put it at the bottom of the screen for easy reachability. If your app has tabs on the bottom, consider placing the command bar at the top so that the UI isn't too bottom-heavy.
--   For larger screens, if you're placing just one command bar, we recommend placing it at the top of the screen.
--   You can also place command bars inline, so that people can use them for contextual actions.
+-   Pour les petits appareils de poche, nous vous recommandons de positionner les barres de commande en bas de l’écran pour faciliter leur accessibilité.
+-   Pour les écrans plus grands : si vous positionnez une seule barre de commandes, nous vous recommandons de la placer en haut de l’écran.
+Utilisez l’API [**DiagonalSizeInInches**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) pour déterminer la taille physique de l’écran.
 
-Command bars can be placed in the following screen regions on single-view screens (left example) and on multi-view screens (right example). Inline command bars can be placed anywhere in the action space.
+Les barres de commandes peuvent être placées dans les zones d’écran suivantes sur les écrans à vue unique (exemple à gauche) et sur les écrans à vues multiples (exemple à droite). Les barres de commandes incorporées peuvent être placées n’importe où dans la zone d’action.
 
-![Example 2 of app bar placement](images/AppbarGuidelines_Placement2.png)
+![Exemple 2 de placement de la barre de l’application](images/AppbarGuidelines_Placement2.png)
 
->**Mobile Device Family**: If the command bar must remain visible to a user when the touch keyboard, or Soft Input Panel (SIP), appears then you can assign the command bar to the BottomAppBar property of a Page and it will move to remain visible when the SIP is present. Otherwise, you should place the command bar inline and positioned relative to your app content. Where you place the command bar will influence things like whether you make it sticky, or use the minimal mode when it's closed.
+>**Appareils tactiles** : si la barre de commandes doit rester visible à l’utilisateur lorsque le clavier tactile, ou virtuel s’affiche, vous pouvez affecter la barre de commandes à la propriété `BottomAppBar` d’une page de sorte qu’elle reste visible en présence du clavier virtuel. Dans le cas contraire, vous devez placer la barre de commandes de sorte qu’elle soit alignée et positionnée par rapport au contenu de votre application.
 
 ### Actions
 
-Prioritize the actions that go in the command bar based on their visibility.
+Classez les actions qui figurent dans la barre de commandes par ordre de priorité en fonction de leur visibilité.
 
--   Place the most important commands, the ones that you want to remain visible in the bar, in the first few slots of the action space. On the smallest screens (320 epx width), between 2-4 items will fit in the command bar's action space, depending on other on-screen UI.
--   Place less-important commands later in the bar's action space or within the first few slots of the overflow area. These commands will be visible when the bar has enough screen real estate, but will fall into the overflow area's drop-down menu when there isn't enough room.
--   Place the least-important commands within the overflow area. These commands will always appear in the drop-down menu.
+-   Placez dans les tout premiers emplacements de l’espace d’action les commandes les plus importantes et celles que vous souhaitez laisser affichées dans la barre. Sur les écrans plus petits (largeur de 320 epx), l’espace d’action de la barre de commandes peut contenir 2 à 4 éléments en fonction des autres éléments de l’interface utilisateur à l’écran.
+-   Placez les commandes moins importantes plus loin dans l’espace d’action de la barre ou dans les tout premiers emplacements de la zone de dépassement. Ces commandes sont visibles si la barre dispose d’un espace suffisant à l’écran, et s’affichent dans le menu déroulant de la zone de dépassement en cas d’espace insuffisant.
+-   Placez les commandes les moins importantes dans la zone de dépassement. Ces commandes apparaissent toujours dans le menu déroulant.
 
-Items in the actions space can be visualized with either icons or buttons. When only using icons, include a text label. The text label appears under the icon when the "see more" \[•••\] button is pressed.
+S’il existe une commande qui s’affiche de façon cohérente sur plusieurs pages, il est préférable de la laisser à un emplacement cohérent. Nous recommandons de placer les commandes Accepter, Oui et OK à gauche des commandes Rejeter, Non et Annuler. La cohérence permet aux utilisateurs de se déplacer en toute confiance dans le système et de réutiliser leur connaissance de navigation d’une application à l’autre.
 
-If there is a command that would appear consistently across pages, it's best to keep that command in a consistent location. We recommended placing Accept, Yes, and OK commands to the left of Reject, No, and Cancel. Consistency gives users the confidence to move around the system and helps them transfer their knowledge of app navigation from app to app.
+Vous pouvez également placer toutes les actions dans la zone de dépassement, afin que seul le bouton « En savoir plus » \ [•••\] soit visible dans la barre de commandes. N’oubliez pas que le masquage de toutes les actions peut prêter à confusion.
 
-Although you can place all actions within the overflow area so that only the "see more" \[•••\] button is visible on the command bar, keep in mind that hiding all actions could confuse users.
+### Menus volants de barre de commandes
 
-### Command bar flyouts and tooltips
+Envisagez le regroupement logique des commandes ; placez par exemple les commandes Répondre, Répondre à tous et Transférer dans un menu Répondre. Un bouton de barre de l’application active en règle générale une seule commande ; il peut cependant être utilisé pour afficher des classes [**MenuFlyout**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) ou [**Flyout**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.flyout.aspx) avec du contenu personnalisé.
 
-Consider logical groupings for the commands, such as placing Reply, Reply All, and Forward in a Respond menu.
+![Exemple de menus volants d’une barre de commandes](images/AppbarGuidelines_Flyouts.png)
 
-![Example of flyouts on a command bar](images/AppbarGuidelines_Flyouts.png)
+### Menu de dépassement
 
-Because text labels are hidden for command bar actions unless \[•••\] is selected, consider using tooltips for action icons.
+![Exemple d’une barre de commandes comportant une zone « Plus »](images/AppbarGuidelines_Illustration.png)
 
-### Overflow menu
+-   Le menu de dépassement est représenté par le bouton « En savoir plus » \ [•••\], qui est le point d’entrée visible du menu. Il se trouve à l’extrême droite de la barre d’outils située en regard des actions principales.
+-   L’espace du menu de dépassement est alloué aux actions qui sont moins fréquemment utilisées.
+-   Les actions peuvent aller et venir entre l’espace d’action principal et le menu de dépassement aux points d’arrêt. Vous pouvez également indiquer des actions devant rester constamment dans l’espace de l’action principal, quelle que soit la taille de l’écran ou de la fenêtre de l’application.
+-   Les actions rarement utilisées peuvent rester dans le menu de dépassement même si la barre d’application est développée sur les écrans plus grands.
 
-![Example of command bar with "More" area](images/AppbarGuidelines_Illustration.png)
+## Capacité d’adaptation
 
--   The overflow menu is represented by the "see more" \[•••\] button, the visible entry point for the menu. It's on the far-right of the toolbar, adjacent to primary actions.
--   Each action in the primary action space is represented by an icon. Selecting the overflow menu reveals text labels for each of the actions in the primary action space.
--   The overflow area is allocated for actions that are less frequently used.
--   Actions can come and go between the primary action space and the overflow menu at breakpoints. You can also designate actions to always remain in the primary action space regardless of screen or app window size.
--   Infrequently used actions can remain in the overflow menu even when the app bar is expanded on larger screens.
+-   Le nombre d’actions visibles dans la barre d’application doit être le même en orientation portrait et paysage, ce qui réduit la charge cognitive de l’utilisateur. Cependant, le nombre d’actions disponibles doit être déterminé par la largeur de l’appareil en orientation portrait.
+-   Sur les petits écrans susceptibles d’être utilisés d’une seule main, les barres d’application doivent être placées dans la partie inférieure de l’écran.
+-   Sur les écrans plus grands, le fait de placer les barres d’application en haut de la fenêtre les rend plus détectables et plus accessibles.
+-   En ciblant des points d’arrêt, vous pouvez déplacer des actions dans le menu et hors de celui-ci en cas de modification de la taille de la fenêtre.
+-   En ciblant la diagonale d’écran, vous pouvez modifier la position de la barre de l’application en fonction de la taille d’écran de l’appareil.
 
-## Responsive guidance
+## Articles connexes
 
--   The same number of actions in the app bar should be visible in both portrait and landscape orientation, which reduces the user's cognitive load. The number of actions available should be determined by the device's width in portrait orientation.
--   By targeting breakpoints, you can move actions in and out of the menu as the screen size or app window size changes.
+**Pour les concepteurs**
+[Informations de base relatives à la conception des commandes pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## Related articles
-
-**For designers**
-[Command design basics for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958433)
-
-**For developers (XAML)**
+**Pour les développeurs (XAML)**
 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=Mar16_HO5-->
+
+

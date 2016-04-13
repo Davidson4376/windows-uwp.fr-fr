@@ -1,34 +1,34 @@
 ---
-Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
-Mouse interactions
+Répondez à l’entrée de souris dans vos applications en gérant les mêmes événements de pointeur de base que ceux utilisés pour l’entrée tactile et du stylo.
+Interactions avec la souris
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
-Mouse
+Souris
 template: detail.hbs
 ---
 
-# Mouse interactions
+# Interactions avec la souris
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Optimize your Universal Windows Platform (UWP) app design for touch input and get basic mouse support by default.
+Optimisez la conception de votre application de plateforme Windows universelle (UWP) pour l’entrée tactile, et définissez la prise en charge de la souris de base par défaut.
 
  
 
-![mouse](images/input-patterns/input-mouse.jpg)
+![Souris](images/input-patterns/input-mouse.jpg)
 
 
 
-Mouse input is best suited for user interactions that require precision when pointing and clicking. This inherent precision is naturally supported by the UI of Windows, which is optimized for the imprecise nature of touch.
+Les entrées de la souris conviennent mieux aux interactions utilisateur qui demandent de la précision comme le pointage et le clic. Cette précision inhérente est naturellement prise en charge par l’interface utilisateur de Windows qui permet de gérer la nature imprécise de l’entrée tactile.
 
-Where mouse and touch input diverge is the ability for touch to more closely emulate the direct manipulation of UI elements through physical gestures performed directly on those objects (such as swiping, sliding, dragging, rotating, and so on). Manipulations with a mouse typically require some other UI affordance, such as the use of handles to resize or rotate an object.
+Les entrées tactiles et de la souris divergent en raison de la capacité de l’entrée tactile à émuler plus fidèlement la manipulation directe d’éléments d’interface utilisateur par le biais de mouvements physiques effectués directement sur ces objets (comme le balayage, le glissement, la rotation, etc.). Les manipulations avec une souris nécessitent généralement une autre affordance d’interface utilisateur, telle l’utilisation de poignées pour redimensionner ou faire pivoter un objet.
 
-This topic describes design considerations for mouse interactions.
+Cette rubrique décrit les considérations relatives à la conception pour les interactions avec la souris.
 
-## <span id="The_UWP_app_mouse_language"></span><span id="the_uwp_app_mouse_language"></span><span id="THE_UWP_APP_MOUSE_LANGUAGE"></span>The UWP app mouse language
+## <span id="The_UWP_app_mouse_language"> </span> <span id="the_uwp_app_mouse_language"> </span> <span id="THE_UWP_APP_MOUSE_LANGUAGE"> </span>Langage de souris d’application UWP
 
 
-A concise set of mouse interactions are used consistently throughout the system.
+Un ensemble concis d’interactions avec la souris est utilisé de façon uniforme dans l’ensemble du système.
 
 <table>
 <colgroup>
@@ -37,117 +37,121 @@ A concise set of mouse interactions are used consistently throughout the system.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Term</th>
+<th align="left">Terme</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Hover_to_learn"></span><span id="hover_to_learn"></span><span id="HOVER_TO_LEARN"></span>Hover to learn</p></td>
-<td align="left"><p>Hover over an element to display more detailed info or teaching visuals (such as a tooltip) without a commitment to an action.</p></td>
+<td align="left"><p><span id="Hover_to_learn"></span><span id="hover_to_learn"></span><span id="HOVER_TO_LEARN"></span>Pointer pour apprendre</p></td>
+<td align="left"><p>Pointez sur un élément pour afficher des informations détaillées ou des éléments visuels didactiques (tels qu’une info-bulle) ne requérant aucune action.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_for_primary_action"></span><span id="left-click_for_primary_action"></span><span id="LEFT-CLICK_FOR_PRIMARY_ACTION"></span>Left-click for primary action</p></td>
-<td align="left"><p>Left-click an element to invoke its primary action (such as launching an app or executing a command).</p></td>
+<td align="left"><p><span id="Left-click_for_primary_action"></span><span id="left-click_for_primary_action"></span><span id="LEFT-CLICK_FOR_PRIMARY_ACTION"></span>Cliquer avec le bouton gauche pour effectuer l’action principale</p></td>
+<td align="left"><p>Cliquez avec le bouton gauche sur un élément pour appeler son action principale (par exemple, le lancement d’une application ou l’exécution d’une commande).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Scroll_to_change_view"></span><span id="scroll_to_change_view"></span><span id="SCROLL_TO_CHANGE_VIEW"></span>Scroll to change view</p></td>
-<td align="left"><p>Display scroll bars to move up, down, left, and right within a content area. Users can scroll by clicking scroll bars or rotating the mouse wheel. Scroll bars can indicate the location of the current view within the content area (panning with touch displays a similar UI).</p></td>
+<td align="left"><p><span id="Scroll_to_change_view"></span><span id="scroll_to_change_view"></span><span id="SCROLL_TO_CHANGE_VIEW"></span>Faire défiler l’affichage pour changer de vue</p></td>
+<td align="left"><p>Affichez des barres de défilement pour monter, descendre, aller à gauche et à droite dans une zone de contenu. Les utilisateurs peuvent faire défiler l’affichage en cliquant sur les barres de défilement ou en actionnant la roulette de la souris. Les barres de défilement peuvent indiquer l’emplacement de la vue actuelle dans la zone de contenu (un mouvement panoramique avec interaction tactile affiche une interface utilisateur similaire).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>Right-click to select and command</p></td>
-<td align="left"><p>Right-click to display the navigation bar (if available) and the app bar with global commands. Right-click an element to select it and display the app bar with contextual commands for the selected element.</p>
+<td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
+<td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application avec des commandes contextuelles pour l’élément sélectionné.</p>
 <div class="alert">
-<strong>Note</strong>  Right-click to display a context menu if selection or app bar commands are not appropriate UI behaviors. But we strongly recommend that you use the app bar for all command behaviors.
+<strong>Remarque</strong> Effectuez un clic droit pour afficher un menu contextuel si les commandes de la sélection ou de la barre de l’application ne correspondent pas à des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="UI_commands_to_zoom"></span><span id="ui_commands_to_zoom"></span><span id="UI_COMMANDS_TO_ZOOM"></span>UI commands to zoom</p></td>
-<td align="left"><p>Display UI commands in the app bar (such as + and -), or press Ctrl and rotate mouse wheel, to emulate pinch and stretch gestures for zooming.</p></td>
+<td align="left"><p><span id="UI_commands_to_zoom"></span><span id="ui_commands_to_zoom"></span><span id="UI_COMMANDS_TO_ZOOM"></span>Commandes d’interface utilisateur pour le zoom</p></td>
+<td align="left"><p>Affichez des commandes d’interface utilisateur dans la barre de l’application (telles que + et -) ou appuyez sur Ctrl et actionnez la roulette de la souris pour émuler des mouvements de pincement et d’étirement pour le zoom.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="UI_commands_to_rotate"></span><span id="ui_commands_to_rotate"></span><span id="UI_COMMANDS_TO_ROTATE"></span>UI commands to rotate</p></td>
-<td align="left"><p>Display UI commands in the app bar, or press Ctrl+Shift and rotate mouse wheel, to emulate the turn gesture for rotating. Rotate the device itself to rotate the entire screen.</p></td>
+<td align="left"><p><span id="UI_commands_to_rotate"></span><span id="ui_commands_to_rotate"></span><span id="UI_COMMANDS_TO_ROTATE"></span>Commandes d’interface utilisateur pour la rotation</p></td>
+<td align="left"><p>Affichez des commandes d’interface utilisateur dans la barre de l’application ou appuyez sur Ctrl+Maj et actionnez la roulette de la souris pour émuler un mouvement de rotation. Faites pivoter l’appareil lui-même pour faire pivoter l’écran tout entier.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left-click_and_drag_to_rearrange"></span><span id="left-click_and_drag_to_rearrange"></span><span id="LEFT-CLICK_AND_DRAG_TO_REARRANGE"></span>Left-click and drag to rearrange</p></td>
-<td align="left"><p>Left-click and drag an element to move it.</p></td>
+<td align="left"><p><span id="Left-click_and_drag_to_rearrange"></span><span id="left-click_and_drag_to_rearrange"></span><span id="LEFT-CLICK_AND_DRAG_TO_REARRANGE"></span>Cliquer avec le bouton gauche et faire glisser pour réorganiser</p></td>
+<td align="left"><p>Cliquez avec le bouton gauche sur un élément et faites-le glisser pour le déplacer.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_and_drag_to_select_text"></span><span id="left-click_and_drag_to_select_text"></span><span id="LEFT-CLICK_AND_DRAG_TO_SELECT_TEXT"></span>Left-click and drag to select text</p></td>
-<td align="left"><p>Left-click within selectable text and drag to select it. Double-click to select a word.</p></td>
+<td align="left"><p><span id="Left-click_and_drag_to_select_text"></span><span id="left-click_and_drag_to_select_text"></span><span id="LEFT-CLICK_AND_DRAG_TO_SELECT_TEXT"></span>Cliquer avec le bouton gauche et faire glisser pour sélectionner du texte</p></td>
+<td align="left"><p>Cliquez avec le bouton gauche dans du texte sélectionnable et faites glisser le curseur pour sélectionner du texte. Double-cliquez pour sélectionner un mot.</p></td>
 </tr>
 </tbody>
 </table>
 
-## Mouse events
+## Événements de souris
 
-Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+Répondez à l’entrée de souris dans vos applications en gérant les mêmes événements de pointeur de base que ceux utilisés pour l’entrée tactile et du stylo.
 
-Use [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events to implement basic input functionality without having to write code for each pointer input device. However, you can still take advantage of the special capabilities of each device (such as mouse wheel events) using the pointer, gesture, and manipulation events of this object.
+Utilisez les événements [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) pour implémenter une fonctionnalité de base d’entrée sans avoir à rédiger de code pour chaque appareil d’entrée de pointeur. Toutefois, vous pouvez toujours tirer parti des fonctionnalités spéciales de chaque appareil (telles que les événements de roulette de souris) à l’aide des événements de pointeur, de mouvement et de manipulation de cet objet.
 
-**Samples:  **See this functionality in action in our [app samples](http://go.microsoft.com/fwlink/p/?LinkID=264996).
-
-
-- [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-
-- [Input sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-
-- [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
-
-## <span id="Guidelines_for_visual_feedback"></span><span id="guidelines_for_visual_feedback"></span><span id="GUIDELINES_FOR_VISUAL_FEEDBACK"></span>Guidelines for visual feedback
+**Exemples : **Découvrez cette fonctionnalité en action dans nos [exemples d’applications](http://go.microsoft.com/fwlink/p/?LinkID=264996).
 
 
--   When a mouse is detected (through move or hover events), show mouse-specific UI to indicate functionality exposed by the element. If the mouse doesn't move for a certain amount of time, or if the user initiates a touch interaction, make the mouse UI gradually fade away. This keeps the UI clean and uncluttered.
--   Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see Cursors below).
--   Don't display visual feedback if an element doesn't support interaction (such as static text).
--   Don't use focus rectangles with mouse interactions. Reserve these for keyboard interactions.
--   Display visual feedback concurrently for all elements that represent the same input target.
--   Provide buttons (such as + and -) for emulating touch-based manipulations such as panning, rotating, zooming, and so on.
+- [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 
-For more general guidance on visual feedback, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
+- [Exemple d’entrée](http://go.microsoft.com/fwlink/p/?linkid=226855)
 
+- [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Cursors
+## <span id="Guidelines_for_visual_feedback"> </span> <span id="guidelines_for_visual_feedback"> </span> <span id="GUIDELINES_FOR_VISUAL_FEEDBACK"> </span>Recommandations en matière de retour visuel
 
 
-A set of standard cursors is available for a mouse pointer. These are used to indicate the primary action of an element.
+-   Quand des événements de déplacement ou de pointage permettent de détecter une souris, affichez une interface utilisateur spécifique à la souris pour indiquer la fonctionnalité exposée par l’élément. Si la souris ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur de la souris. Cela maintient l’interface utilisateur propre et aérée.
+-   N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir la section Curseurs, ci-dessous).
+-   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
+-   N’utilisez pas de rectangles de sélection avec les interactions avec la souris. Réservez ceux-ci aux interactions avec le clavier.
+-   Affichez un retour visuel simultanément pour tous les éléments qui représentent la même cible d’entrée.
+-   Fournissez des boutons (tels que + et -) pour émuler des manipulations tactiles, telles que le mouvement panoramique, la rotation, le zoom, etc.
 
-Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. Specify a cursor image through the [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) function.
+Pour obtenir des recommandations plus générales sur le retour visuel, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
-If you need to customize the mouse cursor:
 
--   Always use the arrow cursor (![arrow cursor](images/cursor-arrow.png)) for clickable elements. don't use the pointing hand cursor (![pointing hand cursor](images/cursor-pointinghand.png)) for links or other interactive elements. Instead, use hover effects (described earlier).
--   Use the text cursor (![text cursor](images/cursor-text.png)) for selectable text.
--   Use the move cursor (![move cursor](images/cursor-move.png)) when moving is the primary action (such as dragging or cropping). Don't use the move cursor for elements where the primary action is navigation (such as Start tiles).
--   Use the horizontal, vertical and diagonal resize cursors (![vertical resize cursor](images/cursor-vertical.png), ![horizontal resize cursor](images/cursor-horizontal.png), ![diagonal resize cursor (lower left, upper right)](images/cursor-diagonal2.png), ![diagonal resize cursor (upper left, lower right)](images/cursor-diagonal1.png)), when an object is resizable.
--   Use the grasping hand cursors (![grasping hand cursor (open)](images/cursor-pan1.png), ![grasping hand cursor (closed)](images/cursor-pan2.png)) when panning content within a fixed canvas (such as a map).
+## <span id="Cursors"> </span> <span id="cursors"> </span> <span id="CURSORS"> </span>Curseurs
 
-## <span id="related_topics"></span>Related articles
 
-* [Handle pointer input](handle-pointer-input.md)
-* [Identify input devices](identify-input-devices.md)
+Un ensemble de curseurs standard est disponible pour servir de pointeurs de souris. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Spécifiez une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
 
-**Archive Samples**
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+Si vous avez besoin de personnaliser le curseur de la souris :
+
+-   Utilisez toujours le curseur en forme de flèche (![Curseur en forme de flèche](images/cursor-arrow.png)) pour les éléments interactifs. N’utilisez pas le curseur en forme de main (![Curseur en forme de main](images/cursor-pointinghand.png)) pour les liens ou pour d’autres éléments interactifs. À la place, utilisez les effets de pointage (décrits précédemment).
+-   Utilisez le curseur texte (![Curseur texte](images/cursor-text.png)) pour le texte sélectionnable.
+-   Utilisez le curseur de déplacement (![Curseur de déplacement](images/cursor-move.png)) lorsque l’action principale correspond à un déplacement (par exemple, un glisser-déplacer ou un rognage). N’utilisez pas le curseur de déplacement pour des éléments lorsque l’action principale correspond à une navigation (tels que les vignettes de l’écran de démarrage).
+-   Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
+-   Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
+
+## <span id="related_topics"> </span>Articles connexes
+
+* [Gérer les entrées du pointeur](handle-pointer-input.md)
+* [Identifier des périphériques d’entrée](identify-input-devices.md)
+
+**Exemples**
+* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
+**Exemples d’archive**
+* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

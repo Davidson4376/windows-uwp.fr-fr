@@ -1,7 +1,7 @@
 ---
-title: Prise en main : Et ensuite ?
+Prise en main : Et ensuite ?
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes.
+Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes.
 ---
 
 # Prise en main : Et ensuite ?
@@ -29,4 +29,8 @@ Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunit�
 * [Ressources pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/jj945493)
 * [Contrôles Windows pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [Guide de référence Windows pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/dn263256)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

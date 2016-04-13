@@ -1,6 +1,6 @@
 ---
-Description: Le Windows Store touche des clients dans plus de 200 pays et régions du monde.
-title: Définition des prix et sélection du marché
+Le Windows Store touche des clients dans plus de 200 pays et régions du monde.
+Définition des prix et sélection du marché
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ---
 
@@ -24,7 +24,7 @@ Vous pouvez définir le champ **Prix de base** sur **Gratuit** ou choisir un niv
 
 Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store, qui en compte plus de 60. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
 
-N'oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Consultez également l'article [Considérations de prix pour des marchés spécifiques](#price-considerations-for-specific-markets) ci-dessous.
+N’oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Consultez également l’article [Considérations de prix pour des marchés spécifiques](#price-considerations-for-specific-markets) ci-dessous.
 
 ## Marchés et prix personnalisés
 
@@ -48,10 +48,10 @@ Tenez compte du fait que même si vous sélectionnez tous les marchés, la légi
 ## Marchés grand public du Windows Store
 
 
-Vous pouvez choisir de répertorier votre application (ou produit intégré à l'application) dans un ou plusieurs des marchés suivants.
+Vous pouvez choisir de répertorier votre application (ou produit intégré à l’application) dans un ou plusieurs des marchés suivants.
 
 -   Afghanistan
--   Åland (îles d')
+-   Åland (îles d’)
 -   Albanie
 -   Samoa américaines
 -   Andorre
@@ -82,7 +82,7 @@ Vous pouvez choisir de répertorier votre application (ou produit intégré à l
 -   Botswana
 -   Bouvet (Île)
 -   Brésil
--   Territoires britanniques de l'océan Indien
+-   Territoires britanniques de l’océan Indien
 -   Îles Vierges britanniques
 -   Brunei
 -   Burkina-Faso
@@ -296,35 +296,35 @@ Vous pouvez choisir de répertorier votre application (ou produit intégré à l
 ## Considérations de prix pour des marchés spécifiques
 
 
-Les moyens de paiement tels que la facturation d'opérateur mobile peuvent aider à augmenter les ventes d'applications payantes et d'articles in-app. En raison des coûts plus élevés engendrés pour autoriser ces moyens de paiement, un Ajustement du développement commercial est ajouté à la redevance du Store pour calculer les revenus de l'application à payer pour des transactions d'applications payantes et d'achats in-app dans les pays/régions et en utilisant les moyens de paiement du tableau ci-dessous. Vous pouvez analyser si l'Ajustement du développement commercial s'applique dans un pays/région où votre application est disponible et en tenir compte dans votre stratégie de fixation des prix du marché. Vous pouvez trouver des détails sur l'Ajustement du développement commercial dans le [Contrat du développeur de l'application](https://msdn.microsoft.com/library/windows/apps/hh694058).
+Les moyens de paiement tels que la facturation d’opérateur mobile peuvent aider à augmenter les ventes d’applications payantes et d’articles in-app. En raison des coûts plus élevés engendrés pour autoriser ces moyens de paiement, un Ajustement du développement commercial est ajouté à la redevance du Store pour calculer les revenus de l’application à payer pour des transactions d’applications payantes et d’achats in-app dans les pays/régions et en utilisant les moyens de paiement du tableau ci-dessous. Vous pouvez analyser si l’Ajustement du développement commercial s’applique dans un pays/région où votre application est disponible et en tenir compte dans votre stratégie de fixation des prix du marché. Vous pouvez trouver des détails sur l’Ajustement du développement commercial dans le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058).
 
-L'Ajustement du développement commercial sera appliqué à toutes les transactions traitées pour les pays/régions et moyens de paiement spécifiés à compter de la date d'entrée en vigueur. Ces informations seront mises à jour mensuellement ; de nouveaux pays/régions et moyens de paiement seront répertoriés dans les trente (30) jours qui suivent la prise d'effet de l'Ajustement du développement commercial pour ce pays/région et moyen de paiement.
+L’Ajustement du développement commercial sera appliqué à toutes les transactions traitées pour les pays/régions et moyens de paiement spécifiés à compter de la date d’entrée en vigueur. Ces informations seront mises à jour mensuellement ; de nouveaux pays/régions et moyens de paiement seront répertoriés dans les trente (30) jours qui suivent la prise d’effet de l’Ajustement du développement commercial pour ce pays/région et moyen de paiement.
 
-| Pays/région | Moyens de paiement         | Ajustement du développement commercial | Date d'entrée en vigueur |
+| Pays/région | Moyens de paiement         | Ajustement du développement commercial | Date d’entrée en vigueur |
 |----------------|-------------------------|-------------------------------|----------------|
-| Brésil         | Facturation de l'opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Chili          | Facturation de l'opérateur mobile | 13,9 %                         | Mars 2014     |
-| Chine          | Facturation de l'opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Colombie       | Facturation de l'opérateur mobile | 13,9 %                         | Mars 2014     |
-| Costa Rica     | Facturation de l'opérateur mobile | 13,9 %                         | Mars 2014     |
-| Équateur (République de l’)        | Facturation de l'opérateur mobile | 13,9 %                         | Novembre 2014  |
-| Égypte          | Facturation de l'opérateur mobile | 13,9 %                         | Juin 2014      |
-| Guatemala      | Facturation de l'opérateur mobile | 13,9 %                         | Octobre 2014   |
-| Inde          | Facturation de l'opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Jordanie         | Facturation de l'opérateur mobile | 13,9 %                         | Mars 2015     |
-| Kenya          | Facturation de l'opérateur mobile | 13,9 %                         | Juillet 2014      |
-| Malaisie       | Facturation de l'opérateur mobile | 13,9 %                         | Mars 2014     |
-| Mexique         | Facturation de l'opérateur mobile | 13,9 %                         | Mars 2014     |
-| Pakistan       | Facturation de l'opérateur mobile | 13.9%                         | Octobre 2015   |
-| Pérou           | Facturation de l'opérateur mobile | 13,9 %                         | Mars 2014     |
-| Philippines    | Facturation de l'opérateur mobile | 13,9 %                         | Juin 2015      |
-| Puerto Rico    | Facturation de l'opérateur mobile | 13,9 %                         | Juin 2015      |
-| Afrique du Sud   | Facturation de l'opérateur mobile | 13,9 %                         | Mars 2014     |
-| Vietnam        | Facturation de l'opérateur mobile | 13,9 %                         | Octobre 2014   |
+| Brésil         | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
+| Chili          | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
+| Chine          | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
+| Colombie       | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
+| Costa Rica     | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
+| Équateur (République de l’)        | Facturation de l’opérateur mobile | 13,9 %                         | Novembre 2014  |
+| Égypte          | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2014      |
+| Guatemala      | Facturation de l’opérateur mobile | 13,9 %                         | Octobre 2014   |
+| Inde          | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
+| Jordanie         | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2015     |
+| Kenya          | Facturation de l’opérateur mobile | 13,9 %                         | Juillet 2014      |
+| Malaisie       | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
+| Mexique         | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
+| Pakistan       | Facturation de l’opérateur mobile | 13.9%                         | Octobre 2015   |
+| Pérou           | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
+| Philippines    | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2015      |
+| Puerto Rico    | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2015      |
+| Afrique du Sud   | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
+| Vietnam        | Facturation de l’opérateur mobile | 13,9 %                         | Octobre 2014   |
 
   
 
-| Pays/région       | Moyens de paiement | Ajustement du développement commercial | Date d'entrée en vigueur |
+| Pays/région       | Moyens de paiement | Ajustement du développement commercial | Date d’entrée en vigueur |
 |----------------------|-----------------|-------------------------------|----------------|
 | Argentine            | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Australie            | Carte cadeau       | 2,24 %                         | Mars 2016     |
@@ -380,7 +380,7 @@ Si vous conservez la sélection par défaut lorsque vous soumettez votre applica
 Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants :
 
 -   Afghanistan
--   Åland (îles d')
+-   Åland (îles d’)
 -   Albanie
 -   Samoa américaines
 -   Andorre
@@ -404,7 +404,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 -   Bosnie-Herzégovine
 -   Botswana
 -   Bouvet (Île)
--   Territoires britanniques de l'océan Indien
+-   Territoires britanniques de l’océan Indien
 -   Îles Vierges britanniques
 -   Brunei
 -   Burkina-Faso
@@ -547,4 +547,8 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 -   Zimbabwe
 
 > **Remarque** Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, voir [Types de compte, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/jj863494).
+
+
 <!--HONumber=Mar16_HO1-->
+
+

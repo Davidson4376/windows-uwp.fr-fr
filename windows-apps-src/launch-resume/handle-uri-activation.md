@@ -1,13 +1,13 @@
 ---
-title: Gérer l’activation des URI
-description: Découvrez comment inscrire une application afin qu’elle devienne le gestionnaire par défaut pour un nom de schéma d’URI (Uniform Resource Identifier).
+Gérer l’activation des URI
+Découvrez comment inscrire une application afin qu’elle devienne le gestionnaire par défaut pour un nom de schéma d’URI (Uniform Resource Identifier).
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 ---
 
 # Gérer l’activation des URI
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -174,4 +174,8 @@ Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

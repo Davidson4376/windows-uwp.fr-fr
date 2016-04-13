@@ -1,6 +1,6 @@
 ---
-title: Mise en réseau pour les jeux
-description: Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX.
+Mise en réseau pour les jeux
+Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ---
 
@@ -384,4 +384,8 @@ using namespace Windows::Web::Http;
 * [Exemple HttpClient]( http://go.microsoft.com/fwlink/p/?linkid=242550)
 * [Exemple de proximité](http://go.microsoft.com/fwlink/p/?linkid=245082)
 * [Exemple StreamSocket](http://go.microsoft.com/fwlink/p/?linkid=243037)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

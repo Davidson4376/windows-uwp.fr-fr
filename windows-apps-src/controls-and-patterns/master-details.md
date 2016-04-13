@@ -1,82 +1,86 @@
 ---
-The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
-Master/details
+Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes de messages électroniques et de contacts ou les carnets d’adresses.
+Maître/détails
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
-Master/details
+Maître/détails
 template: detail.hbs
 ---
-# Master/details pattern
+# Modèle Maître/Détails
 
-The master/details pattern has a master pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the master list is selected, the details pane is updated. This pattern is frequently used for email and address books.
+Le modèle Maître/Détails possède un volet principal (généralement avec un [affichage Liste](lists.md)) et un volet d’informations correspondant au contenu. Lorsqu’un élément de la liste principale est sélectionné, le volet d’informations est mis à jour. Ce modèle est souvent utilisé pour le courrier électronique et les carnets d’adresses.
 
-![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
+![Exemple de modèle Maître/Détails](images/HIGSecOne_MasterDetail.png)
 
-## Is this the right pattern?
+## Est-ce le modèle approprié ?
 
-The master/details pattern works well if you want to:
+Le modèle Maître/Détails fonctionne bien si vous souhaitez :
 
--   Build an email app, address book, or any app that is based on a list-details layout.
--   Locate and prioritize a large collection of content.
--   Allow the quick addition and removal of items from a list while working back-and-forth between contexts.
+-   créer une application de messagerie, un carnet d’adresses ou une application basés sur une disposition liste/détails ;
+-   rechercher et hiérarchiser une grande collection de contenu ;
+-   permettre d’ajouter et de supprimer rapidement des éléments dans une liste tout en basculant entre les contextes.
 
-## Choose the right style
+## Choisir le style approprié
 
-When implementing the master/details pattern, we recommend that you use either the stacked style or the side-by-side style, based on the amount of available screen space.
+Lorsque vous implémentez le modèle Maître/Détails, nous vous recommandons d’utiliser le style empilé ou le style côte à côte, en fonction de l’espace d’écran disponible.
 
-| Available window width | Recommended style |
+| Largeur de fenêtre disponible | Style recommandé |
 |------------------------|-------------------|
-| 320 epx-719 epx        | Stacked           |
-| 720 epx or wider       | Side-by-side      |
+| 320 epx-719 epx        | Mode Empilé           |
+| 720 epx ou plus large       | Côte à côte      |
 
  
-## Stacked style
+## Style empilé
 
-In the stacked style, only one pane is visible at a time: the master or the details.
+Le style empilé ne permet de visualiser qu’un seul volet à la fois : le volet principal ou le volet d’informations.
 
-![A master detail in stacked mode](images/patterns-md-stacked.png)
+![Détail du volet principal en mode Empilé](images/patterns-md-stacked.png)
 
-The user starts at the master pane and "drills down" to the details pane by selecting an item in the master list. To the user, it appears as though the master and details views exist on two separate pages.
+L’utilisateur commence au niveau du volet principal et descend dans le volet d’informations en sélectionnant un élément dans la liste principale. Pour l’utilisateur, les affichages Maître et Détails apparaissent dans deux pages distinctes.
 
-### Create a stacked master/details pattern
+### Créer un modèle Maître/Détails empilé
 
-One way to create the stacked master/details pattern is to use separate pages for the master pane and the details pane. Place the list view that provides the master list on one page, and the content element for the details pane on a separate page.
+L’une des façons de créer le modèle Maître/Détails empilé consiste à utiliser des pages distinctes pour le volet principal et pour le volet d’informations. Placez l’affichage Liste qui contient la liste principale dans une page, et l’élément de contenu du volet d’informations dans une autre page.
 
-![Parts for the stacked-style master detail](images/patterns-md-stacked-parts.png)
+![Parties du modèle Maître/Détails de style empilé](images/patterns-md-stacked-parts.png)
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+Pour le volet principal, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte.
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+Pour le volet d’informations, utilisez l’élément de contenu le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition en grille pour organiser les éléments dans un formulaire.
 
-## Side-by-side style
+## Style côte à côte
 
-In the side-by-side style, the master pane and details pane are visible at the same time.
+Dans le style côte à côte, le volet principal et le volet d’informations sont visibles en même temps.
 
-![The master/detail pattern](images/patterns-masterdetail-400x227.png)
+![Modèle Maître/Détail](images/patterns-masterdetail-400x227.png)
 
-The list in the master pane has a selection visual to indicate the currently selected item. Selecting a new item in the master list updates the details pane.
+La liste du volet principal possède un objet visuel de sélection pour indiquer l’élément sélectionné. La sélection d’un nouvel élément dans la liste principale entraîne la mise à jour du volet d’informations.
 
-### Create a side-by-side master/details pattern
+### Créer un modèle Maître/Détails côte à côte
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+Pour le volet principal, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte.
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+Pour le volet d’informations, utilisez l’élément de contenu le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition en grille pour organiser les éléments dans un formulaire.
 
-## Examples
+## Exemples
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on phone, the master pane/list is on the left, with the details pane on the right.
+La conception d’application ci-dessous qui suit la bourse utilise un modèle Maître/Détails. Dans cet exemple de l’application telle qu’elle serait affichée sur un téléphone, le volet/la liste principal(e) apparaît à gauche, tandis que le volet d’informations figure à droite.
 
-![Example of an app using the master-details pattern, on phone](images/uap-finance-phone-masterdetails-600.png)
+![Exemple d’application utilisant le modèle Maître/Détails sur un téléphone](images/uap-finance-phone-masterdetails-600.png)
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on desktop, the master pane/list and details pane are both visible and full-screen. The master pane features a search box at the top and a command bar at the bottom.
+La conception d’application ci-dessous qui suit la bourse utilise un modèle Maître/Détails. Dans cet exemple de l’application telle qu’elle serait affichée sur un ordinateur, le volet/la liste principal(e) et le volet d’informations sont tous deux visibles et en plein écran. Le volet principal comprend une zone de recherche dans sa partie supérieure et une barre de commandes dans sa partie inférieure.
 
-![Example of an app using the master-details pattern, on desktop](images/uap-finance-desktop700.png)
+![Exemple d’application utilisant le modèle Maître/Détails sur un ordinateur](images/uap-finance-desktop700.png)
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
-## Related articles
+## Articles connexes
 
-- [Lists](lists.md)
-- [Search](search.md)
-- [App and command bars](app-bars.md)
-- [**ListView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [Listes](lists.md)
+- [Recherche](search.md)
+- [Barre de l’application et barre de commandes](app-bars.md)
+- [**Classe ListView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

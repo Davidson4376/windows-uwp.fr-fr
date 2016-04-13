@@ -1,6 +1,6 @@
 ---
-title: Assembler l’infrastructure de rendu
-description: Il est maintenant temps d’examiner la façon dont l’exemple de jeu utilise cette structure et ces états pour afficher ses graphiques.
+Assembler l’infrastructure de rendu
+Il est maintenant temps d’examiner la façon dont l’exemple de jeu utilise cette structure et ces états pour afficher ses graphiques.
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ---
 
@@ -6302,7 +6302,7 @@ void Material::RenderSetup(
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -6318,4 +6318,8 @@ Cet article s’adresse aux développeurs de Windows 10 qui créent des applicat
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

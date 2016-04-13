@@ -1,106 +1,110 @@
 ---
-The Payout summary shows you details about the money you’ve earned with your apps and in-app products. It also lets you know when you’ll receive payments and how much you'll be paid.
-Payout summary
+La page Résumé du paiement affiche le détail des sommes rapportées par vos applications et produits in-app. Elle vous permet également de connaître les délais et les montants de vos paiements.
+Résumé du paiement
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ---
 
-# Payout summary
+# Résumé du paiement
 
 
-The **Payout summary** shows you details about the money you’ve earned with your apps and in-app products. It also lets you know when you’ll receive payments and how much you'll be paid.
+La page **Résumé du paiement** affiche le détail des sommes rapportées par vos applications et produits in-app. Elle vous permet également de connaître les délais et les montants de vos paiements.
 
-If you use Microsoft Advertising to earn money, as of April 1, 2016, you'll also see payment info for advertising proceeds in the **Payout summary**. For more details regarding Advertising Payment policies, see the [pubCenter Payment policies](http://go.microsoft.com/fwlink/p/?LinkID=624469).
+Si vous utilisez Microsoft Advertising pour générer des revenus, à partir du 1er avril 2016, la page **Résumé du paiement** vous donnera aussi des informations de paiement concernant vos revenus publicitaires. Pour plus d’informations sur les stratégies de paiement de publicité, voir [Stratégies de paiement pubCenter](http://go.microsoft.com/fwlink/p/?LinkID=624469).
 
-If you sell products in the Azure Marketplace, you’ll also see info on successful payouts from November 1, 2015 and forward in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](http://go.microsoft.com/fwlink/p/?LinkId=722436) and the [Microsoft Azure Marketplace Publisher Agreement](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). More info about viewing earlier Azure Marketplace payout info can be found [here](http://go.microsoft.com/fwlink/p/?LinkID=722439).
+Si vous vendez des produits dans Azure Marketplace, la page **Résumé du paiement** vous présente également des informations sur les paiements qui vous ont été versés depuis le 1er novembre 2015. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](http://go.microsoft.com/fwlink/p/?LinkId=722436) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). Des détails supplémentaires concernant la visualisation des informations de paiement Azure Marketplace antérieures sont disponibles [ici](http://go.microsoft.com/fwlink/p/?LinkID=722439).
 
-> **Note**  To be eligible for payout, your app proceeds must reach the applicable payment threshold. If the proceeds are less than the payment threshold, they will remain in the Reserved category until the threshold has been met. For more details, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
+> **Remarque** Pour que vous soyez autorisé à percevoir des revenus, votre application doit atteindre le seuil de paiement applicable. Si vos revenus sont inférieurs au seuil fixé, le montant restera dans la catégorie Réservé jusqu’à ce que ce seuil soit atteint. Pour en savoir plus, voir le [Contrat du développeur d’applications](https://msdn.microsoft.com/library/windows/apps/hh694058).
 >
-> Payments are made on a monthly basis (provided any applicable payment threshold has been met). We will typically send any payment due in a given month by the 15th day of that month. Note that payments generally take between 3 to 10 additional business days to reach your payout account.
+> Les paiements sont effectués mensuellement (à condition que le seuil de paiement ait été atteint). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10 jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement.
 
-## Current proceeds and payments
-
-
-Near the top of the page, you’ll find your **Current proceeds and payments**, which contains three sections: **Reserved**, **Upcoming payment**, and **Most recent payment**.
-
--   **Reserved** shows the amount of money your account has accumulated but which has not yet been scheduled for payment, including advertising proceeds. (Azure Marketplace proceeds do not appear in the Reserved section; if you only participate in the Azure Marketplace, you will see $0.00 here.) Proceeds from your most recent advertising and app sales remain on hold for about 30 days before they become eligible for payout. After that, the proceeds will be scheduled for payment the following month (assuming the payment threshold has been met). When a payment is attempted, your reserved balance will decrease by the payment amount and you will see the amount reflected in **Upcoming payment**. Note that the amount shown in **Reserved** is an estimate, because exchange rates for sales in other currencies may fluctuate prior to payment creation. You may notice your reserved balance change slightly at the beginning of every month. Your reserved balance is updated monthly to reflect monthly exchange rates, so that it represents a more accurate estimate. You can click **View details** to see additional information, or click the link to **Download your reserved transactions** to view a .csv file of all your **Reserved** transactions.
--   **Upcoming payment** shows the number of upcoming payments, the amount of your next payment(s), and the payment creation date(s). If your eligible proceeds haven’t met the payment threshold yet, no upcoming payment will be shown here. You can click **View details** to see additional information, including the payment amount(s) and their respective revenue source.
--   **Most recent payment** shows the amount of the last payment attempted. If the payment was successful, the **View details** link will be blue, and you can click it to see the details for each payment. Note that if we attempted to make multiple payments and only one of them was successful, only the amount of the successful payment will be shown here. If one or more payments failed, the **View details** link will be red and the number of failed payments will be displayed. You can click **View details** to see more details about the problem so that you can remedy the situation.
-
-## Proceeds by app and adjustments
+## Revenus et paiements actuels
 
 
-This section breaks down the summary info to let you see specifics by app. If you earned money through Microsoft Advertising, the total amount of your advertising proceeds is shown here as a single line item.
+La zone **Revenus et paiements actuels**, qui se situe en haut de la page, contient trois sections : **Réservé**, **Paiement à venir** et **Dernier paiement**.
 
-By reviewing this section, you can determine which apps have earned money that’s currently in the **Reserved** or **Most recent payment** category. You can also see the total amount you’ve received for each app. If it was necessary to make any [adjustments](#proceeds-by-app-and-adjustments) to your account balance, you can view them here too. (Note that adjustments for Microsoft Advertising proceeds are not currently shown here.)
+-   La vignette **Réservé** affiche le montant accumulé sur votre compte (y compris les revenus publicitaires), mais dont le versement n’a pas encore été planifié. (Les revenus Azure Marketplace n’apparaissent pas dans la section Réservé ; si vous participez uniquement à Azure Marketplace, un montant nul s’affichera dans cette section.) Vos derniers revenus publicitaires et de ventes d’applications restent en suspens pendant environ 30 jours avant de pouvoir être versés. Au terme de cette période, le versement de vos revenus est planifié pour le mois suivant (dans la mesure où vous avez atteint le seuil de paiement). Lors d’une tentative de paiement, votre solde réservé est amputé du montant du paiement. Le montant obtenu s’affiche alors dans **Paiement à venir**. Notez que le montant affiché dans **Réservé** est une estimation, les ventes dans d’autres devises étant soumises aux variations de taux de change avant la création du paiement. Vous pouvez remarquer un léger changement de votre solde réservé au début de chaque mois. Votre solde réservé est mis à jour tous les mois afin de refléter les taux de change mensuels et de représenter ainsi une estimation plus précise. Vous pouvez cliquer sur **Afficher les détails** pour consulter des informations supplémentaires ou cliquer sur le lien **Télécharger vos transactions réservées** pour afficher un fichier .csv de l'ensemble de vos transactions figurant dans la section **Réservé**.
+-   La section **Paiement à venir** indique le nombre de paiements à venir, le montant de vos prochains paiements et les dates de création des paiements. Si vos revenus éligibles n’ont pas atteint le seuil de paiement, aucun paiement à venir n’apparaît dans cette section. Vous pouvez cliquer sur **Afficher les détails** pour consulter des informations supplémentaires, notamment le montant des paiements et leurs sources de revenu respectives.
+-   La section **Dernier paiement** indique le montant de la dernière tentative de paiement. Si le paiement a été effectué avec succès, le lien **Afficher les détails** est bleu, et vous pouvez cliquer dessus pour visualiser les détails de chaque paiement. Notez que si nous avons tenté d’effectuer plusieurs paiements et que seul l’un d’eux a réussi, seul le montant du paiement effectué avec succès s’affiche ici. Si un ou plusieurs paiements ont échoué, le lien **Afficher les détails** est rouge et affiche le nombre de paiements en échec. Vous pouvez cliquer sur **Afficher les détails** pour visualiser plus d’informations sur le problème et ainsi remédier à la situation.
 
-## Payment statements
-
-
-In this section you can view statements for all successful monthly payments and see the total amount of money you've been paid.
-
-The **Total paid to date** section shows the total amount you've been paid for all your sales. Click **View details** to see the amounts that came from each revenue source.
-
-Below the **Total paid to date** section, you will see your last three statements by default. To see the full statement (for successful payments), click **View**. You can access your historical payment statements through the drop-down box.
-
-At the top of each statement, you’ll see the total amount of your monthly payment. Immediately below, in **Payments issued**, you’ll see a summary of how your payment amount was calculated.
-
-Underneath, in the **Proceeds breakdown** section, you can view details on how much money was made per market and per revenue source (such as Windows Phone Store, Windows Store 8, Windows Store, etc.) by app. You’ll also see details on any [adjustments](#proceeds-by-app-and-adjustments) that were made, including the date, amount, and reason for the adjustment.
-
-Note that the sections mentioned above only show info on your proceeds (and adjustments) from app sales; if you earned money through advertising, you’ll see a separate Microsoft Advertising section with details about the payouts and currency conversions.
-
-## Adjustments
+## Revenus par application et ajustements
 
 
-| Adjustment category     | Description                                                                                                |
+Cette section subdivise les informations du résumé afin que vous puissiez voir les spécificités de chaque application. Si vous avez généré des revenus par le biais de Microsoft Advertising, le montant total de vos revenus publicitaires s’affiche ici sur une seule ligne.
+
+Cette section vous permet d’identifier les applications ayant généré le plus de revenus dans les catégories **Réservé** ou **Dernier paiement**. Vous pouvez également afficher le montant total que vous avez perçu pour chaque application. Si le solde de votre compte a subi des [modifications](#proceeds-by-app-and-adjustments), ces derniers figurent également dans cette section. (Notez que les modifications apportées aux revenus Microsoft Advertising n’y sont pas affichées pour le moment).
+
+## Relevés de paiement
+
+
+Dans cette section, vous pouvez afficher les relevés de l’ensemble des paiements mensuels effectués ainsi que le montant total qui vous a été versé.
+
+La section **Montant cumulé des paiements** indique le montant total perçu pour l’ensemble de vos ventes. Cliquez sur **Afficher les détails** pour visualiser les montants provenant de chaque source de revenus.
+
+Au-dessous de la section **Montant cumulé des paiements**, vous pouvez visualiser vos trois derniers relevés par défaut. Pour afficher le relevé complet (dans le cas de paiements réussis), cliquez sur **Afficher**. La zone de liste déroulante vous permet d’accéder à vos relevés de paiement historiques.
+
+En haut de chaque relevé figure le montant total de votre paiement mensuel. La section **Paiements émis**, située juste en dessous, résume le mode de calcul utilisé pour déterminer le montant du paiement.
+
+Au-dessous, dans la section **Répartition des revenus**, vous pouvez voir en détail le montant des revenus générés par marché, par source de revenus (par exemple, Windows Phone Store, Windows Store 8, Windows Store, etc.) et par application. Vous bénéficiez également d’informations sur les [ajustements](#proceeds-by-app-and-adjustments) effectués, comme la date, le montant et le motif de ces modifications.
+
+Notez que les sections mentionnées ci-dessus affichent uniquement des informations sur votre revenu (et sur les ajustements) compte tenu des ventes recensées pour votre application. Si vous avez généré des revenus grâce à la publicité, une autre section Microsoft Advertising regroupera les détails relatifs aux paiements et aux conversions de devises.
+
+## Ajustements
+
+
+| Catégorie d’ajustement     | Description                                                                                                |
 |-------------------------|------------------------------------------------------------------------------------------------------------|
-| Compensatory adjustment | Any adjustment made to your payout balance that does not pertain to the other adjustment categories listed |
-| Historic balance        | Payout balances from a historic payment system                                                             |
-| Passin tax              | Tax adjustment related to sales in Korea                                                                   |
+| Ajustement compensatoire | Ajustement appliqué à votre solde de revenu n’entrant dans aucune des autres catégories d’ajustement répertoriées |
+| Solde historique        | Soldes de revenu dérivés d’un ancien système de paiement                                                             |
+| Transfert de taxe              | Ajustement fiscal sur les ventes réalisées en Corée                                                                   |
 
  
 
-## Downloading payment transactions
+## Téléchargement des transactions de paiement
 
 
-At the top of each statement, you’ll see a link to **Download transactions**. Click this link to get a .csv file with detailed info about each of the transactions included in your payment.
+En haut de chaque relevé figure un lien **Télécharger les transactions**. Cliquez sur ce lien pour créer un fichier .csv comprenant des informations détaillées sur chacune des transactions de votre paiement.
 
-The following table describes the fields that appear in the .csv file. Note that the exact fields you see may vary as we continue to update our reporting.
+Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez que les champs que vous voyez peuvent différer, car nous mettons régulièrement à jour notre reporting.
 
-| Field name              | Description                                                                                                                              |
+| Nom du champ              | Description                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Windows Phone Store, Windows Store 8, Windows Store, etc.)  |
-| Transaction ID          | Unique transaction identifier                                                                                                            |
-| Transaction Date Time   | The date and time the transaction occurred (UTC)                                                                                         |
-| Parent Product ID       | Unique parent product identifier. Please note: if there isn’t a parent product for the transaction, then Parent Product ID = Product ID. |
-| Product ID              | Unique product identifier                                                                                                                |
-| Parent Product Name     | Name of the parent product. Please note: if there isn’t a parent product for the transaction, then Parent Product Name = Product Name.   |
-| Product Name            | Name of the product                                                                                                                      |
-| Product Type            | Type of product (such as App, In-App, Game, etc.)                                                                                        |
-| Transaction Type        | Type of transaction (such as purchase, refund, reversal, chargeback, etc.)                                                               |
-| Payment Method          | Customer payment instrument used for the transaction (such as credit card, mobile operator, etc,)                                        |
-| Country / Region        | Country/region where the transaction occurred                                                                                            |
-| Local Provider / Seller | Local provider/seller of record                                                                                                          |
-| Transaction Currency    | Currency of the transaction                                                                                                              |
-| Transaction Amount      | Amount of the transaction                                                                                                                |
-| Tax Remitted            | Amount of tax remitted (sales, use, or VAT/GST taxes)                                                                                    |
-| Net Receipts            | Transaction amount less tax remitted                                                                                                     |
-| Store Fee               | The percentage of Net Receipts retained by Microsoft as a fee for making the app or in-app product available in the Store                |
-| App Proceeds            | Net receipts minus the Store Fee                                                                                                         |
-| Taxes Withheld          | Amount of income tax withheld                                                                                                            |
-| Payment                 | App Proceeds less any applicable income tax withholding (amount shown in Transaction Currency)                                           |
-| FX Rate                 | Foreign exchange rate used to convert Transaction Currency to Payment Currency                                                           |
-| Payment Currency        | Currency your payment is made in                                                                                                         |
-| Converted Payment       | Payment amount converted to Payment Currency using the FX Rate                                                                           |
-| Tax Remit Model         | Party responsible for remitting taxes (sales, use, or VAT/GST taxes)                                                                     |
-| Charges                 | Shows a breakdown of all the charge details aggregated in the Transaction Amount column. (Only included for Azure Marketplace.)          |
+| Source de revenu          | Votre source de revenu, en fonction de la transaction (par exemple, Windows Phone Store, Windows Store 8, Windows Store, etc.)  |
+| ID de la transaction          | Identifiant unique de la transaction                                                                                                            |
+| Date et heure de la transaction   | Date et heure d'exécution de la transaction (UTC)                                                                                         |
+| ID de produit parent       | Identificateur unique du produit parent. Notez également que si la transaction ne présente aucun produit parent, l'ID du produit parent est l'ID du produit. |
+| ID de produit              | Identifiant unique du produit                                                                                                                |
+| Nom du produit parent     | Nom du produit parent. Notez également que si la transaction ne présente aucun produit parent, le nom du produit parent est identique au nom du produit.   |
+| Nom du produit            | Désignation du produit                                                                                                                      |
+| Type de produit            | Type du produit (par exemple, Application, Produit in-app, Jeu, etc.)                                                                                        |
+| Type de transaction        | Type de la transaction (par exemple, achat, remboursement, contrepassation, rétrofacturation, etc.)                                                               |
+| Moyen de paiement          | Instrument de paiement client utilisé pour la transaction (par exemple, carte de crédit, opérateur mobile, etc.)                                        |
+| Pays / région        | Pays/région d'exécution de la transaction                                                                                            |
+| Fournisseur / vendeur local | Fournisseur/vendeur local de l'enregistrement                                                                                                          |
+| Devise de la transaction    | Devise utilisée pour la transaction                                                                                                              |
+| Montant de transaction      | Montant de la transaction                                                                                                                |
+| Taxes versées            | Montant des taxes versées (taxe de vente, taxe d'utilisation ou TVA/taxe sur les biens et services)                                                                                    |
+| Profits nets            | Montant de la transaction moins les taxes versées                                                                                                     |
+| Frais du Windows Store               | Pourcentage des recettes nettes retenues par Microsoft à titre de frais de mise à disposition de l'application ou du produit in-app dans le Windows Store.                |
+| Revenu de l'application            | Recettes nettes moins les frais du Windows Store                                                                                                         |
+| Impôts retenus          | Montant de l'impôt sur le revenu retenu                                                                                                            |
+| Paiement                 | Revenu de l'application moins toute retenue d'impôt sur le revenu applicable (montant indiqué dans le champ « Devise de la transaction »)                                           |
+| Taux de change                 | Taux de change utilisé pour convertir la devise de la transaction en devise du paiement                                                           |
+| Devise de paiement        | Devise dans laquelle votre paiement a été effectué                                                                                                         |
+| Paiement converti       | Montant du paiement converti en devise du paiement à l'aide du taux de change                                                                           |
+| Modèle de remise des taxes         | Tiers responsable du versement des taxes (taxe de vente, taxe d’utilisation ou TVA/taxe sur les biens et services)                                                                     |
+| Frais                 | Ventilation détaillée de tous les frais agrégés dans la colonne Montant de transaction (uniquement disponible pour Azure Marketplace)          |
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

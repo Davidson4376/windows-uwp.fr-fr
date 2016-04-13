@@ -1,6 +1,6 @@
 ---
-title: Comment activer une application (DirectX et C++)
-description: Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
+Comment activer une application (DirectX et C++)
+Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 ---
 
@@ -87,4 +87,8 @@ void App::Run()
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

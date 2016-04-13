@@ -1,129 +1,130 @@
 ---
 ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
-Before using ad mediation, you'll need to set up accounts with each ad network that you’d like to use in your apps.
-Select and manage your ad networks
+description: Avant d’utiliser la médiation publicitaire, vous devez configurer des comptes auprès de chaque réseau publicitaire que vous souhaitez utiliser dans vos applications.
+title: Sélectionner et gérer vos réseaux publicitaires
 ---
 
-# Select and manage your ad networks
+# Sélectionner et gérer vos réseaux publicitaires
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Before using ad mediation, you'll need to set up accounts with each ad network that you’d like to use in your apps. We recommend doing this before you add the ad mediator control to your Microsoft Visual Studio project. We also recommend that you set up accounts with as many ad networks as possible, so you have maximum flexibility to optimize your ad mediation performance.
+Avant d’utiliser la médiation publicitaire, vous devez configurer des comptes auprès de chaque réseau publicitaire que vous souhaitez utiliser dans vos applications. Nous vous recommandons de procéder ainsi avant d’ajouter le contrôle Ad Mediator à votre projet Microsoft Visual Studio. Nous vous recommandons également de configurer des comptes avec autant de réseaux publicitaires que possible pour que vous disposiez de la flexibilité maximale pour optimiser les performances de médiation publicitaire.
 
-## Supported ad networks and project types
+## Réseaux publicitaires et types de projet pris en charge
 
-Currently, ad mediation is supported for the following ad networks and project types.
+Actuellement, la médiation publicitaire est prise en charge pour les réseaux publicitaires et types de projet suivants.
 
-| Universal Windows Platform (UWP) app using C# or Visual Basic with XAML | Windows 8.1 app using C# or Visual Basic with XAML | Windows Phone 8.1 app using C# or Visual Basic with XAML | Windows Phone 8.x Silverlight app |               |
+|  Réseau publicitaire    | Application de plateforme Windows universelle (UWP) en C# ou Visual Basic avec XAML | Application Windows 8.1 en C# ou Visual Basic avec XAML | Application Windows Phone 8.1 en C# ou Visual Basic avec XAML | Application Windows Phone 8.x Silverlight |               
 |-------------------------------------------------------------------------|----------------------------------------------------|----------------------------------------------------------|-----------------------------------|---------------|
-| [Microsoft Advertising](#microsoft_advertising)                         | **Supported**                                      | **Supported**                                            | **Supported**                     | **Supported** |
-| [AdDuplex](#adduplex)                                                   | **Supported**                                      | **Supported**                                            | **Supported**                     | **Supported** |
-| [Smaato](#smaato)                                                       | Not supported                                      | **Supported**                                            | **Supported**                     | **Supported** |
-| [AdMob (Google)](#admob)                                                | Not supported                                      | Not supported                                            | Not supported                     | **Supported** |
-| [Inneractive](#inneractive)                                             | Not supported                                      | Not supported                                            | Not supported                     | **Supported** |
-| [Vserv VMAX](#vserv)                                                    | Not supported                                      | Not supported                                            | **Supported**                     | Not supported | 
+| [Microsoft](#microsoft)                         | **Pris en charge**                                      | **Pris en charge**                                            | **Pris en charge**                     | **Pris en charge** |
+| [AdDuplex](#adduplex)                                                   | **Pris en charge**                                      | **Pris en charge**                                            | **Pris en charge**                     | **Pris en charge** |
+| [Smaato](#smaato)                                                       | Non pris en charge                                      | **Pris en charge**                                            | **Pris en charge**                     | **Pris en charge** |
+| [AdMob (Google)](#admob)                                                | Non pris en charge                                      | Non pris en charge                                            | Non pris en charge                     | **Pris en charge** |
+| [Inneractive](#inneractive)                                             | Non pris en charge                                      | Non pris en charge                                            | Non pris en charge                     | **Pris en charge** |
+| [Vserv VMAX](#vserv)                                                    | Non pris en charge                                      | Non pris en charge                                            | **Pris en charge**                     | Non pris en charge | 
 
-Some project types, such as C++ with XAML and JavaScript with HTML, are not currently supported by ad mediation. For these project types, you can show ads from Microsoft Advertising without using ad mediation. For more information, see [AdControl in XAML and .NET](https://msdn.microsoft.com/library/mt313186.aspx) and [AdControl in HTML 5 and JavaScript](https://msdn.microsoft.com/library/mt313130.aspx).
+Certains types de projet, tels que C++ avec XAML et JavaScript avec HTML, ne sont actuellement pas pris en charge par la médiation publicitaire. Pour ces types de projet, vous pouvez afficher des publicités de Microsoft sans utiliser de médiation publicitaire. Pour plus d’informations, voir [AdControl et XAML et .NET](https://msdn.microsoft.com/library/mt313186.aspx) et [AdControl en HTML 5 et JavaScript](https://msdn.microsoft.com/library/mt313130.aspx).
 
-## Specific parameters and details for each network
+## Paramètres spécifiques et détails de chaque réseau
 
 
-Here are the specific details you'll need for each ad network, including how to set up your account and how to onboard an app. We also list the required parameters that you need to provide when you [submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md) (and/or in Connected Services for [testing your ad mediation implementation](test-your-ad-mediation-implementation.md)). For more details about using a specific ad network, visit its website.
+Voici les détails spécifiques dont vous aurez besoin pour chaque réseau publicitaire, notamment sur la configuration de votre compte et l’intégration d’une application. Nous répertorions également les paramètres que vous devez spécifier lorsque vous [soumettez votre application et configurez la médiation publicitaire](submit-your-app-and-configure-ad-mediation.md) (et/ou dans les services connectés pour [tester l’implémentation de votre médiation publicitaire](test-your-ad-mediation-implementation.md)). Pour plus d’informations sur l’utilisation d’un réseau publicitaire spécifique, visitez son site web.
 
-In addition to the required parameters, each ad network also has additional optional parameters you can set via code in your app. For examples, see [Optional ad network parameters](#optionalparameters) later in this topic. For the complete list of optional parameters, see the documentation provided by each ad network. Some of these parameters will be ignored or overwritten by ad mediation, and these are listed in the sections below. For example, parameters related to current location are usually overwritten with information about the customer's location that is determined by the location capability within the app itself.
+Outre les paramètres obligatoires, chaque réseau publicitaire possède des paramètres facultatifs supplémentaires que vous pouvez définir via le code de votre application. Pour obtenir des exemples, voir [Paramètres facultatifs des réseaux publicitaires](#optionalparameters) plus loin dans cette rubrique. Pour obtenir la liste complète des paramètres facultatifs, consultez la documentation fournie par chaque réseau publicitaire. Certains de ces paramètres sont ignorés ou remplacés par la médiation publicitaire, et sont répertoriés dans les sections ci-dessous. Par exemple, les paramètres associés à l’emplacement actuel sont généralement remplacés par les informations sur l’emplacement du client, qui est déterminé par la fonctionnalité de localisation de l’application.
 
-Note that when you [add the ad mediator control](add-and-use-the-ad-mediator-control.md) and specify which ad networks to use, Visual Studio attempts to fetch the required assemblies programmatically for some ad networks. If there are any assemblies that cannot be automatically retrieved, you can install them using the links shown below for each ad network.
+Notez que si vous [ajoutez le contrôle Ad Mediator](add-and-use-the-ad-mediator-control.md) et spécifiez les réseaux publicitaires à utiliser, Visual Studio tente de récupérer les assemblys requis par programme pour certains réseaux publicitaires. Si des assemblys ne peuvent pas être récupérés automatiquement, vous pouvez les installer en utilisant les liens ci-dessous correspondant à chaque réseau publicitaire.
 
-### Microsoft Advertising
+### Microsoft
 
-| Website                        | To configure ad network parameters, use the [Monetize with ads](https://msdn.microsoft.com/library/windows/apps/mt170658) page on the [Windows Dev Center dashboard](https://dev.windows.com/overview).   |
+| Site web                        | Pour configurer les paramètres de réseau publicitaire, utilisez la page [Monétiser grâce aux publicités](https://msdn.microsoft.com/library/windows/apps/mt170658) sur le [tableau de bord du Centre de développement Windows](https://dev.windows.com/overview).   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK location                   | [Microsoft Universal Ad Client SDK](http://go.microsoft.com/fwlink/p/?LinkId=518026).                                                                                                                                                                                                                         |
-| Onboarding an app              | Add the ad mediation control to your app, and submit your app to the Windows Dev Center dashboard.                                                                                                                                                                                                            |
-| Required parameters            | ApplicationId and AdUnitId: These parameters are automatically filled in for you when you submit your app package, based on the contents of your app. However, you can optionally edit these parameters when you [submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md). <br> <br> Height and Width (only required for Windows Phone 8 Silverlight and Windows Phone 8.1 Silverlight).                                                                                                                                                                                                           |
-| Overwritten/ignored parameters | Latitude (overwritten)  <br><br> Longitude (overwritten) <br><br> AutoRefreshIntervalInSeconds (ignored) <br><br> IsAutoRefreshEnabled (ignored) <br><br> IsAutoCollapsedEnabled (ignored) <br><br> IsEngaged (ignored) <br><br> IsSuspended (ignored) |
+| Emplacement du Kit de développement logiciel (SDK)                   | [SDK d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk).                                                                                                                                                                                                                         |
+| Intégration d’une application              | Ajoutez le contrôle de médiation publicitaire à votre application et soumettez-la au tableau de bord du Centre de développement Windows.                                                                                                                                                                                                            |
+| Paramètres obligatoires            | ApplicationId et AdUnitId : ces paramètres sont automatiquement renseignés lorsque vous soumettez votre package d’application, en fonction du contenu de votre application. Toutefois, si vous le souhaitez, vous pouvez modifier ces paramètres lorsque vous [soumettez votre application et configurez la médiation publicitaire](submit-your-app-and-configure-ad-mediation.md). <br> <br> Height et Width (requis uniquement pour Windows Phone 8 Silverlight et Windows Phone 8.1 Silverlight).                                                                                                                                                                                                           |
+| Paramètres remplacés/ignorés | Latitude (remplacé)  <br><br> Longitude (remplacé) <br><br> AutoRefreshIntervalInSeconds (ignoré) <br><br> IsAutoRefreshEnabled (ignoré) <br><br> IsAutoCollapsedEnabled (ignoré) <br><br> IsEngaged (ignoré) <br><br> IsSuspended (ignoré) |
 
  
 
 ### AdDuplex
 
-| Website                        | [http://adduplex.com](http://go.microsoft.com/fwlink/p/?LinkId=518028)      |
+| Site web                        | [http://adduplex.com](http://go.microsoft.com/fwlink/p/?LinkId=518028)      |
 |--------------------------------|-----------------------------------------------------------------------------|
-| SDK location                   | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the [Getting Started](http://go.microsoft.com/fwlink/p/?LinkId=518029) section on the AdDuplex website. |
-| Onboarding an app              | In the AdDuplex portal, create a new app.                                                                                                                                                                                                                                                                                                        |
-| Required parameters            | AppKey <br><br> AdUnitId <br><br> Size (only required for Windows 8.1 XAML)  |
-| Overwritten/ignored parameters | Latitude (overwritten) <br><br> Longitude (overwritten) <br><br> AutoRefreshIntervalInSeconds (ignored) <br><br> IsAutoRefreshEnabled (ignored) <br><br> IsAutoCollapsedEnabled (ignored) <br><br> IsEngaged (ignored) <br><br> IsSuspended (ignored) |
+| Emplacement du Kit de développement logiciel (SDK)                   | Tout d’abord, laissez le contrôle Ad Mediator récupérer les assemblys via les services connectés en suivant la description indiquée dans [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md). Si vous devez les télécharger manuellement, accédez à la section [Getting started](http://go.microsoft.com/fwlink/p/?LinkId=518029) du site web AdDuplex. |
+| Intégration d’une application              | Dans le portail AdDuplex, créez une application.                                                                                                                                                                                                                                                                                                        |
+| Paramètres requis            | AppKey <br><br> AdUnitId <br><br> Size (requis uniquement pour Windows 8.1 XAML)  |
+| Paramètres remplacés/ignorés | Latitude (remplacé) <br><br> Longitude (remplacé) <br><br> AutoRefreshIntervalInSeconds (ignoré) <br><br> IsAutoRefreshEnabled (ignoré) <br><br> IsAutoCollapsedEnabled (ignoré) <br><br> IsEngaged (ignoré) <br><br> IsSuspended (ignoré) |
  
 
 ### Smaato
 
-| Website                        | [http://www.smaato.com/](http://go.microsoft.com/fwlink/p/?LinkId=518030)                                                                                                                                                                                                        |
+| Site web                        | [http://www.smaato.com/](http://go.microsoft.com/fwlink/p/?LinkId=518030)                                                                                                                                                                                                        |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK location                   | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the Downloads tab in the Smaato portal. |
-| Onboarding an app              | In the Smaato portal, go to My Spaces and generate a new Adspace.                                                                                                                                                                                                                |
-| Required parameters            | Pub <br> <br> Adspace <br> <br> Height and Width (only required for Windows 8.1 XAML)  |
-| Overwritten/ignored parameters | Gps (overwritten)                                                                                                                                                                                                                                                                |
+| Emplacement du Kit de développement logiciel (SDK)                   | Tout d’abord, laissez le contrôle Ad Mediator récupérer les assemblys via les services connectés en suivant la description indiquée dans [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md). Si vous devez les télécharger manuellement, accédez à l’onglet Downloads du portail Smaato. |
+| Intégration d’une application              | Dans le portail Smaato, accédez à My Spaces et générez un nouvel espace publicitaire.                                                                                                                                                                                                                |
+| Paramètres obligatoires            | Pub <br> <br> Adspace <br> <br> Height et Width (requis uniquement pour Windows 8.1 XAML)  |
+| Paramètres remplacés/ignorés | Gps (remplacé)                                                                                                                                                                                                                                                                |
 
  
 
 ### AdMob (Google)
 
-| Website                        | [http://apps.admob.com](http://go.microsoft.com/fwlink/p/?LinkId=518031)                                               |
+| Site web                        | [http://apps.admob.com](http://go.microsoft.com/fwlink/p/?LinkId=518031)                                               |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| SDK location                   | Get the Windows Phone 8 SDK from the [Google Mobile Ads SDK website](http://go.microsoft.com/fwlink/p/?LinkId=518032). |
-| Onboarding an app              | In the AdMob portal, select Monetize new app.                                                                          |
-| Required parameters            | AdUnitID <br> <br> Format                                                                                              |
-| Overwritten/ignored parameters | Location (overwritten)  <br><br> ForceTesting (ignored) <br><br> Refresh Rate (ignored)                                |
+| Emplacement du Kit de développement logiciel (SDK)                   | Obtenez le Kit de développement logiciel (SDK) de Windows Phone 8 sur le [site web Google Mobile Ads SDK](http://go.microsoft.com/fwlink/p/?LinkId=518032). |
+| Intégration d’une application              | Dans le portail AdMob, sélectionnez Monétiser une nouvelle application.                                                                          |
+| Paramètres obligatoires            | AdUnitID <br> <br> Format                                                                                              |
+| Paramètres remplacés/ignorés | Location (remplacé)  <br><br> ForceTesting (ignoré) <br><br> Refresh Rate (ignoré)                                |
  
 
 ### Inneractive
 
-| Website             | [http://inner-active.com](http://go.microsoft.com/fwlink/p/?LinkId=518035)                                                                                                                                                                                                                                                             |
+| Site web             | [http://inner-active.com](http://go.microsoft.com/fwlink/p/?LinkId=518035)                                                                                                                                                                                                                                                             |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK location        | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, sign in to your account and go to the SDK tab in the Dashboard to download the Windows Phone 8 SDK. |
-| Onboarding an app   | In the Inneractive portal, create a new app.                                                                                                                                                                                                                                                                                           |
-| Required parameters | AppID <br> <br> AdType (either IaAdType_Banner or IaAdType_Text)                                                                               |
+| Emplacement du Kit de développement logiciel (SDK)        | Tout d’abord, laissez le contrôle Ad Mediator récupérer les assemblys via les services connectés en suivant la description indiquée dans [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md). Si vous devez les télécharger manuellement, connectez-vous à votre compte et accédez à l’onglet SDK dans le tableau de bord pour télécharger le Kit de développement logiciel (SDK) Windows Phone 8. |
+| Intégration d’une application   | Dans le portail Inneractive, créez une application.                                                                                                                                                                                                                                                                                           |
+| Paramètres obligatoires | AppID <br> <br> AdType (IaAdType_Banner ou IaAdType_Text)                                                                               |
  
 
 ### Vserv VMAX
 
-| Website             | [http://www.vmax.com](http://www.vmax.com)                                                                                                                                                                                                                                                                         |
+| Site web             | [http://www.vmax.com](http://www.vmax.com)                                                                                                                                                                                                                                                                         |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK location        | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the [SDK](http://go.microsoft.com/fwlink/?LinkId=627078) section on the VMAX website. |
-| Onboarding an app   | Obtain the Adspot ID for your app from the VMAX website (the Adspot ID is called ZoneId in the VMAX APIs).                                                                                                                                                                                                                     |
-| Required parameters | ZoneId                                                                                                                                                                                                                                                                                                                         |12345
+| Emplacement du Kit de développement logiciel (SDK)        | Tout d’abord, laissez le contrôle Ad Mediator récupérer les assemblys via les services connectés en suivant la description indiquée dans [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md). Si vous devez les télécharger manuellement, accédez à la section [Kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=627078) du site web VMAX. |
+| Intégration d’une application   | Récupérez l’ID Adspot de votre application sur le site web VMAX (cet ID est appelé ZoneId dans les API VMAX).                                                                                                                                                                                                                     |
+| Paramètres obligatoires | ZoneId                                                                                                                                                                                                                                                                                                                         |12345
 
  
 
-## Optional ad network parameters
+## Paramètres facultatifs des réseaux publicitaires
 
 
-In addition to the required parameters, each ad network also has additional optional parameters you can set via code in your app. For the complete list of optional parameters, see the documentation provided by each ad network. To set these optional parameters in your code, use the **AdSdkOptionalParameters** property of your **AdMediatorControl** object.
+Outre les paramètres obligatoires, chaque réseau publicitaire possède des paramètres facultatifs supplémentaires que vous pouvez définir via le code de votre application. Pour obtenir la liste complète des paramètres facultatifs, consultez la documentation fournie par chaque réseau publicitaire. Pour définir ces paramètres facultatifs dans votre code, utilisez la propriété **AdSdkOptionalParameters** de votre objet **AdMediatorControl**.
 
-The following example demonstrates how to set the **CountryOrRegion** parameter for Microsoft Advertising.
+L’exemple suivant montre comment définir le paramètre **CountryOrRegion** pour Microsoft Advertising.
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["CountryOrRegion"] = "IN";
 ```
 
-The following example demonstrates how to set the **Width** and **Height** parameters for Smaato.
+L’exemple suivant montre comment définir les paramètres **Width** et **Height** pour Smaato.
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Width"] = 300;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 250;
 ```
 
-## Related topics
+## Rubriques connexes
 
-* [Add and use the ad mediation control](add-and-use-the-ad-mediator-control.md)
-* [Test your ad mediation implementation](test-your-ad-mediation-implementation.md)
-* [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md)
-* [Troubleshoot ad mediation](troubleshoot-ad-mediation.md)
+* [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md)
+* [Tester l’implémentation de votre médiation publicitaire](test-your-ad-mediation-implementation.md)
+* [Soumettre votre application et configurer une médiation publicitaire](submit-your-app-and-configure-ad-mediation.md)
+* [Résoudre les problèmes liés à la médiation publicitaire](troubleshoot-ad-mediation.md)
  
 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
-<!--HONumber=Mar16_HO1-->
+

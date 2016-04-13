@@ -1,67 +1,69 @@
 ---
-A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
-Semantic zoom
+Un contrôle de zoom sémantique permet à l’utilisateur d’effectuer un zoom entre deux affichages sémantiques différents du même jeu de données.
+Zoom sémantique
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
-Semantic zoom
+Zoom sémantique
 template: detail.hbs
 ---
 
-# Semantic zoom
+# Zoom sémantique
+
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+Le contrôle zoom sémantique permet à l’utilisateur de zoomer entre deux vues du même contenu pour pouvoir rapidement naviguer dans un jeu de données volumineux. La vue avec zoom avant est la vue principale du contenu. Vous affichez le jeu de données complet dans cette vue. La vue avec zoom arrière est une vue plus générale du même contenu. En règle générale, vous affichez les en-têtes de groupe pour un jeu de données groupé dans cette vue. Par exemple, lorsque l’utilisateur affiche son carnet d’adresses, il peut faire un zoom avant sur une lettre pour voir tous les noms associés à cette lettre. 
+
+**API importantes**
+
+-   [**Classe SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)
+
+**Fonctionnalités** :
+
+-   La taille de la vue avec zoom arrière est restreinte par les limites du contrôle de zoom sémantique.
+-   Appuyer sur un en-tête de groupe permet de basculer entre les vues. Il est possible d’activer le pincement pour basculer entre les vues.
+-   Les en-têtes actifs basculent entre les vues.
+
+## Exemples
+
+Zoom sémantique utilisé dans l’application Photos.
+
+![Zoom sémantique utilisé dans l’application Photos](images/control-examples/semantic-zoom-photos.png)
+
+Un carnet d’adresses est un exemple de jeu de données dont la navigation peut être considérablement simplifiée grâce à un contrôle de zoom sémantique. L’un des affichages correspond à la vue d’ensemble complète et alphanumérique des personnes figurant dans le carnet d’adresses (image de gauche), tandis que la vue avec zoom avant affiche les données dans l’ordre et avec plus de détails (image de droite).
+
+![Exemple de zoom sémantique utilisé dans une liste de contacts](images/semanticzoom-win10.png)
+
+## Recommandations
+
+-   Lorsque vous utilisez le zoom sémantique dans votre application, veillez à ce que la disposition et le sens du mouvement panoramique de l’élément ne changent pas en fonction du niveau de zoom. Les dispositions et les interactions de mouvement panoramique doivent être cohérentes et prévisibles dans tous les niveaux de zoom.
+-   Comme le zoom sémantique permet aux utilisateurs de passer rapidement d’un élément de contenu à un autre, limitez à trois le nombre de pages/d’écrans du mode d’affichage général. Un mouvement panoramique trop important réduit la fonctionnalité du zoom sémantique.
+-   Évitez d’utiliser le zoom sémantique pour modifier l’étendue du contenu. Par exemple, il convient de ne pas basculer un album photo vers un affichage des dossiers dans l’Explorateur de fichiers.
+-   Utilisez une structure et une sémantique qui sont essentielles à la vue.
+-   Utilisez des noms de groupe pour les éléments d’une collection groupée.
+-   Utilisez un ordre de tri pour une collection non groupée, mais triée, par exemple l’ordre chronologique pour des dates ou l’ordre alphabétique pour une liste de noms.
+
+\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
+## Articles connexes
+
+* [Recommandations en matière d’interactions utilisateur courantes](https://dev.windows.com/design/inputs-devices)
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+**Exemples (XAML)**
+* [Entrée : exemples d’événement d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
 
-
-A semantic zoom control enables the user to toggle between two different views of the same data set. It changes the parameters and layout of a graphical representation and modifies the display of the structure and selection of data.
-
-**Important APIs**
-
--   [**SemanticZoom class**](https://msdn.microsoft.com/library/windows/apps/hh702601)
--   [**Input class**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-<p>Features:</p>
-
--   An app can contain only one semantic zoom control.
--   The size of the zoomed-out view is constrained by the bounds of the semantic zoom control.
--   Tapping on a group header toggles views. Pinching as a way to toggle between views can be enabled.
--   Active headers switch between views.
-
-## Examples
-
-
-An address book is one example of a data set that can be much easier to navigate using a semantic zoom control. In this example, the semantic zoom makes use of a jump list. In one view is the complete, alphanumerical overview of people in the address book (left image), while the zoomed-in view displays the data in order and with greater detail (right image).
-
-![example of semantic zoom used in a contacts list](images/semanticzoom-win10.png)
-
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
-
-
--   When using semantic zoom in your app, be sure that the item layout and panning direction don't change based on the zoom level. Layouts and panning interactions should be consistent and predictable across zoom levels.
--   Semantic zoom enables the user to jump quickly to content, so limit the number of pages/screens to three in the zoomed-out mode. Too much panning diminishes the practicality of semantic zoom.
--   Avoid using semantic zoom to change the scope of the content. For example, a photo album shouldn't switch to a folder view in File Explorer.
--   Use a structure and semantics that are essential to the view.
--   Use group names for items in a grouped collection.
--   Use sort ordering for a collection that is ungrouped but sorted, such as chronological for dates or alphabetical for a list of names.
-
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## <span id="related_topics"></span>Related articles
-
-* [Guidelines for common user interactions](https://dev.windows.com/design/inputs-devices)
-
-
-**Samples (XAML)**
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-
-**Samples (DirectX)**
-* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
-* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
+**Exemples (DirectX)**
+* [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

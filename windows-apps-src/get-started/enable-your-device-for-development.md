@@ -1,7 +1,7 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
-title: Activer votre appareil pour le développement
-description: Il existe une approche différente pour le développement des appareils Windows 10.
+Activer votre appareil pour le développement
+Il existe une approche différente pour le développement des appareils Windows 10.
 mots-clés : Prise en main
 mots-clés : Licence de développeur
 mots-clés : Visual Studio, licence de développeur
@@ -19,7 +19,8 @@ Si vous utilisez toujours un appareil Windows 8.1 pour développer ou tester vos
 
 Si vous utilisez Microsoft Visual Studio sur un appareil Windows 10 et que vous ouvrez une solution dédiée à une application Windows 8.1 ou Windows 10, vous êtes invité à activer votre appareil avec cette boîte de dialogue. Vous devez activer votre appareil pour l’utilisation des concepteurs et le débogage de votre application.
 
-![Activez la boîte de dialogue du mode développeur affichée dans Visual Studio](images/latestenabledialog.png)
+![Boîte de dialogue d’activation du mode développeur affichée dans Visual Studio](images/latestenabledialog.png)
+
 Lorsque cette boîte de dialogue s’affiche, cliquez sur **Paramètres pour les développeurs** pour accéder directement à la page **Mise à jour et sécurité**, comme illustré ci-dessous. Ou bien cliquez sur **OK**, puis suivez les étapes ci-dessous pour activer votre appareil Windows 10 pour le développement.
 
 ### Activer vos appareils Windows 10
@@ -78,7 +79,7 @@ Informations spécifiques à la famille d’appareils
     Vous pouvez appuyer sur le fichier pour installer tout fichier .appx reçu par courrier électronique ou sur une carte SD. N’installez pas d’applications à partir de sources non vérifiées.
 
 **Conseil**  
-Vous pouvez utiliser plusieurs outils pour déployer une application à partir d’un PC Windows 10 sur un appareil mobile Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB. Dans tous les cas, seul le package d’application (.appx) est installé et non les certificats.
+Vous pouvez utiliser plusieurs outils pour déployer une application à partir d’un PC Windows 10 sur un appareil mobile Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB. Dans tous les cas, seul le package d’application (.appx) est installé et non les certificats.
 
 -   Utilisez l’outil de déploiement d’applications Windows 10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
 -   À partir de Windows 10 version 1511, vous pouvez utiliser [Device Portal](#device_portal) pour effectuer un déploiement à partir de votre navigateur sur un appareil mobile exécutant Windows 10 version 1511 ou ultérieure. Utilisez la page **Applications** dans Device Portal (&lt;IP&gt;/appmanager.md) pour charger un package d’application (.appx) et l’installer sur l’appareil.
@@ -136,72 +137,25 @@ Utilisez gpedit.msc pour définir les stratégies de groupe afin d’activer vot
 
     -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
 
-## Fonctionnalités de développement pour les appareils mobiles
+## Fonctionnalités du Mode développeur
 
+Pour chaque famille d’appareils, des fonctionnalités de développement supplémentaires peuvent être disponibles. Ces fonctionnalités sont disponibles uniquement lorsque le **Mode développeur** est activé sur l’appareil et peuvent varier en fonction de la version de votre système d’exploitation.
 
-À partir de Windows 10 version 1511, des fonctionnalités de développement supplémentaires sont disponibles pour la famille d’appareils mobiles. Ces fonctionnalités sont disponibles uniquement lorsque le **mode développeur** est activé sur l’appareil.
+Cette image illustre les fonctionnalités de développement pour la famille d’appareils mobiles sur Windows 10, Version 1511.
 
-![Options du mode développeur pour les appareils mobiles](images/devmode-mob-options.png)
+![Options du Mode développeur pour les appareils mobiles](images/devmode-mob-options.png)
 
-### Détection et couplage d’appareils
+### <span id="device-discovery-and-pairing"> </span>Détection d’appareils et Device Portal
 
-(Windows 10 version 1511 ou ultérieure, famille d’appareils mobiles uniquement)
+Pour en savoir plus sur la détection des appareils et Device Portal, voir [Vue d’ensemble de Windows Device Portal](../debug-test-perf/device-portal.md).
 
-Pour vous connecter à Device Portal, vous devez activer la détection d’appareils. Cela vous permet de coupler votre téléphone avec un PC ou un autre appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB.
-
-La première fois que vous vous connectez à Device Portal, vous êtes invité à entrer un code de sécurité à 6 caractères (avec respect de la casse). Cela garanti votre accès au téléphone et vous préserve des attaques. Appuyez sur le bouton **Coupler** de votre téléphone pour générer et afficher le code, puis entrez les 6 caractères dans la zone de texte du navigateur.
-
-![Paramètres de détection d’appareils en mode développeur](images/devmode-mob-pairing.png)
-
-### Device Portal
-
-(Windows 10 version 1511 ou ultérieure, famille d’appareils mobiles uniquement)
-
-Device Portal vous permet d’afficher les informations de diagnostic et d’interagir avec votre téléphone sur HTTP à l’aide de votre navigateur. Vous pouvez utiliser Device Portal pour :
-
--   afficher la liste des processus en cours d’exécution sur le téléphone ;
--   installer, supprimer, démarrer et arrêter des applications sur votre téléphone ;
--   modifier les profils de connexion Wi-Fi et afficher la force du signal (ipconfig) ;
--   afficher les graphiques d’utilisation du processeur, de la mémoire, des E/S, du réseau et du GPU en temps réel ;
--   arrêter votre téléphone.
-
-L’image suivante illustre la page **Performance** lorsque Device Portal est exécuté localement sur le navigateur du téléphone.
-
-![Device Portal en cours d’exécution sur le téléphone](images/devportal-phone.png)
-
-Vous pouvez vous connecter à Device Portal de 3 façons : USB, hôte local et sur le réseau local (y compris avec VPN et fonction modem).
-
-**Pour se connecter à Device Portal**
-
-1.  Dans votre navigateur, entrez l’adresse indiquée ici selon le type de connexion que vous utilisez.
-
-    -   USB : http://127.0.0.1:10080
-
-        Utilisez cette adresse lorsque le téléphone est connecté à un PC par le biais d’une connexion USB. Les deux appareils doivent disposer de Windows 10 version 1511 ou ultérieure.
-
-    -   Hôte local : http://127.0.0.1
-
-        Utilisez cette adresse pour afficher Device Portal localement sur le téléphone dans Microsoft Edge pour Windows 10 Mobile.
-
-    -   Réseau local : https://*&lt;Adresse IP du téléphone&gt;*
-
-        Utilisez cette adresse pour établir la connexion par le biais d’un réseau local.
-
-        L’adresse IP du téléphone est affichée dans les paramètres Device Portal sur le téléphone. Une connexion HTTPS est requise pour l’authentification et la communication sécurisée.
-
-2.  Appuyez sur le bouton **Coupler** de votre téléphone pour générer et afficher le code de sécurité requis.
-3.  Entrez le code de sécurité à 6 caractères dans la zone de mot de passe de Device Portal, dans votre navigateur.
-4.  (Facultatif) Activez la case à cocher **Mémoriser mon ordinateur** dans votre navigateur afin de mémoriser ce couplage.
-
-Voici la section Device Portal de la page des paramètres du développeur sur Windows Phone.
-
-![Paramètres de Device Portal](images/devmode-mob-portal.png)
-
-Si vous utilisez Device Portal dans un environnement protégé, comme un laboratoire de test, où vous faites confiance à tous les utilisateurs du réseau local, si aucune information personnelle n’est présente sur votre appareil et si vous présentez des exigences uniques, vous pouvez désactiver l’authentification. Cela permet une communication non chiffrée. Toute personne connaissant l’adresse IP de votre téléphone pourra le contrôler.
+Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
+- [Device Portal pour HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [Device Portal pour IoT](http://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
+- [Device Portal pour appareils mobiles](../debug-test-perf/device-portal-mobile.md)
+- [Device Portal pour Xbox](../debug-test-perf/device-portal-xbox.md)
 
 ### Rapport d’erreurs
-
-(Windows 10 version 1511 ou ultérieure, famille d’appareils mobiles uniquement)
 
 Définissez cette valeur pour spécifier le nombre de vidages sur incident enregistrés sur votre téléphone.
 
@@ -221,4 +175,8 @@ Après cela, vous devez activer votre appareil pour le développement, comme dé
 Erreur : DEP0700 : Échec de l’inscription de l’application.
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO5-->
+
+

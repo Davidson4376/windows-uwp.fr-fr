@@ -1,242 +1,156 @@
 ---
-Learn how to extend Cortana with more flexible and natural voice commands, so a user can say your app's name anywhere in the command.
-Support natural language voice commands in Cortana
+Description: Découvrez comment enrichir Cortana avec des commandes vocales plus souples et plus naturelles qui permettent à un utilisateur de prononcer le nom de votre application n’importe où dans la commande.
+title: Prendre en charge des commandes vocales en langage naturel dans Cortana
 ms.assetid: 281E068A-336A-4A8D-879A-D8715C817911
-Support natural language voice commands
+label: Support natural language voice commands
 template: detail.hbs
 ---
 
-# Support natural language voice commands in Cortana
+# Prendre en charge des commandes vocales en langage naturel dans Cortana
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Learn how to extend **Cortana** with more flexible and natural voice commands, so a user can say your app's name anywhere in the command.
+Enrichissez **Cortana** avec des commandes vocales plus souples et plus naturelles qui permettent à un utilisateur de prononcer le nom de votre application n’importe où dans la commande.
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**Voice Command Definition (VCD) elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
 
-Extending **Cortana** through voice commands requires the user to indicate both the app and the specific command or function to execute. This is typically accomplished by announcing the app name at the beginning of the voice command. For example, "Adventure Works, add a new trip to Las Vegas."
+L’utilisation des commandes vocales pour enrichir Cortana avec les fonctionnalités de votre application nécessite que l’utilisateur spécifie à la fois l’application et la commande ou fonction à exécuter. Cette opération est généralement effectuée en annonçant le nom de l’application au début ou à la fin de la commande vocale. Par exemple, « Adventure Works, ajouter un nouveau voyage à Las Vegas ».
 
-However, specifying the application name before the command might sound awkward, stilted, or not even make sense. In many cases, being able to say the app name elsewhere in the command is more comfortable and natural, and helps make the interaction much more intuitive and engaging for the user. Our previous example, "Adventure Works, add a new trip to Las Vegas." could be rephrased as "Add a new Adventure Works trip to Las Vegas." or "Add a new trip to Las Vegas using Adventure Works."
+Toutefois, spécifier le nom de l’application de cette manière peut sembler gauche, maladroit, voire sans intérêt. Dans de nombreux cas, la possibilité de dire le nom de l’application ailleurs dans la commande est plus pratique et plus naturel, et contribue à rendre l’interaction plus intuitive et plus conviviale. Notre exemple précédent, « Adventure Works, ajouter un nouveau voyage à Las Vegas », peut être reformulé ainsi : « Ajouter un nouveau voyage Adventure Works à Las Vegas » ou « À l’aide d’Adventure Works, ajoutez un nouveau voyage à Las Vegas ».
 
-You can set up your voice commands to support the app name as a:
+Vous pouvez configurer vos commandes vocales pour que le nom de l’application soit pris en charge en tant que :
 
--   Prefix - before the command phrase
--   Infix - within the command phrase
--   Suffix - after the command phrase
+-   Préfixe : avant l’expression de la commande
+-   Infixe : au sein de l’expression de la commande
+-   Suffixe : après l’expression de la commande
 
-**Prerequisites:  **
+**Prérequis : **
 
-This topic builds on [Launch a background app with voice commands in Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). We continue here to demonstrate features with a trip planning and management app named **Adventure Works**.
+Cette rubrique s’appuie sur l’article [Lancer une application en arrière-plan avec les commandes vocales de Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). Nous continuons ici à illustrer ces fonctionnalités avec une application de planification et de gestion de voyages nommée **Adventure Works**.
 
-If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
+Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
--   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**User experience guidelines:  **
+**Recommandations en matière d’expérience utilisateur : **
 
-See [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for info about how to integrate your app with **Cortana** and [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) for helpful tips on designing a useful and engaging speech-enabled app.
+Pour des informations sur la manière d’intégrer votre application à **Cortana**, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233). Pour obtenir de précieux conseils sur la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
-## <span id="Specify_an_AppName_element_in_the_VCD"></span><span id="specify_an_appname_element_in_the_vcd"></span><span id="SPECIFY_AN_APPNAME_ELEMENT_IN_THE_VCD"></span>Specify an **AppName** element in the VCD
+## <span id="Specify_an_AppName_element_in_the_VCD"> </span> <span id="specify_an_appname_element_in_the_vcd"> </span> <span id="SPECIFY_AN_APPNAME_ELEMENT_IN_THE_VCD"> </span>Spécifier un élément **AppName** dans le fichier VCD
 
 
-The **AppName** element is used to specify a user-friendly name for an app in a voice command.
+L’élément **AppName** permet de spécifier un nom convivial pour une application dans une commande vocale.
 
 ```XML
-<AppName>Adventure Works</AppName></code></pre></td>
-</tr>
-</tbody>
-</table>
+<AppName>Adventure Works</AppName>
 ```
 
-## <span id="Specify_where_the_app_name_can_be_spoken_in_the_voice_command"></span><span id="specify_where_the_app_name_can_be_spoken_in_the_voice_command"></span><span id="SPECIFY_WHERE_THE_APP_NAME_CAN_BE_SPOKEN_IN_THE_VOICE_COMMAND"></span>Specify where the app name can be spoken in the voice command
+## <span id="Specify_where_the_app_name_can_be_spoken_in_the_voice_command"> </span> <span id="specify_where_the_app_name_can_be_spoken_in_the_voice_command"> </span> <span id="SPECIFY_WHERE_THE_APP_NAME_CAN_BE_SPOKEN_IN_THE_VOICE_COMMAND"> </span>Préciser où le nom de l’application peut être prononcé dans la commande vocale
 
 
-The **ListenFor** element has a **RequireAppName** attribute that specifies where the app name can appear in the voice command. This attribute supports four values.
+L’élément **ListenFor** possède un attribut **RequireAppName** qui spécifie où le nom de l’application peut apparaître dans la commande vocale. Cet attribut prend en charge quatre valeurs.
 
 1.  **BeforePhrase**
 
-    Default.
+    Valeur par défaut.
 
-    Indicates that users must say your app name before the command phrase.
+    Indique que les utilisateurs doivent dire le nom de votre application avant l’expression de la commande.
 
-    Here, Cortana listens for "Adventure Works when is my trip to Las Vegas".
+    Ici, Cortana entend « Adventure Works, quand aura lieu mon voyage à Las Vegas ? ».
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="BeforePhrase"> when is [my] trip to {destination} </code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+```xml
+<ListenFor RequireAppName="BeforePhrase"> show [my] trip to {destination} </ListenFor>
 ```
 
 2.  **AfterPhrase**
 
-    Indicates that users must say your app name after the command phrase.
+    Indique que les utilisateurs doivent dire le nom de votre application après l’expression de la commande.
 
-    A localized phrase list of prepositional conjunctions is provided by the system. This includes phrases such as, "using", "with "and "on".
+    Une liste d’expressions localisées de type préposition est fournie par le système. Elle inclut des expressions telles que « à l’aide de », « avec » et « dans ».
 
-    Here, Cortana listens for commands like "Show my next trip to Las Vegas on Adventure Works" and "Show my next trip to Las Vegas using Adventure Works".
+    Ici, Cortana entend des commandes comme « Afficher mon prochain voyage à Las Vegas dans Adventure Works » et « Afficher mon prochain voyage à Las Vegas à l’aide d’Adventure Works ».
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="AfterPhrase">show [my] next trip to {destination} </ListenFor></code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+```xml
+<ListenFor RequireAppName="AfterPhrase">show [my] next trip to {destination} </ListenFor>
 ```
 
 3.  **BeforeOrAfterPhrase**
 
-    Indicates that users must say your app name either before or after the command phrase.
+    Indique que les utilisateurs peuvent dire le nom de votre application avant ou après l’expression de la commande.
 
-    For the suffix version, a localized phrase list of prepositional conjunctions is provided by the system. This includes phrases such as, "using", "with "and "on".
+    Pour la version suffixe, une liste d’expressions localisées de type préposition est fournie par le système. Elle inclut des expressions telles que « à l’aide de », « avec » et « dans ».
 
-    Here, Cortana listens for commands like "Adventure Works, show my next trip to Las Vegas" or "Show my next trip to Last Vegas on Adventure works".
+    Ici, Cortana entend des commandes comme « Adventure Works, afficher mon prochain voyage à Las Vegas » ou « Afficher mon prochain voyage à Las Vegas dans Adventure Works ».
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="BeforeOrAfterPhrase">show [my] next trip to {destination} </ListenFor></code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+``` xml
+<ListenFor RequireAppName="BeforeOrAfterPhrase">show [my] next trip to {destination}</ListenFor>
 ```
 
 4.  **ExplicitlySpecified**
 
-    Indicates that users must say your app name exactly where you specify in the command phrase. The user is not required to say the app name either before or after the phrase.
+    Indique que les utilisateurs doivent dire le nom de votre application là où vous le spécifiez dans l’expression de la commande. L’utilisateur n’est pas tenu de dire le nom de l’application avant ou après l’expression.
 
-    You must explicitly reference your app name using the **{builtin:AppName}** tag.
+    Vous devez explicitement référencer le nom de votre application à l’aide de la balise **{builtin:AppName}**.
 
-    Here, Cortana listens for commands like "Adventure Works, show my next trip to Las Vegas" or "Show my next Adventure Works trip to Las Vegas".
+    Ici, Cortana entend des commandes comme « Adventure Works, afficher mon prochain voyage à Las Vegas » ou « Afficher mon prochain voyage Adventure Works à Las Vegas ».
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="ExplicitlySpecified">show [my] next {builtin:AppName} trip to {destination} </ListenFor></code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+```xml
+<ListenFor RequireAppName="ExplicitlySpecified">show [my] next {builtin:AppName} trip to {destination} </ListenFor>
 ```
 
-## <span id="Special_cases"></span><span id="special_cases"></span><span id="SPECIAL_CASES"></span>Special cases
+## <span id="Special_cases"> </span> <span id="special_cases"> </span> <span id="SPECIAL_CASES"> </span>Cas particuliers
 
+Lorsque vous déclarez un élément **ListenFor** où **RequireAppName** est « AfterPhrase » ou « ExplicitlySpecified », vous devez vous assurer que certaines conditions sont remplies :
 
-When you declare a **ListenFor** element where **RequireAppName** is either "AfterPhrase" or "ExplicitlySpecified", you must ensure certain requirements are met:
+1.  **{builtin:AppName}** doit apparaître une seule fois si **RequireAppName** est « ExplicitlySpecified ».
 
-1.  **{builtin:AppName}** must appear once and only once when **RequireAppName** is "ExplicitlySpecified".
+    Avec cette valeur, le système ne peut pas déduire où le nom de l’application peut apparaître dans la commande vocale. Vous devez explicitement spécifier cet emplacement.
 
-    With this value, the system cannot infer where the app name can appear in the voice command. You must explicitly specify the location.
+2.  Vous ne pouvez pas avoir de commande vocale commençant par un élément **PhraseTopic**, qui est généralement utilisé pour la reconnaissance vocale contenant plusieurs mots. Un mot au moins doit le précéder.
 
-2.  You cannot have a voice command begin with a **PhraseTopic** element, which is typically used for large vocabulary speech recognition. At least one word must precede it.
+    Cela permet de réduire le risque que **Cortana** lance votre application si une commande contient son nom ou une partie de celui-ci, n’importe où dans l’énoncé.
 
-    This helps to minimize the chance that **Cortana** launches your app if a command contains your app name, or part of it, anywhere in the utterance.
+    Voici une déclaration non valide qui peut conduire **Cortana** à lancer l’application **Adventure Works** si l’utilisateur dit quelque chose comme « Afficher les avis concernant Kinect Adventure Works ».
 
-    Here is an invalid declaration that could lead to **Cortana** launching the **Adventure Works** app if the user says something like "Show me reviews for Kinect adventure works".
-
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="ExplicitlySpecified">{searchPhrase} {builtin:AppName}</ListenFor></code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+```xml
+<ListenFor RequireAppName="ExplicitlySpecified">{searchPhrase} {builtin:AppName}</ListenFor>
 ```
 
-3.  There must be at least two words in the **ListenFor** string besides your app name and references to **PhraseTopic** elements.
+3.  La chaîne **ListenFor** doit contenir au moins deux mots en plus du nom de votre application et des références aux éléments **PhraseTopic**.
 
-    Similar to case 2, you need to ensure your commands contain sufficient phonetic content to minimize the chances your app is launched unintentionally.
+    Comme dans le cas n°2, vous devez vous assurer que le contenu de vos commandes est suffisamment phonétique pour réduire les risques de lancement non intentionnel de votre application.
 
-    This helps you set up your application for best possible success so your application does not get incorrectly launched when user says for example “Find Kinect Adventure works”.
+    Cela vous aide à configurer votre application du mieux possible afin qu’elle ne soit pas lancée de façon incorrecte quand l’utilisateur dit par exemple « Rechercher Kinect Adventure Works ».
 
-    Here are invalid declarations that could lead to **Cortana** launching the **Adventure Works** app if the user says something like "Hey adventure works" or "Find Kinect adventure works".
+    Voici des déclarations non valides qui peuvent conduire **Cortana** à lancer l’application **Adventure Works** si l’utilisateur dit quelque chose comme « Hey Adventure Works » ou « Rechercher Kinect Adventure Works ».
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
+```xml
 <ListenFor RequireAppName="ExplicitlySpecified">Hey {builtin:AppName}</ListenFor>
-    <ListenFor RequireAppName="ExplicitlySpecified">Find {searchPhrase} {builtin:AppName}</ListenFor>
+<ListenFor RequireAppName="ExplicitlySpecified">Find {searchPhrase} {builtin:AppName}</ListenFor>
 ```
 
-## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Remarks
+## <span id="Remarks"> </span> <span id="remarks"> </span> <span id="REMARKS"> </span>Remarques
+
+La prise en charge d’une plus grande variation de la façon dont une commande vocale peut être prononcée par un utilisateur dans **Cortana** augmente également la convivialité de votre application.
+
+Évitez d’avoir « Hey \[nom de l’application\] » en tant que votre **AppName** ou **CommandPrefix**. Les utilisateurs sont beaucoup plus susceptibles de dire « Hey Cortana » pour appeler Cortana via l’activation vocale. Par ailleurs, avoir « Hey \[nom de l’application\] » dans l’énoncé ne semble pas naturel. Par exemple, « Hey Cortana, afficher mon prochain voyage à Las Vegas dans Hey Adventure Works ».
+
+Pensez à ajouter des variantes de type infixe/suffixe à vos commandes vocales existantes. Comme nous l’avons montré ici, il est relativement aisé d’ajouter un attribut supplémentaire à vos éléments **ListenFor** existants et de prendre en charge des variantes de type suffixe. Il semble beaucoup plus naturel de dire « Hey Cortana, afficher mon prochain voyage à Las Vegas dans Adventure Works » que « Hey Cortana, Adventure Works, afficher mon prochain voyage à Las Vegas ».
+
+Pensez à utiliser le nom de votre application comme préfixe dans les cas où la commande vocale est en conflit avec les fonctionnalités **Cortana** existantes (appels, messagerie, etc.). Par exemple, « Adventure Works, envoyer un message à \[agent de voyage\] concernant un voyage à Las Vegas ».
+
+## <span id="Complete_example"> </span> <span id="complete_example"> </span> <span id="COMPLETE_EXAMPLE"> </span>Exemple complet
 
 
-Supporting more variation in how a voice command can be uttered by a user in **Cortana** also increases the general usability of your app.
+Voici un fichier VCD qui illustre différentes manières de fournir des commandes vocales en langage plus naturel.
 
-Avoid having "Hey \[app name\]" as your **AppName** or **CommandPrefix**. Users are much more likely to say "Hey Cortana" to invoke Cortana through voice activation, and having "Hey \[app name\]" in the utterance does not sound natural. For example, "Hey Cortana, show my next trip to Las Vegas on Hey Adventure Works".
-
-Consider adding infix/suffix variations to your existing voice commands. As we've shown here, it doesn't require a lot of effort to add an additional attribute to your existing **ListenFor** elements and support suffix variants. It feels a lot more natural to say "Hey Cortana, show my next trip to Las Vegas on Adventure works" than "Hey Cortana, Adventure Works, show my next trip to Las Vegas".
-
-Consider using your app name as a prefix in cases where the voice command conflicts with existing **Cortana** functionality (calling, messaging, and so on). For example, "Adventure Works, message \[travel agent\] about Las Vegas trip".
-
-## <span id="Complete_example"></span><span id="complete_example"></span><span id="COMPLETE_EXAMPLE"></span>Complete example
-
-
-Here is a VCD file that demonstrates various ways to provide more natural language voice commands.
-
-**Note**  It is valid to have multiple **ListenFor** elements, each with a different **RequireAppName** attribute value.
+**Remarque** Il est possible d’avoir plusieurs éléments **ListenFor**, chacun avec une valeur d’attribut **RequireAppName** différente.
 
  
 
@@ -283,20 +197,20 @@ Here is a VCD file that demonstrates various ways to provide more natural langua
 </VoiceCommands>
 ```
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"> </span>Articles connexes
 
 
-**Developers**
-* [Cortana interactions](cortana-interactions.md)
-* [Define custom recognition constraints](define-custom-recognition-constraints.md)
-* [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+**Développeurs**
+* [Interactions avec Cortana](cortana-interactions.md)
+* [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md)
+* [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**Designers**
-* [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Concepteurs**
+* [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
 
-**Samples**
-* [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**Exemples**
+* [Exemple de commande vocale Cortana](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  
@@ -304,4 +218,8 @@ Here is a VCD file that demonstrates various ways to provide more natural langua
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

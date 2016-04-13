@@ -1,93 +1,97 @@
 ---
-Description: The Channels and conversions report in the Windows Dev Center dashboard lets you see how customers on Windows 10 have arrived at your app's listing.
-title: Channels and conversions report
+Le rapport Canaux et conversions dans le tableau de bord du Centre de développement Windows vous permet de voir comment les clients de Windows 10 sont arrivés à votre application.
+Rapport sur les canaux et conversions
 ms.assetid: C359B9FB-A17B-4A8E-B8EE-19F2F98AA4FF
 ---
 
-# Channels and conversions report
+# Rapport sur les canaux et conversions
 
 
-The **Channels and conversions** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 have arrived at your app's listing. It lets you track [custom promotion campaigns](create-a-custom-app-promotion-campaign.md) for your app or its IAPs, and see how many of those visits resulted in new acquisitions. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+Le rapport **Canaux et conversions** dans le tableau de bord du Centre de développement Windows vous permet de voir comment les clients de Windows 10 sont arrivés à votre application. Il vous permet de suivre les [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md) pour votre application ou ses produits in-app, et de voir combien de ces visites ont généré des nouvelles acquisitions. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
 
-> **Important**   This report only shows page view and conversion data from customers on Windows 10.
-
- 
-
-In this report, a *channel* refers to the method in which a customer arrived at your app's listing page (for example, browsing and searching in the Store, a link from an external website, a link from one of your custom campaigns, etc.). The following channel types are included:
-
--   **Store traffic:** The customer was browsing or searching within the Store when they viewed your app's listing.
--   **External website:** The customer followed a link (without any custom campaign ID) to your app's listing from a website.
--   **Search engine:** The customer followed a link to your app's listing that was returned by an online search engine.
--   **Custom campaign:** The customer followed a link that used a [custom campaign ID](create-a-custom-app-promotion-campaign.md).
-
-A *page view* means that a customer viewed your app's Store listing page, either via the web-based Store or from within the Store app on Windows 10.
-
-A *conversion* means that a customer has newly obtained a license to your app (whether you charged money or you've offered it for free) or to an IAP.
-
-> **Note**  Conversion data is provided only for your custom campaigns. For other channel types, only page view data is currently included in this report.
+> **Important** Ce rapport n’affiche que les données de conversion et les vues de page des clients sur Windows 10.
 
  
 
-## Apply filters
+Dans ce rapport, un *canal* fait référence à la méthode par laquelle un client est arrivé à la page de description de votre application (par exemple, navigation et recherche dans le Windows Store, lien depuis un site web externe, lien depuis l’une de vos campagnes personnalisés, etc.). Les canaux suivants sont inclus :
 
+-   **Trafic du magasin :** le client naviguait ou effectuait une recherche dans le Windows Store lorsqu'ils a consulté la description de votre application.
+-   **Site web externe :** le client suivait un lien (sans ID de campagne personnalisée) vers la description de votre application à partir d'un site web.
+-   **Moteur de recherche :** le client suivait un lien vers la description de votre application qui a été renvoyée par un moteur de recherche en ligne.
+-   **Campagne personnalisée :** le client suivait un lien qui a utilisé un [ID de campagne personnalisée](create-a-custom-app-promotion-campaign.md).
 
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by market.
+Une *vue de page* signifie qu'un client a consulté la description de votre application dans le Store, soit via le Store sur le web, soit depuis l’application du Store sur Windows 10.
 
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show details from customers in that market.
--   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show data from customers using that type of device.
+Une *conversion* signifie qu’un client a obtenu une licence pour votre application (qu’elle soit payante ou gratuite) ou un produit in-app.
 
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
-
-## App page views and conversions by channel
-
-
-The **App page views and conversions by channel** chart shows how often your app's listing page was viewed and how customers arrived there. It also shows the number of conversions from custom campaigns over the selected period of time.
-
-The **Page views** tab of this chart shows the number of times your app's listing page was viewed over the selected period of time. Views are grouped according to the type of channel by which the customer found your app's listing.
-
-The **Conversions** tab of this chart shows the number of conversions (new acquisitions) over the selected period of time for customers who arrived at your app's listing via a custom campaign.
-
-> **Note**  For info about all of your app's acquisitions, including those that did not occur via a custom campaign link and those from customers on other OS versions, see the [Acquisitions report](acquisitions-report.md).
+> **Important** Les données de conversion ne sont disponibles que pour vos campagnes personnalisées. Pour les autres types de canal, seules les données sur les vues de page sont incluses dans ce rapport.
 
  
 
-## Campaign performance by channel
+## Appliquer les filtres
 
 
-The **Campaign performance by channel** chart shows the number of page views for each channel type. It also shows the total number of app and IAP conversions from your custom campaigns during the selected period of time.
+Dans la zone supérieure de la page, vous pouvez développer l'option **Appliquer les filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par marché.
 
-## App page views and conversions by campaign ID
+-   **Date** : la valeur par défaut de ce filtre est **30 derniers jours**, mais vous pouvez étendre cette période aux **12 derniers mois**.
+-   **Marché** : la valeur par défaut de ce filtre est **Tous les marchés**. Vous pouvez choisir un marché spécifique si vous souhaitez n’afficher les détails des clients sur ce marché.
+-   **Type d’appareil** : le filtre par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement les données des clients utilisant celui-ci.
 
+Les informations figurant dans tous les graphiques répertoriés ci-après refléteront la période sélectionnée dans la section **Appliquer des filtres**, ainsi que d’autres filtres que vous avez choisi ici.
 
-The **App page views and conversions by campaign ID** chart shows the number of page views and conversions for each of your specific [campaign IDs](create-a-custom-app-promotion-campaign.md) during the selected period of time.
-
-##  IAP conversions by campaign ID
-
-
-The **IAP conversions by campaign ID** chart shows the number of IAP conversions per custom campaign ID.
-
-When an app install is counted as a conversion for a custom campaign, any IAP purchases in that app are also counted as conversions for the same custom campaign.
-
-By default, the report includes any IAP which had a conversion that resulted from a link using a custom campaign ID during the selected period of time. To view data for a specific IAP, select it from the **Section filters**.
-
-## Conversions breakdown
+## Vues et conversions de la page de l’application par canal
 
 
-The **Conversions breakdown** chart shows more details about the page views that resulted from each of your channel types. Click each channel type to get more info about conversions from that channel:
+Le graphique **Vues et conversions de la page de l’application par canal** indique la fréquence selon laquelle la page de description de votre application a été consultée et comment les clients y sont arrivés. Il indique également le nombre de conversions des campagnes personnalisées sur la période sélectionnée.
 
--   **Custom campaign:** Shows the specific campaign IDs.
--   **External website:** Shows the domain of the website that linked to the app.
--   **Store traffic:** Shows whether the customer was using the Store client app or the online Store.
--   **Search engine:** Shows the specific search terms used by the customer.
+L’onglet **Vues de page** de ce graphique indique le nombre d’affichages de la page de description de votre application sur la période sélectionnée. Les vues sont regroupées selon le type de canal par lequel le client a trouvé la description de votre application.
 
-For custom campaigns, you can also see the number of app conversions and IAP conversions which resulted from each specific campaign ID.
+L’onglet **Conversions** de ce graphique indique le nombre de conversions (nouvelles acquisitions) sur la période sélectionnée pour les clients qui sont arrivés à la description de votre application via une campagne personnalisée.
+
+> **Important** Pour plus d’informations sur toutes les acquisitions de votre application, y compris celles qui ne sont pas survenues par un lien de campagne personnalisée et celles de clients utilisant d’autres versions du système d’exploitation, consultez le [rapport Acquisitions](acquisitions-report.md).
+
+ 
+
+## Performances de campagne par canal
+
+
+Le graphique **Performances de campagne par canal** affiche le nombre de vues de page pour chaque type de canal. Il indique également le nombre de conversions d’application et de produit in-app depuis vos campagnes personnalisées sur la période sélectionnée.
+
+## Vues et conversions de la page de l’application par ID de campagne
+
+
+Le graphique **Vues et conversions de la page de l’application par ID de campagne** affiche le nombre de vues de page et les conversions pour chacun de vos [ID de campagne](create-a-custom-app-promotion-campaign.md) pendant la période sélectionnée.
+
+##  Conversions de produit in-app par ID de campagne
+
+
+Le graphique **Conversions de produit in-app par ID de campagne** indique le nombre de conversions de produit in-app par ID de campagne personnalisée.
+
+Lorsqu’une installation d’application est comptabilisée comme une conversion pour une campagne personnalisée, tout achat de produit in-app dans cette application est également comptabilisé comme une conversion pour la même campagne personnalisée.
+
+Par défaut, ce rapport inclut les produits in-app pour lesquels une conversion provient d’un lien utilisant un ID de campagne personnalisée pendant la période sélectionnée. Pour afficher les données d'un produit in-app spécifique, sélectionnez-le dans **Filtres de section**.
+
+## Répartition des conversions
+
+
+Le graphique **Répartition des conversions** affiche des détails supplémentaires sur les vues de page résultant de chacun de vos types de canal. Cliquez sur chaque type de canal pour obtenir plus d'informations sur les conversions à partir de ce canal :
+
+-   **Campagne personnalisée :** affiche les ID de campagne spécifiques.
+-   **Site web externe :** affiche le domaine du site web lié à l'application.
+-   **Trafic du magasin :** indique si le client utilisait l’application cliente du magasin ou le magasin en ligne.
+-   **Moteur de recherche :** affiche les termes de recherche spécifiques utilisés par le client.
+
+Pour les campagnes personnalisées, vous pouvez également voir le nombre de conversions d’application et de conversions de produit in-app résultant de chaque ID de campagne spécifique.
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,32 +1,32 @@
 ---
-title: Declare background tasks in the application manifest
-description: Enable the use of background tasks by declaring them as extensions in the app manifest.
+Déclarer des tâches en arrière-plan dans le manifeste de l’application
+Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ---
 
-# Declare background tasks in the application manifest
+# Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
--   [**BackgroundTasks Schema**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**Schéma BackgroundTasks**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-Enable the use of background tasks by declaring them as extensions in the app manifest.
+Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
 
-Background tasks but be declared in the app manifest or else your app will not be able to register them (an exception will be thrown). Additionally, background tasks must be declared in the application manifest to pass certification.
+Les tâches en arrière-plan doivent être déclarées dans le manifeste de l’application. Autrement, votre application n’est pas en mesure de les inscrire (une exception est levée). De plus, les tâches en arrière-plan doivent être déclarées dans le manifeste de l’application pour réussir la certification.
 
-This topic assumes you have a created one or more background task classes, and that your app registers each background task to run in response to at least one trigger.
+Cette rubrique suppose que vous avez créé une ou plusieurs classes de tâche en arrière-plan et que votre application inscrit chaque tâche en arrière-plan à exécuter en réponse à un déclencheur au minimum.
 
-## Add Extensions Manually
+## Ajouter manuellement les extensions
 
 
-Open the application manifest (Package.appxmanifest) and go to the Application element. Create an Extensions element (if one doesn't already exist).
+Ouvrez le manifeste de l’application (Package.appxmanifest) et accédez à l’élément Application. Créez un élément Extensions (s’il n’en existe pas).
 
-The following snippet is taken from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666):
+L’extrait de code suivant provient de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) :
 
 ```xml
 <Application Id="App"
@@ -47,12 +47,12 @@ The following snippet is taken from the [background task sample](http://go.micro
  </Application>
 ```
 
-## Add a Background Task Extension
+## Ajouter une extension de tâche en arrière-plan
 
 
-Declare your first background task.
+Déclarez votre première tâche en arrière-plan.
 
-Copy this code into the Extensions element (you will add attributes in the following steps).
+Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux étapes suivantes).
 
 ```xml
       <Extensions>
@@ -64,9 +64,9 @@ Copy this code into the Extensions element (you will add attributes in the follo
       </Extensions>
 ```
 
-1.  Change the EntryPoint attribute to have the same string used by your code as the entry point when registering your background task (**namespace.classname**).
+1.  Modifiez l’attribut EntryPoint de sorte que votre code utilise la même chaîne comme point d’entrée lors de l’inscription de votre tâche en arrière-plan (**namespace.classname**).
 
-    In this example, the entry point is ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:
+    Dans cet exemple, le point d’entrée est ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName :
 
     ```xml
           <Extensions>
@@ -78,11 +78,11 @@ Copy this code into the Extensions element (you will add attributes in the follo
           </Extensions>
     ```
 
-2.  Change the list of Task Type attribute to indicate the type of task registration used with this background task. If the background task is registered with multiple trigger types, add additional Task elements and Type attributes for each one.
+2.  Modifiez la liste de l’attribut Task Type pour indiquer le type d’inscription de tâche utilisé avec cette tâche en arrière-plan. Si la tâche en arrière-plan est inscrite avec plusieurs types de déclencheur, ajoutez des éléments Task et des attributs Type supplémentaires pour chacun d’eux.
 
-    **Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method will fail and throw an exception).
+    **Remarque** Pensez impérativement à répertorier chaque type de déclencheur que vous utilisez, sans quoi la tâche en arrière-plan ne sera pas inscrite avec les types de déclencheur non déclarés (la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) échouera et lèvera une exception).
 
-    This snippet example indicates the use of system event triggers and push notifications:
+    Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés :
 
     ```xml
                 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -141,16 +141,20 @@ The following example is the complete Application element from the [background t
 </Applications>
 ```
 
-## Related topics
+## Rubriques connexes
 
-* [Debug a background task](debug-a-background-task.md)
-* [Register a background task](register-a-background-task.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
+* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
+* [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

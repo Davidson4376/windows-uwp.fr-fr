@@ -1,57 +1,57 @@
 ---
-Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
-Put UI strings into resources
+Placez les ressources de type chaîne de votre interface utilisateur dans des fichiers de ressources. Vous pouvez ensuite référencer ces chaînes dans votre code ou votre balisage.
+Placer des chaînes d’interface utilisateur dans des ressources
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
-Put UI strings into resources
+Placer des chaînes d’interface utilisateur dans des ressources
 template: detail.hbs
 ---
 
-# Put UI strings into resources
+# Placer des chaînes d’interface utilisateur dans des ressources
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**ApplicationModel.Resources.ResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br206014)
 -   [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)
 
-Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
+Placez les ressources de type chaîne de votre interface utilisateur dans des fichiers de ressources. Vous pouvez ensuite référencer ces chaînes dans votre code ou votre balisage.
 
-This topic shows the steps to add several language string resources to your Universal Windows app, and how to briefly test it.
+Cette rubrique décrit la procédure requise pour ajouter plusieurs ressources de chaîne de langue à votre application Windows universelle et pour les tester brièvement.
 
-## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."></span><span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."></span>Put strings into resource files, instead of putting them directly in code or markup.
+## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."> </span> <span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."> </span>Placez les chaînes dans des fichiers de ressources au lieu de les insérer directement dans le code ou dans le balisage.
 
 
-1.  Open your solution (or create a new one) in Visual Studio.
+1.  Ouvrez votre solution (ou créez-en une) dans Visual Studio.
 
-2.  Open package.appxmanifest in Visual Studio, go to the **Application** tab, and (for this example) set the Default language to "en-US". If there are multiple package.appxmanifest files in your solution, do this for each one.
-    <br>**Note**  This specifies the default language for the project. The default language resources are used if the user's preferred language or display languages do not match the language resources provided in the application.
-3.  Create a folder to contain the resource files.
-    1.  In the Solution Explorer, right-click the project (the Shared project if your solution contains multiple projects) and select **Add** &gt; **New Folder**.
-    2.  Name the new folder "Strings".
-    3.  If the new folder is not visible in Solution Explorer, select **Project** &gt; **Show All Files** from the Microsoft Visual Studio menu while the project is still selected.
+2.  Ouvrez package.appxmanifest dans Visual Studio, accédez à l’onglet **Application**, puis (pour cet exemple) définissez la langue par défaut sur « en-US ». Si votre solution comporte plusieurs fichiers package.appxmanifest, effectuez cette opération pour chacun d’eux.
+    <br>**Remarque** Cette opération spécifie la langue par défaut du projet. Les ressources linguistiques par défaut sont utilisées si la langue par défaut de l’utilisateur ou les langues d’affichage ne correspondent pas aux ressources linguistiques fournies dans l’application.
+3.  Créez un dossier destiné à contenir les fichiers de ressources.
+    1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet (projet partagé si votre solution contient plusieurs projets) et sélectionnez **Ajouter** &gt; **Nouveau dossier**.
+    2.  Nommez le nouveau dossier « Strings ».
+    3.  Si le nouveau dossier n’est pas affiché dans l’Explorateur de solutions, sélectionnez **Projet** &gt; **Afficher tous les fichiers** dans le menu Microsoft Visual Studio en veillant à ce que le projet soit toujours sélectionné.
 
-4.  Create a sub-folder and a resource file for English (United States).
-    1.  Right-click the Strings folder and add a new folder beneath it. Name it "en-US". The resource file is to be placed in a folder that has been named for the [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) language tag. See [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324) for details on the language qualifier and a list of common language tags.
-    2.  Right-click the en-US folder and select **Add** &gt; **New Item…**.
-    3.  **XAML:** Select "Resources File (.resw)".
-        <br>**HTML:** Select "Resources File (.resjson)".
+4.  Créez un sous-dossier et un fichier de ressources pour l’anglais (États-Unis).
+    1.  Cliquez avec le bouton droit sur le dossier Strings et ajoutez un dossier sous celui-ci. Nommez-le « en-US ». Le fichier de ressources doit être placé dans un dossier qui a été nommé pour la balise de langue [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Pour obtenir plus de détails sur le qualificateur de langue ainsi qu’une liste des balises de langue usuelles, voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+    2.  Cliquez avec le bouton droit sur le dossier en-US et sélectionnez **Ajouter** &gt; **Nouvel élément…**.
+    3.  **XAML :** sélectionnez « Resources File (.resw) ».
+        <br>**HTML :**sélectionnez « Resources File (.resjson) ».
 
-    4.  Click **Add**. This adds a resource file with the default name "Resources.resw" (for **XAML**) or "resources.rejson" (for **HTML**). We recommend that you use this default filename. Apps can partition their resources into other files, but you must be careful to refer to them correctly (see [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
-    5.  **XAML only:** If you have .resx files with only string resources from previous .NET projects, select **Add** &gt; **Existing Item…**, add the .resx file, and rename it to .resw.
-    6.  Open the file and use the editor to add these resources:
+    4.  Cliquez sur **Ajouter**. Un fichier de ressources est ajouté avec le nom par défaut « Resources.resw » (pour **XAML**) ou « resources.rejson » (pour **HTML**). Nous vous recommandons d’utiliser ce nom de fichier par défaut. Les applications peuvent partitionner leurs ressources dans d’autres fichiers. Toutefois, elles doivent y faire référence correctement (voir [Comment charger des ressources de type chaîne](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
+    5.  **XAML uniquement :** si vous disposez de fichiers .resx contenant uniquement des ressources de type chaîne provenant de précédents projets .NET, sélectionnez **Ajouter** &gt; **Élément existant…**, ajoutez le fichier .resx, puis renommez-le avec l’extension .resw.
+    6.  Ouvrez le fichier et utilisez l’éditeur pour ajouter les ressources suivantes :
 
-        **XAML:**
+        **XAML :**
 
         Strings/en-US/Resources.resw
-        ![add resource, english](images/addresource-en-us.png)
-        In this example, "Greeting.Text" and "Farewell" identify the strings that are to be displayed. "Greeting.Width" identifies the Width property of the "Greeting" string. The comments are a good place to provide any special instructions to translators who localize the strings to other languages.
+        ![Ajouter des ressources (pour l’anglais)](images/addresource-en-us.png)
+        Dans cet exemple, « Greeting.Text » et « Farewell » identifient les chaînes qui doivent être affichées. « Greeting.Width » identifie la propriété Width de la chaîne « Greeting ». Les commentaires permettent de donner des instructions particulières aux traducteurs qui localisent les chaînes dans d’autres langues.
 
-        **HTML:**
+        **HTML :**
 
-        The new file contains default content. Replace the content with the following (which may be similar to the default):
+        Le nouveau fichier contient du contenu par défaut. Remplacez le contenu par ce qui suit (qui peut être très semblable au contenu par défaut) :
 
         Strings/en-US/resources.resjson
 
@@ -65,33 +65,33 @@ This topic shows the steps to add several language string resources to your Univ
         }
         ```
 
-        This is strict JavaScript Object Notation (JSON) syntax where a comma must be placed after each name/value pair, except the last one. In this sample, "greeting" and "farewell" identify the strings that are to be displayed. The other pairs ("\_greeting.comment" and "\_farewell.comment") are comments that describe the strings. The comments are a good place to provide any special instructions to translators who localize the strings to other languages.
+        Il s’agit d’une syntaxe JSON (JavaScript Object Notation) stricte, selon laquelle une virgule doit être placée après chaque paire nom/valeur, sauf la dernière. Dans cet exemple, « greeting » et « farewell » identifient les chaînes à afficher. Les autres paires (« \_greeting.comment » et « \_farewell.comment ») sont des commentaires qui décrivent les chaînes. Les commentaires permettent de donner des instructions particulières aux traducteurs qui localisent les chaînes dans d’autres langues.
 
-## <span id="associate_controls_to_resources."></span><span id="ASSOCIATE_CONTROLS_TO_RESOURCES."></span>Associate controls to resources.
+## <span id="associate_controls_to_resources."> </span> <span id="ASSOCIATE_CONTROLS_TO_RESOURCES."> </span>Associez les contrôles aux ressources.
 
 
-**XAML only:**
+**XAML uniquement :**
 
-You need to associate every control that needs localized text with the .resw file. You do this using the **x:Uid** attribute on your XAML elements like this:
+Vous devez associer chaque contrôle nécessitant du texte localisé au fichier .resw. Pour ce faire, utilisez l’attribut **x:Uid** sur vos éléments XAML comme suit :
 
 ```XAML
 <TextBlock x:Uid="Greeting" Text="" />
 ```
 
-For the resource name, you give the **Uid** attribute value, plus you specify what property is to get the translated string (in this case the Text property). You can specify other properties/values for different languages such as Greeting.Width, but be careful with such layout-related properties. You should strive to allow the controls to lay out dynamically based on the device's screen.
+Attribuez la valeur d’attribut **Uid** au nom de ressource, et spécifiez quelle propriété doit recevoir la chaîne traduite (dans ce cas, la propriété Text). Vous pouvez spécifier d’autres propriétés/valeurs pour d’autres langues (à l’image de Greeting.Width) mais utilisez avec prudence ces propriétés relatives à la disposition. Vous devez veiller à permettre aux contrôles de s’organiser de manière dynamique en fonction de l’écran du périphérique.
 
-Note that attached properties are handled differently in resw files such as AutomationPeer.Name. You need to explicitly write out the namespace like this:
+Notez que les propriétés jointes sont traitées différemment dans des fichiers resw comme AutomationPeer.Name. Vous devez écrire explicitement l’espace de noms comme suit :
 
 ```XAML
 MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
 ```
 
-## <span id="add_string_resource_identifiers_to_code_and_markup."></span><span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."></span>Add string resource identifiers to code and markup.
+## <span id="add_string_resource_identifiers_to_code_and_markup."> </span> <span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."> </span>Ajoutez des identificateurs de ressource de type chaîne dans le code et le balisage
 
 
-**XAML:**
+**XAML :**
 
-In your code, you can dynamically reference strings:
+Dans votre code, vous pouvez faire référence aux chaînes de façon dynamique :
 
 **C#**
 ```CSharp
@@ -105,11 +105,11 @@ auto loader = ref new Windows::ApplicationModel::Resources::ResourceLoader();
 auto str = loader->GetString("Farewell");
 ```
 
-**HTML:**
+**HTML :**
 
-1.  Add references to the Windows Library for JavaScript to your HTML file, if they aren't already there.
+1.  Ajoutez des références à la Bibliothèque Windows pour JavaScript dans votre fichier HTML, si elles ne s’y trouvent pas déjà.
 
-    **Note**  The following code shows the HTML for the default.html file of the Windows project that is generated when you create a new **Blank App (Universal Windows)** JavaScript project in Visual Studio. Note that the file already contains references to the WinJS.
+    **Remarque** Le code ci-après présente le code HTML pour le fichier default.html du projet Windows qui est généré lorsque vous créez un projet JavaScript **Application vide (Windows universel)** dans Visual Studio. Notez que le fichier contient déjà les références à WinJS.
 
     ```    HTML
     <!-- WinJS references -->
@@ -118,7 +118,7 @@ auto str = loader->GetString("Farewell");
     <script src="WinJS/js/ui.js"></script>
     ```
 
-2.  In the JavaScript code that accompanies your HTML file, call the [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864) function when your HTML is loaded.
+2.  Dans le code JavaScript qui accompagne votre fichier HTML, appelez la fonction [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864) lorsque votre code HTML est chargé.
 
     ```    JavaScript
     WinJS.Application.onloaded = function(){
@@ -126,7 +126,7 @@ auto str = loader->GetString("Farewell");
     }
     ```
     
-    If additional HTML is loaded into a [**WinJS.UI.Pages.PageControl**](https://msdn.microsoft.com/library/windows/apps/jj126158) object, call [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)(*element*) in the page control's [**IPageControlMembers.ready**](https://msdn.microsoft.com/library/windows/apps/hh770590) method, where *element* is the HTML element (and its child elements) being loaded. This example is based on scenario 6 of the [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=227301):
+    Si du code HTML supplémentaire est chargé dans un objet [**WinJS.UI.Pages.PageControl**](https://msdn.microsoft.com/library/windows/apps/jj126158), appelez [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)(*element*) dans la méthode [**IPageControlMembers.ready**](https://msdn.microsoft.com/library/windows/apps/hh770590) du contrôle de la page, où *element* est l’élément HTML (et ses éléments enfants) en cours de chargement. Cet exemple est basé sur le scénario 6 des [exemples de localisation et de ressources d’application](http://go.microsoft.com/fwlink/p/?linkid=227301) :
 
     ```    JavaScript
     var output;
@@ -143,23 +143,23 @@ auto str = loader->GetString("Farewell");
     });
     ```
 
-3.  In the HTML, refer to the string resources using the resource identifiers ('greeting' and 'farewell') from the resource files.
+3.  En HTML, utilisez des identificateurs de ressources (« greeting » et « farewell ») pour faire référence aux ressources de chaîne dans les fichiers de ressources.
     ```    HTML
     <h2><span data-win-res="{textContent: 'greeting';}"></span></h2>
     <h2><span data-win-res="{textContent: 'farewell'}"></span></h2>
     ```
 
-4.  Refer to string resources for attributes.
+4.  Faites référence aux ressources de chaîne pour les attributs.
 
     ```    HTML
     <div data-win-res="{attributes: {'aria-label'; : 'String1'}}" >
     ```
 
-    The general pattern of the data-win-res attribute for HTML replacement is data-win-res="{*propertyname1*: '*resource ID*', *propertyname2*: '*resource ID2*'}".
+    Pour le remplacement HTML, le modèle général de l’attribut data-win-res est data-win-res="{*propertyname1*: ’*resource ID*’, *propertyname2*: ’*resource ID2*’}".
 
-    **Note**  If the string does not contain any markup, then bind the resource wherever possible to the textContent property instead of innerHTML. The textContent property is much faster to replace than innerHTML.
+    **Remarque** Si la chaîne ne peut pas contenir de balisage, liez la ressource chaque fois que possible à la propriété textContent à la place de innerHTML. La propriété textContent est beaucoup plus rapide à remplacer que innerHTML.
 
-5.  Refer to string resources in JavaScript.
+5.  Faites référence aux ressources de chaîne en JavaScript.
     <span codelanguage="JavaScript"></span>
     ```    JavaScript
     var el = element.querySelector('#header');
@@ -168,19 +168,19 @@ auto str = loader->GetString("Farewell");
     el.setAttribute('lang', res.lang);
     ```
 
-## <span id="add_folders_and_resource_files_for_two_additional_languages."></span><span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."></span>Add folders and resource files for two additional languages.
+## <span id="add_folders_and_resource_files_for_two_additional_languages."> </span> <span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."> </span>Ajoutez des dossiers et des fichiers de ressources pour deux langues supplémentaires.
 
 
-1.  Add another folder under the Strings folder for German. Name the folder "de-DE" for Deutsch (Deutschland).
-2.  Create another resources file in the de-DE folder, and add the following:
+1.  Ajoutez un dossier sous le dossier Strings pour l’allemand. Nommez le dossier « de-DE », signifiant « Deutsch (Deutschland) ».
+2.  Créez un autre fichier de ressources dans le dossier de-DE, puis ajoutez la ligne suivante :
 
-    **XAML:**
+    **XAML :**
 
     strings/de-DE/Resources.resw
 
-    ![add resource, german](images/addresource-de-de.png)
+    ![Ajouter une ressource (pour l’allemand)](images/addresource-de-de.png)
 
-    **HTML:**
+    **HTML :**
 
     strings/de-DE/resources.resjson
 
@@ -194,13 +194,13 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-3.  Create one more folder named "fr-FR", for français (France). Create a new resources file and add the following:
+3.  Créez un autre dossier nommé « fr-FR » pour « Français (France) ». Créez un fichier de ressources et ajoutez la ligne suivante :
 
-    **XAML:**
+    **XAML :**
 
     strings/fr-FR/Resources.resw
-    ![add resource, french](images/addresource-fr-fr.png)
-    **HTML:**
+    ![Ajouter une ressource (pour le français)](images/addresource-fr-fr.png)
+    **HTML :**
 
     strings/fr-FR/resources.resjson
 
@@ -214,34 +214,38 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-## <span id="build_and_run_the_app."></span><span id="BUILD_AND_RUN_THE_APP."></span>Build and run the app.
+## <span id="build_and_run_the_app."> </span> <span id="BUILD_AND_RUN_THE_APP."> </span>Générez et exécutez l’application.
 
 
-Test the app for your default display language.
+Testez l’application pour votre langue d’affichage par défaut.
 
-1.  Press F5 to build and run the app.
-2.  Note that the greeting and farewell are displayed in the user's preferred language.
-3.  Exit the app.
+1.  Appuyez sur la touche F5 pour générer et exécuter l’application.
+2.  Notez que les chaînes « greeting » et « farewell » sont affichées dans la langue d’affichage par défaut de l’utilisateur.
+3.  Quittez l’application.
 
-Test the app for the other languages.
+Testez l’application avec les autres langues.
 
-1.  Bring up **Settings** on your device.
-2.  Select **Time & language**.
-3.  Select **Region & language** (or on a phone or phone emulator, **Language**).
-4.  Note that the language that was displayed when you ran the app is the top language listed that is English, German, or French. If your top language is not one of these three, the app falls back to the next one on the list that the app supports.
-5.  If you do not have all three of these languages on your machine, add the missing ones by clicking **Add a language** and adding them to the list.
-6.  To test the app with another language, select the language in the list and click **Set as default** (or on a phone or phone emulator, tap and hold the language in the list and then tap **Move up** until it is at the top). Then run the app.
+1.  Accédez à **Paramètres** sur votre appareil.
+2.  Sélectionnez **Heure et langue**.
+3.  Sélectionnez **Région et langue** (ou sur un téléphone ou un émulateur de téléphone, **Langue**).
+4.  Notez que la langue qui était affichée lorsque vous avez exécuté l’application est la langue principale, c’est-à-dire Anglais, Allemand ou Français. Si votre langue principale n’est pas l’une de ces trois langues, l’application passe à la langue suivante dans la liste qui est prise en charge par l’application.
+5.  Si vous ne disposez pas de ces trois langues sur votre appareil, ajoutez les langues manquantes en cliquant sur **Ajouter une langue** pour les ajouter à la liste.
+6.  Pour tester l’application avec une autre langue, sélectionnez cette langue dans la liste, puis cliquez sur **Définir par défaut** (ou sur un téléphone ou un émulateur de téléphone, appuyez longuement sur la langue dans la liste, puis appuyez sur **Monter** jusqu’à ce que la langue apparaisse au sommet de la liste). Exécutez ensuite l’application.
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"> </span>Rubriques connexes
 
 
-* [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
-* [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
-* [The BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+* [Comment charger des ressources de type chaîne](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
+* [Balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

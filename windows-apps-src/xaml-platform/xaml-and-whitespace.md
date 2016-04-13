@@ -1,6 +1,6 @@
 ---
-description: Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
-title: XAML et espace blanc
+Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
+XAML et espace blanc
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ---
 
@@ -46,4 +46,8 @@ Plusieurs techniques pour conserver l’espace blanc dans le code XAML source à
 
 Entités et espaces insécables : le code XAML prend en charge le placement d’une entité Unicode au sein d’un modèle objet texte. Vous pouvez utiliser des entités dédiées telles que l’espace insécable (en codage UTF-8). Vous pouvez également utiliser des contrôles de texte enrichi qui prennent en charge les caractères d’espace insécable. Procédez avec caution si vous utilisez des entités pour simuler des caractéristiques de disposition telles que les retraits, car la sortie au moment de l’exécution des entités varie en fonction d’un nombre supérieur de facteurs que celui des fonctionnalités de disposition générales, telles que l’utilisation propre des volets et marges.
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

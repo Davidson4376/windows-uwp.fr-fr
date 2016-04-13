@@ -1,44 +1,44 @@
 ---
-title: Complete code for DDSTextureLoader
-description: Complete code for a class and method that loads a DDS texture from memory.
+Code complet de DDSTextureLoader
+Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ---
 
-# Complete code for DDSTextureLoader
+# Code complet de DDSTextureLoader
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Complete code for a class and method that loads a DDS texture from memory.
+Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.
 
-This topic contains these sections:
+Cette rubrique contient les sections suivantes :
 
 -   [Technologies](#technologies)
--   [Requirements](#requirements)
--   [View the code (C++)](#view-the-code-c)
+-   [Configuration requise](#requirements)
+-   [Afficher le code (C++)](#view-the-code-c)
 
 
-## Download location
+## Emplacement de téléchargement
 
 
-This sample is not available for download.
+Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
 |                       |                 |
 |-----------------------|-----------------|
-| Programming languages | C++             |
-| Programming models    | Windows Runtime |
+| Langages de programmation | C++             |
+| Modèles de programmation    | Windows Runtime |
 
-## Requirements
+## Configuration requise
 
-| Minimum supported client | Windows 10                            |
+| Client minimal pris en charge | Windows 10                            |
 |--------------------------|---------------------------------------|
-| Minimum supported server | Windows Server 2016 Technical Preview |
-| Minimum required SDK     |                                       |
+| Serveur minimal pris en charge | Windows Server 2016 Technical Preview |
+| Kit de développement logiciel (SDK) au minimum requis     |                                       |
 
 
-## View the code (C++)
+## Afficher le code (C++)
 
 
 ## DDSTextureLoader.h
@@ -1221,4 +1221,8 @@ void CreateDDSTextureFromMemory(
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

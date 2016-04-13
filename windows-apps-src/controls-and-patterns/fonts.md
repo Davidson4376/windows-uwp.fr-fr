@@ -2,23 +2,21 @@
 Description: Suivez ces recommandations pour sélectionner des polices et spécifier leur taille et leur couleur.
 title: Polices
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
-label: Polices
+label: Fonts
 template: detail.hbs
 ---
 
 # Recommandations en matière de polices
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **API importantes**
 
--   [**FontFamily (XAML)**](https://msdn.microsoft.com/library/windows/apps/br209655)
--   [**font-family (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh996845)
--   [**font-size (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh996846)
+-   [**Propriété FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209655)
 
-Une utilisation appropriée des polices, aussi bien en termes de taille, d’épaisseur, de couleurs, d’interlettrage que d’espace, permet de conférer à votre application de la plateforme Windows universelle (UWP) une apparence nette et sobre qui en facilite l’utilisation. Suivez ces recommandations pour sélectionner des polices et spécifier leur taille et leur couleur.
+Une utilisation appropriée des polices, aussi bien en termes de taille, d’épaisseur, de couleurs, d’interlettrage que d’espace, permet de conférer à votre application de plateforme Windows universelle (UWP) une apparence nette et sobre qui en facilite l’utilisation. Suivez ces recommandations pour sélectionner des polices et spécifier leur taille et leur couleur.
 
 Si vous recherchez une liste d’icônes Segoe UI Symbol, voir [**Guidelines for Segoe UI Symbol icons**](segoe-ui-symbol-font.md).
 
@@ -271,7 +269,7 @@ Voici la liste des polices systématiquement disponibles dans toutes les éditio
 
  
 
-## Rubriques connexes
+## <span id="related_topics"> </span>Rubriques connexes
 
 
 **Pour les concepteurs**
@@ -294,4 +292,8 @@ Voici la liste des polices systématiquement disponibles dans toutes les éditio
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

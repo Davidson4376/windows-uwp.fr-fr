@@ -1,44 +1,48 @@
 ---
-Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
-Multiple inputs design guidelines
+Tout comme les personnes ont recours à une combinaison de voix et de mouvement pour communiquer entre elles, plusieurs types et modes d’entrée peuvent également être utilisés lors de l’interaction avec une application.
+Recommandations en matière de conception d’entrées multiples
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
-Multiple inputs
+Entrées multiples
 template: detail.hbs
 ---
 
-# Multiple inputs
+# Entrées multiples
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
+Tout comme les personnes ont recours à une combinaison de voix et de mouvement pour communiquer entre elles, plusieurs types et modes d’entrée peuvent également être utilisés lors de l’interaction avec une application.
 
 
-To accommodate as many users and devices as possible, we recommend that you design your apps to work with as many input types as possible (gesture, speech, touch, touchpad, mouse, and keyboard). Doing so will maximize flexibility, usability, and accessibility.
+Pour vous adapter au plus grand nombre possible d’utilisateurs et d’appareils, nous vous recommandons de concevoir vos applications de manière à ce qu’elles fonctionnent avec le plus grand nombre possible de types d’entrées (mouvement, commande vocale, écran tactile, pavé tactile, souris et clavier). Cela a pour effet d’optimiser la flexibilité, la facilité d’utilisation et l’accessibilité.
 
-To begin, consider the various scenarios in which your app handles input. Try to be consistent throughout your app, and remember that the platform controls provide built-in support for multiple input types.
+Pour commencer, envisagez les différentes situations dans lesquelles votre application gère des entrées. Essayez d’être cohérent dans l’ensemble de votre application et n’oubliez pas que les contrôles de plateforme offrent une prise en charge intégrée de plusieurs types d’entrée.
 
--   Can users interact with the application through multiple input devices?
--   Are all input methods supported at all times? With certain controls? At specific times or circumstances?
--   Does one input method take priority?
+-   Les utilisateurs peuvent interagir avec l’application à l’aide de plusieurs périphériques d’entrée ?
+-   Toutes les méthodes d’entrée sont-elles prises en charge à tout moment ? Avec certains contrôles ? À des moments ou dans des circonstances spécifiques ?
+-   Une méthode d’entrée a-t-elle la priorité ?
 
-## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>Single (or exclusive)-mode interactions
-
-
-With single-mode interactions, multiple input types are supported, but only one can be used per action. For example, speech recognition for commands, and gestures for navigation; or, text entry using touch or gestures, depending on proximity.
-
-## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>Multimodal interactions
+## <span id="Single__or_exclusive_-mode_interactions_"> </span> <span id="single__or_exclusive_-mode_interactions_"> </span> <span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"> </span>Interactions en mode unique (ou exclusif)
 
 
-With multimodal interactions, multiple input methods in sequence are used to complete a single action.
+Avec les interactions en mode unique, plusieurs types d’entrées sont pris en charge, mais un seul peut être utilisé par action. Par exemple, la reconnaissance vocale pour les commandes, et les mouvements pour la navigation ; ou bien la saisie de texte par interface tactile ou à l’aide de mouvements, en fonction de la proximité.
 
-<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>Speech + gesture  
-The user points to a product, and then says “Add to cart.”
+## <span id="Multimodal_interactions"> </span> <span id="multimodal_interactions"> </span> <span id="MULTIMODAL_INTERACTIONS"> </span>Interactions multimodales
 
-<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>Speech + touch  
-The user selects a photo using press and hold, and then says “Send photo.”
+
+Avec les interactions multimodales, plusieurs méthodes d’entrée séquentielles sont utilisées pour effectuer une action unique.
+
+<span id="Speech___gesture"> </span> <span id="speech___gesture"> </span> <span id="SPEECH___GESTURE"> </span>Reconnaissance vocale + mouvement  
+L’utilisateur désigne un produit, puis dit « Ajouter au panier ».
+
+<span id="Speech___touch"> </span> <span id="speech___touch"> </span> <span id="SPEECH___TOUCH"> </span>Reconnaissance vocale + interface tactile  
+L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, puis dit « Envoyer photo ».
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

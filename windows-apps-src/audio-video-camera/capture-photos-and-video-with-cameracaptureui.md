@@ -1,101 +1,101 @@
 ---
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: This article describes how to use the CameraCaptureUI class to capture photos or videos using the camera UI built into Windows.
-title: Capture photos and video with CameraCaptureUI
+Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows.
+Capturer des photos et des vidéos à l’aide de CameraCaptureUI
 ---
 
-# Capture photos and video with CameraCaptureUI
+# Capturer des photos et des vidéos à l’aide de CameraCaptureUI
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article describes how to use the CameraCaptureUI class to capture photos or videos using the camera UI built into Windows. This feature is easy to use and allows your app to get a user-captured photo or video with just a few lines of code.
+Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows. Cette fonctionnalité est facile à utiliser et permet à votre application d’obtenir une photo ou une vidéo capturée par l’utilisateur avec seulement quelques lignes de code.
 
-If your scenario requires more robust, low-level control of the capture operation, you should use the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object and implement your own capture experience. For more information, see [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md).
+Si votre scénario requiert un contrôle de bas niveau plus robuste de l’opération de capture, utilisez l’objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) et implémentez votre propre expérience de capture. Pour plus d’informations, voir [Capturer des photos et des vidéos avec MediaCapture](capture-photos-and-video-with-mediacapture.md).
 
-## Capture a photo with CameraCaptureUI
+## Capturer une photo avec CameraCaptureUI
 
-To use the camera capture UI, include the [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) namespace in your project. To do file operations with the returned image file, include [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346).
+Pour utiliser l’interface utilisateur de capture d’appareil photo, incluez l’espace de noms [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) dans votre projet. Pour les opérations de fichier avec le fichier image renvoyé, incluez [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346).
 
 [!code-cs[UsingCaptureUI](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingCaptureUI)]
 
-To capture a photo, create a new [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) object. Using the object's [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) property you can specify properties for the returned photo such as the image format of the photo. By default, the camera capture UI allows the user to crop the photo before it is returned, although this can be disabled with the [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) property. This example sets the [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) to request that the returned image be 200 x 200 in pixels.
+Pour capturer une photo, créez un objet [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). À l’aide de la propriété [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) de l’objet, vous pouvez spécifier les propriétés de la photo renvoyée, comme le format d’image. Par défaut, l’interface utilisateur de capture de l’appareil photo permet à l’utilisateur de rogner la photo avant de la renvoyer. Cette fonctionnalité peut être désactivée avec la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). Cet exemple définit la [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) pour demander que l’image renvoyée soit au format 200 x 200 pixels.
 
-**Note**  Imaging cropping in the CameraCaptureUI is not supported for devices in the Mobile device family. The value of the [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) property is ignored when your app is running on these devices.
+**Important** Le rognage d’images via CameraCaptureUI n’est pas pris en charge pour les appareils de la famille d’appareils mobiles. La valeur de la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) est ignorée lorsque votre application est exécutée sur ces appareils.
 
-Call [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) and specify [**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040) to specify that a photo should be captured. The method returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) instance containing the image if the capture is successful. If the user cancels the capture, the returned object is null.
+Appelez [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) et spécifiez [**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040) pour indiquer qu’une photo doit être capturée. La méthode renvoie une instance [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) contenant l’image si la capture est réussie. Si l’utilisateur annule la capture, l’objet renvoyé est null.
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
-Once you have the **StorageFile** containing the captured photo, you can create a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) object that can be used with several different Universal Windows app features.
+Une fois que vous avez le **StorageFile** contenant la photo capturée, vous pouvez créer un objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) qui à utiliser avec plusieurs fonctionnalités d’application Windows universelle différentes.
 
-First you should include the [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/br226400) namespace in your project.
+Vous devez d’abord inclure l’espace de noms [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/br226400) dans votre projet.
 
 [!code-cs[UsingSoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmap)]
 
-Call [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) to get a stream from the image file. Call [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) to get a bitmap decoder for the stream. Then call [**GetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887332) to get a **SoftwareBitmap** representation of the image.
+Appelez [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) pour obtenir un flux à partir du fichier image. Appelez [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) pour obtenir un décodeur d’image bitmap à partir du flux. Appelez ensuite [**GetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887332) pour obtenir une représentation **SoftwareBitmap** de l’image.
 
 [!code-cs[SoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmap)]
 
-To display the image in your UI, declare an [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) control in your XAML page.
+Pour afficher l’image dans votre interface utilisateur, déclarez un contrôle [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) dans votre page XAML.
 
 [!code-xml[ImageControl](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-To use the software bitmap in your XAML page, include the using [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) namespace in your project.
+Pour utiliser l’image bitmap logicielle dans votre page XAML, incluez l’espace de noms using [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) dans votre projet.
 
 [!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
 
-The **Image** control requires that the image source be in BGRA8 format with premultiplied alpha or no alpha, so call the static method [**SoftwareBitmap.Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) to create a new software bitmap with the desired format. Next, create a new [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) object and call [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) to assign the software bitmap to the source. Finally, set the **Image** control's [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) property to display the captured photo in the UI.
+Le contrôle **Image** nécessite que la source d’image soit au format BGRA8 avec alpha prémultiplié ou sans alpha. Appelez la méthode statique [**SoftwareBitmap.Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) pour créer une image bitmap logicielle au format souhaité. Ensuite, créez un objet [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) et appelez [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) pour affecter l’image bitmap logicielle à la source. Enfin, définissez le contrôle **Image** et sa propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) pour afficher la photo capturée dans l’interface utilisateur.
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
-## Capture a video with CameraCaptureUI
+## Capturer une vidéo avec CameraCaptureUI
 
-To capture a video, create a new [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) object. Using the object's [**VideoSettings**](https://msdn.microsoft.com/library/windows/apps/br241059) property you can specify properties for the returned video such as the format of the video.
+Pour capturer une vidéo, créez un objet [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). À l’aide de la propriété [**VideoSettings**](https://msdn.microsoft.com/library/windows/apps/br241059) de l’objet, vous pouvez spécifier les propriétés de la vidéo renvoyée, comme le format.
 
-Call [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) and specify [**Video**](https://msdn.microsoft.com/library/windows/apps/br241059) to specify that a video should be capture. The method returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) instance containing the video if the capture is successful. If the user cancels the capture, the returned object is null.
+Appelez [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) et spécifiez [**Video**](https://msdn.microsoft.com/library/windows/apps/br241059) pour indiquer qu’une vidéo doit être capturée. La méthode renvoie une instance [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) contenant la vidéo si la capture est réussie. Si l’utilisateur annule la capture, l’objet renvoyé est null.
 
 [!code-cs[CaptureVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
 
-What you do with the captured video file depends on the scenario for your app. The rest of this article shows you how to quickly create a media composition from one or more captured videos and show it in your UI.
+Ce que vous faites du fichier vidéo capturé dépend du scénario pour votre application. Le reste de cet article décrit comment créer rapidement une composition multimédia à partir d’une ou plusieurs vidéos capturées et l’afficher dans votre interface utilisateur.
 
-First, add a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) control in which the video composition will be displayed to your XAML page.
+Tout d’abord, ajoutez un contrôle [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) dans lequel la composition vidéo s’affichera dans votre page XAML.
 
 [!code-cs[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
-Add the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) and [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) namespaces to your project.
+Ajoutez les espaces de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) et [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) à votre projet.
 
 
 [!code-cs[UsingMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingMediaComposition)]
 
-Declare member variables for a [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) object and a [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) that you want to stay in scope for the lifetime of the page.
+Déclarez les variables membres pour un objet [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) et une [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) qui restera valide pour la durée de vie de la page.
 
 [!code-cs[DeclareMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
 
-Once, before you capture any videos, you should create a new instance of the **MediaComposition** class.
+Avant de capturer des vidéos, vous devez créer une instance de la classe **MediaComposition**.
 
 [!code-cs[InitComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetInitComposition)]
 
-With the video file returned from the camera capture UI, create a new [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) by calling [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Add the media clip to the composition's [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) collection.
+Une fois le fichier vidéo renvoyé depuis l’interface utilisateur de capture d’appareil photo, créez un [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) en appelant [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Ajouter le clip multimédia à la collection [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) de la composition.
 
-Call [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) to create the **MediaStreamSource** object from the composition.
+Appelez [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) pour créer l’objet **MediaStreamSource** à partir de la composition.
 
 [!code-cs[AddToComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetAddToComposition)]
 
-Finally, set the stream source to using the media element's [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) method to show the composition in the UI.
+Enfin, définissez la source de flux de manière à utiliser la méthode [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) de l’élément multimédia pour afficher la composition dans l’interface utilisateur.
 
 [!code-cs[SetMediaElementSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetMediaElementSource)]
 
-You can continue to capture video clips and add them to the composition. For more information on media compositions, see [Media compositions and editing](media-compositions-and-editing.md).
+Vous pouvez continuer à capturer des clips vidéo et les ajouter à la composition. Pour plus d’informations sur les compositions multimédias, voir [Compositions multimédias et modification](media-compositions-and-editing.md).
 
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque**  
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Related topics
+## Rubriques connexes
 
-* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)
  
 
@@ -104,4 +104,8 @@ This article is for Windows 10 developers writing Universal Windows Platform (UW
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

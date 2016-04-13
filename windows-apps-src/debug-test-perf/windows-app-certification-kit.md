@@ -1,7 +1,7 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
-title: Kit de certification des applications Windows
-description: Pour maximiser les chances de publication sur le Windows Store ou de certification Windows de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows.
+Kit de certification des applications Windows
+Pour maximiser les chances de publication sur le Windows Store ou de certification Windows de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows.
 ---
 # Kit de certification des applications Windows
 
@@ -92,4 +92,8 @@ Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,8 +1,8 @@
 ---
-Description: Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
-title: Vignettes, badges et notifications
+Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
+Vignettes, badges et notifications
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
-label: Vignettes, badges et notifications
+Vignettes, badges et notifications
 template: detail.hbs
 ---
 
@@ -124,4 +124,8 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

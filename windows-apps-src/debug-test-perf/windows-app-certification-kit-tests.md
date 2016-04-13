@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-title: Tests du Kit de certification des applications Windows
-description: Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store.
+Tests du Kit de certification des applications Windows
+Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store.
 ---
 ## Tests du Kit de certification des applications Windows
 
@@ -364,41 +364,41 @@ Inspirez-vous du tableau suivant.
 <table>
 <tr><th>Message d’erreur</th><th>Commentaires</th></tr>
 <tr><td>
-<p>L’image {nom_image} définit à la fois les qualificateurs Scale et TargetSize ; vous ne pouvez définir qu’un seul qualificateur à la fois.</p>
+<p>L’image {image name} définit à la fois les qualificateurs Scale et TargetSize ; vous ne pouvez définir qu’un seul qualificateur à la fois.</p>
 </td><td>
 <p>Vous pouvez personnaliser les images pour différentes résolutions.</p>
-<p>Dans le message réel, {nom_image} représente le nom de l’image affectée par l’erreur.</p>
+<p>Dans le message réel, {image name} représente le nom de l’image affectée par l’erreur.</p>
 <p> Assurez-vous que chaque image définit Scale ou TargetSize comme qualificateur.</p>
 </td></tr>
 <tr><td>
-<p>L’image {nom_image} ne respecte pas les restrictions imposées pour la taille.</p>
+<p>L’image {image name} ne respecte pas les restrictions imposées pour la taille.</p>
 </td><td>
 <p>Assurez-vous que toutes les images de l’application adhèrent aux restrictions définissant la taille appropriée.</p>
-<p>Dans le message réel, {nom_image} représente le nom de l’image affectée par l’erreur.</p>
+<p>Dans le message réel, {image name} représente le nom de l’image affectée par l’erreur.</p>
 </td></tr>
 <tr><td>
-<p>L’image {nom_image} ne se trouve pas dans le package.</p>
+<p>L’image {image name} ne se trouve pas dans le package.</p>
 </td><td>
 <p>Une image requise est manquante.</p>
-<p>Dans le message réel, {nom_image} représente le nom de l’image manquante.</p>
+<p>Dans le message réel, {image name} représente le nom de l’image manquante.</p>
 </td></tr>
 <tr><td>
-<p>L’image {nom_image} n’est pas un fichier image valide.</p>
+<p>L’image {image name} n’est pas un fichier image valide.</p>
 </td><td>
 <p>Assurez-vous que toutes les images de l’application adhèrent aux restrictions définissant le type de format de fichier approprié.</p>
-<p>Dans le message réel, {nom_image} représente le nom de l’image non valide.</p>
+<p>Dans le message réel, {image name} représente le nom de l’image non valide.</p>
 </td></tr>
 <tr><td>
 <p>L’image « BadgeLogo » a une valeur ABGR {value} à la position (x, y) qui n’est pas valide. Le pixel doit être blanc (##FFFFFF) ou transparent (00######).</p>
 </td><td>
 <p>Le logo du badge représente une image qui apparaît à côté de la notification de badge afin d’identifier l’application sur l’écran de verrouillage. L’image doit être monochrome (elle ne peut contenir que des pixels blancs ou transparents).</p>
-<p>Dans le message réel, {valeur} représente la valeur de couleur qui n’est pas valide dans l’image.</p>
+<p>Dans le message réel, {value} représente la valeur de couleur qui n’est pas valide dans l’image.</p>
 </td></tr>
 <tr><td>
-<p>L’image « BadgeLogo » a une valeur ABGR « {valeur} » non valide pour une image blanche à contraste élevé à la position (x, y). Les pixels doivent être (##2A2A2A) ou plus sombres, ou transparents (00######).</p>
+<p>L’image « BadgeLogo » a une valeur ABGR « {value} » non valide pour une image blanche à contraste élevé à la position (x, y). Les pixels doivent être (##2A2A2A) ou plus sombres, ou transparents (00######).</p>
 </td><td>
 <p>Le logo du badge représente une image qui apparaît à côté de la notification de badge afin d’identifier l’application sur l’écran de verrouillage.   Étant donné que le logo du badge apparaît sur un arrière-plan blanc lors de l’utilisation d’un motif blanc à contraste élevé, il doit être une version sombre du logo de badge normal. Lors de l’utilisation d’un motif blanc à contraste élevé, le logo du badge ne peut contenir que des pixels plus sombres que (##2A2A2A) ou transparents.</p>
-<p>Dans le message réel, {valeur} représente la valeur de couleur qui n’est pas valide dans l’image.</p>
+<p>Dans le message réel, {value} représente la valeur de couleur qui n’est pas valide dans l’image.</p>
 </td></tr>
 <tr><td>
 <p>L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.</p>
@@ -411,10 +411,10 @@ Inspirez-vous du tableau suivant.
 <p>Si le manifeste de votre application comporte du contenu localisable, veillez à ce que le package de votre application contienne un fichier resources.pri valide.</p>
 </td></tr>
 <tr><td>
-<p>Le fichier « resources.pri » doit contenir un mappage des ressources avec un nom qui correspond au nom du package « {nom_complet_package} ».</p>
+<p>Le fichier « resources.pri » doit contenir un mappage des ressources avec un nom qui correspond au nom du package « {package full name} ».</p>
 </td><td>
 <p>Vous pouvez obtenir cette erreur si le manifeste a changé et que le nom du mappage de ressources dans resources.pri ne correspond plus au nom du package dans le manifeste.</p>
-<p>Dans le message réel, {nom_complet_package} représente le nom du package que resources.pri doit contenir.</p>
+<p>Dans le message réel, {package full name} représente le nom du package que resources.pri doit contenir.</p>
 <p>Pour résoudre ce problème, vous devez régénérer resources.pri ; la façon la plus facile de le faire consiste à régénérer le package de l’application.</p>
 </td></tr>
 <tr><td>
@@ -452,12 +452,12 @@ Inspirez-vous du tableau suivant.
 <p>Assurez-vous que des ressources valides sont définies dans resources.pri pour le manifeste de l’application.</p>
 </td></tr>
 <tr><td>
-<p>La taille du fichier image {nom_fichier} doit être inférieure à 204 800 octets.**</p>
+<p>La taille du fichier image {filename} doit être inférieure à 204 800 octets.**</p>
 </td><td>
 <p>Réduisez la taille des images indiquées.</p>
 </td></tr>
 <tr><td>
-<p>Le fichier « {nom_fichier} » ne doit pas contenir de section de correspondance inverse.**</p>
+<p>Le fichier « {filename} » ne doit pas contenir de section de correspondance inverse.**</p>
 </td><td>
 <p>Bien que la correspondance inverse soit générée pendant un débogage F5 Visual Studio lors d’un appel de makepri.exe, elle peut être supprimée en exécutant makepri.exe sans le paramètre /m lors de la génération d’un fichier .pri.</p>
 </td></tr>
@@ -627,4 +627,8 @@ Envisagez de supprimer la fonctionnalité à usage spécial si votre application
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

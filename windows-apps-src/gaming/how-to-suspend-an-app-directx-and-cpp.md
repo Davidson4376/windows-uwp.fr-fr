@@ -1,6 +1,6 @@
 ---
-title: Comment suspendre une application (DirectX et C++)
-description: Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme Windows universelle.
+Comment suspendre une application (DirectX et C++)
+Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme Windows universelle.
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ---
 
@@ -147,4 +147,8 @@ Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

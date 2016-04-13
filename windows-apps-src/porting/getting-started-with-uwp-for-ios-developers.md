@@ -1,6 +1,6 @@
 ---
 Prise en main UWP pour les développeurs iOS
-title: Prise en main UWP pour les développeurs iOS
+Prise en main UWP pour les développeurs iOS
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 ---
 
@@ -37,4 +37,8 @@ Pour vous lancer dans ces procédures pas à pas, vous aurez besoin d’un ordin
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

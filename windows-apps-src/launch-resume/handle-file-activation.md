@@ -1,13 +1,13 @@
 ---
-title: Gérer l’activation des fichiers
-description: Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier.
+Gérer l’activation des fichiers
+Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier.
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 ---
 
 # Gérer l’activation des fichiers
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x articles, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -115,7 +115,7 @@ En cas de lancement via l’activation de fichier, les applications doivent envi
 
 Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier. Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](http://go.microsoft.com/fwlink/p/?LinkID=142053).
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -149,4 +149,8 @@ Les fichiers que vous recevez peuvent provenir d’une source non approuvée. No
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

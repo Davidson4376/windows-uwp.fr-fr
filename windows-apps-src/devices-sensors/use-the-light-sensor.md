@@ -1,11 +1,11 @@
 ---
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
-title: Utiliser le capteur de luminosité
-description: Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
+Utiliser le capteur de luminosité
+Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
 ---
 # Utiliser le capteur de luminosité
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -24,7 +24,7 @@ L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur d
 
 ## Créer une application simple de capteur de luminosité
 
-Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de capteur de luminosité. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de capteur de luminosité. La sous-section suivante décrit l’application que vous venez de créer.
 
 ###  Instructions
 
@@ -164,4 +164,8 @@ Ces nouvelles valeurs sont écrites dans un TextBlock identifié dans le code XA
 * [Exemple de capteur de luminosité](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

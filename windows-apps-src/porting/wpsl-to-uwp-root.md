@@ -1,6 +1,6 @@
 ---
-description: Si vous êtes un développeur disposant d’une application Silverlight pour Windows Phone, vous pouvez tirer parti de vos compétences et de votre code source pour le passage à Windows 10.
-title: Passer de Silverlight pour Windows Phone à UWP
+Si vous êtes un développeur disposant d’une application Silverlight pour Windows Phone, vous pouvez tirer parti de vos compétences et de votre code source pour le passage à Windows 10.
+Passer de Silverlight pour Windows Phone à UWP
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ---
 
@@ -81,4 +81,8 @@ Concernant les fonctionnalités, il est bon de noter qu’UWP en prend en charge
 * [Le passage de Nokia Musique de Windows Phone à Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

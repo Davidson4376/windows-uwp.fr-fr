@@ -1,6 +1,6 @@
 ---
-Description: Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion.
-title: Télécharger des rapports d’analyse
+Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion.
+Télécharger des rapports d’analyse
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ---
 
@@ -20,4 +20,8 @@ Vous pouvez télécharger des fichiers contenant vos données d'analyse afin d'e
 3.  Sélectionnez des valeurs dans les listes déroulantes **Niveau d'agrégation** et **Plage de dates**. Notez que les options peuvent varier en fonction du type de rapport que vous avez sélectionné.
 
 4.  Cliquez sur le bouton **Télécharger les rapports**, puis enregistrez ou ouvrez le fichier TSV.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

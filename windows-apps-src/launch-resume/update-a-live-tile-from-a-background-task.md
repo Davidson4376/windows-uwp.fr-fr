@@ -1,6 +1,6 @@
 ---
-title: Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
-description: Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.
+Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
+Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.
 Search.SourceType : vidéo
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ---
@@ -9,7 +9,7 @@ ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 # Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -29,7 +29,7 @@ La vidéo suivante montre comment ajouter des vignettes dynamiques à vos applic
 Pour activer une vignette dynamique pour votre application, ajoutez un nouveau projet de composant Windows Runtime à votre solution. Il s’agit d’un assembly distinct que le système d’exploitation charge et exécute en arrière-plan lorsqu’un utilisateur installe votre application.
 
 1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution, pointez sur **Ajouter**, puis cliquez ou appuyez sur **Nouveau projet**.
-2.  Dans la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez le modèle **Composant Windows Runtime** dans la section **Visual C\# &gt; Windows Store**.
+2.  Dans la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez le modèle **Composant Windows Runtime** dans la section **Visual C# &gt; Windows Store**.
 3.  Nommez le projet BackgroundTasks, puis cliquez ou appuyez sur **OK**. Microsoft Visual Studio ajoute le nouveau projet à la solution.
 4.  Dans le projet principal, ajoutez une référence au projet BackgroundTasks.
 
@@ -265,4 +265,8 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

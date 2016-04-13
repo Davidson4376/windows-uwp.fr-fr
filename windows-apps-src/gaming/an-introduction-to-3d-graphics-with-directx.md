@@ -1,55 +1,55 @@
 ---
-title: Basic 3D graphics for DirectX games
-description: We show how to use DirectX programming to implement the fundamental concepts of 3D graphics.
+Graphismes 3D de base pour jeux DirectX
+Nous vous expliquons comment utiliser la programmation DirectX pour implémenter les concepts fondamentaux des graphismes 3D.
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 ---
 
-# Basic 3D graphics for DirectX games
+# Graphismes 3D de base pour jeux DirectX
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-We show how to use DirectX programming to implement the fundamental concepts of 3D graphics.
+Nous vous expliquons comment utiliser la programmation DirectX pour implémenter les concepts fondamentaux des graphismes 3D.
 
-**Objective:** Learn to program a 3D graphics app.
+**Objectif :** Voici comment programmer une application de graphisme 3D.
 
-## Prerequisites
-
-
-We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
-
-**Total time to complete:** 30 minutes.
-
-## Where to go from here
+## Prérequis
 
 
-Here, we talk about how to develop 3D graphics with DirectX and C++\\Cx. This five-part tutorial introduces you to the [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) API and the concepts and code that are also used in many of the other DirectX samples. These parts build upon each other, from configuring DirectX for your UWP C++ app to texturing primitives and adding effects.
+Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
 
-> **Note**  This tutorial uses a right-handed coordinate system with column vectors. Many DirectX samples and apps use a left-handed coordinate system with row vectors. For a more complete graphics math solution and one that supports a left-handed coordinate system with row vectors, consider using [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833). For more info, see [Using DirectXMath with Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D).
+**Durée de réalisation totale :** 30 minutes.
 
- 
+## Où aller à partir d’ici
 
-We show you how to:
 
--   Initialize [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) interfaces by using the Windows Runtime
--   Apply per-vertex shader operations
--   Set up the geometry
--   Rasterize the scene (flattening the 3D scene to a 2D projection)
--   Cull the hidden surfaces
+Nous expliquons ici comment développer des graphismes 3D avec DirectX et C++\\Cx. Ce didacticiel en cinq parties présente l’API [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466), ainsi que les concepts et le code qui sont également employés dans de nombreux autres exemples DirectX. Ces parties s’appuient les unes sur les autres, de la configuration de DirectX pour votre application du Windows Store en C++ jusqu’à l’application de textures aux primitives et à l’ajout d’effets.
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Ce didacticiel utilise un système de coordonnées pour droitier avec des vecteurs colonnes. De nombreux exemples et applications DirectX utilisent un système de coordonnées pour gaucher avec des vecteurs lignes. Pour une solution de calcul graphique plus complète et qui prend en charge un système de coordonnées pour gaucher avec des vecteurs lignes, songez à utiliser [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833). Pour plus d’informations, voir [Utilisation de DirectXMath avec Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D).
 
  
 
-Next, we create a Direct3D device, swap chain, and render-target view, and present the rendered image to the display.
+Les opérations suivantes sont abordées :
 
-[Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md)
+-   Initialiser les interfaces [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) à l’aide du Windows Runtime
+-   Appliquer d’opérations par vertex shader
+-   Configurer la géométrie
+-   Rastériser la scène (aplanissement de la scène 3D en projection 2D)
+-   Éliminer les surfaces masquées
 
-## Related topics
+> **Remarque**  
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+ 
+
+Nous créons ensuite un appareil Direct3D, une chaîne d’échange et une vue de cible de rendu, puis présentons l’image rendue à l’écran.
+
+[Démarrage rapide : configuration de ressources DirectX et affichage d’une image](setting-up-directx-resources.md)
+
+## Rubriques connexes
 
 
-* [Direct3D 11 Graphics](https://msdn.microsoft.com/library/windows/desktop/ff476080)
+* [Graphismes Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
 * [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)
 * [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)
 
@@ -60,4 +60,8 @@ Next, we create a Direct3D device, swap chain, and render-target view, and prese
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément LongListSelector.
-title: Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2
+Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément LongListSelector.
+Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2
 ---
 
 # Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore2
@@ -295,4 +295,8 @@ Nous pouvons désormais décider de supprimer l’élément `ItemsPath="BookSkus
 ## Conclusion
 
 Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. L’ensemble des fonctions et concepts de l’élément  **LongListSelector** de l’application Silverlight pour Windows Phone et d’autres informations utiles se sont révélés disponibles pour une application UWP, sous la forme d’éléments **SemanticZoom**, **ListView**, **GridView** et **CollectionViewSource**. Nous vous avons montré comment réutiliser (ou copier et modifier) le code impératif et le balisage dans une application UWP, afin d’obtenir les fonctionnalités, l’interface utilisateur et les interactions adaptées à tous les facteurs de forme des appareils Windows, des plus étroits aux plus larges, en passant par toutes les tailles intermédiaires.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

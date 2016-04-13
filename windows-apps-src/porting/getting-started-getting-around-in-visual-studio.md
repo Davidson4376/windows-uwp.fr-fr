@@ -1,6 +1,6 @@
 ---
-description: Savoir maîtriser Visual Studio
-title: Savoir maîtriser Visual Studio
+Savoir maîtriser Visual Studio
+Savoir maîtriser Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ---
 
@@ -118,4 +118,8 @@ Pour quitter l’application, revenez à Visual Studio, appuyez sur le menu **D�
 
 [Prise en main : Contrôles courants](getting-started-common-controls.md)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

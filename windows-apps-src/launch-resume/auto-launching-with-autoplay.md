@@ -1,67 +1,67 @@
 ---
-title: Auto-launching with AutoPlay
-description: You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD.
+Démarrage automatique avec lecture automatique
+Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une clé USB, une carte mémoire SD ou un DVD.
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ---
 
-# <span id="dev_launch_resume.auto-launching_with_autoplay"></span>Auto-launching with AutoPlay
+# <span id="dev_launch_resume.auto-launching_with_autoplay"> </span>Démarrage automatique avec lecture automatique
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-You can use **AutoPlay** to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. You can also use **AutoPlay** to offer your app as an option when users share files between two PCs by using proximity (tapping).
+Vous pouvez utiliser la **lecture automatique** pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une clé USB, une carte mémoire SD ou un DVD. Vous pouvez également utiliser la **lecture automatique** pour proposer votre application en tant qu’option quand des utilisateurs partagent des fichiers entre deux PC à l’aide de la fonction de proximité (appui).
 
-> **Note**  If you are a device manufacturer and you want to associate your [Windows Store device app](http://go.microsoft.com/fwlink/p/?LinkID=301381) as an **AutoPlay** handler for your device, you can identify that app in the device metadata. For more info, see [AutoPlay for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306684).
+> **Remarque** Si vous êtes fabricant de périphériques et si vous voulez associer votre [application pour périphériques du Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=301381) en tant que gestionnaire de **lecture automatique** de votre périphérique, vous pouvez identifier l’application dans les métadonnées du périphérique. Pour plus d’informations, voir [Lecture automatique pour les applications pour périphériques du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=306684).
 
-## Register for AutoPlay content
+## S’inscrire pour le contenu de lecture automatique
 
-You can register apps as options for **AutoPlay** content events. **AutoPlay** content events are raised when a volume device such as a camera memory card, thumb drive, or DVD is inserted into the PC. Here we show how to identify your app as an **AutoPlay** option when a volume device from a camera is inserted.
+Vous pouvez inscrire des applications en tant qu’options pour les événements de contenu de **lecture automatique**. Les événements de contenu de **lecture automatique** se déclenchent lorsqu’un périphérique de volume, tel que la carte mémoire d’un appareil photo, une clé USB ou un DVD, est inséré dans le PC. Voici comment identifier votre application en tant qu’option de **lecture automatique** lorsqu’un périphérique de volume d’un appareil photo est inséré.
 
-In this tutorial, you created an app that displays image files or copies them to Pictures. You registered the app for the AutoPlay **ShowPicturesOnArrival** content event.
+Dans ce didacticiel, vous avez créé une application qui affiche des fichiers image ou les copie dans les images. Vous avez inscrit l’application pour l’événement de contenu de lecture automatique **ShowPicturesOnArrival**.
 
-AutoPlay also raises content events for content shared between PCs using proximity (tapping). You can use the steps and code in this section to handle files that are shared between PCs that use proximity. The following table lists the AutoPlay content events that are available for sharing content by using proximity.
+La lecture automatique déclenche également des événements de contenu pour du contenu partagé entre des PC en utilisant la fonction de proximité (action d’appuyer). Vous pouvez utiliser les étapes et le code de cette section pour gérer des fichiers qui sont partagés entre des PC utilisant la fonction de proximité. Le tableau suivant répertorie les événements de contenu de lecture automatique disponibles pour le partage de contenu via la fonction de proximité.
 
-| Action         | AutoPlay content event  |
+| Action         | Événement de contenu de lecture automatique  |
 |----------------|-------------------------|
-| Sharing music  | PlayMusicFilesOnArrival |
-| Sharing videos | PlayVideoFilesOnArrival |
+| Partage de musique  | PlayMusicFilesOnArrival |
+| Partage de vidéos | PlayVideoFilesOnArrival |
 
  
-When files are shared by using proximity, the **Files** property of the **FileActivatedEventArgs** object contains a reference to a root folder that contains all of the shared files.
+Lorsque les fichiers sont partagés à l’aide de la fonction de proximité, la propriété **Files** de l’objet **FileActivatedEventArgs** contient une référence à un dossier racine reprenant l’intégralité des fichiers partagés.
 
-### Step 1: Create a new project and add AutoPlay declarations
+### Étape 1 : Créer un projet et ajouter les déclarations de lecture automatique
 
-1.  Open Microsoft Visual Studio and select **New Project** from the **File** menu. In the **Visual C\#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the app **AutoPlayDisplayOrCopyImages** and click **OK.**
-2.  Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** and **Pictures Library** capabilities. This gives the app access to removable storage devices for camera memory, and access to local pictures.
-3.  In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Content** and click **Add**. Select the new **AutoPlay Content** item that was added to the **Supported Declarations** list.
-4.  An **AutoPlay Content** declaration identifies your app as an option when AutoPlay raises a content event. The event is based on the content of a volume device such as a DVD or a thumb drive. AutoPlay examines the content of the volume device and determines which content event to raise. If the root of the volume contains a DCIM, AVCHD, or PRIVATE\\ACHD folder, or if a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel and pictures are found in the root of the volume, then AutoPlay raises the **ShowPicturesOnArrival** event. In the **Launch Actions** section, enter the values from Table 1 below for the first launch action.
-5.  In the **Launch Actions** section for the **AutoPlay Content** item, click **Add New** to add a second launch action. Enter the values in Table 2 below for the second launch action.
-6.  In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **AutoPlay Copy or Show Images** and the **Name** field to **image\_association1**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.jpg**. In the **Supported File Types** section, set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
-7.  Save and close the manifest file.
+1.  Ouvrez Microsoft Visual Studio et sélectionnez **Nouveau projet** dans le menu **Fichier**. Dans la section **Visual C#**, sous **Windows**, sélectionnez **Application vide (Windows universelle)**. Attribuez à l’application le nom **AutoPlayDisplayOrCopyImages**, puis cliquez sur **OK**.
+2.  Ouvrez le fichier Package.appxmanifest, puis sélectionnez l’onglet **Capacités**. Sélectionnez les fonctionnalités **Stockage amovible** et **Bibliothèque d’images**. Cela permet à l’application d’accéder à des périphériques de stockage amovibles pour la mémoire de l’appareil photo, et d’accéder aux images locales.
+3.  Dans le fichier manifeste, sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Contenu de lecture automatique**, puis cliquez sur **Ajouter**. Sélectionnez le nouvel élément **Contenu de lecture automatique** ajouté à la liste **Déclarations prises en charge**.
+4.  Une déclaration **Contenu de lecture automatique** identifie votre application en tant qu’option lorsque la lecture automatique déclenche un événement de contenu. L’événement est basé sur le contenu d’un périphérique de volume tel qu’un DVD ou une clé USB. La lecture automatique examine le contenu du périphérique de volume et détermine l’événement de contenu à déclencher. Si la racine du volume contient un dossier DCIM, AVCHD ou PRIVATE\ACHD ou si un utilisateur a activé **Choisir l’action pour chaque type de média** dans l’applet Lecture automatique du Panneau de configuration et que des images sont présentes à la racine du volume, la lecture automatique déclenche alors l’événement **ShowPicturesOnArrival**. Dans la section **Actions de lancement**, entrez les valeurs suivantes pour la première action de lancement.
+5.  Dans la section **Actions de lancement** pour l’élément **Contenu de lecture automatique**, cliquez sur **Ajouter nouveau** pour ajouter une deuxième action de lancement. Entrez les valeurs suivantes pour la deuxième action de lancement.
+6.  Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichiers**, puis cliquez sur **Ajouter**. Dans les propriétés de la nouvelle déclaration **Associations de types de fichiers**, attribuez au champ **Nom complet** la valeur **AutoPlay Copy or Show Images** et au champ **Nom** la valeur **image_association1**. Dans la section **Types de fichiers pris en charge**, cliquez sur **Ajouter nouveau**. Attribuez au champ **Type de fichier** la valeur **.jpg**. Dans la section **Types de fichiers pris en charge**, attribuez au champ **Type de fichier** de la nouvelle association de fichier la valeur **.png**. Pour les événements de contenu, la lecture automatique filtre les types de fichiers qui ne sont pas explicitement associés à votre application.
+7.  Enregistrez et fermez le fichier manifeste.
 
 
-**Table 1**
+**Tableau 1**
 
-| Setting             | Value                 |
+| Paramètre             | Valeur                 |
 |---------------------|-----------------------|
-| Verb                | show                  |
-| Action Display Name | Show Pictures         |
-| Content Event       | ShowPicturesOnArrival |
+| Verbe                | show                  |
+| Nom complet de l’action | Show Pictures         |
+| Événement de contenu       | ShowPicturesOnArrival |
 
-The **Action Display Name** setting identifies the string that AutoPlay displays for your app. The **Verb** setting identifies a value that is passed to your app for the selected option. You can specify multiple launch actions for an AutoPlay event and use the **Verb** setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the **verb** property of the startup event arguments passed to your app. You can use any value for the **Verb** setting except, **open**, which is reserved.
+Le paramètre **Nom complet de l’action** identifie la chaîne que la lecture automatique affiche pour votre application. Le paramètre **Verbe** identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre **Verbe** pour déterminer quelle option l’utilisateur a sélectionnée pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété **verb** des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre **Verbe**, sauf la valeur **open** qui est réservée.
 
-**Table 2**  
+**Tableau 2**  
 
-| Setting             | Value                      |
+| Paramètre             | Valeur                      |
 |---------------------|----------------------------|
-| Verb                | copy                       |
-| Action Display Name | Copy Pictures Into Library |
-| Content Event       | ShowPicturesOnArrival      |
+| Verbe                | copy                       |
+| Nom complet de l’action | Copy Pictures Into Library |
+| Événement de contenu       | ShowPicturesOnArrival      |
 
-### Step 2: Add XAML UI
+### Étape 2 : Ajouter une interface utilisateur XAML
 
-Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&gt; section.
+Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &lt;Grid&gt; par défaut.
 
 ```xaml
 <TextBlock FontSize="18">File List</TextBlock>
@@ -71,11 +71,11 @@ Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&g
         Margin="260,20,0,0" Height="280" Width="100"/>
 ```
 
-### Step 3: Add initialization code
+### Étape 3 : Ajouter du code d’initialisation
 
-The code in this step checks the verb value in the **Verb** property, which is one of the startup arguments passed to the app during the **OnFileActivated** event. The code then calls a method related to the option that the user selected. For the camera memory event, AutoPlay passes the root folder of the camera storage to the app. You can retrieve this folder from the first element of the **Files** property.
+Le code de cette étape vérifie la valeur du verbe dans la propriété **Verb**, qui est l’un des arguments de démarrage transmis à l’application pendant l’événement **OnFileActivated**. Le code appelle alors une méthode associée à l’option que l’utilisateur a sélectionnée. Pour un événement de mémoire d’appareil photo, la lecture automatique passe le dossier racine du stockage de l’appareil photo à l’application. Vous pouvez récupérer ce dossier à partir du premier élément de la propriété **Files**.
 
-Open the App.xaml.cs file and add the following code to the **App** class.
+Ouvrez le fichier App.xaml.cs et ajoutez le code suivant à la classe **App**.
 
 ```cs
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -102,11 +102,11 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **Note**  The `DisplayImages` and `CopyImages` methods are added in the following steps.
+> **Remarque** Les méthodes `DisplayImages` et `CopyImages` sont ajoutées dans les étapes suivantes.
 
-### Step 4: Add code to display images
+### Étape 4 : Ajouter du code pour afficher des images
 
-In the MainPage.xaml.cs file add the following code to the **MainPage** class.
+Dans le fichier MainPage.xaml.cs, ajoutez le code suivant à la classe **MainPage**.
 
 ```cs
 async internal void DisplayImages(Windows.Storage.StorageFolder rootFolder)
@@ -164,9 +164,9 @@ private async void WriteMessageText(string message, bool overwrite = false)
 }
 ```
 
-### Step 5: Add code to copy images
+### Étape 5 : Ajouter du code pour copier des images
 
-In the MainPage.xaml.cs file add the following code to the **MainPage** class.
+Dans le fichier MainPage.xaml.cs, ajoutez le code suivant à la classe **MainPage**.
 
 ```cs
 async internal void CopyImages(Windows.Storage.StorageFolder rootFolder)
@@ -210,51 +210,51 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 }
 ```
 
-### Step 6: Build and run the app
+### Étape 6 : Générer et exécuter l’application
 
-1.  Press F5 to build and deploy the app (in debug mode).
-2.  To run your app, insert a camera memory card or another storage device from a camera into your PC. Then, select one of the content event options that you specified in your package.appxmanifest file from the AutoPlay list of options. This sample code only displays or copies pictures in the DCIM folder of a camera memory card. If your camera memory card stores pictures in an AVCHD or PRIVATE\\ACHD folder, you will need to update the code accordingly.
-    **Note**  If you don't have a camera memory card, you can use a flash drive if it has a folder named **DCIM** in the root and if the DCIM folder has a subfolder that contains images.
+1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
+2.  Pour exécuter votre application, insérez une carte mémoire d’appareil photo ou un autre périphérique de stockage d’un appareil photo dans votre PC. Sélectionnez ensuite l’une des options d’événement de contenu que vous avez spécifiées dans votre fichier package.appxmanifest à partir de la liste d’options de la lecture automatique. Cet exemple de code affiche ou copie uniquement les images du dossier DCIM de la carte mémoire d’un appareil photo. Si la carte mémoire de votre appareil photo stocke des images dans un dossier AVCHD ou PRIVATE\\ACHD, vous devez mettre à jour le code en conséquence.
+    **Remarque** Si vous n’avez pas de carte mémoire d’appareil photo, vous pouvez utiliser un disque mémoire flash à condition qu’il ait un dossier nommé **DCIM** à la racine, et que le dossier DCIM dispose d’un sous-dossier contenant des images.
 
-## Register for an AutoPlay device
+## S’inscrire pour un appareil de lecture automatique
 
 
-You can register apps as options for **AutoPlay** device events. **AutoPlay** device events are raised when a device is connected to a PC.
+Vous pouvez inscrire des applications en tant qu’options pour les événements de périphérique de **lecture automatique**. Les événements de périphériques de **lecture automatique** sont déclenchés lorsqu’un périphérique est connecté à un PC.
 
-Here we show how to identify your app as an **AutoPlay** option when a camera is connected to a PC. The app registers as a handler for the **WPD\\ImageSourceAutoPlay** event. This is a common event that the Windows Portable Device (WPD) system raises when cameras and other imaging devices notify it that they are an ImageSource using MTP. For more info, see [Windows Portable Devices](https://msdn.microsoft.com/library/windows/hardware/ff597729).
+Voici comment identifier votre application en tant qu’option de **lecture automatique** lorsqu’un appareil photo est connecté à un PC. L’application s’inscrit en tant que gestionnaire de l’événement **WPD\\ImageSourceAutoPlay**. Il s’agit d’un événement courant que le système WPD (Windows Portable Device) déclenche lorsque des appareils photo et d’autres périphériques d’acquisition d’images l’avertissent qu’ils sont une source d’image (ImageSource) utilisant MTP. Pour plus d’informations, voir [Appareils mobiles Windows](https://msdn.microsoft.com/library/windows/hardware/ff597729).
 
-**Important**  The [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) APIs are part of the [desktop device family](https://msdn.microsoft.com/library/windows/apps/dn894631). Apps can use these APIs only on Windows 10 devices in the desktop device family, such as PCs.
+**Important** Les API [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) font partie de la [famille d’appareils de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Les applications peuvent utiliser ces API uniquement sur les appareils Windows 10 de la famille d’appareils de bureau, tels que les PC.
 
  
 
-### Step 1: Create a new project and add AutoPlay declarations
+### Étape 1 : Créer un projet et ajouter les déclarations de lecture automatique
 
-1.  Open Visual Studio and select **New Project** from the **File** menu. In the **Visual C\#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the app **AutoPlayDevice\_Camera** and click **OK.**
-2.  Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** capability. This gives the app access to the data on the camera as a removable storage volume device.
-3.  In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Device** and click **Add**. Select the new **AutoPlay Device** item that was added to the **Supported Declarations** list.
-4.  An **AutoPlay Device** declaration identifies your app as an option when AutoPlay raises a device event for known events. In the **Launch Actions** section, enter the values in the table below for the first launch action.
-5.  In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **Show Images from Camera** and the **Name** field to **camera\_association1**. In the **Supported File Types** section, click **Add New** (if needed). Set the **File Type** field to **.jpg**. In the **Supported File Types** section, click **Add New** again. Set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
-6.  Save and close the manifest file.
+1.  Ouvrez Visual Studio et sélectionnez **Nouveau projet** dans le menu **Fichier**. Dans la section **Visual C#**, sous **Windows**, sélectionnez **Application vide (Windows universelle)**. Attribuez à l’application le nom **AutoPlayDevice\_Camera**, puis cliquez sur **OK.**
+2.  Ouvrez le fichier Package.appxmanifest, puis sélectionnez l’onglet **Capacités**. Sélectionnez la fonctionnalité **Stockage amovible**. Cela permet à l’application d’accéder aux données situées sur l’appareil photo en tant que périphérique de volume de stockage amovible.
+3.  Dans le fichier manifeste, sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Périphérique de lecture automatique**, puis cliquez sur **Ajouter**. Sélectionnez le nouvel élément **Périphérique de lecture automatique** ajouté à la liste **Déclarations prises en charge**.
+4.  Une déclaration **Périphérique de lecture automatique** identifie votre application en tant qu’option lorsque la lecture automatique déclenche un événement de périphérique pour des événements connus. Dans la section **Actions de lancement**, entrez les valeurs suivantes pour la première action de lancement.
+5.  Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichiers**, puis cliquez sur **Ajouter**. Dans les propriétés de la nouvelle déclaration **Associations de types de fichiers**, attribuez au champ **Nom complet** la valeur **Show Images from Camera** et au champ **Nom** la valeur **camera_association1**. Dans la section **Types de fichiers pris en charge**, cliquez sur **Ajouter nouveau** (si nécessaire). Attribuez au champ **Type de fichier** la valeur **.jpg**. Dans la section **Types de fichiers pris en charge**, cliquez à nouveau sur **Ajouter nouveau**. Attribuez au champ **Type de fichier** de la nouvelle association de fichier la valeur **.png**. Pour les événements de contenu, la lecture automatique filtre les types de fichiers qui ne sont pas explicitement associés à votre application.
+6.  Enregistrez et fermez le fichier manifeste.
 
-| Setting             | Value            |
+| Paramètre             | Valeur            |
 |---------------------|------------------|
-| Verb                | show             |
-| Action Display Name | Show Pictures    |
-| Content Event       | WPD\\ImageSource |
+| Verbe                | show             |
+| Nom complet de l’action | Show Pictures    |
+| Événement de contenu       | WPD\\ImageSource |
 
-The **Action Display Name** setting identifies the string that AutoPlay displays for your app. The **Verb** setting identifies a value that is passed to your app for the selected option. You can specify multiple launch actions for an AutoPlay event and use the **Verb** setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the **verb** property of the startup event arguments passed to your app. You can use any value for the **Verb** setting except, **open**, which is reserved. For an example of using multiple verbs in a single app, see [Register for AutoPlay content](#autoplaycontent).
+Le paramètre **Nom complet de l’action** identifie la chaîne que la lecture automatique affiche pour votre application. Le paramètre **Verbe** identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre **Verbe** pour déterminer quelle option l’utilisateur a sélectionnée pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété **verb** des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre **Verbe**, sauf la valeur **open** qui est réservée. Pour obtenir un exemple d’utilisation de plusieurs verbes dans une même application, voir [S’inscrire pour du contenu de lecture automatique](#autoplaycontent).
 
-### Step 2: Add assembly reference for the desktop extensions
+### Étape 2 : Ajouter la référence d’assembly pour les extensions de bureau
 
-The APIs required to access storage on a Windows Portable Device, [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654), are part of the desktop [desktop device family](https://msdn.microsoft.com/library/windows/apps/dn894631). This means a special assembly is required to use the APIs and those calls will only work on a device in the desktop device family (such as a PC).
+Les API nécessaires pour accéder au stockage d’un appareil portable Windows, [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654), font partie de la [famille d’appareils de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Cela signifie qu’un assembly spécial est requis pour utiliser les API et ces appels fonctionneront uniquement sur un appareil de la famille des appareils de bureau (par exemple un PC).
 
-1.  In **Solution Explorer**, right click on **References** and then **Add Reference...**.
-2.  Expand **Universal Windows** and click **Extensions**.
-3.  Then select **Windows Desktop Extensions for the UWP** and click **OK**.
+1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence...**.
+2.  Développez **Windows universel** et cliquez sur **Extensions**.
+3.  Sélectionnez ensuite **Extensions de bureau Windows pour UWP** et cliquez sur **OK**.
 
-### Step 3: Add XAML UI
+### Étape 3 : Ajouter une interface utilisateur XAML
 
-Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&gt; section.
+Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &lt;Grid&gt; par défaut.
 
 ```xaml
 <StackPanel Orientation="Vertical" Margin="10,0,-10,0">
@@ -280,11 +280,11 @@ Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&g
 </StackPanel>
 ```
 
-### Step 4: Add activation code
+### Étape 4 : Ajouter du code d’activation
 
-The code in this step references the camera as a [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) by passing the device information Id of the camera to the [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655) method. The device information Id of the camera is obtained by first casting the event arguments as [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710), and then getting the value from the [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711) property.
+Le code de cette étape fait référence à l’appareil photo en tant que [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) en transmettant l’ID des informations de périphérique de l’appareil photo à la méthode [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655). L’ID des informations de périphérique de l’appareil photo est obtenu en effectuant tout d’abord un cast des arguments de l’événement en tant que [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710), puis en obtenant la valeur de la propriété [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711).
 
-Open the App.xaml.cs file and add the following code to the **App** class.
+Ouvrez le fichier App.xaml.cs et ajoutez le code suivant à la classe **App**.
 
 ```cs
 protected override void OnActivated(IActivatedEventArgs args)
@@ -332,13 +332,13 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **Note**  The `ShowImages` method is added in the following step.
+> **Remarque** La méthode `ShowImages` est ajoutée à l’étape suivante.
 
-### Step 5: Add code to display device information
+### Étape 5 : Ajouter du code pour afficher des informations de périphérique
 
-You can obtain information about the camera from the properties of the [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) class. The code in this step displays the device name and other info to the user when the app runs. The code then calls the GetImageList and GetThumbnail methods, which you will add in the next step, to display thumbnails of the images stored on the camera
+Vous pouvez obtenir des informations sur l’appareil photo à partir des propriétés de la classe [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654). Le code de cette étape affiche le nom du périphérique et d’autres informations pour l’utilisateur au moment de l’exécution de l’application. Le code appelle alors les méthodes GetImageList et GetThumbnail, que vous ajouterez à l’étape suivante, pour afficher des miniatures des images stockées dans l’appareil photo.
 
-In the MainPage.xaml.cs file, add the following code to the **MainPage** class.
+Dans le fichier MainPage.xaml.cs, ajoutez le code suivant à la classe **MainPage**.
 
 ```cs
 private Windows.Storage.StorageFolder rootFolder;
@@ -360,15 +360,15 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **Note**  The `GetImageList` and `GetThumbnail` methods are added in the following step.
+> **Remarque** Les méthodes `GetImageList` et `GetThumbnail` sont ajoutées à l’étape suivante.
 
  
 
-### Step 6: Add code to display images
+### Étape 6 : Ajouter du code pour afficher des images
 
-The code in this step displays thumbnails of the images stored on the camera. The code makes asynchronous calls to the camera to get the thumbnail image. However, the next asynchronous call doesn't occur until the previous asynchronous call completes. This ensures that only one request is made to the camera at a time.
+Le code de cette étape affiche des miniatures des images stockées dans l’appareil photo. Le code effectue des appels asynchrones à l’appareil photo pour obtenir l’image miniature. Toutefois, l’appel asynchrone suivant ne se produit qu’une fois l’appel asynchrone précédent terminé. Cela garantit qu’une seule demande à la fois est effectuée auprès de l’appareil photo.
 
-In the MainPage.xaml.cs file, add the following code to the **MainPage** class.
+Dans le fichier MainPage.xaml.cs, ajoutez le code suivant à la classe **MainPage**.
 
 ```cs
 async private System.Threading.Tasks.Task<List<Windows.Storage.StorageFile>> GetImageList(Windows.Storage.StorageFolder folder) 
@@ -401,55 +401,55 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 }
 ```
 
-### Step 7: Build and run the app
+### Étape 7 : Générer et exécuter l’application
 
-1.  Press F5 to build and deploy the app (in debug mode).
-2.  To run your app, connect a camera to your machine. Then select the app from the AutoPlay list of options.
-    **Note**  Not all cameras advertise for the **WPD\\ImageSource** AutoPlay device event.
+1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
+2.  Pour exécuter votre application, connectez un appareil photo à votre ordinateur. Sélectionnez ensuite l’application dans la liste d’options de la lecture automatique.
+    **Remarque** Tous les appareils photo n’effectuent pas de publication pour l’événement de périphérique de lecture automatique **WPD\\ImageSource**.
 
      
 
-## Configure removable storage
+## Configurer le stockage amovible
 
 
-You can identify a volume device such as a memory card or thumb drive as an **AutoPlay** device when the volume device is connected to a PC. This is especially useful when you want to associate a specific app for **AutoPlay** to present to the user for your volume device.
+Vous pouvez identifier un périphérique de volume, tel qu’une carte mémoire ou une clé USB, comme périphérique de **lecture automatique** lorsque le périphérique de volume est connecté à un PC. Cette fonctionnalité est particulièrement utile lorsque vous voulez associer une application spécifique pour la **lecture automatique** à présenter à l’utilisateur pour votre périphérique de volume.
 
-Here we show how to identify your volume device as an **AutoPlay** device.
+Voici comment identifier votre périphérique de volume comme périphérique de **lecture automatique**.
 
-To identify your volume device as an **AutoPlay** device, add an autorun.inf file to the root drive of your device. In the autorun.inf file, add a **CustomEvent** key to the **AutoRun** section. When your volume device connects to a PC, **AutoPlay** will find the autorun.inf file and treat your volume as a device. **AutoPlay** will create an **AutoPlay** event by using the name that you supplied for the **CustomEvent** key. You can then create an app and register the app as a handler for that **AutoPlay** event. When the device is connected to the PC, **AutoPlay** will show your app as a handler for your volume device. For more info on autorun.inf files, see [autorun.inf entries](https://msdn.microsoft.com/library/windows/desktop/cc144200).
+Pour identifier votre périphérique de volume comme périphérique de **lecture automatique**, ajoutez un fichier autorun.inf au lecteur racine de votre périphérique. Dans le fichier autorun.inf, ajoutez une clé **CustomEvent** à la section **AutoRun**. Lorsque votre périphérique de volume se connecte à un PC, la **lecture automatique** trouve le fichier autorun.inf et traite votre volume comme un périphérique. La **lecture automatique** crée un événement de **lecture automatique** à l’aide du nom que vous avez fourni dans la clé **CustomEvent**. Vous pouvez alors créer une application et l’inscrire en tant que gestionnaire de cet événement de **lecture automatique**. Lorsque le périphérique est connecté au PC, la **lecture automatique** affiche votre application comme gestionnaire de votre périphérique de volume. Pour plus d’informations sur les fichiers autorun.inf, voir [Entrées du fichier Autorun.inf](https://msdn.microsoft.com/library/windows/desktop/cc144200).
 
-### Step 1: Create an autorun.inf file
+### Étape 1 : Créer un fichier autorun.inf
 
-In the root drive of your volume device, add a file named autorun.inf. Open the autorun.inf file and add the following text.
+Dans le lecteur racine de votre périphérique de volume, ajoutez un fichier nommé autorun.inf. Ouvrez le fichier autorun.inf et ajoutez le texte suivant.
 
 ``` syntax
 [AutoRun]
 CustomEvent=AutoPlayCustomEventQuickstart
 ```
 
-### Step 2: Create a new project and add AutoPlay declarations
+### Étape 2 : Créer un projet et ajouter les déclarations de lecture automatique
 
-1.  Open Visual Studio and select **New Project** from the **File** menu. In the **Visual C\#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the application **AutoPlayCustomEvent** and click **OK.**
-2.  Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** capability. This gives the app access to the files and folders on removable storage devices.
-3.  In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Content** and click **Add**. Select the new **AutoPlay Content** item that was added to the **Supported Declarations** list.
+1.  Ouvrez Visual Studio et sélectionnez **Nouveau projet** dans le menu **Fichier**. Dans la section **Visual C#**, sous **Windows**, sélectionnez **Application vide (Windows universelle)**. Nommez l’application **AutoPlayCustomEvent** et cliquez sur **OK.**
+2.  Ouvrez le fichier Package.appxmanifest, puis sélectionnez l’onglet **Capacités**. Sélectionnez la fonctionnalité **Stockage amovible**. Cela permet à l’application d’accéder aux fichiers et dossiers situés sur les périphériques de stockage amovibles.
+3.  Dans le fichier manifeste, sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Contenu de lecture automatique**, puis cliquez sur **Ajouter**. Sélectionnez le nouvel élément **Contenu de lecture automatique** ajouté à la liste **Déclarations prises en charge**.
 
-    **Note**  Alternatively, you can also choose to add an **AutoPlay Device** declaration for your custom AutoPlay event.
+    **Remarque** Vous pouvez également choisir d’ajouter une déclaration **Périphérique de lecture automatique** pour votre événement de lecture automatique personnalisé.
     
-4.  In the **Launch Actions** section for your **AutoPlay Content** event declaration, enter the values in the table below for the first launch action.
-5.  In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **Show .ms Files** and the **Name** field to **ms\_association**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.ms**. For content events, AutoPlay filters out any file types that aren't explicitly associated with your app.
-6.  Save and close the manifest file.
+4.  Dans la section **Actions de lancement** de votre déclaration d’événement **Contenu de lecture automatique**, entrez les valeurs suivantes pour la première action de lancement.
+5.  Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichiers**, puis cliquez sur **Ajouter**. Dans les propriétés de la nouvelle déclaration **Associations de types de fichiers**, attribuez au champ **Nom complet** la valeur **Show .ms Files** et au champ **Nom** la valeur **ms_association**. Dans la section **Types de fichiers pris en charge**, cliquez sur **Ajouter nouveau**. Attribuez au champ **Type de fichier** la valeur **.ms**. Pour les événements de contenu, la lecture automatique filtre les types de fichiers qui ne sont pas explicitement associés à votre application.
+6.  Enregistrez et fermez le fichier manifeste.
 
-| Setting             | Value                         |
+| Paramètre             | Valeur                         |
 |---------------------|-------------------------------|
-| Verb                | show                          |
-| Action Display Name | Show Files                    |
-| Content Event       | AutoPlayCustomEventQuickstart |
+| Verbe                | show                          |
+| Nom complet de l’action | Afficher les fichiers                    |
+| Événement de contenu       | AutoPlayCustomEventQuickstart |
 
-The **Content Event** value is the text that you supplied for the **CustomEvent** key in your autorun.inf file. The **Action Display Name** setting identifies the string that AutoPlay displays for your app. The **Verb** setting identifies a value that is passed to your app for the selected option. You can specify multiple launch actions for an AutoPlay event and use the **Verb** setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the **verb** property of the startup event arguments passed to your app. You can use any value for the **Verb** setting except, **open**, which is reserved.
+La valeur **Événement de contenu** correspond au texte que vous avez fourni pour la clé **CustomEvent** dans votre fichier autorun.inf. Le paramètre **Nom complet de l’action** identifie la chaîne que la lecture automatique affiche pour votre application. Le paramètre **Verbe** identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre **Verbe** pour déterminer quelle option l’utilisateur a sélectionnée pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété **verb** des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre **Verbe**, sauf la valeur **open** qui est réservée.
 
-### Step 3: Add XAML UI
+### Étape 3 : Ajouter une interface utilisateur XAML
 
-Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&gt; section.
+Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &lt;Grid&gt; par défaut.
 
 ```xaml
 <StackPanel Orientation="Vertical">
@@ -458,11 +458,11 @@ Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&g
 </StackPanel>
 ```
 
-### Step 4: Add activation code
+### Étape 4 : Ajouter du code d’activation
 
-The code in this step calls a method to display the folders in the root drive of your volume device. For the AutoPlay content events, AutoPlay passes the root folder of the storage device in the startup arguments passed to the application during the **OnFileActivated** event. You can retrieve this folder from the first element of the **Files** property.
+Dans les étapes suivantes, le code appelle une méthode destinée à afficher les dossiers présents dans le lecteur racine de votre périphérique de volume. Pour les événements de contenu de lecture automatique, la lecture automatique transmet le dossier racine du périphérique de stockage aux arguments de démarrage qui sont transmis à l’application pendant l’événement **OnFileActivated**. Vous pouvez récupérer ce dossier à partir du premier élément de la propriété **Files**.
 
-Open the App.xaml.cs file and add the following code to the **App** class.
+Ouvrez le fichier App.xaml.cs et ajoutez le code suivant à la classe **App**.
 
 ```cs
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -477,13 +477,13 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **Note**  The `DisplayFiles` method is added in the following step.
+> **Remarque** La méthode `DisplayFiles` est ajoutée à l’étape suivante.
 
  
 
-### Step 5: Add code to display folders
+### Étape 5 : Ajouter du code pour afficher des dossiers
 
-In the MainPage.xaml.cs file add the following code to the **MainPage** class.
+Dans le fichier MainPage.xaml.cs, ajoutez le code suivant à la classe **MainPage**.
 
 ```cs
 internal async void DisplayFiles(Windows.Storage.StorageFolder folder)
@@ -506,53 +506,53 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 }
 ```
 
-### Step 6: Build and run the qpp
+### Étape 6 : Générer et exécuter l’application
 
-1.  Press F5 to build and deploy the app (in debug mode).
-2.  To run your app, insert a memory card or another storage device into your PC. Then select your app from the list of AutoPlay handler options.
+1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
+2.  Pour exécuter votre application, insérez une carte mémoire ou un autre périphérique de stockage dans votre PC. Sélectionnez ensuite votre application dans la liste des options de gestionnaire de lecture automatique.
 
-## AutoPlay event reference
+## Référence des événements de lecture automatique
 
 
-The **AutoPlay** system allows apps to register for a variety of device and volume (disk) arrival events. To register for **AutoPlay** content events, you must enable the **Removable Storage** capability in your package manifest. This table shows the events that you can register for and when they are raised.
+Le système de **lecture automatique** permet aux applications de s’inscrire pour de nombreux événements d’arrivée de périphérique et de volume (disque). Pour pouvoir vous inscrire à des événements de contenu de **lecture automatique**, vous devez activer la fonctionnalité **Stockage amovible** dans votre manifeste de package. Ce tableau affiche les événements auxquels vous pouvez vous inscrire au moment où ils sont déclenchés.
 
-| Scenario                                                           | Event   | Description   |
+| Scénario                                                           | Événement   | Description   |
 |--------------------------------------------------------------------|---------|---------------|
-| Using photos on a Camera                                           | **WPD\ImageSource**                | Raised for cameras that are identified as Windows Portable Devices and offer the ImageSource capability.                                                                                                                                                                                                                                                                  |
-| Using music on an audio player                                     | **WPD\AudioSource**                | Raised for media players that are identified as Windows Portable Devices and offer the AudioSource capability.                                                                                                                                                                                                                                                            |
-| Using videos on a video camera                                     | **WPD\VideoSource**                | Raised for video cameras that are identified as Windows Portable Devices and offer the VideoSource capability.                                                                                                                                                                                                                                                            |
-| Access a connected flash drive or external hard drive              | **StorageOnArrival**               | Raised when a drive or volume is connected to the PC.   If the drive or volume contains a DCIM, AVCHD, or PRIVATE\ACHD folder in the root of the disk, the **ShowPicturesOnArrival** event is raised instead.                                                                                                                                                             |
-| Using photos from mass storage (legacy)                            | **ShowPicturesOnArrival**          | Raised when a drive or volume contains a DCIM, AVCHD, or PRIVATE\ACHD folder in the root of the disk. IIf a user  has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel, AutoPlay will examine a volume connected to the PC to determine the type of content on the disk. When pictures are found, **ShowPicturesOnArrival** is raised. |
-| Receiving photos with Proximity Sharing (tap and send)             | **ShowPicturesOnArrival**          | When users send content with using proximity (tap and send), AutoPlay will examine the shared files to determine the type of content. If pictures are found, **ShowPicturesOnArrival** is raised.                                                                                                                                                                         |
-| Using music from mass storage (legacy)                             | **PlayMusicFilesOnArrival**        | If a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel, AutoPlay will examine a volume connected to the PC to determine the type of content on the disk.  When music files are found, **PlayMusicFilesOnArrival** is raised.                                                                                                   |
-| Receiving music with Proximity Sharing (tap and send)              | **PlayMusicFilesOnArrival**        | When users send content with using proximity (tap and send), AutoPlay will examine the shared files to determine the type of content. If music files are found, **PlayMusicFilesOnArrival** is raised.                                                                                                                                                                    |
-| Using videos from mass storage (legacy)                            | **PlayVideoFilesOnArrival**        | If a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel,, AutoPlay will examine a volume connected to the PC to determine the type of content on the disk. When video files are found, **PlayVideoFilesOnArrival** is raised.                                                                                                   |
-| Receiving videos with Proximity Sharing (tap and send)             | **PlayVideoFilesOnArrival**        | When users send content with using proximity (tap and send), AutoPlay will examine the shared files to determine the type of content. If video files are found, **PlayVideoFilesOnArrival** is raised.                                                                                                                                                                    |
-| Handling mixed sets of files from a connected device               | **MixedContentOnArrival**          | If a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel, AutoPlay will examine a volume connected to the PC to determine the type of content on the disk. If no specific content type is found (for example, pictures), **MixedContentOnArrival** is raised.                                                                    |
-| Handling mixed sets of files with Proximity Sharing (tap and send) | **MixedContentOnArrival**          | When users send content with using proximity (tap and send), AutoPlay will examine the shared files to determine the type of content. If no specific content type is found (for example, pictures), **MixedContentOnArrival** is raised.                                                                                                                                  |
-| Handle video from optical media                                    | **PlayDVDMovieOnArrival**          |                                                                                                                                                                                                                                                                                                                                                                           |
+| Utilisation de photos sur un appareil photo                                           | **WPD\ImageSource**                | Événement déclenché pour des appareils photo identifiés comme des appareils mobiles Windows et dotés de la fonctionnalité ImageSource.                                                                                                                                                                                                                                                                  |
+| Utilisation de musique sur un lecteur audio                                     | **WPD\AudioSource**                | Événement déclenché pour des lecteurs multimédias identifiés comme des appareils mobiles Windows et dotés de la fonctionnalité AudioSource.                                                                                                                                                                                                                                                            |
+| Utilisation de vidéos dans une caméra vidéo                                     | **WPD\VideoSource**                | Événement déclenché pour des caméras vidéo identifiées comme des appareils mobiles Windows et dotées de la fonctionnalité VideoSource.                                                                                                                                                                                                                                                            |
+| Accéder à un disque mémoire flash ou un disque dur externe              | **StorageOnArrival**               | Événement déclenché lorsqu’un lecteur ou un volume est connecté au PC.   Si le lecteur ou le volume contient un dossier DCIM, AVCHD ou PRIVATE\ACHD à la racine du disque, l’événement **ShowPicturesOnArrival** est déclenché à la place.                                                                                                                                                             |
+| Utilisation de photos situées sur un dispositif de stockage de masse (hérité)                            | **ShowPicturesOnArrival**          | Événement déclenché lorsqu’un lecteur ou un volume contient un dossier DCIM, AVCHD ou PRIVATE\ACHD à la racine du disque. Si un utilisateur a activé l’option **Choisir l’action pour chaque type de média** dans le Panneau de configuration Lecture automatique, ce dernier examine un volume connecté à l’ordinateur pour déterminer le type de contenu présent sur le disque. Lorsque le système détecte des images, un événement **ShowPicturesOnArrival** est déclenché. |
+| Réception de photos via le partage de proximité (appui et envoi)             | **ShowPicturesOnArrival**          | Lorsque des utilisateurs transmettent du contenu à l’aide de la fonction de proximité (appui et envoi), la lecture automatique examine les fichiers partagés pour déterminer le type de contenu. Si des images sont détectées, un événement **ShowPicturesOnArrival** est déclenché.                                                                                                                                                                         |
+| Utilisation de musique située sur un dispositif de stockage de masse (hérité)                             | **PlayMusicFilesOnArrival**        | Si un utilisateur a activé l’option **Choisir l’action pour chaque type de média** dans le Panneau de configuration Lecture automatique, ce dernier examine un volume connecté au PC pour déterminer le type de contenu présent sur le disque.  Lorsque le système détecte des fichiers de musique, un événement **PlayMusicFilesOnArrival** est déclenché.                                                                                                   |
+| Réception de musique via le partage de proximité (appui et envoi)              | **PlayMusicFilesOnArrival**        | Lorsque des utilisateurs transmettent du contenu à l’aide de la fonction de proximité (appui et envoi), la lecture automatique examine les fichiers partagés pour déterminer le type de contenu. Si des fichiers de musique sont détectés, un événement **PlayMusicFilesOnArrival** est déclenché.                                                                                                                                                                    |
+| Utilisation de vidéos situées sur un dispositif de stockage de masse (hérité)                            | **PlayVideoFilesOnArrival**        | Si un utilisateur a activé l’option **Choisir l’action pour chaque type de média** dans le Panneau de configuration Lecture automatique, ce dernier examine un volume connecté au PC pour déterminer le type de contenu présent sur le disque. Lorsque le système détecte des fichiers vidéo, un événement **PlayVideoFilesOnArrival** est déclenché.                                                                                                   |
+| Réception de vidéos via le partage de proximité (appui et envoi)             | **PlayVideoFilesOnArrival**        | Lorsque des utilisateurs transmettent du contenu à l’aide de la fonction de proximité (appui et envoi), la lecture automatique examine les fichiers partagés pour déterminer le type de contenu. Si des fichiers vidéo sont détectés, un événement **PlayVideoFilesOnArrival** est déclenché.                                                                                                                                                                    |
+| Gestion d’ensembles mixtes de fichiers depuis un périphérique connecté               | **MixedContentOnArrival**          | Si un utilisateur a activé l’option **Choisir l’action pour chaque type de média** dans le Panneau de configuration Lecture automatique, ce dernier examine un volume connecté au PC pour déterminer le type de contenu présent sur le disque. Si aucun type de contenu spécifique n’est trouvé (par exemple, des images), un événement **MixedContentOnArrival** est déclenché.                                                                    |
+| Gestion d’ensembles mixtes de fichiers via le partage de proximité (appui et envoi) | **MixedContentOnArrival**          | Lorsque des utilisateurs transmettent du contenu à l’aide de la fonction de proximité (appui et envoi), la lecture automatique examine les fichiers partagés pour déterminer le type de contenu. Si aucun type de contenu spécifique n’est trouvé (par exemple, des images), un événement **MixedContentOnArrival** est déclenché.                                                                                                                                  |
+| Gérer de la vidéo depuis un média optique                                    | **PlayDVDMovieOnArrival**          |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlayBluRayOnArrival**            |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlayVideoCDMovieOnArrival**      |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlaySuperVideoCDMovieOnArrival** |                                                                                                                                                                                                                                                                                                                                                                           |
-| Handle music from optical media                                    | **PlayCDAudioOnArrival**           |                                                                                                                                                                                                                                                                                                                                                                           |
+| Gérer de la musique depuis un média optique                                    | **PlayCDAudioOnArrival**           |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlayDVDAudioOnArrival**          |                                                                                                                                                                                                                                                                                                                                                                           |
-| Play enhanced disks                                                | **PlayEnhancedCDOnArrival**        |                                                                                                                                                                                                                                                                                                                                                                           |
+| Lire des disques optimisés                                                | **PlayEnhancedCDOnArrival**        |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlayEnhancedDVDOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
-| Handle writeable optical disks                                     | **HandleCDBurningOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
+| Gérer des disques optiques inscriptibles                                     | **HandleCDBurningOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **HandleDVDBurningOnArrival**      |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **HandleBDBurningOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
-| Handle any other device or volume connection                       | **UnknownContentOnArrival**        | Raised for all events in case content is found that does not match any of the AutoPlay content events. Use of this event is not recommended. You should only register your application for the specific AutoPlay events that it can handle.                                                                                                                               |
+| Gérer un autre périphérique ou une connexion de volume                       | **UnknownContentOnArrival**        | Événement déclenché pour tous les événements si du contenu ne correspondant à aucun événement de contenu de lecture automatique est trouvé. L’utilisation de cet événement n’est pas recommandée. Vous devez seulement inscrire votre application aux événements de lecture automatique spécifiques qu’elle est capable de gérer.                                                                                                                               |
 
-You can specify that AutoPlay raise a custom AutoPlay Content event using the **CustomEvent** entry in the autorun.inf file for a volume. For more info, see [Autorun.inf entries](https://msdn.microsoft.com/library/windows/desktop/cc144200).
+Vous pouvez spécifier que la lecture automatique déclenche l’événement de contenu de lecture automatique à l’aide de l’entrée **CustomEvent** dans le fichier autorun.inf file pour un volume. Pour plus d’informations, voir [Entrées du fichier Autorun.inf](https://msdn.microsoft.com/library/windows/desktop/cc144200).
 
-You can register your app as an AutoPlay Content or AutoPlay Device event handler by adding an extension to the package.appxmanifest file for your app. If you are using Visual Studio, you can add an **AutoPlay Content** or **AutoPlay Device** declaration in the **Declarations** tab. If you are editing the package.appxmanifest file for your app directly, add an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element to your package manifest that specifies either **windows.autoPlayContent** or **windows.autoPlayDevice** as the **Category**. For example, the following entry in the package manifest adds an **AutoPlay Content** extension to register the app as a handler for the **ShowPicturesOnArrival** event.
+Vous pouvez inscrire votre application en tant que gestionnaire d’événements Contenu de lecture automatique ou Périphérique de lecture automatique en ajoutant une extension au fichier package.appxmanifest de votre application. Si vous utilisez Visual Studio, vous pouvez ajouter une déclaration **Contenu de lecture automatique** ou **Périphérique de lecture automatique** dans l’onglet **Déclarations**. Si vous modifiez directement le fichier package.appxmanifest de votre application, ajoutez un élément [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) au manifeste de votre package qui spécifie **windows.autoPlayContent** ou **windows.autoPlayDevice** en tant que **Category**. Par exemple, l’entrée suivante dans le manifeste du package ajoute une extension **Contenu de lecture automatique** pour inscrire l’application en tant que gestionnaire de l’événement **ShowPicturesOnArrival**.
 
 ```xml
   <Applications>
@@ -575,4 +575,8 @@ You can register your app as an AutoPlay Content or AutoPlay Device event handle
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

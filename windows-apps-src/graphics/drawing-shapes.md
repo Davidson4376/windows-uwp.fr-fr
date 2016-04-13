@@ -1,11 +1,11 @@
 ---
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
-title: Dessiner des formes
-description: Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe Path permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier.
+Dessiner des formes
+Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe Path permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier.
 ---
 # Dessiner des formes
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** API importantes **
@@ -192,4 +192,8 @@ Une raison qui peut vous pousser à utiliser la classe [**PathGeometry**](https:
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

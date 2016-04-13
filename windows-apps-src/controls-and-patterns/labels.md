@@ -1,60 +1,64 @@
 ---
-Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
-Labels
+Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
+Étiquettes
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
-Labels
+Étiquettes
 template: detail.hbs
 ---
 
-# Labels
+# Étiquettes
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-A label is the name or title of a control or a group of related controls.
+Une étiquette correspond au nom ou au titre d’un contrôle ou d’un groupe de contrôles associés.
 
-**Important APIs**
+**API importantes**
 
--   Header property
--   [**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/br209652)
-
-
-In XAML, many controls have a built-in Header property that you use to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) instead.
+-   Propriété Header
+-   [**Classe TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 
-## Example
+En XAML, de nombreux contrôles disposent d’une propriété Header intégrée que vous utilisez pour afficher l’étiquette. Pour les contrôles dépourvus de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
 
 
-![a screenshot that illustrates the standard label control](images/label-standard.png)
-
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
+## Exemple
 
 
--   Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
--   When labeling controls, write the label as a noun or a concise noun phrase, not as a sentence, and not as instructional text. Avoid colons or other punctuation.
--   When you do have instructional text in a label, you can be more generous with text-string length and also use punctuation.
+![capture d’écran du contrôle d’étiquette standard](images/label-standard.png)
 
-## Related topics
+## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>Recommandations
 
 
-* [Text controls](text-controls.md)
+-   Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
+-   Si vous étiquetez des contrôles, écrivez l’étiquette sous forme de nom ou de groupe nominal, et non sous la forme d’une phrase ou d’un texte d’instructions. Évitez d’utiliser le signe deux-points ou tout autre signe de ponctuation.
+-   Lorsque vous insérez un texte d’instructions dans une étiquette, vous pouvez utiliser davantage de caractères, ainsi que des signes de ponctuation.
 
-**For developers**
-* [**TextBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [**PasswordBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [**ToggleSwitch.Header property**](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [**DatePicker.Header property**](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [**TimePicker.Header property**](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [**Slider.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [**ComboBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [**RichEditBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/br209652)
+## <span id="related_topics"> </span>Rubriques connexes
+
+
+* [Contrôles de texte](text-controls.md)
+
+**Pour les développeurs**
+* [**Propriété TextBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [**Propriété PasswordBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [**Propriété ToggleSwitch.Header**](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [**Propriété DatePicker.Header**](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [**Propriété TimePicker.Header**](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [**Propriété Slider.Header**](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [**Propriété ComboBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [**Propriété RichEditBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [**Classe TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

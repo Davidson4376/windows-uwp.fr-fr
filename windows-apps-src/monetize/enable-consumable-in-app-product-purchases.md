@@ -1,6 +1,6 @@
 ---
-Description: Proposez des produits consommables dans l’application&\#8212; qui peuvent être achetés, utilisés et rachetés&\#8212;via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application.
-title: Activer les achats de produits consommables in-app
+Proposez des produits consommables dans l’application&\#8212; qui peuvent être achetés, utilisés et rachetés&\#8212;via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application.
+Activer les achats de produits consommables in-app
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
 mots-clés : offre dans l’application
 mots-clés : consommables
@@ -125,4 +125,8 @@ private async void GetUnfulfilledConsumables()
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,35 +1,35 @@
 ---
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
-Bluetooth RFCOMM
-This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
+RFCOMM Bluetooth
+Cet article fournit une vue d’ensemble de RFCOMM Bluetooth dans les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant la façon d’envoyer ou de recevoir un fichier.
 ---
-# Bluetooth RFCOMM
+# RFCOMM Bluetooth
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529)
 
-This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file..
+Cet article fournit une vue d’ensemble de RFCOMM Bluetooth dans les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant la façon d’envoyer ou de recevoir un fichier.
 
-## Overview
+## Vue d’ensemble
 
-The APIs in the [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) namespace build on existing patterns for Windows.Devices, including [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) and [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654). Data reading and writing is designed to take advantage of [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) and objects in [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791). Session Description Protocol (SDP) attributes have a value and an expected type. However, some common devices have faulty implementations of SDP attributes where the value is not of the expected type. Additionally, many usages of RFCOMM do not require additional SDP attributes at all. For these reasons, this API offers access to the unparsed SDP data, from which developers can obtain the information they need.
+Les API dans l’espace de noms [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) s’appuient sur des schémas existants pour Windows.Devices, notamment [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) et [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654). La lecture et l’écriture de données tirent parti des [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) et des objets dans [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791). Les attributs de protocole SDP possèdent une valeur et un type attendu. Toutefois, pour certains appareils communs, les implémentations des attributs SDP sont défectueuses, car le type de la valeur ne correspond pas au type attendu. En outre, de nombreuses utilisations de RFCOMM ne nécessitent aucun attribut SDP supplémentaire. Cette API permet donc d’accéder aux données SDP non analysées, à partir desquelles les développeurs peuvent obtenir les informations dont ils ont besoin.
 
-The RFCOMM APIs use the concept of service identifiers. Although a service identifier is simply a 128-bit GUID, it is also commonly specified as either a 16- or 32-bit integer. The RFCOMM API offers a wrapper for service identifiers that allows them be specified and consumed as 128-bit GUIDs as well as 32-bit integers but does not offer 16-bit integers. This is not an issue for the API because languages will automatically upsize to a 32-bit integer and the identifier can still be correctly generated.
+Les API RFCOMM utilisent le concept d’identificateurs de service. Bien qu’un identificateur de service soit simplement un GUID sur 128 bits, il est également souvent spécifié sous la forme d’un entier sur 16 ou 32 bits. L’API RFCOMM offre un wrapper pour les identificateurs de service grâce auquel ces derniers peuvent être spécifiés et utilisés en tant que GUID sur 128 bits et qu’entiers sur 32 bits ; cependant, elle n’offre pas d’entiers sur 16 bits. Cela ne constitue pas un problème pour l’API, car les langues effectueront automatiquement une migration vers un entier 32 bits qui ne perturbera pas la génération de l’identificateur.
 
-Apps can perform multi-step device operations in a background task so that they can run to completion even if the app is moved to the background and suspended. This allows for reliable device servicing such as changes to persistent settings or firmware, and content synchronization, without requiring the user to sit and watch a progress bar. Use the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) for device servicing and the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) for content synchronization. Note that these background tasks constrain the amount of time the app can run in the background, and are not intended to allow indefinite operation or infinite synchronization.
+L’application peut effectuer des opérations d’appareil en plusieurs étapes dans le cadre d’une tâche en arrière-plan, si bien qu’elle peut s’exécuter jusqu’au bout, même si elle est déplacée vers l’arrière-plan et suspendue. Cela permet d’effectuer des opérations de maintenance fiables pour les appareils telles que la modification de paramètres persistants ou de microprogrammes et la synchronisation du contenu, sans obliger l’utilisateur à observer une barre de progression pour patienter. Utilisez [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) pour la maintenance de l’appareil et [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337)pour la synchronisation du contenu. Ces tâches en arrière-plan limitent la durée pendant laquelle l’application peut s’exécuter en arrière-plan et ne sont pas conçues pour autoriser une opération ou synchronisation illimitée.
 
-## Send a file as a client
+## Envoyer un fichier en tant que client
 
-When sending a file, the most basic scenario is to connect to a paired device based on a desired service. This involves the following steps:
+Lors de l’envoi d’un fichier, le scénario d’application de base consiste à se connecter à un périphérique couplé en fonction d’un service souhaité. Les étapes à accomplir sont les suivantes :
 
--   Use the **RfcommDeviceService.GetDeviceSelector\*** functions to help generate an AQS query that can be used to enumerated paired device instances of the desired service.
--   Pick an enumerated device, create an [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463), and read the SDP attributes as needed (using [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) to parse the attribute's data).
--   Create a socket and use the [**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) and [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) properties to [**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) to the remote device service with the appropriate parameters.
--   Follow established data stream patterns to read chunks of data from the file and send it on the socket's [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) to the device.
+-   Utilisez les fonctions **RfcommDeviceService.GetDeviceSelector\*** pour générer une requête AQS permettant d’énumérer les instances d’appareil couplé du service souhaité.
+-   Sélectionnez un appareil énuméré, créez un [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463), puis lisez les attributs SDP selon les besoins (en utilisant [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) pour analyser les données de l’attribut).
+-   Créez un socket et utilisez les propriétés [**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) et [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) pour établir une connexion [**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) au service d’appareil distant avec les paramètres appropriés.
+-   Suivez les schémas de flux de données établis pour lire des blocs de données dans le fichier et les envoyer à l’appareil via le flux [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) du socket.
 
 ```csharp
 Windows.Devices.Bluetooth.RfcommDeviceService _service;
@@ -226,15 +226,15 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 }
 ```
 
-## Receive File as a Server
+## Recevoir un fichier en tant que serveur
 
-Another common RFCOMM App scenario is to host a service on the PC and expose it for other devices.
+Un autre scénario d’application RFCOMM courant consiste à héberger un service sur le PC et à l’exposer pour d’autres périphériques.
 
--   Create a [**RfcommServiceProvider**](https://msdn.microsoft.com/library/windows/apps/Dn263511) to advertise the desired service.
--   Set the SDP attributes as needed (using [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) to generate the attribute’s Data) and starts advertising the SDP records for other devices to retrieve.
--   To connect to a client device, create a socket listener to start listening for incoming connection requests.
--   When a connection is received, store the connected socket for later processing.
--   Follow established data stream patterns to read chunks of data from the socket's InputStream and save it to a file.
+-   Créez une classe [**RfcommServiceProvider**](https://msdn.microsoft.com/library/windows/apps/Dn263511) pour annoncer le service souhaité.
+-   Définissez les attributs SDP en fonction des besoins (en utilisant la méthode [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) pour générer les données de l’attribut), puis commencez à annoncer les enregistrements SDP pour que d’autres périphériques puissent les récupérer.
+-   Pour vous connecter à un périphérique client, créez un écouteur du socket pour commencer à écouter les demandes de connexion entrantes.
+-   À la réception d’une connexion, stockez le socket connecté en vue d’un traitement ultérieur.
+-   Suivez les schémas de flux de données établis pour lire des blocs de données du flux d’entrée InputStream du socket et les enregistrer dans un fichier.
 
 ```csharp
 Windows.Devices.Bluetooth.RfcommServiceProvider _provider;
@@ -357,4 +357,8 @@ void OnConnectionReceived(
 }
 ```
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

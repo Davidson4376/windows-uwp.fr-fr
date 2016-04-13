@@ -1,42 +1,42 @@
 ---
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
-title: App capability declarations
-description: Capabilities must be declared in your Universal Windows Platform (UWP) app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
+title: Déclarations des fonctionnalités d’application
+description: Pour pouvoir accéder à certaines API, ressources (images ou musique) ou appareils (appareil photo ou microphone), les fonctionnalités doivent être déclarées dans le manifeste du package de votre application de plateforme Windows universelle (UWP).
 ---
-# App capability declarations
+# Déclarations des fonctionnalités d’application
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Capabilities must be declared in your Universal Windows Platform (UWP) app's [package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474) to access certain API or resources like pictures, music, or devices like the camera or the microphone.
+Pour pouvoir accéder à certaines API, ressources (images ou musique) ou appareils (appareil photo ou microphone), les fonctionnalités doivent être déclarées dans le [manifeste du package](https://msdn.microsoft.com/library/windows/apps/BR211474) de votre application de plateforme Windows universelle (UWP).
 
-You request access to specific resources or API by declaring capabilities in your app's [package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474). You can declare general capabilities by using the [Manifest Designer](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx) in Microsoft Visual Studio, or you can add them manually. For more information, see [How to specify capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/BR211477). It is important to know that when customers get your app from the Store, they're notified of all the capabilities that the app declares. Avoid declaring capabilities that your app doesn't need.
+Vous demandez l’accès à des ressources ou API spécifiques en déclarant des fonctionnalités dans le [manifeste du package](https://msdn.microsoft.com/library/windows/apps/BR211474) de votre application. Vous pouvez déclarer les fonctionnalités générales à l’aide du [concepteur de manifeste](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx) dans Microsoft Visual Studio ou vous pouvez les ajouter manuellement. Pour plus d’informations, voir [Comment spécifier des fonctionnalités dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/BR211477). Il est important de savoir que lorsque des clients acquièrent votre application dans le Windows Store, toutes les fonctionnalités déclarées par l’application leur sont notifiées. Évitez de déclarer des fonctionnalités dont votre application n’a pas besoin.
 
-Some capabilities provide apps with access to a *sensitive resource*. These resources are considered sensitive because they can access the user's personal data or cost the user money. Privacy settings, managed by the Settings app, let the user dynamically control access to sensitive resources. Thus, it's important that your app doesn't assume a sensitive resource is always available. For more info about accessing sensitive resources, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/Hh768223). Capabilities that provide apps with access to a *sensitive resource* are annotated by an asterisk (\*) next to the capability scenario.
+Certaines fonctionnalités permettent aux applications d’accéder à des *ressources sensibles*. Ces ressources sont considérées comme « sensibles » parce qu’elles ont accès aux données personnelles de l’utilisateur ou ont un coût pour celui-ci. Les paramètres de confidentialité, gérés par l’application Paramètres, permettent à l’utilisateur de contrôler de façon dynamique l’accès aux ressources sensibles. Il est donc important que votre application ne présume pas de la disponibilité d’une ressource sensible. Pour plus d’informations sur l’accès aux ressources sensibles, voir [Recommandations en matière d’applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/Hh768223). Les fonctionnalités qui fournissent des applications avec un accès à une *ressource* sensible sont marquées d’un astérisque (*) en regard du scénario de fonctionnalité.
 
-This article reviews four categories of capabilities described below.
+Cet article passe en revue les quatre catégories de fonctionnalités décrites ci-dessous.
 
--   General-use capabilities that apply to most common app scenarios.
+-   Les fonctionnalités à usage général qui s’appliquent aux scénarios d’application les plus courants.
 
--   Device capabilities that allow your app to access peripheral and internal devices.
+-   Les fonctionnalités de périphérique qui permettent à votre application d’accéder à des périphériques et à des dispositifs internes.
 
--   Special-use capabilities that require a special company account for submission to the Store to use them. For more info about company accounts, see [Account types, locations, and fees](https://msdn.microsoft.com/library/windows/apps/JJ863494).
+-   Les fonctionnalités à usage spécial qui nécessitent un compte d’entreprise spécial pour les soumettre au Windows Store et les utiliser. Pour plus d’informations sur les comptes d’entreprise, voir [Types de comptes, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/JJ863494).
 
--   Restricted capabilities that are only available to Microsoft and its partners.
+-   Les fonctionnalités restreintes qui sont uniquement disponibles pour Microsoft et ses partenaires.
 
-## General-use capabilities
+## Fonctionnalités à usage général
 
-General-use capabilities apply to the most common app scenarios.
+Les fonctionnalités à usage général s’appliquent aux scénarios d’application les plus courants.
 
 <table>
         <thead>
             <tr>
-                <th>Capability scenario</th>
-                <th>Capability usage</th>
+                <th>Scénario de fonctionnalité</th>
+                <th>Utilisation de la fonctionnalité</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>**Music***</td>
+                <td>**Musique***</td>
                 <td>
                     The **musicLibrary** capability provides programmatic access to the user's Music, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in jukebox apps that make use of the entire Music library.
 
@@ -54,7 +54,7 @@ General-use capabilities apply to the most common app scenarios.
                                 <td>
                                     <pre><code>&lt;Capabilities&gt;
     &lt;uap:Capability Name="musicLibrary"/&gt;
-&lt;/Capabilities&gt;</code></pre>
+&lt;/Capacités&gt;</code></pre>
                                 </td>
                             </tr>
                         </tbody>
@@ -62,9 +62,9 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**Pictures***</td>
+                <td>**Images***</td>
                 <td>
-                    The **picturesLibrary** capability provides programmatic access to the user's Pictures, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in photo apps that make use of the entire Pictures library.
+                    La fonctionnalité **picturesLibrary** fournit un accès par programme aux images de l’utilisateur, permettant à l’application d’énumérer tous les fichiers dans la bibliothèque et d’y accéder sans interaction de l’utilisateur. Cette fonctionnalité est généralement utilisée dans les applications de photos qui utilisent la bibliothèque d’images entière.
 
                     The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that lets users open files for use with an app. Declare the **picturesLibrary** capability only when the scenarios for your app require programmatic access and can't be realized them by using the **file picker**.
 
@@ -88,7 +88,7 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**Videos***</td>
+                <td>**Vidéos***</td>
                 <td>
                     The **videosLibrary** capability provides programmatic access to the user's Videos, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in movie-playback apps that make use of the entire Videos library.
 
@@ -114,7 +114,7 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**Removable Storage**</td>
+                <td>**Stockage amovible**</td>
                 <td>
                     The **removableStorage** capability provides programmatic access to files on removable storage, like USB keys and external hard drives, filtered to the file-type associations declared in the package manifest. For example, if a document-reader app declares a .doc file-type association, it can open .doc files on the removable storage device, but not other types of files. Be careful when you declare this capability, because users may include a variety of info in their removable storage devices, and will expect your app to provide a valid justification for programmatic access to the removable storage for all files of the declared type.
 
@@ -142,7 +142,7 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**Internet and public networks***</td>
+                <td>**Internet et réseaux publics***</td>
                 <td>
                     There are two capabilities that provide different levels of access to the Internet and public networks.
 
@@ -208,7 +208,7 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**Code generation**</td>
+                <td>**Génération de code**</td>
                 <td>
                     The **codeGeneration** capability allows apps to access the following functions which provide JIT capabilities to apps.
 
@@ -257,10 +257,10 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**Recorded Calls Folder***</td>
+                <td>**Dossier d’appels enregistrés***</td>
                 <td>
-                    <p>The **recordedCallsFolder** device capability allows apps to access the recorded calls folder.</p>
-                    <p>The **recordedCallsFolder** capability must include the **mobile** namespace when you declare it in your app's package manifest as shown below.</p>
+                    <p>La fonctionnalité d’appareil **recordedCallsFolder** permet aux applications d’accéder au dossier d’appels enregistrés.</p>
+                    <p>La fonctionnalité **recordedCallsFolder** doit inclure l’espace de noms **mobile** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
                     <table>
                         <thead>
                             <tr>
@@ -280,11 +280,11 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**User Account Information***</td>
+                <td>**Informations sur le compte d’utilisateur***</td>
                 <td>
-                    <p>The **userAccountInformation** capability gives apps the ability to access the user's name and picture.</p>
-                    <p>This capability is required to access some APIs in the Windows.System.User namespace.</p>
-                    <p>The **userAccountInformation** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.</p>
+                    <p>La fonctionnalité **userAccountInformation** offre aux applications la possibilité d’accéder au nom et à l’image de l’utilisateur.</p>
+                    <p>Cette fonctionnalité est nécessaire pour accéder à certaines API de l’espace de noms Windows.System.User.</p>
+                    <p>La fonctionnalité **userAccountInformation** doit inclure l’espace de noms **uap** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
@@ -307,10 +307,10 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**VOIP calling**</td>
+                <td>**Appel VOIP**</td>
                 <td>
-                    <p>The **voipCall** capability allows apps to access the VOIP calling APIs in the [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) namespace.</p>
-                    <p>The **voipCall** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.</p>
+                    <p>La fonctionnalité **voipCall** permet aux applications d’accéder aux API d’appel VoIP de l’espace de noms [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266).</p>
+                    <p>La fonctionnalité **voipCall** doit inclure l’espace de noms **uap** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
@@ -333,11 +333,11 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**3D Objects**</td>
+                <td>**Objets 3D**</td>
                 <td>
-                    <p>The **objects3D** capability allows apps to have programmatic access to the 3D object files. This capability is typically used in 3D apps and games that need access to the entire 3D objects library.</p>
-                    <p>This capability is required to access the folder that contains the 3D objects using APIs in the [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) namespace.</p>
-                    <p>The **objects3D** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.</p>
+                    <p>La fonctionnalité **objects3d** dote les applications d’un accès par programme aux fichiers objets 3D. Cette fonctionnalité est généralement utilisée dans les applications et les jeux 3D qui ont besoin d’accéder à l’intégralité de la bibliothèque d’objets 3D.</p>
+                    <p>Cette fonctionnalité est nécessaire pour accéder au dossier contenant les objets 3D à l’aide des API de l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346).</p>
+                    <p>La fonctionnalité **objects3D** doit inclure l’espace de noms **uap** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
@@ -360,11 +360,11 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**Read Blocked Messages***</td>
+                <td>**Lecture des messages bloqués***</td>
                 <td>
-                    <p>The **blockedChatMessages** capability allows apps to read SMS and MMS messages that have been blocked by the Spam Filter app.</p>
-                    <p>This capability is required to access the blocked messages using APIs in the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) namespace.</p>
-                    <p>The **blockedChatMessages** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.</p>
+                    <p>La fonctionnalité **blockedChatMessages** permet aux applications de lire les messages SMS et MMS bloqués par l’application de filtre de courrier indésirable.</p>
+                    <p>Cette fonctionnalité est nécessaire pour accéder aux messages bloqués à l’aide des API de l’espace de noms [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p>
+                    <p>La fonctionnalité **blockedChatMessages** doit inclure l’espace de noms **uap** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
@@ -387,11 +387,11 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**Chat Message Access**</td>
+                <td>**Accès aux messages de conversation**</td>
                 <td>
-                    <p>The **chat** capability allows apps to read and delete Text Messages. This capability also allows apps to store chat messages in the system data store.</p>
-                    <p>This capability is required to use some APIs in the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) namespace.</p>
-                    <p>The **chat** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.</p>
+                    <p>La fonctionnalité **chat** permet aux applications de lire et de supprimer des SMS. Cette fonctionnalité permet également aux applications de stocker des messages de conversation dans le magasin de données système.</p>
+                    <p>Cette fonctionnalité est nécessaire pour utiliser certaines API de l’espace de noms [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p>
+                    <p>La fonctionnalité **chat** doit inclure l’espace de noms **uap** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
@@ -414,11 +414,11 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**IoT Low-level Bus Hardware**</td>
+                <td>**Matériel de bus de bas niveau IoT**</td>
                 <td>
-                    <p>The **lowLevelDevices** capability allows apps that run on IoT devices to access low-level bus hardware such as GPIO, I2C, SPI, ADC, and PWM.</p>
-                    <p>This capability is required to access some APIs in the [**Windows.Devices.Spi**](https://msdn.microsoft.com/library/windows/apps/Dn708178) namespaces.</p>
-                    <p>The **lowLevelDevices** capability must include the **iot** namespace when you declare it in your app's package manifest as shown below.</p>
+                    <p>La fonctionnalité **lowLevelDevices** permet aux applications qui s’exécutent sur des appareils IoT d’accéder au matériel de bus de bas niveau tel que GPIO, I2C, SPI, ADC et PWM.</p>
+                    <p>Cette fonctionnalité est nécessaire pour accéder à certaines API de l’espace de noms [**Windows.Devices.Spi**](https://msdn.microsoft.com/library/windows/apps/Dn708178).</p>
+                    <p>La fonctionnalité **lowLevelDevices** doit inclure l’espace de noms **iot** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
@@ -441,11 +441,11 @@ General-use capabilities apply to the most common app scenarios.
                 </td>
             </tr>
             <tr>
-                <td>**IoT System Administration**</td>
+                <td>**Administration système IoT**</td>
                 <td>
-                    <p>The **systemManagement** capability allows apps to have basic system administration privileges such as shutting down or rebooting, locale, and timezone.</p>
-                    <p>This capability is required to access some of the APIs in the [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814) namespace.</p>
-                    <p>The **systemManagement** capability must include the **iot** namespace when you declare it in your app's package manifest as shown below.</p>
+                    <p>La fonctionnalité **systemManagement** permet aux applications de disposer de privilèges administratifs système de base tels que l’arrêt ou le redémarrage, les paramètres régionaux et le fuseau horaire.</p>
+                    <p>Cette fonctionnalité est requise pour accéder à certaines API de l’espace de noms [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814).</p>
+                    <p>La fonctionnalité **systemManagement** doit inclure l’espace de noms **iot** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
@@ -471,35 +471,35 @@ General-use capabilities apply to the most common app scenarios.
 </table>
 
  
-## Device capabilities
+## Fonctionnalités de l’appareil
 
-Device capabilities allow your app to access peripheral and internal devices. Device capabilities are specified by using the **DeviceCapability** element in your app package manifest. This element may require additional child elements and some device capabilities need to be added to the package manifest manually. For more info, see [How to specify device capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/Dn263092) and [**DeviceCapability Schema reference**](https://msdn.microsoft.com/library/windows/apps/BR211430).
+Les fonctionnalités d’appareil permettent à votre application d’accéder à des appareils et à des dispositifs internes. Les fonctionnalités d’appareil sont spécifiées avec l’élément **DeviceCapability** dans le manifeste du package de votre application. Cet élément peut exiger des éléments enfants supplémentaires et certaines fonctionnalités d’appareil doivent être ajoutées manuellement au manifeste du package. Pour plus d’informations, voir [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/Dn263092) et [**DeviceCapability Schema reference**](https://msdn.microsoft.com/library/windows/apps/BR211430).
 
-| Capability scenario | Capability usage |
+| Scénario de fonctionnalité | Utilisation de la fonctionnalité |
 |---------------------|------------------|
-| **Location**\* | The **location** capability provides access to location functionality that is retrieved from dedicated hardware like a GPS sensor in the PC or is derived from available network info. Apps must handle the case in which the user has disabled location services from the **Settings** charm. |
-| **Microphone** | The **microphone** capability provides access to the microphone’s audio feed, which allows the app to record audio from connected microphones. Apps must handle the case in which the user has disabled the microphone from the **Settings** charm. |
-| **Proximity** | The **proximity** capability enables multiple devices in close proximity to communicate with one another. This capability is typically used in casual multi-player games and in apps that exchange information. Devices attempt to use the communication technology that provides the best possible connection, including Bluetooth, Wi-Fi, and the Internet. This capability is used only to initiate communication between the devices. |
-| **Webcam** | The **webcam** capability provides access to the video feed of a built-in camera or external webcam, which allows the app to capture photos and videos. On Windows, apps must handle the case in which the user has disabled the camera from the **Settings** charm.<br/>The **webcam** capability only grants access to the video stream. In order to grant access to the audio stream as well, the **microphone** capability must be added. | 
-| **USB** | The **usb** device capability enables access to APIs in the [Updating the app manifest package for a USB device](http://go.microsoft.com/fwlink/p/?LinkId=302259). | 
-| **Human interface device (HID)** | The **humaninterfacedevice** device capability enables access to APIs in the [How to specify device capabilities for HID](https://msdn.microsoft.com/library/windows/apps/Dn263091). |
-| **Point of Sevice (POS)** | The **pointOfService** device capability enables access to APIs in the [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) namespace. This namespace lets your app access Point of Service (POS) barcode scanners and magnetic stripe readers. The namespace provides a vendor-neutral interface for accessing POS devices from various manufacturers from a Windows Store app. |
-| **Bluetooth** | The **bluetooth** device capability allows apps to communicate with already paired bluetooth devices over both Generic Attribute (GATT) or Classic Basic Rate (RFCOMM) protocol.<br/>This capability is required to use some APIs in the [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413) namespace. |
-| **Wi-Fi Networking** | The **wiFiControl** device capability allows apps to scan and connect to Wi-Fi networks.<br/>This capability is required to use some APIs in the [**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/Dn975224) namespace. |
-| **Radio state** | The **radios** device capability allows apps to toggle the Wi-Fi and Bluetooth radios.<br/>This capability is required to use the APIs in the [**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/Dn996447) namespace.  |
-| **Optical disc** | The **optical** device capability allows apps to access functions on optical disk drives such as CD, DVD, and Blu-ray.<br/>This capability is required to use some APIs in the [**Windows.Devices.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn263667) namespace. |
-| **Motion activity** | The **activity** device capability allows apps to detect the current motion of the device.<br/>This capability is required to use some APIs in the [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) namespace. |
+| **Localisation**\* | La fonctionnalité **location** donne accès aux fonctionnalités de géolocalisation obtenues à partir d’un matériel dédié, tel qu’un capteur GPS dans l’ordinateur, ou dérivées des informations réseau disponibles. Les applications doivent gérer le cas où l’utilisateur a désactivé les services de localisation à partir de l’icône **Paramètres**. |
+| **Microphone** | La fonctionnalité **microphone** donne accès au flux audio du microphone, ce qui permet à l’application d’effectuer un enregistrement audio à partir de microphones connectés. Les applications doivent gérer le cas où l’utilisateur a désactivé le microphone à partir de l’icône **Paramètres**. |
+| **Proximité** | La fonctionnalité **proximity** permet à plusieurs appareils très proches les uns des autres de communiquer entre eux. Cette fonctionnalité est généralement utilisée dans des jeux multijoueurs simples et dans des applications qui échangent des informations. Les périphériques tentent d’utiliser la technologie de communication qui offre la meilleure connexion possible, notamment Bluetooth, le WiFi et Internet. Cette fonctionnalité est utilisée uniquement pour initier la communication entre les appareils. |
+| **Webcam** | La fonctionnalité **webcam** fournit un accès au flux vidéo d’une caméra intégrée ou d’une webcam externe, ce qui permet à l’application de capturer des photos et des vidéos. Sous Windows, les applications doivent gérer le cas où l’utilisateur a désactivé la caméra à partir de l’icône **Paramètres**.<br/>La fonctionnalité **webcam** ne donne accès qu’au flux vidéo. Pour autoriser l’accès au flux audio, la fonctionnalité **microphone** doit être ajoutée. |
+| **USB** | La fonctionnalité **usb** permet d’accéder aux API dans [Mise à jour du package du manifeste de l’application pour un périphérique USB](http://go.microsoft.com/fwlink/p/?LinkId=302259). |
+| **Périphérique d’interface utilisateur (HID)** | La fonctionnalité de périphérique **humaninterfacedevice** prend en charge l’accès aux API dans [Comment spécifier des fonctionnalités de périphérique pour un périphérique d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/Dn263091). |
+| **Point de vente (PDV)** | La fonctionnalité d’appareil **pointOfService** permet d’accéder aux API de l’espace de noms [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071). Cet espace de noms permet à votre application d’accéder aux scanneurs de codes-barres et aux lecteurs de bande magnétique de points de vente (PDV). L’espace de noms offre une interface indépendante du fournisseur qui permet d’accéder aux appareils PDV de différents constructeurs à partir d’une application du Windows Store. |
+| **Bluetooth** | La fonctionnalité d’appareil **bluetooth** permet aux applications de communiquer avec des appareils Bluetooth déjà jumelés par le biais du protocole d’attribut générique (GATT) ou de taux de base classique (RFCOMM).<br/>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413). |
+| **Réseau Wi-Fi** | La fonctionnalité d’appareil **wiFiControl** permet aux applications de rechercher les réseaux Wi-Fi disponibles et de s’y connecter.<br/>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/Dn975224). |
+| **État radio** | La fonctionnalité d’appareil **radios** permet aux applications d’activer et de désactiver les radios Wi-Fi et Bluetooth.<br/>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/Dn996447).  |
+| **Disque optique** | La fonctionnalité d’appareil **optical** permet aux applications d’accéder aux fonctions des lecteurs de disque optiques (CD, DVD, Blu-ray, etc.).<br/>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.Devices.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn263667). |
+| **Mouvements** | La fonctionnalité d’appareil **activity** permet aux applications de détecter le mouvement actuel de l’appareil.<br/>Cette fonctionnalité est nécessaire pour utiliser certaines API de l’espace de noms [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408). |
 
-## Special and restricted capabilities
+## Fonctionnalités spéciales et restreintes
 
 **Important**  
-Special and restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review.
+Les fonctionnalités spéciales et restreintes sont destinées à des scénarios très spécifiques. L’utilisation de ces fonctionnalités est extrêmement limitée et sujette à un examen et une stratégie d’accueil Windows Store supplémentaires.
 
-There are cases where such capabilities are necessary and appropriate, such as banking with two-factor authentication, where users provide a smart card with a digital certificate that confirms their identity. Other apps may be designed primarily for enterprise customers and may need access to corporate resources that cannot be accessed without the user’s domain credentials.
+Dans certains cas, de telles fonctionnalités sont nécessaires et appropriées, telles que des applications bancaires avec une authentification à deux facteurs, dans lesquelles les utilisateurs fournissent une carte à puce dotée d’un certificat numérique qui confirme leur identité. D’autres applications peuvent être conçues principalement pour des clients professionnels et peuvent avoir besoin d’accéder à des ressources d’entreprise auxquelles il n’est pas possible d’accéder sans les informations d’identification de domaine de l’utilisateur.
 
-Apps that apply the special-use capabilities require a company account to submit them to the Store. In contrast, restricted capabilities do not require a special company account for the Store, they are not available for developers to use. Restricted capabilities are available only to apps that are developed by Microsoft and its partners. For more information about company accounts, see [Account types, locations, and fees](https://msdn.microsoft.com/library/windows/apps/JJ863494).
+Les applications qui appliquent les fonctionnalités d’utilisation spécifiques requièrent un compte d’entreprise pour pouvoir être envoyées au Windows Store. En revanche, les fonctionnalités restreintes ne nécessitent pas de compte d’entreprise spécial pour le Windows Store, car elles ne sont pas à la disposition des développeurs. Les fonctionnalités restreintes sont disponibles uniquement pour les applications qui sont développées par Microsoft et ses partenaires. Pour plus d’informations sur les comptes d’entreprise, voir [Types de comptes, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/JJ863494).
 
-All restricted capabilities must include the **rescap** namespace when you declare them in your app's package manifest differently than other capabilities. The following example shows you how to declare the **appCaptureSettings** capability.
+À la différence d’autres fonctionnalités, toutes les fonctionnalités restreintes doivent inclure l’espace de noms **rescap** lorsque vous les déclarez dans le manifeste du package de votre application. L’exemple suivant vous montre comment déclarer la fonctionnalité **appCaptureSettings**.
 
 ```xml
 <Capabilities>
@@ -507,15 +507,15 @@ All restricted capabilities must include the **rescap** namespace when you decla
 </Capabilities>
 ```
 
-You must also add the **xmlns:rescap** namespace declaration in the top of the Package.appxmanifest file as shown below.
+Vous devez également ajouter la déclaration d’espace de noms **xmlns:rescap** en haut du fichier Package.appxmanifest, comme illustré ci-dessous.
 
 ```xml
-<Package 
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" 
-    IgnorableNamespaces="uap mp wincap rescap"> 
+<Package
+    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp wincap rescap">
 ```
 
 <table>
@@ -525,18 +525,18 @@ You must also add the **xmlns:rescap** namespace declaration in the top of the P
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Capability scenario</th>
-<th align="left">Capability usage</th>
+<th align="left">Scénario de fonctionnalité</th>
+<th align="left">Utilisation de la fonctionnalité</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">**Enterprise**</td>
-<td align="left"><p>Windows domain credentials enable a user to log into remote resources using their credentials, and act as if a user provided their user name and password. The **enterpriseAuthentication** special capability is typically used in line-of-business apps that connect to servers within an enterprise.</p>
-<p>You don't need this capability for generic communication across the Internet.</p>
+<td align="left">**Entreprise**</td>
+<td align="left"><p>Les informations d’identification de domaine Windows permettent à un utilisateur de se connecter à des ressources distantes à l’aide de ses informations d’identification, comme si l’utilisateur avait fourni son propre nom d’utilisateur et mot de passe. La fonctionnalité spéciale **enterpriseAuthentication** est généralement utilisée dans des applications métiers qui se connectent à des serveurs au sein d’une entreprise.</p>
+<p>Vous n’avez pas besoin de cette capacité pour une communication générique sur Internet.</p>
 
-<p>The **enterpriseAuthentication** special capability is intended to support common line-of-business apps. Don't declare it in apps that don't need to access corporate resources. The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that enables users to open files on a network share for use with an app. Declare the **enterpriseAuthentication** special capability only when the scenarios for your app require programmatic access, and you cannot realize them by using the **file picker**.</p>
-<p>The **enterpriseAuthentication** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.</p>
+<p>La fonctionnalité spéciale **enterpriseAuthentication** a été conçue pour prendre en charge des applications métiers courantes. Ne la déclarez pas dans des applications qui n’ont pas besoin d’accéder à des ressources d’entreprise. Le [**sélecteur de fichiers**](https://msdn.microsoft.com/library/windows/apps/BR207847) fournit un mécanisme d’interface utilisateur robuste qui permet aux utilisateurs d’ouvrir les fichiers sur un partage réseau à utiliser avec une application. Déclarez la fonctionnalité spéciale **enterpriseAuthentication** uniquement quand votre application se trouve dans une situation nécessitant un accès par programme qui ne peut pas être réalisé à l’aide du **sélecteur de fichiers**.</p>
+<p>La fonctionnalité **enterpriseAuthentication** doit inclure l’espace de noms **uap** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
 <div class="code">
 <span codelanguage="XML"></span>
 <table>
@@ -557,7 +557,7 @@ You must also add the **xmlns:rescap** namespace declaration in the top of the P
 </tbody>
 </table>
 </div>
-<p>The **enterpriseDataPolicy** capability allows apps to define and use enterprise-specific policies for the device. This capability is required to use all members of the following classes.</p>
+<p>La fonctionnalité **enterpriseDataPolicy** permet aux applications de définir et d’utiliser des stratégies d’entreprise pour l’appareil. Elle est requise pour l’utilisation de tous les membres des classes suivantes.</p>
 <ul>
 <li>[**FileProtectionManager**](https://msdn.microsoft.com/library/windows/apps/Dn705151)</li>
 <li>[**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/Dn706017)</li>
@@ -565,9 +565,9 @@ You must also add the **xmlns:rescap** namespace declaration in the top of the P
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">**Shared user certificates**</td>
-<td align="left"><p>The **sharedUserCertificates** special capability enables an app to add and access software and hardware-based certificates in the Shared User store, such as certificates stored on a smart card. This capability is typically used for financial or enterprise apps that require a smart card for authentication.</p>
-<p>The **sharedUserCertificates** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.</p>
+<td align="left">**Certificats utilisateur partagés**</td>
+<td align="left"><p>La fonctionnalité spéciale **sharedUserCertificates** permet à une application d’ajouter des certificats de logiciel et de matériel (par exemple, des certificats stockés sur une carte à puce) dans le magasin de certificats utilisateur partagés et d’accéder à ces derniers. Cette fonctionnalité est généralement utilisée pour des applications financières ou d’entreprise qui ont besoin d’une carte à puce pour l’authentification.</p>
+<p>La fonctionnalité **sharedUserCertificates** doit inclure l’espace de noms **uap** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
 <div class="code">
 <span codelanguage="XML"></span>
 <table>
@@ -591,18 +591,18 @@ You must also add the **xmlns:rescap** namespace declaration in the top of the P
 </tr>
 <tr class="odd">
 <td align="left">**Documents***</td>
-<td align="left"><p>The **documentsLibrary** special capability provides programmatic access to the user's Documents, filtered to the file type associations declared in the package manifest, to support offline access to OneDrive. For example, if a DOC reader app declared a .doc file type association, it can open .doc files in Documents, but not other types of files.</p>
-<p>Apps that declare the **documentsLibrary** special capability can't access Documents on Home Group computers. The [file picker](https://msdn.microsoft.com/library/windows/apps/Hh465174) provides a robust UI mechanism that enables users to open files for use with an app. Declare the **documentsLibrary** special capability only when you cannot use the file picker.</p>
-<p>To use the **documentsLibrary** special capability, an app must:</p>
+<td align="left"><p>La fonctionnalité spéciale **documentsLibrary** fournit un accès par programme aux documents de l’utilisateur, filtrés en fonction des associations de types de fichiers déclarées dans le manifeste du package, pour prendre en charge l’accès hors connexion à OneDrive. Par exemple, si une application de type lecteur DOC a déclaré une association de type de fichier .doc, elle peut ouvrir les fichiers .doc dans les documents, mais pas d’autres types de fichiers.</p>
+<p>Les applications qui déclarent la fonctionnalité spéciale **documentsLibrary** ne peuvent pas accéder aux documents sur les ordinateurs d’un groupe résidentiel. Le [file picker](https://msdn.microsoft.com/library/windows/apps/Hh465174) fournit un mécanisme d’interface utilisateur robuste qui permet aux utilisateurs d’ouvrir les fichiers à utiliser avec une application. Déclarez la fonctionnalité spéciale **documentsLibrary** uniquement quand vous ne pouvez pas utiliser le sélecteur de fichiers.</p>
+<p>Pour pouvoir utiliser la fonctionnalité spéciale **documentsLibrary**, une application doit :</p>
 <ul>
-<li>Facilitate cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs</li>
-<li>Save open files to the user’s OneDrive automatically while offline</li>
+<li>faciliter l’accès hors connexion interplateforme à du contenu OneDrive spécifique à l’aide d’URL ou d’ID de ressource OneDrive valides ;</li>
+<li>enregistrer automatiquement les fichiers ouverts sur le OneDrive de l’utilisateur en mode hors connexion.</li>
 </ul>
-<p>Apps that use the **documentsLibrary** special capability for these two purposes may also optionally use the capability to open embedded content within another document. Only the above uses of the **documentsLibrary** special capability are accepted.</p>
+<p>Les applications qui utilisent la fonctionnalité spéciale **documentsLibrary** dans ces deux objectifs ont également la possibilité de l’utiliser pour ouvrir du contenu incorporé dans un autre document. Seules les utilisations ci-dessus de la fonctionnalité spéciale **documentsLibrary** sont acceptées.</p>
 <ul>
-<li><p>Your app can't access the Documents library in the phone's internal storage. If another app creates a Documents folder on the optional SD card, however, your app can see that folder.</p></li>
+<li><p>Votre application ne peut pas accéder à la bibliothèque Documents sur le support de stockage interne du téléphone. Toutefois, si une autre application crée un dossier Documents sur la carte SD optionnelle, votre application peut accéder à ce dossier.</p></li>
 </ul>
-<p>The **documentsLibrary** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.</p>
+<p>La fonctionnalité **documentsLibrary** doit inclure l’espace de noms **uap** lorsque vous la déclarez dans le manifeste du package de votre application, comme illustré ci-dessous.</p>
 <div class="code">
 <span codelanguage="XML"></span>
 <table>
@@ -625,222 +625,233 @@ You must also add the **xmlns:rescap** namespace declaration in the top of the P
 </div></td>
 </tr>
 <tr class="even">
-<td align="left">**Game DVR Settings**</td>
-<td align="left"><p>The **appCaptureSettings** restricted capability allows apps to control the user settings for the Game DVR.</p>
-<p>This capability is required to use some APIs in the [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) namespace.</p></td>
+<td align="left">**Paramètres de jeux DVR**</td>
+<td align="left"><p>La fonctionnalité restreinte **appCaptureSettings** permet aux applications de contrôler les paramètres utilisateur pour la fonction Jeux DVR.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Cellular**</td>
-<td align="left"><p>The **cellularDeviceControl** restricted capability allows apps to have control over the cellular device.</p>
-<p>The **cellularDeviceIdentity** capability allows apps to access cellular identification data.</p>
-<p>The **cellularMessaging** capability allows apps to make use of SMS and RCS.</p>
-<p>These capabilities are required to use some APIs in the [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) namespaces.</p>
-<p>Starting in Windows 10, apps calling [**AppIDList**](https://msdn.microsoft.com/library/windows/apps/Dn393996)).</p></td>
+<td align="left">**Cellulaire**</td>
+<td align="left"><p>La fonctionnalité restreinte **cellularDeviceControl** permet aux applications de contrôler l’appareil cellulaire.</p>
+<p>La fonctionnalité **cellularDeviceIdentity** permet aux applications d’accéder aux informations d’identification cellulaires.</p>
+<p>La fonctionnalité **cellularMessaging** permet aux applications d’utiliser les SMS et le RCS.</p>
+<p>Ces fonctionnalités sont nécessaires pour utiliser certaines API des espaces de noms [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567).</p>
+<p>À compter de Windows 10, les applications appelant [**AppIDList**](https://msdn.microsoft.com/library/windows/apps/Dn393996)).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Device Unlock**</td>
-<td align="left"><p>The **deviceUnlock** restricted capability allows apps to unlock a device for developer and enterprise sideloading scenarios.</p></td>
+<td align="left">**Déverrouillage d’appareil**</td>
+<td align="left"><p>La fonctionnalité restreinte **deviceUnlock** permet aux applications de déverrouiller un appareil pour les scénarios de chargement indépendant de développeur et d’entreprise.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Dual SIM Tiles**</td>
-<td align="left"><p>The **dualSimTiles** restricted capability allows apps to create an additional app list entry on devices that have multiple SIMs.</p>
-<p>This capability is required to use some APIs in the [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235) namespace.</p></td>
+<td align="left">**Vignettes double SIM**</td>
+<td align="left"><p>La fonctionnalité restreinte **dualSimTiles** permet aux applications de créer une entrée supplémentaire dans la liste des applications sur les appareils dotés de plusieurs cartes SIM.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Enterprise Shared Storage**</td>
-<td align="left"><p>The **enterpriseDeviceLockdown** restricted capability allows apps to use the device lock down API and access the enterprise shared storage folders.</p></td>
+<td align="left">**Stockage partagé d’entreprise**</td>
+<td align="left"><p>La fonctionnalité restreinte **enterpriseDeviceLockdown** permet aux applications d’utiliser l’API de verrouillage de l’appareil et d’accéder aux dossiers de stockage partagé de l’entreprise.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**System Input Injection**</td>
-<td align="left"><p>The **inputInjection** restricted capability allows apps to inject various forms of input such as HID, touch, pen, keyboard or mouse into the system programmatically. This capability is typically used for collaboration apps that can take control of the system.</p>
+<td align="left">**Injection d’entrée système**</td>
+<td align="left"><p>La fonctionnalité restreinte **inputInjection** permet aux applications d’injecter différentes formes d’entrée (HID, interface tactile, stylet, clavier, souris, etc.) par programme dans le système. Cette fonctionnalité est généralement utilisée pour les applications de collaboration qui peuvent prendre le contrôle du système.</p>
 <div class="alert">
-**Note**  For a PC, input injection from an app that has this capability will only be received by processes in the same App Container.
+**Remarque** Pour un PC, les entrées injectées par une application disposant de cette fonctionnalité sont reçues uniquement par les processus résidant dans le même conteneur d’application.
 </div>
 </td>
 </tr>
 <tr class="even">
-<td align="left">**Observe Input***</td>
-<td align="left"><p>The **inputObservation** restricted capability allows apps to observe various forms of raw input such as HID, touch, pen, keyboard, or mouse being received by the system regardless of its final destination.</p></td>
+<td align="left">**Observation d’entrée***</td>
+<td align="left"><p>La fonctionnalité restreinte **inputObservation** permet aux applications d’observer différentes formes d’entrée brute (HID, interface tactile, stylet, clavier, souris, etc.) reçues par le système, quelle que soit leur destination finale.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Suppress Input**</td>
-<td align="left"><p>The **inputSuppression** restricted capability allows apps to suppress various forms of raw input such as HID, touch, pen, keyboard, or mouse from being received by the system.</p></td>
+<td align="left">**Suppression d’entrée**</td>
+<td align="left"><p>La fonctionnalité restreinte **inputSuppression** permet aux applications de supprimer différentes formes d’entrée brute (HID, interface tactile, stylet, clavier, souris, etc.) reçues par le système.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**VPN App**</td>
-<td align="left"><p>The **networkingVpnProvider** restricted capability allows apps to have full access to VPN features, including the ability to manage connections and provide VPN Plugin functionality.</p>
-<p>This capability is required to use some APIs in the [**Windows.Networking.Vpn**](https://msdn.microsoft.com/library/windows/apps/Dn434040) namespace.</p></td>
+<td align="left">**Application VPN**</td>
+<td align="left"><p>La fonctionnalité restreinte **networkingVpnProvider** permet aux applications de disposer d’un accès complet aux fonctions de réseau privé virtuel (VPN, Virtual Private Network), y compris la possibilité de gérer les connexions et de fournir les fonctionnalités de plug-in VPN.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.Networking.Vpn**](https://msdn.microsoft.com/library/windows/apps/Dn434040).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Other App Mangement**</td>
-<td align="left"><p>The **packageManagement** restricted capability allows apps to manage other apps directly.</p>
-<p>The **packageQuery** device capability allows apps to gather information about other apps.</p>
-<p>These capabilities are required to access some methods and properties in the [**PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960) class.</p></td>
+<td align="left">**Gestion d’autres applications**</td>
+<td align="left"><p>La fonctionnalité restreinte **packageManagement** permet aux applications de gérer directement d’autres applications.</p>
+<p>La fonctionnalité de périphérique **packageQuery** permet aux applications de collecter des informations sur les autres applications.</p>
+<p>Ces fonctionnalités sont requises pour l’accès à certaines méthodes et propriétés de la classe [**PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Screen Projection**</td>
-<td align="left"><p>The **screenDuplication** restricted capability allows apps to project the screen on another device.</p>
-<p>This capability is required to use APIs in the DirectX namespace.</p></td>
+<td align="left">**Projection d’écran**</td>
+<td align="left"><p>La fonctionnalité restreinte **screenDuplication** permet aux applications de projeter l’écran sur un autre appareil.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms DirectX.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**User Principal Name**</td>
-<td align="left"><p>The **userPrincipalName** restricted capability allows apps to modify and access the thumbnail cache from photos.</p>
-<p>This capability is required to call the [**GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435) function.</p></td>
+<td align="left">**Nom d’utilisateur principal**</td>
+<td align="left"><p>La fonctionnalité restreinte **userPrincipalName** permet aux applications d’accéder au cache de miniatures des photos et de le modifier.</p>
+<p>Cette fonctionnalité est requise pour l’appel de la fonction [**GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Wallet**</td>
-<td align="left"><p>The **walletSystem** restricted capability allows apps to have full access to the stored wallet cards.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610) namespace.</p></td>
+<td align="left">**Portefeuille**</td>
+<td align="left"><p>La fonctionnalité restreinte **walletSystem** permet aux applications de disposer d’un accès complet aux cartes de renseignements médicaux (au format portefeuille) stockées.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Location History**</td>
-<td align="left"><p>The **locationHistory** restricted capability allows apps to access the location history of the device.</p>
-<p>This capability is required to use APIs in the [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/BR225603) namespace.</p></td>
+<td align="left">**Historique de localisation**</td>
+<td align="left"><p>La fonctionnalité restreinte **locationHistory** permet aux applications d’accéder à l’historique de localisation de l’appareil.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/BR225603).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**App Close Confirmation**</td>
-<td align="left"><p>The **confirmAppClose** restricted capability allows apps to close themselves, their own windows, and delay the closing of their app.</p>
-<p>This capability is required to use APIs in the [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/BR242295) namespace.</p></td>
+<td align="left">**Confirmation de fermeture d’application**</td>
+<td align="left"><p>La fonctionnalité restreinte **confirmAppClose** permet aux applications de se fermer par elles-mêmes, de fermer leurs propres fenêtres et de retarder leur fermeture.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/BR242295).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Call History***</td>
-<td align="left"><p>The **phoneCallHistory** restricted capability allows apps to read the call history and to delete entries in the history.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) namespace.</p></td>
+<td align="left">**Historique des appels***</td>
+<td align="left"><p>La fonctionnalité restreinte **phoneCallHistory** permet aux applications de lire l’historique des appels et d’en supprimer des entrées.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**System Level Appointment Access**</td>
-<td align="left"><p>The **appointmentsSystem** restricted capability allows apps to read and modify all appointments on the user's calendar.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359) namespace.</p></td>
+<td align="left">**Accès de niveau système aux rendez-vous**</td>
+<td align="left"><p>La fonctionnalité restreinte **appointmentsSystem** permet aux applications de lire et de modifier tous les rendez-vous du calendrier de l’utilisateur.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**System Level Chat Message Access***</td>
-<td align="left"><p>The **chatSystem** restricted capability allows apps to read and write all SMS and MMS messages.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) namespace.</p></td>
+<td align="left">**Accès de niveau système aux messages de conversation***</td>
+<td align="left"><p>La fonctionnalité restreinte **chatSystem** permet aux applications de lire et d’écrire tous les messages SMS et MMS.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**System Level Contact Access**</td>
-<td align="left"><p>The **contactsSystem** restricted capability allows apps to read contact information that has been designated as restricted or sensitive and modify existing contact information.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) namespace.</p></td>
+<td align="left">**Accès de niveau système aux contacts**</td>
+<td align="left"><p>La fonctionnalité restreinte **contactsSystem** permet aux applications de lire les informations de contact marquées comme confidentielles ou sensibles et de modifier les informations de contacts existantes.</p>
+<p>Cette fonctionnalité est nécessaire pour utiliser les API de l’espace de noms [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Email Access***</td>
-<td align="left"><p>The **email** restricted capability allows apps to read, triage, and send user emails.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) namespace.</p></td>
+<td align="left">**Accès aux e-mails***</td>
+<td align="left"><p>La fonctionnalité restreinte **email** permet aux applications de lire, de trier et d’envoyer les e-mails de l’utilisateur.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**System Level Email Access**</td>
-<td align="left"><p>The **emailSystem** restricted capability allows apps to read, triage, and send user restricted or sensitive emails.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) namespace.</p></td>
+<td align="left">**Accès de niveau système aux e-mails**</td>
+<td align="left"><p>La fonctionnalité restreinte **email** permet aux applications de lire, de trier et d’envoyer des e-mails confidentiels ou sensibles de l’utilisateur.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**System Level Call History Access**</td>
-<td align="left"><p>The **phoneCallHistorySystem** restricted capability allows apps to fully modify the call history by changing existing entries and writing new ones.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) namespace.</p></td>
+<td align="left">**Accès de niveau système à l’historique des appels**</td>
+<td align="left"><p>La fonctionnalité restreinte **phoneCallHistorySystem** permet aux applications de modifier complètement l’historique des appels en modifiant et créant des entrées.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Send Text Messages***</td>
-<td align="left"><p>The **smsSend** restricted capability allows apps to send SMS and MMS messages.</p>
-<p>This capability is required to use APIs in the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) namespace.</p></td>
+<td align="left">**Envoi de SMS***</td>
+<td align="left"><p>La fonctionnalité restreinte **smsSend** permet aux applications d’envoyer des messages SMS et MMS.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation des API de l’espace de noms [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**System Level Access to All User Data**</td>
-<td align="left"><p>The **userDataSystem** restricted capability allows apps to access the user data system datastore.</p></td>
+<td align="left">**Accès de niveau système à toutes les données utilisateur**</td>
+<td align="left"><p>La fonctionnalité restreinte **userDataSystem** permet aux applications d’accéder à la banque de données système des données utilisateur.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Store Preview Features**</td>
-<td align="left"><p>The **previewStore** restricted capability allows apps to retrieve and purchase SKUs of in-app products.</p>
-<p>This capability is required to use certain APIs in the [**Windows.ApplicationModel.Store.Preview**](https://msdn.microsoft.com/library/windows/apps/Mt185546) namespace.</p></td>
+<td align="left">**Fonctionnalités d’aperçu du Windows Store**</td>
+<td align="left"><p>La fonctionnalité restreinte **previewStore** permet aux applications de récupérer et d’acheter des références (SKU) de produits intégrés à l’application.</p>
+<p>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.ApplicationModel.Store.Preview**](https://msdn.microsoft.com/library/windows/apps/Mt185546).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**First-Time Sign-in Settings**</td>
-<td align="left"><p>The **firstSignInSettings** restricted capability allows apps to access user settings that were set when the user first signed in to their device.</p></td>
+<td align="left">**Paramètres de première connexion**</td>
+<td align="left"><p>La fonctionnalité restreinte **firstSignInSettings** permet aux applications d’accéder aux paramètres utilisateur définis lors de la première connexion de l’utilisateur à son appareil.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Windows Team Experience**</td>
-<td align="left"><p>The **teamEditionExperience** restricted capability allows apps to access internal APIs that control many experiential aspects of a Windows Team session. A Windows Team session is likely to be running on a team device such as a Microsoft Surface Hub.</p></td>
+<td align="left">**Expérience d’équipe Windows**</td>
+<td align="left"><p>La fonctionnalité restreinte **teamEditionExperience** permet aux applications d’accéder aux API internes qui contrôlent de nombreux aspects expérimentaux d’une session d’équipe Windows. Une session d’équipe Windows peut s’exécuter sur un appareil collaboratif tel qu’un Microsoft Surface Hub.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Remote Unlock**</td>
-<td align="left"><p>The **remotePassportAuthentication** restricted capability allows apps to access credentials that can be used to unlock a remote PC.</p></td>
+<td align="left">**Déverrouillage à distance**</td>
+<td align="left"><p>La fonctionnalité restreinte **remotePassportAuthentication** permet aux applications d’accéder aux informations d’identification qui peuvent être utilisées pour déverrouiller un PC distant.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Preview Composition**</td>
-<td align="left"><p>The **previewUiComposition** restricted capability allows apps to preview the [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) namespace for their user interface so they can provide feedback on the API before it is completed. Please contact wincomposition@microsoft.com for more information.</p></td>
+<td align="left">**Composition d’aperçu**</td>
+<td align="left"><p>La fonctionnalité restreinte **previewUiComposition** permet aux applications d’afficher un aperçu de l’espace de noms [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) pour leur interface utilisateur afin de pouvoir fournir des commentaires sur l’API avant la fin de son exécution. Pour plus d’informations, contactez wincomposition@microsoft.com.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Secure Assessment Lockdown**</td>
-<td align="left"><p>The **secureAssessment** restricted capability allows apps to lockdown Windows into a single app mode for secure assessments.</p></td>
+<td align="left">**Verrouillage de sécurisation des évaluations**</td>
+<td align="left"><p>La fonctionnalité restreinte **secureAssessment** permet aux applications de verrouiller Windows en mode Application unique pour sécuriser les évaluations.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Connection Manager Provisioning**</td>
-<td align="left"><p>The **networkConnectionManagerProvisioning** restricted capability allows apps to define the policies that connect the device with WWAN and WLAN interfaces. Apps that use this capability are created by Mobile Operators to govern the devices that connect to their mobile network.</p></td>
+<td align="left">**Approvisionnement du Gestionnaire des connexions**</td>
+<td align="left"><p>La fonctionnalité restreinte **networkConnectionManagerProvisioning** permet aux applications de définir les stratégies régissant la connexion de l’appareil avec des interfaces de réseau étendu sans fil (WWAN, Wireless Wide Area Network) et de réseau local sans fil (WLAN, Wireless Local Area Network). Des applications utilisant cette fonctionnalité sont créées par des opérateurs mobiles pour gérer la connexion d’appareils à leur réseau mobile.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Data Plan Provisioning**</td>
-<td align="left"><p>The **networkDataPlanProvisioning** restricted capability allows apps to gather information about data plans on the device and read network usage. Apps that use this capability are created by Mobile Operators to integrate their customers’ actual data usage into the OS Data usage setting.</p></td>
+<td align="left">**Approvisionnement de forfait de données**</td>
+<td align="left"><p>La fonctionnalité restreinte **networkDataPlanProvisioning** permet aux applications de collecter des informations concernant les forfaits de données sur l’appareil et de lire l’utilisation du réseau. Des applications utilisant cette fonctionnalité sont créées par des opérateurs mobiles pour intégrer la consommation réelle des données par leurs clients dans le paramètre de consommation des données du système d’exploitation.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Software Licensing**</td>
-<td align="left"><p>The **slapiQueryLicenseValue** restricted capability allows apps to query software licensing policies.</p></td>
+<td align="left">**Gestion de licences des logiciels**</td>
+<td align="left"><p>La fonctionnalité restreinte **slapiQueryLicenseValue** permet aux applications d’interroger les stratégies de licence des logiciels.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Extended Execution**</td>
-<td align="left"><p>The **extendedExecutionBackgroundAudio** restricted capability allows apps to play audio when the app is not in the foreground.</p>
-<p>The **extendedExecutionCritical** restricted capability allows apps to begin a critical extended execution session.</p>
-<p>The **extendedExecutionUnconstrained** restricted capability allows apps to begin an unconstrained extended execution session.</p></td>
+<td align="left">**Exécution étendue**</td>
+<td align="left"><p>La fonctionnalité restreinte **extendedExecutionBackgroundAudio** permet aux applications de lire l’audio quand l’application n’est pas au premier plan.</p>
+<p>La fonctionnalité restreinte **extendedExecutionCritical** permet aux applications de commencer une session d’exécution étendue critique.</p>
+<p>La fonctionnalité restreinte **extendedExecutionUnconstrained** permet aux applications de démarrer une session d’exécution étendue sans contraintes.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Mobile Device Management**</td>
-<td align="left"><p>The **deviceManagementDmAccount** restricted capability allows apps to provision and configure Mobile Operator Open Mobile Alliance - Device Management (MO OMA-DM) accounts.</p>
-<p>The **deviceManagementFoundation** restricted capability allows apps to have basic access to the Mobile Device Management (MDM) configuration service provider (CSP) infrastructure on the device. Note that other capabilities are needed to access specific CSPs.</p>
-<p>The **deviceManagementWapSecurityPolicies** restricted capability allows apps to configure Wireless Application Protocol (WAP)-based services such as MMs, Service Indication/Service Loading (SI/SL), and Open Mobile Alliance - Client Provisioning (OMA-CP).</p>
-<p>The **deviceManagementEmailAccount** restricted capability allows apps created by Mobile Operators to add and manage an email account on devices they provision to users.</p></td>
+<td align="left">**Gestion des appareils mobiles**</td>
+<td align="left"><p>La fonctionnalité restreinte **deviceManagementDmAccount** permet aux applications d’approvisionner et de configurer les comptes MO OMA-DM (Mobile Operator Open Mobile Aliance - Device Management).</p>
+<p>La fonctionnalité restreinte **deviceManagementFoundation** permet aux applications de disposer d’un accès de base à l’infrastructure du fournisseur de services de configuration (CSP) dans la gestion des périphériques mobiles (GPM) sur l’appareil. Notez que d’autres fonctionnalités sont nécessaires pour accéder à des CSP spécifiques.</p>
+<p>La fonctionnalité restreinte **deviceManagementWapSecurityPolicies** permet aux applications de configurer des services basés sur le protocole WAP (Wireless Application Protocol), tels que les MMS, la stratégie des messages d’indication de service (IS)/chargement de service (CS), et OMA-CP (Open Mobile Alliance - Client Provisioning).</p>
+<p>La fonctionnalité restreinte **deviceManagementEmailAccount** permet à des applications créées par des opérateurs mobiles d’ajouter et de gérer un compte de messagerie sur des appareils fournis aux utilisateurs.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Package Policy Control**</td>
-<td align="left"><p>The **packagePolicySystem** restricted capability allows apps to have control of system policies related to apps that are installed on the device.</p></td>
+<td align="left">**Contrôle de stratégie de package**</td>
+<td align="left"><p>La fonctionnalité restreinte **packagePolicySystem** permet aux applications de contrôler les stratégies système liées aux applications installées sur l’appareil.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Games List**</td>
-<td align="left"><p>The **gameList** restricted capability allows apps to get a list of known games installed on the system.</p></td>
+<td align="left">**Liste de jeux**</td>
+<td align="left"><p>La fonctionnalité restreinte **gameList** permet aux applications d’obtenir la liste des jeux connus installés sur le système.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xbox Accessory**</td>
-<td align="left"><p>The **xboxAccessoryManagement** restricted capability allows apps to directly manage Xbox devices that conform to the Xbox hardware specification.</p></td>
+<td align="left">**Accessoire Xbox**</td>
+<td align="left"><p>La fonctionnalité restreinte **xboxAccessoryManagement** permet aux applications de gérer directement les appareils Xbox conformément aux spécifications matérielles Xbox.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Speech Recognition for Accessories**</td>
-<td align="left"><p>The **cortanaSpeechAccessory** restricted capability allows apps to invoke and pass commands to Cortana.</p></td>
+<td align="left">**Reconnaissance vocale des accessoires**</td>
+<td align="left"><p>La fonctionnalité restreinte **cortanaSpeechAccessory** permet aux applications d’appeler et de transmettre des commandes à Cortana.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Accessory Management**</td>
-<td align="left"><p>The **accessoryManager** restricted capability allows apps to register as an accessory app and opt-in to specific app notifications so that they may be forwarded to accessories and display to the user.</p></td>
+<td align="left">**Gestion des accessoires**</td>
+<td align="left"><p>La fonctionnalité restreinte **accessoryManager** permet aux applications de s’inscrire en tant qu’applications pour accessoire et d’opter pour des notifications d’application spécifiques afin que celles-ci puissent être transférées à des accessoires et s’afficher à l’intention de l’utilisateur.</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Driver access**</td>
-<td align="left"><p>The **interopServices** restricted capability allows apps to interact directly with drivers.</p></td>
+<td align="left">**Accès aux pilotes**</td>
+<td align="left"><p>La fonctionnalité restreinte **interopServices** permet aux applications d’interagir directement avec les pilotes.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Foreground observation**</td>
-<td align="left"><p>The **inputForegroundObservation** restricted capability allows apps in the foreground to intercept keyboard input and byasses all non-app keyboard input processing. SAS combinations cannot be intercepted by this capability. This capability is required to access members of the [**KeyboardDeliveryInterceptor**](https://msdn.microsoft.com/library/windows/apps/Mt608395) class.</p></td>
+<td align="left">**Observation de premier plan**</td>
+<td align="left"><p>La fonctionnalité restreinte **inputForegroundObservation** permet aux applications de premier plan d’intercepter les saisies au clavier et de contourner tous les traitement de saisie au clavier non liés aux applications. Les combinaisons SAS ne peuvent pas être interceptées par cette fonctionnalité. Cette dernière est requise pour l’accès aux membres de la classe [**KeyboardDeliveryInterceptor**](https://msdn.microsoft.com/library/windows/apps/Mt608395).</p></td>
 </tr>
 <tr class="even">
-<td align="left">**OEM and MO Partner apps**</td>
-<td align="left"><p>The **oemDeployment** restricted capability allows apps that are created by Microsoft partners to install new apps and query currently installed apps on the device.</p>
-<p>The **oemPublicDirectory** restricted capability allows apps that are created by Microsoft partners to have access to the shared app folder.</p></td>
+<td align="left">**Applications de fabricants d’ordinateurs OEM et d’opérateurs mobiles partenaires**</td>
+<td align="left"><p>La fonctionnalité restreinte **oemDeployment** permet aux applications qui sont créées par les partenaires Microsoft d’installer les nouvelles applications et d’interroger les applications actuellement installées sur l’appareil.</p>
+<p>La fonctionnalité restreinte **oemPublicDirectory** permet aux applications qui sont créées par les partenaires Microsoft d’avoir accès au dossier des applications partagées.</p></td>
+</tr>
+<tr class="odd">
+<td align="left">**Licence d’application**</td>
+<td align="left"><p>La fonctionnalité restreinte **appLicensing** permet aux applications de s’exécuter sans nécessiter de licence. Vous ne pouvez pas soumettre votre application au Windows Store si vous déclarez cette fonctionnalité dans votre manifeste. Les demandes d’accès à cette fonctionnalité pour l’envoi au Windows Store seront toujours refusées.</p></td>
+</tr>
+<tr class="even">
+<td align="left">**Système Localisation**</td>
+<td align="left"><p>La fonctionnalité restreinte **locationSystem** permet aux applications d’effectuer certaines configurations d’emplacement privilégiées, comme la définition de l’emplacement par défaut de l’appareil. Vous ne pouvez pas soumettre votre application au Windows Store si vous déclarez cette fonctionnalité dans votre manifeste. Les demandes d’accès à cette fonctionnalité pour l’envoi au Windows Store seront toujours refusées.</p></td>
 </tr>
 </tbody>
 </table>
 
-**Note**  
-This article is for Windows 10 developers writing UWP apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque**  
+Cet article s’adresse aux développeurs de Windows 10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Related topics
+## Rubriques connexes
 
-* [Manifest Designer](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)
-* [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/Hh768223)
-* [How to specify capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/BR211477)
-* [How to specify device capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/Dn263092)
+* [Concepteur du manifeste](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)
+* [Recommandations en matière d’applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/Hh768223)
+* [Comment spécifier des fonctionnalités dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/BR211477)
+* [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/Dn263092)
  
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=Mar16_HO5-->
+
+

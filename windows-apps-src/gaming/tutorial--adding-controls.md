@@ -1,6 +1,6 @@
 ---
-title: Ajouter des contrôles
-description: Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
+Ajouter des contrôles
+Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 ---
 
@@ -1901,7 +1901,7 @@ void MoveLookController::UpdateGameController()
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -1917,4 +1917,8 @@ Cet article s’adresse aux développeurs de Windows 10 qui créent des applica
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

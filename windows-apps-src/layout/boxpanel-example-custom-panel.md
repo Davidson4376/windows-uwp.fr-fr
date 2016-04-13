@@ -1,45 +1,48 @@
 ---
-Description: Learn to write code for a custom Panel class, implementing ArrangeOverride and MeasureOverride methods, and using the Children property.
-title: BoxPanel, an example custom panel
+Description: 'Apprenez à écrire du code pour une classe Panel personnalisée, en implémentant les méthodes ArrangeOverride et MeasureOverride, et en utilisant la propriété Children.'
+MS-HAID: 'dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel'
+MSHAttr: 'PreferredLib:/library/windows/apps'
+Search.Product: eADQiWindows 10XVcnh
+title: 'BoxPanel, exemple de panneau personnalisé'
 ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
 ---
 
-# BoxPanel, an example custom panel
+# BoxPanel, exemple de panneau personnalisé
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
--   [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+-   [**Panneau**](https://msdn.microsoft.com/library/windows/apps/br227511)
 -   [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 -   [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
-Learn to write code for a custom [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class, implementing [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) and [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) methods, and using the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property. The example code shows a custom panel implementation, but we don't devote a lot of time explaining the layout concepts that influence how you can customize a panel for different layout scenarios. If you want more info about these layout concepts and how they might apply to your particular layout scenario, see [XAML custom panels overview](custom-panels-overview.md).
+Apprenez à écrire du code pour une classe [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) personnalisée, en implémentant les méthodes [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) et [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730), et en utilisant la propriété [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514). L’exemple de code illustre une implémentation de panneau personnalisé, mais nous ne consacrons pas beaucoup de temps à expliquer les concepts de disposition qui influencent la façon dont vous pouvez personnaliser un panneau pour différents scénarios de disposition. Pour plus d’informations sur ces concepts de disposition et sur la manière dont ils peuvent s’appliquer à votre propre scénario de disposition, voir [Vue d’ensemble des panneaux personnalisés XAML](custom-panels-overview.md).
 
-A *panel* is an object that provides a layout behavior for child elements it contains, when the XAML layout system runs and your app UI is rendered. You can define custom panels for XAML layout by deriving a custom class from the [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class. You provide behavior for your panel by overriding the [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) and [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) methods, supplying logic that measures and arranges the child elements. This example derives from **Panel**. When you start from **Panel**, **ArrangeOverride** and **MeasureOverride** methods don't have a starting behavior. Your code is providing the gateway by which child elements become known to the XAML layout system and get rendered in the UI. So, it's really important that your code accounts for all child elements and follows the patterns the layout system expects.
+Un *panneau* est un objet qui fournit un comportement de disposition pour les éléments enfants qu’il contient, lorsque le système de disposition XAML s’exécute et que l’interface utilisateur de votre application est affichée. Vous pouvez définir des panneaux personnalisés pour la disposition XAML en dérivant une classe personnalisée à partir de la classe [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). Vous fournissez le comportement pour votre panneau en substituant les méthodes [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) et [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) et en fournissant la logique qui mesure et organise les éléments enfants. Cet exemple dérive de **Panel**. Lorsque vous commencez à partir de **Panel**, les méthodes **ArrangeOverride** et **MeasureOverride** n’ont pas de comportement de départ. Votre code fournit la passerelle par laquelle les éléments enfants sont portés à la connaissance du système de disposition XAML et sont affichés dans l’interface utilisateur. Il est donc très important que votre code prenne en compte tous les éléments enfants et suive les modèles attendus par le système de disposition.
 
-## Your layout scenario
-
-
-When you define a custom panel, you're defining a layout scenario.
-
-A layout scenario is expressed through:
-
--   What the panel will do when it has child elements
--   When the panel has constraints on its own space
--   How the logic of the panel determines all the measurements, placement, positions, and sizings that eventually result in a rendered UI layout of children
-
-With that in mind, the `BoxPanel` shown here is for a particular scenario. In the interest of keeping the code foremost in this example, we won't explain the scenario in detail yet, and instead concentrate on the steps needed and the coding patterns. If you want to know more about the scenario first, skip ahead to ["The scenario for `BoxPanel`"](#scenario), and then come back to the code.
-## Start by deriving from **Panel**
+## Votre scénario de disposition
 
 
-Start by deriving a custom class from [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). Probably the easiest way to do this is to define a separate code file for this class, using the **Add** | **New Item** | **Class** context menu options for a project from the **Solution Explorer** in Microsoft Visual Studio. Name the class (and file) `BoxPanel`.
+Quand vous définissez un panneau personnalisé, vous définissez un scénario de disposition
 
-The template file for a class doesn't start with many **using** statements because it's not specifically for Universal Windows Platform (UWP) apps. So first, add **using** statements. The template file also starts with a few **using** statements that you probably don't need, and can be deleted. Here's a suggested list of **using** statements that can resolve types you'll need for typical custom panel code:
+Un scénario de disposition indique :
+
+-   ce que fait le panneau quand il possède des éléments enfants,
+-   quand il a des contraintes sur son propre espace,
+-   comment la logique du panneau détermine toutes les mesures, placement, positions et dimensionnements qui ont pour résultat la disposition des enfants dans l’interface utilisateur.
+
+L’exemple `BoxPanel` fourni ici concerne un scénario spécifique. Pour des raisons de simplification du code, nous n’expliquerons pas le scénario en détail dans cet exemple. Nous nous concentrons plutôt sur les étapes nécessaires et sur les modèles de codage. Si vous souhaitez d’abord en savoir plus sur le scénario, passez directement à [« Le scénario de `BoxPanel` »](#scenario) et revenez ensuite au code.
+## Commencer par dériver à partir de **Panel**
+
+
+Commencez par dériver une classe personnalisée à partir de [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). Le moyen le plus simple consiste sans doute à définir un fichier de code distinct pour cette classe, à l’aide des options de menu contextuel **Ajouter** | **Nouvel élément** | **Classe** pour un projet dans l’**Explorateur de solutions** de Microsoft Visual Studio. Nommez la classe (et le fichier) `BoxPanel`.
+
+Le fichier de modèle d’une classe ne commence pas par beaucoup d’instructions **using**, car il n’est pas destiné spécifiquement aux applications de la plateforme Windows universelle (UWP). Commencez par ajouter des instructions **using**. Le fichier de modèle débute également par quelques instructions **using** dont vous n’aurez probablement pas besoin et que vous pouvez donc supprimer. Voici une liste d’instructions **using** qui peuvent résoudre des types dont vous aurez besoin pour du code de panneau personnalisé classique :
 
 ```CSharp
 using System;
@@ -50,7 +53,7 @@ using Windows.UI.Xaml.Controls; //Panel
 using Windows.UI.Xaml.Media; //if you need Brushes or other utilities
 ```
 
-Now that you can resolve [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), make it the base class of `BoxPanel`. Also, make `BoxPanel` public:
+Maintenant que vous pouvez résoudre [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), faites-en la classe de base de `BoxPanel`. Rendez également `BoxPanel` public :
 
 ```CSharp
 public class BoxPanel : Panel
@@ -58,9 +61,9 @@ public class BoxPanel : Panel
 }
 ```
 
-At the class level, define some **int** and **double** values that will be shared by several of your logic functions, but which won't need to be exposed as public API. In the example, these are named: `maxrc`, `rowcount`, `colcount`, `cellwidth`, `cellheight`, `maxcellheight`, `aspectratio`.
+Au niveau de la classe, définissez certaines valeurs **int** et **double** qui seront partagées par plusieurs de vos fonctions logiques, mais qui n’auront pas besoin d’être exposées comme API publiques. Dans l’exemple, elles se nomment : `maxrc`, `rowcount`, `colcount`, `cellwidth`, `cellheight`, `maxcellheight` et `aspectratio`.
 
-After you've done this, the complete code file looks like this (removing comments on **using**, now that you know why we have them):
+Après cela, le fichier de code complet ressemble à ceci (les commentaires sur **using** ont été supprimés, maintenant que vous savez pourquoi ces instructions sont là) :
 
 ```CSharp
 using System;
@@ -77,7 +80,7 @@ public class BoxPanel : Panel
 }
 ```
 
-From here on out, we'll be showing you one member definition at a time, be that a method override or something supporting such as a dependency property. You can add these to the skeleton above in any order, and we won't be showing the **using** statements or the definition of the class scope again in the snippets until we show the final code.
+Dorénavant, nous vous montrerons une définition de membre à la fois, qu’il s’agisse d’une substitution de méthode ou d’un élément de prise en charge tel qu’une propriété de dépendance. Vous pouvez ajouter ces éléments au squelette ci-dessus dans n’importe quel ordre. Nous ne remontrerons pas les instructions **using** ni la définition de l’étendue de classe dans les extraits avant le code final.
 
 ## **MeasureOverride**
 
@@ -117,19 +120,19 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-The necessary pattern of a [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) implementation is the loop through each element in [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Always call the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) method on each of these elements. **Measure** has a parameter of type [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995). What you're passing here is the size that your panel is committing to have available for that particular child element. So, before you can do the loop and start calling **Measure**, you need to know how much space each cell can devote. From the **MeasureOverride** method itself, you have the *availableSize* value. That is the size that the panel's parent used when it called **Measure**, which was the trigger for this **MeasureOverride** being called in the first place. So a typical logic is to devise a scheme whereby each child element divides the space of the panel's overall *availableSize*. You then pass each division of size to **Measure** of each child element.
+Le modèle nécessaire d’une implémentation [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) est la boucle qui parcourt chaque élément dans [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Vous devez toujours appeler la méthode [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) sur chacun de ces éléments. **Measure** a un paramètre de type [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995). Vous passez ici la taille que votre panneau s’engage à mettre à disposition de cet élément enfant. Avant de pouvoir parcourir la boucle et de commencer à appeler **Measure**, vous devez donc connaître la quantité d’espace que chaque cellule peut allouer. À partir de la méthode **MeasureOverride**, vous avez la valeur *availableSize*. Il s’agit de la taille qui a été utilisée par le parent du panneau quand il a appelé **Measure**, qui a déclenché initialement l’appel de cette méthode **MeasureOverride**. La logique la plus classique consiste à établir un schéma selon lequel chaque élément enfant divise l’espace de la taille disponible (*availableSize*) globale du panneau. Vous passez ensuite chaque division de taille à la méthode **Measure** de chaque élément.
 
-How `BoxPanel` divides size is fairly simple: it divides its space into a number of boxes that's largely controlled by the number of items. Boxes are sized based on row and column count and the available size. Sometimes one row or column from a square isn't needed, so it's dropped and the panel becomes a rectangle rather than square in terms of its row : column ratio. For more info about how this logic was arrived at, skip ahead to ["The scenario for `BoxPanel`"](#scenario).
+La manière dont `BoxPanel` divise la taille est assez simple : il divise son espace en un nombre de cases déterminé en grande partie par le nombre d’éléments. Les tailles des cases sont établies en fonction du nombre de lignes et de colonnes et de la taille globale disponible. Parfois, une ligne ou une colonne d’un carré n’est pas nécessaire. Dans ce cas, elle est supprimée et le panneau devient un rectangle plutôt qu’un carré en termes de rapport ligne/colonne. Pour plus d’informations sur cette logique, passez directement à [« Le scénario de `BoxPanel` »](#scenario).
 
-So what does the measure pass do? It sets a value for the read-only [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) property on each element where [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) was called. Having a **DesiredSize** value is possibly important once you get to the arrange pass, because the **DesiredSize** communicates what the size can or should be when arranging and in the final rendering. Even if you don't use **DesiredSize** in your own logic, the system still needs it.
+Que fait donc la passe de mesure ? Elle définit une valeur pour la propriété [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) en lecture seule sur chaque élément où la méthode [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) a été appelée. Le fait d’avoir une valeur **DesiredSize** peut être important une fois la passe d’organisation atteinte, car la propriété **DesiredSize** indique ce que peut ou doit être la taille lors de l’organisation et du rendu final. Même si vous n’utilisez pas **DesiredSize** dans votre propre logique, le système en a besoin.
 
-It's possible for this panel to be used when the height component of *availableSize* is unbounded. If that's true, the panel doesn't have a known height to divide. In this case, the logic for the measure pass informs each child that it doesn't have a bounded height, yet. It does so by passing a [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) to the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) call for children where [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) is infinite. That's legal. When **Measure** is called, the logic is that the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) is set as the minimum of these: what was passed to **Measure**, or that element's natural size from factors such as explicitly-set [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751).
+Ce panneau peut être utilisé quand le composant hauteur de *availableSize* est sans limite. Dans ce cas, le panneau n’a aucune hauteur connue à diviser. La logique de la passe de mesure signale alors à chaque enfant qu’il n’a pas encore de hauteur limitée. Pour cela, elle passe un objet [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) à l’appel de [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) pour les enfants pour lesquels la propriété [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) est infinie. Cette opération est autorisée. Quand la méthode **Measure** est appelée, la valeur affectée à la propriété [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) est la plus petite parmi les suivantes : la valeur passée à **Measure** ou la taille naturelle de l’élément provenant de facteurs tels que les valeurs [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) définies de manière explicite.
 
-**Note**????The internal logic of [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) also has this behavior: **StackPanel** passes an infinite dimension value to [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) on children, indicating that there is no constraint on children in the orientation dimension. **StackPanel** typically sizes itself dynamically, to accommodate all children in a stack that grows in that dimension.
+**Important**????La logique interne de [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) présente aussi le comportement suivant : **StackPanel** passe une valeur de dimension infinie à [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) sur les enfants pour indiquer l’absence de contraintes sur les enfants dans la dimension d’orientation. **StackPanel** se dimensionne en général de manière dynamique afin de contenir tous les enfants d’une pile qui croît dans cette dimension.
 
 ??
 
-However, the panel itself can't return a [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) with an infinite value from [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730); that throws an exception during layout. So, part of the logic is to find out the maximum height that any child requests, and use that height as the cell height in case that isn't coming from the panel's own size constraints already. Here's the helper function `LimitUnboundedSize` that was referenced in previous code, which then takes that maximum cell height and uses it to give the panel a finite height to return, as well as assuring that `cellheight` is a finite number before the arrange pass is initiated:
+Toutefois, le panneau lui-même ne peut pas retourner d’objet [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) avec une valeur infinie à partir de [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) ; cela lève une exception durant la disposition. Une partie de la logique consiste donc à trouver la hauteur maximale demandée par chaque enfant et à utiliser cette hauteur comme hauteur de cellule dans le cas où elle ne provient pas déjà des propres contraintes de taille du panneau. Voici la fonction d’assistance `LimitUnboundedSize` référencée dans le code précédent, qui prend ensuite cette hauteur maximale de cellule et l’utilise pour donner au panneau une hauteur finie à retourner et garantit que `cellheight` est un nombre fini avant d’initier la passe de mesure :
 
 ```CSharp
 // This method is called only if one of the availableSize dimensions of measure is infinite.
@@ -168,22 +171,22 @@ protected override Size ArrangeOverride(Size finalSize)
 }
 ```
 
-The necessary pattern of an [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) implementation is the loop through each element in [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Always call the [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) method on each of these elements.
+Le modèle nécessaire d’une implémentation [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) est la boucle qui parcourt chaque élément dans [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Vous devez toujours appeler la méthode [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) sur chacun de ces éléments.
 
-Note how there aren't as many calculations as in [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730); that's typical. The size of children is already known from the panel's own **MeasureOverride** logic, or from the [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) value of each child set during the measure pass. However, we still need to decide the location within the panel where each child will appear. In a typical panel, each child should render at a different position. A panel that creates overlapping elements isn't desirable for typical scenarios (although it's not out of the question to create panels that have purposeful overlaps, if that's really your intended scenario).
+Notez qu’il y a moins de calculs que dans [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730), ce qui est normal. La taille des enfants est déjà connue grâce à la propre logique **MeasureOverride** du panneau ou grâce à la valeur [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) de chaque enfant définie durant la passe de mesure. Toutefois, il reste encore à décider de l’emplacement où apparaîtra chaque enfant dans le panneau. Dans un panneau classique, chaque enfant doit être affiché à une position différente. Dans les scénarios ordinaires, il n’est pas souhaitable d’avoir un panneau avec des éléments qui se chevauchent (bien qu’il ne soit pas interdit de créer des panneaux avec des chevauchements intentionnels, si votre scénario l’impose.)
 
-This panel arranges by the concept of rows and columns. The number of rows and columns was already calculated (it was necessary for measurement). So now the shape of the rows and columns plus the known sizes of each cell contribute to the logic of defining a rendering position (the `anchorPoint`) for each element that this panel contains. That [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), along with the [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) already known from measure, are used as the two components that construct a [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994). **Rect** is the input type for [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914).
+Ce panneau organise les éléments selon un concept de lignes et de colonnes. Le nombre de lignes et de colonnes a déjà été calculé (il était nécessaire pour la mesure). La forme des lignes et des colonnes et la taille connue de chaque cellule contribuent maintenant à la logique de définition d’une position de rendu (l’objet `anchorPoint`) pour chaque élément contenu dans ce panneau. Ce [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) et la valeur [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) déjà obtenue suite à la mesure sont utilisés comme composants pour la construction d’un objet [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994). **Rect** est le type d’entrée pour [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914).
 
-Panels sometimes need to clip their content. If they do, the clipped size is the size that's present in [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921), because the [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) logic sets it as the minimum of what was passed to **Measure**, or other natural size factors. So you don't typically need to specifically check for clipping during [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914); the clipping just happens based on passing the **DesiredSize** through to each **Arrange** call.
+Les panneaux doivent parfois tronquer leur contenu. Dans ce cas, la taille coupée est celle présente dans [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921), car la logique de [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) la définit comme le minimum de ce qui a été passé à **Measure**, ou d’autres facteurs de taille naturelle. Ainsi, il n’est généralement pas nécessaire de se préoccuper de la troncature durant [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914). Celle-ci aura simplement lieu en fonction du passage de la valeur **DesiredSize** lors de chaque appel à **Arrange**.
 
-You don't always need a count while going through the loop if all the info you need for defining the rendering position is known by other means. For example, in [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) layout logic, the position in the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) collection doesn't matter. All the info needed to position each element in a **Canvas** is known by reading [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) values of children as part of the arrange logic. The `BoxPanel` logic happens to need a count to compare to the *colcount* so it's known when to begin a new row and offset the *y* value.
+Un décompte n’est pas toujours nécessaire durant le bouclage si toutes les informations dont vous avez besoin pour définir la position de rendu sont déjà connues par un autre moyen. Par exemple, dans la logique de disposition [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), la position dans la collection [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) n’a pas d’importance. Toutes les informations nécessaires pour positionner chaque élément dans un objet **Canvas** sont connues par la lecture des valeurs [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) des enfants dans le cadre de la logique d’organisation. La logique `BoxPanel` a besoin d’un décompte à des fins de comparaison avec *colcount*, afin de savoir quand commencer une nouvelle ligne et décaler la valeur *y*.
 
-It's typical that the input *finalSize* and the [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) you return from a [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) implementation are the same. For more info about why, see "**ArrangeOverride**" section of [XAML custom panels overview](custom-panels-overview.md).
+Il est courant que la valeur *finalSize* d’entrée et la valeur [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) retournée à partir d’une implémentation [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) soient identiques. Pour plus d’informations à ce sujet, voir « **ArrangeOverride** » dans [Vue d’ensemble des panneaux personnalisés XAML](custom-panels-overview.md).
 
-## A refinement: controlling the row vs. column count
+## Un affinement : le contrôle du nombre de lignes et de colonnes
 
 
-You could compile and use this panel just as it is now. However, we'll add one more refinement. In the code just shown, the logic puts the extra row or column on the side that's longest in aspect ratio. But for greater control over the shapes of cells, it might be desirable to choose a 4??3 set of cells instead of 3??4 even if the panel's own aspect ratio is "portrait." So we'll add an optional dependency property that the panel consumer can set to control that behavior. Here's the dependency property definition, which is very basic:
+Vous pourriez compiler et utiliser ce panneau tel quel. Nous allons toutefois ajouter un petit affinement. Dans le code fourni, la logique place la ligne ou colonne supplémentaire du côté où la proportion est la plus longue. Pour un meilleur contrôle des formes des cellules, il peut être souhaitable de choisir un ensemble de cellules 4??3 plutôt que 3??4, même si les proportions du panneau sont définies sur « Portrait ». Nous allons donc ajouter une propriété de dépendance facultative que le consommateur du panneau peut définir pour contrôler le comportement. Voici la définition de cette propriété de dépendance. Elle est très simple :
 
 ```CSharp
 public static readonly DependencyProperty UseOppositeRCRatioProperty =
@@ -196,40 +199,51 @@ public bool UseSquareCells
 }
 ```
 
-And here's how using `UseOppositeRCRatio` impacts the measure logic. Really all it's doing is changing how `rowcount` and `colcount` are derived from `maxrc` and the true aspect ratio, and there are corresponding size differences for each cell because of that. When `UseOppositeRCRatio` is **true**, it inverts the value of the true aspect ratio before using it for row and column counts.
+Et voici comment l’utilisation de `UseOppositeRCRatio` affecte la logique de mesure. Tout ce qu’elle fait, c’est modifier la façon dont `rowcount` et `colcount` sont dérivées de `maxrc` et des proportions réelles, ce qui provoque des différences de taille correspondantes pour chaque cellule. Quand `UseOppositeRCRatio` est **true**, la valeur des proportions réelles est inversée avant d’être utilisée pour définir le nombre de lignes et de colonnes.
 
 ```CSharp
 if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 ```
 
-## The scenario for `BoxPanel`
+## Le scénario de `BoxPanel`
 
 
-The particular scenario for `BoxPanel` is that it's a panel where one of the main determinants of how to divide space is by knowing the number of child items, and dividing the known available space for the panel. Panels are innately rectangle shapes. Many panels operate by dividing that rectangle space into further rectangles; that's what [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) does for its cells. In **Grid**'s case, the size of the cells is set by [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) and [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) values, and elements declare the exact cell they go into with [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) and [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/hh759774) attached properties. Getting good layout from a **Grid** usually requires knowing the number of child elements beforehand, so that there are enough cells and each child element sets its attached properties to fit into its own cell.
+`BoxPanel` est un panneau pour lequel le principal facteur qui permet de déterminer le mode de répartition de l’espace est la connaissance du nombre d’éléments enfants et la division de l’espace disponible connu pour le panneau. Les panneaux sont, à la base, des formes rectangulaires. De nombreux panneaux opèrent en divisant cet espace rectangulaire en plusieurs rectangles. C’est ce que fait [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) pour ses cellules. Dans le cas de **Grid**, la taille des cellules est définie par les valeurs [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) et [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) et les éléments déclarent la cellule exacte dans laquelle ils vont avec les propriétés jointes [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) et [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/hh759774). Pour obtenir une bonne disposition à partir d’une **Grid**, il faut généralement connaître au préalable le nombre d’éléments enfants, pour qu’il y ait suffisamment de cellules et que chaque élément enfant définisse ses propriétés jointes en fonction de la taille de sa propre cellule.
 
-But what if the number of children is dynamic? That's certainly possible; your app code can add items to collections, in response to any dynamic run-time condition you consider to be important enough to be worth updating your UI. If you're using data binding to backing collections/business objects, getting such updates and updating the UI is handled automatically, so that's often the preferred technique (see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)).
+Et si le nombre d’enfants est dynamique ? C’est parfaitement possible ; votre code d’application peut ajouter des éléments aux collections en réponse à toute condition d’exécution dynamique que vous jugez assez importante pour devoir mettre à jour votre interface utilisateur. Si vous utilisez la liaison de données vers des collections ou des objets métier, l’obtention de ces mises à jour et la mise à jour de l’interface utilisateur sont gérées automatiquement. Il s’agit donc de la technique de prédilection (voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946)).
 
-But not all app scenarios lend themselves to data binding. Sometimes, you need to create new UI elements at runtime and make them visible. `BoxPanel` is for this scenario. A changing number of child items is no problem for `BoxPanel` because it's using the child count in calculations, and adjusts both the existing and new child elements into a new layout so they all fit.
+Mais les scénarios d’application ne se prêtent pas tous à la liaison de données. Parfois, vous devez créer de nouveaux éléments d’interface utilisateur au moment de l’exécution et les rendre visibles. Scénario pour `BoxPanel`. Une modification du nombre d’éléments enfants ne constitue pas un problème pour `BoxPanel`, car il utilise le nombre d’enfants dans les calculs et ajuste à la fois les éléments enfants nouveaux et existants pour qu’ils soient tous contenus dans la nouvelle disposition.
 
-An advanced scenario for extending `BoxPanel` further (not shown here) could both accommodate dynamic children and use a child's [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) as a stronger factor for the sizing of individual cells. This scenario might use varying row or column sizes or non-grid shapes so that there's less "wasted" space. This requires a strategy for how multiple rectangles of various sizes and aspect ratios can all fit into a containing rectangle both for aesthetics and smallest size. `BoxPanel` doesn't do that; it's using a simpler technique for dividing space. `BoxPanel`'s technique is to determine the least square number that's greater than the child count. For example, 9 items would fit in a 3??3 square. 10 items require a 4??4 square. However, you can often fit items while still removing one row or column of the starting square, to save space. In the count=10 example, that fits in a 4??3 or 3??4 rectangle.
+Un scénario avancé pour étendre `BoxPanel` (non illustré ici) consisterait à la fois à gérer les enfants dynamiques et à utiliser la valeur [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) d’un enfant comme facteur prioritaire pour le dimensionnement des cellules individuelles. Ce scénario pourrait utiliser des tailles de lignes et de colonnes variables ou des formes autres que des grilles afin de réduire l’espace « perdu ». Cela requiert une stratégie afin de déterminer comment plusieurs rectangles de différentes tailles et proportions peuvent rentrer dans un rectangle contenant du point de vue esthétique et en cas de très petite taille. `BoxPanel` n’offre pas cette fonctionnalité. Il utilise une technique plus simple pour diviser l’espace. La technique employée par `BoxPanel` consiste à déterminer le plus petit nombre de carré supérieur au nombre d’enfants. Par exemple, 9 éléments pourraient être contenus dans un carré de 3??3. 10 éléments nécessitent un carré de 4??4. Toutefois, vous pouvez souvent ajuster les éléments tout en supprimant une ligne ou une colonne dans le carré de départ, pour gagner de l’espace. Avec 10 éléments, par exemple, vous pourriez utiliser un rectangle de 4??3 ou de 3??4.
 
-You might wonder why the panel wouldn't instead choose 5??2 for 10 items, because that fits the item number neatly. However, in practice, panels are sized as rectangles that seldom have a strongly oriented aspect ratio. The least-squares technique is a way to bias the sizing logic to work well with typical layout shapes and not encourage sizing where the cell shapes get odd aspect ratios.
+Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un rectangle de 5??2 pour 10 éléments. En pratique, les panneaux sont dimensionnés sous la forme de rectangles qui ont rarement des proportions fortement orientées. La technique du nombre de carré le plus petit permet à la logique de dimensionnement de bien fonctionner avec les formes de disposition classiques tout en évitant les dimensionnements où des proportions irrégulières sont appliquées aux cellules.
 
-**Note**????
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you???re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Important**????
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ??
 
-## Related topics
+## Rubriques connexes
 
 
-**Reference**
-*[**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
+**Référence**
+[**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 
-* [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+[**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+
+[**Panneau**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **Concepts**
-* [Alignment, margin, and padding](alignment-margin-padding.md)
+[Alignement, marge et espacement](alignment-margin-padding.md)
 
-<!--HONumber=Mar16_HO1-->
+??
+
+??
+
+
+
+
+
+<!--HONumber=Mar16_HO4-->
+
+

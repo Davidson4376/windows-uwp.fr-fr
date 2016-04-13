@@ -1,6 +1,6 @@
 ---
-title: Définir l’infrastructure d’application du jeu de plateforme Windows universelle (UWP)
-description: La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows.
+Définir l’infrastructure d’application du jeu de plateforme Windows universelle (UWP)
+La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows.
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ---
 
@@ -1420,4 +1420,8 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

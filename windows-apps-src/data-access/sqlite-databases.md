@@ -1,77 +1,77 @@
 ---
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
-SQLite databases
-SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
+Bases de données SQLite
+SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source.
 ---
-# SQLite databases
+# Bases de données SQLite
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
+SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source.
 
-## What SQLite is and when to use it
+## Qu’est-ce que SQLite et quand l’utiliser ?
 
-SQLite is an open source, embedded, server-less database. Over the years it has emerged as the dominant device side technology for data storage on many platforms and devices. Universal Windows Platform (UWP) supports and recommends SQLite for local storage across all Windows 10 device families.
+SQLite est une base de données open source intégrée, sans serveur. Au fil des ans, elle s’est imposée comme la technologie dominante côté appareil pour le stockage de données sur de nombreuses plateformes et appareils. La plateforme Windows universelle (UWP) prend en charge et recommande SQLite pour le stockage local sur toutes les familles d’appareils Windows 10.
 
-SQLite is best suited for phone apps, embedded applications for Windows 10 IoT Core (IoT Core), and as a cache for enterprise relations database server (RDBS) data. It will satisfy most local data access needs unless they entail heavy concurrent writes, or a big data scale—scenarios unlikely for most apps.
+SQLite convient parfaitement aux applications de téléphone, aux applications intégrées pour Windows 10 IoT Standard (IoT Standard), et sert de cache pour les données de base de données relationnelle d’entreprise (RDBS). SQLite répond à la plupart des besoins d’accès aux données locales, sauf en cas d’écritures simultanées ou de données trop volumineuses, scénarios peu probable avec la plupart des applications.
 
-In media playback and gaming applications, SQLite can also be used as a file format to store catalogues or other assets, such as levels of a game, that can be downloaded as-is from a web server.
+Dans les applications de jeu et de lecture de contenus multimédias, SQLite peut également être utilisé comme format de fichier pour stocker les catalogues ou d’autres ressources, telles que les niveaux d’un jeu, qui peuvent être téléchargés en l’état à partir d’un serveur web.
 
-## Adding SQLite to a UWP app project
+## Ajout de SQLite à un projet d’application UWP
 
-There are three ways of adding SQLite to a UWP project.
+Il existe trois façons d’ajouter SQLite à un projet UWP.
 
-1.  [Using the SDK SQLite](#using-the-sdk-sqlite)
-2.  [Including SQLite in the App Package](#including-sqlite-in-the-app-package)
-3.  [Building SQLite from source in Visual Studio](#building-sqlite-from-source-in-visual-studio)
+1.  [Utilisation du Kit de développement logiciel (SDK) SQLite](#using-the-sdk-sqlite)
+2.  [Inclusion de SQLite dans le package d’application](#including-sqlite-in-the-app-package)
+3.  [Création d’une bibliothèque SQLite à partir de la source dans Visual Studio](#building-sqlite-from-source-in-visual-studio)
 
-### Using the SDK SQLite
+### Utilisation du Kit de développement logiciel (SDK) SQLite
 
-You may wish to use the SQLite library included in the UWP SDK to reduce the size of your application package, and rely on the platform to update the library periodically. Using the SDK SQLite might also lead to performance advantages such as faster launch times given the SQLite library is highly likely to already be loaded in memory for use by system components.
+Vous pouvez, si vous le souhaitez, utiliser la bibliothèque SQLite incluse dans le SDK UWP pour réduire la taille de votre package d’application, auquel cas la plateforme se chargera de la mise à jour périodique de la bibliothèque. L’utilisation de la bibliothèque SQLite du SDK présente également des avantages en termes de performances, avec notamment des temps de démarrage plus rapides dans la mesure où la bibliothèque SQLite sera très probablement déjà chargée dans la mémoire pour être utilisée par les composants système.
 
-To reference the SDK SQLite, include the following header in your project. The header also contains the version of SQLite supported in the platform.
+Pour référencer le Kit de développement logiciel (SDK) SQLite, incluez l’en-tête suivant dans votre projet. L’en-tête contient également la version de SQLite prise en charge dans la plateforme.
 
 `#include <winsqlite/winsqlite3.h>`
 
-Configure the project to link to winsqlite3.lib. In **Solution Explorer**, right-click your project and select **Properties** &gt; **Linker** &gt; **Input**, then add winsqlite3.lib to **Additional Dependencies**.
+Configurer le projet pour créer un lien vers winsqlite3.lib. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur votre projet. Sélectionnez **Propriétés** &gt; **Éditeur de liens** &gt; **Entrée**, puis ajoutez winsqlite3.lib à **Dépendances supplémentaires**.
 
-### 2. Including SQLite in the App Package
+### 2. Inclusion de SQLite dans le package d’application
 
-Sometimes, you might wish to package your own library instead of using the SDK version, for example, you might wish to use a particular version of it in your cross-platform clients that is different from the version of SQLite included in the SDK.
+Vous pouvez, si vous le souhaitez, créer un package de votre propre bibliothèque au lieu d’utiliser la version du SDK. Vous pouvez par exemple utiliser une version de bibliothèque SQLite différente de celle incluse dans le SDK sur vos clients multiplateformes.
 
-Install the SQLite library on the Universal Windows Platform Visual Studio extension available from SQLite.org, or through the Extensions and Updates tool.
+Installez la bibliothèque SQLite sur l’extension Visual Studio de plateforme Windows universelle disponible sur SQLite.org ou à l’aide de l’outil Extensions et mises à jour.
 
-![Extensions and Updates screen](./images/extensions-and-updates.png)
+![Écran Extensions et mises à jour](./images/extensions-and-updates.png)
 
-Once the extension is installed, reference the following header file in your code.
+Une fois l’extension installée, référencez le fichier d’en-tête suivant dans votre code.
 
 `#include <sqlite3.h>`
 
-### 3. Building SQLite from source in Visual Studio
+### 3. Création d’une bibliothèque SQLite à partir de la source dans Visual Studio
 
-Sometimes you might wish to compile your own SQLite binary to use [various compiler options](http://www.sqlite.org/compile.html) to reduce the file size, performance tune the library, or tailor the feature set to your application. SQLite provides options for platform configuration, setting default parameter values, setting size limits, controlling operating characteristics, enabling features normally turned off, disabling features normally turned on, omitting features, enabling analysis and debugging, and managing memory allocation behavior on Windows.
+Vous pouvez, si vous le souhaitez, compiler votre propre fichier binaire SQLite pour utiliser [diverses options de compilateur](http://www.sqlite.org/compile.html) et réduire la taille du fichier, régler les performances de la bibliothèque ou adapter le jeu de fonctionnalités de votre application. SQLite fournit des options de configuration de plateforme, définir des valeurs de paramètres par défaut, définir des limites de taille, contrôler les caractéristiques d’exploitation, activer les fonctionnalités normalement désactivées, désactiver les fonctionnalités normalement activées, omettre des fonctionnalités, activer l’analyse et le débogage, et gérer le comportement d’allocation de mémoire sur Windows.
 
-*Adding source to a Visual Studio project*
+*Ajout d’une source d’un projet Visual Studio*
 
-The SQLite source code is available for download at the [SQLite.org download page](https://www.sqlite.org/download.html). Add this file to the Visual Studio project of the application you wish to use SQLite in.
+Le code source SQLite est disponible en téléchargement sur la [page de téléchargement SQLite.org](https://www.sqlite.org/download.html). Ajoutez ce fichier au projet Visual Studio de l’application dans laquelle vous souhaitez utiliser SQLite.
 
-*Configure Preprocessors*
+*Configurer des préprocesseurs*
 
-Always use SQLITE\_OS\_WINRT and SQLITE\_API=\_\_declspec(dllexport) in addition to any other [compile time options](http://www.sqlite.org/compile.html).
+Utilisez toujours SQLITE\_OS\_WINRT et SQLITE\_API=\_\_declspec(dllexport) en plus des autres [options de moment de compilation](http://www.sqlite.org/compile.html).
 
-![SQLite Property Pages screen](./images/property-pages.png)
+![Écran Pages de propriétés SQLite](./images/property-pages.png)
 
-## Managing a SQLite Database
+## Gestion d’une base de données SQLite
 
-SQLite databases can be created, updated, and deleted with the SQLite C APIs. Details of the SQLite C API can be found at the SQLite.org [Introduction To The SQLite C/C++ Interface](http://www.sqlite.org/cintro.html) page.
+Il est possible de créer, de mettre à jour et de supprimer des bases de données SQLite avec les API C SQLite. Vous trouverez plus d’informations sur l’API C SQLite dans la page [Introduction To The SQLite C/C++ Interface (anglais)](http://www.sqlite.org/cintro.html) de SQLite.org.
 
-To gain sound understanding of how SQLite works, work backwards from the main task of the SQL database which is to evaluate SQL statements. There are two objects to keep in mind:
+Pour bien comprendre le fonctionnement de SQLite, vous devez tout reprendre à partir de la tâche principale de la base de données SQL qui consiste à évaluer les instructions SQL. Deux objets sont à garder à l’esprit :
 
--   [The database connection handle](https://www.sqlite.org/c3ref/sqlite3.html)
--   [The prepared statement object](https://www.sqlite.org/c3ref/stmt.html)
+-   [Handle de connexion de base de données](https://www.sqlite.org/c3ref/sqlite3.html)
+-   [Objet d’instruction préparé](https://www.sqlite.org/c3ref/stmt.html)
 
-There are six interfaces to perform database operations on these objects:
+Six interfaces permettent d’effectuer des opérations de base de données sur ces objets :
 
 -   [sqlite3\_open()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/open.html)
 -   [sqlite3\_prepare()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/prepare.html)
@@ -87,4 +87,8 @@ There are six interfaces to perform database operations on these objects:
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

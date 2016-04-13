@@ -2,10 +2,11 @@
 description: Cet article vous explique comment ajouter le glisser-déplacer dans votre application UWP.
 title: Glisser-déplacer
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
+author: awkoren
 ---
 # Glisser-déplacer
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article vous explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application.
@@ -30,7 +31,7 @@ L’événement [**DragOver**][DragOver] se déclenche lorsqu’un utilisateur a
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
-## Traiter l’événement Déplacer
+## Traiter l’événement Drop
 
 L’événement [**Drop**][Drop] se produit lorsque l’utilisateur relâche des éléments dans une zone de dépôt valide. Traitez-les à l’aide de la propriété [**DragEventArgs.DataView**][DataView].
 
@@ -53,4 +54,8 @@ Le système fournit une interface utilisateur par défaut pour le glisser-dépos
 [DragUiOverride]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx
 [Drop]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO5-->
+
+

@@ -2,7 +2,7 @@
 Description: Permet d’afficher les images d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, image par image.
 title: Recommandations en matière de contrôles de vue symétrique
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
-label: Vue symétrique
+label: Flip view
 template: detail.hbs
 ---
 # Vue symétrique
@@ -13,8 +13,8 @@ La vue symétrique permet d’afficher les images ou d’autres éléments d’u
 <span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
 -   [**Classe FlipView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
--   [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
--   [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+-   [**Propriété ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
+-   [**Propriété ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
 ## Est-ce le contrôle approprié ?
 
@@ -22,7 +22,7 @@ La vue symétrique est appropriée pour l’examen des images des petites et moy
 
 ## Exemples
 
-La navigation horizontale, c’est à dire à partir de l’élément le plus à gauche et vers la droite, est la disposition de vue symétrique la plus commune. Cette disposition fonctionne bien en orientation portrait ou paysage sur tous les appareils :
+La navigation horizontale, c’est-à-dire à partir de l’élément le plus à gauche et vers la droite, est la disposition de vue symétrique la plus commune. Cette disposition fonctionne bien en orientation portrait ou paysage sur tous les appareils :
 
 ![Exemple de disposition horizontale de vue symétrique](images/controls_flipview_horizonal.jpg)
 
@@ -179,21 +179,33 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 ![Exemple d’indicateur de contexte](images/controls_contextindicator.jpg)
 
-## Recommandations
+## Pratiques conseillées et déconseillées
 
--   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25 éléments environ.
+-   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25 éléments environ.
 -   Évitez d’utiliser un contrôle de vue symétrique pour les collections de grande taille, car le passage d’un élément à l’autre peut être fastidieux. Les albums photo, qui possèdent souvent des centaines, voire des milliers d’images, constituent une exception. Ils passent presque toujours en vue symétrique dès lors qu’une photo a été sélectionnée dans l’affichage Grille. Pour les autres collections de grande taille, pensez à [l’affichage Liste ou Grille](lists.md).
 -   Pour les indicateurs de contexte :
     -   L’ordre des points (ou n’importe quel marqueur visuel que vous choisissez) fonctionne mieux lorsqu’il est centré et placé sous une galerie avec un mouvement panoramique horizontal.
     -   Si vous souhaitez ajouter un indicateur de contexte dans une galerie avec un mouvement panoramique vertical, nous vous conseillons de le positionner au centre et à droite des images.
     -   Le point en surbrillance indique l’élément actuel. Généralement, le point en surbrillance est blanc et les autres points sont gris.
-    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10 points est généralement le nombre maximal à afficher.
+    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10 points est généralement le nombre maximal à afficher.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+## Liste de contrôle de globalisation et de localisation
+
+<table>
+<tr>
+<th>Considérations bidirectionnelles</th><td>Utilisez la mise en miroir standard pour les langues se lisant de droite à gauche. Les commmandes vers l’arrière et vers l’avant doivent se baser sur le sens de lecture de la langue. Pour les langues se lisant de droite à gauche, le bouton droit doit permettre de naviguer vers l’arrière et le bouton gauche vers l’avant.</td>
+</tr>
+
+</table>
+
 
 ## Articles connexes
 
 [Recommandations en matière de listes](https://msdn.microsoft.com/library/windows/apps/mt186889)
 - [**Classe FlipView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
 - [**Classe CarouselPanel (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

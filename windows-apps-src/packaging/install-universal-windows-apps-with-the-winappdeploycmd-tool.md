@@ -1,23 +1,23 @@
 ---
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
-Install apps with the WinAppDeployCmd.exe tool
-Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 machine to any Windows 10 Mobile device.
+Installer des applications avec l’outil WinAppDeployCmd.exe
+Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un ordinateur Windows 10 et vers tout appareil Windows 10 Mobile.
 ---
-# Install apps with the WinAppDeployCmd.exe tool
+# Installer des applications avec l’outil WinAppDeployCmd.exe
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 machine to any Windows 10 Mobile device. You can use this tool to deploy an .appx package when the Windows 10 Mobile device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. This article describes how to install UWP apps using this tool.
+Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un ordinateur Windows 10 et vers tout appareil Windows 10 Mobile. Vous pouvez utiliser cet outil pour déployer un package .appx lorsque l’appareil Windows 10 Mobile est connecté via un port USB ou disponible sur le même sous-réseau, sans avoir besoin de Microsoft Visual Studio ni de la solution pour cette application. Cet article décrit comment installer des applications UWP à l’aide de cet outil.
 
-You just need the Windows 10 SDK installed to run the WinAppDeployCmd tool from a command prompt or a script file. When you install an app with WinAppDeployCmd.exe, this uses the .appx file to side-load your app onto a Windows 10 Mobile device. This command does not install the certificate required for your app. To run the app, the Windows 10 Mobile device must be in developer mode or already have the certificate installed.
+Vous devez simplement installer le kit de développement logiciel (SDK) Windows 10 pour exécuter l’outil WinAppDeployCmd à partir d’une invite de commandes ou d’un fichier de script. Lorsque vous installez une application avec WinAppDeployCmd.exe, celui-ci utilise le fichier .appx pour le chargement indépendant de votre application sur un appareil Windows 10 Mobile. Cette commande n’installe pas le certificat nécessaire pour votre application. Pour exécuter l’application, l’appareil Windows 10 Mobile doit être en mode développeur ou le certificat doit déjà avoir été installé.
 
-Before you can deploy your app to Windows 10 Mobile devices, you must create a package first. For more information, see \[parent link here\].
+Avant de pouvoir déployer votre application pour les appareils Windows 10 Mobile, vous devez d’abord créer un package. Pour plus d’informations, voir \[lien parent ici \].
 
-The **WinAppDeployCmd.exe** tool is located here on your Windows 10 machine: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (based on your installation path for the SDK). First, connect your Windows 10 Mobile device to the same subnet or connect it directly to your Windows 10 machine with a USB connection. Then use the following syntax and examples of this command later in this article to deploy your .appx package:
+L’outil **WinAppDeployCmd.exe** se trouve ici sur votre ordinateur Windows 10 : **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (selon le chemin d’installation du Kit de développement logiciel (SDK) sur votre ordinateur). Tout d’abord, connectez votre appareil Windows 10 Mobile au même sous-réseau ou connectez-le directement à votre ordinateur Windows 10 via un port USB. Utilisez ensuite la syntaxe et les exemples suivants de la commande présentés plus loin dans cet article pour déployer votre package .appx :
 
-## WinAppDeployCmd syntax and options
+## Options et syntaxe WinAppDeployCmd
 
-Here is the possible syntax that you can use for **WinAppDeployCmd.exe**
+Voici la syntaxe que vous pouvez utiliser pour **WinAppDeployCmd.exe**
 
 ``` syntax
 WinAppDeployCmd command -option <argument> ...
@@ -34,75 +34,79 @@ WinAppDeployCmd command -option <argument> ...
     WinAppDeployCmd list -guid <address>
 ```
 
-You can install or uninstall an app on the target device, or you can update an app that's already installed. To keep data or settings saved by an app that's already installed, use the **update** options instead of the **install** options.
+Vous pouvez installer ou désinstaller une application sur l’appareil cible, ou vous pouvez mettre à jour une application déjà installée. Pour conserver les données ou les paramètres enregistrés par une application déjà installée, utilisez les options **update** plutôt que les options **install**.
 
-The following table describes the commands for **WinAppDeployCmd.exe**.
+Le tableau suivant décrit les commandes pour **WinAppDeployCmd.exe**.
 
 |             |                                                                     |
 |-------------|---------------------------------------------------------------------|
-| **Command** | **Description**                                                     |
-| devices     | Show the list of available network devices.                         |
-| install     | Install a UWP app package to the target device.                     |
-| update      | Update a UWP app that is already installed on the target device.    |
-| list        | Show the list of UWP apps installed on the specified target device. |
-| uninstall   | Uninstall the specified app package from the target device.         |
+| **Commande** | **Description**                                                     |
+| devices     | Affiche la liste des périphériques réseau disponibles.                         |
+| install     | Installe un package d’application UWP sur l’appareil cible.                     |
+| update      | Met à jour une application UWP déjà installée sur l’appareil cible.    |
+| list        | Affiche la liste des applications UWP installées sur l’appareil cible spécifié. |
+| uninstall   | Désinstalle le package d’application spécifié de l’appareil cible.         |
 
  
 
-The following table describes the options for **WinAppDeployCmd.exe**
+Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
 |                  |                                                                                                                                                                                                               |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Command**      | **Description**                                                                                                                                                                                               |
-| -h (-help)       | Show the commands, options and arguments.                                                                                                                                                                     |
-| -ip              | IP address of the target device.                                                                                                                                                                              |
-| -g (-guid)       | Unique identifier of the target device.                                                                                                                                                                       |
-| -d (-dependency) | (Optional) Specifies the dependency path for each of the package dependencies. If no path is specified, the tool searches for dependencies in the root directory for the app package and the SDK directories. |
-| -f (-file)       | File path for the app package to install, update or uninstall.                                                                                                                                                |
-| -p (-package)    | The full package name for the app package to uninstall. (You can use the list command to find the full names for packages already installed on the device.)                                                   |
-| -pin             | A pin if it is required to establish a connection with the target device. (You will be prompted to retry with the -pin option if authentication is required.)                                                 |
+| **Commande**      | **Description**                                                                                                                                                                                               |
+| -h (-help)       | Affiche les commandes, les options et les arguments.                                                                                                                                                                     |
+| -ip              | Adresse IP de l’appareil cible.                                                                                                                                                                              |
+| -g (-guid)       | Identificateur unique de l’appareil cible.                                                                                                                                                                       |
+| -d (-dependency) | (Facultatif) Spécifie le chemin d’accès de dépendance pour chacune des dépendances du package. Si aucun chemin d’accès n’est spécifié, l’outil recherche des dépendances dans le répertoire racine pour le package d’application et les répertoires du kit de développement logiciel (SDK). |
+| -f (-file)       | Chemin d’accès de fichier pour le package d’application à installer, mettre à jour ou désinstaller.                                                                                                                                                |
+| -p (-package)    | Le nom complet du package pour le package d’application à désinstaller. (Vous pouvez utiliser la commande « list » pour rechercher le nom complet des packages déjà installés sur l’appareil.)                                                   |
+| -pin             | Un code confidentiel ,s’il est nécessaire pour établir une connexion avec l’appareil cible. (Vous serez invité à réessayer avec l’option -pin si une authentification est nécessaire.)                                                 |
 
  
 
-The following table describes the options for **WinAppDeployCmd.exe**.
+Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
 |                        |                                                                              |
 |------------------------|------------------------------------------------------------------------------|
 | **Argument**           | **Description**                                                              |
-| &lt;x&gt;              | Timeout in seconds. (Default is 10)                                          |
-| &lt;address&gt;        | IP address or unique identifier of the target device.                        |
-| &lt;a&gt;&lt;b&gt; ... | Dependency path for each of the app package dependencies.                    |
-| &lt;p&gt;              | An alpha-numeric pin shown in the device settings to establish a connection. |
-| &lt;path&gt;           | File system path.                                                            |
-| &lt;name&gt;           | Full package name for the app package to uninstall.                          |
+| &lt;x&gt;              | Délai d’expiration en secondes. (La valeur par défaut est 10)                                          |
+| &lt;address&gt;        | Adresse IP ou identificateur unique de l’appareil cible.                        |
+| &lt;a&gt;&lt;b&gt; ... | Chemin d’accès de dépendance pour chacune des dépendances du package d’application.                    |
+| &lt;p&gt;              | Un PIN alphanumérique indiqué dans les paramètres de l’appareil pour établir une connexion. |
+| &lt;path&gt;           | Chemin d’accès au système de fichiers.                                                            |
+| &lt;name&gt;           | Nom complet du package pour le package d’application à désinstaller.                          |
 
  
-## WinAppDeployCmd.exe examples
+## Exemples de WinAppDeployCmd.exe
 
-Here are some examples of how to deploy from the command-line using the sytax for **WinAppDeployCmd.exe**.
+Voici quelques exemples illustrant comment déployer à partir de la ligne de commande via la syntaxe pour **WinAppDeployCmd.exe**.
 
-Shows the devices that are available for deployment. The command times out in 3 seconds.
+Affiche les appareils qui sont disponibles pour le déploiement. La commande expire dans 3 secondes.
 
 ``` syntax
 WinAppDeployCmd devices 3
 ```
 
-Installs the app from MyApp.appx package that is in your PC's Downloads directory to a Windows 10 Mobile device with an IP address of 192.168.0.1 with a PIN of A1B2C3 to establish a connection with the device
+Installe l’application à partir du package MyApp.appx qui se trouve dans le répertoire Téléchargements de votre PC pour un appareil Windows 10 Mobile avec l’adresse IP 192.168.0.1 et avec le PIN A1B2C3 nécessaire pour établir une connexion avec l’appareil.
 
 ``` syntax
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 ```
 
-Uninstalls the specified package (based on its full name) from a Windows 10 Mobile device with an IP address of 192.168.0.1. You can use the list command to see the full names of any packages that are installed on a device.
+Désinstalle le package spécifié (en fonction de son nom complet) à partir d’un appareil Windows 10 Mobile avec l’adresse IP 192.168.0.1. Vous pouvez utiliser la commande list pour afficher le nom complet de tous les packages installés sur un appareil.
 
 ``` syntax
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-Updates the app that is already installed on the Windows 10 Mobile device with an IP address of 192.168.0.1 using the specified .appx package.
+Met à jour l’application qui est déjà installée sur l’appareil Windows 10 Mobile avec l’adresse IP 192.168.0.1 à l’aide du package .appx spécifié.
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 ```
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

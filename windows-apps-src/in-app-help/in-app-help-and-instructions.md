@@ -1,18 +1,18 @@
 ---
-Provide help or troubleshooting tips to your users, and teach them to effectively interact with your app. This section provides best practices for instructing users along the way as they use your app.
-UX guidelines for help and instructions
+Proposez aux utilisateurs de votre application une aide et des conseils de dépannage, et expliquez-leur comment interagir efficacement avec l’application. Cette section décrit les meilleures pratiques à suivre pour guider les utilisateurs dans tous les aspects de l’utilisation de votre application.
+Recommandations en matière d’expérience utilisateur pour l’aide et les instructions
 ms.assetid: 87867BFE-35D1-466E-B1F6-9EDCA3E5EA92
-In-app help and instructional UI
+Aide dans l’application et interface utilisateur d’instruction
 template: detail.hbs
 ---
 
-# In-app help and instructionional UI 
+# Aide dans l’application et interface utilisateur d’instruction 
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Provide help or troubleshooting tips to your users, and teach them to effectively interact with your app. This section provides best practices for instructing users along the way as they use your app.
-## In this section
+Proposez aux utilisateurs de votre application une aide et des conseils de dépannage, et expliquez-leur comment interagir efficacement avec l’application. Cette section décrit les meilleures pratiques à suivre pour guider les utilisateurs dans tous les aspects de l’utilisation de votre application.
+## Dans cette section
 <table>
 <colgroup>
 <col width="50%" />
@@ -27,11 +27,11 @@ Provide help or troubleshooting tips to your users, and teach them to effectivel
 <tbody>
 <tr class="odd">
 <td align="left"><p>[App help](guidelines-for-app-help.md)</p></td>
-<td align="left"><p>These guidelines describe how to design effective Help content for your app.</p></td>
+<td align="left"><p>Ces recommandations décrivent comment concevoir un contenu d’aide efficace pour votre application.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Instructional UI](instructional-ui.md)</p></td>
-<td align="left"><p>Design an instructional user interface (UI) that teaches users how to work with your Windows Store app.</p></td>
+<td align="left"><p>Concevez une interface utilisateur d’instruction qui apprend à vos utilisateurs comment utiliser votre application du Windows Store.</p></td>
 </tr>
 </tbody>
 </table>
@@ -39,4 +39,8 @@ Provide help or troubleshooting tips to your users, and teach them to effectivel
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,17 +1,17 @@
 ---
-title: Mapper les fonctionnalités DirectX 9 aux API DirectX 11
-description: Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP).
+Mapper les fonctionnalités DirectX 9 aux API DirectX 11
+Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP).
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 ---
 
 # Mapper les fonctionnalités DirectX 9 aux API DirectX 11
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Récapitulatif**
 
--   [Planifier votre projet de portage DirectX](plan-your-directx-port.md)
+-   [Planifier votre portage DirectX](plan-your-directx-port.md)
 -   [Modifications importantes de Direct3D 9 à Direct3D 11](understand-direct3d-11-1-concepts.md)
 -   Mappage des fonctionnalités
 
@@ -666,4 +666,8 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,34 +1,38 @@
 ---
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
-Graphics and animation
-.
+Graphismes et animation
+Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
 ---
-# Graphics and animation
+# Graphismes et animation
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-The topics in this section get you started with using graphics and animations in your store apps.
+Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
 
-**Note**  
-Graphics and animation is designed for use by app developers using XAML. If you want to add graphics and animation to a game using Microsoft DirectX, see [Games and DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375).
+**Remarque**  
+Les graphismes et animations sont destinés aux développeurs d’applications en XAML. Si vous souhaitez ajouter des graphismes et animations à un jeu à l’aide de Microsoft DirectX, voir [Jeux et DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375).
 
  
 
-| Topic | Description |
+| Rubrique | Description |
 |-------|-------------|
-| [Draw shapes](drawing-shapes.md) | Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The [Path](https://msdn.microsoft.com/library/windows/apps/BR243355) class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves. |
-| [Use brushes](using-brushes.md) | [Brush](https://msdn.microsoft.com/library/windows/apps/BR228076) objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI. |
-| [Animations overview](animations-overview.md) | Use the animations from the Windows Runtime animation library to integrate the Windows look and feel into your app. |
-| [Transforms overview](transforms-overview.md)  | Learn how to use transforms in the Windows Runtime API, by changing the relative coordinate systems of elements in the UI. This can be used to adjust the appearance of individual XAML elements, such as scaling, rotating, or transforming the position in x-y space. |
-| [Visual layer](visual-layer.md) | The Windows.UI.Composition API gives you access to the composition layer between the framework layer (XAML), and the graphics layer (DirectX). The Windows.UI.Composition API allow you to create composition objects and apply powerful animations, effects and manipulations on those objects in your application. |
+| [Dessiner des formes](drawing-shapes.md) | Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe [Path](https://msdn.microsoft.com/library/windows/apps/BR243355) permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier. |
+| [Utiliser des pinceaux](using-brushes.md) | Les objets [Brush](https://msdn.microsoft.com/library/windows/apps/BR228076) permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur. |
+| [Vue d’ensemble des animations](animations-overview.md) | Utilisez les animations de la bibliothèque d’animations du Windows Runtime pour intégrer l’apparence de Windows dans votre application. |
+| [Vue d’ensemble des transformations](transforms-overview.md)  | Apprenez à utiliser les transformations dans l’API Windows Runtime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur. Cela permet de modifier l’apparence d’éléments XAML, par exemple avec la mise à l’échelle, la rotation ou la transformation de la position dans l’espace x-y. |
+| [Couche visuelle](visual-layer.md) | L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX). Elle vous permet de créer des objets de composition et d’appliquer des animations, des effets et des manipulations percutants sur ces objets dans votre application. |
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

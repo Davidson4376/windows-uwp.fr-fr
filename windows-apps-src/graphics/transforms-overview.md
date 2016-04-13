@@ -1,7 +1,7 @@
 ---
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
-title: Vue d’ensemble des transformations
-description: Apprenez à utiliser les transformations dans l’API Windows Runtime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur.
+Vue d’ensemble des transformations
+Apprenez à utiliser les transformations dans l’API Windows Runtime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur.
 ---
 
 # Vue d’ensemble des transformations
@@ -137,4 +137,8 @@ Vous pouvez appliquer des effets 3D à tout objet [**UIElement**](https://msdn.m
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

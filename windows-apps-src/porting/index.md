@@ -1,30 +1,34 @@
 ---
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-This section describes how to port your existing app to the Universal Windows Platform (UWP) where you can create a single Windows 10 app package that your customers can install onto all types of devices. Your app will benefit from exciting new hardware, great monetization opportunities, a modern API set, adaptive UI controls, and a range of input modalities including mouse/keyboard, touch, and speech.
-Porting apps to Windows 10
+Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales.
+Portage d’applications vers Windows 10
 ---
 
-# Porting apps to Windows 10
+# Portage d’applications vers Windows 10
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section describes how to port your existing app to the Universal Windows Platform (UWP) where you can create a single Windows 10 app package that your customers can install onto all types of devices. Your app will benefit from exciting new hardware, great monetization opportunities, a modern API set, adaptive UI controls, and a range of input modalities including mouse/keyboard, touch, and speech.
+Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, ainsi que les fonctionnalités tactiles et vocales.
 
-The Windows Runtime (WinRT) is the technology that lets you build Universal Windows Platform (UWP) apps. You can refer to [What's a Universal Windows Platform (UWP) app?](https://msdn.microsoft.com/library/windows/apps/dn726767) for more background on WinRT and UWP apps.
+Windows Runtime (WinRT) est la technologie qui vous permet de générer des applications pour la plateforme Windows universelle (UWP). Pour plus d’informations sur WinRT et les applications pour UWP, voir [Qu’est-ce qu’une application pour la plateforme Windows Universelle (UWP) ?](https://msdn.microsoft.com/library/windows/apps/dn726767).
 
-This porting guide explains the differences between your current app's technology and the Universal Windows Platform (UWP). Once the path between technologies is understood, you'll be able to dive into the rest of the Developer Center, which is a comprehensive resource for developing UWP apps. A good way to do that, when you're ready, is to start with [How to develop a Store app](https://msdn.microsoft.com/library/windows/apps/dn726537).
+Ce guide relatif au portage explique les différences entre la technologie de votre application actuelle et celle de la plateforme Windows universelle (UWP). Une fois que vous aurez compris comment effectuer la transition entre ces deux technologies, vous pourrez vous plonger dans le reste du Centre de développement, qui constitue une ressource complète pour le développement d’applications UWP. Lorsque vous serez prêt, l’idéal est de commencer par lire la rubrique [Comment développer une application du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn726537).
 
-| Topic | Description |
+| Rubrique | Description |
 |-------|-------------|
-| [Move from Windows Phone Silverlight to UWP](wpsl-to-uwp-root.md) | If you’re a developer with a Windows Phone Silverlight app, then you can make great use of your skill set and your source code in the move to Windows 10. With Windows 10, you can create a UWP app, which is a single app package that your customers can install onto every kind of device. |
-| [Move from Windows Runtime 8.x to UWP](w8x-to-uwp-root.md) | If you have a Universal 8.1 app—whether it's targeting Windows 8.1, Windows Phone 8.1, or both—then you'll find that your source code and skills will port smoothly to Windows 10. With Windows 10, you can create a UWP app, which is a single app package that your customers can install onto every kind of device. |
-| [Update your UWP Microsoft Visual Studio 2015 RC project to RTM](update-your-visual-studio-2015-rc-project-to-rtm.md) | If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM. The recommended method is to create a new Windows 10 project in Visual Studio 2015 RTM and copy your files into it. Alternatively, you can follow advanced documentation to edit your existing project files and move them over to the new format. |
-| [Windows apps concept mapping for Android and iOS developers](android-ios-uwp-map.md) | If you're a developer with Android or iOS skills or code, and you want to make the move to Windows 10 and the Universal Windows Platform, then this resource has all you need to map platform features—and your knowledge—between the three platforms. |
-| [Move from iOS to UWP](ios-to-uwp-root.md) | Are you an iOS developer, wondering how to make the move to Windows 10 and the UWP? It needn't be as scary as you think. We've got the tools, techniques, and info you need to make great apps that work as well on Windows as they do on your iOS devices: maybe better! |
+| [Passer de Silverlight pour Windows Phone à UWP](wpsl-to-uwp-root.md) | Si vous êtes un développeur disposant d’une application Silverlight pour Windows Phone, vous pouvez tirer parti de vos compétences et de votre code source pour le passage à Windows 10. Grâce à Windows 10, vous pouvez créer une application UWP, à savoir un package d’application unique que vos clients peuvent installer sur tout type d’appareil. |
+| [Passer de Windows Runtime 8.x à UWP](w8x-to-uwp-root.md) | Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence. Grâce à Windows 10, vous pouvez créer une application UWP, à savoir un package d’application unique que vos clients peuvent installer sur tout type d’appareil. |
+| [Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM](update-your-visual-studio-2015-rc-project-to-rtm.md) | Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM. La méthode recommandée consiste à créer un projet Windows 10 dans Visual Studio 2015 RTM et à y copier vos fichiers. Vous pouvez également vous reporter à la documentation avancée pour savoir comment modifier vos fichiers de projet existants et les convertir au nouveau format. |
+| [Mappage de concepts d’applications Windows pour développeurs iOS et Android](android-ios-uwp-map.md) | Si vous êtes un développeur doté de compétences relatives aux systèmes d’exploitation Android ou iOS ou au code et que vous souhaitez migrer vers Windows 10 et la plateforme Windows universelle, cette ressource vous permettra de mapper les fonctionnalités de la plateforme, et vos connaissances, entre les trois plateformes. |
+| [Passer d’iOS à UWP](ios-to-uwp-root.md) | Êtes-vous un développeur iOS vous demandant comment faire pour passer à Windows 10 et UWP ? Cette opération n’est pas aussi effrayante que vous l’imaginez. Nous avons les outils, les techniques et les informations nécessaires pour créer des applications fantastiques qui fonctionnent aussi bien sur Windows que sur vos appareils iOS, et même peut-être mieux ! |
  
-## Related topics
+## Rubriques connexes
 
-* [Move from WPF and Silverlight to WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [Move from Android to WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [Move from the web to WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
+* [Passer de WPF et Silverlight à WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
+* [Passer d’Android à WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
+* [Passer du web à WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

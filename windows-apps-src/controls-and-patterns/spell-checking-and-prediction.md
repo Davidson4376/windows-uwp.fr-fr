@@ -1,66 +1,70 @@
 ---
-During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and providing a way for the user to correct the misspelling.
-Spell checking and text prediction
+Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur.
+Vérification de l’orthographe et prédiction de texte
 ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
-Spell checking and text prediction
+Vérification de l’orthographe et prédiction de texte
 template: detail.hbs
 ---
 
-# Guidelines for spell checking
+# Recommandations en matière de vérification orthographique
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and provides a way for the user to correct the misspelling.
+Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur.
 
-**Important APIs**
+**API importantes**
 
--   [**IsSpellCheckEnabled property (XAML)**](https://msdn.microsoft.com/library/windows/apps/br209688)
-
-
-## <span id="checklist_section"></span><span id="CHECKLIST_SECTION"></span>Recommendations
+-   [**Propriété IsSpellCheckEnabled (XAML)**](https://msdn.microsoft.com/library/windows/apps/br209688)
 
 
--   Use spell checking to help users as they enter words or sentences into text input controls. Spell checking works with touch, mouse, and keyboard inputs.
--   Don't use spell checking when a word is not likely to be in the dictionary or if users wouldn't value spell checking. For example, don't turn it on for input boxes of passwords, telephone numbers, or names. Spell checking is disabled by default for these controls.
--   Don't disable spell checking just because the current spell checking engine doesn't support your app language. When the spell checker doesn't support a language, it doesn't do anything, so there's no harm in leaving the option on. Also, some users might use an Input Method Editor (IME) to enter another language into your app, and that language might be supported. For example, when building a Japanese language app, even though the spell checking engine might not currently recognize that language, don't turn spell checking off. The user may switch to an English IME and type English into the app; if spell checking is enabled, the English will get spell checked.
-
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+## <span id="checklist_section"> </span> <span id="CHECKLIST_SECTION"> </span>Recommandations
 
 
-Windows Store apps provide a built-in spell checker for multiline and single text input boxes, and elements that have their **contentEditable** property set to **true**. Here's an example of the built-in spell checker:
+-   Utilisez la vérification orthographique pour aider l’utilisateur lors de la saisie de mots ou de phrases dans les contrôles de saisie de texte. La vérification orthographique fonctionne avec le pavé tactile et l’entrée à l’aide de la souris et du clavier.
+-   N’utilisez pas la vérification orthographique pour les mots peu susceptibles de figurer dans le dictionnaire ou quand cela n’apporte rien à l’utilisateur. Par exemple, ne l’activez pas pour les zones de saisie de mots de passe, de numéros de téléphone ni de noms. La vérification orthographique est désactivée par défaut pour ces contrôles.
+-   Ne désactivez pas la vérification orthographique au seul motif que le vérificateur d’orthographe actuel ne prend pas en charge la langue de votre application. Si le vérificateur d’orthographe ne prend pas en charge une langue, rien ne se produit, il n’y a donc aucun risque à laisser l’option activée. En outre, certains utilisateurs peuvent utiliser un éditeur de méthode d’entrée (IME) pour saisir dans votre application une autre langue qui elle peut être prise en charge. Par exemple, lorsque vous créez une application en japonais, même si le vérificateur d’orthographe ne reconnaît pas actuellement cette langue, ne le désactivez pas. L’utilisateur pourrait utiliser un IME pour saisir de l’anglais dans l’application ; si la vérification d’orthographe est activée, le texte anglais est vérifié.
 
-![the built-in spell checker](images/spellchecking.png)
+## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>Indications d’utilisation supplémentaires
 
-For more info, see the [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683).
 
-Use spell checking with text input controls for these two purposes:
+Les applications du Windows Store comportent un vérificateur d’orthographe intégré pour les zones de saisie de texte d’une ou de plusieurs lignes et les éléments dont la propriété **contentEditable** a la valeur **true**. Voici un exemple de vérificateur d’orthographe intégré :
 
--   **To auto-correct misspellings**
+![Vérificateur d’orthographe intégré](images/spellchecking.png)
 
-    The spell checking engine automatically corrects misspelled words when it's confident about the correction. For example, the engine automatically changes "teh" to "the."
+Pour plus d’informations, voir [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683).
 
--   **To show alternate spellings**
+Le vérificateur d’orthographe peut être utilisé avec des contrôles de saisie de texte dans deux objectifs :
 
-    When the spell checking engine is not confident about the corrections, it adds a red line under the misspelled word and displays the alternates in a context menu when you tap or right-click the word.
+-   **La correction automatique des fautes**
 
-For JavaScript controls, spell checking is turned on by default for multi-line text input controls and turned off for single-line controls. You can manually turn it on for single-line controls by setting the control's **spellcheck** property to **true**. You can disable spell checking for a control by setting its **spellcheck** property to **false**.
+    Le vérificateur d’orthographe corrige automatiquement les mots mal orthographiés, lorsqu’il est certain de la correction. Par exemple, il remplace automatiquement « puor » par « pour ».
 
-For XAML TextBox controls, spell checking is turned off by default. You can turn it on by setting the **IsSpellCheckEnabled** property to **true**.
+-   **L’affichage d’autres graphies**
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+    Lorsque le vérificateur d’orthographe n’est pas sûr des corrections, il souligne le mot mal orthographié en rouge et affiche des suggestions dans un menu contextuel lorsque vous appuyez ou faites un clic droit sur le mot.
 
-## <span id="related_topics"></span>Related articles
+Pour les contrôles JavaScript, la vérification orthographique est activée par défaut pour les contrôles de saisie de texte de plusieurs lignes et désactivée pour les contrôles de saisie de texte d’une ligne. Pour l’activer manuellement pour les contrôles d’une seule ligne, définissez la propriété **spellcheck** du contrôle sur **true**. Pour la désactiver, définissez sa propriété **spellcheck** sur **false**.
 
-* [Text and text controls](text-controls.md)
-* [Guidelines for text input](https://msdn.microsoft.com/library/windows/apps/hh750315)
-* [Guidelines for text and typography](https://msdn.microsoft.com/library/windows/apps/hh700394)
-**For developers (XAML)**
-* [**TextBox.IsSpellCheckEnabled property**](https://msdn.microsoft.com/library/windows/apps/br209688)
-* [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+Pour les contrôles de zone de texte XAML, la vérification orthographique est désactivée par défaut. Vous pouvez l’activer en affectant à la propriété **IsSpellCheckEnabled** la valeur **true**.
+
+\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
+## <span id="related_topics"> </span>Articles connexes
+
+* [Texte et contrôles de texte](text-controls.md)
+* [Recommandations en matière de saisie de texte](https://msdn.microsoft.com/library/windows/apps/hh750315)
+* [Recommandations en matière de texte et de typographie](https://msdn.microsoft.com/library/windows/apps/hh700394)
+**Pour les développeurs (XAML)**
+* [**Propriété TextBox.IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688)
+* [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 
  
 
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

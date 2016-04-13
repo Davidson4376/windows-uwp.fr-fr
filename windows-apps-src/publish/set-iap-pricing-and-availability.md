@@ -1,43 +1,43 @@
 ---
-When submitting an IAP, the options on the Pricing and availability page determine what to charge for your IAP and how it should be offered to customers.
-Set IAP pricing and availability
+Quand vous soumettez un produit intégré à l’application, les options de la page Tarification et disponibilité déterminent le prix auquel facturer ce produit et la façon dont ce dernier doit être proposé aux clients.
+Définir la tarification et la disponibilité d’un produit intégré à l’application
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ---
 
-# Set IAP pricing and availability
+# Définir la tarification et la disponibilité d’un produit intégré à l’application
 
 
-When submitting an IAP, the options on the **Pricing and availability** page determine what to charge for your IAP and how it should be offered to customers.
+Quand vous soumettez un produit intégré à l'application, les options de la page **Tarification et disponibilité** déterminent le prix auquel facturer ce produit et la façon dont ce dernier doit être proposé aux clients.
 
-## Base price
-
-
-You must select a base price for your IAP. These price tiers are the same as the price tiers for apps, starting at .99 USD. You also have the option to offer your IAP for free.
-
-## Markets and custom prices
+## Prix de base
 
 
-By default, your IAP will be listed in all possible markets, including any future markets that we may add later, at its base price.
+Vous devez sélectionner un prix de base pour votre produit intégré à l'application. Ces niveaux de prix sont identiques à ceux des applications et commencent à 0,99 USD. Vous pouvez également mettre gratuitement à disposition votre produit intégré à l'application.
 
-However, just as with an app, you have the option to choose the markets in which you'd like to offer your IAP. In most cases you'll want to pick the same set of markets as the app, but you have the flexibility to make changes as needed. You can also set custom prices so that you can charge different prices for the IAP in different markets.
-
-For more info and a full list of the available markets, see [Define pricing and market selection](define-pricing-and-market-selection.md).
-
-## Sale pricing
+## Marchés et prix personnalisés
 
 
-If you want to offer your IAP at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and IAPs on sale](put-apps-and-iaps-on-sale.md).
+Par défaut, votre produit intégré à l'application sera indiqué à son prix de base dans tous les marchés possibles, y compris dans les éventuels marchés que nous ajouterons par la suite.
 
-## Distribution and visibility
+Toutefois, comme pour les applications, vous avez la possibilité de choisir les marchés dans lesquels vous souhaitez proposer votre produit intégré à l'application. Dans la plupart des cas, vous sélectionnerez le même ensemble de marchés que l'application, mais vous pouvez modifier les marchés sélectionnés à votre convenance. En outre, vous pouvez définir des prix personnalisés afin d'être en mesure de facturer des prix différents pour votre produit intégré à l'application selon les marchés.
+
+Pour en savoir plus et pour obtenir la liste complète des marchés disponibles, voir [Définition des prix et sélection du marché](define-pricing-and-market-selection.md).
+
+## Prix de vente
 
 
-You can determine whether your IAP should be offered for purchase to customers. Choose from one of the following options:
+Si vous souhaitez proposer votre produit in-app à un prix réduit pendant une durée limitée, vous pouvez créer et planifier une vente. Pour plus d’informations, voir [Mettre des applications et produits in-app en vente](put-apps-and-iaps-on-sale.md).
 
--   **Available for purchase. May be displayed in your app's listing:** This is the default setting and is recommended unless you want to restrict access to your IAP. Leave this option checked for IAPs that will be made available to any customer.
--   **Available for purchase. Not displayed in your app's listing:** Choosing this option allows customers to purchase the IAP from within your app, but the IAP will not be displayed in your app's Store listing. Use this only when the offer is not broadly available, for example during initial periods of internal testing.
--   **No longer available for purchase. Not displayed in your app's listing.** Choosing this option means that the IAP won't be displayed in your app's listing, and no new customers may purchase the IAP. However, **this option is not supported for customers on Windows 8.1 or earlier**. If your app is available on Windows 8.1 or earlier, the IAP will still be available for purchase to those customers. To stop offering this IAP to customers on Windows 8.1 or earlier, you'll need to update your app to remove the code that offers the IAP, then publish a new submission for the app. This is recommended even if your app doesn't target Windows 8.1 or earlier; it's a better experience for your customers if you never offer them an IAP that you've opted to make unavailable.
+## Distribution et visibilité
+
+
+Vous pouvez déterminer si votre produit intégré à l’application doit être proposé à l’achat aux clients. Choisissez l’une des options suivantes :
+
+-   **Disponible à l’achat et affichable dans la description de votre application** : cette option constitue la sélection par défaut et le choix recommandé, sauf si vous voulez restreindre l’accès à votre produit intégré à l’application. Laissez cette option sélectionnée pour les produits intégrés à l’application qui seront disponibles pour tous les clients.
+-   **Disponible à l’achat, mais non affiché dans la description de votre application** : cette option permet aux clients d’acheter le produit intégré à l’application à partir de votre application, mais n’affichera pas ce produit dans la description de votre application dans le Windows Store. Utilisez cette option uniquement si l’offre n’est pas largement disponible, par exemple lors des périodes initiales de test interne.
+-   **Plus disponible à l’achat et non affiché dans la description de votre application.** Le choix de cette option signifie que le produit intégré à l'application ne s'affichera pas dans la description de votre application et qu'aucun nouveau client ne pourra l'acheter. Toutefois, **cette option n'est pas prise en charge pour les clients qui utilisent Windows 8.1 ou une version antérieure**. Si votre application n'est pas disponible sur Windows 8.1 ou une version antérieure, le produit intégré à l'application restera disponible à l'achat pour ces clients. Pour arrêter de proposer ce produit intégré à l'application aux clients qui utilisent Windows 8.1 ou une version antérieure, vous devrez mettre à jour votre application en supprimant le code proposant le produit, puis publier une nouvelle soumission de l'application. Nous vous recommandons de suivre cette procédure, même si votre application ne cible pas Windows 8.1 ou une version antérieure ; en effet, vos clients bénéficieront d’une meilleure expérience si vous ne leur proposez jamais un produit intégré à l’application dont vous avez décidé d’arrêter la mise à disposition.
     
-    > **Note**  Choosing this setting, and/or submitting an app update that removes the IAP from your app's code, does not affect any customers who have already purchased the IAP, regardless of their operating system.
+    > **Remarque** Le choix de ce paramétrage et/ou la soumission d’une mise à jour d’application supprimant le produit intégré à l’application du code de votre application n’ont pas d’incidence sur les clients qui ont déjà acheté ce produit, quel que soit le système d’exploitation qu’ils utilisent.
 
      
 
@@ -48,4 +48,8 @@ You can determine whether your IAP should be offered for purchase to customers. 
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

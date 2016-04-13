@@ -1,11 +1,11 @@
 ---
-Description: Les ressources de thème de XAML sont un ensemble de ressources qui s’appliquent à différentes valeurs en fonction desquelles le thème du système est actif.
+Les ressources de thème de XAML sont un ensemble de ressources qui s’appliquent à différentes valeurs en fonction desquelles le thème du système est actif.
 MS-HAID : « dev\_ctrl\_layout\_txt.xaml\_theme\_resources »
 MSHAttr : « PreferredLib:/library/windows/apps »
 Search.Product : eADQiWindows 10XVcnh
-title: Ressources de thème XAML
+Ressources de thème XAML
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
-label: Ressources de thème XAML
+Ressources de thème XAML
 template: detail.hbs
 ---
 
@@ -62,7 +62,7 @@ L’infrastructure XAML fournit un ensemble de ressources [**Color**](https://ms
 
 Le tableau ci-dessous répertorie la clé, le nom simple et la représentation sous forme de chaîne de la couleur (au format #aarrggbb) pour les ressources « Light » et « Dark » fournies par l’infrastructure XAML. La clé sert à référencer la ressource dans une application. Le « nom simple Light/Dark » est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard.
 
-| Clé                             | Nom simple Clair/Sombre | Clair      | Sombre       |
+| Clé                             | Nom Simple light/dark | Light      | Dark       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -98,7 +98,7 @@ Le tableau suivant répertorie les couleurs système fournies par l’infrastruc
 
 | Clé                           | Nom d’options d’ergonomie            | Nom simple ContrasteÉlevé | Valeur initiale par défaut |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **Texte du bouton** (arrière-plan)   | Contexte               | \#FFF0F0F0      |
+| SystemColorButtonFaceColor    | **Texte du bouton** (arrière-plan)   | Arrière-plan               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **Texte du bouton** (premier plan)   | Premier plan               | \#FF000000      |
 | SystemColorGrayTextColor      | **Texte désactivé**              | Désactivée                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **Texte sélectionné** (arrière-plan) | Highlight                | \#FF3399FF      |
@@ -136,7 +136,7 @@ Lorsque ce pinceau est appliqué à un élément XAML, sa couleur est détermin�
 
 | Thème        | Nom simple de couleur | Ressource de couleur             | Valeur d’exécution                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| Clair        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| Light        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
 | Dark         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
 | HighContrast | Arrière-plan        | SystemColorButtonFaceColor | La couleur spécifiée dans les paramètres pour l’arrière-plan du bouton. |
 
@@ -410,7 +410,7 @@ Pour résoudre ce problème, remplacez le dictionnaire « Default » par des d
 </ResourceDictionary>
 ```
 
-Toutefois, vous rencontrerez toujours des problèmes si l’une de ces ressources est référencée dans les propriétés héritées comme [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Votre modèle de contrôle personnalisé peut spécifier la couleur de premier plan d’un élément à l’aide de l’[extension de balisage ThemeResource](../xaml-platform/themeresource-markup-extension.md), mais lorsque l’infrastructure propage la valeur héritée aux éléments enfants, elle fournit une référence directe à la ressource qui a été résolue par l’expression d’extension de balisage {ThemeResource}. Cela crée des problèmes lorsque l’infrastructure traite les modifications du thème au fur et à mesure qu’elle parcourt l’arborescence visuelle de votre contrôle. Elle évalue de nouveau l’expression d’extension de balisage {ThemeResource} afin d’obtenir une nouvelle ressource de pinceau, mais ne propage pas encore cette référence vers les enfants de votre contrôle ; cela se produit plus tard, par exemple pendant la passe de mesure suivante.
+Toutefois, vous rencontrerez toujours des problèmes si l’une de ces ressources est référencée dans les propriétés héritées comme [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Votre modèle de contrôle personnalisé peut spécifier la couleur de premier plan d’un élément à l’aide de l’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md), mais lorsque l’infrastructure propage la valeur héritée aux éléments enfants, elle fournit une référence directe à la ressource qui a été résolue par l’expression d’extension de balisage {ThemeResource}. Cela crée des problèmes lorsque l’infrastructure traite les modifications du thème au fur et à mesure qu’elle parcourt l’arborescence visuelle de votre contrôle. Elle évalue de nouveau l’expression d’extension de balisage {ThemeResource} afin d’obtenir une nouvelle ressource de pinceau, mais ne propage pas encore cette référence vers les enfants de votre contrôle ; cela se produit plus tard, par exemple pendant la passe de mesure suivante.
 
 Par conséquent, après avoir parcouru l’arborescence visuelle du contrôle suite à un changement de thème, l’infrastructure parcourt les enfants et met à jour les expressions d’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) définies sur chacun d’eux, ou sur les objets définis à partir de leurs propriétés. C’est à ce moment que le problème survient ; l’infrastructure parcourt la ressource de pinceau et, dans la mesure où elle spécifie sa couleur à l’aide d’une extension de balisage {ThemeResource}, une réévaluation est effectuée.
 
@@ -437,5 +437,9 @@ Pour résoudre ce problème, utilisez l’extension de balisage [{StaticResource
 Notez que l’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) est toujours utilisée à la place de l’[extension de balisage {StaticResource}](../xaml-platform/staticresource-markup-extension.md) dans le dictionnaire « HighContrast ». Cette situation correspond à l’exception citée précédemment dans les recommandations. La plupart des valeurs de pinceau utilisées pour le thème « HighContrast » utilisent des choix de couleur qui sont contrôlés globalement par le système, mais exposés au code XAML sous forme d’une ressource spécialement nommée (ceux dont le nom comporte le préfixe SystemColor). Le système permet à l’utilisateur de définir les couleurs spécifiques qui doivent être utilisées pour les paramètres de contraste élevé par l’intermédiaire des Options d’ergonomie. Ces choix de couleur sont appliqués aux ressources spécialement nommées. L’infrastructure XAML utilise le même événement de modification de thème pour mettre également à jour ces pinceaux lorsqu’elle détecte une modification au niveau du système. C’est pourquoi l’extension de balisage {ThemeResource} est utilisée ici.
 
 > **Remarque**&nbsp;&nbsp;  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, consultez la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+
 <!--HONumber=Mar16_HO1-->
+
+

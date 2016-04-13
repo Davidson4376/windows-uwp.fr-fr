@@ -1,45 +1,49 @@
 ---
-Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your description for different targeted operating systems.
-title: Create platform-specific descriptions
+Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description pour ces différents systèmes.
+Création de descriptions spécifiques à la plateforme
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ---
 
-# Create platform-specific descriptions
+# Création de descriptions spécifiques à la plateforme
 
 
-If you've provided packages targeting different operating systems, you have the option to customize parts of your description for different targeted operating systems.
+Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description pour ces différents systèmes.
 
-> **Important**  Customers on Windows 10 will always see your default description.
+> **Important** Les clients sur Windows 10 voient toujours votre description par défaut.
 
-Platform-specific descriptions can be useful if you want to mention features that appear only in one OS version, or want to provide screenshots that are specific to a particular OS (independent of device type), rather than having all customers see the same description.
+Les descriptions spécifiques de la plateforme peuvent être utiles si vous voulez mentionner des fonctionnalités qui apparaissent uniquement dans une version de système d’exploitation, ou fournir des captures d’écran spécifiques d’un système d’exploitation particulier (indépendamment du type d’appareil), au lieu que tous les clients voient la même description.
 
-> **Note**  Creating a platform-specific description in one language does not create a platform-specific description in other languages that your app supports, even if you have [entered description info](create-app-descriptions.md) for those languages. You'll need to create the platform-specific description separately for each language.
+> **Remarque** La création d’une description spécifique de la plateforme dans une langue donnée n’entraîne pas la création de cette description dans toutes les autres langues prises en charge par votre application, même si vous avez [saisi les informations de description](create-app-descriptions.md) associées à ces langues. Il vous faudra créer la description spécifique de la plateforme pour chacune des langues.
 
-## Creating a platform-specific description
-
-
-Near the top of your **Description** page, you'll see a link to **create a platform-specific app description**. When you click this link, a popup will appear asking you to choose from your supported targeted operating systems. Windows 10 is not included in the list of choices, because customers on Windows 10 will always see the app's default description.
-
-> **Note**  If you haven't provided packages targeting multiple OS versions, or if you've already created platform-specific descriptions for all of the OS versions your app targets, you won't be able to make a selection.
-
-You can choose to use your default description as a starting point, which will bring over all of the text and images you've entered for your default description; you'll then be able to make any changes you'd like before saving.
-
-You can also start from a completely blank description if you prefer.
-
-After you click **Continue**, your **Description** page will now include a section for the platform-specific description you've just created (underneath the [Default description](create-app-descriptions.md#default-description-fields) section). This section will include its own set of fields for **Description** (required), **Release notes**, **Screenshots**, **App tile icon**, **App features**, and **Recommended hardware**. Make sure to enter info into each field where you want to display info in the custom description, even if it's the same info as in your default description. If you leave any of these fields blank, no info will appear for that field in the custom description.
-
-> **Note**  Not all fields of your app's description can be customized for a specific targeted OS. For more info, see [Shared fields](create-app-descriptions.md#shared-fields).
-
-## Removing a platform-specific description
+## Création d'une description spécifique de la plateforme
 
 
-If you create a platform-specific description and later decide you'd rather show your default description to customers on that operating system, click the **Delete** link. After confirming that you'd like to show those customers your default description, click **OK**. The platform-specific description will be removed. If you decide you want it back later, you can always create a new platform-specific description for that operating system by following the steps listed above.
+En haut de votre page **Description**, figure le lien **créer une description d’application propre à une plateforme**. Lorsque vous cliquez sur ce lien, une fenêtre contextuelle s’affiche, vous demandant de choisir parmi les systèmes d’exploitation ciblés pris en charge. Windows 10 n’est pas inclus dans la liste des choix, car les clients Windows 10 voient toujours la description par défaut de l’application.
+
+> **Remarque** Si vous n’avez pas fourni de packages ciblant plusieurs versions de système d’exploitation, ou que vous avez déjà créé des descriptions propres à la plateforme pour toutes les versions de système d’exploitation ciblées par votre application, vous ne pourrez pas effectuer de sélection.
+
+Vous pouvez choisir d’utiliser votre description par défaut comme point de départ, ce qui réaffichera l’ensemble du texte et des images que vous avez entrés pour cette description ; vous serez alors en mesure de modifier ces éléments à votre convenance avant d’enregistrer ces modifications.
+
+Vous pouvez également choisir de partir d'une description vide.
+
+Une fois que vous aurez cliqué sur **Continuer**, votre page **Description** inclura une section pour la description spécifique de la plateforme que vous venez de créer (sous la section [Description par défaut](create-app-descriptions.md#default-description-fields)). Cette section inclut son propre ensemble de champs pour **Description** (obligatoire), **Notes de publication**, **Captures d’écran**, **Icône de vignette de l’application**, **Fonctionnalités de l’application** et **Matériel recommandé**. Veillez à entrer des informations dans chaque champ où vous souhaitez afficher des informations pour la description personnalisée, même si ces informations sont identiques à celles de la description par défaut. Si vous laissez un de ces champs vide, aucune information ne s’affiche pour ce champ dans la description personnalisée.
+
+> **Remarque** Vous ne pouvez pas personnaliser tous les champs de la description de votre application pour un système d’exploitation ciblé. Pour plus d’informations, voir l’article [Champs partagés](create-app-descriptions.md#shared-fields).
+
+## Suppression d'une description spécifique de la plateforme
+
+
+Si vous créez une description spécifique de la plateforme, puis décidez d’afficher plutôt votre description par défaut aux clients sur ce système d’exploitation, cliquez sur le lien **Supprimer**. Après avoir confirmé la présentation de la description par défaut à ces clients, cliquez sur **OK**. La description spécifique de la plateforme sera supprimée. Si vous décidez de l’afficher à nouveau, vous pouvez toujours créer une nouvelle description spécifique de la plateforme pour ce système d’exploitation en suivant les étapes indiquées ci-dessus.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

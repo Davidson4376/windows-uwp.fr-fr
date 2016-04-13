@@ -1,126 +1,126 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: Best practices for your app's startup performance
-description: Create Universal Windows Platform (UWP) apps with optimal startup times by improving the way you handle launch and activation.
+Meilleures pratiques en matière de performances lors du démarrage de votre application
+Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 ---
-# Best practices for your app's startup performance
+# Meilleures pratiques en matière de performances lors du démarrage de votre application
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Create Universal Windows Platform (UWP) apps with optimal startup times by improving the way you handle launch and activation.
+Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 
-## Best practices for your app's startup performance
+## Meilleures pratiques en matière de performances lors du démarrage de votre application
 
-In part, users perceive whether your app is fast or slow based on how long it takes to start up. For the purposes of this topic, an app's startup time begins when the user starts the app, and ends when the user can interact with the app in some meaningful way. This section provides suggestions on how to get better performance out of your app when it starts.
+Les utilisateurs jugent les performances d’une application en partie sur le temps nécessaire à son démarrage. Pour les besoins de cette rubrique, le démarrage d’une application commence lorsque l’utilisateur démarre l’application et il se termine lorsque l’utilisateur peut commencer à interagir véritablement avec l’application. Cette section fournit des suggestions pour améliorer les performances de votre application au démarrage.
 
-### Measuring your app's startup time
+### Évaluation du temps nécessaire au démarrage de votre application
 
-Be sure to start your app a few times before you actually measure its startup time. This gives you a baseline for your measurement and ensures that you're measuring as reasonably short a startup time as possible.
+Démarrez l’application plusieurs fois avant de pouvoir évaluer son temps de démarrage. Cela vous servira de référence afin d’estimer un temps de démarrage aussi court que possible, tout en restant dans la mesure du raisonnable.
 
-By the time your UWP app arrives on your customers' computers, your app has been compiled with the .NET Native toolchain. .NET Native is an ahead-of-time compilation technology that converts MSIL into natively-runnable machine code. .NET Native apps start faster, use less memory, and use less battery than their MSIL counterparts. Applications built with .NET Native statically link in a custom runtime and the new converged .NET Core that can run on all devices, so they don’t depend on the in-box .NET implementation. On your development machine, by default your app uses .NET Native if you’re building it in “Release” mode, and it uses CoreCLR if you’re building it in “Debug” mode. You can configure this in Visual Studio from the Build page in “Properties” (C#) or Compile->Advanced in "My Project" (VB). Look for a checkbox that says “Compile with .NET Native Toolchain”.
+Au moment où votre application UWP arrive sur les ordinateurs de vos clients, votre application a été compilée à l’aide de la chaîne d’outils .NET Native. .NET Native est une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET Native démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL. Les applications générées avec .NET Native se lient de manière statistique dans le cadre d’une exécution personnalisée et dans le nouveau .NET Core convergé pouvant s’exécuter sur tous les appareils, afin qu’elles ne dépendent pas de l’implémentation de .NET fournie. Sur l’ordinateur de développement, votre application utilise .NET Native par défaut si vous la créez en mode « Publication », et CoreCLR si vous la créez en mode « Débogage ». Vous pouvez configurer cette option dans Visual Studio à partir de la page de génération dans « Propriétés » (C#) ou Compiler -> Avancé dans « Mon projet » (VB). Recherchez une case à cocher indiquant « Compiler avec la chaîne d’outils .NET Native ».
 
-Of course, you should take measurements that are representative of what the end user will experience. So, if you're not sure you're compiling your app to native code on your development machine, you could run the Native Image Generator (Ngen.exe) tool to precompile your app before you measure its startup time.
+Bien entendu, vous devez obtenir des évaluations représentatives de ce que l’utilisateur final constatera. Par conséquent, si vous n’êtes pas certain de compiler votre application en code natif sur l’ordinateur de développement, vous pouvez exécuter l’outil Native Image Generator (Ngen.exe) pour précompiler votre application avant d’évaluer son temps de démarrage.
 
-The following procedure describes how to run Ngen.exe to precompile your app.
+La procédure suivante décrit comment exécuter Ngen.exe pour précompiler votre application.
 
-**To run Ngen.exe**
+**Pour exécuter Ngen.exe**
 
-1.  Run your app at least one time to ensure that Ngen.exe detects it.
-2.  Open the **Task Scheduler** by doing one of the following:
-    -   Search for "Task Scheduler" from the start screen.
-    -   Run "taskschd.msc."
-3.  In the left-hand pane of **Task Scheduler**, expand **Task Scheduler Library**.
-4.  Expand **Microsoft.**
-5.  Expand **Windows.**
-6.  Select **.NET Framework**.
-7.  Select **.NET Framework NGEN 4.x** from the task list.
+1.  Exécutez votre application au moins une fois pour vérifier que Ngen.exe la détecte.
+2.  Ouvrez le **Planificateur de tâches** en effectuant l’une des opérations suivantes :
+    -   Recherchez « Planificateur de tâches » dans l’écran d’accueil.
+    -   Exécutez « taskschd.msc ».
+3.  Dans le volet de gauche du **Planificateur de tâches**, développez **Bibliothèque du Planificateur de tâches**.
+4.  Développez **Microsoft.**
+5.  Développez **Windows.**
+6.  Sélectionnez **.NET Framework**.
+7.  Sélectionnez **.NET Framework NGEN 4.x** dans la liste des tâches.
 
-    If you are using a 64-bit computer, there is also a **.NET Framework NGEN v4.x 64**. If you are building a 64-bit app, select .**NET Framework NGEN v4.x 64**.
+    Si vous utilisez un ordinateur 64 bits, **.NET Framework NGEN v4.x 64** est également disponible. Si vous créez une application 64 bits, sélectionnez .**NET Framework NGEN v4.x 64**.
 
-8.  From the **Action** menu, click **Run**.
+8.  Dans le menu **Action**, cliquez sur **Exécuter**.
 
-Ngen.exe precompiles all the apps on the machine that have been used and do not have native images. If there are a lot of apps that need to be precompiled, this can take a long time, but subsequent runs are much faster.
+Ngen.exe précompile toutes les applications de l’ordinateur qui ont été utilisées et qui n’ont pas d’images natives. Si de nombreuses applications doivent être précompilées, cette opération peut demander du temps, mais les précompilations suivantes seront plus rapides.
 
-When you recompile your app, the native image is no longer used. Instead, the app is just-in-time compiled, which means that it is compiled as the app runs. You must rerun Ngen.exe to get a new native image.
+Lorsque vous recompilez votre application, l’image native n’est plus utilisée. L’application est alors compilée juste-à-temps, c’est-à-dire qu’elle est compilée en cours d’exécution. Vous devez réexécuter Ngen.exe pour obtenir une nouvelle image native.
 
-### Defer work as long as possible
+### Différer le travail aussi longtemps que possible
 
-To increase your app's startup time, do only the work that absolutely needs to be done to let the user start interacting with the app. This can be especially beneficial if you can delay loading additional assemblies. The common language runtime loads an assembly the first time it is used. If you can minimize the number of assemblies that are loaded, you might be able to improve your app's startup time and its memory consumption.
+Pour réduire le temps de démarrage de votre application, n’effectuez que le travail qui est absolument nécessaire pour permettre à l’utilisateur de commencer à interagir avec l’application. Cela peut être particulièrement utile si vous pouvez retarder le chargement d’assemblys supplémentaires. Le Common Language Runtime charge un assembly la première fois qu’il est utilisé. Si vous pouvez réduire le nombre d’assemblys qui sont chargés, vous pourrez sans doute améliorer le temps nécessaire au démarrage de votre application et sa consommation de mémoire.
 
-### Do long-running work independently
+### Effectuer le travail demandant du temps séparément
 
-Your app can be interactive even though there are parts of the app that aren't fully functional. For example, if your app displays data that takes a while to retrieve, you can make that code execute independently of the app's startup code by retrieving the data asynchronously. When the data is available, populate the app's user interface with the data.
+Votre application peut être interactive même si certaines de ses parties ne sont pas totalement fonctionnelles. Par exemple, si votre application affiche des données qui sont longues à récupérer, vous pouvez faire en sorte que le code chargé de récupérer ces données s’exécute indépendamment du code de démarrage de l’application en récupérant les données de façon asynchrone. Lorsque les données sont disponibles, fournissez-les à l’interface utilisateur de l’application.
 
-Many of the Universal Windows Platform (UWP) APIs that retrieve data are asynchronous, so you will probably be retrieving data asynchronously anyway. For more info about asynchronous APIs, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). If you do work that doesn't use asynchronous APIs, you can use the Task class to do long running work so that you don't block the user from interacting with the app. This will keep your app responsive to the user while the data loads.
+De nombreuses API de plateforme Windows universelle (UWP) qui récupèrent les données sont asynchrones. Pour cette raison, la récupération des données s’effectuera probablement de façon asynchrone. Pour en savoir plus sur les API asynchrones, voir [Appel d’API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Si vous effectuez un travail qui ne nécessite pas l’utilisation d’API asynchrones, vous pouvez utiliser la classe Task pour effectuer les tâches devant s’exécuter sur le long terme, afin de ne pas empêcher l’utilisateur d’interagir avec l’application. L’application continuera à répondre aux actions de l’utilisateur pendant que les données sont chargées.
 
-If your app takes an especially long time to load part of its UI, consider adding a string in that area that says something like, "Getting latest data," so that your users know that the app is still processing.
+Si le chargement d’une partie de l’interface utilisateur de l’application est particulièrement long, nous vous conseillons d’ajouter une ligne à cet égard, en indiquant quelque chose comme « Obtention des dernières données en cours » afin que les utilisateurs sachent que l’application est toujours en cours de traitement.
 
-## Minimize startup time
+## Réduire le temps de démarrage
 
-All but the simplest apps require a perceivable amount of time to load resources, parse XAML, set up data structures, and run logic at activation. Here, we analyze the process of activation by breaking it into three phases. We also provide tips for reducing the time spent in each phase, and techniques for making each phase of your app's startup more palatable to the user.
+Hormis les plus simples d’entre elles, les applications nécessitent un laps de temps, perceptible par l’utilisateur, pour charger les ressources, analyser le code XAML, configurer les structures de données et exécuter la logique au moment de l’activation. Dans cette rubrique, nous allons analyser le processus d’activation en le décomposant en trois phases. Nous vous donnerons également des conseils pour réduire la durée de chaque phase, ainsi que quelques techniques pour rendre chaque phase du démarrage de votre application plus agréable pour l’utilisateur.
 
-The activation period is the time between the moment a user starts the app and the moment the app is functional. This is a critical time because it’s a user’s first impression of your app. They expect instant and continuous feedback from the system and apps. The system and the app are perceived to be broken or poorly designed when apps don't start quickly. Even worse, if an app takes too long to activate, the Process Lifetime Manager (PLM) might kill it, or the user might uninstall it.
+La période d’activation désigne le laps de temps s’écoulant entre le démarrage de l’application par l’utilisateur et le moment où l’application est opérationnelle. Ce laps de temps a une grande importance, car il conditionne la première impression qu’un utilisateur se fait de votre application. Les utilisateurs s’attendent à pouvoir interagir instantanément et sans interruption avec le système et leurs applications. Ils jugeront que le système et les applications ne sont pas fiables ou qu’ils sont mal conçus si les applications ne démarrent pas assez vite. Pire encore, si une application met trop de temps à s’activer, le Gestionnaire de durée de vie d’un processus (PLM) risque de l’arrêter ou l’utilisateur de la désinstaller.
 
-### Introduction to the stages of startup
+### Présentation des étapes de démarrage
 
-Startup involves a number of moving pieces, and all of them need to be correctly coordinated for the best user experience. The following steps occur between your user clicking on your app tile and the application content being shown.
+Le démarrage implique un certain nombre d’éléments mobiles devant être correctement coordonnés pour optimiser l’expérience utilisateur. Les étapes suivantes se déroulent entre le moment où l’utilisateur clique sur la vignette de votre application et celui où le contenu de l’application s’affiche.
 
--   The Windows shell starts the process and Main is called.
--   The Application object is created.
-    -   (Project template) Constructor calls InitializeComponent, which causes App.xaml to be parsed and objects created.
--   Application.OnLaunched event is raised.
-    -   (ProjectTemplate) App code creates a Frame and navigates to MainPage.
-    -   (ProjectTemplate) Mainpage constructor calls InitializeComponent which causes MainPage.xaml to be parsed and objects created.
-    -   ProjectTemplate) Window.Current.Activate() is called.
--   XAML Platform runs the Layout pass including Measure & Arrange.
-    -   ApplyTemplate will cause control template content to be created for each control, which is typically the bulk of Layout time for startup.
--   Render is called to create visuals for all the window contents.
--   Frame is presented to the Desktop Windows Manager (DWM).
+-   L’environnement Windows démarre le processus et Main est appelé.
+-   L’objet Application est créé.
+    -   (Project template) Constructor appelle InitializeComponent qui entraîne l’analyse de App.xaml et la création des objets.
+-   L’événement Application.OnLaunched est déclenché.
+    -   Le code (ProjectTemplate) App crée un Frame et navigue vers MainPage.
+    -   Le constructeur (ProjectTemplate) Mainpage appelle InitializeComponent qui entraîne l’analyse de MainPage.xam et la création des objets.
+    -   ProjectTemplate) Window.Current.Activate() est appelé.
+-   La plateforme XAML exécute la passe de disposition, notamment Mesurer et disposer.
+    -   ApplyTemplate entraîne la création du contenu du modèle de contrôle pour chaque contrôle, qui représente généralement la majeure partie du temps de disposition au démarrage.
+-   Render est appelé pour créer des effets visuels pour tous les contenus de fenêtre.
+-   Frame est présenté au gestionnaire de fenêtrage (DWM).
 
-### Do less in your Startup path
+### Effectuer un moins grand nombre d’opérations dans votre chemin de démarrage
 
-Keep your startup code path free from anything that is not needed for your first frame.
+Retirez de votre code de démarrage tout ce qui n’est pas nécessaire à votre première image.
 
--   If you have user dlls containing controls that are not needed during first frame, consider delay loading them.
--   If you have a portion of your UI dependent on data from the cloud, then split that UI. First, bring up the UI that is not dependent on cloud data and asynchronously bring up the cloud-dependent UI. You should also consider caching data locally so that the application will work offline or not be affected by slow network connectivity.
--   Show progress UI if your UI is waiting for data.
--   Be cautious of app designs that involve a lot of parsing of configuration files, or UI that is dynamically generated by code.
+-   Si vous disposez de DLL utilisateur contenant des contrôles qui ne sont pas nécessaires pour la première image, envisagez de retarder leur chargement.
+-   Si une partie de votre interface utilisateur dépend de données issues du cloud, fractionnez-la. Commencez par afficher l’interface utilisateur qui n’est pas dépendante des données du cloud et affichez ensuite l’interface utilisateur dépendante du cloud de manière asynchrone. Vous devez également envisager la mise en cache locale des données pour que l’application fonctionne en mode hors connexion ou ne soit pas affectée par un ralentissement de la connexion réseau.
+-   Afficher la progression de l’interface utilisateur si votre interface utilisateur est en attente de données.
+-   Soyez vigilant à l’égard des conceptions d’applications impliquant une quantité importante d’analyses de fichiers de configuration ou une interface utilisateur générée de manière dynamique par du code.
 
-### Reduce element count
+### Réduire le nombre d’éléments
 
-Startup performance in a XAML app is directly correlated to the number of elements you create during startup. The fewer elements you create, the less time your app will take to start up. As a rough benchmark, consider each element to take 1ms to create.
+Les performances de démarrage d’une application XAML sont en corrélation directe avec le nombre d’éléments créés lors du démarrage. Moins vous créez d’éléments et plus le démarrage de votre application est rapide. À titre de référence, la création de chaque élément doit prendre environ 1 ms.
 
--   Templates used in items controls can have the biggest impact, as they are repeated multiple times. See [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
--   UserControls and control templates will be expanded, so those should also be taken into account.
--   If you create any XAML that does not appear on the screen, then you should justify whether those pieces of XAML should be created during your startup.
+-   Les modèles utilisés dans les contrôles d’éléments peuvent avoir un impact majeur, dans la mesure où ils sont répétés plusieurs fois. Voir [Optimisation des options d’interface ListView et GridView](optimize-gridview-and-listview.md)
+-   UserControls et les modèles de contrôle sont étendus et doivent donc également être pris en compte.
+-   Si vous créez du code XAML qui ne figure pas sur l’écran, vous devez indiquer pourquoi ces parties de code doivent être créées lors du démarrage.
 
-The [Visual Studio Live Visual Tree](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) window shows the child element counts for each node in the tree.
+La fenêtre [Arborescence visuelle dynamique de Visual Studio](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) indique le nombre d’éléments enfant pour chaque nœud de l’arborescence.
 
-![Live visual tree.](images/live-visual-tree.png)
+![Arborescence visuelle dynamique](images/live-visual-tree.png)
 
-**Use x:DeferLoadStrategy**. Collapsing an element, or setting its opacity to 0, will not prevent the element from being created. Using x:DeferLoadStrategy, you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible during the startup screen, so that you can load it when needed, or as part of a set of delayed logic. To trigger the loading, you need only call FindName for the element. For an example and more information, see [x:DeferLoadStrategy attribute](https://msdn.microsoft.com/library/windows/apps/Mt204785).
+**Utiliser x:DeferLoadStrategy**. Le fait de réduire un élément ou de définir son opacité sur 0 n’empêche pas la création de l’élément. x:DeferLoadStrategy vous permet de retarder le chargement d’un élément d’interface utilisateur et de le charger lorsque cela est nécessaire. Cela est très pratique pour retarder le traitement de l’interface utilisateur qui n’est pas visible sur l’écran de démarrage, afin de pouvoir la charger en cas de besoin, ou dans le cadre d’une logique différée. Pour déclencher le chargement, il vous suffit d’appeler FindName pour l’élément. Pour plus d’informations et pour consulter un exemple, voir [Attribut x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785).
 
-**Virtualization**. If you have list or repeater content in your UI then it’s highly advised that you use UI virtualization. If list UI is not virtualized then you are paying the cost of creating all the elements up front, and that can slow down your startup. See [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
+**Virtualisation** Si votre interface utilisateur comporte un contenu de liste ou Repeater, il est vivement recommandé d’utiliser la virtualisation de l’interface utilisateur. Si l’interface utilisateur de liste n’est pas virtualisée, vous devez créer sur le moment tous les éléments, ce qui peut ralentir le démarrage. Voir [Optimisation des options d’interface ListView et GridView](optimize-gridview-and-listview.md)
 
-Application performance is not only about raw performance, it’s also about perception. Changing the order of operations so that visual aspects occur first will commonly make the user feel like the application is faster. Users will consider the application loaded when the content is on the screen. Commonly, applications need to do multiple things as part of the startup, and not all of that is required to bring up the UI, so those should be delayed or prioritized lower than the UI.
+Les performances d’une application reposent non seulement sur les performances brutes, mais également sur leur perception. La modification de l’ordre des opérations visant à afficher en priorité les aspects visuels donne l’impression à l’utilisateur que l’application est plus rapide. Les utilisateurs considèrent que l’application est chargée une fois le contenu affiché à l’écran. Le plus souvent, les applications doivent effectuer plusieurs opérations au démarrage, qui ne sont pas toutes nécessaires pour afficher l’interface utilisateur, et qui par conséquent, doivent être retardées ou reléguées au second plan.
 
-This topic talks about the “first frame” which comes from animation/TV, and is a measure of how long until content is seen by the end user.
+Cette rubrique traite de la « première image » qui provient de l’animation/de la télévision, et qui est une mesure du temps que met un contenu avant d’être visible à l’utilisateur final.
 
-### Improve startup perception
+### Améliorer la perception du démarrage
 
-Let’s use the example of a simple online game to identify each phase of startup and different techniques to give the user feedback throughout the process. For this example, the first phase of activation is the time between the user tapping the game’s tile and the game starting to run its code. During this time, the system doesn’t have any content to display to the user to even indicate that the correct game has started. But providing a splash screen gives that content to the system. The game then informs the user that the first phase of activation has completed by replacing the static splash screen with its own UI when it begins running code.
+Prenons l’exemple d’un jeu en ligne simple pour nous aider à identifier chaque phase du démarrage et les différentes techniques garantissant à l’utilisateur une réactivité optimale pendant tout le processus. Pour cet exemple, la première phase d’activation est le temps écoulé entre le moment où l’utilisateur appuie sur la vignette du jeu et celui où le jeu commence à exécuter son code. Pendant cette phase, le système ne dispose d’aucune information à afficher pour indiquer à l’utilisateur que le jeu sélectionné a démarré. L’affichage d’un écran de démarrage permet au système de fournir ce contenu. Le jeu informe ensuite l’utilisateur que la première phase d’activation est terminée. Pour cela, il remplace l’écran de démarrage statique par sa propre interface utilisateur dès qu’il commence à exécuter le code.
 
-The second phase of activation encompasses creating and initializing structures critical for the game. If an app can quickly create its initial UI with the data available after the first phase of activation, then the second phase is trivial and you can display the UI immediately. Otherwise we recommend that the app display a loading page while it is initialized.
+La deuxième phase d’activation englobe la création et l’initialisation des structures les plus importantes du jeu. Si l’application parvient à créer rapidement son interface utilisateur initiale à partir des données issues de la première phase d’activation, la deuxième phase consiste simplement à afficher directement l’interface utilisateur. Si la création prend un peu plus de temps, il est préférable que l’application affiche une page de chargement pendant la durée de son initialisation.
 
-What the loading page looks like is up to you and it can be as simple as displaying a progress bar or a progress ring. The key point is that the app indicates that it is performing tasks before becoming responsive. In the case of the game, it would like to display its initial screen but that UI requires that some images and sounds be loaded from disk into memory. These tasks take a couple of seconds, so the app keeps the user informed by replacing the splash screen with a loading page, which shows a simple animation related to the theme of the game.
+Vous pouvez choisir quelles informations afficher dans la page de chargement de votre application : cela peut être tout simplement une barre ou un anneau de progression. L’essentiel est d’indiquer à l’utilisateur que l’application n’est pas réactive actuellement, car elle est en train d’effectuer certaines tâches. Dans notre exemple, l’écran initial du jeu ne peut pas être affiché, car cette interface utilisateur doit d’abord charger en mémoire des images et des sons à partir du disque. Comme ces tâches prennent quelques secondes, l’application tient l’utilisateur informé en remplaçant l’écran de démarrage par une page de chargement. Cette page affiche une animation simple liée au thème du jeu.
 
-The third stage begins after the game has a minimal set of info to create an interactive UI, which replaces the loading page. At this point the only info available to the online game is the content that the app loaded from disk. The game can ship with enough content to create an interactive UI; but because it’s an online game it won’t be functional until it connects to the internet and downloads some additional info. Until it has all the info it needs to be functional, the user can interact with the UI, but features that need additional data from the web should give feedback that content is still loading. It may take some time for an app to become fully functional, so it’s important that functionality be made available as soon as possible.
+La troisième et dernière phase intervient une fois que le jeu dispose des informations minimales requises pour créer une interface utilisateur interactive et l’afficher à la place de la page de chargement. À ce stade, les seules informations fournies au jeu en ligne sont les données que l’application a chargées à partir du disque. Le jeu peut être fourni avec suffisamment de contenu pour pouvoir créer une interface utilisateur interactive, mais s’agissant d’un jeu en ligne, il ne devient pleinement opérationnel qu’après avoir téléchargé des informations supplémentaires sur Internet. Pendant cette phase où le jeu récupère toutes les informations dont il a besoin, l’utilisateur est en mesure d’interagir avec l’interface utilisateur. Les fonctionnalités qui ne sont pas encore disponibles parce qu’elles attendent des informations du web doivent avertir l’utilisateur qu’elles sont en train de télécharger du contenu. L’activation complète d’une application peut nécessiter du temps. C’est pourquoi il est important que toutes les fonctionnalités soient disponibles le plus rapidement possible.
 
-Now that we identified the three stages of activation in the online game, let’s tie them to actual code.
+Après avoir identifié les trois phases d’activation du jeu en ligne, nous allons maintenant examiner le code associé.
 
 ### Phase 1
 
-Before an app starts, it needs to tell the system what it wants to display as the splash screen. It does so by providing an image and background color to the SplashScreen element in an app’s manifest, as in the example. Windows displays this after the app begins activation.
+Avant de démarrer, l’application doit indiquer au système quel contenu elle souhaite afficher dans l’écran de démarrage. Pour cela, elle transmet une image et une couleur d’arrière-plan à l’élément SplashScreen dans un manifeste de l’application, tel que décrit dans l’exemple. Windows affiche l’écran de démarrage aussitôt après que l’application a lancé le processus d’activation.
 
 ```xml
 <Package ...>
@@ -137,13 +137,13 @@ Before an app starts, it needs to tell the system what it wants to display as th
 </Package>
 ```
 
-For more info, see [Add a splash screen](https://msdn.microsoft.com/library/windows/apps/Mt187306).
+Pour plus d’informations, voir [Ajouter un écran de démarrage](https://msdn.microsoft.com/library/windows/apps/Mt187306).
 
-Use the app’s constructor only to initialize data structures that are critical to the app. The constructor is called only the first time the app is run and not necessarily each time the app is activated. For example, the constructor isn't called for an app that has been run, placed in the background, and then activated via the search contract.
+Utilisez le constructeur de l’application uniquement pour initialiser les structures de données qui sont essentielles pour l’application. Le constructeur n’est appelé que la première fois où l’application est exécutée et pas forcément à chaque activation de l’application. Par exemple, le constructeur n’est pas appelé si l’application a déjà été exécutée, placée en arrière-plan, puis activée par le biais du contrat de recherche.
 
 ### Phase 2
 
-There are a number of reasons for an app to be activated, each of which you may want to handle differently. You can override [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330), [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801), [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336), and [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) methods to handle each reason of activation. One of the things that an app must do in these methods is create a UI, assign it to [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051), and then call [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046). At this point the splash screen is replaced by the UI that the app created. This visual could either be loading screen or the app's actual UI if enough info is available at activation to create it.
+Une application peut être activée pour plusieurs raisons, chacune pouvant être gérée différemment si vous le souhaitez. Vous pouvez substituer les méthodes [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330), [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801), [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) et [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) pour gérer chaque raison de l’activation. Dans ces méthodes, l’application doit notamment créer une interface utilisateur, affecter cette dernière à [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051), puis appelez [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046). À ce stade, l’écran de démarrage est remplacé par l’interface utilisateur que l’application a créée. Le contenu affiché peut être la page de chargement, ou l’interface utilisateur actuelle de l’application si toutes les informations nécessaires à sa création sont disponibles au moment de l’activation.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -258,9 +258,9 @@ Partial Friend Class ExtendedSplash
 End Class 
 ```
 
-Apps that display a loading page in the activation handler begin work to create the UI in the background. After that element has been created, its [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) event occurs. In the event handler you replace the window's content, which is currently the loading screen, with the newly created home page.
+Les applications affichant une page de chargement dans le gestionnaire d’activation commencent à créer l’interface utilisateur en arrière-plan. Une fois que cet élément a été créé, l’événement [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) associé est déclenché. Dans le gestionnaire d’événements, vous remplacez le contenu de la fenêtre, à savoir la page de chargement, par la nouvelle page d’accueil.
 
-It’s critical that an app with an extended initialization period show a loading page. Aside from providing the sure feedback about the activation process, the process will be terminated if [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) is not called within 15 seconds of the start of the activation process.
+Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. Outre que cette page informe l’utilisateur sur la progression du processus d’activation, elle empêche que ce processus d’activation ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15 secondes suivant son lancement.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -314,46 +314,50 @@ partial class GameHomePage : Page
 End Class
 ```
 
-For an example of using extended splash screens, see [Splash screen sample](http://go.microsoft.com/fwlink/p/?linkid=234889).
+Pour obtenir un exemple d’utilisation d’un écran de démarrage étendu, voir cet [exemple d’écran de démarrage](http://go.microsoft.com/fwlink/p/?linkid=234889).
 
 ### Phase 3
 
-Just because the app displayed the UI doesn't mean it is completely ready for use. In the case of our game, the UI is displayed with placeholders for features that require data from the internet. At this point the game downloads the additional data needed to make the app fully functional and progressively enables features as data is acquired.
+Bien que l’application affiche maintenant l’interface utilisateur, elle n’est pas encore totalement opérationnelle. Dans notre exemple de jeu, l’interface utilisateur est affichée avec des espaces réservés pour les fonctionnalités ayant besoin de récupérer des données sur Internet. Le jeu va donc télécharger les données supplémentaires requises pour rendre l’application pleinement opérationnelle et activer les fonctionnalités les unes après les autres à mesure qu’elle dispose des données requises.
 
-Sometimes much of the content needed for activation can be packaged with the app. Such is the case with a simple game. This makes the activation process quite simple. But many programs (such as news readers and photo viewers) must pull info from the web to become functional. This data can be large and take a fair amount of time to download. How the app gets this data during the activation process can have a huge impact on the perceived performance of an app.
+Parfois, une grande partie du contenu nécessaire à l’activation est déjà fournie avec l’application (dans les jeux simples, notamment), ce qui facilite le processus d’activation. En revanche, de nombreux programmes (tels que les lecteurs de News et les visionneuses de photos) doivent extraire certaines données du Web pour fonctionner correctement. Le téléchargement de ces données parfois volumineuses peut prendre beaucoup de temps. La façon dont l’application récupère ces données lors du processus d’activation peut avoir un impact important sur la perception que l’utilisateur a des performances de votre application.
 
-You could display a loading page, or worse, a splash screen, for minutes if an app tried to download an entire data set it needs for functionality in phase one or two of activation. This makes an app look like it’s hung or cause it to be terminated by the system. We recommend that an app download the minimal amount of data to show an interactive UI with placeholder elements in phase 2 and then progressively load data, which replaces the placeholder elements, in phase 3. For more info on dealing with data, see [Optimize ListView and GridView](optimize-gridview-and-listview.md).
+Si vous affichez une page de chargement ou pire un écran de démarrage pendant toute la durée (de plusieurs minutes parfois) où l’application essaie de télécharger l’ensemble des données requises par ses fonctionnalités, lors de la phase 1 ou 2 de l’activation, l’application peut paraître bloquée voire être arrêtée par le système. Nous vous recommandons plutôt de télécharger le minimum de données nécessaire à l’application pour afficher une interface utilisateur interactive avec des espaces réservés lors de la phase 2, puis de charger progressivement les données correspondant aux espaces réservés au cours de la phase 3. Pour plus d’informations sur la manipulation des données, voir [Optimiser les contrôles ListView et GridView](optimize-gridview-and-listview.md).
 
-How exactly an app reacts to each phase of startup is completely up to you, but providing the user as much feedback as possible (splash screen, loading screen, UI while data loads) makes the user feel as though an app, and the system as a whole, are fast.
+C’est vous qui définissez le comportement de l’application à chaque phase du démarrage, mais gardez à l’esprit que, si vous fournissez des informations précises sur la progression du processus (par un écran de démarrage, une page de chargement ou une interface utilisateur pendant le chargement des données), l’utilisateur aura une meilleure perception de votre application, et du système en général, en termes de rapidité.
 
-### Minimize managed assemblies in the startup path
+### Limiter l’utilisation des assemblys managés dans le chemin de démarrage
 
-Reusable code often comes in the form of modules (DLLs) included in a project. Loading these modules requires accessing the disk, and as you can imagine, the cost of doing so can add up. This has the greatest impact on cold startup, but it can have an impact on warm startup, too. In the case of C# and Visual Basic, the CLR tries to delay that cost as much as possible by loading assemblies on demand. That is, the CLR doesn’t load a module until an executed method references it. So, reference only assemblies that are necessary to the launch of your app in startup code so that the CLR doesn’t load unnecessary modules. If you have unused code paths in your startup path that have unnecessary references, you can move these code paths to other methods to avoid the unnecessary loads.
+Le code réutilisable prend souvent la forme de modules (DLL) inclus dans un projet. Le chargement de ces modules nécessite des accès au disque, ce qui peut évidemment être coûteux en ressources. Cela peut avoir un impact sur les démarrages à chaud, même si c’est dans une moindre mesure que lors des démarrages à froid. En C# et Visual Basic, le CLR essaie le plus possible de différer ce coût en chargeant les assemblys à la demande : il ne charge un module que si celui-ci est référencé par une méthode exécutée. Par conséquent, dans le code de démarrage, référencez uniquement les assemblys nécessaires au lancement de votre application afin que le CLR ne charge pas de modules inutiles. Si le chemin de démarrage comporte des chemins de code inutilisés avec des références superflues, vous pouvez déplacer ces chemins de code vers d’autres méthodes pour éviter les chargements non nécessaires.
 
-Another way to reduce module loads is to combine your app modules. Loading one large assembly typically takes less time than loading two small ones. This is not always possible, and you should combine modules only if it doesn't make a material difference to developer productivity or code reusability. You can use tools such as [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) or the [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/ff191077.aspx) to find out what modules are loaded on startup.
+Pour réduire les chargements de modules, vous pouvez aussi combiner les modules de votre application. En effet, le chargement d’un assembly volumineux est généralement plus rapide que celui de deux assemblys plus petits. Notez que la combinaison des modules n’est pas toujours possible. Par ailleurs, optez pour cette solution seulement si elle n’a pas d’impact significatif sur la productivité du développeur ni sur la réutilisation du code. Utilisez des outils tels que [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) ou l’[Analyseur de performance Windows](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/ff191077.aspx) pour identifier les modules chargés au démarrage.
 
-### Make smart web requests
+### Effectuer des requêtes Web intelligentes
 
-You can dramatically improve the loading time of an app by packaging its contents locally, including XAML, images, and any other files important to the app. Disk operations are faster than network operations. If an app needs a particular file at initialization, you can reduce the overall startup time by loading it from disk instead of retrieving it from a remote server.
+Vous pouvez améliorer considérablement le temps de chargement d’une application en empaquetant son contenu localement, y compris le code XAML, les images et tout autre fichier important pour l’application. Les opérations sur disque sont plus rapides que les opérations réseau. Lorsqu’une application nécessite un fichier particulier lors de l’initialisation, vous pouvez réduire le temps de démarrage global en chargeant ce fichier directement du disque au lieu de le récupérer sur un serveur distant.
 
-## Journal and Cache Pages Efficiently
+## Journaliser des pages et les mettre en cache efficacement
 
-The Frame control provides navigation features. It offers navigation to a Page (Navigate method), navigation journaling (BackStack/ForwardStack properties, GoForward/GoBack method), Page caching (Page.NavigationCacheMode), and serialization support (GetNavigationState method).
+Le contrôle Frame propose des fonctionnalités de navigation. Il offre des possibilités de navigation vers une page (méthode Navigate), de journalisation de la navigation (propriétés BackStack/ForwardStack, méthode GoForward/GoBack), de mise en cache de pages (méthode Page.NavigationCacheMode) et de prise en charge de la sérialisation (méthode GetNavigationState).
 
-The performance to be aware of with Frame is primarily around the journaling and page caching.
+Les performances à connaître associées au contrôle Frame tournent principalement autour de la journalisation et de la mise en cache de pages.
 
-**Frame journaling**. When you navigate to a page with Frame.Navigate(), a PageStackEntry for the current page is added to Frame.BackStack collection. PageStackEntry is relatively small, but there’s no built-in limit to the size of the BackStack collection. Potentially, a user could navigate in a loop and grow this collection indefinitely.
+**Journalisation du contrôle Frame**. Lorsque vous naviguez vers une page avec Frame.Navigate(), un PageStackEntry pour la page actuelle est ajouté à la collection Frame.BackStack. L’élément PageStackEntry est relativement petit, mais la taille de la collection BackStack ne comporte aucune limite intégrée. Potentiellement, un utilisateur pourrait naviguer en boucle et alimenter indéfiniment cette collection.
 
-The PageStackEntry also includes the parameter that was passed to the Frame.Navigate() method. It’s recommended that that parameter be a primitive serializable type (such as an int or string), in order to allow the Frame.GetNavigationState() method to work. But that parameter could potentially reference an object that accounts for more significant amounts of working set or other resources, making each entry in the BackStack that much more expensive. For example, you could potentially use a StorageFile as a parameter, and consequently the BackStack is keeping an indefinite number of files open.
+L’élément PageStackEntry comprend également le paramètre transmis à la méthode Frame.Navigate(). Il est recommandé que ce paramètre soit de type sérialisable primitif (par exemple, un entier ou une chaîne), afin de permettre à la méthode Frame.GetNavigationState() de fonctionner. Toutefois, ce paramètre peut potentiellement faire référence à un objet qui justifie une plage de travail plus importante ou d’autres ressources, ce qui rend chaque entrée du BackStack plus onéreux. Par exemple, vous pourriez éventuellement utiliser un StorageFile en tant que paramètre pour que le BackStack maintienne l’ouverture d’un nombre indéfini de fichiers.
 
-Therefore it’s recommended to keep the navigation parameters small, and to limit the size of the BackStack. The BackStack is a standard vector (IList in C#, Platform::Vector in C++/CX), and so can be trimmed simply by removing entries.
+Par conséquent, il est recommandé de conserver un petit nombre de paramètres de navigation et de limiter la taille du BackStack. Le BackStack est un vecteur standard (IList en C#, Platform::Vector en C++/CX) qui peut, à ce titre, faire l’objet d’un découpage en supprimant des entrées.
 
-**Page caching**. By default, when you navigate to a page with the Frame.Navigate method, a new instance of the page is instantiated. Similarly, if you then navigate back to the previous page with Frame.GoBack, a new instance of the previous page is allocated.
+**Mise en cache de pages**. Par défaut, lorsque vous naviguez vers une page avec la méthode Frame.Navigate, une nouvelle instance de la page est instanciée. De même, si vous revenez à la page précédente avec Frame.GoBack, une nouvelle instance de la page précédente est allouée.
 
-Frame, though, offers an optional page cache that can avoid these instantiations. To get a page put into the cache, use the Page.NavigationCacheMode property. Setting that mode to Required will force the page to be cached, setting it to Enabled will allow it to be cached. By default the cache size is 10 pages, but this can be overridden with the Frame.CacheSize property. All Required pages will be cached, and if there are fewer than CacheSize Required pages, Enabled pages can be cached as well.
+Frame, cependant, propose un cache de pages facultatif permettant d’éviter les instanciations. Pour obtenir la mise en cache d’une page, utilisez la propriété Page.NavigationCacheMode. Le fait de définir ce mode sur Required entraîne la mise en cache forcée de la page, alors que le paramètre Enabled autorise sa mise en cache. Par défaut, le cache peut contenir 10 pages, toutefois, cette capacité peut être modifiée à l’aide de la propriété Frame.CacheSize. Toutes les pages Required sont mises en cache, et si leur nombre est inférieur à celui des pages CacheSize Required, les pages Enabled peuvent l’être également.
 
-Page caching can help performance by avoiding instantiations, and therefore improving navigation performance. Page caching can hurt performance by over-caching and therefore impacting working set.
+La mise en cache de pages peut améliorer les performances en évitant les instanciations, et par conséquent, la navigation. L’utilisation excessive de la mise en cache de pages peut avoir un effet néfaste sur les performances et par là même sur la plage de travail.
 
-Therefore it’s recommend to use page caching as appropriate for your application. For example, say you have an app that shows a list of items in a Frame, and when you tap on an item, it navigates the frame to a detail page for that item. The list page should probably be set to cache. If the detail page is the same for all items, it should probably be cached as well. But if the detail page is more heterogeneous, it might be better to leave caching off.
+C’est la raison pour laquelle nous vous conseillons d’utiliser la mise en cache de pages en fonction des besoins de votre application. Supposons par exemple que vous disposez d’une application affichant une liste d’éléments d’un contrôle Frame, et que le fait de cliquer sur un élément implique la navigation dans Frame vers une page de détails correspondant à cet élément. La page de liste devrait probablement être mise en cache. Si la page de détails est identique pour tous les éléments, elle devrait probablement être mise en cache également. Toutefois, si la page de détails est plus hétérogène, il peut être préférable d’abandonner la mise en cache.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

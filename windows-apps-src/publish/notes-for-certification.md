@@ -1,43 +1,47 @@
 ---
-As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
-Notes for certification
+Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la page Remarques pour la certification pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement.
+Remarques pour la certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 ---
 
-# Notes for certification
+# Remarques pour la certification
 
 
-As you submit your app, you have the option to use the **Notes for certification** page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
+Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la pages **Remarques pour la certification** pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement.
 
-Make sure to include the following (if applicable for your app):
+Prenez soin d’inclure les éléments suivants (s’ils sont applicables à votre application) :
 
--   **User names and passwords for test accounts**
+-   **Noms d’utilisateurs et mots de passe pour les comptes de test**
 
-    If your app requires users to log in to a service, provide the user name and password for a test account. The certification testers will use this account when reviewing your app.
+    Si votre application nécessite que les utilisateurs se connectent à un service, fournissez le nom d’utilisateur et le mot de passe d’un compte de test. Les testeurs de certification utiliseront ce compte lors de l’examen de votre application.
 
--   **Steps to access hidden or locked features**
+-   **Étapes à suivre pour accéder aux fonctionnalités masquées ou verrouillées**
 
-    If your app has features that might not be obvious to the testers, briefly describe how they can access those features. Apps that appear to be incomplete may fail certification.
+    Si votre application contient des fonctionnalités qui peuvent ne pas être évidentes pour les testeurs, décrivez brièvement comment ils peuvent y accéder. Les applications incomplètes risquent de ne pas obtenir de certification.
 
--   **Steps to verify background audio usage**
+-   **Procédure de vérification de l'utilisation du contenu audio en arrière-plan**
 
-    If your app allows audio to run in the background, testers may need instructions on how to access this feature so they can confirm it functions appropriately.
+    Si votre application autorise l'exécution d'un contenu audio en arrière-plan, les testeurs peuvent avoir besoin de connaître la procédure à suivre pour accéder à cette fonctionnalité afin de vérifier qu'elle fonctionne correctement.
 
--   **Info about what's changed in an app update**
+-   **Informations sur les modifications apportées dans le cadre de la mise à jour d'une application**
 
-    For updates to previously published apps, you may want to let the testers know what has changed, especially if your packages are the same and you're just making changes to your app listing (such as adding more screenshots, changing your app's category, or editing the description).
+    Pour les mises à jour d'applications déjà publiées, il est bon de signaler aux testeurs ce qui a changé, notamment si vos packages sont les mêmes et que vous modifiez simplement la description de votre application (ajout de captures d'écran, changement de catégorie de l'application ou modification de la description, par exemple).
 
-When considering what to write, remember:
+Prenez en considération les points suivants lors de la rédaction des remarques :
 
--   **A real person will read these notes.** Testers will appreciate a polite note and clear, helpful instructions.
--   **Be succinct and keep instructions simple.** If you really need to explain more, you can include a link to a page with more info. Keep in mind that customers of your app won't be seeing these notes. If you need to provide complicated instructions for testing your app, consider whether your app might need to be made simpler so that customers know how to use it.
--   **Services and external components must be online and available.** If your app connects to a service for part of its function, make sure that the service will be online and available. Include any information about the service that testers will need. If your app can't connect to a service it needs during testing, it may fail certification.
+-   **Une personne réelle lira ces remarques.** Les testeurs apprécieront des remarques polies et claires ainsi que des instructions utiles.
+-   **Soyez succinct et donnez des instructions simples.** Si vous devez vraiment fournir des instructions supplémentaires, vous pouvez indiquer un lien vers une page contenant d’autres informations. Gardez à l’esprit que les clients de votre application ne verront pas ces remarques. Si vous avez besoin de fournir des instructions complexes pour le test de votre application, peut-être devez-vous envisager de simplifier l’utilisation de votre application pour les clients.
+-   **Les services et les composants externes doivent être en ligne et disponibles.** Si votre application se connecte à un service pour une partie de son fonctionnement, assurez-vous que ce service sera en ligne et disponible. Incluez toutes les informations relatives au service dont les testeurs auront besoin. Si votre application ne peut pas se connecter à un service nécessaire au cours du test, elle risque de ne pas obtenir sa certification.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

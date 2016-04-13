@@ -1,52 +1,56 @@
 ---
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
-title: Best practices for using the thread pool
-description: This topic describes best practices for working with the thread pool.
+Meilleures pratiques pour l’utilisation du pool de threads
+Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
 ---
-# Best practices for using the thread pool
+# Meilleures pratiques pour l’utilisation du pool de threads
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-This topic describes best practices for working with the thread pool.
-
-## Do's
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
--   Use the thread pool to do parallel work in your app.
+Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
 
--   Use work items to accomplish extended tasks without blocking the UI thread.
-
--   Create work items that are short-lived and independent. Work items run asynchronously and they can be submitted to the pool in any order from the queue.
-
--   Dispatch updates to the UI thread with the [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211).
-
--   Use [**ThreadPoolTimer.CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) instead of the **Sleep** function.
-
--   Use the thread pool instead of creating your own thread management system. The thread pool runs at the OS level with advanced capability and is optimized to dynamically scale according to device resources and activity within the process and across the system.
-
--   In C++, ensure that work item delegates use the agile threading model (C++ delegates are agile by default).
-
--   Use pre-allocated work items when you can't tolerate a resource allocation failure at time of use.
-
-## Dont's
+## Pratiques conseillées
 
 
--   Don't create periodic timers with a *period* value of &lt;1 millisecond (including 0). This will cause the work item to behave as a single-shot timer.
+-   Utilisez le pool de threads pour effectuer des tâches parallèles dans votre application.
 
--   Don't submit periodic work items that take longer to complete than the amount of time you specified in the *period* parameter.
+-   Utilisez des éléments de travail pour accomplir des tâches étendues sans bloquer le thread d’interface utilisateur.
 
--   Don't try to send UI updates (other than toasts and notifications) from a work item dispatched from a background task. Instead, use background task progress and completion handlers - for example, [**IBackgroundTaskInstance.Progress**](https://msdn.microsoft.com/library/windows/apps/BR224800).
+-   Créez des éléments de travail à courte durée de vie et indépendants. Les éléments de travail s’exécutent de manière asynchrone et peuvent être envoyés au pool dans n’importe quel ordre à partir de la file d’attente.
 
--   When you use work-item handlers that use the **async** keyword, be aware that the thread pool work item may be set to the complete state before all of the code in the handler has executed. Code following an **await** keyword within the handler may execute after the work item has been set to the complete state.
+-   Distribuez les mises à jour au thread d’interface utilisateur à l’aide de l’objet [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211).
 
--   Don't try to run a pre-allocated work item more than once without reinitializing it. [Create a periodic work item](create-a-periodic-work-item.md)
+-   Utilisez [**ThreadPoolTimer.CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) plutôt que la fonction **Sleep**.
 
-## Related topics
+-   Utilisez le pool de threads au lieu de créer votre propre système de gestion des threads. Le pool de threads s’exécute au niveau du système d’exploitation avec des fonctionnalités avancées. Il est optimisé pour une mise à l’échelle dynamique en fonction des ressources de l’appareil et de l’activité au sein du processus et dans le système.
+
+-   En C++, assurez-vous que les délégués des éléments de travail utilisent le modèle de thread Agile (les délégués C++ sont Agile par défaut).
+
+-   Utilisez des éléments de travail préalloués si vous ne pouvez pas tolérer d’échec d’allocation de ressources au moment de l’utilisation.
+
+## Pratiques déconseillées
 
 
-* [Create a periodic work item](create-a-periodic-work-item.md)
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
+-   Ne créez pas de minuteurs périodiques avec une valeur *period* inférieure à 1 milliseconde (y compris 0). Cela amène l’élément de travail à se comporter comme un minuteur à déclenchement unique.
+
+-   N’envoyez pas d’éléments de travail périodiques dont l’exécution est plus longue que la durée spécifiée dans le paramètre *period*.
+
+-   N’essayez pas d’envoyer des mises à jour de l’interface utilisateur (autres que des toasts et des notifications) à partir d’un élément de travail distribué à partir d’une tâche en arrière-plan. Au lieu de cela, utilisez des gestionnaires d’achèvement ou de progression de tâches en arrière-plan, par exemple, [**IBackgroundTaskInstance.Progress**](https://msdn.microsoft.com/library/windows/apps/BR224800).
+
+-   Lorsque vous utilisez des gestionnaires d’éléments de travail qui utilisent le mot clé **async**, sachez que l’élément de travail du pool de threads peut être défini sur l’état Terminé avant que tout le code du gestionnaire ne soit exécuté. Le code qui suit un mot clé **await** dans le gestionnaire peut s’exécuter après que l’élément de travail a été défini sur l’état Terminé.
+
+-   N’essayez pas d’exécuter plusieurs fois un élément de travail préalloué sans le réinitialiser. [Créer un élément de travail périodique](create-a-periodic-work-item.md)
+
+## Rubriques connexes
+
+
+* [Créer un élément de travail périodique](create-a-periodic-work-item.md)
+* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
+* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

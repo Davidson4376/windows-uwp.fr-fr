@@ -1,64 +1,64 @@
 ---
-Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
-Navigation design basics for Universal Windows Platform (UWP) apps
+La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures de navigation, d’éléments de navigation et de fonctionnalités au niveau du système.
+Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
-History and backwards navigation
+Navigation dans l’historique et navigation vers l’arrière
 template: detail.hbs
 ---
 
-#  Navigation history and backwards navigation
+#  Navigation dans l’historique et navigation vers l’arrière
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-On the Web, individual web sites provide their own navigation systems, such as tables of contents, buttons, menus, simple lists of links, and so on. The navigation experience can vary wildly from website to website. However, there is one consistent navigation experience: back. Most browsers provide a back button that behaves the same way regardless of the website.
+Sur le web, les sites web individuels fournissent leurs propres systèmes de navigation, tels que des tables des matières, des boutons, des menus, des listes simples de liens, etc. L’expérience de navigation peut varier sensiblement d’un site web à l’autre. Il existe toutefois une expérience de navigation cohérente : le bouton Précédent. La plupart des navigateurs fournissent un bouton Précédent qui a le même comportement, quel que soit le site web consulté.
 
-For similar reasons, the Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
+Pour des raisons similaires, la plateforme Windows universelle (UWP) fournit un système de navigation cohérent pour la fonctionnalité Précédent afin que l’utilisateur puisse parcourir l’historique de navigation dans une application et, en fonction de l’appareil, d’une application à l’autre.
 
-The UI for the system back button is optimized for each form factor and input device type, but the navigation experience is global and consistent across devices and UWP apps.
+L’interface utilisateur pour le bouton Précédent du système est optimisée pour chaque type de facteur de forme et d’appareil d’entrée, mais l’expérience de navigation est globale et cohérente sur les différents appareils et applications UWP.
 
-Here are the primary form factors with the back button UI:
+Voici les facteurs de forme principaux avec l’interface utilisateur du bouton Précédent :
 
 
 <table>
     <tr>
-        <td colspan="2">Devices</td>
-        <td>Back button behavior</td>
+        <td colspan="2">Appareils</td>
+        <td>Comportement du Bouton Précédent</td>
      </tr>
     <tr>
-        <td>Phone</td>
+        <td>Téléphone</td>
         <td>![system back on a phone](images/back-systemback-phone.png)</td>
         <td>
         <ul>
-<li>Always present.</li>
-<li>A software or hardware button at the bottom of the device.</li>
-<li>Global back navigation within the app and between apps.</li>
+<li>Toujours présent.</li>
+<li>Bouton logiciel ou matériel en bas de l’appareil.</li>
+<li>Navigation vers l’arrière globale au sein de l’application et entre les applications.</li>
 </ul>
 </td>
      </tr>
      <tr>
-        <td>Tablet</td>
+        <td>Tablette</td>
         <td>![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
         <td>
 <ul>
-<li>Always present in Tablet mode.
+<li>Toujours présent en mode tablette.
 
     Not available in Desktop mode. Title bar back button can be enabled, instead. See [PC, Laptop, Tablet](#PC).
 
     Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
 
-<li> A software button in the navigation bar at the bottom of the device.</li>
-<li>Global back navigation within the app and between apps.</li></ul>        
+<li> Bouton logiciel dans la barre de navigation en bas de l’appareil.</li>
+<li>Navigation vers l’arrière globale au sein de l’application et entre les applications.</li></ul>        
         </td>
      </tr>
     <tr>
-        <td>PC, Laptop, Tablet</td>
+        <td>PC, ordinateur portable, tablette</td>
         <td>![system back on a pc or laptop](images/back-systemback-pc.png)</td>
         <td>
 <ul>
-<li>Optional in Desktop mode.
+<li>Facultatif en mode bureau.
 
     Not available in Tablet mode. See [Tablet](#Tablet).
 
@@ -66,8 +66,8 @@ Here are the primary form factors with the back button UI:
 
     Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
 
-<li>A software button in the title bar of the app.</li>
-<li>Back navigation within the app only. Does not support app-to-app navigation.</li></ul>        
+<li>Bouton logiciel dans la barre de titre de l’application.</li>
+<li>Navigation vers l’arrière au sein de l’application uniquement. Ne prend pas en charge la navigation entre les applications.</li></ul>        
         </td>
      </tr>
     <tr>
@@ -75,34 +75,34 @@ Here are the primary form factors with the back button UI:
         <td>![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
         <td>
 <ul>
-<li>Optional.</li>
-<li>Disabled by default. Must opt in to enable it.</li>
-<li>A software button in the title bar of the app.</li>
-<li>Back navigation within the app only. Does not support app-to-app navigation.</li></ul>        
+<li>Facultatif.</li>
+<li>Désactivé par défaut. Choisir pour l’activer.</li>
+<li>Bouton logiciel dans la barre de titre de l’application.</li>
+<li>Navigation vers l’arrière au sein de l’application uniquement. Ne prend pas en charge la navigation entre les applications.</li></ul>        
         </td>
      </tr>     
 <table>
 
 
-Here are some alternative input types that don't rely on a back button UI, but still provide the exact same functionality.
+Voici d’autres types d’entrée qui ne font pas appel à une interface utilisateur de bouton Précédent, mais qui néanmoins fournissent exactement les mêmes fonctionnalités.
 
 
 <table>
-<tr><td colspan="3">Input devices</td></tr>
-<tr><td>Keyboard</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Windows key + Backspace</td></tr>
-<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>Say, "Hey Cortana, go back"</td></tr>
+<tr><td colspan="3">Appareils d’entrée</td></tr>
+<tr><td>Clavier</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Touche Windows + Retour arrière</td></tr>
+<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>Dites « Hey Cortana, reviens en arrière »</td></tr>
 </table>
  
 
-When your app runs on a phone, tablet, or on a PC or laptop that has system back enabled, the system notifies your app when the back button is pressed. The user expects the back button to navigate to the previous location in the app's navigation history. It's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
+Lorsque votre application est exécutée sur un téléphone, une tablette, un PC ou un ordinateur portable sur lequel un retour système est activé, le système informe votre application lorsque l’utilisateur appuie sur le bouton Précédent. Lorsqu’il appuie sur le bouton Précédent, l’utilisateur s’attend à accéder à l’emplacement précédent dans l’historique de navigation de l’application. C’est à vous qu’il incombe de décider des actions de navigation à ajouter à l’historique de navigation et de la réponse à un appui sur le bouton Précédent.
 
 
-## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>How to enable system back navigation support
+## <span id="Enable_system_back_navigation_support"> </span> <span id="enable_system_back_navigation_support"> </span> <span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"> </span>Comment activer la prise en charge de la navigation vers l’arrière du système
 
 
-Apps must enable back navigation for all hardware and software system back buttons. Do this by registering a listener for the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event and defining a corresponding handler.
+Les applications doivent activer la navigation vers l’arrière pour tous les boutons Précédent des systèmes matériels et logiciels. Pour ce faire, vous devez inscrire un écouteur pour l’événement [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) et définir un gestionnaire correspondant.
 
-Here we register a global listener for the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event in the App.xaml code-behind file. You can register for this event in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
+Ici, nous inscrivons un écouteur global pour l’événement [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) dans le fichier code-behind App.xaml. Vous pouvez vous inscrire pour cet événement dans chaque page si vous souhaitez exclure des pages spécifiques de la navigation vers l’arrière, ou si vous souhaitez exécuter du code de niveau page avant d’afficher la page.
 
 ```CSharp
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
@@ -116,9 +116,9 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
     App_BackRequested;
 ```
 
-Here's the corresponding [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event handler that calls [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) on the root frame of the app.
+Voici le gestionnaire d’événements [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) correspondant qui appelle [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) dans l’image racine de l'application.
 
-This handler is invoked on a global back event. If the in-app back stack is empty, the system might navigate to the previous app in the app stack or to the Start screen. There is no app back stack in Desktop mode and the user stays in the app even when the in-app back stack is depleted.
+Ce gestionnaire est appelé sur un événement arrière global. Si la pile Back dans l’application est vide, le système peut naviguer jusqu’à l’application précédente dans la pile de l’application ou jusqu’à l’écran de démarrage. Il n’existe aucune pile Back in-app en mode bureau, et l’utilisateur reste dans l’application même lorsque la pile Back de l’application est épuisée.
 
 ```CSharp
 void App::App_BackRequested(
@@ -156,29 +156,29 @@ private void App_BackRequested(object sender,
     }
 }
 ```
-## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>How to enable the title bar back button
+## <span id="Enable_the_title_bar_back_button"> </span> <span id="enable_the_title_bar_back_button"> </span> <span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"> </span>Comment activer le bouton Précédent de la barre de titre
 
 
-Devices that support Desktop mode (typically PCs and laptops, but also some tablets) and have the setting enabled (**Settings &gt; System &gt; Tablet mode**), do not provide a global navigation bar with the system back button.
+Les appareils qui prennent en charge le mode bureau (en règle générale, les PC et ordinateurs portables, mais également certaines tablettes) et sur lesquels le paramètre est activé (**Paramètres &gt; Système &gt; Mode tablette**) ne fournissent pas de barre de navigation globale avec le bouton Précédent du système.
 
-In Desktop mode, every app runs in a window with a title bar. You can provide an alternative back button for your app that is displayed in this title bar.
+En mode bureau, chaque application s’exécute dans une fenêtre avec une barre de titre. Vous pouvez fournir un autre bouton Précédent pour votre application qui est affiché dans cette barre de titre.
 
-The title bar back button is only available in apps running on devices in Desktop mode, and only supports in-app navigation history—it does not support app-to-app navigation history.
+Le bouton Précédent de la barre de titre est uniquement disponible dans les applications qui s’exécutent sur des appareils en mode bureau et ne prend en charge que l’historique de navigation dans l’application. Il ne prend pas en charge l’historique de navigation entre applications.
 
-**Important**  The title bar back button is not displayed by default. You must opt in.
+**Important** Le bouton Précédent de la barre de titre n’est pas affiché par défaut. Vous devez le sélectionner.
 
  
 
 |                                                             |                                                        |
 |-------------------------------------------------------------|--------------------------------------------------------|
-| ![no system back in desktop mode](images/nav-noback-pc.png) | ![system back in desktop mode](images/nav-back-pc.png) |
-| Desktop mode, no back navigation.                           | Desktop mode, back navigation enabled.                 |
+| ![Aucun retour système en mode bureau](images/nav-noback-pc.png) | ![Retour système en mode bureau](images/nav-back-pc.png) |
+| Mode bureau, aucune navigation vers l’arrière.                           | Mode bureau, navigation vers l’arrière activée.                 |
 
  
 
-Override the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) event and set [**AppViewBackButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/dn986448) to [**Visible**](https://msdn.microsoft.com/library/windows/apps/dn986276) in the code-behind file for each page that you want to enable the title bar back button.
+Remplacez l’événement [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) et attribuez à [**AppViewBackButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/dn986448) la valeur [**Visible**](https://msdn.microsoft.com/library/windows/apps/dn986276) dans le fichier code-behind pour chaque page pour laquelle vous souhaitez activer le bouton Précédent de la barre de titre.
 
-For this example, we list each page in the back stack and enable the back button if the [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) property of the frame has a value of **true**.
+Pour cet exemple, nous répertorions chaque page de la pile Back et nous activons le bouton Précédent si la propriété [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) de l’image a la valeur **true**.
 
 ```ManagedCPlusPlus
 void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
@@ -238,9 +238,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-### Guidelines for custom back navigation behavior
+### Recommandations sur le comportement personnalisé de navigation vers l’arrière
 
-If you choose to provide your own back stack navigation, the experience should be consistent with other apps. We recommend that you follow the following patterns for navigation actions:
+Si vous choisissez de fournir votre propre navigation de pile Back, l’expérience doit être cohérente avec les autres applications. Nous vous recommandons de suivre les modèles d’actions de navigation suivants :
 
 <table>
 <colgroup>
@@ -249,50 +249,50 @@ If you choose to provide your own back stack navigation, the experience should b
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation action</th>
-<th align="left">Add to navigation history?</th>
+<th align="left">Action de navigation</th>
+<th align="left">Ajouter à l’historique de navigation ?</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Page to page, different peer groups</strong></p></td>
-<td align="left"><strong>Yes</strong><p>In this illustration, the user navigates from level 1 of the app to level 2, crossing peer groups, so the navigation is added to the navigation history.</p>
+<td align="left"><p><strong>Page à page, différents groupes d’homologues</strong></p></td>
+<td align="left"><strong>Oui</strong><p>Dans cette illustration, l’utilisateur navigue du niveau 1 de l’application vers le niveau 2, en traversant des groupes d’homologues. La navigation est donc ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
-<p>In the next illustration, the user navigates between two peer groups at the same level, again crossing peer groups, so the navigation is added to the navigation history.</p>
+<p>Dans l’illustration suivante, l’utilisateur navigue entre deux groupes d’homologues du même niveau. La navigation est donc ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Page to page, same peer group, no on-screen navigation element</strong></p>
-<p>The user navigates from one page to another with the same peer group. There is no navigation element that is always present (such as tabs/pivots or a docked navigation pane) that provides direct navigation to both pages.</p></td>
-<td align="left"><strong>Yes</strong><p>In the following illustration, the user navigates between two pages in the same peer group. The pages don't use tabs or a docked navigation pane, so the navigation is added to the navigation history.</p>
+<td align="left"><p><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong></p>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Aucun élément de navigation (par exemple les onglets/tableaux croisés dynamiques ou un volet de navigation ancré) fournissant une navigation directe vers les deux pages n’est toujours présent.</p></td>
+<td align="left"><strong>Oui</strong><p>Dans l’illustration suivante, l’utilisateur navigue entre deux pages dans le même groupe d’homologues. Comme les pages n’utilisent pas d’onglets ni de volet de navigation ancré, la navigation est ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Page to page, same peer group, with an on-screen navigation element</strong></p>
-<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element. For example, both pages use the same tabs/pivots element, or both pages appear in a docked navigation pane.</p></td>
-<td align="left"><strong>No</strong><p>When the user presses back, go back to the last page before the user navigated to the current peer group.</p>
+<td align="left"><p><strong>Page à page, même groupe d’homologues, avec un élément de navigation à l’écran</strong></p>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deux pages utilisent le même élément onglets/tableaux croisés dynamiques, ou elles s’affichent dans un volet de navigation ancré.</p></td>
+<td align="left"><strong>Non</strong><p>Lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Show a transient UI</strong><p>The app displays a pop-up or child window, such as a dialog, splash screen, or on-screen keyboard, or the app enters a special mode, such as multiple selection mode.</p></td>
-<td align="left"><strong>No</strong><p>When the user presses the back button, dismiss the transient UI (hide the on-screen keyboard, cancel the dialog, etc) and return to the page that spawned the transient UI.</p>
+<td align="left"><strong>Afficher une interface utilisateur temporaire</strong><p>L’application affiche une fenêtre indépendante ou une fenêtre enfant, comme une boîte de dialogue, un écran de démarrage ou un clavier visuel. Elle passe également en mode spécial, comme le mode de sélection multiple.</p></td>
+<td align="left"><strong>Non</strong><p>Lorsque l’utilisateur appuie sur le bouton Précédent, il ignore l’interface utilisateur temporaire (masque le clavier visuel, annule la boîte de dialogue, etc.) et retourne dans la page qui a généré l’interface utilisateur temporaire.</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>Enumerate items</strong><p>The app displays content for an on-screen item, such as the details for the selected item in master/details list.</p></td>
-<td align="left"><strong>No.</strong><p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
+<td align="left"><strong>Énumérer les éléments</strong><p>L’application affiche le contenu d’un élément visuel, tel que les détails de l’élément sélectionné dans la liste des éléments maîtres/détails.</p></td>
+<td align="left"><strong>Non.</strong><p>L’énumération des éléments est semblable à la navigation au sein d’un groupe d’homologues. Lorsque l’utilisateur appuie sur le bouton Précédent, il navigue vers la page qui a précédé la page actuelle qui comporte l’énumération d’éléments.</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
 </tbody>
 </table>
 
 
-### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>Resuming
+### <span id="Resuming"> </span> <span id="resuming"> </span> <span id="RESUMING"> </span>Reprise
 
-When the user switches to another app and returns to your app, we recommend returning to the last page in the navigation history.
+Lorsque l’utilisateur bascule vers une autre application et retourne vers votre application, nous recommandons de retourner à la dernière page de l’historique de navigation.
 
 
-\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[Cet article contient des informations propres aux applications UWP et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
 
 
@@ -301,4 +301,8 @@ When the user switches to another app and returns to your app, we recommend retu
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

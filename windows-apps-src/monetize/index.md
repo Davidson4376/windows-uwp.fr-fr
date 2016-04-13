@@ -1,30 +1,29 @@
 ---
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-Windows supports free apps, app trials (both time-based and feature-based), paid apps, and in-app products.
-Monetize your app
+description: Le SDK Windows, le SDK d’engagement et de monétisation de la Boutique Microsoft et le Windows Store fournissent de nombreuses fonctionnalités qui vous permettent de générer plus de revenus avec vos applications et de conquérir des clients en engageant les utilisateurs.
+title: Monétiser votre application
 ---
 
-# Monetize your app
+# Monétiser votre application et engager les clients
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Windows supports free apps, app trials (both time-based and feature-based), paid apps, and in-app products. Your Windows app can use these features to let your customers try your app for free and choose what works for them. The topics in this section show you how to build these features into your app.
+Le SDK Windows, le SDK d’engagement et de monétisation de la Boutique Microsoft et le Windows Store fournissent des fonctionnalités qui vous permettent de générer plus de revenus avec vos applications et de conquérir des clients en suscitant l’intérêt des utilisateurs. Les rubriques de cette section indiquent comment générer ces fonctionnalités dans votre application.
 
-For details about the fees charged by the Windows Store and how you get paid for the money your app makes, see [Getting paid](https://msdn.microsoft.com/library/windows/apps/mt148536).
+Pour plus d’informations sur les frais facturés par le Windows Store et la façon dont vous recevez l’argent généré par votre application, voir [Rémunération](https://msdn.microsoft.com/library/windows/apps/mt148536).
 
-## In this section
+## Dans cette section
 
 
-| Topic                                                                                                       | Description                 |
+| Rubrique                                                                                                       | Description                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Exclude or limit features in a trial version](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app. |
-| [Enable in-app product purchases](enable-in-app-product-purchases.md)                                       | Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.    |
-| [Add ads to apps with Microsoft Advertising](add-ads-to-apps-with-microsoft-advertising.md)      | Make more money from your Windows apps by including video and banner ads from Microsoft Advertising. The ads show in Windows apps for PCs, tablets, and phones. You can monitor your ad performance in real time by using the Windows Dev Center dashboard.   |
-| [Use ad mediation to maximize revenue](use-ad-mediation-to-maximize-revenue.md)                           | Microsoft provides support for ad mediation, which lets you optimize your in-app advertising revenue by mediating banner ad requests from multiple ad networks. Different ad networks may have their own strengths, with some having a higher cost per thousand views (eCPM) or higher fill rate (percentage of ads served when your app makes a request) in certain markets than others. With a single ad network, you may end up with unfilled ad requests, causing you to lose potential revenue. Ad mediation helps you maximize your ad monetization by making sure you are always showing a live ad.  |
-| [Use Windows Store services](using-windows-store-services.md)                                    | The Windows Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization's Windows Dev Center account.    |
+| [Exclure ou limiter des fonctionnalités de la version d’évaluation](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation à l’aide des API du SDK Windows. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client. |
+| [Activer les achats de produits dans l’application](enable-in-app-product-purchases.md)                                       | Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application à l’aide des API du SDK Windows.    |
+| [Monétiser votre application et engager les clients avec le SDK d’engagement et de monétisation de la Boutique Microsoft](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)      | Le SDK d’engagement et de monétisation de la Boutique Microsoft fournit des bibliothèques et des outils que vous pouvez utiliser pour ajouter des fonctionnalités à vos applications qui vous aident à générer plus de revenus et conquérir des clients, comme l’affichage d’annonces publicitaires dans vos applications et l’exécution d’expériences avec un test A/B.   |
+| [Utiliser les services du Windows Store](using-windows-store-services.md)                                    | Le Windows Store expose plusieurs services que vous pouvez appeler par le biais d’API REST afin d’accéder par programme à certains types de données pour les applications qui sont enregistrées pour votre compte personnel ou compte d’organisation du Centre de développement Windows.    |
 
- 
 
- 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
+
+

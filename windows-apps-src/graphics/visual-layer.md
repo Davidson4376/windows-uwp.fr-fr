@@ -1,7 +1,7 @@
 ---
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-title: Couche visuelle
-description: L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX).
+Couche visuelle
+L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX).
 ---
 # Couche visuelle
 
@@ -51,7 +51,7 @@ En plus de créer depuis le début une arborescence d’éléments visuels, l’
 
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -70,4 +70,8 @@ Cet article s’adresse aux développeurs de Windows 10 qui créent des applica
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,8 +1,8 @@
 ---
-Description: Cet article présente les quatre options de notification&\#8212;locale, planifiée, périodique et Push&\#8212;disponibles pour remettre des mises à jour de vignette et de badge, ainsi que du contenu de notification toast.
-title: Choisir une méthode de remise de notification
+Cet article présente les quatre options de notification&\#8212;locale, planifiée, périodique et Push&\#8212;disponibles pour remettre des mises à jour de vignette et de badge, ainsi que du contenu de notification toast.
+Choisir une méthode de remise de notification
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
-label: Choisir une méthode de remise de notification
+Choisir une méthode de remise de notification
 template: detail.hbs
 ---
 
@@ -147,11 +147,11 @@ Pour plus d’informations, voir :
 -   [Exemples de code de notification de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Rubriques connexes
+## <span id="related_topics"> </span>Rubriques connexes
 
 
 * [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md)
@@ -168,4 +168,8 @@ Cet article s’adresse aux développeurs de Windows 10 qui créent des applica
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

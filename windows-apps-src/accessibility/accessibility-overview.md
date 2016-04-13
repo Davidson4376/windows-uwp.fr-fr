@@ -1,99 +1,99 @@
 ---
-Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
-title: Accessibility overview
+Description: Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP).
+title: Vue d’ensemble de l’accessibilité
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 label: Accessibility
 template: detail.hbs
 ---
 
-Accessibility overview
+Vue d’ensemble de l’accessibilité
 =================================================================================
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
+Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP).
 
-<span id="Accessibility_and_your_app"></span><span id="accessibility_and_your_app"></span><span id="ACCESSIBILITY_AND_YOUR_APP"></span>Accessibility and your app
+<span id="Accessibility_and_your_app"> </span> <span id="accessibility_and_your_app"> </span> <span id="ACCESSIBILITY_AND_YOUR_APP"> </span>Accessibilité et votre application
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-There are many possible disabilities or impairments, including limitations in mobility, vision, color perception, hearing, speech, cognition, and literacy. However, you can address most requirements by following the guidelines offered here. This means providing:
+Il existe de nombreuses invalidités et handicaps, notamment des limitations relatives à la mobilité, la vision, la perception des couleurs, l’audition, la parole, la connaissance et l’alphabétisation. Toutefois, vous pouvez répondre à la plupart des besoins en suivant les recommandations fournies dans cette rubrique. Vous devez notamment offrir :
 
--   Support for keyboard interactions and screen readers.
--   Support for user customization, such as font, zoom setting (magnification), color, and high-contrast settings.
--   Alternatives or supplements for parts of your UI.
+-   la prise en charge d’interactions au clavier et de lecteurs d’écran ;
+-   la prise en charge de la personnalisation utilisateur, y compris les paramètres de police, de zoom (loupe), de couleur et de contraste élevé ;
+-   des alternatives ou suppléments pour des parties de votre interface utilisateur.
 
-Controls for XAML provide built-in keyboard support and support for assistive technologies such as screen readers, which take advantage of accessibility frameworks that already support UWP apps, HTML, and other UI technologies. This built-in support enables a basic level of accessibility that you can customize with very little work, by setting just a handful of properties. If you are creating your own custom XAML components and controls, you can also add similar support to those controls by using the concept of an *automation peer*.
+Les contrôles XAML fournissent une prise en charge intégrée du clavier et prennent en charge les lecteurs d’écran, qui tirent parti d’infrastructures d’accessibilité qui prennent déjà en charge les applications UWP, HTML et d’autres technologies d’interface utilisateur. Cette prise en charge intégrée offre un niveau d’accessibilité de base que vous pouvez personnaliser avec très peu de travail, en définissant uniquement quelques propriétés. Si vous créez vos propres contrôles et composants XAML personnalisés, vous pouvez également ajouter une prise en charge similaire à ces contrôles en faisant appel au concept d’*homologue d’automation*.
 
-In addition, data binding, style, and template features make it easy to implement support for dynamic changes to display settings and text for alternative UIs.
+De plus, les fonctionnalités de liaison de données, de style et de modèle simplifient l’implémentation de la prise en charge des modifications dynamiques des paramètres d’affichage et du texte pour d’autres interfaces utilisateur.
 
-<span id="UI_Automation"></span><span id="ui_automation"></span><span id="UI_AUTOMATION"></span>UI Automation
+<span id="UI_Automation"> </span> <span id="ui_automation"> </span> <span id="UI_AUTOMATION"> </span>UI Automation
 -------------------------------------------------------------------------------------------------------------
 
-Accessibility support comes primarily from the integrated support for the Microsoft UI Automation framework. That support is provided through base classes and the built-in behavior of the class implementation for control types, and an interface representation of the UI Automation provider API. Each control class uses the UI Automation concepts of automation peers and automation patterns that report the control's role and content to UI Automation clients. The app is treated as a top-level window by UI Automation, and through the UI Automation framework all the accessibility-relevant content within that app window is available to a UI Automation client. For more info about UI Automation, see [UI Automation Overview](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
+La prise en charge de l’accessibilité provient principalement de la prise en charge intégrée de l’infrastructure Microsoft UI Automation. Cette prise en charge est fournie via des classes de base et le comportement intégré de l’implémentation de classe pour les types de contrôle, ainsi que via une représentation d’interface de l’API du fournisseur UI Automation. Chaque classe de contrôle utilise les concepts UI Automation des homologues d’automation et des modèles d’automation pour signaler le rôle et le contenu des contrôles aux clients UI Automation. L’application est traitée en tant que fenêtre de niveau supérieur par UI Automation. Via l’infrastructure UI Automation, tout le contenu relatif à l’accessibilité présent dans cette fenêtre d’application est disponible pour un client UI Automation. Pour plus d’informations sur UI Automation, voir [Vue d’ensemble d’UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
 
-<span id="Assistive_technology"></span><span id="assistive_technology"></span><span id="ASSISTIVE_TECHNOLOGY"></span>Assistive technology
+<span id="Assistive_technology"> </span> <span id="assistive_technology"> </span> <span id="ASSISTIVE_TECHNOLOGY"> </span>Technologie d’assistance
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-Many user accessibility needs are met by assistive technology products installed by the user or by tools and settings provided by the operating system. This includes functionality such as screen readers, screen magnification, and high-contrast settings.
+De nombreux besoins d’accessibilité des utilisateurs sont satisfaits par des produits de technologies d’assistance installés par l’utilisateur ou par des outils et paramètres fournis par le système d’exploitation. Parmi les fonctionnalités proposées, citons les lecteurs d’écran, le grossissement de l’écran et les paramètres de contraste élevé.
 
-Assistive technology products include a wide variety of software and hardware. These products work through the standard keyboard interface and accessibility frameworks that report information about the content and structure of a UI to screen readers and other assistive technologies. Examples of assistive technology products include:
+Les produits de technologie d’assistance englobent une large gamme de logiciels et de matériel. Ces produits fonctionnent par le biais des infrastructures d’accessibilité et d’interface de clavier standard qui signalent les informations relatives au contenu et à la structure d’une interface utilisateur aux lecteurs d’écran et autres technologies d’assistance. Voici quelques exemples de produits de technologie d’assistance :
 
--   The On-Screen Keyboard, which enables people to use a pointer in place of a keyboard to type text.
--   Voice-recognition software, which converts spoken words into typed text.
--   Screen readers, which convert text into spoken words or other forms such as Braille.
--   The Narrator screen reader, which is specifically part of Windows. Narrator has a touch mode, which can perform screen reading tasks by processing touch gestures, for when there is no keyboard available.
--   Programs or settings that adjust the display or areas of it, for example high contrast themes, dots per inch (dpi) settings of the display, or the Magnifier tool.
+-   clavier visuel, qui permet d’utiliser un pointeur à la place d’un clavier pour la saisie d’un texte ;
+-   logiciels de reconnaissance vocale, qui convertissent la parole en texte tapé ;
+-   lecteurs d’écran, qui convertissent le texte en parole ou autres formes telles que le Braille ;
+-   lecteur d’écran du Narrateur, qui fait spécifiquement partie de Windows (le Narrateur dispose d’un mode tactile, qui permet de lire sur l’écran en exécutant des mouvements tactiles quand aucun clavier n’est disponible) ;
+-   programmes ou paramètres qui ajustent l’affichage ou certaines de ses zones, par exemple les thèmes à contraste élevé, les valeurs ppp de l’affichage ou l’outil Loupe.
 
-Apps that have good keyboard and screen reader support usually work well with various assistive technology products. In many cases, a UWP app works with these products without additional modification of information or structure. However, you may want to modify some settings for optimal accessibility experience or to implement additional support.
+Les applications qui disposent d’une bonne prise en charge des claviers et des lecteurs d’écran fonctionnent généralement bien avec différents produits de technologies d’assistance. Dans de nombreux cas, une application UWP fonctionne avec ces produits sans modification supplémentaire d’informations ou de structure. Toutefois, vous souhaiterez peut-être modifier certains paramètres pour une expérience d’accessibilité optimale ou une prise en charge supplémentaire.
 
-Some of the options that you can use for testing basic accessibility scenarios with assistive technologies are listed in [Accessibility testing](accessibility-testing.md).
+Certaines des options à votre disposition pour tester des scénarios d’accessibilité de base avec les technologies d’assistance sont répertoriées dans [Test d’accessibilité](accessibility-testing.md).
 
-<span id="Screen_reader_support_and_basic_accessibility_information"></span><span id="screen_reader_support_and_basic_accessibility_information"></span><span id="SCREEN_READER_SUPPORT_AND_BASIC_ACCESSIBILITY_INFORMATION"></span>Screen reader support and basic accessibility information
+<span id="Screen_reader_support_and_basic_accessibility_information"> </span> <span id="screen_reader_support_and_basic_accessibility_information"> </span> <span id="SCREEN_READER_SUPPORT_AND_BASIC_ACCESSIBILITY_INFORMATION"> </span>Prise en charge de lecteur d’écran et informations d’accessibilité de base
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Screen readers provide access to the text in an app by rendering it in some other format, such as spoken language or Braille output. The exact behavior of a screen reader depends on the software and on the user's configuration of it.
+Les lecteurs d’écran permettent d’accéder au texte d’une application en effectuant un rendu de celui-ci sous une autre forme, telle qu’une sortie en langue parlée ou en Braille. Le comportement exact d’un lecteur d’écran dépend du logiciel et de la façon dont l’utilisateur l’a configuré.
 
-For example, some screen readers read the entire app UI when the user starts or switches to the app being viewed, which enables the user to receive all of the available informational content before attempting to navigate it. Some screen readers also read the text associated with an individual control when it receives focus during tab navigation. This enables users to orient themselves as they navigate among the input controls of an application. Narrator is an example of a screen reader that provides both behaviors, depending on user choice.
+Par exemple, certains lecteurs d’écran lisent la totalité de l’interface utilisateur de l’application quand l’utilisateur démarre ou bascule vers l’application affichée. L’utilisateur peut ainsi recevoir tout le contenu d’information disponible avant de commencer la navigation. Certains lecteurs d’écran lisent aussi le texte associé à un contrôle individuel lorsqu’il reçoit le focus pendant la navigation par onglets. Cela permet aux utilisateurs de s’orienter à mesure qu’ils naviguent parmi les contrôles d’entrée d’une application. Le Narrateur est un exemple de lecteur d’écran qui fournit ces deux comportements, en fonction du choix de l’utilisateur.
 
-The most important information that a screen reader or any other assistive technology needs in order to help users understand or navigate an app is an *accessible name* for the element parts of the app. In many cases, a control or element already has an accessible name that is calculated from other property values that you have otherwise provided. The most common case in which you can use an already-calculated name is with an element that supports and displays inner text. For other elements, you sometimes need to account for other ways to provide an accessible name by following best practices for element structure. And sometimes you need to provide a name that is explicitly intended as the accessible name for app accessibility. For a listing of how many of these calculated values work in common UI elements, and for more info about accessible names in general, see [Basic accessibility information](basic-accessibility-information.md).
+L’information la plus importante dont un lecteur d’écran ou une autre technologie d’assistance a besoin pour aider les utilisateurs à comprendre une application ou à naviguer dans une application est un *nom accessible* pour les parties d’élément de l’application. Dans de nombreux cas, un contrôle ou élément possède déjà un nom accessible calculé à partir d’autres valeurs de propriété que vous avez fournies par un autre moyen. Le cas le plus courant dans lequel vous pouvez utiliser un nom déjà calculé concerne un élément qui prend en charge et affiche du texte interne. Pour les autres éléments, vous devez parfois prendre en compte d’autres manières de fournir un nom accessible en appliquant les meilleures pratiques en matière de structure d’élément. Parfois, vous devez fournir un nom spécifié de manière explicite comme nom accessible aux fins d’accessibilité de l’application. Pour obtenir une liste des valeurs calculées qui fonctionnent dans les éléments d’interface utilisateur courants et pour plus d’informations sur les noms accessibles en général, voir [Informations d’accessibilité de base](basic-accessibility-information.md).
 
-There are several other automation properties available (including the keyboard properties described in the next section). However, not all screen readers support all automation properties. In general, you should set all appropriate automation properties and test to provide the widest possible support for screen readers.
+Plusieurs autres propriétés d’automation sont disponibles (notamment les propriétés de clavier décrites dans la section suivante). Toutefois, tous les lecteurs d’écran ne prennent pas en charge toutes les propriétés d’automation. En général, vous devez définir toutes les propriétés d’automation appropriées et les tester pour fournir la prise en charge la plus large possible pour les lecteurs d’écran.
 
-<span id="Keyboard_support"></span><span id="keyboard_support"></span><span id="KEYBOARD_SUPPORT"></span>Keyboard support
+<span id="Keyboard_support"> </span> <span id="keyboard_support"> </span> <span id="KEYBOARD_SUPPORT"> </span>Prise en charge du clavier
 -------------------------------------------------------------------------------------------------------------------------
 
-To provide good keyboard support, you must ensure that every part of your application can be used with a keyboard. If your app uses mostly the standard controls and doesn't use any custom controls, you are most of the way there already. The basic XAML control model provides built-in keyboard support including tab navigation, text input, and control-specific support. The elements that serve as layout containers (such as panels) use the layout order to establish a default tab order. That order is often the correct tab order to use for an accessible representation of the UI. If you use [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) controls to display data, they provide built-in arrow-key navigation. Or if you use a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) control, it already handles the Spacebar or Enter keys for button activation.
+Pour fournir une bonne prise en charge du clavier, vous devez vous assurer que chaque partie de votre application peut être utilisée avec un clavier. Si votre application utilise principalement les contrôles standard et n’utilise aucun contrôle personnalisé, vous n’aurez pas beaucoup de tâches supplémentaires à effectuer. Le modèle de contrôle de base XAML fournit une prise en charge intégrée du clavier incluant la navigation par tabulation, la saisie de texte et la prise en charge spécifique aux contrôles. Les éléments qui servent de conteneurs de disposition (tels que les panneaux) utilisent l’ordre de disposition pour établir un ordre de tabulation par défaut. Cet ordre est souvent l’ordre de tabulation correct à utiliser pour une représentation accessible de l’interface utilisateur. Si vous utilisez les contrôles [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) pour afficher des données, ils fournissent une navigation avec les touches de direction intégrée. Si vous utilisez un contrôle [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), il gère déjà les touches Espace ou Entrée pour l’activation du bouton.
 
-For more info about all the aspects of keyboard support, including tab order and key-based activation or navigation, see [Keyboard accessibility](keyboard-accessibility.md).
+Pour plus d’informations sur tous les aspects de la prise en charge du clavier, y compris sur l’ordre de tabulation et la navigation ou l’activation basée sur les touches, voir [Accessibilité du clavier](keyboard-accessibility.md).
 
-<span id="Media_and_captioning"></span><span id="media_and_captioning"></span><span id="MEDIA_AND_CAPTIONING"></span>Media and captioning
+<span id="Media_and_captioning"> </span> <span id="media_and_captioning"> </span> <span id="MEDIA_AND_CAPTIONING"> </span>Média et sous-titrage
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-You typically display audiovisual media through a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) object. You can use **MediaElement** APIs to control the media playback. For accessibility purposes, provide controls that enable users to play, pause, and stop the media as needed. Sometimes, media includes additional components that are intended for accessibility, such as captioning or alternative audio tracks that include narrative descriptions.
+Vous affichez généralement le contenu multimédia audiovisuel par l’intermédiaire d’un objet [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926). Vous pouvez utiliser les API **MediaElement** pour contrôler la lecture de média. À des fins d’accessibilité, fournissez des contrôles qui permettent aux utilisateurs de lire, de mettre en pause et d’arrêter le contenu multimédia selon leurs besoins. Parfois, le contenu multimédia inclut des composants supplémentaires destinés à l’accessibilité, tels que les sous-titres ou les pistes audio de substitution qui comportent des descriptions narratives.
 
-<span id="Accessible_text"></span><span id="accessible_text"></span><span id="ACCESSIBLE_TEXT"></span>Accessible text
+<span id="Accessible_text"> </span> <span id="accessible_text"> </span> <span id="ACCESSIBLE_TEXT"> </span>Texte accessible
 ---------------------------------------------------------------------------------------------------------------------
 
-Three main aspects of text are relevant to accessibility:
+Trois principaux aspects du texte sont pertinents en ce qui concerne l’accessibilité :
 
--   Tools must determine whether the text is to be read as part of a tab-sequence traversal or only as part of an overall document representation. You can help control this determination by choosing the appropriate element for displaying the text or by adjusting properties of those text elements. Each text element has a specific purpose, and that purpose often has a corresponding UI Automation role. Using the wrong element can result in reporting the wrong role to UI Automation and creating a confusing experience for an assistive technology user.
--   Many users have sight limitations that make it difficult for them to read text unless it has adequate contrast against the background. How this impacts the user is not intuitive for app designers who do not have that sight limitation. For example, for color-blind users, poor color choices in the design can prevent some users from being able to read the text. Accessibility recommendations that were originally made for web content define standards for contrast that can avoid these problems in apps as well. For more info, see [Accessible text requirements](accessible-text-requirements.md).
--   Many users have difficulty reading text that is simply too small. You can prevent this issue by making the text in your app's UI reasonably large in the first place. However, that's challenging for apps that display large quantities of text, or text interspersed with other visual elements. In such cases, make sure that the app correctly interacts with the system features that can scale up the display, so that any text in apps scales up along with it. (Some users change dpi values as an accessibility option. That option is available from **Make things on the screen larger** in **Ease of Access**, which redirects to a **Control Panel** UI for **Appearance and Personalization** / **Display**.)
+-   Des outils doivent déterminer si le texte doit être lu dans le cadre d’une traversée de séquence de tabulation ou uniquement dans le cadre d’une représentation de document globale. Vous pouvez aider à contrôler cette détermination en choisissant l’élément approprié pour l’affichage du texte ou en ajustant les propriétés de ces éléments de texte. Chaque élément de texte disponible remplit une fonction donnée, souvent associée à un rôle UI Automation particulier. L’utilisation de l’élément incorrect peut entraîner le signalement du rôle incorrect à UI Automation et la création d’une expérience confuse pour un utilisateur de technologie d’assistance.
+-   De nombreux utilisateurs souffrent de limitations visuelles qui font que le texte est difficile à lire en cas d’insuffisance du contraste par rapport à l’arrière-plan. L’impact sur l’utilisateur est délicat à évaluer pour un concepteur d’application qui ne souffre pas de la même limitation visuelle. Par exemple, un choix des couleurs inapproprié lors de la conception peut empêcher certains utilisateurs daltoniens de pouvoir lire le texte. Les recommandations en matière d’accessibilité effectuées initialement pour le contenu Web définissent des normes de contraste qui peuvent éviter ces problèmes également dans les applications. Pour plus d’informations, consultez la rubrique [Exigences de texte accessible](accessible-text-requirements.md).
+-   De nombreux utilisateurs éprouvent des difficultés à lire du texte trop petit. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que le texte de l’interface utilisateur de votre application soit suffisamment grand en premier lieu. Toutefois, ceci est difficile avec les applications qui affichent une grande quantité de texte ou du texte combiné à d’autres éléments visuels. Dans les cas de ce type, assurez-vous que l’application interagit correctement avec les fonctionnalités système qui peuvent agrandir l’affichage ainsi que le texte qu’elle contient. (Certains utilisateurs modifient les valeurs ppp comme option d’accessibilité. Cette option est disponible dans **Agrandir les éléments affichés à l’écran** dans **Options d’ergonomie**, qui redirige vers une interface utilisateur du **Panneau de configuration** pour **Apparence et personnalisation** / **Affichage**.)
 
-<span id="Supporting_high-contrast_themes"></span><span id="supporting_high-contrast_themes"></span><span id="SUPPORTING_HIGH-CONTRAST_THEMES"></span>Supporting high-contrast themes
+<span id="Supporting_high-contrast_themes"> </span> <span id="supporting_high-contrast_themes"> </span> <span id="SUPPORTING_HIGH-CONTRAST_THEMES"> </span>Prise en charge des thèmes à contraste élevé
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-UI controls use a visual representation that is defined as part of a XAML resource dictionary of themes. One or more of these themes is specifically used when the system is set for high contrast. When the user switches to high contrast, by looking up the appropriate theme from a resource dictionary dynamically, all your UI controls will use an appropriate high-contrast theme too. Just make sure that you haven't disabled the themes by specifying an explicit style or using another styling technique that prevents the high-contrast themes from loading and overriding your style changes. For more info, see [High-contrast themes](high-contrast-themes.md).
+Les contrôles d’interface utilisateur utilisent une représentation visuelle définie dans le cadre d’un dictionnaire de ressources XAML de thèmes. Un ou plusieurs de ces thèmes sont spécifiquement utilisés lorsque le système est configuré en mode de contraste élevé. Lorsque l’utilisateur passe en mode de contraste élevé en recherchant dynamiquement le thème approprié dans un dictionnaire de ressources, tous vos contrôles d’interface utilisateur utilisent aussi un thème à contraste élevé approprié. Assurez-vous simplement de ne pas avoir désactivé les thèmes en spécifiant un style explicite ou en utilisant une autre technique de style qui empêche les thèmes à contraste élevé de se charger et de remplacer vos modifications de style. Pour plus d’informations, voir [Thèmes à contraste élevé](high-contrast-themes.md).
 
-<span id="Design_for_alternative_UI"></span><span id="design_for_alternative_ui"></span><span id="DESIGN_FOR_ALTERNATIVE_UI"></span>Design for alternative UI
+<span id="Design_for_alternative_UI"> </span> <span id="design_for_alternative_ui"> </span> <span id="DESIGN_FOR_ALTERNATIVE_UI"> </span>Conception d’une autre interface utilisateur
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-When you design your apps, consider how they may be used by people with limited mobility, vision, and hearing. Because assistive technology products make extensive use of standard UI, it is particularly important to provide good keyboard and screen-reader support even if you make no other adjustments for accessibility.
+Quand vous concevez vos applications, demandez-vous comment elles peuvent être utilisées par les personnes à mobilité réduite, malvoyantes ou malentendantes. Étant donné que les produits de technologies d’assistance utilisent fréquemment l’interface utilisateur standard, il est particulièrement important de fournir une bonne prise en charge des claviers et des lecteurs d’écran, même si vous n’effectuez aucun autre réglage relatif à l’accessibilité.
 
-In many cases, you can convey essential information by using multiple techniques to widen your audience. For example, you can highlight information using both icon and color information to help users who are color blind, and you can display visual alerts along with sound effects to help users who are hearing impaired.
+Dans de nombreux cas, plusieurs techniques permettent de transmettre les informations essentielles afin d’élargir votre audience. Par exemple, vous pouvez mettre en surbrillance des informations à l’aide d’informations sur les icônes et sur les couleurs pour aider les utilisateurs qui ne distinguent pas les couleurs, et vous pouvez afficher des alertes visuelles avec des effets sonores pour aider les utilisateurs qui sont malentendants.
 
-If necessary, you can provide alternative, accessible user interface elements that completely remove nonessential elements and animations, and provide other simplifications to streamline the user experience. The following code example demonstrates how to display one [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) instance in place of another depending on a user setting.
+Si nécessaire, vous pouvez fournir d’autres éléments d’interface utilisateur accessibles qui suppriment totalement les éléments et les animations non essentiels, et fournir d’autres simplifications pour rationaliser l’expérience utilisateur. L’exemple de code suivant montre comment afficher une instance de l’élément [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) à la place d’une autre en fonction d’un paramètre utilisateur.
 
 <span codelanguage="XAML"></span>
 <table>
@@ -110,7 +110,7 @@ If necessary, you can provide alternative, accessible user interface elements th
 <td align="left"><pre><code>&lt;StackPanel x:Name=&quot;LayoutRoot&quot; Background=&quot;White&quot;&gt;
 
   &lt;CheckBox x:Name=&quot;ShowAccessibleUICheckBox&quot; Click=&quot;ShowAccessibleUICheckBox_Click&quot;&gt;
-    Show Accessible UI
+    Afficher l’interface utilisateur accessible
   &lt;/CheckBox&gt;
 
   &lt;UserControl x:Name=&quot;ContentBlock&quot;&gt;
@@ -175,33 +175,37 @@ End Sub</code></pre></td>
 </tbody>
 </table>
 
-<span id="Verification_and_publishing"></span><span id="verification_and_publishing"></span><span id="VERIFICATION_AND_PUBLISHING"></span>Verification and publishing
+<span id="Verification_and_publishing"> </span> <span id="verification_and_publishing"> </span> <span id="VERIFICATION_AND_PUBLISHING"> </span>Vérification et publication
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-For more info about accessibility declarations and publishing your app, see [Accessibility in the Store](accessibility-in-the-store.md).
+Pour plus d’informations sur les déclarations d’accessibilité et la publication de votre application, consultez la rubrique [Accessibilité dans le Windows Store](accessibility-in-the-store.md).
 
-**Note**  Declaring the app as accessible is only relevant to the Windows Store.
+**Remarque** Déclarer l’application comme accessible n’est pertinent que pour le Windows Store.
 
-<span id="Assistive_technology_support_in_custom_controls"></span><span id="assistive_technology_support_in_custom_controls"></span><span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_CUSTOM_CONTROLS"></span>Assistive technology support in custom controls
+<span id="Assistive_technology_support_in_custom_controls"> </span> <span id="assistive_technology_support_in_custom_controls"> </span> <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_CUSTOM_CONTROLS"> </span>Prise en charge de la technologie d’assistance dans des contrôles personnalisés
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-When you create a custom control, we recommend that you also implement or extend one or more [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) subclasses to provide accessibility support. In some cases, so long as you use the same peer class as was used by the base control class, the automation support for your derived class is adequate at a basic level. However, you should test this, and implementing a peer is still recommended as a best practice so that the peer can correctly report the class name of your new control class. Implementing a custom automation peer has a few steps involved. For more info, see [Custom automation peers](custom-automation-peers.md).
+Lorsque vous créez un contrôle personnalisé, nous vous recommandons de mettre en œuvre ou de développer également une ou plusieurs sous-classes [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) pour fournir une prise en charge de l’accessibilité. Dans certains cas, tant que vous utilisez la même classe homologue que celle utilisée par la classe de contrôle de base, la prise en charge de l’automation pour votre classe dérivée est adéquate à un niveau de base. Cependant, nous vous conseillons de tester cette configuration. L’implémentation d’un homologue est toujours recommandée comme meilleure pratique, l’homologue pouvant correctement signaler le nom de la classe de votre nouveau contrôle. Plusieurs étapes sont nécessaires pour implémenter un homologue d’automatisation personnalisé. Pour plus d’informations, voir [Homologues d’automatisation personnalisés](custom-automation-peers.md).
 
-<span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"></span><span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"></span><span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"></span>Assistive technology support in apps that support XAML / Microsoft DirectX interop
+<span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"> </span> <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"> </span> <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"> </span>Prise en charge de la technologie d’assistance dans les applications qui gèrent l’interopérabilité entre XAML et Microsoft DirectX
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) or [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](http://go.microsoft.com/fwlink/p/?LinkID=309155) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
+Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisateur XAML (à l’aide de la classe [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) ou [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) n’est pas accessible. L’[exemple XAML SwapChainPanel DirectX interop](http://go.microsoft.com/fwlink/p/?LinkID=309155) montre comment créer des homologues UI Automation pour le contenu DirectX hébergé. Cette technique permet de rendre le contenu hébergé accessible via UI Automation.
 
-Related topics
+<span id="related_topics"> </span>Rubriques connexes
 -----------------------------------------------
 
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
-* [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Concevoir des applications pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
  
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

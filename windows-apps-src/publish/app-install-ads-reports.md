@@ -1,65 +1,69 @@
 ---
-title: App install ads report
+Rapport de publicité sur l’installation d’applications
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 
 ---
 
-# App install ads report
+# Rapport de publicité sur l’installation d’applications
 
-There are two ways to get to the **App install ads reports** page in Dev Center:
+Il existe deux façons d’accéder à la page des **Rapports de publicité sur l’installation d’applications** dans le Centre de développement :
 
--   From the left navigation menu on your app's page, click **Analytics** &gt; **App install ads**.
--   From the left navigation menu on your app's page, click **Monetization** &gt; **Promote your app**, and then click a campaign's **Report** link.
+-   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Analyse** &gt; **Publicités d’installation d’application**.
+-   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Monétisation** &gt; **Promouvoir votre application**, puis sur le lien **Rapport** d’une campagne.
 
-Here you'll see two sections: **Ad performance** and **Account billing history**.
+Vous accédez à deux sections : **Performance de l’annonce** et **Historique de facturation du compte**.
 
-## Ad performance
+## Performance de l’annonce
 
-Here, performance metrics are displayed as lines plotted on a graph, with the selected metric on the y-axis and time on the x-axis. The default report shows Impressions. Click the tab headers to view data for other performance metrics. The metrics tracked here are:
+Ici, les métriques de performances sont affichées sous forme de lignes tracées sur un graphique, avec la métrique sélectionnée sur l’axe y et l’heure de l’axe x. Le rapport par défaut affiche les expositions. Cliquez sur les en-têtes d’onglet pour afficher les données des autres mesures de performances. Les métriques suivies ici sont les suivantes :
 
--   **Impressions**: The number of times your ad has been shown.
--   **Clicks**: The number of times someone clicked on your ad.
--   **Installs**: The number of times someone clicked on your ad and then installed your app. See below for more information on install tracking.
+-   **Expositions** : nombre de fois où votre publicité a été vue.
+-   **Clics** : nombre de fois où quelqu’un a cliqué sur votre publicité.
+-   **Installations** : nombre de fois où quelqu’un a cliqué sur votre publicité, puis installé votre application. Pour plus d’informations sur le suivi des installations, voir ci-dessous.
 
-You can display performance data for up to four different ad campaigns at a time. Click **More campaigns** to choose which campaigns to display. You can also click the minus symbol by a displayed campaign to remove it.
+Vous pouvez afficher des données de performances pour quatre campagnes de publicité différentes à la fois. Cliquez sur **Plus de campagnes** pour choisir les campagnes à afficher. Vous pouvez également cliquer sur le symbole moins à côté d’une campagne affichée pour la supprimer.
 
-### What is install tracking?
+### Qu’est-ce que le suivi d’installation ?
 
-Running an install ad campaign through **Promote your app** on Dev Center provides much-needed exposure for developers trying to advertise their apps. Ad impressions are shown to users who are most likely to be interested in the app, and the users click on the ad and install the app from the Store. Until today, it was hard to distinguish between installs that were the result of an ad campaign versus installs that came from other sources.
+L’exécution d’une campagne de publicité d’installation au moyen de **Promouvoir votre application** dans le Centre de développement offre aux développeurs qui tentent de promouvoir leurs applications une exposition dont ils ont grandement besoin. Des expositions publicitaires sont proposées dans l’application aux utilisateurs les plus susceptibles d’être intéressés, et les utilisateurs cliquent sur la publicité et installent l’application à partir du Windows Store. Jusqu’à aujourd’hui, il était difficile de distinguer les installations provenant d’une campagne de publicité et celles provenant d’autres sources.
 
-We have now enabled Install reports for app install campaigns that tell developers how many installs they have earned by running the ad campaign. This only represents downloads that are a direct outcome of the ad campaign, and does not include downloads from other sources.
+Nous avons maintenant activé les rapports d’installation pour les campagnes d’installation d’application qui indiquent aux développeurs le nombre d’installations généré par la campagne de publicité. Il s’agit uniquement des téléchargements qui sont une source directe de revenus dans le cadre de la campagne de publicité, et non des téléchargements provenant d’autres sources.
 
-By monitoring installs for their ad campaigns, developers can measure the true return on investment from the money spent on promoting their apps. It also helps in comparing the cost of obtaining a new user with the lifetime value of users.
+En surveillant les installations provenant de leurs campagnes de publicité, les développeurs peuvent mesurer le vrai retour sur investissement de l’argent consacré à promouvoir leurs applications. Cela leur permet également de comparer le coût d’obtention d’un nouvel utilisateur et la durée de vie des utilisateurs.
 
-### How are installs measured?
+### Comment mesurons-nous les installations ?
 
-**Promote your app** ad campaigns deliver ad impressions within other apps. Users who are exposed to the ad are likely to install the app in one of two ways: by clicking the ad or based on viewing the ad impression.
+Les campagnes de publicité **Promouvoir votre application** offrent des expositions publicitaires au sein d’autres applications. Les utilisateurs qui reçoivent cette publicité sont susceptibles d’installer l’application de deux manières : en cliquant sur la publicité ou suite à l’exposition publicitaire.
 
-If a user is shown an ad and he or she installs the app within 24 hours -- by either clicking the ad, or directly going to the Store page of the app -- that install is attributed to the campaign that delivered the impression.
+Si un utilisateur reçoit la publicité et qu’il installe l’application dans les 24 heures, soit en cliquant sur la publicité, soit en accédant directement à la page de l’application dans le Windows Store, cette installation est attribuée à la campagne à l’origine de l’exposition.
 
-An install is tracked in the Store -- across phone, tablet, and PC -- based on the user who installed the app. The advertising engine tracks users who see the ad and we use this information to correlate the users who viewed the ad with the users who installed the app. In order for the app install to be counted, a few requirements must be met:
+Le suivi de l’installation s’effectue dans le Windows Store (sur un téléphone, une tablette et un PC) en fonction de l’utilisateur qui a installé l’application. Le moteur de publicité effectue le suivi des utilisateurs qui affichent la publicité, et nous utilisons ces informations pour mettre en corrélation les utilisateurs qui ont consulté la publicité avec les utilisateurs qui ont installé l’application. Pour que l’installation de l’application soit comptabilisée, plusieurs critères doivent être remplis :
 
-1.  The user has not opted out of targeting.
-2.  The user is logged in to a Microsoft account.
-3.  The user meets [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) requirements (users that don’t meet COPPA requirements cannot be tracked).
+1.  L’utilisateur n’a pas désactivé le ciblage.
+2.  L’utilisateur est connecté à un compte Microsoft.
+3.  L’utilisateur répond aux exigences [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) (aucun suivi n’est possible pour les utilisateurs qui ne répondent pas aux exigences COPPA).
 
-As a result, it is possible the app install tracking may *underreport* the actual number of installs generated by a **Promote your app** campaign. Please note that the total number of downloads for an app is viewable in the **Acquisitions** report in Dev Center.
+Par conséquent, il est possible que le suivi d’installation d’application *sous-estime* le nombre réel d’installations générées par une campagne **Promouvoir votre application**. Notez que le nombre total de téléchargements pour une application est visible dans le rapport **Acquisitions** du Centre de développement.
 
-## Account billing history
+## Historique de facturation du compte
 
-Here you can see all of the transactions associated with your account. For each transaction, we show the **Transaction date**, the appropriate **Campaign name**, the **Payment instrument** charged, and the **Total amount** of the charge.
+Ici, vous pouvez voir toutes les transactions associées à votre compte. Pour chaque transaction, nous affichons la **Date de la transaction**, le **Nom de la campagne** concernée, l’**Instrument de paiement** utilisé et le **Montant total** des frais.
 
-## Related topics
+## Rubriques connexes
 
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [About house ads](about-house-ads.md)
-* [Common questions](common-questions.md)
+* [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
+* [Gestion de votre campagne de publicité](managing-your-ad-campaign.md)
+* [À propos des publicités maison](about-house-ads.md)
+* [Questions courantes](common-questions.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

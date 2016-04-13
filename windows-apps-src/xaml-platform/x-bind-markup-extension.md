@@ -1,6 +1,6 @@
 ---
-description: Au lieu de recourir à la méthode Binding, vous pouvez utiliser l’extension de balisage xBind. Celle-ci n’offre pas certaines des fonctionnalités de Binding, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que Binding, et prend mieux en charge le débogage.
-title: Extension de balisage xBind
+Au lieu de recourir à la méthode Binding, vous pouvez utiliser l’extension de balisage xBind. Celle-ci n’offre pas certaines des fonctionnalités de Binding, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que Binding, et prend mieux en charge le débogage.
+Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ---
 
@@ -129,4 +129,8 @@ Cet exemple de XAML utilise **{x:Bind}** avec une propriété **ListView.ItemTem
   </DataTemplate>
 ```
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

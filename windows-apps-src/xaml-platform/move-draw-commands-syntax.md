@@ -1,235 +1,258 @@
 ---
-Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value.
-Move and draw commands syntax
+Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML.
+Syntaxe des commandes de déplacement et de dessin
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ---
 
-# Move and draw commands syntax
+# Syntaxe des commandes de déplacement et de dessin
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value. Move and draw commands are used by many design and graphics tools that can output a vector graphic or shape, as a serialization and interchange format.
+Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML. Les commandes de déplacement et de dessin sont utilisées par de nombreux outils de conception et de création de graphiques capables de générer un graphique ou une forme de type vectoriel comme format de sérialisation et d’échange.
 
-## Properties that use move and draw command strings
+## Propriétés qui utilisent des chaînes de commande de déplacement et de dessin
 
-The move and draw command syntax is supported by an internal type converter for XAML, which parses the commands and produces a run-time graphics representation. This representation is basically a finished set of vectors that is ready for presentation. The vectors themselves don't complete the presentation details; you'll still need to set other values on the elements. For a [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) object you also need values for [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383), and other properties, and then that **Path** must be connected to the visual tree somehow. For a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) object, set the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) property.
+La syntaxe des commandes de déplacement et de dessin est prise en charge par un convertisseur de type interne pour XAML qui analyse les commandes et produit une représentation graphique au moment de l’exécution. Cette représentation consiste essentiellement en un ensemble fini de vecteurs prêts pour la présentation. Les vecteurs ne représentent pas en eux-mêmes la totalité des détails de la présentation, et vous devez définir d’autres valeurs sur les éléments. Pour un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355), vous avez aussi besoin de valeurs pour [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) et d’autres propriétés. Ensuite, cet objet **Path** doit être connecté d’une façon ou d’une autre à l’arborescence visuelle. Pour un objet [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722), définissez la propriété [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974).
 
-There are two properties in the Windows Runtime that can use a string representing move and draw commands: [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) and [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). If you set one of these properties by specifying move and draw commands, you typically set it as a XAML attribute value along with other required attributes of that element. Without getting into the specifics, here's what that looks like:
+Windows Runtime comprend deux propriétés qui peuvent utiliser une chaîne représentant des commandes de déplacement et de dessin : [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) et [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). Si vous définissez l’une de ces propriétés en spécifiant des commandes de déplacement et de dessin, vous définissez généralement cette propriété comme une valeur d’attribut XAML avec d’autres attributs requis de cet élément. Sans entrer dans les détails, voici à quoi cela ressemble :
 
 ```xaml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) can also use move and draw commands. You might combine a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) object that uses move and draw commands with other [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) types in a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) object, which you'd then use as the value for [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). But that isn't nearly as common as using move and draw commands for attribute-defined data.
+[
+            **PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) peut également utiliser des commandes de déplacement et de dessin. Vous pouvez combiner un objet [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) qui utilise des commandes de déplacement et de dessin avec d’autres types [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) dans un objet [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) que vous utilisez ensuite comme valeur pour [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Toutefois, il est plus fréquent d’utiliser des commandes de déplacement et de dessin pour des données définies par des attributs.
 
-## Using move and draw commands versus using a **PathGeometry**
+## Comparaison entre l’utilisation des commandes de déplacement et de dessin et l’utilisation de **PathGeometry**
 
-For Windows Runtime XAML, the move and draw commands produce a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a single [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) object with a [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) property value. Each draw command produces a [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) derived class in that single **PathFigure**'s [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) collection, the move command changes the [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166), and existence of a close command sets [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) to **true**. You can navigate this structure as an object model if you examine the **Data** values at run time.
+Pour le code XAML Windows Runtime, les commandes de déplacement et de dessin produisent un [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) avec un objet [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) unique avec une valeur de propriété [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169). Chaque commande de dessin produit une classe dérivée de [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) dans la collection [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) de ce **PathFigure** unique, la commande de déplacement modifie la propriété [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166) et l’existence d’une commande de fermeture affecte à [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) la valeur **true**. Vous pouvez naviguer dans cette structure en tant que modèle d’objet si vous examinez les valeurs **Data** au moment de l’exécution.
 
-## The basic syntax
+## Syntaxe de base
 
-The syntax for move and draw commands can be summarized like this:
+La syntaxe des commandes de déplacement et de dessin peut se résumer comme suit :
 
-1.  Start with an optional fill rule. Typically you specify this only if you don't want the **EvenOdd** default. (More about **EvenOdd** later.)
-2.  Specify exactly one move command.
-3.  Specify one or more draw commands.
-4.  Specify a close command. You can omit a close command , but that would leave your figure open (that's uncommon).
+1.  Commencez par une règle de remplissage facultative. En général, spécifiez-la si vous ne voulez pas la valeur par défaut **EvenOdd**. (**EvenOdd** est abordé plus en détail plus loin.)
+2.  Spécifiez exactement une commande de déplacement.
+3.  Spécifiez une ou plusieurs commandes de dessin.
+4.  Spécifiez une commande de fermeture. Vous pouvez omettre une commande de fermeture, mais votre figure serait alors ouverte (ce qui est rare).
 
-General rules of this syntax are:
+Les règles générales de cette syntaxe sont les suivantes :
 
--   Each command is represented by exactly one letter.
--   That letter can be upper-case or lower-case. Case matters, as we'll describe.
--   Each command except the close command is typically followed by one or more numbers.
--   If more than one number for a command, separate with a comma or space.
+-   Chaque commande est représentée par exactement une lettre.
+-   Cette lettre peut être majuscule ou minuscule. La casse a de l’importance, comme vous allez le voir.
+-   Chaque commande, sauf la commande de fermeture, est généralement suivie d’un ou plusieurs nombres.
+-   Si vous avez plusieurs nombres par commande, séparez-les par une virgule ou un espace.
 
-**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
 
-Many of the draw commands use points, where you provide an _x,y_ value. Whenever you see a \*_points_ placeholder you can assume you're giving two decimal values for the _x,y_ value of a point.
+De nombreuses commandes de dessin utilisent des points qui nécessitent la définition d’une valeur _x,y_. Chaque fois que vous voyez un espace réservé \*_points_, vous pouvez supposer que vous donnez deux valeurs décimales à la valeur _x,y_ d’un point.
 
-White space can often be omitted when the result is not ambiguous. You can in fact omit all white space if you use commas as your separator for all number sets (points and size). For example, this usage is legal: `F1M0,58L2,56L6,60L13,51L15,53L6,64z`. But it's more typical to include white space between commands for clarity.
+L’espace blanc peut souvent être omis lorsque le résultat n’est pas ambigu. Vous pouvez en effet omettre les espaces blancs si vous utilisez des virgules comme séparateurs pour tous vos ensembles de nombres (points et taille). Par exemple, cette utilisation est légale :`F1M0,58L2,56L6,60L13,51L15,53L6,64z` Il est toutefois plus courant d’inclure un espace blanc entre les commandes pour plus de clarté.
 
-Don't use commas as the decimal point for decimal numbers; the command string is interpreted by XAML and doesn't account for culture-specific number-formatting conventions that differ from those used in the **en-us** locale.
+N’utilisez pas la virgule comme séparateur décimal pour les nombres décimaux ; la chaîne de commande est interprétée par XAML et ne tient pas compte des conventions de mise en forme des nombres spécifiques à la culture qui diffèrent de celles utilisées dans les paramètres régionaux **en-us**.
 
-## Syntax specifics
+## Spécificités de la syntaxe
 
-**Fill rule**
+**Règle de remplissage**
 
-There are two possible values for the optional fill rule: **F0** or **F1**. (The **F** is always uppercase.) **F0** is the default value; it produces **EvenOdd** fill behavior, so you don't typically specify it. Use **F1** to get the **Nonzero** fill behavior. These fill values align with the values of the [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030) enumeration.
+Il existe deux valeurs possibles pour la règle de remplissage facultative : **F0** ou **F1**. (**F** est toujours en majuscule.) **F0** est la valeur par défaut qui produit le comportement de remplissage **EvenOdd** (donc, vous ne la spécifiez généralement pas). Utilisez **F1** pour obtenir le comportement de remplissage **Nonzero**. Ces valeurs de remplissage sont alignées avec les valeurs de l’énumération [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030).
 
-**Move command**
+**Commande de déplacement**
 
-Specifies the start point of a new figure.
+Spécifie le point de départ d’une nouvelle figure.
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `M ` _startPoint_ <br/>- or -<br/>`m` _startPoint_|
+| `M ` _startPoint_ <br/>- ou -<br/>`m` _startPoint_|
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>The start point of a new figure.|
+| _startPoint_ | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>Point de départ d’une nouvelle figure.|
 
-An uppercase **M** indicates that *startPoint* is an absolute coordinate; a lowercase **m** indicates that *startPoint* is an offset to the previous point, or (0,0) if there was no previous point.
+Un **M** majuscule indique que *startPoint* est une coordonnée absolue ; un **m** minuscule indique que *startPoint* est décalé par rapport au point précédent ou (0,0) s’il n’y avait pas de point précédent.
 
-**Note**  It's legal to specify multiple points after the move command. A line is drawn to those points as if you specified the line command. However that's not a recommended style; use the dedicated line command instead.
+**Remarque** Vous pouvez spécifier plusieurs points après la commande de déplacement. Une ligne est tracée jusqu’à ces points comme si vous aviez spécifié une commande de ligne. Toutefois, ce style n’est pas recommandé ; utilisez plutôt une commande de ligne dédiée.
 
-**Draw commands**
+**Commandes de dessin**
 
-A draw command can consist of several shape commands: line, horizontal line, vertical line, cubic Bezier curve, quadratic Bezier curve, smooth cubic Bezier curve, smooth quadratic Bezier curve, and elliptical arc.
+Une commande de dessin peut être constituée de plusieurs commandes de forme : ligne, ligne horizontale, verticale, courbe de Bézier cubique, courbe de Bézier quadratique, courbe de Bézier cubique lisse, courbe de Bézier quadratique lisse et arc elliptique.
 
-For all draw commands, case matters. Uppercase letters denote absolute coordinates and lowercase letters denote coordinates relative to the previous command.
+Pour toutes les commandes de dessin, la casse a de l’importance. Les lettres majuscules dénotent des coordonnées absolues et les lettres minuscules dénotent des coordonnées relatives à la commande précédente.
 
-The control points for a segment are relative to the end point of the preceding segment. When sequentially entering more than one command of the same type, you can omit the duplicate command entry. For example, `L 100,200 300,400` is equivalent to `L 100,200 L 300,400`.
+Les points de contrôle pour un segment sont relatifs au point de terminaison du segment précédent. Lorsque vous entrez séquentiellement plusieurs commandes du même type, vous pouvez omettre l’entrée de commande en double. Par exemple, `L 100,200 300,400` revient à spécifier `L 100,200 L 300,400`.
 
-**Line command**
+**Commande de ligne**
 
-Creates a straight line between the current point and the specified end point. `l 20 30` and `L 20,30` are examples of valid line commands. Defines the equivalent of a [**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) object.
+Crée une ligne droite entre le point actuel et le point de terminaison spécifié. `l 20 30` et `L 20,30` sont des exemples de commandes de ligne valides. Définit l’équivalent d’un objet [**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117).
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `L` _endPoint_ <br/>- or -<br/>`l` _endPoint_ |
+| `L` _endPoint_ <br/>- ou -<br/>`l` _endPoint_ |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>The end point of the line.|
+| endPoint | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>Point de terminaison de la ligne.|
 
-**Horizontal line command**
+**Commande de ligne horizontale**
 
-Creates a horizontal line between the current point and the specified x-coordinate. `H 90` is an example of a valid horizontal line command.
+Crée une ligne horizontale entre le point actuel et la coordonnée x spécifiée. `H 90` est un exemple de commande de ligne horizontale valide.
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `H ` _x_ <br/> - or - <br/>`h ` _x_ |
+| `H ` _x_ <br/> - ou - <br/>`h ` _x_ |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| x | [**Double**](T:System.Double) <br/> The x-coordinate of the end point of the line. |
+| x | [
+            **Double**](T:System.Double) <br/> Coordonnée x du point final de la ligne. |
 
-**Vertical line command**
+**Commande de ligne verticale**
 
-Creates a vertical line between the current point and the specified y-coordinate. `v 90` is an example of a valid vertical line command.
+Crée une ligne verticale entre le point actuel et la coordonnée y spécifiée. `v 90` est un exemple de commande de ligne verticale valide.
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `V ` _y_ <br/> - or - <br/> `v ` _y_ |
+| `V ` _y_ <br/> - ou - <br/> `v ` _y_ |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| *y* | [**Double**](T:System.Double) <br/> The y-coordinate of the end point of the line. |
+| *y* | [
+            **Double**](T:System.Double) <br/> Coordonnée y du point final de la ligne. |
 
-**Cubic Bézier curve command**
+**Commande de courbe de Bézier cubique**
 
-Creates a cubic Bézier curve between the current point and the specified end point by using the two specified control points (*controlPoint1* and *controlPoint2*). `C 100,200 200,400 300,200` is an example of a valid curve command. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) object with a [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) object.
+Crée une courbe de Bézier cubique entre le point actuel et le point de terminaison spécifié à l’aide des deux points de contrôle spécifiés (*controlPoint1* et *controlPoint2*). `C 100,200 200,400 300,200` est un exemple de commande de courbe valide. Définit l’équivalent d’un objet [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) avec un objet [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068).
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - or - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - ou - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The first control point of the curve, which determines the starting tangent of the curve. |
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The second control point of the curve, which determines the ending tangent of the curve. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The point to which the curve is drawn. | 
+| *controlPoint1* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Premier point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
+| *controlPoint2* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Second point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
+| *endPoint* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel la courbe est tracée. | 
 
-**Quadratic Bézier curve command**
+**Commande de courbe de Bézier quadratique**
 
-Creates a quadratic Bézier curve between the current point and the specified end point by using the specified control point (*controlPoint*). `q 100,200 300,200` is an example of a valid quadratic Bézier curve command. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249).
+Crée une courbe de Bézier quadratique entre le point actuel et le point de terminaison spécifié à l’aide du point de contrôle spécifié (*controlPoint*). `q 100,200 300,200` est un exemple de commande de courbe de Bézier quadratique valide. Définit l’équivalent d’un objet [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) avec un objet [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249).
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `Q ` *controlPoint endPoint* <br/> - or - <br/> `q ` *controlPoint endPoint* |
+| `Q ` *controlPoint endPoint* <br/> - ou - <br/> `q ` *controlPoint endPoint* |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The control point of the curve, which determines the starting and ending tangents of the curve. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
+| *controlPoint* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine les tangentes de début et de fin de la courbe. |
+| *endPoint* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
-**Smooth cubic Bézier curve command**
+**Commande de courbe de Bézier cubique lisse**
 
-Creates a cubic Bézier curve between the current point and the specified end point. The first control point is assumed to be the reflection of the second control point of the previous command relative to the current point. If there is no previous command or if the previous command was not a cubic Bézier curve command or a smooth cubic Bézier curve command, assume the first control point is coincident with the current point. The second control point—the control point for the end of the curve—is specified by *controlPoint2*. For example, `S 100,200 200,300` is a valid smooth cubic Bézier curve command. This command defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) where there was preceding curve segment.
+Crée une courbe de Bézier cubique entre le point actuel et le point de terminaison spécifié. Le premier point de contrôle est censé être la réflexion du deuxième point de contrôle de la commande précédente par rapport au point actuel. S’il n’y a pas de commande précédente ou si la commande précédente n’est ni une commande de courbe de Bézier cubique ni une commande de courbe de Bézier cubique lisse, vous pouvez supposer que le premier point de contrôle coïncide avec le point actuel. Le deuxième point de contrôle (point de contrôle pour la fin de la courbe) est spécifié par *controlPoint2*. Par exemple, `S 100,200 200,300` est une commande de courbe de Bézier cubique lisse valide. Cette commande définit l’équivalent d’un [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) avec un [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) à l’endroit d’un segment de courbe précédent.
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - or - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2* *endPoint* <br/> - ou - <br/>`s` *controlPoint2 endPoint* |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The control point of the curve, which determines the ending tangent of the curve. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
+| *controlPoint2* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
+| *endPoint* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
-**Smooth quadratic Bézier curve command**
+**Commande de courbe de Bézier quadratique lisse**
 
-Creates a quadratic Bézier curve between the current point and the specified end point. The control point is assumed to be the reflection of the control point of the previous command relative to the current point. If there is no previous command or if the previous command was not a quadratic Bézier curve command or a smooth quadratic Bézier curve command, the control point is coincident with the current point. This command defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) where there was preceding curve segment.
+Crée une courbe de Bézier quadratique entre le point actuel et le point de terminaison spécifié. Le point de contrôle est censé être la réflexion du point de contrôle de la commande précédente par rapport au point actuel. S’il n’y a pas de commande précédente ou si la commande précédente n’est ni une commande de courbe de Bézier quadratique ni une commande de courbe de Bézier quadratique lisse, le point de contrôle coïncide avec le point actuel. Cette commande définit l’équivalent d’un [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) avec un [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) à l’endroit d’un segment de courbe précédent.
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - or - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint* *endPoint* <br/> - ou - <br/> `t` *controlPoint* *endPoint* |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The control point of the curve, which determines the starting and tangent of the curve. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
+| *controlPoint* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
+| *endPoint* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
-**Elliptical arc command**
+**Commande d’arc elliptique**
 
-Creates an elliptical arc between the current point and the specified end point. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with an [**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054).
+Crée un arc elliptique entre le point actuel et le point de terminaison spécifié. Définit l’équivalent d’un objet [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) avec un objet [**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054).
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - or - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - ou - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| *size* | [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>The x-radius and y-radius of the arc. |
-| *rotationAngle* | [**Double**](T:System.Double) <br/> The rotation of the ellipse, in degrees. |
-| *isLargeArcFlag* | Set to 1 if the angle of the arc should be 180 degrees or greater; otherwise, set to 0. |
-| *sweepDirectionFlag* | Set to 1 if the arc is drawn in a positive-angle direction; otherwise, set to 0. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The point to which the arc is drawn.|
+| *size* | [
+            **Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Rayon x et rayon y de l’arc. |
+| *rotationAngle* | [
+            **Double**](T:System.Double) <br/> Rotation de l’ellipse, en degrés. |
+| *isLargeArcFlag* | Affectez la valeur 1 si l’angle de l’arc doit être de 180 degrés ou plus ; sinon, affectez la valeur 0. |
+| *sweepDirectionFlag* | Affectez la valeur 1 si l’arc est dessiné dans la direction de l’angle positif ; sinon, affectez la valeur 0. |
+| *endPoint* | [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel l’arc est tracé.|
  
-**Close command**
+**Bouton de fermeture**
 
-Ends the current figure and creates a line that connects the current point to the starting point of the figure. This command creates a line-join (corner) between the last segment and the first segment of the figure.
+Termine la figure actuelle et crée une ligne qui relie le point actuel au point de début de la figure. Cette commande crée un angle entre le dernier segment et le premier segment de la figure.
 
-| Syntax |
+| Syntaxe |
 |--------|
-| `Z` <br/> - or - <br/> `z ` |
+| `Z` <br/> - ou - <br/> `z ` |
 
-**Point syntax**
+**Syntaxe de point**
 
-Describes the x-coordinate and y-coordinate of a point. See also [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870).
+Décrit la coordonnée x et la coordonnée y d’un point. Voir aussi [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870).
 
-| Syntax |
+| Syntaxe |
 |--------|
-| *x*,*y*<br/> - or - <br/>*x* *y* |
+| *x*,*y*<br/> - ou - <br/>*x* *y* |
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| *x* | [**Double**](T:System.Double) <br/> The x-coordinate of the point. |
-| *y* | [**Double**](T:System.Double) <br/> The y-coordinate of the point. |
+| *x* | [
+            **Double**](T:System.Double) <br/> Coordonnée x du point. |
+| *y* | [
+            **Double**](T:System.Double) <br/> Coordonnée y du point. |
 
-**Additional notes**
+**Remarques supplémentaires**
 
-Instead of a standard numerical value, you can also use the following special values. These values are case sensitive.
+Au lieu d’une valeur numérique standard, vous pouvez également utiliser les valeurs spéciales suivantes. Ces valeurs respectent la casse.
 
--   **Infinity**: Represents **PositiveInfinity**.
--   **\-Infinity**: Represents **NegativeInfinity**.
--   **NaN**: Represents **NaN**.
+-   **Infinity** : représente **PositiveInfinity**.
+-   **\-Infinity** : représente **NegativeInfinity**.
+-   **NaN** : représente **NaN**.
 
-Instead of using decimals or integers, you can use scientific notation. For example, `+1.e17` is a valid value.
+Au lieu d’utiliser des nombres décimaux ou entiers, vous pouvez utiliser la notation scientifique. Par exemple, `+1.e17` est une valeur valide.
 
-## Design tools that produce move and draw commands
+## Outils de conception qui produisent des commandes de déplacement et de dessin
 
-Using the **Pen** tool and other drawing tools in Blend for Microsoft Visual Studio 2013 will usually produce a [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) object, with move and draw commands.
+L’outil **Stylet** et d’autres outils de dessin dans Blend pour Microsoft Visual Studio 2013 produisent généralement un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) avec des commandes de déplacement et de dessin.
 
-You might see existing move and draw command data in some of the control parts defined in the Windows Runtime XAML default templates for controls. For example, some controls use a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) that has the data defined as move and draw commands.
+Il est possible que vous constatiez la présence de données de commandes de déplacement et de dessin dans certaines parties de contrôle définies dans les modèles par défaut XAML Windows Runtime de contrôles. Par exemple, certains contrôles utilisent un [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) dans lequel les données sont définies en tant que commandes de déplacement et de dessin.
 
-There are exporters or plug-ins available for other commonly used vector-graphics design tools that can output the vector in XAML form. These usually create [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) objects in a layout container, with move and draw commands for [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). There may be multiple **Path** elements in the XAML so that different brushes can be applied. These exporters or plug-ins were originally written for Windows Presentation Foundation (WPF)  XAML, but that aspect of XAML syntax is identical with Windows Runtime XAML. You can probably use chunks of XAML from an exporter and paste them right into a Windows Runtime XAML page. (However, you won't be able to use a **RadialGradientBrush**, if that was part of the converted XAML, because Windows Runtime XAML doesn't support that brush.)
+Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conception de graphiques vectoriels couramment utilisés pour générer le vecteur au format XAML. Ceux-ci créent généralement des objets [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) dans un conteneur de disposition avec des commandes de déplacement et de dessin pour [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Plusieurs éléments **Path** peuvent être présents dans le code XAML, ce qui permet d’appliquer différents types de pinceaux. Ces exportateurs ou plug-ins ont été écrits à l’origine pour le langage XAML dans Windows Presentation Foundation (WPF), mais cet aspect de la syntaxe XAML est identique dans le langage XAML Windows Runtime. Vous pouvez probablement utiliser des blocs de code XAML d’un exportateur et les coller directement dans une page XAML Windows Runtime. (Toutefois, si **RadialGradientBrush** faisait partie du code XAML converti, vous ne pourrez pas l’utiliser étant donné que le langage XAML Windows Runtime ne prend pas en charge ce pinceau.)
 
-## Related topics
+## Rubriques connexes
 
-* [Draw shapes](https://msdn.microsoft.com/library/windows/apps/mt280380)
-* [Use brushes](https://msdn.microsoft.com/library/windows/apps/mt280383)
+* [Dessiner des formes](https://msdn.microsoft.com/library/windows/apps/mt280380)
+* [Utiliser des pinceaux](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

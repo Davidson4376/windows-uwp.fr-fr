@@ -1,14 +1,14 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore1, commence par une application 8.1 universelle qui affiche des données groupées dans un contrôle SemanticZoom.
-title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore2
+Cette étude de cas, qui repose sur les informations fournies dans Bookstore1, commence par une application 8.1 universelle qui affiche des données groupées dans un contrôle SemanticZoom.
+Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore2
 ---
 
 # Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore2
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](w8x-to-uwp-case-study-bookstore1.md), commence par une application 8.1 universelle qui affiche des données groupées dans un contrôle [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601). Dans le modèle d’affichage, chaque instance de la classe **Author** représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément **SemanticZoom**, nous pouvons afficher la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Nous suivons la procédure de portage de l’application vers une application de plateforme Windows universelle (UWP, Universal Windows Platform) Windows 10.
+Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](w8x-to-uwp-case-study-bookstore1.md), commence par une application 8.1 universelle qui affiche des données groupées dans un contrôle [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601). Dans le modèle d’affichage, chaque instance de la classe **Author** représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément **SemanticZoom**, nous pouvons afficher la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Nous suivons la procédure de portage de l’application vers une application de plateforme Windows universelle (UWP) Windows 10.
 
 **Remarque** Lorsque vous ouvrez Bookstore2Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
@@ -166,4 +166,8 @@ Application Windows 10 portée, exécutée sur un appareil mobile (vue avec zoo
 Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. Comme pour l’étude de cas précédente, ce modèle d’affichage particulier n’a requis aucun effort. Nous avons surtout dû nous concentrer sur la refactorisation de l’interface utilisateur. Certaines modifications inévitables ont été le fruit de la combinaison de deux projets en un seul, qui devait toujours prendre en charge de nombreux facteurs de forme (en fait, nettement plus qu’auparavant). Certaines de ces modifications étaient liées aux changements apportés à la plateforme.
 
 Dans l’étude de cas suivante, [QuizGame](w8x-to-uwp-case-study-quizgame.md), nous examinons l’accès aux données groupées et leur affichage.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

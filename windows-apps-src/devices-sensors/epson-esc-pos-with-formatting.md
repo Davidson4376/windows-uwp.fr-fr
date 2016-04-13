@@ -1,7 +1,7 @@
 ---
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-title: Epson ESC/POS avec mise en forme
-description: Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme le texte, par exemple pour le mettre en gras ou pour doubler la taille des caractères, pour l’imprimante de votre Point de service.
+Epson ESC/POS avec mise en forme
+Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme le texte, par exemple pour le mettre en gras ou pour doubler la taille des caractères, pour l’imprimante de votre Point de service.
 ---
 # Epson ESC/POS avec mise en forme
 
@@ -18,7 +18,7 @@ Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme
 
 Le Point de service Windows prend en charge l’utilisation d’une large gamme d’imprimantes, notamment plusieurs imprimantes de la gamme EPSON TM (pour consulter la liste complète des imprimantes prises en charge, consultez la page [Imprimante PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652)). Windows prend en charge l’impression via le langage de contrôle d’imprimante ESC/POS, qui fournit des commandes efficaces et fonctionnelles permettant de communiquer avec votre imprimante.
 
-ESC/POS est un système de commande créé par Epson qui est utilisé sur une gamme élargie de systèmes d’imprimantes POS. Il a vocation à éliminer l’incompatibilité des ensembles de commandes, en assurant une applicabilité universelle. La plupart des imprimantes modernes prennent en charge ESC/POS.
+ESC/POS est un système de commande créé par Epson qui est utilisé sur une gamme élargie de systèmes d’imprimantes POS. Il a vocation à éliminer l’incompatibilité des ensembles de commandes, en assurant une applicabilité universelle. La plupart des imprimantes modernes prennent en charge ESC/POS.
 
 L’ensemble des commandes commencent par les caractères ESC (ASCII 27, HEX 1B) ou GS (ASCII 29, HEX 1D), suivis par un autre caractère spécifiant la commande. Les éléments textuels normaux sont simplement envoyés vers l’imprimante, séparés par des sauts de ligne.
 
@@ -53,4 +53,8 @@ printJob.ExecuteAsync();
 Pour plus d’informations sur ESC/POS,notamment sur les commandes disponibles, consultez les [FAQ sur le système ESC/POS d’Epson](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Pour plus de détails sur [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) et l’ensemble des fonctionnalités disponibles, consultez la page [Imprimante PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652) sur MSDN.
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

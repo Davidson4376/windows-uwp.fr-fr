@@ -1,205 +1,210 @@
 ---
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-description: This article shows how to use the APIs in the Windows.Media.Audio namespace to create audio graphs for audio routing, mixing, and processing scenarios.
-title: Audio Graphs
+Cet article montre comment utiliser les API dans l’espace de noms Windows.Media.Audio pour créer des graphiques pour le routage audio, le mixage et les scénarios de traitement audio.
+Graphiques audio
 ---
 
-# Audio Graphs
+# Graphiques audio
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-This article shows how to use the APIs in the [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) namespace to create audio graphs for audio routing, mixing, and processing scenarios.
+Cet article montre comment utiliser les API dans l’espace de noms [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) pour créer des graphiques pour le routage audio, le mixage et les scénarios de traitement audio.
 
-An audio graph is a set of interconnected audio nodes through which audio data flows. Audio input nodes supply audio data to the graph from audio input devices, audio files, or from custom code. Audio output nodes are the destination for audio processed by the graph. Audio can be routed out of the graph to audio output devices, audio files, or custom code. The last type of node is a submix node which takes audio from one or more nodes and combines them into a single output that can be routed to other nodes in the graph. After all of the nodes have been created and the connections between them set up, you simply start the audio graph and the audio data flows from the input nodes, through any submix nodes, to the output nodes. This model makes scenarios like recording from a device's microphone to an audio file, playing audio from a file to a device's speaker, or mixing audio from multiple sources quick and easy to implement.
+Un graphique audio est un ensemble de nœuds audio interconnectés par lequel passe le flux des données audio. Les nœuds d’entrée audio transmettent au graphique les données en provenance des appareils d’entrée audio, des fichiers audio ou du code personnalisé. L’audio traitée par le graphique se dirige vers les nœuds de sortie audio. L’audio peut être routée à la sortie du graphique vers des appareils de sortie audio des fichiers audio ou du code personnalisé. Le dernier type de nœud est un nœud prémixé qui extrait l’audio à partir d’un ou plusieurs nœuds et la combine en une seule sortie pouvant être routée vers d’autres nœuds dans le graphique. Une fois tous les nœuds créés et les connexions entre eux configurées, vous pouvez démarrer le graphique audio. Le flux de données audio est alors transmis des nœuds d’entrée aux nœuds de sortie, par le biais des nœuds prémixés. Ce modèle facilite et accélère l’implémentation de scénarios, tels que l’enregistrement sur un fichier audio à partir du microphone de l’appareil, la lecture audio à partir d’un fichier vers le haut-parleur de l’appareil ou le mixage audio à partir de plusieurs sources.
 
-Additional scenarios are enabled with the addition of audio effects to the audio graph. Every node in an audio graph can be populated with zero or more audio effects that perform audio processing on the audio passing through the node. There are several built-in effects such as echo, equalizer, limiting, and reverb that can be attached to an audio node with just a few lines of code. You can also create your own custom audio effects that work exactly the same as the built-in effects.
+Des scénarios supplémentaires sont disponibles en ajoutant des effets audio au graphique audio. Chaque nœud d’un graphique audio peut contenir plusieurs effets audio qui effectuent le traitement sur l’audio traversant le nœud. Plusieurs effets intégrés comme l’écho, l’égaliseur, la limitation et la réverbération peuvent être attachés à un nœud audio simplement avec quelques lignes de code. Vous pouvez aussi créer vos propres effets audio pour produire les mêmes effets intégrés.
 
-**Note**  
-The [AudioGraph UWP sample](http://go.microsoft.com/fwlink/?LinkId=619481) implements the code discussed in this overview. You can download the sample to see the code in context or to use as a starting point for your own app.
+**Remarque**  
+L’[exemple AudioGraph UWP](http://go.microsoft.com/fwlink/?LinkId=619481) implémente le code décrit dans cette vue d’ensemble. Vous pouvez télécharger l’exemple pour voir le code en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
-## Choosing Windows Runtime AudioGraph or XAudio2
+## Choix de Windows Runtime AudioGraph ou XAudio2
 
-The Windows Runtime audio graph APIs offer functionality that can also be implemented using the COM-based [XAudio2 APIs](https://msdn.microsoft.com/library/windows/desktop/hh405049). The following are features of the Windows Runtime audio graph framework that differ from XAudio2.
+Les API de graphique audio Windows Runtime offrent des fonctionnalités qui peuvent également être implémentées à l’aide d’[API XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) COM. Les fonctionnalités de l’infrastructure de graphique audio suivantes diffèrent entre Windows Runtime et XAudio2.
 
--   The Windows Runtime audio graph APIs are significantly easier to use than XAudio2.
--   The Windows Runtime audio graph APIs can be used from C# - in addition to being supported for C++.
--   The Windows Runtime audio graph APIs can use audio files, including compressed file formats, directly. XAudio2 only operates on audio buffers and does not provide any file I/O capabilities.
--   The Windows Runtime audio graph APIs can use the low-latency audio pipeline in Windows 10.
--   The Windows Runtime audio graph APIs supports automatic endpoint switching when default endpoint parameters are used. For example, if the user switches from a device's speaker to a headset, the audio is automatically redirected to the new input.
+-   Les API de graphique audio Windows Runtime sont beaucoup plus faciles à utiliser que celles de XAudio2.
+-   Les API de graphique audio Windows Runtime peuvent être utilisées depuis C# et sont prises en charge par C++.
+-   Les API de graphique audio Windows Runtime peuvent utiliser directement des fichiers audio, notamment les formats de fichier compressé. XAudio2 fonctionne uniquement sur les mémoires tampons audio et n’offre pas de fonctionnalités d’E/S fichier.
+-   Les API de graphique audio Windows Runtime peuvent utiliser le pipeline audio de faible latence dans Windows 10.
+-   Les API de graphique audio Windows Runtime prennent en charge le changement de point de terminaison automatique lorsque les paramètres de point de terminaison par défaut sont utilisés. Par exemple, si l’utilisateur bascule du haut-parleur de l’appareil à un casque, l’audio est automatiquement redirigée vers la nouvelle entrée.
 
-## AudioGraph class
+## Classe AudioGraph
 
-The [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) class is the parent of all nodes that make up the graph. Use this object to create instances of all of the audio node types. Create an instance of the **AudioGraph** class by initializing an [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) object, containing configuration settings for the graph, and then calling [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216). The returned [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) gives access to the created audio graph or provides an error value if audio graph creation fails.
+La classe [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) est le parent de tous les nœuds qui composent le graphique. Utilisez cet objet pour créer des instances de tous les types de nœud audio. Créez une instance de la classe **AudioGraph** en initialisant un objet [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) contenant des paramètres de configuration pour le graphique, puis en appelant [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216). Le [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) renvoyé donne accès au graphique audio créé ou fournit une valeur d’erreur en cas d’échec de création du graphique audio.
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
--   All audio node types are created by using the Create\* methods of the **AudioGraph** class.
--   The [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) method causes the audio graph to start processing audio data. The [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) method stops audio processing. Each node in the graph can be started and stopped independently while the graph is running, but no nodes are active when the graph is stopped. [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) causes all nodes in the graph to discard any data currently in their audio buffers.
--   The [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) event occurs when the graph is starting the processing of a new quantum of audio data. The [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) event occurs when the processing of a quantum is completed.
+-   Tous les types de nœud audio sont créés en utilisant les méthodes Create\* de la classe **AudioGraph**.
+-   La méthode [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) entraîne le graphique audio à traiter les données audio. La méthode [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) arrête le traitement audio. Chaque nœud du graphique peut être démarré et arrêté de façon indépendante lorsque le graphique est en cours d’exécution, mais aucun nœud n’est actif lorsque le graphique est arrêté. [
+            **ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) entraîne tous les nœuds du graphique à ignorer toutes les données actuellement présentes dans leurs mémoires tampons audio.
+-   L’événement [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) se produit lorsque le graphique commence le traitement d’un nouveau quantum de données audio. L’événement [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) se produit lorsque le traitement d’un quantum est terminé.
 
--   The only [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) property that is required is [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724). Specifying this value allows the system to optimize the audio pipeline for the specified category.
--   The quantum size of the audio graph determines the number of samples that are processed at one time. By default, the quantum size is 10 ms based at the default sample rate. If you specify a custom quantum size by setting the [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) property, you must also set the [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) property to **ClosestToDesired** or the supplied value is ignored. If this value is used, the system will choose a quantum size as close as possible to the one you specify. To determine the actual quantum size, check the [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243) of the **AudioGraph** after it has been created.
--   If you only plan to use the audio graph with files and don't plan to output to an audio device, it is recommended that you use the default quantum size by not setting the [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) property.
--   The [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) property determines the amount of processing the primary render device performs on the output of the audio graph. The **Default** setting allows the system to use the default audio processing for the specified audio render category. This processing can significantly improve the sound of audio on some devices, particularly mobile devices with small speakers. The **Raw** setting can improve performance by minimizing the amount of signal processing performed, but can result in inferior sound quality on some devices.
--   If the [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) is set to **LowestLatency**, the audio graph will automatically use **Raw** for [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522).
--   The [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) determines the audio format used by the graph. Only 32-bit float formats are supported.
--   The [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) sets the primary render device for the audio graph. If you don't set this, the default system device is used. The primary render device is used to calculate the quantum sizes for other nodes in the graph. If there are no audio render devices present on the system, audio graph creation will fail.
+-   La seule propriété [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) requise est [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724). Cette valeur permet au système d’optimiser le pipeline audio pour la catégorie spécifiée.
+-   La taille du quantum du graphique audio détermine le nombre d’échantillons traités en une seule fois. Par défaut, la taille du quantum est de 10 ms, basée sur le taux d’échantillonnage par défaut. Si vous spécifiez une taille de quantum personnalisée en définissant la propriété [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205), vous devez également définir la propriété [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) sur **ClosestToDesired**, ou la valeur indiquée sera ignorée. Si cette valeur est utilisée, le système choisit une taille de quantum aussi proche que possible de celle que vous avez spécifiée. Pour déterminer la taille réelle du quantum, vérifiez la propriété [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243) du **AudioGraph** après sa création.
+-   Si vous prévoyez seulement d’utiliser le graphique audio avec des fichiers et que vous n’envisagez pas de sortie vers un appareil audio, il est recommandé d’utiliser la taille de quantum par défaut en ne définissant pas la propriété [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205).
+-   La propriété [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) détermine la quantité de traitement que l’appareil de rendu principal effectue sur la sortie du graphique audio. Le paramètre **Default** permet au système d’utiliser le traitement audio par défaut pour la catégorie de rendu audio spécifiée. Ce traitement peut considérablement améliorer le son sur certains appareils, en particulier les appareils mobiles équipés de petits haut-parleurs. Le paramètre **Raw** peut améliorer les performances en réduisant la quantité de traitement du signal, mais peut entraîner une qualité audio médiocre sur certains appareils.
+-   Si la [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) est définie sur **LowestLatency**, le graphique audio utilise automatiquement **Raw** pour [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522).
+-   La [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) détermine le format audio utilisé par le graphique. Seuls les formats flottants 32 bits sont pris en charge.
+-   La [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) configure l’appareil de rendu principal pour le graphique audio. Si vous ne définissez pas cette propriété, l’appareil système par défaut est utilisé. L’appareil de rendu principal est utilisé pour calculer les tailles de quantum pour les autres nœuds du graphique. S’il n’existe aucun appareil de rendu audio sur le système, la création de graphique audio échouera.
 
-You can let the audio graph use the default audio render device or use the [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) class to get a list of the system's available audio render devices by calling [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) and passing in the audio render device selector returned by [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). You can choose one of the returned **DeviceInformation** objects programatically or show UI to allow the user to select a device and then use it to set the [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) property.
+Vous pouvez laisser le graphique audio utiliser l’appareil de rendu audio par défaut ou utiliser la classe [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) pour obtenir la liste des appareils disponibles sur le système en appelant [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) et en utilisant le sélecteur d’appareil de rendu audio renvoyé par [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). Vous pouvez choisir l’un des objets **DeviceInformation** renvoyés par programme ou afficher l’interface utilisateur pour permettre à l’utilisateur de sélectionner un appareil et de l’utiliser pour définir la propriété [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524).
 
 [!code-cs[EnumerateAudioRenderDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioRenderDevices)]
 
-##  Device input node
+##  Nœud d’entrée d’appareil
 
-A device input node feeds audio into the graph from an audio capture device connected to the system, such as a microphone. Create a [**DeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) object that uses the system's default audio capture device by calling [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218). Provide an [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724) to allow the system to optimize the audio pipeline for the specified category.
+Un nœud d’entrée d’appareil transmet l’audio au graphique à partir d’un appareil de capture audio connecté au système, par exemple un microphone. Créez un objet [**DeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) qui utilise l’appareil de capture audio par défaut du système en appelant [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218). Indiquez une [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724) pour permettre au système d’optimiser le pipeline audio pour la catégorie spécifiée.
 
 [!code-cs[DeclareDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceInputNode)]
 
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-If you want to specify a specific audio capture device for the device input node, you can use the [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) class to get a list of the system's available audio capture devices by calling [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) and passing in the audio render device selector returned by [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). You can choose one of the returned **DeviceInformation** objects programmatically or show UI to allow the user to select a device and then pass it into [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218).
+Pour indiquer un appareil de capture audio spécifique pour le nœud d’entrée d’appareil, vous pouvez utiliser la classe [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) pour obtenir la liste des appareils disponibles sur le système en appelant [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) et en utilisant le sélecteur d’appareil de rendu audio renvoyé par [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). Vous pouvez choisir l’un des objets **DeviceInformation** renvoyés par programme ou afficher l’interface utilisateur pour permettre à l’utilisateur de sélectionner un appareil pour le transmettre à [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218).
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
-##  Device output node
+##  Nœud de sortie d’appareil
 
-A device output node pushes audio from the graph to an audio render device, such as speakers or a headset. Create a [**DeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) by calling [**CreateDeviceOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn958525). The output node uses the [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) of the audio graph.
+Un nœud de sortie d’appareil transmet l’audio du graphique vers l’appareil de rendu audio, par exemple des haut-parleurs ou un casque. Créez un [**DeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) en appelant [**CreateDeviceOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn958525). Le nœud de sortie utilise la [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) du graphique audio.
 
 [!code-cs[DeclareDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceOutputNode)]
 
 [!code-cs[CreateDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceOutputNode)]
 
-##  File input node
+##  Nœud d’entrée de fichier
 
-A file input node allows you to feed data from an audio file into the graph. Create an [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) by calling [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226).
+Un nœud d’entrée de fichier permet de transmettre les données d’un fichier audio au graphique. Créez un [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) en appelant [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226).
 
 [!code-cs[DeclareFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
 
 
 [!code-cs[CreateFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileInputNode)]
 
--   File input nodes support the following file formats: mp3, wav, wma, m4a
--   Set the [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) property to specify the time offset into the file where playback should begin. If this property is null, the beginning of the file is used. Set the [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) property to specify the time offset into the file where playback should end. If this property is null, the end of the file is used. The start time value must be lower than the end time value, and the end time value must be less than or equal to the duration of the audio file, which can be determined by checking the [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn914116) property value.
--   Seek to a position in the audio file by calling [**Seek**](https://msdn.microsoft.com/library/windows/apps/dn914127) and specifying the time offset into the file to which the playback position should be moved. The specified value must be within the [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) and [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) range. Get the current playback position of the node with the read-only [**Position**](https://msdn.microsoft.com/library/windows/apps/dn914124) property.
--   Enable looping of the audio file by setting the [**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120) property. When non-null, this value indicates the number of times the file will be played in after the initial playback. So, for example, setting **LoopCount** to 1 will cause the file to be played 2 times in total, and setting it to 5 will cause the file to be played 6 times in total. Setting **LoopCount** to null causes the file to be looped indefinitely. To stop looping, set the value to 0.
--   Adjust the speed at which the audio file is played back by setting the [**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123). A value of 1 indicates the original speed of the file, .5 is half-speed, and 2 is double speed.
+-   Les nœuds d’entrée de fichier prennent en charge les formats suivants : mp3, wav, wma et m4a
+-   Définissez la propriété [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) pour spécifier le décalage dans le fichier où la lecture doit commencer. Si cette propriété est null, le début du fichier est utilisé. Définissez la propriété [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) pour spécifier le décalage dans le fichier où la lecture doit se terminer. Si cette propriété est null, la fin du fichier est utilisée. L’heure de début doit être antérieure à l’heure de fin, et l’heure de fin doit être inférieure ou égale à la durée du fichier audio, qui peut être déterminée en vérifiant la valeur de propriété [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn914116).
+-   Recherchez une position dans le fichier audio en appelant [**Seek**](https://msdn.microsoft.com/library/windows/apps/dn914127) et en spécifiant le décalage dans le fichier vers lequel la position de lecture doit être déplacée. La valeur spécifiée doit être comprise entre [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) et [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118). Obtenez la position de lecture actuelle du nœud avec la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/dn914124) en lecture seule.
+-   Activez la boucle du fichier audio en définissant la propriété [**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120). Lorsqu’elle n’est pas null, cette valeur indique le nombre de fois que le fichier est lu après la lecture initiale. Par exemple, la définition de **LoopCount** sur 1 entraîne la lecture du fichier 2 fois en tout, la définition sur 5 entraîne la lecture du fichier 6 fois en tout. Si vous définissez **LoopCount** sur null, le fichier sera lu en boucle indéfiniment. Pour arrêter la lecture en boucle, définissez la valeur sur 0.
+-   Réglez la vitesse à laquelle le fichier audio est lu en définissant la [**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123). Une valeur de 1 correspond à la vitesse d’origine du fichier, 0,5 correspond à la vitesse intermédiaire et 2 correspond à la vitesse double.
 
-##  File output node
+##  Nœud de sortie de fichier
 
-A file output node lets you direct audio data from the graph into an audio file. Create an [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) by calling [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227).
+Un nœud de sortie de fichier vous permet de diriger les données audio du graphique vers un fichier audio. Créez un [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) en appelant [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227).
 
 [!code-cs[DeclareFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
 
 
 [!code-cs[CreateFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileOutputNode)]
 
--   File output nodes support the following file formats: mp3, wav, wma, m4a
--   You must call [**AudioFileOutputNode.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914144) to stop the node's processing before calling [**AudioFileOutputNode.FinalizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914140) or an exception will be thrown.
+-   Les nœuds de sortie de fichier prennent en charge les formats suivants : mp3, wav, wma et m4a
+-   Vous devez appeler [**AudioFileOutputNode.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914144) pour arrêter le traitement du nœud avant d’appeler [**AudioFileOutputNode.FinalizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914140) ou une exception sera levée.
 
-##  Audio frame input node
+##  Nœud d’entrée de trame audio
 
-An audio frame input node allows you to push audio data that you generate in your own code into the audio graph. This enables scenarios like creating a custom software synthesizer. Create an [**AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147) by calling [**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230).
+Un nœud d’entrée de trame audio vous permet de transmettre au graphique audio les données audio que vous générez dans votre propre code. Cela permet notamment la création d’un synthétiseur logiciel personnalisé. Créez un [**AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147) en appelant [**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230).
 
 [!code-cs[DeclareFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameInputNode)]
 
 
 [!code-cs[CreateFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameInputNode)]
 
-The [**FrameInputNode.QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn958507) event is raised when the audio graph is ready to begin processing the next quantum of audio data. You supply your custom generated audio data from within the handler to this event.
+L’événement [**FrameInputNode.QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn958507) est déclenché lorsque le graphique audio est prêt à commencer le traitement du prochain quantum de données audio. Vous fournissez à cet événement vos données audio personnalisées depuis le gestionnaire.
 
 [!code-cs[QuantumStarted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStarted)]
 
--   The [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) object passed into the **QuantumStarted** event handler exposes the [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) property that indicates how many samples the audio graph needs to fill up the quantum to be processed.
--   Call [**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148) to pass an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) object filled with audio data into the graph.
--   An example implementation of the **GenerateAudioData** helper method is shown below.
+-   L’objet [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) transmis au gestionnaire d’événements **QuantumStarted** expose la propriété [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) qui indique le nombre d’échantillons dont le graphique audio a besoin pour remplir le quantum à traiter.
+-   Appelez [**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148) pour transmettre un objet [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) contenant les données audio au graphique.
+-   Un exemple d’implémentation de la méthode d’assistance **GenerateAudioData** est indiqué ci-dessous.
 
-To populate an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) with audio data, you must get access to the underlying memory buffer of the audio frame. To do this you must initialize the **IMemoryBufferByteAccess** COM interface by adding the following code within your namespace.
+Pour remplir un [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) avec des données audio, vous devez accéder à la mémoire tampon sous-jacente de la trame audio. Pour ce faire, vous devez initialiser l’interface COM **IMemoryBufferByteAccess** en ajoutant le code suivant dans votre espace de noms.
 
 [!code-cs[ComImportIMemoryBufferByteAccess](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetComImportIMemoryBufferByteAccess)]
 
-The following code shows an example implementation of a **GenerateAudioData** helper method that creates an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) and populates it with audio data.
+Le code suivant montre un exemple d’implémentation de méthode d’assistance **GenerateAudioData** qui crée une [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) et la remplit avec des données audio.
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   Because this method accesses the raw buffer underlying the Windows Runtime types, it must be declared using the **unsafe** keyword. You must also configure your project in Microsoft Visual Studio to allow the compilation of unsafe code by opening the project's **Properties** page, clicking the **Build** property page, and selecting the **Allow Unsafe Code** checkbox.
--   Initialize a new instance of [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871), in the **Windows.Media** namespace, by passing in the desired buffer size to the constructor. The buffer size is the number of samples multiplied by the size of each sample.
--   Get the [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) of the audio frame by calling [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
--   Get an instance of the [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM interface from the audio buffer by calling [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
--   Get a pointer to raw audio buffer data by calling [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) and cast it to the sample data type of the audio data.
--   Fill the buffer with data and return the [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) for submission into the audio graph.
+-   Étant donné que cette méthode accède à la mémoire tampon brute sous-jacente des types Windows Runtime, elle doit être déclarée à l’aide du mot clé **unsafe**. Vous devez également configurer votre projet dans Microsoft Visual Studio pour permettre la compilation du code non sécurisé en ouvrant la page **Propriétés** du projet, en cliquant sur la page de propriétés **Créer**, puis en sélectionnant la case à cocher **Autoriser du code unsafe**.
+-   Initialisez une nouvelle instance de [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871), dans l’espace de noms **Windows.Media**, en passant la taille de mémoire tampon souhaitée au constructeur. La taille de mémoire tampon est le nombre d’échantillons multiplié par la taille de chaque échantillon.
+-   Obtenez la [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)de la trame audio en appelant [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
+-   Obtenez une instance de l’interface COM [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) à partir de la mémoire tampon audio en appelant [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
+-   Obtenez un pointeur vers les données de mémoire tampon audio brutes en appelant [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) et en le diffusant vers le type d’exemple de données des données audio.
+-   Remplissez la mémoire tampon avec les données et renvoyez la [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) pour la soumettre au graphique audio.
 
-##  Audio frame output node
+##  Nœud de sortie de trame audio
 
-An audio frame output node allows you to receive and process audio data output from the audio graph with custom code that you create. An example scenario for this is performing signal analysis on the audio output. Create an [**AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166) by calling [**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233).
+Un nœud de sortie de trame audio vous permet de recevoir et de traiter la sortie de données audio à partir du graphique audio à l’aide du code personnalisé que vous créez. Cela permet d’effectuer par exemple une analyse de signal sur la sortie audio. Créez un [**AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166) en appelant [**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233).
 
 [!code-cs[DeclareFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-The [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) event is raised when the audio graph has completed processing a quantum of audio data. You can access the audio data from within the handler for this event.
+L’événement [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) est déclenché lorsque le graphique audio a terminé le traitement d’un quantum de données audio. Vous pouvez accéder aux données audio à partir du gestionnaire pour cet événement.
 
 [!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
 
--   Call [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) to get an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) object filled with audio data from the graph.
--   An example implementation of the **ProcessFrameOutput** helper method is shown below.
+-   Appelez [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) pour obtenir du graphique un objet [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) contenant les données audio.
+-   Un exemple d’implémentation de la méthode d’assistance **ProcessFrameOutput** est indiqué ci-dessous.
 
 [!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
 
--   Like the audio frame input node example above, you will need to declare the **IMemoryBufferByteAccess** COM interface and configure your project to allow unsafe code in order to access the underlying audio buffer.
--   Get the [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) of the audio frame by calling [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
--   Get an instance of the **IMemoryBufferByteAccess** COM interface from the audio buffer by calling [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
--   Get a pointer to raw audio buffer data by calling **IMemoryBufferByteAccess.GetBuffer** and cast it to the sample data type of the audio data.
+-   Comme dans l’exemple de nœud d’entrée de trame audio ci-dessus, vous devez déclarer l’interface COM **IMemoryBufferByteAccess** et configurer votre projet pour autoriser le code non sécurisé à accéder à la mémoire tampon audio sous-jacente.
+-   Obtenez la [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)de la trame audio en appelant [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
+-   Obtenez une instance de l’interface COM **IMemoryBufferByteAccess** à partir de la mémoire tampon audio en appelant [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
+-   Obtenez un pointeur vers les données de mémoire tampon audio brutes en appelant **IMemoryBufferByteAccess.GetBuffer** et en le diffusant vers le type d’exemple de données des données audio.
 
-## Node connections and submix nodes
+## Connexions de nœud et nœuds prémixés
 
-All input nodes types expose the **AddOutgoingConnection** method that routes the audio produced by the node to the node that is passed into the method. The following example connects an [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) to an [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098), which is a simple setup for playing an audio file on the device's speaker.
+Tous les types de nœud d’entrée exposent la méthode **AddOutgoingConnection** qui achemine les données audio produites par le nœud vers le nœud transmis dans la méthode. L’exemple suivant connecte un [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) à un [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) qui est un programme d’installation simple pour la lecture d’un fichier audio sur les haut-parleurs de l’appareil.
 
 [!code-cs[AddOutgoingConnection1](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection1)]
 
-You can create more than one connection from an input node to other nodes. The following example adds another connection from the [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) to an [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133). Now, the audio from the audio file is played to the device's speaker and is also written out to an audio file.
+Vous pouvez créer plusieurs connexions à partir d’un nœud d’entrée vers d’autres nœuds. L’exemple suivant ajoute une autre connexion à partir du [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) vers un [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133). À présent, le son du fichier audio est lu par le haut-parleur de l’appareil et est également écrit dans un fichier audio.
 
 [!code-cs[AddOutgoingConnection2](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection2)]
 
-Output nodes can also receive more than one connection from other nodes. In the following example a connection is made from a [**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) to the [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098) node. Because the output node has connections from the file input node and the device input node, the output will contain a mix of audio from both sources. **AddOutgoingConnection** provides an overload that lets you specify a gain value for the signal passing through the connection.
+Les nœuds de sortie peuvent également recevoir plus d’une connexion à partir d’autres nœuds. Dans l’exemple suivant, une connexion est établie à partir d’un [**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) vers le nœud [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098). Étant donné que le nœud de sortie dispose de connexions issues du nœud d’entrée de fichier et du nœud d’entrée d’appareil, la sortie contient un mélange d’audio des deux sources. **AddOutgoingConnection** fournit une surcharge qui vous permet de spécifier une valeur gain pour le signal passant par la connexion.
 
 [!code-cs[AddOutgoingConnection3](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection3)]
 
-Although output nodes can accept connections from multiple nodes, you may want to create an intermediate mix of signals from one or more nodes before passing the mix to an output. For example, you may want to set the level or apply effects to a subset of the audio signals in a graph. To do this, use the [**AudioSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914247). You can connect to a submix node from one or more input nodes or other submix nodes. In the following example, a new submix node is created with [**AudioGraph.CreateSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914236). Then, connections are added from a file input node and a frame output node to the submix node. Finally, the submix node is connected to a file output node.
+Bien que les nœuds de sortie puissent accepter des connexions de plusieurs nœuds, vous voudrez peut-être créer une combinaison intermédiaire de signaux à partir d’un ou plusieurs nœuds avant de transmettre la combinaison à une sortie. Par exemple, vous souhaitez peut-être définir le niveau ou appliquer des effets à un sous-ensemble de signaux audio dans un graphique. Pour cela, utilisez le [**AudioSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914247). Vous pouvez vous connecter à un nœud prémixé à partir d’un ou plusieurs nœuds d’entrée ou à partir d’autres nœuds prémixés. Dans l’exemple suivant, un nouveau nœud prémixé est créé avec [**AudioGraph.CreateSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914236). Ensuite, les connexions sont ajoutées à partir d’un nœud d’entrée de fichier et d’un nœud de sortie de trame dans le nœud prémixé. Enfin, le nœud prémixé est connecté à un nœud de sortie de fichier.
 
 [!code-cs[CreateSubmixNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateSubmixNode)]
 
-## Starting and stopping audio graph nodes
+## Démarrage et arrêt de nœuds de graphique audio
 
-When [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) is called, the audio graph begins processing audio data. Every node type provides **Start** and **Stop** methods that cause the individual node to start or stop processing data. When [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) is called, all audio processing in the all nodes is stopped regardless of the state of individual nodes, but the state of each node can be set while the audio graph is stopped. For example, you could call **Stop** on an individual node while the graph is stopped and then call **AudioGraph.Start**, and the individual node will remain in the stopped state.
+Lorsque [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) est appelée, le graphique audio commence à traiter les données audio. Chaque type de nœud fournit les méthodes **Start** et **Stop** qui entraînent le démarrage du nœud individuel ou l’arrêt du traitement des données. Lorsque [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) est appelée, le traitement audio de tous les nœuds est arrêté indépendamment de l’état de chacun d’entre eux. L’état de chaque nœud peut être défini lorsque le graphique audio est arrêté. Par exemple, vous pouvez appeler **Stop** sur un nœud individuel pendant que le graphique est arrêt, puis appeler **AudioGraph.Start**, et le nœud individuel restera à l’arrêt.
 
-All node types expose the **ConsumeInput** property that, when set to false, allows the node to continue audio processing but stops it from consuming any audio data being input from other nodes.
+Tous les types de nœud exposent la propriété **ConsumeInput** qui, lorsqu’elle est définie sur False, permet au nœud de poursuivre le traitement audio, mais l’empêche de consommer des données audio en cours d’entrée à partir d’autres nœuds.
 
-All node types expose the **Reset** method that causes the node to discard any audio data currently in its buffer.
+Tous les types de nœud exposent la méthode **Reset** qui pousse le nœud à ignorer les données audio présentes actuellement dans sa mémoire tampon.
 
-## Adding audio effects
+## Ajout d’effets audio
 
-The audio graph API allows you to add audio effects to every type of node in a graph. Output nodes, input nodes, and submix nodes can each have an unlimited number of audio effects, limited only by the capabilities of the hardware.The following example demonstrates adding the built-in echo effect to a submix node.
+L’API de graphique audio vous permet d’ajouter des effets audio pour chaque type de nœud dans un graphique. Les nœuds de sortie, les nœuds d’entrée et les nœuds prémixés peuvent avoir un nombre illimité d’effets audio (dans la mesure des capacités du matériel). L’exemple suivant illustre l’ajout de l’effet d’écho intégré à un nœud prémixé.
 
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
--   All audio effects implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044). Every node exposes an **EffectDefinitions** property representing the list of effects applied to that node. Add an effect by adding it's definition object to the list.
--   There are several effect definition classes that are provided in the **Windows.Media.Audio** namespace. These include:
+-   Tous les effets audio implémentent [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044). Chaque nœud expose une propriété **EffectDefinitions** représentant la liste des effets appliqués à ce nœud. Ajoutez un effet en ajoutant son objet de définition à la liste.
+-   Il existe plusieurs classes de définition d’effet fournies dans l’espace de noms **Windows.Media.Audio**. Les voici :
     -   [**EchoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914276)
     -   [**EqualizerEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914287)
     -   [**LimiterEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914306)
     -   [**ReverbEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914313)
--   You can create your own audio effects that implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) and apply them to any node in an audio graph.
--   Every node type exposes a **DisableEffectsByDefinition** method that disables all effects in the node's **EffectDefinitions** list that were added using the specified definition. **EnableEffectsByDefinition** enables the effects with the specified definition.
+-   Vous pouvez créer vos propres effets audio qui implémentent [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) et les appliquer à n’importe quel nœud dans un graphique audio.
+-   Chaque type de nœud expose une méthode **DisableEffectsByDefinition** qui désactive tous les effets dans la liste du nœud **EffectDefinitions** qui ont été ajoutés à l’aide de la définition spécifiée. **EnableEffectsByDefinition** active les effets avec la définition spécifiée.
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,10 +1,10 @@
 ---
 Description: Sur la page Packages, vous pouvez charger tous les fichiers de package (.xap, .appx, .appxupload et/ou .appxbundle) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application.
-title: Charger les packages d’application
+title: Chargement des packages d’application
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ---
 
-# Charger les packages d’application
+# Chargement des packages d’application
 
 
 Sur la page **Packages**, vous pouvez charger tous les fichiers de package (.xap, .appx, .appxupload et/ou .appxbundle) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application. Quand un client télécharge votre application, le Store passe en revue tous les packages disponibles de l’application, et propose automatiquement à chaque client le package le mieux adapté à son appareil.
@@ -16,7 +16,9 @@ Pour plus d’informations sur le contenu et sur la structure d’un package, vo
 
 Pour charger des packages, faites-les glisser dans le champ de chargement, ou cliquez pour parcourir vos fichiers. La page **Packages** permet de charger des fichiers .xap, .appx, .appxupload et/ou .appxbundle.
 
-> **Remarque** Pour Windows 10, vous devez toujours charger le fichier .appxupload, et non le fichier .appx ou .appxbundle. Pour plus d’informations sur l’empaquetage d’applications UWP pour le Windows Store, voir [Empaquetage d’applications Windows universelles pour Windows 10](../packaging/packaging-uwp-apps.md).
+Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer la totalité ou uniquement une partie des packages dans cette soumission.
+
+> **Important** Pour Windows 10, vous devez toujours charger le fichier .appxupload, et non le fichier .appx ou .appxbundle. Pour plus d’informations sur l’empaquetage d’applications pour UWP pour le Windows Store, consultez [Empaquetage d’applications Windows universelles pour Windows 10](../packaging/packaging-uwp-apps.md).
 
 Si nous détectons des problèmes liés à vos packages lors de leur validation, vous devrez supprimer le package et résoudre le problème avant d’essayer de le charger à nouveau. Pour plus d’informations, voir [Résolution des erreurs de chargement de package](resolve-package-upload-errors.md).
 
@@ -25,7 +27,7 @@ Il se peut également que vous receviez des avertissements concernant des probl�
 ## Détails du package
 
 
-Une fois vos packages correctement chargés, nous en dressons la liste en les groupant par système d'exploitation cible. Nous affichons le nom, la version et l'architecture du package. Cliquez sur **Détails** pour visualiser des informations complémentaires comme les langues prises en charge, les fonctionnalités de l'application et la taille de fichier de chaque package.
+Une fois vos packages correctement chargés, nous en dressons la liste en les groupant par système d’exploitation cible. Nous affichons le nom, la version et l’architecture du package. Cliquez sur **Détails** pour visualiser des informations complémentaires comme les langues prises en charge, les fonctionnalités de l’application et la taille de fichier de chaque package.
 
 Si vous utilisez la [Médiation publicitaire Windows](../monetize/use-ad-mediation-to-maximize-revenue.md), vous disposez également d’un lien pour configurer la médiation publicitaire pour chaque package.
 
@@ -50,4 +52,8 @@ Nous vous recommandons d’utiliser [Visual Studio Application Insights](http://
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO5-->
+
+

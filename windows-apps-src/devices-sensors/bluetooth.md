@@ -1,20 +1,24 @@
 ---
 ms.assetid: 404783BA-8859-4BFB-86E3-3DD2042E66F5
-title: Bluetooth
-description: This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements.
+Bluetooth
+Cette section contient des articles sur l’intégration du Bluetooth aux applications de la plateforme Windows universelle (UWP), notamment sur l’utilisation des API RFCOMM, GATT et des publications Bluetooth Low Energy (LE).
 ---
 # Bluetooth
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements.
+Cette section contient des articles sur l’intégration du Bluetooth aux applications de la plateforme Windows universelle (UWP), notamment sur l’utilisation des API RFCOMM, GATT et des publications Bluetooth Low Energy (LE).
 
 |        |                  |
 |--------|------------------|
-| [RFCOMM](send-or-receive-files-with-rfcomm.md)   | This article provides an overview of the Bluetooth RFCOMM APIs in the [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) namespace, along with example code on how to send or receive a file. |
-| [GATT](gatt-scenarios.md) | This article provides an overview of the Bluetooth Generic Attribute Profile (GATT) APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) namespace, along with sample code for three common GATT scenarios: retrieving Bluetooth data, controlling a Bluetooth LE thermometer device, and controlling the presentation of Bluetooth LE device data. |
-| [Low Energy (LE) Advertisements](http://go.microsoft.com/fwlink/p/?LinkId=619990) | This code sample demonstrates how to send and receive Bluetooth Low Energy advertisements using the APIs in the [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/Dn894325) namespace.  |
+| [RFCOMM](send-or-receive-files-with-rfcomm.md)   | Cet article fournit une vue d’ensemble des API RFCOMM Bluetooth dans l’espace de noms [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529), ainsi qu’un exemple de code illustrant la façon d’envoyer ou de recevoir un fichier. |
+| [GATT](gatt-scenarios.md) | Cet article fournit une vue d’ensemble des API de profil d’attribut générique (GATT) Bluetooth dans l’espace de noms [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685), ainsi qu’un exemple de code illustrant les trois utilisations communes de GATT : récupération de données Bluetooth, contrôle d’un appareil de thermométrie Bluetooth LE, et contrôle de la présentation des données d’appareil Bluetooth LE. |
+| [Publications Bluetooth Low Energy (LE)](http://go.microsoft.com/fwlink/p/?LinkId=619990) | Cet exemple de code montre comment envoyer et recevoir des publications Bluetooth Low Energy à l’aide des API dans l’espace de noms [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/Dn894325).  |
 
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

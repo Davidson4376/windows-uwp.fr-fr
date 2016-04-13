@@ -1,8 +1,8 @@
 ---
-Description: Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application.
-title: Vignettes
+Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application.
+Vignettes
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
-label: Vignettes
+Vignettes
 template: detail.hbs
 ---
 
@@ -102,4 +102,8 @@ Une fois votre application installée, vous pouvez utiliser les notifications po
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

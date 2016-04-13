@@ -1,6 +1,6 @@
 ---
-description: Lorsque vous commencez le processus de portage, vous avez le choix entre deux options.
-title: Portage d’un projet Windows Runtime 8.x vers un projet UWP
+Lorsque vous commencez le processus de portage, vous avez le choix entre deux options.
+Portage d’un projet Windows Runtime 8.x vers un projet UWP
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 ---
 
@@ -169,4 +169,8 @@ Rubrique suivante : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md)
 * [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

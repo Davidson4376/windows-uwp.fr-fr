@@ -1,19 +1,23 @@
 ---
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
-Data access
-This section discusses storing data on the device in a private database and using object relational mapping in Universal Windows Platform (UWP) apps.
+Accès aux données
+Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications de plateforme Windows universelle (UWP).
 ---
-# Data access
+# Accès aux données
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section discusses storing data on the device in a private database and using object relational mapping in Universal Windows Platform (UWP) apps.
+Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications de plateforme Windows universelle (UWP).
 
-SQLite is included in the UWP SDK. Entity Framework 7 works with SQLite in UWP apps. Use these technologies to develop for offline / intermittent connectivity scenarios, and to persist data across app sessions.
+SQLite est inclus dans le SDK UWP. Entity Framework 7 fonctionne avec SQLite dans les applications UWP. Utilisez ces technologies pour développer des scénarios de connectivité intermittente/hors connexion, et pour conserver des données entre des sessions d’application.
 
-| Topic | Description|
+| Rubrique | Description|
 |-------|------------|
-| [Entity framework 7 with SQLite for C# apps](entity-framework-7-with-sqlite-for-csharp-apps.md) | Entity Framework (EF) is an object-relational mapper that enables you to work with relational data using domain-specific objects. This article explains how you can use Entity Framework 7 with a SQLite database in a Universal Windows app. |
-| [SQLite databases](sqlite-databases.md) | SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source. |
+| [Entity Framework 7 avec des applications SQLite pour C#](entity-framework-7-with-sqlite-for-csharp-apps.md) | Entity Framework (EF) est un mappeur relationel objet qui vous permet de travailler avec les données relationnelles en utilisant des objets spécifiques au domaine. Cet article explique comment utiliser Entity Framework 7 avec une base de données SQLite dans une application Windows universelle. |
+| [Bases de données SQLite](sqlite-databases.md) | SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), créer un package pour votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source. |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

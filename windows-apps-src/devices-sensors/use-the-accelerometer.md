@@ -1,11 +1,11 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
-title: Utiliser l’accéléromètre
-description: Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur.
+Utiliser l’accéléromètre
+Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur.
 ---
 # Utiliser l’accéléromètre
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -26,7 +26,7 @@ L’appareil ou émulateur que vous utilisez doit prendre en charge un accélér
 
 ## Créer une application simple d’accéléromètre
 
-Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’accéléromètre. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’accéléromètre. La sous-section suivante décrit l’application que vous venez de créer.
 
 ### Instructions
 
@@ -167,4 +167,8 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 * [Exemple d’accéléromètre](http://go.microsoft.com/fwlink/p/?linkid=241377)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,42 +1,42 @@
 ---
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
-Keep the UI thread responsive
-Users expect an app to remain responsive while it does computation, regardless of the type of machine.
+Assurer la réactivité du thread de l’interface utilisateur
+Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur.
 ---
-# Keep the UI thread responsive
+# Assurer la réactivité du thread de l’interface utilisateur
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Users expect an app to remain responsive while it does computation, regardless of the type of machine. This means different things for different apps. For some, this translates to providing more realistic physics, loading data from disk or the web faster, quickly presenting complex scenes and navigating between pages, finding directions in a snap, or rapidly processing data. Regardless of the type of computation, users want their app to act on their input and eliminate instances where it appears unresponsive while it "thinks".
+Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur. Les implications sont différentes selon les applications. Pour certaines applications, cela implique de fournir des propriétés physiques plus réalistes, d’accélérer le chargement des données à partir d’un disque ou du Web, de représenter des scènes complexes et naviguer entre les pages plus vite, de trouver un itinéraire en un clin d’œil ou encore de traiter rapidement les données. Quel que soit le type de calcul effectué, les utilisateurs veulent que leur application continue de réagir à leurs interactions et qu’elle ne donne pas l’impression de ne plus répondre pendant l’opération de calcul.
 
-Your app is event-driven, which means that your code performs work in response to an event and then it sits idle until the next. Platform code for UI (layout, input, raising events, etc.) and your app’s code for UI all are executed on the same UI thread. Only one instruction can execute on that thread at a time so if your app code takes too long to process an event then the framework can’t run layout or raise new events representing user interaction. The responsiveness of your app is related to the availability of the UI thread to process work.
+Votre application est pilotée par les événements, ce qui signifie que votre code exécute des tâches en réponse à un événement, puis reste inactif jusqu’à l’événement suivant. L’ensemble du code de la plateforme pour l’interface utilisateur (disposition, entrée, déclenchement d’événements, etc.) et du code de votre application pour l’interface utilisateur est exécuté sur le même thread d’interface utilisateur. Une seule instruction peut être exécutée sur ce thread. Par conséquent, si le code de votre application met trop de temps à traiter un événement, l’infrastructure ne peut pas implémenter de disposition ou déclencher de nouveaux événements en réponse à une interaction utilisateur. La réactivité de votre application est liée à la capacité du thread de l’interface utilisateur à exécuter les tâches demandées.
 
-You need to use the UI thread to make almost all changes to the UI thread, including creating UI types and accessing their members. You can't update the UI from a background thread but you can post a message to it with [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to cause code to be run there.
+Vous devez utiliser le thread d’interface utilisateur pour apporter la quasi-totalité des modifications au thread d’interface utilisateur, notamment la création de types d’interface utilisateur et l’accès à leurs membres. Vous ne pouvez pas mettre à jour l’interface utilisateur à partir d’un thread en arrière-plan, mais vous pouvez y publier un message avec la méthode [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour que le code soit exécuté sur ce thread.
 
-> **Note**  The one exception is that there's a separate render thread that can apply UI changes that won't affect how input is handled or the basic layout. For example many animations and transitions that don’t affect layout can run on this render thread.
+> **Remarque** La seule exception est qu’il existe un thread de rendu distinct capable d’appliquer les modifications d’interface utilisateur qui n’affecteront pas la façon dont l’entrée est gérée ni la disposition de base. Par exemple, de nombreuses animations et transitions qui n’affectent pas la disposition peuvent être exécutées sur ce thread de rendu.
 
-## Delay element instantiation
+## Retarder l’instanciation des éléments
 
-Some of the slowest stages in an app can include startup, and switching views. Don't do more work than necessary to bring up the UI that the user sees initially. For example, don't create the UI for progressively-disclosed UI and the contents of popups.
+Certaines des étapes les plus lentes dans une application incluent le démarrage et le changement d’affichage. N’obligez pas l’application à faire plus de travail que nécessaire pour afficher l’interface utilisateur que l’utilisateur voit initialement. Par exemple, ne créez pas l’interface utilisateur de manière à révéler progressivement des éléments d’interface et le contenu des fenêtres contextuelles.
 
--   Use [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) to delay-instantiate elements.
--   Programmatically insert elements into the tree on-demand.
+-   Utilisez [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) pour retarder l’instanciation des éléments.
+-   Insérez les éléments par programme dans l’arborescence, à la demande.
 
-[**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) queues work for the UI thread to process when it's not busy.
+Les files d’attente [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) fonctionnent pour le traitement par le thread d’interface utilisateur lorsque ce dernier n’est pas occupé.
 
-## Use asynchronous APIs
+## Utiliser des API asynchrones
 
-To help keep your app responsive, the platform provides asynchronous versions of many of its APIs. An asynchronous API ensures that your active execution thread never blocks for a significant amount of time. When you call an API from the UI thread, use the asynchronous version if it's available. For more info about programming with **async** patterns, see [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/Mt187335) or [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337).
+Pour que l’application reste réactive, la plateforme fournit des versions asynchrones de plusieurs de ses API. Une API asynchrone permet de garantir que votre thread d’exécution actif n’est jamais bloqué pendant un laps de temps significatif. Si vous appelez une API à partir du thread d’interface utilisateur, utilisez la version asynchrone si elle est disponible. Pour plus d’informations sur la programmation avec des modèles **async**, voir [Programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/Mt187335) ou [Appel d’API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337).
 
-## Offload work to background threads
+## Décharger les tâches sur les threads en arrière-plan
 
-Write event handlers to return quickly. In cases where a non-trivial amount of work needs to be performed, schedule it on a background thread and return.
+Codez les gestionnaires d’événements de sorte qu’ils effectuent rapidement leur retour. Dans les cas où une quantité considérable de tâches doivent être effectuées, planifiez-les sur un thread en arrière-plan et revenez.
 
-You can schedule work asynchronously by using the **await** operator in C#, the **Await** operator in Visual Basic, or delegates in C++. But this doesn't guarantee that the work you schedule will run on a background thread. Many of the Universal Windows Platform (UWP) APIs schedule work in the background thread for you, but if you call your app code by using only **await** or a delegate, you run that delegate or method on the UI thread. You have to explicitly say when you want to run your app code on a background thread. In C#C# and Visual Basic you can accomplish this by passing code to [**Task.Run**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
+Vous pouvez planifier les tâches de manière asynchrone en utilisant l’opérateur **await** dans C#, l’opérateur **Await** dans Visual Basic ou des délégués dans C++. Cependant, cela ne garantit pas que les tâches ainsi planifiées seront toujours exécutées sur un thread en arrière-plan. La plupart des API de plateforme Windows universelle (UWP) planifient automatiquement les tâches sur le thread en arrière-plan, mais si vous appelez le code de votre application seulement avec l’opérateur **await** ou un délégué, ce délégué ou cette méthode s’exécute sur le thread de l’interface utilisateur. Vous devez indiquer explicitement que vous voulez exécuter le code de votre application sur un thread en arrière-plan. En C# et en Visual Basic, vous avez la possibilité de le faire en transmettant le code à [**Task.Run**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
 
-Remember that UI elements may only be accessed from the UI thread. Use the UI thread to access UI elements before launching the background work and/or use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) or [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) on the background thread.
+Gardez à l’esprit que les éléments d’interface utilisateur sont accessibles uniquement à partir du thread d’interface utilisateur. Utilisez le thread d’interface utilisateur pour accéder aux éléments d’interface utilisateur avant de lancer le travail en arrière-plan et/ou utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) ou [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) sur le thread d’arrière-plan.
 
-An example of work that can be performed on a background thread is the calculating of computer AI in a game. The code that calculates the computer's next move can take a lot of time to execute.
+Une opération de calcul d’intelligence artificielle dans un jeu constitue un exemple de travail pouvant être effectué sur un thread d’arrière-plan. L’exécution du code qui calcule l’action suivante de l’ordinateur peut prendre un temps considérable.
 
 ```csharp
 public class AsyncExample
@@ -90,12 +90,16 @@ Public Class Example
 End Class
 ```
 
-In this example, the `NextMove-Click` handler returns at the **await** in order to keep the UI thread responsive. But execution picks up in that handler again after `ComputeNextMove` (which executes on a background thread) completes. The remaining code in the handler updates the UI with the results.
+Dans cet exemple, le gestionnaire `NextMove-Click` effectue son retour lorsqu’il reçoit l’instruction **await** afin d’assurer la réactivité du thread d’interface utilisateur. Toutefois, l’exécution reprend dans ce gestionnaire à la fin de l’opération `ComputeNextMove` (qui est exécutée sur un thread en arrière-plan). Le reste du code du gestionnaire permet de mettre à jour l’interface utilisateur avec les résultats.
 
-> **Note**  There's also a [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) and [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR229621timer) API for the UWP, which can be used for similar scenarios. For more info, see [Threading and async programming](https://msdn.microsoft.com/library/windows/apps/Mt187340).
+> **Remarque** Il existe également des API [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) et [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR229621timer) pour UWP qui peuvent être utilisées pour des scénarios similaires. Pour plus d’informations, voir [Threads et programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/Mt187340).
 
-## Related topics
+## Rubriques connexes
 
-* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/Mt185599)
+* [Interactions utilisateur personnalisées](https://msdn.microsoft.com/library/windows/apps/Mt185599)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

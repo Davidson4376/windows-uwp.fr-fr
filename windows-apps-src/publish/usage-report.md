@@ -1,6 +1,6 @@
 ---
-Description: Le rapport Utilisation disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application.
-title: Rapport sur l’utilisation
+Le rapport Utilisation disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application.
+Rapport sur l’utilisation
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ---
 
@@ -63,4 +63,8 @@ Le graphique **Vues de page des 30 derniers jours** affiche le nombre total de v
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

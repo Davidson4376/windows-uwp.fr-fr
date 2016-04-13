@@ -1,9 +1,9 @@
 ---
-Description: La globalisation consiste à concevoir et développer votre application de sorte qu’elle adapte son comportement aux différents marchés du monde entier sans aucune modification ou personnalisation.
+La globalisation consiste à concevoir et développer votre application de sorte qu’elle adapte son comportement aux différents marchés du monde entier sans aucune modification ou personnalisation.
 Search.SourceType : vidéo
-title: Globalisation et localisation
+Globalisation et localisation
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
-label: Intro
+Intro
 template: detail.hbs
 ---
 
@@ -91,4 +91,8 @@ Consultez également la documentation initialement créée pour Windows 8.x, qui
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

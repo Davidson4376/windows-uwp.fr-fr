@@ -1,50 +1,50 @@
 ---
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
-Accessing HomeGroup content
-Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
+Accès au contenu du Groupement résidentiel
+Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos.
 ---
-# Accessing HomeGroup content
+# Accès au contenu du Groupement résidentiel
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-** Important APIs **
+** API importantes **
 
--   [**Windows.Storage.KnownFolders class**](https://msdn.microsoft.com/library/windows/apps/br227151)
+-   [**Classe Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151)
 
-Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
+Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos.
 
-## Prerequisites
+## Conditions préalables
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **App capabilty declarations**
+-   **Déclarations des fonctionnalités d’application**
 
-    To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**. When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest. To learn more, see [File access permissions](file-access-permissions.md).
+    Pour accéder au contenu Groupement résidentiel, l’ordinateur de l’utilisateur doit avoir un Groupement résidentiel configuré et votre application au moins une des fonctionnalités suivantes : **picturesLibrary**, **musicLibrary** ou **videosLibrary**. Lorsque votre application accédera au dossier Groupement résidentiel, elle ne verra que les bibliothèques correspondant aux fonctionnalités déclarées dans le manifeste de votre application. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
-    **Note**  Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.
+    **Remarque** Le contenu de la bibliothèque Documents d’un Groupement résidentiel n’est pas visible pour votre application quelles que soient les fonctionnalités déclarées dans le manifeste de votre application et quels que soient les paramètres de partage de l’utilisateur.
 
      
 
--   **Understand how to use file pickers**
+-   **Comprendre comment utiliser les sélecteurs de fichiers**
 
-    You typically use the file picker to access files and folders in the HomeGroup. To learn how to use the file picker, see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
+    Le sélecteur de fichiers sert généralement à accéder aux fichiers et aux dossiers du Groupement résidentiel. Pour savoir comment utiliser le sélecteur de fichiers, voir [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md).
 
--   **Understand file and folder queries**
+-   **Comprendre les requêtes de fichiers et de dossiers**
 
-    You can use queries to enumerate files and folders in the HomeGroup. To learn about file and folder queries, see [Enumerating and querying files and folders](quickstart-listing-files-and-folders.md).
+    Vous pouvez utiliser des requêtes pour énumérer les fichiers et les dossiers du Groupement résidentiel. Pour en savoir plus sur les requêtes de fichiers et de dossiers, voir [Énumération et interrogation de fichiers et de dossiers](quickstart-listing-files-and-folders.md).
 
-## Open the file picker at the HomeGroup
+## Ouvrir le sélecteur de fichiers au Groupement résidentiel
 
-Follow these steps to open an instance of the file picker that lets the user pick files and folders from the HomeGroup:
+Suivez ces étapes pour ouvrir une instance du sélecteur de fichiers qui permet à l’utilisateur de sélectionner des fichiers et des dossiers du Groupement résidentiel :
 
-1.  **Create and customize the file picker**
+1.  **Créer et personnaliser le sélecteur de fichiers**
 
-    Use [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to create the file picker, and then set the picker's [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Or, set other properties that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182)
+    Utilisez [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) pour créer le sélecteur de fichiers, puis définissez le paramètre [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) du sélecteur à [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Ou définissez les autres propriétés qui sont pertinentes pour vos utilisateurs et votre application. Pour obtenir des directives susceptibles de vous aider à choisir comment personnaliser le sélecteur de fichiers, voir [Recommandations et liste de vérification sur les sélecteurs de fichiers](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
-    This example creates a file picker that opens at the HomeGroup, includes files of any type, and displays the files as thumbnail images:
+    Cet exemple crée un sélecteur de fichiers qui s’ouvre au Groupement résidentiel, inclut des fichiers de tous types et affiche les fichiers sous forme d’images miniatures :
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -53,11 +53,11 @@ Follow these steps to open an instance of the file picker that lets the user pic
     picker.FileTypeFilter.Add("*");
     ```
   
-2.  **Show the file picker and process the picked file.**
+2.  **Montrer le sélecteur de fichiers et traiter le fichier sélectionné.**
 
-    After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
+    Une fois que vous avez créé et personnalisé le sélecteur de fichiers, offrez à l’utilisateur la possibilité de choisir un fichier en appelant [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), ou plusieurs fichiers en appelant [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
 
-    This example displays the file picker to let the user pick one file:
+    Cet exemple affiche le sélecteur de fichiers pour permettre à l’utilisateur de sélectionner un fichier :
     ```csharp
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
@@ -71,22 +71,22 @@ Follow these steps to open an instance of the file picker that lets the user pic
     }   
     ```
 
-## Search the HomeGroup for files
+## Chercher des fichiers dans le Groupement résidentiel
 
-This section shows how to find HomeGroup items that match a query term provided by the user.
+Cette sélection illustre comment trouver des éléments du Groupement résidentiel qui correspondent à un terme de requête fourni par l’utilisateur.
 
-1.  **Get the query term from the user.**
+1.  **Obtenez le terme de requête de l’utilisateur.**
 
-    Here we get a query term that the user has entered into a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) control called `searchQueryTextBox`:
+    Nous obtenons ici un terme de requête que l’utilisateur a entré dans un contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) appelé `searchQueryTextBox` :
     ```csharp
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
 
-2.  **Set the query options and search filter.**
+2.  **Définissez les options de requête et le filtre de recherche.**
 
-    Query options determine how the search results are sorted, while the search filter determines which items are included in the search results.
+    Les options de requête déterminent la manière avec laquelle les résultats de la recherche sont triés, tandis que le filtre de recherche détermine quels éléments sont inclus dans les résultats de la recherche.
 
-    This example sets query options that sort the search results by relevance and then the date modified. The search filter is the query term that the user entered in the previous step:
+    Cet exemple définit des options de requête qui trient les résultats de recherche par pertinence, puis par date de modification. Le filtre de recherche est le terme de requête que l’utilisateur a entré à l’étape précédente :
     ```csharp
     Windows.Storage.Search.QueryOptions queryOptions = 
             new Windows.Storage.Search.QueryOptions
@@ -96,9 +96,9 @@ This section shows how to find HomeGroup items that match a query term provided 
             Windows.Storage.KnownFolders.HomeGroup.CreateFileQueryWithOptions(queryOptions);    
     ```
 
-3.  **Run the query and process the results.**
+3.  **Exécutez la requête puis traitez les résultats.**
 
-    The following example runs the search query in the HomeGroup and saves the names of any matching files as a list of strings.
+    L’exemple suivant exécute la requête de recherche dans le Groupement résidentiel et enregistre les noms de tout fichier correspondant sous forme de liste de chaînes.
     ```csharp
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files = 
         await queryResults.GetFilesAsync();
@@ -114,21 +114,21 @@ This section shows how to find HomeGroup items that match a query term provided 
     ```
 
 
-## Search the HomeGroup for a particular user's shared files
+## Rechercher dans le Groupement résidentiel les fichiers partagés d’un utilisateur particulier
 
-This section shows you how to find HomeGroup files that are shared by a particular user.
+Cette section vous montre comment trouver les fichiers du Groupement résidentiel qui sont partagés par un utilisateur particulier.
 
-1.  **Get a collection of HomeGroup users.**
+1.  **Obtenir un ensemble d’utilisateurs du Groupement résidentiel.**
 
-    Each of the first-level folders in the HomeGroup represents an individual HomeGroup user. So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) retrieve the top-level HomeGroup folders.
+    Chacun des dossiers de premier niveau du Groupement résidentiel représente un utilisateur individuel. Ainsi, pour obtenir la collection d’utilisateurs du Groupement résidentiel, appelez [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) pour récupérer les dossiers du Groupement résidentiel du niveau supérieur.
     ```csharp
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders = 
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
-2.  **Find the target user's folder, and then create a file query scoped to that user's folder.**
+2.  **Trouver le dossier de l’utilisateur cible, puis créer une requête de fichier dont la portée correspond au dossier de cet utilisateur.**
 
-    The following example iterates through the retrieved folders to find the target user's folder. Then, it sets query options to find all files in the folder, sorted first by relevance and then by the date modified. The example builds a string that reports the number of files found, along with the names of the files.
+    L’exemple suivant répète l’opération sur les dossiers récupérés jusqu’à ce qu’il trouve le dossier de l’utilisateur cible. Ensuite, il définit des options de requête pour trouver tous les fichiers du dossier, d’abord triés par pertinence, puis par date de modification. L’exemple construit une chaîne qui rapporte le nombre de fichiers trouvés, ainsi que les noms des fichiers.
     ```csharp
     bool userFound = false;
     foreach (Windows.Storage.StorageFolder folder in hgFolders)
@@ -159,22 +159,22 @@ This section shows you how to find HomeGroup files that are shared by a particul
     }    
     ```
 
-## Stream video from the HomeGroup
+## Lecture en continu de la vidéo du Groupement résidentiel
 
-Follow these steps to stream video content from the HomeGroup:
+Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupement résidentiel :
 
-1.  **Include a MediaElement in your app.**
+1.  **Inclure un MediaElement dans votre application.**
 
-    A [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) lets you play back audio and video content in your app. For more information on audio and video playback, see [Create custom transport controls](https://msdn.microsoft.com/library/windows/apps/mt187271) and [Audio, video, and camera](https://msdn.microsoft.com/library/windows/apps/mt203788).
+    Un [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) vous permet de lire des contenus audio et vidéo dans votre application. Pour plus d’informations sur la lecture audio et vidéo, voir [Créer des contrôles de transport personnalisés](https://msdn.microsoft.com/library/windows/apps/mt187271) et [Audio, vidéo et appareil photo](https://msdn.microsoft.com/library/windows/apps/mt203788).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
     </Grid>    
     ```
 
-2.  **Open a file picker at the HomeGroup and apply a filter that includes video files in the formats that your app supports.**
+2.  **Ouvrez un sélecteur de fichiers dans le Groupement résidentiel, et appliquez un filtre qui inclut les fichiers vidéo dans les formats pris en charge par votre application.**
 
-    This example includes .mp4 and .wmv files in the file open picker.
+    Cet exemple inclut les fichiers .mp4 et .wmv dans le sélecteur d’ouverture de fichier.
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -185,7 +185,7 @@ Follow these steps to stream video content from the HomeGroup:
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Open the the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), and then play the file.
+3.  **Ouvrir la sélection de fichier de l’utilisateur pour un accès en lecture, définir le flux de fichiers comme source pour le** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), puis lire le fichier.
     ```csharp
     if (file != null)
     {
@@ -207,4 +207,8 @@ Follow these steps to stream video content from the HomeGroup:
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

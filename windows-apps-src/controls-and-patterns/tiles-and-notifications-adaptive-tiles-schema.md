@@ -1,8 +1,8 @@
 ---
-Description: Voici les éléments et attributs permettant de créer des vignettes adaptatives.
-title: Schéma et modèles de vignette adaptative
+Voici les éléments et attributs permettant de créer des vignettes adaptatives.
+Schéma et modèles de vignette adaptative
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
-label: Schéma et modèles de vignette adaptative
+Schéma et modèles de vignette adaptative
 template: detail.hbs
 ---
 
@@ -132,11 +132,11 @@ Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle su
 ```
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Rubriques connexes
+## <span id="related_topics"> </span>Rubriques connexes
 
 
 * [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
@@ -147,4 +147,8 @@ Cet article s’adresse aux développeurs de Windows 10 qui créent des applica
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

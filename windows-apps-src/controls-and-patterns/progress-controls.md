@@ -1,84 +1,88 @@
 ---
-A progress control provides feedback to the user that a long-running operation is underway.
-Guidelines for progress controls
+Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours.
+Recommandations en matière de contrôles de progression
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
-Progress controls
+Contrôles de progression
 template: detail.hbs
 ---
-# Progress controls
+# Contrôles de progression
 
-A progress control provides feedback to the user that a long-running operation is underway. A *determinate* progress bar shows the percentage of completion of an operation. An *indeterminate* progress bar, or a progress ring, shows that an operation is underway.
+Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours. Une barre de progression *déterminée* affiche le pourcentage d’achèvement d’une opération. Une barre de progression, ou un anneau de progression, *indéterminée* affiche qu’une opération est en cours d’exécution.
 
-A progress control is read only; it is not interactive.
+Un contrôle de progression est en lecture seule ; il n’est pas interactif.
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
--   [**ProgressBar class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)
--   [**IsIndeterminate property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)
--   [**ProgressRing class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)
--   [**IsActive property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+-   [**Classe ProgressBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)
+-   [**Propriété IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)
+-   [**Classe ProgressRing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)
+-   [**Propriété IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
-![Windows app: indeterminate progress bar, progress ring, and determinate progress bar](images/ProgressBar.png)
+![Application Windows : barre de progression indéterminée, anneau de progression et barre de progression déterminée](images/ProgressBar.png)
 
-Windows app: indeterminate progress bar, progress ring, and determinate progress bar
+Application Windows : barre de progression indéterminée, anneau de progression et barre de progression déterminée
 
-![Windows Phone app: status bar progress indicator and progress bars](images/wp_progress_bar.png)
+![Application Windows Phone : indicateur de progression de la barre d’état et barres de progression](images/wp_progress_bar.png)
 
-Windows Phone app: status bar progress indicator and progress bars
+Application Windows Phone : indicateur de progression de la barre d’état et barres de progression
 
-## Examples
+## Exemples
 
-Here's an example of a progress ring control on a splash screen.
+Voici un exemple de contrôle d’anneau de progression sur un écran de démarrage.
 
-![A screenshot that illustrates the standard progress ring control](images/ProgressBar_Standard.png)
+![Capture d’écran du contrôle d’anneau de progression standard](images/ProgressBar_Standard.png)
 
-A progress bar is also a good indicator of state or position. A progress bar used for a music track corresponds to the timeline of the song: the bar’s value is the song position; the paused state indicates that playback is paused.
+Une barre de progression est également un bon indicateur d’état ou de position. Lorsqu’elle est utilisée pour un morceau de musique, elle indique la chronologie de la chanson : la valeur de la barre est la position dans la chanson ; l’état de suspension indique que la lecture est suspendue.
 
-![Xbox Music app displays a progress bar when playing a song](images/ProgressBar_MusicTimeline.png)
+![L’application Xbox Music affiche une barre de progression lorsqu’elle lit de la musique.](images/ProgressBar_MusicTimeline.png)
 
-## Is this the right control?
+## Est-ce le contrôle approprié ?
 
-It's not always necessary to show a progress control. Sometimes a task's progress is obvious enough on its own or the task completes so quickly that showing a progress control would be distracting. Here are some points to consider when determining whether you should show a progress control.
+Il n’est pas systématiquement nécessaire de présenter un contrôle de progression. Parfois, le caractère manifeste ou rapide de la progression d’une tâche ne justifie pas la présentation d’un contrôle de progression. Voici quelques points à considérer pour déterminer si vous devez présenter un contrôle de progression.
 
--   **Does the operation take more than two seconds to complete?**
+-   **L’opération nécessite-t-elle plus de deux secondes pour s’accomplir ?**
 
-    If so, show a progress control as soon as the operation starts. If an operation takes more than two seconds to complete most of the time, but sometimes completes in under two seconds, wait 500ms before showing the control to avoid flickering.
+    Si c’est le cas, affichez un contrôle de progression aussitôt que l’opération démarre. Si une opération nécessite la plupart du temps plus de deux secondes pour s’accomplir, mais qu’elle aboutit parfois en moins de deux secondes, patientez 500 ms avant de afficher le contrôle pour éviter tout scintillement.
 
--   **Is the operation waiting for the user to complete a task?**
+-   **L’opération attend-elle que l’utilisateur effectue une tâche ?**
 
-    If so, don't use a progress bar. Progress bars are for computer progress, not user progress.
+    Si oui, n’utilisez pas de barre de progression. Les barres de progression concernent la progression de l’ordinateur, pas celle de l’utilisateur.
 
--   **Does the user need to know that something is happening?**
+-   **L’utilisateur a-t-il besoin de savoir que quelque chose se produit ?**
 
-    For example, if the app is downloading something in the background and the user didn’t initiate the download, the user doesn’t need to know about it.
+    Par exemple, si l’application exécute un téléchargement en arrière-plan et que l’utilisateur n’en est pas l’initiateur, il est inutile d’informer l’utilisateur.
 
--   **Is the operation a background activity that doesn't block user activity and is of minimal (but still some) interest to the user?**
+-   **L’opération est-elle une activité en arrière-plan qui ne bloque pas celle de l’utilisateur et dont l’intérêt est minime (mais tout de même existant) pour l’utilisateur ?**
 
-    Use text and ellipses when your app is performing tasks that don't have to be visible all the time, but you still need to show the status.
+    Utilisez du texte et des points de suspension lorsque votre application effectue des tâches qui n’ont pas à être visibles tout le temps, mais dont vous souhaitez quand même indiquer le statut.
 
-    ![Example of text as a progress indicator](images/textprogress.png)
+    ![Exemple de texte utilisé en tant qu’indicateur de progression](images/textprogress.png)
 
-    Use the ellipses to indicate that the task is ongoing. If there are multiple tasks or items, you can indicate the number of remaining tasks. When all tasks complete, dismiss the indicator.
+    Utilisez les points de suspension pour indiquer que la tâche est en cours. S’il existe plusieurs tâches ou éléments, vous pouvez indiquer le nombre de tâches restantes. Lorsque toutes les tâches sont terminées, faites disparaître l’indicateur.
 
--   **Can you use the content from the operation to visualize progress?**
+-   **Pouvez-vous utiliser le contenu de l’opération pour visualiser la progression ?**
 
-    If so, don't show a progress control. For example, when displaying /src/assets loaded from the disk, /src/assets appear on the screen one-by-one as they are loaded. Displaying a progress control would provide no benefit; it would just clutter the UI.
+    Si oui, ne présentez pas de contrôle de progression. Par exemple, lors de l’affichage d’éléments /src/assets chargés depuis le disque, ceux-ci apparaissent à l’écran un par un au fur et à mesure de leur chargement. L’affichage d’un contrôle de progression ne présenterait aucun avantage et ne ferait qu’encombrer l’interface utilisateur.
 
--   **Can you determine, relatively, how much of the total work is complete while the operation is progressing?**
+-   **Pouvez-vous déterminer, de manière relative, la quantité de travail effectuée tandis que l’opération est en cours de progression ?**
 
-    If so, use a determinate progress bar, especially for operations that block the user. Use an indeterminate progress bar or ring otherwise. Even if all the user knows is that something is happening, that’s still helpful.
+    Dans ce cas, utilisez une barre de progression déterminée, en particulier pour les opérations qui bloquent l’utilisateur. Sinon, utilisez une barre ou un anneau de progression indéterminée. Même si sa seule fonction est d’indiquer à l’utilisateur qu’une opération est en train de se produire, elle s’avère utile.
 
-## Create a determinate progress control
+## Créer un contrôle de progression déterminée
 
-A determinate progress bar shows how much progress the app has made. As work progresses , the bar fills up. If you can estimate remaining amount of work in time, bytes, files, or some other quantifiable units of measure, use a determinate progress bar.
+Une barre de progression déterminée affiche l’état d’avancement de la tâche en cours de réalisation par l’application. La barre se remplit à mesure que la tâche progresse. Utilisez une barre de progression déterminée si vous pouvez évaluer la part de la tâche restant à réaliser en termes de temps, d’octets, de fichiers ou de toute autre unité de mesure quantifiable.
 
-The progress bar provides several properties for setting and determining progress:
-- [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx): Specifies whether the progress bar is indeterminate. Set to **false** to create a determinate progress bar.
-- [**Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx): The start of the value range. The default is 0.0.
-- [**Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx): The end of the vlaue range. The default is 1.0. 
-- [**Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx): A number that specifies the current progress. If you're showing the progress of a file download, this value might be the number of bytes downloaded (and then you set Maximum to the total number of bytes to download).
+La barre de progression fournit plusieurs propriétés qui permettent de définir et de déterminer la progression :
+- [
+            **IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx) : spécifie si la barre de progression est indéterminée. Appliquez la valeur **false** pour créer une barre de progression déterminée.
+- [
+            **Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx) : début de la plage de valeurs. La valeur par défaut est 0,0.
+- [
+            **Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx) : fin de la plage de valeurs. La valeur par défaut est 1,0. 
+- [
+            **Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx) : nombre qui spécifie la progression actuelle. Si vous affichez la progression du téléchargement d’un fichier, cette valeur peut être le nombre d’octets téléchargés (dans ce cas, vous définissez Maximum sur le nombre total d’octets à télécharger).
  
-The following example shows a value-based determinate progress bar. 
+L’exemple suivant montre une barre de progression déterminée basée sur la valeur. 
 
 ```xaml
 <ProgressBar IsIndeterminate="False" Maximum="100" Width="200"/>
@@ -94,13 +98,13 @@ progressBar1.Width = 200;
 stackPanel1.Children.Add(progressBar1);
 ```
 
-You don't typically specify the value of a progress bar in markup. Instead, you use procedural code or data binding to update the value of the progress bar as a response to some indicator of progress. For example, if your progress bar indicates how many files have been downloaded, you update the value each time another file is downloaded.
+En règle générale, vous ne spécifiez pas la valeur d’une barre de progression dans le balisage. En fait, vous utilisez un code procédural ou une liaison de données pour mettre à jour la valeur de la barre de progression en réaction à un indicateur d’avancement. Par exemple, si la barre de progression indique le nombre de fichiers ayant été téléchargés, sa valeur est mise à jour dès qu’un autre fichier a été téléchargé.
 
-## Create an indeterminate progress control
+## Créer un contrôle de progression indéterminée
 
-When you can't estimate how much work remains to finish a task and the task doesn't block user interaction, use an indeterminate progress bar or progress ring. Instead of showing a bar that fills up as progress completes, an indeterminate progress bar shows an animation of dots moving from left to right. An indeterminate progress ring shows an animated sequence of dots moving in a circle. 
+Utilisez une barre ou un anneau de progression indéterminée lorsque vous ne pouvez pas évaluer la part de la tâche restant à réaliser et que la tâche n’empêche pas les actions utilisateur. Au lieu d’afficher une barre qui se remplit à mesure que la tâche progresse, une barre de progression indéterminée affiche une série de points animés qui se déplacent de gauche à droite. Un anneau de progression indéterminée affiche une série de points animés qui se déplacent en cercle. 
 
-To make a progess bar indeterminate, set its [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx) property to **true**.
+Pour rendre une barre de progression indéterminée, définissez sa propriété [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx) sur **true**.
 
 ```xaml
 <ProgressBar IsIndeterminate="True" Width="200"/>
@@ -115,7 +119,7 @@ progressBar1.Width = 200;
 stackPanel1.Children.Add(progressBar1);
 ```
 
-To show a progress ring in your app, set its [**IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx) property to **true**.
+Pour afficher un anneau de progression dans votre application, définissez sa propriété [**IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx) sur **true**.
 
 ```xaml
 <ProgressRing IsActive="True"/>
@@ -129,166 +133,170 @@ progressRing1.IsActive = true;
 stackPanel1.Children.Add(progressRing1);
 ```
 
-## Recommendations
+## Recommandations
 
--   Use the determinate progress bar when a task is determinate, that is when it has a well-defined duration or a predictable end. For example, if you can estimate remaining amount of work in time, bytes, files, or some other quantifiable units of measure, use a determinate progress bar. Here are some examples of determinate tasks:
+-   Utilisez la barre de progression déterminée lorsque la tâche est déterminée, c’est-à-dire que sa durée est bien définie ou sa fin prévisible. Par exemple, si vous pouvez estimer la quantité de travail restante en temps, octets, fichiers ou autres unités de mesure quantifiables, utilisez une barre de progression déterminée. Voici quelques exemples de tâches déterminées :
 
-    -   The app is downloading a 500k photo and has received 100k so far.
-    -   The app is displaying a 15 second advertisement and 2 seconds have elapsed.
+    -   L’application télécharge une photo de 500 ko et a pour l’heure reçu 100 ko.
+    -   L’application affiche une annonce de 15 secondes et 2 secondes se sont écoulées.
 
-    ![Example of a determinate progress bar](images/progress_determinate_bar.png)
+    ![Exemple de barre de progression déterminée](images/progress_determinate_bar.png)
 
--   Use the indeterminate progress ring for tasks that are not determinate and are modal (block user interaction).
+-   Utilisez l’anneau de progression indéterminée pour les tâches qui ne sont pas déterminées et modales (qui bloquent l’interaction de l’utilisateur).
 
-    ![Example of a progress ring](images/progress_ring.png)
+    ![Exemple d’anneau de progression](images/progress_ring.png)
 
--   Use the indeterminate progress bar for tasks that are not determinate that are non-modal (don't block user interaction).
+-   Utilisez la barre de progression indéterminée pour les tâches qui ne sont pas déterminées et qui ne sont pas modales (qui ne bloquent pas l’interaction de l’utilisateur).
 
-    ![Example of an indeterminate progress bar](images/progress_indeterminate_bar.png)
+    ![Exemple de barre de progression indéterminée](images/progress_indeterminate_bar.png)
 
--   Treat partially modal tasks as non-modal if the modal state lasts less than 2 seconds. Some tasks block interaction until some progress has been made, and then the user can start interacting with the app again. For example, when the user performs a search query, interaction is blocked until the first result is displayed. Treat tasks such as these as non-modal and use the indeterminate progress bar style if modal state lasts less than 2 seconds. If modal state can last more than 2 seconds, use the indeterminate progress ring for the modal phase of the task, and use the indeterminate progress bar for the non-modal phase.
--   Consider providing a way to cancel or pause the operation that is in progress, particularly when the user is blocked awaiting the completion of the operation and has a good idea of how much longer the operation has left to run.
--   Don't use the "wait cursor" to indicate activity, because users who use touch to interact with the system won't see it, and those users who use mouse don't need two ways to visualize activity (the cursor and the progress control).
--   Show a single progress control for multiple active related tasks. If there are multiple related items on the screen that are all simultaneously performing some kind of activity, don't show multiple progress controls. Instead, show one that ends when the last task completes. For example, if the app downloads multiple photos, show a single progress control, instead of showing one for every photo.
--   Don't change the location or size of the progress control while the task is running.
+-   Traitez les tâches partiellement modales comme des tâches non modales, si l’état modal dure moins de 2 secondes. Certaines tâches bloquent l’interaction le temps qu’une certaine progression ait lieu, après quoi l’utilisateur peut recommencer à interagir avec l’application. Par exemple, lorsque l’utilisateur effectue une requête de recherche, son interaction est bloquée jusqu’à ce que le premier résultat s’affiche. Traitez ces tâches comme non modales et utilisez la barre de progression indéterminée si l’état modal dure moins de 2 secondes. Si l’état modal peut durer plus de deux secondes, utilisez l’anneau de progression indéterminée pour la phase modale de la tâche et la barre de progression indéterminée pour la phase non modale.
+-   Songez à fournir un moyen d’annuler ou de suspendre l’opération en cours de progression, notamment lorsque l’utilisateur est bloqué en attendant l’achèvement de l’opération et connaît sa durée d’exécution restante.
+-   N’utilisez pas le « curseur d’attente » pour indiquer une activité, car les utilisateurs qui interagissent de manière tactile avec le système ne le voient pas et ceux qui utilisent la souris n’ont pas besoin de deux manières de visualiser l’activité (le curseur et le contrôle de progression).
+-   Présentez un seul contrôle de progression pour plusieurs tâches connexes actives. S’il existe plusieurs éléments connexes à l’écran qui effectuent simultanément un type d’activité, ne présentez pas plusieurs contrôles de progression. Présentez-en plutôt un qui se termine lorsque la dernière tâche est accomplie. Par exemple, si l’application télécharge plusieurs photos, présentez un seul contrôle de progression, plutôt qu’un pour chaque photo.
+-   Ne changez pas l’emplacement ou la taille du contrôle de progression pendant que la tâche s’exécute.
 
-### Guidelines for determinate tasks
+### Recommandations en matière de tâches déterminées
 
--   If the operation is modal (blocks user interaction), and takes longer than 10 seconds, provide a way to cancel it. The option to cancel should be available when the operation begins.
--   Space progress updates evenly. Avoid situations where progress increases to over 80% and then stops for a long period of time. You want to speed up progress towards the end, not slow it down. Avoid drastic jumps, such as from 0% to 90%.
--   After setting progress to 100%, wait until the determinate progress bar finishes animating before hiding it.
--   If your task is stopped (by a user or an external condition), but a user can resume it, visually indicate that progress is paused. In JavaScript apps, you do this by using the win-paused CSS style. In C\#/C++/VB apps, you do this by setting the ShowPaused property to true. Provide status text under the progress bar that tells the user what's going on.
--   If the task is stopped and can’t be resumed or has to be restarted from scratch, visually indicate that there's an error. In JavaScript apps, you do this by using the win-error CSS style. In C\#/C++/VB apps, you do this by setting the ShowError property to true. Replace the status text (underneath the bar) with a message that tells the user what happened and how to fix the issue (if possible).
--   If some time (or action) is needed before you can provide determinate progress, use the indeterminate bar first, and then switch to the determinate bar. For example, if the first step of a download task is connecting to a server, you can’t estimate how long that takes. After the connection is established, switch to the determinate progress bar to show the download progress. Keep the progress bar in exactly the same place, and of the same size after the switch.
+-   Si l’opération est modale (elle bloque l’interaction de l’utilisation) et nécessite plus de 10 secondes, fournissez un moyen de l’annuler. La possibilité d’annuler doit être disponible au début de l’opération.
+-   Échelonnez les mises à jour de la progression de manière régulière. Évitez les situations dans lesquelles la progression augmente de plus de 80 %, puis s’arrête pendant longtemps. Il est préférable d’accélérer la progression vers la fin, plutôt que de la ralentir. Évitez les sauts considérables, par exemple de 0 % à 90 %.
+-   Avant de définir la progression à 100 %, patientez jusqu’à ce que l’animation de la barre de progression déterminée soit terminée avant de la masquer.
+-   Si votre tâche est arrêtée (par un utilisateur ou une condition externe), mais que l’utilisateur peut la reprendre, indiquez visuellement que la progression est interrompue. Dans les applications JavaScript, vous utilisez pour cela le style CSS win-paused. Dans les applications C\#/C++/VB, vous effectuez cette opération en affectant à la propriété ShowPaused la valeur True. Fournissez un texte de statut sous la barre de progression pour indiquer à l’utilisateur ce qui se passe.
+-   Si la tâche est arrêtée et qu’elle ne peut pas être reprise ou qu’elle doit être redémarrée à partir de zéro, indiquez visuellement la présence d’une erreur. Dans les applications JavaScript, vous utilisez pour cela le style CSS win-error. Dans les applications C\#/C++/VB, vous effectuez cette opération en affectant à la propriété ShowError la valeur True. Remplacez le texte de statut (sous la barre) par un message qui indique à l’utilisateur la nature du problème et la procédure à suivre pour le résoudre (si possible).
+-   Si un délai (ou une action) est nécessaire avant de fournir une progression déterminée, utilisez d’abord la barre indéterminée, puis basculez vers la barre déterminée. Par exemple, si la première étape d’une tâche de téléchargement est la connexion à un serveur, vous ne pouvez pas estimer la durée de cette tâche. Une fois la connexion établie, basculez vers la barre de progression déterminée pour montrer la progression du téléchargement. Maintenez la barre de progression exactement au même emplacement, sans modifier sa taille après le basculement.
 
-    ![Changing from an indeterminate to a determinate progress bar](images/progress_changing.png)
+    ![Passage d’une barre de progression indéterminée à une barre de progression déterminée](images/progress_changing.png)
 
--   If you have a list of items, such as a list of printers, and certain actions can initiate an operation on items in that list (such as installing a driver for one of the printers), show a determinate progress bar next to the item.
+-   Si vous avez une liste d’éléments, telle qu’une liste d’imprimantes, et que certaines actions puissent initier une opération sur les éléments de cette liste (telle que l’installation d’un pilote pour l’une des imprimantes), présentez une barre de progression déterminée en regard de l’élément.
 
-    Show the subject (label) of the task above the progress bar and status underneath. Don’t provide status text if what's happening is obvious. After the task completes, hide the progress bar. Use the status text to communicate the new state of an item.
+    Montrez l’objet (étiquette) de la tâche au-dessus de la barre de progression et le statut en dessous. N’indiquez pas de texte de statut si ce qui se produit est une évidence. Une fois la tâche terminez, masquez la barre de progression. Utilisez le texte de statut pour communiquer le nouvel état d’un élément.
 
-    ![Showing inline progress with status](images/progress_multiplebars.png)
+    ![Affichage de la progression avec statut](images/progress_multiplebars.png)
 
--   To show a list of tasks, align the content in a grid so users can see the status at a glance. Show progress bars for all items, even those that are pending.
+-   Pour montrer une liste de tâches, alignez le contenu dans une grille afin que les utilisateurs puissent voir le statut d’un seul coup. Montrez les barres de progression de tous les éléments, même ceux en attente.
 
-    Because the purpose of this list is to show ongoing operations, remove operations from the list when they complete.
+    Étant donné que l’objectif de cette liste est de montrer les opérations en cours, supprimez les opérations de la liste lorsqu’elles sont terminées.
 
-    ![Displaying multiple progress bars](images/progress_bar_multiple.png)
+    ![Affichage de plusieurs barres de progression](images/progress_bar_multiple.png)
 
--   If a user initiated a task from the app bar and it blocks user interaction, show the progress control in the app bar.
+-   Si l’utilisateur a initié une tâche à partir de la barre de l’application et qu’elle bloque l’interaction de l’utilisateur, affichez le contrôle de progression dans la barre de l’application.
 
-    If it's clear what the progress bar is showing progress for, you can align progress bar to the top of the app bar and omit the label and status; otherwise, provide a label and status text.
+    Si l’élément auquel s’applique la progression est évident, vous pouvez aligner la barre de progression en haut de la barre de l’application et omettre l’étiquette et le statut ; sinon, entrez un texte pour l’étiquette et le statut.
 
-    Disable interaction during the task by disabling controls in the app bar and ignoring input in the content area.
+    Désactivez l’interaction pendant la tâche en désactivant les contrôles dans la barre de l’application et en ignorant la saisie dans la zone de contenu.
 
--   Don’t decrement progress. Always increment the progress value. If you need to reverse an action, show the progress of reversal as you would show progress of any other action.
--   Don’t restart progress (from 100% to 0%), unless it’s obvious to the user that a current step or task is not the last one. For example, suppose a task has two parts: downloading some data, and then processing and displaying the data. After the download is complete, reset the progress bar to 0% and begin showing the data processing progress. If it’s unclear to users that there are multiple steps in a task, collapse the tasks into a single 0-100% scale and update status text as you move from one task to the next.
+-   Ne décrémentez pas la progression. Incrémentez toujours la valeur de la progression. Si vous avez besoin d’inverser une action, présentez la progression de l’inversion comme vous présenteriez la progression de toute autre action.
+-   Ne redémarrez pas la progression (de 100 % à 0 %), sauf s’il est évident pour l’utilisateur qu’une étape ou tâche en cours n’est pas la dernière. Par exemple, supposons qu’une tâche comporte deux parties : le téléchargement de certaines données, puis le traitement et l’affichage de ces données. Une fois le téléchargement terminé, réinitialisez la barre de progression à 0 % et commencez à montrer la progression du traitement des données. S’il n’est pas clair pour les utilisateurs qu’il existe plusieurs étapes dans une tâche, réduisez les tâches à une seule échelle 0-100 % et mettez à jour le texte de statut au fur et à mesure que vous passez d’une tâche à la suivante.
 
-### Guidelines for modal, indeterminate tasks that use the progress ring
+### Recommandations en matière de tâches indéterminées, modales, qui utilisent l’anneau de progression
 
--   Display the progress ring in the context of the action: show it near the location where the user initiated the action or where the resulting data will display.
--   Provide status text to the right of the progress ring.
--   Make the progress ring the same color as its status text.
--   Disable controls that user shouldn’t interact with while the task is running.
--   If the task results in an error, hide the progress indicator and status text and display an error message in their place.
--   In a dialog, if an operation must complete before you move to the next screen, place the progress ring just above the button area, left-aligned with the content of the dialog.
+-   Affichez l’anneau de progression dans le contexte de l’action : placez-le près de l’emplacement où l’utilisateur a initié l’action ou à l’endroit où les données qui en résultent vont s’afficher.
+-   Fournissez un texte de statut à droite de l’anneau de progression.
+-   Utilisez la même couleur pour l’anneau de progression et son texte de statut.
+-   Désactivez les contrôles avec lesquels l’utilisateur ne doit pas interagir pendant que la tâche est en cours d’exécution.
+-   Si la tâche génère une erreur, masquez l’indicateur de progression et le texte de statut et affichez un message d’erreur à la place.
+-   Dans une boîte de dialogue, si une opération doit être terminée avant de pouvoir passer à l’écran suivant, placez l’anneau de progression juste au-dessus de la zone du bouton, en l’alignant à gauche sur le contenu de la boîte de dialogue.
 
-    ![Progress in a dialog](images/prog_ring_dialog.png)
+    ![Progression dans une boîte de dialogue](images/prog_ring_dialog.png)
 
--   In an app window with right-aligned controls, place the progress ring to the left or just above the control that caused the action. Left-align the progress ring with related content.
+-   Dans une fenêtre d’application avec des contrôles alignés à droite, placez l’anneau de progression à gauche ou juste au-dessus du contrôle qui a causé l’action. Alignez l’anneau de progression à gauche sur le contenu connexe.
 
-    ![Showing progress in an app window with right-aligned controls](images/prog_right_aligned_controls.png)
+    ![Affichage de la progression dans une fenêtre d’application avec des contrôles alignés à droite](images/prog_right_aligned_controls.png)
 
--   In an app window with left-aligned controls, place the progress ring to the right or just under the control that caused the action.
+-   Dans une fenêtre d’application avec des contrôles alignés à gauche, placez l’anneau de progression à droite ou juste en dessous du contrôle qui a causé l’action.
 
-    ![A progress ring with left-aligned controls](images/prog_left_aligned_1.png)
+    ![Anneau de progression avec des contrôles alignés à gauche](images/prog_left_aligned_1.png)
 
-    ![A progress ring below left-aligned controls](images/prog_left_aligned_2.png)
+    ![Anneau de progression sous des contrôles alignés à gauche](images/prog_left_aligned_2.png)
 
--   If you are showing multiple items, place the progress ring and status text underneath the title of the item. If an error occurs, replace the progress ring and status with error text.
+-   Si vous présentez plusieurs éléments, placez l’anneau de progression et le texte de statut en dessous du titre de l’élément. Si une erreur se produit, remplacez l’anneau de progression et le texte de statut par un texte d’erreur.
 
-    ![A progress ring in a list of multiple items](images/prog_ring_multiple.png)
+    ![Anneau de progression dans une liste de plusieurs éléments](images/prog_ring_multiple.png)
 
-### Guidelines for non-modal, indeterminate tasks that use the progress bar
+### Recommandations en matière de tâches indéterminées, non modales qui utilisent la barre de progression
 
--   If you show progress in a flyout, place the indeterminate progress bar at the top of the flyout and set its width so that it spans the entire flyout. This placement minimizes distraction but still communicates ongoing activity. Don't give the flyout a title, because a title prevents you from placing the progress bar at the top of the flyout.
+-   Si vous affichez la progression dans un menu volant, placez la barre de progression indéterminée en haut du menu volant et définissez sa largeur afin qu’elle s’étende sur la totalité du menu volant. Cette position permet de réduire l’effet de distraction tout en communiquant quand même l’activité en cours. Ne donnez pas de titre au menu volant car celui-ci vous empêcherait de placer la barre de progression en haut du menu volant.
 
-    ![An indeterminate progress bar in a flyout](images/prog_flyout_indeterminate_bar.png)
+    ![Barre de progression indéterminée dans un menu volant](images/prog_flyout_indeterminate_bar.png)
 
--   If you show progress in an app window, place the indeterminate progress bar at the top of the app window, spanning the entire window.
+-   Si vous affichez la progression dans une fenêtre d’application, placez la barre de progression indéterminée en haut de la fenêtre d’application, en l’étendant sur toute la fenêtre.
 
-    ![A progress bar at the top of an app window](images/prog_indeterminate_bar_app_window.png)
+    ![Barre de progression en haut d’une fenêtre d’application](images/prog_indeterminate_bar_app_window.png)
 
-### Guidelines for status text
+### Recommandations pour le texte de statut
 
--   When you use the determinate progress bar, don’t show the progress percentage in the status text. The control already provides that info.
--   If you use text to indicate activity without a progress control, use ellipsis to convey that the activity is ongoing.
--   If you use a progress control, don't use ellipsis in your status text, because the progress control already indicates that the operation is ongoing.
+-   Lorsque vous utilisez la barre de progression déterminée, n’affichez pas le pourcentage de progression dans le texte de statut. Le contrôle fournit déjà cette information.
+-   Si vous utilisez un texte pour indiquer l’activité, sans contrôle de progression, utilisez des points de suspension pour indiquer que l’activité est en cours.
+-   Si vous utilisez un contrôle de progression, n’utilisez pas de points de suspension dans le texte du statut. Le contrôle de progression indique déjà que l’opération est en cours.
 
-### Guidelines for appearance and layout
+### Recommandations en matière d’apparence et de disposition
 
--   A determinate progress bar appears as a colored bar that grows to fill a gray background bar. The proportion of the total length that is colored indicates, relatively, how much of the operation is complete.
--   An indeterminate progress bar or ring is made of continually moving colored dots.
--   Choose the progress control's location and prominence based on its importance.
+-   Une barre de progression déterminée apparaît comme une barre de couleur qui remplit petit à petit une barre d’arrière-plan grise. La proportion de la longueur totale qui est colorée indique, de manière relative, le volume d’opération qui est achevé.
+-   Un anneau ou barre de progression indéterminée est constitué de points de couleur en perpétuel mouvement.
+-   Choisissez l’emplacement et l’envergure du contrôle de progression en fonction de son importance.
 
-    Important progress controls can serve as a call-to-action, telling the user to resume a certain operation after the system has done its work. Some built-in Windows Phone apps use a status bar progress indicator at the top of the screen for important cases. You can do this, too, and configure it to be determinate or indeterminate.
+    Des contrôles de progression importants peuvent inciter l’utilisateur à effectuer une action, lui indiquant de reprendre une opération donnée après que le système a terminé son travail. Certaines applications Windows Phone intégrées utilisent un indicateur de progression de barre d’état en haut de l’écran pour les situations importantes. Vous pouvez en faire autant et le configurer en mode déterminé ou indéterminé.
 
-    Cases that are less critical, such as during downloading, appear smaller and are restricted to one view.
+    Pour des situations moins critiques, telles qu’une opération de téléchargement, il peut apparaître en plus petit et être limité à un affichage.
 
--   Use a label to show the progress value, or to describe the process taking place, or to indicate that the operation has been interrupted. A label is optional, but we highly recommend it.
+-   Utilisez une étiquette pour afficher la valeur de progression, pour décrire le processus en cours d’exécution ou pour indiquer la suspension de l’opération. Une étiquette est facultative, mais nous conseillons vivement son utilisation.
 
-    To describe the process taking place, use a gerund (an –ing verb), e.g. ‘connecting’, ‘downloading’, or ‘sending’.
+    Pour décrire le processus en cours, utilisez un substantif (+ en cours), p. ex. « connexion en cours », « téléchargement en cours » ou « envoi en cours ».
 
-    To indicate that progress is paused or has encountered an exception, use past participles, e.g. ‘paused’, ‘download failed’, or ‘canceled’.
+    Pour indiquer que la progression est interrompue ou a rencontré une exception, utilisez le participe passé, p. ex. « la connexion a été interrompue », « le téléchargement a échoué » ou « l’envoi est annulé ».
 
--   Determinate progress bar with label and status
+-   Barre de progression déterminée avec étiquette et statut
 
-    ![A determinate progress bar with a lable and status information](images/progress_bar_determinate_redline.png)
+    ![Barre de progression déterminée avec une étiquette et des informations de statut](images/progress_bar_determinate_redline.png)
 
--   Multiple progress bars
+-   Barres de progression multiples
 
-    ![Recommended layout for multiple progress bars](images/progress_bar_multi_redline.png)
+    ![Disposition recommandée pour plusieurs barres de progression](images/progress_bar_multi_redline.png)
 
--   Indeterminate progress ring with status text
+-   Anneau de progression indéterminée avec texte de statut
 
-    ![Layout for indeterminate progress ring with status text](images/progress_ring_status_text.png)
+    ![Disposition pour anneau de progression indéterminée avec texte de statut](images/progress_ring_status_text.png)
 
--   Indeterminate progress bar
+-   Barre de progression indéterminée
 
-    ![Layout for indeterminate progress bar](images/progress_indeterminate_bar_redline.png)
+    ![Disposition pour barre de progression indéterminée](images/progress_indeterminate_bar_redline.png)
 
-## Additional usage guidance
+## Indications d’utilisation supplémentaires
 
-### Decision tree for choosing a progress style
+### Arbre de décision pour choisir un style de progression
 
--   **Does the user need to know that something is happening?**
+-   **L’utilisateur a-t-il besoin de savoir que quelque chose se produit ?**
 
-    If the answer is no, don't show a progress control.
+    Si la réponse est non, n’affichez pas de contrôle de progression.
 
--   **Is info about how much time it will take to complete the task available?**
-    -   **Yes:** **Does the task take more than two seconds to complete?**
-        -   **Yes:** Use a determinate progress bar. For tasks that take longer than 10 seconds, provide a way to cancel the task.
-        -   **No:** Don't show a progress control.
+-   **Des informations sur la durée de réalisation de la tâche sont-elles disponibles ?**
+    -   **Oui :** **la tâche nécessite-t-elle plus de deux secondes pour s’accomplir ?**
+        -   **Oui :** utilisez une barre de progression déterminée. Pour les tâches qui nécessitent plus de 10 secondes, fournissez un moyen d’annuler la tâche.
+        -   **Non :** ne présentez pas de contrôle de progression.
 
-    -   **No:** **Are users blocked from interacting with the UI until the task is complete?**
-        -   **Yes:** **Is this task part of a multi-step process where the user needs to know specific details of the operation?**
-            -   **Yes:** Use an indeterminate progress ring with status text horizontally centered in the screen.
-            -   **No:** Use an indeterminate progress ring without text in the center of the screen.
-        -   **No:** **Is this a primary activity?**
-            -   **Yes:** **Is progress related to a single, specific element in the UI?**
-                -   **Yes:** Use an inline indeterminate progress ring with status text next to its related UI element.
-                -   **No:** **Is a large amount of data being loaded into a list?**
-                    -   **Yes:** Use the indeterminate progress bar at the top with placeholders to represent incoming content.
-                    -   **No:** Use the indeterminate progress bar at the top of the screen or surface.
-            -   **No:** Use status text in an upper corner of the screen.
+    -   **Non :** **l’interaction avec l’interface utilisateur est-elle bloquée pour les utilisateurs tant que la tâche n’est pas terminée ?**
+        -   **Oui :** **cette tâche fait-elle partie d’un processus en plusieurs étapes qui implique que l’utilisateur connaisse des détails spécifiques de l’opération ?**
+            -   **Oui :** utilisez un anneau de progression indéterminée avec texte d’état centré horizontalement dans l’écran.
+            -   **Non :** utilisez un anneau de progression indéterminée sans texte au centre de l’écran.
+        -   **Non :** **s’agit-il d’une activité principale ?**
+            -   **Oui :** **la progression est-elle liée à un seul élément spécifique de l’interface utilisateur ?**
+                -   **Oui :** utilisez un anneau de progression indéterminée inséré avec texte d’état en regard de son élément d’interface utilisateur associé.
+                -   **Non :** **une grande quantité de données est-elle chargée dans une liste ?**
+                    -   **Oui :** utilisez la barre de progression indéterminée en haut avec des espaces réservés pour représenter le contenu entrant.
+                    -   **Non :** utilisez la barre de progression indéterminée en haut de l’écran ou de la surface.
+            -   **Non :** utilisez du texte d’état dans un angle supérieur de l’écran.
 
-## Related articles
+## Articles connexes
 
 
-- [**ProgressBar class**](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [**ProgressRing class**](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [**Classe ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)
+- [**Classe ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)
 
-**For developers (XAML)**
-- [Adding progress controls](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
-- [How to create a custom indeterminate progress bar for Windows Phone](http://go.microsoft.com/fwlink/p/?LinkID=392426)
+**Pour les développeurs (XAML)**
+- [Ajout de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [Comment créer une barre de progression indéterminée personnalisée pour Windows Phone](http://go.microsoft.com/fwlink/p/?LinkID=392426)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

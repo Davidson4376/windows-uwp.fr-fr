@@ -1,7 +1,7 @@
 ---
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
-description: Cette rubrique vous montre comment obtenir une image d’aperçu à partir du flux d’aperçu de capture multimédia.
-title: Obtenir une image d’aperçu
+Cette rubrique vous montre comment obtenir une image d’aperçu à partir du flux d’aperçu de capture multimédia.
+Obtenir une image d’aperçu
 ---
 
 # Obtenir une image d’aperçu
@@ -56,4 +56,8 @@ Lorsque vous avez fini d’utiliser l’image d’aperçu, veillez à appeler sa
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

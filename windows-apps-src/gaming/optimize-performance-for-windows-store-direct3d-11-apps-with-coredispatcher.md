@@ -1,63 +1,63 @@
 ---
-Optimize input latency for Universal Windows Platform (UWP) DirectX games
-Input latency can significantly impact the experience of a game, and optimizing it can make a game feel more polished.
+Optimiser la latence d’entrée pour les jeux de plateforme Windows universelle (UWP) DirectX
+La latence d’entrée peut avoir un impact important sur un jeu. Son optimisation peut rendre un jeu plus fluide.
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ---
 
-#  Optimize input latency for Universal Windows Platform (UWP) DirectX games
+#  Optimiser la latence d’entrée pour les jeux de plateforme Windows universelle (UWP) DirectX
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Input latency can significantly impact the experience of a game, and optimizing it can make a game feel more polished. Additionally, proper input event optimization can improve battery life. Learn how to choose the right CoreDispatcher input event processing options to make sure your game handles input as smoothly as possible.
+La latence d’entrée peut avoir un impact important sur un jeu. Son optimisation peut rendre un jeu plus fluide. De plus, une optimisation appropriée des événements d’entrée peut améliorer l’autonomie de la batterie. Apprenez à choisir les options de traitement appropriées de l’événement d’entrée CoreDispatcher pour vous assurer que votre jeu gère les entrées de façon aussi fluide que possible.
 
-## Input latency
-
-
-Input latency is the time it takes for the system to respond to user input. The response is often a change in what's displayed on the screen, or what's heard through audio feedback.
-
-Every input event, whether it comes from a touch pointer, mouse pointer, or keyboard, generates a message to be processed by an event handler. Modern touch digitizers and gaming peripherals report input events at a minimum of 100 Hz per pointer, which means that apps can receive 100 events or more per second per pointer (or keystroke). This rate of updates is amplified if multiple pointers are happening concurrently, or a higher precision input device is used (for example, a gaming mouse). The event message queue can fill up very quickly.
-
-It's important to understand the input latency demands of your game so that events are processed in a way that is best for the scenario. There is no one solution for all games.
-
-## Power efficiency
+## Latence d’entrée
 
 
-In the context of input latency, "power efficiency" refers to how much a game uses the GPU. A game that uses less GPU resources is more power efficient and allows for longer battery life. This also holds true for the CPU.
+La latence d’entrée est le temps nécessaire au système pour répondre à une entrée utilisateur. La réponse représente souvent un changement par rapport à ce qui est affiché à l’écran ou à ce qui est entendu par le biais du retour audio.
 
-If a game can draw the whole screen at less than 60 frames per second (currently, the maximum rendering speed on most displays) without degrading the user's experience, it will be more power efficient by drawing less often. Some games only update the screen in response to user input, so those games should not draw the same content repeatedly at 60 frames per second.
+Chaque événement d’entrée, qu’il provienne d’un pointeur tactile, d’un pointeur de souris ou d’un clavier, génère un message qui doit être traité par un gestionnaire d’événements. De nos jours, les numériseurs tactiles et les périphériques de jeu signalent les événements d’entrée à une fréquence d’au moins 100 Hz par pointeur. En d’autres termes, les applications peuvent recevoir 100 événements ou plus par seconde et par pointeur (ou frappe). Cette fréquence des mises à jour est amplifiée si plusieurs pointeurs s’exécutent en même temps, ou qu’un périphérique d’entrée d’une plus grande précision est utilisé (par exemple, une souris de jeu). La file d’attente de messages d’événements peut se remplir très rapidement.
 
-## Choosing what to optimize for
+Il est important de bien comprendre les exigences de votre jeu en matière de latence d’entrée afin que les événements soient traités du mieux possible selon la situation. Il n’y a pas de solution unique valable pour l’ensemble des jeux.
 
-
-When designing a DirectX app, you need to make some choices. Does the app need to render 60 frames per second to present smooth animation, or does it only need to render in response to input? Does it need to have the lowest possible input latency, or can it tolerate a little bit of delay? Will my users expect my app to be judicious about battery usage?
-
-The answers to these questions will likely align your app with one of the following scenarios:
-
-1.  Render on demand. Games in this category only need to update the screen in response to specific types of input. Power efficiency is excellent because the app doesn’t render identical frames repeatedly, and input latency is low because the app spends most of its time waiting for input. Board games and news readers are examples of apps that might fall into this category.
-2.  Render on demand with transient animations. This scenario is similar to the first scenario except that certain types of input will start an animation that isn’t dependent on subsequent input from the user. Power efficiency is good because the game doesn’t render identical frames repeatedly, and input latency is low while the game is not animating. Interactive children’s games and board games that animate each move are examples of apps that might fall into this category.
-3.  Render 60 frames per second. In this scenario, the game is constantly updating the screen. Power efficiency is poor because it renders the maximum number of frames the display can present. Input latency is high because DirectX blocks the thread while content is being presented. Doing so prevents the thread from sending more frames to the display than it can show to the user. First person shooters, real-time strategy games, and physics-based games are examples of apps that might fall into this category.
-4.  Render 60 frames per second and achieve the lowest possible input latency. Similar to scenario 3, the app is constantly updating the screen, so power efficiency will be poor. The difference is that the game responds to input on a separate thread, so that input processing isn’t blocked by presenting graphics to the display. Online multiplayer games, fighting games, or rhythm/timing games might fall into this category because they support move inputs within extremely tight event windows.
-
-## Implementation
+## Efficacité énergétique
 
 
-Most DirectX games are driven by what is known as the game loop. The basic algorithm is to perform these steps until the user quits the game or app:
+Dans le contexte de la latence d’entrée, l’« efficacité énergétique » fait référence au taux d’utilisation du GPU par un jeu. Un jeu qui utilise moins de ressources GPU est plus économe en énergie et permet un accroissement de l’autonomie de la batterie. Cela est également vrai pour l’UC.
 
-1.  Process input
-2.  Update the game state
-3.  Draw the game content
+Si un jeu peut dessiner du contenu sur la totalité de l’écran en moins de 60 images par seconde (actuellement, il s’agit de la vitesse de rendu maximale sur la plupart des écrans) sans dégrader l’expérience de l’utilisateur, il sera plus économe en énergie en dessinant moins souvent. Certains jeux ne mettent à jour l’écran qu’en réponse à une entrée utilisateur. Ainsi, ces jeux ne dessinent pas le même contenu à plusieurs reprises à 60 images par seconde.
 
-When the content of a DirectX game is rendered and ready to be presented to the screen, the game loop waits until the GPU is ready to receive a new frame before waking up to process input again.
-
-We’ll show the implementation of the game loop for each of the scenarios mentioned earlier by iterating on a simple jigsaw puzzle game. The decision points, benefits, and tradeoffs discussed with each implementation can serve as a guide to help you optimize your apps for low latency input and power efficiency.
-
-## Scenario 1: Render on demand
+## Choix en matière d’optimisation
 
 
-The first iteration of the jigsaw puzzle game only updates the screen when a user moves a puzzle piece. A user can either drag a puzzle piece into place or snap it into place by selecting it and then touching the correct destination. In the second case, the puzzle piece will jump to the destination with no animation or effects.
+Durant la conception d’une application DirectX, vous devez faire des choix. Est-ce que l’application doit afficher 60 images par seconde pour présenter une animation fluide, ou est-ce qu’elle doit seulement afficher le contenu en réponse à une entrée ? Faut-il qu’elle ait la latence d’entrée la plus basse possible ou peut-elle tolérer un léger retard ? Est-ce que mes utilisateurs s’attendent à ce que mon application soit économe en matière d’utilisation de la batterie ?
 
-The code has a single-threaded game loop within the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method that uses **CoreProcessEventsOption::ProcessOneAndAllPending**. Using this option dispatches all currently available events in the queue. If no events are pending, the game loop waits until one appears.
+Les réponses à ces questions vous permettront probablement de situer votre application par rapport à l’un des scénarios suivants :
+
+1.  Rendu à la demande. Les jeux de cette catégorie ne doivent mettre à jour l’écran qu’en réponse à des types d’entrée spécifiques. L’efficacité énergétique est excellente, car l’application n’effectue pas de rendu répétitif d’images identiques. Par ailleurs, la latence d’entrée est faible, car l’application passe la majeure partie de son temps à attendre une entrée. Les jeux de société et les lecteurs de News sont des exemples d’applications qui peuvent correspondre à cette catégorie.
+2.  Rendu à la demande avec animations de transition. Ce scénario est similaire au premier scénario, sauf que certains types d’entrée démarrent une animation qui ne dépend pas d’une entrée ultérieure de l’utilisateur. L’efficacité énergétique est bonne, car le jeu n’effectue pas de rendu répétitif d’images identiques. De plus, la latence d’entrée est faible quand le jeu n’est pas en cours d’animation. Les jeux interactifs pour enfants et les jeux de société où chaque déplacement est animé sont des exemples d’applications qui peuvent appartenir à cette catégorie.
+3.  Rendu de 60 images par seconde. Dans ce scénario, le jeu met constamment l’écran à jour. L’efficacité énergétique est faible, car le jeu effectue le rendu du nombre maximal d’images pouvant être affichées. La latence d’entrée est élevée, car DirectX bloque le thread pendant la présentation du contenu. Ainsi, le thread ne peut pas envoyer plus d’images à l’écran qu’il ne peut en montrer à l’utilisateur. Les jeux de tir à la première personne, les jeux de stratégie en temps réel et les jeux basés sur la physique sont des exemples d’applications qui peuvent appartenir à cette catégorie.
+4.  Rendu de 60 images par seconde avec la latence d’entrée la plus faible possible. Comme dans le scénario 3, l’application met constamment l’écran à jour, d’où une efficacité énergétique faible. Toutefois, il existe une différence dans ce cas précis : le jeu répond à l’entrée sur un thread distinct afin que le traitement de l’entrée ne soit pas bloqué par la présentation des images à l’écran. Les jeux multijoueurs en ligne, les jeux de combat ou les jeux de rythme/synchronisation peuvent appartenir à cette catégorie, car ils prennent en charge des entrées relatives aux déplacements dans des fenêtres d’événements très brèves.
+
+## Implémentation
+
+
+La plupart des jeux DirectX sont basés sur ce que l’on appelle la boucle de jeu. L’algorithme de base consiste à effectuer les étapes suivantes jusqu’à ce que l’utilisateur quitte le jeu ou l’application :
+
+1.  Traiter l’entrée
+2.  Mettre à jour l’état du jeu
+3.  Dessiner le contenu du jeu
+
+Quand le contenu d’un jeu DirectX est rendu et qu’il est prêt à être présenté à l’écran, la boucle de jeu attend que le GPU soit prêt à recevoir une nouvelle image avant de se réactiver pour traiter une entrée.
+
+Nous montrerons l’implémentation de la boucle de jeu pour chacun des scénarios mentionnés précédemment en itérant un simple jeu de puzzle. Les points de décision, les avantages et les compromis abordés durant chaque implémentation peuvent servir de repères pour vous aider à optimiser vos applications en atteignant une latence d’entrée faible et une efficacité énergétique élevée.
+
+## Scénario 1 : rendu à la demande
+
+
+La première itération du jeu de puzzle ne met à jour l’écran qu’au moment où l’utilisateur déplace une pièce de puzzle. Un utilisateur peut faire glisser une pièce de puzzle vers son emplacement ou l’ancrer à son emplacement en la sélectionnant, puis en appuyant sur la destination appropriée. Dans le second cas, la pièce de puzzle saute vers sa destination sans animations, ni effets d’aucune sorte.
+
+Le code a une boucle de jeu à thread unique dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) qui utilise **CoreProcessEventsOption::ProcessOneAndAllPending**. L’utilisation de cette option envoie tous les événements actuellement disponibles en file d’attente. Si aucun événement n’est en attente, la boucle de jeu attend leur apparition.
 
 ``` syntax
 void App::Run()
@@ -83,12 +83,12 @@ void App::Run()
 }
 ```
 
-## Scenario 2: Render on demand with transient animations
+## Scénario 2 : rendu à la demande avec animations de transition
 
 
-In the second iteration, the game is modified so that when a user selects a puzzle piece and then touches the correct destination for that piece, it animates across the screen until it reaches its destination.
+Dans la deuxième itération, le jeu est modifié afin qu’au moment où l’utilisateur sélectionne une pièce de puzzle et appuie sur sa destination, la pièce s’anime à l’écran jusqu’à ce qu’elle atteigne sa destination.
 
-As before, the code has a single-threaded game loop that uses **ProcessOneAndAllPending** to dispatch input events in the queue. The difference now is that during an animation, the loop changes to use **CoreProcessEventsOption::ProcessAllIfPresent** so that it doesn’t wait for new input events. If no events are pending, [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) returns immediately and allows the app to present the next frame in the animation. When the animation is complete, the loop switches back to **ProcessOneAndAllPending** to limit screen updates.
+Comme précédemment, le code a une boucle de jeu à thread unique qui utilise **ProcessOneAndAllPending** pour répartir les événements d’entrée en file d’attente. La différence est la suivante : durant une animation, la boucle utilise **CoreProcessEventsOption::ProcessAllIfPresent** afin de ne pas attendre de nouveaux événements d’entrée. Si aucun événement n’est en attente, [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) est immédiatement retourné et permet à l’application de présenter l’image suivante de l’animation. Quand l’animation est terminée, la boucle revient à **ProcessOneAndAllPending** pour limiter les mises à jour de l’écran.
 
 ``` syntax
 void App::Run()
@@ -129,14 +129,14 @@ void App::Run()
 }
 ```
 
-To support the transition between **ProcessOneAndAllPending** and **ProcessAllIfPresent**, the app must track state to know if it’s animating. In the jigsaw puzzle app, you do this by adding a new method that can be called during the game loop on the GameState class. The animation branch of the game loop drives updates in the state of the animation by calling GameState’s new Update method.
+Pour prendre en charge la transition entre **ProcessOneAndAllPending** et **ProcessAllIfPresent**, l’application doit suivre l’état afin de savoir si l’animation est en cours. Pour ce faire, dans l’application puzzle, ajoutez une nouvelle méthode qui peut être appelée durant la boucle de jeu sur la classe GameState. La branche d’animation de la boucle de jeu entraîne des mises à jour de l’état de l’animation via l’appel de la nouvelle méthode Update de GameState.
 
-## Scenario 3: Render 60 frames per second
+## Scénario 3 : rendu de 60 images par seconde
 
 
-In the third iteration, the app displays a timer that shows the user how long they’ve been working on the puzzle. Because it displays the elapsed time up to the millisecond, it must render 60 frames per second to keep the display up to date.
+Dans la troisième itération, l’application affiche un minuteur qui indique à l’utilisateur le temps qu’il a passé sur le puzzle. Dans la mesure où elle affiche le temps écoulé à la milliseconde près, elle doit afficher 60 images par seconde pour garder l’affichage à jour.
 
-As in scenarios 1 and 2, the app has a single-threaded game loop. The difference with this scenario is that because it’s always rendering, it no longer needs to track changes in the game state as was done in the first two scenarios. As a result, it can default to use **ProcessAllIfPresent** for processing events. If no events are pending, **ProcessEvents** returns immediately and proceeds to render the next frame.
+Comme dans les scénarios 1 et 2, l’application comporte une boucle de jeu à thread unique. La différence avec ce scénario est la suivante : dans la mesure où le rendu est constant, l’application n’a plus besoin de suivre les modifications d’état du jeu comme dans les deux premiers scénarios. Ainsi, elle peut utiliser **ProcessAllIfPresent** par défaut pour le traitement des événements. Si aucun événement n’est en attente, **ProcessEvents** est immédiatement retourné et affiche ensuite l’image suivante.
 
 ``` syntax
 void App::Run()
@@ -165,16 +165,16 @@ void App::Run()
 }
 ```
 
-This approach is the easiest way to write a game because there’s no need to track additional state to determine when to render. It achieves the fastest rendering possible along with reasonable input responsiveness on a timer interval.
+Cette approche est la plus simple pour écrire un jeu, car il n’est pas nécessaire de suivre un état supplémentaire pour déterminer le moment où un affichage doit être effectué. Elle permet d’atteindre le rendu le plus rapide possible avec une réactivité raisonnable par rapport aux entrées en fonction d’un intervalle de minuteur.
 
-However, this ease of development comes with a price. Rendering at 60 frames per second uses more power than rendering on demand. It’s best to use **ProcessAllIfPresent** when the game is changing what is displayed every frame. It also increases input latency by as much as 16.7 ms because the app is now blocking the game loop on the display’s sync interval instead of on **ProcessEvents**. Some input events might be dropped because the queue is only processed once per frame (60 Hz).
+Toutefois, cette facilité de développement a un prix. Le rendu à 60 images par seconde consomme plus d’énergie que le rendu à la demande. Il est préférable d’utiliser **ProcessAllIfPresent** quand le jeu change ce qui est affiché à chaque image. Cela entraîne également une augmentation de la latence d’entrée de 16,7 ms, car l’application bloque désormais la boucle de jeu en fonction de l’intervalle de synchronisation de l’affichage au lieu de **ProcessEvents**. Certains événements d’entrée peuvent être annulés, car la file d’attente n’est traitée qu’une seule fois par image (60 Hz).
 
-## Scenario 4: Render 60 frames per second and achieve the lowest possible input latency
+## Scénario 4 : rendu de 60 images par seconde avec la latence d’entrée la plus basse possible
 
 
-Some games may be able to ignore or compensate for the increase in input latency seen in scenario 3. However, if low input latency is critical to the game’s experience and sense of player feedback, games that render 60 frames per second need to process input on a separate thread.
+Certains jeux peuvent ignorer ou compenser l’augmentation de la latence d’entrée décrite au scénario 3. Toutefois, si une faible latence d’entrée est essentielle pour l’expérience du jeu et les sensations des joueurs, les jeux qui affichent 60 images par seconde doivent traiter les entrées sur un thread distinct.
 
-The fourth iteration of the jigsaw puzzle game builds on scenario 3 by splitting the input processing and graphics rendering from the game loop into separate threads. Having separate threads for each ensures that input is never delayed by graphics output; however, the code becomes more complex as a result. In scenario 4, the input thread calls [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) with [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217), which waits for new events and dispatches all available events. It continues this behavior until the window is closed or the game calls [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260).
+La quatrième itération du jeu de puzzle se fonde sur le scénario 3 en séparant le traitement des entrées et le rendu graphique de la boucle de jeu en threads distincts. Avec des threads distincts, chaque entrée est assurée de ne jamais être retardée par la sortie graphique. Cependant, il en résulte un code plus complexe. Dans le scénario 4, le thread d’entrée appelle [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) avec [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217), qui attend les nouveaux événements et répartit tous les événements disponibles. Il garde ce comportement jusqu’à ce que la fenêtre soit fermée ou que le jeu appelle [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260).
 
 ``` syntax
 void App::Run()
@@ -225,32 +225,36 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-The **DirectX 11 and XAML App (Universal Windows)** template in Microsoft Visual Studio 2015 splits the game loop into multiple threads in a similar fashion. It uses the [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) object to start a thread dedicated to handling input and also creates a rendering thread independent of the XAML UI thread. For more details on these templates, read [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
+Le modèle **DirectX 11 et application XAML App (Windows universelle)** dans Microsoft Visual Studio 2015 sépare la boucle de jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
 
-## Additional ways to reduce input latency
+## Autres façons de réduire la latence d’entrée
 
 
-### Use waitable swap chains
+### Utiliser des chaînes d’échange d’attente
 
-DirectX games respond to user input by updating what the user sees on-screen. On a 60 Hz display, the screen refreshes every 16.7 ms (1 second/60 frames). Figure 1 shows the approximate life cycle and response to an input event relative to the 16.7 ms refresh signal (VBlank) for an app that renders 60 frames per second:
+Les jeux DirectX répondent aux entrées de l’utilisateur en mettant à jour ce que ce dernier voit à l’écran. L’affichage d’un écran de 60 Hz est rafraîchi toutes les 16,7 ms (1 seconde/60 images). La figure 1 illustre approximativement le cycle de vie et la réponse à un événement d’entrée par rapport au signal de rafraîchissement à 16,7 ms (VBlank) pour une application qui affiche 60 images par seconde :
 
 Figure 1
 
-![figure 1 input latency in directx ](images/input-latency1.png)
+![Figure 1 : latence d’entrée dans DirectX ](images/input-latency1.png)
 
-In Windows 8.1, DXGI introduced the **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** flag for the swap chain, which allows apps to easily reduce this latency without requiring them to implement heuristics to keep the Present queue empty. Swap chains created with this flag are referred to as waitable swap chains. Figure 2 shows the approximate life cycle and response to an input event when using waitable swap chains:
+Dans Windows 8.1, DXGI a introduit l’indicateur **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** pour la chaîne d’échange, ce qui permet aux applications de réduire facilement cette latence sans devoir implémenter des heuristiques afin de garder la file d’attente actuelle vide. Les chaînes d’échange créées avec cet indicateur sont appelées chaînes d’échange d’attente. La figure 2 illustre approximativement le cycle de vie et la réponse à un événement d’entrée durant l’utilisation de chaînes d’échange d’attente :
 
 Figure 2
 
-![figure2 input latency in directx waitable](images/input-latency2.png)
+![Figure 2 : latence d’entrée dans une chaîne d’échange d’attente DirectX](images/input-latency2.png)
 
-What we see from these diagrams is that games can potentially reduce input latency by two full frames if they are capable of rendering and presenting each frame within the 16.7 ms budget defined by the display’s refresh rate. The jigsaw puzzle sample uses waitable swap chains and controls the Present queue limit by calling:` m_deviceResources->SetMaximumFrameLatency(1);`
+Ces schémas nous montrent que les jeux peuvent réduire la latence d’entrée de deux images complètes s’ils sont capables d’afficher et de présenter chaque image dans la limite des 16,7 ms définie par le taux de rafraîchissement de l’écran. L’exemple de jeu de puzzle utilise les chaînes d’échange d’attente et contrôle la limite de la file d’attente actuelle en appelant :` m_deviceResources->SetMaximumFrameLatency(1);`
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

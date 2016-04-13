@@ -14,7 +14,7 @@ Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir 
 ## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit :
+Pour utiliser cette méthode, procédez comme suit :
 
 -   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
@@ -236,10 +236,10 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 L’exemple suivant illustre plusieurs demandes d’obtention des données d’acquisition d’applications. Remplacez la valeur *applicationId* par l’ID produit de votre application.
 
 ```
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0  HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&amp;startDate=8/1/2015&amp;endDate=8/31/2015&amp;skip=0&amp;$filter=market eq &#39;US&#39; and gender eq &#39;m’  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=8/1/2015&endDate=8/31/2015&skip=0&filter=market eq 'US'; and gender eq 'm'  HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -250,7 +250,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Value      | tableau  | Tableau d’objets contenant les données de classification agrégées. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs d’acquisition](#acquisition-values) ci-dessous.                                                                                                                      |
+| Valeur      | tableau  | Tableau d’objets contenant les données de classification agrégées. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs d’acquisition](#acquisition-values) ci-dessous.                                                                                                                      |
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que plus de 10000 lignes de données d’acquisition sont associées à la requête. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                             |
 
@@ -298,7 +298,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
       "acquisitionQuantity": 1
     }
   ],
-  "@nextLink": "appacquisitions?applicationId=9NBLGGGZ5QDR&amp;aggregationLevel=day&amp;startDate=2015/01/01&amp;endDate=2016/02/01&amp;top=1&amp;skip=1&amp;orderby=date desc",
+  "@nextLink": "appacquisitions?applicationId=9NBLGGGZ5QDR&amp;aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&amp;skip=1&orderby=date desc",
   "TotalCount": 466766
 }
 ```
@@ -312,4 +312,8 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir les avis sur les applications](get-app-reviews.md)
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO2-->
+
+

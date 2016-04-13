@@ -1,6 +1,6 @@
 ---
-title: Création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
-description: Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript.
+Création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
+Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript.
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ---
 
@@ -12,11 +12,11 @@ ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C\# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle pour Windows à l’aide de JavaScript.
+Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript.
 
-Visual Studio facilite l’ajout à votre application d’un composant Windows Runtime écrit en C\# ou Visual Basic, et la création de types Windows Runtime que vous pouvez appeler à partir de JavaScript. En interne, vos types Windows Runtime peuvent utiliser toutes les fonctionnalités .NET Framework autorisées dans une application Windows universelle. (Pour plus d’informations, voir les articles [Création de composants Windows Runtime en C\# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) et [Vue d’ensemble de .NET pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx).) En externe, les membres de votre type peuvent exposent uniquement les types Windows Runtime pour leurs paramètres et valeurs de retour. Lorsque vous générez votre solution, Visual Studio génère votre projet de composant Windows Runtime .NET Framework, puis exécute une étape de génération qui crée un fichier de métadonnées Windows (.winmd). Il s’agit de votre composant Windows Runtime, que Visual Studio inclut dans votre application.
+Visual Studio facilite l’ajout à votre application d’un composant Windows Runtime écrit en C# ou Visual Basic, et la création de types Windows Runtime que vous pouvez appeler à partir de JavaScript. En interne, vos types Windows Runtime peuvent utiliser toutes les fonctionnalités .NET Framework autorisées dans une application Windows universelle. (Pour plus d’informations, voir les articles [Création de composants Windows Runtime en C\# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) et [Vue d’ensemble de .NET pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx).) En externe, les membres de votre type peuvent exposer uniquement les types Windows Runtime pour leurs paramètres et valeurs de retour. Lorsque vous générez votre solution, Visual Studio génère votre projet de composant Windows Runtime .NET Framework, puis exécute une étape de génération qui crée un fichier de métadonnées Windows (.winmd). Il s’agit de votre composant Windows Runtime, que Visual Studio inclut dans votre application.
 
-> **Remarque** .NET Framework mappe automatiquement certains types .NET Framework couramment utilisés, tels que les types de données primitives et les types de collection, à leurs équivalents Windows Runtime. Ces types .NET Framework peuvent être utilisés dans l’interface publique d’un composant Windows Runtime et sont présentés aux utilisateurs du composant comme les types Windows Runtime correspondants. Pour plus d’informations, voir [Création de composants Windows Runtime en C\# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+> **Remarque** .NET Framework mappe automatiquement certains types .NET Framework couramment utilisés, tels que les types de données primitives et les types de collection, à leurs équivalents Windows Runtime. Ces types .NET Framework peuvent être utilisés dans l’interface publique d’un composant Windows Runtime et sont présentés aux utilisateurs du composant comme les types Windows Runtime correspondants. Consultez l’article [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 Cette procédure pas à pas décrit les tâches suivantes. Après avoir terminé la première section, qui permet d’installer l’application Windows avec JavaScript, vous pouvez aborder les sections restantes dans n’importe quel ordre.
 
@@ -28,10 +28,10 @@ Cette procédure pas à pas décrit les tâches suivantes. Après avoir terminé
 ## Création d’une classe Windows Runtime simple
 
 
-Cette section permet de créer une application Windows universelle pour Windows à l’aide de JavaScript et d’ajouter un projet de composant Windows Runtime Visual Basic ou C\#. Elle explique comment définir un type Windows Runtime managé, créer une instance du type à partir de JavaScript, puis appeler les membres statiques et les membres d’instance. L’affichage de l’exemple d’application est volontairement simple afin de focaliser l’attention sur le composant. N’hésitez pas à l’améliorer.
+Cette section permet de créer une application Windows universelle générée pour Windows à l’aide de JavaScript et d’ajouter un projet de composant Windows Runtime Visual Basic ou C#. Elle explique comment définir un type Windows Runtime managé, créer une instance du type à partir de JavaScript, puis appeler les membres statiques et les membres d’instance. L’affichage de l’exemple d’application est volontairement simple afin de focaliser l’attention sur le composant. N’hésitez pas à l’améliorer.
 
 1.  Dans Visual Studio, créez un projet JavaScript : dans la barre de menus, choisissez **Fichier > Nouveau > Projet**. Dans la section **Modèles installés** de la boîte de dialogue **Nouveau projet**, sélectionnez **JavaScript**, **Windows**, puis **Universel**. (Si Windows n’est pas disponible, vérifiez que vous utilisez Windows 8 ou une version ultérieure.) Choisissez le modèle **Application vide** et nommez le projet SampleApp.
-2.  Créez le projet de composant : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution SampleApp et choisissez **Ajouter**, puis **Nouveau projet** pour ajouter un nouveau projet en C\# ou Visual Basic à la solution. Dans la section **Modèles installés** de la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez **Visual Basic** ou **Visual C\#**, **Windows**, puis **Universel**. Choisissez le modèle **Composant Windows Runtime** et nommez le projet **SampleComponent**.
+2.  Créez le projet de composant : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution SampleApp et choisissez **Ajouter**, puis **Nouveau projet** pour ajouter un projet en C# ou Visual Basic à la solution. Dans la section **Modèles installés** de la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez **Visual Basic** ou **Visual C#**, **Windows**, puis **Universel**. Choisissez le modèle **Composant Windows Runtime** et nommez le projet **SampleComponent**.
 3.  Remplacez le nom de la classe par **Example**. Notez que la classe est marquée comme **public sealed** par défaut (**Public NotInheritable** en Visual Basic). Toutes les classes Windows Runtime que vous exposez à partir de votre composant doivent être sealed.
 4.  Ajoutez deux membres simple à la classe, une méthode **static** (méthode **Shared** en Visual Basic) et une propriété d’instance :
 
@@ -91,7 +91,7 @@ function basics2() {
 
 Notez que la première lettre majuscule de chaque nom de membre est remplacée par une minuscule. Cette transformation fait partie de la prise en charge que JavaScript fournit pour permettre l’utilisation naturelle de Windows Runtime. Les espaces de noms et les noms de classe utilisent la casse Pascal. Les noms de membres utilisent la casse mixte, à l’exception des noms d’événements, qui sont en minuscules. Consultez l’article [Utilisation de Windows Runtime en JavaScript](https://msdn.microsoft.com/library/hh710230.aspx). Les règles de casse mixte peuvent prêter à confusion. Une série de majuscules initiales apparaît normalement en minuscules, mais si trois lettres majuscules sont suivies par une minuscule, seules les deux premières lettres apparaissent en minuscules : par exemple, un membre nommé IDStringKind apparaît comme idStringKind. Dans Visual Studio, vous pouvez générer votre projet de composant Windows Runtime, puis utiliser IntelliSense dans votre projet JavaScript pour voir la casse correcte.
 
-De la même façon, .NET Framework fournit une prise en charge pour permettre l’utilisation naturelle de Windows Runtime en code managé. Ce sujet est abordé dans les sections suivantes de cet article, ainsi que dans les articles [Création de composants Windows Runtime en C\# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) et [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
+De la même façon, .NET Framework fournit une prise en charge pour permettre l’utilisation naturelle de Windows Runtime en code managé. Ce sujet est abordé dans les sections suivantes de cet article, ainsi que dans les articles [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) et [Prise en charge de .NET Framework pour les applications du Windows Store et Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
 
 ## Créer une interface utilisateur simple
 
@@ -175,11 +175,11 @@ Cliquez sur le bouton Basics 1 pour affecter la valeur de retour de la méthode 
 
 Cliquez sur le bouton Basics 2 pour incrémenter la valeur de la propriété SampleProperty et afficher la nouvelle valeur dans la zone de sortie. Les types primitifs tels que les chaînes et les nombres peuvent être utilisés en tant que types de paramètre et types de retour. Ils peuvent par ailleurs être transmis entre le code managé et JavaScript. Étant donné que les nombres JavaScript sont enregistrés au format à virgule flottante double précision, ils sont convertis en types numériques .NET Framework.
 
-> **Remarque** Par défaut, vous pouvez uniquement définir des points d’arrêt dans votre code JavaScript. Pour déboguer votre code Visual Basic ou C\#, consultez l’article Création de composants Windows Runtime en C\# et Visual Basic.
+> **Remarque** Par défaut, vous pouvez uniquement définir des points d’arrêt dans votre code JavaScript. Pour déboguer votre code Visual Basic ou C#, consultez l’article Création de composants Windows Runtime en C# et Visual Basic.
 
  
 
-Pour arrêter le débogage et fermer votre application, basculez de l’application à Visual Studio et appuyez sur Maj+F5.
+Pour arrêter le débogage et fermer votre application, passez de l’application à Visual Studio et appuyez sur Maj+F5.
 
 ## Utilisation de Windows Runtime à partir de JavaScript et du code managé
 
@@ -337,7 +337,7 @@ Pour ajouter deux éléments supplémentaires à la collection PropertySet à pa
 > End Sub
 > ```
 
-Ce code met en évidence une autre différence dans l’utilisation des types Windows Runtime dans les deux environnements. Si vous tapez ce code vous-même, vous remarquerez qu’IntelliSense n’affiche pas la méthode insert que vous avez utilisée dans le code JavaScript. Au lieu de cela, il affiche la méthode Add qui apparaît en général sur des collections dans .NET Framework. En effet, certaines interfaces de collection souvent utilisées ont des noms différents mais des fonctionnalités semblables dans Windows Runtime et .NET Framework. Lorsque vous utilisez ces interfaces en code managé, elles s’affichent sous la forme de leurs équivalents .NET Framework. Ce sujet est abordé dans l’article [Création de composants Windows Runtime en C\# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md). Lorsque vous utilisez les mêmes interfaces en JavaScript, la seule différence par rapport à Windows Runtime est que les lettres majuscules au début des noms de membres sont remplacées par des minuscules.
+Ce code met en évidence une autre différence dans l’utilisation des types Windows Runtime dans les deux environnements. Si vous tapez ce code vous-même, vous remarquerez qu’IntelliSense n’affiche pas la méthode insert que vous avez utilisée dans le code JavaScript. Au lieu de cela, il affiche la méthode Add qui apparaît en général sur des collections dans .NET Framework. En effet, certaines interfaces de collection souvent utilisées ont des noms différents mais des fonctionnalités semblables dans Windows Runtime et .NET Framework. Lorsque vous utilisez ces interfaces en code managé, elles s’affichent sous la forme de leurs équivalents .NET Framework. Ce sujet est abordé dans l’article [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md). Lorsque vous utilisez les mêmes interfaces en JavaScript, la seule différence par rapport à Windows Runtime est que les lettres majuscules au début des noms de membres sont remplacées par des minuscules.
 
 Enfin, pour appeler la méthode AddMore avec la gestion des exceptions, ajoutez la fonction runtime2 à default.js.
 
@@ -367,16 +367,16 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 Pour exécuter l’application, appuyez sur la touche F5. Cliquez sur **Runtime 1**, puis sur **Runtime 2**. Le gestionnaire d’événements JavaScript indique la première modification apportée à la collection. La deuxième modification, toutefois, présente une clé dupliquée. Les utilisateurs des dictionnaires .NET Framework s’attendent à ce que la méthode Add lève une exception, et c’est ce qui se produit. JavaScript gère l’exception .NET Framework.
 
-> **Remarque** Vous ne pouvez pas afficher le message de l’exception à partir du code JavaScript. Le texte du message est remplacé par une trace de la pile. Pour plus d’informations, voir la section « Levée d’exceptions » dans l’article Création de composants Windows Runtime en C\# et Visual Basic.
+> **Remarque** Vous ne pouvez pas afficher le message de l’exception à partir du code JavaScript. Le texte du message est remplacé par une trace de la pile. Pour plus d’informations, consultez la section « Levée d’exceptions » dans l’article Création de composants Windows Runtime en C# et Visual Basic.
 
-En revanche, lorsque JavaScript appelle la méthode insert avec une clé dupliquée, la valeur de l’élément est modifiée. Cette différence de comportement est due à la différence de prise en charge de Windows Runtime par JavaScript et .NET Framework, comme expliqué dans l’article [Création de composants Windows Runtime en C\# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+En revanche, lorsque JavaScript appelle la méthode insert avec une clé dupliquée, la valeur de l’élément est modifiée. Cette différence de comportement est due à la différence de prise en charge de Windows Runtime par JavaScript et .NET Framework, comme expliqué dans l’article [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 ## Retour des types managés à partir de votre composant
 
 
-Comme indiqué précédemment, vous pouvez transmettre librement des types Windows Runtime natifs dans les deux sens entre votre code JavaScript et votre code C\# ou Visual Basic. Le plus souvent, les noms de types et les noms de membres sont identiques dans les deux cas (à ceci près que les noms de membres commencent par une lettre minuscule en JavaScript). Cependant, dans la section précédente, la classe PropertySet semblait présenter des membres différents en code managé. (Par exemple, vous avez appelé la méthode insert en JavaScript et la méthode Add dans le code .NET Framework.) Cette section examine l’impact de ces différences sur les types .NET Framework transmis à JavaScript.
+Comme indiqué précédemment, vous pouvez transmettre librement des types Windows Runtime natifs dans les deux sens entre votre code JavaScript et votre code C# ou Visual Basic. Le plus souvent, les noms de types et les noms de membres sont identiques dans les deux cas (à ceci près que les noms de membres commencent par une lettre minuscule en JavaScript). Cependant, dans la section précédente, la classe PropertySet semblait présenter des membres différents en code managé. (Par exemple, vous avez appelé la méthode insert en JavaScript et la méthode Add dans le code .NET Framework.) Cette section examine l’impact de ces différences sur les types .NET Framework transmis à JavaScript.
 
-En plus de retourner les types Windows Runtime que vous avez créés dans votre composant ou transmis à votre composant à partir de JavaScript, vous pouvez retourner un type managé, créé en code managé, à JavaScript comme s’il s’agissait du type Windows Runtime correspondant. Même dans le premier exemple simple d’une classe Windows Runtime, les paramètres et les types de retour des membres étaient des types primitifs Visual Basic ou C\#, qui sont des types .NET Framework. Afin d’illustrer cela pour les collections, ajoutez le code suivant à la classe Example pour créer une méthode qui retourne un dictionnaire générique de chaînes, indexé par des entiers :
+En plus de retourner les types Windows Runtime que vous avez créés dans votre composant ou transmis à votre composant à partir de JavaScript, vous pouvez retourner un type managé, créé en code managé, à JavaScript comme s’il s’agissait du type Windows Runtime correspondant. Même dans le premier exemple simple d’une classe Windows Runtime, les paramètres et les types de retour des membres étaient des types primitifs Visual Basic ou C#, qui sont des types .NET Framework. Afin d’illustrer cela pour les collections, ajoutez le code suivant à la classe Example pour créer une méthode qui retourne un dictionnaire générique de chaînes, indexé par des entiers :
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -733,8 +733,12 @@ Pour exécuter l’application, appuyez sur la touche F5. Pour démarrer l’op�
 
 ## Rubriques connexes
 
-* [Vue d’ensemble de .NET pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [Vue d’ensemble du .NET pour les applications Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Procédure pas à pas : création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

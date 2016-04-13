@@ -1,15 +1,16 @@
 ---
-title: Compare buffers
-description: This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.
+title: Comparer des mémoires tampons
+description: Cet exemple de code indique comment comparer des mémoires tampon dans une application de plateforme Windows universelle (UWP).
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
+author: awkoren
 ---
 
-# Compare buffers
+# Comparer des mémoires tampons
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.
+Cet exemple de code indique comment comparer des mémoires tampon dans une application de plateforme Windows universelle (UWP).
 
 ```cs
 public void CompareBuffers()
@@ -44,11 +45,6 @@ public void CompareBuffers()
 }
 ```
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

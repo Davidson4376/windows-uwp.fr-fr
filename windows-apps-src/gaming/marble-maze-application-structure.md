@@ -1,108 +1,108 @@
 ---
-Marble Maze application structure
-The structure of a DirectX Universal Windows Platform (UWP) app differs from that of a traditional desktop application.
+Structure de l’application Marble Maze
+La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique.
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 ---
 
-# Marble Maze application structure
+# Structure de l’application Marble Maze
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-The structure of a DirectX Universal Windows Platform (UWP) app differs from that of a traditional desktop application. Instead of working with handle types such as **HWND** and functions such as **CreateWindow**, the Windows Runtime provides interfaces such as [**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296) so that you can develop UWP apps in a more modern, object-oriented manner. This section of the documentation shows how the Marble Maze application code is structured.
+La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique. Au lieu de fonctionner avec des types de handle tels que **HWND** et des fonctions telles que **CreateWindow**, Windows Runtime fournit des interfaces comme [**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296). Vous pouvez ainsi développer des applications pour UWP grâce à une approche orientée objet plus moderne. Cette section montre comment le code de l’application Marble Maze est structuré.
 
-> **Note**   The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
+> **Remarque** L’exemple de code correspondant à ce document est disponible dans l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
 
  
 ## 
-Here are some of the key points that this document discusses for when you structure your game code:
+Ce document aborde certains points importants relatifs à la structure de votre code de jeu :
 
--   In the initialization phase, set up runtime and library components that your game uses. Also load game-specific resources.
--   UWP apps must start processing events within 5 seconds of launch. Therefore, load only essential resources when you load your app. Games should load large resources in the background and display a progress screen.
--   In the game loop, respond to Windows events, read user input, update scene objects, and render the scene.
--   Use event handlers to respond to window events. (These replace the window messages from desktop Windows applications.)
--   Use a state machine to control the flow and order of the game logic.
+-   Dans la phase d’initialisation, configurez les composants d’exécution et de bibliothèque utilisés par votre jeu. Chargez également les ressources spécifiques au jeu.
+-   Les applications pour UWP doivent commencer à traiter les événements dans un délai de 5 secondes après le lancement. Ne chargez donc que les ressources nécessaires quand vous chargez votre application. Les jeux doivent charger une grande quantité de ressources en arrière-plan et afficher un écran de progression.
+-   Dans la boucle de jeu, répondez aux événements Windows, lisez l’entrée utilisateur, mettez à jour les objets de scène, puis restituez la scène.
+-   Utilisez les gestionnaires d’événements pour répondre aux événements fenêtre. (Ils remplacent les messages de fenêtre des applications de bureau Windows.)
+-   Utilisez une machine à états pour contrôler le flux et l’ordre de la logique de jeu.
 
-##  File organization
+##  Organisation des fichiers
 
 
-Some of the components in Marble Maze can be reused with any game with little or no modification. For your own game, you can adapt the organization and ideas that these files provide. The following table briefly describes the important source code files.
+Vous pouvez réutiliser certains composants de Marble Maze dans n’importe quel jeu, avec peu ou pas de modifications. Pour votre propre jeu, vous pouvez adapter l’organisation et les idées présentées dans ces fichiers. Le tableau suivant décrit brièvement les fichiers de code source importants.
 
-| Files                                      | Description                                                                                                                                                                          |
+| Fichiers                                      | Description                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Audio.h, Audio.cpp                         | Defines the **Audio** class, which manages audio resources.                                                                                                                          |
-| BasicLoader.h, BasicLoader.cpp             | Defines the **BasicLoader** class, which provides utility methods that help you load textures, meshes, and shaders.                                                                  |
-| BasicMath.h                                | Defines structures and functions that help you work with vector and matrix data and computations. Many of these functions are compatible with HLSL shader types.                     |
-| BasicReaderWriter.h, BasicReaderWriter.cpp | Defines the **BasicReaderWriter** class, which uses the Windows Runtime to read and write file data in a UWP app.                                                                    |
-| BasicShapes.h, BasicShapes.cpp             | Defines the **BasicShapes** class, which provides utility methods for creating basic shapes such as cubes and spheres. (These files are not used by the Marble Maze implementation). |
-| BasicTimer.h, BasicTimer.cpp               | Defines the **BasicTimer** class, which provides an easy way to get total and elapsed times.                                                                                         |
-| Camera.h, Camera.cpp                       | Defines the **Camera** class, which provides the position and orientation of a camera.                                                                                               |
-| Collision.h, Collision.cpp                 | Manages collision info between the marble and other objects, such as the maze.                                                                                                       |
-| DDSTextureLoader.h, DDSTextureLoader.cpp   | Defines the **CreateDDSTextureFromMemory** function, which loads textures that are in .dds format from a memory buffer.                                                              |
-| DirectXApp.h, DirectXApp.cpp               | Defines the **DirectXApp** and **DirectXAppSource** classes, which encapsulate the view (window, thread, and events) of the app.                                                     |
-| DirectXBase.h, DirectXBase.cpp             | Defines the **DirectXBase** class, which provides infrastructure that is common to many DirectX UWP apps.                                                                            |
-| DirectXSample.h                            | Defines utility functions that can be used by DirectX UWP apps.                                                                                                                      |
-| LoadScreen.h, LoadScreen.cpp               | Defines the **LoadScreen** class, which displays a loading screen during app initialization.                                                                                         |
-| MarbleMaze.h, MarbleMaze.cpp               | Defines the **MarbleMaze** class, which manages game-specific resources and defines much of the game logic.                                                                          |
-| MediaStreamer.h, MediaStreamer.cpp         | Defines the **MediaStreamer** class, which uses Media Foundation to help the game manage audio resources.                                                                            |
-| PersistentState.h, PersistentState.cpp     | Defines the **PersistentState** class, which reads and writes primitive data types from and to a backing store.                                                                      |
-| Physics.h, Physics.cpp                     | Defines the **Physics** class, which implements the physics simulation between the marble and the maze.                                                                              |
-| Primitives.h                               | Defines geometric types that are used by the game.                                                                                                                                   |
-| SampleOverlay.h, SampleOverlay.cpp         | Defines the **SampleOverlay** class, which provides common 2-D and user-interface data and operations.                                                                               |
-| SDKMesh.h, SDKMesh.cpp                     | Defines the **SDKMesh** class, which loads and renders meshes that are in SDK Mesh (.sdkmesh) format.                                                                                |
-| UserInterface.h, UserInterface.cpp         | Defines functionality that's related to the user interface, such as the menu system and the high score table.                                                                        |
+| Audio.h, Audio.cpp                         | Définit la classe **Audio** qui gère les ressources audio.                                                                                                                          |
+| BasicLoader.h, BasicLoader.cpp             | Définit la classe **BasicLoader** qui fournit les méthodes d’utilitaire permettant de charger des textures, du maillage et des nuanceurs.                                                                  |
+| BasicMath.h                                | Définit les structures et les fonctions qui vous permettent d’utiliser des données vectorielles et matricielles, ainsi que des calculs. Plusieurs de ces fonctions sont compatibles avec les types de nuanceurs HLSL.                     |
+| BasicReaderWriter.h, BasicReaderWriter.cpp | Définit la classe **BasicReaderWriter** qui utilise Windows Runtime pour lire et écrire les données d’un fichier dans une application UWP.                                                                    |
+| BasicShapes.h, BasicShapes.cpp             | Définit la classe **BasicShapes** qui fournit des méthodes d’utilitaire pour créer des formes de base telles que les cubes et les sphères. (Ces fichiers ne sont pas utilisés par l’implémentation de Marble Maze). |
+| BasicTimer.h, BasicTimer.cpp               | Définit la classe **BasicTimer** qui offre un moyen facile d’obtenir le nombre total d’heures et le nombre d’heures écoulées.                                                                                         |
+| Camera.h, Camera.cpp                       | Définit la classe **Camera** qui fournit la position et l’orientation d’un appareil photo.                                                                                               |
+| Collision.h, Collision.cpp                 | Gère les informations de collision entre la bille et les autres objets, comme le labyrinthe.                                                                                                       |
+| DDSTextureLoader.h, DDSTextureLoader.cpp   | Définit la fonction **CreateDDSTextureFromMemory** qui charge les textures au format .dds à partir d’une mémoire tampon.                                                              |
+| DirectXApp.h, DirectXApp.cpp               | Définit les classes **DirectXApp** et **DirectXAppSource** qui encapsulent la vue (fenêtre, thread et événements) de l’application.                                                     |
+| DirectXBase.h, DirectXBase.cpp             | Définit la classe **DirectXBase** qui fournit l’infrastructure commune à de nombreuses applications UWP en DirectX.                                                                            |
+| DirectXSample.h                            | Définit les fonctions d’utilitaire qui peuvent être utilisées par les applications pour UWP en DirectX.                                                                                                                      |
+| LoadScreen.h, LoadScreen.cpp               | Définit la classe **LoadScreen** qui affiche un écran de chargement pendant l’initialisation de l’application.                                                                                         |
+| MarbleMaze.h, MarbleMaze.cpp               | Définit la classe **MarbleMaze** qui gère les ressources spécifiques au jeu et définit une grande partie de la logique de jeu.                                                                          |
+| MediaStreamer.h, MediaStreamer.cpp         | Définit la classe **MediaStreamer** qui utilise Media Foundation pour aider le jeu à gérer les ressources audio.                                                                            |
+| PersistentState.h, PersistentState.cpp     | Définit la classe **PersistentState** qui lit et écrit les types de données primitives depuis et vers un magasin de stockage.                                                                      |
+| Physics.h, Physics.cpp                     | Définit la classe **Physics** qui implémente la simulation physique entre la bille et le labyrinthe.                                                                              |
+| Primitives.h                               | Définit les types géométriques utilisés par le jeu.                                                                                                                                   |
+| SampleOverlay.h, SampleOverlay.cpp         | Définit la classe **SampleOverlay** qui fournit les données et opérations d’interface utilisateur 2D communes.                                                                               |
+| SDKMesh.h, SDKMesh.cpp                     | Définit la classe **SDKMesh** qui charge et restitue le maillage au format SDK Mesh (.sdkmesh).                                                                                |
+| UserInterface.h, UserInterface.cpp         | Définit la fonctionnalité liée à l’interface utilisateur, comme le système de menus et le tableau des scores.                                                                        |
 
  
 
-##  Design-time versus run-time resource formats
+##  Formats des ressources au moment de la conception et au moment de l’exécution
 
 
-When you can, use run-time formats instead of design-time formats to more efficiently load game resources.
+Si possible, utilisez les formats au moment de l’exécution à la place des formats au moment de la conception pour charger plus efficacement les ressources du jeu.
 
-A *design-time* format is the format you use when you design your resource. Typically, 3-D designers work with design-time formats. Some design-time formats are also text-based so that you can modify them in any text-based editor. Design-time formats can be verbose and contain more information than your game requires. A *run-time* format is the binary format that is read by your game. Run-time formats are typically more compact and more efficient to load than the corresponding design-time formats. This is why the majority of games use run-time assets at run time.
+Vous devez utiliser les formats *au moment de la conception* quand vous concevez votre ressource. En général, les concepteurs 3D utilisent des formats au moment de la conception. Certains formats au moment de la conception sont également des formats texte que vous pouvez modifier dans n’importe quel éditeur de texte. Les formats au moment de la conception peuvent être constitués de commentaires et contenir plus d’informations que votre jeu n’en a besoin. Les formats *au moment de l’exécution* représentent le format binaire lu par votre jeu. Les formats au moment de l’exécution sont généralement plus compacts et plus efficaces à charger que les formats au moment de la conception correspondants. C’est pourquoi la plupart des jeux utilisent des composants au moment de l’exécution.
 
-Although your game can directly read a design-time format, there are several benefits to using a separate run-time format. Because run-time formats are often more compact, they require less disk space and require less time to transfer over a network. Also, run-time formats are often represented as memory-mapped data structures. Therefore, they can be loaded into memory much faster than, for example, an XML-based text file. Finally, because separate run-time formats are typically binary-encoded, they are more difficult for the end-user to modify.
+Bien que votre jeu puisse lire directement un format au moment de la conception, l’utilisation d’un format au moment de l’exécution distinct présente plusieurs avantages. Étant donné qu’ils sont souvent plus compacts, ils nécessitent moins d’espace disque et impliquent des temps de transfert réseau inférieurs. De plus, les formats au moment de l’exécution sont souvent représentés en tant que structures de données mappées en mémoire. Ils peuvent donc être chargés en mémoire beaucoup plus rapidement qu’un fichier texte XML, par exemple. Enfin, l’utilisateur final modifie plus difficilement les formats au moment de l’exécution car ils sont généralement codés en binaire.
 
-HLSL shaders are one example of resources that use different design-time and run-time formats. Marble Maze uses .hlsl as the design-time format, and .cso as the run-time format. A .hlsl file holds source code for the shader; a .cso file holds the corresponding shader byte code. When you convert .hlsl files offline and provide .cso files with your game, you avoid the need to convert HLSL source files to byte code when your game loads.
+Les nuanceurs HLSL sont un exemple de ressources qui utilisent différents formats au moment de la conception et au moment de l’exécution. Marble Maze utilise .hlsl comme format au moment de la conception et .cso comme format au moment de l’exécution. Un fichier .hlsl contient le code source du nuanceur ; un fichier .cso contient le code d’octet du nuanceur correspondant. Quand vous convertissez des fichiers .hlsl hors connexion et fournissez des fichiers .cso à votre jeu, vous n’avez pas besoin de convertir des fichiers sources HLSL en code d’octet pendant le chargement de celui-ci.
 
-For instructional reasons, the Marble Maze project includes both the design-time format and the run-time format for many resources, but you only have to maintain the design-time formats in the source project for your own game because you can convert them to run-time formats when you need them. This documentation shows how to convert the design-time formats to the run-time formats.
+Pour les instructions, le projet Marble Maze inclut à la fois le format au moment de la conception et le format au moment de l’exécution pour de nombreuses ressources. Toutefois, vous n’avez à appliquer que les formats au moment de la conception dans le projet source de votre jeu, car vous pourrez toujours les convertir aux formats au moment de l’exécution quand vous en aurez besoin. Cette documentation indique comment convertir les formats au moment de la conception en formats au moment de l’exécution.
 
-##  Application life cycle
-
-
-Marble Maze follows the life cycle of a typical UWP app. For more info about the life cycle of a UWP app, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/mt243287).
-
-When a UWP game initializes, it typically initializes runtime components such as Direct3D, Direct2D, and any input, audio, or physics libraries that it uses. It also loads game-specific resources that are required before the game begins. This initialization occurs one time during a game session.
-
-After initialization, games typically run the *game loop*. In this loop, games typically perform four actions: process Windows events, collect input, update scene objects, and render the scene. When the game updates the scene, it can apply the current input state to the scene objects and simulate physical events, such as object collisions. The game can also perform other activities such as playing sound effects or sending data over the network. When the game renders the scene, it captures the current state of the scene and draws it to the display device. The following sections describe these activities in greater detail.
-
-##  Adding to the template
+##  Cycle de vie de l’application
 
 
-The *DirectX 11 App (Universal Windows)* template creates a core window that you can render to with Direct3D. The template also includes the **DeviceResources** class that creates all of the Direct3D device resources needed for rendering 3D content in a UWP app. The **AppMain** class creates the **MarbleMaze** class object, starts the loading of resources, loops to update the timer, and calls the **MarbleMaze** render method each frame. The **CreateWindowSizeDependentResources**, Update, and Render methods for this class call the corresponding methods in the **MarbleMaze** class. The following example shows where the **AppMain** constructor creates the **MarbleMaze** class object. The device resources class is passed to the class so it can use the Direct3D objects for rendering.
+Marble Maze suit le cycle de vie d’une application pour UWP classique. Pour plus d’informations sur le cycle de vie d’une application pour UWP, voir [Cycle de vie d’une application](https://msdn.microsoft.com/library/windows/apps/mt243287).
+
+L’initialisation d’un jeu UWP entraîne généralement celle des composants d’exécution tels que Direct3D, Direct2D et de toutes les bibliothèques de données d’entrée, audio ou physiques qu’il utilise. Il charge également des ressources spécifiques au jeu qui sont nécessaires avant son démarrage. Cette initialisation se produit une seule fois pendant une session de jeu.
+
+Après l’initialisation, les jeux exécutent généralement la *boucle de jeu*. Dans cette boucle, les jeux exécutent généralement quatre actions : le traitement des événements Windows, la collecte des données d’entrée, la mise à jour des objets de scène et le rendu de la scène. Quand le jeu met à jour la scène, il peut appliquer l’état d’entrée actuel aux objets de scène et simuler des événements physiques, comme les collisions d’objets. Le jeu peut également effectuer d’autres activités telles que la lecture d’effets sonores ou l’envoi de données sur le réseau. Quand le jeu restitue la scène, il capture l’état actuel de la scène et la dessine sur le périphérique d’affichage. Les sections suivantes décrivent ces activités de manière détaillée.
+
+##  Ajout au modèle
+
+
+Le modèle *Application DirectX 11 (Windows universel)* crée une fenêtre principale dont vous pouvez effectuer le rendu avec Direct3D. Le modèle comprend également la classe **DeviceResources** qui crée toutes les ressources d’appareil Direct3D nécessaires au rendu du contenu 3D dans une application UWP. La classe **AppMain** crée l’objet de classe **MarbleMaze**, démarre le chargement des ressources, effectue une boucle de mise à jour de la minuterie, puis appelle la méthode de rendu **MarbleMaze** pour chaque image. Les méthodes **CreateWindowSizeDependentResources**, Update et Render de cette classe appellent les méthodes correspondantes de la classe **MarbleMaze**. L’exemple suivant montre l’emplacement où le constructeur **AppMain** crée l’objet de classe **MarbleMaze**. La classe des ressources d’appareil est passée à la classe afin de permettre l’utilisation des objets Direct3D pour le rendu.
 
 ```cpp
     m_marbleMaze = std::unique_ptr<MarbleMaze>(new MarbleMaze(m_deviceResources));
     m_marbleMaze->CreateWindowSizeDependentResources();
 ```
 
-The **AppMain** class also starts loading the deferred resources for the game. See the next section for more detail. The **DirectXPage** constructor sets up the event handlers, creates the **DeviceResources** class, and creates the **AppMain** class.
+La classe **AppMain** démarre également le chargement des ressources différées du jeu. Pour plus d’informations, voir la section suivante. Le constructeur **DirectXPage** définit les gestionnaires d’événements, crée la classe **DeviceResources**, puis crée la classe **AppMain**.
 
-When the handlers for these events are called, they pass the input to the **MarbleMaze** class.
+Quand les gestionnaires de ces événements sont appelés, ils passent l’entrée à la classe **MarbleMaze**.
 
-## Loading game assets in the background
+## Chargement des composants du jeu en arrière-plan
 
 
-To ensure that your game can respond to window events within 5 seconds after it is launched, we recommend that you load your game assets asynchronously, or in the background. As assets load in the background, your game can respond to window events.
+Pour être sûr que votre jeu réponde aux événements fenêtre en moins de 5 secondes après son lancement, nous vous recommandons de charger les composants du jeu de façon asynchrone ou en arrière-plan. Quand les composants sont chargés en arrière-plan, votre jeu peut répondre aux événements fenêtre.
 
-> **Note**  You can also display the main menu when it is ready, and allow the remaining assets to continue loading in the background. If the user selects an option from the menu before all resources are loaded, you can indicate that scene resources are continuing to load by displaying a progress bar, for example.
+> **Remarque** Vous pouvez également afficher le menu principal quand il est prêt et permettre aux autres composants de poursuivre leur chargement en arrière-plan. Si l’utilisateur sélectionne une option de menu avant que toutes les ressources soient chargées, vous pouvez indiquer le chargement en cours des ressources de scène en affichant, par exemple, une barre de progression.
 
  
 
-Even if your game contains relatively few game assets, it is good practice to load them asynchronously for two reasons. One reason is that it is difficult to guarantee that all of your resources will load quickly on all devices and all configurations. Also, by incorporating asynchronous loading early, your code is ready to scale as you add functionality.
+Même si le jeu contient peu de composants, il est conseillé de les charger de façon asynchrone pour deux raisons. La première est qu’il est difficile de garantir que l’ensemble de vos composants seront rapidement chargés sur tous les périphériques et avec toutes les configurations. En outre, en incorporant le chargement asynchrone au préalable, votre code évolue à mesure que vous ajoutez des fonctionnalités.
 
-Asynchronous asset loading begins with the **AppMain::Load** method. This method uses the [**task Class (Concurrency Runtime)**](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) class to load game assets in the background.
+Le chargement asynchrone des composants commence par la méthode **AppMain::Load**. Cette méthode utilise la classe [**task Class (Concurrency Runtime)**](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) pour charger les composants du jeu en arrière-plan.
 
 ```cpp
     task<void>([=]()
@@ -112,22 +112,22 @@ Asynchronous asset loading begins with the **AppMain::Load** method. This method
 
 ```
 
-The **MarbleMaze** class defines the *m\_deferredResourcesReady* flag to indicate that asynchronous loading is complete. The **MarbleMaze::LoadDeferredResources** method loads the game resources and then sets this flag. The update (**MarbleMaze::Update**) and render (**MarbleMaze::Render**) phases of the app check this flag. When this flag is set, the game continues as normal. If the flag is not yet set, the game shows the loading screen.
+La classe **MarbleMaze** définit l’indicateur *m\_deferredResourcesReady* pour spécifier que le chargement asynchrone est terminé. La méthode **MarbleMaze::LoadDeferredResources**charge les ressources du jeu, puis définit cet indicateur. Les phases de mise à jour (**MarbleMaze::Update**) et de rendu (**MarbleMaze::Render**) de l’application vérifient cet indicateur. Quand cet indicateur est défini, le jeu continue à s’exécuter normalement. S’il n’est pas encore défini, le jeu affiche l’écran de chargement.
 
-For more information about asynchronous programming for UWP apps, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+Pour plus d’informations sur la programmation asynchrone dans les applications UWP, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
->> > **Tip**   If you’re writing game code that is part of a Windows Runtime C++ Library (in other words, a DLL), consider whether to read [Creating Asynchronous Operations in C++ for Windows Store Apps](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) to learn how to create asynchronous operations that can be consumed by apps and other libraries.
+>> > **Conseil** Si vous écrivez le code de jeu qui fait partie d’une bibliothèque C++ Windows Runtime (en d’autres termes, une DLL), prenez connaissance de la section [Création d’opérations asynchrones en C++ pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) pour savoir comment créer des opérations asynchrones pouvant être consommées par des applications et d’autres bibliothèques.
 
  
 
-## The game loop
+## Boucle de jeu
 
 
-The **DirectPage::OnRendering** method runs the main game loop. This method is called every frame.
+La méthode **DirectPage::OnRendering** exécute la boucle de jeu principale. Cette méthode est appelée pour chaque image.
 
-To help separate view and window code from game-specific code, we implemented the **DirectXApp::Run** method to forward update and render calls to the **MarbleMaze** object. The **DirectPage::OnRendering** method also defines the game timer, which is used for animation and physics simulation.
+Pour distinguer facilement le code de vue et de fenêtre du code spécifique au jeu, nous avons implémenté la méthode **DirectXApp::Run** pour transférer la mise à jour et restituer les appels vers l’objet **MarbleMaze**. La méthode **DirectPage::OnRendering** définit également la minuterie de jeu, qui est utilisée pour l’animation et la simulation physique.
 
-The following example shows the **DirectPage::OnRendering** method, which includes the main game loop. The game loop updates the total time and frame time variables, and then updates and renders the scene. This also makes sure that content is only rendered when the window is visible.
+L’exemple suivant montre la méthode **DirectPage::OnRendering** qui inclut la boucle de jeu principale. La boucle de jeu met à jour les variables de durée totale et de durée d’image, puis met à jour et restitue la scène. Cela permet également de s’assurer que le rendu du contenu est effectué uniquement quand la fenêtre est visible.
 
 ```cpp
 
@@ -145,12 +145,12 @@ void DirectXPage::OnRendering(Object^ sender, Object^ args)
 }
 ```
 
-## The state machine
+## Machine à états
 
 
-Games typically contain a *state machine* (also known as a *finite state machine*, or FSM) to control the flow and order of the game logic. A state machine contains a given number of states and the ability to transition among them. A state machine typically starts from an *initial* state, transitions to one or more *intermediate* states, and possibly ends at a *terminal* state.
+Les jeux contiennent généralement une *machine à états* (également appelée *machine à états finis* ou FSM (Finite State Machine) pour contrôler le flux et l’ordre de la logique de jeu. Une machine à états offre un nombre donné d’états et la capacité de passer d’un état à un autre. Une machine à états part généralement d’un état *initial*, passe par un ou plusieurs états *intermédiaires* et aboutit à un état *terminal*.
 
-A game loop often uses a state machine so that it can perform the logic that is specific to the current game state. Marble Maze defines the **GameState** enumeration, which defines each possible state of the game.
+Une boucle de jeu utilise souvent une machine à états pour exécuter la logique spécifique à l’état de jeu actuel. Marble Maze définit l’énumération **GameState** qui définit chaque état potentiel du jeu.
 
 ```cpp
 enum class GameState
@@ -165,9 +165,9 @@ enum class GameState
 };
 ```
 
-The **MainMenu** state, for example, defines that the main menu appears, and that the game is not active. Conversely, the **InGameActive** state defines that the game is active, and that the menu does not appear. The **MarbleMaze** class defines the **m\_gameState** member variable to hold the active game state.
+Par exemple, l’état **MainMenu** définit que le menu principal s’affiche et que le jeu n’est pas actif. Inversement, l’état **InGameActive** définit que le jeu est actif et que le menu ne s’affiche pas. La classe **MarbleMaze** définit la variable membre **m\_gameState** afin qu’elle contienne l’état de jeu actif.
 
-The **MarbleMaze::Update** and **MarbleMaze::Render** methods use the switch statement to perform logic for the current state. The following example shows what this switch statement might look like for the **MarbleMaze::Update** method (details are removed to illustrate the structure).
+Les méthodes **MarbleMaze::Update** et **MarbleMaze::Render** utilisent l’instruction switch pour exécuter la logique relative à l’état actuel. L’exemple suivant illustre l’instruction switch dans le cas de la méthode **MarbleMaze::Update** (les détails sont supprimés pour représenter la structure).
 
 ```cpp
 switch (m_gameState)
@@ -190,27 +190,27 @@ case GameState::InGamePaused:
 }
 ```
 
-When game logic or rendering depends on a specific game state, we emphasize it in this documentation.
+Quand la logique ou le rendu du jeu dépend d’un état spécifique de jeu, nous le soulignons dans cette documentation.
 
-## Handling app and window events
+## Gestion des événements d’application et de fenêtre
 
 
-The Windows Runtime provides an object-oriented event-handling system so that you can more easily manage Windows messages. To consume an event in an application, you must provide an event handler, or event-handling method, that responds to the event. You must also register the event handler with the event source. This process is often referred to as event wiring.
+Windows Runtime fournit un système de gestion d’événements orienté objet qui vous permet de gérer plus facilement les messages Windows. Pour utiliser un événement dans une application, vous devez fournir un gestionnaire d’événements ou la méthode de gestion d’événements qui répond à l’événement. Vous devez également inscrire le gestionnaire d’événements avec la source de l’événement. Ce processus est souvent appelé connexion des événements.
 
-### Supporting suspend, resume, and restart
+### Prise en charge de la suspension, la reprise et du redémarrage
 
-Marble Maze is suspended when the user switches away from it or when Windows enters a low power state. The game is resumed when the user moves it to the foreground or when Windows comes out of a low power state. Generally, you don't close apps. Windows can terminate the app when it's in the suspended state and Windows requires the resources, such as memory, that the app is using. Windows notifies an app when it is about to be suspended or resumed, but it doesn't notify the app when it's about to be terminated. Therefore, your app must be able to save—at the point when Windows notifies your app that it is about to be suspended—any data that would be required to restore the current user state when the app is restarted. If your app has significant user state that is expensive to save, you may also need to save state regularly, even before your app receives the suspend notification. Marble Maze responds to suspend and resume notifications for two reasons:
+Marble Maze est suspendu quand l’utilisateur quitte le jeu ou quand Windows entre dans un état de faible consommation d’énergie. Le jeu reprend quand l’utilisateur le place au premier plan ou quand Windows quitte un état de faible consommation d’énergie. En général, vous ne fermez pas les applications. Windows peut fermer l’application quand elle est à l’état suspendu et que des ressources sont nécessaires, comme la mémoire utilisée par l’application. Windows prévient quand une application est sur le point d’être suspendue ou de reprendre. En revanche, il ne signale pas si l’application est sur le point d’être fermée. Votre application doit donc pouvoir sauvegarder les données nécessaires (au moment où Windows signale que votre application est sur le point d’être suspendue) pour restaurer l’état de l’utilisateur actuel quand l’application est redémarrée. Si l’état de l’utilisateur de votre application est difficile à enregistrer, il sera alors nécessaire de procéder à son enregistrement régulier, même avant que votre application reçoive la notification de suspension. Marble Maze répond aux notifications de suspension et de reprise pour deux raisons :
 
-1.  When the app is suspended, the game saves the current game state and pauses audio playback. When the app is resumed, the game resumes audio playback.
-2.  When the app is closed and later restarted, the game resumes from its previous state.
+1.  Quand l’application est suspendue, le jeu enregistre l’état de jeu actuel et met en pause la lecture audio. Quand l’application reprend, le jeu redémarre la lecture audio.
+2.  Quand l’application est fermée puis redémarrée, le jeu reprend à l’état précédent.
 
-Marble Maze performs the following tasks to support suspend and resume:
+Marble Maze effectue les tâches suivantes pour prendre en charge les fonctionnalités de suspension et de reprise :
 
--   It saves its state to persistent storage at key points in the game, such as when the user reaches a checkpoint.
--   It responds to suspend notifications by saving its state to persistent storage.
--   It responds to resume notifications by loading its state from persistent storage. It also loads the previous state during startup.
+-   Il enregistre son état dans un stockage persistant aux points clés dans le jeu, par exemple quand l’utilisateur atteint un point de contrôle.
+-   Il répond aux notifications de suspension en enregistrant son état dans un stockage persistant.
+-   Il répond aux notifications de reprise en chargeant son état à partir du stockage persistant. Il charge également l’état précédent au démarrage.
 
-To support suspend and resume, Marble Maze defines the **PersistentState** class. (See PersistentState.h and PersistentState.cpp). This class uses the [**Windows::Foundation::Collections::IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) interface to read and write properties. The **PersistentState** class provides methods that read and write primitive data types (such as **bool**, **int**, **float**, [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475), and [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/hh755812.aspx)), from and to a backing store.
+Pour prendre en charge les fonctionnalités de suspension et de reprise, Marble Maze définit la classe **PersistentState**. (Voir PersistentState.h et PersistentState.cpp). Cette classe utilise l’interface [**Windows::Foundation::Collections::IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) pour les propriétés de lecture et d’écriture. La classe **PersistentState** fournit des méthodes qui lisent et écrivent des types de données primitives (par exemple **bool**, **int**, **float**, [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) et [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/hh755812.aspx)), depuis et vers un magasin de stockage.
 
 ```cpp
 ref class PersistentState
@@ -239,18 +239,18 @@ private:
 };
 ```
 
-The **MarbleMaze** class holds a **PersistentState** object. The **MarbleMaze** constructor initializes this object and provides the local application data store as the backing data store.
+La classe **MarbleMaze** contient un objet **PersistentState**. Le constructeur **MarbleMaze** initialise cet objet et fournit le magasin de données d’application locales en tant que magasin de données de stockage.
 
 ```cpp
 m_persistentState = ref new PersistentState();
 m_persistentState->Initialize(ApplicationData::Current->LocalSettings->Values, "MarbleMaze");
 ```
 
-Marble Maze saves its state when the marble passes over a checkpoint or the goal (in the **MarbleMaze::Update** method), and when the window loses focus (in the **MarbleMaze::OnFocusChange** method). If your game holds a large amount of state data, we recommend that you occasionally save state to persistent storage in a similar manner because you only have a few seconds to respond to the suspend notification. Therefore, when your app receives a suspend notification, it only has to save the state data that has changed.
+Marble Maze enregistre son état quand la bille passe sur un point de contrôle ou sur l’objectif (dans la méthode **MarbleMaze::Update**) et quand la fenêtre perd le focus (dans la méthode **MarbleMaze::OnFocusChange**). Si le jeu contient un grand nombre de données d’état, nous vous recommandons d’enregistrer occasionnellement l’état dans un stockage persistant de la même façon, car vous ne disposez que de quelques secondes pour répondre à la notification de suspension. Par conséquent, quand votre application reçoit une notification de suspension, elle ne doit enregistrer que les données d’état qui ont changé.
 
-To respond to suspend and resume notifications, the **DirectXPage** class defines the **SaveInternalState** and **LoadInternalState** methods that are called on suspend and resume. The **MarbleMaze::OnSuspending** method handles the suspend event and the **MarbleMaze::OnResuming** method handles the resume event.
+Pour répondre aux notifications de suspension et de reprise, la classe **DirectXPage** définit les méthodes **SaveInternalState** et **LoadInternalState**, qui sont appelées durant les phases de suspension et de reprise. La méthode **MarbleMaze::OnSuspending** gère l’événement de suspension et la méthode **MarbleMaze::OnResuming** gère l’événement de reprise.
 
-The **MarbleMaze::OnSuspending** method saves game state and suspends audio.
+La méthode **MarbleMaze::OnSuspending** enregistre l’état de jeu et suspend la lecture audio.
 
 ```cpp
 void MarbleMaze::OnSuspending()
@@ -260,7 +260,7 @@ void MarbleMaze::OnSuspending()
 }
 ```
 
-The **MarbleMaze::SaveState** method saves game state values such as the current position and velocity of the marble, the most recent checkpoint, and the high-score table.
+La méthode **MarbleMaze::SaveState** enregistre les valeurs d’état de jeu telles que la position et la vitesse actuelles de la bille, le point de contrôle le plus récent et le tableau des scores.
 
 ```cpp
 void MarbleMaze::SaveState()
@@ -289,11 +289,11 @@ void MarbleMaze::SaveState()
 }
 ```
 
-When the game resumes, it only has to resume audio. It doesn't have to load state from persistent storage because the state is already loaded in memory.
+Quand le jeu reprend, seule la lecture audio est réactivée. Il ne doit pas charger l’état du stockage persistant car celui-ci est déjà chargé en mémoire.
 
-How the game suspends and resumes audio is explained in the document [Adding audio to the Marble Maze sample](adding-audio-to-the-marble-maze-sample.md).
+Pour savoir comment le jeu est suspendu et la lecture audio reprend, voir le document [Ajout d’audio à l’exemple Marble Maze](adding-audio-to-the-marble-maze-sample.md).
 
-To support restart, the **MarbleMaze::Initialize** method, which is called during startup, calls the **MarbleMaze::LoadState** method. The **MarbleMaze::LoadState** method reads and applies the state to the game objects. This method also sets the current game state to paused if the game was paused or active when it was suspended. We pause the game so that the user is not surprised by unexpected activity. It also moves to the main menu if the game was not in a gameplay state when it was suspended.
+Pour prendre en charge la reprise, la méthode **MarbleMaze::Initialize** qui est appelée au démarrage appelle la méthode **MarbleMaze::LoadState**. La méthode **MarbleMaze::LoadState** lit et applique l’état aux objets de jeu. Cette méthode définit également le jeu à l’état de pause si celui-ci a été mis en pause ou était actif au moment de la suspension. Le jeu est mis en pause afin que l’utilisateur ne soit pas surpris par une activité inattendue. Il se déplace également vers le menu principal s’il n’y avait aucune action de jeu en cours quand le jeu a été suspendu.
 
 ```cpp
 void MarbleMaze::LoadState()
@@ -346,28 +346,32 @@ void MarbleMaze::LoadState()
 }
 ```
 
-> **Important**  Marble Maze doesn't distinguish between cold starting—that is, starting for the first time without a prior suspend event—and resuming from a suspended state. This is recommended design for all UWP apps.
+> **Important** Marble Maze ne fait pas de distinction entre le démarrage à froid (autrement dit, le démarrage initial sans événement de suspension antérieur) et la reprise à partir de l’état suspendu. Il s’agit de la conception recommandée pour toutes les applications UWP.
 
  
 
-For more examples that demonstrate how to store and retrieve settings and files from the local application data store, see [Quickstart: Local application data](https://msdn.microsoft.com/library/windows/apps/hh465118). For more info about application data, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/library/windows/apps/mt299098).
+Pour obtenir d’autres exemples illustrant comment stocker et récupérer des paramètres et des fichiers à partir des magasins de données d’application locales, voir [Démarrage rapide : données d’application locales](https://msdn.microsoft.com/library/windows/apps/hh465118). Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](https://msdn.microsoft.com/library/windows/apps/mt299098).
 
-##  Next steps
+##  Étapes suivantes
 
 
-Read [Adding visual content to the Marble Maze sample](adding-visual-content-to-the-marble-maze-sample.md) for information about some of the key practices to keep in mind when you work with visual resources.
+Pour plus d’informations sur certaines pratiques importantes à garder à l’esprit quand vous utilisez des ressources visuelles, voir [Ajout de contenu visuel à l’exemple Marble Maze](adding-visual-content-to-the-marble-maze-sample.md).
 
-## Related topics
+## Rubriques connexes
 
-* [Adding visual content to the Marble Maze sample](adding-visual-content-to-the-marble-maze-sample.md)
-* [Marble Maze sample fundamentals](marble-maze-sample-fundamentals.md)
-* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Ajout de contenu visuel à l’exemple Marble Maze](adding-visual-content-to-the-marble-maze-sample.md)
+* [Notions de base de l’exemple Marble Maze](marble-maze-sample-fundamentals.md)
+* [Développement de Marble Maze, jeu pour UW en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,15 +1,16 @@
 ---
-title: Convert between strings and binary data
-description: This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
+title: Convertir entre chaînes et données binaires
+description: Cet exemple de code indique comment convertir les chaînes et les données binaires dans une application de plateforme Windows universelle (UWP).
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
+author: awkoren
 ---
 
-# Convert between strings and binary data
+# Convertir entre chaînes et données binaires
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
+Cet exemple de code indique comment convertir les chaînes et les données binaires dans une application de plateforme Windows universelle (UWP).
 
 ```cs
 public void ConvertData()
@@ -28,11 +29,6 @@ public void ConvertData()
 }
 ```
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

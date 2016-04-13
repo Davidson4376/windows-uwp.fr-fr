@@ -1,6 +1,6 @@
 ---
-title: Contrôles tactiles pour les jeux
-description: Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX.
+Contrôles tactiles pour les jeux
+Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX.
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ---
 
@@ -96,7 +96,7 @@ public:
 
 Les champs privés contiennent l’état actuel du contrôleur de la caméra. Passons-les en revue.
 
--   **m\_position** représente la position de la caméra dans l’espace de scène. Dans cet exemple, la valeur de coordonnée z est fixée à 0. Nous pourrions utiliser DirectX::XMFLOAT2 pour représenter cette valeur, mais dans le cadre de cet exemple et à des fins d’extensibilité future, nous utilisons DirectX::XMFLOAT3. Nous transmettons cette valeur par le biais de la propriété get\_Position à l’application proprement dite afin qu’elle puisse mettre à jour la fenêtre d’affichage en conséquence.
+-   **m\_position** représente la position de la caméra dans l’espace de scène. Dans cet exemple, la valeur de coordonnée z est fixée à 0. Nous pourrions utiliser DirectX::XMFLOAT2 pour représenter cette valeur, mais dans le cadre de cet exemple et à des fins d’extensibilité future, nous utilisons DirectX::XMFLOAT3. Nous transmettons cette valeur par le biais de la propriété **get\_Position** à l’application proprement dite afin qu’elle puisse mettre à jour la fenêtre d’affichage en conséquence.
 -   **m\_panInUse** est une valeur booléenne qui indique si une opération panoramique est active ou, plus spécifiquement, si le joueur touche l’écran et déplace la caméra.
 -   **m\_panPointerID** représente un ID unique pour le pointeur. Nous ne l’utiliserons pas dans cet exemple, mais il est conseillé d’associer la classe de l’état du contrôleur à un pointeur spécifique.
 -   **m\_panFirstDown** est le point de l’écran où le joueur a touché pour la première fois l’écran ou a cliqué à l’aide de la souris pendant l’action panoramique de la caméra. Nous utiliserons cette valeur plus tard pour définir une zone morte afin d’empêcher tout sautillement lorsque l’écran est touché ou que la souris bouge légèrement.
@@ -334,15 +334,19 @@ Nous pouvons maintenant obtenir une coordonnée d’espace de scène sur laquell
 Félicitations ! Vous avez implémenté un ensemble simple de contrôles tactiles de panoramique de la caméra dans votre jeu.
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,6 +1,6 @@
 ---
-title: Créer et utiliser un service d’application
-description: Découvrez comment écrire une application de plateforme Windows universelle (UWP) capable de fournir des services à d’autres applications UWP et comment utiliser ces services.
+Créer et utiliser un service d’application
+Découvrez comment écrire une application de plateforme Windows universelle (UWP) capable de fournir des services à d’autres applications UWP et comment utiliser ces services.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 ---
 
@@ -17,7 +17,7 @@ Découvrez comment écrire une application de plateforme Windows universelle (UW
 
 Dans la procédure décrite ici, nous allons créer tous les éléments dans une seule solution par souci de simplicité.
 
--   Dans Microsoft Visual Studio 2015, créez un projet d’application UWP et nommez-le AppServiceProvider. (Dans la boîte de dialogue **Nouveau projet**, sélectionnez **Modèles &gt; Autres langages &gt; Visual C\# &gt; Windows &gt; Windows universel &gt; Application vide (Windows universel)**). Il s’agira de l’application qui fournit le service d’application.
+-   Dans Microsoft Visual Studio 2015, créez un projet d’application UWP et nommez-le AppServiceProvider. (Dans la boîte de dialogue **Nouveau projet**, sélectionnez **Modèles &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Application vide (Windows universel)**). Il s’agira de l’application qui fournit le service d’application.
 
 ## Ajouter une extension de service d’application à package.appxmanifest
 
@@ -47,7 +47,7 @@ L’attribut **EntryPoint** identifie la classe qui implémente le service, que 
 ## Créer le service d’application
 
 
-1.  Un service d’application est implémenté sous forme de tâche en arrière-plan. Cela permet à une application au premier plan d’appeler un service d’application dans une autre application pour effectuer des tâches en arrière-plan. Ajoutez un nouveau projet de composant Windows Runtime nommé MyAppService à la solution (**Fichier &gt; Ajouter &gt; Nouveau projet**). (Dans la boîte de dialogue **Ajouter un nouveau projet**, choisissez **Installé &gt; Autres langages &gt; Visual C\# &gt; Windows &gt; Windows universel &gt; Composant Windows Runtime (Windows universel)**
+1.  Un service d’application est implémenté sous forme de tâche en arrière-plan. Cela permet à une application au premier plan d’appeler un service d’application dans une autre application pour effectuer des tâches en arrière-plan. Ajoutez un nouveau projet de composant Windows Runtime nommé MyAppService à la solution (**Fichier &gt; Ajouter &gt; Nouveau projet**). (Dans la boîte de dialogue **Ajouter un nouveau projet**, choisissez **Installé &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Composant Windows Runtime (Windows universel)**
 2.  Dans le projet AppServiceProvider, ajoutez une référence au projet MyAppService.
 3.  Dans le projet MyappService, ajoutez les instructions **using** suivantes au début du fichier Class1.cs :
     ```cs
@@ -175,7 +175,7 @@ L’application qui fournit le service d’application doit être déployée ava
 ## Écrire un client pour appeler le service d’application
 
 
-1.  Ajoutez un nouveau projet d’application universelle Windows vide nommé ClientApp à la solution (**Fichier &gt; Ajouter &gt; Nouveau projet**). (Dans la boîte de dialogue **Ajouter un nouveau projet**, choisissez **Installé &gt; Autres langages &gt; Visual C\# &gt; Windows &gt; Windows universel &gt; Application vide (Windows universel)**).
+1.  Ajoutez un nouveau projet d’application universelle Windows vide nommé ClientApp à la solution (**Fichier &gt; Ajouter &gt; Nouveau projet**). (Dans la boîte de dialogue **Ajouter un nouveau projet**, choisissez **Installé &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Application vide (Windows universel)**).
 2.  Dans le projet ClientApp, ajoutez l’instruction **using** suivante au début du fichier MainPage.xaml.cs :
     ```cs
     >using Windows.ApplicationModel.AppService;
@@ -386,4 +386,8 @@ namespace MyAppService
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

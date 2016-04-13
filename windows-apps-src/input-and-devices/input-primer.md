@@ -1,34 +1,34 @@
 ---
-User interactions in the Universal Windows Platform (UWP) are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, Cortana, controller, gesture, gaze, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
-Interaction primer
+Dans la plateforme Windows universelle (UWP), les interactions utilisateur reposent sur une combinaison de sources d’entrée et de sortie (souris, clavier, stylet, interface tactile, pavé tactile, fonctions vocales, Cortana, contrôleur, mouvement, regard, etc.), ainsi que sur différents modes ou modificateurs qui permettent des expériences étendues (roulette et boutons de la souris, bouton et gomme du stylet, clavier tactile, services d’application en arrière-plan, etc.).
+Notions fondamentales sur les interactions
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
-Interaction primer
+Notions fondamentales sur les interactions
 template: detail.hbs
 ---
 
-# Interaction primer
+# Notions fondamentales sur les interactions
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-![windows input types](images/input-interactions/icons-inputdevices03.png)
+![types d’entrées Windows](images/input-interactions/icons-inputdevices03.png)
 
-User interactions in the Universal Windows Platform (UWP) are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, **Cortana**, controller, gesture, gaze, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
+Dans la plateforme Windows universelle (UWP), les interactions utilisateur reposent sur une combinaison de sources d’entrée et de sortie (souris, clavier, stylet, interface tactile, pavé tactile, fonctions vocales, **Cortana**, contrôleur, mouvement, regard, etc.), ainsi que sur différents modes ou modificateurs qui permettent des expériences étendues (roulette et boutons de la souris, bouton et gomme du stylet, clavier tactile, services d’application en arrière-plan, etc.).
 
-The UWP uses a "smart" contextual interaction system that, in most cases, eliminates the need to individually handle the unique types of input received by your app. This includes handling touch, touchpad, mouse, and pen input as a generic pointer type to support static gestures such as tap or press-and-hold, manipulation gestures such as slide for panning, or rendering digital ink.
+La plateforme UWP utilise un système d’interactions contextuelles intelligent qui, dans la plupart des cas, élimine la nécessité de traiter individuellement les types d’entrées uniques reçus par votre application. Cela inclut la gestion des entrées effectuées par le biais d’une interface tactile, d’un pavé tactile, d’une souris et d’un stylet en tant que type de pointeur générique pour prendre en charge les actions statiques (comme l’appui ou l’appui long), les actions de manipulation (comme le glissement pour le mouvement panoramique) ou le rendu d’entrée manuscrite.
 
-Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. This can help you decide whether the platform controls and affordances are sufficient for your app, or require you to provide customized interaction experiences.
+Familiarisez-vous avec chaque type de périphérique d’entrée, ses comportements, ses fonctionnalités et ses limites, selon son association à certains facteurs de forme. Cela vous aidera à déterminer si les contrôles et l’intuitivité de la plateforme sont suffisants pour votre application ou requièrent une personnalisation de l’expérience d’interaction utilisateur.
 
-## <span id="Cortana"></span><span id="cortana"></span><span id="CORTANA"></span>Cortana
+## <span id="Cortana"> </span> <span id="cortana"> </span> <span id="CORTANA"> </span>Cortana
 
 
-In Windows 10, **Cortana** extensibility lets you handle voice commands from a user and launch your application to carry out a single action.
+Dans Windows 10, l’extensibilité de **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une opération unique.
 
-Device support
--   Phones and phablets
--   Tablet
--   PCs and laptops
+Prise en charge des appareils
+-   Téléphones et phablettes
+-   Tablette
+-   PC et portables
 -   Surface Hub
 -   IoT
 -   Xbox
@@ -36,284 +36,288 @@ Device support
 
 ![cortana](images/input-interactions/icons-cortana01.png)
 
-Typical usage
-A voice command is a single utterance, defined in a Voice Command Definition (VCD) file, directed at an installed app through **Cortana**. The app can be launched in the foreground or background, depending on the level and complexity of the interaction. For instance, voice commands that require additional context or user input are best handled in the foreground, while basic commands can be handled in the background.
+Utilisation type
+Une commande vocale est un énoncé, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée via **Cortana**. L’application peut être lancée au premier plan ou en arrière-plan en fonction du niveau et de la complexité de l’interaction. Par exemple, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaire sont mieux gérées au premier plan, tandis que les commandes de base peuvent être gérées en arrière-plan.
 
-Integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, lets **Cortana** become a liaison between your app and the user. In many cases, this can save the user significant time and effort. For more info, see [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233).
+L’intégration des fonctionnalités de base de votre application et la fourniture d’un point d’entrée central pour que l’utilisateur accomplisse la plupart des tâches sans ouvrir directement votre application, permettent à **Cortana** de devenir une liaison entre votre application et l’utilisateur. Dans de nombreux cas, cela permet à l’utilisateur de gagner beaucoup de temps et d’énergie. Pour plus d’informations, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233).
 
-More info
-[Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
+Informations supplémentaires
+[Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233)
  
 
-## <span id="Speech"></span><span id="speech"></span><span id="SPEECH"></span>Speech
+## <span id="Speech"> </span> <span id="speech"> </span> <span id="SPEECH"> </span>Fonctions vocales
 
 
-Speech is an effective and natural way for people to interact with applications. It's an easy and accurate way to communicate with applications, and lets people be productive and stay informed in a variety of situations.
+Les fonctions vocales offrent un moyen efficace et naturel d’interagir avec les applications. Elles assurent une communication simple et précise avec les applications et permettent aux utilisateurs d’être productifs et de se tenir informés dans diverses situations.
 
-Speech can complement or, in many cases, be the primary input type, depending on the user's device. For example, devices such as HoloLens and Xbox do not support traditional input types (aside from a software keyboard in specifc scenarios). Instead, they rely on speech input and output (often combined with other non-traditional input types such as gaze and gesture) for most user interactions.
+Les fonctions vocales peuvent compléter ou, souvent, représenter le type d’entrée principal, selon l’appareil de l’utilisateur. Par exemple, les appareils tels que HoloLens et Xbox ne prennent pas en charge les types d’entrée traditionnels (au-delà d’un clavier logiciel dans certains cas). Au lieu de cela, ils reposent sur des entrées et sorties vocales (souvent combinées à d’autres types d’entrée non traditionnels comme le regard et le mouvement) pour la plupart des interactions utilisateur.
 
-Text-to-speech (also known as TTS, or speech synthesis) is used to inform or direct the user.
+La conversion de texte par synthèse vocale (ou TTS) est utilisée pour informer ou guider l’utilisateur.
 
-Device support
--   Phones and phablets
--   Tablet
--   PCs and laptops
+Prise en charge des appareils
+-   Téléphones et phablettes
+-   Tablette
+-   PC et portables
 -   Surface Hub
 -   IoT
 -   Xbox
 -   HoloLens
 
-![speech](images/input-interactions/icons-speech01.png)
+![fonctions vocales](images/input-interactions/icons-speech01.png)
 
-Typical usage
+Utilisation type
 
-There are three modes of Speech interaction:
+Il existe trois modes d’interaction vocale :
 
-<span id="Natural_language"></span><span id="natural_language"></span><span id="NATURAL_LANGUAGE"></span>Natural language  
-Natural language is how we verbally interact with people on a regular basis. Our speech varies from person to person and situation to situation, and is generally understood. When it's not, we often use different words and word order to get the same idea across.
+<span id="Natural_language"> </span> <span id="natural_language"> </span> <span id="NATURAL_LANGUAGE"> </span>Langage naturel  
+Le langage naturel est la façon dont nous interagissons verbalement avec d’autres personnes de façon régulière. Notre discours varie d’une personne à l’autre et d’une situation à l’autre, et il est généralement compris. Lorsque ce n’est pas le cas, nous utilisons souvent d’autres mots et séquences de mots pour formuler la même idée.
 
-Natural language interactions with an app are similar: we speak to the app through our device as if it were a person and expect it to understand and react accordingly.
+Les interactions en langage naturel avec une application sont similaires : nous parlons à l’application par le biais de notre appareil comme s’il s’agissait d’une personne et attendons de l’application qu’elle comprenne et réagisse en conséquence.
 
-Natural language is the most advanced mode of speech interaction, and can be implemented and exposed through **Cortana**.
+Le langage naturel est le mode d’interaction vocale le plus avancé. Il peut être implémenté et exposé par le biais de **Cortana**.
 
-<span id="Command_and_control"></span><span id="command_and_control"></span><span id="COMMAND_AND_CONTROL"></span>Command and control  
-Command and control is the use of verbal commands to activate controls and functionality such as clicking a button or selecting a menu item.
+<span id="Command_and_control"> </span> <span id="command_and_control"> </span> <span id="COMMAND_AND_CONTROL"> </span>Commande et contrôle  
+La commande et le contrôle représentent l’utilisation de commandes verbales pour activer des contrôles et fonctionnalités comme un clic sur un bouton ou la sélection d’un élément de menu.
 
-As command and control is critical to a successful user experience, a single input type is generally not recommended. Speech is typically one of several input options for a user based on their preferences or hardware capabilities.
+Ce sont des aspects essentiels d’une expérience utilisateur réussie. Par conséquent, il n’est pas recommandé de prévoir un seul type d’entrée. Les fonctions vocales sont généralement proposées en complément d’autres options d’entrée, selon les préférences de l’utilisateur ou les fonctionnalités matérielles.
 
-<span id="Dictation"></span><span id="dictation"></span><span id="DICTATION"></span>Dictation  
-The most basic speech input method. Each utterance is converted to text.
+<span id="Dictation"> </span> <span id="dictation"> </span> <span id="DICTATION"> </span>Dictée  
+La méthode de saisie vocale la plus simple. Chaque énoncé est converti en texte.
 
-Dictation is typically used when an app doesn’t need to understand meaning or intent.
+La dictée est généralement utilisée lorsqu’une application n’a pas besoin de comprendre la signification ou l’intention des phrases.
 
-More info
-[Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+Informations supplémentaires
+[Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
  
 
-## <span id="Pen"></span><span id="pen"></span><span id="PEN"></span>Pen
+## <span id="Pen"> </span> <span id="pen"> </span> <span id="PEN"> </span>Stylet
 
 
-A pen (or stylus) can serve as a pixel precise pointing device, like a mouse, and is the optimal device for digital ink input.
+Un stylet peut servir d’appareil de pointage précis au niveau des pixels, tel que la souris. Il constitue également l’appareil d’entrée manuscrite numérique optimal.
 
-**Note**  There are two types of pen devices: active and passive.
--   Passive pens do not contain electronics, and effectively emulate touch input from a finger. They require a basic device display that recognizes input based on contact pressure. Because users often rest their hand as they write on the input surface, input data can become polluted due to unsuccessful palm rejection.
--   Active pens contain electronics and can work with complex device displays to provide much more extensive input data (including hover, or proximity data) to the system and your app. Palm rejection is much more robust.
+**Remarque** Il existe deux types de stylet : actif et passif.
+-   Les stylets passifs ne contiennent pas d’éléments électroniques et peuvent émuler efficacement des entrées tactiles au doigt. Ils requièrent un écran de base reconnaissant les entrées en fonction de la pression de contact. Dans la mesure où les utilisateurs posent souvent leur main lorsqu’ils écrivent sur la surface d’entrée, les données d’entrée peuvent être altérées en raison d’une mauvaise élimination des interférences de la paume.
+-   Les stylets actifs contiennent des éléments électroniques et peuvent fonctionner avec des écrans d’appareil complexes. Ils peuvent ainsi fournir des données d’entrée beaucoup plus étendues (pointage ou données de proximité, par exemple) au système et à votre application. L’élimination des interférences de la paume est beaucoup plus robuste.
 
  
 
-When we refer to pen devices here, we are referring to active pens that provide rich input data and are used primarily for precise ink and pointing interactions.
+Lorsque nous parlons de stylets, nous faisons référence à des stylets actifs qui fournissent des données d’entrée riches et qui sont utilisés principalement dans les interactions de pointage et d’écriture précises.
 
-Device support
--   Phones and phablets
--   Tablet
--   PCs and laptops
+Prise en charge des appareils
+-   Téléphones et phablettes
+-   Tablette
+-   PC et portables
 -   Surface Hub
 -   IoT
 
-![pen](images/input-interactions/icons-pen01.png)
+![stylet](images/input-interactions/icons-pen01.png)
 
-Typical usage
-The Windows ink platform, together with a pen, provides a natural way to create handwritten notes, drawings, and annotations. The platform supports capturing ink data from digitizer input, generating ink data, rendering that data as ink strokes on the output device, managing the ink data, and performing handwriting recognition. In addition to capturing the spatial movements of the pen as the user writes or draws, your app can also collect info such as pressure, shape, color, and opacity, to offer user experiences that closely resemble drawing on paper with a pen, pencil, or brush.
+Utilisation type
+La plateforme d’entrée manuscrite de Windows, associée à un stylet, fournit un moyen naturel de créer des notes manuscrites, des dessins et des annotations. Cette plateforme prend en charge la capture de données d’entrée manuscrite à partir de l’entrée du numériseur, la génération de données d’entrée manuscrite, le rendu de ces données sous forme de traits d’encre sur le périphérique de sortie, la gestion des données d’entrée manuscrite et la reconnaissance de l’écriture manuscrite. En plus de capturer les mouvements spatiaux du stylet à mesure que l’utilisateur écrit ou dessine, votre application peut également recueillir des informations telles que la pression, la forme, la couleur et l’opacité, de manière à offrir des expériences utilisateur ressemblant étroitement au dessin réel à l’aide d’un stylo, d’un crayon ou d’un pinceau.
 
-Where pen and touch input diverge is the ability for touch to emulate direct manipulation of UI elements on the screen through physical gestures performed on those objects (such as swiping, sliding, dragging, rotating, and so on).
+Les entrées tactiles et du stylet divergent en raison de la capacité de l’entrée tactile à émuler la manipulation directe des éléments de l’interface utilisateur sur l’écran par le biais de mouvements physiques effectués sur ces objets (comme le balayage, le glissement, la rotation, etc.).
 
-You should provide pen-specific UI commands, or affordances, to support these interactions. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
+Il est recommandé de fournir des commandes d’interface utilisateur spécifiques au stylet (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, de redimensionner et d’agrandir les objets.
 
-More info
-[Pen design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456352)
+Informations supplémentaires
+[Recommandations en matière de conception pour le stylet](https://msdn.microsoft.com/library/windows/apps/dn456352)
  
 
-## <span id="Touch"></span><span id="touch"></span><span id="TOUCH"></span>Touch
+## <span id="Touch"> </span> <span id="touch"> </span> <span id="TOUCH"> </span>Interface tactile
 
 
-With touch, physical gestures from one or more fingers can be used to either emulate the direct manipulation of UI elements (such as panning, rotating, resizing, or moving), as an alternative input method (similar to mouse or pen), or as a complementary input method (to modify aspects of other input, such as smudging an ink stroke drawn with a pen). Tactile experiences such as this can provide more natural, real-world sensations for users as they interact with elements on a screen.
+Avec une interface tactile, les mouvements physiques avec un ou plusieurs doigts peuvent servir à émuler la manipulation directe d’éléments d’interface utilisateur (par exemple, le mouvement panoramique, la rotation, le redimensionnement ou le déplacement), ou faire office de méthode d’entrée alternative (semblable à la souris ou au stylet) ou complémentaire (pour modifier l’aspect d’autres entrées, comme par exemple maculer un trait d’encre dessiné avec un stylet). Les expériences tactiles peuvent fournir des sensations plus naturelles et proches de celles du monde réel pour les utilisateurs lorsqu’ils interagissent avec des éléments sur un écran.
 
-Device support
--   Phones and phablets
--   Tablet
--   PCs and laptops
+Prise en charge des appareils
+-   Téléphones et phablettes
+-   Tablette
+-   PC et portables
 -   Surface Hub
 -   IoT
 
-![touch](images/input-interactions/icons-touch01.png)
+![interface tactile](images/input-interactions/icons-touch01.png)
 
-Typical usage
-Support for touch input can vary significantly, depending on the device.
+Utilisation type
+La prise en charge des entrées tactiles peut varier de manière significative selon l’appareil.
 
-Some devices don't support touch at all, some devices support a single touch contact, while others support multi-touch (two or more contacts).
+Certains appareils ne prennent en charge aucune fonction tactile. Certains prennent en charge un contact tactile unique et d’autres l’entrée tactile multipoint (deux contacts ou plus).
 
-Most devices that support multi-touch input, typically recognize ten unique, concurrent contacts.
+La plupart des appareils qui prennent en charge l’entrée tactile multipoint reconnaissent généralement dix contacts uniques simultanés.
 
-Surface Hub devices recognize 100 unique, concurrent touch contacts.
+Les appareils Surface Hub reconnaissent 100 contacts tactiles uniques simultanés.
 
-In general, touch is:
+En règle générale, une interface tactile répond aux critères suivants :
 
--   Single user, unless being used with a Microsoft Team device like Surface Hub, where collaboration is emphasized.
--   Not constrained to device orientation.
--   Used for all interactions, including text input (touch keyboard) and inking (app-configured).
+-   Un seul utilisateur, sauf si elle est utilisée avec un appareil de l’équipe Microsoft comme Surface Hub, où la collaboration est mise en avant.
+-   Pas de contrainte quant à l’orientation de l’appareil
+-   Utilisée pour toutes les interactions, y compris les entrées de texte (clavier tactile) et les entrées manuscrites (application configurée).
 
-More info
-[Touch design guidelines](https://msdn.microsoft.com/library/windows/apps/hh465370)
+Informations supplémentaires
+[Recommandations en matière de conception pour l’interface tactile](https://msdn.microsoft.com/library/windows/apps/hh465370)
  
 
-## <span id="Touchpad"></span><span id="touchpad"></span><span id="TOUCHPAD"></span>Touchpad
+## <span id="Touchpad"> </span> <span id="touchpad"> </span> <span id="TOUCHPAD"> </span>Pavé tactile
 
 
-A touchpad combines both indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both a touch-optimized UI and the smaller targets of productivity apps.
+Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un appareil de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
 
-Device support
--   PCs and laptops
+Prise en charge des appareils
+-   PC et portables
 -   IoT
 
-![touchpad](images/input-interactions/icons-touchpad01.png)
+![pavé tactile](images/input-interactions/icons-touchpad01.png)
 
-Typical usage
-Touchpads typically support a set of touch gestures that provide support similar to touch for direct manipulation of objects and UI.
+Utilisation type
+Les pavés tactiles prennent généralement en charge un ensemble de mouvements tactiles similaires à la manipulation directe d’objets et de l’interface utilisateur.
 
-Because of this convergence of interaction experiences supported by touchpads, we recommend also providing mouse-style UI commands or affordances rather than relying solely on support for touch input. Provide touchpad-specific UI commands, or affordances, to support these interactions.
+Outre la prise en charge de l’entrée tactile, nous vous recommandons également de fournir des commandes d’interface utilisateur (ou un élément incitatif) accessibles à l’aide de la souris grâce à la convergence des expériences d’interaction prises en charge par les pavés tactiles. Fournissez des commandes d’interface utilisateur spécifiques au pavé tactile (ou un élément incitatif) pour prendre en charge ces interactions.
 
-You should provide mouse-specific UI commands, or affordances, to support these interactions. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
+Il est recommandé de fournir des commandes d’interface utilisateur spécifiques à la souris (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, de redimensionner et d’agrandir les objets.
 
-More info
-[Touchpad design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456353)
+Informations supplémentaires
+[Recommandations en matière de conception pour le pavé tactile](https://msdn.microsoft.com/library/windows/apps/dn456353)
  
 
-## <span id="Keyboard"></span><span id="keyboard"></span><span id="KEYBOARD"></span>Keyboard
+## <span id="Keyboard"> </span> <span id="keyboard"> </span> <span id="KEYBOARD"> </span>Clavier
 
 
-A keyboard is the primary input device for text, and is often indispensable to people with certain disabilities or users who consider it a faster and more efficient way to interact with an app.
+Le clavier, principal appareil d’entrée de texte, est indispensable pour certaines personnes souffrant d’un handicap et les utilisateurs qui le considèrent simplement comme un moyen plus rapide et plus efficace d’interaction avec une application.
 
-With [Continuum for Phone](http://go.microsoft.com/fwlink/p/?LinkID=699431), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a mouse and keyboard to make their phones work like a laptop.
+Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour les utiliser comme un ordinateur portable.
 
-Device support
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
-
-![keyboard](images/input-interactions/icons-keyboard01.png)
-
-Typical usage
-Users can interact with Universal Windows apps through a hardware keyboard and two software keyboards: the On-Screen Keyboard (OSK) and the touch keyboard.
-
-The OSK is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The OSK is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The OSK emulates most, if not all, the functionality of a hardware keyboard.
-
-The touch keyboard is a visual, software keyboard used for text entry with touch input. The touch keyboard is not a replacement for the OSK as it is used for text input only (it doesn't emulate the hardware keyboard) and appears only when a text field or other editable text control gets focus. The touch keyboard does not support app or system commands.
-
-**Note**  The OSK has priority over the touch keyboard, which won't be shown if the OSK is present.
-
- 
-
-In general, a keyboard is:
-
--   Single user.
--   Not constrained to device orientation.
--   Used for text input, navigation, gameplay, and accessibility.
--   Always available, either proactively or reactively.
-
-More info
-[Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345)
- 
-
-## <span id="Mouse"></span><span id="mouse"></span><span id="MOUSE"></span>Mouse
-
-
-A mouse is best suited for productivity apps and high-density UI where user interactions require pixel-level precision for targeting and commanding.
-
-Device support
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
-
-![mouse](images/input-interactions/icons-mouse01.png)
-
-Typical usage
-Mouse input can be modified with the addition of various keyboard keys (Ctrl, Shift, Alt, and so on). These keys can be combined with the left mouse button, the right mouse button, the wheel button, and the X buttons for an expanded mouse-optimized command set. (Some Microsoft mouse devices have two additional buttons, referred to as X buttons, typically used to navigate back and forward in Web browsers).
-
-Similar to pen, where mouse and touch input diverge is the ability for touch to emulate direct manipulation of UI elements on the screen through physical gestures performed on those objects (such as swiping, sliding, dragging, rotating, and so on).
-
-You should provide mouse-specific UI commands, or affordances, to support these interactions. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
-
-More info
-[Mouse design guidelines](https://msdn.microsoft.com/library/windows/apps/dn456351)
- 
-
-## <span id="Gesture"></span><span id="gesture"></span><span id="GESTURE"></span>Gesture
-
-
-A gesture is any form of user movement that is recognized as input for controlling or interacting with an application. Gestures take many forms, from simply using a hand to target something on the screen, to specific, learned patterns of movement, to long stretches of continuous movement using the entire body. Be careful when designing custom gestures, as their meaning can vary depending on locale and culture.
-
-Device support
--   PCs and laptops
--   IoT
--   Xbox
--   HoloLens
-
-![gesture](images/input-interactions/icons-gesture01.png)
-
-Typical usage
-Touchpads typically support a set of touch gestures that provide support similar to touch for direct manipulation of objects and UI.
-
-Because of this convergence of interaction experiences supported by touchpads, we recommend also providing mouse-style UI commands or affordances rather than relying solely on support for touch input. Provide touchpad-specific UI commands, or affordances, to support these interactions.
-
-You should provide mouse-specific UI commands, or affordances, to support these interactions. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
-
- 
-
-## <span id="Gamepad_Controller"></span><span id="gamepad_controller"></span><span id="GAMEPAD_CONTROLLER"></span>Gamepad/Controller
-
-
-The gamepad/controller is a highly specialized device typically dedicated to playing games. However, it is also used for to emulate basic keyboard input and provides a UI navigation experience very similar to the keyboard.
-
-Device support
--   PCs and laptops
--   IoT
--   Xbox
-
-![controller](images/input-interactions/icons-controller01.png)
-
-Typical usage
-Touchpads typically support a set of touch gestures that provide support similar to touch for direct manipulation of objects and UI.
-
-Because of this convergence of interaction experiences supported by touchpads, we recommend also providing mouse-style UI commands or affordances rather than relying solely on support for touch input. Provide touchpad-specific UI commands, or affordances, to support these interactions.
-
-You should provide mouse-specific UI commands, or affordances, to support these interactions. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
-
- 
-
-## <span id="Multiple_inputs"></span><span id="multiple_inputs"></span><span id="MULTIPLE_INPUTS"></span>Multiple inputs
-
-
-Accommodating as many users and devices as possible and designing your apps to work with as many input types (gesture, speech, touch, touchpad, mouse, and keyboard) as possible maximizes flexibility, usability, and accessibility.
-
-Device support
--   Phones and phablets
--   Tablet
--   PCs and laptops
+Prise en charge des appareils
+-   Téléphones et phablettes
+-   Tablette
+-   PC et portables
 -   Surface Hub
 -   IoT
 -   Xbox
 -   HoloLens
 
-![multiple inputs](images/input-interactions/icons-inputdevices03-vertical.png)
+![clavier](images/input-interactions/icons-keyboard01.png)
 
-Typical usage
-Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app. However, these combined interactions need to be as intuitive and natural as possible as they can also create a very confusing experience.
+Utilisation type
+Les utilisateurs peuvent interagir avec les applications Windows universelles via un clavier matériel et deux claviers logiciels : le clavier visuel et le clavier tactile.
+
+Le clavier visuel est un clavier logiciel visuel que vous pouvez utiliser à la place du clavier physique pour entrer des données à l’aide de la fonction tactile, de la souris, du stylo/stylet ou d’un autre dispositif de pointage (un écran tactile n’est pas nécessaire). Le clavier visuel est fourni pour les systèmes qui ne possèdent pas de clavier physique ou pour les utilisateurs qui connaissent des problèmes de mobilité les empêchant d’utiliser les périphériques d’entrée physiques classiques. Le clavier visuel émule la plupart, sinon la totalité, des fonctionnalités d’un clavier matériel.
+
+Le clavier tactile est un clavier logiciel visuel permettant d’entrer du texte à l’aide de la fonction tactile. Le clavier tactile ne se substitue pas au clavier visuel car il n’est utilisé que pour la saisie de texte (il n’émule pas le clavier matériel) et apparaît seulement quand un champ textuel ou un autre contrôle textuel modifiable reçoit le focus. Le clavier tactile ne gère pas les commandes système ou de l’application.
+
+**Remarque** Le clavier visuel a priorité sur le clavier tactile, lequel n’est pas visible si le clavier visuel est présent.
+
+ 
+
+En règle générale, un clavier répond aux critères suivants :
+
+-   Utilisateur unique
+-   Pas de contrainte quant à l’orientation de l’appareil
+-   Utilisé pour l’entrée de texte, la navigation, le jeu et l’accessibilité
+-   Toujours disponible, de façon proactive ou réactive
+
+Informations supplémentaires
+[Recommandations en matière de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345)
+ 
+
+## <span id="Mouse"> </span> <span id="mouse"> </span> <span id="MOUSE"> </span>Souris
+
+
+La souris est particulièrement adaptée aux applications de productivité et interfaces utilisateur haute densité, lorsque les interactions utilisateur nécessitent une précision au niveau des pixels pour le ciblage et la commande.
+
+Prise en charge des appareils
+-   Téléphones et phablettes
+-   Tablette
+-   PC et portables
+-   Surface Hub
+-   IoT
+
+![souris](images/input-interactions/icons-mouse01.png)
+
+Utilisation type
+Les entrées de souris peuvent être modifiées avec l’ajout de plusieurs touches du clavier (Ctrl, Maj, Alt, etc.). Ces touches peuvent être combinées avec le bouton gauche de la souris, le bouton droit de la souris, la roulette et les boutons X pour un ensemble de commandes étendues optimisées pour la souris. (Certaines souris Microsoft possèdent deux boutons supplémentaires, nommés boutons X, qui permettent en général de naviguer vers l’arrière et vers l’avant dans les navigateurs Web.)
+
+Comme pour le stylet, les entrées tactiles et de la souris divergent en raison de la capacité de l’entrée tactile à émuler la manipulation directe des éléments de l’interface utilisateur sur l’écran par le biais de mouvements physiques effectués sur ces objets (comme le balayage, le glissement, la rotation, etc.).
+
+Il est recommandé de fournir des commandes d’interface utilisateur spécifiques à la souris (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, de redimensionner et d’agrandir les objets.
+
+Informations supplémentaires
+[Recommandations en matière de conception pour la souris](https://msdn.microsoft.com/library/windows/apps/dn456351)
+ 
+
+## <span id="Gesture"> </span> <span id="gesture"> </span> <span id="GESTURE"> </span>Mouvement
+
+
+Un mouvement désigne tous les gestes de l’utilisateur reconnus comme entrée pour contrôler ou interagir avec une application. Les mouvements prennent différentes formes : mouvements simples de la main pour cibler quelque chose à l’écran, mouvements appris dans un but spécifique ou longs mouvements continus effectués avec la totalité du corps. Soyez prudent lors de la conception des mouvements personnalisés, car leur signification peut varier en fonction des paramètres régionaux et de la culture.
+
+Prise en charge des appareils
+-   PC et portables
+-   IoT
+-   Xbox
+-   HoloLens
+
+![mouvement](images/input-interactions/icons-gesture01.png)
+
+Utilisation type
+Les pavés tactiles prennent généralement en charge un ensemble de mouvements tactiles similaires à la manipulation directe d’objets et de l’interface utilisateur.
+
+Outre la prise en charge de l’entrée tactile, nous vous recommandons également de fournir des commandes d’interface utilisateur (ou un élément incitatif) accessibles à l’aide de la souris grâce à la convergence des expériences d’interaction prises en charge par les pavés tactiles. Fournissez des commandes d’interface utilisateur spécifiques au pavé tactile (ou un élément incitatif) pour prendre en charge ces interactions.
+
+Il est recommandé de fournir des commandes d’interface utilisateur spécifiques à la souris (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, redimensionner et agrandir les objets.
+
+ 
+
+## <span id="Gamepad_Controller"> </span> <span id="gamepad_controller"> </span> <span id="GAMEPAD_CONTROLLER"> </span>Boîtier de commande/contrôleur
+
+
+Le boîtier de commande/contrôleur est un appareil spécialisé généralement dédié aux jeux. Toutefois, il est également utilisé pour émuler les entrées de clavier de base et pour offrir une expérience de navigation de l’interface utilisateur très similaire au clavier.
+
+Prise en charge des appareils
+-   PC et portables
+-   IoT
+-   Xbox
+
+![contrôleur](images/input-interactions/icons-controller01.png)
+
+Utilisation type
+Les pavés tactiles prennent généralement en charge un ensemble de mouvements tactiles similaires à la manipulation directe d’objets et de l’interface utilisateur.
+
+Outre la prise en charge de l’entrée tactile, nous vous recommandons également de fournir des commandes d’interface utilisateur (ou un élément incitatif) accessibles à l’aide de la souris grâce à la convergence des expériences d’interaction prises en charge par les pavés tactiles. Fournissez des commandes d’interface utilisateur spécifiques au pavé tactile (ou un élément incitatif) pour prendre en charge ces interactions.
+
+Il est recommandé de fournir des commandes d’interface utilisateur spécifiques à la souris (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, redimensionner et agrandir les objets.
+
+ 
+
+## <span id="Multiple_inputs"> </span> <span id="multiple_inputs"> </span> <span id="MULTIPLE_INPUTS"> </span>Entrées multiples
+
+
+En vous adaptant au plus grand nombre d’utilisateurs et d’appareils et en concevant vos applications de manière à ce qu’elles fonctionnent avec le plus grand nombre de types d’entrée (mouvement, fonctions vocales, interface tactile, pavé tactile, souris et clavier), vous optimisez la flexibilité, la facilité d’utilisation et l’accessibilité.
+
+Prise en charge des appareils
+-   Téléphones et phablettes
+-   Tablette
+-   PC et portables
+-   Surface Hub
+-   IoT
+-   Xbox
+-   HoloLens
+
+![entrées multiples](images/input-interactions/icons-inputdevices03-vertical.png)
+
+Utilisation type
+Tout comme les personnes ont recours à une combinaison de voix et de mouvement pour communiquer entre elles, plusieurs types et modes d’entrée peuvent également être utilisés lors de l’interaction avec une application. Toutefois, ces interactions combinées doivent être aussi intuitives et naturelles que possible pour ne pas perturber l’expérience de l’utilisateur.
 
 
 
-\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[Cet article contient des informations propres aux applications UWP et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,8 +1,8 @@
 ---
-Description: Cette rubrique décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
-title: Recommandations en matière de zoom optique et de redimensionnement
+Cette rubrique décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
+Recommandations en matière de zoom optique et de redimensionnement
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
-label: Zoom optique et redimensionnement
+Zoom optique et redimensionnement
 template: detail.hbs
 ---
 
@@ -93,4 +93,8 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

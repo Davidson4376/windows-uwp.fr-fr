@@ -1,233 +1,235 @@
 ---
-Plan your Universal Windows Platform (UWP) app
-On Microsoft design teams, our process for creating apps consists of five distinct stages--concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
+Planifier votre application de plateforme Windows universelle (UWP)
+Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 ---
 
-#  Plan your Universal Windows Platform (UWP) app
+#  Planifier votre application de plateforme Windows universelle (UWP)
 
-On Microsoft design teams, our process for creating apps consists of five distinct stages: concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
+Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
 
 ## Concept
 
-**Focus your app**
+**Se concentrer sur l’application**
 
-When planning your Universal Windows Platform (UWP) app, you should determine not only what your app will do and who it's for, but also what your app will be great at. At the core of every great app is a strong concept that provides a solid foundation.
+Durant la planification de votre application de plateforme Windows universelle (UWP), vous devez déterminer sa finalité et sa cible, mais aussi ses points forts. Au cœur de chaque application réussie se trouve un concept puissant, qui offre une base solide.
 
-Say you want to create a photo app. Thinking about the reasons users work with, save, and share their photos, you’ll realize that they want to relive memories, connect with others through the photos, and keep the photos safe. These, then, are the things that you want the app to be great at, and you use these experience goals to guide you through the rest of the design process.
+Supposons que vous souhaitiez créer une application de photographie. En cherchant les raisons qui pousseraient quelqu’un à utiliser votre application, à l’enregistrer et à partager ses photos, vous arrivez à la conclusion que ses objectifs seraient de faire revivre des souvenirs, de rester en contact avec des proches grâce aux photos et de conserver celles-ci en lieu sûr. Voilà en quoi votre application doit exceller. Ces objectifs doivent vous guider tout au long du processus de conception.
 
-**What's your app about?** Start with a broad concept and list all of the things that you want to help users do with your app.
+**Quel est l’objet de votre application ?** Commencez avec un concept élargi et faites l’inventaire des tâches que votre application peut aider à effectuer.
 
-For example, suppose you want to build an app that helps people plan their trips. Here are some ideas you might sketch out on the back of a napkin:
+Par exemple, imaginons que vous souhaitiez créer une application qui aide les utilisateurs à planifier leurs voyages. Voici quelques idées que vous pourriez commencer par noter :
 
--   Get maps of all the places on an itinerary, and take them with you on the trip.
--   Find out about special events happening while you're in a city.
--   Let travel buddies create separate but shareable lists of must-do activities and must-see attractions.
--   Let travel buddies compile all of their photos to share with friends and family.
--   Get recommended destinations based on flight prices.
--   Find a consolidated list of deals for restaurants, shops, and activities around your destination.
+-   Trouver des cartes de tous les lieux d’un itinéraire et les emporter pour le voyage.
+-   Rechercher tous les événements qui se produisent dans une ville donnée.
+-   Pouvoir créer des listes individuelles, et partageables avec ses compagnons de voyage, des activités et des attractions incontournables.
+-   Permettre à des compagnons de voyage de rassembler toutes leurs photos pour les partager avec leurs amis et leur famille.
+-   Trouver des destinations conseillées en fonction du prix des vols.
+-   Trouver une liste d’offres de restaurants, de boutiques et d’activités regroupées sur le lieu de voyage.
 
-![a design for a travel app](images/ux-triptracker-tab-phone-700.png)
+![Conception d’une application de voyage](images/ux-triptracker-tab-phone-700.png)
 
-**What's your app great at?** Take a step back and look at your list of ideas to see if a particular scenario really jumps out at you. Challenge yourself to trim the list to just a single scenario that you want to focus on. In the process, you might cross off many good ideas, but saying "no" to them is crucial to making a single scenario great.
+**Quels sont les points forts de votre application ?** Prenez du recul et analysez votre liste d’idées pour voir s’il en ressort un scénario particulier. Obligez-vous à réduire cette liste pour arriver à un seul scénario sur lequel vous concentrer. En cours de processus, vous serez peut-être amené à supprimer de nombreuses bonnes idées, mais, pour aboutir à un excellent scénario unique, vous devez être rigoureux.
 
-After you choose a single scenario, decide how you would explain to an average person what your app is great at by writing it down in one sentence. For example:
+Lorsque vous avez choisi un scénario unique, décidez comment vous expliqueriez les capacités de votre application à une personne lambda, par écrit, en une phrase. Par exemple :
 
--   My travel app is great at helping friends create itineraries collaboratively for group trips.
--   My workout app is great at letting friends track their workout progress and share their achievements with each other.
--   My grocery app is great at helping families coordinate their weekly grocery shopping so they never miss or duplicate a purchase.
+-   Mon application de voyage est excellente pour aider des amis à créer ensemble des itinéraires pour des voyages en groupe.
+-   Mon application d’entraînement est excellente pour permettre à des amis de suivre leurs progrès et de partager leurs résultats.
+-   Mon application de courses est excellente pour aider les familles à organiser leurs courses hebdomadaires et pour leur éviter d’oublier certains achats ou d’en faire en double.
 
-![a design for a collaboration tool](images/ux-collaboration-tabphone-700.png)
+![Conception d’un outil de collaboration](images/ux-collaboration-tabphone-700.png)
 
-This is your app's "great at" statement, and it can guide many design decisions and tradeoffs that you make as you build your app. Focus on the scenarios you want users to experience in your app, and be careful not to turn this into a feature list. It should be about what your users will be able to do, as opposed to what your app will be able to do.
+Cette liste de points forts peut orienter un grand nombre de décisions et d’arbitrage de conception à prendre durant la création de votre application. Concentrez-vous sur une liste de scénarios d’utilisation de votre application, et veillez à ne pas transformer cette liste en une énumération de fonctionnalités. Il s’agit de répertorier ce que vos utilisateurs pourront faire, pas votre application.
 
-**The design funnel**
+**L’entonnoir de conception**
 
-It’s very tempting—having thought of an idea you like—to go ahead and develop it, perhaps even taking it quite a ways into production. But let’s say you do that and then another interesting idea comes along. It’s natural that you’ll be tempted to stick with the idea you’ve already invested in regardless of the relative merits of the two ideas. If only you’d thought of that other idea earlier in the process! Well, the design funnel is a technique to help uncover your best ideas as early as possible.
+Il est très tentant (après avoir eu une idée intéressante) de se lancer et de la développer, et peut-être même de l’amener à un stade avancé en matière de production. Mais admettons que les choses se passent ainsi, quand soudain une autre idée intéressante se présente. Il est naturel que vous soyez tenté de vous en tenir à l’idée dans laquelle vous vous êtes investi, indépendamment des mérites que peuvent avoir ces deux idées. Si seulement vous aviez pensé plus tôt à cette autre idée au cours du processus ! Justement, l’entonnoir de conception est une technique qui vous aide à découvrir vos meilleures idées le plus tôt possible.
 
-The term "funnel" comes from its shape. At the wide end of the funnel, many ideas go in and each one is realized as a very low-fidelity design artifact (a sketch, perhaps, or a paragraph of text). As this collection of ideas travels through toward the narrow end of the funnel, the number of ideas is trimmed down while the fidelity of the artifacts representing the ideas increases. Each artifact should capture only the information necessary to judge one idea against another, or to answer a particular question such as "is this usable, or intuitive?". *Put no more time and effort into each than that*. Some ideas will fall by the wayside as you test them, and you’ll be okay with that because you won’t be invested in them any more than was necessary to judge the idea. Ideas that survive to move further into the funnel will receive successively high-fidelity treatments. In the end, you’ll have a single design artifact that represents the winning idea. This is the idea that won because of its merits, not merely because it came along first. You will have designed the best app you could.
+Le terme « entonnoir » provient de la forme de cette technique. À l’extrémité large de l’entonnoir, de nombreuses idées sont injectées, chacune étant représentée par un artefact de conception peu précis (via un croquis, peut-être, ou un paragraphe de texte). Au fur et à mesure que cet ensemble d’idées circule jusqu’à l’extrémité étroite de l’entonnoir, le nombre d’idées baisse alors que la précision des artefacts qui représentent ces idées augmente. Chaque artefact doit cibler uniquement les informations nécessaires pour comparer les idées ou pour répondre à une question particulière telle que « est-ce utilisable ? » ou « est-ce intuitif ? ». *N’y consacrez pas plus de temps et d’efforts que nécessaire*. Vous abandonnerez certaines idées en les testant, ce qui est une bonne chose, car vous n’aurez pas à vous investir davantage dans ces dernières. Les idées qui continuent leur chemin dans l’entonnoir seront prises en considération de manière plus fine. Au final, il restera un seul artefact de conception qui représentera l’idée gagnante. Il s’agit de l’idée qui gagne en raison de ses mérites, et pas simplement parce qu’elle vous est venue en premier. Ainsi, vous concevrez la meilleure application possible.
 
 ## Structure
 
 
-**Organization makes everything easier**
+**L’organisation rend tout plus facile**
 
-![organization makes everything easier](images/ux-vision-and-process-organization.png)
+![L’organisation rend tout plus facile](images/ux-vision-and-process-organization.png)
 
-When you're happy with your concept, you're ready for the next stage—creating your app's blueprint. Information architecture (IA) gives your content the structural integrity it needs. It helps define your app's navigational model and, ultimately, your app's identity. By planning how your content will be organized—and how your users will discover that content—you can get a better idea of how users will experience your app.
+Quand vous êtes satisfait de votre concept, vous êtes prêt pour la prochaine étape : la création du plan de votre application. L’architecture de l’information donne à votre contenu l’intégrité structurelle dont il a besoin. Il permet de définir le modèle de navigation de votre application et, en fin de compte, son identité. En planifiant l’organisation de votre contenu et la façon dont vos utilisateurs vont le découvrir, vous pouvez vous faire une meilleure idée du ressenti des utilisateurs face à votre application.
 
-Good IA not only facilitates user scenarios, but it helps you envision the key screens to start with. The [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) app, for example, launches directly into a hub that provides access to the user's library, store, news, and stats. The experience is focused, so users can get and enjoy audiobooks quickly. Deeper levels of the app focus on more specific tasks.
+Une bonne architecture de l’information facilite les scénarios d’utilisation et vous aide à envisager les écrans principaux. L’application [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089), par exemple, se lance directement dans une page Hub, qui permet d’accéder à la bibliothèque, au magasin, aux informations et aux statistiques de l’utilisateur. L’expérience est ciblée, pour permettre aux utilisateurs d’obtenir rapidement des livres audio et d’en profiter. À des niveaux plus profonds, l’application se concentre sur des tâches plus spécifiques.
 
-For related guidelines, see [Navigation design basics](../layout/navigation-basics.md).
+Pour obtenir des recommandations à ce sujet, voir [Informations de base relatives à la conception de la navigation](../layout/navigation-basics.md).
 
-## Dynamics
+## Dynamique
 
-**Execute your concept**
+**Exécuter votre concept**
 
-If the concept stage is about defining your app's purpose, the dynamics stage is all about executing that purpose. This can be accomplished in many ways, such as using wireframes to sketch out your page flows (how you get from one place to the next within the app to achieve their goals), and thinking about the voice and the words used throughout your app's UI. Wireframes are a quick, low-fidelity tool to help you make critical decisions about your app's user flow.
+Si l’étape de concept permet de définir la finalité de votre application, l’étape dynamique consiste à atteindre cette finalité. Il existe de nombreuses façons d’y parvenir, par exemple en utilisant des maquettes de fil de fer pour esquisser vos flux de page (comment aller d’un point à un autre dans l’application pour atteindre les objectifs), ainsi qu’en réfléchissant au ton et aux mots utilisés dans l’ensemble de l’interface utilisateur. La maquette de fil de fer est un outil de représentation rapide et globale, qui vous aide à prendre des décisions essentielles sur le flux d’utilisation de votre application.
 
-Your app flow should be tightly tied to your "great at" statement, and should help users achieve that single scenario that you want to light up. Great apps have flows that are easy to learn, and require minimal effort. Start thinking on a screen-to-screen level—see your app as if you're using it for the first time. When you pinpoint user scenarios for pages you create, you'll give people exactly what they want without lots of unnecessary screen touches. Dynamics are also about motion. The right motion capabilities will determine fluidity and ease of use from one page to the next.
+Le flux de votre application doit être étroitement lié à votre liste de points forts et doit aider les utilisateurs à réaliser le scénario unique que vous souhaitez valoriser. Les applications réussies ont des flux faciles à assimiler qui nécessitent un effort minimal. Commencez à penser à un niveau écran à écran, et imaginez votre application comme si vous l’utilisiez pour la première fois. Quand vous définissez les situations d’utilisation des pages que vous créez, donnez aux utilisateurs exactement ce qu’ils veulent sans touches d’écran inutiles. La dynamique est également liée au mouvement. Les capacités de mouvement appropriées vont déterminer la fluidité et la facilité d’utilisation d’une page à l’autre.
 
-Common techniques to help with this step:
+Techniques courantes :
 
--   Outline the flow: What comes first, what comes next?
--   Storyboard the flow: How should users move through your UI to complete the flow?
--   Prototype: Try out the flow with a quick prototype.
+-   Présentez le flux : qu’est-ce qui arrive en premier, et ensuite ?
+-   Détaillez le flux : comment les utilisateurs doivent-ils progresser au niveau de l’interface pour réaliser le flux ?
+-   Prototype : testez le flux avec un prototype rapide.
 
-**What should users be able to do?** For example, the travel app is "great at helping friends collaboratively create itineraries for group trips." Let's list the flows that we want to enable:
+**Que doivent pouvoir faire les utilisateurs ?** Par exemple, l’application de voyage est « excellente pour aider des amis à créer ensemble des itinéraires pour des voyages en groupe ». Établissons la liste des flux à activer :
 
--   Create a trip with general information.
--   Invite friends to join a trip.
--   Join a friend's trip.
--   See itineraries recommended by other travelers.
--   Add destinations and activities to trips.
--   Edit and comment on destinations and activities that friends added.
--   Share itineraries for friends and families to follow.
+-   Créer un voyage en utilisant des informations générales.
+-   Inviter des amis à se joindre à un voyage.
+-   Participer à un voyage avec des amis.
+-   Voir les itinéraires recommandés par d’autres voyageurs.
+-   Ajouter des destinations et des activités au voyage.
+-   Modifier et commenter les destinations et les activités ajoutées par les amis.
+-   Permettre à des amis et à la famille de suivre les itinéraires partagés.
 
-## Visual
+## Éléments visuels
 
-**Speak without words**
+**Parler sans mots**
 
-![a design for a cocktail creator app](images/ux-cocktailcreator-tab-phone.png)
+![Conception d’une application de création de cocktails](images/ux-cocktailcreator-tab-phone.png)
 
-Once you've established the dynamics of your app, you can make your app shine with the right visual polish. Great visuals define not only how your app looks, but how it feels and comes alive through animation and motion. Your choice of color palette, icon, and artwork are just a few examples of this visual language.
+Une fois que vous avez créé la dynamique de votre application, vous pouvez mettre celle-ci en valeur en soignant son aspect visuel de façon appropriée. Des éléments visuels réussis définissent non seulement l’apparence de votre application, mais également la façon dont elle est perçue et la manière dont elle fonctionne via l’animation et le mouvement. Vos choix de palette de couleurs, d’icônes et d’illustrations ne sont que quelques exemples de ce langage visuel.
 
-All apps have their own unique identity, so explore the visual directions you can take with your app. Let the content guide the look and feel; don't let the look dictate your content.
+Chaque application possède sa propre identité, explorez donc les directions visuelles que vous pouvez prendre avec votre application. Laissez le contenu guider l’apparence de votre application, et non l’inverse.
 
 ## Prototype
 
-**Refine your masterpiece**
+**Peaufiner votre chef-d’œuvre**
 
-Prototyping is a stage in the *design funnel*—a technique we talked about earlier—at which the artifact representing your idea develops into something more than a sketch, but less complicated than a complete app. A prototype might be a flow of hand-drawn screens shown to a user. The person running the test might respond to cues from the user by placing different screens down, or sticking or unsticking smaller pieces of UI on the pages, to simulate a running app. Or, a prototype might be a very simple app that simulates some workflows, provided the operator sticks to a script and pushes the right buttons. At this stage, your ideas begin to really come alive and your hard work is tested in earnest. When prototyping areas of your app, take the time to sculpt and refine the components that need it the most.
+Le prototypage est une étape de l’*entonnoir de conception* (technique dont nous avons parlé un peu plus tôt), où l’artefact qui représente votre idée se développe au-delà de l’esquisse, mais à un niveau moins complexe que celui d’une application complète. Un prototype peut être un flux d’écrans dessinés à la main et présentés à un utilisateur. La personne qui effectue le test peut répondre aux indications de l’utilisateur en plaçant différents écrans vers le bas, ou en collant/décollant de petites parties de l’interface utilisateur sur les pages, pour simuler une application en cours d’exécution. Un prototype peut également être une application très simple qui simule certains flux de travail, à condition que l’opérateur respecte un script établi et appuie sur les boutons appropriés. À ce stade, votre application prend vie et tout votre dur travail est mis à l’épreuve. Durant le prototypage des domaines de votre application, prenez le temps de façonner et d’affiner les éléments qui en ont le plus besoin.
 
-To new developers, we can't stress enough: Making great apps is an iterative process. We recommend that you prototype early and often. Like any creative endeavor, the best apps are the product of intensive trial and error.
+À l’attention des nouveaux développeurs : n’oubliez pas que la conception d’applications réussies est un processus itératif. Nous vous recommandons de prototyper le plus tôt possible et souvent. Comme toute activité créatrice, les meilleures applications sont le fruit d’un processus intensif d’essais et d’erreurs.
 
-## Decide what features to include
+## Identifier les fonctionnalités à inclure
 
-When you know what your users want and how you can help them get there, you can look at the specific tools in your toolbox. Explore the Universal Windows Platform (UWP) and associate features with your app's needs. Be sure to follow the [user experience (UX) guidelines](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx) for each feature.
+Une fois que vous savez ce que veulent vos utilisateurs et comment les aider à y parvenir, vous pouvez étudier les outils spécifiques de votre boîte à outils. Passez la plateforme Windows universelle (UWP) en revue et associez des fonctionnalités pour répondre aux besoins de votre application. Veillez à suivre les [recommandations relatives à l’expérience utilisateur](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx) pour chaque fonctionnalité.
 <!--need URL for landing page -->
 
-Common techniques:
+Techniques courantes : - Recherche au niveau de la plateforme : recherchez les fonctionnalités de la plateforme et comment vous pouvez les utiliser.
+- Diagrammes d’association : mettez en relation vos flux et les fonctionnalités.
+- Prototype : testez les fonctionnalités pour vérifier qu’elles répondent à vos besoins.
 
--   Platform research: Find out what features the platform offers and how you can use them.
--   Association diagrams: Connect your flows with features.
--   Prototype: Exercise the features to ensure that they do what you need.
+**Contrats d’application** Votre application peut participer à des contrats d’application qui autorisent les flux d’utilisateurs importants entre applications et fonctionnalités.
 
-**App contracts**  Your app can participate in app contracts that enable broad, cross-app, cross-feature user flows.
+-   **Partage** Permet aux utilisateurs de partager du contenu de votre application par le biais d’autres applications, mais également de recevoir du contenu pouvant être partagé par d’autres contacts et d’autres applications.
+-   **Lire sur** Permet aux utilisateurs de lire du contenu audio et vidéo ou des images, diffusés en continu depuis votre application sur d’autres appareils de leur réseau domestique.
+-   **Sélecteur de fichiers et extensions du sélecteur de fichiers** Permet aux utilisateurs de charger et d’enregistrer leurs fichiers à partir du système de fichiers local, leurs dispositifs de stockage connectés, leur groupe résidentiel et d’autres applications. Vous pouvez également fournir une extension du sélecteur de fichiers pour permettre à d’autres applications de charger le contenu de votre application.
 
--   **Share**  Let your users share content from your app with other people through other apps, and receive shareable content from other people and apps, too.
--   **Play To**  Let your users enjoy audio, video, or images streamed from your app to other devices in their home network.
--   **File picker and file picker extensions**   Let your users load and save their files from the local file system, connected storage devices, HomeGroup, or even other apps. You can also provide a file picker extension so other apps can load your app's content.
-
-For more info, see [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
+Pour plus d’informations, voir [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
 <!-- Win 8 page. Should have replacement. -->
 
-**Different views, form factors, and hardware configurations**  Windows puts users in charge and your app in the forefront. You want your app UI to shine on any device, using any input mode, in any orientation, in any hardware configuration, and in whatever circumstance the user decides to use it.
+**Différents affichages, facteurs de forme et configurations matérielles** Windows met les utilisateurs aux commandes et place votre application en première ligne. Vous voulez que l’interface utilisateur de votre application ressorte sur tous les appareils, à l’aide de n’importe quel mode d’entrée, avec toutes les orientations et configurations matérielles et dans toutes les circonstances d’utilisation.
 
-**Touch first**  Windows provides a unique and distinctive touch experience that does more than simply emulate mouse functionality.
+**Tactile avant tout** Windows propose une expérience tactile unique qui dépasse la simple émulation des fonctionnalités de la souris.
 
-For example, semantic zoom is a touch-optimized way to navigate through a large set of content. Users can pan or scroll through categories of content, and then zoom in on those categories to view more and more detailed information. You can use this to present your content in a more tactile, visual, and informative way than with traditional navigation and layout patterns like tabs.
+Par exemple, le zoom sémantique permet de naviguer dans un grand volume de contenu en mode tactile. Les utilisateurs peuvent survoler ou faire défiler les catégories de contenu, puis zoomer pour afficher des informations de façon de plus en plus détaillée. Vous pouvez ainsi présenter votre contenu de façon plus tactile, visuelle et instructive qu’avec la navigation traditionnelle et les modèles de disposition tels que les onglets.
 
-Of course, you can take advantage of a number of touch interactions, like rotate, pan, swipe, and others. Learn more about [Touch and other user interactions](../input-and-devices/input-primer.md).
+Vous pouvez évidemment tirer parti d’un certain nombre d’interactions tactiles permettant de faire pivoter, d’effectuer un mouvement panoramique, un balayage, etc. En savoir plus sur les [interactions tactiles et les autres interactions avec l’utilisateur](../input-and-devices/input-primer.md).
 
-**Engaging and fresh**  Be sure your app feels fresh and engages users with these standard experiences:
+**Attrayante et d’actualité** Votre application sera moderne et attrayante avec ces expériences utilisateur proposées en standard :
 
--   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](../graphics/animations-overview.md).
--   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](../controls-and-patterns/tiles-badges-notifications.md).
--   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](../controls-and-patterns/tiles-and-notifications-creating-tiles.md).
+-   **Animations** Utilisez notre bibliothèque d’animations pour rendre votre application rapide et fluide pour vos utilisateurs. Permet aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles. Découvrez tout ce qu’il faut savoir sur l’[animation de votre interface utilisateur](../graphics/animations-overview.md).
+-   **Notifications toast** Permet aux utilisateurs d’identifier le contenu limité dans le temps ou qui peut les intéresser grâce à des notifications. Permet également d’inviter les utilisateurs à revenir dans votre application quand elle est fermée. En savoir plus sur les [vignettes, badges et notifications toast](../controls-and-patterns/tiles-badges-notifications.md).
+-   **Vignettes d’application** Fournit des mises à jour actuelles et appropriées encourageant les utilisateurs à revenir sur votre application. Pour plus d’informations à ce sujet, voir la section suivante. En savoir plus sur les [vignettes d’application](../controls-and-patterns/tiles-and-notifications-creating-tiles.md).
 
-**Personalization**
+**Personnalisation**
 
--   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../app-settings/app-settings-and-data.md).
--   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094).
--   **User tiles**   Make your app more personal to your users by loading their user tile image, or let the users set content from your app as their personal tile throughout Windows.
+-   **Paramètres** Permet aux utilisateurs de créer une expérience dédiée en enregistrant des paramètres de l’application qui leur sont propres. Regroupe tous vos paramètres sur un seul écran, ce qui permet aux utilisateurs de configurer votre application via un mécanisme courant qu’ils maîtrisent déjà. En savoir plus sur l’[ajout de paramètres d’application](../app-settings/app-settings-and-data.md).
+-   **Itinérance** Créez une expérience continue sur plusieurs appareils en rendant les données itinérantes. De cette façon, les utilisateurs peuvent reprendre une tâche à l’endroit précis où ils se sont arrêtés, et leur expérience utilisateur privilégiée est préservée quel que soit l’appareil utilisé. Votre application doit être facile à utiliser partout (du PC familial dans la cuisine au PC professionnel, en passant par la tablette personnelle et d’autres facteurs de forme), et conserver les paramètres et les états en itinérance. Pour en savoir plus, voir [Gestion des données d’application](../app-settings/store-and-retrieve-app-data.md) et [Recommandations en matière de données d’application itinérantes](https://msdn.microsoft.com/library/windows/apps/hh465094).
+-   **Vignettes utilisateur** Permet aux utilisateurs de personnaliser votre application en chargeant leur propre image en vignette ou en définissant du contenu de votre application comme vignette personnelle dans Windows.
 
-**Device capabilities**  Be sure your app takes full advantage of the capabilities of today's devices.
+**Fonctionnalités des appareils** Veillez à ce que votre application tire pleinement parti des fonctionnalités des appareils actuels.
 
--   **Proximity gestures**  Let your users connect devices with other users who are physically in close proximity, by physically tapping the devices together (multiplayer games). Learn more about [proximity and tapping](https://msdn.microsoft.com/library/windows/apps/hh465229).
--   **Cameras and external storage devices**  Connect your users to their built-in or plugged-in cameras for chatting and conferencing, recording vlogs, taking profile pics, documenting the world around them, or whatever activity your app is great at. Learn more about [Accessing content on removable storage](https://msdn.microsoft.com/library/windows/apps/hh465189).
--   **Accelerometers and other sensors**     Devices come with a number of sensors nowadays. Your app can dim or brighten the display based on ambient light, reflow the UI if the user rotates the display, or react to any physical movement. Learn more about [sensors](../devices-sensors/sensors.md).
--   **Geolocation**  Use geolocation information from standard web data or from geolocation sensors to help your users get around, find their position on a map, or get notices about nearby people, activities, and destinations. Learn more about [geolocation](https://msdn.microsoft.com/library/windows/apps/hh465139).
+-   **Mouvements de proximité** Permettez aux utilisateurs de connecter leurs appareils avec ceux des autres utilisateurs à proximité en appuyant ces appareils l’un contre l’autre (jeux multijoueur). En savoir plus sur [les mouvements de proximité et le contact](https://msdn.microsoft.com/library/windows/apps/hh465229).
+-   **Caméras et dispositifs de stockage externes** Connectez vos utilisateurs grâce aux caméras intégrées ou reliées à leur ordinateur pour qu’ils puissent discuter, participer à des conférences, enregistrer des vidéoblogues, prendre des photos pour leur profil, parler du monde qui les entoure ou participer à toute autre activité entrant dans le domaine de l’application. Découvrez tout ce qu’il faut savoir sur l’[accès à du contenu de stockage amovible](https://msdn.microsoft.com/library/windows/apps/hh465189).
+-   **Accéléromètres et autres capteurs** De nos jours, les appareils intègrent un certain nombre de capteurs. Votre application peut assombrir ou éclaircir l’affichage en fonction de la lumière ambiante, réorganiser l’interface utilisateur si l’utilisateur fait pivoter l’affichage ou réagir à un mouvement. En savoir plus sur les [capteurs](../devices-sensors/sensors.md).
+-   **Géolocalisation** Utilisez les informations de géolocalisation des données du web ou des capteurs de géolocalisation standard pour aider les utilisateurs à circuler, à repérer leur emplacement sur une carte ou à recevoir des renseignements sur les personnes, les activités et les destinations à proximité. En savoir plus sur la [géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465139).
 
-Let's consider the travel app example again. To be great at helping friends collaboratively create itineraries for group trips, you could use some of these features, just to name a few:
+Reprenons l’exemple de l’application de voyage. Pour réellement aider des amis à créer ensemble des itinéraires pour les voyages en groupe, vous pouvez utiliser quelques fonctionnalités, comme les suivantes pour n’en citer que certaines :
 
--   Share: Users share upcoming trips and their itineraries to multiple social networks to share the pre-trip excitement with their friends and families.
--   Search: Users search for and find activities or destinations from others' shared or public itineraries that they can include in their own trips.
--   Notifications: Users are notified when travel companions update their itineraries.
--   Settings: Users configure the app to their preference, like which trip should bring up notifications or which social groups are allowed to search the users' itineraries.
--   Semantic zoom: Users navigate through the timeline of their itinerary and zoom in to see greater details of the long list of activities they've planned.
--   User tiles: Users choose the picture they want to appear when they share their trip with friends.
+-   Partager : les utilisateurs partagent leurs prochains voyages et leurs itinéraires sur plusieurs réseaux sociaux et font découvrir les joies des préparatifs à leurs amis et leur famille.
+-   Rechercher : les utilisateurs recherchent et trouvent des activités ou des destinations sur les itinéraires partagés ou publics d’autres utilisateurs et peuvent les ajouter à leurs propres voyages.
+-   Notifications : les utilisateurs sont avertis lorsque des compagnons de voyage mettent à jour leurs itinéraires.
+-   Paramètres : les utilisateurs configurent l’application selon leurs préférences, en définissant par exemple le voyage pour lequel ils reçoivent des notifications ou les groupes sociaux qui sont autorisés à faire des recherches dans leurs itinéraires.
+-   Zoom sémantique : les utilisateurs naviguent dans toutes les étapes de leur itinéraire et peuvent zoomer pour afficher plus de détails dans la longue liste d’activités qu’ils ont planifiées.
+-   Vignettes des utilisateurs : les utilisateurs choisissent l’avatar qu’ils souhaitent afficher lorsqu’ils partagent leur voyage avec leurs amis.
 
-## Decide how to monetize your app
+## Choisir le mode de monétisation de votre application
 
-You have a lot of options for earning money from your app. If you decide to use in-app ads or sales, you'll want to design your UI to support that. For more information, see [Plan for monetization](../monetize/index.md).
+Il existe un grand nombre d’options vous permettant de gagner de l’argent avec votre application. Si vous décidez d’utiliser des publicités ou des ventes intégrées à l’application, vous devez concevoir une interface utilisateur adaptée. Pour plus d’informations, voir [Planifier la monétisation](../monetize/index.md).
 
-## Design the UX for your app
+## Concevoir l’expérience utilisateur de votre application
 
-This is about getting the basics right. Now that you know what your app is great at, and you've figured out the flows that you want to support, you can start to think about the fundamentals of user experience (UX) design.
+Il s’agit de partir sur la bonne base. Maintenant que vous connaissez les points forts de votre application et les flux à prendre en charge, vous pouvez réfléchir aux principes de base de la conception de l’expérience utilisateur.
 
-**How should you organize UI content?**   Most app content can be organized into some form of groupings or hierarchies. What you choose as the top-level grouping of your content should match the focus of your "great at" statement.
+**Comment organiser le contenu de l’interface utilisateur ?** La majorité du contenu de l’application peut être organisée sous forme de regroupements ou hiérarchique. Ce que vous choisissez comme groupe de premier niveau pour votre contenu doit correspondre à votre liste de points forts.
 
-To use the travel app as an example, there are multiple ways to group itineraries. If the focus of the app is discovering interesting destinations, you might group them based on interest, like adventure, fun in the sun, or romantic getaways. However, because the focus of the app is planning trips with friends, it makes more sense to organize itineraries based on social circles, like family, friends, or work.
+Pour reprendre l’exemple de l’application de voyage, il existe de nombreuses façons de regrouper des itinéraires. Si l’objet principal de l’application est de découvrir des destinations intéressantes, vous pouvez les regrouper par centre d’intérêt : aventure, plaisirs ensoleillés ou destinations romantiques. Si votre application sert cependant à planifier des voyages avec des amis, il est plus sensé d’organiser des itinéraires en fonction des cercles sociaux, comme la famille, les amis ou les collègues.
 
-Choosing how you want to group your content helps you decide what pages or views you need in your app. See UI basics for more info.
+Choisir le mode de regroupement de votre contenu vous permet de décider des pages ou des vues nécessaires dans votre application. Reportez-vous aux notions de base sur l’interface utilisateur pour plus d’informations.
 
-**How should you present UI content?** After you've decided how to organize your UI, you can define UX goals that specify how your UI gets built and presented to your user. In any scenario, you want to make sure that your user can continue using and enjoying your app as quickly as possible. To do this, decide what parts of your UI need to be presented first, and make sure that those parts are complete before you spend time building the noncritical parts.
+**Comment présenter le contenu de l’interface utilisateur ?** Une fois que vous avez décidé de l’organisation de votre interface utilisateur, vous pouvez définir les objectifs de l’expérience utilisateur qui spécifient la création et la présentation de cette interface à vos utilisateurs. Quel que soit le scénario, assurez-vous que vos utilisateurs peuvent continuer à profiter de votre application aussi rapidement que possible. Pour ce faire, déterminez les parties de votre interface utilisateur qui doivent être présentées en premier, puis vérifiez qu’elles sont complètes avant de passer du temps à générer les parties non essentielles.
 
-In the travel app, probably the first thing the user will want to do in the app is find a specific trip itinerary. To present this info as fast as possible, you should show the list of trips first, using a **ListView** control.
+Dans l’application de voyage, l’utilisateur souhaitera probablement trouver en premier un itinéraire de voyage. Pour présenter ces informations le plus rapidement possible, affichez la liste des voyages en premier à l’aide d’un contrôle **ListView**.
 
-![a design for the itinerary selector in a travel app](images/ux-app-travel-cc-a-1-180.png)
+![Conception du sélecteur d’itinéraires d’une application de voyage](images/ux-app-travel-cc-a-1-180.png)
 
-After showing the trips list, you could start loading other features, like a news feed of their friends' trips.
+Une fois la liste des voyages affichée, vous pouvez charger d’autres fonctionnalités, par exemple un flux d’actualités relatif aux voyages des amis.
 
-**What UI surfaces and commands do you need?**   Review the flows that you identified earlier. For each flow, create a rough outline of the steps users take.
+**De quelle interface utilisateur et de quelles commandes avez-vous besoin ?** Passez en revue les flux identifiés précédemment. Pour chaque flux, esquissez les étapes des utilisateurs.
 
-Let's look at the "Share itineraries for friends and families to follow" flow. We'll assume that the user has already created a trip. Sharing a trip itinerary might require these steps:
+Analysons le flux « Permettre à des amis et à la famille de suivre les itinéraires ». Supposons que l’utilisateur a déjà créé un voyage. Pour partager l’itinéraire d’un voyage, les étapes suivantes sont nécessaires :
 
-1.  The user opens the app and sees a list of trips she created.
-2.  The user taps on the trip she wants to share.
-3.  The details of the trip appear on screen.
-4.  The user accesses some UI to initiate sharing.
-5.  The user selects or enters the email address or name of the friend she wants to share the trip with.
-6.  The user accesses some UI to finalize sharing.
-7.  Your app updates the trip details with the list of people she has shared her trip with.
+1.  L’utilisateur ouvre l’application et voit la liste des voyages qu’il a créés.
+2.  L’utilisateur appuie sur le voyage à partager.
+3.  Les détails du voyage s’affichent à l’écran.
+4.  L’utilisateur accède à certaines zones de l’interface utilisateur pour lancer le partage.
+5.  L’utilisateur sélectionne ou entre l’adresse e-mail ou le nom de l’ami avec lequel il veut partager le voyage.
+6.  L’utilisateur accède à certaines zones de l’interface utilisateur pour finaliser le partage.
+7.  Votre application met à jour les informations du voyage avec la liste des personnes avec qui il a partagé son voyage.
 
-During this process, you begin to see what UI you need to create and the additional details you need to figure out (like drafting a standard email boilerplate for friends who aren't using your app yet). You also can start eliminating unnecessary steps. Perhaps the user doesn't actually need to see the details of the trip before sharing, for example. The cleaner the flow, the easier to use.
+Au cours de ce processus, vous entrevoyez le type d’interface utilisateur que vous devez créer et les informations supplémentaires à trouver (comme rédiger un modèle d’e-mail standard pour les amis qui n’utilisent pas encore votre application). Vous pouvez également commencer à supprimer certaines étapes inutiles. L’utilisateur n’a peut-être pas besoin de voir tous les détails du voyage avant de le partager, par exemple. Plus le flux est simple, plus il est facile à utiliser.
 
-For more details on how to use different surfaces, take a look at <!--[Command design basics](../layout/commanding-basics.md)-->.
+Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Command design basics](../layout/commanding-basics.md)-->.
 
-**What should the flow feel like?** When you have defined the steps your user will take, you can turn that flow into performance goals. For more info, see [Plan for performance](../debug-test-perf/planning-and-measuring-performance.md).
+**À quoi doit ressembler le flux ?** Une fois les étapes de l’utilisateur définies, vous pouvez transformer ce flux en objectifs de performances. Pour plus d’informations, voir [Planifier les performances](../debug-test-perf/planning-and-measuring-performance.md).
 
-**How should you organize commands?**  Use your outline of the flow steps to identify potential commands that you need to design for. Then think about where to use those commands in your app.
+**Comment organiser les commandes ?** Utilisez votre esquisse des étapes du flux pour identifier les commandes pour lesquelles vous devez effectuer la conception. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
 
--   **Always try to use the content.**  Whenever possible, let users directly manipulate the content on the app's canvas, rather than adding commands that act on the content. For example, in the travel app, let users rearrange their itinerary by dragging and dropping activities in a list on the canvas, rather than by selecting the activity and using Up or Down command buttons.
--   **If you can't use the content.** Place commands on one of these UI surfaces if you are not able to use the content:
+-   **Essayez toujours d’utiliser le contenu.**  Laissez les utilisateurs manipuler directement, autant que possible, le contenu sur la zone de dessin, au lieu d’ajouter des commandes qui agissent sur le contenu. Par exemple, dans l’application de voyage, permettez aux utilisateurs de réorganiser leur itinéraire en faisant glisser et en déplaçant des activités d’une liste de la zone de dessin, plutôt qu’en sélectionnant l’activité et en utilisant les boutons haut et bas de la barre de commandes.
+-   **Si vous ne pouvez pas utiliser le contenu.** Placez les commandes sur l’une des surfaces suivantes de l’interface utilisateur :
 
-    -   In the [command bar](https://msdn.microsoft.com/library/windows/apps/hh465302): You should put most commands on the command bar, which is usually hidden until the user taps to make it visible.
-    -   On the app's canvas: If the user is on a page or view that has a single purpose, you can provide commands for that purpose directly on the canvas. There should be very few of these commands.
-    -   In a [context menu](https://msdn.microsoft.com/library/windows/apps/hh465308): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
+    -   Dans la [barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302) : placez la majorité des commandes sur la barre de commandes, généralement masquée jusqu’à ce que l’utilisateur appuie sur celle-ci pour la rendre visible.
+    -   Sur la zone de dessin de l’application : si l’utilisateur consulte une page ou une vue avec un objectif unique, vous pouvez placer les commandes adéquates directement sur cette zone. Il doit y avoir très peu de commandes de ce type.
+    -   Dans un [menu contextuel](https://msdn.microsoft.com/library/windows/apps/hh465308) : vous pouvez utiliser des menus contextuels pour les actions du Presse-papiers (comme couper, copier et coller) ou pour les commandes qui concernent le contenu qui ne peut pas être sélectionné (ajouter une punaise pour localiser un lieu sur une carte, par exemple).
 
-**Decide how to lay out your app in each view.**  Windows supports landscape and portrait orientations and supports resizing apps to any width, from full screen to a minimum width. You want your app to look and work great at any size, on any screen, in either orientation. This means you need to plan the layout of your UI elements for different sizes and views. When you do this, your app UI changes fluidly to meet your user's needs and preferences.
+**Déterminez la disposition de votre application dans chaque affichage.**  Windows prend en charge les orientations paysage et portrait et le redimensionnement des applications à n’importe quelle largeur, du plein écran jusqu’à la largeur minimale. Vous devez faire en sorte que votre application fonctionne correctement et soit visuellement plaisante dans n’importe quelle taille, sur n’importe quel écran et dans n’importe quelle orientation. Cela signifie que vous devez planifier la disposition des éléments de votre interface utilisateur pour différentes tailles et affichages. Ainsi, l’interface utilisateur de l’application s’adapte de façon fluide pour répondre aux besoins et aux préférences de l’utilisateur.
 
-![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
+![Conception d’une application pour PC ou appareils mobiles](images/ux-budgettracker1-md-notablet.png)
 
-For more info on designing for different screen sizes, see <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
+Pour plus d’informations sur la conception d’applications pour des tailles d’écran différentes, voir <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
 
-## Make a good first impression
+## Faire une bonne première impression
 
-Think about what you want users to think, feel, or do when they first launch your app. Refer back to your "great at" statement. Even though you won't get a chance to personally tell your users what your app is great at, you can convey the message to them when you make your first impression. Take advantage of these:
+Gardez à l’esprit ce que vous voulez que vos utilisateurs pensent, ressentent ou fassent au moment où ils lancent votre application pour la première fois. Reportez-vous à votre liste de points forts. Même si vous n’aurez pas l’occasion de dire personnellement à vos utilisateurs quels sont les points forts de votre application, vous pouvez leur faire passer le message en donnant une bonne première impression. Utilisez les possibilités suivantes :
 
-**Tile and notifications**    The tile is the face of your app. Among the many other apps on a user's Start screen, what will make the user want to launch your app? Be sure your tile highlights your app's brand and shows what the app is great at. Use tile notifications so your app will always feel fresh and relevant, bringing the user back to your app again and again.
+**Vignette et notifications** La vignette représente le visage de votre application. Pour quelles raisons les utilisateurs choisiront-ils de lancer votre application, présentée parmi d’autres sur leur écran de démarrage ? Votre vignette doit mettre en valeur la marque et les capacités de votre application. Utilisez les notifications par vignette pour garder votre application à jour et d’actualité, et pour ramener constamment l’utilisateur à votre application.
 
-**Splash screen**  The splash screen should load as fast as possible, and remain on the screen only as long as you need to initialize your app state. What you show on the splash screen should express your app's personality.
+**Écran de démarrage** L’écran de démarrage doit se charger aussi vite que possible et ne rester affiché que pendant la phase d’initialisation de votre application. Ce que vous affichez sur cet écran de démarrage doit exprimer la personnalité de votre application.
 
-**First launch**  Before users sign up for your service, log in to their account, or add their own content, what will they see? Try to demonstrate the value of your app before asking users for information. Consider showing sample content so people can look around and understand what your app does before you ask them to commit.
+**Premier démarrage** Que voient les utilisateurs avant de s’abonner à votre service, de se connecter à leur compte ou d’ajouter leur contenu ? Essayez de montrer la valeur de votre application avant de demander des informations aux utilisateurs. Pensez à donner des exemples de contenu pour permettre aux utilisateurs de les manipuler et de comprendre l’objet de votre application avant de leur demander de s’engager.
 
-**Home page**  The home page is where you bring users each time they launch your app. The content here should have a clear focus, and immediately showcase what your app is tailored to do. Make this page great at one thing and trust that people will explore the rest of your app. Focus on eliminating distractions on the landing page, and not on discoverability.
+**Page d’accueil** La page d’accueil est celle vers laquelle vous dirigez les utilisateurs chaque fois qu’ils lancent votre application. Son contenu doit être évident et doit indiquer immédiatement ce pour votre application est conçue. Faites une excellente page et comptez sur les gens pour explorer le reste de votre application. Éliminez à tout prix les distractions sur la page d’accueil au lieu de miser sur la découverte.
 
-## Validate your design
+## Valider votre conception
 
-Before you get too far into developing your app, you should validate your design or prototype against guidelines, user impressions, and requirements to avoid having to rework it later. Each feature has a set of UX guidelines to help you polish your app, and a set of Store requirements that you must meet to publish your app in the Windows Store. You can use [the Windows App Certification Kit](https://dev.windows.com/develop/app-certification-kit) to test for technical compliance with Store requirements. You can also use the performance tools in Microsoft Visual Studio to make sure that you're giving your users a great experience in every scenario.
+Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. À chaque fonctionnalité correspondent des recommandations d’expérience utilisateur pour vous aider à perfectionner votre application, et des conditions à remplir pour la publication de votre application dans le Windows Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://dev.windows.com/develop/app-certification-kit) pour tester la conformité technique aux exigences du Windows Store. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
 
-Use the [detailed UX guidelines for UWP apps](https://msdn.microsoft.com/library/windows/apps/hh465424) to stay focused on important features. Use the [Visual Studio performance tools](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) to analyze the performance of each of your app's scenarios.
+Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh465424) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) pour analyser les performances de chacun des scénarios de votre application.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,6 +1,6 @@
 ---
-description: Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application du Windows Store.
-title: Vue d’ensemble du langage XAML
+Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application du Windows Store.
+Vue d’ensemble du langage XAML
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
 ---
 
@@ -97,7 +97,7 @@ Le langage XAML Windows Runtime prend en charge ces extensions de balisage qui s
 -   [{ThemeResource}](themeresource-markup-extension.md) : similaire à [{StaticResource}](staticresource-markup-extension.md), mais peut répondre à des modifications de thème au moment de l’exécution. {ThemeResource} apparaît assez souvent dans les modèles XAML Windows Runtime par défaut, car la plupart de ces modèles sont conçus afin d’assurer la compatibilité lorsque l’utilisateur change de thème pendant l’exécution de l’application.
 -   [{TemplateBinding}](templatebinding-markup-extension.md) : cas spécial de [{Binding}](binding-markup-extension.md) qui prend en charge les modèles de contrôle en XAML et leur utilisation éventuelle au moment de l’exécution.
 -   [{RelativeSource}](relativesource-markup-extension.md) : autorise une forme particulière de liaison de modèles où les valeurs proviennent du parent basé sur un modèle.
--   [CustomResource](customresource-markup-extension.md) : pour les scénarios de recherche de ressource avancés.
+-   [{CustomResource}](customresource-markup-extension.md) : pour les scénarios de recherche de ressource avancés.
 
 Windows Runtime prend également en charge l’[extension de balisage {x:Null}](x-null-markup-extension.md). Celle-ci est utilisée pour définir les valeurs [**Nullable**](T:System.Nullable%601) sur **null** en XAML. Par exemple, vous pouvez l’utiliser dans un modèle de contrôle pour un élément [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316), qui interprète **null** comme un état de case à cocher indéterminé (déclenchant l’état visuel « Indeterminate »).
 
@@ -236,4 +236,8 @@ Une fois que l’application s’exécute pour de bon, les erreurs d’analyse X
 
 Pour plus d’informations sur le débogage d’une application Windows Runtime, voir [Démarrer une session de débogage](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx).
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

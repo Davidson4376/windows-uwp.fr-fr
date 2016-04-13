@@ -1,99 +1,103 @@
 ---
-Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
-title: App submissions
+Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission.
+Soumissions d’application
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
-keywords: submit an app
-keywords: required info
-keywords: required fields
-keywords: required data
-keywords: checklist
+mots clés : soumettre une application
+mots clés : informations requises
+mots clés : champs requis
+mots clés : données requises
+mots clés : liste de vérification
 ---
 
-# App submissions
+# Soumissions d’application
 
 
-Once you've [created your app by reserving a name](create-your-app-by-reserving-a-name.md), you can start working on getting it published. The first step is to create a **submission**.
+Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission**.
 
-You can start your submission when your app is complete and ready to publish, or you can start entering info even before you have written a single line of code. The submission will be saved in your dashboard, so you can work on it whenever you're ready.
+Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Votre soumission est enregistrée sur votre tableau de bord. Vous pouvez y travailler à votre meilleure convenance.
 
-After your app is published, you can publish an updated version by creating another submission in your dashboard. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for an app, click **Update** next to the most recent submission shown on the App overview page.
+Une fois votre application publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans le tableau de bord. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application, cliquez sur **Mettre à jour** en regard de la soumission plus récente affichée sur la page de présentation de l’application.
 
-## App submission checklist
+## Liste de vérification relative à la soumission d’une application
 
 
-Here are the details that you can provide when creating your app submission, with links to more info.
+Voici la liste des informations que vous pouvez fournir quand vous soumettez votre application, avec des liens vers des informations complémentaires.
 
-Items that you are required to provide or specify are noted below. Some areas are optional, or have default values provided that you can change as desired.
+Les éléments que vous devez obligatoirement fournir ou spécifier sont signalés ci-dessous. Certains sont facultatifs ou ont des valeurs par défaut que vous pouvez modifier selon vos besoins.
 
-### Pricing and availability page
-| Field name                    | Notes                                       | For more info                                                             |
+### Page Tarification et disponibilité
+| Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Base price**                | Required                                    | [Base price](set-app-pricing-and-availability.md#base-price)              |
-| **Free trial**                | Default: No free trial                      | [Adding trials and in-app purchases](https://msdn.microsoft.com/library/windows/apps/jj193599)  |
-| **Markets and custom prices** | Default: All possible markets, no custom pricing | [Define pricing and market selection](define-pricing-and-market-selection.md)              |
-| **Sale pricing**              | Optional                                    | [Put apps and IAPs on sale](put-apps-and-iaps-on-sale.md)                                       |
-| **Distribution and visibility** | Default: Make this app available in the Store | [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) | 
-| **Windows 10 device families**  | Default: Your app can be downloaded on any Windows 10 device that can run it | [Windows 10 device families](set-app-pricing-and-availability.md#windows-10-device-families) | 
-| **Organizational licensing**    | Default: Allow volume acquisition by organizations | [Organizational licensing options](organizational-licensing.md)                        | 
-| **Publish date**                | Default: Publish as soon as possible      | [Publish date](set-app-pricing-and-availability.md#publish-date)          |
+| **Prix de base**                | Obligatoire                                    | [Prix de base](set-app-pricing-and-availability.md#base-price)              |
+| **Évaluation gratuite**                | Par défaut : aucune version d'évaluation gratuite                      | [Ajout de versions d’évaluation et d’achats dans l’application](https://msdn.microsoft.com/library/windows/apps/jj193599)  |
+| **Marchés et prix personnalisés** | Par défaut : tous les marchés possibles, aucune tarification personnalisée | [Définition des prix et sélection du marché](define-pricing-and-market-selection.md)              |
+| **Prix de vente**              | Facultatif                                    | [Mettre des applications et des produits in-app en vente](put-apps-and-iaps-on-sale.md)                                       |
+| **Distribution et visibilité** | Par défaut : Rendre votre application accessible dans le Windows Store | [Distribution et visibilité](set-app-pricing-and-availability.md#distribution-and-visibility) | 
+| **Familles d’appareils Windows 10**  | Par défaut : votre application peut être téléchargée sur n'importe quel appareil Windows 10 capable de l’exécuter | [Familles d’appareils Windows 10](set-app-pricing-and-availability.md#windows-10-device-families) | 
+| **Gestion des licences organisationnelles**    | Par défaut : autoriser l'acquisition en volume par des organisations | [Options de gestion des licences organisationnelles](organizational-licensing.md)                        | 
+| **Date de publication**                | Par défaut : publication dès que possible      | [Date de publication](set-app-pricing-and-availability.md#publish-date)          |
 
 
 
-### App properties page
+### Page Propriétés de l’application
 
-| Field name                    | Notes                                       | For more info                                                             |
+| Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Category and subcategory**  | Required                                    | [Category and subcategory table](category-and-subcategory-table.md)       |
-| **Hardware preferences**      | Optional                                    | [Hardware preferences](enter-app-properties.md#hardware_preferences)      |
-| **App declarations**          | Default: Customers can install this app to alternate drives or removable storage; Windows can include this app's data in automatic backups to OneDrive | [App declarations](app-declarations.md) |
+| **Catégorie et sous-catégorie**  | Obligatoire                                    | [Tableau des catégories et sous-catégories](category-and-subcategory-table.md)       |
+| **Préférences matérielles**      | Facultatif                                    | [Préférences matérielles](enter-app-properties.md#hardware_preferences)      |
+| **Déclarations d'application**          | Par défaut : les clients peuvent installer cette application sur un autre lecteur ou dispositif de stockage. Windows peut inclure les données de cette application dans les sauvegardes automatiques sur OneDrive | [Déclarations d’application](app-declarations.md) |
 
 
 
-### Age ratings page
+### Page Classification par âge
 
-| Field name                    | Notes                                       | For more info                          |
+| Nom du champ                    | Remarques                                       | Informations supplémentaires                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
-| **Age ratings**               | Required                                    | [Age ratings](age-ratings.md)          |
+| **Classification par âge**               | Obligatoire                                    | [Classification par âge](age-ratings.md)          |
 
 
 
-### Packages page
+### Page Packages
 
-| Field name                    | Notes                                       | For more info                          |
+| Nom du champ                    | Remarques                                       | Informations supplémentaires                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
-| **Package upload control**    | Required (at least one package)             | [Upload app packages](upload-app-packages.md) | 
+| **Contrôle du chargement des packages**    | Obligatoire (au moins un package)             | [Chargement des packages d’application](upload-app-packages.md) | 
 
 
 
-### Descriptions page
+### Page Descriptions
 
-You'll need all the required info for at least one of the languages that your app supports. We recommend providing descriptions in all available languages.
+Vous devez indiquer toutes les informations requises pour au moins l’une des langues prises en charge par votre application. Nous vous recommandons de fournir des descriptions dans l’ensemble des langues disponibles.
 
-| Field name                    | Notes                                       | For more info                                                     |
+| Nom du champ                    | Remarques                                       | Informations supplémentaires                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **Description**               | Required                                    | [Write a great app description](write-a-great-app-description.md) | 
-| **Release notes**             | Optional                                    | [Release notes](create-app-descriptions.md#release-notes)         |
-| **Screenshots**               | Required (at least one screenshot)          | [App screenshots and images](app-screenshots-and-images.md)       |
-| **App tile icon**             | Optional, but highly recommended for Windows Phone 8.1 and earlier | [App tile icon](create-app-descriptions.md#app-tile-icon) | 
-| **Promotional artwork**       | Optional                                    | [App screenshots and images](app-screenshots-and-images.md)       | 
-| **App features**              | Optional                                    | [Features](create-app-descriptions.md#app-features)               |
-| **Recommended hardware**      | Optional                                    | [Recommended hardware](create-app-descriptions.md#recommended-hardware) | 
-| **Keywords**                  | Optional                                    | [Keywords](create-app-descriptions.md#keywords)                   |
-| **Copyright and trademark info** | Optional                                 | [Copyright and trademark info](create-app-descriptions.md#copyright-and-trademark-info) | 
-| **Additional license terms**  | Optional                                    | [Additional license terms](create-app-descriptions.md#additional-license-terms) | 
-| **Website**                   | Optional                                    | [Website](create-app-descriptions.md#website)                     |
-| **Support contact info**      | Optional                                    | [Support contact info](create-app-descriptions.md)                | 
-| **Privacy policy**            | Required for some apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1) | [Privacy policy](create-app-descriptions.md#privacy-policy) | 
-| **Platform-specific descriptions** | Optional                               | [Create platform-specific descriptions](create-platform-specific-descriptions.md) |
+| **Description**               | Obligatoire                                    | [Rédaction d'une description convaincante de l'application](write-a-great-app-description.md) | 
+| **Notes de publication**             | Facultatif                                    | [Notes de publication](create-app-descriptions.md#release-notes)         |
+| **Captures d’écran**               | Obligatoire (au moins une capture d'écran)          | [Images et captures d’écran de l’application](app-screenshots-and-images.md)       |
+| **Icône de vignette d’application**             | Facultatif, mais fortement recommandé pour Windows Phone 8.1 et versions antérieures | [Icône de vignette d’application](create-app-descriptions.md#app-tile-icon) | 
+| **Illustrations publicitaires**       | Facultatif                                    | [Images et captures d’écran de l’application](app-screenshots-and-images.md)       | 
+| **Fonctionnalités de l’application**              | Facultatif                                    | [Fonctionnalités](create-app-descriptions.md#app-features)               |
+| **Matériel recommandé**      | Facultatif                                    | [Matériel recommandé](create-app-descriptions.md#recommended-hardware) | 
+| **Mots clés**                  | Facultatif                                    | [Mots clés](create-app-descriptions.md#keywords)                   |
+| **Informations de copyright et de marque déposée** | Facultatif                                 | [Informations de copyright et de marque déposée](create-app-descriptions.md#copyright-and-trademark-info) | 
+| **Termes de licence supplémentaires**  | Facultatif                                    | [Termes de licence supplémentaires](create-app-descriptions.md#additional-license-terms) | 
+| **Site web**                   | Facultatif                                    | [Site web](create-app-descriptions.md#website)                     |
+| **Coordonnées du support technique**      | Facultatif                                    | [Coordonnées du support technique](create-app-descriptions.md)                | 
+| **Politique de confidentialité**            | Obligatoire pour certaines applications. Voir le [contrat du développeur d'applications](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1) | [Politique de confidentialité](create-app-descriptions.md#privacy-policy) | 
+| **Descriptions spécifiques de la plateforme** | Facultatif                               | [Créer des descriptions spécifiques de la plateforme](create-platform-specific-descriptions.md) |
 
 
 
-### Notes for certification page
+### Remarques pour la page de certification
 
-| Field name                    | Notes                                       | For more info                                                     |
+| Nom du champ                    | Remarques                                       | Informations supplémentaires                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **Notes**                     | Optional                                    | [Notes for certification](notes-for-certification.md)             |
+| **Remarques**                     | Facultatif                                    | [Remarques pour la certification](notes-for-certification.md)             |
 
  
-**Note**  For info about publishing line-of-business (LOB) apps directly to enterprises, see [Distribute LOB apps to enterprises](distribute-lob-apps-to-enterprises.md).
+**Remarque** Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
+
+
 <!--HONumber=Mar16_HO1-->
+
+

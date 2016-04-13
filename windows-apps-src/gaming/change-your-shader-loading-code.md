@@ -1,89 +1,89 @@
 ---
-title: Compare the OpenGL ES 2.0 shader pipeline to Direct3D
-description: Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0.
+Comparer le pipeline nuanceur d’OpenGL ES 2.0 à celui de Direct3D
+D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0.
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ---
 
-# Compare the OpenGL ES 2.0 shader pipeline to Direct3D
+# Comparer le pipeline nuanceur d’OpenGL ES 2.0 à celui de Direct3D
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
--   [Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205116)
--   [Vertex-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage)
--   [Pixel-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
+-   [Étape de l’assembleur d’entrée](https://msdn.microsoft.com/library/windows/desktop/bb205116)
+-   [Étape du nuanceur de vertex](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage)
+-   [Étape du nuanceur de pixels](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
 
-Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) and [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.
+D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0. En termes de conception d’API, les composants majeurs de création et de gestion des étapes de nuanceur appartiennent aux deux interfaces principales, [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) et [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). Cette rubrique tente d’établir une correspondance dans ces interfaces entre les modèles courants d’API du pipeline nuanceur d’OpenGL ES 2.0 et ceux de Direct3D 11.
 
-## Reviewing the Direct3D 11 shader pipeline
-
-
-The shader objects are created with methods on the [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) interface, such as [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513).
-
-The Direct3D 11 graphics pipeline is managed by instances of the [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) interface, and has the following stages:
-
--   [Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205116). The input-assembler stage supplies data (triangles, lines and points) to the pipeline. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "IA".
--   [Vertex-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage) - The vertex-shader stage processes vertices, typically performing operations such as transformations, skinning, and lighting. A vertex shader always takes a single input vertex and produces a single output vertex. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "VS".
--   [Stream-Output Stage](https://msdn.microsoft.com/library/windows/desktop/bb205121) - The stream-output stage streams primitive data from the pipeline to memory on its way to the rasterizer. Data can be streamed out and/or passed into the rasterizer. Data streamed out to memory can be recirculated back into the pipeline as input data or read-back from the CPU. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "SO".
--   [Rasterizer Stage](https://msdn.microsoft.com/library/windows/desktop/bb205125) - The rasterizer clips primitives, prepares primitives for the pixel shader, and determines how to invoke pixel shaders. You can disable rasterization by telling the pipeline there is no pixel shader (set the pixel shader stage to NULL with [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)), and disabling depth and stencil testing (set DepthEnable and StencilEnable to FALSE in [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110)). While disabled, rasterization-related pipeline counters will not update.
--   [Pixel-Shader Stage](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage) - The pixel-shader stage receives interpolated data for a primitive and generates per-pixel data such as color. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "PS".
--   [Output-Merger Stage](https://msdn.microsoft.com/library/windows/desktop/bb205120) - The output-merger stage combines various types of output data (pixel shader values, depth and stencil information) with the contents of the render target and depth/stencil buffers to generate the final pipeline result. [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) methods that support this stage are prefixed with "OM".
-
-(There are also stages for geometry shaders, hull shaders, tesselators, and domain shaders, but since they have no analogues in OpenGL ES 2.0, we won't discuss them here.)
-For a complete list of the methods for these stages, refer to the [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) and [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) reference pages. **ID3D11DeviceContext1** extends **ID3D11DeviceContext** for Direct3D 11.
-
-## Creating a shader
+## Exploration du pipeline nuanceur de Direct3D 11
 
 
-In Direct3D, shader resources are not created before compiling and loading them; rather, the resource is created when the HLSLis loaded. Therefore, there is no directly analogous function to glCreateShader, which creates an initialized shader resource of a specific type (such as GL\_VERTEX\_SHADER or GL\_FRAGMENT\_SHADER). Rather, shaders are created after the HLSL is loaded with specific functions like [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513), and which take the type and the compiled HLSL as parameters.
+Les objets nuanceurs sont créés par des méthodes dans l’interface [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575), telles que [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) et [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513).
+
+Le pipeline graphique de Direct3D 11 est géré par des instances de l’interface [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) et comprend les étapes suivantes :
+
+-   [Étape de l’assembleur d’entrée](https://msdn.microsoft.com/library/windows/desktop/bb205116). Cette étape fournit des données (triangles, lignes et points) au pipeline. Les méthodes [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) qui prennent en charge cette étape sont identifiées par le préfixe « IA ».
+-   [Étape du nuanceur de vertex](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage). Cette étape traite les vertex, généralement par le biais d’opérations de type transformation, application d’apparence et éclairage. Un nuanceur de vertex prend toujours un seul vertex d’entrée et produit un seul vertex de sortie. Les méthodes [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) qui prennent en charge cette étape sont identifiées par le préfixe « VS ».
+-   [Étape de sortie de flux](https://msdn.microsoft.com/library/windows/desktop/bb205121). Cette étape diffuse des données primitives du pipeline dans la mémoire vers le rastériseur. Les données peuvent être diffusées vers la sortie et/ou dans le rastériseur. Les données diffusées dans la mémoire peuvent être renvoyées dans le pipeline en tant que données d’entrée ou lues par le processeur. Les méthodes [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) qui prennent en charge cette étape sont identifiées par le préfixe « SO ».
+-   [Étape du rastériseur](https://msdn.microsoft.com/library/windows/desktop/bb205125). Le rastériseur extrait les primitives, les prépare pour le nuanceur de pixels et détermine le mode d’invocation des nuanceurs de pixels. Vous pouvez désactiver la rastérisation en indiquant au pipeline qu’aucun nuanceur de pixels n’est présent (définissez l’étape du nuanceur de pixels sur la valeur NULL avec la méthode [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)) et en désactivant les tests de profondeur et gabarit (définissez DepthEnable et StencilEnable sur la valeur FALSE dans [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110)). Quand la rastérisation est désactivée, les compteurs du pipeline relatif à la rastérisation ne sont pas mis à jour.
+-   [Étape du nuanceur de pixels](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage). Cette étape reçoit les données interpolées pour une primitive et génère des données par pixel telles que la couleur. Les méthodes [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) qui prennent en charge cette étape sont identifiées par le préfixe « PS ».
+-   [Étape de fusion de sortie](https://msdn.microsoft.com/library/windows/desktop/bb205120). Cette étape combine plusieurs types de données de sortie (valeurs du nuanceur de pixels, informations de profondeur et gabarit) avec le contenu de la cible de rendu et des tampons de profondeur/gabarit pour générer le résultat final du pipeline. Les méthodes [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) qui prennent en charge cette étape sont identifiées par le préfixe « OM ».
+
+(Il existe aussi des étapes pour les nuanceurs de géométries, les nuanceurs de coques, les fragmenteurs et les nuanceurs de domaines, mais comme ils n’ont aucun équivalent dans OpenGL ES 2.0, nous ne les aborderons pas ici).
+Pour obtenir une liste complète des méthodes pour ces étapes, reportez-vous aux pages d’informations de référence sur [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) et [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). **ID3D11DeviceContext1** développe **ID3D11DeviceContext** pour Direct3D 11.
+
+## Création d’un nuanceur
+
+
+Dans Direct3D, les ressources de nuanceur ne sont pas créées avant leur compilation et leur chargement. En réalité, elles sont créées lors du chargement du HLSL. Par conséquent, il n’existe pas de fonction analogue à glCreateShader, qui crée une ressource de nuanceur initialisée d’un type spécifique (par exemple, GL\_VERTEX\_SHADER or GL\_FRAGMENT\_SHADER). Les nuanceurs sont créés après le chargement du HLSL avec des fonctions spécifiques telles que [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) et [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513), et adoptent le fichier HLSL compilé pour définir leurs paramètres.
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                                             |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glCreateShader | Call [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) after successfully loading the compiled shader object, passing them the CSO as a buffer. |
+| glCreateShader | Appelez [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) et [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) après avoir chargé l’objet nuanceur compilé dans un tampon, et transmettez-leur le tampon. |
 
  
 
-## Compiling a shader
+## Compilation d’un nuanceur
 
 
-Direct3D haders must be precompiled as Compiled Shader Object (.cso) files in Universal Windows Platform (UWP) apps and loaded using one of the Windows Runtime file APIs. (Desktop apps can compile the shaders from text files or string at run-time.) The CSO files are built from any .hlsl files that are part of your Microsoft Visual Studio project, and retain the same names, only with a .cso file extension. Ensure that they are included with your package when you ship!
+Les nuanceurs Direct3D doivent être précompilés en fichiers d’objet nuanceur compilé (.cso) dans les applications de plateforme Windows universelle (UWP) et chargés à l’aide des API du fichier Windows Runtime. (Les applications de bureau peuvent compiler les nuanceurs à partir de fichiers de texte ou de chaînes au moment de l’exécution). Les fichiers CSO sont créés à partir de n’importe quel fichier .hlsl de votre projet Microsoft Visual Studio. Ils portent le même nom avec l’extension de fichier .cso. Assurez-vous qu’ils sont inclus dans votre package au moment de la publication.
 
 | OpenGL ES 2.0                          | Direct3D 11                                                                                                                                                                   |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glCompileShader                        | N/A. Compile the shaders to .cso files in Visual Studio and include them in your package.                                                                                     |
-| Using glGetShaderiv for compile status | N/A. See the compilation output from Visual Studio's FX Compiler (FXC) if there are errors in compilation. If compilation is successful, a corresponding CSO file is created. |
+| glCompileShader                        | Non applicable. Compilez les nuanceurs en fichiers .cso dans Visual Studio et incluez-les dans votre package.                                                                                     |
+| Utilisation de glGetShaderiv pour vérifier le statut de la compilation | Non applicable. Affichez le fichier de compilation dans le compilateur FX (FXC) de Visual Studio pour vérifier les éventuelles erreurs de compilation. Si la compilation est réussie, un fichier CSO est créé. |
 
  
 
-## Loading a shader
+## Chargement d’un nuanceur
 
 
-As noted in the section on creating a shader, Direct3D 11 creates the shader when the corresponding CSO file is loaded into a buffer and passed to one of the methods in the following table.
+Comme indiqué dans la section Création d’un nuanceur, Direct3D 11 crée le nuanceur quand le fichier CSO correspondant est chargé dans un tampon et transmis à l’une des méthodes du tableau suivant.
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                                                                                                           |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ShaderSource  | Call [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) and [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) after successfully loading the compiled shader object. |
+| ShaderSource  | Appelez [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) et [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) une fois que l’objet nuanceur compilé est correctement chargé. |
 
  
 
-## Setting up the pipeline
+## Configuration du pipeline
 
 
-OpenGL ES 2.0 has the "shader program" object, which contains multiple shaders for execution. Individual shaders are attached to the shader program object. However, in Direct3D 11, you work with the rendering context ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) directly and create shaders on it.
+OpenGL ES 2.0 inclut l’objet « programme de nuanceur », qui contient plusieurs nuanceurs pour l’exécution. Les nuanceurs individuels sont rattachés à l’objet programme de nuanceur. Toutefois, dans Direct3D 11, vous travaillez directement avec le contexte de rendu ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) sur lequel vous créez des nuanceurs.
 
 | OpenGL ES 2.0   | Direct3D 11                                                                                   |
 |-----------------|-----------------------------------------------------------------------------------------------|
-| glCreateProgram | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
-| glLinkProgram   | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
-| glUseProgram    | N/A. Direct3D 11 does not use the shader program object abstraction.                          |
-| glGetProgramiv  | Use the reference you created to [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). |
+| glCreateProgram | N/A. Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
+| glLinkProgram   | N/A. Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
+| glUseProgram    | N/A. Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
+| glGetProgramiv  | Utilisez la référence à [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) que vous avez créée. |
 
  
 
-Create an instance of [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) and [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) with the static [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) method.
+Créez une instance de [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) et [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) avec la méthode [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) statique.
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11Device1>          m_d3dDevice;
@@ -105,12 +105,12 @@ D3D11CreateDevice(
 );
 ```
 
-## Setting the viewport(s)
+## Définition d’une ou plusieurs fenêtres d’affichage
 
 
-Setting a viewport in Direct3D 11 is very similar to how you set a viewport in OpenGL ES 2.0. In Direct3D 11, call [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) with a configured [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722).
+La définition d’une fenêtre d’affichage dans Direct3D 11 est très similaire à la méthode utilisée dans OpenGL ES 2.0. Dans Direct3D 11, appelez [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) avec une classe [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722) configurée.
 
-Direct3D 11: Setting a viewport.
+Direct3D 11 : définition d’une fenêtre d’affichage.
 
 ``` syntax
 CD3D11_VIEWPORT viewport(
@@ -124,86 +124,90 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [
+            **CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
  
 
-## Configuring the vertex shaders
+## Configuration des nuanceurs de vertex
 
 
-Configuring a vertex shader in Direct3D 11 is done when the shader is loaded. Uniforms are passed as constant buffers using [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795).
+La configuration d’un nuanceur de vertex dans Direct3D 11 est effectuée après le chargement du nuanceur. Les uniformes sont transmis sous forme de tampons constants à l’aide de [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795).
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524)                       |
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
-| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
+| glGetUniformfv, glGetUniformiv   | [
+            **ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
 
  
 
-## Configuring the pixel shaders
+## Configuration des nuanceurs de pixels
 
 
-Configuring a pixel shader in Direct3D 11 is done when the shader is loaded. Uniforms are passed as constant buffers using [**ID3D11DeviceContext1::PSSetConstantBuffers1.**](https://msdn.microsoft.com/library/windows/desktop/hh404649)
+La configuration d’un nuanceur de pixels dans Direct3D 11 est effectuée après le chargement du nuanceur. Les uniformes sont transmis sous forme de tampons constants à l’aide de [**ID3D11DeviceContext1::PSSetConstantBuffers1.**](https://msdn.microsoft.com/library/windows/desktop/hh404649).
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)                         |
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
-| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
+| glGetUniformfv, glGetUniformiv   | [
+            **ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
 
  
 
-## Generating the final results
+## Génération des résultats finaux
 
 
-When the pipeline completes, you draw the results of the shader stages into the back buffer. In Direct3D 11, just as it is with Open GL ES 2.0, this involves calling a draw command to output the results as a color map in the back buffer, and thensending that back buffer to the display.
+Une fois le pipeline terminé, vous dessinez les résultats des étapes du nuanceur dans le tampon d’arrière-plan. Dans Direct3D 11, tout comme dans Open GL ES 2.0, cela implique d’appeler une commande de dessin pour représenter les résultats sous forme de table des couleurs dans le tampon d’arrière-plan, puis d’envoyer ce tampon d’arrière-plan à l’affichage.
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (or other Draw\* methods on [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
+| glDrawElements | [
+            **ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (ou autres méthodes Draw\* sur [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
  
 
-## Porting GLSL to HLSL
+## Portage GLSL vers HLSL
 
 
-GLSL and HLSL are not very different beyond complex type support and syntax some overall syntax. Many developers find it easiest to port between the two by aliasing common OpenGL ES 2.0 instructions and definitions to their HLSL equivalent. Note that Direct3D uses the Shader Model version to express the feature set of the HLSL supported by a graphics interface; OpenGL has a different version specification for HLSL. The following table attempts to give you some approximate idea of the shader language feature sets defined for Direct3D 11 and OpenGL ES 2.0 in the terms of the other's version.
+GLSL et HLSL ne sont pas très différents, au-delà de la prise en charge des types complexes et d’une partie de la syntaxe générale. Bon nombre de développeurs trouvent qu’il est plus facile d’effectuer le portage en créant des alias des instructions et des définitions courantes d’OpenGL ES 2.0 pour leur équivalent HLSL. Notez que Direct3D utilise la version Shader Model pour exprimer l’ensemble des fonctionnalités du HLSL pris en charge par une interface graphique. OpenGL présente des spécifications de version différentes pour HLSL. Le tableau suivant tente de vous donner une idée approximative des équivalences entre les ensembles de fonctionnalités de langage du nuanceur définis pour Direct3D 11 et OpenGL ES 2.0.
 
-| Shader language           | GLSL feature version                                                                                                                                                                                                      | Direct3D Shader Model |
+| Langage du nuanceur           | version de la fonctionnalité GLSL                                                                                                                                                                                                      | Shader Model Direct3D |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| Direct3D 11 HLSL          | ~4.30.                                                                                                                                                                                                                    | SM 5.0                |
-| GLSL ES for OpenGL ES 2.0 | 1.40. Older implementations of GLSL ES for OpenGL ES 2.0 may use 1.10 through 1.30. Check your original code with glGetString(GL\_SHADING\_LANGUAGE\_VERSION) or glGetString(SHADING\_LANGUAGE\_VERSION) to determine it. | ~SM 2.0               |
+| HLSL Direct3D 11          | ~4.30.                                                                                                                                                                                                                    | SM 5.0                |
+| GLSL ES pour OpenGL ES 2.0 | 1.40. Les anciennes implémentations de GLSL ES pour OpenGL ES 2.0 peuvent utiliser les versions 1.10 à 1.30. Vérifiez votre code d’origine avec glGetString(GL\_SHADING\_LANGUAGE\_VERSION) ou glGetString(SHADING\_LANGUAGE\_VERSION) pour le déterminer. | ~SM 2.0               |
 
  
 
-For more details of differences between the two shader languages, as well as common syntax mappings, read the [GLSL-to-HLSL reference](glsl-to-hlsl-reference.md).
+Pour plus d’informations sur les différences de langages entre les deux nuanceurs, de même que sur les mappages de la syntaxe courante, voir [Informations de référence sur le passage de GLSL à HLSL](glsl-to-hlsl-reference.md).
 
-## Porting the OpenGL intrinsics to HLSL semantics
+## Portage des intrinsèques OpenGL vers les sémantiques HLSL
 
 
-Direct3D 11 HLSL semantics are strings that, like a uniform or attribute name, are used to identify a value passed between the app and a shader program. While they can be any of a variety of possible strings, the best practice is to use a string like POSITION or COLOR that indicates the usage. You assign these semantics when you are constructing a constant buffer or buffer input layout. You can also append a number between 0 and 7 to the semantic so that you use separate registers for similar values. For example: COLOR0, COLOR1, COLOR2...
+Les sémantiques HLSL de Direct3D 11 sont des chaînes qui, à l’instar d’un uniforme ou d’un nom d’attribut, sont utilisées pour identifier une valeur transmise entre l’application et un programme de nuanceur. Bien qu’il existe un grand nombre de chaînes possibles, on utilise en général une chaîne de type POSITION ou COLOR qui indique l’utilisation. Vous devez assigner ces sémantiques quand vous créez un tampon constant ou un schéma d’entrée de tampon. Vous pouvez aussi ajouter un nombre compris entre 0 et 7 à la sémantique afin d’utiliser des registres séparés pour des valeurs similaires. Par exemple : COLOR0, COLOR1, COLOR2…
 
-Semantics that are prefixed with "SV\_" are system value semantics that are written to by your shader program; your app itself (running on the CPU) cannot modify them. Typically, these contain values that are inputs or outputs from another shader stage in the graphics pipeline, or are generated entirely by the GPU.
+Les sémantiques identifiées par le préfixe « SV\_ » sont des sémantiques de valeur système modifiées par votre programme de nuanceur. Votre application (exécutée sur le processeur) ne peut pas les modifier. Généralement, elles contiennent des valeurs qui sont des entrées ou des sorties d’une autre étape de nuanceur dans le pipeline graphique, ou qui sont générées entièrement par le processeur graphique.
 
-Additionally, SV\_ semantics have different behaviors when they are used to specify input to or output from a shader stage. For example, SV\_POSITION (output) contains the vertex data transformed during the vertex shader stage, and SV\_POSITION (input) contains the pixel position values interpolated during rasterization.
+Par ailleurs, les sémantiques SV\_ se comportent différemment quand elles sont utilisées pour spécifier des entrées ou des sorties d’étape de nuanceur. Par exemple, SV\_POSITION (sortie) contient les données de vertex transformées pendant l’étape du nuanceur de vertex et SV\_POSITION (input) contient les valeurs de position de pixel interpolées pendant la rastérisation.
 
-Here are a few mappings for common OpenGL ES 2.0 shader instrinsics:
+Voici quelques mappages d’intrinsèques de nuanceur courants d’OpenGL ES 2.0 :
 
-| OpenGL system value | Use this HLSL Semantic                                                                                                                                                   |
+| Valeur système OpenGL | Utilisez cette sémantique HLSL                                                                                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| gl\_Position        | POSITION(n) for vertex buffer data. SV\_POSITION provides a pixel position to the pixel shader and cannot be written by your app.                                        |
-| gl\_Normal          | NORMAL(n) for normal data provided by the vertex buffer.                                                                                                                 |
-| gl\_TexCoord\[n\]   | TEXCOORD(n) for texture UV (ST in some OpenGL documentation) coordinate data supplied to a shader.                                                                       |
-| gl\_FragColor       | COLOR(n) for RGBA color data supplied to a shader. Note that it is treated identically to coordinate data; the semantic simply helps you identify that it is color data. |
-| gl\_FragData\[n\]   | SV\_Target\[n\] for writing from a pixel shader to a target texture or other pixel buffer.                                                                               |
+| gl\_Position        | POSITION(n) pour les données de tampon de vertex. SV\_POSITION fournit une position de pixel au nuanceur de pixels et ne peut pas être modifiée par votre application.                                        |
+| gl\_Normal          | NORMAL(n) pour des données normales fournies par le tampon de vertex.                                                                                                                 |
+| gl\_TexCoord\[n\]   | TEXCOORD(n) pour des données de coordonnées de texture UV (ST dans certaines documentations OpenGL) fournies à un nuanceur.                                                                       |
+| gl\_FragColor       | COLOR(n) pour des données de couleur RVBA fournies à un nuanceur. Notez qu’elles sont traitées de la même façon que les données de coordonnées. La sémantique vous aide simplement à identifier qu’il s’agit de données de couleur. |
+| gl\_FragData\[n\]   | SV\_Target\[n\] pour écrire depuis un nuanceur de pixels dans une texture cible ou un autre tampon de pixels.                                                                               |
 
  
 
-The method by which you code for semantics is not the same as using intrinsics in OpenGL ES 2.0. In OpenGL, you can access many of the intrinsics directly without any configuration or declaration; in Direct3D, you must declare a field in a specific constant buffer to use a particular semantic, or you declare it as the return value for a shader's **main()** method.
+La méthode de codage des sémantiques n’est pas la même que celle des intrinsèques dans OpenGL ES 2.0. Dans OpenGL, vous pouvez accéder directement à la plupart des intrinsèques sans configuration, ni déclaration. Dans Direct3D, vous devez déclarer un champ dans un tampon constant spécifique pour utiliser une sémantique en particulier, ou la déclarer en tant que valeur de retour d’une méthode **main()** de nuanceur.
 
-Here's an example of a semantic used in a constant buffer definition:
+Voici un exemple de sémantique utilisée dans une définition de tampon constant :
 
 ```cpp
 struct VertexShaderInput
@@ -220,9 +224,9 @@ struct PixelShaderInput
 };
 ```
 
-This code defines a pair of simple constant buffers
+Ce code définit une paire de tampons constants simples
 
-And here's an example of a semantic used to define the value returned by a fragment shader:
+Et voici un exemple de sémantique utilisée pour définir la valeur renvoyée par un nuanceur de fragments :
 
 ```cpp
 // A pass-through for the (interpolated) color data.
@@ -232,15 +236,19 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-In this case, SV\_TARGET is the location of the render target that the pixel color (defined as a vector with four float values) is written to when the shader completes execution.
+Dans ce cas, SV\_TARGET est l’emplacement de la cible de rendu dans laquelle la couleur de pixel (définie comme un vecteur avec quatre valeurs float) est écrite après l’exécution du nuanceur.
 
-For more details on the use of semantics with Direct3D, read [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+Pour plus d’informations sur l’utilisation des sémantiques avec Direct3D, voir [Sémantiques HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

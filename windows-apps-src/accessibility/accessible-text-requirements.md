@@ -1,67 +1,71 @@
 ---
-Description: This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio.
-title: Accessible text requirements
+Description: Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et les arrière-plans respectent le coefficient de contraste nécessaire.
+title: Exigences de texte accessible
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 label: Text requirements
 template: detail.hbs
 ---
 
-Accessible text requirements
+Exigences de texte accessible
 =============================================================================================
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a Universal Windows Platform (UWP) app can have, and best practices for text in graphics.
+Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et les arrière-plans respectent le coefficient de contraste nécessaire. Elle traite également des rôles Microsoft UI Automation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
 
-<span id="contrast_rations"></span><span id="CONTRAST_RATIONS"></span>Contrast ratios
+<span id="contrast_rations"> </span> <span id="CONTRAST_RATIONS"> </span>Coefficients de contraste
 -------------------------------------------------------------------------------------
 
-Although users always have the option to switch to a high-contrast mode, your app design for text should regard that option as a last resort. A much better practice is to make sure that your app text meets certain established guidelines for the level of contrast between text and its background. Evaluation of the level of contrast is based on deterministic techniques that do not consider color hue. For example, if you have red text on a green background, that text might not be readable to someone with a color blindness impairment. Checking and correcting the contrast ratio can prevent these types of accessibility issues.
+Bien que les utilisateurs aient toujours la possibilité de basculer en mode de contraste élevé, la conception de votre application en ce qui concerne le texte doit considérer cette option comme un dernier recours. L’idéal consiste à s’assurer que le texte de votre application remplit certains critères établis quant au niveau de contraste entre le texte et son arrière-plan. L’évaluation du niveau de contraste est basée sur des techniques déterministes qui ne prennent pas en compte la teinte. Par exemple, si vous avez du texte rouge sur fond vert, ce texte risque de ne pas être lisible pour quelqu’un souffrant de daltonisme. La vérification et la correction du coefficient de contraste peuvent éliminer ce genre de problème d’accessibilité.
 
-The recommendations for text contrast documented here are based on a web accessibility standard, [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](http://go.microsoft.com/fwlink/p/?linkid=221823). This guidance exists in the *W3C Techniques for WCAG 2.0* specification.
+Les recommandations en matière de contraste du texte documentées ici sont basées sur une norme d’accessibilité Web intitulée [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](http://go.microsoft.com/fwlink/p/?linkid=221823). Ces conseils se trouvent dans la spécification *Techniques W3C pour WCAG 2.0*.
 
-To be considered accessible, visible text must have a minimum luminosity contrast ratio of 4.5:1 against the background. Exceptions include logos and incidental text, such as text that is part of an inactive UI component.
+Pour être considéré comme accessible, le texte visible doit présenter un coefficient de contraste de luminosité minimal de 4,5 pour 1 par rapport à l’arrière-plan. Les exceptions comprennent les logos et le texte accessoire tel que le texte qui fait partie d’un composant d’interface utilisateur inactif.
 
-Text that is decorative and conveys no information is excluded. For example, if random words are used to create a background, and the words can be rearranged or substituted without changing meaning, the words are considered to be decorative and do not need to meet this criterion.
+Le texte décoratif et qui ne véhicule aucune information est exclu. Par exemple, si des mots aléatoires sont utilisés pour créer un arrière-plan, et que ces mots peuvent être réorganisés ou remplacés sans changer le sens, ils sont considérés comme étant décoratifs et n’ont pas besoin de répondre à ce critère.
 
-Use color contrast tools to verify that the visible text contrast ratio is acceptable. See [Techniques for WCAG 2.0 G18 (Resources section)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
+Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
-**Note**  Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a UWP app. You may need to enter foreground and background color values manually in the tool, or make screen captures of app UI and then run the contrast ratio tool over the screen capture image.
+**Remarque** Certains outils répertoriés par la spécification Techniques for WCAG 2.0 G18 ne peuvent pas être utilisés de manière interactive avec une application UWP. Vous pouvez être amené à saisir manuellement des valeurs de couleur de premier plan et d’arrière-plan dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application, puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran.
 
  
 
-<span id="Text_element_roles"></span><span id="text_element_roles"></span><span id="TEXT_ELEMENT_ROLES"></span>Text element roles
+<span id="Text_element_roles"> </span> <span id="text_element_roles"> </span> <span id="TEXT_ELEMENT_ROLES"> </span>Rôles d’éléments de texte
 ---------------------------------------------------------------------------------------------------------------------------------
 
-A UWP app can use these default elements (commonly called *text elements* or *textedit controls*):
+Une application UWP peut utiliser les éléments par défaut suivants (couramment appelés *éléments de texte* ou *contrôles d’édition de texte*) :
 
--   [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): role is [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
--   [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683): role is [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
--   [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (and overflow class [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/BR227565overflow)): role is [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
--   [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): role is [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+-   [
+            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) : le rôle est [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+-   [
+            **TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) : le rôle est [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+-   [
+            **RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (et classe de débordement [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/BR227565overflow)) : le rôle est [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+-   [
+            **RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548) : le rôle est [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
-When a control reports that is has a role of [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182), assistive technologies assume that there are ways for users to change the values. So if you put static text in a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), you are misreporting the role and thus misreporting the structure of your app to the accessibility user.
+Quand un contrôle signale qu’il a le rôle [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182), les technologies d’assistance supposent qu’il existe un ou plusieurs moyens pour l’utilisateur de modifier les valeurs. Par conséquent, si vous placez du texte statique dans un objet [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), vous signalez de manière incorrecte le rôle et donc la structure de votre application à l’utilisateur d’accessibilité.
 
-In the text models for XAML, there are two elements that are primarily used for static text, [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565). Neither of these are a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) subclass, and as such neither of them are keyboard-focusable or can appear in the tab order. But that does not mean that assistive technologies can't or won't read them. Screen readers are typically designed to support multiple modes of reading the content in an app, including a dedicated reading mode or navigation patterns that go beyond focus and the tab order, like a "virtual cursor". So don't put your static text into focusable containers just so that tab order gets the user there. Assistive technology users expect that anything in the tab order is interactive, and if they encounter static text there, that is more confusing than helpful. You should test this out yourself with Narrator to get a sense of the user experience with your app when using a screen reader to examine your app's static text.
+Dans les modèles de texte pour XAML, deux éléments sont principalement utilisés pour le texte statique : [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) et [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565). Comme aucun de ces éléments n’est une sous-classe [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390), aucun des deux ne peut être actif via le clavier ou apparaître dans l’ordre de tabulation. Toutefois, cela ne signifie pas que les technologies d’assistance ne peuvent pas ou ne veulent pas les lire. Les lecteurs d’écran sont généralement conçus pour prendre en charge plusieurs modes de lecture du contenu dans une application, notamment un mode de lecture dédié ou des modèles de navigation qui vont au-delà du focus et de l’ordre de tabulation, comme un « curseur virtuel ». Par conséquent, ne placez pas votre texte statique dans des conteneurs pouvant être actifs simplement pour que l’ordre de tabulation y amène l’utilisateur. Les utilisateurs des technologies d’assistance s’attendent à ce que tous les éléments inclus dans l’ordre de tabulation soient interactifs. Par conséquent, le fait d’y rencontrer du texte statique peut s’avérer plus déroutant qu’utile. Nous vous recommandons de tester cette fonction vous-même, via le Narrateur, afin de vous faire une idée de l’expérience utilisateur liée à votre application lorsque vous utilisez le lecteur d’écran pour examiner le texte statique de cette dernière.
 
-<span id="Text_in_graphics"></span><span id="text_in_graphics"></span><span id="TEXT_IN_GRAPHICS"></span>Text in graphics
+<span id="Text_in_graphics"> </span> <span id="text_in_graphics"> </span> <span id="TEXT_IN_GRAPHICS"> </span>Texte dans les graphiques
 -------------------------------------------------------------------------------------------------------------------------
 
-Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) value that you provide as the equivalent of "alt text" includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355), or by using [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921).
+Dans la mesure du possible, évitez d’inclure du texte dans un graphique. Par exemple, tout texte que vous placez dans le fichier source d’image et qui est affiché dans l’application en tant qu’élément [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) n’est pas automatiquement accessible ou lisible par les technologies d’assistance. Si vous devez utiliser du texte dans des graphiques, assurez-vous que la valeur [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) que vous fournissez comme équivalent de alt text comprend ce texte ou un résumé de la signification du texte. Des considérations semblables s’appliquent si vous créez des caractères texte à partir de vecteurs dans le cadre d’un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) ou à l’aide de [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921).
 
-<span id="Text_font_size"></span><span id="text_font_size"></span><span id="TEXT_FONT_SIZE"></span>Text font size
+<span id="Text_font_size"> </span> <span id="text_font_size"> </span> <span id="TEXT_FONT_SIZE"> </span>Modification de la taille des polices
 -----------------------------------------------------------------------------------------------------------------
 
-Many readers have difficulty reading text in an app when that text is using a text font size that's simply too small for them to read. You can prevent this issue by making the text in your app's UI reasonably large in the first place. There are also assistive technologies that are part of Windows, and these enable users to change the view sizes of apps, or the display in general.
+Beaucoup de lecteurs ont du mal à lire le texte d’une application quand celui-ci utilise une taille de police trop petite. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que la police du texte de l’interface utilisateur de votre application soit suffisamment grande. Windows propose également certaines technologies d’assistance, qui permettent aux utilisateurs de modifier la taille de l’affichage des applications, ou de l’affichage en général.
 
--   Some users change dots per inch (dpi) values of their primary display as an accessibility option. That option is available from **Make things on the screen larger** in **Ease of Access**, which redirects to a **Control Panel** UI for **Appearance and Personalization** / **Display**. Exactly which sizing options are available can vary because this depends on the capabilities of the display device.
--   The Magnifier tool can enlarge a selected area of the UI. However, it's difficult to use the Magnifier tool for reading text.
+-   Certains utilisateurs modifient les valeurs de haute résolution de leur affichage principal dans le cadre de leurs options d’accessibilité. Cette option est disponible dans la zone **Agrandir les éléments affichés à l’écran** de la fenêtre **Options d’ergonomie**, qui redirige l’utilisateur vers une interface utilisateur du **Panneau de configuration** pour les options **Apparence et personnalisation** / **Affichage**. Les options de dimensionnement réellement disponibles varient, car elles dépendent des caractéristiques de l’appareil d’affichage.
+-   La Loupe peut agrandir une zone sélectionnée de l’interface utilisateur. Cependant, la Loupe est difficile à utiliser pour lire un texte.
 
-<span id="Text_scale_factor"></span><span id="text_scale_factor"></span><span id="TEXT_SCALE_FACTOR"></span>Text scale factor
+<span id="Text_scale_factor"> </span> <span id="text_scale_factor"> </span> <span id="TEXT_SCALE_FACTOR"> </span>Facteur d’échelle de police
 -----------------------------------------------------------------------------------------------------------------------------
 
-Various text elements and controls have an [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209652_istextscalefactorenabled) property. This property has the value **true** by default. When its value is **true**, the setting called **Text scaling** on the phone (**Settings &gt; Ease of access**), causes the text size of text in that element to be scaled up. The scaling will affect text that has a small **FontSize** to a greater degree than it will affect text that has a large **FontSize**. But you can disable that automatic enlargement by setting an element's **IsTextScaleFactorEnabled** property to **false**. Try this markup, adjust the **Text size** setting on the phone, and see what happens to the **TextBlock**s:
+Les différents contrôles et éléments de texte ont une propriété [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209652_istextscalefactorenabled). La valeur par défaut de cette propriété est **true**. Lorsque sa valeur est **true**, le paramètre appelé **Mise à l’échelle** du texte sur le téléphone (**Paramètres &gt; Options d’ergonomie**) entraîne l’agrandissement de la taille du texte dans l’élément concerné. La mise à l’échelle affecte davantage le texte pour lequel la valeur **FontSize** est faible que le texte pour lequel la valeur **FontSize** est élevée. Vous pouvez toutefois désactiver cet agrandissement automatique en définissant la propriété **IsTextScaleFactorEnabled** d’un élément sur **false**. Essayez ce balisage, ajustez le paramètre **Taille du texte** sur le téléphone, puis observez les éléments **TextBlock** :
 
 <span codelanguage=""></span>
 <table>
@@ -73,15 +77,15 @@ Various text elements and controls have an [**IsTextScaleFactorEnabled**](https:
 <td align="left"><pre><code>&lt;TextBlock Text=&quot;In this case, IsTextScaleFactorEnabled has been left set to its default value of true.&quot; 
     Style=&quot;{StaticResource BodyTextBlockStyle}&quot;/&gt;
 
-&lt;TextBlock Text=&quot;In this case, IsTextScaleFactorEnabled has been set to false.&quot; 
+&lt;TextBlock Text=&quot;Dans ce cas, IsTextScaleFactorEnabled a été défini sur false.&quot; 
     Style=&quot;{StaticResource BodyTextBlockStyle}&quot; IsTextScaleFactorEnabled=&quot;False&quot;/&gt;</code></pre></td>
 </tr>
 </tbody>
 </table>
 
-Please don't disable automatic enlargement routinely, though, because scaling UI text universally across all apps is an important accessibility experience for users and they will expect it to work in your app too.
+Cependant, ne désactivez pas l’agrandissement automatique systématiquement, car la mise à l’échelle du texte de l’interface utilisateur à travers toutes les applications constitue une expérience d’accessibilité importante pour les utilisateurs qui s’attendent à ce qu’elle fonctionne aussi dans votre application.
 
-You can also use the [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) event and the [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) property to find out about changes to the **Text size** setting on the phone. Here’s how:
+Vous pouvez également utiliser l’événement [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) et la propriété [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) pour évaluer les incidences sur le paramètre **Taille du texte** sur le téléphone. Voici comment :
 
 <span codelanguage=""></span>
 <table>
@@ -106,29 +110,35 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 </tbody>
 </table>
 
-The value of **TextScaleFactor** is a double in the range \[1,2\]. The smallest text is scaled up by this amount. You might be able to use the value to, say, scale graphics to match the text. But remember that not all text is scaled by the same factor. Generally speaking, the larger text is to begin with, the less it’s affected by scaling.
+La valeur de **TextScaleFactor** est un double appartenant à la plage [1,2]. Le texte le plus petit subit un agrandissement de cette ampleur. Vous pouvez par exemple utiliser la valeur pour adapter des éléments graphiques au texte. Gardez toutefois à l’esprit que tout le texte n’est pas mis à l’échelle selon le même facteur. En règle générale, plus la taille du texte initial est élevée, moins le texte est affecté par la mise à l’échelle.
 
-These types have an **IsTextScaleFactorEnabled** property:
+Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :
 
 -   [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
--   [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) and derived classes
+-   [
+            **Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) et classes dérivées
 -   [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 -   [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 -   [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
--   [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) and derived classes
+-   [
+            **TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) et classes dérivées
 
-Related topics
+<span id="related_topics"> </span>Rubriques connexes
 -----------------------------------------------
 
-* [Accessibility](accessibility.md)
-* [Basic accessibility information](basic-accessibility-information.md)
-* [XAML text display sample](http://go.microsoft.com/fwlink/p/?linkid=238579)
-* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Accessibilité](accessibility.md)
+* [Informations d’accessibilité élémentaires](basic-accessibility-information.md)
+* [Exemple d’affichage de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=238579)
+* [Exemple de modification de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=251417)
+* [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
  
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

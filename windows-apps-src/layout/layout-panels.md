@@ -1,26 +1,26 @@
 ---
-Use layout panels to arrange and group UI elements in your app.
-Layout panels for Universal Windows Platform (UWP) apps
+Utilisez les panneaux de disposition pour organiser et regrouper des éléments d’interface utilisateur dans votre application.
+Panneaux de disposition pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
-Layout panels
+Panneaux de disposition
 template: detail.hbs
 ---
-# Layout panels
+# Panneaux de disposition
 
-You use layout panels to arrange and group UI elements in your app. The built-in XAML layout panels include [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx), [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx), [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx), and [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx). Here, we describe each panel and show how to use it to layout XAML UI elements.
+Les panneaux de disposition vous permettent d’organiser et de regrouper des éléments d’interface utilisateur dans votre application. Les panneaux de disposition XAML intégrés incluent [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx), [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx), [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) et [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx). Nous décrivons ici chaque panneau et la manière de les utiliser pour disposer des éléments d'interface utilisateur XAML.
 
-There are several things to consider when choosing a layout panel:
-- How the panel positions its child elements.
-- How the panel sizes its child elements.
-- How overlapping child elements are layered on top of each other (z-order).
-- The number and complexity of nested panel elements needed to create your desired layout.
+Plusieurs éléments sont à prendre en considération lors du choix d’un panneau de disposition :
+- la manière dont le panneau positionne ses éléments enfants ;
+- la manière dont le panneau dimensionne ses éléments enfants ;
+- la manière dont les éléments enfants superposés s’empilent les uns sur les autres (ordre de plan) ;
+- le nombre et la complexité des éléments de panneau imbriqués nécessaires pour créer la disposition souhaitée.
 
 
-**Panel attached properties**
+**Propriétés jointes du panneau**
 
-Most XAML layout panels use attached properties to let their child elements inform the parent panel about how they should be positioned in the UI. Attached properties use the syntax *AttachedPropertyProvider.PropertyName*. If you have panels that are nested inside other panels, attached properties on UI elements that specify layout characteristics to a parent are interpreted by the most immediate parent panel only.
+La plupart des panneaux de disposition XAML utilisent des propriétés jointes pour permettre à leurs éléments enfants d’informer le panneau parent sur la manière dont ils doivent être placés dans l’interface utilisateur. Les propriétés jointes utilisent la syntaxe *AttachedPropertyProvider.PropertyName*. Si des panneaux sont imbriqués dans d’autres panneaux, les propriétés jointes des éléments d’interface utilisateur spécifiant les caractéristiques de disposition à un parent sont interprétées par le panneau parent le plus proche uniquement.
 
-Here is an example of how you can set the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) attached property on a Button control in XAML. This informs the parent Canvas that the Button should be positioned 50 effective pixels from the left edge of the Canvas.
+Voici un exemple de la façon dont vous pouvez définir la propriété jointe [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) sur un contrôle Button en XAML. Cela informe l’élément Canvas parent que le contrôle Button doit être positionné à 50 pixels effectifs du bord gauche de l’élément Canvas.
 
 ```xaml
 <Canvas>
@@ -28,15 +28,15 @@ Here is an example of how you can set the [**Canvas.Left**](https://msdn.microso
 </Canvas>
 ```
 
-For more info about attached properties, see [Attached properties overview](../xaml-platform/attached-properties-overview.md).
+Pour plus d’informations sur les propriétés jointes, voir [Vue d’ensemble des propriétés jointes](../xaml-platform/attached-properties-overview.md).
 
-> **Note**&nbsp;&nbsp;An attached property is a XAML concept that requires special syntax to get or set from code. To use attached properties in code, see the *Attached properties in code* section of the *Attached properties overview* article.
+> **Remarque**&nbsp;&nbsp;Une propriété jointe est un concept XAML qui requiert une syntaxe spéciale pour obtenir ou définir à partir du code. Pour utiliser des propriétés jointes dans le code, voir la section *Propriétés jointes dans le code* de l’article *Vue d’ensemble des propriétés jointes*.
 
-**Panel borders**
+**Bordures des panneaux**
 
-The RelativePanel, StackPanel, and Grid panels define border properties that let you draw a border around the panel without wrapping them in an additional Border element. The border properties are **BorderBrush**, **BorderThickness**, **CornerRadius**, and **Padding**.
+Les panneaux RelativePanel, StackPanel et Grid définissent les propriétés de bordure qui vous permettent de dessiner une bordure autour du panneau sans les encapsuler dans un autre élément Border. Les propriétés de bordure sont **BorderBrush**, **BorderThickness**, **CornerRadius** et **Padding**.
 
-Here’s an example of how to set border properties on a Grid.
+Voici un exemple illustrant comment définir les propriétés de bordure sur un élément Grid.
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="12" CornerRadius="12" Padding="12">
@@ -44,17 +44,18 @@ Here’s an example of how to set border properties on a Grid.
 </Grid>
 ```
 
-![A Grid with borders](images/layout-panel-grid-border.png)
+![Un élément Grid avec des bordures](images/layout-panel-grid-border.png)
 
-Using the built-in border properties reduces the XAML element count, which can improve the UI performance of your app. For more info about layout panels and UI performance, see [Optimize your XAML layout](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx).
+L’utilisation des propriétés de bordure intégrées réduit le nombre d’éléments XAML, ce qui peut améliorer les performances de l’interface utilisateur de votre application. Pour plus d’informations sur les panneaux de disposition et les performances de l’interface utilisateur, voir [Optimiser votre disposition XAML](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx).
 
 ## RelativePanel
 
-[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) lets you layout UI elements by specifying where they go in relation to other elements and in relation to the panel. By default, an element is positioned in the upper left corner of the panel. You can use RelativePanel with a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) and [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx)s to rearrange your UI for different window sizes.
+[
+            **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) vous permet de disposer des éléments d’interface utilisateur en spécifiant leur emplacement en fonction d’autres éléments et par rapport au panneau. Par défaut, un élément est positionné dans le coin supérieur gauche du panneau. Vous pouvez utiliser RelativePanel avec un [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) et des [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) pour réorganiser votre interface utilisateur pour différentes tailles de fenêtre.
 
-This table shows the attached properties you can use to align an element with the edge or center of the panel, and align and position it in relation to other elements.
+Ce tableau indique les propriétés jointes que vous pouvez utiliser pour aligner un élément avec le bord ou le centre du panneau, et par rapport aux autres éléments.
 
-Panel alignment | Sibling alignment | Sibling position
+Alignement du panneau | Alignement frère | Position sœur
 ----------------|-------------------|-----------------
 [**AlignTopWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aligntopwithpanel.aspx) | [**AlignTopWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aligntopwith.aspx) | [**Above**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.above.aspx)  
 [**AlignBottomWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignbottomwithpanel.aspx) | [**AlignBottomWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignbottomwith.aspx) | [**Below**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.below.aspx)  
@@ -64,7 +65,7 @@ Panel alignment | Sibling alignment | Sibling position
 [**AlignVerticalCenterWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanel.aspx) | [**AlignVerticalCenterWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignverticalcenterwith.aspx) | &nbsp;   
 
  
-This XAML shows how to arrange elements in a RelativePanel.
+Ce code XAML montre comment organiser des éléments dans un élément RelativePanel.
 
 ```xaml
 <RelativePanel BorderBrush="Gray" BorderThickness="1">
@@ -86,22 +87,23 @@ This XAML shows how to arrange elements in a RelativePanel.
 </RelativePanel>
 ```
 
-The result looks like this. 
+Le résultat se présente ainsi : 
 
-![Relative panel](images/layout-panel-relative-panel.png)
+![Panneau relatif](images/layout-panel-relative-panel.png)
 
-Here are a few thing to note about the sizing of the rectangles.
-- The red rectangle is given an explicit size of 44x44. It's placed in the upper left corner of the panel, which is the default position.
-- The green rectangle is given an explicit height of 44. Its left side is aligned with the red rectangle, and its right side is aligned with the blue rectangle, which determines its width.
-- The yellow rectangle isn't given an explicit size. Its left side is aligned with the blue rectangle. Its right and bottom edges are aligned with the edge of the panel. Its size is determined by these alignments and it will resize as the panel resizes.
+Voici quelques informations à noter concernant le dimensionnement des rectangles.
+- Le rectangle rouge est fourni dans une taille explicite de 44 x 44. Il est placé dans le coin supérieur gauche du panneau, qui est la position par défaut.
+- Le rectangle vert est fourni dans une hauteur explicite de 44. Le côté gauche est aligné avec le rectangle rouge, et son côté droit est aligné avec le rectangle bleu, ce qui détermine sa largeur.
+- Le rectangle jaune n’est pas fourni dans une taille explicite. Son côté gauche est aligné avec le rectangle bleu. Ses bords droit et inférieur sont alignés avec le bord du panneau. Sa taille est déterminée par ces alignements et elle est redimensionnées lorsque le panneau est redimensionné.
 
 ## StackPanel
 
-[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) is a simple layout panel that arranges its child elements into a single line that can be oriented horizontally or vertically. StackPanel controls are typically used in scenarios where you want to arrange a small subsection of the UI on your page.
+[
+            **StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) est un panneau de disposition simple qui organise ses éléments enfants sur une seule ligne orientable horizontalement ou verticalement. Les contrôles StackPanel sont généralement utilisés quand vous souhaitez organiser une petite sous-section de l’interface utilisateur sur votre page.
 
-You can use the [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) property to specify the direction of the child elements. The default orientation is [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx).
+Vous pouvez utiliser la propriété [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) pour préciser l’orientation des éléments enfants. L’orientation par défaut est [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx).
 
-The following XAML shows how to create a vertical StackPanel of items.
+Le code XAML suivant indique comment créer un empilement StackPanel vertical des éléments.
 
 ```xaml
 <StackPanel>
@@ -113,21 +115,21 @@ The following XAML shows how to create a vertical StackPanel of items.
 ```
 
 
-The result looks like this.
+Le résultat se présente ainsi :
 
-![Stack panel](images/layout-panel-stack-panel.png)
+![Panneau d’empilement](images/layout-panel-stack-panel.png)
 
-In a StackPanel, if a child element's size is not set explicitly, it stretches to fill the available width (or height if the Orientation is **Horizontal**). In this example, the width of the rectangles is not set. The rectangles expand to fill the entire width of the StackPanel.
+Dans un panneau StackPanel, si la taille d’un élément enfant n’est pas définie explicitement, ce dernier s’étire pour remplir la largeur disponible (ou la hauteur si la propriété Orientation est définie sur **Horizontal**). Dans cet exemple, la largeur des rectangles n’est pas définie. Les rectangles se développent afin d’occuper toute la largeur du panneau StackPanel.
 
 ## Grid
 
-The [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) panel supports arranging controls in multi-row and multi-column layouts. You can specify a Grid panel's rows and columns by using the [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) and [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx) properties. In XAML, use property element syntax to declare the rows and columns within the Grid element. You can distribute space within a column or a row by using **Auto** or star sizing.
+Le panneau [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) permet d’organiser des contrôles dans des dispositions constituées de plusieurs lignes et colonnes. Vous pouvez spécifier les lignes et les colonnes d’un panneau Grid à l’aide des propriétés [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) et [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx). En XAML, utilisez la syntaxe de l’élément de propriété pour déclarer les lignes et colonnes au sein de l’élément Grid. Vous pouvez répartir l’espace au sein d’une colonne ou d’une ligne en utilisant le dimensionnement **Auto** ou proportionnel.
 
-You position objects in specific cells of the Grid by using the [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.column.aspx) and [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.row.aspx) attached properties.
+Les objets peuvent être positionnés dans des cellules spécifiques du panneau Grid à l’aide des propriétés jointes [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.column.aspx) et [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.row.aspx).
 
-You can make content span across multiple rows and columns by using the [**Grid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowspan.aspx) and [**Grid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columnspan.aspx) attached properties.
+Vous pouvez forcer le contenu à s’étendre sur plusieurs lignes et colonnes via les propriétés jointes [**Grid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowspan.aspx) et [**Grid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columnspan.aspx).
 
-This XAML example shows how to create a Grid with three rows and two columns. The height of the first and third rows is just large enough to contain the text. The height of the second row fills up the rest of the available height. The width of the columns is split equally within the available container width.
+Cet exemple XAML montre comment créer un élément Grid à trois lignes et deux colonnes. La hauteur des première et troisième lignes est juste suffisante pour contenir le texte. La hauteur de la deuxième ligne remplit le reste de la hauteur disponible. La largeur des colonnes est répartie de façon égale au sein de la largeur de conteneur disponible.
 
 ```xaml
 <Grid>
@@ -147,26 +149,27 @@ This XAML example shows how to create a Grid with three rows and two columns. Th
 ```
 
 
-The result looks like this.
+Le résultat se présente ainsi :
 
-![Grid](images/layout-panel-grid.png)
+![Grille](images/layout-panel-grid.png)
 
-In this example, the sizing works like this: 
-- The second row has an explicit height of 44 effective pixels. By default, the height of the first row fills whatever space is left over.
-- The width of the first column is set to **Auto**, so it's as wide as needed for its children. In this case, it's 44 effective pixels wide to accommodate the width of the red rectangle.
-- There are no other size constraints on the rectangles, so each one stretches to fill the grid cell it's in.
+Dans cet exemple, le dimensionnement fonctionne comme suit. 
+- La deuxième ligne a une hauteur explicite de 44 pixels effectifs. Par défaut, la hauteur de la première ligne remplit l’espace restant disponible.
+- La largeur de la première colonne est définie sur **Auto**, de manière à être suffisamment large pour ses enfants. Dans ce cas, elle est de 44 pixels efficaces pour s’adapter à la largeur du rectangle rouge.
+- Il n’existe aucune autre contrainte de taille sur les rectangles, de manière à ce que chacun d’entre eux s’étire pour remplir la cellule de grille qui le contient.
 
 ## VariableSizedWrapGrid
 
-[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) provides a grid-style layout panel where elements are arranged in rows or columns that automatically wrap to a new row or column when the [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) value is reached. 
+[
+            **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) fournit un panneau de disposition dans lequel les éléments sont organisés en lignes et en colonnes qui sont automatiquement renvoyés à la ligne ou dans une nouvelle colonne lorsque la valeur [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) est atteinte. 
 
-The [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) property specifies whether the grid adds its items in rows or columns before wrapping. The default orientation is **Vertical**, which means the grid adds items from top to bottom until a column is full, then wraps to a new column. When the value is **Horizontal**, the grid adds items from left to right, then wraps to a new row.
+La propriété [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) spécifie si la grille ajoute ses éléments en lignes ou en colonnes avant leur renvoi. L’orientation par défaut est **Vertical**, ce qui signifie que la grille ajoute des éléments du haut vers le bas jusqu’à ce qu’une colonne soit remplie, puis passe à une nouvelle colonne. Lorsque la valeur est **Horizontal**, la grille ajoute des éléments de gauche à droite, puis passe à la ligne suivante.
 
-Cell dimensions are specified by the [**ItemHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight.aspx) and [**ItemWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth.aspx). Each cell is the same size. If ItemHeight or ItemWidth is not specified, then the first cell sizes to fit its content, and every other cell is the size of the first cell.
+Les dimensions des cellules sont spécifiées par [**ItemHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight.aspx) et [**ItemWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth.aspx). Chaque cellule a la même taille. Si les valeurs ItemHeight ou ItemWidth ne sont pas spécifiées, la première cellule est redimensionnée pour s’adapter à son contenu, et toutes les autres cellules prennent la même taille.
 
-You can use the [**VariableSizedWrapGrid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.columnspan.aspx) and [**VariableSizedWrapGrid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.rowspan.aspx) attached properties to specify how many adjacent cells a child element should fill.
+Vous pouvez utiliser les propriétés jointes [**VariableSizedWrapGrid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.columnspan.aspx) et [**VariableSizedWrapGrid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.rowspan.aspx) pour spécifier le nombre de cellules adjacentes devant être remplies par un élément enfant.
 
-Here's how to use a VariableSizedWrapGrid in XAML.
+Voici comment utiliser un élément VariableSizedWrapGrid en XAML.
 
 ```xaml
 <VariableSizedWrapGrid MaximumRowsOrColumns="3" ItemHeight="44" ItemWidth="44">
@@ -182,21 +185,21 @@ Here's how to use a VariableSizedWrapGrid in XAML.
 ```
 
 
-The result looks like this.
+Le résultat se présente ainsi :
 
-![Variable size wrap grid](images/layout-panel-variable-size-wrap-grid.png)
+![Grille avec renvoi à la ligne à taille variable](images/layout-panel-variable-size-wrap-grid.png)
 
-In this example, the maximum number of rows in each column is 3. The first column contains only 2 items (the red and blue rectangles) because the blue rectangle spans 2 rows. The green rectangle then wraps to the top of the next column.
+Dans cet exemple, le nombre maximal de lignes dans chaque colonne est 3. La première colonne contient seulement 2 éléments (les rectangles rouge et bleu), car le rectangle bleu s'étend sur 2 lignes. Le rectangle vert s’étend ensuite jusqu’en haut de la colonne suivante.
 
-## Canvas
+## Zone de dessin
 
-The [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) panel positions its child elements using fixed coordinate points. You specify the points on individual child elements by setting the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) attached properties on each element. During layout, the parent Canvas reads these attached property values from its children and uses these values during the [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx) pass of layout.
+Le panneau [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) positionne ses éléments enfants à l’aide de points de coordonnées fixes. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) de chaque élément. Durant la disposition, l’élément Canvas parent lit les valeurs de propriétés jointes de ses enfants, puis utilise ces valeurs pendant la transmission de disposition [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx).
 
-Objects in a Canvas can overlap, where one object is drawn on top of another object. By default, the Canvas renders child objects in the order in which they’re declared, so the last child is rendered on top (each element has a default z-index of 0). This is the same as other built-in panels. However, Canvas also supports the [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) attached property that you can set on each of the child elements. You can set this property in code to change the draw order of elements during run time. The element with the highest Canvas.ZIndex value draws last and therefore draws over any other elements that share the same space or overlap in any way. Note that alpha value (transparency) is respected, so even if elements overlap, the contents shown in overlap areas might be blended if the top one has a non-maximum alpha value.
+Dans un élément Canvas, les objets peuvent se chevaucher, auquel cas un objet est dessiné sur un autre objet. Par défaut, l’élément Canvas restitue les objets enfants dans l’ordre dans lequel ils sont déclarés, de sorte que le dernier enfant est restitué en haut (chaque élément a une valeur ZIndex par défaut de 0). Il en va de même pour les autres panneaux intégrés. Toutefois, l’élément Canvas prend également en charge la propriété jointe [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) que vous pouvez définir sur chacun des éléments enfants. Vous pouvez définir cette propriété dans le code pour changer l’ordre de dessin des éléments pendant l’exécution. L’élément avec la valeur Canvas.ZIndex la plus élevée est dessiné en dernier. Ainsi, il est dessiné au-dessus des autres éléments qui partagent le même espace ou qui se chevauchent. Notez que la valeur alpha (transparence) est respectée. Ainsi, même si des éléments se chevauchent, le contenu affiché dans les zones de chevauchement peut être fusionné si le contenu supérieur a une valeur alpha non maximale.
 
-The Canvas does not do any sizing of its children. Each element must specify its size.
+L’élément Canvas ne procède à aucun redimensionnement de ses enfants. Chaque élément doit spécifier sa taille.
 
-Here's an example of a Canvas in XAML.
+Voici un exemple d’élément Canvas en XAML.
 
 ```xaml
 <Canvas Width="120" Height="120">
@@ -208,13 +211,17 @@ Here's an example of a Canvas in XAML.
 ```
 
 
-The result looks like this.
+Le résultat se présente ainsi :
 
-![Canvas](images/layout-panel-canvas.png)
+![Canevas](images/layout-panel-canvas.png)
 
-Use the Canvas panel with discretion. While it's convenient to be able to precisely control positions of elements in UI for some scenarios, a fixed positioned layout panel causes that area of your UI to be less adaptive to overall app window size changes. App window resize might come from device orientation changes, split app windows, changing monitors, and a number of other user scenarios.
+Utilisez le panneau Canvas en fonction de vos besoins. Bien qu’il soit pratique de pouvoir contrôler précisément les positions des éléments de l’interface utilisateur dans certains scénarios, un panneau de disposition positionné de manière fixe rend cette zone de l’interface utilisateur moins adaptable à l’ensemble des modifications de taille de fenêtre de l’application. Le redimensionnement des fenêtres d’application peut être dû au changement d’orientation de l’appareil, au fractionnement des fenêtres d’application, au changement de moniteur, ainsi qu’à plusieurs autres scénarios utilisateur.
 
-## Panels for ItemsControl
+## Panneaux pour ItemsControl
 
-There are several special-purpose panels that can be used only as an [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) to display items in an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). These are [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx), and [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). You can't use these panels for general UI layout.
+Il existe plusieurs panneaux à usage spécifique qui peuvent être utilisés uniquement comme un contrôle [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) pour afficher des éléments dans un contrôle [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Il s’agit de [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) et [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). Vous ne pouvez pas utiliser ces panneaux pour créer une disposition générale de l’interface utilisateur.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,6 +1,6 @@
 ---
-description: Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
-title: Vue d’ensemble des propriétés de dépendance
+Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
+Vue d’ensemble des propriétés de dépendance
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ---
 
@@ -95,7 +95,7 @@ Dans certains cas, le modèle peut même remplacer des valeurs locales s’il ne
 
 ###  Liaisons et priorité
 
-Les opérations de liaison disposent de la priorité appropriée quelle que soit l’étendue pour laquelle elles sont utilisées. Par exemple, une liaison appliquée à une valeur locale agit comme une valeur locale, et une liaison ([extension de balisage TemplateBinding](templatebinding-markup-extension.md)) pour une méthode setter de propriété s’applique comme une méthode setter de style. Étant donné que les liaisons doivent patienter jusqu’au moment de l’exécution avant d’obtenir des valeurs à partir des sources de données, le processus de détermination de la priorité de la valeur d’une propriété, quelle qu’elle soit, s’étend également jusqu’au moment de l’exécution.
+Les opérations de liaison disposent de la priorité appropriée quelle que soit l’étendue pour laquelle elles sont utilisées. Par exemple, une liaison appliquée à une valeur locale agit comme une valeur locale, et une liaison ([extension de balisage {TemplateBinding}](templatebinding-markup-extension.md)) pour une méthode setter de propriété s’applique comme une méthode setter de style. Étant donné que les liaisons doivent patienter jusqu’au moment de l’exécution avant d’obtenir des valeurs à partir des sources de données, le processus de détermination de la priorité de la valeur d’une propriété, quelle qu’elle soit, s’étend également jusqu’au moment de l’exécution.
 
 Non seulement les liaisons fonctionnent au même niveau de priorité qu’une valeur locale, mais elles correspondent vraiment à une valeur locale, où la liaison est l’espace réservé pour une valeur différée. Si vous avez une liaison en place pour une valeur de propriété, et si vous définissez une valeur locale sur celle-ci au moment de l’exécution, elle remplace entièrement la liaison. De même, si vous appelez la méthode [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) pour définir une liaison qui naît seulement au moment de l’exécution, vous remplacez n’importe quelle valeur locale que vous auriez plutôt appliquée en XAML ou par du code précédemment exécuté.
 
@@ -122,7 +122,7 @@ Les propriétés de dépendance ont encore des valeurs par défaut même si cell
 -   Une propriété qui utilise une structure Windows Runtime est dotée d’une valeur par défaut qui est obtenue par l’appel du constructeur implicite par défaut de cette structure. Ce constructeur utilise les valeurs par défaut pour chaque champ de valeur de base de la structure. Par exemple, la valeur [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) est initialisée par défaut avec ses valeurs **X** et **Y** à 0.
 -   Une propriété qui utilise une énumération a une valeur par défaut du premier membre défini dans cette énumération. Vérifiez la référence des énumérations spécifiques pour connaître la valeur par défaut utilisée.
 -   Une propriété qui utilise une chaîne ([**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) pour .NET, [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) pour C++/CX) a la valeur par défaut d’une chaîne vide (**""**).
--   En général, les propriétés de collection ne sont pas implémentées en tant que propriétés de dépendance pour les raisons exposées plus loin dans cette rubrique. Mais si vous implémentez une propriété de collection personnalisée et que vous souhaitez la définir en tant que propriété de dépendance, assurez-vous d’éviter un *singleton accidentel*, comme décrit à la fin de de la rubrique [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
+-   En général, les propriétés de collection ne sont pas implémentées en tant que propriétés de dépendance pour les raisons exposées plus loin dans cette rubrique. Mais si vous implémentez une propriété de collection personnalisée et que vous souhaitez la définir en tant que propriété de dépendance, assurez-vous d’éviter un *singleton accidentel*, comme décrit à la fin de la rubrique [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
 
 ## Fonctionnalités de propriété fournie par une propriété de dépendance
 
@@ -199,4 +199,8 @@ Les aspects relatifs aux threads de [**DependencyObject**](https://msdn.microsof
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,101 +1,101 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-This section describes how to modify your PlayReady Web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
-PlayReady Encrypted Media Extension
+Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10.
+Extension EME (Encrypted Media Extension) PlayReady
 ---
 
-# PlayReady Encrypted Media Extension
+# Extension EME (Encrypted Media Extension) PlayReady
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-This section describes how to modify your PlayReady Web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10.
 
-Using PlayReady media elements in Internet Explorer enables developers to create Web apps capable of providing PlayReady content to the user while enforcing the access rules defined by the content provider. This section describes how to add PlayReady media elements to your existing Web apps using only HTML5 and JavaScript.
+L’utilisation d’éléments multimédias PlayReady dans Internet Explorer permet aux développeurs de créer des applications web capables de fournir du contenu PlayReady à l’utilisateur tout en appliquant les règles d’accès définies par le fournisseur de contenu. Cette section explique comment ajouter des éléments multimédias PlayReady à vos applications web existantes en utilisant uniquement HTML5 et JavaScript.
 
-## What's New in PlayReady Encrypted Media Extension
+## Nouveautés de l’extension EME (Encrypted Media Extension) PlayReady
 
-This section provides a list of changes made to the PlayReady Encrypted Media Extension to enable PlayReady content protection on Windows 10.
+Cette section répertorie les modifications apportées à l’extension EME PlayReady pour permettre la protection de contenu PlayReady sur Windows 10.
 
-The following list describes the new features and changes made to PlayReady Encrypted Media Extension for Windows 10:
+La liste suivante décrit les nouvelles fonctionnalités et les modifications apportées à l’extension EME PlayReady pour Windows 10 :
 
--   Added hardware digital rights management (DRM).
+-   Ajout de la gestion des droits numériques (DRM) en fonction du matériel.
 
-    Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security.
+    La prise en charge de la protection du contenu en fonction du matériel permet la lecture sécurisée de contenu en haute définition (HD) et ultra haute définition (UHD) sur plusieurs plateformes d’appareils. Le matériel de clé (y compris les clés privées, les clés de contenu et tout autre matériel de clé utilisé pour dériver ou déverrouiller ces clés) et les échantillons vidéo compressés et non compressés déchiffrés sont protégés en tirant parti de la sécurité matérielle.
 
--   Provides proactive acquisition of non-persistent licenses.
--   Provides acquisition of multiple licenses in one message.
+-   Acquisition proactive de licences non persistantes.
+-   Acquisition de plusieurs licences en un message.
 
-    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) with multiple KeyIDs.
+    Vous pouvez utiliser un objet PlayReady avec plusieurs identificateurs de clé (KeyID) dans Windows 8.1 ou utiliser des [données de modèle de déchiffrement de contenu (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) avec plusieurs KeyID.
 
-    **Note**  In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.
+    **Remarque** Dans Windows 10, plusieurs identificateurs de clé sont pris en charge sous &lt;KeyID&gt; dans CDMData.
 
      
 
--   Added real time expiration support, or limited duration license (LDL).
+-   Ajout de la prise en charge du délai d’expiration en temps réel ou licence à durée limitée (LDL).
 
-    Provides the ability to set real-time expiration on licenses.
+    Permet de définir l’expiration en temps réel des licences.
 
--   Added HDCP Type 1 (version 2.2) policy support.
--   Miracast is now implicit as an output.
--   Added secure stop.
+-   Ajout de la prise en charge de la stratégie de protection HDCP de type 1 (version 2.2).
+-   Miracast est désormais une sortie implicite.
+-   Ajout de l’arrêt sécurisé.
 
-    Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content.
+    L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné.
 
--   Added audio and video license separation.
+-   Ajout d’une séparation de licence audio et vidéo.
 
-    Separate tracks prevent video from being decoded as audio; enabling more robust content protection. Emerging standards are requiring separate keys for audio and visual tracks.
+    Les pistes séparées empêchent la vidéo d’être décodée en tant qu’audio, offrant ainsi une protection plus sûre du contenu. Les normes émergentes nécessitent des touches distinctes pour les pistes audio et vidéo.
 
--   Added MaxResDecode.
+-   Ajout de MaxResDecode.
 
-    This feature was added to limit playback of content to a maximum resolution even when in possession of a more capable key (but not a license). It supports cases where multiple stream sizes are encoded with a single key.
+    Cette fonctionnalité a été ajoutée pour limiter la lecture de contenu à une résolution maximale et ce, même en cas de possession d’une clé plus compatible (mais pas d’une licence). Cela concerne également les cas où plusieurs tailles de flux sont codées avec une clé unique.
 
-## Encrypted Media Extension Support in PlayReady
+## Prise en charge de l’extension EME (Encrypted Media Extension) dans PlayReady
 
-This section describes the version of the W3C Encrypted Media Extension supported by PlayReady.
+Cette section décrit la version de l’extension EME (Encrypted Media Extension) W3C prise en charge par PlayReady.
 
-PlayReady for Web Apps is currently bound to the [W3C Encrypted Media Extension (EME) draft of May 10, 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). This support will be changed to the updated EME specification in future versions of Windows.
+PlayReady pour les applications web est actuellement lié à l’[ébauche du document W3C sur l’extension EME (Encrypted Media Extension) datée du 10 mai 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). Cette prise en charge sera remplacée par la spécification EME mise à jour dans les prochaines versions de Windows.
 
-## Use Hardware DRM
+## Utiliser la gestion des droits numériques en fonction du matériel
 
-This section describes how your web app can use PlayReady hardware DRM, and how to disable hardware DRM if the protected content does not support it.
+Cette section explique comment votre application web peut utiliser la gestion des droits numériques en fonction du matériel par PlayReady et comment désactiver la gestion des droits numériques en fonction du matériel si le contenu protégé ne la prend pas en charge.
 
-To use PlayReady hardware DRM, your JavaScript web app should use the **isTypeSupported** EME method with a key system identifier of `com.microsoft.playready.hardware` to query for PlayReady hardware DRM support from the browser.
+Pour utiliser la gestion des droits numériques en fonction du matériel par PlayReady, votre application web JavaScript doit utiliser la méthode EME **isTypeSupported** avec un identificateur système de clé `com.microsoft.playready.hardware` pour vérifier la prise en charge de la gestion des droits numériques en fonction du matériel par PlayReady à partir du navigateur.
 
-Occasionally, some content is not supported in hardware DRM. Cocktail content is never supported in hardware DRM; if you want to play cocktail content, you must opt out of hardware DRM. Some hardware DRM will support HEVC and some will not; if you want to play HEVC content and hardware DRM doesn’t support it, you will want to opt out as well.
+Il arrive que certains contenus ne soient pas pris en charge par la gestion des droits numériques en fonction du matériel. Le contenu Cocktail n’est jamais pris en charge par la gestion des droits numériques en fonction du matériel. Si vous souhaitez lire du contenu Cocktail, vous devez désactiver la gestion des droits numériques en fonction du matériel. Certains types de gestion des droits numériques en fonction du matériel prennent en charge le contenu HEVC et d’autres non. Si vous voulez lire du contenu HEVC et que la gestion des droits numériques en fonction du matériel ne le prend pas en charge, vous voudrez la désactiver.
 
-**Note**  To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method.
+**Remarque** Pour déterminer si le contenu HEVC est pris en charge, après l’instanciation de `com.microsoft.playready`, utilisez la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441).
 
  
 
-## Add Secure Stop to your Web App
+## Ajouter un arrêt sécurisé à votre application web
 
-This section describes how to add secure stop to your web app.
+Cette section explique comment ajouter un arrêt sécurisé à votre application web.
 
-Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
+L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de diffusion multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
 
-There are two primary scenarios for sending a secure stop challenge:
+Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt sécurisé :
 
--   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
--   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
+-   Lorsque la présentation multimédia s’arrête car la fin du contenu a été atteinte ou lorsque l’utilisateur a arrêté la présentation multimédia en cours de lecture.
+-   Lorsque la session précédente se termine inopinément (par exemple, en raison d’un blocage du système ou de l’application). L’application devra contrôler, au moment du démarrage ou de l’arrêt, s’il y a des sessions d’arrêt sécurisé en attente et envoyer les demandes séparément de la lecture de tout autre contenu multimédia.
 
-The following procedures describe how to set up secure stop for various scenarios.
+Les procédures suivantes expliquent comment configurer l’arrêt sécurisé pour différents scénarios.
 
-To set up secure stop for a normal end of a presentation:
+Pour configurer l’arrêt sécurisé pour un arrêt normal d’une présentation :
 
-1.  Register the **onEnded** event before playback starts.
-2.  The **onEnded** event handler needs to call `removeAttribute(“src”)` from the video/audio element object to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
-3.  You can start the secure stop CDM session inside the handler to send the secure stop challenge to the server to notify the playback has stopped at this time, but it can be done later as well.
+1.  Enregistrez l’événement **onEnded** avant le début de la lecture.
+2.  Le gestionnaire d’événements **onEnded** doit appeler`removeAttribute(“src”)` à partir de l’objet de l’élément audio/vidéo pour définir la source sur **NULL**, ce qui déclenchera la suppression de la topologie, la destruction des déchiffreurs et la définition de l’état d’arrêt par Media Foundation.
+3.  Vous pouvez démarrer la session CDM d’arrêt sécurisé dans le gestionnaire pour envoyer la demande d’arrêt sécurisé au serveur afin de notifier l’arrêt de la lecture à ce moment, mais vous pouvez également le faire ultérieurement.
 
-To set up secure stop if the user navigates away from the page or closes down the tab or browser:
+Pour configurer l’arrêt sécurisé si l’utilisateur quitte la page ou ferme l’onglet ou le navigateur :
 
--   No app action is required to record the stop state; it will be recorded for you.
+-   Aucune action de l’application n’est requise pour enregistrer l’état d’arrêt ; il sera enregistré pour vous.
 
-To set up secure stop for custom page controls or user actions (such as custom navigation buttons or starting a new presentation before the current presentation completed):
+Pour configurer l’arrêt sécurisé pour des contrôles de page ou des actions utilisateur personnalisés (par exemple, des boutons de navigation personnalisés ou le démarrage d’une nouvelle présentation avant la fin de la présentation actuelle) :
 
--   When custom user action occurs, the app needs to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
+-   Lorsqu’une action utilisateur personnalisée a lieu, l’application doit définir la source sur **NULL**, ce qui déclenchera la suppression de la topologie, la destruction des déchiffreurs et la définition de l’état d’arrêt par Media Foundation.
 
-The following example demonstrates how to use secure stop in your web app:
+L’exemple suivant montre comment utiliser l’arrêt sécurisé dans votre application web :
 
 ``` syntax
 // JavaScript source code
@@ -254,13 +254,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 }
 ```
 
-**Note**  The secure stop data’s `<SessionID>B64 encoded session ID</SessionID>` in the sample above can be an asterisk (\*), which is a wild card for all the secure stop sessions recorded. That is, the **SessionID** tag can be a specific session, or a wild card (\*) to select all the secure stop sessions.
+**Remarque** La ligne de code `<SessionID>B64 encoded session ID</SessionID>` des données d’arrêt sécurisé dans l’exemple ci-dessus peut être un astérisque (\*), qui constitue un caractère générique pour toutes les sessions d’arrêt sécurisé enregistrées. Autrement dit, la balise **SessionID** peut être une session spécifique, ou un caractère générique (\*) pour sélectionner toutes les sessions d’arrêt sécurisé.
 
-## Programming Considerations for Encrypted Media Extension
+## Considérations en matière de programmation de l’extension EME (Encrypted Media Extension)
 
-This section lists the programming considerations that you should take into account when creating your PlayReady-enabled web app for Windows 10.
+Cette section répertorie les considérations en matière de programmation que vous devez prendre en compte lors de la création de votre application web compatible PlayReady pour Windows 10.
 
-The **MSMediaKeys** and **MSMediaKeySession** objects created by your app must be kept alive until your app closes. One way of ensuring these objects stay alive is to assign them as global variables (the variables would become out of scope and subject to garbage collection if declared as a local variable inside of a function). For example, the following sample assigns the variables *g\_msMediaKeys* and *g\_mediaKeySession* as global variables, which are then assigned to the **MSMediaKeys** and **MSMediaKeySession** objects in the function.
+Les objets **MSMediaKeys** et **MSMediaKeySession** créés par votre application doivent être maintenus actifs jusqu’à la fermeture de votre application. Pour garantir que ces objets restent actifs, vous pouvez les affecter en tant que variables globales (les variables deviennent hors de portée et sont mises à la corbeille si elles sont déclarées comme variables locales à l’intérieur d’une fonction). L’exemple suivant affecte les variables *g\_msMediaKeys* et *g\_mediaKeySession* en tant que variables globales, avant de les affecter aux objets **MSMediaKeys** et **MSMediaKeySession** dans la fonction.
 
 ``` syntax
 var g_msMediaKeys;
@@ -288,13 +288,17 @@ function foo() {
 }
 ```
 
-Refer to the [sample applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738) for more information.
+Pour plus d’informations, reportez-vous aux [exemples d’applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

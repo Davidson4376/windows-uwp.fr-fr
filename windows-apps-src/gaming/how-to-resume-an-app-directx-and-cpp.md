@@ -1,6 +1,6 @@
 ---
-title: Comment relancer une application (DirectX et C++)
-description: Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle.
+Comment relancer une application (DirectX et C++)
+Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle.
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 ---
 
@@ -92,4 +92,8 @@ Le système suspend votre application chaque fois que l’utilisateur bascule ve
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

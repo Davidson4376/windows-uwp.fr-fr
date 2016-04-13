@@ -1,68 +1,72 @@
 ---
-The Ratings report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store.
-Ratings report
+Le rapport Évaluations disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store.
+Rapport Évaluations
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 ---
 
-# Ratings report
+# Rapport Évaluations
 
 
-The **Ratings** report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Le rapport **Évaluations** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
-In this report, a rating means the number of stars (from 1 to 5) that a customer gave your app when rating it in the Store. The **Ratings** report does not include info on any individual comments left as reviews; those are available in the [Reviews report](reviews-report.md).
+Dans ce rapport, une évaluation correspond au nombre d’étoiles (compris entre 1 et 5) qu’un client a attribué à votre application dans le Windows Store. Le rapport **Évaluations** ne fournit aucune information sur les commentaires formulés sous forme d’avis ; ces derniers sont consultables dans le [rapport sur les avis](reviews-report.md).
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by market.
-
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Market**: The default filter is **All markets**. You can choose a specific market if you want this page to only show ratings from customers in that market.
--   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show ratings left by customers using that type of device.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
-
-## Average rating
+## Appliquer les filtres
 
 
-The **Average rating** chart shows the average rating of your app over the selected period of time.
+Dans la zone supérieure de la page, vous pouvez développer l'option **Appliquer les filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par marché.
 
-## Number of ratings
+-   **Date** : la valeur par défaut de ce filtre est **30 derniers jours**, mais vous pouvez étendre cette période aux **12 derniers mois**.
+-   **Marché** : le filtre par défaut est **Tous les marchés**. Vous pouvez choisir un marché spécifique si vous souhaitez ne visualiser que les évaluations des clients sur ce marché.
+-   **Type d’appareil** : le filtre par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement l’évaluation laissée par les clients utilisant celui-ci.
 
+Les informations figurant dans tous les graphiques répertoriés ci-après refléteront la période sélectionnée dans la section **Appliquer des filtres**, ainsi que d’autres filtres que vous avez choisi ici.
 
-The **Number of ratings** chart shows the total number of ratings of your app over the selected period of time.
-
-## New and revised ratings
-
-
-The **New and revised ratings** chart shows the number of ratings for each type of rating (new or revised) over the selected period of time.
-
--   **New ratings** are ratings that customers have submitted but haven't changed.
--   **Revised ratings** are ratings that have been changed by the customer.
-
->**Note**  A rating will appear here as revised even if the customer only changed or added the text or title of their review and left the actual rating the same.
-
-## Average rating over time
+## Évaluation moyenne
 
 
-The **Average rating over time** chart shows how the app's average rating has changed over the selected period of time.
+Le graphique **Évaluation moyenne** affiche l'évaluation moyenne de votre application sur la période sélectionnée.
 
-Rather than calculating the average of all ratings left during the selected period of time (as in the **Average rating** chart), the **Average rating over time** chart shows you how customers rated the app on a given day or week during the period. This helps you identify trends or determine if ratings were affected by updates or other factors.
-
-If you have filtered the info by **Last 30 days** or **Last 3 months**, the chart displays your average rating by day. If you've filtered by **Last 6 months** or **Last 12 months**, the chart displays your average rating by week (with a new week considered to start on Monday; the average rating shown is for the previous week).
-
-## Markets
+## Nombre d'évaluations
 
 
-The **Markets** chart shows average rating and number of ratings over the selected period of time by market.
+Le graphique **Nombre d'évaluations** affiche le nombre total d'évaluations de votre application au cours de la période sélectionnée.
 
-> **Note**  If you have used the **Page filters** to specify a specific market, you won't see this chart on the **Ratings** report. To see this chart, change the **Page filters** to show all markets.
+## Évaluations nouvelles et révisées
 
-By default, we show you the market which had the most reviews and continue downward from there, but you can reverse this order by toggling the arrow in the **Number of ratings** column of this chart. You can also sort the data by **Average rating** or **Market** by clicking those columns.
 
-> **Note**  It’s likely that you’ll see a different number of ratings when comparing the **Ratings** report in the Windows Dev Center with the Reviews report in the older Dev Center mobile app. This is because the app only shows data for reviews left from customers on Windows Phone 8.1 and earlier. This may also be a result of work by Microsoft to remove reviews from the Windows Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
+Le graphique **Évaluations nouvelles et révisées** présente le nombre d'évaluations de chaque type (nouvelles ou révisées) effectuées au cours de la période sélectionnée.
+
+-   La section **Nouvelles évaluations** spécifie les évaluations qui ont été soumises par les clients et qui n'ont pas été modifiées.
+-   La section **Évaluations révisées** indique les évaluations qui ont été modifiées par le client.
+
+>**Remarque** Une évaluation est signalée comme révisée même dans les cas où le client s’est contenté de changer ou d’ajouter un texte ou un titre dans son avis sans modifier son évaluation proprement dite.
+
+## Évaluation moyenne dans le temps
+
+
+Le graphique **Évaluation moyenne dans le temps** illustre l'évolution de l'évaluation moyenne de l'application au cours de la période sélectionnée.
+
+Au lieu de calculer la moyenne de toutes les évaluations laissées au cours de la période sélectionnée (comme dans le graphique **Évaluation moyenne** graphique), le graphique **Évaluation moyenne dans le temps** indique l’évaluation laissée par les clients un jour ou une semaine donné(e) au cours de la période. Ce graphique vous permet d’identifier les tendances ou de déterminer dans quelle mesure les mises à jour ou autres modifications ont affecté ou non les évaluations.
+
+Si vous avez filtré les informations sur les **30 derniers jours** ou les **3 derniers mois**, le graphique affiche votre évaluation moyenne par jour. Si vous les avez filtrées sur les **6 derniers mois** ou les **12 derniers mois**, le graphique affiche votre évaluation moyenne par semaine (le lundi marquant le début de chaque nouvelle semaine ; l'évaluation moyenne indiquée concerne la semaine précédente).
+
+## Marchés
+
+
+Le graphique **Marchés** présente l’évaluation moyenne et le nombre d’évaluations par marché au cours de la période sélectionnée.
+
+> **Remarque** Si vous avez utilisé l’option **Filtres de page** pour spécifier un marché donné, ce graphique n’apparaîtra pas dans le rapport **Évaluations**. Pour visualiser ce graphique, modifiez la valeur de l’option **Filtres de page** de façon à afficher tous les marchés.
+
+Par défaut, les marchés ayant fait l’objet du plus grand nombre d’évaluations apparaissent en premier dans le graphique, mais vous pouvez inverser cet ordre en cliquant sur la flèche dans la colonne **Nombre d’évaluations** de ce graphique. Vous pouvez également trier les données par **Évaluation moyenne** ou par **Marché** en cliquant sur ces colonnes.
+
+> **Remarque** Vous constaterez probablement une différence dans le nombre d’évaluations si vous comparez le rapport **Évaluations** dans le Centre de développement Windows avec le rapport Avis dans l’application mobile de l’ancien Centre de développement. Cela s’explique par le fait que l’application affiche uniquement les avis laissés par les clients utilisant Windows Phone 8.1 et antérieur. Ce peut être également la conséquence du travail effectué par Microsoft pour supprimer les avis du Windows Store, qui ont été identifiés comme indésirables, inappropriés, offensants ou comme violant la politique. Nous pensons que cette action va améliorer l’expérience utilisateur.
+
+ 
 
  
 
- 
+
 <!--HONumber=Mar16_HO1-->
+
+

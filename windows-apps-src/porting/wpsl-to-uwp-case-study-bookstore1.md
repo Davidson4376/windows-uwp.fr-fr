@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10.
-title: Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1
+Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10.
+Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1
 ---
 
 # Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1
@@ -128,4 +128,8 @@ Lorsque l’application s’exécute sur un appareil mobile, l’arrière-plan d
 Cette étude de cas vous a décrit le processus de portage d’une application très simple, probablement non réaliste. Par exemple, il est possible d’utiliser des contrôles de liste pour la sélection ou pour la création d’un contexte de navigation. L’application accède alors à une page contenant plus de détails sur l’élément sélectionné. Cette application spécifique ne fait rien avec la sélection de l’utilisateur et est dépourvue de navigation. Malgré tout, l’étude de cas a servi à briser la glace, afin d’introduire le processus de portage et d’illustrer les techniques importantes que vous pouvez utiliser dans les applications UWP réelles.
 
 Dans l’étude de cas suivante, [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et l’affichage de ces dernières.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

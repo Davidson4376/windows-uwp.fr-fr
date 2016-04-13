@@ -1,33 +1,33 @@
 ---
-Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
-Set speech recognition timeouts
+Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
+Définir des délais d’expiration de reconnaissance vocale
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
-Speech recognition timeouts
+Délais d’expiration de reconnaissance vocale
 template: detail.hbs
 ---
 
-# Set speech recognition timeouts
-Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
+# Définir des délais d’expiration de reconnaissance vocale
+Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)
 -   [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 
-## <span id="Set_a_timeout"></span><span id="set_a_timeout"></span><span id="SET_A_TIMEOUT"></span>Set a timeout
+## <span id="Set_a_timeout"> </span> <span id="set_a_timeout"> </span> <span id="SET_A_TIMEOUT"> </span>Définir un délai d’expiration
 
 
-Here, we specify various [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) values:
+Ici, nous spécifions différentes valeurs [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) :
 
--   InitialSilenceTimeout - The length of time that a SpeechRecognizer detects silence (before any recognition results have been generated) and assumes speech input is not forthcoming.
--   BabbleTimeout - The length of time that a SpeechRecognizer continues to listen to unrecognizable sounds (babble) before it assumes speech input has ended and finalizes the recognition operation.
--   EndSilenceTimeout - The length of time that a SpeechRecognizer detects silence (after recognition results have been generated) and assumes speech input has ended.
+-   InitialSilenceTimeout : durée pendant laquelle un SpeechRecognizer détecte du silence (avant que les résultats de la reconnaissance vocale aient été générés) avant de supposer qu’aucune saisie vocale ne va être effectuée.
+-   BabbleTimeout : durée pendant laquelle un SpeechRecognizer continue à écouter les sons incompréhensibles (brouhaha) avant de supposer que la saisie vocale est terminée et de mettre fin à l’opération de reconnaissance vocale.
+-   EndSilenceTimeout : durée pendant laquelle un SpeechRecognizer détecte du silence (après que les résultats de la reconnaissance vocale ont été générés) avant de supposer que la saisie vocale est terminée.
 
-**Note**  Timeouts can be set on a per-recognizer basis.
+**Remarque** Les délais d’expiration sont définissables pour chaque moteur de reconnaissance vocale.
 
  
 
@@ -38,17 +38,21 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"> </span>Articles connexes
 
 
-* [Speech interactions](speech-interactions.md)
-**Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Interactions vocales](speech-interactions.md)
+**Exemples**
+* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

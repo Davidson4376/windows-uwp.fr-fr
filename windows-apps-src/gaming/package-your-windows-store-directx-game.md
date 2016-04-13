@@ -1,112 +1,112 @@
 ---
-Package your Universal Windows Platform (UWP) DirectX game
-Larger Universal Windows Platform (UWP) games, especially those that support multiple languages with region-specific assets or feature optional high-definition assets, can easily balloon to large sizes.
+Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
+Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux.
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 ---
 
-#  Package your Universal Windows Platform (UWP) DirectX game
+#  Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Larger Universal Windows Platform (UWP) games, especially those that support multiple languages with region-specific assets or feature optional high-definition assets, can easily balloon to large sizes. In this topic, learn how to use app packages and app bundles to customize your app so that your customers only receive the resources they actually need.
+Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux. Dans cette rubrique, découvrez comment utiliser les packages et ensembles d’applications pour personnaliser votre application afin que vos clients ne reçoivent que les ressources dont ils ont réellement besoin.
 
-In addition to the app package model, Windows 10 supports app bundles which group together two types of packs:
+En complément du modèle de package d’application, Windows 10 prend en charge les lots d’applications qui groupes deux types de packages :
 
--   App packs contain platform-specific executables and libraries. Typically, a UWP game can have up to three app packs: one each for the x86, x64, and ARM CPU architectures. All code and data specific to that hardware platform must be included in its app pack. An app pack should also contain all the core assets for the game to run with a baseline level of fidelity and performance.
--   Resource packs contain optional or expanded platform-agnostic data, such as game assets (textures, meshes, sound, text). A UWP game can have one or more resource packs, including resource packs for high-definition assets or textures, DirectX feature level 11+ resources, or language-specific assets and resources.
+-   Les packages d’application qui contiennent des fichiers exécutables et de bibliothèques spécifiques à la plateforme. Un jeu UWP peut compter jusqu’à trois packages d’application : un par architecture d’UC x86, x64 et ARM. L’ensemble du code et des données spécifiques à cette plateforme matérielle doit être inclus dans son package d’application. Ce dernier doit également contenir toutes les ressources principales pour que le jeu s’exécute avec un niveau de fidélité et de performance de base.
+-   Les packs de ressources contiennent des données non spécifiques d’une plateforme étendues ou facultatives telles que les ressources de jeu (textures, maillages, son et texte). Un jeu UWP peut comporter un ou plusieurs packs de ressources, notamment pour les textures ou les ressources haute définition, les ressources de niveau de fonctionnalité DirectX 11 ou supérieur, ou les ressources spécifiques d’une langue.
 
-For more information about app bundles and app packs, read [Defining app resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
+Pour plus d’informations sur les ensembles d’applications et sur les packages d’application, voir [Définition des ressources d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
 
-While you can place all content in your app packs, this is inefficient and redundant. Why have the same large texture file replicated three times for each platform, especially for ARM platforms that may not use it? A good goal is to try to minimize what your customer has to download, so they can start playing your game sooner, save space on their device, and avoid possible metered bandwidth costs.
+Même si vous pouvez placer la totalité du contenu dans vos packages d’application, cette approche est inefficace et redondante. Pourquoi recourir au même fichier de texture de grande taille répliqué trois fois pour chaque plateforme, notamment pour les plateformes ARM qui ne l’utiliseront peut-être pas ? Votre objectif va consister à limiter le volume du contenu à télécharger. Les utilisateurs peuvent ainsi commencer plus rapidement à jouer à votre jeu, en gagnant de l’espace sur leur appareil et en économisant d’éventuels frais de bande passante limitée.
 
-To use this feature of the UWP app installer, it is important to consider the directory layout and file naming conventions for app and resource packaging early in game development, so your tools and source can output them correctly in a way that makes packaging simple. Follow the rules outlined in this doc when developing or configuring asset creation and managing tools and scripts, and when authoring code that loads or references resources.
+Pour utiliser cette fonctionnalité du programme d’installation d’une application UWP, tenez compte de la disposition du répertoire et des conventions d’affectation de nom pour la création de package d’application et de ressources dès le début du développement du jeu. Vos outils et vos sources peuvent ainsi correctement générer des sorties et simplifier la création de package. Suivez les règles énoncées dans ce document quand vous développez ou configurez des scripts et des outils de création et de gestion de ressources ou quand vous créez du code qui charge ou référence des ressources.
 
-## Why create resource packs?
+## Pourquoi créer des packs de ressources ?
 
 
-When you create an app, particularly a game app that can be sold in many locales or a broad variety of UWP hardware platforms, you often need to include multiple versions of many files to support those locales or platforms. For example, if you are releasing your game in both the United States and Japan, you might need one set of voice files in English for the en-us locales, and another in Japanese for the jp-jp locale. Or, if you want to use an image in your game for ARM devices as well as x86 and x64 platforms, you must upload the same image asset 3 times, once for each CPU architecture.
+Quand vous créez une application, notamment une application de jeu que vous pouvez vendre dans de nombreux pays ou dans un large éventail de plateformes matérielles UWP, vous devez souvent ajouter plusieurs versions de nombreux fichiers pour prendre en charge ces paramètres régionaux ou plateformes. Par exemple, si vous publiez votre jeu aux États-Unis et au Japon, vous pouvez avoir besoin d’un jeu de fichiers audio en anglais pour les paramètres régionaux en-us, et d’un autre en japonais pour le paramètre régional jp-jp. Sinon, si vous voulez utiliser une image dans votre jeu pour les appareils ARM, ainsi que les plateformes x86 et x64, vous devez charger vers le serveur les mêmes ressources d’image 3 fois, une par architecture d’UC.
 
-Additionally, if your game has a lot of high definition resources that do not apply to platforms with lower DirectX feature levels, why include them in the baseline app pack and require your user to a download a large volume of components that the device can’t use? Separating these high-def resources into an optional resource pack means that customers with devices that support those high-def resources can obtain them at the cost of (possibly metered) bandwidth, while those who do not have higher-end devices can get their game quicker and at a lower network usage cost.
+En outre, si votre jeu est constitué de nombreuses ressources haute définition qui ne s’appliquent pas aux plateformes dotées de niveaux de fonctionnalités DirectX inférieurs, pourquoi les inclure dans le package d’application de base et obliger votre utilisateur à télécharger un volume important de composants inutilisables par son appareil ? En plaçant ces ressources haute définition dans un pack de ressources facultatif, vous permettez aux utilisateurs équipés d’appareils prenant en charge ces ressources haute définition de les obtenir au coût de la bande passante (éventuellement limitée). Ceux dont les appareils ne prennent pas en charge la haute définition peuvent ainsi obtenir leur jeu plus rapidement et à un coût d’utilisation du réseau inférieur.
 
-Content candidates for game resource packs include:
+Contenu susceptible d’intégrer des packs de ressources de jeu :
 
--   International locale specific assets (localized text, audio, or images)
--   High resolution assets for different device scaling factors (1.0x, 1.4x, and 1.8x)
--   High definition assets for higher DirectX feature levels (9, 10, and 11)
+-   Ressources spécifiques de paramètres internationaux (texte, audio ou images localisés)
+-   Ressources haute résolution pour différents facteurs d’échelle d’appareil (1.0x, 1.4x et 1.8x)
+-   Ressources haute définition pour des niveaux de fonctionnalités DirectX plus élevés (9, 10 et 11)
 
-All of this is defined in the package.appxmanifest that is part of your UWP project, and in your directory structure of your final package. Because of the new Visual Studio UI, if you follow the process in this document, you should not need to edit it manually.
+Tout cela est défini dans le fichier package.appxmanifest qui fait partie de votre projet UWP, ainsi que dans la structure de répertoires de votre package final. Avec cette nouvelle interface utilisateur Visual Studio, en suivant la procédure figurant dans ce document, vous n’avez pas besoin d’effectuer des modifications manuelles.
 
-> **Important**   The loading and management of these resources are handled through the **Windows.ApplicationModel.Resources**\* APIs. If you use these app model resource APIs to load the correct file for a locale, scaling factor, or DirectX feature level, you do not need to load your assets using explicit file paths; rather, you provide the resource APIs with just the generalized file name of the asset you want, and let the resource management system obtain the correct variant of the resource for the user’s current platform and locale configuration (which you can specify directly as well with these same APIs).
+> **Important** Le chargement et la gestion de ces ressources sont gérés par le biais des API **Windows.ApplicationModel.Resources**\*. Si vous utilisez ces API de ressources de modèle d’applications pour charger le fichier qui convient pour un paramètre régional, un facteur d’échelle ou un niveau de fonctionnalité DirectX spécifiques, vous n’avez pas besoin de charger vos ressources à l’aide de chemins d’accès de fichiers explicites. Vous fournissez à la place les API de ressources avec simplement le nom du fichier généralisé de la ressource souhaitée. Le système de gestion des ressources se charge ensuite d’obtenir la variante correcte de la ressource de la plateforme active et de la configuration régionale de l’utilisateur (que vous pouvez directement spécifier comme avec ces mêmes API).
 
  
 
-Resources for resource packaging are specified in one of two basic ways:
+Les ressources utilisées pour la création de packs de ressources sont spécifiées de l’une de ces deux manières de base suivantes :
 
--   Asset files have the same filename, and the resource pack specific versions are placed in specific named directories. These directory names are reserved by the system. For example, \\en-us, \\scale-140, \\dxfl-dx11.
--   Asset files are stored in folders with arbitrary names, but the files are named with a common label that is appended with strings reserved by the system to denote language or other qualifiers. Specifically, the qualifier strings are affixed to the generalized filename after an underscore (“\_”). For example, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. You may also combine these strings. For example, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
-    > **Note**   When used in a filename rather than alone in a directory name, a language qualifier must take the form "lang-<tag>", e.g."lang-en-us" as described in [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+-   Les fichiers de ressources portent le même nom de fichier et les versions spécifiques du pack de ressources sont placées dans des répertoires nommés particuliers. Ces noms de répertoires sont réservés par le système. Par exemple, \\en-us, \\scale-140, \\dxfl-dx11.
+-   Les fichiers de ressources sont stockés dans des dossiers avec des noms arbitraires. Toutefois, les fichiers sont nommés avec une étiquette commune qui est ajoutée à l’aide des chaînes réservées par le système pour indiquer la langue ou d’autres qualificateurs. Plus précisément, les chaînes des qualificateurs sont ajoutées au nom de fichier généralisé après un trait de soulignement (« \_ »). Par exemple, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. Vous pouvez également combiner ces chaînes. Par exemple, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
+    > **Remarque** Quand il est utilisé dans un nom de fichier au lieu d’être utilisé seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme « lang-<tag>» (exemple : « lang-fr-fr »), comme décrit dans [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
 
      
 
-Directory names can be combined for additional specificity in resource packaging. However, they cannot be redundant. For example, \\en-us\\menu\_option1\_lang-en-us.png is redundant.
+Les noms de répertoires peuvent être combinés pour afficher une spécificité supplémentaire au cours de la création de pack de ressources. Toutefois, ils ne peuvent pas être redondants. Par exemple, \\en-us\\menu\_option1\_lang-en-us.png est redondant.
 
-You may specify any non-reserved subdirectory names you need underneath a resource directory, as long as the directory structure is identical in each resource directory. For example, \\dxfl-dx10\\assets\\textures\\coolsign.dds. When you load or reference an asset, the pathname must be generalized, removing any qualifiers for language, scale, or DirectX feature level, whether they are in folder nodes or in the file names. For example, to refer in code to an asset for which one of the variants is \\dxfl-dx10\\assets\\textures\\coolsign.dds, use \\assets\\textures\\coolsign.dds. Likewise, to refer to an asset with a variant \\images\\background\_scale-140.png, use \\images\\background.png.
+Vous pouvez spécifier tous les noms de sous-répertoires non réservés dont vous avez besoin sous le répertoire d’une ressource. Il suffit que la structure du répertoire soit identique dans chaque répertoire de ressource. Par exemple, \\dxfl-dx10\\assets\\textures\\coolsign.dds. Quand vous chargez ou référencez une ressource, le chemin d’accès doit être généralisé par la suppression des qualificateurs de la langue, de l’échelle ou du niveau de fonctionnalité DirectX, que ce soit dans les nœuds de dossier ou dans les noms de fichier. Par exemple, pour faire référence dans du code à une ressource dont l’une des variantes est \\dxfl-dx10\\assets\\textures\\coolsign.dds, utilisez \\assets\\textures\\coolsign.dds. De même, pour faire référence à une ressource avec une variante \\images\\background\_scale-140.png, utilisez \\images\\background.png.
 
-Here are the following reserved directory names and filename underscore prefixes:
+Voici les noms de répertoires réservés et les suffixes de nom de fichier derrière le trait de soulignement suivants :
 
-| Asset type                   | Resource pack directory name                                                                                                                  | Resource pack filename suffix                                                                                                    |
+| Type de ressource                   | Nom de répertoire du pack de ressources                                                                                                                  | Suffixe de nom de fichier du pack de ressources                                                                                                    |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Localized assets             | All possible languages, or language and locale combinations, for Windows 10. (The qualifier prefix "lang-" is not required in a folder name.) | An "\_" followed by the language, locale, or language-locale specifier. For example, "\_en", "\_us", or "\_en-us", respectively. |
-| Scaling factor assets        | scale-100, scale-140, scale-180. These are for the 1.0x, 1.4x, and 1.8x UI scaling factors, respectively.                                     | An "\_" followed by "scale-100", "scale-140", or "scale-180".                                                                    |
-| DirectX feature level assets | dxfl-dx9, dxfl-dx10, and dxfl-dx11. These are for the DirectX 9, 10, and 11 feature levels, respectively.                                     | An "\_" followed by "dxfl-dx9", "dxfl-dx10", or "dxfl-dx11".                                                                     |
+| Ressources localisées             | Toutes les langues possibles ou les combinaisons de langues et de paramètres régionaux possibles pour Windows 10. (Le préfixe qualificateur « lang- » n’est pas nécessaire dans un nom de dossier.) | Un « \_ » suivi de la langue, d’un paramètre régional ou d’un spécificateur de langue-paramètre régional. Par exemple, « \_en », « \_us » ou « \_en-us » respectivement. |
+| Ressources de facteur d’échelle        | scale-100, scale-140 ou scale-180. Ces valeurs conviennent pour les facteurs d’échelle d’interface utilisateur 1.0x, 1.4x et 1.8x respectivement.                                     | Un « \_ » suivi de « scale-100 », « scale-140 » ou « scale-180 ».                                                                    |
+| Ressources de niveau de fonctionnalité DirectX | dxfl-dx9, dxfl-dx10 et dxfl-dx11. Ces valeurs conviennent pour les niveaux de fonctionnalités DirectX 9, 10 et 11, respectivement.                                     | Un « \_ » suivi de « dxfl-dx9 », « dxfl-dx10 » ou « dxfl-dx11 ».                                                                     |
 
  
 
-## Defining localized language resource packs
+## Définition de packs de ressources de langues localisées
 
 
-Locale-specific files are placed in project directories named for the language (for example, "en").
+Les fichiers propres aux paramètres régionaux sont placés dans les répertoires de projets nommés selon la langue (par exemple, « en »)
 
-When configuring your app to support localized assets for multiple languages, you should:
+Lorsque vous configurez votre application pour prendre en charge les ressources localisées pour plusieurs langues, vous devez effectuer les opérations suivantes :
 
--   Create an app subdirectory (or file version) for each language and locale you will support (for example, en-us, jp-jp, zh-cn, fr-fr, and so on).
--   During development, place copies of ALL assets (such as localized audio files, textures, and menu graphics) in the corresponding language locale subdirectory, even if they are not different across languages or locales. For the best user experience, ensure that the user is alerted if they have not obtained an available language resource pack for their locale if one is available (or if they have accidentally deleted it after download and installation).
--   Make sure each asset or string resource file (.resw) has the same name in each directory. For example, menu\_option1.png should have the same name in both the \\en-us and \\jp-jp directories even if the content of the file is for a different language. In this case, you'd see them as \\en-us\\menu\_option1.png and \\jp-jp\\menu\_option1.png.
-    > **Note**   You can optionally append the locale to the file name and store them in the same directory; for example, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_lang-jp-jp.png.
-
-     
-
--   Use the APIs in [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) and [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to specify and load the locale-specific resources for you app. Also, use asset references that do no include the specific locale, since these APIs determine the correct locale based on the user's settings and then retrieve the correct resource for the user.
--   In Microsoft Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
-
-## Defining scaling factor resource packs
-
-
-Windows 10 provides three user interface scaling factors: 1.0x, 1.4x, and 1.8x. Scaling values for each display are set during installation based on a number of combined factors: the size of the screen, the resolution of the screen, and the assumed average distance of the user from the screen. The user can also adjust scale factors to improve readability. Your game should be both DPI-aware and scaling factor-aware for the best possible experience. Part of this awareness means creating versions of critical visual assets for each of the three scaling factors. This also includes pointer interaction and hit testing!
-
-When configuring your app to support resource packs for different UWP app scaling factors, you should:
-
--   Create an app subdirectory (or file version) for each scaling factor you will support (scale-100, scale-140, and scale-180).
--   During development, place scale factor-appropriate copies of ALL assets in each scale factor resource directory, even if they are not different across scaling factors.
--   Make sure each asset has the same name in each directory. For example, menu\_option1.png should have the same name in both the \\scale-100 and \\scale-180 directories even if the content of the file is different. In this case, you'd see them as \\scale-100\\menu\_option1.png and \\scale-140\\menu\_option1.png.
-    > **Note**   Again, you can optionally append the scaling factor suffix to the file name and store them in the same directory; for example, \\assets\\menu\_option1\_scale-100.png, \\assets\\menu\_option1\_scale-140.png.
+-   Créez un sous-répertoire d’application (ou version de fichier) pour chaque langue et paramètre régional pris en charge (comme en-us, jp-jp, zh-cn, fr-fr, etc.).
+-   Pendant le développement, placez des copies de TOUTES les ressources (telles que les fichiers audio, les textures et les graphiques de menus localisés) dans le sous-répertoire du paramètre régional de la langue correspondant, même si elles sont similaires entre les langues et les paramètres régionaux. Pour garantir la meilleure expérience utilisateur possible, veillez à ce que l’utilisateur soit alerté s’il n’obtient pas le pack de ressources de langue qui convient à ses paramètres régionaux, s’il existe (ou si les packs de ressources ont été accidentellement supprimés après le téléchargement et l’installation).
+-   Veillez à ce que chaque ressource ou fichier de ressource de chaîne (.resw) porte le même nom dans chaque répertoire. Par exemple, menu\_option1.png doit avoir le même nom dans les deux répertoires \\en-us et \\jp-jp, même si le contenu du fichier correspond à une autre langue. Dans ce cas, ils s’affichent comme \\en-us\\menu\_option1.png et \\jp-jp\\menu\_option1.png.
+    > **Remarque** Vous pouvez éventuellement ajouter le paramètre régional au nom de fichier et les stocker dans le même répertoire, par exemple \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_lang-jp-jp.png.
 
      
 
--   Use the APIs in [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to load the assets. Asset references should be generalized (no suffix), leaving out the specific scale variation. The system will retrieve the appropriate scale asset for the display and the user's settings.
--   In Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
+-   Utilisez les API dans [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) et [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour spécifier et charger les ressources spécifiques aux paramètres régionaux de votre application. En outre, utilisez des références de ressources qui n’incluent pas les paramètres régionaux spécifiques, car ces API déterminent les paramètres régionaux appropriés en fonction des paramètres de l’utilisateur, puis récupèrent la ressource appropriée pour l’utilisateur.
+-   Dans Microsoft Visual Studio 2015, sélectionnez **PROJET->Windows Store->Créer un package d’application**, puis créez le package.
 
-## Defining DirectX feature level resource packs
+## Définition des packs de ressources du facteur d’échelle
 
 
-DirectX feature levels correspond to GPU feature sets for prior and current versions of DirectX (specifically, Direct3D). This includes shader model specifications and functionality, shader language support, texture compression support, and overall graphics pipeline features.
+Windows 10 fournit trois facteurs d’échelle d’interface utilisateur : 1.0x, 1.4x et 1.8x. Les valeurs d’échelle pour chaque affichage sont définies pendant l’installation en fonction de la combinaison de plusieurs facteurs : la taille et la résolution de l’écran et la distance moyenne supposée qui sépare l’utilisateur de l’écran. L’utilisateur peut également modifier les facteurs d’échelle pour améliorer la lisibilité. Votre jeu doit assurer la prise en charge DPI et des facteurs d’échelle pour offrir la meilleure expérience possible. Vous devez donc créer des versions de ressources visuelles critiques pour chacun de ces trois facteurs d’échelle. Cela inclut également l’interaction avec le pointeur et le test de résultats !
 
-Your baseline app pack should use the baseline texture compression formats: BC1, BC2, or BC3. These formats can be consumed by any UWP device, from low-end ARM platforms up to dedicated multi-GPU workstations and media computers.
+Quand vous configurez votre application pour prendre en charge des packs de ressources de différents facteurs d’échelle d’applications UWP, vous devez effectuer les actions suivantes :
 
-Texture format support at DirectX feature level 10 or higher should be added in a resource pack to conserve local disk space and download bandwidth. This enables using the more advanced compression schemes for 11, like BC6H and BC7. (For more details, see [Texture block compression in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) These formats are more efficient for the high-resolution texture assets supported by modern GPUs, and using them improves the look, performance, and space requirements of your game on high-end platforms.
+-   Créez un sous-répertoire d’application (ou version de fichier) pour chaque facteur d’échelle pris en charge (scale-100, scale-140, et scale-180).
+-   Pendant le développement, placez des copies appropriées en fonction du facteur d’échelle de TOUTES les ressources dans chaque répertoire de ressources de facteur d’échelle, même si elles sont similaires entre les différents facteurs d’échelle.
+-   Veillez à ce que chaque ressource porte le même nom dans chaque répertoire. Par exemple, menu\_option1.png doit avoir le même nom dans les deux répertoires \\scale-100 et \\scale-180, même si le contenu du fichier est différent. Dans ce cas, ils s’affichent comme \\scale-100\\menu\_option1.png et \\scale-140\\menu\_option1.png.
+    > **Remarque** Vous pouvez éventuellement ajouter le suffixe du facteur d’échelle au nom de fichier et les stocker dans le même répertoire, par exemple \\assets\\menu\_option1\_scale-100.png, \\assets\\menu\_option1\_scale-140.png.
 
-| DirectX feature level | Supported texture compression |
+     
+
+-   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté la variation d’échelle spécifique. Le système récupère la ressource d’échelle appropriée pour l’affichage et les paramètres de l’utilisateur.
+-   Dans Visual Studio 2015, sélectionnez **PROJET->Windows Store->Créer un package d’application**, puis créez le package.
+
+## Définition des packs de ressources de niveau de fonctionnalité DirectX
+
+
+Les niveaux de fonctionnalités DirectX correspondent aux jeux de fonctionnalités de l’unité de traitement graphique (GPU) relatifs aux versions précédentes et actuelles de DirectX (en particulier, Direct3D). Cela inclut les spécifications et les fonctionnalités du modèle de nuanceur, la prise en charge de la langue du nuanceur, la prise en charge de la compression de la texture et les fonctionnalités de pipeline graphique globales.
+
+Votre package d’application de base doit utiliser les formats de compression de texture de base : BC1, BC2 ou BC3. Ces formats peuvent être consommés par tout appareil UWP, depuis les plateformes ARM à faible résolution jusqu’aux stations de travail multi-GPU et ordinateurs multimédias.
+
+La prise en charge du format de texture au niveau de fonctionnalité DirectX 10 ou supérieur doit être ajouté dans un pack de ressources pour conserver de l’espace disque en local et de la bande passante de téléchargement. Cela permet d’utiliser des schémas de compression avancés pour la version 11, comme BC6H et BC7. (Pour plus d’informations, voir [Compression de bloc de texture dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Ces formats sont plus efficaces pour les ressources de texture haute résolution prises en charge par les GPU modernes. Leur utilisation améliore l’apparence, les performances et les exigences en termes d’espace de votre jeu sur des plateformes de haute qualité.
+
+| Niveau de fonctionnalité DirectX | Compression de texture prise en charge |
 |-----------------------|-------------------------------|
 | 9                     | BC1, BC2, BC3                 |
 | 10                    | BC4, BC5                      |
@@ -114,20 +114,20 @@ Texture format support at DirectX feature level 10 or higher should be added in 
 
  
 
-Also, each DirectX feature levels supports different shader model versions. Compiled shader resources can be created on a per-feature level basis, and can be included in DirectX feature level resource packs. Additionally, some later version shader models can use assets, such as normal maps, that earlier shader model versions cannot. These shader model specific assets should be included in a DirectX feature level resource pack as well.
+Chaque niveau de fonctionnalité DirectX prend en charge différentes versions du modèle de nuanceur. Vous pouvez créer les ressources du nuanceur compilées par niveau de fonctionnalité, puis les inclure dans les packs de ressources de niveau de fonctionnalité DirectX. En outre, certains modèles de nuanceur récents peuvent utiliser des ressources comme les cartes normales, alors que des modèles de nuanceur plus anciens ne le peuvent pas. Vous pouvez également inclure ces ressources spécifiques de modèle de nuanceur dans un pack de ressources de niveau de fonctionnalité DirectX.
 
-The resource mechanism is primarily focused on texture formats supported for assets, so it supports only the 3 overall feature levels. If you need to have separate shaders for sub-levels (dot versions) like DX9\_1 vs DX9\_3, your asset management and rendering code must handle them explicitly.
+Le mécanisme de ressource se concentre principalement sur les formats de texture pris en charge pour les ressources. Ainsi, il ne prend en charge que les trois niveaux de fonctionnalités globaux. Si vous avez besoin d’autres nuanceurs pour les sous-niveaux (versions intermédiaires), tels que DX9\_1 ou DX9\_3, votre gestion des ressources et votre code de rendu doivent les gérer de manière explicite.
 
-When configuring your app to support resource packs for different DirectX feature levels, you should:
+Quand vous configurez votre application pour prendre en charge des packs de ressources de différents niveaux de fonctionnalités DirectX, vous devez effectuer les actions suivantes :
 
--   Create an app subdirectory (or file version) for each DirectX feature level you will support (dxfl-dx9, dxfl-dx10, and dxfl-dx11).
--   During development, place feature level specific assets in each feature level resource directory. Unlike locales and scaling factors, you may have different rendering code branches for each feature level in your game, and if you have textures, compiled shaders, or other assets that are only used in one or a subset of all supported feature levels, put the corresponding assets only in the directories for the feature levels that use them. For assets that are loaded across all feature levels, make sure that each feature level resource directory has a version of it with the same name. For example, for a feature level independent texture named "coolsign.dds", place the BC3-compressed version in the \\dxfl-dx9 directory and the BC7-compressed version in the \\dxfl-dx11 directory.
--   Make sure each asset (if it is available to multiple feature levels) has the same name in each directory. For example, coolsign.dds should have the same name in both the \\dxfl-dx9 and \\dxfl-dx11 directories even if the content of the file is different. In this case, you'd see them as \\dxfl-dx9\\coolsign.dds and \\dxfl-dx11\\coolsign.dds.
-    > **Note**   Again, you can optionally append the feature level suffix to the file name and store them in the same directory; for example, \\textures\\coolsign\_dxfl-dx9.dds, \\textures\\coolsign\_dxfl-dx11.dds.
+-   Créez un sous-répertoire d’application (ou version de fichier) pour chaque niveau de fonctionnalité DirectX pris en charge (dxfl-dx9, dxfl-dx10 et dxfl-dx11).
+-   Pendant le développement, placez les ressources spécifiques de niveau de fonctionnalité dans chaque répertoire de ressource de niveau de fonctionnalité. Contrairement aux paramètres régionaux et aux facteurs d’échelle, vous pouvez disposer de différentes ramifications de code de rendu pour chaque niveau de fonctionnalité dans votre jeu. Si vous utilisez des textures, des nuanceurs compilés ou d’autres ressources qui ne sont utilisées dans un niveau de fonctionnalité ou un sous-ensemble comprenant tous les niveaux de fonctionnalités, ne placez les ressources correspondantes que dans les répertoires relatifs aux niveaux de fonctionnalités qui les utilisent. Si des ressources sont chargées dans tous les niveaux de fonctionnalités, veillez à ce que chaque répertoire de ressource de niveau de fonctionnalité dispose d’une version du même nom. Par exemple, dans le cas d’une texture non liée à un niveau de fonctionnalité appelée « coolsign.dds », placez la version compressée BC3 dans le répertoire \\dxfl-dx9 et la version compressée BC7 dans le répertoire \\dxfl-dx11.
+-   Veillez à ce que chaque ressource (si elle est disponible dans plusieurs niveaux de fonctionnalités) porte le même nom dans chaque répertoire. Par exemple, coolsign.dds doit avoir le même nom dans les deux répertoires \\dxfl-dx9 et \\dxfl-dx11, même si le contenu du fichier est différent. Dans ce cas, ils s’affichent comme \\dxfl-dx9\\coolsign.dds et \\dxfl-dx11\\coolsign.dds.
+    > **Remarque** Vous pouvez éventuellement ajouter le suffixe du niveau de fonctionnalité au nom de fichier et les stocker dans le même répertoire, par exemple \\textures\\coolsign\_dxfl-dx9.dds, \\textures\\coolsign\_dxfl-dx11.dds.
 
      
 
--   Declare the supported DirectX feature levels when configuring your graphics resources.
+-   Déclarez les niveaux de fonctionnalités DirectX pris en charge quand vous configurez vos ressources graphiques.
     ```cpp
     D3D_FEATURE_LEVEL featureLevels[] = 
     {
@@ -157,7 +157,7 @@ When configuring your app to support resource packs for different DirectX featur
     );
     ```
 
--   Use the APIs in [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to load the resources. Asset references should be generalized (no suffix), leaving out the feature level. However, unlike language and scale, the system does not automatically determine which feature level is optimal for a given display; that is left to you to determine based on code logic. Once you make that determination, use the APIs to inform the OS of the preferred feature level. The system will then be able to retrieve the correct asset based on that preference. Here is a code sample that shows how to inform your app of the current DirectX feature level for the platform:
+-   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté le niveau de fonctionnalité. Cependant, contrairement à la langue et à l’échelle, le système ne détermine pas automatiquement le niveau de fonctionnalité optimal pour un affichage donné. C’est à vous de le déterminer via la logique du code. Une fois cette opération effectuée, utilisez les API pour indiquer au système d’exploitation le niveau de fonctionnalité préféré. Le système pourra ensuite récupérer la ressource appropriée en fonction de cette préférence. Voici un exemple de code qui montre comment indiquer à votre application le niveau de fonctionnalité DirectX actuel de la plateforme :
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -181,11 +181,11 @@ When configuring your app to support resource packs for different DirectX featur
         ResourceContext::SetGlobalQualifierValue(L"DXFeatureLevel", dxFeatureLevel);
     ```
 
-    > **Note**  In your code, load the texture directly by name (or path below the feature level directory). Do not include either the feature level directory name or the suffix. For example, load "textures\\coolsign.dds", not "dxfl-dx11\\textures\\coolsign.dds" or "textures\\coolsign\_dxfl-dx11.dds".
+    > **Remarque** Dans votre code, chargez la texture directement par nom (ou par chemin d’accès sous le répertoire de niveau de fonctionnalité). N’incluez pas le nom du répertoire du niveau de fonctionnalité ni le suffixe. Par exemple, chargez « textures\\coolsign.dds », mais pas « dxfl-dx11\\textures\\coolsign.dds » ni « textures\\coolsign\_dxfl-dx11.dds ».
 
      
 
--   Now, use the [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) to locate the file that matches current DirectX feature level. The **ResourceManager** returns a [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089), which you query with [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) (or [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)) and a supplied [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064). This returns a [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051) that most closely matches the DirectX feature level that was specified by calling [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101).
+-   À présent, utilisez [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) pour localiser le fichier qui correspond au niveau de fonctionnalité actuel de DirectX. **ResourceManager** retourne [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089), que vous interrogez avec [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) (ou [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)) et un [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064) fourni. Cela retourne [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051), qui correspond le mieux au niveau de fonctionnalité DirectX spécifié par l’appel de [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101).
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.
@@ -204,21 +204,25 @@ When configuring your app to support resource packs for different DirectX featur
     Platform::String^ resourceName = possibleResource->ValueAsString;
     ```
 
--   In Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
--   Make sure that you enable app bundles in the package.appxmanifest manifest settings.
+-   Dans Visual Studio 2015, sélectionnez **PROJET->Windows Store->Créer un package d’application**, puis créez le package.
+-   Veillez à activer les ensembles d’applications dans les paramètres du manifeste package.appxmanifest.
 
-## Related topics
+## Rubriques connexes
 
 
-* [Defining app resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
-* [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [Définition des ressources d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
+* [Packaging d’applications](https://msdn.microsoft.com/library/windows/apps/mt270969)
+* [Outil de création de package de l’application (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

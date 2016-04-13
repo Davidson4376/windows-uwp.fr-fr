@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
-title: Lier des données hiérarchiques et créer un affichage maître/détails
-description: Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances CollectionViewSource qui sont liées dans une chaîne.
+Lier des données hiérarchiques et créer un affichage maître/détails
+Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances CollectionViewSource qui sont liées dans une chaîne.
 ---
 # Lier des données hiérarchiques et créer un affichage maître/détails
 
@@ -217,4 +217,8 @@ Notez qu’en effectuant une liaison directe à la classe [**CollectionViewSourc
 
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

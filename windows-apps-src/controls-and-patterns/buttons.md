@@ -2,43 +2,43 @@
 label: Buttons
 template: detail.hbs
 ---
-# Buttons
-A button gives the user a way to trigger an immediate action.
+# Boutons
+Un bouton permet à l’utilisateur de déclencher une action immédiate.
 
-![Example of buttons](images/controls_button_example.png)
+![Exemple de boutons](images/controls/button.png)
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
--   [**Button class (XAML)**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
--   [**RepeatButton class (XAML)**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
--   [**Click event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
+-   [**Classe Button**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+-   [**Classe RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
+-   [**Événement Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
 
-## Example
+## Est-ce le contrôle approprié ?
 
-This example uses two buttons, submit and cancel, in a dialog. 
+Un bouton permet à l’utilisateur d’initier une action immédiate, telle que l’envoi d’un formulaire.
 
-![Example of buttons, used in a dialog](images/controls_button_example_dialog.png)
+N’utilisez pas de bouton lorsque l’action consiste à naviguer vers une autre page ; dans ce cas, utilisez plutôt un lien. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
+    
+> Exception : pour la navigation dans un assistant, utilisez les boutons Précédent et Suivant. Pour les autres types de navigation vers l’arrière ou vers un niveau supérieur, utilisez un bouton Précédent.
 
-## Is this the right control?
+## Exemple
 
-A button lets the user initiate an immediate action, such as submitting a form.
+Cet exemple utilise deux boutons, Tout fermer et Annuler, dans une boîte de dialogue du navigateur Microsoft Edge. 
 
-Don't use a button when the action is to navigate to another page; use a link instead. See [Hyperlinks](hyperlinks.md) for more info.
+![Exemple de boutons utilisés dans une boîte de dialogue](images/control-examples/buttons-edge.png)
 
-> Exception: For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a back button.
+## Créer un bouton
 
-## Create a button
+Cet exemple illustre un bouton qui répond à un clic. 
 
-This example shows a button that responds to a click. 
-
-Create the button in XAML.
+Créez le bouton en XAML.
 
 ```xaml
 <Button Content="Submit" Click="SubmitButton_Click"/>
 ```
 
-Or create the button in code.
+Ou créez le bouton dans le code.
 
 ```csharp
 Button submitButton = new Button();
@@ -49,7 +49,7 @@ submitButton.Click += SubmitButton_Click;
 stackPanel1.Children.Add(submitButton);
 ```
 
-Handle the Click event.
+Gérez l’événement Click.
 
 ```csharp
 private async void SubmitButton_Click(object sender, RoutedEventArgs e)
@@ -62,20 +62,20 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### Button interaction
+### Interaction de bouton
 
-When you tap a Button with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event. If a button has keyboard focus, pressing the Enter key or the Spacebar key also raises the Click event.
+Lorsque vous appuyez sur un bouton avec un doigt ou un stylet, ou lorsque vous cliquez dessus avec le bouton de la souris, le bouton déclenche l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx). Si un bouton est sélectionné au clavier, une pression sur la touche Entrée ou sur la barre d’espace déclenche également l’événement Click.
 
-You generally can't handle low-level [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events on a Button because it has the Click behavior instead. For more info, see [Events and routed events overview](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx).
+Généralement, vous ne pouvez pas gérer les événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) de bas niveau sur un bouton, car un comportement Click lui est affecté à la place. Pour plus d’informations, voir [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx).
 
-You can change how a button raises the Click event by changing the [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) property. The default ClickMode value is **Release**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch. 
+Vous pouvez modifier la façon dont un bouton déclenche l’événement Click en modifiant la propriété [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx). La valeur ClickMode par défaut est **Release**. Si ClickMode est défini sur **Hover**, l’événement Click ne peut pas être déclenché avec le clavier ou le mode tactile. 
 
 
-### Button content
+### Contenu du bouton
 
-Button is a [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Its XAML content property is [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), which enables a syntax like this for XAML: `<Button>A button's content</Button>`. You can set any object as the button's content. If the content is a [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), it is rendered in the button. If the content is another type of object, its string representation is shown in the button.
+Le bouton est un [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Sa propriété de contenu XAML est [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation sous forme de chaîne est affichée dans le bouton.
 
-Here, a **StackPanel** that contains an image of a banana and text is set as the content of a button.
+Ici, un objet **StackPanel** qui contient une image d’une banane et du texte est défini comme le contenu d’un bouton.
 
 ```xaml
 <Button Click="Button_Click" 
@@ -89,15 +89,15 @@ Here, a **StackPanel** that contains an image of a banana and text is set as the
 </Button>
 ```
 
-The button looks like this.
+Le bouton ressemble à ceci.
 
-![A button with image and text content](images/button-orange.png)
+![Bouton avec contenu d’image et de texte](images/button-orange.png)
 
-## Create a repeat button
+## Créer un bouton de répétition
 
-A [**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) is a button that raises [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) events repeatedly from the time it's pressed until it's released. Set the [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) property to specify the time that the RepeatButton waits after it is pressed before it starts repeating the click action. Set the [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) property to specify the time between repetitions of the click action. Times for both properties are specified in milliseconds.
+Un [**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) est un bouton qui déclenche les événements [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) plusieurs fois à partir du moment où il est enfoncé jusqu’à ce qu’il soit relâché. Définissez la propriété [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) pour spécifier la durée pendant laquelle RepeatButton attend entre le moment où il est actionné et le moment où il commence à répéter l’action de clic. Définissez la propriété [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) pour spécifier la durée entre les répétitions de l’action de clic. Les durées pour les deux propriétés sont spécifiées en millisecondes.
 
-The following example shows two RepeatButton controls whose respective Click events are used to increase and decrease the value shown in a text block.
+L’exemple suivant montre deux contrôles RepeatButton dont les événements Click respectifs sont utilisés pour augmenter ou réduire la valeur affichée dans un bloc de texte.
 
 ```xaml
 <StackPanel>
@@ -125,105 +125,109 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Recommendations
+## Recommandations
 
--   Make sure the purpose and state of a button are clear to the user.
--   Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text content is a single word, a verb.
--   If the button's text content is dynamic, for example, it is localized, consider how the button will resize and what will happen to controls around it.
--   For command buttons with text content, use a minimum button width.
--   Avoid narrow, short, or tall command buttons with text content.
--   Use the default font unless your brand guidelines tell you to use something different.
--   For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
--   Expose only one or two buttons to the user at a time, for example, Accept and Cancel. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
--   Use the default command button to indicate the most common or recommended action.
--   Consider customizing your buttons. A button's shape is rectangular by default, but you can customize the visuals that make up the button's appearance. A button's content is usually text—for example, Accept or Cancel—but you could replace the text with an icon, or use an icon plus text.
--   Make sure that as the user interacts with a button, the button changes state and appearance to provide feedback to the user. Normal, pressed, and disabled are examples of button states.
--   Trigger the button's action when the user taps or presses the button. Usually the action is triggered when the user releases the button, but you also can set a button's action to trigger when a finger first presses it.
--   Don't use a command button to set state.
--   Don't change button text while the app is running; for example, don't change the text of a button that says "Next" to "Continue".
--   Don't swap the default submit, reset, and button styles.
--   Don't put too much content inside a button. Make the content concise and easy to understand (nothing more than a picture and some text).
+-   Assurez-vous que le but et l’état actuel d’un bouton sont clairs pour l’utilisateur.
+-   Utilisez un texte concis, précis et suffisamment explicite qui décrit clairement l’action effectuée par le bouton. Généralement le texte d’un bouton est représenté par un seul mot, un verbe.
+-   Si le contenu du texte du bouton est dynamique, par exemple s’il est localisé, songez au redimensionnement du bouton et à ses conséquences sur les contrôles environnant.
+-   Pour les boutons de commande avec du texte, utilisez une largeur de bouton minimale.
+-   Évitez les boutons de commande trop étroits, petits ou hauts avec des étiquettes de texte.
+-   Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
+-   Pour une action qui doit être disponible sur plusieurs pages dans votre application, pensez à utiliser une [barre d’application inférieure](app-bars.md), au lieu de dupliquer un bouton sur plusieurs pages.
+-   Exposez seulement un ou deux boutons à la fois pour l’utilisateur, par exemple Accepter et Annuler. Si vous devez inviter l’utilisateur à effectuer plusieurs actions, pensez à utiliser des [cases à cocher](checkbox.md) ou des [cases d’option](radio-button.md) à partir desquelles l’utilisateur peut sélectionner des actions, avec un seul bouton de commande pour les déclencher.
+-   Utilisez le bouton de commande par défaut pour indiquer l’action la plus courante ou recommandée.
+-   Envisagez de personnaliser vos boutons. Un bouton est rectangulaire par défaut, mais vous pouvez personnaliser les effets visuels qui constituent son apparence. Le contenu du bouton correspond généralement à du texte (par exemple Accepter ou Annuler) mais vous pouvez remplacer le texte par une icône, ou utiliser une icône plus du texte.
+-   Lorsque l’utilisateur interagit avec un bouton, vous devez vous assurer que le bouton change d’état et d’apparence pour fournir un retour à l’utilisateur. Les exemples d’états de bouton sont : normal, enfoncé et désactivé.
+-   Déclenchez l’action du bouton lorsque l’utilisateur appuie ou clique dessus. Généralement, l’action est déclenchée lorsque l’utilisateur relâche le bouton, mais vous pouvez également définir l’action d’un bouton de sorte qu’il déclenche une action au premier contact du doigt.
+-   N’utilisez pas de bouton de commande pour définir un état.
+-   Ne modifiez pas le texte du bouton pendant l’exécution de l’application. Par exemple, ne modifiez pas le texte d’un bouton de « Suivant » en « Continuer ».
+-   Ne permutez pas les styles par défaut des boutons submit, reset et button.
+-   Ne surchargez pas le contenu d’un bouton. Faites en sorte que le contenu soit concis et facile à comprendre (rien d’autre qu’une image et du texte).
 
-## Back buttons
-The back button is a system-provided UI affordance that enables backward navigation through either the back stack or navigation history of the user.
+## Boutons Précédent
+Le bouton Précédent est une affordance de l’interface utilisateur fournie par le système qui permet de revenir en arrière dans la pile Back ou dans l’historique de navigation de l’utilisateur.
 
-The scope of the navigation history (whether in-app or global) depends on the device and device mode.
+L’étendue de l’historique de navigation (intégré à l’application ou global) dépend de l’appareil et du mode de ce dernier.
 
-## <span id="examples"></span><span id="EXAMPLES"></span>Example
+## <span id="examples"> </span> <span id="EXAMPLES"> </span>Exemple
 
 
-The UI for the system back button is optimized for each device and input type, but the navigation experience is global and consistent across devices and Universal Windows Platform (UWP) apps. These different experiences include:
+L’interface utilisateur pour le bouton Précédent du système est optimisée pour chaque type d’appareil et d’entrée, mais l’expérience de navigation est globale et cohérente sur les différents appareils et applications pour plateforme Windows universelle (UWP). Voici quelques exemples d’expérience :
 
-Devices
-Phone
-![system back on a phone](images/nav-back-phone.png)
--   Always present.
--   A software or hardware button at the bottom of the device.
--   Global back navigation within the app and between apps.
+Appareils
+Téléphone
+![système de retour sur un téléphone](images/nav-back-phone.png)
+-   Toujours présent.
+-   Bouton logiciel ou matériel en bas de l’appareil.
+-   Navigation vers l’arrière globale au sein de l’application et entre les applications.
 
-<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>Tablet
-![system back on a tablet (in tablet mode)](images/nav-back-tablet.png)
--   Always present in Tablet mode.
+<span id="Tablet"> </span> <span id="tablet"> </span> <span id="TABLET"> </span>Tablette
+![système de retour sur une tablette (en mode tablette)](images/nav-back-tablet.png)
+-   Toujours présent en mode tablette.
 
-    Not available in Desktop mode. Title bar back button can be enabled, instead. See [PC, Laptop, Tablet](#PC).
+    Non disponible en mode bureau. Le bouton Précédent de la barre de titre peut être activé à la place. Voir [PC, ordinateur portable, tablette](#PC).
 
-    Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.
+    Les utilisateurs peuvent basculer entre le mode tablette et le mode bureau en accédant à **Paramètres &gt; Système &gt; Mode tablette** et en définissant **Optimiser les fonctions tactiles de Windows lors de l’utilisation de votre appareil en mode tablette**.
 
--   A software button in the navigation bar at the bottom of the device.
--   Global back navigation within the app and between apps.
+-   Bouton logiciel dans la barre de navigation en bas de l’appareil.
+-   Navigation vers l’arrière globale au sein de l’application et entre les applications.
 
-<span id="PC"></span><span id="pc"></span>PC, Laptop, Tablet
-![system back on a pc or laptop](images/nav-back-pc.png)
--   Optional in Desktop mode.
+<span id="PC"> </span> <span id="pc"> </span>PC, ordinateur portable, tablette
+![système de retour sur un pc ou un portable](images/nav-back-pc.png)
+-   Facultatif en mode bureau.
 
-    Not available in Tablet mode. See [Tablet](#Tablet).
+    Non disponible en mode tablette. Voir [Tablette](#Tablet).
 
-    Disabled by default. Must opt in to enable it.
+    Désactivé par défaut. Choisir pour l’activer.
 
-    Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.
+    Les utilisateurs peuvent basculer entre le mode tablette et le mode bureau en accédant à **Paramètres &gt; Système &gt; Mode tablette** et en définissant **Optimiser les fonctions tactiles de Windows lors de l’utilisation de votre appareil en mode tablette**.
 
--   A software button in the title bar of the app.
--   Back navigation within the app only. Does not support app-to-app navigation.
+-   Bouton logiciel dans la barre de titre de l’application.
+-   Navigation vers l’arrière au sein de l’application uniquement. Ne prend pas en charge la navigation entre les applications.
 
 Surface Hub
-![system back on a surface hub](images/nav-back-surfacehub.png)
--   Always present.
--   A software button at the bottom of the device.
--   Back navigation within the app and between apps.
+![système de retour sur un surface hub](images/nav-back-surfacehub.png)
+-   Toujours présent.
+-   Bouton logiciel en bas de l’appareil.
+-   Navigation vers l’arrière au sein de l’application et entre les applications.
 
  
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
+## Pratiques conseillées et déconseillées
 
 
--   Enable back navigation.
+-   Activer la navigation vers l’arrière.
 
-    If back navigation is not enabled, your app is included on the global back stack, but in-app page navigation history is not maintained.
+    Si la navigation vers l’arrière n’est pas activée, votre application est incluse dans la pile Back globale, mais l’historique de navigation de page in-app n’est pas conservée.
 
--   Enable the title bar back button in Desktop mode.
+-   Activer le bouton Précédent de la barre de titre en mode bureau.
 
-    In-app page navigation history is maintained, app-to-app back navigation is not supported.
+    L’historique de navigation de page in-app est conservé, mais la navigation vers l’arrière entre les applications n’est pas prise en charge.
 
-    **Note**  In Tablet mode, the title bar is displayed when a user swipes down from the top of the device or moves a mouse pointer near the top of the device. To avoid duplication and confusion, the title bar back button is not displayed in Tablet mode.
+    **Important** En mode tablette, la barre de titre s’affiche lorsqu’un utilisateur effectue un balayage vers le bas à partir du haut de l’appareil ou place le pointeur de la souris vers le haut de l’appareil. Pour éviter toute confusion ou duplication, le bouton Précédent de la barre de titre ne s’affiche pas en mode tablette.
 
      
 
--   Hide or disable the title bar back button in Desktop mode when in-app navigation history is depleted or unavailable.
+-   Masquer ou désactiver le bouton Précédent de la barre de titre en mode bureau lorsque l’historique de navigation in-app est épuisé ou indisponible.
 
-    Provides a clear indication to the user that they have navigated back as far as possible.
+    Indique à l’utilisateur qu’il ne peut pas revenir davantage en arrière.
 
--   Each back command should go back one page in the back stack, or, if not in Desktop mode, to the immediately preceding app.
+-   Chaque commande Précédent doit revenir à la page précédente dans la pile Back ou, si l’utilisateur n’est pas en mode bureau, à la dernière application utilisée.
 
-    Users could get confused if back navigation is not intuitive, consistent, and predictable.
+    Une navigation vers l’arrière non intuitive, incohérente et non prévisible peut semer le trouble chez les utilisateurs.
 
-## Related articles
+## Articles connexes
 
-- [Radio buttons](radio-button.md)
-- [Toggle switches](toggles.md)
-- [Check boxes](checkbox.md)
+- [Cases d’option](radio-button.md)
+- [Boutons bascule](toggles.md)
+- [Cases à cocher](checkbox.md)
 
-**For developers (XAML)**
-- [**Button class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+**Pour les développeurs (XAML)**
+- [**Classe Button**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

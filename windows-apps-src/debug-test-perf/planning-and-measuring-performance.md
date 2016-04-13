@@ -1,189 +1,153 @@
 ---
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
-Planning for performance
-Users expect their apps to remain responsive, to feel natural, and not to drain their battery.
+Planification des performances
+Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie.
 ---
-# Planning for performance
+# Planification des performances
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals.
+Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs.
 
-## Specifying goals
+## Spécification des objectifs
 
-The user experience is a basic way to define good performance. An app's startup time can influence a user's perception of its performance. A user might consider an app launch time of less than one second to be excellent, less than 5 seconds to be good, and greater than 5 seconds to be poor.
+L’expérience utilisateur est l’une des façons les plus simples de définir ce que l’on appelle « bonnes performances ». Le temps de démarrage de votre application peut être un facteur déterminant de la façon dont un utilisateur perçoit ses performances. Il peut envisager un temps de démarrage inférieur à une seconde comme excellent, inférieur à 5 secondes comme bon et supérieur à 5 secondes comme insatisfaisant.
 
-Other metrics have a less obvious impact on user experience, for example memory. The chances of an app being terminated while either suspended or inactive rise with the amount of memory used by the active app. It's a general rule that high memory usage degrades the experience for all apps on the system, so having a goal on memory consumption is reasonable. Take into consideration the rough size of your app as perceived by users: small, medium, or large. Expectations around performance will correlate to this perception. For example, you might want a small app that doesn't use a lot of media to consume less than 100MB of memory.
+D’autres facteurs, tels que la mémoire, ont moins d’impact sur l’expérience utilisateur. Le risque qu’une application s’arrête lorsqu’elle est en pause ou inactive augmente avec la quantité de mémoire utilisée par l’application active. Il est communément établi qu’une utilisation intensive de la mémoire dégrade l’expérience utilisateur pour toutes les applications du système, c’est pourquoi il est recommandé de se fixer un objectif en matière de consommation de mémoire. Prenez en considération la taille approximative de votre application telle qu’elle est perçue par les utilisateurs (petite, moyenne ou grande). Les attentes en matière de performances vont se baser sur cette perception. Par exemple, vous souhaiterez peut-être qu’une petite application utilisant peu de contenu multimédia consomme moins de 100 Mo de mémoire.
 
-It's better to set an initial goal, and then revise it later, than not to have a goal at all. Your app's performance goals should be specific and measurable and they should fall into three categories: how long it takes users, or the app, to complete tasks (time); the rate and continuity with which the app redraws itself in response to user interaction (fluidity); and how well the app conserves system resources, including battery power (efficiency).
+Il est préférable de définir un objectif initial et de le modifier ultérieurement, plutôt que de ne pas avoir d’objectif du tout. Les objectifs de performances de votre application doivent être précis et mesurables, et respecter trois grands critères : le temps nécessaire aux utilisateurs, ou à l’application, pour effectuer les tâches (temps) ; la vitesse et la facilité avec lesquelles elle se redessine en réponse à l’interaction utilisateur (fluidité) ; et la conservation des ressources système, y compris la batterie (efficacité).
 
-## Time
+## Temps
 
-Think of the acceptable ranges of elapsed time (*interaction classes*) it takes for users to complete their tasks in your app. For each interaction class assign a label, a perceived user sentiment, and ideal and maximum durations. Here are some suggestions.
+Pensez à la durée acceptable (*classes d’interaction*) nécessaire pour que les utilisateurs effectuent leurs tâches dans votre application. Pour chaque classe d’interaction, attribuez une étiquette et définissez la perception de l’utilisateur ainsi que les durées idéales et maximum. Voici quelques suggestions.
 
-| Interaction class label | User perception                 | Ideal            | Maximum          | Examples                                                                     |
+| Étiquette de classe d’interaction | Perception de l’utilisateur                 | Durée idéale            | Durée maximum          | Exemples                                                                     |
 |-------------------------|---------------------------------|------------------|------------------|------------------------------------------------------------------------------|
-| Fast                    | Minimally noticeable delay      | 100 milliseconds | 200 milliseconds | Bring up the app bar; press a button (first response)                        |
-| Typical                 | Quick, but not fast             | 300 milliseconds | 500 milliseconds | Resize; semantic zoom                                                        |
-| Responsive              | Not quick, but feels responsive | 500 milliseconds | 1 second         | Navigate to a different page; resume the app from a suspended state          |
-| Launch                  | Competitive experience          | 1 second         | 3 seconds        | Launch the app for the first time or after it has been previously terminated |
-| Continuous              | No longer feels responsive      | 500 milliseconds | 5 seconds        | Download a file from the Internet                                            |
-| Captive                 | Long; user could switch away    | 500 milliseconds | 10 seconds       | Install multiple apps from the Store                                         |
+| Rapidité                    | Délai presque imperceptible      | 100 millisecondes | 200 millisecondes | Afficher la barre de l’application ; appuyer sur un bouton (première réponse)                        |
+| Typique                 | Rapide, mais pas très rapide             | 300 millisecondes | 500 millisecondes | Redimensionner ; zoom sémantique                                                        |
+| Réactivité              | Pas rapide, mais semble réactive | 500 millisecondes | 1 seconde         | Accéder à une autre page ; relancer l’application à partir d’un état interrompu          |
+| Lancement                  | Expérience compétitive          | 1 seconde         | 3 secondes        | Lancer l’application pour la première fois ou après un arrêt |
+| Continu              | Ne semble plus répondre      | 500 millisecondes | 5 secondes        | Télécharger un fichier d’Internet                                            |
+| Captif                 | Long ; l’utilisateur peut décider de quitter    | 500 millisecondes | 10 secondes       | Installer plusieurs applications à partir du Store                                         |
 
  
 
-You can now assign interaction classes to your app's performance scenarios. You can assign the app's point-in-time reference, a portion of the user experience, and an interaction class to each scenario. Here are some suggestions for an example food and dining app.
+Vous pouvez désormais attribuer des classes d’interaction aux scénarios de performances de votre application. Vous pouvez attribuer la référence dans le temps de l’application, une partie de l’expérience utilisateur et une classe d’interaction à chaque scénario. Vous trouverez ci-dessous des suggestions pour un exemple d’application de cuisine et restauration.
 
 
 <!-- DHALE: used HTML table here b/c WDCML src used rowspans -->
 <table>
-<tr><th>Scenario</th><th>Time point</th><th>User experience</th><th>Interaction class</th></tr>
-<tr><td rowspan="3">Navigate to recipe page </td><td>First response</td><td>Page transition animation started</td><td>Fast (100-200 milliseconds)</td></tr>
-<tr><td>Responsive</td><td>Ingredients list loaded; no images</td><td>Responsive (500 milliseconds - 1 second)</td></tr>
-<tr><td>Visible complete</td><td>All content loaded; images shown</td><td>Continuous (500 milliseconds - 5 seconds)</td></tr>
-<tr><td rowspan="2">Search for recipe</td><td>First response</td><td>Search button clicked</td><td>Fast (100 - 200 milliseconds)</td></tr>
-<tr><td>Visible complete</td><td>List of local recipe titles shown</td><td>Typical (300 - 500 milliseconds)</td></tr>
+<tr><th>Scénario</th><th>Point dans le temps</th><th>Expérience utilisateur</th><th>Classe d’interaction</th></tr>
+<tr><td rowspan="3">Accéder à une page de recette </td><td>Première réponse</td><td>Démarrage de l’animation de transition de page</td><td>Rapide (100-200 millisecondes)</td></tr>
+<tr><td>Réactivité</td><td>Chargement de la liste des ingrédients ; sans images</td><td>Dynamique (500 millisecondes - 1 seconde)</td></tr>
+<tr><td>Visuel terminé</td><td>Contenu chargé ; images affichées</td><td>Continu (500 millisecondes - 5 secondes)</td></tr>
+<tr><td rowspan="2">Rechercher des recettes</td><td>Première réponse</td><td>Clic sur le bouton Rechercher</td><td>Rapide (100 - 200 millisecondes)</td></tr>
+<tr><td>Visuel terminé</td><td>Liste des titres de recettes en local affichée</td><td>Typique (300 - 500 millisecondes)</td></tr>
 </table>
 
-If you're displaying live content then also consider content freshness goals. Is the goal to refresh content every few seconds? Or is refreshing content every few minutes, every few hours, or even once a day an acceptable user experience?
+Si votre application contient du contenu dynamique, pensez également aux objectifs de rafraîchissement du contenu. Est-ce que le contenu doit être actualisé toutes les secondes ? Est-ce que le contenu doit être actualisé toutes les minutes, toutes les heures ou une fois par jour ?
 
-With your goals specified, you are now better able to test, analyze, and optimize your app.
+Une fois vos objectifs spécifiés, vous pouvez désormais mieux tester, analyser et optimiser votre application.
 
-## Fluidity
+## Fluidité Voici quelques exemples d’objectifs de fluidité mesurables : - Pas d’arrêt et de redémarrage du dessin à l’écran (problèmes).
+- Rendu des animations à 60 images par seconde (FPS).
+- Lorsque l’utilisateur effectue un panoramique/fait défiler l’écran, l’application affiche 3 à 6 pages de contenu par seconde.
 
-Specific measurable fluidity goals for your app might include:
+## Efficacité Voici quelques exemples d’objectifs d’efficacité mesurables : - Concernant la capacité de traitement de votre application, le pourcentage du processeur est égal ou inférieur à *N* et l’utilisation de la mémoire (en Mo) est égale ou inférieure à *M* à tout moment.
+- Lorsque l’application est inactive, les valeurs *N* et *M* sont égales à zéro pour la capacité de traitement de votre application.
+- Votre application peut fonctionner de manière active pendant *X* heures sur la batterie. En cas d’inactivité, l’appareil conserve sa charge pendant *Y* heures.
 
--   No screen redraw stops-and-starts (glitches).
--   Animations render at 60 frames per second (FPS).
--   When a user pans/scrolls, the app presents 3-6 pages of content per second.
+## Conception de votre application dans un objectif de performances Vous pouvez désormais utiliser vos objectifs de performances pour déterminer la façon dont vous allez concevoir votre application. Reprenons l’exemple de l’application de cuisine et restauration. Lorsque l’utilisateur accède à la page d’une recette, vous pouvez décider de [update items incrementally](optimize-gridview-and-listview.md#update-items-incrementally) de telle sorte que le nom de la recette s’affiche en premier, puis les ingrédients et enfin les photos du plat. Ce procédé permet de conserver la réactivité et la fluidité de l’interface utilisateur lors du panoramique/défilement, en affichant le rendu d’une totale fidélité après le ralentissement de l’interaction afin de permettre au thread de l’interface utilisateur de rattraper le retard. Voici quelques éléments à prendre en compte.
 
-## Efficiency
+**Interface utilisateur** 
 
-Specific measurable efficiency goals for your app might include:
+- Optimisez le temps d’analyse et de chargement ainsi que l’efficacité de la mémoire de chaque page de l’interface utilisateur de votre application (surtout la page d’accueil) en [optimizing your XAML markup](optimize-xaml-loading.md). Autrement dit, différez le chargement de l’interface utilisateur et du code jusqu’à ce que cela soit nécessaire.
+- Pour [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705), faites en sorte que tous les éléments aient la même taille et utilisez autant de [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) que possible.
+- Déclarez l’interface utilisateur sous forme de balisage, pouvant être chargé et réutilisé sous forme de segments par l’infrastructure, au lieu de vouloir à tout prix la construire dans le code.
+- Réduisez les éléments de l’interface utilisateur jusqu’à ce que l’utilisateur en ait besoin. Consultez la propriété [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992).
+- Préférez les transitions et les animations thématiques aux animations dans une table de montage. Pour plus d’informations, voir [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). Rappelez-vous que les animations dans une table de montage nécessitent que l’affichage soit en permanence mis à jour et que le processeur et les transformations graphiques restent actifs. Pour préserver la batterie, ne lancez pas d’animations si l’utilisateur n’interagit pas avec l’application.
+- Les images doivent être chargées à une taille appropriée à la vue dans laquelle vous les présentez, à l’aide de la méthode [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210).
 
--   For your app's process, CPU percentage is at or below *N* and memory usage in MB is at or below *M* at all times.
--   When the app is inactive, *N* and *M* are zero for your app's process.
--   Your app can be used actively for *X* hours on battery power; when your app is inactive, the device retains its charge for *Y* hours.
+**Processeur, mémoire et alimentation** 
 
-## Design your app for performance
+- Planifiez des tâches de priorité inférieure à exécuter sur les threads de priorité inférieure et/ou les programmes principaux. Voir [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/Mt187335), la propriété [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR209054) et la classe [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211).
+- Minimisez l’encombrement mémoire de votre application en mettant les ressources coûteuses (le contenu multimédia, par exemple) en suspens.
+- Réduisez la plage de travail de votre code.
+- Évitez les fuites de mémoire en désinscrivant les gestionnaires d’événements et en déréférençant les éléments d’interface utilisateur quand cela est possible.
+- Afin d’économiser la batterie, faites preuve de parcimonie en ce qui concerne la fréquence de collecte des données, d’interrogation d’un capteur ou de planification des tâches sur le processeur lorsque celui-ci est inactif.
 
-You can now use your performance goals to influence your app's design. Using the example food and dining app, after the user navigates to the recipe page, you might choose to [update items incrementally](optimize-gridview-and-listview.md#update-items-incrementally) so that the recipe's name is rendered first, displaying the ingredients is deferred, and displaying images is deferred further. This maintains responsiveness and a fluid UI while panning/scrolling, with the full fidelity rendering taking place after the interaction slows to a pace that allow the UI thread to catch up. Here are some other aspects to consider.
+**Accès aux données** 
 
-**UI**
+- Dans la mesure du possible, prérécupérez le contenu. Pour une prérécupération automatique, voir la classe [**ContentPrefetcher**](https://msdn.microsoft.com/library/windows/apps/Dn279042). Pour une prérécupération manuelle, voir l’espace de noms [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/BR224847) et la classe [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Hh700517).
+- Dans la mesure du possible, placez en cache le contenu coûteux d’accès. Consultez les propriétés [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) et [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622).
+- En cas d’échecs de mise en cache, affichez aussi rapidement que possible une interface utilisateur d’espace réservé indiquant que l’application est toujours en train de charger le contenu. Passez de l’espace réservé au contenu en direct d’une façon qui ne soit pas déplaisante pour l’utilisateur. Par exemple, ne modifiez pas la position du contenu sous le doigt de l’utilisateur ou le pointeur de la souris quand l’application charge le contenu en direct.
 
--   Maximize parse and load time and memory efficiency for each page of your app's UI (especially the initial page) by [optimizing your XAML markup](optimize-xaml-loading.md). In a nutshell, defer loading UI and code until it's needed.
--   For [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705), make all the items the same size and use as many [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) as you can.
--   Declare UI in the form of markup, which the framework can load and re-use in chunks, rather than constructing it imperatively in code.
--   Collapse UI elements until the user needs them. See the [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) property.
--   Prefer theme transitions and animations to storyboarded animations. For more info, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). Remember that storyboarded animations require constant updates to the screen, and keep the CPU and graphics pipeline active. To preserve the battery, don't have animations running if the user is not interacting with the app.
--   Images you load should be loaded at a size that is appropriate for the view in which you are presenting it, using the [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) method.
+**Lancer et reprendre l’application** 
 
-**CPU, memory, and power**
+-Retardez l’écran de démarrage de l’application et ne l’étendez que si cela est nécessaire. Pour plus d’informations, voir [Creating a fast and fluid app launch experience](http://go.microsoft.com/fwlink/p/?LinkId=317595) et [Display a splash screen for more time](https://msdn.microsoft.com/library/windows/apps/Mt187309).
+- Désactivez les animations qui se produisent immédiatement après la disparition de l’écran de démarrage, car celles-ci entraînent uniquement une perception de retard du moment du démarrage de l’application.
 
--   Schedule lower-priority work to run on lower-priority threads and/or cores. See [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/Mt187335), the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR209054) property, and the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) class.
--   Minimize your app's memory footprint by releasing expensive resources (such as media) on suspend.
--   Minimize your code's working set.
--   Avoid memory leaks by unregistering event handlers and dereferencing UI elements whenever possible.
--   For the sake of the battery, be conservative with how often you poll for data, query a sensor, or schedule work on the CPU when it is idle.
+**Interface utilisateur adaptative et orientation** 
 
-**Data access**
+- Utilisez la classe [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021).
+- Effectuez uniquement les tâches requises immédiatement, en différant les tâches d’application intensives pour plus tard. Votre application dispose de 200 à 800 millisecondes pour effectuer les tâches avant que l’interface utilisateur de votre application n’apparaisse rognée pour l’utilisateur.
 
--   If possible, prefetch content. For automatic prefetching, see the [**ContentPrefetcher**](https://msdn.microsoft.com/library/windows/apps/Dn279042) class. For manual prefetching, see the [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/BR224847) namespace and the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Hh700517) class.
--   If possible, cache content that's expensive to access. See the [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) and [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) properties.
--   For cache misses, show a placeholder UI as quickly as possible that indicates that the app is still loading content. Transition from placeholder to live content in a way that is not jarring to the user. For example, don't change the position of content under the user's finger or mouse pointer as the app loads live content.
+Une fois la conception liée aux performances en place, vous pouvez commencer à coder votre application.
 
-**App launch and resume**
+## Instrumenter des applications performantes Lorsque vous développez du code, ajoutez du code qui enregistre les messages et les événements à différents moments lors de l’exécution de votre application. Ensuite, lors du test de votre application, vous pouvez utiliser des outils de profilage tels que l’Enregistreur de performance Windows et Windows Performance Analyzer (inclus dans le [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)) pour créer et afficher un rapport sur les performances de votre application. Dans ce rapport, vous pouvez rechercher ces messages et événements qui vous permettent d’analyser plus facilement les résultats du rapport.
 
--   Defer the app's splash screen, and don't extend the app's splash screen unless necessary. For details, see [Creating a fast and fluid app launch experience](http://go.microsoft.com/fwlink/p/?LinkId=317595) and [Display a splash screen for more time](https://msdn.microsoft.com/library/windows/apps/Mt187309).
--   Disable animations that occur immediately after the splash screen is dismissed, as these will only lead to a perception of delay in app launch time.
+La plateforme Windows universelle (UWP) fournit des API d’enregistrement, basées sur le [Event Tracing for Windows (ETW)](https://msdn.microsoft.com/library/windows/desktop/Bb968803), qui proposent un enregistrement détaillé et une solution de suivi complète. Ces API, qui font partie de l’espace de noms [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/BR206677), comprennent les classes [**FileLoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264138), [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195), [**LoggingChannel**](https://msdn.microsoft.com/library/windows/apps/Dn264202) et [**LoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264217).
 
-**Adaptive UI, and orientation**
+Pour enregistrer un message dans le rapport à un point spécifique de l’exécution de l’application, créez un objet **LoggingChannel**, puis appelez la méthode [**LogMessage**](https://msdn.microsoft.com/library/windows/apps/Dn264202-logmessage) de l’objet, ainsi.
 
--   Use the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) class.
--   Complete only required work immediately, deferring intensive app work until later—your app has between 200 and 800 milliseconds to complete work before the user sees your app's UI in a cropped state.
+```csharp // using Windows.Foundation.Diagnostics; // ... LoggingChannel myLoggingChannel = new LoggingChannel(&quot;MyLoggingChannel&quot;); myLoggingChannel.LogMessage(LoggingLevel.Information, &quot;Voici mon message enregistré.&quot;); // ... ``` Pour enregistrer les événements de démarrage et d’arrêt dans le rapport sur une durée donnée pendant l’exécution de l’application, créez un objet **LoggingActivity**, puis appelez le constructeur [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195-loggingactivity) de l’objet, ainsi.
 
-With your performance-related designs in place, you can start coding your app.
-
-## Instrument for performance
-
-As you code, add code that logs messages and events at certain points while your app runs. Later, when you're testing your app, you can use profiling tools such as Windows Performance Recorder and Windows Performance Analyzer (both are included in the [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)) to create and view a report about your app's performance. In this report, you can look for these messages and events to help you more easily analyze the report's results.
-
-The Universal Windows Platform (UWP) provides logging APIs, backed by [Event Tracing for Windows (ETW)](https://msdn.microsoft.com/library/windows/desktop/Bb968803), that together offer a rich event logging and tracing solution. The APIs, which are part of the [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/BR206677) namespace, include the [**FileLoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264138), [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195), [**LoggingChannel**](https://msdn.microsoft.com/library/windows/apps/Dn264202), and [**LoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264217) classes.
-
-To log a message in the report at a specific point while the app is running, create a **LoggingChannel** object, and then call the object's [**LogMessage**](https://msdn.microsoft.com/library/windows/apps/Dn264202-logmessage) method, like this.
-
-```csharp
-// using Windows.Foundation.Diagnostics;
-// ...
-
-LoggingChannel myLoggingChannel = new LoggingChannel(&quot;MyLoggingChannel&quot;);
-
-myLoggingChannel.LogMessage(LoggingLevel.Information, &quot;Here' s my logged message.&quot;);
-
-// ...
-```
-
-To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195-loggingactivity) constructor, like this.
-
-```csharp
-// using Windows.Foundation.Diagnostics;
-// ...
-
-LoggingActivity myLoggingActivity;
-
-// myLoggingChannel is defined and initialized in the previous code example.
-using (myLoggingActivity = new LoggingActivity(&quot;MyLoggingActivity&quot;), myLoggingChannel))
-{   // After this logging activity starts, a start event is logged.
+```csharp // using Windows.Foundation.Diagnostics; // ... LoggingActivity myLoggingActivity; // myLoggingChannel est défini et initialisé dans l’exemple de code précédent.
+using (myLoggingActivity = new LoggingActivity(&quot;MyLoggingActivity&quot;), myLoggingChannel)) { // Un événement de démarrage est enregistré une fois cette activité d’enregistrement commencée.
     
-    // Add code here to do something of interest.
+    // Ajoutez du code ici pour exécuter une tâche intéressante.
     
-}   // After this logging activity ends, an end event is logged.
+} // Après la fin de cette activité d’enregistrement, un événement d’arrêt est enregistré.
 
-// ...
-```
+// ... ``` Voir également le [Logging sample](http://go.microsoft.com/fwlink/p/?LinkId=529576).
 
-Also see the [Logging sample](http://go.microsoft.com/fwlink/p/?LinkId=529576).
+Une fois votre application instrumentée, vous pouvez tester et mesurer les performances de l’application.
 
-With your app instrumented, you can test and measure your app's performance.
+## Tester et mesurer les performances par rapport aux objectifs Lorsque vous planifiez les performances, vous devez définir les points du cycle de développement qui feront l’objet d’une mesure des performances. Selon que vous effectuez les mesures lors du cycle de prototypage, de développement ou de déploiement, les valeurs relevées n’auront pas le même usage. Il peut être extrêmement utile de mesurer les performances dès les premières phases de prototypage. C’est pourquoi nous vous recommandons de le faire dès que vous utilisez du code pour effectuer des tâches importantes. Les premières mesures vous donnent une bonne idée des points où se concentrent les principaux coûts dans votre application, et peuvent orienter vos décisions de conception. Au final, vos applications gagneront en performances et en évolutivité. Plus les conceptions sont modifiées tardivement et plus cela coûte cher. Mesurer les performances tardivement dans le cycle du projet peut occasionner des modifications de dernière minute et nuire aux performances.
 
-## Test and measure against performance goals
+Utilisez les techniques et les outils suivants pour tester les performances de l’application par rapport aux objectifs définis :
 
-Part of your performance plan is to define the points during development where you'll measure performance. This serves different purposes depending on whether you're measuring during prototyping, development, or deployment. Measuring performance during the early stages of prototyping can be tremendously valuable, so we recommend that you do so as soon as you have code that does meaningful work. Early measurements give you a good idea of where the important costs are in your app, and inform design decisions. This results in high performing and scaling apps. It's generally costlier to change designs later than earlier. Measuring performance late in the product cycle can result in last-minute hacks and poor performance.
+- Effectuez des tests sur différentes configurations matérielles, notamment des PC de bureau et tout-en-un, des ordinateurs portables et ultraportables, des tablettes et d’autres appareils mobiles.
+- Effectuez des tests sur différentes tailles d’écran. Si des tailles d’écran plus larges permettent d’afficher beaucoup plus de contenu, tout ce contenu supplémentaire peut avoir un impact négatif sur les performances.
+- Supprimez le plus de variables de test possible.
+    - Désactivez les applications d’arrière-plan sur l’appareil de test. Pour cela, sous Windows, sélectionnez **Paramètres** dans le menu Démarrer &gt; **Personnalisation** &gt; **Écran de verrouillage**. Sélectionnez chaque application active et sélectionnez **Aucun**.
+    - Compilez votre application en code natif en l’intégrant dans la configuration release avant de la déployer sur l’appareil de test.
+    - Pour vous assurer que la maintenance automatique n’affecte pas les performances de l’appareil de test, déclenchez-la manuellement et attendez qu’elle se termine. Sous Windows, dans le menu Démarrer, recherchez **Sécurité et maintenance**. Dans la zone **Maintenance**, sous **Maintenance automatique**, sélectionnez **Commencer la maintenance** et attendez que l’état passe à **Maintenance en cours**.
+    - Exécutez l’application plusieurs fois pour mieux éliminer les variables de test aléatoires et garantir des mesures cohérentes.
+- Effectuez des tests en condition de faible alimentation électrique. Il se peut que l’appareil de vos utilisateurs ne bénéficie pas d’une alimentation aussi puissante que votre ordinateur de développement. Windows a été conçu pour fonctionner de manière optimale avec des appareils à faible consommation, tels que des appareils mobiles. Vous devez vous assurer que les applications qui s’exécutent sur la plateforme fonctionnent correctement sur ces périphériques. Pour bien définir vos objectifs, gardez à l’esprit qu’un appareil à faible consommation d’énergie est environ 4 fois plus lent qu’un ordinateur de bureau.
+- Utilisez plusieurs outils, tels que Microsoft Visual Studio et Windows Performance Analyzer pour mesurer les performances de l’application. Visual Studio est conçu pour fournir des analyses sur l’application, par exemple les liaisons de code source. Windows Performance Analyzer est conçu pour fournir des analyses sur le système, par exemple des informations sur le système, des informations sur les événements de manipulation tactile, des informations sur les entrées/sorties disque et le coût de l’unité centrale graphique. Ces deux outils permettent de capturer et d’exporter les résultats, et peuvent rouvrir des suivis post-mortem et partagés.
+- Avant de soumettre votre application sur le Windows Store pour certification, incorporez dans vos plans de test les tests liés aux performances décrits dans la section « Tests de performances » des [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) et dans la section « Performances et stabilité » des [Windows Store app test cases](https://msdn.microsoft.com/library/windows/apps/Dn275879).
 
-Use these techniques and tools to test how your app stacks up against your original performance goals.
+Pour en savoir plus, consultez ces ressources et outils de profilage.
 
--   Test against a wide variety of hardware configurations including all-in-one and desktop PCs, laptops, ultrabooks, and tablets and other mobile devices.
--   Test against a wide variety of screen sizes. While wider screen sizes can show much more content, bringing in all of that extra content can negatively impact performance.
--   Eliminate as many testing variables as you can.
-    -   Turn off background apps on the testing device. To do this, in Windows, select **Settings** from the Start menu &gt; **Personalization** &gt; **Lock screen**. Select each active app and select **None**.
-    -   Compile your app to native code by building it in release configuration before deploying it to the testing device.
-    -   To ensure that automatic maintenance does not affect the performance of the testing device, trigger it manually and wait for it to complete. In Windows, in the Start menu search for **Security and Maintenance**. In the **Maintenance** area, under **Automatic Maintenance**, select **Start maintenance** and wait for the status to change from **Maintenance in progress**.
-    -   Run the app multiple times to help eliminate random testing variables and help ensure consistent measurements.
--   Test for reduced power availability. Your users' device might have significantly less power than your development machine. Windows was designed with low-power devices, such as mobile devices, in mind. Apps that run on the platform should ensure they perform well on these devices. As a heuristic, expect that a low power device runs at about a quarter the speed of a desktop computer, and set your goals accordingly.
--   Use a combination of tools like Microsoft Visual Studio and Windows Performance Analyzer to measure app performance. Visual Studio is designed to provide app-focused analysis, such as source code linking. Windows Performance Analyzer is designed to provide system-focused analysis, such as providing system info, info about touch manipulation events, and info about disk input/output (I/O) and graphics processing unit (GPU) cost. Both tools provide trace capture and export, and can reopen shared and post-mortem traces.
--   Before you submit your app to the Store for certification, be sure to incorporate into your test plans the performance-related test cases as described in the "Performance tests" section of [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) and in the "Performance and stability" section of [Windows Store app test cases](https://msdn.microsoft.com/library/windows/apps/Dn275879).
+-   [
+            Windows Performance Analyzer](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh448170.aspx) 
+-   [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx) 
+-   [Analyze performance using Visual Studio diagnostic tools](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh696636.aspx) 
+- La session //build/ [XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)
+- La session //build/ [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
 
-For more info, see these resources and profiling tools.
+## Actions suite aux résultats du test de performances Après avoir analysé les résultats des tests de performances, déterminez si des modifications sont nécessaires, par exemple : - Devez-vous revoir vos décisions en matière de conception d’application ou bien optimiser votre code ?
+- L’instrumentation dans le code doit-elle être ajoutée, supprimée ou modifiée ?
+- Devez-vous revoir l’un de vos objectifs de performances ?
 
--   [Windows Performance Analyzer](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh448170.aspx)
--   [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)
--   [Analyze performance using Visual Studio diagnostic tools](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh696636.aspx)
--   The //build/ session [XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)
--   The //build/ session [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
+Si des modifications sont nécessaires, faites-les, puis revenez à l’instrumentation ou au test et répétez l’opération.
 
-## Respond to the performance test results
+## Optimisation Optimisez uniquement les chemins de code critiques en termes de performances, c’est-à-dire ceux qui occupent le plus de temps. Le profilage vous indiquera quels sont ces chemins. Il y a souvent un compromis à faire entre créer une application respectueuse des meilleures pratiques de conception et écrire du code qui s’exécute de façon optimale. En règle générale, il vaut mieux privilégier la productivité du développeur et la qualité de la conception pour les aspects de l’application où les performances ne sont pas essentielles.
 
-After you analyze your performance test results, determine if any changes are needed, for example:
 
--   Should you change any of your app design decisions, or optimize your code?
--   Should you add, remove, or change any of the instrumentation in the code?
--   Should you revise any of your performance goals?
-
-If any changes are needed, make them and then go back to instrumenting or testing and repeat.
-
-## Optimizing
-
-Optimize only the performance-critical code paths in your app: those where most time is spent. Profiling will tell you which. Often, there is a trade-off between creating software that follows good design practices and writing code that performs at the highest optimization. It is generally better to prioritize developer productivity and good software design in areas where performance is not a concern.
 
 <!--HONumber=Mar16_HO1-->
+
+

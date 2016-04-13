@@ -14,7 +14,7 @@ Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupé
 ## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit :
+Pour utiliser cette méthode, procédez comme suit :
 
 -   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
@@ -244,10 +244,10 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 Les exemples suivants fournissent font figurer plusieurs requêtes de récupération des données de rapport d’erreurs. Remplacez la valeur *applicationId* par l’ID produit de votre application.
 
 ```
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&amp;startDate=8/1/2015&amp;endDate=8/31/2015&amp;skip=0&amp;$filter=market eq &#39;US&#39; and deviceType eq &#39;phone’ HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=8/1/2015&endDate=8/31/2015&skip=0&filter=market eq 'US' and deviceType eq 'phone' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -258,7 +258,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type    | Description                                                                                                                                                                                                                                                                    |
 |------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Value      | tableau   | Tableau d’objets comportant les données agrégées de rapport d’erreurs. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs des erreurs](#error-values) ci-dessous.                                                                                                          |
+| Valeur      | tableau   | Tableau d’objets comportant les données agrégées de rapport d’erreurs. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs des erreurs](#error-values) ci-dessous.                                                                                                          |
 | @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que plus de 10 000 lignes d’erreurs sont associées à la requête. |
 | TotalCount | nombre entier | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                     |
 
@@ -267,7 +267,7 @@ Authorization: Bearer <your access token>
 
 Les éléments du tableau *Value* comportent les valeurs suivantes :
 
-| Value           | Type    | Description                                                                                                                                                                                                                              |
+| Valeur           | Type    | Description                                                                                                                                                                                                                              |
 |-----------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date            | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | applicationId   | chaîne  | L’ID produit de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
@@ -310,7 +310,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
       "eventCount": 1.0
     }
   ],
-  "@nextLink": "failurehits?applicationId=9NBLGGGZ5QDR&amp;aggregationLevel=week&amp;startDate=2015/03/01&amp;endDate=2016/02/01&amp;top=1&amp;skip=1",
+  "@nextLink": "failurehits?applicationId=9NBLGGGZ5QDR&aggregationLevel=week&startDate=2015/03/01&endDate=2016/02/01&top=1&skip=1",
   "TotalCount": 191753
 }
 
@@ -323,4 +323,8 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir les acquisitions de produits in-app](get-in-app-acquisitions.md)
 * [Obtenir les classifications des applications](get-app-ratings.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO2-->
+
+

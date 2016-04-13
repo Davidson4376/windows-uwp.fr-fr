@@ -1,12 +1,12 @@
 ---
-description: Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet.
-title: Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
+Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet.
+Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 ---
 
 # Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Rubrique précédente : [Portage du projet](w8x-to-uwp-porting-to-a-uwp-project.md).
 
@@ -46,4 +46,8 @@ Les informations sur les solutions contenues dans le tableau sont destinées à 
 
 Rubrique suivante : [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md).
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

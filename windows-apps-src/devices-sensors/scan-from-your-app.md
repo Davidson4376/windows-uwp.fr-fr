@@ -1,38 +1,38 @@
 ---
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
-Scan from your app
-Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
+Numériser à partir de votre application
+Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement.
 ---
-# Scan from your app
+# Numériser à partir de votre application
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
 -   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
 -   [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381)
 
-Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
+Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement.
 
-**Important**  The [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) APIs are part of the desktop [device family](https://msdn.microsoft.com/library/windows/apps/Dn894631). Apps can use these APIs only on the desktop version of Windows 10.
+**Important** Les API [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) font partie de la [famille d’appareils](https://msdn.microsoft.com/library/windows/apps/Dn894631) bureautiques. Les applications peuvent utiliser ces API uniquement sur la version bureau de Windows 10.
 
-To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object and getting the [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
+Pour numériser à partir de votre application, vous devez d’abord répertorier les scanneurs disponibles en déclarant un nouvel objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) et en récupérant le type [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381). Seuls les scanneurs installés localement avec des pilotes WIA sont répertoriés et disponibles pour votre application.
 
-After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393).
+Une fois que votre application a répertorié les scanneurs disponibles, elle peut utiliser les paramètres de numérisation configurés automatiquement en fonction du type de scanneur, ou numériser en utilisant simplement le scanneur à plat ou à chargeur disponible. Pour utiliser les paramètres configurés automatiquement, le scanneur doit être activé pour la configuration automatique et ne doit pas posséder à la fois un dispositif de numérisation à plat et un dispositif de numérisation à chargeur. Pour plus d’informations, consultez [Numérisation configurée automatiquement](https://msdn.microsoft.com/library/windows/hardware/Ff539393).
 
-## Enumerate available scanners
+## Énumérer les scanneurs disponibles
 
-Windows does not detect scanners automatically. You must perform this step in order for your app to communicate with the scanner. In this example, the scanner device enumeration is done using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace.
+Windows ne détecte pas les scanneurs automatiquement. Vous devez effectuer cette étape pour que votre application communique avec le scanneur. Dans cet exemple, l’énumération des périphériques de numérisation est effectuée à l’aide de l’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459).
 
-1.  First, add these using statements to your class definition file.
+1.  Dans un premier temps, ajoutez les instructions « using » ci-après à votre fichier de définition de classe.
 
 ``` csharp
     using Windows.Devices.Enumeration;
     using Windows.Devices.Scanners;
 ```
 
-2.  Next, implement a device watcher to start enumerating scanners. For more info, see [Enumerate devices](enumerate-devices.md).
+2.  Ensuite, implémentez un observateur d’appareil pour démarrer l’énumération des scanneurs. Pour plus d’informations, voir [Énumérer les appareils](enumerate-devices.md).
 
 ```csharp
     void InitDeviceWatcher()
@@ -46,7 +46,7 @@ Windows does not detect scanners automatically. You must perform this step in or
     }
 ```
 
-3.  Create an event handler for when a scanner is added.
+3.  Créez un gestionnaire d’événements pour l’ajout d’un scanneur.
 
 ```csharp
     private async void OnScannerAdded(DeviceWatcher sender,  DeviceInformation deviceInfo)
@@ -75,34 +75,34 @@ Windows does not detect scanners automatically. You must perform this step in or
     }
 ```
 
-## Scan
+## Numériser
 
-1.  **Get an ImageScanner object**
+1.  **Obtenir un objet ImageScanner**
 
-For each [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) enumeration type, whether it's **Default**, **AutoConfigured**, **Flatbed**, or **Feeder**, you must first create an [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) object by calling the [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) method, like this.
+Pour chaque type d’énumération [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238), que ce soit **Default**, **AutoConfigured**, **Flatbed** ou **Feeder**, vous devez d’abord créer un objet [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) en appelant la méthode [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync), comme suit.
 
  ```csharp
     ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
  ```
 
-2.  **Just scan**
+2.  **Effectuer une numérisation simple**
 
-To scan with the default settings, your app relies on the [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) namespace to select a scanner and scans from that source. No scan settings are changed. The possible scanners are auto-configure, flatbed, or feeder. This type of scan will most likely produce a successful scan operation, even if it scans from the wrong source, like flatbed instead of feeder.
+Pour une numérisation avec les paramètres par défaut, votre application s’appuie sur l’espace de noms [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) pour sélectionner un scanneur et effectuer la numérisation à partir de cette source. Aucun paramètre de numérisation n’est modifié. Les scanneurs possibles sont les scanneurs configurés automatiquement, à plat ou à chargeur. En règle générale, ce type de numérisation fonctionne correctement, même si la numération est effectuée à partir d’une source incorrecte, par exemple un dispositif à plat au lieu d’un chargeur.
 
-**Note**  If the user places the document to scan in the feeder, the scanner will scan from the flatbed instead. If the user tries to scan from an empty feeder, the scan job won't produce any scanned files.
+**Remarque** Si l’utilisateur place le document à numériser dans le chargeur, le scanneur effectue la numérisation à partir du dispositif à plat. S’il essaie de numériser à partir d’un chargeur vide, la numérisation ne génère aucun fichier numérisé.
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default, 
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
-3.  **Scan from Auto-configured, Flatbed, or Feeder source**
+3.  **Numériser à partir d’une source configurée automatiquement, à plat ou à chargeur**
 
-Your app can use the device's [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393) to scan with the most optimal scan settings. With this option, the device itself can determine the best scan settings, like color mode and scan resolution, based on the content being scanned. The device selects the scan settings at run time for each new scan job.
+Votre application peut utiliser la [numérisation configurée automatiquement](https://msdn.microsoft.com/library/windows/hardware/Ff539393) du périphérique pour bénéficier des paramètres de numérisation les plus performants. Grâce à cette option, le périphérique peut lui-même déterminer les meilleurs paramètres de numérisation, comme le mode couleur et la résolution de la numérisation, en fonction du contenu numérisé. L’appareil sélectionne les paramètres de numérisation au moment de l’exécution pour chaque nouveau travail de numérisation.
 
-**Note**  Not all scanners support this feature, so the app must check if the scanner supports this feature before using this setting.
+**Remarque** Comme tous les scanneurs ne prennent pas en charge cette fonctionnalité, l’application doit vérifier si le scanneur est compatible avec ce paramétrage avant de lancer l’opération.
 
-In this example, the app first checks if the scanner is capable of auto-configuration and then scans. To specify either flatbed or feeder scanner, simply replace **AutoConfigured** with **Flatbed** or **Feeder**.
+Dans cet exemple, l’application vérifie si le scanneur prend en charge la configuration automatique, puis effectue la numérisation. Pour spécifier un scanneur à plat ou à chargeur, remplacez simplement **AutoConfigured** par **Flatbed** ou **Feeder**.
 
 ```csharp
     if (myScanner.IsScanSourceSupported(ImageScannerScanSource.AutoConfigured))
@@ -115,9 +115,9 @@ In this example, the app first checks if the scanner is capable of auto-configur
     }
 ```
 
-## Preview the scan
+## Obtenir un aperçu de la numérisation
 
-You can add code to preview the scan before scanning to a folder. In the example below, the app checks if the **Flatbed** scanner supports preview, then previews the scan.
+Vous pouvez ajouter du code pour obtenir un aperçu de la numérisation avant de l’enregistrer dans un dossier. Dans l’exemple ci-après, l’application vérifie si le scanneur **Flatbed** prend en charge la fonctionnalité d’aperçu, puis génère un aperçu de la numérisation.
 
 ```csharp
 if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
@@ -128,9 +128,9 @@ if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
                     ImageScannerScanSource.Flatbed, stream);
 ```
 
-## Cancel the scan
+## Annuler la numérisation
 
-You can let users cancel the scan job midway through a scan, like this.
+Vous pouvez permettre aux utilisateurs d’annuler un travail de numérisation en cours comme ceci.
 
 ```csharp
 void CancelScanning()
@@ -148,23 +148,27 @@ void CancelScanning()
 }
 ```
 
-## Scan with progress
+## Numériser avec indication de la progression
 
-1.  Create a **System.Threading.CancellationTokenSource** object.
+1.  Créez un objet **System.Threading.CancellationTokenSource**.
 
 ```csharp
 cancellationToken = new CancellationTokenSource();
 ```
 
-2.  Set up the progress event handler and get the progress of the scan.
+2.  Configurez le gestionnaire d’événements de progression et récupérez la progression de la numérisation.
 
 ```csharp
     rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
     var progress = new Progress&lt;UInt32&gt;(ScanProgress);
 ```
 
-## Scanning to the pictures library
+## Numériser vers la bibliothèque d’images
 
-Users can scan to any folder dynamically using the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+Grâce à la classe [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881), les utilisateurs peuvent numériser dynamiquement vers n’importe quel dossier, mais vous devez déclarer la fonctionnalité *Bibliothèque d’images* dans le manifeste pour qu’ils puissent numériser dans ce dossier. Pour plus d’informations sur les fonctionnalités d’application, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

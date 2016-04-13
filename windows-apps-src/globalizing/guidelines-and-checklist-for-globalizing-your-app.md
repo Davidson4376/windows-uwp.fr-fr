@@ -3,7 +3,7 @@ Description: Suivez ces meilleures pratiques en globalisant vos applications pou
 Search.Refinement.TopicID: 180
 title: Indications de globalisation et de localisation
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
-label: Pratiques conseillées et déconseillées
+label: Do's and don'ts
 template: detail.hbs
 ---
 
@@ -135,7 +135,7 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 </tr>
 <tr class="odd">
 <td align="left"><p>Utilisez des identificateurs de ressource dans le code et le balisage pour faire référence aux ressources.</p></td>
-<td align="left"><p>Au lieu d’utiliser des opérateurs de chaîne ou des noms de fichiers spécifiques pour les images dans votre balisage, utilisez les références aux ressources. Veillez à utiliser des identificateurs uniques pour chaque ressource. Pour plus d’informations, voir [<strong>Comment nommer des ressources à l’aide de qualificateurs</strong>](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/Hh965324).</p>
+<td align="left"><p>Au lieu d’utiliser des opérateurs de chaîne ou des noms de fichiers spécifiques pour les images dans votre balisage, utilisez les références aux ressources. Veillez à utiliser des identificateurs uniques pour chaque ressource. Pour plus d’informations, voir [<strong>Comment nommer des ressources à l’aide de qualificateurs</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965324).</p>
 <p>Écoutez les événements déclenchés en cas de changements dans le système et si ce dernier commence à utiliser un ensemble distinct de qualificateurs. Retraitez le document afin de charger les ressources correctes.</p></td>
 </tr>
 <tr class="even">
@@ -185,4 +185,8 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

@@ -1,29 +1,29 @@
 ---
-Initialize Direct3D 11
-Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain.
+Initialiser Direct3D 11
+Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange.
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ---
 
-# Initialize Direct3D 11
+# Initialiser Direct3D 11
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Summary**
+**Récapitulatif**
 
--   Part 1: Initialize Direct3D 11
--   [Part 2: Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   [Part 3: Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
-
-
-Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain. Part 1 of the [Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
-
-## Initialize the Direct3D device
+-   Partie 1 : initialiser Direct3D 11
+-   [Partie 2 : convertir l’infrastructure de rendu](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   [Partie 3 : porter la boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-In Direct3D 9, we created a handle to the Direct3D device by calling [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). We started by getting a pointer to [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) and we specified a number of parameters to control the configuration of the Direct3D device and the swap chain. Before doing this we called [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) to make sure we weren't asking the device to do something it couldn't do.
+Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange. Partie 1 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et la plateforme Windows universelle (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-Direct3D 9
+## Initialiser le périphérique Direct3D
+
+
+Dans Direct3D 9, nous avons créé un handle vers le périphérique Direct3D en appelant la méthode [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). Nous avons commencé en obtenant un pointeur vers l’[**interface IDirect3D9**](https://msdn.microsoft.com/library/windows/desktop/bb174300) et nous avons spécifié plusieurs paramètres pour contrôler la configuration du périphérique Direct3D et de la chaîne d’échange. Avant cela, nous avons appelé la fonction [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) pour vérifier que nous n’étions pas en train de demander au périphérique quelque chose qu’il ne pourrait pas faire.
+
+Direct3D 9
 
 ```cpp
 UINT32 AdapterOrdinal = 0;
@@ -59,17 +59,17 @@ m_pD3D->CreateDevice(
     );
 ```
 
-In Direct3D 11, the device context and graphics infrastructure is considered separate from the device itself. Initialization is divided into multiple steps.
+Dans Direct3D 11, le contexte de périphérique et l’infrastructure graphique est considérée comme étant distincte du périphérique lui-même. L’initialisation se divise en plusieurs étapes.
 
-First we create the device. We get a list of the feature levels the device supports - this informs most of what we need to know about the GPU. Also, we don't need to create an interface just to access Direct3D. Instead we use the [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) core API. This gives us a handle to the device and the device's immediate context. The device context is used to set pipeline state and generate rendering commands.
+Pour commencer, nous créons le périphérique. Nous obtenons la liste des niveaux de fonctionnalité que le périphérique prend en charge : celle-ci nous informe de presque tout ce que nous devons savoir sur l’unité de traitement graphique (GPU). En outre, nous n’avons pas besoin de créer une interface juste pour accéder à Direct3D. Nous utilisons plutôt l’API principale [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Cela nous permet d’obtenir un handle vers le périphérique et le contexte immédiat de périphérique. Le contexte de périphérique sert à définir l’état du pipeline et à générer des commandes de rendu.
 
-After creating the Direct3D 11 device and context, we can take advantage of COM pointer functionality to get the most recent version of the interfaces, which include additional capability and are always recommended.
+Après avoir créé le périphérique Direct3D 11 et le contexte, nous pouvons exploiter la fonctionnalité de pointeur COM pour obtenir la version la plus récente des interfaces, lesquelles incluent des fonctionnalités supplémentaires et sont toujours recommandées.
 
-> **Note**   D3D\_FEATURE\_LEVEL\_9\_1 (which corresponds to shader model 2.0) is the minimum level your Windows Store game is required to support. (Your game's ARM packages will fail certification if you don't support 9\_1.) If your game also includes a rendering path for shader model 3 features, then you should include D3D\_FEATURE\_LEVEL\_9\_3 in the array.
+> **Remarque** D3D\_FEATURE\_LEVEL\_9\_1 (qui correspond au modèle de nuanceur 2.0) est le niveau minimal que votre jeu du Windows Store doit prendre en charge. (Les packages ARM de votre jeu échouent à la certification si vous ne prenez pas en charge 9\_1.) Si votre jeu inclut également un chemin de rendu pour les fonctionnalités du modèle de nuanceur 3, alors vous devez inclure D3D\_FEATURE\_LEVEL\_9\_3 dans le tableau.
 
  
 
-Direct3D 11
+Direct3D 11
 
 ```cpp
 // This flag adds support for surfaces with a different color channel 
@@ -110,18 +110,18 @@ device.As(&m_d3dDevice);
 context.As(&m_d3dContext);
 ```
 
-## Create a swap chain
+## Créer une chaîne d’échange
 
 
-Direct3D 11 includes a device API called DirectX graphics infrastructure (DXGI). The DXGI interface allows us to (for example) control how the swap chain is configured and set up shared devices. At this step in initializing Direct3D, we're going to use DXGI to create a swap chain. Since we created the device, we can follow an interface chain back to the DXGI adapter.
+Direct3D 11 inclut une API de périphérique appelée DXGI (infrastructure DirectX Graphics). L’interface DXGI nous permet (par exemple) de contrôler la manière dont la chaîne d’échange est configurée et de configurer des périphériques partagés. À cette étape de l’initialisation de Direct3D, nous allons utiliser DXGI pour créer une chaîne d’échange. Puisque nous avons créé le périphérique, nous pouvons suivre une chaîne d’interface vers la carte DXGI.
 
-The Direct3D device implements a COM interface for DXGI. First we need to get that interface and use it to request the DXGI adapter hosting the device. Then we use the DXGI adapter to create a DXGI factory.
+Le périphérique Direct3D implémente une interface COM pour DXGI. Tout d’abord, nous avons besoin d’obtenir cette interface, puis de l’utiliser pour demander la carte DXGI hébergeant le périphérique. Ensuite, nous utilisons la carte DXGI pour créer une fabrique DXGI.
 
-> **Note**   These are COM interfaces so your first response might be to use [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). You should use [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) smart pointers instead. Then just call the [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) method, supplying an empty COM pointer of the correct interface type.
+> **Remarque** Il s’agit d’interfaces COM, alors votre première réponse peut consister à utiliser la méthode [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Vous devez utiliser des pointeurs intelligents [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) à la place. Ensuite, il suffit d’appeler la méthode [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) en fournissant un pointeur COM vide du type d’interface correct.
 
  
 
-**Direct3D 11**
+**Direct3D 11**
 
 ```cpp
 ComPtr<IDXGIDevice2> dxgiDevice;
@@ -139,13 +139,13 @@ dxgiAdapter->GetParent(
     );
 ```
 
-Now that we have the DXGI factory, we can use it to create the swap chain. Let's define the swap chain parameters. We need to specify the surface format; we'll choose [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) because it's compatible with Direct2D. We'll turn off display scaling, multisampling, and stereo rendering because they aren't used in this example. Since we are running directly in a CoreWindow we can leave the width and height set to 0 and get full-screen values automatically.
+Maintenant que nous avons la fabrique DXGI, nous pouvons l’utiliser pour créer la chaîne d’échange. Définissons à présent les paramètres de cette chaîne d’échange. Nous avons besoin de spécifier le format de surface ; nous choisissons [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) car c’est un format compatible avec Direct2D. Nous désactivons l’échelle d’affichage, l’échantillonnage multiple et le rendu stéréo car ils ne sont pas utilisés dans cet exemple. Étant donné que l’exécution est directement effectuée dans un CoreWindow, nous pouvons laisser les valeurs 0 de la largeur et de la hauteur et obtenir automatiquement les valeurs de plein écran.
 
-> **Note**   Always set the *SDKVersion* parameter to D3D11\_SDK\_VERSION for UWP apps.
+> **Remarque** Affectez toujours au paramètre *SDKVersion* la valeur D3D11\_SDK\_VERSION pour les applications UWP.
 
  
 
-**Direct3D 11**
+**Direct3D 11**
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -159,26 +159,26 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-To ensure we aren't rendering more often than the screen can actually display, we set frame latency to 1 and use [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). This saves power and is a store certification requirement; we'll learn more about presenting to the screen in part 2 of this walkthrough.
+Pour nous assurer de ne pas générer le rendu plus souvent que ne le peut l’écran, nous affectons à la latence d’image la valeur 1 et nous utilisons [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). Cela permet d’économiser de l’énergie et constitue une exigence de certification du Windows Store. Nous en saurons plus sur la présentation à l’écran dans la partie 2 de cette procédure pas à pas.
 
-> **Note**   You can use multithreading (for example, [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) work items) to continue other work while the rendering thread is blocked.
+> **Remarque** Vous pouvez utiliser le multithreading (par exemple, des éléments de travail [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642)) pour continuer un autre travail pendant que le thread de rendu est bloqué.
 
  
 
-**Direct3D 11**
+**Direct3D 11**
 
 ```cpp
 dxgiDevice->SetMaximumFrameLatency(1);
 ```
 
-Now we can set up the back buffer for rendering.
+Nous pouvons maintenant configurer la mémoire tampon d’arrière-plan pour le rendu.
 
-## Configure the back buffer as a render target
+## Configurer la mémoire tampon d’arrière-plan en tant que cible de rendu
 
 
-First we have to get a handle to the back buffer. (Note that the back buffer is owned by the DXGI swap chain, whereas in DirectX 9 it was owned by the Direct3D device.) Then we tell the Direct3D device to use it as the render target by creating a render target *view* using the back buffer.
+Nous devons d’abord obtenir un handle vers la mémoire tampon d’arrière-plan. (Notez que la mémoire tampon d’arrière-plan appartient à la chaîne d’échange DXGI, alors que dans DirectX 9, elle appartenait au périphérique Direct3D.) Ensuite, nous demandons au périphérique Direct3D de l’utiliser en tant que cible de rendu en créant un *affichage* de cible de rendu à l’aide de la mémoire tampon d’arrière-plan.
 
-**Direct3D 11**
+**Direct3D 11**
 
 ```cpp
 ComPtr<ID3D11Texture2D> backBuffer;
@@ -196,7 +196,7 @@ m_d3dDevice->CreateRenderTargetView(
     );
 ```
 
-Now the device context comes into play. We tell Direct3D to use our newly-created render target view by using the device context interface. We'll retrieve the width and height of the back buffer so that we can target the whole window as our viewport. Note that the back buffer is attached to the swap chain, so if the window size changes (for example, the user drags the game window to another monitor) the back buffer will need to be resized and some setup will need to be redone.
+À présent, le contexte de périphérique entre en jeu. Nous demandons à Direct3D d’utiliser la vue de cible de rendu que nous venons de créer à l’aide de l’interface du contexte de périphérique. Nous allons récupérer la largeur et la hauteur de la mémoire tampon d’arrière-plan afin de pouvoir cibler toute la fenêtre en tant que fenêtre d’affichage. Notez que la mémoire tampon d’arrière-plan est liée à la chaîne d’échange, alors si la taille de la fenêtre change (par exemple, quand l’utilisateur fait glisser la fenêtre de jeu vers un autre moniteur), la mémoire tampon d’arrière-plan a besoin d’être redimensionnée, ce qui requiert une reconfiguration.
 
 **Direct3D 11**
 
@@ -214,13 +214,17 @@ CD3D11_VIEWPORT viewport(
 m_d3dContext->RSSetViewports(1, &viewport);
 ```
 
-Now that we have a device handle and a full-screen render target, we are ready to load and draw geometry. Continue to [Part 2: Rendering](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md).
+Maintenant que nous avons un handle de périphérique et une cible de rendu en plein écran, nous sommes prêts à charger et dessiner la géométrie. Passez à la [Partie 2 : rendu](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

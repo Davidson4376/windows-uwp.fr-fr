@@ -1,32 +1,32 @@
 ---
-Prepare your app for localization to other markets, languages, or regions.
-Prepare your app for localization
+Description: Préparez votre application en vue de sa localisation pour d’autres marchés, langues ou régions.
+title: Préparer votre application en vue de sa localisation
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
-Prepare your app for localization
+label: Prepare your app for localization
 template: detail.hbs
 ---
 
-# Prepare your app for localization
+# Préparer votre application en vue de sa localisation
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Prepare your app for localization to other markets, languages, or regions. Before you get started, be sure to read through the [do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md).
+Préparez votre application en vue de sa localisation pour d’autres marchés, langues ou régions. Avant de commencer, veillez à lire l’intégralité des [pratiques conseillées et déconseillées](guidelines-and-checklist-for-globalizing-your-app.md).
 
-## <span id="use_resource_files_and_qualifiers."></span><span id="USE_RESOURCE_FILES_AND_QUALIFIERS."></span>Use resource files and qualifiers.
-
-
-Be sure to specify the UI strings of your app in resource files, instead of placing them in your code. For more detail, see [Put UI strings into resources](put-ui-strings-into-resources.md).
-
-Specify images or other file resources with the appropriate language tag in their file or folder. Be aware that it takes a significant amount of system resources to localize images, audio, and video, so it’s best to use neutral media assets whenever you can. To learn more, see [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
-
-## <span id="add_contextual_comments."></span><span id="ADD_CONTEXTUAL_COMMENTS."></span>Add contextual comments.
+## <span id="use_resource_files_and_qualifiers."> </span> <span id="USE_RESOURCE_FILES_AND_QUALIFIERS."> </span>Utilisez des qualificateurs et des fichiers de ressources.
 
 
-Add localization comments to your app resource files. The comments are visible to the localizer, and should provide contextual information that helps the localizer to accurately translate the resources. The comments should also provide sufficient constraint information on the resource, so that translation does not break the software. Optionally, the comments can be logged by the Makepri.exe tool.
+Veillez à spécifier les chaînes d’interface utilisateur de votre application dans des fichiers de ressources au lieu de les placer dans votre code. Pour plus d’informations, voir [Placer des chaînes d’interface utilisateur dans des ressources](put-ui-strings-into-resources.md).
 
-**XAML:** Resw files (resources created in Visual Studio for apps using XAML) have a comment element. For example:
+Spécifiez des images ou d’autres ressources de fichiers avec la balise de langue appropriée dans leur fichier ou dossier. Soyez conscient que la localisation d’images, de contenu audio ou de contenu vidéo exige une quantité significative de ressources système, si bien que la solution optimale consiste à utiliser des ressources multimédias neutres chaque fois que vous le pouvez. Pour plus d’informations, voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+
+## <span id="add_contextual_comments."> </span> <span id="ADD_CONTEXTUAL_COMMENTS."> </span>Ajoutez des commentaires contextuels.
+
+
+Ajoutez des commentaires de localisation dans les fichiers de ressources de votre application. Ces commentaires sont visibles par le traducteur et doivent fournir des informations contextuelles qui aideront le traducteur à traduire avec précision les ressources. Les commentaires doivent également fournir des informations de contrainte suffisantes sur la ressource de manière à ce que la traduction ne bloque pas le logiciel. Les commentaires peuvent également être enregistrés par l’outil Makepri.exe.
+
+**XAML :** les fichiers Resw (ressources créées dans Visual Studio pour les applications en XAML) intègrent un élément « comment ». Par exemple :
 
 ```XAML
 <data name="String1">
@@ -35,7 +35,7 @@ Add localization comments to your app resource files. The comments are visible t
 </data>
 ```
 
-**HTML:** Resjson files (resources created in Visual Studio for apps using HTML) allow metadata in fields that begin with an underscore, such as comments:
+**HTML :** les fichiers Resjson (ressources créées dans Visual Studio pour les applications en HTML) autorisent les métadonnées dans les champs qui commencent par un trait de soulignement, tels que les commentaires :
 
 ```json
 {
@@ -44,14 +44,14 @@ Add localization comments to your app resource files. The comments are visible t
 }
 ```
 
-## <span id="localize_sentences_instead_of_words."></span><span id="LOCALIZE_SENTENCES_INSTEAD_OF_WORDS."></span>Localize sentences instead of words.
+## <span id="localize_sentences_instead_of_words."> </span> <span id="LOCALIZE_SENTENCES_INSTEAD_OF_WORDS."> </span>Localisez des phrases et non des mots.
 
 
-Consider the following string: "The {0} could not be synchronized."
+Prenons pour exemple la chaîne suivante : « The {0} could not be synchronized ».
 
-A variety of words could replace {0}, such as appointment, task, or document. While this example would appear to work for the English language, it will not work in all cases for the corresponding sentence in German. Notice that in the following German sentences, some of the words in the template string ("Der", "Die", "Das") need to match the parameterized word:
+Divers mots pourraient remplacer {0} : rendez-vous, tâche, document, etc. Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle (« Der », « Die », « Das ») doivent correspondre au mot paramétré :
 
-| English                                    | German                                           |
+| Anglais                                    | Allemand                                           |
 |:------------------------------------------ |:------------------------------------------------ |
 | The appointment could not be synchronized. | Der Termin konnte nicht synchronisiert werden.   |
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
@@ -59,96 +59,96 @@ A variety of words could replace {0}, such as appointment, task, or document. Wh
 
  
 
-As another example, consider the sentence "Remind me in {0} minute(s)." While using "minute(s)" works for the English language, other languages might use different terms. For example, the Polish language uses "minuta", "minuty", or "minut" depending on the context.
+Autre exemple : la phrase « Me rappeler dans {0} minute(s). » Si « minute(s) » fonctionne en français, cela n’est pas le cas avec d’autres langues. Par exemple, le polonais utilise « minuta », « minuty » ou « minut » selon le contexte.
 
-To solve this problem, localize the entire sentence, rather than a single word. Doing this may seem like extra work and an inelegant solution, but it is the best solution because:
+Pour résoudre ce problème, localisez la phrase entière, plutôt qu’un mot individuel. Cela peut paraître comme une charge de travail supplémentaire et une solution dépourvue d’élégance, mais il s’agit de la solution optimale pour les raisons suivantes :
 
--   A clean error message will be displayed for all languages.
--   Your localizer will not need to ask about what the strings will be replaced with.
--   You will not need to implement a costly code fix when a problem like this surfaces after your app is completed.
+-   Un message d’erreur propre sera affiché pour toutes les langues.
+-   Votre traducteur n’aura pas besoin de vous demander par quoi les chaînes seront remplacées.
+-   Vous n’aurez pas besoin d’implémenter un correctif de code onéreux lorsqu’un problème de ce type se révélera une fois votre application terminée.
 
-## <span id="ensure_the_correct_parameter_order."></span><span id="ENSURE_THE_CORRECT_PARAMETER_ORDER."></span>Ensure the correct parameter order.
-
-
-Don't assume that all languages use parameters in the same order. For example, consider the string "Every %s %s", where the first %s is replaced by the name of a month, and the second %s is replaced by the date of a month. This example works for the English language, but will fail when the app is localized into the German language, where the date and month are displayed in the reverse order.
-
-To solve this problem, change the string to "Every %1 %2", so that the order is interchangeable depending on the language.
-
-## <span id="don_t_over_localize."></span><span id="DON_T_OVER_LOCALIZE."></span>Don’t over localize.
+## <span id="ensure_the_correct_parameter_order."> </span> <span id="ENSURE_THE_CORRECT_PARAMETER_ORDER."> </span>Garantissez l’ordre correct des paramètres.
 
 
-Localize specific strings, not tags. Consider the following examples:
+Ne supposez pas que toutes les langues utilisent les paramètres dans le même ordre. Prenons pour exemple la chaîne « Every %s %s », où le premier %s est remplacé par le nom d’un mois et le second %s par la date dans le mois. Cet exemple ne pose pas de problème en anglais, mais ne fonctionne pas lorsque l’application est localisée en allemand, où la date et le mois doivent être placés dans l’ordre inverse.
 
-| Over-localized string                   | Correctly-localized string |
+Pour résoudre ce problème, remplacez la chaîne par « Every %1 %2 », afin que l’ordre soit interchangeable selon la langue.
+
+## <span id="don_t_over_localize."> </span> <span id="DON_T_OVER_LOCALIZE."> </span>Ne sur-localisez pas.
+
+
+Localisez les chaînes, mais pas les balises. Prenons les exemples suivants :
+
+| Chaîne sur-localisée                   | Chaîne correctement localisée |
 |:--------------------------------------- |:-------------------------- |
-| &lt;link&gt;terms of use&lt;/link&gt;   | terms of use               |
-| &lt;link&gt;privacy policy&lt;/link&gt; | privacy policy             |
+| &lt;link&gt;conditions d’utilisation&lt;/link&gt;   | conditions d’utilisation               |
+| &lt;link&gt;politique de confidentialité&lt;/link&gt; | politique de confidentialité             |
 
  
 
-Including the above &lt;link&gt; tag in the resources means that it too will be localized. This renders the tag not valid. Only the strings themselves should be localized. Generally, you should think of tags as code that should be kept separate from localizable content. However, some long strings should include markup to keep context and ensure ordering.
+Le fait que la balise précédente &lt;link&gt; soit intégrée aux ressources signifie qu’elle sera aussi localisée. Cela a pour effet de rendre la balise non valide. Seules les chaînes proprement dites doivent être localisées. En règle générale, vous devriez considérer les balises comme du code qui doit être maintenu à part du contenu localisable. Toutefois, certaines chaînes longues doivent inclure un balisage pour conserver le contexte et garantir l’ordre correct.
 
-## <span id="do_not_use_the_same_strings_in_dissimilar_contexts."></span><span id="DO_NOT_USE_THE_SAME_STRINGS_IN_DISSIMILAR_CONTEXTS."></span>Do not use the same strings in dissimilar contexts.
-
-
-Reusing a string may seem like the best solution, but it can cause localization problems if the same word or phrase can have different meanings or contexts.
-
-You can reuse strings if the two contexts are the same. For instance, you can reuse the string "Volume" for both sound effect volume and music volume because both refer to intensity of sound. You should not reuse that same string when referring to a hard disk volume because the context and meaning are different, and the word might be translated differently.
-
-Another example is the use of the strings "on" and "off". In the English language, "on" and "off" can be used for a toggle for Flight Mode, Bluetooth, and devices. But in Italian, the translation depends on the context of what is being turned on and off. You would need to create a pair of strings for each context.
-
-Additionally, a string like "text" or "fax" could be used as both a verb and a noun in the English language, which can confuse the translation process. Instead, create a separate string for both the verb and noun format. When you're not sure whether the contexts are the same, err on the safe side and use a distinct string.
-
-## <span id="identify_resources_with_unique_attributes."></span><span id="IDENTIFY_RESOURCES_WITH_UNIQUE_ATTRIBUTES."></span>Identify resources with unique attributes.
+## <span id="do_not_use_the_same_strings_in_dissimilar_contexts."> </span> <span id="DO_NOT_USE_THE_SAME_STRINGS_IN_DISSIMILAR_CONTEXTS."> </span>N’utilisez pas de chaînes identiques dans des contextes dissemblables.
 
 
-Resource identifiers are case insensitive and must be unique per resource file. When accessing a resource, use the resource identifier, not the actual value of the resource. Resource identifiers don't change, but the actual values of the resources do change depending on the language.
+La réutilisation d’une chaîne peut sembler être la meilleure solution, mais cela peut causer des problèmes de localisation si un mot ou une expression ont des significations ou des contextes différents.
 
-Be sure to use meaningful resource identifiers to provide additional context for translation.
+Vous pouvez réutiliser des chaînes si les deux contextes sont identiques. Par exemple, vous pouvez réutiliser la chaîne « Volume » pour le volume des effets sonores et le volume de la musique, car les deux font référence à l’intensité sonore. Vous ne devez pas réutiliser la même chaîne pour faire référence au volume du disque dur, car le contexte et la signification sont différents, et le mot peut être traduit différemment.
 
-Don't change the resource identifiers after the string resources are sent to translation. Localization teams use the resource identifier to track additions, deletions, and updates in the resources. Changes in resource identifiers—also known as "resource identifiers shift"—require strings to be retranslated, because it will appear as though strings were deleted and others added.
+L’utilisation des chaînes « on » et « off » en est un autre exemple. En anglais, « on » et « off » peuvent être utilisés pour activer et désactiver le mode Avion, la fonctionnalité Bluetooth et des appareils. En revanche, en italien, la traduction dépend du contexte de ce qui est activé et désactivé. Vous devez créer une paire de chaînes pour chaque contexte.
 
-## <span id="choose_an_appropriate_translation_approach."></span><span id="CHOOSE_AN_APPROPRIATE_TRANSLATION_APPROACH."></span>Choose an appropriate translation approach.
+De plus, une chaîne comme « text » ou « fax » peut être utilisée en tant que verbe ou substantif en anglais, ce qui peut compliquer le processus de traduction. Créez plutôt deux chaînes distinctes pour la forme verbale et la forme nominale. Lorsque vous n’êtes pas certain que les contextes sont les mêmes, ne prenez pas de risque et utilisez deux chaînes distinctes.
 
-
-After strings are separated into resource files, they can be translated. The ideal time to translate strings is after the strings in your project are finalized, which usually happens toward the end of a project. You can approach the translation process in number of ways. This may depend on the volume of strings to be translated, the number of languages to be translated, and how the translation will be done (such as in-house versus hiring an external vendor).
-
-Consider the following options:
-
--   **The resource files can be translated by opening them directly in the project.** This approach works well for a project that has a small volume of strings and that needs to be translated into two or three languages. It could be suitable for a scenario where a developer speaks more than one language and is willing to handle the translation process. This approach benefits by being quick, requires no tools, and minimizes the risk of mistranslations, but it is not scalable. In particular, the resources in different languages can easily get out of sync, causing bad user experiences and maintenance headaches.
--   **The string resource files are in XML or ResJSON text format, so could be handed off for translation using any text editor. The translated files would then be copied back into the project.** This approach carries a risk of translators accidentally editing the XML tags, but it lets translation work take place outside of the Microsoft Visual Studio project. This approach could work well for projects that need to be translated into a small number of languages. The XLIFF format is an XML format specifically designed for use in localization, and should be well supported by some localization vendors or localization tools. You can use the [Multilingual App Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) to generate XLIFF files from other resource files, such as .resw or .resjson.
-
-Handoffs to localizers may need to occur for other files, such as images or audio files. Typically, we don't recommend creating culturally dependent files because they can be difficult to localize.
-
-Additionally, consider the following suggestions:
-
--   **Use a localization tool.** A number of localization tools are available for parsing resource files and allowing only the translatable strings to be edited by translators. This approach reduces the risk of a translator accidentally editing the XML tags. But it has the drawback of introducing a new tool and process to the localization process. A localization tool is good for projects with a large volume of strings, but a small number of languages. To learn more, see [How to use the Multilingual App Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
--   **Use a localization vendor.** Consider using a localization vendor if your project contains a large volume of strings and needs to be translated for many languages. A localization vendor can give advice about tools and processes, as well as translating your resource files. This is an ideal solution, but is also the most costly option, and may increase the turnaround time for your translated content.
--   **Keep your localizers informed.** Inform localizers of strings that can be considered a noun or a verb. Explain fabricated words to your localizers by using terminology tools. Keep strings grammatically correct, unambiguous, and as nontechnical as possible to avoid confusion.
-
-## <span id="keep_access_keys_and_labels_consistent."></span><span id="KEEP_ACCESS_KEYS_AND_LABELS_CONSISTENT."></span>Keep access keys and labels consistent.
+## <span id="identify_resources_with_unique_attributes."> </span> <span id="IDENTIFY_RESOURCES_WITH_UNIQUE_ATTRIBUTES."> </span>Identifiez les ressources à l’aide d’attributs uniques.
 
 
-It is a challenge to "synchronize" the access keys used in accessibility with the display of the localized access keys, because the two string resources are categorized in two separate sections. Be sure to provide comments for the label string such as: `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+Les identificateurs de ressources ne respectent pas la casse et doivent être uniques pour chaque fichier de ressources. Lorsque vous accédez à une ressource, utilisez l’identificateur de ressource et non pas la valeur réelle de la ressource. Les identificateurs de ressources ne changent pas, mais les valeurs réelles des ressources changent selon la langue.
 
-**HTML:**
+Veillez à utiliser des identificateurs de ressources significatifs pour fournir un contexte supplémentaire pour la traduction.
 
-You can follow the implementation shown below. Again, be sure to properly comment the label string to link it to the access key definition.
+Ne modifiez pas les identificateurs de ressources après l’envoi en traduction des ressources de type chaîne. Les équipes de localisation utilisent l’identificateur de ressource pour effectuer le suivi des ajouts, des suppressions et des mises à jour dans les ressources. Les modifications apportées dans les identificateurs de ressources (appelées également « transition des identificateurs de ressources ») nécessitent la retraduction des chaînes, car il semblera que des chaînes auront été supprimées et d’autres ajoutées.
+
+## <span id="choose_an_appropriate_translation_approach."> </span> <span id="CHOOSE_AN_APPROPRIATE_TRANSLATION_APPROACH."> </span>Choisissez une approche de traduction appropriée.
+
+
+Une fois que les chaînes ont été séparées en fichiers de ressources, elles peuvent être traduites. Le moment idéal pour traduire des chaînes est après la finalisation de ces chaînes dans le projet, laquelle survient habituellement vers la fin d’un projet. Vous pouvez adopter des approches différentes du processus de traduction. Cela peut dépendre du volume des chaînes à traduire, le nombre de langues cibles et la manière dont la traduction sera réalisée (par exemple, en interne ou en faisant appel à un prestataire externe).
+
+Considérez les options suivantes :
+
+-   **Les fichiers de ressources peuvent être traduits en étant ouverts directement dans le projet.** Cette approche fonctionne bien pour un projet qui possède un volume réduit de chaînes et qui a besoin d’être traduit en deux ou trois langues. Elle est adaptée pour un scénario dans lequel un développeur parlerait plusieurs langues et accepterait de traiter le processus de traduction. Cette approche a l’avantage d’être rapide, de ne requérir aucun outil et de minimiser les risques d’erreurs de traduction, mais elle n’est pas évolutive. En particulier, les ressources dans les différentes langues peuvent aisément se désynchroniser, ce qui peut entraîner de mauvaises expériences utilisateur et des difficultés de maintenance.
+-   **Les fichiers de ressources de type chaîne sont au format texte XML ou ResJSON et peuvent être confiés pour traduction à l’aide d’un éditeur de texte. Les fichiers traduits pourront alors être copiés en retour dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
+
+Un transfert vers des traducteurs peut être nécessaire pour d’autres fichiers, tels que des images ou des fichiers audio. En général, nous déconseillons de créer des fichiers dépendant de la culture, car ils peuvent s’avérer difficiles à localiser.
+
+De plus, considérez les suggestions suivantes :
+
+-   **Utilisez un outil de localisation.** De nombreux outils de localisation sont disponibles pour analyser les fichiers de ressources et permettre la modification par les traducteurs des seules chaînes traduisibles. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
+-   **Faites appel à un prestataire de localisation.** Considérez l’utilisation d’un prestataire de localisation si votre projet contient un volume élevé de chaînes et doit être traduit en de nombreuses langues. Un prestataire de localisation peut conseiller des outils et des processus, ainsi que traduire vos fichiers de ressources. Il s’agit d’une solution idéale, mais c’est aussi l’option la plus coûteuse et elle peut augmenter le délai de traitement de votre contenu traduit.
+-   **Maintenez vos traducteurs informés.** Informez les traducteurs sur les chaînes pouvant être considérées comme un substantif ou un verbe. Expliquez les mots fabriqués aux traducteurs à l’aide d’outils terminologiques. Conservez des chaînes grammaticalement correctes, non ambiguës et aussi peu techniques que possible pour éviter les confusions.
+
+## <span id="keep_access_keys_and_labels_consistent."> </span> <span id="KEEP_ACCESS_KEYS_AND_LABELS_CONSISTENT."> </span>Utilisez des touches d’accès rapide et des étiquettes cohérentes.
+
+
+La « synchronisation » des touches d’accès rapide utilisées dans les options d’accessibilité avec l’affichage des touches d’accès rapide localisées relève du défi, car les deux ressources de type chaîne sont classées dans deux sections distinctes. Ajoutez des commentaires pour la chaîne d’étiquette, par exemple : `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+
+**HTML :**
+
+Vous pouvez suivre l’implémentation illustrée ci-dessous. Là encore, n’oubliez pas de commenter correctement la chaîne d’étiquette pour l’associer à la définition de touche d’accès rapide.
 
 ```HTML
 <label id="theLabel" data-win-res="{accessKey: 'theLabelAccessKey'}" for="xPrinterRedirection" accessKey="L">The <u>L</u>abel</label>
 <input type="checkbox" value="OFF" id="xPrinterRedirection" name="xPrinterRedirection" />
 ```
 
-## <span id="support_furigana_for_japanese_strings_that_can_be_sorted."></span><span id="SUPPORT_FURIGANA_FOR_JAPANESE_STRINGS_THAT_CAN_BE_SORTED."></span>Support Furigana for Japanese strings that can be sorted.
+## <span id="support_furigana_for_japanese_strings_that_can_be_sorted."> </span> <span id="SUPPORT_FURIGANA_FOR_JAPANESE_STRINGS_THAT_CAN_BE_SORTED."> </span>Prenez en charge les furigana pour les chaînes japonaises qui peuvent être triées.
 
 
-Japanese Kanji characters have the unique property of having more than one pronunciation depending on the word and context they are used in. This leads to problems when you try to sort Japanese named objects, such as application names, files, songs, and so on. Japanese Kanji have, in the past, usually been sorted in a machine-understandable order called XJIS. Unfortunately, because this sorting order is not phonetic it is not very useful for humans.
+Les caractères japonais kanji possèdent la propriété unique d’avoir plusieurs prononciations selon le mot et le contexte dans lesquels ils sont utilisés. Cela génère des problèmes lorsque vous tentez de trier des objets nommés en japonais, tels que des noms d’applications, de fichiers, de chansons, etc. Dans le passé, les kanji japonais ont généralement été triés dans un ordre compréhensible par les machines, nommé XJIS. Malheureusement, comme cet ordre de tri n’est pas phonétique, il n’est pas très utile pour les hommes.
 
-Furigana works around this problem by allowing the user or creator to specify the phonetics for the characters they are using. If you use the following procedure to add Furigana to your app name, you can ensure that it is sorted in the proper location in the app list. If your app name contains Kanji characters and Furigana is not provided when the user’s UI language or the sort order is set to Japanese, Windows makes its best effort to generate the appropriate pronunciation. However, there is a possibility for app names containing rare or unique readings to be sorted under a more common reading instead. Therefore, the best practice for Japanese applications (especially those containing Kanji characters in their names) is to provide a Furigana version of their app name as part of the Japanese localization process.
+Les furigana contournent ce problème en permettant à l’utilisateur ou au créateur de spécifier la prononciation des caractères utilisés. Si vous utilisez la procédure suivante pour ajouter des furigana au nom de votre application, vous pouvez garantir qu’elle sera classée à l’emplacement approprié dans la liste des applications. Si le nom de votre application contient des caractères kanji et qu’aucun furigana n’est fourni lorsque la langue de l’interface utilisateur ou l’ordre de tri est défini sur le japonais, Windows s’efforce pour générer la prononciation appropriée. Toutefois, il est possible de classer les noms d’applications contenant des prononciations rares ou uniques sous une prononciation plus courante. Ainsi, la meilleure pratique pour les applications japonaises (notamment celles contenant des caractères kanji dans leur nom) consiste à fournir une version avec furigana de leur nom d’application dans le cadre du processus de localisation japonaise.
 
-1.  Add "ms-resource:Appname" as the Package Display Name and the Application Display Name.
-2.  Create a ja-JP folder under strings, and add two resource files as follows:
+1.  Ajoutez « ms-resource:Appname » comme nom complet du package et nom complet de l’application.
+2.  Créez un dossier ja-JP sous le dossier « strings » et ajoutez deux fichiers de ressources comme suit :
 
     ``` syntax
     strings\
@@ -158,25 +158,34 @@ Furigana works around this problem by allowing the user or creator to specify th
             Resources.resw
     ```
 
-3.  In Resources.resw for general ja-JP: Add a string resource for Appname "希蒼"
-4.  In Resources.altform-msft-phonetic.resw for Japanese furigana resources: Add Furigana value for AppName "のあ"
+3.  Dans Resources.resw pour le dossier général ja-JP : ajoutez une ressource de type chaîne pour le nom d’application « 希蒼 ».
+4.  Dans Resources.altform-msft-phonetic.resw pour les ressources japonaises avec furigana : ajoutez la valeur de furigana pour le nom d’application « のあ ».
 
-The user can search for the app name "希蒼" using both the Furigana value "のあ" (noa),　and the phonetic value (using the **GetPhonetic** function from Input Method Editor (IME)) "まれあお" (mare-ao).
+L’utilisateur peut rechercher le nom d’application « 希蒼 » en utilisant à la fois la valeur de furigana « のあ » (noa) et la valeur phonétique (en utilisant la fonction **GetPhonetic** à partir de l’éditeur de méthode d’entrée (IME)) « まれあお » (mare-ao).
 
-Sorting follows the **Regional Control Panel** format:
+Le classement suit le format de l’application **Région** du Panneau de configuration :
 
--   Under Japanese user locale,
-    -   If Furigana is enabled, the "希蒼" is sorted under "の".
-    -   If Furigana is missing, the "希蒼" is sorted under "ま".
--   Under non-Japanese user locale,
-    -   If Furigana is enabled, the "希蒼" is sorted under "の".
-    -   If Furigana is missing, the "希蒼" is sorted under "漢字".
+-   Sous les paramètres régionaux d’utilisateur japonais,
+    -   Si les furigana sont activés, le nom « 希蒼 » est classé sous « の ».
+    -   En l’absence de furigana, le nom « 希蒼 » est classé sous « ま ».
+-   Sous les paramètres régionaux d’utilisateur non japonais,
+    -   Si les furigana sont activés, le nom « 希蒼 » est classé sous « の ».
+    -   En l’absence de furigana, le nom « 希蒼 » est classé sous « 漢字 ».
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"> </span>Rubriques connexes
 
 
-* [Globalization and localization do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Put UI strings into resources](put-ui-strings-into-resources.md)
-* [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+* [Pratiques conseillées et déconseillées en matière de globalisation et de localisation](guidelines-and-checklist-for-globalizing-your-app.md)
+* [Placer des chaînes d’interface utilisateur dans des ressources](put-ui-strings-into-resources.md)
+* [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
  
-<!--HONumber=Mar16_HO1-->
+
+ 
+
+
+
+
+
+<!--HONumber=Mar16_HO4-->
+
+

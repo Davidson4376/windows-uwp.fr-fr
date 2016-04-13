@@ -1,87 +1,92 @@
 ---
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
-Optimize suspend/resume
-Create Universal Windows Platform (UWP) apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination.
+Optimiser l’interruption/la reprise
+Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 ---
-# Optimize suspend/resume
+# Optimiser l’interruption/la reprise
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Create Universal Windows Platform (UWP) apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination.
+Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 
-## Launch
+## Lancer
 
-When reactivating an app following suspend/terminate, check to see if a long time has elapsed. If so, consider returning to the main landing page of the app instead of showing the user stale data. This will also result in faster startup.
+Si vous réactivez une application après l’avoir suspendue/arrêtée, vérifiez si une longue durée s’est écoulée. Si tel est le cas, pensez à revenir dans la page de destination principale de l’application au lieu d’afficher les données utilisateur obsolètes. Cela entraînera également un démarrage plus rapide.
 
-During activation, always check the PreviousExecutionState of the event args parameter (for example, for launched activations check LaunchActivatedEventArgs.PreviousExecutionState). If the value is ClosedByUser or NotRunning, don’t waste time restoring previously saved state. In this case, the right thing is to provide a fresh experience – and it will result in faster startup.
+Pendant l’activation, vérifiez toujours l’état PreviousExecutionState du paramètre des arguments d’événement. Par exemple, pour les activations lancées, vérifiez LaunchActivatedEventArgs.PreviousExecutionState). Si la valeur est ClosedByUser ou NotRunning, ne perdez pas votre temps à restaurer l’état de mise en mémoire précédent. Dans ce cas, il convient de fournir une expérience toute nouvelle, laquelle entraînera un démarrage plus rapide.
 
-Instead of eagerly restoring previously saved state, consider keep track of that state, and only restoring it on demand. For example, consider a situation where your app was previously suspended, saved state for 3 pages, and was then terminated. Upon relaunch, if you decide to return the user to the 3rd page, do not eagerly restore the state for the first 2 pages. Instead, hold on to this state and only use it once you know you need it.
+Au lieu de restaurer l’état de mise en mémoire précédent, pensez à assurer le suivi de cet état et à le restaurer uniquement à la demande. Par exemple, prenez une situation dans laquelle votre application avec un état de mise en mémoire correspondant à 3 pages a été suspendue, avant d’être arrêtée. Dès son relancement, si vous décidez de renvoyer l’utilisateur à la 3e page, ne restaurez pas dynamiquement l’état des 2 premières pages. Maintenez plutôt cet état, et utilisez-le uniquement lorsque vous en avez besoin.
 
-## While running
+## En cours d’exécution
 
-As a best practice, don’t wait for the suspend event and then persist a large amount of state. Instead, your application should incrementally persist smaller amounts of state as it runs. This is especially important for large apps that are at risk of running out of time during suspend if they try to save everything at once.
+Il est recommandé de ne pas attendre l’événement de suspension, puis de maintenir une grande quantité de l’état. À la place, votre application doit être maintenue de façon incrémentielle en plus petites quantités de l’état lorsqu’elle s’exécute. Cela est particulièrement important pour les applications volumineuses qui courent le risque de manquer de temps pendant la suspension si elles essaient d’enregistrer tous les éléments en même temps.
 
-However, you need to find a good balance between incremental saving and performance of your app while running. A good tradeoff is to incrementally keep track of the data that has changed (and therefore needs to be saved) – and use the suspend event to actually save that data (which is faster than saving all data or examining the entire state of app to decide what to save).
+Toutefois, vous devez trouver un bon équilibre entre l’enregistrement incrémentiel et les performances de votre application en cours d’exécution. Un bon compromis consiste à effectuer le suivi incrémentiel des données qui ont été modifiées (et qui doivent donc être enregistrées) et à utiliser l’événement de suspension pour enregistrer réellement les données (ce qui est plus rapide que d’enregistrer toutes les données ou d’examiner l’état entier de l’application pour décider des éléments à enregistrer).
 
-Don’t use the window Activated or VisibilityChanged events to decide when to save state. When the user switches away from your app, the window is deactivated, but the system waits a short amount of time (about 10 seconds) before suspending the app. This is to give a more responsive experience in case the user switches back to your app rapidly. Wait for the suspend event before running suspend logic.
+N’utilisez pas les événements Activated ou VisibilityChanged de la fenêtre pour choisir le moment auquel enregistrer l’état. Lorsque l’utilisateur quitte votre application, la fenêtre est désactivée, mais le système attend un court moment (environ 10 secondes) avant de suspendre l’application. Il s’agit de fournir une meilleure réactivité si jamais l’utilisateur rebascule rapidement vers votre application. Attendez l’événement de suspension avant d'exécuter la logique correspondante.
 
-## Suspend
+## Suspendre
 
-During suspend, reduce the footprint of your app. If your app uses less memory while suspended, the overall system will be more responsive and fewer suspended apps (including yours) will be terminated. However, balance this with the need for snappy resumes: don’t reduce footprint so much that resume slows down considerably while your app reloads lots of data into memory.
+Lors de la suspension, réduisez l’encombrement de votre application. Si votre application utilise moins de mémoire alors qu’elle est suspendue, l’ensemble du système sera plus réactif et un plus petit nombre d’applications suspendues (y compris les vôtres) seront arrêtées. Toutefois, équilibrez ce point avec la nécessité d’effectuer des reprises réactives : ne réduisez pas trop l’encombrement, car la reprise est considérablement ralentie lorsque votre application recharge de nombreuses données en mémoire.
 
-For managed apps, the system will run a garbage collection pass after the app’s suspend handlers complete. Make sure to take advantage of this by releasing references to objects that will help reduce the app’s footprint while suspended.
+Pour les applications gérées, le système exécute une passe de nettoyage de la mémoire après l’exécution des gestionnaires de suspension de l’application. Veillez à tirer parti de cela en libérant les références aux objets, ce qui vous aidera à réduire l’encombrement de l’application pendant sa suspension.
 
-Ideally, your app will finish with suspend logic in less than 1 second. The faster you can suspend, the better – that will result in a snappier user experience for other apps and parts of the system. If you must, your suspend logic can take up to 5 seconds on desktop devices or 10 seconds on mobile devices. If those times are exceeded, your app will be abruptly terminated. You don’t want this to happen – because if it does, when the user switches back to your app, a new process will be launched and the experience will feel much slower compared to resuming a suspended app.
+Dans l’idéal, votre application en finit avec la logique de suspension en moins de 1 seconde. Plus la suspension est rapide, plus l’expérience utilisateur est réactive pour les autres applications et parties du système. Si vous y êtes contraint, sachez que votre logique de suspension peut prendre jusqu’à 5 secondes sur les appareils de bureau et 10 secondes sur les appareils mobiles. Si ces délais sont dépassés, votre application sera arrêtée brusquement. Vous ne souhaitez pas que cela se produise, car le cas échéant, si l’utilisateur rebascule vers votre application, un nouveau processus sera lancé, et l’expérience sera beaucoup plus lente que la reprise d’une application suspendue.
 
-## Resume
+## Reprendre
 
-Most apps don’t need to do anything special when resumed, so typically you won’t handle this event. Some apps use resume to restore connections that were closed during suspend, or to refresh data that may be stale. Instead of doing this kind of work eagerly, design your app to initiate these activities on demand. This will result in a faster experience when the user switches back to a suspended app, and ensures that you’re only doing work the user really needs.
+La plupart des applications ne nécessitent rien de spécial lors de leur reprise ; en règle générale, vous ne gérez donc pas cet événement. Certaines applications utilisent la reprise pour restaurer les connexions qui ont été fermées lors de la suspension ou pour actualiser les données qui sont peut-être obsolètes. Si vous le préférez, vous pouvez concevoir votre application pour lancer ces activités à la demande. Cela entraîne une expérience plus rapide lorsque l’utilisateur rebascule vers une application suspendue et permet de s’assurer que vous ne faites que ce dont l’utilisateur a réellement besoin.
 
-## Avoid unnecessary termination
+## Éviter les arrêts intempestifs
 
-The UWP process lifetime system can suspend or terminate an app for a variety of reasons. This process is designed to quickly return an app to the state it was in before it was suspended or terminated. When done well, the user won’t be aware that the app ever stopped running. Here are a few tricks that your UWP app can use to help the system streamline transitions in an app’s lifetime.
+Le système de gestion de la durée de vie des processus UWP peut être amené à suspendre ou à arrêter une application pour diverses raisons. Il a été conçu de manière à remettre rapidement l’application dans l’état où elle se trouvait avant sa suspension ou son arrêt. Lorsque cela se passe bien, le processus de suspension ou d’arrêt reste transparent pour l’utilisateur. Nous allons vous donner quelques astuces que votre application UWP peut utiliser pour aider le système à simplifier les transitions tout au long de la durée de vie d’une application.
 
-An app can be suspended when the user moves it to the background or when the system enters a low power state. When the app is being suspended, it raises the suspending event and has up to 5 seconds to save its data. If the app's suspending event handler doesn't complete within 5 seconds, the system assumes the app has stopped responding and terminates it. A terminated app has to go through the long startup process again instead of being immediately loaded into memory when a user switches to it.
+Une application peut être suspendue lorsque l’utilisateur la met en arrière-plan ou que le système passe dans un état de faible consommation d’énergie. Quand l’application est suspendue, elle déclenche l’événement de suspension et dispose de cinq secondes pour enregistrer ses données. Si le gestionnaire de l’événement de suspension de l’application ne s’exécute pas dans un délai de cinq secondes, le système suppose que l’application a cessé de répondre et l’arrête. Après avoir été arrêtée, l’application doit recommencer tout le processus de démarrage au lieu d’être immédiatement chargée en mémoire quand l’utilisateur y revient.
 
-### Serialize only when necessary
+### Sérialiser uniquement en cas de nécessité
 
-Many apps serialize all their data on suspension. If you only need to store a small amount of app settings data, however, you should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) store instead of serializing the data. Use serialization for larger amounts of data and for non-settings data.
+De nombreuses applications sérialisent toutes leurs données lors de la mise en suspens. Toutefois, si vous ne devez stocker qu’une petite quantité de données de paramètres d’application, vous devez utiliser le magasin[**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) plutôt que de sérialiser les données. Utilisez la sérialisation pour les grandes quantités de données et pour les données autres que les données de paramètres.
 
-When you do serialize your data, you should avoid reserializing if it hasn't changed. It takes extra time to serialize and save the data, plus extra time to read and deserialize it when the app is activated again. Instead, we recommend that the app determine if its state has actually changed, and if so, serialize and deserialize only the data that changed. A good way to ensure that this happens is to periodically serialize data in the background after it changes. When you use this technique, everything that needs to be serialized at suspension has already been saved so there is no work to do and an app suspends quickly.
+Évitez de resérialiser vos données si elles n’ont pas changé. Il faut davantage de temps pour sérialiser et enregistrer les données, mais aussi pour les lire et les désérialiser lors de la réactivation de l’application. Par conséquent, votre application doit pouvoir déterminer si son état a réellement changé, et s’il a changé, sérialiser et désérialiser uniquement les données qui ont changé. Pour cela, nous vous recommandons de sérialiser périodiquement les données en arrière-plan après leur modification. Avec cette méthode, toutes les données à sérialiser au moment de la suspension ont déjà été enregistrées, ce qui élimine toute tâche supplémentaire et accélère la suspension de l’application.
 
-### Serializing data in C# and Visual Basic
+### Sérialiser les données en C# et en Visual Basic
 
-The available choices of serialization technology for .NET apps are the [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx), and [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) classes.
+Pour la sérialisation des applications .NET, vous avez le choix entre les classes suivantes : [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) et [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx)
 
-From a performance perspective, we recommend using the [**XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) class. The **XmlSerializer** has the lowest serialization and deserialization times, and maintains a low memory footprint. The **XmlSerializer** has few dependencies on the .NET framework; this means that compared with the other serialization technologies, fewer modules need to be loaded into your app to use the **XmlSerializer**.
+Pour obtenir des performances optimales, utilisez la classe [**XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx). Avec **XmlSerializer**, la sérialisation et la désérialisation sont rapides, et l’encombrement mémoire reste faible. La classe **XmlSerializer** est peu dépendante de .NET Framework. Par conséquent, contrairement aux autres méthodes de sérialisation, **XmlSerializer** peut être utilisée en chargeant un nombre réduit de modules.
 
-[**DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) makes it easier to serialize custom classes, although it has a larger performance impact than **XmlSerializer**. If you need better performance, consider switching. In general, you should not load more than one serializer, and you should prefer **XmlSerializer** unless you need the features of another serializer.
+[
+            **DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) simplifie la sérialisation des classes personnalisées, bien que son impact sur les performances soit supérieur à celui de **XmlSerializer**. Si vous voulez obtenir de meilleures performances, il est préférable de changer. En général, il vaut mieux ne pas charger plus d’un sérialiseur et **XmlSerializer** est préférable, à moins que vous n’ayez besoin des fonctionnalités d’un autre sérialiseur.
 
-### Reduce memory footprint
+### Réduire l’encombrement mémoire
 
-The system tries to keep as many suspended apps in memory as possible so that users can quickly and reliably switch between them. When an app is suspended and stays in the system's memory, it can quickly be brought to the foreground for the user to interact with, without having to display a splash screen or perform a lengthy load operation. If there aren't enough resources to keep an app in memory, the app is terminated. This makes memory management important for two reasons:
+Le système essaie de conserver en mémoire autant d’applications suspendues que possible, pour que les utilisateurs puissent passer de l’une à l’autre rapidement et sans aucune difficulté. Lorsqu’une application est suspendue et qu’elle reste dans la mémoire du système, elle peut rapidement être ramenée au premier plan pour que l’utilisateur puisse s’en servir, sans qu’il soit nécessaire d’afficher un écran de démarrage ou d’effectuer une longue opération de chargement. Si les ressources pour conserver une application en mémoire sont insuffisantes, l’application est arrêtée. La gestion de la mémoire est donc importante pour les deux raisons suivantes :
 
--   Freeing as much memory as possible at suspension minimizes the chances that your app is terminated because of lack of resources while it’s suspended.
--   Reducing the overall amount of memory your app uses reduces the chances that other apps are terminated while they are suspended.
+-   Libérer le plus de mémoire possible au moment de la suspension de votre application réduit les risques de voir ensuite votre application arrêtée par manque de ressources disponibles.
+-   Réduire la consommation de la mémoire totale de votre application limite les risques d’arrêt d’autres applications en cours de suspension.
 
-### Release resources
+### Libérer des ressources
 
-Certain objects, such as files and devices, occupy a large amount of memory. We recommend that during suspension, an app release handles to these objects and recreate them when needed. This is also a good time to purge any caches that won’t be valid when the app is resumed. An additional step the XAML framework runs on your behalf for C# and Visual Basic apps is garbage collection if it is necessary. This ensures any objects no longer referenced in app code are released.
+Certains objets, tels que les fichiers et les périphériques, occupent une grande partie de la mémoire. C’est pourquoi nous recommandons qu’une application suspendue libère les descripteurs de ces objets et les recrée lorsque c’est nécessaire. C’est également le moment approprié pour supprimer les caches qui ne seront plus valides à la reprise de l’application. De plus, l’infrastructure XAML se charge si nécessaire du nettoyage de la mémoire dans les applications C# et Visual Basic. Vous avez ainsi l’assurance que les objets qui ne sont plus référencés dans le code de l’application sont libérés.
 
-## Resume quickly
+## Reprendre rapidement l’exécution de l’application
 
-A suspended app can be resumed when the user moves it to the foreground or when the system comes out of a low power state. When an app is resumed from the suspended state, it continues from where it was when it was suspended. No app data is lost because it was stored in memory, even if the app was suspended for a long period of time.
+Une application peut reprendre lorsque l’utilisateur l’exécute au premier plan ou lorsque le système quitte le mode d’alimentation faible. Lorsque qu’une application suspendue reprend, elle reprend là où elle s’est arrêtée. Aucune donnée n’est perdue, car les données sont conservées en mémoire, même si l’application reste suspendue pendant une longue période.
 
-Most apps don't need to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/BR205859) event. When your app is resumed, variables and objects have the exact same state they had when the app was suspended. Handle the **Resuming** event only if you need to update data or objects that might have changed between the time your app was suspended and when it was resumed such as: content (for example, update feed data), network connections that may have gone stale, or if you need to reacquire access to a device (for example, a webcam).
+La plupart des applications n’ont pas besoin de gérer l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/BR205859). Lorsque votre application reprend, les variables et les objets retrouvent le même état qu’au moment de la suspension de l’application. Gérez l’événement **Resuming** uniquement si vous devez mettre à jour des données ou des objets qui peuvent avoir changé entre la suspension de votre application et sa reprise, comme du contenu (par exemple des données de flux de mise à jour) ou des connexions réseau qui peuvent ne pas avoir été utilisées pendant longtemps, ou si vous devez accéder de nouveau à un appareil (par exemple une webcam).
 
-## Related topics
+## Rubriques connexes
 
-* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [Recommandations pour la suspension et la reprise d’une application](https://msdn.microsoft.com/library/windows/apps/Hh465088)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

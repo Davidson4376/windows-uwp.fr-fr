@@ -1,8 +1,8 @@
 ---
-Description: Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans le Windows Store qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10.
-title: Notifications Visualizer
+Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans le Windows Store qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10.
+Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
-label: À déterminer
+À déterminer
 template: detail.hbs
 ---
 
@@ -61,4 +61,8 @@ Cette capture d’écran de l’application montre l’éditeur de vignettes :
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,22 +1,22 @@
 ---
-description: Explains the concept of an attached property in XAML, and provides some examples.
-title: Attached properties overview
+Explique le concept de propriété jointe en XAML et fournit quelques exemples.
+Vue d’ensemble des propriétés jointes
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 ---
 
-# Attached properties overview
+# Vue d’ensemble des propriétés jointes
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-An *attached property* is a XAML concept. It is conceptually similar to a global property that can be set on any object element in XAML. Attached properties are typically defined as a specialized form of dependency property that doesn't have a conventional property wrapper in the owner type's object model.
+Une *propriété jointe* est un concept XAML. D’un point de vue conceptuel, elle est comparable à une propriété globale pouvant être définie dans un élément objet en XAML. Les propriétés jointes sont généralement définies comme une forme spécialisée de propriété de dépendance dont le modèle objet du type du propriétaire ne comporte pas de wrapper de propriété conventionnel.
 
-## Prerequisites
+## Conditions préalables
 
-We assume that you understand the basic concept of dependency properties, and have read [Dependency properties overview](dependency-properties-overview.md).
+Nous supposons que vous connaissez les principes de base des propriétés de dépendance et que vous avez lu le document [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
-## Attached properties in XAML
+## Propriétés jointes en XAML
 
-Attached properties exist mostly because they enabled a XAML syntax. In XAML, you set attached properties by using the syntax _AttachedPropertyProvider.PropertyName_. Here is an example of how you can set [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) in XAML.
+Les propriétés jointes existent principalement parce qu’elles ont permis une syntaxe XAML. En XAML, on définit les propriétés jointes à l’aide de la syntaxe _AttachedPropertyProvider.PropertyName_. Voici un exemple montrant comment définir [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) en XAML.
 
 ```XAML
 <Canvas>
@@ -24,47 +24,47 @@ Attached properties exist mostly because they enabled a XAML syntax. In XAML, yo
 </Canvas>
 ```
 
-Note that the usage is somewhat similar to a static property; you always reference the type **Canvas** that owns and registers the attached property, rather than referring to any instance by name.
+Notez que l’utilisation s’apparente quelque peu à une propriété statique ; on fait toujours référence au type **Canvas** qui détient et inscrit la propriété jointe, plutôt que de faire référence à une instance par nom.
 
-**Note**  We're just using [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) as an example attached property without fully explaining why you'd use it. If you want to know more about what **Canvas.Left** is for and how [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) handles its layout children, see the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) reference topic or [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
+**Remarque** Nous utilisons simplement [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) comme exemple de propriété jointe sans expliquer de manière exhaustive la raison de cette utilisation. Si vous voulez en savoir plus sur le rôle de **Canvas.Left** et la façon dont [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) gère ses enfants de disposition, voir la rubrique de référence [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) ou [Définir des dispositions avec XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
 
-## Why use attached properties?
+## Pourquoi utiliser des propriétés jointes ?
 
-Attached properties are a way to escape the coding conventions that might prevent different objects in a relationship from communicating information to each other at run time. It's certainly possible to put properties on a common base class so that each object could just get and set that property. But eventually the sheer number of scenarios where you might want to do this will bloat your base classes with shareable properties. It might even introduce cases where there might just be two of hundreds of descendants trying to use a property. That's not good class design. To address this, the attached property concept enables an object to assign a value for a property that its own class structure doesn't define. The defining class can read the value from child objects at run time after the various objects are created in relationships in an object tree.
+Les propriétés jointes sont un moyen d’échapper aux conventions de codage qui pourraient empêcher différents objets d’une relation d’échanger des informations au moment de l’exécution. Il est certainement possible de placer des propriétés sur une classe de base courante afin que chaque objet puisse juste obtenir et définir ces propriétés. Mais au final, le nombre considérable de scénarios où vous souhaiterez le faire encombrera vos classes de base de propriétés partageables. Cette approche pourrait même créer des situations où seuls deux des centaines de descendants essaieraient d’utiliser une propriété. Cela ne constitue pas une bonne conception de classe. Pour résoudre ce problème, le concept des propriétés jointes permet à un objet d’affecter une valeur pour une propriété que sa propre structure de classe ne définit pas. La classe de définition peut lire cette valeur à partir des objets enfants au moment de l’exécution, après que les différents objets ont été créés dans des relations dans une arborescence d’objets.
 
-For example, child elements can use attached properties to inform their parent element of how they are to be presented in the UI. This is the case with the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) attached property. **Canvas.Left** is created as an attached property because it is set on elements that are contained within a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) element, rather than on the **Canvas** itself. Any possible child element then uses **Canvas.Left** and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) to specify its layout offset within the **Canvas** layout container parent. Attached properties make it possible for this to work without cluttering the base element's object model with lots of properties that each apply to only one of the many possible layout containers. Instead, many of the layout containers implement their own attached property set.
+Par exemple, des éléments enfants peuvent utiliser des propriétés jointes pour indiquer à leur élément parent la manière dont ils doivent être présentés dans l’interface utilisateur. C’est le cas avec la propriété jointe [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771). **Canvas.Left** est créée en tant que propriété jointe car elle est définie au niveau d’éléments contenus dans un élément [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), et non dans la classe **Canvas** proprement dite. Tous les éléments enfants possibles utilisent alors **Canvas.Left** et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) pour spécifier leur décalage de disposition au sein du parent du conteneur de disposition **Canvas**. Les propriétés jointes permettent à ce scénario de fonctionner sans encombrer le modèle objet de l’élément de base de nombreuses propriétés qui s’appliquent chacune uniquement à un des nombreux conteneurs de disposition possibles. Au lieu de cela, la plupart des conteneurs de disposition implémentent leur propre jeu de propriétés jointes.
 
-To implement the attached property, the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) class defines a static [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field named [**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272). Then, **Canvas** provides the [**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) and [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) methods as public accessors for the attached property, to enable both XAML setting and run-time value access. For XAML and for the dependency property system, this set of APIs satisfies a pattern that enables a specific XAML syntax for attached properties, and stores the value in the dependency property store.
+Pour implémenter la propriété jointe, la classe [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) définit un champ statique [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) nommé [**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272). Ensuite, **Canvas** fournit les méthodes [**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) et [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) comme accesseurs publics pour la propriété jointe, afin de permettre l’accès au paramètre XAML et à la valeur au moment de l’exécution. Pour XAML et le système de propriétés de dépendance, cet ensemble d’API obéit à un schéma qui autorise une syntaxe XAML spécifique pour les propriétés jointes et stocke la valeur dans la banque de propriétés de dépendance.
 
-## How the owning type uses attached properties
+## Utilisation des propriétés jointes par le type propriétaire
 
-Although attached properties can be set on any XAML element (or any underlying [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)), that doesn't automatically mean that setting the property produces a tangible result, or that the value is ever accessed. The type that defines the attached property typically follows one of these scenarios:
+Bien que les propriétés jointes puissent être définies sur n’importe quel élément XAML (ou tout [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) sous-jacent), cela ne veut pas dire nécessairement que leur définition produit un résultat concret ou que leur valeur sera un jour utilisée. Le type qui définit la propriété jointe suit généralement l’un des scénarios suivants :
 
--   The type that defines the attached property is the parent in a relationship of other objects. The child objects will set values for the attached property. The attached property owner type has some innate behavior that iterates through its child elements, obtains the values, and acts on those values at some point in object lifetime (a layout action, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742), etc.)
--   The type that defines the attached property is used as the child element for a variety of possible parent elements and content models, but the info isn't necessarily layout info.
--   The attached property reports info to a service, not to another UI element.
+-   Le type qui définit la propriété jointe est le parent dans une relation entre d’autres objets. Les objets enfants définissent les valeurs de la propriété jointe. Le type de propriétaire de la propriété jointe a un comportement inné qui itère au sein de ses éléments enfants, obtient les valeurs et agit sur ces valeurs à un moment donné dans la durée de vie des objets (une action de disposition, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742), etc.)
+-   Le type qui définit la propriété jointe est utilisé en tant qu’élément enfant pour divers éléments parents et modèles de contenu possibles, mais les informations ne sont pas nécessairement des informations de disposition.
+-   La propriété jointe communique des informations à un service, et non à un autre élément d’interface utilisateur.
 
-For more info on these scenarios and owning types, see the "More about Canvas.Left" section of [Custom attached properties](custom-attached-properties.md).
+Pour plus d’informations sur ces scénarios et les types propriétaires, voir la section « En savoir plus sur Canvas.Left » de la rubrique [Propriétés jointes personnalisées](custom-attached-properties.md).
 
-## Attached properties in code
+## Propriétés jointes dans le code
 
-Attached properties don't have the typical property wrappers for easy get and set access like other dependency properties do. This is because the attached property is not necessarily part of the code-centered object model for instances where the property is set. (It is permissible, though uncommon, to define a property that is both an attached property that other types can set on themselves, and that also has a conventional property usage on the owning type.)
+Contrairement à d’autres propriétés de dépendance, les propriétés jointes ne disposent pas des wrappers de propriété classiques qui facilitent l’accès get et set. Cela est dû au fait que la propriété jointe ne fait pas nécessairement partie du modèle objet centré sur le code pour les instances où la propriété est définie. (Il est également possible, même si cela est rare, de définir une propriété qui est une propriété jointe définissable dans d’autres types et qui offre une utilisation de propriété classique dans le type propriétaire.)
 
-There are two ways to set an attached property in code: use the property-system APIs, or use the XAML pattern accessors. These techniques are pretty much equivalent in terms of their end result, so which one to use is mostly a matter of coding style.
+Il existe deux façons de définir une propriété jointe dans le code : soit en utilisant les API du système de propriétés, soit en utilisant les accesseurs de modèle XAML. Ces techniques offrant des résultats très proches, le choix de l’une ou de l’autre est dicté essentiellement par le style de codage.
 
-### Using the property system
+### Utilisation du système de propriétés
 
-Attached properties for the Windows Runtime are implemented as dependency properties, so that the values can be stored in the shared dependency-property store by the property system, just as many conventional instance properties are stored. Therefore attached properties expose a dependency property identifier on the owning class.
+Pour le Windows Runtime, les propriétés jointes sont implémentées en tant que propriétés de dépendance. De ce fait, le système de propriétés peut stocker les valeurs dans la banque de propriétés de dépendance partagée, à l’instar de nombreuses propriétés d’instance classiques. Par conséquent, les propriétés jointes exposent un identificateur de propriété de dépendance dans la classe propriétaire.
 
-To set an attached property in code, you call the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) method, and pass the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field that serves as the identifier for that attached property. (You also pass the value to set.)
+Pour définir une propriété jointe dans le code, vous devez appeler la méthode [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) et passer le champ [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362), qui fait office d’identificateur pour cette propriété jointe. (Vous devez aussi passer la valeur à définir.)
 
-To get the value of an attached property in code, you call the [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) method, again passing the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) field that serves as the identifier.
+Pour obtenir la valeur d’une propriété jointe dans le code, vous devez appeler la méthode [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) en passant à nouveau le champ [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) qui sert d’identificateur.
 
-### Using the XAML accessor pattern
+### Utilisateur du modèle d’accesseur XAML
 
-A XAML processor must be able to set attached property values when XAML is parsed into an object tree. The owner type of the attached property must implement dedicated accessor methods named in the form **Get***PropertyName* and **Set***PropertyName*. These dedicated accessor methods are also one way to get or set the attached property in code. From a code perspective, an attached property is similar to a backing field that has method accessors instead of property accessors, and that backing field can exist on any object rather than having to be specifically defined.
+Un processeur XAML doit être en mesure de définir des valeurs de propriétés jointes lorsque le code XAML est analysé dans une arborescence d’objets. Le type propriétaire de la propriété jointe doit implémenter des méthodes d’accesseur dédiées nommées sous la forme **Get***PropertyName* et **Set***PropertyName*. Ces méthodes d’accesseur dédiées offrent aussi un moyen d’obtenir ou de définir la propriété jointe dans le code. Du point de vue du code, une propriété jointe s’apparente à un champ de stockage doté d’accesseurs de méthode et non d’accesseurs de propriété, et ce champ de stockage peut exister dans n’importe quel objet au lieu de devoir être spécifiquement défini.
 
-The next example shows how you can set an attached property in code via the XAML accessor API. In this example, `myCheckBox` is an instance of the [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) class. The last line is the code that actually sets the value; the lines before that just establish the instances and their parent-child relationship. The uncommented last line is the syntax if you use the property system. The commented last line is the syntax if you use the XAML accessor pattern.
+L’exemple suivant montre comment définir une propriété jointe dans du code via l’API d’accesseur XAML. Dans cet exemple, `myCheckBox` est une instance de la classe [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316). La dernière ligne correspond au code qui définit à proprement parler la valeur, tandis que les lignes qui la précèdent ne font qu’établir les instances et leur relation parent-enfant. La dernière ligne sans marques de commentaires est la syntaxe si vous utilisez le système de propriétés. La dernière ligne avec marques de commentaires est la syntaxe si vous utilisez le modèle d’accesseur XAML.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -92,27 +92,31 @@ The next example shows how you can set an attached property in code via the XAML
     //Canvas::SetTop(myCheckBox, 75);
 ```
 
-## Custom attached properties
+## Propriétés jointes personnalisées
 
-For code examples of how to define custom attached properties, and more info about the scenarios for using an attached property, see [Custom attached properties](custom-attached-properties.md).
+Pour obtenir des exemples de code illustrant comment définir des propriétés jointes personnalisées et pour plus d’informations sur les scénarios d’utilisation de propriété jointe, voir [Propriétés jointes personnalisées](custom-attached-properties.md).
 
-## Special syntax for attached property references
+## Syntaxe spéciale pour les références aux propriétés jointes
 
-The dot in an attached property name is a key part of the identification pattern. Sometimes there are sometimes ambiguities when a syntax or situation treats the dot as having some other meaning. For example, a dot is treated as an object-model traversal for a binding path. In most cases involving such ambiguity, there is a special syntax for an attached property that enables the inner dot still to be parsed as the *owner***.***property* separator of an attached property.
+Le point figurant dans un nom de propriété jointe est un élément clé du modèle d’identification. Des ambiguïtés surviennent parfois quand une syntaxe ou une situation prête au point une toute autre signification. Par exemple, un point est considéré comme une traversée de modèle objet dans le cas d’un chemin de liaison. Dans la plupart des cas impliquant une telle ambiguïté, une propriété jointe est assortie d’une syntaxe spéciale qui permet au point intérieur d’être quand même analysé comme séparateur *owner***.***property* d’une propriété jointe.
 
-- To specify an attached property as part of a target path for an animation, enclose the attached property name in parentheses ("()")—for example, "(Canvas.Left)". For more info, see [Property-path syntax](property-path-syntax.md).
+- Pour spécifier une propriété jointe comme faisant partie du chemin cible d’une animation, mettez le nom de la propriété jointe entre parenthèses ("()") par exemple "(Canvas.Left)". Pour plus d’informations, voir [Syntaxe de PropertyPath](property-path-syntax.md).
 
-**Caution**  An existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
+**Attention** Une limitation existante d’une implémentation XAML Windows Runtime ne vous permet pas d’animer une propriété jointe personnalisée.
  
-- To specify an attached property as the target property for a resource reference from a resource file to **x:Uid**, use a special syntax that injects a code-style, fully qualified **using:** declaration inside square brackets ("\[\]"), to create a deliberate scope break. For example, assuming there exists an element '<TextBlock x:Uid="Title" />', the resource key in the resource file that targets the **Canvas.Top** value on that instance is "Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top". For more info on resource files and XAML, see [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+- Pour spécifier une propriété jointe en tant que propriété cible d’une référence de ressource à partir d’un fichier de ressources vers **x:Uid**, utilisez une syntaxe spéciale qui injecte une déclaration **using:** complète qui s’apparente à du code entre crochets ("\[\]"), de façon à créer une rupture d’étendue délibérée. Par exemple, en supposant qu’il existe un élément ’<TextBlock x:Uid="Title" />’, la clé de ressource dans le fichier de ressources qui cible la valeur de **Canvas.Top** sur cette instance est « Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top ». Pour plus d’informations sur les fichiers de ressources et le code XAML, voir [Démarrage rapide : traduction des ressources d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
 
-## Related topics
+## Rubriques connexes
 
-* [Custom attached properties](custom-attached-properties.md)
-* [Dependency properties overview](dependency-properties-overview.md)
-* [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/mt228350)
-* [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/hh943060)
+* [Propriétés jointes personnalisées](custom-attached-properties.md)
+* [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
+* [Définir des dispositions avec XAML](https://msdn.microsoft.com/library/windows/apps/mt228350)
+* [Démarrage rapide : traduction des ressources d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/hh943060)
 * [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
 * [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,6 +1,6 @@
 ---
-title: Diagnostic des conditions d’erreur d’un composant Windows Runtime
-description: Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé.
+Diagnostic des conditions d’erreur d’un composant Windows Runtime
+Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé.
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ---
 
@@ -11,7 +11,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé. Il se base sur les informations fournies dans les messages d’erreur à partir de [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx) et complète les informations sur les restrictions fournies dans [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code géré. Il se base sur les informations fournies dans les messages d’erreur à partir de [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx) et complète les informations sur les restrictions fournies dans [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 Cet article ne couvre pas toutes les erreurs. Les erreurs décrites ici sont regroupées par catégorie générale, et chaque catégorie inclut un tableau des messages d’erreur associés. Recherchez le texte du message (en omettant les valeurs spécifiques des espaces réservés) ou le numéro du message. Si vous ne trouvez pas les informations dont vous avez besoin ici, veuillez nous aider à améliorer la documentation à l’aide du bouton de commentaire à la fin de cet article. Fournissez le message d’erreur. Autrement, vous pouvez déposer un bogue sur le site web Microsoft Connect.
 
@@ -71,7 +71,7 @@ Dans l’UWP, une classe ne peut avoir qu’un seul constructeur avec un nombre 
 ## Spécification obligatoire d’une valeur par défaut pour les surcharges ayant le même nombre de paramètres
 
 
-Dans l’UWP, les méthodes surchargées peuvent avoir le même nombre de paramètres uniquement si une surcharge est spécifiée en tant que surcharge par défaut. Voir « Méthodes surchargées » dans [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+Dans l’UWP, les méthodes surchargées peuvent avoir le même nombre de paramètres uniquement si une surcharge est spécifiée en tant que celle par défaut. Voir « Méthodes surchargées » dans [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 | Numéro d’erreur | Texte du message                                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -117,7 +117,7 @@ Un type dans un composant Windows Runtime ne peut pas avoir un nom identique à 
 ## Exportation des types qui ne sont pas des types de plateforme Windows universelle valides
 
 
-L’interface publique de votre composant doit exposer uniquement les types UWP. Toutefois, le .NET Framework fournit des mappages pour un certain nombre de types couramment utilisés qui sont légèrement différents dans le .NET Framework et l’UWP. Cela permet au développeur de .NET Framework de travailler avec des types familiers au lieu d’en apprendre de nouveaux. Vous pouvez utiliser ces types .NET Framework mappés dans l’interface publique de votre composant. Voir « Déclaration des types dans les composants Windows Runtime » et « Passage de types Windows Runtime au code managé » dans [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) et [Mappages .NET Framework des types Windows Runtime](net-framework-mappings-of-windows-runtime-types.md).
+L’interface publique de votre composant doit exposer uniquement les types UWP. Toutefois, le .NET Framework fournit des mappages pour un certain nombre de types couramment utilisés qui sont légèrement différents dans le .NET Framework et l’UWP. Cela permet au développeur de .NET Framework de travailler avec des types familiers au lieu d’en apprendre de nouveaux. Vous pouvez utiliser ces types .NET Framework mappés dans l’interface publique de votre composant. Voir « Déclaration des types dans les composants Windows Runtime » et « Passage de types Windows Runtime au code managé » dans [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) et [Mappages .NET Framework des types Windows Runtime](net-framework-mappings-of-windows-runtime-types.md).
 
 Bon nombre de ces mappages sont des interfaces. Par exemple, [IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) mappe vers l’interface UWP [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx). Si vous utilisez List&lt;string&gt; (`List(Of String)` en Visual Basic) au lieu de IList&lt;string&gt; en tant que type de paramètre, Winmdexp.exe fournit une liste de possibilités qui comprend toutes les interfaces mappées implémentées par List&lt;T&gt;. Si vous utilisez des types génériques imbriqués, tels que List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) en Visual Basic), Winmdexp.exe offre des choix pour chaque niveau d’imbrication. Ces listes peuvent considérablement s’allonger.
 
@@ -245,4 +245,8 @@ Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par 
 
 * [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

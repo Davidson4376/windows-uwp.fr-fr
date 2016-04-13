@@ -1,80 +1,84 @@
 ---
-Description: Follow these guidelines to prepare your app's packages for submission to the Windows Store.
-title: App package requirements
+Suivez ces instructions pour préparer les packages de votre application et les envoyer au Windows Store.
+Exigences relatives au package de l’application
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ---
 
-# App package requirements
+# Exigences relatives au package de l’application
 
-Follow these guidelines to prepare your app's packages for submission to the Windows Store.
+Suivez ces instructions pour préparer les packages de votre application et les envoyer au Windows Store.
 
-## Before you build your app's package for the Windows Store
+## Avant de générer le package de votre application pour le Windows Store
 
-Make sure to [test your app with the Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449). We also recommend that you test your app on different types of hardware. Note that until we certify your app and make it available from the Windows Store, it can only be installed and run on computers that have developer licenses.
+Veillez à [tester votre application à l’aide du Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186449). Nous vous recommandons également de tester votre application sur différents types de matériels. Notez que votre application ne peut être installée et exécutée que sur des ordinateurs disposant de licences de développeur, tant que nous ne l’avons pas certifiée et rendue accessible sur le Windows Store.
 
-## Building the app package using Microsoft Visual Studio
+## Génération du package d’application à l’aide de Microsoft Visual Studio
 
-If you're using Microsoft Visual Studio as your development environment, you already have built-in tools that make creating an app package a quick and easy process. For more info, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969).
+Si vous utilisez Visual Studio comme environnement de développement, vous disposez déjà d’outils intégrés pour créer rapidement et facilement un package d’application. Pour plus d’informations, consultez [Empaquetage d’applications](https://msdn.microsoft.com/library/windows/apps/mt270969).
 
-> **Note**  Be sure that all your filenames use ANSI. 
-
-
-When you create your package in Visual Studio, make sure you are signed in with the same Microsoft account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically.
-
-When you build your app's packages, Visual Studio can create an .appx file or an .appxupload file (or a .xap file for Windows Phone 8.1 and earlier). For apps that target Windows 10, always upload the .appxupload file in the [Packages](upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
-
-Your app's packages don't have to be signed with a certificate rooted in a trusted certificate authority.
-
-### App bundles
-
-For apps that target Windows 8.1, Windows Phone 8.1, and later, Visual Studio can generate an app bundle (.appxbundle) to reduce the size of the app that users download. This can be helpful if you've defined language-specific assets, a variety of image-scale assets, or resources that apply to specific versions of Microsoft DirectX.
-
-> **Note**  One app bundle can contain your packages for all architectures. You should submit only one bundle for each targeted OS.
+> **Remarque** Vérifiez que tous vos noms de fichiers utilisent le format ANSI. 
 
 
-With an app bundle, a user will only download the relevant files, rather than all possible resources. For more info about app bundles, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969) and [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+Quand vous créez votre package dans Visual Studio, vérifiez que vous êtes connecté au même compte Microsoft que celui associé à votre compte de développeur. Les informations contenues dans certaines parties du manifeste du package font référence à votre compte. Ces informations sont automatiquement détectées et ajoutées.
 
-## Building the app package manually
+Quand vous générez les packages de votre application, Visual Studio peut créer un fichier .appx ou .appxupload (ou encore un fichier .xap pour Windows Phone 8.1 et versions antérieures). Pour les applications qui ciblent Windows 10, chargez toujours le fichier .appxupload dans la page [Packages](upload-app-packages.md). Pour plus d’informations sur l’empaquetage d’applications pour UWP pour le Windows Store, consultez [Empaquetage d’applications Windows universelles pour Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
 
-If you don't use Visual Studio to create your package, you must [create your package manifest manually](https://msdn.microsoft.com/library/windows/apps/br211476).
+Il n’est pas nécessaire que les packages de votre application soient signés avec un certificat provenant d’une autorité de certification approuvée.
 
-Be sure to review the [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
+### Ensembles d’applications
 
-Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
+Pour les applications ciblant Windows 8.1, Windows Phone 8.1 et versions ultérieures, Visual Studio peut générer un ensemble d’applications (.appxbundle) afin de réduire la taille de l’application téléchargée par les utilisateurs. Cela peut être utile si vous avez défini des ressources propres à une langue, plusieurs ressources de mise à l’échelle d’images ou encore des ressources qui s’appliquent à des versions spécifiques de Microsoft DirectX.
 
-> **Note**  Values in the manifest are case-sensitive. Spaces and other punctuation must also match. Enter the values carefully and review them to ensure that they are correct.
-
-
-App bundles use a different manifest. Review the [Bundle manifest](https://msdn.microsoft.com/library/windows/apps/dn263089) documentation for the details and requirements for app bundle manifests.
-
-> **Tip**  Be sure to run the [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449) before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.
+> **Remarque** Une offre groupée d’applications peut contenir vos packages pour toutes les architectures. Vous ne devez soumettre qu’un seul ensemble par système d’exploitation ciblé.
 
 
-If your app has more than one package, these app manifest elements must be the same in each package (per targeted OS):
+Avec un ensemble d’applications, un utilisateur ne télécharge que les fichiers pertinents, et non toutes les ressources disponibles. Pour plus d’informations sur les ensembles d’applications, voir [Empaquetage d’applications](https://msdn.microsoft.com/library/windows/apps/mt270969) et [Empaquetage d’applications Windows universelles pour Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
 
--   [**Package/Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)
--   [**Package/Dependencies**](https://msdn.microsoft.com/library/windows/apps/br211428)
--   [**Package/Resources**](https://msdn.microsoft.com/library/windows/apps/br211462)
+## Génération manuelle du package d’application
 
-## Package format requirements
+Si vous n’utilisez pas Visual Studio pour créer votre package, vous devez [créer manuellement votre manifeste de package](https://msdn.microsoft.com/library/windows/apps/br211476).
 
-Your app’s packages must comply with these requirements.
+Pour obtenir des détails complets et les conditions requises concernant le manifeste, consultez la documentation [Manifeste du package d’application](https://msdn.microsoft.com/library/windows/apps/br211474). Pour obtenir la certification, votre manifeste doit suivre le schéma du manifeste du package.
 
-| App package property | Requirement                                                          |
+Votre manifeste doit inclure des informations spécifiques concernant votre compte et votre application. Pour trouver ces informations, consultez [Visualiser les détails d’identité d’application](view-app-identity-details.md) dans la section **Gestion de l’application** de la page de présentation de votre application, dans le tableau de bord.
+
+> **Remarque** Les valeurs du manifeste respectent la casse. Les espaces et autres symboles de ponctuation doivent également correspondre. Saisissez les valeurs correctement et vérifiez-les pour vous assurer qu’elles sont correctes.
+
+
+Les ensembles d’applications utilisent un manifeste différent. Pour obtenir les détails et conditions requises concernant les manifestes d’offres groupées d’applications, consultez la documentation relative au [manifeste d’offre groupée](https://msdn.microsoft.com/library/windows/apps/dn263089).
+
+> **Conseil** Veillez à exécuter le [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186449) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
+
+
+Si votre application possède plusieurs packages, les éléments suivants du manifeste de l’application doivent être identiques dans chaque package (par système d’exploitation ciblé) :
+
+-   [**Package/Capacités**](https://msdn.microsoft.com/library/windows/apps/br211422)
+-   [**Package/Dépendances**](https://msdn.microsoft.com/library/windows/apps/br211428)
+-   [**Package/Ressources**](https://msdn.microsoft.com/library/windows/apps/br211462)
+
+## Exigences relatives au format des packages
+
+Les packages de votre application doivent être conformes aux exigences ci-après.
+
+| Propriété du package de l’application | Exigence                                                          |
 |----------------------|----------------------------------------------------------------------|
-| Package size         | .appxbundle: 25 GB maximum per bundle <br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
-| Block map hashes     | SHA2-256 algorithm                                                   |
+| Taille de package         | .appxbundle : 25 Go maximum par offre groupée <br>Packages .appx ciblant Windows 8.1 : 8 Go maximum par package <br> Packages .appx ciblant Windows 8 : 2 Go maximum par package <br> Packages .appx ciblant Windows Phone 8.1 : 4 Go maximum par package <br> Packages .xap : 1 Go maximum par package                                                                           |
+| Hachages de mappage de bloc     | Algorithme SHA2-256                                                   |
  
 
-## StoreManifest XML file
+## Fichier XML StoreManifest
 
-StoreManifest.xml is an optional configuration file that may be included in app packages. Its purpose is to enable features, such as declaring your app as a Windows Store device app or declaring requirements that a package depends on to be applicable to a device, that the package manifest does not cover. StoreManifest.xml is submitted with the app package and must be in the root folder of your app's main project. For more info, see [StoreManifest schema](https://msdn.microsoft.com/library/windows/apps/mt617325).
+Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut être inclus dans les packages d’application. Son objet est d’activer des fonctionnalités, par exemple en déclarant que votre application est une application pour périphériques du Windows Store ou en déclarant des critères dont dépend un package à appliquer à un appareil. Ces fonctionnalités ne sont pas couvertes par le manifeste du package. Le fichier StoreManifest.xml est envoyé avec le package d’application, et doit se situer dans le dossier racine du projet principal de votre application. Pour plus d’informations, voir [Schéma StoreManifest](https://msdn.microsoft.com/library/windows/apps/mt617325).
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

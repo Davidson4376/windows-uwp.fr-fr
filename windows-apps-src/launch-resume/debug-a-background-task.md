@@ -1,113 +1,117 @@
 ---
-title: Debug a background task
-description: Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
+Déboguer une tâche en arrière-plan
+Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ---
 
-# Debug a background task
+# Déboguer une tâche en arrière-plan
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
+Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.
 
-This topic assumes that you already have an existing app with a background task to debug.
+Cette rubrique part du principe que vous disposez d’une application existante avec une tâche en arrière-plan à déboguer.
 
-## Make sure the background task project is set up correctly
-
-
--   In C\# and C++, make sure the main project references the background task project. If this reference is not in place, the background task won't be included in the app package.
--   In C\# and C++, make sure the **Output type** of the background task project is "Windows Runtime Component".
--   The background class and must be declared in the entry point attribute in the package manifest.
-
-## Trigger background tasks manually to debug background task code
+## Vérifier que le projet de tâche en arrière-plan est configuré comme il se doit
 
 
-Background tasks can be triggered manually through Microsoft Visual Studio. Then you can step through the code and debug it.
+-   En C# et C++, vérifiez que le projet principal fait référence au projet de tâche en arrière-plan. En l’absence de cette référence, la tâche en arrière-plan n’est pas incluse dans le package d’application.
+-   En C\# et C++, vérifiez que le **Output type** du projet de tâche en arrière-plan est « Composant Windows Runtime ».
+-   La classe en arrière-plan doit être déclarée dans l’attribut de point d’entrée dans le manifeste du package.
 
-1.  In C\#, put a breakpoint in the Run method of the background class, and/or write debugging output by using [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
-
-    In C++, put a breakpoint in the Run function of the background class, and/or write debugging output by using [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
-
-2.  Run your application in the debugger and then trigger the background task using the suspend drop down menu in the **Lifecycle Events** toolbar. This drop down shows the names of the background tasks that can be activated by Visual Studio.
-
-    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
-
-    **Note**  Background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) or [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), and background tasks using a [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) with the [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) trigger type, cannot be activated in this manner.     
-
-    ![debugging background tasks](images/debugging-activation.png)
-
-3.  When the background task activates, the debugger will attach to it and display debug output in VS.
-
-## Debug background task activation
+## Déclencher des tâches en arrière-plan manuellement pour déboguer le code de la tâche en arrière-plan
 
 
-Background task activation depends on three things matching up correctly. This procedure shows how to check and make sure that these all match up.
+Les tâches en arrière-plan peuvent être déclenchées manuellement par le biais de Microsoft Visual Studio. Vous pouvez ensuite exécuter pas à pas le code et le déboguer.
 
--   The name and namespace of the background task class
--   The entry point attribute specified in the package manifest
--   The entry point specified by your app when registering the background task
+1.  En C#, insérez un point d’arrêt dans la méthode Run et/ou écrivez la sortie de débogage à l’aide de l’espace de noms [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
 
-1.  Use Visual Studio to note the entry point of the background task:
+    En C++, insérez un point d’arrêt dans la fonction Run de la classe en arrière-plan, ou écrivez la sortie de débogage au moyen de la fonction [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
 
-    -   In C\# and C++, note the name and namespace of the background task class specified in the background task project.
+2.  Exécutez votre application dans le débogueur, puis déclenchez la tâche en arrière-plan via le menu déroulant Suspendre dans la barre d’outils **Événements de cycle de vie**. Ce menu déroulant affiche les noms des tâches en arrière-plan qui peuvent être activées par Visual Studio.
 
-2.  Use the manifest designer to check that the background task is correctly declared in the package manifest:
+    Pour que cette opération fonctionne, la tâche en arrière-plan, doit déjà être inscrite et doit toujours attendre le déclencheur. Par exemple, si une tâche en arrière-plan a été inscrite avec un TimeTrigger à déclenchement unique et que ce déclencheur a déjà été déclenché, le lancement de la tâche via Visual Studio n’aura aucun effet.
 
-    -   In C\# and C++, the entry point attribute must match the background task namespace followed by the class name. For example: RuntimeComponent1.MyBackgroundTask.
-    -   All the trigger type(s) used with the task must also be specified.
-    -   The executable MUST NOT be specified unless you are using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) or [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543).
+    **Remarque** Les tâches en arrière-plan qui utilisent l’objet [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) ou [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) et celles qui utilisent un [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) avec le type de déclencheur [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) ne peuvent pas être activées de cette manière.     
 
-3.  Windows only. To see the entry point used by Windows to activate the background task, enable debug tracing and use the Windows event log.
+    ![débogage des tâches en arrière-plan](images/debugging-activation.png)
 
-    If you follow this procedure and the event log shows the wrong entry point or trigger for the background task, your app is not registering the background task correctly. For help with this task see [Register a background task](register-a-background-task.md).
+3.  Lorsque la tâche en arrière-plan est activée, le débogueur s’y associe et affiche la sortie de débogage dans Visual Studio.
 
-    1.  Open event viewer by going to the Start screen and searching for eventvwr.exe.
-    2.  Go to **Application and Services Logs** -&gt; **Microsoft** -&gt; **Windows** -&gt; **BackgroundTaskInfrastructure** in the event viewer.
-    3.  In the actions pane, select **View** -&gt; **Show Analytic and Debug Logs** to enable the diagnostic logging.
-    4.  Select the **Diagnostic log** and click **Enable Log**.
-    5.  Now try using your app to register and activate the background task again.
-    6.  View the diagnostic logs for detailed error information. This will include the entry point registered for the background task.
-
-![event viewer for background tasks debug information](images/event-viewer.png)
-
-## Background tasks and Visual Studio package deployment
+## Déboguer l’activation de la tâche en arrière-plan
 
 
-If an app that uses background tasks is deployed using Visual Studio, and the version (major and/or minor) specified in Manifest Designer is then updated, subsequently re-deploying the app with Visual Studio may cause the app’s background tasks to stall. This can be remedied as follows:
+L’activation de la tâche en arrière-plan dépend de la correspondance correcte de trois éléments. Cette procédure montre comment vérifier et garantir que ces éléments correspondent tous.
 
--   Use Windows PowerShell to deploy the updated app (instead of Visual Studio) by running the script generated alongside the package.
--   If you already deployed the app using Visual Studio and its background tasks are now stalled, reboot or log off/log in to get the app’s background tasks working again.
--   You can select the "Always re-install my package" debugging option to avoid this in C\# projects.
--   Wait until the app is ready for final deployment to increment the package version (don’t change it while debugging).
+-   nom et espace de noms de la classe de tâche en arrière-plan ;
+-   attribut de point d’entrée spécifié dans le manifeste du package ;
+-   point d’entrée spécifié par votre application lors de l’inscription de la tâche en arrière-plan.
 
-## Remarks
+1.  Utilisez Visual Studio pour noter le point d’entrée de la tâche en arrière-plan :
+
+    -   En C# et C++, notez le nom et l’espace de noms de la classe de tâche en arrière-plan spécifiée dans le projet de tâche en arrière-plan.
+
+2.  Utilisez le concepteur du manifeste pour vérifier que la tâche en arrière-plan est correctement déclarée dans le manifeste du package :
+
+    -   En C# et C++, l’attribut de point d’entrée doit correspondre à l’espace de noms de la tâche en arrière-plan suivi du nom de la classe. Par exemple : RuntimeComponent1.MyBackgroundTask.
+    -   Tous les types de déclencheurs utilisés avec la tâche doivent également être indiqués.
+    -   Le fichier exécutable NE doit PAS être spécifié sauf si vous utilisez l’objet [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) ou [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543).
+
+3.  Windows uniquement. Pour afficher le point d’entrée utilisé par Windows afin d’activer la tâche en arrière-plan, activez le suivi de débogage et utilisez le journal des événements Windows.
+
+    Si vous suivez cette procédure et que le journal des événements indique un déclencheur ou point d’entrée incorrect pour la tâche en arrière-plan, votre application n’inscrit pas correctement la tâche en arrière-plan. Pour obtenir de l’aide sur cette tâche, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
+
+    1.  Ouvrez l’observateur d’événements en accédant à l’écran de démarrage et en recherchant eventvwr.exe.
+    2.  Accédez à **Journaux des applications et des services** -&gt; **Microsoft** -&gt; **Windows** -&gt; **BackgroundTaskInfrastructure** dans l’observateur d’événements.
+    3.  Dans le volet Actions, sélectionnez **Affichage** -&gt; **Afficher les journaux d’analyse et de débogage** pour activer la journalisation des diagnostics.
+    4.  Sélectionnez le **journal de diagnostic**, puis cliquez sur **Activer le journal**.
+    5.  Essayez à présent d’utiliser votre application pour inscrire et activer la tâche en arrière-plan une nouvelle fois.
+    6.  Consultez les journaux de diagnostic à la recherche d’informations détaillées sur l’erreur. Cela comprend le point d’entrée inscrit pour la tâche en arrière-plan.
+
+![informations de débogage des tâches en arrière-plan dans l’observateur d’événements](images/event-viewer.png)
+
+## Tâches en arrière-plan et déploiement du package Visual Studio
 
 
--   Make sure your app checks for existing background task registrations before registering the background task again. Multiple registrations of the same background task can cause unexpected results by running the background task more than once each time it is triggered.
--   On Windows, if the background task requires lock screen access make sure to put the app on the lock screen before trying to debug the background task. For info on specifying manifest options for lock screen-capable apps, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
--   Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+Si vous déployez une application utilisant des tâches en arrière-plan à l’aide de Visual Studio et si vous mettez ensuite à jour la version (majeure et/ou mineure) précisée dans le concepteur du manifeste, le redéploiement de l’application avec Visual Studio qui s’ensuivra peut entraîner un blocage des tâches en arrière-plan de l’application. Vous pouvez remédier à ce problème de la manière suivante.
 
-For more info on using VS to debug a background task see [How to trigger suspend, resume, and background events in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+-   Utilisez Windows PowerShell pour déployer l’application mise à jour (plutôt que Visual Studio). Pour cela, exécutez le script généré avec le package.
+-   Si vous avez déjà déployé l’application à l’aide de Visual Studio et si ses tâches en arrière-plan sont maintenant bloquées, redémarrez ou bien déconnectez-vous et reconnectez-vous afin de relancer l’exécution des tâches en arrière-plan de l’application.
+-   Vous pouvez sélectionner l’option de débogage « Toujours réinstaller mon package » pour éviter cela dans des projets C#.
+-   Patientez jusqu’à ce que l’application soit prête pour un déploiement final avant d’incrémenter la version du package (ne la changez pas pendant le débogage).
 
-## Related topics
+## Remarques
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Register a background task](register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [Analyzing the code quality of Windows Windows Store apps with Visual Studio code analysis](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+
+-   Assurez-vous que votre application vérifie la présence d’inscriptions de tâches en arrière-plan existantes avant d’inscrire de nouveau la tâche en arrière-plan. Plusieurs inscriptions de la même tâche en arrière-plan peuvent entraîner des résultats inattendus si vous exécutez plusieurs fois la tâche en arrière-plan chaque fois qu’elle est déclenchée.
+-   Sur Windows, si la tâche en arrière-plan requiert un accès à l’écran de verrouillage, veillez à placer l’application sur l’écran de verrouillage avant d’essayer de déboguer la tâche en arrière-plan. Pour plus d’informations sur la spécification des options de manifeste pour les applications compatibles avec l’écran de verrouillage, voir [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
+-   Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
+
+Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan, voir [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+
+## Rubriques connexes
+
+* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Analyse de la qualité du code des applications du Windows Store avec analyse de code Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
-description: Cette rubrique montre comment utiliser FaceDetector pour détecter des visages dans une images. FaceTracker est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
-title: Détecter les visages dans des images ou des vidéos
+Cette rubrique montre comment utiliser FaceDetector pour détecter des visages dans une images. FaceTracker est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
+Détecter les visages dans des images ou des vidéos
 ---
 
 # Détecter les visages dans des images ou des vidéos
@@ -94,4 +94,8 @@ Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/a
 * [Exemple de détection des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
 * [Exemple de suivi des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

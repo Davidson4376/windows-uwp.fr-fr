@@ -1,8 +1,8 @@
 ---
-Description: Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options.
-title: Recommandations en matière de boutons bascule
+Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options.
+Recommandations en matière de boutons bascule
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-label: Boutons bascule
+Boutons bascule
 template: detail.hbs
 ---
 # Boutons bascule
@@ -42,6 +42,16 @@ Le bouton bascule et la case à cocher peuvent tous deux convenir à certaines a
 -   Utilisez des cases à cocher ou une [zone de liste](lists.md) lorsque l’utilisateur peut sélectionner plusieurs éléments :
 
     ![Case à cocher avec plusieurs éléments sélectionnés](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
+
+## Exemples
+
+Boutons bascule dans les paramètres généraux de l’application Actualités.
+
+![Boutons bascule dans les paramètres généraux de l’application Actualités](images/control-examples/toggle-switch-news.png)
+
+Boutons bascule dans les paramètres du menu Démarrer dans Windows.
+
+![Boutons bascule dans les paramètres du menu Démarrer dans Windows](images/control-examples/toggle-switch-start-settings.png)
 
 ## Créer un bouton bascule
 
@@ -144,4 +154,8 @@ Vous pouvez également utiliser un contenu plus complexe en définissant les pro
 
 **Pour les développeurs (XAML)**
 - [**Classe ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/br209712)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

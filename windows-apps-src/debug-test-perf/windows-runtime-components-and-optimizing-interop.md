@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
-title: Composants de plateforme Windows universelle et optimisation de l’interopérabilité
-description: Créez des applications de plateforme Windows universelle (UWP) qui utilisent des composants UWP et l’interopérabilité entre les types natifs et managés, tout en évitant les problèmes de performances liés à l’interopérabilité.
+Composants de plateforme Windows universelle et optimisation de l’interopérabilité
+Créez des applications de plateforme Windows universelle (UWP) qui utilisent des composants UWP et l’interopérabilité entre les types natifs et managés, tout en évitant les problèmes de performances liés à l’interopérabilité.
 ---
 # Composants de plateforme Windows universelle et optimisation de l’interopérabilité
 
@@ -82,4 +82,8 @@ Toutes les suggestions pour obtenir des performances optimales dans les applicat
 
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

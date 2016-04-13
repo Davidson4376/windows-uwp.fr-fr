@@ -14,7 +14,7 @@ Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir 
 ## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit :
+Pour utiliser cette méthode, procédez comme suit :
 
 -   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
@@ -245,13 +245,13 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 L’exemple suivant illustre quelques requêtes de récupération de données d’acquisition de produits in-app. Remplacez les valeurs *inAppProductId* ou *applicationId* par l’ID produit approprié associé à votre application ou votre produit in-app.
 
 ```
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;top=100&amp;skip=0&amp;endDate=7/3/2015&amp;$filter=market ne &#39;US&#39; and gender ne &#39;Unknown&#39; and gender ne &#39;m&#39; and market ne &#39;NO&#39; and ageGroup ne &#39;>55&#39; HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=7/3/2015&top=100&skip=0&filter=market ne 'US' and gender ne 'Unknown' and gender ne 'm' and market ne 'NO' and ageGroup ne '>55' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -314,7 +314,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
       "acquisitionQuantity": 1
     }
   ],
-  "@nextLink": "inappacquisitions?applicationId=9NBLGGGZ5QDR&amp;inAppProductId=&amp;aggregationLevel=day&amp;startDate=2015/01/01&amp;endDate=2016/02/01&amp;top=1&amp;skip=1",
+  "@nextLink": "inappacquisitions?applicationId=9NBLGGGZ5QDR&inAppProductId=&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1",
   "TotalCount": 33677
 }
 ```
@@ -330,4 +330,8 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
  
 
  
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO2-->
+
+

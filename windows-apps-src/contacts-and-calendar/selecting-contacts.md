@@ -1,65 +1,65 @@
 ---
-Through the Windows.ApplicationModel.Contacts namespace, you have several options for selecting contacts.
-Select contacts
+L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
+Sélectionner des contacts
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: contacts, selecting
-keywords: select single contact
-keywords: select multiple contacts
-keywords: contacts, select multiple
-keywords: select specific contact data
-keywords: contact, selecting specific data
-keywords: contact, selecting specific fields
+Mots clés : contacts, sélection
+Mots clés : sélection d’un seul contact
+Mots clés : sélection de plusieurs contacts
+Mots clés : contacts, sélection multiple
+Mots clés : sélection de données de contact spécifiques
+Mots clés : contact, sélection de données spécifiques
+Mots clés : contact, sélection de champs spécifiques
 ---
 
-# Select contacts
+# Sélectionner des contacts
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Through the [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) namespace, you have several options for selecting contacts. Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.
+L’espace de noms [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) fournit plusieurs options de sélection des contacts. Ici, nous allons vous montrer comment sélectionner un ou plusieurs contacts, et comment configurer le sélecteur de contacts pour récupérer uniquement les informations de contact dont votre application a besoin.
 
-## Set up the contact picker
+## Configurer le sélecteur de contacts
 
-Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) and assign it to a variable.
+Créez une instance de [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) et attribuez-lui une variable.
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## Set the selection mode (optional)
+## Définir le mode de sélection (facultatif)
 
-By default, the contact picker retrieves all of the available data for the contacts that the user selects. The [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs. This is a more efficient way to use the contact picker if you only need a subset of the available contact data.
+Par défaut, le sélecteur de contacts récupère toutes les données disponibles des contacts que l’utilisateur sélectionne. La propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) vous permet de configurer le sélecteur de contacts pour récupérer uniquement les champs de données dont votre application a besoin. Il s’agit d’un moyen plus efficace pour utiliser le sélecteur de contacts, si vous avez seulement besoin d’un sous-ensemble des données de contact disponibles.
 
-First, set the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) property to **Fields**:
+Affectez d’abord à la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) la valeur **Fields** :
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Then, use the [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve. This example configures the contact picker to retrieve email addresses:
+Utilisez ensuite la propriété [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) pour indiquer les champs que le sélecteur de contacts doit récupérer. Cet exemple configure le sélecteur de contacts pour récupérer les adresses de messagerie :
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## Launch the picker
+## Lancer le sélecteur
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Use [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) if you want the user to select one or more contacts.
+Utilisez [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) si vous voulez que l’utilisateur sélectionne un ou plusieurs contacts.
 
 ```cs
 public IList&lt;Contact&gt; contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## Process the contacts
+## Traiter les contacts
 
-When the picker returns, check whether the user has selected any contacts. If so, process the contact information.
+Quand le sélecteur retourne sa valeur, vérifiez si l’utilisateur a sélectionné des contacts. Si c’est le cas, traitez les informations de contact.
 
-This example shows how to processes a single contact. Here we retrieve the contact's name and copy it into a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) control called *OutputName*.
+Cet exemple montre comment traiter un contact unique. Ici, nous récupérons le nom du contact afin de le copier dans un contrôle [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) appelé *OutputName*.
 
 ```cs
 if (contact != null)
@@ -72,7 +72,7 @@ else
 }
 ```
 
-This example shows how to process multiple contacts.
+Cet exemple montre comment traiter plusieurs contacts.
 
 ```cs
 if (contacts != null &amp;&amp; contacts.Count &gt; 0)
@@ -84,9 +84,9 @@ if (contacts != null &amp;&amp; contacts.Count &gt; 0)
 }
 ```
 
-## Complete example (single contact)
+## Exemple complet (contact unique)
 
-This example uses the contact picker to retrieve a single contact's name along with an email address, location or phone number.
+Cet exemple utilise le sélecteur de contacts pour récupérer le nom, ainsi que l’adresse électronique, la localisation ou le numéro de téléphone d’un contact unique.
 
 ```cs
 // ...
@@ -164,9 +164,9 @@ private void AppendContactFieldValues&lt;T&gt;(TextBlock content, IList&lt;T&gt;
 }
 ```
 
-## Complete example (multiple contacts)
+## Exemple complet (contacts multiples)
 
-This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) control called `OutputContacts`.
+Cet exemple utilise le sélecteur de contacts pour récupérer plusieurs contacts, puis les ajoute à un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) appelé `OutputContacts`.
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -227,8 +227,12 @@ public class ContactItemAdapter
 }
 ```
 
-## Summary and next steps
+## Récapitulatif et étapes suivantes
 
-Now you have a basic understanding of how to use the contact picker to retrieve contact information. Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.
+À présent, vous savez utiliser de manière basique le sélecteur de contacts pour récupérer des informations de contact. Téléchargez les [Exemples d’applications Windows universelles](http://go.microsoft.com/fwlink/p/?linkid=619979) dans GitHub pour voir d’autres exemples illustrant comment utiliser les contacts et le sélecteur de contacts.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,113 +1,114 @@
 ---
-Description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
-title: Guidelines for date and time controls
+Description: Les contrôles de date et heure vous permettent d’afficher et de définir la date et l’heure. Cet article fournit des recommandations en matière de conception et vous permet de sélectionner le contrôle approprié.
+title: Recommandations en matière de contrôles de date et d’heure
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
 ---
 
-# Calendar, date, and time controls
+# Contrôles de calendrier, de date et d’heure
 
-Date and time controls give you standard, localized ways to let a user view and set date and time values in your app. This article provides design guidelines and helps you pick the right control.
+Les contrôles de date et d’heure offrent aux utilisateurs des moyens standards et localisés d’afficher et de définir des valeurs de date et d’heure dans votre application. Cet article fournit des recommandations en matière de conception et vous permet de sélectionner le contrôle approprié.
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
--   [**CalendarView class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
--   [**CalendarDatePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
--   [**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
--   [**TimePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
+-   [**Classe CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
+-   [**Classe CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
+-   [**Classe DatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
+-   [**Classe TimePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
 
-## Which date or time control should you use?
+## Quel contrôle de date ou d’heure utiliser ?
 
-There are four date and time controls to choose from; the control you use depends on your scenario. Use this info to pick the right control to use in your app.
+Quatre contrôles de date et d’heure sont disponibles ; le contrôle à utiliser dépend de votre scénario. Utilisez les informations fournies dans cet article pour sélectionner le contrôle adapté à votre application.
 
 &nbsp;|&nbsp;|&nbsp;                                                                                                                      
 --------------------|-------|-------------------------------------------------------------------------------------------------------------------------------
-Calendar view       |![Example of calendar view](images/controls_calendar_monthview_small.png)|Use to pick a single date or a range of dates from an always visible calendar.                   
-Calendar date picker|![Example of calendar date picker](images/calendar-date-picker-closed.png)|Use to pick a single date from a contextual calendar. 
-Date picker         |![Example of date picker](images/date-picker-closed.png)|Use to pick a single known date when contextual info isn't important.
-Time picker         |![Example of time picker](images/time-picker-closed.png)|Use to pick a single time value.                                        
+Affichage Calendrier       |![Exemple d’affichage Calendrier](images/controls_calendar_monthview_small.png)|Pour sélectionner une date unique ou une plage de dates à partir d’un calendrier toujours visible.                   
+Sélecteur de dates du calendrier|![Exemple de sélecteur de dates du calendrier](images/calendar-date-picker-closed.png)|Pour sélectionner une date unique à partir d’un calendrier contextuel. 
+Sélecteur de dates         |![Exemple de sélecteur de dates](images/date-picker-closed.png)|Pour sélectionner une seule date connue lorsque les informations contextuelles importent peu.
+Sélecteur d’heure         |![Exemple de sélecteur d’heure](images/time-picker-closed.png)|Pour sélectionner une seule valeur d’heure.                                        
 
 <!-- This table seems redundant, not sure it's needed.-->
 
-### Calendar view
+### Affichage Calendrier
 
-**CalendarView** lets a user view and interact with a calendar that they can navigate by month, year, or decade. A user can select a single date or a range of dates. It doesn't have a picker surface and the calendar is always visible.
+L’affichage **CalendarView** permet à un utilisateur d’afficher un calendrier qu’il peut parcourir par mois, par année ou par décennie, et d’interagir avec celui-ci. Un utilisateur peut sélectionner une seule date ou une plage de dates. Il n’y a pas de surface de sélection et le calendrier est toujours visible.
 
-The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open, but you can specify any view as the startup view.
+L’affichage Calendrier se compose de 3 affichages distincts : l’affichage mensuel, l’affichage annuel et l’affichage décennal. Par défaut, il s’ouvre avec l’affichage mensuel, mais vous pouvez spécifier l’affichage de votre choix en tant qu’affichage de démarrage.
 
-![Example of calendar date picker](images/calendar-view-3-views.png)
+![Exemple de sélecteur de dates du calendrier](images/calendar-view-3-views.png)
 
-- If you need to let a user select multiple dates, you must use a **CalendarView**.
-- If you need to let a user pick only a single date and don’t need a calendar to be always visible, consider using a **CalendarDatePicker** or **DatePicker** control.
+- Si vous avez besoin de permettre à un utilisateur de sélectionner plusieurs dates, vous devez utiliser un affichage **CalendarView**.
+- Si vous avez besoin de permettre à un utilisateur de sélectionner une seule date sans que le calendrier soit toujours visible, envisagez d’utiliser un contrôle de type **CalendarDatePicker** ou **DatePicker**.
 
-### Calendar date picker
+### Sélecteur de dates du calendrier
 
-**CalendarDatePicker** is a drop down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.
+Le sélecteur de dates de calendrier (**CalendarDatePicker**) est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes. Vous pouvez modifier le calendrier pour fournir du contexte supplémentaire ou pour limiter les dates disponibles.
 
-The entry point displays placeholder text if a date has not been set; otherwise, it displays the chosen date. When the user selects the entry point, a calendar view expands for the user to make a date selection. The calendar view overlays other UI; it doesn't push other UI out of the way.
+Le point d’entrée affiche le texte de l’espace réservé si aucune date n’a été définie. Sinon, il affiche la date choisie. Lorsque l’utilisateur sélectionne le point d’entrée, un affichage de calendrier est développé pour que l’utilisateur sélectionne une date. Cet affichage de calendrier se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
 
-![Example of calendar date picker](images/calendar-date-picker-2-views.png)
+![Exemple de sélecteur de dates du calendrier](images/calendar-date-picker-2-views.png)
 
-- Use a calendar date picker for things like choosing an appointment or departure date. 
+- Utilisez un sélecteur de dates de calendrier pour des éléments tels que le choix d’une date de rendez-vous ou de départ. 
 
-### Date picker
+### Sélecteur de dates
 
-The **DatePicker** control provides a standardized way to choose a specific date. 
+Le contrôle sélecteur de dates (**DatePicker**) offre une méthode normalisée de sélection d’une date spécifique. 
 
-The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
+Le point d’entrée affiche la date choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur effectue une sélection. Le sélecteur de dates se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
 
-![Example of the date picker expanding](images/controls_datepicker_expand.png)
+![Exemple de développement du sélecteur de date](images/controls_datepicker_expand.png)
 
-- Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
+- Utilisez un sélecteur de dates pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important.
 
-### Time picker
+### Sélecteur d’heure
 
-The **TimePicker** is used to select a single time value for things like appointments or a departure time. It's a static display that is set by the user or in code, but it doesn't update to display the current time. 
+Le sélecteur d’heure (**TimePicker**) permet de sélectionner une valeur d’heure spécifique pour des éléments tels que des heures de rendez-vous ou de départ. Il s’agit d’un affichage statique défini par l’utilisateur ou dans le code. Cependant, il ne se met pas à jour pour indiquer l’heure actuelle. 
 
-The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
+Le point d’entrée affiche l’heure choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur effectue une sélection. Le sélecteur d’heure se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
 
-![Example of the time picker expanding](images/controls_timepicker_expand.png)
+![Exemple de développement du sélecteur d’heure](images/controls_timepicker_expand.png)
 
-- Use a time picker to let a user pick a single time value.
+- Utilisez un sélecteur d’heure pour permettre à un utilisateur de sélectionner une valeur d’heure unique.
 
-## Create a date or time control
+## Créez un contrôle de date ou d’heure
 
-See these articles for info and examples specific to each date and time control.
+Pour plus d’informations et d’exemples propres à chaque contrôle de date ou d’heure, voir les articles suivants.
 
-- [**Calendar view**](calendar-view.md)
-- [**Calendar date picker**](calendar-date-picker.md)
-- [**Date picker**](date-picker.md)
-- [**Time Picker**](time-picker.md)
+- [**Affichage Calendrier**](calendar-view.md)
+- [**Sélecteur de dates du calendrier**](calendar-date-picker.md)
+- [**Sélecteur de dates**](date-picker.md)
+- [**Sélecteur d’heure**](time-picker.md)
 
-### Globalization
+### Globalisation
 
-The XAML date controls support each of the calendar systems supported by Windows. These calendars are specified in the [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) class. Each control uses the correct calendar for your app's default language, or you can set the **CalendarIdentifier** property to use a specific calendar system.
+Le contrôle des dates XAML prend en charge chacun des systèmes de calendrier pris en charge par Windows. Ces calendriers sont définis dans la classe [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx). Chaque contrôle utilise le calendrier approprié pour la langue par défaut de votre application. Vous pouvez également définir la propriété **CalendarIdentifier** pour utiliser un système de calendrier spécifique.
 
-The time picker control supports each of the clock systems specified in the [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) class. You can set the [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) property to use either a 12-hour clock or 24-hour clock. The type of the property is String, but you must use values that correspond to the static string properties of the ClockIdentifiers class. These are: TwelveHour (the string "12HourClock")and TwentyFourHour (the string "24HourClock"). "12HourClock" is the default value.
-
-
-### DateTime and Calendar values
-
-The date objects used in the XAML date and time controls have a different representation depending on your programming language. 
-- C# and Visual Basic use the [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) structure that is part of .NET. 
-- C++/CX uses the [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) structure. 
-
-A related concept is the Calendar class, which influences how dates are interpreted in context. All Windows Runtime apps can use the [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) class. C# and Visual Basic apps can alternatively use the [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) class, which has very similar functionality. (Windows Runtime apps can use the base .NET Calendar class but not the specific implementations; for example, GregorianCalendar.)
-
-.NET also supports a type named [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), which is implicitly convertible to a [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx). So you might see a "DateTime" type being used in .NET code that's used to set values that are really DateTimeOffset. For more info on the difference between DateTime and DateTimeOffset, see Remarks in the [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) class.
-
-> **Note**&nbsp;&nbsp;Properties that take date objects can't be set as a XAML attribute string, because the Windows Runtime XAML parser doesn't have a conversion logic for converting strings to dates as DateTime/DateTimeOffset objects. You typically set these values in code. Another possible technique is to define a date that's available as a data object or in the data context, then set the property as a XAML attribute that references a [\{Binding\} markup extension](../xaml-platform/binding-markup-extension.md) expression that can access the date as data.
+Le contrôle de sélecteur d’heure prend en charge chacun des systèmes d’horloge spécifiés dans la classe [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx). Vous pouvez définir la propriété [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) pour utiliser une horloge au format 12 heures ou 24 heures. La propriété est de type String, mais vous devez utiliser des valeurs qui correspondent aux propriétés de chaîne statique de la classe ClockIdentifiers, c’est-à-dire : TwelveHour (chaîne « 12HourClock » et TwentyFourHour (chaîne « 24HourClock »). La valeur par défaut est « 12HourClock ».
 
 
+### Valeurs DateTime et Calendar
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+Les objets Date utilisés dans les contrôles de date et d’heure XAML ont une représentation différente selon votre langage de programmation. 
+- C# et Visual Basic utilisent la structure [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) qui fait partie de .NET. 
+- C++/CX utilise la structure [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx). 
 
-## Related topics
+Un concept associé est la classe Calendar qui influence l’interprétation des dates dans le contexte. Toutes les applications Windows Runtime peuvent utiliser la classe [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx). Les applications C# et Visual Basic peuvent également utiliser la classe [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx), qui comporte une fonctionnalité très similaire. (Les applications Windows Runtime peuvent utiliser la classe Calendar .NET de base, mais pas les implémentations spécifiques ; par exemple, GregorianCalendar.)
 
-**For developers (XAML)**
-* [**CalendarView class**](https://msdn.microsoft.com/library/windows/apps/dn890052)
-* [**CalendarDatePicker class**](https://msdn.microsoft.com/library/windows/apps/dn950083)
-* [**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/dn298584)
-* [**TimePicker class**](https://msdn.microsoft.com/library/windows/apps/dn299280)
-<!--HONumber=Mar16_HO1-->
+.NET prend également en charge un type nommé [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), qui est implicitement convertible en un [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx). Par conséquent, il est possible que vous voyiez un type « DateTime » utilisé dans le code .NET qui sert à définir des valeurs DateTimeOffset. Pour plus d’informations sur la différence entre DateTime et DateTimeOffset, consultez les remarques dans la classe [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx).
+
+> **Remarque** Les propriétés qui acceptent les objets date ne peuvent pas être définies comme chaîne d’attribut XAML, car l’analyseur XAML Windows Runtime ne dispose pas d’une logique de conversion pour convertir les chaînes en dates en tant qu’objets DateTime/DateTimeOffset. Ces valeurs sont généralement définies dans le code. Une autre technique possible consiste à définir une date disponible sous la forme d’un objet de données ou dans le contexte de données, puis à définir la propriété en tant qu’attribut XAML qui fait référence à une expression d’[extension de balisage \{Binding\}](../xaml-platform/binding-markup-extension.md), qui peut accéder à la date en tant que données.
+
+
+## Rubriques connexes
+
+**Pour les développeurs (XAML)**
+- [**Classe CalendarView**](https://msdn.microsoft.com/library/windows/apps/dn890052)
+- [**Classe CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/dn950083)
+- [**Classe DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)
+- [**Classe TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280)
+
+
+<!--HONumber=Mar16_HO4-->
+
+

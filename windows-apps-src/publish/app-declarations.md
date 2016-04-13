@@ -1,62 +1,66 @@
 ---
-Description: You can provide additional information about your app in the App declarations section of the App properties page during the submission process.
-title: App declarations
+Vous pouvez fournir des informations complémentaires sur votre application dans la section Déclarations d’application de la page Propriétés de l’application pendant le processus de soumission.
+Déclarations d’application
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ---
 
-# App declarations
+# Déclarations d’application
 
-You can provide additional information about your app in the **App declarations** section of the **App properties** page during the [submission process](app-submissions.md). These declarations can help make sure your app is displayed appropriately and offered to the right set of customers, or can indicate how customers can use your app.
+Vous pouvez fournir des informations complémentaires sur votre application dans la section **Déclarations d'application** de la page **Propriétés de l'application** pendant le [processus de soumission](app-submissions.md). Avec ces déclarations, vous avez la garantie que votre application s'affiche correctement et qu'elle est proposée au groupe de clients approprié, ou vous pouvez indiquer le nombre de clients autorisés à utiliser votre application.
 
-The following sections describe each declaration and what you need to consider when determining whether each declaration applies to your app.
+Les sections suivantes décrivent chaque déclaration et ce que vous avez besoin de prendre en compte au moment de déterminer si chaque déclaration s'applique à votre application.
 
-## This app allows users to make purchases, but does not use the Windows Store commerce system.
+## Cette application permet aux utilisateurs d'effectuer des achats, mais n'utilise pas le système de commerce du Windows Store.
 
-Most apps should leave this box unchecked, since apps which offer opportunities to make in-app purchases generally use the Microsoft in-app purchase API to create and [submit the IAPs](iap-submissions.md). Per the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), apps that were created and submitted prior to June 29, 2015, may continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
+La plupart des applications doivent laisser cette case désactivée, car les applications qui offrent des possibilités d’effectuer des achats in-app utilisent généralement l’API d’achat in-app Microsoft pour créer et [soumettre les produits in-app](iap-submissions.md). En vertu du [Contrat développeur d’applications](https://msdn.microsoft.com/library/windows/apps/hh694058), les applications créées et soumises avant le 29 juin 2015 peuvent continuer à offrir la fonctionnalité d’achat in-app sans utiliser le moteur de commerce de Microsoft, pour autant que la fonctionnalité d’achat soit conforme aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
 
-## This app has been tested to meet accessibility guidelines.
+## Cette application a fait l'objet de tests pour voir si elle est conforme aux recommandations d'accessibilité.
 
-Checking this box makes your app discoverable to customers who are specifically looking for accessible apps in the Store.
+En cochant cette case, vous rendez votre application détectable par les clients qui recherchent tout particulièrement des applications accessibles dans le Windows Store.
 
-You should only check this box if you have done all of the following items:
+Cochez uniquement cette case si vous avez :
 
--   Set all the relevant accessibility info for UI elements, such as accessible names.
--   Implemented keyboard navigation and operations, taking into account tab order, keyboard activation, arrow keys navigation, shortcuts.
--   Ensured an accessible visual experience by including such things as a 4.5:1 text contrast ratio, and don't rely on color alone to convey info to the user.
--   Used accessibility testing tools, such as Inspect or AccChecker, to verify your app, and resolve all high-priority errors detected by those tools.
--   Verified the app’s key scenarios from end to end using such facilities and tools as Narrator, Magnifier, On Screen Keyboard, High Contrast, and High DPI.
+-   défini toutes les informations d'accessibilité relatives aux éléments de l'interface utilisateur, comme les noms accessibles ;
+-   implémenté la navigation et l'utilisation à partir du clavier en tenant compte de l'ordre des onglets, de l'activation du clavier, de la navigation à l'aide des touches de direction et des raccourcis ;
+-   vérifié la présence d'une expérience visuelle accessible respectant notamment un coefficient de contraste de texte de 4.5:1 et n'utilisant pas simplement la couleur pour transmettre des informations à l'utilisateur ;
+-   utilisé des outils de test d'accessibilité, comme Inspect ou AccChecker, afin de vérifier votre application et de résoudre les erreurs de priorité élevée détectées par ces outils ;
+-   vérifié les scénarios clés de votre application de bout en bout à l'aide de fonctionnalités et d'outils tels que le Narrateur, la Loupe, le clavier sur écran, le contraste élevé et la haute résolution.
 
-When you declare your app as accessible, you agree that your app is accessible to all customers, including those with disabilities. For example, this means you have tested the app with high-contrast mode and with a screen reader. You've also verified that the user interface functions correctly with a keyboard, the Magnifier, and other accessibility tools.
+Lorsque vous déclarez votre application comme étant accessible, vous certifiez qu'elle est accessible à tous les utilisateurs, y compris ceux souffrant de handicaps. Cela signifie, par exemple, que vous avez testé l'application avec le mode de contraste élevé et avec un lecteur d'écran. Vous avez également vérifié que l’interface utilisateur fonctionnait correctement avec un clavier, la Loupe et d’autres outils d’accessibilité.
 
-For more info, see [Accessibility for Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/dn263101), [Accessibility testing](https://msdn.microsoft.com/library/windows/apps/mt297664), and [Accessibility in the Store](https://msdn.microsoft.com/library/windows/apps/mt297663).
+Pour plus d’informations, voir [Accessibilité des applications Windows Runtime](https://msdn.microsoft.com/library/windows/apps/dn263101), [Test d’accessibilité](https://msdn.microsoft.com/library/windows/apps/mt297664) et [Accessibilité dans le Windows Store](https://msdn.microsoft.com/library/windows/apps/mt297663).
 
-> **Important**  Don't list your app as accessible unless you have specifically engineered and tested it for that purpose. If your app is declared as accessible, but it doesn’t actually support accessibility, you'll probably receive negative feedback from the community.
+> **Important** Ne déclarez pas votre application comme accessible à moins de l’avoir spécifiquement conçue et testée pour des scénarios d’accessibilité. Si votre application est déclarée comme étant accessible, mais qu’elle ne prend pas réellement en charge l’accessibilité, vous allez probablement recevoir des commentaires négatifs de la part de la communauté.
 
-## Customers can install this app to alternate drives or removable storage.
+## Les clients peuvent installer cette application sur d'autres disques ou dispositifs de stockage amovible.
 
-This box is checked by default, to allow customers to install your app to removable storage media such as an SD card, or to a non-system volume drive such as an external drive.
+Cette case, cochée par défaut, autorise les clients à installer votre application sur un support de stockage amovible tel qu'une carte SD ou un lecteur de volume tiers, comme un lecteur externe.
 
-If you want to prevent your app from being installed to alternate drives or removable storage, uncheck this box.
+Si vous voulez empêcher les clients à installer votre application sur d'autres lecteurs ou dispositifs de stockage amovibles, désélectionnez cette case.
 
-Note that there is no option to restrict installation so that an app can only be installed to removable storage media.
+Notez qu’il n’existe aucune option permettant de restreindre l’installation d’une application sur un dispositif de stockage amovible.
 
-> **Note**  For Windows Phone 8.1, this was previously indicated via StoreManifest.xml.
+> **Remarque** Pour Windows Phone 8.1, cela était auparavant mentionné dans le fichier StoreManifest.xml.
 
-## Windows can include this app's data in automatic backups to OneDrive.
+## Windows peut intégrer les données de cette application dans les sauvegardes automatiques sur OneDrive.
 
-This box is checked by default, to allow your app's data to be included when a customer chooses to have Windows make automated backups to OneDrive.
+Cette case est cochée par défaut pour permettre l'insertion des données de votre application quand un client choisit de paramétrer Windows pour des sauvegardes automatiques sur OneDrive.
 
-If you want to prevent your app's data from being included in automated backups, uncheck this box.
+Si vous voulez empêcher l’insertion des données de votre application dans les sauvegardes automatiques, décochez cette case.
 
-> **Note**  For Windows Phone 8.1, this was previously indicated via StoreManifest.xml.
-
- 
+> **Remarque** Pour Windows Phone 8.1, cela était auparavant mentionné dans le fichier StoreManifest.xml.
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

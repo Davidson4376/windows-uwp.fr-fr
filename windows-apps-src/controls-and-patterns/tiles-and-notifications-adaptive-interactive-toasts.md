@@ -1,8 +1,8 @@
 ---
-Description: Les notifications toast adaptatives et interactives vous permettent de créer des notifications contextuelles flexibles présentant davantage de contenu, ainsi que des images incluses et une interaction utilisateur facultatives.
-title: Notifications toast adaptatives et interactives
+Les notifications toast adaptatives et interactives vous permettent de créer des notifications contextuelles flexibles présentant davantage de contenu, ainsi que des images incluses et une interaction utilisateur facultatives.
+Notifications toast adaptatives et interactives
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
-label: Notifications toast adaptatives et interactives
+Notifications toast adaptatives et interactives
 template: detail.hbs
 ---
 
@@ -640,4 +640,8 @@ Pour construire des actions de répétition et de masquage individuelles, procé
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

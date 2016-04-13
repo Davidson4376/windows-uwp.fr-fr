@@ -1,158 +1,167 @@
 ---
 ms.assetid: 69E05E56-B5F0-4D4C-A1FF-B6EAFF5D0E28
-During the submission process, you can configure the ad mediation behavior you'd like to see. You'll be able to adjust this later without having to make code changes or submit new packages.
-Submit your app and configure ad mediation
+description: Lors du processus de soumission, vous pouvez configurer le comportement de médiation publicitaire que vous souhaitez. Vous pourrez l’ajuster ultérieurement sans devoir modifier le code ni soumettre de nouveaux packages.
+title: Soumettre votre application et configurer une médiation publicitaire
 ---
 
-# Submit your app and configure ad mediation
+# Soumettre votre application et configurer une médiation publicitaire
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Once you’ve built your app to include all of the ad networks you may want to use, and tested it to ensure everything’s working, you’re ready to submit the app. During the submission process, you can configure the ad mediation behavior you'd like to see. You'll be able to adjust this later without having to make code changes or submit new packages.
+Une fois que vous avez développé votre application pour inclure tous les réseaux publicitaires que vous voudrez peut-être utiliser et que vous l’avez testée pour vérifier son bon fonctionnement, vous êtes prêt à la soumettre. Lors du processus de soumission, vous pouvez configurer le comportement de médiation publicitaire que vous souhaitez. Vous pourrez l’ajuster ultérieurement sans devoir modifier le code ni soumettre de nouveaux packages.
 
-## Create a baseline configuration for an app package
-
-
-When you upload your packages, Dev Center automatically detects that you're using ad mediation and identifies which ad networks you’re using. On the **Packages** page, you’ll see a **Configure ad mediation** link. Click this link to go to the [Monetize with ads](https://msdn.microsoft.com/library/windows/apps/mt170658) page, where you’ll configure your mediation logic in the **Windows ad mediation** section. For more information about the other sections on this page, see Monetize with ads.
-
-The first time you configure ad mediation settings for your app, you’ll create a baseline configuration. After that's set up, you can add market-specific configurations to take advantage of specific ad networks’ strengths in different markets. If you choose not to configure your ad mediation settings before submitting your app, Dev Center automatically applies [default settings](#default-ad-mediation-settings), and you can [modify those settings later](#optimize-ad-mediation-after-the-app-has-been-published).
-
-The following steps describe how to create a baseline configuration in the **Windows ad mediation** section of the **Monetize with ads** page.
-
-1.  Under **Configure mediation for**, make sure the app package you want to configure is selected.
-2.  Under **Target**, make sure **Baseline** is selected.
-3.  Under **Refresh rate**, choose the length of the mediation cycle (how frequently new ads should be shown). The duration must be between 30 and 120 seconds.
-    **Note**  If you've already configured a refresh rate in any of your ad network portals, make sure you set the same refresh rate here.
-4.  Next, the **Windows ad mediation** section lists all of the ad networks used by your app and provides two different ways to specify how often your app should use each ad network. Choose one of these options in the **Mediation type** drop-down:
-
-    -   **Order by weight**. Choose this option to apply percentage values to each ad network that specify how often they should be used by your app. The total percentages you set for all ad networks must add up to exactly 100%. For more information, see [Order ad networks by weight](#order-ad-networks-by-weight).
-    -   **Order by rank**. Choose this option to apply a ranking number to each ad network, from 1 to *n*, that specifies how often your app should use each ad network. For more information, see [Order ad networks by rank](#order-ad-networkds-by-rank).
-
-    Dev Center automatically applies [default settings](#default-ad-mediation-settings) that specify how often your app should use each ad network.
-
-5.  In the list of ad networks used by your app, click the drop-down arrow for each ad network provider to view the required parameters for each network, and enter the required parameters. For a list of the parameters, see [Select and manage your ad networks](select-and-manage-your-ad-networks.md).
-
-    In the expanded list of parameters for each network, you can optionally use the **Timeout** field to specify the number of seconds (from 2-120) for which ad mediation should wait after requesting an ad from that ad network before abandoning that request and making a request to another network instead. If you already [specify this value in your code](add-and-use-the-ad-mediator-control.md#set-timeouts), the value you specify in code overrides the value you specify here.
-
-    If you are using Microsoft Advertising, make note of the following:
-
-    -   The parameters for **Microsoft Advertising** are filled in for you based on the contents of your app package. You can optionally specify your own **Application Id** and **Ad Unit Id** values for **Microsoft Advertising**.
-    -   In addition to **Microsoft Advertising**, there is also a row for **Microsoft Advertising house ads**. House ads provide a way to create free ads that promote one of your apps in your other apps. Even though house ads are free, your allotment of house ads comes from the same pool as other ad networks. Therefore, if you allocate any ad requests to **Microsoft Advertising house ads**, you are choosing to use that percentage of your total ad supply for house ads. If you allocate ad requests to house ads, you must also create a house ad campaign for at least one other app registered to your developer account. For more information, see [About House ads](https://msdn.microsoft.com/library/windows/apps/mt148566).
-
-6.  Click **Save** to save the baseline configuration.
-
-### Order ad networks by weight
-
-Choose this option in the **Mediation type** drop-down to specify percentage values that specifies how often your app should use each ad network. The total percentages you set for all ad networks must add up to exactly 100%.
-
-To automatically spread requests equally across all of your networks, click **Distribute ad requests equally across all your active ad networks**. To spread requests unequally, use the slider controls to indicate how often your app should use each ad network. The total percentages you set for all ad networks must add up to exactly 100%. When dragging the slider controls, you have several options:
-
--   If you drag the slider to a number, the number indicates the percentage of time that this ad network will be called as the app's first choice in a mediation cycle.
--   If you drag the slider to **Backup**, this indicates that the ad network should be called only if none of the ad networks with a designated percentage can provide an ad. This is equivalent to setting the percentage at 0%.
--   If you drag the slider to **Inactive**, this indicates that this ad network will never be called. The assemblies for the ad network will remain in the package, but the mediator will not attempt to invoke them. You can set this option in market-specific configurations to exclude ad networks that are known to perform poorly in, or don’t support, a certain market.
--   When you adjust the percentage for an ad network, any other slider controls where you have selected a value other than **Backup** will automatically adjust so that the total distribution adds up to 100%. If you select the **Lock** check box for an ad network, that ad network will remain fixed at its currently selected value. You can then adjust the values for the other ad networks without affecting the value for the locked ad network
-
-### Order ad networks by rank
-
-Choose this option in the **Mediation type** drop-down to apply a ranking number to each ad network, from 1 to *n*, that specifies how often your app should use each ad network.
-
-If you clear the **Active** check box for an ad network, this indicates that this ad network will never be called. The assemblies for the ad network will remain in the package, but the mediator will not attempt to invoke them. You can set this option in market-specific configurations to exclude ad networks that are known to perform poorly in, or don’t support, a certain market.
-
-### Default ad mediation settings
-
-By default, Dev Center applies the following ad mediation settings to your app on the **Monetize with ads** page. These same default values are also applied if you choose not to configure ad mediation before you submit your app.
-
--   If your app uses Microsoft Advertising, **Microsoft Advertising** is set to 100 (if you choose **Order by weight**) or 1 (if you choose **Order by rank**), and all other ad networks are set to inactive.
--   If your app does not use Microsoft Advertising, all ad networks are set to inactive.
-
-## Create a new target configuration
+## Créer une configuration de base pour un package d’application
 
 
-After you create a baseline configuration for your app, you can create additional configurations to use in specific markets. These new configurations inherit their initial settings from the baseline configuration, but you can adjust details for the specific markets you are supporting for your app.
+Lorsque vous chargez vos packages, le Centre de développement détecte automatiquement que vous utilisez une médiation publicitaire et identifie les réseaux publicitaires utilisés. Sur la page **Packages**, vous verrez le lien **Configurer la médiation publicitaire**. Cliquez sur ce lien pour accéder à la page [Monétiser avec des publicités](https://msdn.microsoft.com/library/windows/apps/mt170658), sur laquelle vous pourrez configurer votre logique de médiation dans la section **Médiation publicitaire Windows**. Pour en savoir plus sur les autres sections de cette page, voir Monétisation à l’aide des publicités.
 
-To create a new target configuration:
+La première fois que vous configurez les paramètres de médiation publicitaire pour votre application, vous créez une configuration de référence. Vous pouvez ensuite ajouter des configurations propres aux marchés pour tirer parti des atouts des réseaux publicitaires spécifiques sur les différents marchés. Si vous choisissez de ne pas configurer vos paramètres de médiation publicitaire avant de soumettre votre application, le Centre de développement applique automatiquement les [paramètres par défaut](#default-ad-mediation-settings), que vous pourrez [modifier ultérieurement](#optimize-ad-mediation-after-the-app-has-been-published).
 
-1.  Under **Target**, select the market for which you want to create the new configuration.
-2.  Update the refresh rate and ad request distribution information as desired.
-3.  Click **Save** to save the new configuration.
+Les étapes suivantes décrivent comment créer une configuration de base dans la section **Médiation publicitaire Windows** de la page **Monétiser avec des publicités**.
 
-## Optimize ad mediation after the app has been published
+1.  Sous **Configurer la médiation pour**, vérifiez que le package d’application que vous voulez configurer est sélectionné.
+2.  Sous **Cible**, assurez-vous que l’option **De base** est sélectionnée.
+3.  Sous **Fréquence d’actualisation**, définissez la durée du cycle de médiation (fréquence à laquelle les nouvelles publicités doivent être affichées). Cette durée doit être comprise entre 30 et 120 secondes.
+    **Remarque** Si vous avez déjà configuré une fréquence d’actualisation dans l’un de vos portails de réseau publicitaire, vérifiez que vous définissez la même fréquence d’actualisation ici.
+4.  Ensuite, la liste **Médiation publicitaire Windows** répertorie tous les réseaux publicitaires utilisés par votre application et propose deux façons de spécifier la fréquence à laquelle votre application doit utiliser chaque réseau. Choisissez l’une de ces options dans la liste déroulante **Type de médiation** :
+
+    -   **Classer par poids**. Choisissez cette option pour appliquer des valeurs de pourcentage à chaque réseau publicitaire pour indiquer à quelle fréquence l’application doit les utiliser. Le total des pourcentages que vous définissez pour tous les réseaux publicitaires doit correspondre exactement à 100 %. Pour en savoir plus, voir [Classer les réseaux publicitaires par poids](#order-ad-networks-by-weight).
+    -   **Classer par classement**. Choisissez cette option pour appliquer un numéro de classement à chaque réseau publicitaire, de 1 à *n*, qui spécifie la fréquence à laquelle votre application doit utiliser chaque réseau. Pour en savoir plus, voir [Classer les réseaux publicitaires par classement](#order-ad-networkds-by-rank).
+
+    Le Centre de développement applique automatiquement les [paramètres par défaut](#default-ad-mediation-settings), qui spécifient la fréquence à laquelle votre application doit utiliser chaque réseau publicitaire.
+
+5.  Dans la liste des réseaux publicitaires utilisés par votre application, cliquez sur la flèche déroulante vers le bas de chaque fournisseur de réseau publicitaire afin d’afficher les paramètres obligatoires pour chaque réseau, puis entrez les paramètres obligatoires. Pour obtenir la liste des paramètres, voir [Sélectionner et gérer vos réseaux publicitaires](select-and-manage-your-ad-networks.md).
+
+    Dans la liste développée des paramètres de chaque réseau, vous pouvez éventuellement utiliser le champ **Délai d’attente** pour spécifier le nombre de secondes (de 2 à 120) définissant le temps d’attente de la médiation publicitaire après qu’elle a demandé une publicité au réseau publicitaire, avant qu’elle n’abandonne cette demande et n’en adresse une autre à un autre réseau. Si vous avez déjà [spécifié cette valeur dans votre code](add-and-use-the-ad-mediator-control.md#set-timeouts), la valeur spécifiée dans le code remplace la valeur définie ici.
+
+    Si vous utilisez Microsoft Advertising, notez les éléments suivants :
+
+    -   Les paramètres de **Microsoft Advertising** sont renseignés pour vous en fonction du contenu de votre package d’application. Vous pouvez éventuellement spécifier vos propres valeurs d’**ID de l’application** et d’**ID de l’unité de publicité** pour **Microsoft Advertising**.
+    -   Outre **Microsoft Advertising**, il existe aussi une ligne pour **les publicités maison Microsoft Advertising**. Les publicités maison permettent de créer des publicités gratuites qui promeuvent l’une de vos applications dans vos autres applications. Bien que les publicités maison soient gratuites, votre allocation provient du même pool que les autres réseaux publicitaires. Par conséquent, si vous allouez des demandes de publicité aux **Publicités maison Microsoft Advertising**, vous choisissez d’appliquer ce pourcentage de votre dotation publicitaire totale aux publicités maison. Si vous allouez des demandes de publicité pour les publicités maison, vous devez également créer une campagne de publicité maison pour au moins une autre application enregistrée dans votre compte de développeur. Pour plus d’informations, voir [À propos des publicités maison](https://msdn.microsoft.com/library/windows/apps/mt148566).
+
+6.  Cliquez sur **Enregistrer** pour enregistrer la configuration de base.
+
+### Classer des réseaux publicitaires par poids
+
+Choisissez cette option dans la liste déroulante **Type de médiation** pour spécifier les valeurs de pourcentage indiquant la fréquence à laquelle votre application doit utiliser chaque réseau publicitaire. Le total des pourcentages que vous définissez pour tous les réseaux publicitaires doit correspondre exactement à 100 %.
+
+Pour répartir automatiquement les demandes de manière égale entre tous vos réseaux, cliquez sur **Distribuer équitablement les demandes publicitaires sur tous vos réseaux publicitaires actifs**. Pour répartir les demandes de manière inégale, utilisez les curseurs pour indiquer la fréquence à laquelle votre application doit utiliser chaque réseau publicitaire. Le total des pourcentages que vous définissez pour tous les réseaux publicitaires doit correspondre exactement à 100 %. Lorsque vous faites glisser les curseurs, vous disposez de plusieurs options :
+
+-   Si vous faites glisser le curseur vers un chiffre, celui-ci indique le pourcentage de temps pendant lequel ce réseau publicitaire est appelé en tant que premier choix de l’application dans un cycle de médiation.
+-   Si vous faites glisser le curseur vers **Réserve**, cela indique que le réseau publicitaire doit être appelé uniquement si aucun des réseaux publicitaires dotés d’un pourcentage désigné ne peut fournir de publicité. Cela revient à définir le pourcentage sur 0 %.
+-   Si vous faites glisser le curseur vers **Inactif**, cela indique que ce réseau publicitaire ne sera jamais appelé. Les assemblys du réseau publicitaire restent dans le package, mais le médiateur ne tente pas de les appeler. Vous pouvez définir cette option dans des configurations propres aux marchés pour exclure les réseaux publicitaires qui sont connus pour leurs faibles résultats ou qui ne prennent pas en charge un certain marché.
+-   Lorsque vous ajustez le pourcentage d’un réseau publicitaire, n’importe quel autre contrôle de curseur dans lequel vous avez sélectionné une valeur autre que **Réserve** s’ajuste automatiquement afin que la distribution totale atteigne 100 %. Si vous coché la case **Verrouillage** pour un réseau publicitaire, ce dernier conserve sa valeur actuelle. Vous pouvez ajuster les valeurs des autres réseaux publicitaires sans affecter la valeur du réseau publicitaire verrouillé
+
+### Classer des réseaux publicitaires par classement
+
+Choisissez cette option dans la liste déroulante **Type de médiation** pour appliquer un numéro de classement à chaque réseau publicitaire, de 1 à *n*, qui spécifie la fréquence à laquelle votre application doit utiliser chaque réseau publicitaire.
+
+En décochant la case **Actif** d’un réseau publicitaire, vous indiquez que ce réseau ne sera jamais appelé. Les assemblys du réseau publicitaire restent dans le package, mais le médiateur ne tente pas de les appeler. Vous pouvez définir cette option dans des configurations propres aux marchés pour exclure les réseaux publicitaires qui sont connus pour leurs faibles résultats ou qui ne prennent pas en charge un certain marché.
+
+### Paramètres de médiation publicitaire par défaut
+
+Par défaut, le Centre de développement applique les paramètres de médiation publicitaire suivants à votre application sur la page **Monétisation à l’aide des publicités**. Ces mêmes valeurs par défaut sont également appliquées si vous choisissez de ne pas configurer la médiation publicitaire avant de soumettre votre application.
+
+-   Si votre application utilise Microsoft Advertising, l’option **Microsoft Advertising** est définie sur 100 (si vous choisissez **Classer par poids**) ou 1 (si vous choisissez **Classer par classement**), et tous les autres réseaux publicitaires sont définis sur Inactif.
+-   Si votre application n’utilise pas Microsoft Advertising, tous les réseaux publicitaires sont définis sur Inactif.
+
+## Créer une nouvelle configuration cible
 
 
-If you want to adjust your ad mediation for a specific app, you can do so at any time without having to resubmit the app. This is useful if you’ve already added ad networks into your app that you hadn’t previously set up accounts for, or if you’re finding that one ad network is not able to fill ads reliably in specific markets. You can make changes to your baseline configuration as well as to market-specific configurations. You can also add or remove market-specific configurations if desired.
+Après avoir créé une configuration de base pour votre application, vous pouvez créer des configurations supplémentaires à utiliser sur des marchés spécifiques. La configuration de base fournit à ces nouvelles configurations leurs paramètres d’origine, mais vous pouvez ajuster les détails pour les marchés spécifiques que vous prenez en charge pour votre application.
 
-To return to the app mediation settings for your app, do one of the following:
+Pour créer une configuration cible, procédez comme suit :
 
--   From your account overview page on the dashboard, click your app under the **Ad mediation** section.
--   From the overview page for your app on the dashboard, expand **Monetization** and click **Monetize with ads**.
+1.  Sous **Cible**, sélectionnez le marché pour lequel vous voulez créer la configuration.
+2.  Mettez à jour le taux d’actualisation et les informations de distribution de demande publicitaire selon vos besoins.
+3.  Cliquez sur **Enregistrer** pour enregistrer la nouvelle configuration.
 
-## Ad mediation settings and app updates
+## Optimiser la médiation publicitaire après la publication de l’application
 
 
-When you submit an app update, the existing ad mediation configuration information for your app is automatically applied to the updated package if the following conditions are met:
+Si vous le souhaitez, vous pouvez ajuster votre médiation publicitaire pour une application spécifique à tout moment sans avoir à soumettre de nouveau l’application. Cela est utile si vous avez déjà ajouté des réseaux publicitaires dans votre application pour laquelle vous n’aviez pas configuré de comptes ou si vous estimez qu’un réseau publicitaire n’est pas en mesure de remplir les publicités de façon fiable sur des marchés spécifiques. Vous pouvez apporter des modifications à votre configuration de référence ainsi qu’aux configurations propres aux marchés. Vous pouvez également ajouter ou supprimer des configurations propres aux marchés si vous le souhaitez.
 
--   The number of **AdMediatorControl** controls is the same as the number of controls in the previous app package, and all of the controls have the same IDs as the previous app package.
--   The list of ad network providers is the same as the previous app package.
+Pour rétablir les paramètres de médiation publicitaire pour votre application, effectuez l’une des opérations suivantes :
 
-If either of these conditions are not met, you must recreate the baseline configuration and any applicable market-specific target configurations for your app.
+-   Dans la page de vue d’ensemble de votre compte sur le tableau de bord, cliquez sur votre application sous la section **Médiation publicitaire**.
+-   Dans la page de vue d’ensemble de votre compte sur le tableau de bord, développez **Monétisation**, puis cliquez sur **Monétisation à l’aide des publicités**.
 
-**Note**  The ID of an **AdMediatorControl** is generated when you drag the control to a design surface in your app. This ID will not change unless you delete the control and then replace it by dragging a new control to the same design surface.
+## Paramètres de médiation publicitaire et mises à jour des applications
+
+
+Lorsque vous envoyez une mise à jour de l’application, les informations de configuration de la médiation publicitaire existantes pour votre application sont automatiquement appliquées au package mis à jour si les conditions suivantes sont remplies :
+
+-   Le nombre de contrôles **AdMediatorControl** est le même que le nombre de contrôles dans le package d’application précédent, et tous les contrôles ont les mêmes ID que le package d’application précédent.
+-   La liste des fournisseurs de réseaux publicitaires est la même que celle du package d’application précédent.
+
+Si l’une de ces conditions n’est pas respectée, vous devez recréer la configuration de base et les configurations cibles propres au marché applicables à votre application.
+
+**Remarque** L’ID d’un **AdMediatorControl** est généré lorsque vous faites glisser le contrôle vers une aire de conception dans votre application. Cet ID ne change pas, sauf si vous supprimez le contrôle et que vous le remplacez en faisant glisser un nouveau contrôle vers la même aire de conception.
 
  
 
-## Review ad mediation reports on the unified Dev Center dashboard
+## Examiner les rapports de médiation publicitaire du tableau de bord du Centre de développement unifié
 
 
-To review ad mediation reports, go to the **Analytics** section in Dev Center and click **Ad mediation**. For more information about this report, see [Ad mediation report](https://msdn.microsoft.com/library/windows/apps/mt148521).
+Pour consulter les rapports de médiation publicitaire, accédez à la section **Analyse** du Centre de développement, puis cliquez sur **Médiation publicitaire**. Pour plus d’informations sur ce rapport, voir [Rapport de médiation publicitaire](https://msdn.microsoft.com/library/windows/apps/mt148521).
 
-## Example scenarios
+## Exemples de scénario
 
 
-You can configure your ad networks in a variety of ways to support different goals and scenarios. The examples below show how you might configure your ad mediation using **Order by weight** when you've included three ad networks. We'll use Microsoft Advertising, Inneractive, and AdDuplex as our example networks here.
+Vous pouvez configurer vos réseaux publicitaires de différentes manières pour prendre en charge des scénarios et des objectifs variés. Les exemples ci-dessous montrent comment vous pouvez configurer votre médiation publicitaire à l’aide de **Classer par poids** lorsque vous avez inclus 3 réseaux publicitaires. Nous allons utiliser Microsoft Advertising, Inneractive et AdDuplex à titre d’exemples de réseau.
 
-### **Example 1:** You want to find out the fill rate and cost per thousand views (eCPM) of all the networks, before starting to optimize.
+### Exemple 1
 
-To begin, set each network to use an equal distribution of mediation traffic. You can review each ad network's reports later to help determine the highest performing ad networks for each market.
+Vous voulez déterminer le taux de remplissage et le coût eCPM de tous les réseaux, avant de commencer l’optimisation.
 
-After a few days or weeks, you'll want to check the fill rate and eCPM in each of the ad network portals. This will help you determine the best ad networks for each market. You can then make adjustments for specific markets (or overall) without having to submit new packages.
+Pour commencer, définissez chaque réseau pour utiliser une distribution égale du trafic de médiation. Vous pouvez consulter ultérieurement les rapports de chaque réseau publicitaire pour déterminer les réseaux publicitaires les plus performants de chaque marché.
 
-### **Example 2:** You want to use Microsoft Advertising first whenever possible. If Microsoft Advertising can't provide an ad, you're happy to use any of your other ad networks as backup, with no preference for one over another.
+Après quelques jours ou quelques semaines, vous vérifierez le taux de remplissage et le coût eCPM dans chaque portail de réseau publicitaire. Cela vous aidera à déterminer les meilleurs réseaux publicitaires de chaque marché. Vous pouvez ensuite effectuer des ajustements pour des marchés spécifiques (ou généraux) sans avoir à soumettre de nouveaux packages.
 
-| Ad network            | Configuration |
+### Exemple 2
+
+Vous voulez utiliser Microsoft Advertising en premier lieu autant que possible. Si Microsoft Advertising ne peut pas fournir de publicité, vous serez satisfait d’utiliser l’un de vos autres réseaux publicitaires en tant que réseau de réserve, sans aucune préférence pour un réseau particulier.
+
+| Réseau publicitaire            | Configuration |
 |-----------------------|---------------|
-| Microsoft Advertising | 100%          |
-| Inneractive           | Backup        |
-| AdDuplex              | Backup        |
+| Microsoft             | 100%          |
+| Inneractive           | Sauvegarde        |
+| AdDuplex              | Sauvegarde        |
 
-### **Example 3:** You generally want to use Microsoft Advertising first. If Microsoft Advertising can't provide an ad, you want to make sure Inneractive is called before AdDuplex.
+### Exemple 3
 
-| Ad network            | Configuration |
+Vous souhaitez généralement utiliser Microsoft Advertising en premier. Si Microsoft Advertising ne peut pas fournir de publicité, vous voulez vous assurer qu’Inneractive sera appelé avant AdDuplex.
+
+| Réseau publicitaire            | Configuration |
 |-----------------------|---------------|
-| Microsoft Advertising | 90%           |
-| Inneractive           | 10%           |
-| AdDuplex              | Backup        |
+| Microsoft             | 90%           |
+| Inneractive           | 10 %           |
+| AdDuplex              | Sauvegarde        |
 
-### **Example 4:** You want to use Microsoft Advertising and Inneractive equally, so that there's a greater variety of ads in your app than you'd see with just one network always called first. If neither ad network is available, you’ll use AdDuplex as backup.
+### Example 4
 
-| Ad network            | Configuration |
+Vous souhaitez utiliser Microsoft Advertising et Inneractive de façon équitable pour qu’il existe une plus grande variété de publicités dans votre application que si vous appeliez toujours un même réseau en premier. Si aucun réseau publicitaire n’est disponible, vous utiliserez AdDuplex en tant que sauvegarde.
+
+| Réseau publicitaire            | Configuration |
 |-----------------------|---------------|
-| Microsoft Advertising | 50%           |
+| Microsoft             | 50%           |
 | Inneractive           | 50%           |
-| AdDuplex              | Backup        |
+| AdDuplex              | Sauvegarde        |
 
 
-## Related topics
+## Rubriques connexes
 
-* [Select and manage your ad networks](select-and-manage-your-ad-networks.md)
-* [Add and use the ad mediation control](add-and-use-the-ad-mediator-control.md)
-* [Test your ad mediation implementation](test-your-ad-mediation-implementation.md)
-* [Troubleshoot ad mediation](troubleshoot-ad-mediation.md)
+* [Sélectionner et gérer vos réseaux publicitaires](select-and-manage-your-ad-networks.md)
+* [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md)
+* [Tester l’implémentation de votre médiation publicitaire](test-your-ad-mediation-implementation.md)
+* [Résoudre les problèmes liés à la médiation publicitaire](troubleshoot-ad-mediation.md)
  
 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
-<!--HONumber=Mar16_HO1-->
+

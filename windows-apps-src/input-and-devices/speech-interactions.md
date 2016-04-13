@@ -1,219 +1,219 @@
 ---
-Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
-Speech interactions
+Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana.
+Interactions vocales
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
-Speech interactions
+Interactions vocales
 template: detail.hbs
 ---
 
-# Speech interactions
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# Interactions vocales
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app.
-
-
-**Other speech components**
-
--   See the [Cortana design guidelines](cortana-interactions.md) if you are exposing app functionality in the **Cortana** UI.
+Intégrez la reconnaissance vocale et la conversion de texte par synthèse vocale (également appelée TTS ou synthèse vocale) directement dans l’expérience utilisateur de votre application.
 
 
-**Speech recognition:  **converts words spoken by the user into text for form input, for text dictation, to specify an action or command, and to accomplish tasks. Both pre-defined grammars for free-text dictation and web search, and custom grammars authored using Speech Recognition Grammar Specification (SRGS) Version 1.0 are supported.
+**Autres fonctions vocales**
 
-**TTS:  **uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
+-   Voir [Recommandations en matière de conception de Cortana](cortana-interactions.md) si vous exposez des fonctionnalités d’application dans l’interface utilisateur **Cortana**.
 
-**Note**  Using **Cortana** and customized voice commands, your app can be launched in the foreground (the app takes focus, just as if it was launched from the Start menu) or activated as a background service (**Cortana** retains focus but provides results from the app). Commands that require additional context or user input (such as sending a message to a specific contact) are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app.
-If you are exposing functionality as a background service through voice commands in the **Cortana** UI, see the [Cortana design guidelines](cortana-design-guidelines.md).
+
+**Reconnaissance vocale : **convertit en texte les mots prononcés par l’utilisateur pour remplir des formulaires, dicter du texte, spécifier une action ou une commande ou accomplir des tâches. Les deux grammaires prédéfinies pour la dictée de texte libre et la recherche web, ainsi que les grammaires personnalisées basées sur la norme SRGS (Speech Recognition Grammar Specification) version 1.0 sont prises en charge.
+
+**Conversion de texte par synthèse vocale (TTS, text-to-speech) : **utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en parole. La chaîne d’entrée peut être du texte basique sans aucune fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse, et l’accentuation.
+
+**Remarque** À l’aide de **Cortana** et des commandes vocales personnalisées, votre application peut être lancée au premier plan (l’application prend le focus, comme si elle avait été lancée à partir du menu Démarrer) ou activée en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). Les commandes vocales qui requièrent un contexte supplémentaire ou une entrée utilisateur (par exemple, l’envoi d’un message à un contact spécifique) sont mieux gérées dans une application au premier plan, tandis que les commandes de base peuvent être gérées dans **Cortana** par le biais d’une application en arrière-plan.
+Si vous exposez la fonctionnalité en tant que service en arrière-plan par le biais des commandes vocales dans l’interface utilisateur **Cortana**, voir [Recommandations en matière de conception de Cortana](cortana-design-guidelines.md).
 
  
 
-Designed and implemented thoughtfully, speech can be a robust and enjoyable way for people to interact with your app, complementing, or even replacing, keyboard, mouse, touch, and gestures.
+Conçues et mises en œuvre efficacement, les fonctions vocales peuvent permettre aux utilisateurs d’interagir avec votre application de manière fiable et agréable. Elles peuvent aussi compléter, voire remplacer le clavier, la souris, l’écran tactile et les mouvements.
 
-## <span id="Speech_interaction_design"></span><span id="speech_interaction_design"></span><span id="SPEECH_INTERACTION_DESIGN"></span>Speech interaction design
-
-
-These guidelines and recommendations describe how to best integrate both speech recognition and TTS into the interaction experience of your app.
-
-If you are considering supporting speech interactions in your app:
-
--   What actions can be taken through speech? Can a user navigate between pages, invoke commands, or enter data as text fields, brief notes, or long messages?
--   Is speech input a good option for completing a task?
--   How does a user know when speech input is available?
--   Is the app always listening, or does the user need to take an action for the app to enter listening mode?
--   What phrases initiate an action or behavior? Do the phrases and actions need to be enumerated on screen?
--   Are prompt, confirmation, and disambiguation screens or TTS required?
--   What is the interaction dialog between app and user?
--   Is a custom or constrained vocabulary required (such as medicine, science, or locale) for the context of your app?
--   Is network connectivity required?
-
-## <span id="Text_input"></span><span id="text_input"></span><span id="TEXT_INPUT"></span>Text input
+## <span id="Speech_interaction_design"> </span> <span id="speech_interaction_design"> </span> <span id="SPEECH_INTERACTION_DESIGN"> </span>Conception de l’interaction vocale
 
 
-Speech for text input can range from short form (single word or phrase) to long form (continuous dictation). Short form input must be less than 10 seconds in length, while long form input session can be up to two minutes in length. (Long form input can be restarted without user intervention to give the impression of continuous dictation.)
+Ces instructions et recommandations décrivent comment intégrer au mieux la reconnaissance vocale et la TTS dans l’expérience d’interaction de votre application.
 
-You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Command bars](../controls-and-patterns/app-bars.md)) can be used to show both availability and state.
+Si vous envisagez de prendre en charge des interactions vocales dans votre application :
 
-Provide ongoing recognition feedback to minimize any apparent lack of response while recognition is being performed.
+-   Quelles actions peuvent être effectuées par le biais de reconnaissance vocale ? L’utilisateur peut-il naviguer entre les pages, appeler des commandes ou entrer des notes, des messages longs ou des données en tant que champs de texte ?
+-   La saisie vocale est-elle une option pratique pour mener à bien une tâche ?
+-   Comment un utilisateur peut-il savoir que la saisie vocale est disponible ?
+-   L’application est-elle toujours à l’écoute, ou l’utilisateur doit-il effectuer une action pour que l’application passe en mode d’écoute ?
+-   Quelles sont les expressions qui initient une action ou un comportement ? Les actions et les expressions doivent-elles être énumérées à l’écran ?
+-   La TTS ou les écrans d’invite, de confirmation et de levée d’ambiguïté sont-ils requis ?
+-   Quelle est la boîte de dialogue d’interaction entre l’application et l’utilisateur ?
+-   Un vocabulaire personnalisé ou restreint (médical, scientifique ou régional) est-il requis pour le contexte de votre application ?
+-   La connectivité réseau est-elle nécessaire ?
 
-Let users revise recognition text using keyboard input, disambiguation prompts, suggestions, or additional speech recognition.
-
-Stop recognition if input is detected from a device other than speech recognition, such as touch or keyboard. This probably indicates that the user has moved onto another task, such as correcting the recognition text or interacting with other form fields.
-
-Specify the length of time for which no speech input indicates that recognition is over. Do not automatically restart recognition after this period of time as it typically indicates the user has stopped engaging with your app.
-
-Disable all continuous recognition UI and terminate the recognition session if a network connection is not available. Continuous recogntion requires a network connection.
-
-## <span id="Commanding"></span><span id="commanding"></span><span id="COMMANDING"></span>Commanding
-
-
-Speech input can initiate actions, invoke commands, and accomplish tasks.
-
-If space permits, consider displaying the supported responses for the current app context, with examples of valid input. This reduces the potential responses your app has to process and also eliminates confusion for the user.
-
-Try to frame your questions such that they elicit as specific a response as possible. For example, "What do you want to do today?" is very open ended and would require a very large grammar definition due to how varied the responses could be. Alternatively, "Would you like to play a game or listen to music?" constrains the response to one of two valid answers with a correspondingly small grammar definition. A small grammar is much easier to author and results in much more accurate recognition results.
-
-Request confirmation from the user when speech recognition confidence is low. If the user's intent is unclear, it's better to get clarification than to initiate an unintended action.
-
-You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Guidelines for command bars](../controls-and-patterns/app-bars.md)) can be used to show both availability and state.
-
-If the speech recognition switch is typically out of view, consider displaying a state indicator in the content area of the app.
-
-If recognition is initiated by the user, consider using the built-in recognition experience for consistency. The built-in experience includes customizable screens with prompts, examples, disambiguations, confirmations, and errors.
-
-The screens vary depending on the specified constraints:
-
--   Pre-defined grammar (dictation or web search)
-
-    -   The **Listening** screen.
-    -   The **Thinking** screen.
-    -   The **Heard you say** screen or the error screen.
--   List of words or phrases, or a SRGS grammar file
-
-    -   The **Listening** screen.
-    -   The **Did you say** screen, if what the user said could be interpreted as more than one potential result.
-    -   The **Heard you say** screen or the error screen.
-
-On the **Listening** screen you can:
-
--   Customize the heading text.
--   Provide example text of what the user can say.
--   Specify whether the **Heard you say** screen is shown.
--   Read the recognized string back to the user on the **Heard you say** screen.
-
-Here is an example of the built-in recognition flow for a speech recognizer that uses a SRGS-defined constraint. In this example, speech recognition is successful.
-
-![initial recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-initial.png)
-
-![intermediate recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-intermediate.png)
-
-![final recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-complete.png)
-
-## <span id="Always_listening"></span><span id="always_listening"></span><span id="ALWAYS_LISTENING"></span>Always listening
+## <span id="Text_input"> </span> <span id="text_input"> </span> <span id="TEXT_INPUT"> </span>Saisie de texte
 
 
-Your app can listen for and recognize speech input as soon as the app is launched, without user intervention.
+Les fonctions vocales pour la saisie de texte peuvent varier du court (un seul mot ou une seule expression) au long (dictée en continu). L’entrée courte doit être inférieure à 10 secondes, tandis que l’entrée longue peut durer jusqu’à 2 minutes. (L’entrée longue peut être redémarrée sans intervention de l’utilisateur afin de donner l’impression d’une dictée en continu).
 
-You should customize the grammar constraints based on the app context. This keeps the speech recognition experience very targeted and relevant to the current task, and minimizes errors.
+Vous devez fournir un signal visuel pour indiquer que la reconnaissance vocale est prise en charge et disponible pour l’utilisateur, et si elle doit être activée. Par exemple, un bouton de barre de commandes avec un glyphe de microphone (voir [Barres de commandes](../controls-and-patterns/app-bars.md)) peut être utilisé pour afficher la disponibilité et l’état.
 
-## <span id="What_can_I_say_"></span><span id="what_can_i_say_"></span><span id="WHAT_CAN_I_SAY_"></span>"What can I say?"
+Fournissez des commentaires en continu pour minimiser l’absence de réponse apparente lorsque la reconnaissance est en cours d’exécution.
 
+Donnez aux utilisateurs la possibilité de réviser le texte de reconnaissance à l’aide de saisie au clavier, d’invites de levée d’ambiguïté, de suggestions ou de reconnaissance vocale supplémentaire.
 
-When speech input is enabled, it's important to help users discover what exactly can be understood and what actions can be performed.
+Arrêtez la reconnaissance si une entrée en provenance d’un appareil autre que la reconnaissance vocale (entrée tactile ou clavier) est détectée. Cela indique probablement que l’utilisateur effectue une autre tâche, telle que la correction du texte de reconnaissance ou l’interaction avec d’autres champs de formulaire.
 
-If speech recognition is user enabled, consider using the command bar or a menu command to show all words and phrases supported in the current context.
+Spécifiez la durée maximale sans entrée vocale indiquant que la reconnaissance est terminée. Ne redémarrez pas automatiquement la reconnaissance après cette période de temps, car cela indique généralement que l’utilisateur a cessé d’interagir avec votre application.
 
-If speech recognition is always on, consider adding the phrase "What can I say?" to every page. When the user says this phrase, display all words and phrases supported in the current context. Using this phrase provides a consistent way for users to discover speech capabilities across the system.
+Désactivez la reconnaissance vocale continue de l’interface utilisateur et mettez fin à la session de reconnaissance si aucune connexion réseau n’est disponible. La reconnaissance continue nécessite une connexion réseau.
 
-## <span id="Recognition_failures"></span><span id="recognition_failures"></span><span id="RECOGNITION_FAILURES"></span>Recognition failures
-
-
-Speech recognition will fail. Failures happen when audio quality is poor, when only part of a phrase is recognized, or when no input is detected at all.
-
-Handle failure gracefully, help a user understand why recognition failed, and recover.
-
-Your app should inform the user that they weren't understood and that they need to try again.
-
-Consider providing examples of one or more supported phrases. The user is likely to repeat a suggested phrase, which increases recognition success.
-
-You should display a list of potential matches for a user to select from. This can be far more efficient than going through the recognition process again.
-
-You should always support alternative input types, which is especially helpful for handling repeated recognition failures. For example, you could suggest that the user try to use a keyboard, or use touch or a mouse to select from a list of potential matches.
-
-Use the built-in speech recognition experience as it includes screens that inform the user that recognition was not successful and lets the user make another recognition attempt.
-
-Listen for and try to correct issues in the audio input. The speech recognizer can detect issues with the audio quality that might adversely affect speech recognition accuracy. You can use the information provided by the speech recognizer to inform the user of the issue and let them take corrective action, if possible. For example, if the volume setting on the microphone is too low, you can prompt the user to speak louder or turn the volume up.
-
-## <span id="Constraints"></span><span id="constraints"></span><span id="CONSTRAINTS"></span>Constraints
+## <span id="Commanding"> </span> <span id="commanding"> </span> <span id="COMMANDING"> </span>Commande
 
 
-Constraints, or grammars, define the spoken words and phrases that can be matched by the speech recognizer. You can specify one of the pre-defined web service grammars or you can create a custom grammar that is installed with your app.
+La saisie vocale permet d’initier des actions, d’appeler des commandes et d’accomplir des tâches.
 
-### <span id="Predefined_grammars"></span><span id="predefined_grammars"></span><span id="PREDEFINED_GRAMMARS"></span>Predefined grammars
+Si l’espace le permet, envisagez d’afficher les réponses prises en charge pour le contexte de l’application en cours, avec des exemples d’entrée valide. Cela réduit les réponses potentielles que votre application doit traiter et permet d’éviter toute confusion pour l’utilisateur.
 
-Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device
+Essayez de formuler vos questions de manière à ce que la réponse soit la plus précise possible. Par exemple, la question « Que vous voulez faire aujourd’hui ? » est très ouverte et nécessiterait une définition de grammaire lourde en raison de la variété des réponses. La question « Voulez-vous jouer à un jeu ou écouter de la musique ? » restreint la réponse à deux options valides avec une définition de grammaire relativement simple. Une grammaire simple est beaucoup plus facile à créer et génère des résultats de reconnaissance beaucoup plus précis.
 
--   The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.
--   The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
+Demandez confirmation à l’utilisateur quand le niveau de fiabilité de la reconnaissance vocale est faible. Si l’intention de l’utilisateur n’est pas évidente, il est préférable de la clarifier avant de lancer une action involontaire.
 
-**Note**  Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.
+Vous devez fournir un signal visuel pour indiquer que la reconnaissance vocale est prise en charge et disponible pour l’utilisateur, et si elle doit être activée. Par exemple, un bouton de barre de commandes avec un glyphe de microphone (voir [Recommandations en matière de barres de commandes](../controls-and-patterns/app-bars.md)) peut être utilisé pour afficher la disponibilité et l’état.
+
+Si le commutateur de reconnaissance vocale est hors de la vue, envisagez d’afficher un indicateur d’état dans la zone de contenu de l’application.
+
+Si la reconnaissance est initiée par l’utilisateur, envisagez d’utiliser l’expérience de reconnaissance intégrée par souci de cohérence. L’expérience intégrée comprend des écrans personnalisables avec invites, des exemples, des levées d’ambiguïté, des confirmations et des erreurs.
+
+Les écrans varient selon les contraintes spécifiées :
+
+-   Grammaire prédéfinie (dictée ou recherche web)
+
+    -   Écran **Écoute**
+    -   Écran **Réflexion**
+    -   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
+-   Liste de mots ou d’expressions, ou fichier de grammaire SRGS
+
+    -   Écran **Écoute**
+    -   Écran **Nous vous avons entendu dire**, si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
+    -   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
+
+Sur l’écran **Écoute**, vous pouvez :
+
+-   personnaliser le titre ;
+-   fournir un exemple de texte illustrant ce que peut dire l’utilisateur ;
+-   spécifier si l’écran **Nous vous avons entendu dire** s’affiche ;
+-   restituer à l’utilisateur la chaîne reconnue sur l’écran **Nous vous avons entendu dire**.
+
+Voici un exemple du flux de reconnaissance intégrée pour un module de reconnaissance vocale qui utilise une contrainte définie par le SRGS. Dans cet exemple, la reconnaissance vocale est une réussite.
+
+![Écran initial de la reconnaissance vocale correspondant à une contrainte basée sur un fichier de grammaire SGRS](images/speech/speech-listening-initial.png)
+
+![Écran intermédiaire de la reconnaissance vocale correspondant à une contrainte basée sur un fichier de grammaire SGRS](images/speech/speech-listening-intermediate.png)
+
+![Écran final de la reconnaissance vocale correspondant à une contrainte basée sur un fichier de grammaire SGRS](images/speech/speech-listening-complete.png)
+
+## <span id="Always_listening"> </span> <span id="always_listening"> </span> <span id="ALWAYS_LISTENING"> </span>Toujours à l’écoute
+
+
+Votre application peut écouter et reconnaître la saisie vocale dès que l’application est lancée, sans intervention de l’utilisateur.
+
+Vous devez personnaliser les contraintes de grammaire en fonction du contexte de l’application. Cela permet non seulement de cibler l’expérience de reconnaissance vocale sur les tâches en cours afin de la rendre plus pertinente, mais également de minimiser les erreurs.
+
+## <span id="What_can_I_say_"> </span> <span id="what_can_i_say_"> </span> <span id="WHAT_CAN_I_SAY_"> </span>« Que puis-je dire ? »
+
+
+Lorsque la saisie vocale est activée, il est important d’aider les utilisateurs à cerner ce qui est compréhensible et les actions qui peuvent être effectuées.
+
+Si la reconnaissance vocale est activée par l’utilisateur, envisagez d’utiliser la barre de commandes ou une commande de menu pour afficher tous les mots et expressions pris en charge dans le contexte actuel.
+
+Si la reconnaissance vocale est toujours activée, pensez à ajouter l’expression « Que puis-je dire ? » à chaque page. Lorsque l’utilisateur prononce cette phrase, affichez tous les mots et expressions pris en charge dans le contexte actuel. Cette expression fournit un moyen cohérent pour les utilisateurs de découvrir les fonctionnalités vocales du système.
+
+## <span id="Recognition_failures"> </span> <span id="recognition_failures"> </span> <span id="RECOGNITION_FAILURES"> </span>Gestion des échecs de la reconnaissance
+
+
+La reconnaissance vocale peut échouer. Les échecs se produisent lorsque la qualité audio est médiocre, qu’une seule partie d’une expression est reconnue, ou qu’aucune entrée n’est détectée.
+
+Gérez au mieux ces échecs en aidant l’utilisateur à comprendre pourquoi la reconnaissance n’a pas fonctionné et recherchez une solution.
+
+Votre application doit informer l’utilisateur qu’il n’a pas été compris et qu’il doit réessayer.
+
+Envisagez de fournir des exemples d’expressions prises en charge. L’utilisateur est susceptible de répéter une expression suggérée, ce qui augmente la réussite de la reconnaissance vocale.
+
+Vous pouvez afficher une liste de correspondances potentielles dans laquelle l’utilisateur peut piocher. Cela peut s’avérer bien plus efficace que de reprendre le processus de reconnaissance à zéro.
+
+Vous devez prendre en charge les autres types d’entrée afin de gérer au mieux les échecs de reconnaissance répétés. Par exemple, vous pourriez suggérer à l’utilisateur d’utiliser le clavier, l’interaction tactile ou la souris pour effectuer une sélection dans la liste des correspondances potentielles.
+
+Utilisez l’expérience de la reconnaissance vocale intégrée, car elle comprend des écrans qui indiquent à l’utilisateur que la reconnaissance a échoué et qui lui permettent de parler de nouveau pour effectuer une autre tentative de reconnaissance.
+
+Détectez et corrigez les problèmes liés à l’entrée audio. Le module de reconnaissance vocale peut détecter les problèmes liés à la qualité audio, susceptibles d’affecter la précision de la reconnaissance vocale. Vous pouvez utiliser les informations fournies par le module de reconnaissance vocale pour informer l’utilisateur du problème et lui permettre de le résoudre, le cas échéant. Par exemple, si le paramètre du volume sur le microphone est trop faible, vous pouvez inviter l’utilisateur à parler plus fort ou à augmenter le volume.
+
+## <span id="Constraints"> </span> <span id="constraints"> </span> <span id="CONSTRAINTS"> </span>Contraintes
+
+
+Les contraintes, ou les grammaires, définissent les mots et les expressions qui peuvent être détectés par le module de reconnaissance vocale. Vous pouvez spécifier l’une des grammaires de service web prédéfinies ou encore créer une grammaire personnalisée installée sur votre application.
+
+### <span id="Predefined_grammars"> </span> <span id="predefined_grammars"> </span> <span id="PREDEFINED_GRAMMARS"> </span>Grammaires prédéfinies
+
+Les grammaires de dictée et de recherche web prédéfinies vous permettent d’activer la reconnaissance vocale dans votre application sans créer votre propre grammaire. Si vous optez pour ces grammaires, la reconnaissance vocale est effectuée par un service web distant qui renvoie les résultats à l’appareil.
+
+-   La grammaire de dictée de texte libre par défaut peut reconnaître la plupart des mots et expressions prononcés par un utilisateur dans une langue spécifique. Elle est optimisée pour reconnaître les expressions courtes. La dictée de texte libre est utile si vous ne souhaitez pas limiter ce qu’un utilisateur peut dire. Elle est généralement utilisée pour créer des notes ou dicter le contenu d’un message.
+-   La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
+
+**Remarque** Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.
 
  
 
-These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require connection to a network.
+Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Elles nécessitent toutefois une connexion à un réseau.
 
-### <span id="Custom_grammars"></span><span id="custom_grammars"></span><span id="CUSTOM_GRAMMARS"></span>Custom grammars
+### <span id="Custom_grammars"> </span> <span id="custom_grammars"> </span> <span id="CUSTOM_GRAMMARS"> </span>Grammaires personnalisées
 
-A custom grammar is designed and authored by you and is installed with your app. Speech recognition using a custom constraint is performed on the device.
+Une grammaire personnalisée est conçue et créée par vous-même et installé sur votre application. La reconnaissance vocale à l’aide d’une contrainte personnalisée est effectuée sur l’appareil.
 
--   Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.
--   An SRGS grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the [SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.
+-   Les contraintes de liste de programmation permettent de créer facilement une grammaire simple sous la forme d’une liste de mots ou d’expressions. Une contrainte de liste fonctionne correctement pour la reconnaissance d’expressions distinctes courtes. En indiquant explicitement des mots dans une grammaire, vous améliorez également la précision de la reconnaissance, car le traitement de la parole par le moteur de reconnaissance se limite à la confirmation d’une correspondance. La liste peut également être mise à jour par programme.
+-   Contrairement à une contrainte de liste de programmation, une grammaire SRGS est un document statique au format XML défini par la norme [SRGS version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
 
-    Here are some tips for authoring SRGS grammars:
+    Voici quelques conseils pour la création de grammaires SRGS :
 
-    -   Keep each grammar small. Grammars that contain fewer phrases tend to provide more accurate recognition than larger grammars that contain many phrases. It's better to have several smaller grammars for specific scenarios than to have a single grammar for your entire app.
-    -   Let users know what to say for each app context and enable and disable grammars as needed.
-    -   Design each grammar so users can speak a command in a variety of ways. For example, you can use the **GARBAGE** rule to match speech input that your grammar does not define. This lets users speak additional words that have no meaning to your app. For example, "give me", "and", "uh", "maybe", and so on.
-    -   Use the [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) element to help match speech input. This is a Microsoft extension to the SRGS specification to help match partial phrases.
-    -   Try to avoid defining phrases in your grammar that contain only one syllable. Recognition tends to be more accurate for phrases containing two or more syllables.
-    -   Avoid using phrases that sound similar. For example, phrases such as "hello", "bellow", and "fellow" can confuse the recognition engine and result in poor recognition accuracy.
+    -   Limitez chaque grammaire. Les grammaires qui contiennent peu d’expressions ont tendance à offrir une reconnaissance plus précise que les grammaires complexes qui contiennent de nombreuses expressions. Il est préférable d’utiliser plusieurs grammaires de taille réduite pour les différents scénarios plutôt qu’une seule grammaire pour la totalité de l’application.
+    -   Indiquez aux utilisateurs ce qu’ils doivent dire pour chaque contexte d’application, et activez et désactivez les grammaires selon les besoins.
+    -   Concevez chaque grammaire de manière à ce que les utilisateurs puissent prononcer une commande de différentes manières. Par exemple, vous pouvez utiliser la règle **GARBAGE** pour accepter la saisie vocale que votre grammaire ne définit pas. Cela permet aux utilisateurs de prononcer des mots supplémentaires qui n’ont aucune signification pour votre application. Par exemple, « donnez-moi », « et », « euh », « peut-être », etc.
+    -   Utilisez l’élément [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) pour faciliter la détection de l’entrée vocale. Il s’agit d’une extension Microsoft à la spécification SRGS permettant de mieux répondre aux expressions partielles.
+    -   Évitez de définir des expressions dans votre grammaire qui ne contiennent qu’une seule syllabe. La reconnaissance tend à être plus précise pour les expressions contenant au moins deux syllabes.
+    -   Évitez d’utiliser des expressions qui se ressemblent. Par exemple, les expressions telles que « matin », « châtain » et « latin » peuvent induire en erreur le module de reconnaissance et affecter le degré de précision de la reconnaissance.
 
-**Note**  Which type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
+**Remarque** Le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous voulez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
 
  
 
-### <span id="Custom_pronunciations"></span><span id="custom_pronunciations"></span><span id="CUSTOM_PRONUNCIATIONS"></span>Custom pronunciations
+### <span id="Custom_pronunciations"> </span> <span id="custom_pronunciations"> </span> <span id="CUSTOM_PRONUNCIATIONS"> </span>Prononciations personnalisées
 
-If your app contains specialized vocabulary with unusual or fictional words, or words with uncommon pronunciations, you might be able to improve recognition performance for those words by defining custom pronunciations.
+Si votre application contient un vocabulaire spécialisé avec des mots inhabituels, fictifs ou dont la prononciation est particulière, vous pouvez améliorer leur reconnaissance en définissant des prononciations personnalisées.
 
-For a small list of words and phrases, or a list of infrequently used words and phrases, you can create custom pronunciations in a SRGS grammar. See [token Element](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx) for more info.
+Pour une petite liste de mots et d’expressions, ou une liste de mots et d’expressions rarement utilisés, vous pouvez créer des prononciations personnalisées dans une grammaire SRGS. Pour plus d’informations, voir [Élément token](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx).
 
-For larger lists of words and phrases, or frequently used words and phrases, you can create separate pronunciation lexicon documents. See [About Lexicons and Phonetic Alphabets](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx) for more info.
+Pour les listes de mots et d’expressions plus conséquentes, ou pour les mots et les expressions fréquemment utilisés, vous pouvez créer des documents de lexique de prononciation distincte. Pour plus d’informations, voir [À propos des lexiques et des alphabets phonétiques](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx).
 
-## <span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>Testing
-
-
-Test speech recognition accuracy and any supporting UI with your app's target audience. This is the best way to determine the effectiveness of the speech interaction experience in your app. For example, are users getting poor recognition results because your app isn't listening for a common phrase?
-
-Either modify the grammar to support this phrase or provide users with a list of supported phrases. If you already provide the list of supported phrases, ensure it is easily discoverable.
-
-## <span id="Text-to-speech__TTS_"></span><span id="text-to-speech__tts_"></span><span id="TEXT-TO-SPEECH__TTS_"></span>Text-to-speech (TTS)
+## <span id="Testing"> </span> <span id="testing"> </span> <span id="TESTING"> </span>Test
 
 
-TTS generates speech output from plain text or SSML.
+Testez la précision de la reconnaissance vocale et les interfaces utilisateur concernées auprès du public cible de votre application. C’est la meilleure façon de déterminer l’efficacité de l’expérience d’interaction vocale de votre application. Par exemple, vos utilisateurs ont-ils obtenu de mauvais résultats de reconnaissance, car votre application n’est pas à l’écoute d’une expression courante ?
 
-Try to design prompts that are polite and encouraging.
+Changez la grammaire de manière à prendre en charge cette expression ou fournissez aux utilisateurs une liste d’expressions prises en charge. Si vous fournissez une liste des expressions prises en charge, assurez-vous qu’elle est facilement accessible.
 
-Consider whether you should read long strings of text. It's one thing to listen to a text message, but quite another to listen to a long list of search results that are difficult to remember.
+## <span id="Text-to-speech__TTS_"> </span> <span id="text-to-speech__tts_"> </span> <span id="TEXT-TO-SPEECH__TTS_"> </span>Conversion de texte par synthèse vocale (TTS)
 
-You should provide media controls to let users pause, or stop, TTS.
 
-You should listen to all TTS strings to ensure they are intelligible and sound natural.
+TTS génère la sortie vocale à partir du texte brut ou du langage SSML.
 
--   Stringing together an unusual sequence of words or speaking part numbers or punctuation might cause a phrase to become unintelligible.
--   Speech can sound unnatural when the prosody or cadence is different from how a native speaker would say a phrase.
+Concevez des invites courtoises et encourageantes.
 
-Both issues can be addressed bu using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see [Use SSML to Control Synthesized Speech](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) and [Speech Synthesis Markup Language Reference](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
+Envisagez de lire les longues chaînes de texte. C’est une chose d’écouter un message texte, mais une autre d’écouter une longue liste de résultats de recherche qui sont difficiles à mémoriser.
 
-## Other articles in this section 
+Vous devez fournir les contrôles multimédias pour permettre aux utilisateurs de suspendre ou d’arrêter TTS.
+
+Vous devez écouter toutes les chaînes de texte TTS pour vous assurer qu’elles sont compréhensibles et naturelles.
+
+-   En reliant une séquence de mots inhabituels ou en prononçant des numéros de référence ou des signes de ponctuation, l’expression risque de devenir incompréhensible.
+-   La parole peut manquer de naturel lorsque la prosodie ou l’intonation est différente de la façon dont un locuteur natif prononcerait une expression.
+
+Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal une entrée basée sur le langage SSML plutôt que sur du texte brut. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
+
+## Autres articles de cette section 
 <table>
 <colgroup>
 <col width="50%" />
@@ -221,34 +221,34 @@ Both issues can be addressed bu using SSML instead of plain text as input to the
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Speech recognition](speech-recognition.md)</p></td>
-<td align="left"><p>Use speech recognition to provide input, specify an action or command, and accomplish tasks.</p></td>
+<td align="left"><p>La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Specify the speech recognizer language](specify-the-speech-recognizer-language.md)</p></td>
-<td align="left"><p>Learn how to select an installed language to use for speech recognition.</p></td>
+<td align="left"><p>Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Define custom recognition constraints](define-custom-recognition-constraints.md)</p></td>
-<td align="left"><p>Learn how to define and use custom constraints for speech recognition.</p></td>
+<td align="left"><p>Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Enable continuous dictation](enable-continuous-dictation.md)</p></td>
-<td align="left"><p>Learn how to capture and recognize long-form, continuous dictation speech input.</p></td>
+<td align="left"><p>Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Manage issues with audio input](manage-issues-with-audio-input.md)</p></td>
-<td align="left"><p>Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.</p></td>
+<td align="left"><p>Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Set speech recognition timeouts](set-speech-recognition-timeouts.md)</p></td>
-<td align="left"><p>Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.</p></td>
+<td align="left"><p>Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.</p></td>
 </tr>
 </tbody>
 </table>
@@ -256,17 +256,21 @@ Both issues can be addressed bu using SSML instead of plain text as input to the
  
 
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"> </span>Articles connexes
 
 
-* [Speech interactions](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Cortana interactions](https://msdn.microsoft.com/library/windows/apps/mt185598)
- **Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Interactions vocales](https://msdn.microsoft.com/library/windows/apps/mt185614)
+* [Interactions avec Cortana](https://msdn.microsoft.com/library/windows/apps/mt185598)
+ **Exemples**
+* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

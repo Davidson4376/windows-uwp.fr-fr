@@ -1,17 +1,17 @@
 ---
-title: Modifications importantes de Direct3D 9 à Direct3D 11
-description: Cette rubrique décrit les principales différences entre DirectX 9 et DirectX 11.
+Modifications importantes de Direct3D 9 à Direct3D 11
+Cette rubrique décrit les principales différences entre DirectX 9 et DirectX 11.
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 ---
 
 # Modifications importantes de Direct3D 9 à Direct3D 11
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
--   [Planifier votre projet de portage DirectX](plan-your-directx-port.md)
+-   [Planifier votre portage DirectX](plan-your-directx-port.md)
 -   Modifications importantes de Direct3D 9 à Direct3D 11
 -   [Mappage des fonctionnalités](feature-mapping.md)
 
@@ -108,4 +108,8 @@ Direct3D 9 gérait les constantes des nuanceurs en utilisant un tableau partag�
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

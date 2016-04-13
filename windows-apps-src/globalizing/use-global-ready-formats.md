@@ -1,15 +1,15 @@
 ---
-Description: Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises.
-title: Utiliser des formats compatibles avec la globalisation
+Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises.
+Utiliser des formats compatibles avec la globalisation
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-label: Utiliser des formats compatibles avec la globalisation
+Utiliser des formats compatibles avec la globalisation
 template: detail.hbs
 ---
 
 # <span id="dev_globalizing.use_global-ready_formats"> </span>Utiliser des formats compatibles avec la globalisation
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -187,4 +187,8 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

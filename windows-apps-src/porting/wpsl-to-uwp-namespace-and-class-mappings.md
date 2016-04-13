@@ -1,6 +1,6 @@
 ---
-description: Cette rubrique présente le mappage complet des API de Silverlight pour Windows Phone sur leurs équivalents de la plateforme Windows universelle (UWP).
-title: Mappages des espaces de noms et des classes de Silverlight pour Windows Phone sur UWP
+Cette rubrique présente le mappage complet des API de Silverlight pour Windows Phone sur leurs équivalents de la plateforme Windows universelle (UWP).
+Mappages des espaces de noms et des classes de Silverlight pour Windows Phone sur UWP
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ---
 
@@ -241,4 +241,8 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 
 Rubrique suivante : [Portage du projet](wpsl-to-uwp-porting-to-a-uwp-project.md).
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

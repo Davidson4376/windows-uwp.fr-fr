@@ -1,6 +1,6 @@
 ---
-title: Technologies de jeu des applications pour la plateforme Windows universelle (UWP)
-description: Ce guide décrit les technologies disponibles pour le développement de jeux UWP.
+Technologies de jeu des applications pour la plateforme Windows universelle (UWP)
+Ce guide décrit les technologies disponibles pour le développement de jeux UWP.
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 ---
 
@@ -348,4 +348,8 @@ Pour plus d’informations sur la soumission de votre jeu au Windows Store, voi
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

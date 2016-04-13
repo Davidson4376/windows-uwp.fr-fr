@@ -1,13 +1,13 @@
 ---
-title: Gérer le prélancement d’une application
-description: Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched.
+Gérer le prélancement d’une application
+Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched.
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ---
 
 # Gérer le prélancement d’une application
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x articles, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -126,4 +126,8 @@ public sealed partial class MainPage : Page
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

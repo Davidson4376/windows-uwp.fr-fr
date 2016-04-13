@@ -1,13 +1,13 @@
 ---
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
-title: Utiliser des reçus pour vérifier les achats de produits
+Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
+Utiliser des reçus pour vérifier les achats de produits
 ---
 
 # Utiliser des reçus pour vérifier les achats de produits
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -236,4 +236,8 @@ namespace ReceiptVerificationSample
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

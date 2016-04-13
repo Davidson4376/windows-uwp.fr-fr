@@ -1,7 +1,7 @@
 ---
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: Créer votre première application
-description: Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez.
+Créer votre première application
+Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez.
 ---
 # Créer votre première application
 
@@ -29,7 +29,7 @@ Nous supposons que vous connaissez déjà XAML et C# ou Visual Basic. Si vous so
 
 -   [Principes de base de C# pour les néophytes](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
 -   [Principes de base de VB pour les néophytes](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
--   [Grand saut XAML pour les applications Windows et Windows Phone](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+-   [Grand saut XAML pour le lancement d’applications Windows et Windows Phone](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
 
 ## Didacticiels sur les extensions des composants Visual C++ (C++/CX) et XAML
 
@@ -66,4 +66,8 @@ Vous avez déjà une expérience d’iOS ou d’Android ? La section [Portage d�
 * [S’inscrire](sign-up.md)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -14,7 +14,7 @@ Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupé
 ## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit :
+Pour utiliser cette méthode, procédez comme suit :
 
 -   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
@@ -104,7 +104,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="even">
 <td align="left">orderby</td>
 <td align="left">chaîne</td>
-<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque classification. La syntaxe est <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter les chaînes suivantes :
+<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque avis. La syntaxe est <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter les chaînes suivantes :
 <ul>
 <li><strong>date</strong></li>
 <li><strong>osVersion</strong></li>
@@ -186,10 +186,10 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 Les exemples suivants illustrent plusieurs requêtes permettant de récupérer les données de classification. Remplacez la valeur *applicationId* par l’ID produit de votre application.
 
 ```
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&amp;startDate=8/1/2015&amp;endDate=8/31/2015&amp;skip=0&amp;$filter=market eq &#39;US&#39; deviceType eq &#39;phone&#39;  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&startDate=8/1/2015&endDate=8/31/2015&skip=0&filter=market eq 'US' and deviceType eq 'phone' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -211,7 +211,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date            | chaîne  | Première date dans la plage de dates des données de classification. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
+| date            | chaîne  | Première date dans la plage de dates de classification. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | applicationId   | chaîne  | L’ID produit de l’application pour laquelle vous récupérez les données de classification.                                                                                                                                                                 |
 | applicationName | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                         |
 | market          | chaîne  | Le code pays ISO 3166 du marché dans lequel la classification a été soumise.                                                                                                                                                              |
@@ -248,7 +248,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
       "fiveStars": 2
     }
   ],
-  "@nextLink": "ratings?applicationId=9NBLGGGZ5QDR&amp;aggregationLevel=day&amp;startDate=2015/01/01&amp;endDate=2016/02/01&amp;top=1&amp;skip=1",
+  "@nextLink": "ratings?applicationId=9NBLGGGZ5QDR&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1",
   "TotalCount": 15242
 } 
 
@@ -263,4 +263,8 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir les avis sur les applications](get-app-reviews.md)
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO2-->
+
+

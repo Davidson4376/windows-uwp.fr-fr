@@ -1,51 +1,51 @@
 ---
-Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
-During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
+Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
+Au cours du processus de portage vers Direct3D 11 depuis OpenGL ES 2.0, vous devez modifier la syntaxe et le comportement de l’API pour passer des données entre l’application et les programmes de nuanceurs.
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ---
 
-# Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
+# Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
 -   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
 -   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
 
-During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
+Au cours du processus de portage vers Direct3D 11 depuis OpenGL ES 2.0, vous devez modifier la syntaxe et le comportement de l’API pour passer des données entre l’application et les programmes de nuanceurs.
 
-In OpenGL ES 2.0, data is passed to and from shader programs in four ways: as uniforms for constant data, as attributes for vertex data, as buffer objects for other resource data (such as textures). In Direct3D 11, these roughly map to constant buffers, vertex buffers, and subresources. Despite the superficial commonality, they are handled quite different in usage.
+Dans OpenGL ES 2.0, les données sont passées vers et depuis des programmes de nuanceurs de quatre manières : en tant qu’uniformes pour les données constantes, en tant qu’attributs pour les données de vertex, en tant qu’objets de tampons pour les autres données de ressources (telles que les textures). Dans Direct3D 11, celles-ci correspondent grosso modo à des tampons constants, des mémoires tampons de vertex et des sous-ressources. Malgré la standardisation superficielle, elles sont gérées de manière assez différente dans l’usage.
 
-Here's the basic mapping.
+Voici les principales correspondances.
 
 | OpenGL ES 2.0             | Direct3D 11                                                                                                                                                                         |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| uniform                   | constant buffer (**cbuffer**) field.                                                                                                                                                |
-| attribute                 | vertex buffer element field, designated by an input layout and marked with a specific HLSL semantic.                                                                                |
-| buffer object             | buffer; See [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) and [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and for a general-use buffer definitions. |
-| frame buffer object (FBO) | render target(s); See [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) with [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
-| back buffer               | swap chain with "back buffer" surface; See [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) with attached [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343).                       |
+| uniforme                   | Champ de tampon constant (**cbuffer**).                                                                                                                                                |
+| attribut                 | Champ d’élément de tampon de vertex, désigné par un schéma d’entrée et marqué à l’aide d’une sémantique HLSL spécifique.                                                                                |
+| objet de tampon             | Tampon ; voir [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) et [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) pour obtenir les définitions des tampons à usage général. |
+| objet de tampon de trame (FBO) | Cible(s) de rendu ; voir [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) avec [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
+| mémoire tampon d’arrière-plan               | Chaîne de permutation avec surface de « mémoire tampon d’arrière-plan » ; voir [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) avec [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) attaché.                       |
 
  
 
-## Port buffers
+## Mémoires tampons de port
 
 
-In OpenGL ES 2.0, the process for creating and binding any kind of buffer generally follows this pattern
+Dans OpenGL ES 2.0, le processus de création et de liaison de tout type de tampon suit généralement ce modèle :
 
--   Call glGenBuffers to generate one or more buffers and return the handles to them.
--   Call glBindBuffer to define the layout of a buffer, such as GL\_ELEMENT\_ARRAY\_BUFFER.
--   Call glBufferData to populate the buffer with specific data (such as vertex structures, index data, or color data) in a specific layout.
+-   Appelez glGenBuffers pour générer un ou plusieurs tampons et leur renvoyer les handles.
+-   Appelez glBindBuffer pour définir la disposition d’un tampon, notamment GL\_ELEMENT\_ARRAY\_BUFFER.
+-   Appelez glBufferData pour renseigner le tampon à l’aide de données spécifiques (telles que les structures de vertex, les données d’index ou les données de couleurs) dans une disposition spécifique.
 
-The most common kind of buffer is the vertex buffer, which minimally contains the positions of the vertices in some coordinate system. In typical use, a vertex is represented by a structure that contains the position coordinates, a normal vector to the vertex position, a tangent vector to the vertex position, and texture lookup (uv) coordinates. The buffer contains a contiguous list of these vertices, in some order (like a triangle list, or strip, or fan), and which collectively represent the visible polygons in your scene. (In Direct3D 11 as well as OpenGL ES 2.0 it is inefficient to have multiple vertex buffers per draw call.)
+Le type le plus courant de mémoire tampon est la mémoire tampon de vertex, qui contient au minimum les positions des vertex dans un système de coordonnées. Dans le cadre d’une utilisation typique, un vertex est représenté par une structure qui contient les coordonnées de position, un vecteur normal vers la position du vertex, un vecteur tangent à la position du vertex et des coordonnées (uv) de recherche de texture. La mémoire tampon contient la liste contiguë de ces vertex, dans le même ordre (comme une liste de triangles, une bande ou un éventail), représentant collectivement les polygones visibles dans votre scène. (Dans Direct3D 11 et OpenGL ES 2.0, il n’est pas efficace d’avoir plusieurs mémoires tampons de vertex par appel de dessin.)
 
-Here's an example a vertex buffer and an index buffer created with OpenGL ES 2.0:
+Voici un exemple de mémoire tampon de vertex et de tampon d’index créés avec OpenGL ES 2.0 :
 
-OpenGL ES 2.0: Creating and populating a vertex buffer and an index buffer.
+OpenGL ES 2.0 : création et renseignement d’une mémoire tampon de vertex et d’un tampon d’index.
 
 ``` syntax
 glGenBuffers(1, &renderer->vertexBuffer);
@@ -57,19 +57,19 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * CUBE_INDICES, renderer->vertexIndices, GL_STATIC_DRAW);
 ```
 
-Other buffers include pixel buffers and maps, like textures. The shader pipeline can render into texture buffers (pixmaps) or render buffer objects and use those buffers in future shader passes. In the simplest case, the call flow is:
+D’autres tampons incluent les tampons de pixels et les pixmaps, comme les textures. Le pipeline nuanceur peut générer un rendu en tampons de texture (pixmaps) ou générer le rendu d’objets de tampons et utiliser ces tampons lors des futures passes du nuanceur. Dans le cas le plus simple, le flux des appels est le suivant :
 
--   Call glGenFramebuffers to generate a frame buffer object.
--   Call glBindFramebuffer to bind the frame buffer object for writing.
--   Call glFramebufferTexture2D to draw into a specified texture map.
+-   Appelez glGenFramebuffers pour générer un objet de tampon de trame.
+-   Appelez glBindFramebuffer pour lier l’objet de tampon de trame pour l’écriture.
+-   Appelez glFramebufferTexture2D pour dessiner dans une carte de texture spécifiée.
 
-In Direct3D 11, buffer data elements are considered "subresources," and can range from individual vertex data elements to MIP-map textures.
+Dans Direct3D 11, les éléments de données des tampons sont considérés comme des « sous-ressources » et peuvent varier des éléments de données de vertex individuels aux textures de carte MIP.
 
--   Populate a [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure with the configuration for a buffer data element.
--   Populate a [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) structure with the size of the individual elements in the buffer as well as the buffer type.
--   Call [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) with these two structures.
+-   Renseignez une structure [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) à l’aide de la configuration d’un élément de données de tampon.
+-   Renseignez une structure [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) à l’aide de la taille des éléments individuels dans le tampon ainsi que du type de tampon.
+-   Appelez [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) avec ces deux structures.
 
-Direct3D 11: Creating and populating a vertex buffer and an index buffer.
+Direct3D 11 : création et renseignement d’une mémoire tampon de vertex et d’un tampon d’index.
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -98,9 +98,9 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-Writable pixel buffers or maps, such as a frame buffer, can be created as [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) objects. These can be bound as resources to an [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) or [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628), which, once drawn into, can be displayed with the associated swap chain or passed to a shader, respectively.
+Il est possible de créer des tampons de pixels ou pixmaps, tels qu’un tampon de trame, sous forme d’objets [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635). Ceux-ci peuvent être liés en tant que ressources à un [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) ou [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628), lequel, une fois dessiné, peut s’afficher avec la chaîne de permutation associée ou être passé à un nuanceur, respectivement.
 
-Direct3D 11: Creating a frame buffer object.
+Direct3D 11 : création d’un objet de tampon de trame.
 
 ``` syntax
 ComPtr<ID3D11RenderTargetView> m_d3dRenderTargetViewWin;
@@ -114,14 +114,14 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-## Change uniforms and uniform buffer objects to Direct3D constant buffers
+## Changer les uniformes et les objets de tampons uniformes en tampons constants Direct3D
 
 
-In Open GL ES 2.0, uniforms are the mechanism to supply constant data to individual shader programs. This data cannot be altered by the shaders.
+Dans Open GL ES 2.0, les uniformes correspondent au mécanisme qui fournit des données constantes aux programmes de nuanceurs individuels. Ces données ne peuvent pas être modifiées par les nuanceurs.
 
-Setting a uniform typically involves providing one of the glUniform\* methods with the upload location in the GPU along with a pointer to the data in app memory. After ithe glUniform\* method executes, the uniform data is in the GPU memory and accessible by the shaders that have declared that uniform. You are expected to ensure that the data is packed in such a way that the shader can interpret it based on the uniform declaration in the shader (by using compatible types).
+La définition d’un uniforme implique en général de fournir l’une des méthodes glUniform\* avec l’emplacement de chargement dans le GPU, ainsi qu’un pointeur vers les données dans la mémoire de l’application. Après l’exécution de la méthode glUniform\*, les données de l’uniforme sont dans la mémoire du GPU et sont accessibles par les nuanceurs qui ont déclaré cet uniforme. Vous devez veiller à ce que les données soient compressées de manière à ce que le nuanceur puisse les interpréter selon la déclaration uniforme incluse dans le nuanceur (à l’aide de types compatibles).
 
-OpenGL ES 2.0 Creating a uniform and uploading data to it
+OpenGL ES 2.0 : création d’un uniforme et téléchargement de données dans cet uniforme
 
 ``` syntax
 renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
@@ -131,19 +131,19 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 glUniformMatrix4fv(renderer->mvpLoc, 1, GL_FALSE, (GLfloat*) &renderer->mvpMatrix.m[0][0]);
 ```
 
-In a shader's GLSL, the corresponding uniform declaration looks like this:
+Dans le langage GLSL d’un nuanceur, la déclaration uniforme correspondante ressemble à ceci :
 
-Open GL ES 2.0: GLSL uniform declaration
+Open GL ES 2.0 : déclaration uniforme GLSL
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
 ```
 
-Direct3D designates uniform data as "constant buffers," which, like uniforms, contain constant data provided to individual shaders. As with uniform buffers, it is important to pack the constant buffer data in memory identically to the way the shader expects to interpret it. Using DirectXMath types (such as [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) instead of platform types (such as **float\*** or **float\[4\]**) guarantees proper data element alignment.
+Direct3D désigne les données uniformes comme étant des « tampons constants », lesquels, à l’instar des uniformes, contiennent les données constantes fournies aux nuanceurs individuels. Comme avec les tampons uniformes, il est important de compresser les données de tampons constants dans la mémoire de la même manière que celle avec laquelle le nuanceur s’attend à les interpréter. L’utilisation de types DirectXMath (comme [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) plutôt que de types de plateforme (comme **float\*** ou **float\[4\]**) garantit un alignement approprié des éléments de données.
 
-Constant buffers must have an associated GPU register used to reference that data on the GPU. The data is packed into the register location as indicated by the layout of the buffer.
+Les tampons constants doivent avoir un registre de GPU associé utilisé pour référencer ces données sur le GPU. Les données sont compressées dans l’emplacement du registre comme indiqué par la disposition du tampon.
 
-Direct3D 11: Creating a constant buffer and uploading data to it
+Direct3D 11 : création d’un tampon constant et téléchargement de données vers ce tampon
 
 ``` syntax
 struct ModelViewProjectionConstantBuffer
@@ -166,9 +166,9 @@ m_d3dDevice->CreateBuffer(
   &m_constantBuffer);
 ```
 
-In a shader's HLSL, the corresponding constant buffer declaration looks like this:
+Dans le langage HLSL d’un nuanceur, la déclaration de tampon constant correspondante ressemble à ceci :
 
-Direct3D 11: Constant buffer HLSL declaration
+Direct3D 11 : déclaration HLSL de tampon constant
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -177,21 +177,21 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-Note that a register must be declared for each constant buffer. Different Direct3D feature levels have different maximum available registers, so do not exceed the maximum number for the lowest feature level you are targeting.
+Notez qu’un registre doit être déclaré pour chaque tampon constant. Les différents niveaux de fonctionnalités Direct3D possèdent des registres disponibles maximaux différents, alors ne dépassez pas le nombre maximal pour le niveau de fonctionnalité le plus bas que vous ciblez.
 
-## Port vertex attributes to a Direct3D input layouts and HLSL semantics
+## Porter des attributs de vertex vers des schémas d’entrée Direct3D et une sémantique HLSL
 
 
-Since vertex data can be modified by the shader pipeline, OpenGL ES 2.0 requires that you specify them as "attributes" instead of "uniforms". (This has changed in later versions of OpenGL and GLSL.) Vertex-specific data such the vertex position, normals, tangents, and color values are supplied to the shaders as attribute values. These attribute values correspond to specific offsets for each element in the vertex data; for example, the first attribute could point to the position component of an individual vertex, and the second to the normal, and so on.
+Comme les données de vertex peuvent être modifiées par le pipeline nuanceur, OpenGL ES 2.0 requiert que vous les spécifiiez en tant qu’« attributs » plutôt qu’« uniformes ». (Cela a changé dans les versions ultérieures d’OpenGL et GLSL.) Les données propres aux vertex telles que leur position, les normales, les tangentes et les valeurs de couleurs sont fournies aux nuanceurs sous forme de valeurs d’attributs. Ces valeurs d’attributs correspondent à des décalages spécifiques pour chaque élément dans les données de vertex ; par exemple, le premier attribut peut pointer vers le composant de position d’un vertex individuel et le deuxième vers la normale, etc.
 
-The basic process for moving the vertex buffer data from main memory to the GPU looks like this:
+Le processus de base permettant de déplacer les données de mémoire tampon de vertex depuis la mémoire principale vers le GPU ressemble à ceci :
 
--   Upload the vertex data with glBindBuffer.
--   Get the location of the attributes on the GPU with glGetAttribLocation. Call it for each attribute in the vertex data element.
--   Call glVertexAttribPointer to provide set the correct attribute size and offset inside an individual vertex data element. Do this for each attribute.
--   Enable the vertex data layout information with glEnableVertexAttribArray.
+-   Chargez les données de vertex avec glBindBuffer.
+-   Obtenez l’emplacement des attributs sur le GPU avec glGetAttribLocation. Appelez-le pour chaque attribut dans l’élément de données de vertex.
+-   Appelez glVertexAttribPointer pour définir la taille et le décalage corrects de l’attribut à l’intérieur d’un élément de données de vertex individuel. Procédez ainsi pour chaque attribut.
+-   Activez les informations de disposition des données de vertex avec glEnableVertexAttribArray.
 
-OpenGL ES 2.0: Uploading vertex buffer data to the shader attribute
+OpenGL ES 2.0 : téléchargement de données de mémoire tampon de vertex vers l’attribut de nuanceur
 
 ``` syntax
 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->vertexBuffer);
@@ -207,20 +207,20 @@ glVertexAttribPointer(loc, 4, GL_FLOAT, GL_FALSE,
 glEnableVertexAttribArray(loc);
 ```
 
-Now, in your vertex shader, you declare attributes with the same names you defined in your call to glGetAttribLocation.
+Maintenant, dans votre nuanceur de vertex, vous déclarez les attributs à l’aide des mêmes noms que ceux que vous avez définis dans votre appel à glGetAttribLocation.
 
-OpenGL ES 2.0: Declaring an attribute in GLSL
+OpenGL ES 2.0 : déclaration d’un attribut en langage GLSL
 
 ``` syntax
 attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-In some ways, the same process holds for Direct3D. Instead of a attributes, vertex data is provided in input buffers, which include vertex buffers and the corresponding index buffers. However, since Direct3D does not have the "attribute" declaration, you must specify an input layout which declares the individual component of the data elements in the vertex buffer and the HLSL semantics that indicate where and how those components are to be interpreted by the vertex shader. HLSL semantics require that you define the usage of each component with a specific string that informs the shader engine as to its purpose. For example, vertex position data is marked as POSITION, normal data is marked as NORMAL, and vertex color data is marked as COLOR. (Other shader stages also require specific semantics, and those semantics have different interpretations based on the shader stage.) For more info on HLSL semantics, read [Port your shader pipeline](change-your-shader-loading-code.md) and [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574).
+D’une certaine manière, le même processus est valable pour Direct3D. Au lieu des attributs, les données de vertex sont fournies dans des tampons d’entrée, qui incluent des mémoires tampons de vertex et les tampons d’index correspondants. Toutefois, étant donné que Direct3D ne possède pas la déclaration des « attributs », vous devez spécifier un schéma d’entrée qui déclare le composant individuel des éléments de données dans la mémoire tampon de vertex et la sémantique HLSL qui indiquent où et comment ces composants doivent être interprétés par le nuanceur de vertex. La sémantique HLSL exige que vous définissiez l’usage de chaque composant avec une chaîne spécifique qui informe le moteur de nuanceur de son objectif. Par exemple, les données de position de vertex sont marquées comme POSITION, les données normales sont marquées comme NORMAL et les données de couleurs de vertex sont marquées comme COLOR. (D’autres stades de nuanceur requièrent également une sémantique spécifique, laquelle comporte des interprétations différentes en fonction du stade de nuanceur.) Pour plus d’informations sur la sémantique HLSL, lisez [Porter votre pipeline de nuanceur](change-your-shader-loading-code.md) et [Sémantique HLSL](https://msdn.microsoft.com/library/windows/desktop/bb205574).
 
-Collectively, the process of setting the vertex and index buffers, and setting the input layout is called the "Input Assembly" (IA) stage of the Direct3D graphics pipeline.
+Collectivement, le processus de définition de la mémoire tampon de vertex et du tampon d’index et de définition du schéma d’entrée est appelé stade « d’assembly d’entrée » (stade IA) du pipeline graphique Direct3D.
 
-Direct3D 11: Configuring the input assembly stage
+Direct3D 11 : configuration du stade d’assembly d’entrée
 
 ``` syntax
 // Set up the IA stage corresponding to the current draw operation.
@@ -242,14 +242,14 @@ m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-An input layout is declared and associated with a vertex shader by declaring the format of the vertex data element and the semantic used for each component. The vertex element data layout described in the D3D11\_INPUT\_ELEMENT\_DESC you create must correspond to the layout of the corresponding structure. Here, you create a layout for vertex data that has two components:
+Un schéma d’entrée est déclaré et associé avec un nuanceur de vertex en déclarant le format de l’élément de données de vertex et la sémantique utilisée pour chaque composant. Le schéma des données d’élément de vertex décrit dans le D3D11\_INPUT\_ELEMENT\_DESC que vous créez doit correspondre au schéma de la structure correspondante. Ici, vous créez un schéma pour les données de vertex qui comporte deux composants :
 
--   A vertex position coordinate, represented in main memory as an XMFLOAT3, which is an aligned array of 3 32-bit floating point values for the (x, y, z) coordinates.
--   A vertex color value, represented as an XMFLOAT4, which is an aligned array of 4 32-bit floating point values for the color (RGBA).
+-   Une coordonnée de position de vertex, représentée dans la mémoire principale sous forme de XMFLOAT3, un tableau aligné de 3 valeurs à virgule flottante 32 bits pour les coordonnées (x, y, z).
+-   Une valeur de couleur de vertex, représentée sous forme de XMFLOAT4, un tableau aligné de 4 valeurs à virgule flottante 32 bits pour la couleur (RVBA).
 
-You assign a semantic for each one, as well as a format type. You then pass the description to [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). The input layout is used when we call [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) when you set up the input assembly during our render method.
+Vous attribuez une sémantique pour chacun, ainsi qu’un type de format. Vous passez ensuite la description à la méthode [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). Le schéma d’entrée est utilisé quand nous appelons la méthode [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) quand vous configurez l’assembly d’entrée pendant notre méthode de rendu.
 
-Direct3D 11: Describing an input layout with specific semantics
+Direct3D 11 : description d’un schéma d’entrée avec une sémantique spécifique
 
 ``` syntax
 ComPtr<ID3D11InputLayout> m_inputLayout;
@@ -275,9 +275,9 @@ m_d3dDevice->CreateInputLayout(
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-Finally, you make sure that the shader can understand the input data by declaring the input. The semantics you assigned in the layout are used to select the correct locations in GPU memory.
+Enfin, vous vérifiez que le nuanceur peut comprendre les données d’entrée en déclarant l’entrée. La sémantique que vous avez attribuée dans le schéma est utilisée pour sélectionner les emplacements corrects dans la mémoire GPU.
 
-Direct3D 11: Declaring shader input data with HLSL semantics
+Direct3D 11 : déclaration de données d’entrée de nuanceur avec une sémantique HLSL
 
 ``` syntax
 struct VertexShaderInput
@@ -294,4 +294,8 @@ struct VertexShaderInput
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

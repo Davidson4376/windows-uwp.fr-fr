@@ -1,6 +1,6 @@
 ---
-description: Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires ; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes.
-title: Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur
+Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires ; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes.
+Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
 ---
 
@@ -64,4 +64,8 @@ Reportez-vous à la liste [Valorisation de la réutilisation du code et du balis
 
 * [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

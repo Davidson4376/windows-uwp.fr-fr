@@ -1,65 +1,69 @@
 ---
-The IAP acquisitions report in the Windows Dev Center dashboard lets you see how many IAPs you've sold, along with demographic and platform details.
-IAP acquisitions report
+Le rapport sur les acquisitions de produits in-app disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de produits in-app que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques.
+Rapport sur les acquisitions de produits in-app
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ---
 
-# IAP acquisitions report
+# Rapport sur les acquisitions de produits in-app
 
 
-The **IAP acquisitions** report in the Windows Dev Center dashboard lets you see how many IAPs you've sold, along with demographic and platform details. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Le rapport sur les **acquisitions de produits in-app** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de produits in-app que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
-In this report, an IAP acquisition means a customer has purchased an IAP from you. Multiple purchases of the same consumable IAP by the same customer are counted as separate IAP acquisitions.
+Dans ce rapport, une « acquisition de produits in-app » signifie qu’un client vous a acheté l’un de ces produits. Plusieurs achats d’un même produit in-app de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions de produits in-app.
 
-> **Important**  The **IAP acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
+> **Important** Le rapport sur les **acquisitions de produits in-app** n’inclut aucune donnée sur les remboursements, reprises, rétrofacturations, etc. Pour évaluer les revenus générés par l’application, visitez [Synthèse des paiements](payout-summary.md). Dans la section **Réservé**, cliquez sur le lien **Télécharger les transactions réservées**.
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by device type. You can also filter to show only data for a specific IAP.
-
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **IAP**: The default filter is **All IAPs**. If you want to show acquisition data for only one of your IAPs, you can choose a specific one here.
--   **Device type**: The default setting is **All devices**. If you want to show data for IAP acquisitions from a certain device type only, you can choose a specific one here.
-
-The info in the charts listed below will reflect the period of time selected in the **Apply filters** section.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section. By default this will include data for all device types, unless you've used **Apply filters** to choose only one.
-
-## IAP acquisitions
+## Appliquer des filtres
 
 
-The **IAP acquisitions** chart shows the number of daily or weekly acquisitions of your IAPs over the selected period of time. (When you use **Apply filters** to filter the data over a longer duration, the data will be grouped by week.)
+Dans la zone supérieure de la page, vous pouvez développer l'option **Appliquer les filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par type d'appareil. Vous pouvez également filtrer les données de façon à afficher uniquement celles relatives à un produit in-app spécifique.
 
-You can also see the lifetime number of acquisitions for your IAPs. This shows the cumulative total of all acquisitions, starting from when your app was first published.
+-   **Date** : la valeur par défaut de ce filtre est **30 derniers jours**, mais vous pouvez étendre cette période aux **12 derniers mois**.
+-   **Produit in-app** : le filtre par défaut est **Tous les produits in-app**. Si vous souhaitez afficher les données d'acquisition pour l'un de vos produits in-app uniquement, vous pouvez en choisir un ici.
+-   **Type d'appareil** : le paramètre par défaut est **Tous les appareils**. Si vous souhaitez afficher les données d'acquisitions de produit in-app relatives à un certain type d'appareil uniquement, vous pouvez en choisir un ici.
 
-The chart also shows the price that a customer paid to acquire the IAP.
+Les informations figurant dans les graphiques répertoriés ci-après correspondent à la période sélectionnée dans la section **Appliquer les filtres**.
 
-You can optionally filter the results by market and/or by OS version.
+Les informations figurant dans tous les graphiques répertoriés ci-après refléteront la période sélectionnée dans la section **Appliquer des filtres**. Par défaut, ces données porteront sur tous les types d'appareil, sauf si vous avez utilisé l'option **Appliquer les filtres** pour ne visualiser qu'un seul type.
 
-## Top IAPs
-
-
-The **Top IAPs** chart shows the total number of acquisitions for each of your IAPs over the selected period of time by market. By default, we show you the IAP which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Acquisitions** column of this chart.
-
-## Markets
+## Acquisitions de produits in-app
 
 
-The **Markets** chart shows the total number of IAP acquisitions over the selected period of time by market. By default, we show you the market which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Acquisitions** column of this chart.
+Le graphique **Acquisitions de produits in-app** affiche le nombre total d’acquisitions quotidiennes ou hebdomadaires de vos produits in-app au cours de la période sélectionnée. (Lorsque vous utilisez l'option **Appliquer des filtres** pour filtrer les données sur une plus longue période, les données sont rassemblées par semaine.)
 
-## Customer demographic
+Vous pouvez également afficher le nombre total d’acquisitions sur toute la durée de vie de vos produits in-app. Vous avez alors accès au total cumulé de l'ensemble des acquisitions effectuées depuis la première publication de votre application.
+
+Le graphique indique également le prix qu'un client a payé pour acquérir le produit in-app.
+
+Vous pouvez également filtrer les résultats par marché et/ou par version du système d'exploitation.
+
+## Top des produits in-app
 
 
-The **Customer demographic** chart shows demographic info about the people who acquired your app. You can see how many acquisitions (over the selected period of time) were made by people in a certain age group and by which gender.
+Le graphique **Top des produits dans l'application** présente le nombre total d'acquisitions de chacun de vos produits in-app par marché au cours de la période sélectionnée. Par défaut, les produits in-app ayant fait l’objet du plus grand nombre d’acquisitions apparaissent en premier dans le graphique. Vous pouvez inverser cet ordre en cliquant sur la flèche dans la colonne **Acquisitions** de ce graphique.
 
-> **Note**  Some customers have opted not to share this info. If we were unable to determine the age group or gender, the acquisition is categorized as **Unknown**.
-
-## OS version
+## Marchés
 
 
-The **OS version** chart shows the total number of acquisitions based on the customer's operating system (or via [volume acquisition by organizations](organizational-licensing.md)). In some cases we may not be able to determine this info. In that case, the OS version will be listed as **Unknown**.
+Le graphique **Marchés** présente le nombre total d'acquisitions de produits in-app par marché au cours de la période sélectionnée. Par défaut, les marchés ayant donné lieu au plus grand nombre d’acquisitions apparaissent en premier dans le graphique. Vous pouvez inverser cet ordre en cliquant sur la flèche dans la colonne **Acquisitions** de ce graphique.
+
+## Données démographiques sur les clients
+
+
+Le graphique **Données démographiques sur les clients** présente des informations démographiques sur les personnes ayant acheté votre application. Vous pouvez voir le nombre d’acquisitions (au cours de la période sélectionnée) effectuées par des personnes appartenant à un certain groupe d’âge et par sexe.
+
+> **Remarque** Certains clients ont choisi de ne pas partager ces informations. Si nous n’avons pas pu déterminer le groupe d’âge ni le sexe, l’acquisition entre dans la catégorie **Inconnu**.
+
+## Version du système d'exploitation
+
+
+Le graphique **Version du système d'exploitation** présente le nombre total d'acquisitions en fonction du système d'exploitation du client (ou via une [acquisition en volume par des organisations](organizational-licensing.md)). Il arrive que nous ne soyons pas en mesure de fournir ces informations. Auquel cas, la version du système d'exploitation entre dans la catégorie **Inconnu**.
+
+ 
 
  
 
- 
+
 <!--HONumber=Mar16_HO1-->
+
+

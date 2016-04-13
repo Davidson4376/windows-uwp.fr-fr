@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-description: La classe AdvancedPhotoCapture vous permet de capturer des photos HDR.
-title: Capture photo avec plage dynamique élevée (HDR)
+La classe AdvancedPhotoCapture vous permet de capturer des photos HDR.
+Capture photo avec plage dynamique élevée (HDR)
 ---
 
 # Capture photo avec plage dynamique élevée (HDR)
@@ -93,4 +93,8 @@ Lorsque votre application a terminé la capture, avant d’éliminer l’objet *
 
 ## Rubriques connexes
 
-* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)<!--HONumber=Mar16_HO1-->
+* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
+
+<!--HONumber=Mar16_HO1-->
+
+

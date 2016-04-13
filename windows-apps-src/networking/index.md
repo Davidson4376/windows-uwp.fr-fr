@@ -1,23 +1,27 @@
 ---
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
-Technologies for accessing the network and web services.
-Networking and web services
+description: Technologies d’accès aux services réseau et web.
+title: Réseau et services web
 ---
 
-# Networking and web services
+# Réseau et services web
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-The following networking and web services technologies are available for Universal Windows Platform (UWP) developers.
+Les technologies de réseau et services web suivantes sont disponibles pour les développeurs de plateforme Windows universelle (UWP).
 
-| Topic                                                                                   | Description                                                                      |
+| Rubrique                                                                                   | Description                                                                      |
 |-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| [Networking basics](networking-basics.md)                                               | Things you must do for any network-enabled app.                     |
-| [Which networking technology?](which-networking-technology.md)                          | A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.               |
-| [Network communications in the background](network-communications-in-the-background.md) | Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground: The socket broker, and control channel triggers.                  |
-| [Sockets](sockets.md)                                                                   | You can use both [Windows.Networking.Sockets](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.networking.sockets.aspx) and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) to communicate with other devices as a UWP app developer. This topic provides in-depth guidance on using the Windows.Networking.Sockets namespace to perform networking operations. |
-| [WebSockets](websockets.md)                                                             | WebSockets provide a mechanism for fast, secure two-way communication between a client and a server over the web using HTTP(S).                 |
-| [HttpClient](httpclient.md)                                                             | Use [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.             |
-| [RSS/Atom feeds](web-feeds.md)                                                          | Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) namespace.                   |
-| [Background transfers](background-transfers.md)                                         | Use the background transfer API to copy files reliably over the network.           |
-<!--HONumber=Mar16_HO1-->
+| [Notions de base en matière de réseau](networking-basics.md)                                               | Ce que vous devez faire pour toute application réseau.                     |
+| [Quelle technologie de réseau ?](which-networking-technology.md)                          | Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application.               |
+| [Communications réseau en arrière-plan](network-communications-in-the-background.md) | Les applications utilisent les tâches en arrière-plan et deux mécanismes principaux pour maintenir les communications lorsqu’elles ne sont pas au premier plan : le broker de socket et les déclencheurs de canal de contrôle.                  |
+| [Sockets](sockets.md)                                                                   | En tant que développeur d’applications UWP, vous pouvez utiliser tant [Windows.Networking.Sockets](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.networking.sockets.aspx) que [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) pour communiquer avec d’autres appareils. Cette rubrique fournit des instructions détaillées sur l’utilisation de l’espace de noms Windows.Networking.Sockets pour les opérations réseau. |
+| [WebSockets](websockets.md)                                                             | Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web à l’aide du protocole HTTP(S).                 |
+| [HttpClient](httpclient.md)                                                             | Utilisez l’API d’espace de noms [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1.             |
+| [Flux RSS/Atom](web-feeds.md)                                                          | Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632).                   |
+| [Transferts en arrière-plan](background-transfers.md)                                         | Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau.           |
+| [Marquage de connexions réseau avec l’identité EDP](tagging_network_connections_with_edp_identity.md) | Cette rubrique vous explique comment générer un contexte de thread protégé avant de créer les connexions réseau dans un scénario de protection des données d’entreprise (EDP, Enterprise Data Protection). |
+
+<!--HONumber=Mar16_HO5-->
+
+

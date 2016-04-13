@@ -1,8 +1,8 @@
 ---
-Description: Grâce à un Assistant Visual Studio, vous pouvez générer des notifications Push à partir d’un service mobile créé par le biais de Microsoft Azure Mobile Services.
-title: Code généré par l’Assistant Notification Push
+Grâce à un Assistant Visual Studio, vous pouvez générer des notifications Push à partir d’un service mobile créé par le biais de Microsoft Azure Mobile Services.
+Code généré par l’Assistant Notification Push
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
-label: À déterminer
+À déterminer
 template: detail.hbs
 ---
 
@@ -246,4 +246,8 @@ Vous pouvez également envoyer des notifications Push en exécutant une tâche p
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

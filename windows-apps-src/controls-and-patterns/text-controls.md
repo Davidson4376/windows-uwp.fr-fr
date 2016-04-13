@@ -1,8 +1,8 @@
 ---
-Description: Nous lisons du texte en permanence dans notre vie quotidienne : nos e-mails, un livre, un panneau routier, les prix sur un menu, la pression des pneus ou des affiches sur des poteaux.
-title: Contrôles de texte
+Nous lisons du texte en permanence dans notre vie quotidienne : nos e-mails, un livre, un panneau routier, les prix sur un menu, la pression des pneus ou des affiches sur des poteaux.
+Contrôles de texte
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
-label: Contrôles de texte
+Contrôles de texte
 template: detail.hbs
 ---
 # Contrôles de texte
@@ -39,7 +39,7 @@ La propriété de contenu de RichTextBlock est la propriété [Blocks](https://m
 
 ### Saisie de texte
 
-Utilisez un contrôle **TextBox** si vous souhaitez permettre à un utilisateur de saisir et de modifier du texte sans mise en forme, dans un formulaire par exemple. Vous pouvez utiliser la propriété Text pour obtenir et définir le texte d’un contrôle TextBox.
+Utilisez un contrôle **TextBox** si vous souhaitez permettre à un utilisateur de saisir et de modifier du texte sans mise en forme, dans un formulaire par exemple. Vous pouvez utiliser la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) pour obtenir et définir le texte d’un contrôle TextBox.
 
 Vous avez la possibilité de définir un contrôle TextBox en lecture seule, mais il doit s’agir d’un état conditionnel temporaire. Si le texte ne doit jamais être modifiable, envisagez plutôt d’utiliser un contrôle TextBlock.
 
@@ -112,7 +112,7 @@ Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un
 >Important  
 >L’étendue des entrées n’entraîne l’exécution d’aucune validation des entrées et n’empêche pas l’utilisateur de saisir des données par le biais d’un clavier matériel ou d’un autre dispositif du même ordre. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.
 
-Pour plus d’informations, voir l’article Utiliser l’étendue des entrées pour modifier le clavier tactile.
+Pour plus d’informations, voir l’article [Utiliser l’étendue des entrées pour modifier le clavier tactile]().
 
 ## Polices en couleur
 
@@ -158,4 +158,8 @@ Votre application peut insérer un séparateur de paragraphes entre les paragrap
 - [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

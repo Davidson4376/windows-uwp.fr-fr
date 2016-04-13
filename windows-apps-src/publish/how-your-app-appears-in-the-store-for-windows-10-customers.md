@@ -1,6 +1,6 @@
 ---
-Description: Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10.
-title: Apparence de votre application dans le Store pour les clients dotés de Windows 10
+Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10.
+Apparence de votre application dans le Store pour les clients dotés de Windows 10
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 ---
 
@@ -114,4 +114,8 @@ Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-a
 | Jeux &gt; Famille           | Jeux &gt; Famille + enfants             |
 | Jeux &gt; Puzzle           | Jeux &gt; Puzzle + jeux d’esprit           |
 | Jeux &gt; Courses           | Jeux &gt; Course + vol           |
+
+
 <!--HONumber=Mar16_HO1-->
+
+

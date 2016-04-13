@@ -1,6 +1,6 @@
 ---
-title: Audio pour les jeux
-description: Apprenez à développer et à incorporer de la musique et des sons dans votre jeu DirectX, et à traiter les signaux audio afin de créer des sons dynamiques et positionnels.
+Audio pour les jeux
+Apprenez à développer et à incorporer de la musique et des sons dans votre jeu DirectX, et à traiter les signaux audio afin de créer des sons dynamiques et positionnels.
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
 ---
 
@@ -296,7 +296,7 @@ Si vous utilisez la [technologie interop XAML-DirectX](https://msdn.microsoft.co
 -   [Vue d’ensemble de Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, consultez la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -312,4 +312,8 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,11 +1,11 @@
 ---
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
-title: Utiliser la boussole
-description: Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
+Utiliser la boussole
+Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
 ---
 # Utiliser la boussole
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -26,7 +26,7 @@ L’appareil ou émulateur que vous utilisez doit prendre en charge une boussole
 
 ## Créer une application de boussole simple
 
-Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de boussole. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de boussole. La sous-section suivante décrit l’application que vous venez de créer.
 
 ### Instructions
 
@@ -173,4 +173,8 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

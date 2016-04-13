@@ -1,6 +1,6 @@
 ---
-title: Technologie interop DirectX et XAML
-description: Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu de plateforme Windows universelle (UWP).
+Technologie interop DirectX et XAML
+Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu de plateforme Windows universelle (UWP).
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ---
 
@@ -379,4 +379,8 @@ Voici le processus de base de création et de mise à jour d’un objet [**SwapC
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

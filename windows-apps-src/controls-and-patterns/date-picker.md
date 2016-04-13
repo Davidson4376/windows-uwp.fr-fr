@@ -1,35 +1,35 @@
 ---
-Description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
-title: Date picker
+Description: Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier. 
+title: Sélecteur de dates
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
 ---
 
-# Date picker
+# Sélecteur de dates
 
-The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
+Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier. 
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
--   [**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
--   [**Date property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
+-   [**Classe DatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
+-   [**Propriété Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
 
-## Is this the right control?
-Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
+## Est-ce le contrôle approprié ?
+Utilisez un sélecteur de dates pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important.
 
-For more info about choosing the right date control, see the [Date and time controls](date-and-time.md) article.
+Pour plus d’informations sur le choix du contrôle de date approprié, voir l’article [Contrôles de date et d’heure](date-and-time.md).
 
-## Examples
+## Exemples
 
-The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
+Le point d’entrée affiche la date choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur effectue une sélection. Le sélecteur de dates se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
 
-![Example of the date picker expanding](images/controls_datepicker_expand.png)
+![Exemple de développement du sélecteur de date](images/controls_datepicker_expand.png)
 
-## Create a date picker
+## Créer un sélecteur de dates
 
-This example shows how to create a simple date picker with a header.
+Cet exemple montre comment créer un sélecteur de dates simple avec un en-tête.
 
 ```xaml
 <DatePicker x:Name=birthDatePicker Header="Date of birth"/>
@@ -40,18 +40,22 @@ DatePicker birthDatePicker = new DatePicker();
 birthDatePicker.Header = "Date of birth";
 ```
 
-The resulting date picker looks like this:
+Le sélecteur de dates qui en résulte se présente comme suit :
 
-![Example of date picker](images/date-picker-closed.png)
+![Exemple de sélecteur de dates](images/date-picker-closed.png)
 
-> **Note**&nbsp;&nbsp;For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
+> **Remarque** Pour obtenir des informations importantes sur les valeurs de date, voir [Valeurs de date, d’heure et de calendrier](date-and-time.md#datetime-and-calendar-values) dans l’article relatif aux contrôles de date et d’heure.
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Related topics
 
-* [Date and time controls](date-and-time.md)
-* [Calendar date picker](calendar-date-picker.md)
-* [Calendar view](calendar-view.md)
-* [Time picker](time-picker.md)
-<!--HONumber=Mar16_HO1-->
+## Articles connexes
+
+- [Contrôles de date et d’heure](date-and-time.md)
+- [Sélecteur de dates du calendrier](calendar-date-picker.md)
+- [Affichage Calendrier](calendar-view.md)
+- [Sélecteur d’heure](time-picker.md)
+
+
+<!--HONumber=Mar16_HO4-->
+
+

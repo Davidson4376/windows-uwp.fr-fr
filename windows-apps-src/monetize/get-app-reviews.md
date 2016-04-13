@@ -14,7 +14,7 @@ Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir 
 ## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit :
+Pour utiliser cette méthode, procédez comme suit :
 
 -   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
@@ -285,10 +285,10 @@ Pour obtenir une liste des champs pris en charge et des opérateurs associés à
 Les exemples suivants illustrent plusieurs requêtes de récupération des avis. Remplacez la valeur *applicationId* par l’ID produit de votre application.
 
 ```
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&amp;startDate=8/1/2015&amp;endDate=8/31/2015&amp;skip=0&amp;filter=contains(reviewText,&#39;great&#39;) and contains(reviewText,&#39;ads&#39;) and deviceRAM lt 2048 and market eq &#39;US&#39; HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=8/1/2015&endDate=8/31/2015&skip=0&filter=contains(reviewText,'great') and contains(reviewText,'ads') and deviceRAM lt 2048 and market eq 'US' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -315,7 +315,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 | applicationName        | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                         |
 | market                 | chaîne  | Le code pays ISO 3166 du marché dans lequel la classification a été soumise.                                                                                                                                                              |
 | osVersion              | chaîne  | La version du système d’exploitation sur lequel la classification a été soumise. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                               |
-| deviceType             | chaîne  | Le type d’appareil sur lequel l’avis a été soumis. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                           |
+| deviceType             | chaîne  | Le type d’appareil sur lequel la classification a été soumise. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                           |
 | isRevised              | Booléen | La valeur **true** indique que l’avis a été révisé ; sinon, la valeur **false** est affichée.                                                                                                                                                       |
 | packageVersion         | chaîne  | La version du package d’application qui a été passée en revue.                                                                                                                                                                                    |
 | deviceModel            | chaîne  | Le type d’appareil sur lequel l’application a été révisée.                                                                                                                                                                                    |
@@ -380,4 +380,8 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les classifications des applications](get-app-ratings.md)
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO2-->
+
+

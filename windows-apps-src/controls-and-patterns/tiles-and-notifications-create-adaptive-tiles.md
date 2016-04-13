@@ -1,8 +1,8 @@
 ---
-Description: Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran.
-title: Créer des vignettes adaptatives
+Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran.
+Créer des vignettes adaptatives
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
-label: Créer des vignettes adaptatives
+Créer des vignettes adaptatives
 template: detail.hbs
 ---
 
@@ -283,7 +283,7 @@ Si vous ne spécifiez aucune personnalisation dans votre charge utile de notific
 ## <span id="Display_name"> </span> <span id="display_name"> </span> <span id="DISPLAY_NAME"> </span>Nom d’affichage
 
 
-Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cet aspect dans l’élément &lt;visual&gt;, ce qui affecte toute la charge utile de notification, ou bien le spécifier dans l’élément &lt;binding&gt;, ce qui affecte uniquement les vignettes individuelles.
+Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cet aspect dans l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte toute la charge utile de notification, ou bien le spécifier dans l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte uniquement les vignettes individuelles.
 
 ```XML
 <tile>
@@ -1486,4 +1486,8 @@ TileWide = new TileBinding()
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

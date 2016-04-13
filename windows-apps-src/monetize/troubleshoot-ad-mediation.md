@@ -7,12 +7,12 @@ ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
 # Résoudre les problèmes liés à la médiation publicitaire
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Voici quelques solutions à plusieurs problèmes de développement courants liés à la médiation publicitaire.
 
 **Vous ne pouvez pas ajouter de contrôle AdMediatorControl à l’aire de conception.**  
-Lorsque vous faites glisser le contrôle **AdMediatorControl** vers le concepteur pour la première fois dans un projet de plateforme Windows universelle (UWP), Windows 8.1 ou Windows Phone 8.1 à l’aide de C# ou de Visual Basic avec XAML, Visual Studio ajoute la référence appropriée d’assembly Ad Mediator à votre projet, mais le contrôle n’est, à ce stade, pas encore ajouté au concepteur. Pour ajouter le contrôle, cliquez sur OK dans le message apparaissant dans Visual Studio, attendez quelques secondes que le concepteur s’actualise, puis faites glisser de nouveau le contrôle vers le concepteur.
+Lorsque vous faites glisser le contrôle **AdMediatorControl** vers le concepteur pour la première fois dans un projet UWP, Windows 8.1 ou Windows Phone 8.1 à l’aide de C# ou de Visual Basic avec XAML, Visual Studio ajoute la référence appropriée d’assembly Ad Mediator à votre projet, mais le contrôle n’est, à ce stade, pas encore ajouté au concepteur. Pour ajouter le contrôle, cliquez sur OK dans le message apparaissant dans Visual Studio, attendez quelques secondes que le concepteur s’actualise, puis faites glisser de nouveau le contrôle vers le concepteur.
 
 Si vous ne réussissez toujours pas à ajouter le contrôle dans le concepteur, vérifiez que votre projet cible l’architecture de processeur requise par votre application (par exemple, **x86**), et non pas **Toute CPU**. Le contrôle ne peut pas être ajouté au concepteur si le projet cible **Toute CPU** pour la plateforme de génération.
 
@@ -28,7 +28,7 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["He
 ```
 
 **La médiation publicitaire n’inclut pas de localisation (latitude/longitude) pour le réseau publicitaire**  
-Si vous activez la fonctionnalité de localisation dans votre application, le contrôle Ad Mediator récupère automatiquement les coordonnées de latitude/longitude et les fournit aux réseaux publicitaires qui les prennent en charge.
+Si vous activez la fonctionnalité de localisation dans votre application, le contrôle Ad Mediator récupère automatiquement les coordonnées de latitude/longitude et les fournit aux réseaux publicitaires qui les prennent en charge.
 
 **Le contrôle publicitaire Smaato ne s’aligne pas correctement**  
 Essayez d’utiliser les paramètres facultatifs pour définir les valeurs des contrôles du Kit de développement logiciel (SDK) :
@@ -36,7 +36,7 @@ Essayez d’utiliser les paramètres facultatifs pour définir les valeurs des c
 ```
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Margin”] = new Thickness(0, -20, 0, 0);
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Width”] = 50d;
-myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Height”] = 320d; 
+myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Height”] = 320d;
 ```
 
 **Le contrôle publicitaire AdDuplex ne s’affiche pas avec la taille correcte (il s’affiche au format 250 x 250)**  
@@ -47,10 +47,10 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.AdDuplex][“Size”] = �
 ```
 
 **Vous recevez l’erreur « Un élément recouvre le contrôle publicitaire »**  
-AdDuplex affiche toujours une erreur si la publicité est masquée d’une quelconque manière au sein de votre application. [Lisez la solution AdDuplex](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl) pour cette erreur.
+AdDuplex affiche toujours une erreur si la publicité est masquée d’une quelconque manière au sein de votre application. [Lisez la solution](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl) AdDuplex à cette erreur.
 
 **Vous recevez l’erreur « Un conflit s’est produit entre deux fichiers »**  
-Vous avez référencé les assemblys Microsoft Advertising ailleurs dans votre application. La médiation publicitaire est conçue pour fonctionner exclusivement dans votre application ; elle ne fonctionnera pas si d’autres références aux assemblys Microsoft Advertising sont utilisées. Supprimez manuellement les références Microsoft Advertising et réinstallez le Kit de développement logiciel (SDK) Microsoft Universal Ad Client pour effacer l’erreur.
+Vous avez référencé les assemblys Microsoft Advertising ailleurs dans votre application. La médiation publicitaire est conçue pour fonctionner exclusivement dans votre application ; elle ne fonctionnera pas si d’autres références aux assemblys Microsoft Advertising sont utilisées. Supprimez manuellement les références Microsoft Advertising et réinstallez le SDK d’engagement et de monétisation de la Boutique Microsoft pour effacer l’erreur.
 
 ## Rubriques connexes
 
@@ -63,6 +63,6 @@ Vous avez référencé les assemblys Microsoft Advertising ailleurs dans votre 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
 
-<!--HONumber=Mar16_HO1-->

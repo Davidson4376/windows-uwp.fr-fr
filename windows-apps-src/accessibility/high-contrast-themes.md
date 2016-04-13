@@ -2,7 +2,7 @@
 Description: Décrit les étapes requises pour garantir que votre application UWP est utilisable lorsqu’un thème à contraste élevé est actif.
 title: Thèmes à contraste élevé
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
-label: Thèmes à contraste élevé
+label: High-contrast themes
 template: detail.hbs
 ---
 
@@ -31,7 +31,7 @@ Une application UWP peut utiliser des membres de la classe [**AccessibilitySetti
 
 Les applications peuvent utiliser des valeurs de ressource à contraste élevé pendant qu’elles sont en cours d’exécution. Cela ne fonctionne que si les ressources sont demandées à l’aide de l’[extension de balisage {ThemeResource}](https://msdn.microsoft.com/library/windows/apps/Mt185591) dans le code XAML du style ou du modèle. Comme les thèmes par défaut (generic.xaml) utilisent tous cette technique d’extension de balisage {ThemeResource}, vous obtenez ce comportement si vous utilisez des thèmes de contrôle par défaut. Les contrôles ou styles de contrôle personnalisés prennent cela en charge si vous avez également utilisé cette technique d’extension de balisage {ThemeResource} dans vos modèles et styles personnalisés.
 
-Rubriques connexes
+<span id="related_topics"> </span>Rubriques connexes
 -----------------------------------------------
 
 * [Accessibilité](accessibility.md)
@@ -45,4 +45,8 @@ Rubriques connexes
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

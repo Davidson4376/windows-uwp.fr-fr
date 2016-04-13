@@ -1,39 +1,39 @@
 ---
-Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
-Navigation design basics for Universal Windows Platform (UWP) apps
+La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures de navigation, d’éléments de navigation et de fonctionnalités au niveau du système.
+Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
-Navigation design basics
+Informations de base relatives à la conception de la navigation
 template: detail.hbs
 ---
 
-#  Navigation design basics for UWP apps
+#  Informations de base relatives à la conception de la navigation pour les applications UWP
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features. Together, they enable a variety of intuitive user experiences for moving between apps, pages, and content.
+La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures de navigation, d’éléments de navigation et de fonctionnalités au niveau du système. Ensemble, ces composantes permettent d’offrir diverses expériences utilisateur intuitives de déplacement entre les applications, les pages et dans leur contenu.
 
-In some cases, you might be able to fit all of your app's content and functionality onto a single page without requiring the user to do anything more than pan to navigate through that content. However, the majority of apps typically have multiple pages of content and functionality with which to explore, engage, and interact. When an app has more than one page, you need to provide the right navigation experience.
+Dans certains cas, vous pouvez faire tenir la totalité du contenu et des fonctionnalités de votre application sur une seule page, de sorte que l’utilisateur n’ait plus qu’à faire défiler celle-ci pour en parcourir le contenu. Toutefois, la plupart des applications comptent généralement plusieurs pages de contenu et fonctionnalités permettant d’explorer et d’interagir. Si une application possède plusieurs pages, vous devez fournir une expérience de navigation adaptée.
 
-To be successful and make sense to users, multi-page navigation experiences in UWP apps include (described in detail later):
+Pour être réussie et sensée pour l’utilisateur, une expérience de navigation multipage dans une application UWP inclut ce qui suit (décrit plus loin en détail) :
 
--   **The right navigation structure**
+-   **Structure de navigation appropriée**
 
-    Building a navigation structure that makes sense to the user is crucial to creating an intuitive navigation experience.
+    La création d’une structure de navigation logique pour l’utilisateur est essentielle pour assurer une expérience de navigation intuitive.
 
--   **Compatible navigation elements** that support the chosen structure.
+-   **Éléments de navigation compatibles** qui prennent en charge la structure choisie
 
-    Navigation elements can help the user get to the content they want and can also let users know where they are within the app. However, they also take up space that could be used for content or commanding elements, so it's important to use the navigation elements that are right for your app's structure.
+    Les éléments de navigation aident l’utilisateur à accéder au contenu souhaité et à savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 
--   **Appropriate responses to system-level navigation features (such as Back)**
+-   **Réponses appropriées aux fonctionnalités de navigation au niveau système (par exemple, au bouton Précédent)**
 
-    To provide a consistent experience that feels intuitive, respond to system-level navigation features in predictable ways.
+    Pour fournir une expérience cohérente et intuitive, répondez aux fonctionnalités de navigation de niveau système de manière à satisfaire les attentes des utilisateurs.
 
-## <span id="Build_the_right_navigation_structure"></span><span id="build_the_right_navigation_structure"></span><span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"></span>Build the right navigation structure
+## <span id="Build_the_right_navigation_structure"> </span> <span id="build_the_right_navigation_structure"> </span> <span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"> </span>Créer la structure de navigation appropriée
 
 
-Let's look at an app as a collection of groups of pages, with each page containing a unique set of content or functionality. For example, a photo app might have a page for taking photos, a page for image editing, and another page for managing your image library. The way you arrange these pages into groups defines the app's navigation structure. There are two common ways to arrange a group of pages:
+Considérons une application comme une collection de groupes de pages, chaque page contenant un ensemble unique de contenu ou de fonctionnalités. Par exemple, une application de photos peut avoir une page pour la prise des photos, une page pour la modification d’image et une autre pour la gestion de votre bibliothèque d’images. La manière dont vous organisez ces pages en groupes définit la structure de navigation de l’application. Deux méthodes sont couramment utilisées pour organiser un groupe de pages :
 
 <table>
 <colgroup>
@@ -42,8 +42,8 @@ Let's look at an app as a collection of groups of pages, with each page containi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">In a hierarchy</th>
-<th align="left">As peers</th>
+<th align="left">Dans une hiérarchie</th>
+<th align="left">En tant qu’homologues</th>
 </tr>
 </thead>
 <tbody>
@@ -52,19 +52,19 @@ Let's look at an app as a collection of groups of pages, with each page containi
 <td align="left"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Pages are organized into a tree-like structure. Each child page has only one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.</p></td>
-<td align="left"><p>Pages exist side-by-side. You can go from one page to another in any order.</p></td>
+<td align="left"><p>Les pages sont organisées selon une structure arborescente. Chaque page enfant n’a qu’un parent, mais un parent peut avoir une ou plusieurs pages enfants. Pour atteindre une page enfant, vous naviguez via le parent.</p></td>
+<td align="left"><p>Les pages se trouvent côte à côte. Vous pouvez aller d’une page à une autre dans n’importe quel ordre.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-A typical app will use both arrangements, with some portions being arranged as peers and some portions being arranged into hierarchies.
+Une application standard utilise les deux dispositions, certaines parties étant organisées en tant qu’homologues et d’autres l’étant en hiérarchies.
 
-![an app with a hybrid structure](images/nav/nav-hybridstructure.png.png)
+![Application à structure hybride](images/nav/nav-hybridstructure.png.png)
 
-So, when should you arrange pages into hierarchies and when you should arrange them as peers? To answer that question we must consider the number of pages in the group, whether the pages should be traversed in a particular order, and the relationship between the pages. In general, flatter structures are easier to understand and faster to navigate, but sometimes it's appropriate to have a deep hierarchy.
+Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les organiser en tant qu’homologues ? Pour répondre à cette question, nous devons prendre en compte le nombre de pages contenues dans le groupe, si les pages doivent être parcourues dans un ordre particulier et la relation entre les pages. En règle générale, les structures plus plates sont plus faciles à comprendre et la navigation y est plus aisée, mais il convient parfois de disposer d’une hiérarchie à plusieurs niveaux.
 
 <table>
 <colgroup>
@@ -73,19 +73,19 @@ So, when should you arrange pages into hierarchies and when you should arrange t
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>We recommend using a hierarchical relationship when</p>
+<td align="left"><p>Nous recommandons une relation hiérarchique lorsque :</p>
 <ul>
-<li><p>You expect the user to traverse the pages in a specific order. Arrange the hierarchy to enforce that order.</p></li>
-<li><p>There is a clear parent-child relationship between one of the pages and the other pages in the group.</p></li>
-<li><p>If there are more than 7 pages in the group.</p>
-<p>When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</p></li>
+<li><p>Vous pensez que l’utilisateur va parcourir les pages dans un ordre spécifique. Organisez la hiérarchie pour appliquer cet ordre.</p></li>
+<li><p>Il existe une relation parent-enfant claire entre l’une des pages et les autres pages du groupe.</p></li>
+<li><p>Le groupe contient plus de 7 pages.</p>
+<p>S’il y a plus de 7 pages dans le groupe, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits. (Un contrôle hub peut vous aider à regrouper des pages en catégories.)</p></li>
 </ul></td>
-<td align="left"><p>We recommend using a peer relationship when</p>
+<td align="left"><p>Nous recommandons l’utilisation d’une relation d’homologue lorsque :</p>
 <ul>
-<li>The pages can be viewed in any order.</li>
-<li>The pages are clearly distinct from each other and don't have an obvious parent/child relationship.</li>
-<li><p>There are fewer than 8 pages in the group.</p>
-<p>When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</p></li>
+<li>Les pages peuvent être affichées dans n’importe quel ordre.</li>
+<li>Les pages sont clairement distinctes les unes des autres et n’ont aucune relation parent/enfant évidente.</li>
+<li><p>Le groupe contient moins de 8 pages.</p>
+<p>S’il y a plus de 7 pages dans le groupe, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits. (Un contrôle hub peut vous aider à regrouper des pages en catégories.)</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -93,18 +93,18 @@ So, when should you arrange pages into hierarchies and when you should arrange t
 
  
 
-## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>Use the right navigation elements
+## <span id="Use_the_right_navigation_elements"> </span> <span id="use_the_right_navigation_elements"> </span> <span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"> </span>Utiliser les éléments de navigation appropriés
 
 
-Navigation elements can provide two services: they help the user get to the content they want, and some elements also let users know where they are within the app. However, they also take up space that the app could use for content or commanding elements, so it's important to use the navigation elements that are just right for your app's structure.
+Les éléments de navigation peuvent fournir deux services : ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 
-### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>Peer-to-peer navigation elements
+### <span id="Peer-to-peer_navigation_elements"> </span> <span id="peer-to-peer_navigation_elements"> </span> <span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"> </span>Éléments de navigation pair à pair
 
-Peer-to-peer navigation elements enable navigation between pages in the same level of the same subtree.
+Les éléments de navigation pair à pair permettent de naviguer entre les pages d’un même niveau d’une même sous-arborescence.
 
-![peer to peer navigation](images/nav/nav-lateralmovement.png)
+![Navigation pair à pair](images/nav/nav-lateralmovement.png)
 
-For peer-to-peer navigation, we recommend using tabs or a navigation pane.
+Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou un volet de navigation.
 
 <table>
 <colgroup>
@@ -113,7 +113,7 @@ For peer-to-peer navigation, we recommend using tabs or a navigation pane.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation element</th>
+<th align="left">Élément de navigation</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -121,27 +121,27 @@ For peer-to-peer navigation, we recommend using tabs or a navigation pane.
 <tr class="odd">
 <td align="left"><p>[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)</p>
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
-<td align="left">Displays a persistent list of links to pages at the same level.
-<p>Use tabs/pivots when:</p>
+<td align="left">Affiche une liste permanente de liens vers les pages du même niveau.
+<p>Utilisez les onglets/pivots lorsque...</p>
 <ul>
-<li><p>There are 2-5 pages.</p>
-<p>(You can use tabs/pivots when there are more than 5 pages, but it might be difficult to fit all the tabs/pivots on the screen.)</p></li>
-<li>You expect users to switch between pages frequently.</li>
+<li><p>Il y a 2 à 5 pages.</p>
+<p>(Utilisez les onglets/pivots lorsqu’il y a plus de 5 pages, mais qu’il peut être difficile d’ajuster l’ensemble des onglets/pivots à l’écran.)</p></li>
+<li>Vous pensez que les utilisateurs passeront fréquemment d’une page à l’autre.</li>
 </ul>
-<p>This design for a restaurant-finding app uses tabs/pivots:</p>
+<p>Cette conception pour une application de recherche de restaurants utilise des onglets/pivots :</p>
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Nav pane](../controls-and-patterns/nav-pane.md)</p>
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
-<td align="left">Displays a list of links to top-level pages.
-<p>Use a navigation pane when:</p>
+<td align="left">Affiche une liste de liens vers les pages de niveau supérieur.
+<p>Utilisez un volet de navigation lorsque...</p>
 <ul>
-<li>You don't expect users to switch between pages frequently.</li>
-<li>You want to conserve space at the expense of slowing down navigation operations.</li>
-<li>The pages exist at the top level.</li>
+<li>Vous ne pensez pas que les utilisateurs passeront fréquemment d’une page à l’autre.</li>
+<li>Vous souhaitez économiser de l’espace, même si cela ralentit les opérations de navigation.</li>
+<li>Les pages se trouvent au niveau supérieur.</li>
 </ul>
-<p>This design for a smart home app features a nav pane:</p>
+<p>Cette conception pour une application de maison intelligente utilise un volet de navigation :</p>
 <p><img src="images/smart-home/uap-smarthome-tabletphone-sbs-sm-400.png" alt="Example of an app that uses a nav pane pattern" /></p>
 <p></p></td>
 </tr>
@@ -150,19 +150,19 @@ For peer-to-peer navigation, we recommend using tabs or a navigation pane.
 
  
 
-If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the following illustration, which shows a navigation structure that has three levels:
+Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation pair à pair uniquement aux homologues au sein de leur sous-arborescence actuelle. Considérez l’illustration suivante, qui montre une structure de navigation à trois niveaux :
 
-![an app with two subtrees](images/nav/nav-subtrees.png)
--   For level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
--   At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
+![Application avec deux sous-arborescences](images/nav/nav-subtrees.png)
+-   Pour le niveau 1, l’élément de navigation pair à pair doit permettre d’accéder aux pages A, B, C et D.
+-   Au niveau 2, les éléments de navigation pair à pair des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau 2 de la sous-arborescence C.
 
-![an app with two subtrees](images/nav/nav-subtrees2.png)
+![Application avec deux sous-arborescences](images/nav/nav-subtrees2.png)
 
-### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>Hierarchical navigation elements
+### <span id="Hierarchical_navigation_elements"> </span> <span id="hierarchical_navigation_elements"> </span> <span id="HIERARCHICAL_NAVIGATION_ELEMENTS"> </span>Éléments de navigation hiérarchique
 
-Hierarchical navigation elements provide navigation between a parent page and its child pages.
+Les éléments de navigation hiérarchique permettent de naviguer entre une page parente et ses pages enfants.
 
-![hiearchical navigation](images/nav/nav-verticalmovement.png)
+![Navigation hiérarchique](images/nav/nav-verticalmovement.png)
 
 <table>
 <colgroup>
@@ -171,7 +171,7 @@ Hierarchical navigation elements provide navigation between a parent page and it
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation element</th>
+<th align="left">Élément de navigation</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -179,25 +179,25 @@ Hierarchical navigation elements provide navigation between a parent page and it
 <tr class="odd">
 <td align="left"><p>[Hub](../controls-and-patterns/hub.md)</p>
 <p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
-<td align="left">A hub is a special type of navigation control that provides previews/summaries of its child pages. Unlike the navigation pane or tabs, it provides navigation to these child pages through links and section headers embedded in the page itself.
-<p>Use a hub when:</p>
+<td align="left">Un hub est un type spécial de contrôle de navigation qui fournit des aperçus/synthèses de ses pages enfants. Contrairement aux onglets ou au volet de navigation, il permet de naviguer vers ces pages enfants via des liens et des en-têtes de section, incorporés dans la page proprement dite.
+<p>Utilisez un hub lorsque...</p>
 <ul>
-<li>You expect that users would want to view some of the content of the child pages without having to navigate to each one.</li>
+<li>Vous pensez que l’utilisateur souhaitera afficher une partie du contenu des pages enfants sans devoir naviguer vers chacune d’elles.</li>
 </ul>
-<p>Hubs promote discovery and exploration, which makes them well suited for media, news-reader, and shopping apps.</p>
+<p>Les hubs favorisent la découverte et l’exploration, ce qui les rend particulièrement bien adaptés aux applications multimédias, d’informations et d’achat.</p>
 <p></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Master/details](../controls-and-patterns/master-details.md)</p>
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
-<td align="left">Displays a list (master view) of item summaries. Selecting an item displays its corresponding items page in the details section.
-<p>Use the Master/details element when:</p>
+<td align="left">Affiche la liste (affichage Maître) des résumés des éléments. La sélection d’un élément affiche sa page d’éléments correspondante dans la section Détails.
+<p>Utilisez l’élément maître/détails lorsque...</p>
 <ul>
-<li>You expect users to switch between child items frequently.</li>
-<li>You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.</li>
+<li>Vous pensez que les utilisateurs passeront fréquemment d’un élément enfant à un autre.</li>
+<li>Vous voulez permettre à l’utilisateur d’effectuer des opérations générales, comme la suppression ou le tri, sur des éléments individuels ou des groupes d’éléments. Vous voulez également lui permettre d’afficher ou de mettre à jour les détails de chaque élément.</li>
 </ul>
-<p>Master/details elements are well suited for email inboxes, contact lists, and data entry.</p>
-<p>This design for a stock-tracking app makes use of a master/details pattern:</p>
+<p>Les éléments maîtres/détails sont particulièrement bien adaptés aux boîtes de réception, aux listes de contacts et à l’entrée de données.</p>
+<p>Cette conception pour une application de suivi d’inventaire utilise un modèle Maître/Détails :</p>
 <p><img src="images/stock-tracker/uap-finance-tabletphone-sbs-sm.png" alt="Example of a stock trading app that has a master/details pattern" /></p></td>
 </tr>
 </tbody>
@@ -205,7 +205,7 @@ Hierarchical navigation elements provide navigation between a parent page and it
 
  
 
-### <span id="Historical_navigation_elements"></span><span id="historical_navigation_elements"></span><span id="HISTORICAL_NAVIGATION_ELEMENTS"></span>Historical navigation elements
+### <span id="Historical_navigation_elements"> </span> <span id="historical_navigation_elements"> </span> <span id="HISTORICAL_NAVIGATION_ELEMENTS"> </span>Éléments de navigation historique
 
 <table>
 <colgroup>
@@ -214,21 +214,21 @@ Hierarchical navigation elements provide navigation between a parent page and it
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation element</th>
+<th align="left">Élément de navigation</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Back</td>
-<td align="left"><p>Lets the user traverse the navigation history within an app and, depending on the device, from app to app. For more info, see the [Make your app work well with system-level navigation features](#backnavigation) section that appears later in this article.</p></td>
+<td align="left">Précédent</td>
+<td align="left"><p>Permet à l’utilisateur de parcourir l’historique de navigation dans une application et, en fonction de l’appareil, d’une application à l’autre. Pour plus d’informations, voir la section [Make your app work well with system-level navigation features](#backnavigation) plus loin dans cet article.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Content-embedded_navigation_elements"></span><span id="content-embedded_navigation_elements"></span><span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"></span>Content-embedded navigation elements
+### <span id="Content-embedded_navigation_elements"> </span> <span id="content-embedded_navigation_elements"> </span> <span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"> </span>Éléments de navigation incorporés au contenu
 
 <table>
 <colgroup>
@@ -237,32 +237,36 @@ Hierarchical navigation elements provide navigation between a parent page and it
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation element</th>
+<th align="left">Élément de navigation</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Hyperlinks and buttons</td>
-<td align="left"><p>Content-embedded navigation elements appear in a page's content. Unlike other navigation elements, which should be consistent across the page's group or subtree, content-embedded navigation elements are unique from page to page.</p></td>
+<td align="left">Liens hypertexte et boutons</td>
+<td align="left"><p>Les éléments de navigation incorporés au contenu apparaissent dans le contenu d’une page. Contrairement aux autres éléments de navigation, qui doivent être cohérents dans un groupe ou une sous-arborescence de page, les éléments de navigation incorporés au contenu sont uniques d’une page à l’autre.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Combining_navigation_elements"></span><span id="combining_navigation_elements"></span><span id="COMBINING_NAVIGATION_ELEMENTS"></span>Combining navigation elements
+### <span id="Combining_navigation_elements"> </span> <span id="combining_navigation_elements"> </span> <span id="COMBINING_NAVIGATION_ELEMENTS"> </span>Combinaison d’éléments de navigation
 
-You can combine navigation elements to create a navigation experience that's right for your app. For example, your app might use a nav pane to provide access to top-level pages and tabs to provide access to second-level pages.
+Vous pouvez combiner des éléments de navigation pour créer une expérience de navigation appropriée pour votre application. Par exemple, votre application peut utiliser un volet de navigation pour accéder aux pages de niveau supérieur et des onglets pour accéder aux pages de deuxième niveau.
 
 
-\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[Cet article contient des informations propres aux applications UWP et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
 
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

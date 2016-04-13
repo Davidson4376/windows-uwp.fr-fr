@@ -1,38 +1,38 @@
 ---
-Description: Convert ink strokes to text using handwriting recognition, or to shapes using custom recognition.
-title: Recognize ink strokes
+Convertissez des traits d’encre en texte à l’aide de la reconnaissance de l’écriture manuscrite ou en formes à l’aide de la reconnaissance personnalisée.
+Reconnaître les traits d’encre
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
-label: Recognize ink strokes
+Reconnaître les traits d’encre
 template: detail.hbs
 ---
 
-# Recognize ink strokes
+# Reconnaître les traits d’encre
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
 -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
-Convert ink strokes to text using handwriting recognition, or to shapes using custom recognition.
+Convertissez des traits d’encre en texte à l’aide de la reconnaissance de l’écriture manuscrite ou en formes à l’aide de la reconnaissance personnalisée.
 
-Handwriting recognition is built in to the Windows ink platform, and supports an extensive set of locales and languages.
+La reconnaissance de l’écriture manuscrite est intégrée à la plateforme d’entrée manuscrite Windows et prend en charge un ensemble étendu de paramètres régionaux et de langues
 
-For all examples here, add the namespace references required for ink functionality. This includes "Windows.UI.Input.Inking".
+Pour tous les exemples ici, ajoutez les références d’espaces de noms nécessaires au fonctionnement de l’écriture manuscrite Cela comprend « Windows.UI.Input.Inking ».
 
-## <span id="Basic_handwriting_recognition"></span><span id="basic_handwriting_recognition"></span><span id="BASIC_HANDWRITING_RECOGNITION"></span>Basic handwriting recognition
+## <span id="Basic_handwriting_recognition"> </span> <span id="basic_handwriting_recognition"> </span> <span id="BASIC_HANDWRITING_RECOGNITION"> </span>Reconnaissance de l’écriture manuscrite de base
 
 
-Here, we demonstrate how to use the handwriting recognition engine, associated with the default installed language pack, to interpret a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+Nous montrons ici comment utiliser le moteur de reconnaissance de l’écriture manuscrite associé au module linguistique pour interpréter un ensemble de traits sur un [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-The recognition is initiated by the user clicking a button when they are finished writing.
+L’utilisateur lance la reconnaissance en cliquant sur un bouton une fois qu’il a terminé d’écrire.
 
-1.  First, we set up the UI.
+1.  Tout d’abord, nous configurons l’interface utilisateur.
 
-    The UI includes a "Recognize" button, the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), and an area to display recognition results.
+    L’interface utilisateur inclut un bouton « Reconnaître », [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) et une zone d’affichage des résultats de la reconnaissance.
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -65,9 +65,9 @@ The recognition is initiated by the user clicking a button when they are finishe
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
 
-    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Ink strokes are rendered on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) using the specified [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050). A listener for the click event on the "Recognize" button is also declared.
+    L’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Les traits d’encre sont restitués sur [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) à l’aide de l’élément [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) spécifié. Un écouteur de l’événement Click est également déclaré sur le bouton « Reconnaître ».
 
 ```    CSharp
 public MainPage()
@@ -91,9 +91,9 @@ public MainPage()
     }
 ```
 
-3.  Finally, we perform the basic handwriting recognition. For this example, we use the click event handler of the "Recognize" button to perform the handwriting recognition.
+3.  Enfin, nous procédons à la reconnaissance de l’écriture manuscrite de base. Pour cet exemple, nous utilisons le gestionnaire d’événements Click du bouton « Reconnaître » pour procéder à la reconnaissance de l’écriture manuscrite.
 
-    An [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stores all ink strokes in an [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) object. The strokes are exposed through the [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) property of the **InkPresenter** and retrieved using the [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) method.
+    Un élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stocke tous les traits d’encre dans un objet [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Les traits sont exposés par le biais de la propriété [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) de l’élément **InkPresenter** et récupérés à l’aide de la méthode [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499).
 
 ```    CSharp
 // Get all strokes on the InkCanvas.
@@ -207,72 +207,72 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="International_recognition"></span><span id="international_recognition"></span><span id="INTERNATIONAL_RECOGNITION"></span>International recognition
+## <span id="International_recognition"> </span> <span id="international_recognition"> </span> <span id="INTERNATIONAL_RECOGNITION"> </span>Reconnaissance internationale
 
 
-A comprehensive subset of languages supported by Windows can be used for handwriting recognition.
+Il est possible d’utiliser un sous-ensemble de langues pris en charge par Windows pour la reconnaissance de l’écriture manuscrite.
 
-The following table lists the languages supported by the [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478). The first column contains the possible values for [**Name**](https://msdn.microsoft.com/library/windows/apps/br208484).
+Le tableau suivant répertorie les langues prises en charge par l’élément [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478). La première colonne contient les valeurs possibles pour [**Name**](https://msdn.microsoft.com/library/windows/apps/br208484).
 
-| Name                                                            | IETF language tag | Coverage                                                                      |
+| Nom                                                            | Balise de langue IETF | Couverture                                                                      |
 |-----------------------------------------------------------------|-------------------|-------------------------------------------------------------------------------|
-| Microsoft English (US) Handwriting Recognizer                   | en-US             | English in the U.S. and the Philippines                                       |
-| Microsoft English (UK) Handwriting Recognizer                   | en-GB             | English in Great Britain, and all other locations not specified in this table |
-| Microsoft English (Canada) Handwriting Recognizer               | en-CA             | English in Canada                                                             |
-| Microsoft English (Australia) Handwriting Recognizer            | en-AU             | English in Australia                                                          |
-| Microsoft-Handschrifterkennung - Deutsch                        | de-DE             | German in Germany, Austria, Luxembourg, and Namibia                           |
-| Microsoft-Handschrifterkennung - Deutsch (Schweiz)              | de-CH             | German in Switzerland and Liechtenstein                                       |
-| Reconocimiento de escritura a mano en español de Microsoft      | es-ES             | Spanish in Spain, and all other locations not specified in this table         |
-| Reconocedor de escritura en Español (México) de Microsoft       | es-MX             | Spanish in Mexico and the United States                                       |
-| Reconocedor de escritura en Español (Argentina) de Microsoft    | es-AR             | Spanish in Argentina, Paraguay, and Uruguay                                   |
-| Reconnaissance d'écriture Microsoft - Français                  | fr                | French in France, Canada, Belgium, Switzerland, and all other locations       |
-| Microsoft 日本語手書き認識エンジン                              | ja                | Japanese in all locations                                                     |
-| Riconoscimento grafia italiana Microsoft                        | it                | Italian in Italy, Switzerland, and all other locations                        |
-| Microsoft Nederlandstalige handschriftherkenning                | nl-NL             | Dutch in the Netherlands, Surinam, and the Antilles                           |
-| Microsoft Nederlandstalige (België) handschriftherkenning       | nl-BE             | Dutch in Belgium (Flemish)                                                    |
-| Microsoft 中文(简体)手写识别器                                  | zh                | Chinese in simplified script                                                  |
-| Microsoft 中文(繁體)手寫辨識器                                  | zh-Hant           | Chinese in traditional script                                                 |
-| Microsoft система распознавания русского рукописного ввода      | ru                | Russian in all locations                                                      |
-| Reconhecedor de Manuscrito da Microsoft para Português (Brasil) | pt-BR             | Portuguese in Brazil                                                          |
-| Reconhecedor de escrita manual da Microsoft para português      | pt-PT             | Portuguese in Portugal, and all other locations                               |
-| Microsoft 한글 필기 인식기                                      | ko                | Korean in all locations                                                       |
-| System rozpoznawania polskiego pisma odręcznego firmy Microsoft | pl                | Polish in all locations                                                       |
-| Microsoft Handskriftstolk för svenska                           | sv                | Swedish in all locations                                                      |
-| Microsoft rozpoznávač rukopisu pro český jazyk                  | cs                | Czech in all locations                                                        |
-| Microsoft Genkendelse af dansk håndskrift                       | da                | Danish in all locations                                                       |
-| Microsoft Håndskriftsgjenkjenner for norsk                      | nb                | Norwegian (Bokmal) in all locations                                           |
-| Microsoft Håndskriftsgjenkjenner for nynorsk                    | nn                | Norwegian (Nynorsk) in all locations                                          |
-| Microsoftin suomenkielinen käsinkirjoituksen tunnistus          | fi                | Finnish in all locations                                                      |
-| Microsoft recunoaştere grafie - Română                          | ro                | Romanian in all locations                                                     |
-| Microsoftov hrvatski rukopisni prepoznavač                      | hr                | Croatian in all locations                                                     |
-| Microsoft prepoznavač rukopisa za srpski (latinica)             | sr-Latn           | Serbian, in Latin, in all locations                                           |
-| Microsoft препознавач рукописа за српски (ћирилица)             | sr                | Serbian, in Cyrillic, in all locations                                        |
-| Reconeixedor d'escriptura manual en català de Microsoft         | ca                | Catalan in all locations                                                      |
+| Microsoft English (US) Handwriting Recognizer                   | en-US             | Anglais des États-Unis et des Philippines                                       |
+| Microsoft English (UK) Handwriting Recognizer                   | en-GB             | Anglais du Royaume-Uni et de tous les autres pays non spécifiés dans ce tableau |
+| Microsoft English (Canada) Handwriting Recognizer               | en-CA             | Anglais du Canada                                                             |
+| Microsoft English (Australia) Handwriting Recognizer            | en-AU             | Anglais d’Australie                                                          |
+| Microsoft-Handschrifterkennung - Deutsch                        | de-DE             | Allemand d’Allemagne, d’Autriche, du Luxembourg et de Namibie                           |
+| Microsoft-Handschrifterkennung - Deutsch (Schweiz)              | de-CH             | Allemand de Suisse et du Liechtenstein                                       |
+| Reconocimiento de escritura a mano en español de Microsoft      | es-ES             | Anglais d’Espagne et de tous les autres pays non spécifiés dans ce tableau         |
+| Reconocedor de escritura en Español (México) de Microsoft       | es-MX             | Espagnol du Mexique et des États-Unis                                       |
+| Reconocedor de escritura en Español (Argentina) de Microsoft    | es-AR             | Espagnol d’Argentine, du Paraguay et d’Uruguay                                   |
+| Reconnaissance d’écriture Microsoft - Français                  | fr                | Français de France, du Canada, de Belgique, de Suisse et de tous les autres pays       |
+| Microsoft 日本語手書き認識エンジン                              | ja                | Japonais de tous les pays                                                     |
+| Riconoscimento grafia italiana Microsoft                        | it                | Italien d’Italie, de Suisse et de tous les autres pays                        |
+| Microsoft Nederlandstalige handschriftherkenning                | nl-NL             | Néerlandais des Pays-Bas, du Surinam et des Antilles                           |
+| Microsoft Nederlandstalige (België) handschriftherkenning       | nl-BE             | Néerlandais de Belgique (flamand)                                                    |
+| Microsoft 中文(简体)手写识别器                                  | zh                | Chinois simplifié                                                  |
+| Microsoft 中文(繁體)手寫辨識器                                  | zh-hant           | Chinois traditionnel                                                 |
+| Microsoft система распознавания русского рукописного ввода      | ru                | Russe de tous les pays                                                      |
+| Reconhecedor de Manuscrito da Microsoft para Português (Brasil) | pt-BR             | Portugais du Brésil                                                          |
+| Reconhecedor de escrita manual da Microsoft para português      | pt-PT             | Portugais du Portugal et de tous les autres pays                               |
+| Microsoft 한글 필기 인식기                                      | ko                | Coréen de tous les pays                                                       |
+| System rozpoznawania polskiego pisma odręcznego firmy Microsoft | pl                | Polonais de tous les pays                                                       |
+| Microsoft Handskriftstolk för svenska                           | sv                | Suédois de tous les pays                                                      |
+| Microsoft rozpoznávač rukopisu pro český jazyk                  | cs                | Tchèque de tous les pays                                                        |
+| Microsoft Genkendelse af dansk håndskrift                       | da                | Danois de tous les pays                                                       |
+| Microsoft Håndskriftsgjenkjenner for norsk                      | nb                | Norvégien (Bokmal) de tous les pays                                           |
+| Microsoft Håndskriftsgjenkjenner for nynorsk                    | nn                | Norvégien (Nynorsk) de tous les pays                                          |
+| Microsoftin suomenkielinen käsinkirjoituksen tunnistus          | fi                | Finnois de tous les pays                                                      |
+| Microsoft recunoaştere grafie - Română                          | ro                | Roumain de tous les pays                                                     |
+| Microsoftov hrvatski rukopisni prepoznavač                      | hr                | Croate de tous les pays                                                     |
+| Microsoft prepoznavač rukopisa za srpski (latinica)             | sr-Latn           | Serbe, en alphabet latin, de tous les pays                                           |
+| Microsoft препознавач рукописа за српски (ћирилица)             | sr                | Serbe, en alphabet cyrillique, de tous les pays                                        |
+| Reconeixedor d’escriptura manual en català de Microsoft         | ca                | Catalan de tous les pays                                                      |
 
  
 
-Your app can query the set of installed handwriting recognition engines and use one of those or let a user select their preferred language.
+Votre application peut interroger l’ensemble des moteurs de reconnaissance de l’écriture manuscrite installés et utiliser l’un d’entre eux ou laisser un utilisateur sélectionner sa langue préférée.
 
-**Note**  
-Users can see a list of installed languages by going to Settings -&gt; Time & Language. Installed languages are listed under Languages.
+**Remarque**  
+Les utilisateurs peuvent voir une liste des langues installées en accédant à Paramètres -&gt; Heure & Langue. Les langues installées figurent sous Langues.
 
-To install new language packs and enable handwriting recognition for that language:
+Pour installer de nouveaux modules linguistiques et activer la reconnaissance de l’écriture manuscrite pour cette langue, procédez comme suit :
 
-1.  Go to **Settings &gt; Time & language &gt; Region & language**.
-2.  Select **Add a language**.
-3.  Select a language from the list, then choose the region version. The language is now listed on the **Region & language** page.
-4.  Click the language and select **Options**.
-5.  On the **Language options** page, download the **Handwriting recognition engine** (they can also download the full language pack, speech recognition engine, and keyboard layout here).
+1.  Accédez à **Paramètres &gt; Heure et langue &gt; Région et langue**.
+2.  Cliquez sur **Ajouter une langue**.
+3.  Sélectionnez une langue de la liste, puis choisissez la version de la région. La langue est désormais répertoriée dans la page **Région & Langue**.
+4.  Cliquez sur la langue et sélectionnez **Options**.
+5.  Sur la page **Options de langue**, téléchargez le **moteur de reconnaissance de l’écriture manuscrite** (L’utilisateur peut également télécharger le module linguistique dans son intégralité, le moteur de reconnaissance vocale et la disposition du clavier ici).
 
  
 
-Here, we demonstrate how to use the handwriting recognition engine to interpret a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) based on the selected recognizer.
+Nous montrons ici comment utiliser le moteur de reconnaissance de l’écriture manuscrite pour interpréter un ensemble de traits sur un élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) basé sur le module de reconnaissance sélectionné.
 
-The recognition is initiated by the user clicking a button when they are finished writing.
+L’utilisateur lance la reconnaissance en cliquant sur un bouton une fois qu’il a terminé d’écrire.
 
-1.  First, we set up the UI.
+1.  Tout d’abord, nous configurons l’interface utilisateur.
 
-    The UI includes a "Recognize" button, a combo box that lists all installed handwriting recognizers, the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), and an area to display recognition results.
+    L’interface utilisateur inclut un bouton Reconnaître, une zone de liste modifiable qui répertorie toutes les modules de reconnaissance de l’écriture manuscrite installés, l’élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), et une zone d’affichage des résultats de reconnaissance.
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -316,13 +316,13 @@ The recognition is initiated by the user clicking a button when they are finishe
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
 
-    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Ink strokes are rendered on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) using the specified [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050).
+    L’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Les traits d’encre sont restitués sur [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) à l’aide de l’élément [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) spécifié.
 
-    We call an `InitializeRecognizerList` function to populate the recognizer combo box with a list of installed handwriting recognizers.
+    Nous appelons une fonction `InitializeRecognizerList` pour remplir la zone de liste modifiable du module de reconnaissance avec une liste des modules de reconnaissance de l’écriture manuscrite installés.
 
-    We also declare listeners for the click event on the "Recognize" button and the selection changed event on the recognizer combo box.
+    Nous déclarons également des écouteurs pour l’événement Click sur le bouton Reconnaître et l’événement modifié de la sélection sur la zone de liste modifiable du module de reconnaissance.
 
 ```    CSharp
  public MainPage()
@@ -353,9 +353,9 @@ The recognition is initiated by the user clicking a button when they are finishe
      }
 ```
 
-3.  We populate the recognizer combo box with a list of installed handwriting recognizers.
+3.  Nous remplissons la zone de liste modifiable du module de reconnaissance avec une liste des modules de reconnaissance de l’écriture manuscrite installés.
 
-    An [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) is created to manage the handwriting recognition process. Use this object to call [**GetRecognizers**](https://msdn.microsoft.com/library/windows/apps/br208480) and retrieve the list of installed recognizers to populate the recognizer combo box.
+    Un élément [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) est créé pour gérer le processus de reconnaissance manuscrite. Utilisez cet objet pour appeler [**GetRecognizers**](https://msdn.microsoft.com/library/windows/apps/br208480) et récupérer la liste des modules de reconnaissance installés pour remplir la zone de liste modifiable du module de reconnaissance.
 
 ```    CSharp
 // Populate the recognizer combo box with installed recognizers.
@@ -375,9 +375,9 @@ The recognition is initiated by the user clicking a button when they are finishe
     }
 ```
 
-4.  Update the handwriting recognizer if the recognizer combo box selection changes.
+4.  Mettez à jour le module de reconnaissance de l’écriture manuscrite en cas de modification de la sélection de la zone de liste modifiable.
 
-    Use the [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) to call [**SetDefaultRecognizer**](https://msdn.microsoft.com/library/windows/apps/hh920328) based on the selected recognizer from the recognizer combo box.
+    Utilisez [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) pour appeler [**SetDefaultRecognizer**](https://msdn.microsoft.com/library/windows/apps/hh920328) en fonction du module de reconnaissance sélectionné à partir de la zone de liste modifiable correspondante.
 
 ```    CSharp
 // Handle recognizer change.
@@ -389,9 +389,9 @@ The recognition is initiated by the user clicking a button when they are finishe
     }
 ```
 
-5.  Finally, we perform the handwriting recognition based on the selected handwriting recognizer. For this example, we use the click event handler of the "Recognize" button to perform the handwriting recognition.
+5.  Enfin, nous effectuons la reconnaissance de l’écriture manuscrite en fonction du module de reconnaissance sélectionné. Pour cet exemple, nous utilisons le gestionnaire d’événements Click du bouton « Reconnaître » pour procéder à la reconnaissance de l’écriture manuscrite.
 
-    An [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stores all ink strokes in an [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) object. The strokes are exposed through the [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) property of the **InkPresenter** and retrieved using the [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) method.
+    Un élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stocke tous les traits d’encre dans un objet [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Les traits sont exposés par le biais de la propriété [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) de l’élément **InkPresenter** et récupérés à l’aide de la méthode [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499).
 
 ```    CSharp
 // Get all strokes on the InkCanvas.
@@ -497,16 +497,16 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="Dynamic_handwriting_recognition"></span><span id="dynamic_handwriting_recognition"></span><span id="DYNAMIC_HANDWRITING_RECOGNITION"></span>Dynamic handwriting recognition
+## <span id="Dynamic_handwriting_recognition"> </span> <span id="dynamic_handwriting_recognition"> </span> <span id="DYNAMIC_HANDWRITING_RECOGNITION"> </span>Reconnaissance de l’écriture manuscrite dynamique
 
 
-The previous two examples require the user to press a button to start recognition. Your app can also perform dynamic recognition using stroke input paired with a basic timing function.
+Les deux exemples précédents exigent que l’utilisateur appuie sur un bouton pour lancer la reconnaissance. Votre application peut également procéder à la reconnaissance dynamique à l’aide de la saisie de traits associée à une fonction de chronométrage de base.
 
-For this example, we'll use the same UI and stroke settings as the previous international recognition example.
+Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’interface utilisateur que l’exemple de reconnaissance internationale précédent.
 
-1.  Like the previous examples, the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and ink strokes are rendered on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) using the specified [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050).
+1.  Comme les exemples précédents, l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), et les traits d’encre sont restitués sur [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) à l’aide de l’élément [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) spécifié.
 
-    Instead of a button to initiate recognition, we add listeners for two [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stroke events ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) and [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)), and set up a basic timer ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250)) with a one second [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) interval.
+    Au lieu d’un bouton pour lancer la reconnaissance, nous ajoutons des écouteurs pour deux événements de traits [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) et [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)) et configurons un minuteur de base ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250)) avec un intervalle [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) d’une seconde.
 
 ```    CSharp
 public MainPage()
@@ -574,16 +574,16 @@ public MainPage()
     
 ```
 
-2.  Here are the handlers for the three events we added in the first step.
+2.  Voici les gestionnaires pour les trois événements que nous avons ajoutés à la première étape.
 
-    <span id="StrokesCollected"></span><span id="strokescollected"></span><span id="STROKESCOLLECTED"></span>[**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
-    Start the recognition timer when the user stops inking by lifting their pen or finger, or releasing the mouse button. After one second of no ink input, recognition is initiated.
+    <span id="StrokesCollected"> </span> <span id="strokescollected"> </span> <span id="STROKESCOLLECTED"> </span> [**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
+    Démarre le minuteur de reconnaissance lorsque l’utilisateur arrête l’entrée manuscrite en levant son stylet ou son doigt ou en relâchant le bouton de la souris. La reconnaissance est lancée dès que l’utilisateur arrête d’écrire pendant plus d’une seconde.
 
-    <span id="StrokeStarted"></span><span id="strokestarted"></span><span id="STROKESTARTED"></span>[**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
-    If a new stroke starts before the next timer tick event, stop the timer as the new stroke is likely the continuation of a single handwriting entry.
+    <span id="StrokeStarted"> </span> <span id="strokestarted"> </span> <span id="STROKESTARTED"> </span> [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
+    Arrête la minuterie sachant que le nouveau trait est probablement la suite d’une entrée manuscrite unique, si un nouveau trait commence avant le prochain battement d’horloge.
 
-    <span id="Tick"></span><span id="tick"></span><span id="TICK"></span>[**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
-    Call the recognition function after one second of no ink input.
+    <span id="Tick"> </span> <span id="tick"> </span> <span id="TICK"> </span> [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
+    Appelle la fonction de reconnaissance dès que l’utilisateur arrête d’écrire pendant plus d’une seconde.
 
 ```    CSharp
 // Handler for the timer tick event calls the recognition function.
@@ -611,9 +611,9 @@ public MainPage()
     }
 ```
 
-3.  Finally, we perform the handwriting recognition based on the selected handwriting recognizer. For this example, we use the [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) event handler of a [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) to initiate the handwriting recognition.
+3.  Enfin, nous effectuons la reconnaissance de l’écriture manuscrite en fonction du module de reconnaissance sélectionné. Pour cet exemple, nous utilisons le gestionnaire d’événements [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) d’un élément [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) pour lancer la reconnaissance de l’écriture manuscrite.
 
-    An [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stores all ink strokes in an [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) object. The strokes are exposed through the [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) property of the **InkPresenter** and retrieved using the [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) method.
+    Un élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stocke tous les traits d’encre dans un objet [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Les traits sont exposés par le biais de la propriété [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) de l’élément **InkPresenter** et récupérés à l’aide de la méthode [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499).
 
 ```    CSharp
 // Get all strokes on the InkCanvas.
@@ -716,19 +716,23 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"> </span>Articles connexes
 
 
-* [Pen and stylus interactions](pen-and-stylus-interactions.md)
-**Samples**
-* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Interactions avec le stylo et le stylet](pen-and-stylus-interactions.md)
+**Exemples**
+* [Exemple d’entrée manuscrite](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Exemple d’entrée manuscrite simple](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Exemple d’entrée manuscrite complexe](http://go.microsoft.com/fwlink/p/?LinkID=620314)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

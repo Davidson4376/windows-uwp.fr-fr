@@ -1,8 +1,8 @@
 ---
-Description: Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP).
-title: Ressources de vignette et d’icône
+Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP).
+Ressources de vignette et d’icône
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-label: Ressources de vignette et d’icône
+Ressources de vignette et d’icône
 template: detail.hbs
 ---
 
@@ -177,7 +177,7 @@ Voici des recommandations de dimensionnement pour les ressources basées sur la 
 
 Le modèle sous forme d’icône (également connu sous le nom de modèle « IconWithBadge ») vous permet d’afficher une petite image au centre de la vignette. Windows 10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau. (Pour en savoir plus sur la création de vignettes sous forme d’icône, voir l’article [Modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md).)
 
-Les applications qui utilisent un modèle sous forme d’icône, telles que les applications Messagerie, Téléphone et Windows Store, disposent de ressources basées sur la cible pouvant intégrer un badge (avec compteur dynamique). À l’instar des autres ressources basées sur la cible, aucun remplissage n’est nécessaire. Les ressources sous forme d'icône ne font pas partie du manifeste de l’application, mais d’une charge utile de vignettes dynamiques. Les ressources sont redimensionnées et centrées dans un conteneur de coefficient 3:2 :
+Les applications qui utilisent un modèle sous forme d’icône, telles que les applications Messagerie, Téléphone et Windows Store, disposent de ressources basées sur la cible pouvant intégrer un badge (avec compteur dynamique). À l’instar des autres ressources basées sur la cible, aucun remplissage n’est nécessaire. Les ressources sous forme d’icône ne font pas partie du manifeste de l’application, mais d’une charge utile de vignettes dynamiques. Les ressources sont redimensionnées et centrées dans un conteneur de coefficient 3:2 :
 
 ![Dimensionnement des ressources avec et sans badge](images/assetguidance24.png)
 
@@ -232,7 +232,7 @@ Nous vous recommandons vivement de fournir au moins des ressources pour les fact
 | Petite                | Square71x71Logo   | 71 x 71         | 89 x 89         | 107 x 107       | 142 x 142       | 284 x 284       |
 | Moyenne               | Square150x150Logo | 150 x 150       | 188 x 188       | 225 x 225       | 300 x 300       | 600 x 600       |
 | Large                 | Square310x150Logo | 310 x 150       | 388 x 188       | 465 x 225       | 620 x 300       | 1 240 x 600      |
-| Grande (bureau uniquement) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1 240 1 240     |
+| Grande (bureau uniquement) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1 240 x 1 240     |
 | Liste des applications (icône)      | Square44x44Logo   | 44 x 44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
 
  
@@ -359,9 +359,9 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 -   Utilisations :
     -   Écran de démarrage de l’application
 
-**Ressources de vignette sous forme d'icône**
+**Ressources de vignette sous forme d’icône**
 
--   Il s’agit des ressources pour les applications utilisant le modèle sous forme d'icône.
+-   Il s’agit des ressources pour les applications utilisant le modèle sous forme d’icône.
 -   Format de nom de fichier : non applicable
 -   Applications concernées : Messagerie, Téléphone, Windows Store, etc.
 -   Utilisations :
@@ -369,8 +369,20 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 
 \[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
-## Rubriques connexes
+## <span id="related_topics"> </span>Rubriques connexes
+
+
 
 * [Modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md)
+ 
+
+ 
+
+
+
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

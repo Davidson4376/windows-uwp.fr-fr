@@ -1,43 +1,43 @@
 ---
-title: Complete code for BasicLoader
-description: Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
+Code complet de BasicLoader
+Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs.
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 ---
 
-# Complete code for BasicLoader
+# Code complet de BasicLoader
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
+Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs.
 
-This topic contains these sections:
+Cette rubrique contient les sections suivantes :
 
 -   [Technologies](#technologies)
--   [Requirements](#requirements)
--   [View the code (C++)](#view-the-code-c-)
+-   [Configuration requise](#requirements)
+-   [Afficher le code (C++)](#view-the-code-c-)
 
 <span id="download_locations"></span>
-## Download location
+## Emplacement de téléchargement
 
 
-This sample is not available for download.
+Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
 |                       |                 |
 |-----------------------|-----------------|
-| Programming languages | C++             |
-| Programming models    | Windows Runtime |
+| Langages de programmation | C++             |
+| Modèles de programmation    | Windows Runtime |
 
-## Requirements
+## Configuration requise
 
-| Minimum supported client | Windows 10                            |
+| Client minimal pris en charge | Windows 10                            |
 |--------------------------|---------------------------------------|
-| Minimum supported server | Windows Server 2016 Technical Preview |
-| Minimum required SDK     |                                       |
+| Serveur minimal pris en charge | Windows Server 2016 Technical Preview |
+| Kit de développement logiciel (SDK) au minimum requis     |                                       |
 
-## View the code (C++)
+## Afficher le code (C++)
 
 ## BasicLoader.h
 
@@ -1106,4 +1106,8 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,87 +1,87 @@
 ---
-description: Use the background transfer API to copy files reliably over the network.
-title: Background transfers
+Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau.
+Transferts en arrière-plan
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ---
 
-# Background transfers
+# Transferts en arrière-plan
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
 -   [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
-Use the background transfer API to copy files reliably over the network. The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination. The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status. The API is ideal for uploading and downloading large files using HTTP(S). FTP is also supported, but only for downloads.
+Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau. L’API de transfert en arrière-plan offre des fonctionnalités avancées de chargement et téléchargement, qui s’exécutent en arrière-plan pendant la suspension d’une application, et perdurent après l’arrêt de l’application. L’API surveille l’état du réseau. Elle suspend et reprend automatiquement les transferts en cas de perte de connexion. Les transferts sont par ailleurs régis par l’Assistant Données et l’Assistant batterie, ce qui signifie que l’activité de téléchargement s’ajuste en fonction de l’état actuel de la batterie de l’appareil et de la connexion. L’API est idéale pour le chargement et le téléchargement de fichiers volumineux à l’aide du protocole HTTP(S). Le protocole FTP est également pris en charge, mais uniquement pour les téléchargements.
 
-Background Transfer runs separately from the calling app and is primarily designed for long-term transfer operations for resources like video, music, and large images. For these scenarios, using Background Transfer is essential because downloads continue to progress even when the app is suspended.
+Le transfert en arrière-plan s’exécute séparément de l’application appelante et est principalement conçu pour des opérations de transfert à long terme pour des ressources telles que des vidéos, de la musique et des images volumineuses. Dans ces cas, l’utilisation du transfert en arrière-plan est essentielle, car les téléchargements se poursuivent même quand l’application est suspendue.
 
-If you are downloading small resources that are likely to complete quickly, you should use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) APIs instead of Background Transfer.
+Si vous téléchargez peu de ressources et si l’opération est censée se terminer rapidement, utilisez les API [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) à la place du transfert en arrière-plan.
 
-## Using Windows.Networking.BackgroundTransfer
+## Utilisation de Windows.Networking.BackgroundTransfer
 
 
-### How does the Background Transfer feature work?
+### Comment la fonctionnalité de transfert en arrière-plan fonctionne-t-elle ?
 
-When an app uses Background Transfer to initiate a transfer, the request is configured and initialized using [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) or [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) class objects. Each transfer operation is handled individually by the system and separate from the calling app. Progress information is available if you want to give status to the user in your app's UI, and your app can pause, resume, cancel, or even read from the data while the transfer is occurring. The way transfers are handled by the system promotes smart power usage and prevents problems that can arise when a connected app encounters events such as app suspension, termination, or sudden network status changes.
+Quand une application utilise la fonctionnalité de transfert en arrière-plan pour lancer un transfert, la requête est configurée et initialisée à l’aide d’objets de classe [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) ou [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). Chaque opération de transfert est gérée individuellement par le système et séparément de l’application appelante. Les informations sur la progression sont disponibles si vous voulez indiquer un état à l’utilisateur dans l’interface utilisateur de votre application. En outre, l’exécution de votre application peut être suspendue, reprise, annulée ou même lue à partir des données pendant le transfert. La manière dont les transferts sont gérés par le système favorise une consommation d’énergie intelligente et évite les problèmes qui peuvent se produire lorsqu’une application connectée se heurte à des événements tels qu’une interruption ou un arrêt de l’application, ou encore des modifications soudaines de l’état du réseau.
 
-### Performing authenticated file requests with Background Transfer
+### Exécution de demandes de fichiers authentifiées avec le transfert en arrière-plan
 
-Background Transfer provides methods that support basic server and proxy credentials, cookies, and the use of custom HTTP headers (via [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) for each transfer operation.
+Le transfert en arrière-plan fournit des méthodes qui prennent en charge les informations d’authentification serveur et proxy de base, les cookies et l’utilisation d’en-têtes HTTP personnalisés (par l’intermédiaire de la méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) pour chaque opération de transfert.
 
-### How does this feature adapt to network status changes or unexpected shutdowns?
+### Comment cette fonctionnalité s’adapte-t-elle aux modifications de l’état du réseau ou aux arrêts inattendus ?
 
-The Background Transfer feature maintains a consistent experience for each transfer operation when network status changes occur, by intelligently leveraging connectivity and carrier data-plan status information provided by the [Connectivity](https://msdn.microsoft.com/library/windows/apps/hh452990) feature. To define behavior for different network scenarios, an app sets a cost policy for each operation using values defined by [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138).
+La fonctionnalité de transfert en arrière-plan garantit une démarche cohérente pour chaque opération de transfert en cas de modification de l’état du réseau. Pour cela, elle exploite intelligemment les informations sur l’état de la connectivité et du forfait données de l’opérateur fournies par la fonctionnalité [Connectivité](https://msdn.microsoft.com/library/windows/apps/hh452990). Afin de définir un comportement pour des scénarios réseau différents, une application définit une stratégie de coût pour chaque opération de transfert à l’aide de valeurs définies par [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138).
 
-For example, the cost policy defined for an operation can indicate that the operation should be paused automatically when the device is using a metered network. The transfer is then automatically resumed (or restarted) when a connection to an "unrestricted" network has been established. For more information on how networks are defined by cost, see [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292).
+Par exemple, la stratégie de coût définie pour une opération peut indiquer que l’opération doit être automatiquement suspendue lorsque l’appareil exploite une connexion réseau limitée. Le transfert reprend (ou redémarre) automatiquement ensuite dès qu’une connexion à un réseau « non restreint » est établie. Pour plus d’informations sur le mode de définition par coût des réseaux, voir [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292).
 
-While the Background Transfer feature has its own mechanisms for handling network status changes, there are other general connectivity considerations for network-connected apps. Read [Leveraging available network connection information](https://msdn.microsoft.com/library/windows/apps/hh452983) for additional info.
+Bien que la fonctionnalité de transfert en arrière-plan possède ses propres mécanismes pour gérer les modifications de l’état du réseau, d’autres considérations générales ayant trait à la connectivité des applications connectées au réseau sont à prendre en compte. Pour plus d’informations, voir [Exploitation des informations de connexion réseau disponibles](https://msdn.microsoft.com/library/windows/apps/hh452983).
 
-> **Note**  For apps running on mobile devices, there are features that allow the user to monitor and restrict the amount of data that is transferred based on the type of connection, roaming status, and the user's data plan. Because of this, background transfers may be paused on the phone even when the [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indicates that the transfer should proceed.
+> **Remarque** Les applications pour appareils mobiles disposent de fonctionnalités qui permettent à l’utilisateur de surveiller et de limiter la quantité de données transférées en fonction du type de connexion, de l’état de l’itinérance et du forfait de données. C’est pourquoi les transferts en arrière-plan peuvent être suspendus sur le téléphone même quand [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indique que le transfert doit s’effectuer.
 
-The following table indicates when background transfers are allowed on the phone for each [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) value, given the current state of the phone. You can use the [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) class to determine the phone's current state.
+Le tableau suivant indique les moments où les transferts en arrière-plan sont autorisés sur le téléphone pour chaque valeur [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138), en fonction de l’état actuel du téléphone. Vous pouvez utiliser la classe [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) pour déterminer l’état actuel du téléphone.
 
-| Device State                                                                                                                      | UnrestrictedOnly | Default | Always |
+| État de l’appareil                                                                                                                      | UnrestrictedOnly | Default | Always |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
-| Connected to WiFi                                                                                                                 | Allow            | Allow   | Allow  |
-| Metered Connection, not roaming, under data limit, on track to stay under limit                                                   | Deny             | Allow   | Allow  |
-| Metered Connection, not roaming, under data limit, on track to exceed limit                                                       | Deny             | Deny    | Allow  |
-| Metered Connection, roaming, under data limit                                                                                     | Deny             | Deny    | Allow  |
-| Metered Connection, over data limit. This state only occurs when the user enables "Restrict background data in the Data Sense UI. | Deny             | Deny    | Deny   |
+| Connecté au Wi-Fi                                                                                                                 | Autoriser            | Autoriser   | Autoriser  |
+| Connexion limitée, pas d’itinérance, sous la limite de données, en bonne voie pour rester sous la limite                                                   | Refuser             | Autoriser   | Autoriser  |
+| Connexion limitée, pas d’itinérance, sous la limite de données, en bonne voie pour dépasser la limite                                                       | Refuser             | Refuser    | Autoriser  |
+| Connexion limitée, itinérance, sous la limite de données                                                                                     | Refuser             | Refuser    | Autoriser  |
+| Connexion limitée, au-dessus de la limite de données. Cet état se produit uniquement quand l’utilisateur active la restriction des données en arrière-plan dans l’interface utilisateur Data Sense. | Refuser             | Refuser    | Refuser   |
 
  
 
-## Uploading files
+## Téléchargement de fichiers sur le serveur
 
 
-When using Background Transfer an upload exists as an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) that exposes a number of control methods that are used to restart or cancel the operation. App events (e.g. suspension or termination) and connectivity changes are handled automatically by the system per **UploadOperation**; uploads will continue during app suspension periods or pause and persist beyond app termination. Additionally, setting the [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) property will indicate whether or not your app will start uploads while a metered network is being used for Internet connectivity.
+Lorsque vous faites appel à la fonctionnalité de transfert en arrière-plan, le chargement qui en résulte existe sous la forme d’une opération [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) qui expose de nombreuses méthodes de contrôle servant à redémarrer ou à annuler l’opération. Les événements d’application (par exemple, une suspension ou un arrêt) et les changements de connectivité sont gérés automatiquement par le système pour chaque opération **UploadOperation**. Les chargements se poursuivent lors des périodes de suspension des applications et perdurent après l’arrêt des applications. De plus, la propriété [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) peut être définie pour indiquer si oui ou non votre application entamera des chargements tandis qu’une connexion réseau limitée est utilisée pour la connectivité Internet.
 
-The following examples will walk you through the creation and initialization of a basic upload and how to enumerate and reintroduce operations persisted from a previous app session.
+Les exemples qui suivent vous guident tout au long du processus de création et d’initialisation d’un chargement de base et décrivent comment énumérer des opérations de chargement issues d’une session d’application précédente.
 
-### Uploading a single file
+### Chargement d’un fichier unique
 
-The creation of an upload begins with [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). This class is used to provide the methods that enable your app to configure the upload before creating the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224). The following example shows how to do this with the required [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) and [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects.
+La création d’un chargement commence avec [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). Cette classe sert à fournir les méthodes qui permettent à votre application de configurer le chargement avant de créer l’objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) qui en résulte. L’exemple qui suit montre comment y parvenir avec les objets [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) et [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) requis.
 
-**Identify the file and destination for the upload**
+**Identifier le fichier et la destination du chargement**
 
-Before we can begin with the creation of an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), we first need to identify the URI of the location to upload to, and the file that will be uploaded. In the following example, the *uriString* value is populated using a string from UI input, and the *file* value using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object returned by a [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) operation.
+Avant de commencer avec la création d’un objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), nous devons avant tout identifier l’URI du lieu de chargement, ainsi que le fichier qui sera chargé. Dans l’exemple qui suit, la valeur *uriString* est remplie au moyen d’une chaîne issue d’entrées de l’interface utilisateur et la valeur *file* est remplie à l’aide de l’objet  [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) renvoyé par une opération [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275).
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "Identify the file and destination for the upload")]
 
-**Create and initialize the upload operation**
+**Créer et initialiser l’opération de chargement**
 
-In the previous step the *uriString* and *file* values are passed to an instance of our next example, UploadOp, where they are used to configure and start the new upload operation. First, *uriString* is parsed to create the required [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object.
+Dans l’étape qui précède, les valeurs *uriString* et *file* sont transmises à une instance de notre exemple suivant, UploadOp, où elles sont utilisées pour configurer et lancer la nouvelle opération de chargement. Pour commencer, la valeur *uriString* est analysée afin de créer l’objet [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) requis.
 
-Next, the properties of the provided [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) are used by [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) to populate the request header and set the *SourceFile* property with the **StorageFile** object. The [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) method is then called to insert the file name, provided as a string, and the [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) property.
+Ensuite, les propriétés de l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) fourni (*file*) sont utilisées par la classe [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) pour remplir l’en-tête de la demande et définir la propriété *SourceFile* à l’aide de l’objet **StorageFile**. La méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) est ensuite appelée pour insérer le nom de fichier, fourni comme chaîne, et la propriété [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220).
 
-Finally, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) creates the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*).
+Pour finir, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) crée l’objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*).
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Create and initialize the upload operation")]
 
-Note the asynchronous method calls defined using JavaScript promises. Looking at a line from the last example:
+Notez les appels de méthode asynchrone définis à l’aide de promesses JavaScript. Examinons une ligne du dernier exemple :
 
 ```javascript
 promise = upload.startAsync().then(complete, error, progress);
@@ -89,9 +89,9 @@ promise = upload.startAsync().then(complete, error, progress);
 
     The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
-### Uploading multiple files
+### Chargement de plusieurs fichiers
 
-**Identify the files and destination for the upload**
+**Identifier les fichiers et la destination du chargement**
 
     In a scenario involving multiple files transferred with a single [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), the process begins as it usually does by first providing the required destination URI and local file information. Similar to the example in the previous section, the URI is provided as a string by the end-user and [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) can be used to provide the ability to indicate files through the user interface as well. However, in this scenario the app should instead call the [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) method to enable the selection of multiple files through the UI.
 
@@ -116,7 +116,7 @@ function uploadFiles() {
     }
 ```
 
-**Create objects for the provided parameters**
+**Créer des objets pour les paramètres fournis**
 
     The next two examples use code contained in a single example method, **startMultipart**, which was called at the end of the last step. For the purpose of instruction the code in the method that creates an array of [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects has been split from the code that creates the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224).
 
@@ -136,7 +136,7 @@ upload.startMultipart = function (uriString, files) {
             });
 ```
 
-**Create and initialize the multi-part upload operation**
+**Créer et initialiser l’opération de chargement à parties multiples**
 
     With our contentParts array populated with all of the [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects representing each [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) for upload, we are ready to call [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) using the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) to indicate where the request will be sent.
 
@@ -155,71 +155,71 @@ upload.startMultipart = function (uriString, files) {
      };
 ```
 
-### Restarting interrupted upload operations
+### Redémarrage d’opérations de chargement interrompues
 
-On completion or cancellation of an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), any associated system resources are released. However, if your app is terminated before either of these things can occur, any active operations are paused and the resources associated with each remain occupied. If these operations are not enumerated and re-introduced to the next app session, they will not be completed and will continue to occupy device resources.
+Lors de l’achèvement ou de l’annulation d’une opération [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), toutes les ressources système associées sont libérées. Toutefois, si votre application est arrêtée avant que l’une de ces situations puisse se produire, toutes les opérations en cours sont suspendues et les ressources associées à chacune d’entre elles persistent. Si ces opérations ne sont pas énumérées et réintroduites dans la session d’application suivante, elles s’arrêteront et resteront présentes dans les ressources d’appareil.
 
-1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) objects that it will return:
+1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) que cette fonction renverra :
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "Restart interrupted upload operation")]
 
-2.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks to the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), should it persist through app termination, is in the UploadOp class we define later in this section.
+2.  Il nous faut ensuite définir la fonction qui énumère les opérations persistantes et les stocke dans notre tableau. Notez que la méthode **load** appelée pour réaffecter les rappels vers [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), si elle persiste après l’arrêt de l’application, se trouve dans la classe UploadOp définie plus loin dans cette section.
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "Enumerate persisted operations")]
 
-## Downloading files
+## Téléchargement de fichiers
 
-When using Background Transfer, each download exists as a [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) that exposes a number of control methods used to pause, resume, restart, and cancel the operation. App events (e.g. suspension or termination) and connectivity changes are handled automatically by the system per **DownloadOperation**; downloads will continue during app suspension periods or pause and persist beyond app termination. For mobile network scenarios, setting the [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) property will indicate whether or not your app will begin or continue downloads while a metered network is being used for Internet connectivity.
+Lorsque vous faites appel à la fonctionnalité de transfert en arrière-plan, chaque téléchargement qui en résulte existe sous la forme d’une opération [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) qui dévoile de nombreuses méthodes de contrôle servant à suspendre, reprendre, redémarrer et annuler l’opération. Les événements d’application (par exemple, une suspension ou un arrêt) et les changements de connectivité sont gérés automatiquement par le système pour chaque opération **DownloadOperation**. Les téléchargements se poursuivent lors des périodes de suspension des applications et perdurent après l’arrêt des applications. Dans le cadre des scénarios de réseau mobile, la propriété [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) peut être définie pour indiquer si oui ou non votre application entamera ou poursuivra un téléchargement tandis qu’une connexion réseau limitée est utilisée pour la connectivité Internet.
 
-If you are downloading small resources that are likely to complete quickly, you should use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) APIs instead of Background Transfer.
+Si vous téléchargez peu de ressources et si l’opération est censée se terminer rapidement, utilisez les API [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) à la place du transfert en arrière-plan.
 
-The following examples will walk you through the creation and initialization of a basic download, and how to enumerate and reintroduce operations persisted from a previous app session.
+Les exemples qui suivent vous guident tout au long du processus de création et d’initialisation d’un téléchargement de base et décrivent comment énumérer des opérations de chargement issues d’une session d’application précédente.
 
-### Configure and start a Background Transfer file download
+### Configurer et démarrer un téléchargement de fichier à l’aide de la fonctionnalité de transfert en arrière-plan
 
-The following example demonstrates how strings representing a URI and a file name can be used to create a [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object and the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that will contain the requested file. In this example, the new file is automatically placed in a pre-defined location. Alternatively, [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) can be used allow users to indicate where to save the file on the device. Note that the **load** method called to re-assign callbacks to the [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), should it persist through app termination, is in the DownloadOp class defined later in this section.
+L’exemple qui suit montre comment des chaînes représentant un URI et un nom de fichier peuvent être utilisées pour créer un objet [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) et le [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) qui contiendra la ressource demandée. Dans cet exemple, le nouveau fichier est automatiquement placé à un emplacement prédéfini. La classe [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) peut également servir aux utilisateurs pour indiquer où enregistrer le fichier sur l’appareil. Notez que la méthode **load** appelée pour réaffecter les rappels vers [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), si elle persiste après l’arrêt de l’application, se trouve dans la classe DownloadOp définie plus loin dans cette section.
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_A)]
 
-Note the asynchronous method calls defined using JavaScript promises. Looking at line 17 from the previous code example:
+Notez les appels de méthode asynchrone définis à l’aide de promesses JavaScript. Examinons la ligne 17 du dernier échantillon de code :
 
 ```javascript
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+L’appel de méthode asynchrone est suivi d’une instruction then indiquant les méthodes, définies par l’application, qui sont appelées lorsqu’un résultat de l’appel de méthode asynchrone est retourné. Pour plus d’informations sur ce modèle de programmation, voir [Programmation asynchrone en JavaScript à l’aide de promesses](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
-### Adding additional operation control methods
+### Ajout de méthodes de contrôle des opérations supplémentaires
 
-The level of control can be increased by implementing additional [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) methods. For example, adding the following code to the example above will introduce the ability to cancel the download.
+Le niveau de contrôle peut être augmenté en implémentant des méthodes [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) supplémentaires. Par exemple, en intégrant le code suivant à l’exemple ci-dessus, nous pouvons inclure la possibilité d’annuler l’opération.
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_B)]
 
-### Enumerating persisted operations at start-up
+### Énumération des opérations persistantes au démarrage
 
-On completion or cancellation of a [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), any associated system resources are released. However, if your app is terminated before either of these events occur, downloads will pause and persist in the background. The following examples demonstrate how to re-introduce persisted downloads into a new app session.
+Lors de l’achèvement ou de l’annulation d’une opération [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), toutes les ressources système associées sont libérées. Toutefois, si votre application est arrêtée avant que l’un de ces événements ne se produise, les téléchargements sont suspendus et persistent en arrière-plan. Les exemples qui suivent expliquent comment réintroduire des téléchargements persistants dans une nouvelle session d’application.
 
-1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) objects that it will return:
+1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) que cette fonction renverra :
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
 
-2.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks for a persisted [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) is in the DownloadOp example we define later in this section.
+2.  Il nous faut ensuite définir la fonction qui énumère les opérations persistantes et les stocke dans notre tableau. Notez que la méthode **load** appelée pour réaffecter les rappels pour une opération [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) persistante se trouve dans l’exemple DownloadOp défini plus loin dans cette section.
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
 
-3.  You can now use the populated list to restart pending operations.
+3.  Vous pouvez désormais utiliser la liste remplie pour redémarrer des opérations en attente.
 
-## Post-processing
+## Post-traitement
 
-A new feature in Windows 10 is the ability to run application code at the completion of a background transfer even when the app is not running. For example, your app might want to update a list of available movies after a movie has finished downloading, rather than have your app scan for new movies every time it starts. Or your app might want to handle a failed file transfer by trying again using a different server or port. Post-processing is invoked for both successful and failed transfers, so you can use it to implement custom error-handling and retry logic.
+Une nouvelle fonctionnalité dans Windows 10 est la possibilité d’exécuter un code d’application à la fin d’un transfert en arrière-plan, même lorsque l’application n’est pas en cours d’exécution. Par exemple, votre application pourrait mettre à jour une liste de films disponibles à l’issue du téléchargement d’un film, au lieu de rechercher la présence de nouveaux films à chaque démarrage. Elle pourrait également gérer un transfert de fichier ayant échoué en réessayant via un serveur ou un port différent. Le post-traitement est appelé pour tous les transferts, réussis ou non. Vous pouvez donc l’utiliser pour implémenter une logique personnalisée de gestion des erreurs et de nouvelle tentative.
 
-Postprocessing uses the existing background task infrastructure. You create a background task and associate it with your transfers before you start the transfers. The transfers are then executed in the background, and when they are complete, your background task is called to perform post-processing.
+Un post-traitement utilise l’infrastructure de tâche en arrière-plan existante. Vous créez une tâche en arrière-plan et l’associez à vos transferts avant de les démarrer. Les transferts sont ensuite exécutés en arrière-plan et, quand ils sont terminés, votre tâche en arrière-plan est appelée pour effectuer le post-traitement.
 
-Post-processing uses a new class, [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). This class is similar to the existing [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) in that it allows you to group background transfers together, but **BackgroundTransferCompletionGroup** adds the ability to designate a background task to be run when the transfer is complete.
+Un post-traitement utilise une nouvelle classe, [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). Cette classe est semblable à la classe [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) existante, dans la mesure où elle vous permet de regrouper des transferts en arrière-plan. Toutefois, la classe **BackgroundTransferCompletionGroup** ajoute la possibilité de désigner une tâche en arrière-plan pour s’exécuter une fois le transfert terminé.
 
-You initiate a background transfer with post-processing as follows.
+Pour initier un transfert en arrière-plan avec post-traitement, procédez comme suit.
 
-1.  Create a [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) object. Then, create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. Set the **Trigger** property of the builder object to the completion group object, and the **TaskEngtyPoint** property of the builder to the entry point of the background task that should execute on transfer completion. Finally, call the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method to register your background task. Note that many completion groups can share one background task entry point, but you can have only one completion group per background task registration.
+1.  Créez un objet [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). Créez ensuite un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Définissez la propriété **Trigger** de l’objet générateur sur l’objet groupe d’achèvement, et la propriété **TaskEngtyPoint** du générateur sur le point d’entrée de la tâche en arrière-plan qui doit s’exécuter à la fin du transfert. Pour finir, appelez la méthode [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) pour inscrire votre tâche en arrière-plan. Notez que de nombreux groupes d’achèvement peuvent partager un point d’entrée de tâche en arrière-plan, mais que vous ne pouvez avoir qu’un seul groupe d’achèvement par inscription de tâche en arrière-plan.
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -309,4 +309,8 @@ An error encountered on an asynchronous method in the [**Windows.Networking.back
 
 For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

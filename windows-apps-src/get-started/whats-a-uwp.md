@@ -1,7 +1,7 @@
 ---
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
-title: Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
-description: Découvrez les différents types d’application que recouvre l’appellation « applications Windows universelles » : applications du Windows Store, applications du Windows Phone Store et applications Windows Runtime.
+Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
+Découvrez les différents types d’application que recouvre l’appellation « applications Windows universelles » : applications du Windows Store, applications du Windows Phone Store et applications Windows Runtime.
 ---
 
 # Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
@@ -87,4 +87,8 @@ Pour une présentation plus détaillée d’UWP, lisez le [Guide des application
 
 * [Guide des applications de plateforme Windows universelle](universal-application-platform-guide.md)
 * [Se préparer](get-set-up.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

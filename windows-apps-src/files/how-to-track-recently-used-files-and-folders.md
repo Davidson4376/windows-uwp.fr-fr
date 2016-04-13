@@ -1,11 +1,11 @@
 ---
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
-title: Suivre les fichiers et dossiers récemment utilisés
-description: Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des éléments utilisés récemment de votre application.
+Suivre les fichiers et dossiers récemment utilisés
+Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des éléments utilisés récemment de votre application.
 ---
 # Suivre les fichiers et dossiers récemment utilisés
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -103,4 +103,8 @@ Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à vo
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

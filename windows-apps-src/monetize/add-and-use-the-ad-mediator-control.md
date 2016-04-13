@@ -1,168 +1,168 @@
 ---
 ms.assetid: 3C03FDD8-FA61-4E7B-BDCA-3C29DFEA20E4
-description: After you install the Microsoft Universal Ad Client SDK, follow the instructions in this topic to use the ad mediator control in your app.
-title: Add and use the ad mediator control
+description: Après avoir installé le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft, suivez les instructions de cette rubrique pour utiliser le contrôle Ad Mediator dans votre application.
+title: Ajouter et utiliser le contrôle Ad Mediator
 ---
 
-# Add and use the ad mediator control
+# Ajouter et utiliser le contrôle Ad Mediator
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-After you [install the Microsoft Universal Ad Client SDK](install-the-microsoft-universal-ad-client-sdk.md), follow the instructions in this topic to use the ad mediator control in your app. For a list of the ad networks and project types currently supported by ad mediation, see [Select and manage your ad networks](select-and-manage-your-ad-networks.md).
+Après [avoir installé le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk), suivez les instructions de cette rubrique pour utiliser le contrôle Ad Mediator dans votre application. Pour obtenir la liste des réseaux publicitaires et des types de projets actuellement pris en charge par la médiation publicitaire, voir [Sélection et gestion de vos réseaux publicitaires](select-and-manage-your-ad-networks.md).
 
-## Add the ad mediator control to your project
+## Ajouter le contrôle Ad Mediator à votre projet
 
 
-To add an instance of the ad mediator control to your project:
+Ajouter une instance du contrôle Ad Mediator à votre projet :
 
-1.  In Visual Studio, open your project.
-2.  If you're adding ad mediation to an app which is already monetizing with any of the [ad networks](select-and-manage-your-ad-networks.md) supported by ad mediation, remove the existing ad implementation and all of its references before proceeding.
-3.  In **Solution Explorer**, locate the page in your app where you want to show ads and then double-click the page to open it in the designer.
-4.  From the **Toolbox**, drag a new **AdMediatorControl** into the designer (be sure to drag the control into the designer, not into your XAML code). Position the control in the location where you'd like your ads to display. You can add multiple controls if you want to display ads in more than one area of your app.
+1.  Ouvrez votre projet dans Visual Studio.
+2.  Si vous ajoutez la fonction de médiation publicitaire à une application qui gère déjà la monétisation avec l’un des [réseaux publicitaires](select-and-manage-your-ad-networks.md) pris en charge par cette médiation, supprimez au préalable l’implémentation publicitaire existante et toutes ses références.
+3.  Dans l’**Explorateur de solutions**, recherchez la page de votre application dans laquelle vous souhaitez afficher des publicités, puis double-cliquez sur la page pour l’ouvrir dans le concepteur.
+4.  À partir de la **Boîte à outils**, faites glisser un nouveau **AdMediatorControl** dans le concepteur (veillez à faire glisser le contrôle dans le concepteur et non dans votre code XAML). Placez le contrôle à l’emplacement auquel vous souhaitez faire apparaître vos publicités. Vous pouvez ajouter plusieurs contrôles si vous voulez afficher des publicités dans plusieurs zones de votre application.
 
-    The **AdMediatorControl** is located in the following **Toolbox** locations:
+    L’élément **AdMediatorControl** est situé dans les emplacements suivants de la **boîte à outils** :
 
-    -   In a Universal Windows Platform (UWP) project, use the **AdMediatorControl** under the **AdMediator Universal** section.
-    -   In a Windows 8.1 or Windows Phone 8.1 project using C# or Visual Basic with XAML, use the **AdMediatorControl** under the **AdMediator** section.
-    -   In a Windows Phone Silverlight project, use the **AdMediatorControl** under the **All Windows Phone Controls** section.
+    -   Dans un projet de plateforme Windows universelle, utilisez l’élément **AdMediatorControl** de la section **AdMediator Universal**.
+    -   Dans un projet Windows 8.1 ou Windows Phone 8.1 utilisant C# ou Visual Basic avec XAML, utilisez l’élément **AdMediatorControl** de la section **AdMediator**.
+    -   Dans un projet Windows Phone Silverlight, utilisez l’élément **AdMediatorControl** de la section **Tous les contrôles Windows Phone**.
 
-    **Note**  When you drag the **AdMediatorControl** control to the designer for the first time in a UWP, Windows 8.1, or Windows Phone 8.1 project using C# or Visual Basic with XAML, Visual Studio adds the required ad mediator assembly reference to your project, but the control isn't added to the designer yet. To add the control, click OK in the message displayed by Visual Studio, wait several seconds for the designer to refresh, and then drag the control back to the designer again. If you still can't successfully add the control to the designer, make sure your project targets the applicable processor architecture for your app (for example, **x86**) rather than **Any CPU**. The control cannot be added to the designer if the project targets **Any CPU** for the build platform.
+    **Remarque** Lorsque vous faites glisser le contrôle **AdMediatorControl** vers le concepteur pour la première fois dans un projet UWP, Windows 8.1 ou Windows Phone 8.1 à l’aide de C# ou de Visual Basic avec XAML, Visual Studio ajoute la référence appropriée d’assembly Ad Mediator à votre projet, mais le contrôle n’est, à ce stade, pas encore ajouté au concepteur. Pour ajouter le contrôle, cliquez sur OK dans le message apparaissant dans Visual Studio, attendez quelques secondes que le concepteur s’actualise, puis faites glisser de nouveau le contrôle vers le concepteur. Si vous ne réussissez toujours pas à ajouter le contrôle dans le concepteur, vérifiez que votre projet cible l’architecture de processeur requise par votre application (par exemple, **x86**), et non pas **Toute CPU**. Le contrôle ne peut pas être ajouté au concepteur si le projet cible **Toute CPU** pour la plateforme de génération.
 
-5.  Visual Studio adds an ad mediator assembly reference to your project and inserts XAML for the ad mediator control into the current page, including a unique ID and a name for the control. The assembly reference and the XAML varies depending on your target platform. For example, for a Universal Windows Platform (UWP) app the assembly name is **Microsoft.AdMediator.Universal**, and the generated XAML is similar to the following example.
+5.  Visual Studio ajoute une référence d’assembly Ad Mediator à votre projet et insère XAML pour le contrôle Ad Mediator dans la page actuelle, en lui associant un identifiant unique et un nom. La référence d’assembly et le code XAML varient en fonction de votre plateforme cible. Par exemple, pour une application UWP, le nom de l’assembly est **Microsoft.AdMediator.Universal**, et le code XAML généré aura l’aspect ci-dessous.
 
     ```xml
     // Code that gets added to the XAML page header
         xmlns:Universal="using:Microsoft.AdMediator.Universal"
 
         // Code that gets added for the ad mediator control
-        <Universal:AdMediatorControl x:Name="AdMediator_3D4884" 
-         Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="250" 
-         Id="AdMediator-Id-D1FDFDA7-EABB-474C-940C-ECA7FBCFF143" Margin="121,175,0,0" 
+        <Universal:AdMediatorControl x:Name="AdMediator_3D4884"
+         Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="250"
+         Id="AdMediator-Id-D1FDFDA7-EABB-474C-940C-ECA7FBCFF143" Margin="121,175,0,0"
          VerticalAlignment="Top" Width="300"/>
     ```
 
-    The **Name** element helps you to identify the specific control in your app when you configure your ad mediation. You can change this to whatever you’d like, but be sure not to change or duplicate the **Id** element. This **Id** must be unique for each control within your app.
+    L’élément **Name** vous aide à identifier le contrôle spécifique dans votre application lorsque vous configurez la fonction de médiation publicitaire. Vous pouvez le remplacer par la valeur de votre choix. Cependant, vous ne devez ni modifier ni dupliquer l’élément **Id**. Cet **Id** doit être unique pour chaque contrôle de votre application.
 
-6.  Adjust the size and position of the control as necessary. For more information, see [Adjust size and position](#adjust-size-and-position).
+6.  Ajustez la taille et la position du contrôle si besoin. Pour en savoir plus, voir [Ajuster la taille et la position](#adjust-size-and-position).
 
-## Configure ad networks
+## Configurer des réseaux publicitaires
 
-After you’ve added all the controls you’d like, you’re ready to configure the ad networks through Connected Services.
+Après avoir ajouté tous les contrôles souhaités, vous êtes prêt à configurer les réseaux publicitaires via les Services connectés.
 
-**Important**  If you add an additional AdMediatorControl later, you’ll need to configure it through Connected Services again. Otherwise, the new control will not be able to use ad mediation.
+**Important** Si, plus tard, vous ajoutez un élément AdMediatorControl supplémentaire, vous devez également le configurer via les Services connectés. Dans le cas contraire, le nouveau contrôle ne sera pas en mesure d’utiliser la fonction de médiation publicitaire.
 
-To configure the ad networks:
+Pour configurer les réseaux publicitaires :
 
-1.  Right-click the name of the project in Solution Explorer, click **Add**, and then click **Connected Service…** to launch the **Add Connected Service** window (Visual Studio 2015) or **Services Manager** window (Visual Studio 2013).
-2.  If you are using Visual Studio 2015, click **Ad Mediator** and then click **Configure** to open the **Ad Mediator** window. If you are using Visual Studio 2013, simply click **Ad Mediator** in the left pane of the **Services Manager**.
+1.  Ouvrez l’Explorateur de solutions, cliquez sur **Ajouter** puis sur **Service connecté**. pour lancer la fenêtre **Ajouter un service connecté** (Visual Studio 2015) ou la fenêtre **Gestionnaire de Services** (Visual Studio 2013).
+2.  Si vous utilisez Visual Studio 2015, cliquez sur **Ad Mediator**, puis sur **Configurer** pour ouvrir la fenêtre **Ad Mediator**. Si vous utilisez Visual Studio 2013, cliquez simplement sur **Ad Mediator** dans le volet gauche du **Gestionnaire de services**.
 
-    The AdMediator.config file is added to your project. This file is where initial ad network configuration settings are saved locally in your project.
+    Le fichier AdMediator.config est ajouté à votre projet. C’est dans ce fichier que les paramètres initiaux de configuration des réseaux publicitaires sont enregistrés localement dans votre projet.
 
-3.  In the **Ad Mediator** (Visual Studio 2015) or **Services Manager** (Visual Studio 2013) window, click **Select ad networks**, select the ad networks you want to use, and click **OK** in the **Select ad networks** window.
+3.  Dans la fenêtre **Ad Mediator** (Visual Studio 2015) ou **Gestionnaire de services** (Visual Studio 2013), cliquez sur **Sélectionner des réseaux publicitaires**, sélectionnez les réseaux publicitaires à utiliser, puis cliquez sur **OK** dans la fenêtre **Sélectionner des réseaux publicitaires**.
 
-    **Tip**  It’s a good idea to add all the networks that you have accounts with, even if you don’t plan to use all of them in your app right away. After the app is published, you'll be able configure how often each network is used in Dev Center (or start to use a network you hadn't before) without having to make code changes and resubmit the app.
+    **Conseil** Il est conseillé d’ajouter tous les réseaux pour lesquels vous disposez de compte, même si vous ne prévoyez pas d’utiliser dès le départ l’ensemble de ces réseaux dans votre application. Une fois l’application publiée, vous serez en mesure de configurer la fréquence d’utilisation de chaque réseau dans le Centre de développement (ou d’utiliser un réseau auquel vous n’aviez pas accès auparavant) sans en avoir à modifier le code ou soumettre l’application une nouvelle fois.
 
-    Visual Studio fetches the required assemblies for the selected ad networks and adds those assembly references to your project. After this process is complete, click **OK** in the **Fetching Status** dialog box.
+    Visual Studio récupère les assemblys requis pour les réseaux publicitaires sélectionnés et ajoute leurs références à votre projet. Une fois ce processus terminé, cliquez sur **OK** dans la boîte de dialogue **État de l’extraction**.
 
-4.  In the **Ad Mediator** (Visual Studio 2015) or **Services Manager** (Visual Studio 2013) window, optionally select each network and click **Configure** to enter the configuration information for each network to use while testing the app. This information is saved to the AdMediator.config file in your project. You'll be able to modify this information when you configure ad network behavior on the Windows Dev Center dashboard. For more information, see [Submitting your app and configuring ad mediation](submit-your-app-and-configure-ad-mediation.md).
-    **Note**  If you do not enter configuration information during this step, ad mediation will automatically use test configuration values when you run your app on your development computer (for UWP and Windows 8.1 XAML apps) or on the emulator or device (for Windows Phone apps).
+4.  Dans la fenêtre **Ad Mediator** (Visual Studio 2015) ou **Gestionnaire de Services** (Visual Studio 2013), sélectionnez éventuellement chaque réseau et cliquez sur **Configurer** pour saisir les informations de configuration de chaque réseau à utiliser pendant le test de l’application. Ces informations sont enregistrées dans le fichier AdMediator.config de votre projet. Vous pourrez les modifier lors de la configuration du comportement des réseaux publicitaires dans le tableau de bord du Centre de développement Windows. Pour plus d’informations, voir [Soumission de votre application et configuration d’une médiation publicitaire](submit-your-app-and-configure-ad-mediation.md).
+    **Remarque** Si vous ne saisissez pas d’informations de configuration au cours de cette étape, la médiation publicitaire utilise automatiquement les valeurs de configuration de test lors de l’exécution de l’application sur votre ordinateur de développement (pour les applications de la plateforme universelle Windows et XAML Windows 8.1) ou sur l’émulateur ou l’appareil (pour les applications Windows Phone).
 
-5.  In the **Ad Mediator** (Visual Studio 2015) or **Services Manager** (Visual Studio 2013) window, confirm that each ad network you have selected shows **Fetched**. Click **OK** to submit the changes to your project.
+5.  Dans la fenêtre **Ad Mediator** (Visual Studio 2015) ou **Gestionnaire de services** (Visual Studio 2013), vérifiez que chaque réseau publicitaire sélectionné affiche la mention **Récupéré**. Cliquez sur **OK** pour envoyer les modifications à votre projet.
 
-**Note**   If you later upgrade to a newer version of the Microsoft Universal Ad Client SDK, you’ll need to launch **Connected Services** again to ensure any automatically fetched ad network DLLs are correctly updated.
+**Remarque** Si vous passez ensuite à une version plus récente du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft, vous devrez de nouveau ouvrir **Services connectés** pour vérifier que chaque fichier DLL de réseau publicitaire récupéré automatiquement est bien mis à jour.
 
-### Declare required capabilities
+### Déclarer les fonctionnalités requises
 
-Each ad network may require certain app capabilities. These are shown by each provider in the **Ad Mediator** (for Visual Studio 2015) or **Services Manager** (for Visual Studio 2013) window. Be sure to declare all of the required capabilities in your app's manifest so that the ads are properly displayed.
+Chaque réseau publicitaire peut requérir certaines fonctionnalités de l’application. Celles-ci sont indiquées par chaque fournisseur dans la fenêtre **Ad Mediator** (pour Visual Studio 2015) ou **Gestionnaire de services** (pour Visual Studio 2013). Veillez à déclarer toutes les fonctionnalités requises dans le manifeste de votre application, afin que les publicités s’affichent correctement.
 
-The following screenshot shows the required capabilities for several ad networks in a Windows 8.1 or Windows Phone 8.1 XAML app.
+La capture d’écran suivante indique les fonctionnalités requises pour plusieurs réseaux publicitaires dans une application XAML Windows 8.1 ou Windows Phone 8.1.
 
-![services manager showing all references fetched](images/ad-med-8.jpg)
+![gestionnaire de services affichant toutes les références récupérées](images/ad-med-8.jpg)
 
-The following screenshot shows the required capabilities for several ad networks in a Windows Phone 8.1 Silverlight app.
+La capture d’écran suivante indique les fonctionnalités requises pour plusieurs réseaux publicitaires dans une application Silverlight Windows Phone 8.1.
 
-![services manager showing all references fetched](images/ad-med-6.jpg)
-### Fetch ad network DLLs manually
+![gestionnaire de services affichant toutes les références récupérées](images/ad-med-6.jpg)
+### Extraire manuellement des fichiers DLL de réseaux publicitaires
 
-In some cases, you may see that certain DLLs were not fetched. In this case, you'll need to add them manually. For links to download individual assemblies, see [Selecting and managing your ad networks](select-and-manage-your-ad-networks.md).
+Dans certains cas, vous pourrez constater que certains fichiers n’ont pas été récupérés : il vous faudra les ajouter manuellement. Pour obtenir des liens permettant de télécharger des assemblies individuels, consultez la section [Sélection et gestion de vos réseaux publicitaires](select-and-manage-your-ad-networks.md).
 
-**Note**  When adding DLLs manually, you may get an error message saying "A reference to a higher version or incompatible assembly cannot be added to the project." To resolve this error, right-click the DLL in Explorer and then select **Properties**. In the Security section, click **Unblock**.
+**Remarque** Lorsque vous ajoutez des fichiers DLL manuellement, il se peut que le message d’erreur suivant s’affiche : « Une référence à une version supérieure ou à un assembly incompatible ne peut être ajoutée au projet. » Pour corriger cette erreur, cliquez avec le bouton droit de la souris sur le fichier DLL dans l’Explorateur, puis sélectionnez **Propriétés**. Dans la section Sécurité, cliquez sur **Débloquer**.
 
-![unblock button for resolving error message](images/ad-med-4.png)
-## Adjust size and position
+![bouton Débloquer permettant de résoudre le message d’erreur](images/ad-med-4.png)
+## Ajuster la taille et la position
 
-You can configure the size and position of the ad mediator control in the designer or in your XAML code. Make sure that this size will be large enough to fit all the ads you'll be displaying from your ad networks. Some ad networks may not serve an ad if they detect that the canvas size isn't large enough for the ad to display in full. If any of your ad units will be larger than the default size, you can adjust the canvas size to accommodate your largest ad.
+Vous pouvez configurer la taille et la position du contrôle Ad Mediator dans le concepteur ou dans votre code XAML. Assurez-vous que cette taille sera suffisante pour inclure toutes les publicités que vous allez afficher à partir de vos réseaux publicitaires. Certains réseaux publicitaires risquent de ne pas pouvoir proposer une publicité s’ils détectent une taille de zone de dessin insuffisante pour l’affichage de cette publicité dans son ensemble. Si l’un des blocs de publicité est plus volumineux que ce qu’autorise la taille par défaut, vous pouvez ajuster la zone de dessin afin qu’elle puisse l’inclure.
 
-When you drag the control to the designer, the default control sizes are:
+Lorsque vous faites glisser le contrôle dans le concepteur, les tailles du contrôle par défaut sont :
 
--   UWP and Windows 8.1 XAML: 300 width x 250 height.
--   Windows Phone 8.1 XAML: 400 width x 67 height.
--   Windows Phone 8 and Windows Phone 8.1 Silverlight: 480 width x 80 height.
+-   UWP et Windows 8.1 XAML : 300 x 250 (largeur x hauteur).
+-   Windows Phone 8.1 XAML : 400 x 67 (largeur x hauteur).
+-   Windows Phone 8 et Windows Phone 8.1 Silverlight : 480 x 80 (largeur x hauteur).
 
-You can override the default ad sizes using the **Width** and **Height** optional parameters, as shown below.
+Vous pouvez ignorer les tailles par défaut des publicités par défaut à l’aide des paramètres facultatifs **Largeur** et **Hauteur**, comme indiqué ci-dessous.
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Width"] = 400;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 80;
 ```
 
-You can also specify how each control is positioned to accommodate a variety of sizes and placements depending on your app's needs. For some ad networks, you can use optional parameters to make adjustments. For example, to align ads from Microsoft Advertising to the bottom left:
+Vous pouvez également spécifier la position de chaque contrôle de façon à prendre en charge différents emplacements et tailles, en fonction des besoins de votre application. Dans le cas de certains réseaux publicitaires, vous pouvez utiliser des paramètres facultatifs pour effectuer des ajustements. Par exemple, pour aligner des publicités provenant de Microsoft Advertising sur la partie inférieure gauche de la fenêtre :
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["HorizontalAlignment"] = HorizontalAlignment.Left;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["VerticalAlignment"] = VerticalAlignment.Bottom;
 ```
 
-### Supported ad sizes for Microsoft Advertising
+### Tailles de publicités prises en charge pour Microsoft Advertising
 
-Microsoft Advertising only supports ads in the following standard sizes recommended by the Interactive Advertising Bureau (IAB) for apps running on the following platforms.
+Microsoft Advertising prend uniquement en charge les publicités dans les tailles standard suivantes recommandées par l’Interactive Advertising Bureau (IAB) pour les applications exécutées sur les plateformes suivantes.
 
--   Windows 10 and Windows 8.1:
+-   Windows 10 et Windows 8.1 :
     -   160 x 600
-    -   250 x 250 (Note that very few ads are available in this size. We recommend using other sizes to maximize the fill rate and eCPM.)
+    -   250 x 250 (Notez que très peu d’annonces sont disponibles dans cette taille. Nous vous recommandons d’utiliser d’autres tailles afin d’optimiser le taux de remplissage et le coût eCPM.)
     -   300 x 250
     -   300 x 600
     -   728 x 90
--   Windows 10 Mobile, Windows Phone 8.1 and Windows Phone 8:
+-   Windows 10 Mobile, Windows Phone 8.1 et Windows Phone 8 :
     -   300 x 50
     -   320 x 50
     -   480 x 80
-    -   640 x 100
+    -   640 x 100
 
-You might want to specify an ad mediator control size that doesn't match one of the ad sizes supported by Microsoft Advertising (for example, you might want to do this if a different size is a better fit for your app's UI, or if you are also targeting other ad networks that support other ad sizes). To do this, specify the exact control size you want in the designer or in your XAML code, and then assign the **Width** and **Height** optional parameters for Microsoft Advertising to the closest supported size that will fit within the bounds of the control. The control will display to the exact size you specify in the designer, but Microsoft Advertising will serve ads that match the size you specify using the **Width** and **Height** optional parameters.
+Vous souhaiterez peut-être spécifier une taille de contrôle Ad Mediator qui ne correspond pas à l’une des tailles de publicités prises en charge par Microsoft Advertising (par exemple, vous pouvez souhaiter procéder ainsi si une taille différente est davantage adaptée à l’interface utilisateur de votre application, ou si vous ciblez également d’autres réseaux publicitaires qui prennent en charge d’autres tailles de publicités). Pour ce faire, spécifiez la taille de contrôle exacte souhaitée dans le concepteur ou dans votre code XAML, puis définissez les paramètres facultatifs **Width** et **Height** pour Microsoft Advertising sur la taille prise en charge la plus proche qui s’adaptera aux limites du contrôle. Le contrôle s’affiche à la taille exacte que vous spécifiez dans le concepteur, mais Microsoft Advertising affiche des publicités correspondant à la taille spécifiée à l’aide des paramètres facultatifs **Width** et **Height**.
 
-For example, if you have a UWP app and you want your ad mediator control to display at 300 x 300, set the control to 300 x 300 in the designer or in your XAML code. Then, assign the **Width** optional parameter to 300 and the **Height** optional parameter to 250 for Microsoft Advertising, as shown in the following code.
+Par exemple, si vous avez une application UWP et que vous souhaitez que votre contrôle Ad Mediator s’affiche au format 300 x 300, définissez le contrôle sur 300 x 300 dans le concepteur ou dans votre code XAML. Ensuite, définissez le paramètre facultatif **Width** sur 300 et le paramètre facultatif **Height** sur 250 pour Microsoft Advertising, comme indiqué dans le code suivant.
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Width"] = 300;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Height"] = 250;
 ```
 
-To verify that your size settings are compatible with Microsoft Advertising, [test your ad mediation implementation](test-your-ad-mediation-implementation.md) and make sure that test ads from Microsoft Advertising are displayed.
+Pour vérifier que vos paramètres de taille sont compatibles avec Microsoft Advertising, [testez l’implémentation de votre médiation publicitaire](test-your-ad-mediation-implementation.md) et assurez-vous que les publicités de test envoyées par Microsoft Advertising s’affichent.
 
-## Pause, resume, and disable ad mediation
+## Suspendre, reprendre et désactiver la médiation publicitaire
 
-If you’d like to pause ad mediation for any given amount of time during the app runtime, use the AdMediatorControl.Pause() method. Note that when you do this, the most recent ad will continue showing until you resume mediation by calling the AdMediatorControl.Resume() method.
+Pour suspendre la médiation publicitaire pendant une période donnée lors de l’exécution de l’application, utilisez la méthode AdMediatorControl.Pause(). Notez que lorsque vous effectuez cette opération, la publicité la plus récente continue d’apparaître jusqu’à ce que vous relanciez la médiation en appelant la méthode AdMediatorControl.Resume().
 
-To disable the ad mediator completely, use the AdMediatorControl.Disable() method. This will remove any ads that are showing, and it will minimize the memory footprint of the mediator. You can call AdMediatorControl.Resume() to resume mediation, but note that startup time will be slower than usual after ad mediation has been disabled.
+Pour désactiver complètement Ad Mediator, utilisez la méthode AdMediatorControl.Disable(). Cette dernière supprime les publicités qui sont affichées et réduit l’encombrement mémoire de la fonction de médiation publicitaire. Vous pouvez appeler la méthode AdMediatorControl.Resume() pour reprendre la médiation. Notez cependant que le démarrage sera plus lent que d’habitude après la désactivation de la médiation publicitaire.
 
-## Set timeouts
+## Définir des délais d’attente
 
-You can specify the number of seconds (from 2-60) for which ad mediation should wait after requesting an ad from that ad network before abandoning that request and making a request to another network instead. By default, the timeout for all ad networks is 15 seconds.
+Vous pouvez spécifier le nombre de secondes (de 2 à 60) définissant le temps d’attente de la médiation publicitaire après qu’elle a demandé une publicité au réseau publicitaire, avant qu’elle n’abandonne cette demande et n’en adresse une autre à un autre réseau. Par défaut, le délai d’attente pour tous les réseaux publicitaires est de 15 secondes.
 
-The code below shows how to specify a timeout duration for Microsoft Advertising. You can modify the durations and networks as needed.
+Le code ci-dessous indique comment spécifier un délai d’attente pour Microsoft Advertising. Vous pouvez modifier les différents réseaux et durées selon vos besoins.
 
 ```CSharp
-myAdMediatorControl.AdSdkTimeouts[AdSdkNames.MicrosoftAdvertising] = TimeSpan.FromSeconds(10); 
+myAdMediatorControl.AdSdkTimeouts[AdSdkNames.MicrosoftAdvertising] = TimeSpan.FromSeconds(10);
 ```
 
-**Note**  You can alternatively set the timeout value in the **Monetize with ads** page on the Dev Center dashboard. If you set the timeout in code and in the dashboard, that value you set in code overrides the dashboard value.
+**Remarque** Vous pouvez également définir le délai d’attente sur la page **Monétiser avec des publicités** du tableau de bord du Centre de développement. Si vous définissez le délai d’attente dans le code et dans le tableau de bord, la valeur que vous définissez dans le code remplacera la valeur du tableau de bord.
 
-## Event handling
+## Gestion des événements
 
-Adding code to log events and capture ad mediation errors can help with troubleshooting. The code sample below adds event handlers for specific events from a control.
+L’ajout de code pour enregistrer les événements et capturer les erreurs de médiation publicitaire peut vous aider à résoudre les différents problèmes. L’exemple de code ci-dessous ajoute des gestionnaires d’événements pour des événements spécifiques à partir d’un contrôle.
 
 ```CSharp
 // add this during initialization of your app
@@ -196,11 +196,11 @@ void AdMediator_Bottom_AdError(object sender, Microsoft.AdMediator.Core.Events.A
 }
 ```
 
-## Handle unhandled exceptions from ad networks
+## Administrer des exceptions non gérées à partir des réseaux publicitaires
 
-**Note**  As part of our testing, we've identified a number of unhandled exceptions from specific ad networks that must be handled within the app to avoid app crashes related to these exceptions. We highly recommend that you copy and paste the code sample below to your App.xaml.cs file.
+**Remarque** Dans le cadre de notre test, nous avons identifié un certain nombre d’exceptions non gérées à partir de réseaux publicitaires spécifiques, qui doivent être administrées dans l’application afin d’éviter les blocages d’application liés à celles-ci. Nous vous recommandons vivement de copier-coller l’exemple de code ci-dessous dans votre fichier App.xaml.cs.
 
-Code to use for a UWP, Windows 8.1 or a Windows Phone app using C# and XAML
+Code à utiliser pour UWP, Windows 8.1 ou une application Windows Phone utilisant C# et XAML
 
 ```CSharp
 // In App.xaml.cs file, register with the UnhandledException event handler.
@@ -228,7 +228,7 @@ void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
    }
 ```
 
-Code to use for a Windows Phone Silverlight app
+Code à utiliser pour une application Silverlight pour Windows Phone
 
 ```CSharp
 // In App.xaml.cs file, register with the UnhandledException event handler.
@@ -264,7 +264,7 @@ private void Application_UnhandledException(object sender, ApplicationUnhandledE
            e.Handled = true;
            return;
        }
-              
+
    }
 // APP SPECIFIC HANDLING HERE
 
@@ -277,16 +277,17 @@ if (Debugger.IsAttached)
 }
 ```
 
-## Related topics
+## Rubriques connexes
 
-* [Select and manage your ad networks](select-and-manage-your-ad-networks.md)
-* [Test your ad mediation implementation](test-your-ad-mediation-implementation.md)
-* [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md)
-* [Troubleshoot ad mediation](troubleshoot-ad-mediation.md)
+* [Sélectionner et gérer vos réseaux publicitaires](select-and-manage-your-ad-networks.md)
+* [Tester l’implémentation de votre médiation publicitaire](test-your-ad-mediation-implementation.md)
+* [Soumettre votre application et configurer une médiation publicitaire](submit-your-app-and-configure-ad-mediation.md)
+* [Résoudre les problèmes liés à la médiation publicitaire](troubleshoot-ad-mediation.md)
  
 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
-<!--HONumber=Mar16_HO1-->
+

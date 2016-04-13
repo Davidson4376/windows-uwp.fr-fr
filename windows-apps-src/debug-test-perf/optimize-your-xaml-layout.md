@@ -1,41 +1,41 @@
 ---
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
-Optimize your XAML layout
-Layout can be an expensive part of a XAML app&\#8212;both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
+Optimiser votre disposition XAML
+La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML.
 ---
-# Optimize your XAML layout
+# Optimiser votre disposition XAML
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Important APIs**
+**API importantes**
 
 -   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
-Layout is the process of defining the visual structure for your UI. The primary mechanism for describing layout in XAML is through panels, which are container objects that enable you to position and arrange the UI elements within them. Layout can be an expensive part of a XAML app—both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
+La disposition est le processus de définition de la structure visuelle de l’interface utilisateur. Les panneaux sont le mécanisme principal utilisé pour décrire la disposition en XAML. Ce sont des objets conteneurs permettant de positionner et d’organiser les éléments d’interface qu’ils contiennent. La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML.
 
-## Reduce layout structure
+## Réduire la structure de la disposition
 
-The biggest gain in layout performance comes from simplifying the hierarchical structure of the tree of UI elements. Panels exist in the visual tree, but they are structural elements, not *pixel producing elements* like a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) or a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). Simplifying the tree by reducing the number of non-pixel-producing elements typically provides a significant performance increase.
+La meilleure solution pour améliorer les performances de la disposition consiste à simplifier la structure hiérarchique de l’arborescence des éléments d’interface utilisateur. Les panneaux existent dans l’arborescence visuelle, mais ce sont des éléments structurels, pas des *éléments produisant des pixels* comme une classe [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) ou [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). Le fait de simplifier l’arborescence en réduisant le nombre d’éléments qui ne produisent pas de pixels permet généralement d’améliorer significativement les performances.
 
-Many UIs are implemented by nesting panels which results in deep, complex trees of panels and elements. It is convenient to nest panels, but in many cases the same UI can be achieved with a more complex single panel. Using a single panel provides better performance.
+De nombreuses interfaces utilisateur sont implémentées en imbriquant des panneaux, ce qui crée des arborescences complexes et étendues de panneaux et d’éléments. L’imbrication de panneaux est pratique, mais le plus souvent il est possible d’obtenir la même interface utilisateur avec un seul panneau plus complexe. Les performances sont meilleures en utilisant un seul panneau.
 
-### When to reduce layout structure
+### À quel moment réduire la structure de la disposition
 
-Reducing layout structure in a trivial way—for example, reducing one nested panel from your top-level page—does not have a noticeable effect.
+Le fait de réduire la structure de la disposition de manière simple (par exemple, en réduisant un panneau imbriqué à partir de la page de niveau supérieur) n’a pas d’effet visible.
 
-The largest performance gains come from reducing layout structure that's repeated in the UI, like in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705). These [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) elements use a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), which defines a subtree of UI elements that is instantiated many times. When the same subtree is being duplicated many times in your app, any improvements to the performance of that subtree has a multiplicative effect on the overall performance of your app.
+Pour optimiser les performances, il faut réduire la structure de la disposition qui se répète dans l’interface utilisateur, comme dans une classe [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) ou [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705). Ces éléments [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) utilisent une classe [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), qui définit une sous-arborescence d’éléments d’interface utilisateur qui est instanciée plusieurs fois. Lorsque la même sous-arborescence est dupliquée de nombreuses fois dans votre application, les améliorations des performances de cette sous-arborescence démultiplient les performances globales de votre application.
 
-### Examples
+### Exemples
 
-Consider the following UI.
+Examinez l’interface utilisateur suivante :
 
-![Form layout example](images/layout-perf-ex1.png)
+![Exemple de disposition de formulaire](images/layout-perf-ex1.png)
 
-These examples shows 3 ways of implementing the same UI. Each implementation choice results in nearly identical pixels on the screen, but differs substantially in the implementation details.
+Ces exemples montrent 3 méthodes d’implémentation de la même interface utilisateur. Chaque implémentation choisie produit un nombre quasiment identique de pixels à l’écran. Les différences se jouent dans les détails.
 
-Option1: Nested [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) elements
+Option 1 : Éléments [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) imbriqués
 
-Although this is the simplest model, it uses 5 panel elements and results in significant overhead.
+Bien que ce modèle soit le plus simple, il utilise 5 éléments panneau et entraîne une surcharge importante.
 
 ```xml
   <StackPanel>
@@ -61,9 +61,9 @@ Although this is the simplest model, it uses 5 panel elements and results in sig
 </StackPanel>
 ```
 
-Option 2: A single [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
+Option 2 : Un seul élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
 
-The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds some complexity, but uses only a single panel element.
+L’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) ajoute une certaine complexité, mais utilise un seul élément panneau.
 
 ```
   <Grid>
@@ -94,9 +94,9 @@ The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds so
 </Grid>
 ```
 
-Option 3: A single [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
+Option 3 : Un seul élément [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) :
 
-This single panel is also a bit more complex than using nested panels, but may be easier to understand and maintain than a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
+Ce panneau unique est également un peu plus complexe que l’utilisation de panneaux imbriqués, mais peut être plus facile à comprendre et à gérer qu’un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
 
 ```xml
 <RelativePanel>
@@ -119,15 +119,15 @@ This single panel is also a bit more complex than using nested panels, but may b
 </RelativePanel>
 ```
 
-As these examples show, there are many ways of achieving the same UI. You should choose by carefully considering all the tradeoffs, including performance, readability, and maintainability.
+Comme ces exemples le montrent, il existe de nombreuses façons d’obtenir la même interface utilisateur. Vous devez faire votre choix en réfléchissant à tous les compromis, notamment les performances, la lisibilité et la maintenance.
 
-## Use single-cell grids for overlapping UI
+## Utiliser des grilles à cellule unique pour le chevauchement de l’interface utilisateur
 
-A common UI requirement is to have a layout where elements overlap each other. Typically padding, margins, alignments, and transforms are used to position the elements this way. The XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) control is optimized to improve layout performance for elements that overlap.
+Il est courant qu’une interface utilisateur ait une disposition dans laquelle les éléments se chevauchent. Généralement, pour positionner les éléments de cette manière, on utilise le remplissage, les marges, les alignements et les transformations. Le contrôle [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) XAML est optimisé pour améliorer les performances de la disposition des éléments qui se chevauchent.
 
-**Important**  To see the improvement, use a single-cell [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704). Do not define [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) or [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions).
+**Important** Pour voir l’amélioration, utilisez un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) à une seule cellule. Ne définissez pas [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) ou [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions).
 
-### Examples
+### Exemples
 
 ```xml
 <Grid>
@@ -138,7 +138,7 @@ A common UI requirement is to have a layout where elements overlap each other. T
 </Grid>
 ```
 
-![Text overlaid on a circle](images/layout-perf-ex2.png)
+![Texte superposé dans un cercle](images/layout-perf-ex2.png)
 
 ```xml
 <Grid Width="200" BorderBrush="Black" BorderThickness="1">
@@ -147,15 +147,15 @@ A common UI requirement is to have a layout where elements overlap each other. T
 </Grid>
 ```
 
-![Two text blocks in a grid](images/layout-perf-ex3.png)
+![Deux blocs de texte dans une grille](images/layout-perf-ex3.png)
 
-## Use a panel's built-in border properties
+## Utiliser les propriétés intégrées de bordure du panneau
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), and [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) controls have built-in border properties that let you draw a border around them without adding an additional [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) element to your XAML. The new properties that support the built-in border are: **BorderBrush**, **BorderThickness**, **CornerRadius**, and **Padding**. Each of these is a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362), so you can use them with bindings and animations. They’re designed to be a full replacement for a separate **Border** element.
+Les contrôles [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) et [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) ont des propriétés de bordure intégrée qui vous permettent de dessiner une bordure autour d’eux sans ajouter un élément [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) supplémentaire à votre XAML. Les nouvelles propriétés qui prennent en charge la bordure intégrée sont : **BorderBrush**, **BorderThickness**, **CornerRadius** et **Padding**. Chacune d’elles est une [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). Vous pouvez donc les utiliser avec les liaisons et les animations. Elles sont conçues pour remplacer intégralement un élément **Border** séparé.
 
-If your UI has [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) elements around these panels, use the built-in border instead, which saves an extra element in the layout structure of your app. As mentioned previously, this can be a significant savings, especially in the case of repeated UI.
+Si votre interface utilisateur comporte des éléments [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) autour de ces panneaux, utilisez la bordure intégrée à la place, qui enregistre un élément supplémentaire dans la structure de la disposition de votre application. Comme mentionné précédemment, cela peut représenter une économie importante, notamment dans le cas d’une interface utilisateur répétée.
 
-### Examples
+### Exemples
 
 ```xml
 <RelativePanel BorderBrush="Red" BorderThickness="2" CornerRadius="10" Padding="12">
@@ -164,18 +164,23 @@ If your UI has [**Border**](https://msdn.microsoft.com/library/windows/apps/BR20
 </RelativePanel>
 ```
 
-## Use **SizeChanged** events to respond to layout changes
+## Utilisez des événements **SizeChanged** pour réagir à des modifications de disposition.
 
-The [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) class exposes two similar events for responding to layout changes: [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) and [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged). You might be using one of these events to receive notification when an element is resized during layout. The semantics of the two events are different, and there are important performance considerations in choosing between them.
+La classe [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) expose deux événements similaires pour réagir aux modifications de disposition : [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) et [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged). Vous utilisez peut-être l’un de ces événements pour recevoir une notification lorsqu’un élément est redimensionné pendant la disposition. La sémantique des deux événements est différente, et le choix de l’un ou l’autre influe considérablement sur les performances.
 
-For good performance, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) is almost always the right choice. **SizeChanged** has intuitive semantics. It is raised during layout when the size of the [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) has been updated.
+Pour des performances optimales, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) est presque toujours le bon choix. **SizeChanged** a une sémantique intuitive. Il est déclenché pendant la disposition lorsque la taille de [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) a été mise à jour.
 
-[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) is also raised during layout, but it has global semantics—it is raised on every element whenever any element is updated. It is typical to only do local processing in the event handler, in which case the code is run more often than needed. Use **LayoutUpdated** only if you need to know when an element is repositioned without changing size (which is uncommon).
+[
+            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) est également déclenché pendant la disposition, mais il a une sémantique globale : il est déclenché sur chaque élément chaque fois qu’un élément est mis à jour. Il est courant de faire uniquement un traitement local dans le gestionnaire d’événement, auquel cas le code est exécuté plus souvent que nécessaire. Utilisez **LayoutUpdated** seulement si vous avez besoin de savoir quand un élément est repositionné sans modification de taille (ce qui est rare).
 
-## Choosing between panels
+## Choix entre des panneaux
 
-Performance is typically not a consideration when choosing between individual panels. That choice is typically made by considering which panel provides the layout behavior that is closest to the UI you’re implementing. For example, if you’re choosing between [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) , and [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), you should choose the panel that provides the closest mapping to your mental model of the implementation.
+Les performances ne sont généralement pas prises en compte lors du choix entre des panneaux individuels. Ce choix repose habituellement sur la prise en compte du panneau fournissant le comportement de disposition le plus proche de l’interface utilisateur que vous implémentez. Par exemple, si vous choisissez entre [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)et [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), vous devez choisir le panneau de configuration qui fournit le mappage le plus proche de votre modèle mental de l’implémentation.
 
-Every XAML panel is optimized for good performance, and all the panels provide similar performance for similar UI.
+Chaque panneau XAML est optimisé pour des performances optimales, et tous les panneaux fournissent des performances similaires pour une interface utilisateur similaire.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+
