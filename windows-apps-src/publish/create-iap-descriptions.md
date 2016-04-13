@@ -1,6 +1,6 @@
 ---
-Quand vous envoyez un produit in-app, les informations que vous entrez à l’étape Descriptions seront visibles par les clients de votre application.
-Créer des descriptions de produit in-app
+Description: Quand vous envoyez un produit in-app, les informations que vous entrez à l’étape Descriptions seront visibles par les clients de votre application.
+title: Créer des descriptions de produit in-app
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ---
 

@@ -1,8 +1,8 @@
 ---
-Cet article présente les quatre options de notification&\#8212;locale, planifiée, périodique et Push&\#8212;disponibles pour remettre des mises à jour de vignette et de badge, ainsi que du contenu de notification toast.
-Choisir une méthode de remise de notification
+Description: Cet article présente les quatre options de notification&\#8212;locale, planifiée, périodique et Push&\#8212;disponibles pour remettre des mises à jour de vignette et de badge, ainsi que du contenu de notification toast.
+title: Choisir une méthode de remise de notification
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
-Choisir une méthode de remise de notification
+label: Choisir une méthode de remise de notification
 template: detail.hbs
 ---
 

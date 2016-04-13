@@ -1,8 +1,8 @@
 ---
-Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application.
-Ajouter des contrôles et gérer les événements
+Description: Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application.
+title: Ajouter des contrôles et gérer les événements
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-Présentation des contrôles et des événements
+label: Présentation des contrôles et des événements
 template: detail.hbs
 ---
 # Présentation des contrôles et des événements

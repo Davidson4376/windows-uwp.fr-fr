@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-La classe AdvancedPhotoCapture vous permet de capturer des photos HDR.
-Capture photo avec plage dynamique élevée (HDR)
+description: La classe AdvancedPhotoCapture vous permet de capturer des photos HDR.
+title: Capture photo avec plage dynamique élevée (HDR)
 ---
 
 # Capture photo avec plage dynamique élevée (HDR)

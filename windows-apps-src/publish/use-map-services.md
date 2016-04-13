@@ -1,6 +1,6 @@
 ---
-Pour utiliser les services cartographiques dans les applications pour Windows Phone 8.1 et versions antérieures, vous devez insérer un identifiant et un jeton d’application de service cartographique dans le code de votre application. Vous pouvez obtenir ce jeton sur la page Cartes accessible dans la section Services du tableau de bord du Centre de développement.
-Utiliser les services cartographiques
+Description: Pour utiliser les services cartographiques dans les applications pour Windows Phone 8.1 et versions antérieures, vous devez insérer un identifiant et un jeton d’application de service cartographique dans le code de votre application. Vous pouvez obtenir ce jeton sur la page Cartes accessible dans la section Services du tableau de bord du Centre de développement.
+title: Utiliser les services cartographiques
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
 ---
 

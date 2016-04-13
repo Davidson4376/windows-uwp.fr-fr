@@ -1,7 +1,7 @@
 ---
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
-Capteurs
-Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil.
+title: Capteurs
+description: Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil.
 ---
 # Capteurs
 

@@ -1,6 +1,6 @@
 ---
-Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion.
-Télécharger des rapports d’analyse
+Description: Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion.
+title: Télécharger des rapports d’analyse
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ---
 

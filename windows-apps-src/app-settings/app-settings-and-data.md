@@ -1,8 +1,8 @@
 ---
-Cette section contient des recommandations en matière d’expérience utilisateur en rapport avec la présentation de paramètres d’application et leur stockage en tant que données d’application.
-Paramètres et données d’application
+Description: Cette section contient des recommandations en matière d’expérience utilisateur en rapport avec la présentation de paramètres d’application et leur stockage en tant que données d’application.
+title: Paramètres et données d’application
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
-Paramètres et données d’application
+label: Paramètres et données d’application
 template: detail.hbs
 ---
 

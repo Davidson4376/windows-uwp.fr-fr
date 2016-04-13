@@ -1,8 +1,8 @@
 ---
-Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP).
-Ressources de vignette et d’icône
+Description: Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP).
+title: Ressources de vignette et d’icône
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-Ressources de vignette et d’icône
+label: Ressources de vignette et d’icône
 template: detail.hbs
 ---
 

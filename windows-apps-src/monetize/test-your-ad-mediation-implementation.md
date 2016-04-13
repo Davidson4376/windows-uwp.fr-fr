@@ -1,7 +1,7 @@
 ---
 ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
-Avant de soumettre votre application, nous vous recommandons de tester l’implémentation de votre médiation publicitaire.
-Tester l’implémentation de votre médiation publicitaire
+description: Avant de soumettre votre application, nous vous recommandons de tester l’implémentation de votre médiation publicitaire.
+title: Tester l’implémentation de votre médiation publicitaire
 ---
 
 # Tester l’implémentation de votre médiation publicitaire

@@ -1,6 +1,6 @@
 ---
-Découvrez ce que vous pouvez faire lorsque vous pensez qu’une autre application viole vos droits de propriété intellectuelle.
-Protection de la marque et du copyright
+Description: Découvrez ce que vous pouvez faire lorsque vous pensez qu’une autre application viole vos droits de propriété intellectuelle.
+title: Protection de la marque et du copyright
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ---
 

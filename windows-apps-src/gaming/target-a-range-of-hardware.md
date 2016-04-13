@@ -1,6 +1,6 @@
 ---
-Prendre en charge les mappages d’ombre sur une gamme de matériel
-Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants.
+title: Prendre en charge les mappages d’ombre sur une gamme de matériel
+description: Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants.
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
 ---
 

@@ -1,8 +1,8 @@
 ---
-Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana.
-Interactions vocales
+Description: Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana.
+title: Interactions vocales
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
-Interactions vocales
+label: Interactions vocales
 template: detail.hbs
 ---
 

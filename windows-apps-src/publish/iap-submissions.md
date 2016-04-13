@@ -1,6 +1,6 @@
 ---
-Les produits in-app sont publiés par le biais du tableau de bord du Centre de développement Windows.
-Soumissions des produits in-app
+Description: Les produits in-app sont publiés par le biais du tableau de bord du Centre de développement Windows.
+title: Soumissions des produits in-app
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ---
 

@@ -1,6 +1,6 @@
 ---
-La version 1511 de Windows 10 et les mises à jour des outils de développeurs continuent à fournir les fonctionnalités, expériences et outils pris en charge par la plateforme Windows universelle.
-Nouveautés pour les développeurs dans Windows 10, version 1511 - Novembre 2015
+Description: La version 1511 de Windows 10 et les mises à jour des outils de développeurs continuent à fournir les fonctionnalités, expériences et outils pris en charge par la plateforme Windows universelle.
+title: Nouveautés pour les développeurs dans Windows 10, version 1511 - Novembre 2015
 ---
 
 # Nouveautés pour les développeurs dans Windows 10, version 1511 - Novembre 2015

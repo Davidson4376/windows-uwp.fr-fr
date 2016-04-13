@@ -1,7 +1,7 @@
 ---
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe task qui est définie dans l’espace de noms concurrency dans ppltasks.h.
-Programmation asynchrone en C++
+description: Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe task qui est définie dans l’espace de noms concurrency dans ppltasks.h.
+title: Programmation asynchrone en C++
 ---
 
 # Programmation asynchrone en C++

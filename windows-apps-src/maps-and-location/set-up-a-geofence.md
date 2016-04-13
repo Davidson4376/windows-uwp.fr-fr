@@ -1,6 +1,6 @@
 ---
-Configurer une clôture virtuelle
-Configurez une Geofence dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
+title: Configurer une clôture virtuelle
+description: Configurez une Geofence dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ---
 

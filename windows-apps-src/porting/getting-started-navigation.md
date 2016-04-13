@@ -1,6 +1,6 @@
 ---
-Prise en main : Navigation
-Prise en main : Navigation
+title: Prise en main : Navigation
+description: Prise en main : Navigation
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ---
 

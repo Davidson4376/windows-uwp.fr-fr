@@ -1,7 +1,7 @@
 ---
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
-Utiliser des reçus pour vérifier les achats de produits
+description: Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
+title: Utiliser des reçus pour vérifier les achats de produits
 ---
 
 # Utiliser des reçus pour vérifier les achats de produits

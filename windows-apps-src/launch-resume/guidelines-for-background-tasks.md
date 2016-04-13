@@ -1,6 +1,6 @@
 ---
-Recommandations pour les tâches en arrière-plan
-Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.
+title: Recommandations pour les tâches en arrière-plan
+description: Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ---
 

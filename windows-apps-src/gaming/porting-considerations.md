@@ -1,6 +1,6 @@
 ---
-Portage de DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP)
-Cette section fournit des recommandations sur le portage de jeux de bureau DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP).
+title: Portage de DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP)
+description: Cette section fournit des recommandations sur le portage de jeux de bureau DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP).
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 ---
 

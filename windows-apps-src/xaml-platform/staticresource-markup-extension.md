@@ -1,6 +1,6 @@
 ---
-Fournit une valeur pour un attribut XAML en évaluant une référence à une ressource déjà définie. Les ressources sont définies dans un ResourceDictionary, et une utilisation StaticResource référence la clé de cette ressource dans le ResourceDictionary.
-Extension de balisage StaticResource
+description: Fournit une valeur pour un attribut XAML en évaluant une référence à une ressource déjà définie. Les ressources sont définies dans un ResourceDictionary, et une utilisation StaticResource référence la clé de cette ressource dans le ResourceDictionary.
+title: Extension de balisage StaticResource
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ---
 

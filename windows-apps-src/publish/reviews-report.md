@@ -1,6 +1,6 @@
 ---
-Le rapport Avis disponible dans le tableau de bord du Centre de développement Windows vous permet de consulter les commentaires que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store.
-Rapport Avis
+Description: Le rapport Avis disponible dans le tableau de bord du Centre de développement Windows vous permet de consulter les commentaires que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store.
+title: Rapport Avis
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ---
 

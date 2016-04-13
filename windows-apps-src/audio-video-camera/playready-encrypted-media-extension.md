@@ -1,7 +1,7 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10.
-Extension EME (Encrypted Media Extension) PlayReady
+description: Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10.
+title: Extension EME (Encrypted Media Extension) PlayReady
 ---
 
 # Extension EME (Encrypted Media Extension) PlayReady

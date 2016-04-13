@@ -1,6 +1,6 @@
 ---
-Gérer l’activation des fichiers
-Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier.
+title: Gérer l’activation des fichiers
+description: Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier.
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 ---
 

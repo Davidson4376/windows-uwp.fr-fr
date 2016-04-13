@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
-Énumérer et interroger des fichiers et dossiers
-Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers.
+title: Énumérer et interroger des fichiers et dossiers
+description: Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers.
 ---
 # Énumérer et interroger des fichiers et dossiers
 

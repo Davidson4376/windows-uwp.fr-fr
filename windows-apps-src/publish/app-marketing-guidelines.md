@@ -1,6 +1,6 @@
 ---
-Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
-Recommandations en matière de marketing adapté aux applications du Windows Store
+Description: Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
+title: Recommandations en matière de marketing adapté aux applications du Windows Store
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ---
 

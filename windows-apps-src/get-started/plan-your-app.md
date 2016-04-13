@@ -1,6 +1,6 @@
 ---
-Planifier votre application de plateforme Windows universelle (UWP)
-Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
+title: Planifier votre application de plateforme Windows universelle (UWP)
+description: Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 ---
 

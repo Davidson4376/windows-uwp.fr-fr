@@ -1,7 +1,7 @@
 ---
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-Créer une application « Hello World » (JS)
-Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &\#0034;Hello, world&\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10.
+title: Créer une application « Hello World » (JS)
+description: Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &\#0034;Hello, world&\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10.
 ---
 # Créer une application « Hello World » (JS)
 

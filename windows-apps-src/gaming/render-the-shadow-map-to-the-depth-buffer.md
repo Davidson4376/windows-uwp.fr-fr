@@ -1,6 +1,6 @@
 ---
-Générer le rendu du mappage d’ombre dans le tampon de profondeur
-Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre.
+title: Générer le rendu du mappage d’ombre dans le tampon de profondeur
+description: Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre.
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ---
 

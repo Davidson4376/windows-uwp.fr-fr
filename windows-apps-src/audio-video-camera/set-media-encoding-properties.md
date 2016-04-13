@@ -1,7 +1,7 @@
 ---
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
-Cet article vous montre comment utiliser l’interface IMediaEncodingProperties pour définir la résolution et la fréquence d’images du flux d’aperçu de caméra et des photos et vidéos capturées.
-Définir les propriétés d’encodage du média
+description: Cet article vous montre comment utiliser l’interface IMediaEncodingProperties pour définir la résolution et la fréquence d’images du flux d’aperçu de caméra et des photos et vidéos capturées.
+title: Définir les propriétés d’encodage du média
 ---
 
 # Définir les propriétés d’encodage du média

@@ -1,6 +1,6 @@
 ---
-Graphismes 3D de base pour jeux DirectX
-Nous vous expliquons comment utiliser la programmation DirectX pour implémenter les concepts fondamentaux des graphismes 3D.
+title: Graphismes 3D de base pour jeux DirectX
+description: Nous vous expliquons comment utiliser la programmation DirectX pour implémenter les concepts fondamentaux des graphismes 3D.
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 ---
 

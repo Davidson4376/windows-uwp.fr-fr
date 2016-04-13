@@ -1,6 +1,6 @@
 ---
-Charger des ressources dans votre jeu DirectX
-La plupart des jeux, à un moment donné, chargent des ressources et des éléments multimédias (comme les nuanceurs, les textures, les maillages prédéfinis ou d’autres données graphiques) à partir d’un stockage local ou d’autres flux de données.
+title: Charger des ressources dans votre jeu DirectX
+description: La plupart des jeux, à un moment donné, chargent des ressources et des éléments multimédias (comme les nuanceurs, les textures, les maillages prédéfinis ou d’autres données graphiques) à partir d’un stockage local ou d’autres flux de données.
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 ---
 

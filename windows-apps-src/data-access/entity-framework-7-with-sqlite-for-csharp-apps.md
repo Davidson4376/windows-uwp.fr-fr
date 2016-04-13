@@ -1,7 +1,7 @@
 ---
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
-Entity Framework (EF) est un mappeur relationnel objet qui vous permet de travailler avec les données relationnelles en utilisant des objets spécifiques au domaine.
-Entity Framework 7 avec des applications SQLite pour C#
+description: Entity Framework (EF) est un mappeur relationnel objet qui vous permet de travailler avec les données relationnelles en utilisant des objets spécifiques au domaine.
+title: Entity Framework 7 avec des applications SQLite pour C#
 ---
 
 # Entity Framework 7 avec des applications SQLite pour C#

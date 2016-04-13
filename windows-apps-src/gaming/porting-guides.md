@@ -1,6 +1,6 @@
 ---
-Guides en matière de portage de jeu
-Fournit des guides relatifs au portage de vos jeux existants vers Direct3D 11, la plateforme Windows universelle (UWP) et Windows 10.
+title: Guides en matière de portage de jeu
+description: Fournit des guides relatifs au portage de vos jeux existants vers Direct3D 11, la plateforme Windows universelle (UWP) et Windows 10.
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 ---
 

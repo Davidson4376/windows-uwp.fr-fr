@@ -1,6 +1,6 @@
 ---
-Visual Studio Tools pour la programmation de jeux
-Vue d’ensemble des outils propres à DirectX disponibles dans Visual Studio.
+title: Visual Studio Tools pour la programmation de jeux
+description: Vue d’ensemble des outils propres à DirectX disponibles dans Visual Studio.
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ---
 

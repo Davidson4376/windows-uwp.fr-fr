@@ -1,6 +1,6 @@
 ---
-Noms de schéma d’URI et de fichier réservés
-Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique.
+title: Noms de schéma d’URI et de fichier réservés
+description: Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique.
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 ---
 # Noms de schéma d’URI et de fichier réservés

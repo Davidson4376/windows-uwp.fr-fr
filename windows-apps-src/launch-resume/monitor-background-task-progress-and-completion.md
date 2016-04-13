@@ -1,6 +1,6 @@
 ---
-Surveiller la progression et l’achèvement des tâches en arrière-plan
-Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan.
+title: Surveiller la progression et l’achèvement des tâches en arrière-plan
+description: Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan.
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ---
 

@@ -1,6 +1,6 @@
 ---
-Diagnostic des conditions d’erreur d’un composant Windows Runtime
-Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé.
+title: Diagnostic des conditions d’erreur d’un composant Windows Runtime
+description: Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé.
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ---
 

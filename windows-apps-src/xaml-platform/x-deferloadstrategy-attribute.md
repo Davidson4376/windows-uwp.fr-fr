@@ -1,6 +1,6 @@
 ---
-Attribut xDeferLoadStrategy
-xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire.
+title: Attribut xDeferLoadStrategy
+description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ---
 

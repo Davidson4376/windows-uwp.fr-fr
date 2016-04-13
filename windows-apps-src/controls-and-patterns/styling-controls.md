@@ -1,11 +1,11 @@
 ---
-Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.
+Description: Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.
 MS-HAID : « dev\_ctrl\_layout\_txt.styling\_controls »
 MSHAttr : « PreferredLib:/library/windows/apps »
 Search.Product : eADQiWindows 10XVcnh
-Application de styles aux contrôles
+title: Application de styles aux contrôles
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
-Application de styles aux contrôles
+label: Application de styles aux contrôles
 template: detail.hbs
 ---
 

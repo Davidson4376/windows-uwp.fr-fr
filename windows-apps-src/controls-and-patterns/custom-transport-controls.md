@@ -1,8 +1,8 @@
 ---
-Le lecteur multimédia dispose de contrôles de transport XAML personnalisables permettant de gérer du contenu audio et vidéo.
-Créer des contrôles de transport de média personnalisés
+Description: Le lecteur multimédia dispose de contrôles de transport XAML personnalisables permettant de gérer du contenu audio et vidéo.
+title: Créer des contrôles de transport de média personnalisés
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
-Créer des contrôles de transport de média personnalisés
+label: Créer des contrôles de transport de média personnalisés
 template: detail.hbs
 ---
 # Créer des contrôles de transport personnalisés

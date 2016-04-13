@@ -1,6 +1,6 @@
 ---
-Ajout d’entrées et d’interactivité à l’exemple Marble Maze
-Les jeux d’application de plateforme Windows universelle (UWP) s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes.
+title: Ajout d’entrées et d’interactivité à l’exemple Marble Maze
+description: Les jeux d’application de plateforme Windows universelle (UWP) s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes.
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ---
 

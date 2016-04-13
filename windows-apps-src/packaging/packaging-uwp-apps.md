@@ -1,7 +1,7 @@
 ---
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-Création de packages d’application UWP
-Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload.
+title: Création de packages d’application UWP
+description: Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload.
 ---
 # Création de packages d’application UWP
 

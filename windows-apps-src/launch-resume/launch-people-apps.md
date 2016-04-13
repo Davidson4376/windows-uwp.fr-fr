@@ -1,6 +1,6 @@
 ---
-Lancer l’application Contacts
-Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
+title: Lancer l’application Contacts
+description: Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 ---
 

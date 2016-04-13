@@ -1,8 +1,8 @@
 ---
-Les notifications brutes sont des notifications Push courtes à usage général.
-Vue d’ensemble des notifications brutes
+Description: Les notifications brutes sont des notifications Push courtes à usage général.
+title: Vue d’ensemble des notifications brutes
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
-À déterminer
+label: À déterminer
 template: detail.hbs
 ---
 

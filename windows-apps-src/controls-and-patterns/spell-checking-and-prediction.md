@@ -1,8 +1,8 @@
 ---
-Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur.
-Vérification de l’orthographe et prédiction de texte
+Description: Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur.
+title: Vérification de l’orthographe et prédiction de texte
 ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
-Vérification de l’orthographe et prédiction de texte
+label: Vérification de l’orthographe et prédiction de texte
 template: detail.hbs
 ---
 

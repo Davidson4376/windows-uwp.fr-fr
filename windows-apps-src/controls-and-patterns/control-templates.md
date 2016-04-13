@@ -1,11 +1,11 @@
 ---
-Vous pouvez personnaliser la structure et le comportement visuels d’un contrôle en créant un modèle de contrôle dans l’infrastructure XAML.
+Description: Vous pouvez personnaliser la structure et le comportement visuels d’un contrôle en créant un modèle de contrôle dans l’infrastructure XAML.
 MS-HAID : « dev\_ctrl\_layout\_txt.control\_templates »
 MSHAttr : « PreferredLib:/library/windows/apps »
 Search.Product : eADQiWindows 10XVcnh
-Modèles de contrôles
+title: Modèles de contrôles
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
-Modèles de contrôles
+label: Modèles de contrôles
 template: detail.hbs
 ---
 

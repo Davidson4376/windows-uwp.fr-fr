@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
-Déploiement et débogage des applications de plateforme Windows universelle (UWP)
+description: Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
+title: Déploiement et débogage des applications de plateforme Windows universelle (UWP)
 ---
 
 # Déploiement et débogage des applications de plateforme Windows universelle (UWP)

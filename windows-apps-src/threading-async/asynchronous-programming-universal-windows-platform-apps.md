@@ -1,7 +1,7 @@
 ---
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
-Programmation asynchrone
-Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C\+\+ (C\+\+/CX) et JavaScript.
+title: Programmation asynchrone
+description: Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C\+\+ (C\+\+/CX) et JavaScript.
 ---
 # Programmation asynchrone
 

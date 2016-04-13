@@ -1,8 +1,8 @@
 ---
-Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
-Répondre à la présence du clavier tactile
+Description: Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
+title: Répondre à la présence du clavier tactile
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
-Répondre à la présence du clavier tactile
+label: Répondre à la présence du clavier tactile
 template: detail.hbs
 ---
 

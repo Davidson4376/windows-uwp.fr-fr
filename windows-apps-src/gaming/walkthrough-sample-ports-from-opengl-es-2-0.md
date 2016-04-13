@@ -1,6 +1,6 @@
 ---
-Exemples de portage pas à pas depuis OpenGL ES 2.0
-Cet ensemble de rubriques présente plusieurs scénarios de portage de pipeline graphique OpenGL ES 2.0 de différente complexité.
+title: Exemples de portage pas à pas depuis OpenGL ES 2.0
+description: Cet ensemble de rubriques présente plusieurs scénarios de portage de pipeline graphique OpenGL ES 2.0 de différente complexité.
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ---
 

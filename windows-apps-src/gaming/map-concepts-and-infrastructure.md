@@ -1,6 +1,6 @@
 ---
-Mapper OpenGL ES 2.0 à Direct3D 11
-Si vous vous apprêtez à porter votre architecture graphique OpenGL ES 2.0 sur Direct3D pour la première fois, commencez par vous familiariser avec ces API afin de découvrir les principales caractéristiques qui les distinguent.
+title: Mapper OpenGL ES 2.0 à Direct3D 11
+description: Si vous vous apprêtez à porter votre architecture graphique OpenGL ES 2.0 sur Direct3D pour la première fois, commencez par vous familiariser avec ces API afin de découvrir les principales caractéristiques qui les distinguent.
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 ---
 

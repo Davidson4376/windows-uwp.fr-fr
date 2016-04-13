@@ -1,7 +1,7 @@
 ---
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
-Graphismes et animation
-Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
+title: Graphismes et animation
+description: Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
 ---
 # Graphismes et animation
 

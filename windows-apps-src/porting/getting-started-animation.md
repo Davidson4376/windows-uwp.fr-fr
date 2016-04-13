@@ -1,7 +1,7 @@
 ---
-Prise en main de l’application Animation
+title: Prise en main de l’application Animation
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher.
+description: Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher.
 ---
 
 # Prise en main : Animation

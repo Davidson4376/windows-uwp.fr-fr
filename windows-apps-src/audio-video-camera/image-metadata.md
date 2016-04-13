@@ -1,7 +1,7 @@
 ---
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
-Cet article montre comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe utilitaire GeotagHelper.
-Métadonnées d’image
+description: Cet article montre comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe utilitaire GeotagHelper.
+title: Métadonnées d’image
 ---
 
 # Métadonnées d’image

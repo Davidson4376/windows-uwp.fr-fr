@@ -1,7 +1,7 @@
 ---
-Animations par images clés et animations de fonctions d’accélération
+title: Animations par images clés et animations de fonctions d’accélération
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
-Les animations par images clés linéaires, les animations par images clés avec une valeur KeySpline ou les animations de fonctions d’accélération constituent trois techniques différentes pour pratiquement le même scénario.
+description: Les animations par images clés linéaires, les animations par images clés avec une valeur KeySpline ou les animations de fonctions d’accélération constituent trois techniques différentes pour pratiquement le même scénario.
 ---
 # Animations par images clés et animations de fonctions d’accélération
 

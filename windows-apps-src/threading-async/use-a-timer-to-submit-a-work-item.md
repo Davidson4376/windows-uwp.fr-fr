@@ -1,7 +1,7 @@
 ---
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
-Utiliser un minuteur pour envoyer un élément de travail
-Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé.
+title: Utiliser un minuteur pour envoyer un élément de travail
+description: Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé.
 ---
 # Utiliser un minuteur pour envoyer un élément de travail
 

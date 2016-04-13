@@ -1,8 +1,8 @@
 ---
-Identifiez les appareils d’entrée connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
-Identifier des appareils d’entrée
+Description: Identifiez les appareils d’entrée connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
+title: Identifier des appareils d’entrée
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
-Identifier des appareils d’entrée
+label: Identifier des appareils d’entrée
 template: detail.hbs
 ---
 

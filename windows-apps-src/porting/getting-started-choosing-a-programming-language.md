@@ -1,7 +1,7 @@
 ---
-Choix d’un langage de programmation
+title: Choix d’un langage de programmation
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-Choix d’un langage de programmation
+description: Choix d’un langage de programmation
 ---
 
 # Prise en main : Choix d’un langage de programmation

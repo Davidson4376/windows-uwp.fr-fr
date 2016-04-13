@@ -1,6 +1,6 @@
 ---
-Porter les objets nuanceurs
-Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
+title: Porter les objets nuanceurs
+description: Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 ---
 

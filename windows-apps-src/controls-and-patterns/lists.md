@@ -1,8 +1,8 @@
 ---
-Les listes affichent et activent l’interaction avec du contenu basé sur des collections.
-Listes
+Description: Les listes affichent et activent l’interaction avec du contenu basé sur des collections.
+title: Listes
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-Listes
+label: Listes
 template: detail.hbs
 ---
 # Listes

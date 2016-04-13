@@ -1,6 +1,6 @@
 ---
-Si vous rencontrez des erreurs après avoir envoyé votre application au Windows Store, vous devez les résoudre pour poursuivre le processus de certification.
-Résoudre les erreurs d’envoi
+Description: Si vous rencontrez des erreurs après avoir envoyé votre application au Windows Store, vous devez les résoudre pour poursuivre le processus de certification.
+title: Résoudre les erreurs d’envoi
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ---
 

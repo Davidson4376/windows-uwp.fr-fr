@@ -1,6 +1,6 @@
 ---
-Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d’en savoir plus sur elle.
-Tableau des catégories et sous-catégories
+Description: Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d’en savoir plus sur elle.
+title: Tableau des catégories et sous-catégories
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ---
 

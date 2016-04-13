@@ -1,7 +1,7 @@
 ---
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-Vous pouvez utiliser les API Windows.Media.Transcoding pour transcoder des fichiers vidéo d’un format vers un autre.
-Transcoder des fichiers multimédias
+description: Vous pouvez utiliser les API Windows.Media.Transcoding pour transcoder des fichiers vidéo d’un format vers un autre.
+title: Transcoder des fichiers multimédias
 ---
 
 # Transcoder des fichiers multimédias

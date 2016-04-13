@@ -1,6 +1,6 @@
 ---
-Indique la prise en charge au niveau du langage en XAML pour Windows Runtime pour certains types de données dans le Common Language Runtime (CLR) et dans d’autres langages de programmation tels que C++.
-Types de données intrinsèques XAML
+description: Indique la prise en charge au niveau du langage en XAML pour Windows Runtime pour certains types de données dans le Common Language Runtime (CLR) et dans d’autres langages de programmation tels que C++.
+title: Types de données intrinsèques XAML
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 ---
 

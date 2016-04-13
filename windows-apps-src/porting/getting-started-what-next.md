@@ -1,7 +1,7 @@
 ---
-Prise en main : Et ensuite ?
+title: Prise en main : Et ensuite ?
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes.
+description: Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes.
 ---
 
 # Prise en main : Et ensuite ?

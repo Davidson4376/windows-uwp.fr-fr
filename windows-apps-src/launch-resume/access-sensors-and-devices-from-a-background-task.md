@@ -1,6 +1,6 @@
 ---
-Accéder aux capteurs et aux appareils à partir d’une tâche en arrière-plan
-DeviceUseTrigger permet à votre application Windows universelle d’accéder aux capteurs et aux appareils en arrière-plan, même si votre application au premier plan est suspendue.
+title: Accéder aux capteurs et aux appareils à partir d’une tâche en arrière-plan
+description: DeviceUseTrigger permet à votre application Windows universelle d’accéder aux capteurs et aux appareils en arrière-plan, même si votre application au premier plan est suspendue.
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 ---
 

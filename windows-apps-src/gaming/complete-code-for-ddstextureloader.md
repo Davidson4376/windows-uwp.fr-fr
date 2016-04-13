@@ -1,6 +1,6 @@
 ---
-Code complet de DDSTextureLoader
-Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.
+title: Code complet de DDSTextureLoader
+description: Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ---
 

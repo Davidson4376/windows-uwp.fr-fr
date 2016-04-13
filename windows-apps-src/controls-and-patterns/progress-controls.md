@@ -1,8 +1,8 @@
 ---
-Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours.
-Recommandations en matière de contrôles de progression
+Description: Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours.
+title: Recommandations en matière de contrôles de progression
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
-Contrôles de progression
+label: Contrôles de progression
 template: detail.hbs
 ---
 # Contrôles de progression

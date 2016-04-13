@@ -1,9 +1,9 @@
 ---
-La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures de navigation, d’éléments de navigation et de fonctionnalités au niveau du système.
-Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)
+Description: La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures de navigation, d’éléments de navigation et de fonctionnalités au niveau du système.
+title: Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
-Navigation dans l’historique et navigation vers l’arrière
+label: Navigation dans l’historique et navigation vers l’arrière
 template: detail.hbs
 ---
 

@@ -1,6 +1,6 @@
 ---
-Afficher des cartes avec des vues 2D, 3D et Streetside
-Affichez des cartes personnalisables dans votre application en utilisant la classe MapControl. Cette rubrique présente également des vues 3D aériennes et Streetside.
+title: Afficher des cartes avec des vues 2D, 3D et Streetside
+description: Affichez des cartes personnalisables dans votre application en utilisant la classe MapControl. Cette rubrique présente également des vues 3D aériennes et Streetside.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
-Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP).
-Gestion des droits numériques par PlayReady
+description: Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP).
+title: Gestion des droits numériques par PlayReady
 ---
 
 # Gestion des droits numériques par PlayReady

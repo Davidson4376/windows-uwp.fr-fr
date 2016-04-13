@@ -1,6 +1,6 @@
 ---
-Quels sont les choix possibles lors du développement d’applications multiplateformes ?
-Sélection d’une approche d’iOS et développement d’applications UWP
+description: Quels sont les choix possibles lors du développement d’applications multiplateformes ?
+title: Sélection d’une approche d’iOS et développement d’applications UWP
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ---
 

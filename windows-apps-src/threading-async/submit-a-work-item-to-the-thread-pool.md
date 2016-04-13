@@ -1,7 +1,7 @@
 ---
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
-Envoyer un élément de travail au pool de threads
-Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads.
+title: Envoyer un élément de travail au pool de threads
+description: Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads.
 ---
 # Envoyer un élément de travail au pool de threads
 

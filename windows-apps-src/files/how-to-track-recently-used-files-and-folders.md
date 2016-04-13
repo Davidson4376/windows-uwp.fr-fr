@@ -1,7 +1,7 @@
 ---
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
-Suivre les fichiers et dossiers récemment utilisés
-Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des éléments utilisés récemment de votre application.
+title: Suivre les fichiers et dossiers récemment utilisés
+description: Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des éléments utilisés récemment de votre application.
 ---
 # Suivre les fichiers et dossiers récemment utilisés
 

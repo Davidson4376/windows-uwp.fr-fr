@@ -1,6 +1,6 @@
 ---
-Un namescope XAML stocke les relations entre les noms définis en XAML des objets et leurs instances équivalentes. Ce concept est similaire à celui dont la signification plus large correspond au terme namescope dans d’autres langages et technologies de programmation.
-Namescopes XAML
+description: Un namescope XAML stocke les relations entre les noms définis en XAML des objets et leurs instances équivalentes. Ce concept est similaire à celui dont la signification plus large correspond au terme namescope dans d’autres langages et technologies de programmation.
+title: Namescopes XAML
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ---
 

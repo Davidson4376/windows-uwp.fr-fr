@@ -1,6 +1,6 @@
 ---
-Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission.
-Soumissions d’application
+Description: Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission.
+title: Soumissions d’application
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 mots clés : soumettre une application
 mots clés : informations requises

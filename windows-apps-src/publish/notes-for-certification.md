@@ -1,6 +1,6 @@
 ---
-Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la page Remarques pour la certification pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement.
-Remarques pour la certification
+Description: Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la page Remarques pour la certification pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement.
+title: Remarques pour la certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 ---
 

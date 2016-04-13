@@ -1,6 +1,6 @@
 ---
-Vous pouvez promouvoir votre application ou produit in-app dans le Windows Store en les mettant en vente à prix réduit pendant une période limitée.
-Commercialiser des applications et produits in-app à prix réduit
+Description: Vous pouvez promouvoir votre application ou produit in-app dans le Windows Store en les mettant en vente à prix réduit pendant une période limitée.
+title: Commercialiser des applications et produits in-app à prix réduit
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ---
 

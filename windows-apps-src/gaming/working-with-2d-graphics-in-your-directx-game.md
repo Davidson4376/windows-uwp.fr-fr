@@ -1,6 +1,6 @@
 ---
-Graphiques 2D pour jeux DirectX
-Nous allons découvrir comment utiliser les graphiques et les effets 2D, puis comment vous en servir dans votre jeu.
+title: Graphiques 2D pour jeux DirectX
+description: Nous allons découvrir comment utiliser les graphiques et les effets 2D, puis comment vous en servir dans votre jeu.
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ---
 

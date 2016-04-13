@@ -1,7 +1,7 @@
 ---
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
-Dessiner des formes
-Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe Path permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier.
+title: Dessiner des formes
+description: Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe Path permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier.
 ---
 # Dessiner des formes
 

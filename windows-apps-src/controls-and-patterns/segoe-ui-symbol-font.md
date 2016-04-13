@@ -1,9 +1,9 @@
 ---
-Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets.
+Description: Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets.
 Search.Refinement.TopicID : 184
-Recommandations en matière d’icônes Segoe MDL2
+title: Recommandations en matière d’icônes Segoe MDL2
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-Icônes Segoe MDL2
+label: Icônes Segoe MDL2
 template: detail.hbs
 ---
 

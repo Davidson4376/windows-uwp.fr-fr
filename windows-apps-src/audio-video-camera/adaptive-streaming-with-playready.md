@@ -1,7 +1,7 @@
 ---
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP.
-Diffusion en continu adaptative avec PlayReady
+description: Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP.
+title: Diffusion en continu adaptative avec PlayReady
 ---
 
 # Diffusion en continu adaptative avec PlayReady

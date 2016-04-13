@@ -1,6 +1,6 @@
 ---
-Inscrire une tâche en arrière-plan
-Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité.
+title: Inscrire une tâche en arrière-plan
+description: Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité.
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 ---
 

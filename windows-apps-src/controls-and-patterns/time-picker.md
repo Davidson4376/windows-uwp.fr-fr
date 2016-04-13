@@ -1,8 +1,8 @@
 ---
-Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélection d’une heure à l’aide d’une entrée tactile, de la souris ou du clavier.
-Sélecteur d’heure
+Description: Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélection d’une heure à l’aide d’une entrée tactile, de la souris ou du clavier.
+title: Sélecteur d’heure
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
-Sélecteur d’heure
+label: Sélecteur d’heure
 template: detail.hbs
 ---
 

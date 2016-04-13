@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-Cette section fournit des informations sur la création d’une application Windows universelle permettant de capturer, de lire ou de modifier des photos, vidéos ou fichiers audio.
-Audio, vidéo et appareil photo
+description: Cette section fournit des informations sur la création d’une application Windows universelle permettant de capturer, de lire ou de modifier des photos, vidéos ou fichiers audio.
+title: Audio, vidéo et appareil photo
 ---
 
 # Audio, vidéo et appareil photo

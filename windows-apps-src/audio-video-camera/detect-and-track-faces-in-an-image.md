@@ -1,7 +1,7 @@
 ---
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
-Cette rubrique montre comment utiliser FaceDetector pour détecter des visages dans une images. FaceTracker est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
-Détecter les visages dans des images ou des vidéos
+description: Cette rubrique montre comment utiliser FaceDetector pour détecter des visages dans une images. FaceTracker est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
+title: Détecter les visages dans des images ou des vidéos
 ---
 
 # Détecter les visages dans des images ou des vidéos

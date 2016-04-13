@@ -1,7 +1,7 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément LongListSelector.
-Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2
+description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément LongListSelector.
+title: Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2
 ---
 
 # Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore2

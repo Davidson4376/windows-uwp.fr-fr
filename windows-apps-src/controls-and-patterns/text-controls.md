@@ -1,8 +1,8 @@
 ---
-Nous lisons du texte en permanence dans notre vie quotidienne : nos e-mails, un livre, un panneau routier, les prix sur un menu, la pression des pneus ou des affiches sur des poteaux.
-Contrôles de texte
+Description: Nous lisons du texte en permanence dans notre vie quotidienne : nos e-mails, un livre, un panneau routier, les prix sur un menu, la pression des pneus ou des affiches sur des poteaux.
+title: Contrôles de texte
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
-Contrôles de texte
+label: Contrôles de texte
 template: detail.hbs
 ---
 # Contrôles de texte

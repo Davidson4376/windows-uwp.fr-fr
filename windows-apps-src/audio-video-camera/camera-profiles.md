@@ -1,7 +1,7 @@
 ---
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo.
-Profils d’appareil photo
+description: Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo.
+title: Profils d’appareil photo
 ---
 
 # Profils d’appareil photo

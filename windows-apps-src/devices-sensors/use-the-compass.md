@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
-Utiliser la boussole
-Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
+title: Utiliser la boussole
+description: Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
 ---
 # Utiliser la boussole
 

@@ -1,6 +1,6 @@
 ---
-Si vous rencontrez des erreurs de chargement des packages d’application au cours du processus de soumission d’application, vous devez les corriger avant de soumettre votre application au Windows Store.
-Résolution des erreurs de chargement de package
+Description: Si vous rencontrez des erreurs de chargement des packages d’application au cours du processus de soumission d’application, vous devez les corriger avant de soumettre votre application au Windows Store.
+title: Résolution des erreurs de chargement de package
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
 ---
 

@@ -1,6 +1,6 @@
 ---
-Lancement et reprise des applications (DirectX et C++)
-Découvrez comment lancer, suspendre et reprendre votre application DirectX de plateforme Windows universelle (UWP).
+title: Lancement et reprise des applications (DirectX et C++)
+description: Découvrez comment lancer, suspendre et reprendre votre application DirectX de plateforme Windows universelle (UWP).
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 ---
 

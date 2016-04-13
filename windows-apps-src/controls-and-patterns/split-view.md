@@ -1,8 +1,8 @@
 ---
-Mode Fractionné
+title: Mode Fractionné
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masqué, ainsi qu’une zone de contenu.
-Mode Fractionné
+description: Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masqué, ainsi qu’une zone de contenu.
+label: Mode Fractionné
 template: detail.hbs
 ---
 

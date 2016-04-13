@@ -1,6 +1,6 @@
 ---
-Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d’ordinateurs OEM d’inclure votre application dans son image.
-Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM
+Description: Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d’ordinateurs OEM d’inclure votre application dans son image.
+title: Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ---
 

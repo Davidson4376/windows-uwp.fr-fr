@@ -1,6 +1,6 @@
 ---
-Dans le tableau de bord du Centre de développement Windows, vous pouvez, pour chacune de vos applications, visualiser tous les noms que vous avez réservés pour votre application, réserver des noms supplémentaires et supprimer les noms inutiles à partir de la page Gérer les noms d’application de la section Gestion des applications.
-Gérer les noms d’application
+Description: Dans le tableau de bord du Centre de développement Windows, vous pouvez, pour chacune de vos applications, visualiser tous les noms que vous avez réservés pour votre application, réserver des noms supplémentaires et supprimer les noms inutiles à partir de la page Gérer les noms d’application de la section Gestion des applications.
+title: Gérer les noms d’application
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ---
 

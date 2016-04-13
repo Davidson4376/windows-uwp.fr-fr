@@ -1,6 +1,6 @@
 ---
-Création d’un composant Windows Runtime de base en C++ et appel de ce composant à partir de JavaScript ou C#
-Cette procédure pas à pas indique comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic.
+title: Création d’un composant Windows Runtime de base en C++ et appel de ce composant à partir de JavaScript ou C#
+description: Cette procédure pas à pas indique comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic.
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ---
 

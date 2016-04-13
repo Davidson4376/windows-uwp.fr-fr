@@ -1,6 +1,6 @@
 ---
-Vue d’ensemble des cartes et de l’emplacement
-Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
+title: Vue d’ensemble des cartes et de l’emplacement
+description: Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ---
 

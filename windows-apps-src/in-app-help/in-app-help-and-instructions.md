@@ -1,8 +1,8 @@
 ---
-Proposez aux utilisateurs de votre application une aide et des conseils de dépannage, et expliquez-leur comment interagir efficacement avec l’application. Cette section décrit les meilleures pratiques à suivre pour guider les utilisateurs dans tous les aspects de l’utilisation de votre application.
-Recommandations en matière d’expérience utilisateur pour l’aide et les instructions
+Description: Proposez aux utilisateurs de votre application une aide et des conseils de dépannage, et expliquez-leur comment interagir efficacement avec l’application. Cette section décrit les meilleures pratiques à suivre pour guider les utilisateurs dans tous les aspects de l’utilisation de votre application.
+title: Recommandations en matière d’expérience utilisateur pour l’aide et les instructions
 ms.assetid: 87867BFE-35D1-466E-B1F6-9EDCA3E5EA92
-Aide dans l’application et interface utilisateur d’instruction
+label: Aide dans l’application et interface utilisateur d’instruction
 template: detail.hbs
 ---
 

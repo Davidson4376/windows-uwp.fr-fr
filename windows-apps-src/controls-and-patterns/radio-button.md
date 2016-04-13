@@ -1,8 +1,8 @@
 ---
-Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités.
-Recommandations en matière de cases d’option
+Description: Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités.
+title: Recommandations en matière de cases d’option
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
-Cases d’option
+label: Cases d’option
 template: detail.hbs
 ---
 # Cases d’option

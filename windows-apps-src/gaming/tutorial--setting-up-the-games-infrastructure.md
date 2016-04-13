@@ -1,6 +1,6 @@
 ---
-Configurer le projet de jeu
-La première étape de l’assemblage de votre jeu consiste à configurer un projet dans Microsoft Visual Studio de façon à réduire la quantité de travail nécessaire sur l’infrastructure de code.
+title: Configurer le projet de jeu
+description: La première étape de l’assemblage de votre jeu consiste à configurer un projet dans Microsoft Visual Studio de façon à réduire la quantité de travail nécessaire sur l’infrastructure de code.
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ---
 

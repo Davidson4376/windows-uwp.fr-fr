@@ -1,7 +1,7 @@
 ---
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
-Optimiser l’interruption/la reprise
-Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
+title: Optimiser l’interruption/la reprise
+description: Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 ---
 # Optimiser l’interruption/la reprise
 

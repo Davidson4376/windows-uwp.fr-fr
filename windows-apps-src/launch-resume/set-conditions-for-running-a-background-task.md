@@ -1,6 +1,6 @@
 ---
-Définir des conditions pour exécuter une tâche en arrière-plan
-Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera.
+title: Définir des conditions pour exécuter une tâche en arrière-plan
+description: Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera.
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ---
 

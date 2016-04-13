@@ -1,7 +1,7 @@
 ---
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
-Accéder à la carte SD
-Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité.
+title: Accéder à la carte SD
+description: Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité.
 ---
 # Accéder à la carte SD
 

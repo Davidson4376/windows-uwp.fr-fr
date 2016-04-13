@@ -1,6 +1,6 @@
 ---
-Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
-Au cours du processus de portage vers Direct3D 11 depuis OpenGL ES 2.0, vous devez modifier la syntaxe et le comportement de l’API pour passer des données entre l’application et les programmes de nuanceurs.
+title: Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
+description: Au cours du processus de portage vers Direct3D 11 depuis OpenGL ES 2.0, vous devez modifier la syntaxe et le comportement de l’API pour passer des données entre l’application et les programmes de nuanceurs.
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ---
 

@@ -1,6 +1,6 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Zone de texte
+label: Zone de texte
 template: detail.hbs
 ---
 # Zone de texte

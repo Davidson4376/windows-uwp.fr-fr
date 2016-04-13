@@ -1,6 +1,6 @@
 ---
-Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
-Exclure ou limiter des fonctionnalités de la version d’évaluation
+Description: Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
+title: Exclure ou limiter des fonctionnalités de la version d’évaluation
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
 Mots-clés : évaluation gratuite
 Mots-clés : période d’évaluation gratuite

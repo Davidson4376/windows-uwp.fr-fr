@@ -1,7 +1,7 @@
 ---
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
-Créer, écrire et lire un fichier
-Lisez et écrivez un fichier à l’aide d’un objet StorageFile.
+title: Créer, écrire et lire un fichier
+description: Lisez et écrivez un fichier à l’aide d’un objet StorageFile.
 ---
 
 # Créer, écrire et lire un fichier

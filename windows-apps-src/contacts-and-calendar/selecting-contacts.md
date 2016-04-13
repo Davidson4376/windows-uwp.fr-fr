@@ -1,6 +1,6 @@
 ---
-L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
-Sélectionner des contacts
+description: L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
+title: Sélectionner des contacts
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 Mots clés : contacts, sélection
 Mots clés : sélection d’un seul contact

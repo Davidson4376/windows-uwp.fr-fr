@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
-Créer un élément de travail périodique
-Découvrez comment créer un élément de travail qui se reproduit régulièrement.
+title: Créer un élément de travail périodique
+description: Découvrez comment créer un élément de travail qui se reproduit régulièrement.
 ---
 # Créer un élément de travail périodique
 

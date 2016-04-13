@@ -1,8 +1,8 @@
 ---
-Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc.
-Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)
+Description: Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc.
+title: Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
-Informations de base relatives à la conception de contenu
+label: Informations de base relatives à la conception de contenu
 template: detail.hbs
 ---
 

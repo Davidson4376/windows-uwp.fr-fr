@@ -1,6 +1,6 @@
 ---
-Le contrôle de carte peut afficher des cartes routières et des vues aériennes, des itinéraires, des résultats de recherche et des informations sur la circulation.
-Recommandations sur les cartes
+Description: Le contrôle de carte peut afficher des cartes routières et des vues aériennes, des itinéraires, des résultats de recherche et des informations sur la circulation.
+title: Recommandations sur les cartes
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
 ---
 

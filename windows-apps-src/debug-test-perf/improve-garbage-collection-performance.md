@@ -1,7 +1,7 @@
 ---
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
-Améliorer les performances du nettoyage de la mémoire
-Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP.
+title: Améliorer les performances du nettoyage de la mémoire
+description: Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP.
 ---
 # Améliorer les performances du nettoyage de la mémoire
 

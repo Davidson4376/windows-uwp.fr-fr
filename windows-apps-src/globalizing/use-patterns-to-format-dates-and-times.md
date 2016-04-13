@@ -1,8 +1,8 @@
 ---
-Utilisez l’API Windows.Globalization.DateTimeFormatting avec des modèles personnalisés pour afficher les dates et heures dans le format souhaité.
-Utiliser des modèles de format des dates et heures
+Description: Utilisez l’API Windows.Globalization.DateTimeFormatting avec des modèles personnalisés pour afficher les dates et heures dans le format souhaité.
+title: Utiliser des modèles de format des dates et heures
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
-Utiliser des modèles de format des dates et heures
+label: Utiliser des modèles de format des dates et heures
 template: detail.hbs
 ---
 

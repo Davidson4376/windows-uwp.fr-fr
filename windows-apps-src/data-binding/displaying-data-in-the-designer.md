@@ -1,7 +1,7 @@
 ---
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
-Exemples de données sur l’aire de conception et pour la création d’un prototype
-Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio.
+title: Exemples de données sur l’aire de conception et pour la création d’un prototype
+description: Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio.
 ---
 Exemples de données sur l’aire de conception et pour la création d’un prototype
 =============================================================================================

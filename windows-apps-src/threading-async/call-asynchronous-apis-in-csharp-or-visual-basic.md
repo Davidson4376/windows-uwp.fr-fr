@@ -1,7 +1,7 @@
 ---
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
-Appeler des API asynchrones en C# ou Visual Basic
-La plateforme Windows universelle (UWP) comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues.
+title: Appeler des API asynchrones en C# ou Visual Basic
+description: La plateforme Windows universelle (UWP) comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues.
 ---
 # Appeler des API asynchrones en C# ou Visual Basic
 

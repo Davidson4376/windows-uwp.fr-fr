@@ -1,7 +1,7 @@
 ---
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
-Utiliser l’inclinomètre
-Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
+title: Utiliser l’inclinomètre
+description: Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 ---
 # Utiliser l’inclinomètre
 

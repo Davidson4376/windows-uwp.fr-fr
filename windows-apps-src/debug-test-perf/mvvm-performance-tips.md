@@ -1,7 +1,7 @@
 ---
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
-Conseils relatifs aux performances du langage de programmation et du modèle MVVM
-Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation.
+title: Conseils relatifs aux performances du langage de programmation et du modèle MVVM
+description: Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation.
 ---
 # Conseils relatifs aux performances du langage de programmation et du modèle MVVM
 

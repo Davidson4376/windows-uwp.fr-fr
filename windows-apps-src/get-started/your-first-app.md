@@ -1,7 +1,7 @@
 ---
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-Créer votre première application
-Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez.
+title: Créer votre première application
+description: Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez.
 ---
 # Créer votre première application
 

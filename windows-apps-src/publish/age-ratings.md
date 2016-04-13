@@ -1,6 +1,6 @@
 ---
-La page Classification par âge du processus de soumission d’application comporte des champs dans lesquels vous renseignez des informations sur votre application, afin que cette dernière puisse recevoir la classification par âge appropriée de l’International Age Ratings Coalition (IARC).
-Classification par âge
+Description: La page Classification par âge du processus de soumission d’application comporte des champs dans lesquels vous renseignez des informations sur votre application, afin que cette dernière puisse recevoir la classification par âge appropriée de l’International Age Ratings Coalition (IARC).
+title: Classification par âge
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ---
 

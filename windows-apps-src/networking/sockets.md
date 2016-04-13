@@ -1,6 +1,6 @@
 ---
-En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant Windows.Networking.Sockets que Winsock pour communiquer avec d’autres appareils.
-Sockets
+description: En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant Windows.Networking.Sockets que Winsock pour communiquer avec d’autres appareils.
+title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ---
 

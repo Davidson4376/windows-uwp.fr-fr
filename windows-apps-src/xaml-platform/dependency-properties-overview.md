@@ -1,6 +1,6 @@
 ---
-Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
-Vue d’ensemble des propriétés de dépendance
+description: Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
+title: Vue d’ensemble des propriétés de dépendance
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ---
 

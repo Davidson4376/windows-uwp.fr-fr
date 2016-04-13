@@ -1,6 +1,6 @@
 ---
-Le rapport Évaluations disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store.
-Rapport Évaluations
+Description: Le rapport Évaluations disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store.
+title: Rapport Évaluations
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 ---
 

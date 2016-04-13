@@ -1,6 +1,6 @@
 ---
-Ressources de programmation de jeux
-Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
+title: Ressources de programmation de jeux
+description: Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 ---
 

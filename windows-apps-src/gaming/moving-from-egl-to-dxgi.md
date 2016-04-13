@@ -1,6 +1,6 @@
 ---
-Comparer le code EGL avec DXGI et Direct3D
-L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même rôle qu’EGL. Cette rubrique vous aidera à comprendre le fonctionnement de DXGI et Direct3D 11 sous l’ange d’EGL.
+title: Comparer le code EGL avec DXGI et Direct3D
+description: L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même rôle qu’EGL. Cette rubrique vous aidera à comprendre le fonctionnement de DXGI et Direct3D 11 sous l’ange d’EGL.
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
 ---
 

@@ -1,8 +1,8 @@
 ---
-Convertissez des traits d’encre en texte à l’aide de la reconnaissance de l’écriture manuscrite ou en formes à l’aide de la reconnaissance personnalisée.
-Reconnaître les traits d’encre
+Description: Convertissez des traits d’encre en texte à l’aide de la reconnaissance de l’écriture manuscrite ou en formes à l’aide de la reconnaissance personnalisée.
+title: Reconnaître les traits d’encre
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
-Reconnaître les traits d’encre
+label: Reconnaître les traits d’encre
 template: detail.hbs
 ---
 

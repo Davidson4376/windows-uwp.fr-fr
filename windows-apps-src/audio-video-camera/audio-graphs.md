@@ -1,7 +1,7 @@
 ---
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-Cet article montre comment utiliser les API dans l’espace de noms Windows.Media.Audio pour créer des graphiques pour le routage audio, le mixage et les scénarios de traitement audio.
-Graphiques audio
+description: Cet article montre comment utiliser les API dans l’espace de noms Windows.Media.Audio pour créer des graphiques pour le routage audio, le mixage et les scénarios de traitement audio.
+title: Graphiques audio
 ---
 
 # Graphiques audio

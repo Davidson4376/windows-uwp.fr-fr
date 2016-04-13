@@ -1,6 +1,6 @@
 ---
-Code complet de BasicLoader
-Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs.
+title: Code complet de BasicLoader
+description: Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs.
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 ---
 

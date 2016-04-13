@@ -1,8 +1,8 @@
 ---
-Créer des applications de plateforme Windows universelle (UWP) qui prennent en charge les interactions personnalisées à partir de stylos et de stylets, y compris l’encre numérique pour des expériences de dessin et d’écriture naturelles.
-Interactions avec le stylo et le stylet
+Description: Créer des applications de plateforme Windows universelle (UWP) qui prennent en charge les interactions personnalisées à partir de stylos et de stylets, y compris l’encre numérique pour des expériences de dessin et d’écriture naturelles.
+title: Interactions avec le stylo et le stylet
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
-Stylo et stylet
+label: Stylo et stylet
 template: detail.hbs
 ---
 

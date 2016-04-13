@@ -1,8 +1,8 @@
 ---
-Utilisez un contrôle RichTextBlock avec des éléments RichTextBlockOverflow pour créer des dispositions avancées de texte.
-RichTextBlock
+Description: Utilisez un contrôle RichTextBlock avec des éléments RichTextBlockOverflow pour créer des dispositions avancées de texte.
+title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
-Bloc de texte enrichi
+label: Bloc de texte enrichi
 template: detail.hbs
 ---
 # Bloc de texte enrichi

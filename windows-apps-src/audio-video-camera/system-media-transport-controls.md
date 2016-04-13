@@ -1,7 +1,7 @@
 ---
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-La classe SystemMediaTransportControls permet à votre application d’utiliser les contrôles de transport de média système intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application.
-Contrôles de transport de média système
+description: La classe SystemMediaTransportControls permet à votre application d’utiliser les contrôles de transport de média système intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application.
+title: Contrôles de transport de média système
 ---
 
 # Contrôles de transport de média système

@@ -1,8 +1,8 @@
 ---
-Fournit une liste par fonction de certains des contrôles que vous pouvez utiliser dans vos applications.
-Contrôles par fonction
+Description: Fournit une liste par fonction de certains des contrôles que vous pouvez utiliser dans vos applications.
+title: Contrôles par fonction
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
-Contrôles par fonction
+label: Contrôles par fonction
 template: detail.hbs
 ---
 # Contrôles par fonction

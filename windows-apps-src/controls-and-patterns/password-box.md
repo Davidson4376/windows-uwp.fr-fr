@@ -1,9 +1,9 @@
 ---
-Une zone de mot de passe (PasswordBox) est une zone d’entrée de texte qui masque les caractères saisis, pour des raisons de confidentialité.
-Recommandations en matière de zones de mot de passe
+Description: Une zone de mot de passe (PasswordBox) est une zone d’entrée de texte qui masque les caractères saisis, pour des raisons de confidentialité.
+title: Recommandations en matière de zones de mot de passe
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
-Zone de mot de passe
+label: Zone de mot de passe
 template: detail.hbs
 ---
 # Zone de mot de passe

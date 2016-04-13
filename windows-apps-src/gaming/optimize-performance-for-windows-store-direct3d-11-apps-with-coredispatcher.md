@@ -1,6 +1,6 @@
 ---
-Optimiser la latence d’entrée pour les jeux de plateforme Windows universelle (UWP) DirectX
-La latence d’entrée peut avoir un impact important sur un jeu. Son optimisation peut rendre un jeu plus fluide.
+title: Optimiser la latence d’entrée pour les jeux de plateforme Windows universelle (UWP) DirectX
+description: La latence d’entrée peut avoir un impact important sur un jeu. Son optimisation peut rendre un jeu plus fluide.
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ---
 

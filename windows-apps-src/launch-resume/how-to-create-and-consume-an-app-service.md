@@ -1,6 +1,6 @@
 ---
-Créer et utiliser un service d’application
-Découvrez comment écrire une application de plateforme Windows universelle (UWP) capable de fournir des services à d’autres applications UWP et comment utiliser ces services.
+title: Créer et utiliser un service d’application
+description: Découvrez comment écrire une application de plateforme Windows universelle (UWP) capable de fournir des services à d’autres applications UWP et comment utiliser ces services.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 ---
 

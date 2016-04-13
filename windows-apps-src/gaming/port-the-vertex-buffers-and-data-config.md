@@ -1,6 +1,6 @@
 ---
-Porter les mémoires tampons et données de vertex
-Lors de cette étape, vous allez définir les mémoires tampons de vertex qui contiendront vos maillages ainsi que les mémoires tampons d’index qui permettront aux nuanceurs de parcourir les vertex dans l’ordre indiqué.
+title: Porter les mémoires tampons et données de vertex
+description: Lors de cette étape, vous allez définir les mémoires tampons de vertex qui contiendront vos maillages ainsi que les mémoires tampons d’index qui permettront aux nuanceurs de parcourir les vertex dans l’ordre indiqué.
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 ---
 

@@ -1,6 +1,6 @@
 ---
-Quand vous envoyez un produit in-app, les options de la page Propriétés vous aident à déterminer le comportement de ce produit lorsqu’il est proposé aux clients.
-Entrer les propriétés d’un produit in-app
+Description: Quand vous envoyez un produit in-app, les options de la page Propriétés vous aident à déterminer le comportement de ce produit lorsqu’il est proposé aux clients.
+title: Entrer les propriétés d’un produit in-app
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ---
 

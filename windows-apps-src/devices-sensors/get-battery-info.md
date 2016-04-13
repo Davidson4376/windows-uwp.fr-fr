@@ -1,7 +1,7 @@
 ---
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
-Obtenir des informations sur la batterie
-Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API dans l’espace de noms Windows.Devices.Power.
+title: Obtenir des informations sur la batterie
+description: Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API dans l’espace de noms Windows.Devices.Power.
 ---
 # Obtenir des informations sur la batterie
 

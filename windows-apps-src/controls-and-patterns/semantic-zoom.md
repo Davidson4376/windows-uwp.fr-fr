@@ -1,8 +1,8 @@
 ---
-Un contrôle de zoom sémantique permet à l’utilisateur d’effectuer un zoom entre deux affichages sémantiques différents du même jeu de données.
-Zoom sémantique
+Description: Un contrôle de zoom sémantique permet à l’utilisateur d’effectuer un zoom entre deux affichages sémantiques différents du même jeu de données.
+title: Zoom sémantique
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
-Zoom sémantique
+label: Zoom sémantique
 template: detail.hbs
 ---
 

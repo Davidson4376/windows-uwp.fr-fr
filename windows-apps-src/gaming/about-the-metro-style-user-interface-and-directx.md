@@ -1,6 +1,6 @@
 ---
-Objet application et DirectX
-Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store.
+title: Objet application et DirectX
+description: Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store.
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
-Vue d’ensemble des animations
-Utilisez les animations de la bibliothèque d’animations du Windows Runtime pour intégrer l’apparence de Windows dans votre application.
+title: Vue d’ensemble des animations
+description: Utilisez les animations de la bibliothèque d’animations du Windows Runtime pour intégrer l’apparence de Windows dans votre application.
 ---
 # Vue d’ensemble des animations
 

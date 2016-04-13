@@ -1,6 +1,6 @@
 ---
-En plus de créer une campagne de publicité pour votre application qui s’exécute dans des applications Windows, vous pouvez également promouvoir votre application à l’aide d’autres canaux.
-Créer une campagne personnalisée de promotion d’applications
+Description: En plus de créer une campagne de publicité pour votre application qui s’exécute dans des applications Windows, vous pouvez également promouvoir votre application à l’aide d’autres canaux.
+title: Créer une campagne personnalisée de promotion d’applications
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ---
 

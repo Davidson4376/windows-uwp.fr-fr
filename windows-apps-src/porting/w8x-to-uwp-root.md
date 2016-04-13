@@ -1,6 +1,6 @@
 ---
-Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence.
-Passer de Windows Runtime 8.x à UWP
+description: Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence.
+title: Passer de Windows Runtime 8.x à UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ---
 

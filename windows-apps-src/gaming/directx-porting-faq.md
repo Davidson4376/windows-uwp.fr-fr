@@ -1,6 +1,6 @@
 ---
-Portage DirectX 11 : FAQ
-Réponses aux questions fréquemment posées sur le portage de jeux vers la plateforme Windows universelle (UWP).
+title: Portage DirectX 11 : FAQ
+description: Réponses aux questions fréquemment posées sur le portage de jeux vers la plateforme Windows universelle (UWP).
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 ---
 

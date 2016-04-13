@@ -1,6 +1,6 @@
 ---
-Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML.
-Syntaxe des commandes de déplacement et de dessin
+description: Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML.
+title: Syntaxe des commandes de déplacement et de dessin
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ---
 

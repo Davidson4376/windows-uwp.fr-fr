@@ -1,7 +1,7 @@
 ---
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
-Optimisation des options d’interface ListView et GridView
-Améliorez les performances des contrôles ListView et GridView et le temps de démarrage à travers la virtualisation de l’interface utilisateur, la réduction des éléments et la mise à jour progressive des éléments.
+title: Optimisation des options d’interface ListView et GridView
+description: Améliorez les performances des contrôles ListView et GridView et le temps de démarrage à travers la virtualisation de l’interface utilisateur, la réduction des éléments et la mise à jour progressive des éléments.
 ---
 # Optimisation des options d’interface ListView et GridView
 

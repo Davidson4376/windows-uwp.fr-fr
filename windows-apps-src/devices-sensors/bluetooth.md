@@ -1,7 +1,7 @@
 ---
 ms.assetid: 404783BA-8859-4BFB-86E3-3DD2042E66F5
-Bluetooth
-Cette section contient des articles sur l’intégration du Bluetooth aux applications de la plateforme Windows universelle (UWP), notamment sur l’utilisation des API RFCOMM, GATT et des publications Bluetooth Low Energy (LE).
+title: Bluetooth
+description: Cette section contient des articles sur l’intégration du Bluetooth aux applications de la plateforme Windows universelle (UWP), notamment sur l’utilisation des API RFCOMM, GATT et des publications Bluetooth Low Energy (LE).
 ---
 # Bluetooth
 

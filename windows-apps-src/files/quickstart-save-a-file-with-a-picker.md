@@ -1,7 +1,7 @@
 ---
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
-Enregistrer un fichier avec un sélecteur
-Utilisez FileSavePicker pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier.
+title: Enregistrer un fichier avec un sélecteur
+description: Utilisez FileSavePicker pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier.
 ---
 
 # Enregistrer un fichier avec un sélecteur

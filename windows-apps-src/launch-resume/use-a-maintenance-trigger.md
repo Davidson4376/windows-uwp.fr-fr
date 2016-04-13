@@ -1,6 +1,6 @@
 ---
-Utiliser un déclencheur de maintenance
-Découvrez comment utiliser la classe MaintenanceTrigger pour exécuter du code léger en arrière-plan tandis que l’appareil est branché.
+title: Utiliser un déclencheur de maintenance
+description: Découvrez comment utiliser la classe MaintenanceTrigger pour exécuter du code léger en arrière-plan tandis que l’appareil est branché.
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 ---
 

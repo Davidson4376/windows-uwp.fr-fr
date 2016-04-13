@@ -1,8 +1,8 @@
 ---
-Utilisez les panneaux de disposition pour organiser et regrouper des éléments d’interface utilisateur dans votre application.
-Panneaux de disposition pour les applications de plateforme Windows universelle (UWP)
+Description: Utilisez les panneaux de disposition pour organiser et regrouper des éléments d’interface utilisateur dans votre application.
+title: Panneaux de disposition pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
-Panneaux de disposition
+label: Panneaux de disposition
 template: detail.hbs
 ---
 # Panneaux de disposition

@@ -1,6 +1,6 @@
 ---
-Configurer des ressources DirectX et afficher une image
-Nous vous montrons ici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis comment présenter l’image rendue à l’écran.
+title: Configurer des ressources DirectX et afficher une image
+description: Nous vous montrons ici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis comment présenter l’image rendue à l’écran.
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
 ---
 

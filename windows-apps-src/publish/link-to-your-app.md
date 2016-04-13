@@ -1,6 +1,6 @@
 ---
-Vous pouvez aider les clients à découvrir votre application en créant un lien vers la description de votre application dans le Windows Store.
-Créer un lien vers votre application
+Description: Vous pouvez aider les clients à découvrir votre application en créant un lien vers la description de votre application dans le Windows Store.
+title: Créer un lien vers votre application
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 ---
 

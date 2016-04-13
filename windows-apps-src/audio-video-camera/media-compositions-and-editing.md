@@ -1,7 +1,7 @@
 ---
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-Les API de l’espace de noms Windows.Media.Editing vous permettent de développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo.
-Compositions multimédias et modification
+description: Les API de l’espace de noms Windows.Media.Editing vous permettent de développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo.
+title: Compositions multimédias et modification
 ---
 
 # Compositions multimédias et modification

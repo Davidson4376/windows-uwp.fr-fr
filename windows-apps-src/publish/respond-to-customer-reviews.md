@@ -1,6 +1,6 @@
 ---
-Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires.
-Répondre aux avis des clients
+Description: Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires.
+title: Répondre aux avis des clients
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ---
 

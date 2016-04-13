@@ -1,6 +1,6 @@
 ---
-Classes de paramètres du modèle
-Classes de paramètres du modèle
+description: Classes de paramètres du modèle
+title: Classes de paramètres du modèle
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ---
 

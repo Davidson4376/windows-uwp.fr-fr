@@ -1,8 +1,8 @@
 ---
-Les onglets et sélecteurs de vue permettent aux utilisateurs de naviguer entre les contenus fréquemment consultés.
-Onglets et sélecteurs de vue
+Description: Les onglets et sélecteurs de vue permettent aux utilisateurs de naviguer entre les contenus fréquemment consultés.
+title: Onglets et sélecteurs de vue
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
-Onglets et sélecteurs de vue
+label: Onglets et sélecteurs de vue
 template: detail.hbs
 ---
 # Onglets et sélecteurs de vue

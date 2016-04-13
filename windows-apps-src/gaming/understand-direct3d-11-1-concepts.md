@@ -1,6 +1,6 @@
 ---
-Modifications importantes de Direct3D 9 à Direct3D 11
-Cette rubrique décrit les principales différences entre DirectX 9 et DirectX 11.
+title: Modifications importantes de Direct3D 9 à Direct3D 11
+description: Cette rubrique décrit les principales différences entre DirectX 9 et DirectX 11.
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 ---
 

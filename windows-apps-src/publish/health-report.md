@@ -1,6 +1,6 @@
 ---
-Le rapport d’intégrité disponible dans le tableau de bord du centre de développement Windows vous permet d’obtenir des données liées aux performances et à la qualité de votre application, y compris les incidents et blocages.
-Rapport d’intégrité
+Description: Le rapport d’intégrité disponible dans le tableau de bord du centre de développement Windows vous permet d’obtenir des données liées aux performances et à la qualité de votre application, y compris les incidents et blocages.
+title: Rapport d’intégrité
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ---
 

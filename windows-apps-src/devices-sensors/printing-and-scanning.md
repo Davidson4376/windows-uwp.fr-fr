@@ -1,7 +1,7 @@
 ---
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-Impression et numérisation
-Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
+title: Impression et numérisation
+description: Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
 ---
 # Impression et numérisation
 

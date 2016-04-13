@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
-Bases de données SQLite
-SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source.
+title: Bases de données SQLite
+description: SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source.
 ---
 # Bases de données SQLite
 

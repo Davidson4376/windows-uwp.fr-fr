@@ -1,6 +1,6 @@
 ---
-Déclarer des tâches en arrière-plan dans le manifeste de l’application
-Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
+title: Déclarer des tâches en arrière-plan dans le manifeste de l’application
+description: Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ---
 

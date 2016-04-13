@@ -1,8 +1,8 @@
 ---
-Étendre Cortana avec la fonctionnalité fournie par votre application, à l’aide des commandes vocales.
-Recommandations relatives à la conception de Cortana
+Description: Étendre Cortana avec la fonctionnalité fournie par votre application, à l’aide des commandes vocales.
+title: Recommandations relatives à la conception de Cortana
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
-Recommandations
+label: Recommandations
 template: detail.hbs
 ---
 

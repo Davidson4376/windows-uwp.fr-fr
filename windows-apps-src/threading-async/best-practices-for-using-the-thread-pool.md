@@ -1,7 +1,7 @@
 ---
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
-Meilleures pratiques pour l’utilisation du pool de threads
-Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
+title: Meilleures pratiques pour l’utilisation du pool de threads
+description: Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
 ---
 # Meilleures pratiques pour l’utilisation du pool de threads
 

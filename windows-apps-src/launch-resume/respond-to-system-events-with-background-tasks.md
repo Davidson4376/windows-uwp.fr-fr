@@ -1,6 +1,6 @@
 ---
-Répondre aux événements système avec des tâches en arrière-plan
-Découvrez comment créer une tâche en arrière-plan qui répond aux événements SystemTrigger.
+title: Répondre aux événements système avec des tâches en arrière-plan
+description: Découvrez comment créer une tâche en arrière-plan qui répond aux événements SystemTrigger.
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 ---
 

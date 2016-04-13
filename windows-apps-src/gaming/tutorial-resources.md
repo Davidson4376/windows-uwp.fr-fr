@@ -1,6 +1,6 @@
 ---
-Développer l’exemple de jeu
-Félicitations ! À ce stade, vous maîtrisez les principaux composants d’un jeu de plateforme Windows universelle (WUP) DirectX 3D de base.
+title: Développer l’exemple de jeu
+description: Félicitations ! À ce stade, vous maîtrisez les principaux composants d’un jeu de plateforme Windows universelle (WUP) DirectX 3D de base.
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 Mots clés : [« DirectX, XAML »]
 ---

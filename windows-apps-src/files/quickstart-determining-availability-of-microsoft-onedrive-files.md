@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-Détermination de la disponibilité des fichiers Microsoft OneDrive
-Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable.
+title: Détermination de la disponibilité des fichiers Microsoft OneDrive
+description: Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable.
 ---
 # Détermination de la disponibilité des fichiers Microsoft OneDrive
 

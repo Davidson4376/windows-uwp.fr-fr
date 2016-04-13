@@ -1,7 +1,7 @@
 ---
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
-Énumérer les appareils sur un réseau
-Outre la découverte d’appareils connectés localement, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les appareils sur protocoles sans fil et réseau.
+title: Énumérer les appareils sur un réseau
+description: Outre la découverte d’appareils connectés localement, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les appareils sur protocoles sans fil et réseau.
 ---
 # Énumérer les appareils sur un réseau
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
-Utiliser le gyromètre
-Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur.
+title: Utiliser le gyromètre
+description: Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur.
 ---
 # Utiliser le gyromètre
 

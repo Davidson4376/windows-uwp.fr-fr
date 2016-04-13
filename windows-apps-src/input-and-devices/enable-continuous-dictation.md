@@ -1,8 +1,8 @@
 ---
-Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
-Activer la dictée continue
+Description: Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
+title: Activer la dictée continue
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
-Dictée continue
+label: Dictée continue
 template: detail.hbs
 ---
 

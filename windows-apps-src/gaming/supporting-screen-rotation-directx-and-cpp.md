@@ -1,6 +1,6 @@
 ---
-Prise en charge de l’orientation de l’écran (DirectX et C++)
-Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10.
+title: Prise en charge de l’orientation de l’écran (DirectX et C++)
+description: Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10.
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
 ---
 

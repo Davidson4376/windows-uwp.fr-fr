@@ -1,6 +1,6 @@
 ---
-Notions de base de l’exemple Marble Maze
-Ce document présente les principales caractéristiques du projet Marble Maze, notamment la façon dont il utilise Visual C++ dans l’environnement Windows Runtime, mais également la façon dont il est créé, structuré et généré.
+title: Notions de base de l’exemple Marble Maze
+description: Ce document présente les principales caractéristiques du projet Marble Maze, notamment la façon dont il utilise Visual C++ dans l’environnement Windows Runtime, mais également la façon dont il est créé, structuré et généré.
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ---
 

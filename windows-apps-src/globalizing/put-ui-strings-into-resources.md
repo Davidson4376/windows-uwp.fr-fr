@@ -1,8 +1,8 @@
 ---
-Placez les ressources de type chaîne de votre interface utilisateur dans des fichiers de ressources. Vous pouvez ensuite référencer ces chaînes dans votre code ou votre balisage.
-Placer des chaînes d’interface utilisateur dans des ressources
+Description: Placez les ressources de type chaîne de votre interface utilisateur dans des fichiers de ressources. Vous pouvez ensuite référencer ces chaînes dans votre code ou votre balisage.
+title: Placer des chaînes d’interface utilisateur dans des ressources
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
-Placer des chaînes d’interface utilisateur dans des ressources
+label: Placer des chaînes d’interface utilisateur dans des ressources
 template: detail.hbs
 ---
 

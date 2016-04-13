@@ -1,6 +1,6 @@
 ---
-Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application du Windows Store.
-Vue d’ensemble du langage XAML
+description: Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application du Windows Store.
+title: Vue d’ensemble du langage XAML
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
 ---
 

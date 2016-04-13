@@ -1,6 +1,6 @@
 ---
-Savoir maîtriser Visual Studio
-Savoir maîtriser Visual Studio
+description: Savoir maîtriser Visual Studio
+title: Savoir maîtriser Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ---
 

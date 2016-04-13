@@ -1,7 +1,7 @@
 ---
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
-Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
-Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser les classes FileOpenPicker et FileSavePicker pour accéder à des fichiers et la classe FolderPicker pour accéder à un dossier.
+title: Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
+description: Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser les classes FileOpenPicker et FileSavePicker pour accéder à des fichiers et la classe FolderPicker pour accéder à un dossier.
 ---
 
 # Ouvrir des fichiers et dossiers à l’aide d’un sélecteur

@@ -1,8 +1,8 @@
 ---
-Contrôlez la façon dont Windows sélectionne les ressources de l’interface utilisateur et formate les éléments de l’interface utilisateur de l’application, en utilisant les différents paramètres de langue et de région fournis par Windows.
-Gérer la langue et la région
+Description: Contrôlez la façon dont Windows sélectionne les ressources de l’interface utilisateur et formate les éléments de l’interface utilisateur de l’application, en utilisant les différents paramètres de langue et de région fournis par Windows.
+title: Gérer la langue et la région
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
-Gérer la langue et la région
+label: Gérer la langue et la région
 template: detail.hbs
 ---
 

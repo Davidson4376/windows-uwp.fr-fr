@@ -1,6 +1,6 @@
 ---
-Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows.
-Configuration de votre Mac avec Windows 10
+description: Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows.
+title: Configuration de votre Mac avec Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ---
 

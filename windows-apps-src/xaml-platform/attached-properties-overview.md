@@ -1,6 +1,6 @@
 ---
-Explique le concept de propriété jointe en XAML et fournit quelques exemples.
-Vue d’ensemble des propriétés jointes
+description: Explique le concept de propriété jointe en XAML et fournit quelques exemples.
+title: Vue d’ensemble des propriétés jointes
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 ---
 

@@ -1,6 +1,6 @@
 ---
-Distribution d’un composant Windows Runtime managé
-Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers.
+title: Distribution d’un composant Windows Runtime managé
+description: Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers.
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 ---
 

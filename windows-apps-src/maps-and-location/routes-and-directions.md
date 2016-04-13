@@ -1,6 +1,6 @@
 ---
-Afficher des itinéraires et indications sur une carte
-Demandez des itinéraires et indications, et affichez-les dans votre application.
+title: Afficher des itinéraires et indications sur une carte
+description: Demandez des itinéraires et indications, et affichez-les dans votre application.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ---
 

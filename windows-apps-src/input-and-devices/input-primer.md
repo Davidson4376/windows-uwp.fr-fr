@@ -1,8 +1,8 @@
 ---
-Dans la plateforme Windows universelle (UWP), les interactions utilisateur reposent sur une combinaison de sources d’entrée et de sortie (souris, clavier, stylet, interface tactile, pavé tactile, fonctions vocales, Cortana, contrôleur, mouvement, regard, etc.), ainsi que sur différents modes ou modificateurs qui permettent des expériences étendues (roulette et boutons de la souris, bouton et gomme du stylet, clavier tactile, services d’application en arrière-plan, etc.).
-Notions fondamentales sur les interactions
+Description: Dans la plateforme Windows universelle (UWP), les interactions utilisateur reposent sur une combinaison de sources d’entrée et de sortie (souris, clavier, stylet, interface tactile, pavé tactile, fonctions vocales, Cortana, contrôleur, mouvement, regard, etc.), ainsi que sur différents modes ou modificateurs qui permettent des expériences étendues (roulette et boutons de la souris, bouton et gomme du stylet, clavier tactile, services d’application en arrière-plan, etc.).
+title: Notions fondamentales sur les interactions
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
-Notions fondamentales sur les interactions
+label: Notions fondamentales sur les interactions
 template: detail.hbs
 ---
 

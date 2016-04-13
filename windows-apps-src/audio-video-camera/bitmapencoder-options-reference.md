@@ -1,7 +1,7 @@
 ---
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
-Cet article répertorie les options de codage qui peuvent être utilisées avec BitmapEncoder.
-Référence des options BitmapEncoder
+description: Cet article répertorie les options de codage qui peuvent être utilisées avec BitmapEncoder.
+title: Référence des options BitmapEncoder
 ---
 
 # Référence des options BitmapEncoder

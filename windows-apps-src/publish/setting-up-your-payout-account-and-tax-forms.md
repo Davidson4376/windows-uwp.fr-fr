@@ -1,6 +1,6 @@
 ---
-Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires.
-Configuration de votre compte de revenu et de vos déclarations fiscales
+Description: Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires.
+title: Configuration de votre compte de revenu et de vos déclarations fiscales
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ---
 

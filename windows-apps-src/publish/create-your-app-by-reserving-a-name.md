@@ -1,6 +1,6 @@
 ---
-Quand vous créez une application dans le tableau de bord du Centre de développement Windows, le nom de celle-ci doit être unique dans le Windows Store. Cette rubrique explique comment réserver des noms, et propose des suggestions pour choisir un nom de l’application attractif.
-Créer votre application en réservant un nom
+Description: Quand vous créez une application dans le tableau de bord du Centre de développement Windows, le nom de celle-ci doit être unique dans le Windows Store. Cette rubrique explique comment réserver des noms, et propose des suggestions pour choisir un nom de l’application attractif.
+title: Créer votre application en réservant un nom
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ---
 

@@ -1,6 +1,6 @@
 ---
-Une description attrayante peut contribuer à attirer l’attention sur votre application dans le Windows Store et à inciter les clients à la télécharger.
-Rédiger une description convaincante de l’application
+Description: Une description attrayante peut contribuer à attirer l’attention sur votre application dans le Windows Store et à inciter les clients à la télécharger.
+title: Rédiger une description convaincante de l’application
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ---
 

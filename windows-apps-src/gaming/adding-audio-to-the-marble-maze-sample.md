@@ -1,6 +1,6 @@
 ---
-Ajout de son à l’exemple Marble Maze
-Ce document décrit les pratiques clés à prendre en compte quand vous utilisez du son et comment appliquer ces pratiques à l’exemple Marble Maze.
+title: Ajout de son à l’exemple Marble Maze
+description: Ce document décrit les pratiques clés à prendre en compte quand vous utilisez du son et comment appliquer ces pratiques à l’exemple Marble Maze.
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ---
 

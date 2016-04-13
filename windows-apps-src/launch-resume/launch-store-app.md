@@ -1,6 +1,6 @@
 ---
-Lancer l’application du Windows Store
-Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store en ouvrant des pages spécifiques dans le Windows Store.
+title: Lancer l’application du Windows Store
+description: Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store en ouvrant des pages spécifiques dans le Windows Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ---
 

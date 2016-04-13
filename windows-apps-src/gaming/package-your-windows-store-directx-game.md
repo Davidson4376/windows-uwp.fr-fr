@@ -1,6 +1,6 @@
 ---
-Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
-Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux.
+title: Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
+description: Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux.
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 ---
 

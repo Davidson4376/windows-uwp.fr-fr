@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-Tests du Kit de certification des applications Windows
-Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store.
+title: Tests du Kit de certification des applications Windows
+description: Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store.
 ---
 ## Tests du Kit de certification des applications Windows
 

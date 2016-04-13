@@ -1,6 +1,6 @@
 ---
-Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML.
-Attribut x:Class
+description: Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML.
+title: Attribut x:Class
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
-Autorisations d’accès aux fichiers
-Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités.
+title: Autorisations d’accès aux fichiers
+description: Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités.
 ---
 # Autorisations d’accès aux fichiers
 

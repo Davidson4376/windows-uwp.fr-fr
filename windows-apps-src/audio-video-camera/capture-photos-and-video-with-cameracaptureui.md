@@ -1,7 +1,7 @@
 ---
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows.
-Capturer des photos et des vidéos à l’aide de CameraCaptureUI
+description: Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows.
+title: Capturer des photos et des vidéos à l’aide de CameraCaptureUI
 ---
 
 # Capturer des photos et des vidéos à l’aide de CameraCaptureUI

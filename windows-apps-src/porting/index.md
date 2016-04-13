@@ -1,7 +1,7 @@
 ---
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales.
-Portage d’applications vers Windows 10
+description: Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales.
+title: Portage d’applications vers Windows 10
 ---
 
 # Portage d’applications vers Windows 10

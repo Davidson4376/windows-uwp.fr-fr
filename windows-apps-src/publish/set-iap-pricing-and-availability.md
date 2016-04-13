@@ -1,6 +1,6 @@
 ---
-Quand vous soumettez un produit intégré à l’application, les options de la page Tarification et disponibilité déterminent le prix auquel facturer ce produit et la façon dont ce dernier doit être proposé aux clients.
-Définir la tarification et la disponibilité d’un produit intégré à l’application
+Description: Quand vous soumettez un produit intégré à l’application, les options de la page Tarification et disponibilité déterminent le prix auquel facturer ce produit et la façon dont ce dernier doit être proposé aux clients.
+title: Définir la tarification et la disponibilité d’un produit intégré à l’application
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ---
 

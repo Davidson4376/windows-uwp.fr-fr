@@ -1,7 +1,7 @@
 ---
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
-Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
-Gestion des droits numériques en fonction du matériel
+description: Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
+title: Gestion des droits numériques en fonction du matériel
 ---
 
 # Gestion des droits numériques en fonction du matériel

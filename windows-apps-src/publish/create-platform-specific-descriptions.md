@@ -1,6 +1,6 @@
 ---
-Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description pour ces différents systèmes.
-Création de descriptions spécifiques à la plateforme
+Description: Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description pour ces différents systèmes.
+title: Création de descriptions spécifiques à la plateforme
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ---
 

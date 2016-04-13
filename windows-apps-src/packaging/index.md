@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
-Création de packages d’application
-Cette section contient ou associe des articles sur la création de packages d’application de plateforme Windows universelle (UWP).
+title: Création de packages d’application
+description: Cette section contient ou associe des articles sur la création de packages d’application de plateforme Windows universelle (UWP).
 ---
 # Création de packages d’application
 

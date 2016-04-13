@@ -1,6 +1,6 @@
 ---
-Lancer l’application par défaut pour un URI
-Découvrez comment lancer l’application par défaut pour un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique donne également une vue d’ensemble des nombreux schémas d’URI intégrés à Windows.
+title: Lancer l’application par défaut pour un URI
+description: Découvrez comment lancer l’application par défaut pour un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique donne également une vue d’ensemble des nombreux schémas d’URI intégrés à Windows.
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 ---
 

@@ -1,6 +1,6 @@
 ---
-Microsoft Advertising pour pubCenter a été intégré au Centre de développement Windows.
-Intégration de pubCenter au Centre de développement
+Description: Microsoft Advertising pour pubCenter a été intégré au Centre de développement Windows.
+title: Intégration de pubCenter au Centre de développement
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
 ---
 

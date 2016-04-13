@@ -1,11 +1,11 @@
 ---
-Explique comment définir un élément ResourceDictionary et des ressources à clé et décrit la relation entre les ressources XAML et les autres ressources que vous définissez dans le cadre de votre application ou de votre package d’application.
+Description: Explique comment définir un élément ResourceDictionary et des ressources à clé et décrit la relation entre les ressources XAML et les autres ressources que vous définissez dans le cadre de votre application ou de votre package d’application.
 MS-HAID : « dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references »
 MSHAttr : « PreferredLib:/library/windows/apps »
 Search.Product : eADQiWindows 10XVcnh
-Références aux ressources ResourceDictionary et XAML
+title: Références aux ressources ResourceDictionary et XAML
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
-Références aux ressources ResourceDictionary et XAML
+label: Références aux ressources ResourceDictionary et XAML
 template: detail.hbs
 ---
 

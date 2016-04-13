@@ -1,6 +1,6 @@
 ---
-Ajouter une interface utilisateur
-Vous venez de voir comment l’exemple de jeu implémente l’objet jeu principal ainsi que l’infrastructure de rendu de base.
+title: Ajouter une interface utilisateur
+description: Vous venez de voir comment l’exemple de jeu implémente l’objet jeu principal ainsi que l’infrastructure de rendu de base.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ---
 

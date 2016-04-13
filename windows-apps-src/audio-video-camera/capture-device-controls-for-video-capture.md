@@ -1,7 +1,7 @@
 ---
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition.
-Contrôles de l’appareil de capture pour la vidéo
+description: Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition.
+title: Contrôles de l’appareil de capture pour la vidéo
 ---
 
 # Contrôles de l’appareil de capture pour la vidéo

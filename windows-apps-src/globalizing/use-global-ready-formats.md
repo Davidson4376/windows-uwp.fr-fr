@@ -1,8 +1,8 @@
 ---
-Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises.
-Utiliser des formats compatibles avec la globalisation
+Description: Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises.
+title: Utiliser des formats compatibles avec la globalisation
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-Utiliser des formats compatibles avec la globalisation
+label: Utiliser des formats compatibles avec la globalisation
 template: detail.hbs
 ---
 

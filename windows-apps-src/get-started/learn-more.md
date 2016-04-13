@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
-Et après ?
-Maintenant que vous avez créé votre première application, consultez le reste du Centre de développement. Les différentes sections qu’il contient sont présentées ci-après.
+title: Et après ?
+description: Maintenant que vous avez créé votre première application, consultez le reste du Centre de développement. Les différentes sections qu’il contient sont présentées ci-après.
 mots clés : Centre de développement, visite guidée
 mots clés : Centre de développement, Prise en main
 ---

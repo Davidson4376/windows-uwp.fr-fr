@@ -1,8 +1,8 @@
 ---
-Le mouvement panoramique et le défilement permettent aux utilisateurs d’atteindre du contenu qui s’étend au-delà des limites de l’écran.
-Recommandations en matière de barres de défilement
+Description: Le mouvement panoramique et le défilement permettent aux utilisateurs d’atteindre du contenu qui s’étend au-delà des limites de l’écran.
+title: Recommandations en matière de barres de défilement
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-Barres de défilement
+label: Barres de défilement
 template: detail.hbs
 ---
 # Barres de défilement

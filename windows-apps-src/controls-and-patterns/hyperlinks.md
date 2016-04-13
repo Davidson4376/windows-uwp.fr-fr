@@ -1,8 +1,8 @@
 ---
-Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte.
-Liens hypertexte
+Description: Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte.
+title: Liens hypertexte
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
-Liens hypertexte
+label: Liens hypertexte
 template: detail.hbs
 ---
 # Liens hypertexte

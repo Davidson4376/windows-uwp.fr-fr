@@ -1,6 +1,6 @@
 ---
-Définir l’objet jeu principal
-Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
+title: Définir l’objet jeu principal
+description: Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ---
 

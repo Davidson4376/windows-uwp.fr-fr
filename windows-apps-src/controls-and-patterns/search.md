@@ -1,8 +1,8 @@
 ---
-L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
-Recherche et recherche dans la page
+Description: L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
+title: Recherche et recherche dans la page
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
-Recherche
+label: Recherche
 template: detail.hbs
 ---
 

@@ -1,8 +1,8 @@
 ---
-Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
-Affichage Web
+Description: Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
+title: Affichage Web
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
-Affichage web
+label: Affichage web
 template: detail.hbs
 ---
 

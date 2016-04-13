@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
-Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
-Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos.
+title: Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
+description: Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos.
 ---
 
 # Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos

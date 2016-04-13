@@ -1,6 +1,6 @@
 ---
-Identifie de manière unique les éléments qui sont créés et référencés en tant que ressources, et qui existent au sein d’une classe ResourceDictionary.
-Attribut x:Key
+description: Identifie de manière unique les éléments qui sont créés et référencés en tant que ressources, et qui existent au sein d’une classe ResourceDictionary.
+title: Attribut x:Key
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ---
 

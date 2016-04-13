@@ -1,8 +1,8 @@
 ---
-Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
-Navigation pair à pair entre deux pages
+Description: Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
+title: Navigation pair à pair entre deux pages
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
-Navigation pair à pair entre deux pages
+label: Navigation pair à pair entre deux pages
 template: detail.hbs
 ---
 

@@ -1,6 +1,6 @@
 ---
-La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications 8.1 universelles en applications de plateforme Windows universelle (UWP).
-Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
+description: La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications 8.1 universelles en applications de plateforme Windows universelle (UWP).
+title: Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ---
 

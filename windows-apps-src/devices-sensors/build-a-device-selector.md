@@ -1,7 +1,7 @@
 ---
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
-Créer un sélecteur d’appareil
-La création d’un sélecteur d’appareil permet de limiter les appareils que vous parcourez lors de l’énumération de ceux-ci.
+title: Créer un sélecteur d’appareil
+description: La création d’un sélecteur d’appareil permet de limiter les appareils que vous parcourez lors de l’énumération de ceux-ci.
 ---
 # Créer un sélecteur d’appareil
 

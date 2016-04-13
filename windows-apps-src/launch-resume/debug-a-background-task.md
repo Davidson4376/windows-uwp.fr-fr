@@ -1,6 +1,6 @@
 ---
-Déboguer une tâche en arrière-plan
-Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.
+title: Déboguer une tâche en arrière-plan
+description: Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ---
 

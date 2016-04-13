@@ -1,6 +1,6 @@
 ---
-Lancer une application pour obtenir des résultats
-Découvrez comment démarrer une application à partir d’une autre et échanger des données entre les deux. On parle de « démarrage d’une application pour afficher les résultats ».
+title: Lancer une application pour obtenir des résultats
+description: Découvrez comment démarrer une application à partir d’une autre et échanger des données entre les deux. On parle de « démarrage d’une application pour afficher les résultats ».
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ---
 

@@ -1,6 +1,6 @@
 ---
-Prendre en charge votre application avec des tâches en arrière-plan
-Les rubriques de cette section expliquent comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan.
+title: Prendre en charge votre application avec des tâches en arrière-plan
+description: Les rubriques de cette section expliquent comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ---
 

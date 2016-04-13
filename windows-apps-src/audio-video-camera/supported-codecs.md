@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
-Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.
-Codecs pris en charge
+description: Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.
+title: Codecs pris en charge
 ---
 
 # Codecs pris en charge

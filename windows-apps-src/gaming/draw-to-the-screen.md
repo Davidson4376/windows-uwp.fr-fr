@@ -1,6 +1,6 @@
 ---
-Dessiner à l’écran
-Pour finir, nous portons le code qui trace le cube tournant à l’écran.
+title: Dessiner à l’écran
+description: Pour finir, nous portons le code qui trace le cube tournant à l’écran.
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 ---
 

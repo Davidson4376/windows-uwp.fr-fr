@@ -1,7 +1,7 @@
 ---
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
-Utiliser le capteur de luminosité
-Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
+title: Utiliser le capteur de luminosité
+description: Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
 ---
 # Utiliser le capteur de luminosité
 

@@ -1,6 +1,6 @@
 ---
-Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet.
-Résolution des problèmes de portage de Windows Phone Silverlight vers UWP
+description: Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet.
+title: Résolution des problèmes de portage de Windows Phone Silverlight vers UWP
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
 ---
 

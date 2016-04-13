@@ -1,7 +1,7 @@
 ---
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
-Optimiser votre disposition XAML
-La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML.
+title: Optimiser votre disposition XAML
+description: La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML.
 ---
 # Optimiser votre disposition XAML
 

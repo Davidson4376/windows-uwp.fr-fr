@@ -1,6 +1,6 @@
 ---
-Création de composants Windows Runtime en C# et Visual Basic
-Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime.
+title: Création de composants Windows Runtime en C# et Visual Basic
+description: Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime.
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ---
 

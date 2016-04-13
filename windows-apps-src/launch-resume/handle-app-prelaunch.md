@@ -1,6 +1,6 @@
 ---
-Gérer le prélancement d’une application
-Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched.
+title: Gérer le prélancement d’une application
+description: Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched.
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ---
 

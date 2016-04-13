@@ -1,6 +1,6 @@
 ---
-Code complet de BasicReaderWriter
-Code complet pour une classe et des méthodes permettant de lire et écrire des fichiers de données binaires en général.
+title: Code complet de BasicReaderWriter
+description: Code complet pour une classe et des méthodes permettant de lire et écrire des fichiers de données binaires en général.
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ---
 

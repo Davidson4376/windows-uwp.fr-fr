@@ -1,7 +1,7 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-Cette étude de cas, qui repose sur les informations fournies dans Bookstore1, commence par une application 8.1 universelle qui affiche des données groupées dans un contrôle SemanticZoom.
-Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore2
+description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore1, commence par une application 8.1 universelle qui affiche des données groupées dans un contrôle SemanticZoom.
+title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore2
 ---
 
 # Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore2

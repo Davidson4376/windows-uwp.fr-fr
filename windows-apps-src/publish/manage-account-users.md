@@ -1,6 +1,6 @@
 ---
-Vous pouvez utiliser Azure Active Directory pour ajouter des utilisateurs à votre compte du Centre de développement.
-Gérer des utilisateurs de compte
+Description: Vous pouvez utiliser Azure Active Directory pour ajouter des utilisateurs à votre compte du Centre de développement.
+title: Gérer des utilisateurs de compte
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ---
 

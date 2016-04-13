@@ -1,6 +1,6 @@
 ---
-Comment utiliser les informations relatives aux contacts et calendriers dans votre application UWP.
-Contacts et calendriers
+description: Comment utiliser les informations relatives aux contacts et calendriers dans votre application UWP.
+title: Contacts et calendriers
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ---
 

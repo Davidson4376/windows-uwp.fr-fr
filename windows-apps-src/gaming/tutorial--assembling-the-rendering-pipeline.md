@@ -1,6 +1,6 @@
 ---
-Assembler l’infrastructure de rendu
-Il est maintenant temps d’examiner la façon dont l’exemple de jeu utilise cette structure et ces états pour afficher ses graphiques.
+title: Assembler l’infrastructure de rendu
+description: Il est maintenant temps d’examiner la façon dont l’exemple de jeu utilise cette structure et ces états pour afficher ses graphiques.
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ---
 

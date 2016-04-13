@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
-Imprimer à partir de votre application
-Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques.
+title: Imprimer à partir de votre application
+description: Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques.
 ---
 # Imprimer à partir de votre application
 

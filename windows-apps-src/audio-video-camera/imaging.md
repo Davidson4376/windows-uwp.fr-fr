@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
-Cet article explique comment charger et enregistrer des fichiers image à l’aide de BitmapDecoder et de BitmapEncoder, et comment utiliser l’objet SoftwareBitmap pour représenter des images bitmap.
-Acquisition d’images
+description: Cet article explique comment charger et enregistrer des fichiers image à l’aide de BitmapDecoder et de BitmapEncoder, et comment utiliser l’objet SoftwareBitmap pour représenter des images bitmap.
+title: Acquisition d’images
 ---
 
 # Acquisition d’images

@@ -1,8 +1,8 @@
 ---
-Voici les éléments et attributs permettant de créer des vignettes adaptatives.
-Schéma et modèles de vignette adaptative
+Description: Voici les éléments et attributs permettant de créer des vignettes adaptatives.
+title: Schéma et modèles de vignette adaptative
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
-Schéma et modèles de vignette adaptative
+label: Schéma et modèles de vignette adaptative
 template: detail.hbs
 ---
 

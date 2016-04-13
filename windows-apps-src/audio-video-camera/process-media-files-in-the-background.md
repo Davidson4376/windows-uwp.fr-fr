@@ -1,7 +1,7 @@
 ---
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-Cet article vous montre comment utiliser MediaProcessingTrigger et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan.
-Traiter des fichiers multimédias en arrière-plan
+description: Cet article vous montre comment utiliser MediaProcessingTrigger et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan.
+title: Traiter des fichiers multimédias en arrière-plan
 ---
 
 # Traiter des fichiers multimédias en arrière-plan

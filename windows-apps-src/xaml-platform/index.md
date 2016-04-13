@@ -1,7 +1,7 @@
 ---
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-Cette section contient des rubriques qui décrivent des concepts de programmation généralement applicables aux applications que vous écrivez.
-Plateforme XAML
+description: Cette section contient des rubriques qui décrivent des concepts de programmation généralement applicables aux applications que vous écrivez.
+title: Plateforme XAML
 ---
 
 # Plateforme XAML

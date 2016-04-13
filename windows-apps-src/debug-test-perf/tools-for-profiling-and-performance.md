@@ -1,7 +1,7 @@
 ---
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
-Outils de profilage et de performances
-Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de vos applications de plateforme Windows universelle (UWP).
+title: Outils de profilage et de performances
+description: Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de vos applications de plateforme Windows universelle (UWP).
 ---
 # Outils de profilage et de performances
 

@@ -1,6 +1,6 @@
 ---
-L’extension de balisage Binding est convertie au moment du chargement XAML en une instance de la classe Binding.
-Extension de balisage Binding
+description: L’extension de balisage Binding est convertie au moment du chargement XAML en une instance de la classe Binding.
+title: Extension de balisage Binding
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ---
 

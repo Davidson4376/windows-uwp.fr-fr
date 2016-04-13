@@ -1,7 +1,7 @@
 ---
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo.
-Lampe torche indépendante de l’appareil photo
+description: Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo.
+title: Lampe torche indépendante de l’appareil photo
 ---
 
 # Lampe torche indépendante de l’appareil photo

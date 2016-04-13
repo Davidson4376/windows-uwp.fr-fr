@@ -1,7 +1,7 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-Créer une application Hello World en C++ (Windows 10)
-Microsoft Visual Studio 2015 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
+title: Créer une application Hello World en C++ (Windows 10)
+description: Microsoft Visual Studio 2015 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
 ---
 
 # Créer une application « Hello World » en C++ (Windows 10)

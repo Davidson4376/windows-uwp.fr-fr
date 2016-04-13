@@ -1,7 +1,7 @@
 ---
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-Cet article décrit comment créer des applications UWP permettant de lire du contenu audio en arrière-plan.
-Contenu audio en arrière-plan
+description: Cet article décrit comment créer des applications UWP permettant de lire du contenu audio en arrière-plan.
+title: Contenu audio en arrière-plan
 ---
 
 # Contenu audio en arrière-plan

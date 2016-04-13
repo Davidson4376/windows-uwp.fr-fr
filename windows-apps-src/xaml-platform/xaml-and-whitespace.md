@@ -1,6 +1,6 @@
 ---
-Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
-XAML et espace blanc
+description: Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
+title: XAML et espace blanc
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ---
 

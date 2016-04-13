@@ -1,6 +1,6 @@
 ---
-Exécuter une tâche en arrière-plan en fonction d’un minuteur
-Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique.
+title: Exécuter une tâche en arrière-plan en fonction d’un minuteur
+description: Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique.
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 ---
 

@@ -1,11 +1,11 @@
 ---
-Les ressources de thème de XAML sont un ensemble de ressources qui s’appliquent à différentes valeurs en fonction desquelles le thème du système est actif.
+Description: Les ressources de thème de XAML sont un ensemble de ressources qui s’appliquent à différentes valeurs en fonction desquelles le thème du système est actif.
 MS-HAID : « dev\_ctrl\_layout\_txt.xaml\_theme\_resources »
 MSHAttr : « PreferredLib:/library/windows/apps »
 Search.Product : eADQiWindows 10XVcnh
-Ressources de thème XAML
+title: Ressources de thème XAML
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
-Ressources de thème XAML
+label: Ressources de thème XAML
 template: detail.hbs
 ---
 

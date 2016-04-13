@@ -1,6 +1,6 @@
 ---
-Fournit un moyen de spécifier la source d’une liaison en termes de relation relative dans le graphique d’objet au moment de l’exécution.
-Extension de balisage RelativeSource
+description: Fournit un moyen de spécifier la source d’une liaison en termes de relation relative dans le graphique d’objet au moment de l’exécution.
+title: Extension de balisage RelativeSource
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ---
 

@@ -1,6 +1,6 @@
 ---
-Mise en réseau pour les jeux
-Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX.
+title: Mise en réseau pour les jeux
+description: Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ---
 

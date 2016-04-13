@@ -1,6 +1,6 @@
 ---
-Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau.
-Transferts en arrière-plan
+description: Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau.
+title: Transferts en arrière-plan
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ---
 

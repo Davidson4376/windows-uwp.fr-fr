@@ -1,6 +1,6 @@
 ---
-Appliquer des textures aux primitives
-Dans cette rubrique, nous chargeons des données de texture brutes et les appliquons à une primitive 3D à l’aide du cube que nous avons créé à la rubrique Utilisation de la profondeur et d’effets sur des primitives.
+title: Appliquer des textures aux primitives
+description: Dans cette rubrique, nous chargeons des données de texture brutes et les appliquons à une primitive 3D à l’aide du cube que nous avons créé à la rubrique Utilisation de la profondeur et d’effets sur des primitives.
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 ---
 

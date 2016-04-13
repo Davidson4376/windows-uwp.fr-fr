@@ -1,6 +1,6 @@
 ---
-Nous expliquons les règles syntaxiques XAML et la terminologie qui décrit les restrictions ou les choix disponibles pour la syntaxe XAML.
-Guide de la syntaxe XAML
+description: Nous expliquons les règles syntaxiques XAML et la terminologie qui décrit les restrictions ou les choix disponibles pour la syntaxe XAML.
+title: Guide de la syntaxe XAML
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ---
 

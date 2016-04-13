@@ -1,6 +1,6 @@
 ---
-Afficher un écran de démarrage plus longtemps
-Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable.
+title: Afficher un écran de démarrage plus longtemps
+description: Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable.
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ---
 

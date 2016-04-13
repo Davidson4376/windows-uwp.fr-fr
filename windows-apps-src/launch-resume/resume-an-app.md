@@ -1,6 +1,6 @@
 ---
-Gérer la reprise d’une application
-Apprenez à actualiser le contenu à l’écran lorsque le système reprend l’exécution de votre application.
+title: Gérer la reprise d’une application
+description: Apprenez à actualiser le contenu à l’écran lorsque le système reprend l’exécution de votre application.
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ---
 

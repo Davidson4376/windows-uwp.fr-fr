@@ -1,8 +1,8 @@
 ---
-Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes de messages électroniques et de contacts ou les carnets d’adresses.
-Maître/détails
+Description: Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes de messages électroniques et de contacts ou les carnets d’adresses.
+title: Maître/détails
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
-Maître/détails
+label: Maître/détails
 template: detail.hbs
 ---
 # Modèle Maître/Détails

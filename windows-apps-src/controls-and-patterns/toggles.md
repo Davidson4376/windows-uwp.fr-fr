@@ -1,8 +1,8 @@
 ---
-Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options.
-Recommandations en matière de boutons bascule
+Description: Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options.
+title: Recommandations en matière de boutons bascule
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-Boutons bascule
+label: Boutons bascule
 template: detail.hbs
 ---
 # Boutons bascule

@@ -1,6 +1,6 @@
 ---
-Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet.
-Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
+description: Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet.
+title: Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 ---
 

@@ -1,6 +1,6 @@
 ---
-Votre application doit inclure différents logos, différentes captures d’écran et différentes images.
-Images et captures d’écran de l’application
+Description: Votre application doit inclure différents logos, différentes captures d’écran et différentes images.
+title: Images et captures d’écran de l’application
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ---
 

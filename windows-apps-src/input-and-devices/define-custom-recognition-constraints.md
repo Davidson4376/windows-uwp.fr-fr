@@ -1,8 +1,8 @@
 ---
-Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
-Définir des contraintes de reconnaissance vocale personnalisées
+Description: Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
+title: Définir des contraintes de reconnaissance vocale personnalisées
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
-Définir des contraintes de reconnaissance vocale personnalisées
+label: Définir des contraintes de reconnaissance vocale personnalisées
 template: detail.hbs
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
-Utilisez cette méthode dans l’API de collection du Windows Store pour obtenir tous les produits possédés par un client pour les applications associées à votre ID client Azure AD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres.
-Demander des produits
+description: Utilisez cette méthode dans l’API de collection du Windows Store pour obtenir tous les produits possédés par un client pour les applications associées à votre ID client Azure AD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres.
+title: Demander des produits
 ---
 
 # Demander des produits

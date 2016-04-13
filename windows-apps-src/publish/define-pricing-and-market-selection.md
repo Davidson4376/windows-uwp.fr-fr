@@ -1,6 +1,6 @@
 ---
-Le Windows Store touche des clients dans plus de 200 pays et régions du monde.
-Définition des prix et sélection du marché
+Description: Le Windows Store touche des clients dans plus de 200 pays et régions du monde.
+title: Définition des prix et sélection du marché
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ---
 

@@ -1,6 +1,6 @@
 ---
-L’espace de noms Windows.ApplicationModel.Appointments vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur.
-Gérer des rendez-vous
+description: L’espace de noms Windows.ApplicationModel.Appointments vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur.
+title: Gérer des rendez-vous
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
-Gestion de vos paramètres de compte et des informations sur le profil
-Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows.
+title: Gestion de vos paramètres de compte et des informations sur le profil
+description: Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows.
 ---
 # Gestion de vos paramètres de compte et des informations sur le profil
 

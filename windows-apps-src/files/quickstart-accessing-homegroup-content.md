@@ -1,7 +1,7 @@
 ---
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
-Accès au contenu du Groupement résidentiel
-Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos.
+title: Accès au contenu du Groupement résidentiel
+description: Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos.
 ---
 # Accès au contenu du Groupement résidentiel
 

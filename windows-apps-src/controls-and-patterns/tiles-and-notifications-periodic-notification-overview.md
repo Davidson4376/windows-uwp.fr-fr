@@ -1,8 +1,8 @@
 ---
-Les notifications périodiques, également appelées notifications interrogées, mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud.
-Vue d’ensemble des notifications périodiques
+Description: Les notifications périodiques, également appelées notifications interrogées, mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud.
+title: Vue d’ensemble des notifications périodiques
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
-À déterminer
+label: À déterminer
 template: detail.hbs
 ---
 

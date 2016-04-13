@@ -1,6 +1,6 @@
 ---
-Découvrez comment les packages de votre application sont mis à la disposition de vos clients, et comment gérer des scénarios de package spécifiques.
-Aide sur la gestion des packages d’application
+Description: Découvrez comment les packages de votre application sont mis à la disposition de vos clients, et comment gérer des scénarios de package spécifiques.
+title: Aide sur la gestion des packages d’application
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ---
 

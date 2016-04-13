@@ -1,8 +1,8 @@
 ---
-Le contrôle hub utilise un modèle de navigation hiérarchique pour prendre en charge les applications avec une architecture d’informations relationnelle.
-Contrôles hub
+Description: Le contrôle hub utilise un modèle de navigation hiérarchique pour prendre en charge les applications avec une architecture d’informations relationnelle.
+title: Contrôles hub
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
-Hub
+label: Hub
 template: detail.hbs
 ---
 # Modèle/contrôle hub

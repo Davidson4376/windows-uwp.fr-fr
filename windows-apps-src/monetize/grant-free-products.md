@@ -1,7 +1,7 @@
 ---
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit in-app gratuit à un utilisateur donné.
-Octroyer des produits gratuits
+description: Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit in-app gratuit à un utilisateur donné.
+title: Octroyer des produits gratuits
 ---
 
 # Octroyer des produits gratuits

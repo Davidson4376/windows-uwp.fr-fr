@@ -1,8 +1,8 @@
 ---
-Les API Core Text de l’espace de noms Windows.UI.Text.Core activent une application sur la plateforme Windows universelle (UWP) pour recevoir une entrée de texte à partir de n’importe quel service de texte pris en charge sur les appareils Windows.
-Vue d’ensemble de la saisie de texte personnalisé
+Description: Les API Core Text de l’espace de noms Windows.UI.Text.Core activent une application sur la plateforme Windows universelle (UWP) pour recevoir une entrée de texte à partir de n’importe quel service de texte pris en charge sur les appareils Windows.
+title: Vue d’ensemble de la saisie de texte personnalisé
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
-Saisie de texte personnalisé
+label: Saisie de texte personnalisé
 template: detail.hbs
 ---
 

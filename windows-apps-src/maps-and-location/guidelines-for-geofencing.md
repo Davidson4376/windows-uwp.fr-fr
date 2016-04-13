@@ -1,6 +1,6 @@
 ---
-Suivez ces meilleures pratiques pour geofencing dans votre application.
-Recommandations concernant les applications de clôture virtuelle
+Description: Suivez ces meilleures pratiques pour geofencing dans votre application.
+title: Recommandations concernant les applications de clôture virtuelle
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ---
 

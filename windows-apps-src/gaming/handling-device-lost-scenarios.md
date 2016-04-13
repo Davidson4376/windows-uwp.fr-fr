@@ -1,6 +1,6 @@
 ---
-Gérer des scénarios de suppression de périphériques dans Direct3D 11
-Cette rubrique explique comment recréer la chaîne d’interface de périphériques Direct3D et DXGI quand la carte graphique est supprimée ou réinitialisée.
+title: Gérer des scénarios de suppression de périphériques dans Direct3D 11
+description: Cette rubrique explique comment recréer la chaîne d’interface de périphériques Direct3D et DXGI quand la carte graphique est supprimée ou réinitialisée.
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 ---
 

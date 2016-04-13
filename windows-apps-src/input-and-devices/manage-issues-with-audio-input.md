@@ -1,8 +1,8 @@
 ---
-Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio.
-Gérer les problèmes liés aux entrées audio
+Description: Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio.
+title: Gérer les problèmes liés aux entrées audio
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
-Gérer les problèmes liés aux entrées audio
+label: Gérer les problèmes liés aux entrées audio
 template: detail.hbs
 ---
 

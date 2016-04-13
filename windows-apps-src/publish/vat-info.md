@@ -1,6 +1,6 @@
 ---
-Si vous devez fournir un numéro de TVA lors du processus d’inscription au Centre de développement, voici quelques informations pour vous aider à démarrer.
-Informations sur la TVA
+Description: Si vous devez fournir un numéro de TVA lors du processus d’inscription au Centre de développement, voici quelques informations pour vous aider à démarrer.
+title: Informations sur la TVA
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ---
 

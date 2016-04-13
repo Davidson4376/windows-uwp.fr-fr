@@ -1,7 +1,7 @@
 ---
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
-ID de classe de service AEP
-Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement.
+title: ID de classe de service AEP
+description: Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement.
 ---
 # ID de classe de service AEP
 

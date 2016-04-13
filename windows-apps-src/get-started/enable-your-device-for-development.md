@@ -1,7 +1,7 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
-Activer votre appareil pour le développement
-Il existe une approche différente pour le développement des appareils Windows 10.
+title: Activer votre appareil pour le développement
+description: Il existe une approche différente pour le développement des appareils Windows 10.
 mots-clés : Prise en main
 mots-clés : Licence de développeur
 mots-clés : Visual Studio, licence de développeur

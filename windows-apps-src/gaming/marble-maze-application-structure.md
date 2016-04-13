@@ -1,6 +1,6 @@
 ---
-Structure de l’application Marble Maze
-La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique.
+title: Structure de l’application Marble Maze
+description: La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique.
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 ---
 

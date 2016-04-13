@@ -1,7 +1,7 @@
 ---
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-La classe MediaSource offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent.
-Lecture de contenu multimédia avec MediaSource
+description: La classe MediaSource offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent.
+title: Lecture de contenu multimédia avec MediaSource
 ---
 
 # Lecture de contenu multimédia avec MediaSource

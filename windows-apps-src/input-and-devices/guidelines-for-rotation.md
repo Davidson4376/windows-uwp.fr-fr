@@ -1,8 +1,8 @@
 ---
-Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application du Windows Store.
-Rotation
+Description: Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application du Windows Store.
+title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
-Rotation
+label: Rotation
 template: detail.hbs
 ---
 

@@ -1,6 +1,6 @@
 ---
-Contrôles de déplacement/vue pour les jeux
-Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (également connus sous le nom de contrôles de vue à la souris) à votre jeu DirectX.
+title: Contrôles de déplacement/vue pour les jeux
+description: Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (également connus sous le nom de contrôles de vue à la souris) à votre jeu DirectX.
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ---
 

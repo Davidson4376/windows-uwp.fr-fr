@@ -1,6 +1,6 @@
 ---
-Une fois que votre application se trouve dans le Windows Store, le moment est venu de la promouvoir auprès du plus grand nombre de clients possible.
-Promotion des applications et implication des clients
+Description: Une fois que votre application se trouve dans le Windows Store, le moment est venu de la promouvoir auprès du plus grand nombre de clients possible.
+title: Promotion des applications et implication des clients
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 ---
 

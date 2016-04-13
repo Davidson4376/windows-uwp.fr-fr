@@ -1,6 +1,6 @@
 ---
-Utiliser la profondeur et les effets sur des primitives
-Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur et d’autres effets sur des primitives.
+title: Utiliser la profondeur et les effets sur des primitives
+description: Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur et d’autres effets sur des primitives.
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ---
 

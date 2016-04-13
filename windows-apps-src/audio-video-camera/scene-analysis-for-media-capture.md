@@ -1,7 +1,7 @@
 ---
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-Cet article décrit comment utiliser les classes SceneAnalysisEffect et FaceDetectionEffect pour analyser le contenu du flux d’aperçu de capture multimédia.
-Analyse de scène de capture multimédia
+description: Cet article décrit comment utiliser les classes SceneAnalysisEffect et FaceDetectionEffect pour analyser le contenu du flux d’aperçu de capture multimédia.
+title: Analyse de scène de capture multimédia
 ---
 
 # Analyse de scène de capture multimédia

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
-Tests bêta
-Le test de la version bêta vous permet d’améliorer votre application en fonction des commentaires des personnes ne faisant pas partie de votre équipe de développement d’applications, qui essaient votre application non publiée sur leur propre appareil.
+title: Tests bêta
+description: Le test de la version bêta vous permet d’améliorer votre application en fonction des commentaires des personnes ne faisant pas partie de votre équipe de développement d’applications, qui essaient votre application non publiée sur leur propre appareil.
 ---
 # Bêta-test
 

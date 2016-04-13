@@ -1,7 +1,7 @@
 ---
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-Couche visuelle
-L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX).
+title: Couche visuelle
+description: L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX).
 ---
 # Couche visuelle
 

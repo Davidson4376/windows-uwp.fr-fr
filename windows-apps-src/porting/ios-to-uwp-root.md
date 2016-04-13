@@ -1,7 +1,7 @@
 ---
-Passer d’iOS à UWP
+description: Passer d’iOS à UWP
 Search.SourceType : vidéo
-Passer d’iOS à UWP
+title: Passer d’iOS à UWP
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
-Cet article vous montre comment énumérer des périphériques MIDI (Musical Instrument Digital Interface) et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle.
-MIDI
+description: Cet article vous montre comment énumérer des périphériques MIDI (Musical Instrument Digital Interface) et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle.
+title: MIDI
 ---
 
 # MIDI

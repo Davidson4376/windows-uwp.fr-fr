@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-Virtualisation des données ListView et GridView
-Améliorez les performances et le délai de démarrage des éléments ListView et GridView via la virtualisation des données.
+title: Virtualisation des données ListView et GridView
+description: Améliorez les performances et le délai de démarrage des éléments ListView et GridView via la virtualisation des données.
 ---
 # Virtualisation des données ListView et GridView
 

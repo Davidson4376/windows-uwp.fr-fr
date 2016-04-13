@@ -1,6 +1,6 @@
 ---
-Ajouter des contrôles
-Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
+title: Ajouter des contrôles
+description: Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 ---
 

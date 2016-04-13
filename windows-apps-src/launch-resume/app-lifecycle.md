@@ -1,6 +1,6 @@
 ---
-Cycle de vie de l’application
-Cette rubrique décrit le cycle de vie d’une application de plateforme Windows universelle (UWP), de son activation jusqu’à sa fermeture.
+title: Cycle de vie de l’application
+description: Cette rubrique décrit le cycle de vie d’une application de plateforme Windows universelle (UWP), de son activation jusqu’à sa fermeture.
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ---
 

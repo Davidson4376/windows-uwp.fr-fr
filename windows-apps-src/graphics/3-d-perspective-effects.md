@@ -1,7 +1,7 @@
 ---
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
-Effets de perspective 3D pour une interface utilisateur en XAML
-Vous pouvez appliquer des effets 3D au contenu de vos applications Windows Runtime à l’aide de transformations de perspective. Par exemple, vous pouvez donner l’illusion qu’un objet est tourné vers vous ou vers l’arrière, comme illustré ici.
+title: Effets de perspective 3D pour une interface utilisateur en XAML
+description: Vous pouvez appliquer des effets 3D au contenu de vos applications Windows Runtime à l’aide de transformations de perspective. Par exemple, vous pouvez donner l’illusion qu’un objet est tourné vers vous ou vers l’arrière, comme illustré ici.
 ---
 # Effets de perspective 3D pour une interface utilisateur en XAML
 

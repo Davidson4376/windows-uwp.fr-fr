@@ -1,7 +1,7 @@
 ---
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
-Créer une application de carte à puce NFC
-Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile.
+title: Créer une application de carte à puce NFC
+description: Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile.
 ---
 # Créer une application de carte à puce NFC
 

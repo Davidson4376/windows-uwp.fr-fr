@@ -1,6 +1,6 @@
 ---
-Créer des nuanceurs et tracer des primitives
-Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez utiliser ensuite pour tracer des primitives à l’écran.
+title: Créer des nuanceurs et tracer des primitives
+description: Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez utiliser ensuite pour tracer des primitives à l’écran.
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ---
 

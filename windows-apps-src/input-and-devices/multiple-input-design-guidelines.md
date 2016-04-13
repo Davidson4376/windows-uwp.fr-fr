@@ -1,8 +1,8 @@
 ---
-Tout comme les personnes ont recours à une combinaison de voix et de mouvement pour communiquer entre elles, plusieurs types et modes d’entrée peuvent également être utilisés lors de l’interaction avec une application.
-Recommandations en matière de conception d’entrées multiples
+Description: Tout comme les personnes ont recours à une combinaison de voix et de mouvement pour communiquer entre elles, plusieurs types et modes d’entrée peuvent également être utilisés lors de l’interaction avec une application.
+title: Recommandations en matière de conception d’entrées multiples
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
-Entrées multiples
+label: Entrées multiples
 template: detail.hbs
 ---
 

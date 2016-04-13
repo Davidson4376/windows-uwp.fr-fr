@@ -1,7 +1,7 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
-Utiliser l’accéléromètre
-Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur.
+title: Utiliser l’accéléromètre
+description: Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur.
 ---
 # Utiliser l’accéléromètre
 

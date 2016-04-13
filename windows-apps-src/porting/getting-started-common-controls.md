@@ -1,7 +1,7 @@
 ---
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-Prise en main : Contrôles courants
-Prise en main : Contrôles courants
+description: Prise en main : Contrôles courants
+title: Prise en main : Contrôles courants
 ---
 
 # Prise en main : Contrôles courants

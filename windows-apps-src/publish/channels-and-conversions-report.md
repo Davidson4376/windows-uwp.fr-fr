@@ -1,6 +1,6 @@
 ---
-Le rapport Canaux et conversions dans le tableau de bord du Centre de développement Windows vous permet de voir comment les clients de Windows 10 sont arrivés à votre application.
-Rapport sur les canaux et conversions
+Description: Le rapport Canaux et conversions dans le tableau de bord du Centre de développement Windows vous permet de voir comment les clients de Windows 10 sont arrivés à votre application.
+title: Rapport sur les canaux et conversions
 ms.assetid: C359B9FB-A17B-4A8E-B8EE-19F2F98AA4FF
 ---
 

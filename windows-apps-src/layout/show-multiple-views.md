@@ -1,8 +1,8 @@
 ---
-Aidez les utilisateurs à accroître leur productivité en leur permettant d’afficher plusieurs parties indépendantes de votre application dans des fenêtres distinctes.
-Afficher plusieurs vues d’une application
+Description: Aidez les utilisateurs à accroître leur productivité en leur permettant d’afficher plusieurs parties indépendantes de votre application dans des fenêtres distinctes.
+title: Afficher plusieurs vues d’une application
 ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
-Afficher plusieurs vues d’une application
+label: Afficher plusieurs vues d’une application
 template: detail.hbs
 ---
 

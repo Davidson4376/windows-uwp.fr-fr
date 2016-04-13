@@ -1,6 +1,6 @@
 ---
-Transmission de tableaux à un composant Windows Runtime
-Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie.
+title: Transmission de tableaux à un composant Windows Runtime
+description: Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie.
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 ---
 

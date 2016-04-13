@@ -1,6 +1,6 @@
 ---
-Contrôles tactiles pour les jeux
-Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX.
+title: Contrôles tactiles pour les jeux
+description: Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX.
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ---
 

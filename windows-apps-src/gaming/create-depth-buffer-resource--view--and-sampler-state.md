@@ -1,6 +1,6 @@
 ---
-Créer des ressources de périphérique pour un tampon de profondeur
-Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre.
+title: Créer des ressources de périphérique pour un tampon de profondeur
+description: Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre.
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ---
 

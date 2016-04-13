@@ -1,6 +1,6 @@
 ---
-Échantillonnage multiple des applications de plateforme Windows universelle (UWP)
-Découvrez comment utiliser l’échantillonnage multiple dans des applications de plateforme Windows universelle (UWP) générées avec Direct3D.
+title: Échantillonnage multiple des applications de plateforme Windows universelle (UWP)
+description: Découvrez comment utiliser l’échantillonnage multiple dans des applications de plateforme Windows universelle (UWP) générées avec Direct3D.
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ---
 

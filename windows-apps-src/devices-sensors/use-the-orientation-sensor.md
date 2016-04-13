@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
-Utiliser le capteur d’orientation
-Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil.
+title: Utiliser le capteur d’orientation
+description: Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil.
 ---
 # Utiliser le capteur d’orientation
 

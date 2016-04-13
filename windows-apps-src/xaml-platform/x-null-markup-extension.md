@@ -1,6 +1,6 @@
 ---
-En XAML, un balisage spécifie une valeur null pour une propriété.
-Extension de balisage xNull
+description: En XAML, un balisage spécifie une valeur null pour une propriété.
+title: Extension de balisage xNull
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 ---
 

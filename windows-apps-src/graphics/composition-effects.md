@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-Effets de composition
-Les API d’effet permettent aux développeurs de personnaliser l’affichage de leur interface utilisateur.
+title: Effets de composition
+description: Les API d’effet permettent aux développeurs de personnaliser l’affichage de leur interface utilisateur.
 ---
 # Effets de composition
 

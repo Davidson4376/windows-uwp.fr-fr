@@ -1,7 +1,7 @@
 ---
 ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
-Étalonner les capteurs
-Dans un appareil basé sur le magnétomètre (la boussole, l’inclinomètre et le capteur d’orientation), il peut s’avérer nécessaire d’étalonner les capteurs en raison de facteurs environnementaux.
+title: Étalonner les capteurs
+description: Dans un appareil basé sur le magnétomètre (la boussole, l’inclinomètre et le capteur d’orientation), il peut s’avérer nécessaire d’étalonner les capteurs en raison de facteurs environnementaux.
 ---
 # Étalonner les capteurs
 

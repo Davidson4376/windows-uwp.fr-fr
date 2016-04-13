@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
-Animations dans une table de montage séquentiel
-Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel.
+title: Animations dans une table de montage séquentiel
+description: Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel.
 ---
 # Animations dans une table de montage séquentiel
 

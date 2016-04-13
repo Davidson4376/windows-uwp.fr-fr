@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
-Utilisez cette méthode pour renouveler une clé du Windows Store.
-Renouveler une clé d’ID du Windows Store
+description: Utilisez cette méthode pour renouveler une clé du Windows Store.
+title: Renouveler une clé d’ID du Windows Store
 ---
 
 # Renouveler une clé d’ID du Windows Store

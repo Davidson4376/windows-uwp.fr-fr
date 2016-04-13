@@ -1,6 +1,6 @@
 ---
-Questions courantes sur les campagnes de publicité
-Questions courantes sur les campagnes de publicité
+Description: Questions courantes sur les campagnes de publicité
+title: Questions courantes sur les campagnes de publicité
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ---
 

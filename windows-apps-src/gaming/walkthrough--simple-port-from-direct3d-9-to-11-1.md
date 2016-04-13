@@ -1,6 +1,6 @@
 ---
-Procédure pas à pas : porter une application Direct3D 9 simple vers DirectX 11 et la plateforme Windows universelle (UWP)
-Cet exercice de portage indique comment faire passer une infrastructure de rendu simple de Direct3D 9 à Direct3D 11 et à la plateforme Windows universelle (UWP).
+title: Procédure pas à pas : porter une application Direct3D 9 simple vers DirectX 11 et la plateforme Windows universelle (UWP)
+description: Cet exercice de portage indique comment faire passer une infrastructure de rendu simple de Direct3D 9 à Direct3D 11 et à la plateforme Windows universelle (UWP).
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ---
 

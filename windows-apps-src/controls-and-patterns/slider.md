@@ -1,8 +1,8 @@
 ---
-Permet à l’utilisateur de définir une valeur comprise dans une plage donnée.
-Curseurs
+Description: Permet à l’utilisateur de définir une valeur comprise dans une plage donnée.
+title: Curseurs
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
-Curseurs
+label: Curseurs
 template: detail.hbs
 ---
 # Curseurs

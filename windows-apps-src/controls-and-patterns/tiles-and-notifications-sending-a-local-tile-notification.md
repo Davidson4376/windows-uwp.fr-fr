@@ -1,8 +1,8 @@
 ---
-Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative.
-Envoyer une notification par vignette locale
+Description: Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative.
+title: Envoyer une notification par vignette locale
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
-À déterminer
+label: À déterminer
 template: detail.hbs
 ---
 

@@ -1,8 +1,8 @@
 ---
-Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale.
-Spécifier la langue de reconnaissance vocale
+Description: Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale.
+title: Spécifier la langue de reconnaissance vocale
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
-Spécifier la langue de reconnaissance vocale
+label: Spécifier la langue de reconnaissance vocale
 template: detail.hbs
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
-Accès aux données
-Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications de plateforme Windows universelle (UWP).
+title: Accès aux données
+description: Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications de plateforme Windows universelle (UWP).
 ---
 # Accès aux données
 

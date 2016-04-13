@@ -1,6 +1,6 @@
 ---
-Derrière votre interface utilisateur se trouvent les couches métier et les couches de données.
-Portage des couches métier et des couches de données de Silverlight pour Windows Phone vers UWP
+description: Derrière votre interface utilisateur se trouvent les couches métier et les couches de données.
+title: Portage des couches métier et des couches de données de Silverlight pour Windows Phone vers UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ---
 

@@ -1,6 +1,6 @@
 ---
-Réduire la latence avec des chaînes d’échange DXGI 1.3
-Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image.
+title: Réduire la latence avec des chaînes d’échange DXGI 1.3
+description: Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image.
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-Epson ESC/POS avec mise en forme
-Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme le texte, par exemple pour le mettre en gras ou pour doubler la taille des caractères, pour l’imprimante de votre Point de service.
+title: Epson ESC/POS avec mise en forme
+description: Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme le texte, par exemple pour le mettre en gras ou pour doubler la taille des caractères, pour l’imprimante de votre Point de service.
 ---
 # Epson ESC/POS avec mise en forme
 

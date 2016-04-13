@@ -1,6 +1,6 @@
 ---
-Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
-Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0.
+title: Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
+description: Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0.
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 ---
 

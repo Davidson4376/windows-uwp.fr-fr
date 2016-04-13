@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
-Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue.
-Gérer un vaste catalogue de produits in-app
+description: Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue.
+title: Gérer un vaste catalogue de produits in-app
 ---
 
 # Gérer un vaste catalogue de produits in-app

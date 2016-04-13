@@ -1,8 +1,8 @@
 ---
-Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
-Étiquettes
+Description: Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
+title: Étiquettes
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
-Étiquettes
+label: Étiquettes
 template: detail.hbs
 ---
 

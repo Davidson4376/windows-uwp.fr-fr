@@ -1,7 +1,7 @@
 ---
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
-Types de compte, emplacements et frais
-Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions.
+title: Types de compte, emplacements et frais
+description: Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions.
 ---
 
 # Types de compte, emplacements et frais

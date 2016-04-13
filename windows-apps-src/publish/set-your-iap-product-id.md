@@ -1,6 +1,6 @@
 ---
-Cette opération constitue la première étape de la soumission d’un produit in-app dans le tableau de bord du Centre de développement Windows.
-Définir l’ID produit d’un produit in-app
+Description: Cette opération constitue la première étape de la soumission d’un produit in-app dans le tableau de bord du Centre de développement Windows.
+title: Définir l’ID produit d’un produit in-app
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ---
 

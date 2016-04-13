@@ -1,6 +1,6 @@
 ---
-Mapper les fonctionnalités DirectX 9 aux API DirectX 11
-Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP).
+title: Mapper les fonctionnalités DirectX 9 aux API DirectX 11
+description: Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP).
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 ---
 

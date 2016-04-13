@@ -1,6 +1,6 @@
 ---
-Gérer la suspension d’une application
-Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application.
+title: Gérer la suspension d’une application
+description: Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application.
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ---
 

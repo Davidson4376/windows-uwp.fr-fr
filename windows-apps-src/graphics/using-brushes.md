@@ -1,7 +1,7 @@
 ---
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
-Utiliser des pinceaux
-Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur.
+title: Utiliser des pinceaux
+description: Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur.
 ---
 # Utiliser des pinceaux
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
-Threads et programmation asynchrone
-Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles.
+title: Threads et programmation asynchrone
+description: Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles.
 ---
 # Threads et programmation asynchrone
 

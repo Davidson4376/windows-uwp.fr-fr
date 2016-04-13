@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10.
-Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1
+description: Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10.
+title: Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1
 ---
 
 # Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1

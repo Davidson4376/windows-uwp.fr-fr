@@ -1,6 +1,6 @@
 ---
-Le rapport Acquisitions disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application, et vous fournit des informations sur la plateforme ainsi que des données démographiques.
-Rapport sur les acquisitions
+Description: Le rapport Acquisitions disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application, et vous fournit des informations sur la plateforme ainsi que des données démographiques.
+title: Rapport sur les acquisitions
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ---
 

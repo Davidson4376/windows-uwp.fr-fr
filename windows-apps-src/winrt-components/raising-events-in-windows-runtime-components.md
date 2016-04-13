@@ -1,5 +1,5 @@
 ---
-Déclenchement d’événements dans les composants Windows Runtime
+title: Déclenchement d’événements dans les composants Windows Runtime
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
 ---

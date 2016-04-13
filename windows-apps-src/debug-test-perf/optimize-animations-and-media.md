@@ -1,7 +1,7 @@
 ---
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
-Optimiser les animations, les éléments multimédias et les images
-Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
+title: Optimiser les animations, les éléments multimédias et les images
+description: Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
 ---
 # Optimiser les animations, les éléments multimédias et les images
 

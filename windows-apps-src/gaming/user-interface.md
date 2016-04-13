@@ -1,6 +1,6 @@
 ---
-Modèles de projet de jeu DirectX
-Découvrez les modèles pour la création d’un jeu pour la plateforme Windows universelle (UWP) et DirectX.
+title: Modèles de projet de jeu DirectX
+description: Découvrez les modèles pour la création d’un jeu pour la plateforme Windows universelle (UWP) et DirectX.
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ---
 

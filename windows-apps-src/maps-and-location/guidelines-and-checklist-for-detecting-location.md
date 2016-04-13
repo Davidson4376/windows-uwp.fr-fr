@@ -1,6 +1,6 @@
 ---
-Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
-Recommandations en matière d’applications prenant en charge la géolocalisation
+Description: Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
+title: Recommandations en matière d’applications prenant en charge la géolocalisation
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ---
 

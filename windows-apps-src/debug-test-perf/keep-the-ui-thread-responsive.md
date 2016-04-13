@@ -1,7 +1,7 @@
 ---
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
-Assurer la réactivité du thread de l’interface utilisateur
-Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur.
+title: Assurer la réactivité du thread de l’interface utilisateur
+description: Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur.
 ---
 # Assurer la réactivité du thread de l’interface utilisateur
 

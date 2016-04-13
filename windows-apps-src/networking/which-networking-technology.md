@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
-Quelle technologie de réseau ?
+description: Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
+title: Quelle technologie de réseau ?
 
 ---
 

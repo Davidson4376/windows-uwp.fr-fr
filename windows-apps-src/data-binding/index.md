@@ -1,7 +1,7 @@
 ---
 ms.assetid: 83b4be37-6613-4d00-a48a-0451a24a30fb
-Liaison de données
-La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
+title: Liaison de données
+description: La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
 ---
 
 # Liaison de données

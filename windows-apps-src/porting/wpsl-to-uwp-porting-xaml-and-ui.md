@@ -1,6 +1,6 @@
 ---
-La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif se transpose extrêmement bien entre les applications Silverlight pour Windows Phone et les applications de plateforme Windows universelle (UWP).
-Portage du balisage XAML et de la couche interface utilisateur de Silverlight pour Windows Phone vers UWP
+description: La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif se transpose extrêmement bien entre les applications Silverlight pour Windows Phone et les applications de plateforme Windows universelle (UWP).
+title: Portage du balisage XAML et de la couche interface utilisateur de Silverlight pour Windows Phone vers UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ---
 

@@ -1,6 +1,6 @@
 ---
-Créer et inscrire une tâche en arrière-plan
-Créez une classe de tâche en arrière-plan et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan.
+title: Créer et inscrire une tâche en arrière-plan
+description: Créez une classe de tâche en arrière-plan et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 ---
 

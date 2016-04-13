@@ -1,8 +1,8 @@
 ---
-Découvrez comment intégrer des images dans votre application et comment utiliser les API des deux principales classes XAML, Image et ImageBrush.
-Images et pinceaux image
+Description: Découvrez comment intégrer des images dans votre application et comment utiliser les API des deux principales classes XAML, Image et ImageBrush.
+title: Images et pinceaux image
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
-Images et pinceaux image
+label: Images et pinceaux image
 template: detail.hbs
 ---
 # Images et pinceaux image

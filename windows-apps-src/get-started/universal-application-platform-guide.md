@@ -1,6 +1,6 @@
 ---
-Guide des applications de plateforme Windows universelle (UWP)
-Ce guide décrit les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un vaste éventail d’appareils.
+title: Guide des applications de plateforme Windows universelle (UWP)
+description: Ce guide décrit les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un vaste éventail d’appareils.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ---
 

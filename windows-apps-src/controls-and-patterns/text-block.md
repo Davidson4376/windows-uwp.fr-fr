@@ -1,6 +1,6 @@
 ---
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
-Bloc de texte
+label: Bloc de texte
 template: detail.hbs
 ---
 # Bloc de texte

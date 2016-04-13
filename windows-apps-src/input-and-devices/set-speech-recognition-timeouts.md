@@ -1,8 +1,8 @@
 ---
-Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
-Définir des délais d’expiration de reconnaissance vocale
+Description: Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
+title: Définir des délais d’expiration de reconnaissance vocale
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
-Délais d’expiration de reconnaissance vocale
+label: Délais d’expiration de reconnaissance vocale
 template: detail.hbs
 ---
 

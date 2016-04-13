@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
-Énumérer les appareils
-L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau.
+title: Énumérer les appareils
+description: L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau.
 ---
 # Énumérer les appareils
 

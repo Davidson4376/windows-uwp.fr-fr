@@ -1,7 +1,7 @@
 ---
-Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
+title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10.
+description: Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10.
 ---
 
 # Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1

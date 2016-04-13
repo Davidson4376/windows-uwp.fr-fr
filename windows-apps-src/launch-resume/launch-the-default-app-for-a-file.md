@@ -1,6 +1,6 @@
 ---
-Lancer l’application par défaut pour un fichier
-Découvrez comment lancer l’application par défaut pour un fichier.
+title: Lancer l’application par défaut pour un fichier
+description: Découvrez comment lancer l’application par défaut pour un fichier.
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 ---
 

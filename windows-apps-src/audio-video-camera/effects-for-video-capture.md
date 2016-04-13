@@ -1,7 +1,7 @@
 ---
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo.
-Effets de capture vidéo
+description: Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo.
+title: Effets de capture vidéo
 ---
 
 # Effets de capture vidéo

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-Meilleures pratiques en matière de performances lors du démarrage de votre application
-Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
+title: Meilleures pratiques en matière de performances lors du démarrage de votre application
+description: Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 ---
 # Meilleures pratiques en matière de performances lors du démarrage de votre application
 

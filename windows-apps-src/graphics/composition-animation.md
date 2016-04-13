@@ -1,7 +1,7 @@
 ---
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
-Animations de composition
-De nombreuses propriétés d’objet et d’effet de composition peuvent être animées à l’aide d’animations par images clés et expressions, ce qui permet aux propriétés d’un élément d’interface utilisateur de changer dans le temps ou en fonction d’un calcul.
+title: Animations de composition
+description: De nombreuses propriétés d’objet et d’effet de composition peuvent être animées à l’aide d’animations par images clés et expressions, ce qui permet aux propriétés d’un élément d’interface utilisateur de changer dans le temps ou en fonction d’un calcul.
 ---
 # Animations de composition
 

@@ -1,6 +1,6 @@
 ---
-Ce que vous devez faire pour toute application réseau.
-Notions de base en matière de réseau
+description: Ce que vous devez faire pour toute application réseau.
+title: Notions de base en matière de réseau
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ---
 

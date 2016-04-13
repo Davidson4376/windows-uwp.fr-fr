@@ -1,6 +1,6 @@
 ---
-Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général.
-Attribut xName
+description: Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général.
+title: Attribut xName
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ---
 

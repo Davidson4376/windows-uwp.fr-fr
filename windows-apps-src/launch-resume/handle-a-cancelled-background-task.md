@@ -1,6 +1,6 @@
 ---
-Gérer une tâche en arrière-plan annulée
-Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant.
+title: Gérer une tâche en arrière-plan annulée
+description: Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant.
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 ---
 

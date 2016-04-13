@@ -1,7 +1,7 @@
 ---
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
-Obtenir les propriétés du fichier
-Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet StorageFile.
+title: Obtenir les propriétés du fichier
+description: Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet StorageFile.
 ---
 # Obtenir les propriétés du fichier
 

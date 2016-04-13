@@ -1,7 +1,7 @@
 ---
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
-Personnaliser l’interface utilisateur d’aperçu avant impression
-Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression.
+title: Personnaliser l’interface utilisateur d’aperçu avant impression
+description: Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression.
 ---
 # Personnaliser l’interface utilisateur d’aperçu avant impression
 

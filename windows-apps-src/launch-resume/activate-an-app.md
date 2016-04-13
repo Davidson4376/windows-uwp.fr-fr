@@ -1,6 +1,6 @@
 ---
-Gérer l’activation d’une application
-Découvrez comment gérer l’activation d’une application en remplaçant la méthode OnLaunched.
+title: Gérer l’activation d’une application
+description: Découvrez comment gérer l’activation d’une application en remplaçant la méthode OnLaunched.
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ---
 

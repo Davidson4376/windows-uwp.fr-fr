@@ -1,6 +1,6 @@
 ---
-Suivez ces instructions pour préparer les packages de votre application et les envoyer au Windows Store.
-Exigences relatives au package de l’application
+Description: Suivez ces instructions pour préparer les packages de votre application et les envoyer au Windows Store.
+title: Exigences relatives au package de l’application
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ---
 
