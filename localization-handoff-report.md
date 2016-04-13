@@ -1,11 +1,29 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/cad401dfc1345b0def2586720b517f460d7c9e58/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | OutofSyncHandedBackSuccess | [Details](#b8d3ce9b0934ae57180c152111e056f74bfdad153269)
 
 ## Item Details
+##### <a name='b8d3ce9b0934ae57180c152111e056f74bfdad153269'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/cad401dfc1345b0def2586720b517f460d7c9e58/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/9457cb0492bed79ca4f2777adcbbcee32e4891d2/ol-handoff/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf)
+* Handoff Datetime: 2016-04-13 21:13:32
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/7fbed9ad8cbba130abbabd30726f1f1cfdd57c99/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/6e7159564c4200add4e580eaa85372bc25b59a69/ol-handback/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf)
+* Current Handback Datetime: 2016-04-13 17:50:44
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
