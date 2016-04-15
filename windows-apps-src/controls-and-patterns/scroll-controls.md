@@ -24,7 +24,7 @@ Un contrôle de visionneuse à défilement est composé d’autant de contenu qu
 
 Un [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) permet d’afficher le contenu dans une zone plus petite que sa taille réelle. Lorsque le contenu de la visionneuse à défilement n’est pas entièrement visible, celle-ci affiche des barres de défilement que l’utilisateur peut utiliser pour déplacer la zone de contenu visible. La zone qui inclut tout le contenu de la visionneuse à défilement est l’*étendue*. La zone visible du contenu est la *fenêtre d’affichage*.
 
-![Capture d’écran du contrôle de barre de défilement standard](images/ScrollBar_Standard.jpg)
+![Capture d’écran du contrôle de barre de défilement standard](images/SCROLLBAR_STANDARD.jpg)
 
 ## Créer une visionneuse à défilement
 
