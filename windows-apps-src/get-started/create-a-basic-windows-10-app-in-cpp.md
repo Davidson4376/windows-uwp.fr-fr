@@ -278,7 +278,7 @@ Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre v
 ## Étape 2 : créer un gestionnaire d’événements
 
 1.  Dans MainPage.xaml, en mode XAML ou Création, sélectionnez le [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) « Say Hello » dans le [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) que vous avez ajouté précédemment.
-2.  Ouvrez la **Fenêtre Propriétés** en appuyant sur Alt+Entrée, puis choisissez le bouton Événements (![bouton Événements](IMAGES/EVENTSBUTTON.png)).
+2.  Ouvrez la **Fenêtre Propriétés** en appuyant sur Alt+Entrée, puis choisissez le bouton Événements (![bouton Événements](images/eventsbutton.png)).
 3.  Recherchez l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). Dans sa zone de texte, tapez le nom de la fonction qui gère l’événement **Click**. Pour cet exemple, tapez « Button\_Click ».
 
 ![Fenêtre Propriétés, vue Événements](images/xaml-hw-event.png)
@@ -350,7 +350,7 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 
 1.  Dans le projet Windows, ouvrez MainPage.xaml.
 2.  En mode XAML ou Création, sélectionnez le [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) « What’s your name? » que vous avez ajouté précédemment.
-3.  Dans la fenêtre **Propriétés** (**F4**), choisissez le bouton Propriétés (![bouton Propriétés](IMAGES/PROPERTIESBUTTON.png)) dans l’angle supérieur droit.
+3.  Dans la fenêtre **Propriétés** (**F4**), choisissez le bouton Propriétés (![bouton Propriétés](images/propertiesbutton.png)) dans l’angle supérieur droit.
 4.  Développez le groupe **Texte** et affectez 18 pixels à la taille de police.
 5.  Développez le groupe **Divers** et recherchez la propriété **Style**.
 6.  Cliquez sur le marqueur de propriété (zone verte à droite de la propriété **Style**), puis, dans le menu, choisissez **Ressource système** > **BaseTextBlockStyle**.
