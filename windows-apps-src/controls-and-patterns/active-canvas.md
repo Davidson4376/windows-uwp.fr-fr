@@ -15,7 +15,7 @@ Cette conception d’application de retouche photo présente un modèle de Canva
 
 ![Exemple d’éditeur de photos utilisant un modèle de Canvas actif](images/uap-photo-pc-phone-700.png)
 
-Cette conception d’une application de carte métro utilise un Canvas actif doté d’une bande d’interface utilisateur simple dans la partie supérieure, comprenant seulement deux actions et une zone de recherche. Les actions contextuelles sont affichées dans le menu contextuel, comme illustré sur l’image de droite.
+Cette conception d’une application de carte métro utilise un Canvas actif doté d’une bande d’interface utilisateur simple dans la partie supérieure, comprenant seulement deux actions et une zone de recherche. Les actions contextuelles sont affichées dans le menu contextuel, comme illustré sur l’image de droite. 
 
 ![Exemple d’application cartographique utilisant un modèle de Canvas actif](images/uap-subway-pc-phone-700.png)
 
