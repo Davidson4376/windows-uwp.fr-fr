@@ -434,7 +434,7 @@ Ajoutons un contrôle [**Rating**](https://msdn.microsoft.com/library/windows/ap
 
 2.  Exécutez l’application sur l’ordinateur local. Notez le nouveau contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895).
 
-   ![L’application Hello world! avec un contrôle de la bibliothèque Windows pour JavaScript](images/helloworld-4-JS.png)
+   ![L’application Hello world! avec un contrôle de la bibliothèque Windows pour JavaScript](images/helloworld-4-js.png)
 
 Pour l’instant, un clic sur le contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) ne fait que modifier l’évaluation, rien de plus. Utilisons un gestionnaire d’événements pour effectuer une action quand l’utilisateur modifie l’évaluation.
 
