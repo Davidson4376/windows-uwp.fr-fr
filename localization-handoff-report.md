@@ -6,22 +6,19 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\android-ios-uwp-map.md](https://github.com/Microsoft/windows-apps/blob/cb96da2be6023d5b4737a3fe2d0550630fdcf057/windows-apps-src/porting/android-ios-uwp-map.md) | OutofSyncHandedBackSuccess | [Details](#d3cf4126b6a98cd922ef9a7c9cd127ad26eed35b3332)
+ [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/27e28881402453f0b2d105d56168732f83ad57f5/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md) | HandedOffSuccess | [Details](#e25fcd0c0e07b022eb42b5fb2f890eb8379c9e613745)
 
 ## Item Details
-##### <a name='d3cf4126b6a98cd922ef9a7c9cd127ad26eed35b3332'></a> Source: [windows-apps-src\porting\android-ios-uwp-map.md](https://github.com/Microsoft/windows-apps/blob/cb96da2be6023d5b4737a3fe2d0550630fdcf057/windows-apps-src/porting/android-ios-uwp-map.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='e25fcd0c0e07b022eb42b5fb2f890eb8379c9e613745'></a> Source: [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/27e28881402453f0b2d105d56168732f83ad57f5/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/6c6cfce9b08af3d1048e098615cd2e213c77b4ad/ol-handoff/Microsoft/windows-apps.fr-fr/master/android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf)
-* Handoff Datetime: 2016-04-21 20:12:59
+* Handoff File: [automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/b078c4d5812026098fa352b0fb199ed52cbb7334/ol-handoff/Microsoft/windows-apps.fr-fr/master/automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.fr-fr.xlf)
+* Handoff Datetime: 2016-04-21 20:43:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\porting\android-ios-uwp-map.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/57eb92992149293ebcb4e7c2e5aef2b1ec3d3f78/windows-apps-src/porting/android-ios-uwp-map.md)
-* Current Handback File: [android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e7f140b0bc415d1f2c55d2a4ceec5f69a9b94387/ol-handback/Microsoft/windows-apps.fr-fr/master/android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf)
-* Current Handback Datetime: 2016-04-13 20:42:23
 * [Back to Top](#report-top)
 
 
