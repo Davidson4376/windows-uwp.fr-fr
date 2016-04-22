@@ -1,4 +1,4 @@
----
+﻿---
 description: Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager.
 title: Recevoir des données
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
