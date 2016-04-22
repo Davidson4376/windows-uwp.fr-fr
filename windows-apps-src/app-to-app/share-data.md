@@ -1,4 +1,4 @@
----
+﻿---
 description: Cet article explique comment prendre en charge le contrat de partage dans une application de plateforme Windows universelle (UWP).
 title: Partager des données
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
