@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\analytics.md](https://github.com/Microsoft/windows-apps/blob/d5820634730d07aa60edec9c684534304dad4172/windows-apps-src/publish/analytics.md) | OutofSyncHandedBackSuccess | [Details](#9f733b096cc91a29942728f8c33fb7c32e8460e83433)
+ [windows-apps-src\monetize\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md](https://github.com/Microsoft/windows-apps/blob/386c5b1cfacb341e8ad3060354490026181ba1e9/windows-apps-src/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) | OutofSyncHandedBackSuccess | [Details](#bf900aac732fb012a39d2e2e6c5312ccb5a65cee3283)
 
 ## Item Details
-##### <a name='9f733b096cc91a29942728f8c33fb7c32e8460e83433'></a> Source: [windows-apps-src\publish\analytics.md](https://github.com/Microsoft/windows-apps/blob/d5820634730d07aa60edec9c684534304dad4172/windows-apps-src/publish/analytics.md)
+##### <a name='bf900aac732fb012a39d2e2e6c5312ccb5a65cee3283'></a> Source: [windows-apps-src\monetize\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md](https://github.com/Microsoft/windows-apps/blob/386c5b1cfacb341e8ad3060354490026181ba1e9/windows-apps-src/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [analytics.af2b800449cbe8bf6986c66ce2822732c6490965.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/6d169311d4a86d7e6c59b805bfab140da031a7fd/ol-handoff/Microsoft/windows-apps.fr-fr/master/analytics.af2b800449cbe8bf6986c66ce2822732c6490965.fr-fr.xlf)
-* Handoff Datetime: 2016-04-25 16:42:28
+* Handoff File: [monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/d075bae63622ab59f29ec9c3b21f479a53493d51/ol-handoff/Microsoft/windows-apps.fr-fr/master/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.fr-fr.xlf)
+* Handoff Datetime: 2016-04-25 17:41:12
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\analytics.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/57eb92992149293ebcb4e7c2e5aef2b1ec3d3f78/windows-apps-src/publish/analytics.md)
-* Current Handback File: [analytics.af2b800449cbe8bf6986c66ce2822732c6490965.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e7f140b0bc415d1f2c55d2a4ceec5f69a9b94387/ol-handback/Microsoft/windows-apps.fr-fr/master/analytics.af2b800449cbe8bf6986c66ce2822732c6490965.fr-fr.xlf)
+* Current Target File: [windows-apps-src\monetize\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/57eb92992149293ebcb4e7c2e5aef2b1ec3d3f78/windows-apps-src/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
+* Current Handback File: [monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e7f140b0bc415d1f2c55d2a4ceec5f69a9b94387/ol-handback/Microsoft/windows-apps.fr-fr/master/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.fr-fr.xlf)
 * Current Handback Datetime: 2016-04-13 20:42:23
 * [Back to Top](#report-top)
 
