@@ -1,4 +1,4 @@
-# [Prise en main de la plateforme Windows universelle](https://dev.windows.com/en-us/getstarted)
+﻿# [Prise en main de la plateforme Windows universelle](https://dev.windows.com/en-us/getstarted)
 ## [Qu’est-ce qu’une application UWP ?](get-started/whats-a-uwp.md)
 ## [Guide des applications pour la plateforme Windows universelle](get-started/universal-application-platform-guide.md)
 ## [Se préparer](get-started/get-set-up.md)

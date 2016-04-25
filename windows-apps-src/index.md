@@ -1,4 +1,4 @@
----
+﻿---
 Description: Voici les informations dont vous avez besoin pour créer une application Windows universelle pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC.
 title: Guides de procédure pour les applications Windows 10 - Développement d’applications Windows
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
