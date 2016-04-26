@@ -61,7 +61,7 @@ Ce que vous faites du fichier vidéo capturé dépend du scénario pour votre ap
 
 Tout d’abord, ajoutez un contrôle [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) dans lequel la composition vidéo s’affichera dans votre page XAML.
 
-[!code-cs[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
+[!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
 Ajoutez les espaces de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) et [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) à votre projet.
 
