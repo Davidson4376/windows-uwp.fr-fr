@@ -4,8 +4,7 @@ description: Cette rubrique explique comment recréer la chaîne d’interface d
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 ---
 
-# <span id="dev_gaming.handling_device-lost_scenarios">
-            </span>Gérer des scénarios de suppression de périphériques dans Direct3D 11
+# <span id="dev_gaming.handling_device-lost_scenarios"></span>Gérer des scénarios de suppression de périphériques dans Direct3D 11
 
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x articles, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
