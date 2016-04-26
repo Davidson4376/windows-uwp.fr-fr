@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps/blob/e3af2050b7978e02c6e55557fe60a239f04e3093/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md) | OutofSyncHandedBackSuccess | [Details](#68a1b6c3b2af734fe67f262f8585630d05ca11d73481)
+ [windows-apps-src\monetize\troubleshoot-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/10dcf3c2b8ea530b94e9c17ada80aaa98e9418fe/windows-apps-src/monetize/troubleshoot-ad-mediation.md) | OutofSyncHandedBackSuccess | [Details](#f32dc28c9b199c11a1932639f49ab4c29d3e1e8f3323)
 
 ## Item Details
-##### <a name='68a1b6c3b2af734fe67f262f8585630d05ca11d73481'></a> Source: [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps/blob/e3af2050b7978e02c6e55557fe60a239f04e3093/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md)
+##### <a name='f32dc28c9b199c11a1932639f49ab4c29d3e1e8f3323'></a> Source: [windows-apps-src\monetize\troubleshoot-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/10dcf3c2b8ea530b94e9c17ada80aaa98e9418fe/windows-apps-src/monetize/troubleshoot-ad-mediation.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/34cad104e7eacf37b7abcf4680a5d3a5b721524c/ol-handoff/Microsoft/windows-apps.fr-fr/master/distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.fr-fr.xlf)
-* Handoff Datetime: 2016-04-26 23:11:17
+* Handoff File: [troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/3ea7a16f5c1a9a31ec1866760cf598af4ef45995/ol-handoff/Microsoft/windows-apps.fr-fr/master/troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.fr-fr.xlf)
+* Handoff Datetime: 2016-04-26 23:41:35
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/57eb92992149293ebcb4e7c2e5aef2b1ec3d3f78/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md)
-* Current Handback File: [distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e7f140b0bc415d1f2c55d2a4ceec5f69a9b94387/ol-handback/Microsoft/windows-apps.fr-fr/master/distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.fr-fr.xlf)
+* Current Target File: [windows-apps-src\monetize\troubleshoot-ad-mediation.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/57eb92992149293ebcb4e7c2e5aef2b1ec3d3f78/windows-apps-src/monetize/troubleshoot-ad-mediation.md)
+* Current Handback File: [troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e7f140b0bc415d1f2c55d2a4ceec5f69a9b94387/ol-handback/Microsoft/windows-apps.fr-fr/master/troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.fr-fr.xlf)
 * Current Handback Datetime: 2016-04-13 20:42:23
 * [Back to Top](#report-top)
 
