@@ -33,7 +33,7 @@ Utilisez un [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps
 
 L’objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) est l’interface de votre application pour l’appareil photo de l’appareil. Cette classe est membre de l’espace de noms Windows.Media.Capture. L’exemple de cet article utilise également des API à partir des espaces de noms [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) et [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx), en plus de celles fournies par le modèle de projet par défaut.
 
-[!code-cs[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
+[!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
 Ajoutez des directives using pour inclure les espaces de noms suivants dans le fichier .cs de votre page.
 
