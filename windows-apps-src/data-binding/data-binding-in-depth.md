@@ -599,7 +599,14 @@ MyTextBox.DataContext = textcolor
 ' Create the binding and associate it with the text box.
 Dim binding As New Binding() With {.Path = New PropertyPath("Brush1")}
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
-``` Comparaison des fonctionnalités {x:Bind} et {Binding} ------------------------------------------ | Fonctionnalité | {x:Bind} | {Binding} | Remarques | |---------|----------|-----------|-------| | Path est la propriété par défaut | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
+```
+
+Comparaison des fonctionnalités {x:Bind} et {Binding}
+------------------------------------------
+
+| Fonctionnalité | {x:Bind} | {Binding} | Remarques |
+|---------|----------|-----------|-------|
+| Path est la propriété par défaut | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
 | Propriété Path | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | Dans x:Bind, Path a pour racine Page par défaut et non DataContext. | | Indexer | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Se lie à l’élément spécifié dans la collection. Seuls les index basés sur des entiers sont pris en charge. | | Attached properties | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Les propriétés jointes sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | | Transtypage | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Non requis< | Les conversions de type (transtypage) sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
 | Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Les convertisseurs doivent être déclarés à la racine de Page/ResourceDictionary ou dans le fichier App.xaml. | 
 | ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Les convertisseurs doivent être déclarés à la racine de Page/ResourceDictionary ou dans le fichier App.xaml. | 
