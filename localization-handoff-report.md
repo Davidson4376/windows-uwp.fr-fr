@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/08f7ccb0dc81d335cea524a56a88e7fd05e36e99/windows-apps-src/security/companion-device-unlock.md) | OutofSyncHandedBackSuccess | [Details](#8b14f1f92837d560924ebd1540a56c67ad9d33b53561)
+ [windows-apps-src\debug-test-perf\best-practices-for-your-app-s-startup-performance.md](https://github.com/Microsoft/windows-apps/blob/05c3dfe3a8dc8b73967c1a7d53813f416d20cd73/windows-apps-src/debug-test-perf/best-practices-for-your-app-s-startup-performance.md) | OutofSyncHandedBackSuccess | [Details](#55228bca09d4458483f4ec76495c9ea6c74ff0641907)
 
 ## Item Details
-##### <a name='8b14f1f92837d560924ebd1540a56c67ad9d33b53561'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/08f7ccb0dc81d335cea524a56a88e7fd05e36e99/windows-apps-src/security/companion-device-unlock.md)
+##### <a name='55228bca09d4458483f4ec76495c9ea6c74ff0641907'></a> Source: [windows-apps-src\debug-test-perf\best-practices-for-your-app-s-startup-performance.md](https://github.com/Microsoft/windows-apps/blob/05c3dfe3a8dc8b73967c1a7d53813f416d20cd73/windows-apps-src/debug-test-perf/best-practices-for-your-app-s-startup-performance.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/63f726f1be18a09376c1235a616fc57062d9bb87/ol-handoff/Microsoft/windows-apps.fr-fr/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf)
-* Handoff Datetime: 2016-05-04 17:49:49
+* Handoff File: [best-practices-for-your-app-s-startup-performance.5ec42a47e6e8399673e57be6ed1c44c418164b4b.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/6c9ddfbd1eec35091fe13ee39287b2a6634f2a27/ol-handoff/Microsoft/windows-apps.fr-fr/master/best-practices-for-your-app-s-startup-performance.5ec42a47e6e8399673e57be6ed1c44c418164b4b.fr-fr.xlf)
+* Handoff Datetime: 2016-05-04 18:18:43
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/57eb92992149293ebcb4e7c2e5aef2b1ec3d3f78/windows-apps-src/security/companion-device-unlock.md)
-* Current Handback File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e7f140b0bc415d1f2c55d2a4ceec5f69a9b94387/ol-handback/Microsoft/windows-apps.fr-fr/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf)
+* Current Target File: [windows-apps-src\debug-test-perf\best-practices-for-your-app-s-startup-performance.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/57eb92992149293ebcb4e7c2e5aef2b1ec3d3f78/windows-apps-src/debug-test-perf/best-practices-for-your-app-s-startup-performance.md)
+* Current Handback File: [best-practices-for-your-app-s-startup-performance.5ec42a47e6e8399673e57be6ed1c44c418164b4b.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e7f140b0bc415d1f2c55d2a4ceec5f69a9b94387/ol-handback/Microsoft/windows-apps.fr-fr/master/best-practices-for-your-app-s-startup-performance.5ec42a47e6e8399673e57be6ed1c44c418164b4b.fr-fr.xlf)
 * Current Handback Datetime: 2016-04-13 20:42:23
 * [Back to Top](#report-top)
 
