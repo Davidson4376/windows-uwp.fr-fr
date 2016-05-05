@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\layout\layouts-with-xaml.md](https://github.com/Microsoft/windows-apps/blob/50205b35b1448fd6700624b627624cb03eede72b/windows-apps-src/layout/layouts-with-xaml.md) | HandedOffSuccess | [Details](#525f9940b90b5c5e7cb5c197d1c2f9e5f991844a3201)
+ [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/5d2e9c3969746ee9a96eff3e76dd84de3c8555d3/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md) | HandedOffSuccess | [Details](#3c514c400dc41f4ee2d192fbcfd9a323d6fc94162199)
 
 ## Item Details
-##### <a name='525f9940b90b5c5e7cb5c197d1c2f9e5f991844a3201'></a> Source: [windows-apps-src\layout\layouts-with-xaml.md](https://github.com/Microsoft/windows-apps/blob/50205b35b1448fd6700624b627624cb03eede72b/windows-apps-src/layout/layouts-with-xaml.md)
+##### <a name='3c514c400dc41f4ee2d192fbcfd9a323d6fc94162199'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/5d2e9c3969746ee9a96eff3e76dd84de3c8555d3/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/aaff8cb9333d823f76b0c40d92095168d4db5e47/ol-handoff/Microsoft/windows-apps.fr-fr/master/layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.fr-fr.xlf)
-* Handoff Datetime: 2016-05-05 17:48:57
+* Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/49ca7b1e9852ba83ffa906a5f3c015ece33dfcc0/ol-handoff/Microsoft/windows-apps.fr-fr/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.fr-fr.xlf)
+* Handoff Datetime: 2016-05-05 18:18:44
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
