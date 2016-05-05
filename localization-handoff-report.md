@@ -1,45 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/f3cb50e5b0b0baa73431392a1f6854a62f3655de/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md) | HandedOffSuccess | [Details](#5f534169117da94cb2249c897603f567c007299b2199)
- [windows-apps-src\layout\layouts-with-xaml.md](https://github.com/Microsoft/windows-apps/blob/681023be35b01eac84272a73d1ae3e7a459351db/windows-apps-src/layout/layouts-with-xaml.md) | HandedOffSuccess | [Details](#0cc466ccdc4d214539fb4258f95fda72e08ac9db3201)
- [windows-apps-src\publish\package-flights.md](https://github.com/Microsoft/windows-apps/blob/57d0637da61e9cc9c04f0ebf3d65f78e7125f858/windows-apps-src/publish/package-flights.md) | HandedOffSuccess | [Details](#dbc445db596b30dc216deeab11d996da84b6cdc13514)
+ [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/a75f3a3fdfa58d728028a4bb01909a2c716dc7ae/windows-apps-src/publish/payout-summary.md) | HandedOffSuccess | [Details](#1e989f9255f753140885f111fe2851f3aad912583516)
 
 ## Item Details
-##### <a name='5f534169117da94cb2249c897603f567c007299b2199'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/f3cb50e5b0b0baa73431392a1f6854a62f3655de/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
+##### <a name='1e989f9255f753140885f111fe2851f3aad912583516'></a> Source: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/a75f3a3fdfa58d728028a4bb01909a2c716dc7ae/windows-apps-src/publish/payout-summary.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/0e97992d345db3c2c4a883175bbe798e26026c71/ol-handoff/Microsoft/windows-apps.fr-fr/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.fr-fr.xlf)
-* Handoff Datetime: 2016-05-05 18:48:28
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='0cc466ccdc4d214539fb4258f95fda72e08ac9db3201'></a> Source: [windows-apps-src\layout\layouts-with-xaml.md](https://github.com/Microsoft/windows-apps/blob/681023be35b01eac84272a73d1ae3e7a459351db/windows-apps-src/layout/layouts-with-xaml.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/0e97992d345db3c2c4a883175bbe798e26026c71/ol-handoff/Microsoft/windows-apps.fr-fr/master/layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.fr-fr.xlf)
-* Handoff Datetime: 2016-05-05 18:48:28
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='dbc445db596b30dc216deeab11d996da84b6cdc13514'></a> Source: [windows-apps-src\publish\package-flights.md](https://github.com/Microsoft/windows-apps/blob/57d0637da61e9cc9c04f0ebf3d65f78e7125f858/windows-apps-src/publish/package-flights.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [package-flights.01f17a418d82f23d1aa9d2df8fc583f11c6c61bf.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/0e97992d345db3c2c4a883175bbe798e26026c71/ol-handoff/Microsoft/windows-apps.fr-fr/master/package-flights.01f17a418d82f23d1aa9d2df8fc583f11c6c61bf.fr-fr.xlf)
-* Handoff Datetime: 2016-05-05 18:48:28
+* Handoff File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/53ec8d047ef6953b5b80ce39551f8f603d7ba14c/ol-handoff/Microsoft/windows-apps.fr-fr/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.fr-fr.xlf)
+* Handoff Datetime: 2016-05-05 19:50:08
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
