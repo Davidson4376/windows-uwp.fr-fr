@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\android-ios-uwp-map.md](https://github.com/Microsoft/windows-apps/blob/a869ae056d29f45fb60597cf8ce49cc150e1af01/windows-apps-src/porting/android-ios-uwp-map.md) | HandedOffSuccess | [Details](#8e10b13f87a6b4b04b0bc8a8bbf221b08ad009113364)
+ [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/a6265ca66a1a9d729465845da1014d1aff0e7d4d/windows-apps-src/security/companion-device-unlock.md) | HandedOffSuccess | [Details](#18102d6277ff1c66ebd147b5c1fd2f2d6c91edd13562)
 
 ## Item Details
-##### <a name='8e10b13f87a6b4b04b0bc8a8bbf221b08ad009113364'></a> Source: [windows-apps-src\porting\android-ios-uwp-map.md](https://github.com/Microsoft/windows-apps/blob/a869ae056d29f45fb60597cf8ce49cc150e1af01/windows-apps-src/porting/android-ios-uwp-map.md)
+##### <a name='18102d6277ff1c66ebd147b5c1fd2f2d6c91edd13562'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/a6265ca66a1a9d729465845da1014d1aff0e7d4d/windows-apps-src/security/companion-device-unlock.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/c98f30eb3ef743c97c5ae5e9db4cbd012fca9212/ol-handoff/Microsoft/windows-apps.fr-fr/master/android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf)
-* Handoff Datetime: 2016-05-06 21:19:51
+* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/e30a944775917c985f9c8f2ec3857f1eeb8d7364/ol-handoff/Microsoft/windows-apps.fr-fr/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf)
+* Handoff Datetime: 2016-05-09 18:56:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
