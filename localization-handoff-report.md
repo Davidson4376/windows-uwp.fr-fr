@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/57dff209c85fe6a69778709c21d80ca6addf2e33/windows-apps-src/debug-test-perf/device-portal-api-core.md) | HandedOffSuccess | [Details](#3dd5b1341fce8b62bcdce2cb0cd6ee5a6a3d2fa11910)
 
 ## Item Details
-##### <a name='3dd5b1341fce8b62bcdce2cb0cd6ee5a6a3d2fa11910'></a> Source: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/57dff209c85fe6a69778709c21d80ca6addf2e33/windows-apps-src/debug-test-perf/device-portal-api-core.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/135a3d633fc9161b5af430c76d0710595967ecbf/ol-handoff/Microsoft/windows-apps.fr-fr/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.fr-fr.xlf)
-* Handoff Datetime: 2016-05-09 22:54:02
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
