@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps/blob/93b6d952e42949917a0fff5b39f3f194f49531d5/windows-apps-src/publish/account-types-locations-and-fees.md) | HandedOffSuccess | [Details](#b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b103466)
+ [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/ea5611de066d5f8f4f6be19ca5d8b1b1ab9328be/windows-apps-src/publish/payout-summary.md) | HandedOffSuccess | [Details](#78a52fb9ed86538161544b0c5b3bcd19e741c8fa3524)
 
 ## Item Details
-##### <a name='b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b103466'></a> Source: [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps/blob/93b6d952e42949917a0fff5b39f3f194f49531d5/windows-apps-src/publish/account-types-locations-and-fees.md)
+##### <a name='78a52fb9ed86538161544b0c5b3bcd19e741c8fa3524'></a> Source: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/ea5611de066d5f8f4f6be19ca5d8b1b1ab9328be/windows-apps-src/publish/payout-summary.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/3faaba621cddef853abd248911973483961b41c8/ol-handoff/Microsoft/windows-apps.fr-fr/master/account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.fr-fr.xlf)
-* Handoff Datetime: 2016-05-10 19:25:45
+* Handoff File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/0adb96131e9de6f83158e0b6f81b287e8a00f3f2/ol-handoff/Microsoft/windows-apps.fr-fr/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.fr-fr.xlf)
+* Handoff Datetime: 2016-05-10 22:24:06
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
