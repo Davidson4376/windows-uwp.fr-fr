@@ -1,90 +1,84 @@
 ---
+author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
-description: Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application de plateforme Windows universelle (UWP).
-title: Accès à l’aperçu simple de l’appareil photo
+description: This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app.
+title: Simple camera preview access
 ---
 
-# Accès à l’aperçu simple de l’appareil photo
+# Simple camera preview access
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application de plateforme Windows universelle (UWP). La création d’une application qui capture des photos et des vidéos à l’aide de l’appareil photo nécessite que vous effectuiez des tâches telles que la gestion de l’orientation de l’appareil et de la caméra ou la définition des options de codage pour le fichier capturé. Pour certains scénarios d’application, vous pouvez simplement afficher le flux d’aperçu à partir de l’appareil photo sans tenir compte de ces autres considérations. Cet article vous montre comment effectuer cette opération avec un minimum de code. Vous devez toujours arrêter le flux d’aperçu correctement lorsque vous avez fini de l’utiliser en suivant les étapes ci-dessous.
+This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. Creating an app that captures photos and videos using the camera requires you to perform tasks like handling device and camera orientation or setting encoding options for the captured file. For some app scenarios, you may want to just simply show the preview stream from the camera without worrying about these other considerations. This article shows you how to do that with a minimum of code. Note that you should always shut down the preview stream properly when you are done with it by following the steps below.
 
-Pour plus d’informations sur l’écriture d’une application d’appareil photo qui capture des photos ou des vidéos, voir [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md).
+For information on writing a camera app that captures photos or videos, see [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md).
 
-## Ajouter des déclarations de fonctionnalités au manifeste de l’application
+## Add capability declarations to the app manifest
 
-Afin que votre application puisse accéder à l’appareil photo d’un appareil, vous devez déclarer que cette application utilise les fonctionnalités de l’appareil *webcam* et *microphone*. Si vous souhaitez enregistrer dans la bibliothèque d’images ou dans la vidéothèque de l’utilisateur des photos et des vidéos capturées, vous devez également déclarer les fonctionnalités *picturesLibrary* et *videosLibrary*.
+In order for your app to access a device's camera, you must declare that your app uses the *webcam* and *microphone* device capabilities. If you want to save captured photos and videos to the users's Pictures or Videos library, you must also declare the *picturesLibrary* and *videosLibrary* capability.
 
-**Ajouter des fonctionnalités au manifeste de l’application**
+**Add capabilities to the app manifest**
 
-1.  Dans Microsoft Visual Studio, dans l’**Explorateur de solutions**, ouvrez le concepteur pour le manifeste de l’application en double-cliquant sur l’élément **package.appxmanifest**.
-2.  Sélectionnez l’onglet **Fonctionnalités**.
-3.  Activez les cases à cocher **Webcam** et **Microphone**.
-4.  Pour accéder à la bibliothèque d’images et à la vidéothèque, cochez les cases correspondant à **Bibliothèque d’images** et **Vidéothèque**.
+1.  In Microsoft Visual Studio, in **Solution Explorer**, open the designer for the application manifest by double-clicking the **package.appxmanifest** item.
+2.  Select the **Capabilities** tab.
+3.  Check the box for **Webcam** and the box for **Microphone**.
+4.  For access to the Pictures and Videos library check the boxes for **Pictures Library** and the box for **Videos Library**.
 
-## Ajouter un objet CaptureElement à votre page
+## Add a CaptureElement to your page
 
-Utilisez un [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) pour afficher le flux d’aperçu sur votre page XAML.
-
-[!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
-
-## Utiliser MediaCapture pour démarrer le flux d’aperçu
-
-L’objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) est l’interface de votre application pour l’appareil photo de l’appareil. Cette classe est membre de l’espace de noms Windows.Media.Capture. L’exemple de cet article utilise également des API à partir des espaces de noms [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) et [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx), en plus de celles fournies par le modèle de projet par défaut.
+Use a [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) to display the preview stream within your XAML page.
 
 [!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
-Ajoutez des directives using pour inclure les espaces de noms suivants dans le fichier .cs de votre page.
+## Use MediaCapture to start the preview stream
+
+The [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object is your app's interface to the device's camera. This class is a member of the Windows.Media.Capture namespace. The example in this article also uses APIs from the [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) and [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) namespaces, in addition to those included by the default project template.
+
+Add using directives to include the following namespaces in your page's .cs file.
 
 [!code-cs[SimpleCameraPreviewUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSimpleCameraPreviewUsing)]
 
-Déclarez une variable de classe pour l’objet **MediaCapture**.
+Declare a class variable for the **MediaCapture** object.
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-Créez une instance de la classe **MediaCapture** et appelez [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) pour initialiser l’appareil de capture. Cette méthode pouvant par exemple échouer sur des appareils n’ayant pas d’appareil photo, vous devez donc l’appeler à partir d’un bloc **try**. Une **UnauthorizedAccessException** est levée lorsque vous tentez d’initialiser l’appareil photo si l’utilisateur a désactivé l’accès à ce dernier dans les paramètres de confidentialité de l’appareil. Vous verrez également cette exception au cours du développement si vous n’avez pas ajouté les fonctionnalités appropriées au manifeste de votre application.
+Create a new instance of the **MediaCapture** class and call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) to initialize the capture device. This method may fail, on devices that don't have a camera for example, so you should call it from within a **try** block. An **UnauthorizedAccessException** will be thrown when you attempt to initialize the camera if the user has disabled camera access in the device's privacy settings. You will also see this exception during development if you have neglected to add the proper capabilities to your app manifest.
 
-**Important** Sur certaines familles d’appareils, l’utilisateur doit approuver une invite de consentement avant que votre application puisse avoir accès à l’appareil photo de l’appareil. Pour cette raison, vous devez uniquement appeler [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) à partir du thread d’interface utilisateur principal. Toute tentative d’initialiser l’appareil photo à partir d’un autre thread peut entraîner un échec de l’initialisation.
+**Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
 
-Connectez **MediaCapture** à **CaptureElement** en définissant la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280). Enfin, démarrez l’aperçu en appelant [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
+Connect the **MediaCapture** to the **CaptureElement** by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property. Finally, start the preview by calling [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
 
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 
-## Arrêter le flux d’aperçu
+## Shut down the preview stream
 
-Lorsque vous avez fini d’utiliser le flux d’aperçu, vous devez toujours arrêter le flux et supprimer correctement les ressources associées afin de garantir que l’appareil photo est disponible pour d’autres applications sur l’appareil. Les étapes nécessaires à l’arrêt du flux d’aperçu sont les suivantes :
+When you are done using the preview stream, you should always shut down the stream and properly dispose of the associated resources to ensure that the camera is available to other apps on the device. The required steps for shutting down the preview stream are:
 
--   Appelez [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) pour arrêter le flux d’aperçu.
--   Définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) de **CaptureElement** sur null.
--   Appelez la méthode [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) de l’objet **MediaCapture** pour libérer l’objet.
--   Définissez la variable membre **MediaCapture** sur null.
+-   Call [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) to stop the preview stream.
+-   Set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property of the **CaptureElement** to null.
+-   Call the **MediaCapture** object's [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) method to release the object.
+-   Set the **MediaCapture** member variable to null.
 
 [!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-Vous devez arrêter le flux d’aperçu lorsque l’utilisateur quitte votre page en remplaçant la méthode [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507).
+You should shut down the preview stream when the user navigates away from your page by overriding the [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) method.
 
 [!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-Vous devez également arrêter le flux d’aperçu correctement si votre application est interrompue. Pour ce faire, inscrivez un gestionnaire pour l’événement [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) dans le constructeur de votre page.
+You should also shut down the preview stream properly when your app is suspending. To do this, register a handler for the [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event in your page's constructor.
 
 [!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
 
-Dans le gestionnaire d’événements **Suspending**, vérifiez que la page est affichée par le [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) de l’application en comparant le type de page à la propriété [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390). Si la page n’est pas affichée, l’événement **OnNavigatedFrom** doit déjà avoir été déclenché et le flux d’aperçu arrêté. Si la page est affichée, obtenez un objet [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) à partir des arguments d’événement transmis au gestionnaire pour vous assurer que le système n’interrompt pas votre application avant l’arrêt du flux d’aperçu. Après l’arrêt du flux, appelez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) de report afin que le système continue d’interrompre votre application.
+In the **Suspending** event handler, first check to make sure that the page is being displayed the application's [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) by comparing the page type to the [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390) property. If the page is not currently being displayed, then the **OnNavigatedFrom** event should already have been raised and the preview stream shut down. If the page is currently being displayed, get a [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) object from the event args passed into the handler to make sure the system does not suspend your app until the preview stream has been shut down. After shutting down the stream, call the deferral's [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) method to let the system continue suspending your app.
 
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 
-## Capturer une image fixe à partir du flux d’aperçu
+## Capture a still image from the preview stream
 
-Il est très facile d’obtenir une image fixe à partir du flux d’aperçu de capture multimédia sous la forme d’un [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). Pour plus d’informations, voir [Obtenir une image d’aperçu](get-a-preview-frame.md).
+It's simple to get a still image from the media capture preview stream in the form of a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). For more information, see [Get a preview frame](get-a-preview-frame.md).
 
-## Rubriques connexes
+## Related topics
 
-* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
-* [Obtenir une image d’aperçu](get-a-preview-frame.md)
-
-
-<!--HONumber=Mar16_HO5-->
-
-
+* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Get a preview frame](get-a-preview-frame.md)

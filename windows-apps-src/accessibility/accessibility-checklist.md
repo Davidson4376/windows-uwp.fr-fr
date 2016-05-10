@@ -1,76 +1,63 @@
 ---
-Description: Fournit une liste de vérification pour vous aider à garantir que votre application UWP est accessible.
-title: Liste de vérification de l’accessibilité
+author: Xansky
+Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
-label: Checklist
+title: Accessibility checklist
+label: Accessibility checklist
 template: detail.hbs
 ---
 
-Liste de vérification de l’accessibilité
-===================================================================================
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-Fournit une liste de vérification pour vous aider à garantir que votre application UWP est accessible.
-
-Nous fournissons ici une liste de vérification qui vous permet de garantir que votre application est accessible.
-
-1.  Définissez le nom accessible (obligatoire) et la description accessible (facultative) du contenu et des éléments d’interface utilisateur interactifs de votre application.
-
-    Le nom accessible est une chaîne de texte courte et descriptive qui est utilisée par les lecteurs d’écran pour présenter un élément d’interface utilisateur. Certains éléments d’interface utilisateur tels que [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) et [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) effectuent la promotion de leur contenu texte comme nom accessible par défaut ; voir [Informations d’accessibilité élémentaires](basic-accessibility-information.md#name_from_inner_text).
-
-    Vous devez définir le nom accessible de manière explicite pour les images ou autres contrôles qui n’effectuent pas la promotion du contenu de texte interne comme nom accessible implicite. Vous devez utiliser des étiquettes pour les éléments de formulaires afin que le texte d’étiquette puisse être utilisé comme cible [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) dans le modèle Microsoft UI Automation pour la corrélation entre les étiquettes et les entrées. Si vous souhaitez fournir davantage d’instructions dans l’interface utilisateur que celles normalement fournies par le nom accessible, des descriptions accessibles et des info-bulles aident les utilisateurs à mieux comprendre l’interface utilisateur.
-
-    Pour plus d’informations, voir les sections [Nom accessible](basic-accessibility-information.md#accessible_name) et [Description accessible](basic-accessibility-information.md).
-
-2.  Mettez en œuvre l’accessibilité du clavier :
+# Accessibility checklist
 
 
-    -   Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) on some of the UI elements.
-    -   Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.
-    -   Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) pattern, keyboard activation is typically available; check the documentation for that control.
-    -   Set access keys or implement accelerator keys for specific parts of the UI that support interaction.
-    -   For any custom controls that you use in your UI, verify that you have implemented these controls with correct [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
+
+Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+
+Here we provide a checklist you can use to ensure that your app is accessible.
+
+1.  Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
+
+    An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Some UI elements such as [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) promote their text content as the default accessible name; see [Basic accessibility information](basic-accessibility-information.md#name_from_inner_text).
+
+    You should set the accessible name explicitly for images or other controls that do not promote inner text content as an implicit accessible name. You should use labels for form elements so that the label text can be used as a [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) target in the Microsoft UI Automation model for correlating labels and inputs. If you want to provide more UI guidance for users than is typically included in the accessible name, accessible descriptions and tooltips help users understand the UI.
+
+    For more info, see [Accessible name](basic-accessibility-information.md#accessible_name) and [Accessible description](basic-accessibility-information.md).
+
+2.  Implement keyboard accessibility:
+
+    * Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) on some of the UI elements.
+    * Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.
+    * Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) pattern, keyboard activation is typically available; check the documentation for that control.
+    * Set access keys or implement accelerator keys for specific parts of the UI that support interaction.
+    * For any custom controls that you use in your UI, verify that you have implemented these controls with correct [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
 
     For more info, see [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/Mt185607).
 
-3.  Vérifiez visuellement votre interface utilisateur pour vous assurer que le contraste du texte est suffisant, que le rendu des éléments est correct dans les thèmes à contraste élevé et que les couleurs sont utilisées correctement.
+3.  Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
 
-    -   Utilisez les options d’affichage système qui ajustent la valeur en haute résolution de l’affichage et assurez-vous que l’interface utilisateur de votre application est correctement mise à l’échelle lorsque cette valeur est modifiée. (Certains utilisateurs modifient les valeurs haute résolution en tant qu’option d’accessibilité, par le biais du champ **Options d’ergonomie**.)
-    -   Utilisez un outil d’analyse des couleurs pour vérifier que le coefficient de contraste de texte visuel est au moins de 4,5 pour 1.
-    -   Basculez vers un thème à contraste élevé et vérifiez que l’interface utilisateur de votre application est lisible et utilisable.
-    -   Assurez-vous que votre interface utilisateur n’utilise pas la couleur comme seule façon de transmettre les informations.
+    * Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access**.)
+    * Use a color analyzer tool to verify that the visual text contrast ratio is at least 4.5:1.
+    * Switch to a high contrast theme and verify that the UI for your app is readable and usable.
+    * Ensure that your UI doesn’t use color as the only way to convey information.
 
-    Pour plus d’informations, voir les rubriques [Thèmes à contraste élevé](high-contrast-themes.md) et [Exigences de texte accessible](accessible-text-requirements.md).
+    For more info, see [High-contrast themes](high-contrast-themes.md) and [Accessible text requirements](accessible-text-requirements.md).
 
-4.  Exécutez les outils d’accessibilité, traitez les problèmes signalés et vérifiez l’expérience de lecture d’écran.
+4.  Run accessibility tools, address reported issues, and verify the screen reading experience.
 
-    Utilisez des outils tels que [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) pour vérifier l’accès par programme, exécutez des outils de diagnostic tels que [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) pour identifier les erreurs courantes et vérifiez l’expérience de lecture d’écran avec le Narrateur.
+    Use tools such as [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) to verify programmatic access, run diagnostic tools such as [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) to discover common errors, and verify the screen reading experience with Narrator.
 
-    Pour plus d’informations, voir [Tests d’accessibilité](accessibility-testing.md).
+    For more info, see [Accessibility testing](accessibility-testing.md).
 
-5.  Assurez-vous que vos paramètres de manifeste d’application respectent les recommandations en matière d’accessibilité.
+5.  Make sure your app manifest settings follow accessibility guidelines.
 
-6.  Déclarez votre application comme accessible dans le Windows Store.
+6.  Declare your app as accessible in the Windows Store.
 
-    Si vous avez implémenté la prise en charge de l’accessibilité de base, le fait de marquer votre application comme accessible dans le Windows Store peut vous permettre d’atteindre davantage de clients et d’obtenir davantage de bonnes évaluations.
+    If you implemented the baseline accessibility support, declaring your app as accessible in the Windows Store can help reach more customers and get some additional good ratings.
 
-    Pour plus d’informations, voir [Accessibilité dans le Windows Store](accessibility-in-the-store.md).
+    For more info, see [Accessibility in the Store](accessibility-in-the-store.md).
 
-<span id="related_topics"> </span>Rubriques connexes
------------------------------------------------
-
-* [Accessibilité](accessibility.md)
-* [Concevoir des applications pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [Pratiques à éviter](practices-to-avoid.md)
- 
-
- 
-
-
-
-
-
-<!--HONumber=Mar16_HO3-->
-
-
+<span id="related_topics"/>
+## Related topics  
+* [Accessibility](accessibility.md)
+* [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [Practices to avoid](practices-to-avoid.md)
