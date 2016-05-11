@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/7ce24486e0c730d1b6d9a9239b605603895a6a68/windows-apps-src/security/index.md) | HandedOffSuccess | [Details](#074c4f23e5912ece050d0b44621ab78015f2ce7b3621)
 
 ## Item Details
-##### <a name='074c4f23e5912ece050d0b44621ab78015f2ce7b3621'></a> Source: [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/7ce24486e0c730d1b6d9a9239b605603895a6a68/windows-apps-src/security/index.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [index.36c19658e673067b86aba619b12635d8359c4091.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/5408db6b16c76da95d6f880619788688472408c3/ol-handoff/Microsoft/windows-apps.fr-fr/master/index.36c19658e673067b86aba619b12635d8359c4091.fr-fr.xlf)
-* Handoff Datetime: 2016-05-11 18:20:03
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
