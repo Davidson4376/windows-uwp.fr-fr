@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "13603b66bd6168073b855bbe37ea92763e14a5a0",
+  "LastProcessedCommit": "ea746685b1d2903c9fdc45f2df004ed909a309b1",
   "LastTranslatedCommit": null,
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -63100,6 +63100,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.fr-fr.xlf",
       "HandoffFileCommit": "0c793e9198f0648eb4e0ad0e2d2cef7137b51bd2",
       "HandoffDateTime": "2016-05-12T23:49:32.4120686Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "99702a50a2653fbc58428ed6d8003dcfddef07bb": {
+      "FileHash": "99702a50a2653fbc58428ed6d8003dcfddef07bb",
+      "SourceFileCommit": "ea746685b1d2903c9fdc45f2df004ed909a309b1",
+      "SourceFilePath": "windows-apps-src\\audio-video-camera\\playready-client-sdk.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.fr-fr.xlf",
+      "HandoffFileCommit": "aa54fbc00937f64dea6ba16bcbb5a54d9cb49dc2",
+      "HandoffDateTime": "2016-05-13T16:49:43.7633124Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
