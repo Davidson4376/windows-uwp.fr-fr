@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "4c32b134c704fa0e4534bc4ba8d045e671c89442",
-  "LastTranslatedCommit": "2e588812e0bc5942bfa549aeaec1f3fb27fbb3a3",
+  "LastTranslatedCommit": "8633d584a520a022b67165bef851e4bac4ae2369",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -23010,7 +23010,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-05-16T16:01:27.8967291Z",
+      "HandbackDateTime": "2016-05-16T16:30:46.7000718Z",
       "HandbackException": {
         "internal_error_code": "handback_validate_file_name_invalide",
         "internal_error_message": "Handback file name: text-controls.2a79d23d8cadb311a9c266357d7152d968f81dc5.fr-FR is different with handoff file name: text-controls.2a79d23d8cadb311a9c266357d7152d968f81dc5.fr-fr.",
@@ -23020,7 +23020,7 @@
         "stack_trace": null,
         "extended_information": null
       },
-      "HandbackFailureTimes": 5,
+      "HandbackFailureTimes": 1,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
