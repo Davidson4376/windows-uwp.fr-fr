@@ -1,16 +1,16 @@
 ---
 author: mtoepke
-title: Walkthrough-- Implement shadow volumes using depth buffers in Direct3D 11
-description: This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
+title: Implémenter à l’aide de tampons de profondeur dans Direct3D 11
+description: Vous saurez comment effectuer le rendu de volumes « shadow volumes » avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils Direct3D.
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ---
 
-# Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11
+# Procédure pas à pas &#58; implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
+Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre (« shadow volumes ») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D.
 ## 
 <table>
 <colgroup>
@@ -19,67 +19,72 @@ This walkthrough demonstrates how to render shadow volumes using depth maps, usi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Create depth buffer device resources](create-depth-buffer-resource--view--and-sampler-state.md)</p></td>
-<td align="left"><p>Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.</p></td>
+<td align="left"><p>[Créer des ressources de périphérique pour un tampon de profondeur](create-depth-buffer-resource--view--and-sampler-state.md)</p></td>
+<td align="left"><p>Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Render the shadow map to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md)</p></td>
-<td align="left"><p>Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.</p></td>
+<td align="left"><p>[Générer le rendu du mappage d’ombre dans le tampon de profondeur](render-the-shadow-map-to-the-depth-buffer.md)</p></td>
+<td align="left"><p>Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Render the scene with depth testing](render-the-scene-with-depth-testing.md)</p></td>
-<td align="left"><p>Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.</p></td>
+<td align="left"><p>[Générer le rendu de la scène avec un test de profondeur](render-the-scene-with-depth-testing.md)</p></td>
+<td align="left"><p>Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Support shadow maps on a range of hardware](target-a-range-of-hardware.md)</p></td>
-<td align="left"><p>Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices.</p></td>
+<td align="left"><p>[Prendre en charge les mappages d’ombre sur une gamme de matériel](target-a-range-of-hardware.md)</p></td>
+<td align="left"><p>Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-## Shadow mapping application to Direct3D 9 desktop porting
-
-
-Windows 8 adde d depth comparison functionality to feature level 9\_1 and 9\_3. Now you can migrate rendering code with shadow volumes to DirectX 11, and the Direct3D 11 renderer will be downlevel compatible with feature level 9 devices. This walkthrough shows how any Direct3D 11 app or game can implement traditional shadow volumes using depth testing. The code covers the following process:
-
-1.  Creating Direct3D device resources for shadow mapping.
-2.  Adding a rendering pass to create the depth map.
-3.  Adding depth testing to the main rendering pass.
-4.  Implementing the necessary shader code.
-5.  Options for fast rendering on downlevel hardware.
-
-Upon completing this walkthrough, you should be familiar with how to implement a basic compatible shadow volume technique in Direct3D 11 that's compatible with feature level 9\_1 and above.
-
-## Prerequisites
+## Application du mappage d’ombres pour le portage Direct3D 9
 
 
-You should [Prepare your dev environment for Universal Windows Platform (UWP) DirectX game development](prepare-your-dev-environment-for-windows-store-directx-game-development.md). You don't need a template yet, but you'll need Microsoft Visual Studio 2015 to build the code sample for this walkthrough.
+Dans Windows 8, une nouvelle fonctionnalité de comparaison de la profondeur a été ajoutée aux niveaux de fonctionnalité 9\_1 et 9\_3. Vous pouvez désormais transférer du code de rendu contenant des volumes d’ombre sur DirectX 11. Le convertisseur Direct3D 11 peut être utilisé sur les appareils fonctionnant avec des niveaux de fonctionnalité 9 inférieurs. Cette procédure pas à pas montre comment une application ou un jeu Direct3D 11 peut implémenter des volumes d’ombres classiques avec le test de profondeur. Le code couvre le processus suivant :
 
-## Related topics
+1.  Création de ressources de périphérique Direct3D pour le mappage d’ombres.
+2.  Ajout d’une passe de rendu pour créer le mappage de profondeur.
+3.  Ajout du test de profondeur à la passe de rendu principale.
+4.  Implémentation du code de nuanceur requis.
+5.  Options d’accélération du rendu sur le matériel avec un niveau de fonctionnalité inférieur.
+
+Au terme de cette procédure pas à pas, vous serez capable d’implémenter un volume d’ombre de base dans Direct3D 11, totalement compatible avec les niveaux de fonctionnalité 9\_1 et supérieurs.
+
+## Prérequis
+
+
+Vous devez [préparer votre environnement au développement de jeux de plateforme Windows universelle (UWP) DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Vous n’avez pas encore besoin de modèle, mais vous devez disposer de Microsoft Visual Studio 2015 pour générer l’exemple de code de cette procédure pas à pas.
+
+## Rubriques connexes
 
 
 **Direct3D**
 
-* [Writing HLSL Shaders in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
-* [Create a new DirectX 11 project for UWP](user-interface.md)
+* [Écriture de nuanceurs HLSL dans Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Créer un projet DirectX 11 pour UWP](user-interface.md)
 
-**Shadow mapping technical articles**
+**Articles techniques sur le mappage d’ombres**
 
-* [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [Cascaded Shadow Maps](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324)
+* [Mappages d’ombres en cascade (CSM)](https://msdn.microsoft.com/library/windows/desktop/ee416307)
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

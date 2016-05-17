@@ -1,39 +1,39 @@
 ---
 author: TylerMSFT
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
-title: Create, write, and read a file
-description: Read and write a file using a StorageFile object.
+title: Créer, écrire et lire un fichier
+description: Lisez et écrivez un fichier à l’aide d’un objet StorageFile.
 ---
 
-# Create, write, and read a file
+# Créer, écrire et lire un fichier
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
--   [**StorageFolder class**](https://msdn.microsoft.com/library/windows/apps/br227230)
--   [**StorageFile class**](https://msdn.microsoft.com/library/windows/apps/br227171)
--   [**FileIO class**](https://msdn.microsoft.com/library/windows/apps/hh701440)
+-   [**Classe StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)
+-   [**Classe StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**Classe FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440)
 
-Read and write a file using a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
+Lisez et écrivez un fichier à l’aide d’un objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
-> **Note**  Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> **Remarque** Consultez aussi l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## Prerequisites
+## Prérequis
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Know how to get the file that you want to read from, write to, or both**
+-   **Savoir vous procurer le fichier que vous voulez lire et dans lequel vous voulez écrire, ou les deux.**
 
-    You can learn how to get a file by using a file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
+    Pour apprendre à vous procurer un fichier à l’aide d’un sélecteur de fichiers, voir [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md).
 
-## Creating a file
+## Création d’un fichier
 
-Here's how to create a file in the app's local folder. If it already exists, we replace it.
+Voici comment créer un fichier dans le dossier local de l'application. S’il existe déjà, nous le remplaçons.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 // Create sample file; replace if exists.
@@ -49,10 +49,10 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## Writing to a file
+## Écriture dans un fichier
 
 
-Here's how to write to a writable file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
+Voici comment écrire dans un fichier accessible en écriture sur le disque à l’aide de la classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). La première étape pour chacune des méthodes d’écriture dans un fichier (sauf si vous écrivez dans le fichier immédiatement après sa création) consiste à obtenir le fichier à l’aide de la méthode [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 Windows.Storage.StorageFolder storageFolder =
@@ -65,9 +65,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**Writing text to a file**
+**Écriture de texte dans un fichier**
 
-Write text to your file by calling the [**WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+Écrivez du texte dans votre fichier en appelant la méthode [**WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
@@ -76,9 +76,9 @@ await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
-**Writing bytes to a file by using a buffer (2 steps)**
+**Écriture d’octets dans un fichier par le biais d’une mémoire tampon (2 étapes)**
 
-1.  First, call [**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) to get a buffer of the bytes (based on an arbitrary string) that you want to write to your file.
+1.  Tout d’abord, appelez la méthode [**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) pour obtenir une mémoire tampon des octets (basés sur une chaîne arbitraire) que vous voulez écrire dans votre fichier.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -90,7 +90,7 @@ Dim buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBi
                     Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
 ```
 
-2.  Then write the bytes from your buffer to your file by calling the [**WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+2.  Ensuite, écrivez les octets de votre mémoire tampon dans votre fichier en appelant la méthode [**WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -99,9 +99,9 @@ await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
 Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
 ```
 
-**Writing text to a file by using a stream (4 steps)**
+**Écriture de texte dans un fichier par le biais d’un flux (4 étapes)**
 
-1.  First, open the file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method. It returns a stream of the file's content when the open operation completes.
+1.  Premièrement, ouvrez le fichier en appelant la méthode [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851). Cette dernière renvoie un flux du contenu du fichier lorsque l’opération d’ouverture se termine.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
@@ -110,7 +110,7 @@ var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Next, get an output stream by calling the [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) method from the `stream`. Put this in a **using** statement to manage the output stream's lifetime.
+2.  Ensuite, obtenez un flux de sortie en appelant la méthode [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) à partir du `stream`. Placez ce code dans une instruction **using** pour gérer la durée de vie du flux en sortie.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var outputStream = stream.GetOutputStreamAt(0))
@@ -125,7 +125,7 @@ Using outputStream = stream.GetOutputStreamAt(0)
 End Using
 ```
 
-3.  Now add this code within the existing **using** statement to write to the output stream by creating a new [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) object and calling the [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642) method.
+3.  À présent, ajoutez ce code dans l’instruction **using** existante pour écrire dans le flux de sortie en créant un objet [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) et en appelant la méthode [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -139,7 +139,7 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
-4.  Lastly, add this code (within the inner **using** statement) to save the text to your file with [**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) and close the stream with [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729).
+4.  Pour finir, ajoutez le code suivant (dans l’instruction **using**) pour enregistrer le texte dans votre fichier avec [**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) et fermer le flux avec [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729).
 > [!div class="tabbedCodeSnippets"]
 ```cs
     await dataWriter.StoreAsync();
@@ -150,10 +150,10 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
         Await outputStream.FlushAsync()
 ```
 
-## Reading from a file
+## Lecture d’un fichier
 
 
-Here's how to read from a file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
+Voici comment lire un fichier sur disque en utilisant la classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). La première étape de lecture d’un fichier consiste à obtenir le fichier à l’aide de la méthode [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 Windows.Storage.StorageFolder storageFolder =
@@ -166,9 +166,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**Reading text from a file**
+**Lecture de texte dans un fichier**
 
-Read text from your file by calling the [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+Lisez du texte de votre fichier en appelant la méthode [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
@@ -177,9 +177,9 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**Reading bytes from a file by using a buffer (2 steps)**
+**Lecture d’octets dans un fichier avec une mémoire tampon (2 étapes)**
 
-1.  First, read bytes from your buffer to your file by calling the [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+1.  Commencez par lire les octets à partir de votre mémoire tampon dans votre fichier en appelant la méthode [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -188,7 +188,7 @@ var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
 Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
 ```
 
-2.  Then use a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object to read first the length of the buffer and then its contents.
+2.  Utilisez ensuite un objet [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) pour lire la longueur de la mémoire tampon, puis son contenu.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
@@ -201,9 +201,9 @@ Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buf
     Dim text As String = dataReader.ReadString(buffer.Length)
 ```
 
-**Reading text from a file by using a stream (4 steps)**
+**Lecture de texte dans un fichier avec un flux (4 étapes)**
 
-1.  Open a stream for your file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method. It returns a stream of the file's content when the operation completes.
+1.  Ouvrez un flux pour votre fichier en appelant la méthode [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851). Celle-ci renvoie un flux du contenu du fichier pendant l’exécution de l’opération.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
@@ -212,7 +212,7 @@ var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Get the size of the stream to use later.
+2.  Obtenez la taille du flux à utiliser ultérieurement.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 ulong size = stream.Size;
@@ -221,7 +221,7 @@ ulong size = stream.Size;
 Dim size = stream.Size
 ```
 
-3.  Get an input stream by calling the [**GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737) method. Put this in a **using** statement to manage the stream's lifetime. Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.
+3.  Obtenez un flux d’entrée en appelant la méthode [**GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737). Placez ce code dans une instruction **using** pour gérer la durée de vie du flux. Spécifiez 0 quand vous appelez **GetInputStreamAt** pour définir la position sur le début du flux.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var inputStream = stream.GetInputStreamAt(0))
@@ -235,7 +235,7 @@ Using inputStream = stream.GetInputStreamAt(0)
 End Using
 ```
 
-4.  Lastly, add this code within the existing **using** statement to get a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object on the stream then read the text by calling [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) and [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147).
+4.  Enfin, ajoutez ce code dans l’instruction **using** existante pour obtenir un objet [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) sur le flux, puis lisez le texte en appelant les méthodes [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) et [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
@@ -250,10 +250,15 @@ Dim dataReader As New DataReader(inputStream)
     Dim text As String = dataReader.ReadString(numBytesLoaded)
 ```
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

@@ -1,20 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
-title: Touch interactions
+Description: Créez des applications UWP offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
+title: Interactions tactiles
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 ---
 
-# Touch interactions
+# Interactions tactiles
 
 
-Design your app with the expectation that touch will be the primary input method of your users. If you use UWP controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because UWP apps provide this for free.
+Concevez votre application en partant du principe que l’entrée tactile sera la principale méthode d’entrée de vos utilisateurs. Si vous utilisez des contrôles UWP, la prise en charge du pavé tactile, de la souris et du stylet ne nécessite pas de programmation supplémentaire, car les applications UWP proposent cette fonctionnalité gratuitement.
 
-However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch (including touchpad), pen/stylus, mouse, and keyboard input.
+Sachez cependant qu’une interface utilisateur optimisée pour les entrées tactiles ne se révèle pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées : tactile (y compris le pavé tactile), stylet, souris et clavier.
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 -   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
@@ -22,221 +22,221 @@ However, keep in mind that a UI optimized for touch is not always superior to a 
 
 
 
-Many devices have multi-touch screens that support using one or more fingers (or touch contacts) as input. The touch contacts, and their movement, are interpreted as touch gestures and manipulations to support various user interactions.
+De nombreux appareils sont équipés d’écrans à interaction tactile multipoint qui prennent en charge l’utilisation de plusieurs doigts (ou contacts tactiles) en tant qu’entrée. Les contacts tactiles et leurs déplacements, sont interprétés comme des mouvements et des manipulations tactiles pour prendre en charge diverses interactions utilisateur.
 
-The Universal Windows Platform (UWP) includes a number of different mechanisms for handling touch input, enabling you to create an immersive experience that your users can explore with confidence. Here, we cover the basics of using touch input in a UWP app.
+La plateforme Windows universelle (UWP) a différents mécanismes pour gérer les entrées tactiles, qui vous permettent de créer une expérience immersive que les utilisateurs de vos applications peuvent explorer avec confiance. Nous allons expliquer ici les principes de base de la saisie tactile dans une application UWP.
 
-Touch interactions require three things:
+Les interactions tactiles nécessitent trois éléments :
 
--   A touch-sensitive display.
--   The direct contact (or proximity to, if the display has proximity sensors and supports hover detection) of one or more fingers on that display.
--   Movement of the touch contacts (or lack thereof, based on a time threshold).
+-   Un écran tactile.
+-   Le contact direct (ou la fonctionnalité de proximité, si l’écran est doté de capteurs de proximité et prend en charge le pointage détection) d’un ou plusieurs doigts sur cet écran.
+-   Déplacement des contacts tactiles (ou absence de déplacement, basé sur un seuil de temps).
 
-The input data provided by the touch sensor can be:
+Les données d’entrée fournies par le capteur tactile peuvent :
 
--   Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window, dialog box, or other UI affordance is considered indirect manipulation.
--   Recognized as an alternative input method, such as mouse or pen.
--   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
+-   Être interprétées comme un mouvement physique de manipulation directe d’un ou plusieurs éléments d’interface utilisateur (par exemple, mouvement panoramique, rotation, redimensionnement ou déplacement). En revanche, l’interaction avec un élément par le biais de sa fenêtre de propriétés ou d’une autre boîte de dialogue ou interface utilisateur est considérée comme étant une manipulation indirecte.
+-   Faire office de méthode d’entrée alternative, à la manière d’une souris ou d’un stylet.
+-   Compléter ou modifier des aspects d’autres méthodes d’entrée, par exemple en maculant un trait d’encre dessiné avec un stylet.
 
-Touch input typically involves the direct manipulation of an element on the screen. The element responds immediately to any touch contact within its hit test area, and reacts appropriately to any subsequent movement of the touch contacts, including removal.
+En règle générale, l’entrée tactile implique la manipulation directe d’un élément à l’écran. L’élément répond immédiatement à n’importe quel contact tactile dans sa zone de test et réagit de manière appropriée pour tous les mouvements des contacts tactiles qui s’ensuivent, notamment la suppression.
 
-Custom touch gestures and interactions should be designed carefully. They should be intuitive, responsive, and discoverable, and they should let users explore your app with confidence.
+Les interactions et mouvements tactiles personnalisés doivent être conçus avec soin. Ils doivent être détectables, réactifs et intuitifs et permettre aux utilisateurs d’explorer votre application en toute confiance.
 
-Ensure that app functionality is exposed consistently across every supported input device type. If necessary, use some form of indirect input mode, such as text input for keyboard interactions, or UI affordances for mouse and pen.
+Vérifiez que les fonctionnalités de l’application sont exposées de façon cohérente sur chaque type de périphérique d’entrée pris en charge. Si nécessaire, utilisez une forme de mode d’entrée indirect, par exemple la saisie de texte pour les interactions avec le clavier ou les fonctions d’une interface utilisateur pour la souris et le stylet.
 
-Remember that traditional input devices (such as mouse and keyboard), are familiar and appealing to many users. They can offer speed, accuracy, and tactile feedback that touch might not.
+N’oubliez pas que les périphériques d’entrée traditionnels (comme la souris et clavier), sont familiers et accrocheurs pour de nombreux utilisateurs. Ils peuvent proposer la vitesse, la précision et le retour tactile que les entrées tactiles n’offrent pas.
 
-Providing unique and distinctive interaction experiences for all input devices will support the widest range of capabilities and preferences, appeal to the broadest possible audience, and attract more customers to your app.
+En offrant des expériences d’interactions uniques et différenciées pour tous ces périphériques d’entrée, vous prendrez en charge le plus large éventail possible de fonctionnalités et de préférences, vous vous adresserez au plus grand nombre d’utilisateurs et vous attirerez ainsi davantage de clients vers votre application.
 
-## Compare touch interaction requirements
+## Comparer les critères de l’interaction tactile
 
-The following table shows some of the differences between input devices that you should consider when you design touch-optimized UWP apps.
+Le tableau suivant présente certaines des différences qui existent entre les périphériques d’entrée et dont vous devez tenir compte quand vous concevez des applications UWP optimisées pour l’interaction tactile.
 
 <table>
-<tbody><tr><th>Factor</th><th>Touch interactions</th><th>Mouse, keyboard, pen/stylus interactions</th><th>Touchpad</th></tr>
-<tr><td rowspan="3">Precision</td><td>The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations.</td><td>The mouse and pen/stylus supply a precise x-y coordinate.</td><td>Same as mouse.</td></tr>
-<tr><td>The shape  of the contact area changes throughout the movement.  </td><td>Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit.</td><td>Same as mouse.</td></tr>
-<tr><td>There is no mouse cursor to assist with targeting.</td><td>The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting.</td><td>Same as mouse.</td></tr>
-<tr><td rowspan="3">Human anatomy</td><td>Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion.</td><td>It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen.</td><td>Same as mouse.</td></tr>
-<tr><td>Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device.</td><td>The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order. </td><td>Finger posture and grip can be an issue.</td></tr>
-<tr><td>Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion.</td><td>Indirect input devices do not cause  occlusion.</td><td>Same as mouse.</td></tr>
-<tr><td>Object state</td><td>Touch uses a two-state model: the touch surface of a display device  is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback.</td><td>
-<p>A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).</p>
-<p>Hover lets users explore and learn through tooltips  associated with UI elements. Hover and focus effects  can relay which objects are interactive and also help with targeting. 
+<tbody><tr><th>Facteur</th><th>Interactions tactiles</th><th>Interactions à l’aide de la souris, du clavier, du stylo/stylet</th><th>Pavé tactile</th></tr>
+<tr><td rowspan="3">Précision</td><td>La zone de contact au bout du doigt est plus importante qu’une simple coordonnées x-y, ce qui augmente le risque d’activations involontaires de commandes.</td><td>La souris et le stylo/stylet répondent à une coordonnée x-y précise.</td><td>Comme la souris.</td></tr>
+<tr><td>La forme de la zone de contact change tout au long du mouvement.  </td><td>Les mouvements de la souris et les traits du stylo/stylet répondent à des coordonnées x-y précises. Le focus du clavier est explicite.</td><td>Comme la souris.</td></tr>
+<tr><td>Il n’y a pas de curseur de souris pour aider au ciblage.</td><td>Le curseur de la souris, le curseur du stylo/stylet et le focus du clavier constituent tous une aide au ciblage.</td><td>Comme la souris.</td></tr>
+<tr><td rowspan="3">Anatomie humaine</td><td>Les mouvements effectués avec le bout du doigt sont imprécis, car le traçage d’une ligne droite avec un ou plusieurs doigts est difficile à réaliser. Cela s’explique par la courbure des articulations de la main et le nombre d’articulations impliquées dans le mouvement.</td><td>Il est plus facile de tracer un mouvement de ligne droite avec la souris ou le stylo/stylet, car la main qui les contrôle parcourt une distance plus courte que le curseur sur l’écran.</td><td>Comme la souris.</td></tr>
+<tr><td>Certaines zones situées sur la surface tactile d’un périphérique d’affichage peuvent être difficiles à atteindre en raison de la posture des doigts et de la prise en main du périphérique par l’utilisateur.</td><td>La souris et le stylo/stylet peuvent accéder à toutes les parties de l’écran, et n’importe quel contrôle est accessible par le clavier via l’ordre des onglets. </td><td>La posture des doigts et la prise en main peuvent poser problème.</td></tr>
+<tr><td>Le bout des doigts ou la main de l’utilisateur peuvent masquer des objets. C’est ce que l’on appelle l’« occlusion ».</td><td>Les périphériques d’entrée indirects ne provoquent pas d’occlusion.</td><td>Comme la souris.</td></tr>
+<tr><td>État de l’objet</td><td>L’interaction tactile utilise un modèle à deux états : la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.</td><td>
+<p>Une souris, un stylo/stylet et un clavier exposent tous un modèle à trois états : soulevé (activé), appuyé (activé) et pointé (focus).</p>
+<p>Le pointage permet à l’utilisateur d’explorer et de découvrir les éléments à l’aide d’info-bulles associées aux éléments de l’interface utilisateur. Les effets de pointage et de focus peuvent transmettre les objets qui sont interactifs et aident également au ciblage. 
 </p>
-</td><td>Same as mouse.</td></tr>
-<tr><td rowspan="2">Rich interaction</td><td>Supports multi-touch: multiple input points (fingertips) on a touch surface.</td><td>Supports a single input point.</td><td>Same as touch.</td></tr>
-<tr><td>Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.</td><td>No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.</td><td>Same as mouse.</td></tr>
+</td><td>Comme la souris.</td></tr>
+<tr><td rowspan="2">Interaction évoluée</td><td>Prend en charge l’interaction tactile multipoint : plusieurs points d’entrée (bout des doigts) sur une surface tactile.</td><td>Prend en charge un point d’entrée unique.</td><td>Comme l’entrée tactile.</td></tr>
+<tr><td>Prend en charge la manipulation directe des objets par le biais de gestes tels que l’appui, le glissement, le pincement et la rotation.</td><td>Ne prend pas en charge la manipulation directe, car la souris, le stylo/stylet et le clavier sont des périphériques d’entrée indirects.</td><td>Comme la souris.</td></tr>
 </tbody></table>
 
 
 
-**Note**  
-Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
+**Remarque**  
+L’entrée indirecte a bénéficié de plus de 25 ans d’amélioration. Les fonctions comme les info-bulles déclenchées par le pointage ont été conçues pour résoudre les problèmes d’exploration de l’interface utilisateur spécifiques aux entrées à l’aide du pavé tactile, de la souris, du stylo/stylet et du clavier. Les fonctionnalités d’interface utilisateur de ce genre ont été repensées pour enrichir l’expérience de la saisie tactile, sans compromettre l’expérience utilisateur sur les autres appareils.
 
- 
+ 
 
-## Use touch feedback
+## Utiliser le retour tactile
 
-Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and Windows 8. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
+Les retours visuels appropriés au cours des interactions avec votre application aident les utilisateurs à reconnaître, à apprendre et à s’adapter à l’interprétation des leurs interactions par l’application et par Windows 8. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
 
-Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.
+Le retour visuel est essentiel quand l’utilisateur doit réaliser, avec la fonction tactile, des activités qui demandent de l’exactitude et de la précision selon l’endroit concerné. Affichez le retour, quels que soient l’emplacement et le moment de la détection de l’entrée tactile, pour aider l’utilisateur à comprendre toutes les méthodes de ciblage personnalisé qui sont définies par votre application et ses contrôles.
 
 
-## Targeting
+## Ciblage
 
-Targeting is optimized through:
+Le ciblage est optimisé par les éléments suivants :
 
--   Touch target sizes
+-   Taille des cibles tactiles
 
-    Clear size guidelines ensure that applications provide a comfortable UI that contains objects and controls that are easy and safe to target.
+    Des instructions claires concernant les tailles garantissent une interface utilisateur confortable contenant des objets et des contrôles que l’utilisateur peut cibler facilement et en toute sécurité.
 
--   Contact geometry
+-   Géométrie de contact
 
-    The entire contact area of the finger determines the most likely target object.
+    La totalité de la zone de contact du doigt détermine l’objet cible le plus probable.
 
--   Scrubbing
+-   Frottement
 
-    Items within a group are easily re-targeted by dragging the finger between them (for example, radio buttons). The current item is activated when the touch is released.
+    L’utilisateur peut facilement recibler les éléments au sein d’un groupe en glissant le doigt entre eux (par exemple, des cases d’option). L’élément actif est activé lorsque l’utilisateur relâche le doigt.
 
--   Rocking
+-   Va-et-vient
 
-    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a tooltip or the status bar and is activated when the touch is released.
+    L’utilisateur peut facilement recibler des éléments compacts (par exemple, des liens hypertexte) en appuyant avec le doigt et, sans le faire glisser, en effectuant un mouvement de va-et-vient sur les éléments. Pour éviter l’occlusion, l’élément est identifié par une info-bulle ou la barre d’état. Il est activé dès que l’utilisateur relâche le doigt.
 
-## Accuracy
+## Précision
 
-Design for sloppy interactions by using:
+Pour les interactions imprécises, utilisez :
 
--   Snap-points that can make it easier to stop at desired locations when users interact with content.
--   Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
+-   des points d’ancrage qui permettent à l’utilisateur de s’arrêter plus facilement aux emplacements souhaités quand il interagit avec le contenu ;
+-   des « rails » d’orientation qui permettent d’aider l’utilisateur à effectuer un mouvement panoramique vertical ou horizontal, même si la main se déplace avec un léger mouvement d’arc. Pour plus d’informations, voir [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md).
 
 ## Occlusion
 
-Finger and hand occlusion is avoided through:
+Pour éviter l’occlusion du doigt et de la main, respectez les recommandations suivantes :
 
--   Size and positioning of UI
+-   Taille et positionnement des éléments d’interface utilisateur
 
-    Make UI elements big enough so that they cannot be completely covered by a fingertip contact area.
+    Créez des éléments d’interface utilisateur suffisamment grands pour qu’ils ne soient pas complètement recouverts par la zone de contact du doigt.
 
-    Position menus and pop-ups above the contact area whenever possible.
+    Positionnez autant que possible les menus et les fenêtres indépendantes au-dessus de la zone de contact.
 
--   Tooltips
+-   Info-bulles
 
-    Show tooltips when a user maintains finger contact on an object. This is useful for describing object functionality. The user can drag the fingertip off the object to avoid invoking the tooltip.
+    Affichez des info-bulles quand un utilisateur maintient son doigt sur un objet. Cela est utile pour décrire la fonctionnalité d’un objet. L’utilisateur peut retirer le bout de son doigt de l’objet pour éviter d’appeler l’info-bulle.
 
-    For small objects, offset tooltips so they are not covered by the fingertip contact area. This is helpful for targeting.
+    Pour les petits objets, décalez les info-bulles afin qu’elles ne soient pas recouvertes par la zone de contact du doigt. Cela permet d’améliorer le ciblage.
 
--   Handles for precision
+-   Poignées de précision
 
-    Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](guidelines-for-textselection.md).
+    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Sélection de texte et d’images](guidelines-for-textselection.md).
 
-## Timing
+## Chronométrage
 
-Avoid timed mode changes in favor of direct manipulation. Direct manipulation simulates the direct, real-time physical handling of an object. The object responds as the fingers are moved.
+Évitez les modifications en mode chronométré au profit de la manipulation directe. Celle-ci simule le maniement direct et en temps réel d’un objet. L’objet réagit directement au mouvement du doigt.
 
-A timed interaction, on the other hand, occurs after a touch interaction. Timed interactions typically depend on invisible thresholds like time, distance, or speed to determine what command to perform. Timed interactions have no visual feedback until the system performs the action.
+À l’inverse, en mode chronométré, l’interaction se produit après le geste tactile. Généralement, les interactions chronométrées dépendent de seuils invisibles, tels que le temps, la distance ou la vitesse, pour déterminer la commande à effectuer. Elles ne produisent aucun retour visuel tant que le système n’a pas effectué l’action.
 
-Direct manipulation provides a number of benefits over timed interactions:
+La manipulation directe offre un certain nombre d’avantages par rapport aux interactions chronométrées :
 
--   Instant visual feedback during interactions make users feel more engaged, confident, and in control.
--   Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.
--   Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.
--   Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.
+-   Le retour visuel instantané au cours de l’interaction permet à l’utilisateur de se sentir davantage impliqué, confiant et en contrôle.
+-   Les manipulations directes permettent de sécuriser l’exploration d’un système, car elles sont réversibles, c’est-à-dire que l’utilisateur peut facilement revenir en arrière et annuler ses actions d’une manière logique et intuitive.
+-   Les interactions qui affectent directement les objets et qui imitent les gestes réels sont plus intuitives, plus visibles et plus faciles à retenir. Elles ne dépendent pas d’interactions obscures ou abstraites.
+-   Les interactions chronométrées peuvent être difficiles à effectuer, étant donné que l’utilisateur doit atteindre des seuils arbitraires et invisibles.
 
-In addition, the following are strongly recommended:
+En outre, nous vous encourageons vivement à tenir compte des recommandations suivantes :
 
--   Manipulations should not be distinguished by the number of fingers used.
--   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
--   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
+-   Ne classez pas les manipulations en fonction du nombre de doigts utilisés.
+-   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
+-   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-    **Note**  An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
+    **Remarque** Il existe une exception à cette règle : quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
 
-     
+     
 
--   Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
-
-
-## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>App views
+-   Les descriptions appropriées et les signaux visuels influent très favorablement sur l’utilisation des interactions avancées.
 
 
-Tweak the user interaction experience through the pan/scroll and zoom settings of your app views. An app view dictates how a user accesses and manipulates your app and its content. Views also provide behaviors such as inertia, content boundary bounce, and snap points.
-
-Pan and scroll settings of the [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) control dictate how users navigate within a single view, when the content of the view doesn't fit within the viewport. A single view can be, for example, a page of a magazine or book, the folder structure of a computer, a library of documents, or a photo album.
-
-Zoom settings apply to both optical zoom (supported by the [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) control) and the [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) control. Semantic Zoom is a touch-optimized technique for presenting and navigating large sets of related data or content within a single view. It works by using two distinct modes of classification, or zoom levels. This is analogous to panning and scrolling within a single view. Panning and scrolling can be used in conjunction with Semantic Zoom.
-
-Use app views and events to modify the pan/scroll and zoom behaviors. This can provide a smoother interaction experience than is possible through the handling of pointer and gesture events.
-
-For more info about app views, see [Controls, layouts, and text](https://msdn.microsoft.com/library/windows/apps/mt228348).
-
-## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>Custom touch interactions
+## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>Vues d’applications
 
 
-If you implement your own interaction support, keep in mind that users expect an intuitive experience involving direct interaction with the UI elements in your app. We recommend that you model your custom interactions on the platform control libraries to keep things consistent and discoverable. The controls in these libraries provide the full user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. Create custom interactions only if there is a clear, well-defined requirement and basic interactions don't support your scenario.
+Ajustez l’expérience d’interaction utilisateur par le biais des paramètres de panoramique/défilement et zoom de vos vues d’applications. La vue d’une application régit la manière dont un utilisateur accède à cette dernière et manipule votre application et son contenu. Les vues fournissent également des comportements tels que l’inertie, le rebond de limite de zone de contenu et les points d’ancrage.
 
-To provide customized touch support, you can handle various [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events. These events are grouped into three levels of abstraction.
+Les paramètres de panoramique et de défilement du contrôle [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) déterminent la façon dont les utilisateurs naviguent au sein d’une vue unique quand le contenu de la vue est trop grand pour la fenêtre d’affichage. Une vue unique est par exemple la page d’un magazine ou d’un livre, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo.
 
--   Static gesture events are triggered after an interaction is complete. Gesture events include [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985), [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922), [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984), and [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928).
+Les paramètres de zoom s’appliquent à la fois au zoom optique (pris en charge par le contrôle [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)) et au contrôle [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601). Le zoom sémantique est une technique optimisée pour l’interaction tactile applicable à la présentation et à la navigation de grands ensembles de contenus ou de données associés dans une même vue. Il fonctionne à l’aide de deux modes de classification (ou niveaux de zoom) distincts. Cette fonctionnalité est identique au mouvement panoramique et au défilement simple au sein d’une même vue. Ces types de défilements peuvent être utilisés en association avec le zoom sémantique.
 
-    You can disable gesture events on specific elements by setting [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939), [**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931), [**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937), and [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) to **false**.
+Utilisez les événements et les vues de l’application pour modifier les comportements de panoramique/défilement et de zoom. Vous pouvez ainsi offrir une expérience d’interaction aussi fluide que possible via la gestion de pointeur et les événements de mouvement.
 
--   Pointer events such as [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) and [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
+Pour plus d’informations concernant les vues d’applications, voir [Contrôles, dispositions et texte](https://msdn.microsoft.com/library/windows/apps/mt228348).
 
-    A pointer is a generic input type with a unified event mechanism. It exposes basic info, such as screen position, on the active input source, which can be touch, touchpad, mouse, or pen.
+## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>Personnaliser des interactions tactiles
 
--   Manipulation gesture events, such as [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
 
-    Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. The information provided by the manipulation events doesn't identify the form of the interaction that was performed, but rather includes data such as position, translation delta, and velocity. You can use this touch data to determine the type of interaction that should be performed.
+Si vous implémentez votre propre prise en charge d’interaction, gardez à l’esprit que les utilisateurs s’attendent à disposer d’une expérience intuitive impliquant une interaction directe avec les éléments d’interface utilisateur de votre application. Nous vous recommandons de modeler vos interactions personnalisées sur les bibliothèques de contrôles de plateforme pour des raisons de cohérence et de simplicité de détection. Les contrôles de ces bibliothèques fournissent une expérience d’interaction utilisateur complète, notamment pour les interactions standard, les effets physiques animés, le retour visuel et l’accessibilité. Ne créez des interactions personnalisées que pour répondre à des exigences claires et bien définies, notamment en l’absence d’interactions de base prenant en charge votre scénario.
 
-Here is the basic set of touch gestures supported by the UWP.
+Pour assurer une prise en charge personnalisée des entrées tactiles, vous pouvez gérer divers événements [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Ces événements sont regroupés en trois niveaux d’abstraction.
 
-| Name           | Type                 | Description                                                                            |
+-   Les événements de mouvement statique sont déclenchés une fois que l’interaction se termine. Les événements de mouvement incluent [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985), [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922), [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) et [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928).
+
+    Vous pouvez désactiver les événements de mouvement sur des éléments spécifiques en définissant [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939), [**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931), [**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) et [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) sur **false**.
+
+-   Les événements de pointeur tels que [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) et [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) fournissent des détails de bas niveau pour chaque contact tactile, y compris le mouvement du pointeur et la capacité à distinguer les événements liés à l’appui ou au relâchement.
+
+    Un pointeur est un type d’entrée générique avec un mécanisme d’événements unifiés. Il expose les informations de base (telles que la position de l’écran) sur la source d’entrée active (entrée tactile, pavé tactile, souris ou stylet).
+
+-   Les événements d’action de manipulation, tels que [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), indiquent une interaction en cours. L’utilisateur les déclenche en touchant un élément. Ils se poursuivent jusqu’à ce que l’utilisateur mette fin au contact ou que la manipulation soit annulée.
+
+    Les événements de manipulation comprennent les interactions tactiles multipoint, telles que le zoom, le mouvement panoramique ou la rotation, et des interactions qui utilisent des données d’inertie et de vitesse, telles que le glissement. Les informations fournies par les événements de manipulation ne reflètent pas l’interaction qui s’est produite, mais comprennent des données, telles que la position, le delta de translation et la vitesse. Vous pouvez utiliser ces données tactiles pour déterminer le type d’interaction qui doit être produit.
+
+Voici l’ensemble de mouvements tactiles de base pris en charge par la plateforme UWP.
+
+| Nom           | Type                 | Description                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
-| Tap            | Static gesture       | One finger touches the screen and lifts up.                                            |
-| Press and hold | Static gesture       | One finger touches the screen and stays in place.                                      |
-| Slide          | Manipulation gesture | One or more fingers touch the screen and move in the same direction.                   |
-| Swipe          | Manipulation gesture | One or more fingers touch the screen and move a short distance in the same direction.  |
-| Turn           | Manipulation gesture | Two or more fingers touch the screen and move in a clockwise or counter-clockwise arc. |
-| Pinch          | Manipulation gesture | Two or more fingers touch the screen and move closer together.                         |
-| Stretch        | Manipulation gesture | Two or more fingers touch the screen and move farther apart.                           |
+| Appuyer            | Action statique       | Brève pression de l’écran avec un doigt.                                            |
+| Appuyer longuement | Action statique       | Pression prolongée de l’écran avec un doigt.                                      |
+| Faire glisser          | Action de manipulation | Pression de l’écran avec un ou plusieurs doigts et déplacement dans une même direction.                   |
+| Balayer          | Action de manipulation | Pression de l’écran avec un ou plusieurs doigts et déplacement sur une courte distance dans une même direction.  |
+| Tourner           | Action de manipulation | Pression de l’écran avec deux doigts ou plus et mouvement en arc de cercle de haut en bas ou de bas en haut. |
+| Pincer          | Action de manipulation | Pression de l’écran avec deux doigts ou plus, puis rapprochement des doigts.                         |
+| Étirer        | Action de manipulation | Pression de l’écran avec deux doigts ou plus, puis étirement des doigts.                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## <span id="gestures"></span><span id="GESTURES"></span>Gesture events
+## <span id="gestures"></span><span id="GESTURES"></span>Événements de mouvement
 
 
-For details about individual controls, see [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406).
+Pour plus d’informations concernant les contrôles individuels, voir [Liste des contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>Pointer events
+## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>Événements de pointeur
 
 
-Pointer events are raised by a variety of active input sources, including touch, touchpad, pen, and mouse (they replace traditional mouse events.)
+Les événements de pointeur sont déclenchés par diverses sources d’entrée actives, y compris les entrées tactiles, le pavé tactile, le stylet et la souris (ils remplacent les événements de souris classiques.)
 
-Pointer events are based on a single input point (finger, pen tip, mouse cursor) and do not support velocity-based interactions.
+Les événements de pointeur sont basés sur un point d’entrée unique (doigt, pointe du stylet, curseur de la souris) et ne prennent pas en charge les interactions basées sur la vitesse.
 
-Here is a list of pointer events and their related event argument.
+Voici une liste des événements de pointeur et leur argument d’événement associé.
 
-| Event or class                                                       | Description                                                   |
+| Événement ou classe                                                       | Description                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
-| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | Occurs when a single finger touches the screen.               |
-| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | Occurs when that same touch contact is lifted.                |
-| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | Occurs when the pointer is dragged across the screen.         |
-| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | Occurs when a pointer enters the hit test area of an element. |
-| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | Occurs when a pointer exits the hit test area of an element.  |
-| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | Occurs when a touch contact is abnormally lost.               |
-| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | Occurs when a pointer capture is taken by another element.    |
-| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | Occurs when the delta value of a mouse wheel changes.         |
-| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | Provides data for all pointer events.                         |
+| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | Se produit lorsqu’un seul doigt touche l’écran.               |
+| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | Se produit quand ce même contact tactile est relâché.                |
+| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | Se produit lorsque l’on fait glisser le pointeur sur l’écran.         |
+| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | Se produit lorsqu’un pointeur entre dans la zone de test de positionnement d’un élément. |
+| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | Se produit lorsqu’un pointeur quitte la zone de test de positionnement d’un élément.  |
+| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | Se produit lorsqu’un contact tactile est anormalement perdu.               |
+| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | Se produit lorsqu’une capture du pointeur est effectuée par un autre élément.    |
+| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | Se produit lorsque la valeur delta d’une roulette de souris change.         |
+| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | Fournit des données pour tous les événements de pointeur.                         |
 
- 
+ 
 
-The following example shows how to use the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events to handle a tap interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) object.
+L’exemple suivant indique comment utiliser les événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) et [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) pour gérer une interaction d’appui sur un objet [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371).
 
-First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
+Pour commencer, un élément [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) nommé `touchRectangle` est créé en XAML (Extensible Application Markup Language).
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -259,7 +259,7 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
 </Grid>
 ```
 
-Next, listeners for the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events are specified.
+Ensuite, les détecteurs des événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) et [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) sont spécifiés.
 
 ```ManagedCPlusPlus
 MainPage::MainPage()
@@ -299,7 +299,7 @@ Public Sub New()
 End Sub
 ```
 
-Finally, the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event handler increases the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), while the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) event handlers set the **Height** and **Width** back to their starting values.
+Enfin, le gestionnaire d’événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) augmente les valeurs [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) de [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), tandis que les gestionnaires d’événements [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) et [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) redéfinissent **Height** et **Width** sur leurs valeurs de départ.
 
 ```ManagedCPlusPlus
 // Handler for pointer exited event.
@@ -420,42 +420,42 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>Manipulation events
+## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>Événements de manipulation
 
 
-Use manipulation events if you need to support multiple finger interactions in your app, or interactions that require velocity data.
+Si vous souhaitez que votre application prenne en charge les interactions impliquant plusieurs doigts ou les interactions qui utilisent des données de rapidité, alors dans ce cas utilisez les événements de manipulation.
 
-You can use manipulation events to detect interactions such as drag, zoom, and hold.
+Vous pouvez utiliser des événements de manipulation pour détecter des interactions telles que les actions de faire glisser, de zoomer et de maintenir.
 
-Here is a list of manipulation events and related event arguments.
+Voici une liste des événements de manipulation et de leur argument d’événement associé.
 
-| Event or class                                                                                               | Description                                                                                                                               |
+| Événement ou classe                                                                                               | Description                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**ManipulationStarting event**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | Occurs when the manipulation processor is first created.                                                                                  |
-| [**ManipulationStarted event**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Occurs when an input device begins a manipulation on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
-| [**ManipulationDelta event**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | Occurs when the input device changes position during a manipulation.                                                                      |
-| [**ManipulationInertiaStarting event**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | Occurs when the input device loses contact with the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) object during a manipulation and inertia begins. |
-| [**ManipulationCompleted event**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | Occurs when a manipulation and inertia on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) are complete.                                          |
-| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | Provides data for the [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951) event.                                         |
-| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | Provides data for the [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) event.                                           |
-| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | Provides data for the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event.                                               |
-| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | Provides data for the [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947) event.                           |
-| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | Describes the speed at which manipulations occur.                                                                                         |
-| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | Provides data for the [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) event.                                       |
+| [**Événement ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | Se produit lorsque le processeur de manipulation est créé.                                                                                  |
+| [**Événement ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Se produit lorsqu’un périphérique d’entrée entame une manipulation sur l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
+| [**Événement ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | Se produit lorsque le périphérique d’entrée change de position au cours d’une manipulation.                                                                      |
+| [**Événement ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | Se produit lorsque le périphérique d’entrée perd le contact avec l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) durant une manipulation et que cela entraîne un début d’inertie. |
+| [**Événement ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | Se produit lorsque les opérations de manipulation et d’inertie sont terminées sur l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                          |
+| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | Fournit des données pour l’événement [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951).                                         |
+| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | Fournit des données pour l’événement [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950).                                           |
+| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | Fournit des données pour l’événement [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946).                                               |
+| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | Fournit des données pour l’événement [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947).                           |
+| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | Décrit la vitesse à laquelle les manipulations se produisent.                                                                                         |
+| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | Fournit des données pour l’événement [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945).                                       |
 
- 
+ 
 
-A gesture consists of a series of manipulation events. Each gesture starts with a [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) event, such as when a user touches the screen.
+Un mouvement se compose d’une série d’événements de manipulation. Chaque mouvement débute par un événement [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), par exemple lorsqu’un utilisateur appuie sur l’écran.
 
-Next, one or more [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) event is raised when the interaction finishes.
+Puis, un ou plusieurs événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) sont déclenchés. Par exemple, si vous appuyez sur l’écran et faites glisser votre doigt sur celui-ci. Enfin, un événement [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) est déclenché lorsque l’interaction prend fin.
 
-**Note**  If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.
+**Remarque** Si vous ne possédez pas d’écran tactile, vous pouvez tester le code de votre événement de manipulation dans le simulateur à l’aide d’une souris et d’une interface de roulette de souris.
 
- 
+ 
 
-The following example shows how to use the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events to handle a slide interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) and move it across the screen.
+L’exemple suivant indique comment utiliser les événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) pour gérer une interaction de glissement sur l’élément [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) et de déplacement de ce dernier sur l’écran.
 
-First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in XAML with a [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of 200.
+Pour commencer, un élément [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) nommé `touchRectangle` est créé en XAML avec une valeur [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et une valeur [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) de 200.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -481,7 +481,7 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
 </Grid>
 ```
 
-Next, a global [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) named `dragTranslation` is created for translating the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). A [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) of the **Rectangle**.
+Ensuite, un élément [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) global nommé `dragTranslation` est créé pour la translation de l’élément [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). Un détecteur d’événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) est spécifié sur l’élément **Rectangle**, et `dragTranslation` est ajouté à la propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) de **Rectangle**.
 
 ```ManagedCPlusPlus
 // Global translation transform used for changing the position of 
@@ -552,7 +552,7 @@ Public Sub New()
 End Sub
 ```
 
-Finally, in the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event handler, the position of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) is updated by using the [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) on the [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) property.
+Enfin, dans le gestionnaire d’événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946), la position de [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) est mise à jour à l’aide de l’objet [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) sur la propriété [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058).
 
 ```ManagedCPlusPlus
 // Handler for the ManipulationDelta event.
@@ -596,41 +596,44 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>Routed events
+## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>Événements routés
 
 
-All of the pointer events, gesture events and manipulation events mentioned here are implemented as *routed events*. This means that the event can potentially be handled by objects other than the one that originally raised the event. Successive parents in an object tree, such as the parent containers of a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) or the root [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) of your app, can choose to handle these events even if the original element does not. Conversely, any object that does handle the event can mark the event handled so that it no longer reaches any parent element. For more info about the routed event concept and how it affects how you write handlers for routed events, see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/hh758286).
+Tous les événements de pointeur, événements de mouvement et événements de manipulation mentionnés ici sont implémentés en tant qu’*événements routés*. Cela signifie que l’événement peut éventuellement être géré par des objets autres que celui qui a initialement déclenché l’événement. Des parents successifs dans une arborescence d’objets, tels que les conteneurs parents d’un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) ou l’élément [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) racine, peuvent choisir de gérer ces événements même si l’élément d’origine ne le fait pas. À l’inverse, tout objet qui gère l’événement peut marquer l’événement géré afin qu’il n’accède plus à aucun élément parent. Pour plus d’informations concernant le concept des événements routés et la façon dont il affecte votre manière d’écrire des gestionnaires pour les événements routés, voir [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/hh758286).
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
-
-
--   Design applications with touch interaction as the primary expected input method.
--   Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)
--   Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.
--   Optimize accuracy through the use of snap points and directional "rails".
--   Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.
--   Don't use timed interactions whenever possible (example of appropriate use: touch and hold).
--   Don't use the number of fingers used to distinguish the manipulation whenever possible.
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
 
 
-## <span id="related_topics"></span>Related articles
-
-* [Handle pointer input](handle-pointer-input.md)
-* [Identify input devices](identify-input-devices.md)
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Archive Samples**
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
-
- 
+-   Concevez des applications en utilisant l’interaction tactile comme méthode d’entrée principale.
+-   Fournissez un retour visuel pour les interactions de tous types (entrée tactile, stylo, stylet, souris, etc.)
+-   Optimisez le ciblage en ajustant la taille de la cible tactile, la géométrie de contact, ainsi que les mouvements de frottement et de va-et-vient.
+-   Optimisez la précision grâce à l’utilisation de points d’ancrage et de « rails » d’orientation.
+-   Fournissez des info-bulles et des poignées pour améliorer la précision tactile quand les éléments d’interface sont serrés entre eux.
+-   Évitez dans la mesure du possible d’utiliser des interactions chronométrées (exemple d’utilisation appropriée : maintenir appuyé).
+-   Évitez d’utiliser le nombre de doigts servant à distinguer la manipulation.
 
 
+## <span id="related_topics"></span>Articles connexes
+
+* [Gérer les entrées du pointeur](handle-pointer-input.md)
+* Identifier des périphériques d’entrée
+* [Exemples](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* Exemple de mode d’interaction utilisateur
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Exemples d’archive](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

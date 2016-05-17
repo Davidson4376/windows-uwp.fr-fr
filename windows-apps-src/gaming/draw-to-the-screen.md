@@ -1,40 +1,44 @@
 ---
 author: mtoepke
-title: Draw to the screen
-description: Finally, we port the code that draws the spinning cube to the screen.
+title: Dessiner à l’écran
+description: Pour finir, nous portons le code qui trace le cube tournant à l’écran.
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 ---
 
-# Draw to the screen
+# Dessiner à l’écran
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
 -   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
 -   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)
 
-Finally, we port the code that draws the spinning cube to the screen.
+Pour finir, nous portons le code qui trace le cube tournant à l’écran.
 
-In OpenGL ES 2.0, your drawing context is defined as an EGLContext type, which contains the window and surface parameters as well the resources necessary for drawing to the render targets that will be used to compose the final image displayed to the window. You use this context to configure the graphics resources to correctly display the results of your shader pipeline on the display. One of the primary resources is the "back buffer" (or "frame buffer object") that contains the final, composited render targets, ready for presentation to the display.
+Dans OpenGL ES 2.0, votre contexte de dessin est défini par le type EGLContext. Ce type contient les paramètres de fenêtre et de surface, ainsi que les ressources nécessaires pour dessiner dans les cibles de rendu qui seront utilisées pour composer l’image finale affichée dans la fenêtre. Vous utilisez ce contexte pour configurer les ressources graphiques et afficher correctement les résultats de votre pipeline nuanceur à l’écran. L’une des principales ressources est le « tampon d’arrière-plan » (ou « objet tampon de trame ») qui contient les cibles de rendu composées finales, prêtes pour la présentation à l’écran.
 
-With Direct3D, the process of configuring the graphics resources for drawing to the display is more didactic, and requires quite a few more APIs. (A Microsoft Visual Studio Direct3D template can significantly simplify this process, though!) To obtain a context (called a Direct3D device context), you must first obtain an [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) object, and use it to create and configure an [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) object. These two objects are used in conjunction to configure the specific resources you need for drawing to the display.
+Avec Direct3D, le processus de configuration des ressources graphiques pour le dessin à l’écran est plus didactique et requiert quelques API supplémentaires. (Un modèle Microsoft Visual Studio Direct3Dpeut simplifier considérablement ce processus, néanmoins !) Pour obtenir un contexte (appelé contexte de périphérique Direct3D), vous devez préalablement obtenir un objet [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575), que vous utilisez pour créer et configurer un objet [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). Ces deux objets servent ensemble à configurer les ressources spécifiques dont vous avez besoin pour le dessin à l’écran.
 
-In short, the DXGI APIs contain primarily APIs for managing resources that directly pertain to the graphics adapter, and Direct3D contains the APIs that allow you to interface between the GPU and your main program running on the CPU.
+Pour résumer, les API DXGI contiennent principalement des API pour gérer les ressources qui appartiennent directement à la carte graphique et Direct3D contient les API qui servent d’interface entre le processeur graphique et le programme principal qui s’exécute sur le processeur.
 
-For the purposes of comparison in this sample, here are the relevant types from each API:
+Pour établir une comparaison dans le cadre de cet exemple, voici les types pertinents de chaque API :
 
--   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575): provides a virtual representation of the graphics device and its resources.
--   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598): provides the interface to configure buffers and issue rendering commands.
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631): the swap chain is analogous to the back buffer in OpenGL ES 2.0. It is the region of memory on the graphics adapter that contains the final rendered image(s) for display. It is called the "swap chain" because it has several buffers that can be written to and "swapped" to present the latest render to the screen.
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582): this contains the 2D bitmap buffer that the Direct3D device context draws into, and which is presented by the swap chain. As with OpenGL ES 2.0, you can have multiple render targets, some of which are not bound to the swap chain but are used for multi-pass shading techniques.
+-   [
+            **ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) : fournit une représentation virtuelle du périphérique graphique et de ses ressources.
+-   [
+            **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) : fournit l’interface pour la configuration des tampons et l’envoi des commandes de rendu.
+-   [
+            **IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) : la chaîne de permutation est analogue au tampon d’arrière-plan d’OpenGL ES 2.0. Il s’agit de la zone de mémoire de la carte graphique qui contient la ou les images de rendu final à afficher. Elle est appelée « chaîne de permutation », car elle contient plusieurs tampons modifiables et « permutables » pour présenter le dernier rendu à l’écran.
+-   [
+            **ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) : cette API contient le tampon de bitmap 2D dans lequel l’appareil Direct3D écrit le contexte et qui est présenté par la chaîne de permutation. Comme dans OpenGL ES 2.0, vous pouvez avoir plusieurs cibles de rendu, dont certaines ne sont pas liées à la chaîne de permutation mais utilisées pour les techniques d’ombrage multipasse.
 
-In the template, the renderer object contains the following fields:
+Dans le modèle, l’objet de rendu contient les champs suivants :
 
-Direct3D 11: Device and device context declarations
+Direct3D 11 : déclarations de périphérique et de contexte de périphérique
 
 ``` syntax
 Platform::Agile<Windows::UI::Core::CoreWindow>       m_window;
@@ -45,7 +49,7 @@ Microsoft::WRL::ComPtr<IDXGISwapChain1>                      m_swapChainCoreWind
 Microsoft::WRL::ComPtr<ID3D11RenderTargetView>          m_d3dRenderTargetViewWin;
 ```
 
-Here's how the back buffer is configured as a render target and provided to the swap chain.
+C’est la façon dont le tampon d’arrière-plan est configuré en tant que cible de rendu et transmis à la chaîne de permutation.
 
 ``` syntax
 ComPtr<ID3D11Texture2D> backBuffer;
@@ -56,19 +60,19 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-The Direct3D runtime implicitly creates an [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) for the [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635), which represents the texture as a "back buffer" that the swap chain can use for display.
+Le runtime Direct3D crée implicitement une interface [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) pour l’interface [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635), qui représente la texture sous forme de « tampon d’arrière-plan » utilisé par la chaîne de permutation pour l’affichage.
 
-The initialization and configuration of the Direct3D device and device context, as well as the render targets, can be found in the custom **CreateDeviceResources** and **CreateWindowSizeDependentResources** methods in the Direct3D template.
+L’initialisation et la configuration du périphérique et du contexte de périphérique Direct3D, de même que les cibles de rendu, figurent dans les méthodes personnalisées **CreateDeviceResources** et **CreateWindowSizeDependentResources** du modèle Direct3D.
 
-For more info on Direct3D device context as it relates to EGL and the EGLContext type, read [Port EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md).
+Pour plus d’informations sur le contexte de périphérique Direct3D par rapport au code EGL et au type EGLContext, voir [Porter du code EGL vers DXGI et Direct3D](moving-from-egl-to-dxgi.md).
 
 ## Instructions
 
-### Step 1: Rendering the scene and displaying it
+### Étape 1 : Rendu de la scène et affichage
 
-After updating the cube data (in this case, by rotating it slightly around the y axis), the Render method sets the viewport to the dimensions of he drawing context (an EGLContext). This context contains the color buffer that will be displayed to the window surface (an EGLSurface), using the configured display (EGLDisplay). At this time, the example updates the vertex data attributes, re-binds the index buffer, draws the cube, and swaps in color buffer drawn by the shading pipeline to the display surface.
+Après la mise à jour des données de cube (dans cet exemple, en le faisant pivoter légèrement autour de l’axe y), la méthode Render définit la fenêtre d’affichage sur les dimensions du contexte de dessin (EGLContext). Ce contexte contient le tampon de couleur qui sera affiché à la surface de la fenêtre (EGLSurface) sur l’écran configuré (EGLDisplay). À ce stade, l’exemple met à jour les attributs des données de vertex, relie le tampon d’index, dessine le cube et permute le tampon de couleur dessiné par le pipeline d’ombrage sur la surface de la fenêtre.
 
-OpenGL ES 2.0: Rendering a frame for display
+OpenGL ES 2.0 : rendu d’une trame pour l’affichage
 
 ``` syntax
 void Render(GraphicsContext *drawContext)
@@ -114,19 +118,19 @@ void Render(GraphicsContext *drawContext)
 }
 ```
 
-In Direct3D 11, the process is very similar. (We're assuming that you're using the viewport and render target configuration from the Direct3D template.
+Dans Direct3D 11, le processus est très similaire. (Nous supposons que vous utilisez la configuration de fenêtre d’affichage et de cible de rendu du modèle Direct3D).
 
--   Update the constant buffers (the model-view-projection matrix, in this case) with calls to [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
--   Set the vertex buffer with [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
--   Set the index buffer with [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453).
--   Set the specific triangle topology (a triangle list) with [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
--   Set the input layout of the vertex buffer with [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454).
--   Bind the vertex shader with [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493).
--   Bind the fragment shader with [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472).
--   Send the indexed vertices through the shaders and output the color results to the render target buffer with [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409).
--   Display the render target buffer with [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
+-   Mettez à jour les tampons constants (la matrice projection-vue-modèle, dans cet exemple) en appelant [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
+-   Définissez le tampon de vertex avec [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+-   Définissez le tampon d’index avec [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453).
+-   Définissez la topologie de triangle spécifique (une liste de triangles) avec [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
+-   Définissez le schéma d’entrée du tampon de vertex avec [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454).
+-   Liez le nuanceur de vertex avec [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493).
+-   Liez le nuanceur de fragments avec [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472).
+-   Envoyez les vertex indexés dans les nuanceurs et publiez les résultats de couleur dans le tampon de cible de rendu avec [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409).
+-   Affichez le tampon de cible de rendu avec [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
-Direct3D 11: Rendering a frame for display
+Direct3D 11 : rendu d’une trame pour l’affichage
 
 ``` syntax
 void RenderObject::Render()
@@ -189,29 +193,34 @@ void RenderObject::Render()
 
 ```
 
-Once [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) is called, your frame is output to the configured display.
+Dès que [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) est appelée, votre trame est envoyée à l’écran configuré.
 
-## Previous step
-
-
-[Port the GLSL](port-the-glsl.md)
-
-## Remarks
-
-This example glosses over much of the complexity that goes into configuring device resources, especially for Universal Windows Platform (UWP) DirectX apps. We suggest you review the full template code, especially the parts that perform the window and device resource setup and management. UWP apps have to support rotation events as well as suspend/resume events, and the template demonstrates best practices for handling the loss of an interface or a change in the display parameters.
-
-## Related topics
+## Étape précédente
 
 
-* [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [Port the shader objects](port-the-shader-config.md)
-* [Port the GLSL](port-the-glsl.md)
-* [Draw to the screen](draw-to-the-screen.md)
+[Porter le langage GLSL](port-the-glsl.md)
 
- 
+## Remarques
 
- 
+Cet exemple ne s’attarde pas sur la grande complexité de la configuration des ressources de périphérique, en particulier pour les applications DirectX de plateforme Windows universelle (UWP). Nous vous conseillons de revoir l’intégralité du code du modèle, notamment les parties correspondant à la configuration et à la gestion des fenêtres et des ressources de périphérique. Les applications UWP doivent aussi prendre en charge les événements de rotation et les événements de suspension/reprise. Le modèle démontre les meilleures pratiques pour gérer la perte d’une interface ou une modification des paramètres d’affichage.
+
+## Rubriques connexes
 
 
+* [Procédure : portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [Porter les objets nuanceur](port-the-shader-config.md)
+* [Porter le GLSL](port-the-glsl.md)
+* [Dessiner à l’écran](draw-to-the-screen.md)
+
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

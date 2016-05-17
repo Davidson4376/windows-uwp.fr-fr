@@ -1,41 +1,42 @@
 ---
 author: DelfCo
-Description: Use the Windows.Globalization.DateTimeFormatting API with custom patterns to display dates and times in exactly the format you wish.
-title: Use patterns to format dates and times
+Description: Utilisez l’API Windows.Globalization.DateTimeFormatting avec des modèles personnalisés pour afficher les dates et heures dans le format souhaité.
+title: Utiliser des modèles de format des dates et heures
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
 ---
 
-# Use patterns to format dates and times
+# Utiliser des modèles de format des dates et heures
 
 
 
 
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 -   [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)
 -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
 
-Use the [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish.
+Utilisez l’API [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) avec des modèles personnalisés pour afficher les dates et heures dans le format souhaité.
 
 ## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
 
 
-[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) provides various ways to properly format dates and times for languages and regions around the world. You can use standard formats for year, month, day, and so on, or you can use standard string templates, such as "longdate" or "month day".
+[
+            **Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) offre différentes façons de formater correctement les dates et heures selon les langues et régions du monde. Vous pouvez utiliser des formats standard pour l’année, le mois, le jour, etc., ou recourir à des modèles de chaîne standard, tels que « date_longue » ou « jour mois ».
 
-But when you want more control over the order and format of the constituents of the [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) string you wish to display, you can use a special syntax for the string template parameter, called a "pattern". The pattern syntax allows you to obtain individual constituents of a **DateTime** object—just the month name, or just the year value, for example—in order to display them in whatever custom format you choose. Furthermore, the pattern can be localized to adapt to other languages and regions.
+Toutefois, si vous voulez mieux contrôler l’ordre et le format des éléments de la chaîne [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) à afficher, vous pouvez utiliser une syntaxe spéciale pour le paramètre du modèle de chaîne, appelée « modèle ». La syntaxe modèle vous permet d’obtenir des constituants individuels d’un objet **DateTime**, seulement le nom du mois ou la valeur de l’année, par exemple, afin de les afficher dans n’importe quel format personnalisé de votre choix. En outre, il est possible de localiser le modèle pour l’adapter à d’autres langues et régions.
 
-**Note**  This is an overview of format patterns. For a more complete discussion of format templates and format patterns see the Remarks section of the [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) class.
+**Remarque** Il s’agit d’une vue d’ensemble des modèles de format. Pour consulter une description plus complète des modèles et types de formats, voir la section « Remarques » de la classe [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828).
 
- 
+ 
 
-## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>What you need to know
+## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>Ce que vous devez savoir
 
 
-It's important to note that when you use patterns, you are building a custom format that is not guaranteed to be valid across cultures. For example, consider the "month day" template:
+Il est important de noter que lorsque vous utilisez des modèles, vous créez un format personnalisé qui n’est pas forcément valide dans toutes les cultures. Par exemple, considérez le modèle « jour mois » :
 
 **C#**
 ```CSharp
@@ -46,7 +47,7 @@ var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("mo
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
 ```
 
-This creates a formatter based on the language and region value of the current context. Therefore, it always displays the month and day together in an appropriate global format. For example, it displays "January 1" for English (US), but "1 janvier" for French (France) and "1月1日" for Japanese. That is because the template is based on a culture-specific pattern string, which can be accessed via the pattern property:
+Ce code crée un formateur basé sur la langue et la région du contexte actuel. Il affiche donc toujours le jour et le mois ensemble dans un format international approprié. Par exemple, il affiche « January 1» pour l’anglais (États-Unis), mais « 1er janvier» pour le français (France) et « 1月1日 » pour le japonais. Ceci est dû au fait que le modèle est basé sur une chaîne de modèle propre à la culture, qui est accessible par le biais de la propriété pattern :
 
 **C#**
 ```CSharp
@@ -57,7 +58,7 @@ var monthdaypattern = datefmt.Patterns;
 var monthdaypattern = datefmt.patterns;
 ```
 
-This yields different results depending on the language and region of the formatter. Note that different regions may use different constituents, in different orders, with or without additional characters and spacing:
+Les résultats diffèrent selon la langue et la région du formateur. Notez que différentes régions peuvent utiliser des constituants distincts dans des ordres différents, avec ou sans espacement et caractères supplémentaires :
 
 ``` syntax
 En-US: "{month.full} {day.integer}"
@@ -65,7 +66,7 @@ Fr-FR: "{day.integer} {month.full}"
 Ja-JP: "{month.integer}月{day.integer}日"
 ```
 
-You can use patterns to construct a custom [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828), for instance this one based on the US English pattern:
+Vous pouvez utiliser les modèles pour construire un élément [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) personnalisé, par exemple celui-ci basé sur le modèle anglais (États-Unis) :
 
 **C#**
 ```CSharp
@@ -76,7 +77,7 @@ var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{m
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-Windows returns culture-specific values for the individual constituents inside the brackets {}. But with the pattern syntax, the constituent order is invariant. You get precisely what you ask for, which may not be culturally appropriate:
+Windows renvoie des valeurs propres à la culture pour les constituants individuels indiqués entre crochets {}. En revanche, avec la syntaxe modèle, l’ordre des constituants est invariable. Vous obtenez exactement ce que vous demandez, ce qui pourrait ne pas convenir d’un point de vue culturel :
 
 ``` syntax
 En-US: January 1
@@ -84,41 +85,41 @@ Fr-FR: janvier 1 (inappropriate for France; non-standard order)
 Ja-JP: 1月1 (inappropriate for Japan; the day symbol is missing)
 ```
 
-Furthermore, patterns are not guaranteed to remain consistent over time. Countries or regions may change their calendar systems, which alters a format template. Windows updates the output of the formatters to accommodate such changes. Therefore, you should only use the pattern syntax for formatting [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)s when:
+En outre, la cohérence des modèles n’est pas garantie dans le temps. Les pays ou régions peuvent apporter des changements à leurs systèmes calendaires, ce qui modifie un modèle de format. Windows met à jour la sortie des formateurs pour tenir compte de ces changements. C’est pourquoi, vous ne devez utiliser la syntaxe modèle pour la mise en forme de [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) que :
 
--   You are not dependent on a particular output for a format.
--   You do not need the format to follow some culture-specific standard.
--   You specifically intend the pattern to be invariant across cultures.
--   You intend to localize the pattern.
+-   si vous n’êtes pas dépendant d’une sortie particulière pour un format ;
+-   si vous n’avez pas besoin que le format respecte une norme propre à une culture ;
+-   si vous voulez précisément que le modèle soit invariable dans toutes les cultures ;
+-   si vous avez l’intention de localiser le modèle.
 
-To summarize the differences between the standard string templates and non-standard string patterns:
+Pour résumer les différences entre les modèles de chaîne standard et les modèles de chaîne non standard :
 
-**String templates, such as "month day":**
+**Modèles de chaîne, comme « mois jour » :**
 
--   Abstracted representation of a [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) format that includes values for the month and the day, in some order.
--   Guaranteed to return a valid standard format across all language-region values supported by Windows.
--   Guaranteed to give you a culturally-appropriate formatted string for the given language-region.
--   Not all combinations of constituents are valid. For example, there is no string template for "dayofweek day".
+-   Représentation abstraite d’un format [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) qui inclut des valeurs pour le mois et le jour, dans un certain ordre.
+-   Garantie de retourner un format standard valide pour toutes les valeurs langue-région prises en charge par Windows.
+-   Garantie de produire une chaîne formatée adaptée à la langue-région donnée.
+-   Les combinaisons de constituants ne sont pas toutes valides. Par exemple, il n’existe aucun modèle de chaîne pour « jour_de_la_semaine jour ».
 
-**String patterns, such as "{month.full} {day.integer}":**
+**Modèles de chaîne, tels que « {month.full} {day.integer} » :**
 
--   Explicitly ordered string that expresses the full month name, followed by a space, followed by the day integer, in that order.
--   May not correspond to a valid standard format for any language-region pair.
--   Not guaranteed to be culturally appropriate.
--   Any combination of constituents may be specified, in any order.
+-   Chaîne explicitement ordonnée qui exprime le nom complet du mois, suivi d’un espace, suivi par l’entier du jour, dans cet ordre.
+-   Peut ne pas correspondre à un format standard valable pour toute paire langue-région.
+-   Pas de garantie d’être adapté d’un point de vue culturel.
+-   Toute combinaison de constituants peut être spécifiée dans n’importe quel ordre.
 
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tasks
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tâches
 
 
-Suppose you wish to display the current month and day together with the current time, in a specific format. For example, you would like US English users to see something like this:
+Supposons que vous souhaitiez afficher le mois et le jour courants avec l’heure courante dans un format spécifique. Par exemple, vous souhaitez que les utilisateurs américains voient une chaîne de ce type :
 
 ``` syntax
 June 25 | 1:38 PM
 ```
 
-The date part corresponds to the "month day" template, and the time part corresponds to the "hour minute" template. So, you can create a custom format that concatenates the patterns which make up those templates.
+La partie date correspond au modèle « mois jour », et la partie heure correspond au modèle « minute heure ». Vous pouvez donc créer un format personnalisé qui concatène les éléments composant ces modèles.
 
-First, get the formatters for the relevant date and time templates, and then get the patterns of those templates:
+Tout d’abord, obtenez les formateurs pour les modèles de date et heure pertinents, puis les modèles de ces modèles :
 
 **C#**
 ```CSharp
@@ -142,7 +143,7 @@ var mydatepattern = mydate.patterns[0];
 var mytimepattern = mytime.patterns[0];
 ```
 
-You should store your custom format as a localizable resource string. For example, the string for English (United States) would be "{date} | {time}". Localizers can adjust this string as needed. For example, they can change the order of the constituents, if it seems more natural in some language or region to have the time precede the date. Or, they can replace "|" with some other separator character. At runtime you replace the {date} and {time} portions of the string with the relevant pattern:
+Votre format personnalisé doit être stocké dans une chaîne de ressource localisable. Par exemple, la chaîne pour l’anglais (États-Unis) serait « {date} | {time} ». Les localisateurs peuvent ajuster cette chaîne selon les besoins. Ils peuvent par exemple changer l’ordre des constituants, si une langue ou une région spécifiques utilisent plus naturellement l’heure avant la date. Ils peuvent également remplacer le caractère « | » par tout autre caractère de séparation. Lors de l’exécution, vous remplacez les parties {date} et {time} de la chaîne par le modèle pertinent :
 
 **C#**
 ```CSharp
@@ -160,7 +161,7 @@ mydateplustime = mydateplustime.replace("{date}", mydatepattern);
 mydateplustime = mydateplustime.replace("{time}", mytimepattern);
 ```
 
-Then you can construct a new formatter based on the custom pattern:
+Vous pouvez ensuite construire un nouveau formateur basé sur le modèle personnalisé :
 
 **C#**
 ```CSharp
@@ -173,15 +174,20 @@ var mydateplustimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFor
 var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 ```
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>Rubriques connexes
 
 
-* [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?LinkId=231618)
+* [Exemple de mise en forme des dates et heures](http://go.microsoft.com/fwlink/p/?LinkId=231618)
 * [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 * [**Windows.Foundation.DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
- 
+ 
 
- 
+ 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: Énumérer les appareils sur un réseau
-description: Outre la découverte d’appareils connectés localement, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les appareils sur protocoles sans fil et réseau.
+description: Outre la découverte d’appareils en local, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les produits sur protocoles sans fil et réseau.
 ---
 # Énumérer les appareils sur un réseau
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -16,7 +17,7 @@ Outre la découverte d’appareils connectés localement, vous pouvez utiliser l
 
 ## Énumération d’appareils sur protocoles réseau ou sans fil
 
-Parfois, vous devez énumérer des appareils qui ne sont pas connectés localement et peuvent uniquement être détectés via des protocoles sans fil ou réseau. Pour ce faire, les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) possèdent trois genres différents d’objets appareil : **AssociationEndpoint** (AEP), **AssociationEndpointContainer** (conteneur AEP) et **AssociationEndpointService** (service AEP). En tant que groupe, ils sont appelés AEP ou objets AEP.
+Parfois, vous devez énumérer des appareils qui ne sont pas connectés localement et peuvent uniquement être détectés via des protocoles sans fil ou réseau. Pour ce faire, les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) possèdent trois genres différents d’objets appareil : **AssociationEndpoint** (AEP), **AssociationEndpointContainer** (conteneur AEP) et **AssociationEndpointService** (service AEP). En tant que groupe, ils sont appelés AEP ou objets AEP.
 
 Certaines API d’appareils fournissent une chaîne de sélecteur que vous pouvez utiliser pour énumérer les objets AEP disponibles. Cela peut inclure à la fois les appareils associés et non associés avec le système. Certains appareils peuvent ne pas nécessiter d’association. Ces API d’appareil peuvent essayer de s’associer avec l’appareil si c’est nécessaire avant d’interagir avec celui-ci. Wi-Fi Direct est un exemple d’API qui suit ce modèle. Si ces API d’appareil ne s’associent pas automatiquement avec l’appareil, vous pouvez les associer à l’aide de l’objet [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/Mt168396) disponible dans [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/Dn705960).
 
@@ -35,8 +36,8 @@ Lorsque vous créez votre propre sélecteur, il est fortement recommandé de lim
 | Windows Connect Now (WCN)                    | **{4c1b1ef8-2f62-4b9f-9bc5-b21ab636138f}** |
 | Stations d’accueil WiGig                                  | **{a277f3a5-8764-4f88-8045-4c5e962640b1}** |
 | Approvisionnement Wi-Fi pour imprimantes HP           | **{c85ef710-f344-4792-bb6d-85a4346f1e69}** |
-| Bluetooth                                    | Non fourni actuellement                     |
-| Bluetooth LE                                 | Non fourni actuellement                     |
+| Bluetooth                                    | **{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}** |
+| Bluetooth LE                                 | **{bb7bb05e-5972-42b5-94fc-76eaa7084d49}** |
 
  
 
@@ -78,6 +79,6 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

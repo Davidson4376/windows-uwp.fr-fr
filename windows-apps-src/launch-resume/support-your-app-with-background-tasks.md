@@ -1,188 +1,193 @@
 ---
 author: mcleblanc
-title: Support your app with background tasks
-description: The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks.
+title: Prendre en charge votre application avec des tâches en arrière-plan
+description: Cette section explique comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ---
 
-# Support your app with background tasks
+# Prendre en charge votre application avec des tâches en arrière-plan
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks. Background tasks are lightweight classes that the OS runs in the background. You can use background tasks to provide functionality when your app is suspended or not running. You can also use background tasks for real-time communication apps like VOIP, mail, and IM.
+Les rubriques de cette section expliquent comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan. Les tâches en arrière-plan sont des classes légères que le système d’exploitation exécute en arrière-plan. Vous pouvez également recourir à des tâches en arrière-plan pour fournir des fonctionnalités lorsque votre application est en suspens ou n’est pas en cours d’exécution. Les tâches en arrière-plan sont aussi utiles pour des applications de communication en temps réel (VoIP, messagerie électronique et messagerie instantanée, par exemple).
 
-Background tasks are separate classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. You register a background task by using the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class. The class name is used to specify the entry point when you registering the background task.
+Les tâches en arrière-plan sont des classes séparées chargées d’implémenter l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Vous inscrivez une tâche en arrière-plan à l’aide de la classe [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Le nom de la classe est utilisé pour spécifier le point d’entrée lors de l’inscription de la tâche en arrière-plan.
 
-To get started quickly with a background task, see [Create and register a background task](create-and-register-a-background-task.md).
+Pour débuter rapidement avec une tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md).
 
-**Tip**  Starting with Windows 10, you no longer need to place an app on the lock screen in order to register background tasks.
+**Conseil** À partir de Windows 10, il n’est plus nécessaire de placer une application sur l’écran de verrouillage pour qu’elle inscrive les tâches en arrière-plan.
 
- 
+ 
 
-## Background tasks for system events
+## Tâches en arrière-plan pour événements système
 
 
-Your app can respond to system-generated events by registering a background task with the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) class. An app can use any of the following system event triggers (defined in [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839))
+Votre application peut répondre à des événements générés par le système en inscrivant une tâche en arrière-plan à l’aide de la classe [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838). Une application peut utiliser au choix l’un des déclencheurs d’événements système suivants (définis dans [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)).
 
-| Trigger name                     | Description                                                                                                    |
+| Nom du déclencheur                     | Description                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **InternetAvailable**            | The Internet becomes available.                                                                                |
-| **NetworkStateChange**           | A network change such as a change in cost or connectivity occurs.                                              |
-| **OnlineIdConnectedStateChange** | Online ID associated with the account changes.                                                                 |
-| **SmsReceived**                  | A new SMS message is received by an installed mobile broadband device.                                         |
-| **TimeZoneChange**               | The time zone changes on the device (for example, when the system adjusts the clock for daylight saving time). |
+| **InternetAvailable**            | Internet devient disponible.                                                                                |
+| **NetworkStateChange**           | Une modification, liée au coût ou à la connectivité, par exemple, se produit sur le réseau.                                              |
+| **OnlineIdConnectedStateChange** | ID en ligne associé aux modifications du compte.                                                                 |
+| **SmsReceived**                  | Un nouveau message SMS est reçu par un appareil mobile à haut débit installé.                                         |
+| **TimeZoneChange**               | Le fuseau horaire est modifié sur l’appareil (par exemple, lorsque le système règle l’horloge pour le passage à l’heure d’été). |
 
- 
+ 
 
-For more info see [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md).
+Pour plus d’informations, voir [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md).
 
-## Conditions for background tasks
+## Conditions pour tâches en arrière-plan
 
 
-You can control when the background task runs, even after it is triggered, by adding a condition. Once triggered, a background task will not run until all of its conditions are met. The following conditions (represented by the [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration) can be used.
+Vous pouvez contrôler à quel moment la tâche en arrière-plan est exécutée, même après l’avoir déclenchée, en ajoutant une condition. Une fois déclenchée, la tâche en arrière-plan ne sera pas exécutée tant que toutes ses conditions ne seront pas remplies. Les conditions suivantes (représentées par l’énumération [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)) peuvent être appliquées.
 
-| Condition name           | Description                       |
+| Nom de la condition           | Description                       |
 |--------------------------|-----------------------------------|
-| **InternetAvailable**    | The Internet must be available.   |
-| **InternetNotAvailable** | The Internet must be unavailable. |
-| **SessionConnected**     | The session must be connected.    |
-| **SessionDisconnected**  | The session must be disconnected. |
-| **UserNotPresent**       | The user must be away.            |
-| **UserPresent**          | The user must be present.         |
+| **InternetAvailable**    | Internet doit être accessible.   |
+| **InternetNotAvailable** | Internet ne doit pas être accessible. |
+| **SessionConnected**     | La session doit être connectée.    |
+| **SessionDisconnected**  | La session doit être déconnectée. |
+| **UserNotPresent**       | L’utilisateur doit être absent.            |
+| **UserPresent**          | L’utilisateur doit être présent.         |
 
- 
+ 
 
-For more info see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
+Pour plus d’informations, voir [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
 
-## Application manifest requirements
-
-
-Before your app can successfully register a background task, it must be declared in the application manifest. For more info see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
-
-## Background tasks
+## Conditions requises pour le manifeste de l’application
 
 
-The following real-time triggers can be used to run lightweight custom code in the background:
+Pour que votre application puisse inscrire une tâche en arrière-plan avec succès, vous devez au préalable la déclarer dans le manifeste de l’application. Pour plus d’informations, voir [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 
-**Control Channel:  **Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). The **ControlChannelTrigger** is not supported on Windows Phone.
-
-**Timer:  **Background tasks can run as frequently as every 15 minutes, and they can be set to run at a certain time by using the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). For more info see [Run a background task on a timer](run-a-background-task-on-a-timer-.md).
-
-**Push Notification:  **Background tasks respond to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) to receive raw push notifications.
-
-**Note**  
-
-Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
-
-To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
-
-## System event triggers
+## Tâches en arrière-plan
 
 
-> **Note**  The [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) enumeration includes the following system event triggers.
+Les déclencheurs en temps réel suivants peuvent être utilisés pour exécuter du code léger personnalisé en arrière-plan :
 
-| Trigger name            | Description                                                       |
+**Canal de contrôle :**les tâches en arrière-plan peuvent conserver une connexion active et recevoir des messages sur le canal de contrôle, en utilisant l’objet [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Si votre application est à l’écoute d’un socket, vous pouvez utiliser le Broker de socket à la place du **ControlChannelTrigger**. Pour plus d’informations sur l’utilisation du Broker de socket, voir [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). La classe **ControlChannelTrigger** n’est pas prise en charge sur Windows Phone.
+
+**Minuteur :**vous pouvez exécuter des tâches en arrière-plan toutes les 15 minutes et fixer leur exécution à un moment précis à l’aide du [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Pour plus d’informations, voir [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md).
+
+**Notifications Push :**les tâches en arrière-plan répondent à l’objet [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) pour recevoir des notifications Push brutes.
+
+**Remarque**  
+
+Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
+
+Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
+
+## Déclencheurs d’événements système
+
+
+> **Remarque** L’énumération [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) intègre les déclencheurs d’événements système suivants.
+
+| Nom du déclencheur            | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
-| **UserPresent**         | The background task is triggered when the user becomes present.   |
-| **UserAway**            | The background task is triggered when the user becomes absent.    |
-| **ControlChannelReset** | The background task is triggered when a control channel is reset. |
-| **SessionConnected**    | The background task is triggered when the session is connected.   |
+| **UserPresent**         | La tâche en arrière-plan est déclenchée dès que l’utilisateur est présent.   |
+| **UserAway**            | La tâche en arrière-plan est déclenchée dès que l’utilisateur est absent.    |
+| **ControlChannelReset** | La tâche en arrière-plan est déclenchée lorsqu’un canal de contrôle est réinitialisé. |
+| **SessionConnected**    | La tâche en arrière-plan est déclenchée dès que la session est connectée.   |
 
- 
+ 
 
-The following system event triggers make it possible to recognize when the user has moved an app on or off the lock screen.
+Les déclencheurs d’événements système suivants permettent de savoir lorsque l’utilisateur active ou désactive une application sur l’écran de verrouillage.
 
-| Trigger name                     | Description                                  |
+| Nom du déclencheur                     | Description                                  |
 |----------------------------------|----------------------------------------------|
-| **LockScreenApplicationAdded**   | An app tile is added to the lock screen.     |
-| **LockScreenApplicationRemoved** | An app tile is removed from the lock screen. |
+| **LockScreenApplicationAdded**   | Une vignette d’application est ajoutée à l’écran de verrouillage.     |
+| **LockScreenApplicationRemoved** | Une vignette d’application est supprimée de l’écran de verrouillage. |
 
- 
-## Background task resource constraints
-
-
-Background tasks are lightweight. Keeping background execution to a minimum ensures the best user experience with foreground apps and battery life. This is enforced by applying resource constraints to background tasks:
-
--   Background tasks are limited to 30 seconds of wall-clock usage.
-
-## Additional background task resource constraints
+ 
+## Contraintes de ressource des tâches en arrière-plan
 
 
-### Memory constraints
+Les tâches en arrière-plan sont légères. Le fait de limiter autant que possible l’exécution en arrière-plan est l’assurance d’une expérience utilisateur optimale pour les applications de premier plan et d’une plus grande durée de batterie. Pour cela, il convient d’appliquer des contraintes de ressource aux tâches en arrière-plan :
 
-Due to the resource constraints for low-memory devices, background tasks may have a memory limit that determines the maximum amount of memory the background task can use. If your background task attempts an operation that would exceed this limit, the operation will fail and may generate an out-of-memory exception that the task can handle. If the task does not handle the out-of-memory exception, or the nature of the attempted operation is such that an out-of-memory exception was not generated, then the task will be terminated immediately. You can use the [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
+-   Les tâches en arrière-plan sont limités à 30 secondes de l'utilisation de l'horloge.
 
-### Per-device limit for apps with background tasks for low-memory devices
-
-On memory-constrained devices, there is a limit to the number of apps that can be installed on a device and use background tasks at any given time. If this number is exceeded, the call to [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), which is required to register all background tasks, will fail.
-
-### Battery Saver
-
-Unless you exempt your app so that it can still run background tasks and receive push notifications when Battery Saver is on, the Battery Saver feature, when enabled, will prevent background tasks from running when the device is not connected to external power and the battery goes below a specified amount of power remaining. This will not prevent you from registering background tasks.
-
-## Background task resource guarantees for real-time communication
+## Contraintes supplémentaires de ressource des tâches en arrière-plan
 
 
-To prevent resource quotas from interfering with real-time communication functionality, background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) receive guaranteed CPU resource quotas for every running task. The resource quotas are as mentioned above, and remain constant for these background tasks.
+### Contraintes de mémoire
 
-Your app doesn't have to do anything differently to get the guaranteed resource quotas for [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) background tasks. The system always treats these as critical background tasks.
+En raison des contraintes de ressources des appareils disposant de peu de mémoire, les tâches en arrière-plan peuvent avoir une limite de mémoire qui détermine la quantité maximale de mémoire que la tâche en arrière-plan peut utiliser. Si votre tâche en arrière-plan tente d'exécuter une opération qui dépasse cette limite, l'opération échoue et peut générer une exception de mémoire insuffisante que la tâche pourra gérer. Si la tâche ne parvient pas à gérer cette exception, ou si la nature de l'opération est telle qu'elle n’a pas généré d’exception de mémoire insuffisante, la tâche sera immédiatement arrêtée. Vous pouvez utiliser les API [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) pour connaître le niveau d’utilisation actuel et les limites de la mémoire afin d’en déterminer le plafond (le cas échéant) et de surveiller l'utilisation de la mémoire de votre tâche en arrière-plan.
 
-## Maintenance trigger
+### Limite par appareil pour les applications avec des tâches en arrière-plan pour les appareils dont la mémoire est insuffisante
 
+Sur les appareils à faible capacité de mémoire, le nombre d’applications pouvant être installées et l’utilisation de tâches en arrière-plan à tout moment sont limités. En cas de dépassement, l’appel à [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), qui est requis pour inscrire toutes les tâches en arrière-plan, échoue.
 
-Maintenance tasks only run when the device is plugged in to AC power. For more info see [Use a maintenance trigger](use-a-maintenance-trigger.md).
+### Économiseur de batterie
 
-## Background task for sensors and devices
+Sauf si vous appliquez une exception à votre application pour qu’elle puisse continuer à exécuter des tâches en arrière-plan et à recevoir des notifications push lorsque l’Économiseur de batterie est activé, la fonctionnalité Économiseur de batterie, lorsqu’elle est activée, empêche l’exécution de tâches en arrière-plan quand l’appareil n’est pas connecté à une source d’énergie externe et que la batterie passe sous une quantité d’énergie restante spécifiée. Cela ne vous empêche pas d’inscrire des tâches en arrière-plan.
 
-
-Your app can access sensors and peripheral devices from a background task with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) class. You can use this trigger for long-running operations such as data synchronization or monitoring. Unlike tasks for system events, a **DeviceUseTrigger** task can only be triggered while your app is running in the foreground and no conditions can be set on it.
-
-Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
-## Managing background tasks
+## Garanties de ressources des tâches en arrière-plan pour la communication en temps réel
 
 
-Background tasks can report progress, completion, and cancellation to your app using events and local storage. Your app can also catch exceptions thrown by a background task, and manage background task registration during app updates. For more info see:
+Afin que les quotas de ressources n’interfèrent pas avec la fonctionnalité de communication en temps réel, les tâches en arrière-plan qui utilisent le [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) et le [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) bénéficient de quotas de ressources de processeur garantis pour chaque tâche en cours d’exécution. Les quotas de ressources sont comme mentionné plus haut et demeurent inchangés pour ces tâches en arrière-plan.
 
-[Handle a cancelled background task](handle-a-cancelled-background-task.md)
+Votre application n’a pas besoin d’effectuer une procédure différente pour obtenir les quotas de ressources garantis pour les tâches en arrière-plan [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) et [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543). Le système les traite toujours en tant que tâches en arrière-plan critiques.
 
-[Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Related topics
+## Déclencheur de maintenance
 
 
-**Conceptual guidance for multitasking in Windows 10**
+Les tâches de maintenance s’exécutent uniquement lorsque l’appareil est branché sur le secteur. Pour plus d’informations, voir [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md).
 
-* [Launching, resuming, and multitasking](index.md)
+## Tâche en arrière-plan pour les capteurs et les périphériques
 
-**Related background task guidance**
 
-* [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Debug a background task](debug-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-* [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+Votre application peut accéder à des capteurs et des périphériques à partir d’une tâche en arrière-plan à l’aide de la classe [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Vous pouvez utiliser ce déclencheur pour des opérations longues telles que la synchronisation ou la surveillance de données. Contrairement aux tâches pour les événements système, une tâche **DeviceUseTrigger** peut être déclenchée uniquement pendant que votre application s’exécute au premier plan et aucune condition ne peut être définie dessus.
 
- 
+Certaines opérations d’appareil critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec le [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de l’appareil permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour plus d’informations, voir [Synchronisation et mise à jour des périphériques pour les applications de périphérique du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=306619).
 
- 
+## Gestion des tâches en arrière-plan
 
+
+Les tâches en arrière-plan peuvent signaler leur progression, leur annulation et leur achèvement à votre application par le biais d’événements et du stockage local. Votre application peut également intercepter les exceptions levées par une tâche en arrière-plan et gérer l’inscription des tâches en arrière-plan lors des mises à jour des applications. Pour plus d’informations, voir :
+
+[Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
+
+[Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+
+**Remarque**  
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+ 
+
+## Rubriques connexes
+
+
+**Recommandations conceptuelles pour le multitâche sous Windows 10**
+
+* [Lancement, reprise et multitâche](index.md)
+
+**Instructions connexes en matière de tâches en arrière-plan**
+
+* [Accéder aux capteurs et aux périphériques à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)
+* [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
+* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
+* [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
+* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Synchronisation et mise à jour des périphériques pour les applications pour périphériques du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+
+ 
+
+ 
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

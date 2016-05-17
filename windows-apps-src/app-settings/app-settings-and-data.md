@@ -1,23 +1,23 @@
 ---
 author: mijacobs
-Description: This section contains user experience guidelines for presenting app settings and storing those settings as app data.
-title: App settings and data
+Description: Cette section contient des recommandations d’expérience utilisateur en lien avec la présentation de paramètres et le stockage en tant que données applicatives.
+title: Paramètres et données d’application
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
 ---
 
-# App settings and data
+# Paramètres et données d’application
 
 
 
 
-This section contains user experience guidelines for presenting app settings and storing those settings as app data.
+Cette section contient des recommandations d’expérience utilisateur en lien avec la présentation de paramètres et le stockage en tant que données applicatives.
 
-App settings are the user-customizable portions of your Universal Windows Platform (UWP) app. For example, a news reader app might let the user specify which news sources to display or how many columns to display on the screen.
+Les paramètres d’application sont les parties personnalisables par l’utilisateur de votre application de plateforme Windows universelle (UWP). Par exemple, une application de lecteur de news peut permettre à l’utilisateur de spécifier les sources de news à afficher ou le nombre de colonnes à afficher à l’écran.
 
-App data is data that the app itself creates and manages. It includes runtime state, app settings, reference content (such as the dictionary definitions in a dictionary app), and other settings. App data is tied to the existence of the app and is only meaningful to that app.
-## In this section
+Des données d’application que l’application crée et gère elle-même. Elles incluent l’état d’exécution, les paramètres de l’application, le contenu de référence (par exemple les définitions du dictionnaire dans une application de type dictionnaire), ainsi que d’autres paramètres. Les données d’application sont liées à l’existence de l’application et n’ont de sens que par rapport à cette dernière.
+## Dans cette section
 <table>
 <colgroup>
 <col width="50%" />
@@ -31,15 +31,20 @@ App data is data that the app itself creates and manages. It includes runtime st
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Guidelines](guidelines-for-app-settings.md)</p></td>
-<td align="left"><p>Best practices for creating and displaying app settings.</p></td>
+<td align="left"><p>[Recommandations](guidelines-for-app-settings.md)</p></td>
+<td align="left"><p>Meilleures pratiques pour créer et afficher des paramètres d’application</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Store and retrieve app data](store-and-retrieve-app-data.md)</p></td>
-<td align="left"><p>How to store and retrieve local, roaming, and temporary app data.</p></td>
+<td align="left"><p>[Stocker et récupérer des données d’application](store-and-retrieve-app-data.md)</p></td>
+<td align="left"><p>Comment stocker et récupérer des données d’application locale, itinérantes et temporaires</p></td>
 </tr>
 </tbody>
 </table>
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 
