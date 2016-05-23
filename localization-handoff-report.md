@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\input-primer.md](https://github.com/Microsoft/windows-apps/blob/1221928ebea4a2a926154ed1148e49bdb1e0834c/windows-apps-src/input-and-devices/input-primer.md) | HandedOffSuccess | [Details](#7c2d3bd1ab2d2f4923cf84834a73fd1c581132122884)
+ [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/7503c371995f5f4656edaf37709f7d824924339f/windows-apps-src/audio-video-camera/playready-client-sdk.md) | OutofSyncHandedBackSuccess | [Details](#4bbe78597eb79c3f002c6a3de8f05d1f092dd482484)
 
 ## Item Details
-##### <a name='7c2d3bd1ab2d2f4923cf84834a73fd1c581132122884'></a> Source: [windows-apps-src\input-and-devices\input-primer.md](https://github.com/Microsoft/windows-apps/blob/1221928ebea4a2a926154ed1148e49bdb1e0834c/windows-apps-src/input-and-devices/input-primer.md)
-* Status: HandedOffSuccess
+##### <a name='4bbe78597eb79c3f002c6a3de8f05d1f092dd482484'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/7503c371995f5f4656edaf37709f7d824924339f/windows-apps-src/audio-video-camera/playready-client-sdk.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [input-primer.5342c7c3046580ba53971943f93ff8467cc4bd6e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/38e23003da52f10efd5a260be6ccfd53a2579975/ol-handoff/Microsoft/windows-apps.fr-fr/master/input-primer.5342c7c3046580ba53971943f93ff8467cc4bd6e.fr-fr.xlf)
-* Handoff Datetime: 2016-05-22 21:35:13
+* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/e4188e06bce0d10d5dd1ab99951c9d523230e829/ol-handoff/Microsoft/windows-apps.fr-fr/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.fr-fr.xlf)
+* Handoff Datetime: 2016-05-23 16:20:00
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/8a5270bfb44b027add8ec963320bc992ac447f9c/windows-apps-src/audio-video-camera/playready-client-sdk.md)
+* Current Handback File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/9cbe6f34f6bb8871d2eba5f6e800893f3bc6901b/ol-handback/Microsoft/windows-apps.fr-fr/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.fr-fr.xlf)
+* Current Handback Datetime: 2016-05-17 12:03:09
 * [Back to Top](#report-top)
 
 
