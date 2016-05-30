@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.
 title: Codecs pris en charge
@@ -6,7 +7,7 @@ title: Codecs pris en charge
 
 # Codecs pris en charge
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.
@@ -2691,6 +2692,6 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

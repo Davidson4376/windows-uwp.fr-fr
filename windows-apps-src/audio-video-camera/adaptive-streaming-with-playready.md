@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP.
 title: Diffusion en continu adaptative avec PlayReady
@@ -8,13 +9,19 @@ title: Diffusion en continu adaptative avec PlayReady
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
+Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP. 
 
-Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP. Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en flux continu HTTP (HLS) et de contenu à diffusion en continu dynamique sur HTTP (DASH).
+Cette fonctionnalité prend actuellement en charge la lecture de contenu à diffusion en continu dynamique sur HTTP (DASH).
+
+HLS (la diffusion en continu HTTP d’Apple) n’est pas pris en charge par PlayReady.
+
+Smooth Streaming n’est pas non plus pris en charge en mode natif pour le moment ; toutefois, PlayReady est extensible et, à l’aide de code ou de bibliothèques supplémentaires, il est possible de prendre en charge Smooth Streaming protégé par PlayReady tirant parti de la gestion des droits numériques basée sur le logiciel ou même sur le matériel.
 
 Cet article traite uniquement des aspects de la diffusion en continu adaptative propre à PlayReady. Pour des informations plus générales sur l’implémentation de la diffusion en continu adaptative, voir [Diffusion en continu adaptative](adaptive-streaming.md).
 
-Vous aurez besoin des instructions using suivantes :
+Cet article utilise le code de [l’exemple de diffusion en continu adaptative](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming) dans le référentiel **Windows-universal-samples** de Microsoft sur GitHub. Le scénario 4 traite de l’utilisation de la diffusion en continu adaptative avec PlayReady. Vous pouvez télécharger le référentiel dans un fichier ZIP en navigant jusqu’au niveau racine du référentiel et en cliquant sur le bouton **Télécharger le ZIP**.
+
+Vous aurez besoin des instructions using suivantes :
 
 ```csharp
 using LicenseRequest;
@@ -44,14 +51,14 @@ private string playReadyChallengeCustomData = "";
 Vous devrez également déclarer la constante suivante :
 
 ```csharp
-private const int MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = -2147174251;
+private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 ```
 
 ## Configuration du MediaProtectionManager
 
 Pour ajouter la protection de contenu PlayReady à votre application UWP, vous devez configurer un objet [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040). Cette opération s’effectue lors de l’initialisation de votre objet [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912).
 
-Le code suivant définit un objet [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) :
+Le code suivant définit un objet [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) :
 
 ```csharp
 private void SetUpProtectionManager(ref MediaElement mediaElement)
@@ -154,7 +161,7 @@ async Task<bool> ReactiveIndivRequest(
         else
         {
             COMException comException = exception as COMException;
-            if (comException != null &amp;&amp; comException.HResult == MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED)
+            if (comException != null && comException.HResult == MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED)
             {
                 IndivRequest.NextServiceRequest();
             }
@@ -290,6 +297,6 @@ Vous pouvez appeler cette fonction dans n’importe quel événement gérant le 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

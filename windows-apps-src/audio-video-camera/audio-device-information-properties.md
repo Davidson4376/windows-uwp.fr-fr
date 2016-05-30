@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
 description: Cet article répertorie les propriétés DeviceInformation liées aux appareils audio
 title: Propriétés d’informations des appareils audio
@@ -26,6 +27,6 @@ Pour obtenir des informations générales sur l’énumération des appareils su
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

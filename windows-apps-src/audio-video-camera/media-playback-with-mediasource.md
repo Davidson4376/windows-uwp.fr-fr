@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: La classe MediaSource offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent.
 title: Lecture de contenu multimédia avec MediaSource
@@ -6,7 +7,7 @@ title: Lecture de contenu multimédia avec MediaSource
 
 # Lecture de contenu multimédia avec MediaSource
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -18,7 +19,7 @@ Le code figurant dans cet article a été adapté à partir de l’exemple [Kit 
 
 ## Créer et lire un MediaSource
 
-Créez une instance de **MediaSource** en appelant l’une des méthodes de fabrique exposées par la classe :
+Créez une instance de **MediaSource** en appelant l’une des méthodes de fabrique exposées par la classe :
 
 -   [**CreateFromAdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930906)
 -   [**CreateFromIMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn965527)
@@ -176,6 +177,6 @@ Définissez la propriété [**AutoRepeatEnabled**](https://msdn.microsoft.com/li
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

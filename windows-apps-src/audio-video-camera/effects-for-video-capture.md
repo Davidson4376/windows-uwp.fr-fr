@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo.
 title: Effets de capture vidéo
@@ -84,6 +85,6 @@ Pour nettoyer l’effet de stabilisation vidéo, appelez [**ClearEffectsAsync**]
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

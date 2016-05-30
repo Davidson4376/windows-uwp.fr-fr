@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: Cet article explique comment charger et enregistrer des fichiers image à l’aide de BitmapDecoder et de BitmapEncoder, et comment utiliser l’objet SoftwareBitmap pour représenter des images bitmap.
 title: Acquisition d’images
@@ -24,7 +25,7 @@ La classe **SoftwareBitmap** est une API polyvalente qui peut être créée à p
 
 L’exemple de code dans cet article utilise les API des espaces de noms suivants.
 
-[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+[!code-cs[Espaces de noms](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
 ## Créer un élément SoftwareBitmap à partir d’un fichier image avec BitmapDecoder
 
@@ -106,7 +107,7 @@ Appelez [**CreateCopyFromSurfaceAsync**](https://msdn.microsoft.com/library/wind
 
 La classe **SoftwareBitmap** fournit la méthode statique [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) permettant de créer facilement un nouvel élément **SoftwareBitmap**, qui utilise le format pixel et le mode alpha spécifiés à partir d’un élément **SoftwareBitmap** existant. Veuillez noter que l’image bitmap créée contient une copie distincte des données d’image. Les modifications apportées à la nouvelle image bitmap n’affectent pas l’image bitmap source.
 
-[!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
+[!code-cs[Convertir](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
 ## Transcoder un fichier image
 
@@ -127,6 +128,6 @@ Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecode
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

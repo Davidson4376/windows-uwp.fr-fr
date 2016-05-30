@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10.
 title: Extension EME (Encrypted Media Extension) PlayReady
@@ -54,7 +55,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 
 Cette section décrit la version de l’extension EME (Encrypted Media Extension) W3C prise en charge par PlayReady.
 
-PlayReady pour les applications web est actuellement lié à l’[ébauche du document W3C sur l’extension EME (Encrypted Media Extension) datée du 10 mai 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). Cette prise en charge sera remplacée par la spécification EME mise à jour dans les prochaines versions de Windows.
+PlayReady pour les applications web est actuellement lié à l’[ébauche du document W3C sur l’extension EME (Encrypted Media Extension) datée du 10 mai 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). Cette prise en charge sera remplacée par la spécification EME mise à jour dans les prochaines versions de Windows.
 
 ## Utiliser la gestion des droits numériques en fonction du matériel
 
@@ -97,7 +98,7 @@ Pour configurer l’arrêt sécurisé pour des contrôles de page ou des actions
 
 L’exemple suivant montre comment utiliser l’arrêt sécurisé dans votre application web :
 
-``` syntax
+```JavaScript
 // JavaScript source code
 
 var g_prkey = null;
@@ -299,6 +300,6 @@ Pour plus d’informations, reportez-vous aux [exemples d’applications](https:
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

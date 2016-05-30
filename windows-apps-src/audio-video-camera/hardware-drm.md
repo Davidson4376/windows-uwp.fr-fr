@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
 title: Gestion des droits numériques en fonction du matériel
@@ -11,7 +12,7 @@ title: Gestion des droits numériques en fonction du matériel
 
 Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
 
-**Remarque** La gestion des droits numériques en fonction du matériel est uniquement prise en charge sur certains matériels dotés d’une version Windows 10 du microprogramme de ce matériel. Pour plus d’informations sur les garanties fournies, reportez-vous aux [règles de conformité et de robustesse PlayReady](http://www.microsoft.com/playready/licensing/compliance/).
+**Remarque** La gestion des droits numériques en fonction du matériel est uniquement prise en charge sur certains matériels dotés d’une version Windows 10 du microprogramme de ce matériel. Pour plus d’informations sur les garanties fournies, reportez-vous aux [règles de conformité et de robustesse PlayReady](http://www.microsoft.com/playready/licensing/compliance/).
 
 Les fournisseurs de contenu se tournent de plus en plus vers des protections matérielles pour autoriser la lecture de contenu à valeur élevée complet dans les applications. La prise en charge robuste d’une implémentation matérielle de la base de chiffrement a été ajoutée à PlayReady pour répondre à ce besoin. Cette prise en charge permet la lecture sécurisée de contenu en haute définition (1080p) et ultra haute définition (UHD) sur plusieurs plateformes d’appareils. Le matériel de clé (y compris les clés privées, les clés de contenu et tout autre matériel de clé utilisé pour dériver ou déverrouiller ces clés) et les échantillons vidéo compressés et non compressés déchiffrés sont protégés en tirant parti de la sécurité matérielle.
 
@@ -19,7 +20,7 @@ Les fournisseurs de contenu se tournent de plus en plus vers des protections mat
 
 Cette rubrique offre une présentation succincte de la façon dont Windows 10 implémente l’environnement d’exécution de confiance (TEE).
 
-Les détails de l’implémentation TEE Windows n’entrent pas dans le cadre de ce document. Cependant, une brève description de la différence entre le port TEE du kit de portage standard et le port Windows sera utile. Windows implémente la couche proxy OEM et transfère les appels de fonctions PRITEE en série à un pilote en mode utilisateur dans le sous-système Windows Media Foundation. Ceux-ci seront finalement acheminés vers le pilote TrEE (Trusted Execution Environment) Windows ou le pilote graphique OEM. Les détails de ces deux approches n’entrent pas dans le cadre de ce document. Le diagramme suivant illustre l’interaction générale des composants pour le port Windows. Si vous souhaitez développer une implémentation TEE Windows PlayReady, vous pouvez contacter <WMLA@Microsoft.com>.
+Les détails de l’implémentation TEE Windows n’entrent pas dans le cadre de ce document. Cependant, une brève description de la différence entre le port TEE du kit de portage standard et le port Windows sera utile. Windows implémente la couche proxy OEM et transfère les appels de fonctions PRITEE en série à un pilote en mode utilisateur dans le sous-système Windows Media Foundation. Ceux-ci seront finalement acheminés vers le pilote TrEE (Trusted Execution Environment) Windows ou le pilote graphique OEM. Les détails de ces deux approches n’entrent pas dans le cadre de ce document. Le diagramme suivant illustre l’interaction générale des composants pour le port Windows. Si vous souhaitez développer une implémentation TEE Windows PlayReady, vous pouvez contacter <WMLA@Microsoft.com>.
 
 ![diagramme des composants tee Windows](images/windowsteecomponentdiagram720.jpg)
 
@@ -53,18 +54,18 @@ Par défaut, la gestion des droits numériques en fonction du matériel est util
 
 L’exemple suivant explique comment désactiver la gestion des droits numériques en fonction du matériel. Vous devez uniquement effectuer cette action avant de procéder à la modification. Assurez-vous également que vous n’avez aucun objet PlayReady en mémoire. Sinon, le comportement n’est pas défini.
 
-``` syntax
+```js
 var applicationData = Windows.Storage.ApplicationData.current;
-var localSettings = applicationData.localSettings.createContainer(“PlayReady”, Windows.Storage.ApplicationDataCreateDisposition.always);
-localSettings.values[“SoftwareOverride”] = 1;
+var localSettings = applicationData.localSettings.createContainer("PlayReady", Windows.Storage.ApplicationDataCreateDisposition.always);
+localSettings.values["SoftwareOverride"] = 1;
 ```
 
 Pour revenir à la gestion des droits numériques en fonction du matériel, définissez la valeur **SoftwareOverride** sur **0**.
 
 Pour chaque lecture multimédia, vous devez définir **MediaProtectionManager** sur :
 
-``` syntax
-mediaProtectionManager.properties[“Windows.Media.Protection.UseSoftwareProtectionLayer”] = true;
+```js
+mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
 Pour savoir si vous êtes en gestion des droits numériques en fonction du matériel ou en fonction du logiciel, regardez sous C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
@@ -79,7 +80,7 @@ Cette section explique comment détecter quel type de gestion des droits numéri
 
 Vous pouvez utiliser la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) pour déterminer si le système prend en charge une fonctionnalité spécifique de gestion des droits numériques (DRM) en fonction du matériel. Par exemple :
 
-``` syntax
+```cpp
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
@@ -89,6 +90,6 @@ Vous pouvez également utiliser la propriété [**PlayReadyStatics.PlayReadyCert
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

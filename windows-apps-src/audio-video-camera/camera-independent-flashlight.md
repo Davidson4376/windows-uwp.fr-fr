@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo.
 title: Lampe torche indépendante de l’appareil photo
@@ -61,7 +62,7 @@ Dans le gestionnaire de l’événement, vérifiez la propriété [**LampAvailab
 
 ## Libérer correctement la ressource de lampe quand elle n’est pas en cours d’utilisation
 
-Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisez C#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
+Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisez C#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
@@ -74,6 +75,6 @@ Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [*
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: Cet article vous montre comment utiliser l’interface IMediaEncodingProperties pour définir la résolution et la fréquence d’images du flux d’aperçu de caméra et des photos et vidéos capturées.
 title: Définir les propriétés d’encodage du média
@@ -41,7 +42,7 @@ Sur certains appareils, le même code confidentiel de matériel est utilisé pou
 
 ## Obtenir une liste des propriétés de flux disponibles
 
-Obtenez une liste des propriétés de flux disponibles pour un appareil de capture en obtenant l’élément [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) pour l’objet [MediaCapture](capture-photos-and-video-with-mediacapture.md) de votre application, puis en appelant [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) et en transmettant l’une des valeurs de [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) : **VideoPreview**, **VideoRecord** ou **Photo**. Dans cet exemple, la syntaxe Linq est utilisée pour créer une liste d’objets **StreamPropertiesHelper**, définis précédemment dans cet article, pour chacune des valeurs [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) renvoyées par **GetAvailableMediaStreamProperties**. Cet exemple utilise d’abord les méthodes d’extension Linq pour classer les propriétés renvoyées tout d’abord en fonction de la résolution, puis de la fréquence d’images.
+Obtenez une liste des propriétés de flux disponibles pour un appareil de capture en obtenant l’élément [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) pour l’objet [MediaCapture](capture-photos-and-video-with-mediacapture.md) de votre application, puis en appelant [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) et en transmettant l’une des valeurs de [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) : **VideoPreview**, **VideoRecord** ou **Photo**. Dans cet exemple, la syntaxe Linq est utilisée pour créer une liste d’objets **StreamPropertiesHelper**, définis précédemment dans cet article, pour chacune des valeurs [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) renvoyées par **GetAvailableMediaStreamProperties**. Cet exemple utilise d’abord les méthodes d’extension Linq pour classer les propriétés renvoyées tout d’abord en fonction de la résolution, puis de la fréquence d’images.
 
 Si votre application exige une résolution ou une fréquence d’images spécifique, vous pouvez sélectionner un ensemble de propriétés d’encodage du média par programme. Une application de caméra classique expose plutôt la liste des propriétés disponibles dans l’interface utilisateur et permet à l’utilisateur de sélectionner les paramètres qu’il souhaite. Un **ComboBoxItem** est créé pour chaque élément dans la liste des objets **StreamPropertiesHelper** de la liste. Le contenu est défini sur le nom convivial renvoyé par la classe d’assistance, et la balise est définie sur la classe d’assistance elle-même pour une utilisation ultérieure à des fins de récupération des propriétés d’encodage associées. Chaque **ComboBoxItem** est ensuite ajouté à l’élément **ComboBox** transmis à la méthode.
 
@@ -84,6 +85,6 @@ Pour vous assurer que les flux de capture de photo ou de vidéo correspondent au
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

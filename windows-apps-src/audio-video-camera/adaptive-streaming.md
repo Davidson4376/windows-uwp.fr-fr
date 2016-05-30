@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: Cet article décrit comment doter une application de plateforme Windows universelle (UWP) d’une fonctionnalité de lecture de contenu multimédia à diffusion en continu adaptative. Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en flux continu HTTP (HLS) et de contenu à diffusion en continu dynamique sur HTTP (DASH).
 title: Diffusion en continu adaptative
@@ -57,6 +58,6 @@ L’objet **AdaptiveMediaSource** fournit des événements qui vous permettent d
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

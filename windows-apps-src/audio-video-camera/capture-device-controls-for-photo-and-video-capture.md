@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide.
 title: Contrôles de l’appareil de capture pour la photo et la vidéo
@@ -21,7 +22,7 @@ Toutes les API de contrôle des appareils mentionnées dans cet article sont mem
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## Exposition :
+## Exposition
 
 [
             **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) vous permet de définir la vitesse d’obturation utilisée pendant la capture photo ou vidéo.
@@ -163,9 +164,9 @@ Enfin, appelez [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/
 
 **Important** Lorsque vous implémentez le scénario « Appuyer pour mettre au point », l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant :
 
-**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
-**2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
-**3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
+**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 
+           **2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) 
+           **3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -193,7 +194,7 @@ La valeur de mise au point doit être comprise dans la plage prise en charge par
 
 Définissez la valeur du contrôle de curseur sur la valeur actuelle de **FocusControl** après la suppression de l’enregistrement du gestionnaire d’événements [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) afin que l’événement ne soit pas déclenché lorsque la valeur est définie.
 
-[!code-cs[Focus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
+[!code-cs[Mise au point](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
 
 Dans le gestionnaire d’événements **Checked** de la case d’option de mise au point manuelle, obtenez l’objet **FocusControl** et appelez [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) si votre application a déverrouillé précédemment la mise au point avec un appel à [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081).
 
@@ -330,6 +331,7 @@ Définissez le niveau de zoom sur l’appareil de capture en créant un objet [*
 
 * [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
 
-<!--HONumber=Mar16_HO2-->
+
+<!--HONumber=May16_HO2-->
 
 
