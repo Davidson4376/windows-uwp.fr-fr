@@ -1,11 +1,12 @@
 ---
+author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Utiliser des pinceaux
 description: Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur.
 ---
 # Utiliser des pinceaux
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -16,7 +17,7 @@ Les objets [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
 ## Vue d’ensemble des pinceaux
 
-Pour peindre un objet tel qu’un objet [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) ou les parties d’un objet [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) qui apparaît sur la zone de dessin de l’application, vous utilisez un objet [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). Par exemple, si vous définissez la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) de l’objet **Shape** ou les propriétés [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) d’un objet **Control** sur une valeur **Brush**, cette valeur **Brush** détermine la façon dont l’élément d’interface utilisateur est peint ou restitué dans l’interface utilisateur. Les différents types de pinceaux sont [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) et [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703).
+Pour peindre un objet tel qu’un objet [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) ou les parties d’un objet [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) qui apparaît sur la zone de dessin de l’application, vous utilisez un objet [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). Par exemple, si vous définissez la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) de l’objet **Shape** ou les propriétés [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) d’un objet **Control** sur une valeur **Brush**, cette valeur **Brush** détermine la façon dont l’élément d’interface utilisateur est peint ou restitué dans l’interface utilisateur. Les différents types de pinceau sont [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) et [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703).
 
 ## Pinceaux de couleur unie
 
@@ -40,7 +41,7 @@ Si vous définissez un objet [**SolidColorBrush**](https://msdn.microsoft.com/li
 
 ### Valeurs de couleur hexadécimales
 
-Vous pouvez, à l’aide d’une chaîne au format hexadécimal, déclarer des valeurs de couleurs 24 bits précises avec un canal alpha sur 8 bits pour un objet [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Deux caractères dans la plage 0 à F définissent chaque valeur du composant, et l’ordre des valeurs de composants de la chaîne hexadécimale est le suivant : canal alpha (opacité), canal rouge, canal vert et canal bleu (**ARGB**). Par exemple, la valeur hexadécimale « \#FFFF0000 » définit un rouge entièrement opaque (alpha=« FF », rouge=« FF », vert=« 00 » et bleu=« 00 »).
+Vous pouvez, à l’aide d’une chaîne au format hexadécimal, déclarer des valeurs de couleurs 24 bits précises avec un canal alpha sur 8 bits pour un objet [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Deux caractères dans la plage 0 à F définissent chaque valeur du composant, et l’ordre des valeurs de composants de la chaîne hexadécimale est le suivant : canal alpha (opacité), canal rouge, canal vert et canal bleu (**ARGB**). Par exemple, la valeur hexadécimale « \#FFFF0000 » définit un rouge entièrement opaque (alpha=« FF », rouge=« FF », vert=« 00 » et bleu=« 00 »).
 
 L’exemple XAML suivant définit la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) d’un objet [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) sur la valeur hexadécimale « \#FFFF0000 » et aboutit au même résultat que l’utilisation de la couleur nommée [**Colors.Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
@@ -50,11 +51,11 @@ L’exemple XAML suivant définit la propriété [**Fill**](https://msdn.microso
 </StackPanel>
 ```
 
-### <span id="Property_element_syntax__"> </span> <span id="property_element_syntax__"> </span> <span id="PROPERTY_ELEMENT_SYNTAX__"> </span>Syntaxe des éléments de propriété
+### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Syntaxe des éléments de la propriété
 
 Vous pouvez utiliser la syntaxe des éléments de propriété pour définir un pinceau [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Cette syntaxe est plus détaillée que les méthodes précédentes, mais elle vous permet de spécifier des valeurs de propriétés supplémentaires sur un élément, telles que la propriété [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx). Pour plus d’informations sur la syntaxe XAML, y compris la syntaxe des éléments de propriété, voir [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595) et [Guide la syntaxe XAML](https://msdn.microsoft.com/library/windows/apps/Mt185596).
 
-Dans les exemples précédents, la chaîne « SolidColorBrush » n’apparaît nulle part dans la syntaxe. Le pinceau en cours de création est généré implicitement et automatiquement, dans le cadre d’un raccourci délibéré en langage XAML qui assure la simplicité de la définition de l’interface utilisateur dans les cas les plus courants. L’exemple suivant permet de créer un objet [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) et de créer explicitement l’objet [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) en tant que valeur d’élément pour une propriété [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx). La propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) de l’objet **SolidColorBrush** est définie sur la valeur [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx), tandis que la propriété [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) présente la valeur 0,5.
+Dans les exemples précédents, la chaîne « SolidColorBrush » n’apparaît nulle part dans la syntaxe. Le pinceau en cours de création est généré implicitement et automatiquement, dans le cadre d’un raccourci délibéré en langage XAML qui assure la simplicité de la définition de l’interface utilisateur dans les cas les plus courants. L’exemple suivant permet de créer un objet [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) et de créer explicitement l’objet [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) en tant que valeur d’élément pour une propriété [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx). La propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) de l’objet **SolidColorBrush** est définie sur la valeur [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx), tandis que la propriété [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) présente la valeur 0,5.
 
 ```xml
 <Rectangle Width="200" Height="150">
@@ -64,7 +65,7 @@ Dans les exemples précédents, la chaîne « SolidColorBrush » n’apparaît
 </Rectangle>
 ```
 
-## <span id="Linear_gradient_brushes_"> </span> <span id="linear_gradient_brushes_"> </span> <span id="LINEAR_GRADIENT_BRUSHES_"> </span>Pinceaux de dégradé linéaire
+## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>Pinceaux de dégradé linéaire
 
 Un objet [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) peint une zone en dégradé défini le long d’une ligne. Cette ligne est appelée *axe de dégradé*. Vous devez spécifier les couleurs du dégradé et leur emplacement le long de l’axe à l’aide d’objets [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078). Par défaut, l’axe de dégradé court du coin supérieur gauche vers le coin inférieur droit de la zone peinte par le pinceau, ce qui produit une ombre diagonale.
 
@@ -72,7 +73,7 @@ Le point de dégradé [**GradientStop**](https://msdn.microsoft.com/library/wind
 
 La propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) du point de dégradé spécifie sa couleur. Vous pouvez définir la couleur à l’aide d’un nom de couleur prédéfini ou de valeurs **ARGB** hexadécimales.
 
-La propriété [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) d’un objet [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) spécifie la position de chaque objet **GradientStop** le long de l’axe de dégradé. La valeur **Offset** correspond à une valeur **double** de 0 à 1. Si la propriété **Offset** a pour valeur 0, l’objet **GradientStop** est placé au début de l’axe de dégradé, en d’autres termes près du point [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) correspondant. Si la propriété **Offset** présente la valeur 1, l’objet **GradientStop** est placé au niveau du point [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx). Au minimum, un objet [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) utile doit comporter deux valeurs **GradientStop**, chaque valeur **GradientStop** devant spécifier une propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) différente et posséder une propriété **Offset** différente dont la valeur est comprise entre 0 et 1.
+La propriété [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) d’un objet [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) spécifie la position de chaque objet **GradientStop** le long de l’axe de dégradé. La valeur **Offset** correspond à une valeur **double** de 0 à 1. Si la propriété **Offset** a pour valeur 0, l’objet **GradientStop** est placé au début de l’axe de dégradé, en d’autres termes près du point [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) correspondant. Si la propriété **Offset** présente la valeur 1, l’objet **GradientStop** est placé au niveau du point [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx). Au minimum, un objet [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) utile doit comporter deux valeurs **GradientStop**, chaque valeur **GradientStop** devant spécifier une propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) différente et posséder une propriété **Offset** différente dont la valeur est comprise entre 0 et 1.
 
 L’exemple suivant permet de créer un dégradé linéaire constitué de quatre couleurs afin de peindre un objet [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
 
@@ -92,12 +93,11 @@ L’exemple suivant permet de créer un dégradé linéaire constitué de quatre
 
 La couleur de chaque point entre les extrémités est interpolée de façon linéaire sous la forme d’une combinaison de la couleur spécifiée par les deux points limites. L’illustration met en relief ces points de dégradés. Les cercles indiquent la position des points de dégradé, et la ligne en pointillés représente l’axe de dégradé.
 
-![Points de dégradé](images/linear-gradients-stops.png)
-Vous pouvez changer la ligne de positionnement des points de dégradé en affectant aux propriétés [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) et [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) des valeurs différentes des valeurs par défaut initiales `(0,0)` et `(1,1)`. En modifiant les valeurs de coordonnées **StartPoint** et **EndPoint**, vous pouvez créer des dégradés horizontaux ou verticaux, inverser le sens du dégradé ou condenser son étalement afin de l’appliquer à une plage plus petite que la zone peinte totale. Pour condenser le dégradé, vous attribuez à la propriété **StartPoint** et/ou à la propriété **EndPoint** des valeurs comprises entre 0 et 1. Par exemple, pour obtenir un dégradé horizontal dont l’effet se produit en totalité sur la moitié gauche du pinceau, tandis que le côté droit conserve la dernière couleur unie définie par l’objet [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078), vous spécifiez une propriété **StartPoint** d’une valeur de `(0,0)` et une propriété **EndPoint** d’une valeur de `(0.5,0)`.
+![Points de dégradé](images/linear-gradients-stops.png) Vous pouvez changer la ligne de positionnement des points de dégradé en affectant aux propriétés [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) et [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) des valeurs différentes des valeurs par défaut initiales `(0,0)` et `(1,1)`. En modifiant les valeurs de coordonnées **StartPoint** et **EndPoint**, vous pouvez créer des dégradés horizontaux ou verticaux, inverser le sens du dégradé ou condenser son étalement afin de l’appliquer à une plage plus petite que la zone peinte totale. Pour condenser le dégradé, vous attribuez à la propriété **StartPoint** et/ou à la propriété **EndPoint** des valeurs comprises entre 0 et 1. Par exemple, pour obtenir un dégradé horizontal dont l’effet se produit en totalité sur la moitié gauche du pinceau, tandis que le côté droit conserve la dernière couleur unie définie par l’objet [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078), vous spécifiez une propriété **StartPoint** d’une valeur `(0,0)` et une propriété **EndPoint** d’une valeur `(0.5,0)`.
 
-### <span id="Use_tools_to_make_gradients"> </span> <span id="use_tools_to_make_gradients"> </span> <span id="USE_TOOLS_TO_MAKE_GRADIENTS"> </span>Utiliser les outils pour rendre les dégradés
+### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Utiliser les outils pour rendre les dégradés
 
-À présent que vous savez comment fonctionnent les dégradés linéaires, vous pouvez utiliser Visual Studio ou Blend pour les créer plus facilement. Pour créer un dégradé, sélectionnez l’objet auquel vous souhaitez l’appliquer dans l’aire de conception ou dans une vue XAML. Développez **Pinceau**, puis sélectionnez l’onglet **Dégradé linéaire** (voir la capture d’écran suivante).
+Maintenant que vous savez comment fonctionnent les dégradés linéaires, vous pouvez utiliser Visual Studio ou Blend pour les créer plus facilement. Pour créer un dégradé, sélectionnez l’objet auquel vous souhaitez l’appliquer dans l’aire de conception ou dans une vue XAML. Développez **Pinceau**, puis sélectionnez l’onglet **Dégradé linéaire** (voir la capture d’écran suivante).
 
 ![Créer un dégradé linéaire à l’aide de Visual Studio](images/tool-gradient-brush-1.png)
 
@@ -105,7 +105,7 @@ Vous pouvez à présent modifier les couleurs des points de dégradé et modifie
 
 ![Barre au bas de la fenêtre de propriétés qui contrôle les points de dégradé.](images/tool-gradient-brush-2.png)
 
-## <span id="Image_brushes"> </span> <span id="image_brushes"> </span> <span id="IMAGE_BRUSHES"> </span>Pinceaux image
+## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>Pinceaux image
 
 Un objet [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) peint une zone avec une image qui provient d’une source de fichier image. Vous devez définir la propriété [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) sur le chemin de l’image à charger. En règle générale, la source d’image est issue d’un élément **Content** qui fait partie des ressources de votre application.
 
@@ -146,7 +146,7 @@ Vous pouvez déclarer n’importe quel pinceau en tant que ressource XAML à cl�
 
 Il est beaucoup plus courant de spécifier des pinceaux en XAML que d’utiliser du code pour en définir. Cela est dû au fait que les pinceaux sont généralement définis en tant que ressources XAML, et que les valeurs de pinceau sont souvent la sortie des outils de conception ou sinon, qu’elles font partie d’une définition d’interface utilisateur XAML. Quand même, pour les quelques cas où vous voulez définir un pinceau à l’aide de code, tous les types [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) sont disponibles pour l’instanciation du code.
 
-Pour créer une classe [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) dans le code, utilisez le constructeur qui prend un paramètre [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Passez une valeur qui est une propriété statique de la classe [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) comme celle-ci :
+Pour créer une classe [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) dans le code, utilisez le constructeur qui prend un paramètre [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Passez une valeur qui est une propriété statique de la classe [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) comme celle-ci :
 
 ```cs
 SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
@@ -175,6 +175,6 @@ Pour obtenir des exemples de code, voir les pages de référence pour les classe
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

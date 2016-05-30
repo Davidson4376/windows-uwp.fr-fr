@@ -1,11 +1,12 @@
 ---
+author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: Effets de composition
 description: Les API d’effet permettent aux développeurs de personnaliser l’affichage de leur interface utilisateur.
 ---
 # Effets de composition
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 L’API WinRT [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) autorise l’application d’effets en temps réel à des images et à l’interface utilisateur avec des propriétés d’effet animables. Dans cette vue d’ensemble, nous allons parcourir les fonctionnalités disponibles, qui permettent d’appliquer des effets à un élément visuel de composition.
 
@@ -29,8 +30,8 @@ Actuellement, les compositions prennent en charge les effets suivants :
 
 | Effet               | Description                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Transformation affine 2D :  | applique une matrice de transformation affine 2D à une image. Nous avons utilisé cet effet pour animer un masque alpha dans nos [exemples](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects) d’effet.       |
-| Composite arithmétique : | combine deux images à l’aide d’une équation flexible. Nous avons utilisé le composite arithmétique pour créer un effet de fondu enchaîné dans nos [exemples](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects). |
+| Transformation affine 2D :  | applique une matrice de transformation affine 2D à une image. Nous avons utilisé cet effet pour animer un masque alpha dans nos [exemples](http://go.microsoft.com/fwlink/?LinkId=785341) d’effet.       |
+| Composite arithmétique : | combine deux images à l’aide d’une équation flexible. Nous avons utilisé le composite arithmétique pour créer un effet de fondu enchaîné dans nos [exemples](http://go.microsoft.com/fwlink/?LinkId=785341). |
 | Effet de fusion :         | crée un effet de fusion qui combine deux images. La composition fournit 21 des 26 [modes de fusion](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md) pris en charge dans Win2D.        |
 | Source de couleur :         | génère une image contenant une couleur unie.                                                                                                                                                                               |
 | Composite :            | combine deux images. La composition fournit l’ensemble des 13 [modes composites](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md) pris en charge dans Win2D.                                              |
@@ -78,7 +79,7 @@ Les propriétés d’effet prennent en charge l’animation ; lors de la compila
 
 ### Propriétés d’effet : comparaison entre effet constant et effet animé
 
-Lors de la compilation d’effet, vous pouvez spécifier des propriétés d’effet comme étant dynamiques ou comme étant « intégrées » sous forme de constantes. Les propriétés dynamiques sont spécifiées par le biais de chaînes de la forme “<effect name>.<property name>”. Les propriétés dynamiques peuvent être définies sur une valeur spécifique ou être animées à l’aide du système d’animations de composition.
+Lors de la compilation d’effet, vous pouvez spécifier des propriétés d’effet comme étant dynamiques ou comme étant « intégrées » sous forme de constantes. Les propriétés dynamiques sont spécifiées par le biais de chaînes de la forme «<effect name>.<property name>». Les propriétés dynamiques peuvent être définies sur une valeur spécifique ou être animées à l’aide du système d’animations de composition.
 
 Lorsque vous compilez la description d’effet ci-dessus, vous avez la possibilité d’intégrer la saturation de sorte qu’elle soit égale à 0,5, ou de la rendre dynamique et de la définir de manière dynamique ou en l’animant.
 
@@ -116,11 +117,11 @@ Démarrez l’animation sur la propriété de saturation de l’effet comme suit
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-Voir l’[exemple Désaturation - Animation](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/Desaturation%20-%20Animation) pour les propriétés d’effet animées avec des images clés et l’[exemple AlphaMask](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/AlphaMask) pour l’utilisation des effets et expressions.
+Voir l’[exemple Désaturation - Animation](http://go.microsoft.com/fwlink/?LinkId=785342) pour les propriétés d’effet animées avec des images clés et l’[exemple AlphaMask](http://go.microsoft.com/fwlink/?LinkId=785343) pour l’utilisation des effets et expressions.
 
 ### Instances d’effet multiples avec des propriétés indépendantes
 
-En indiquant qu’un paramètre doit être dynamique lors de la compilation d’effet, le paramètre peut ensuite être modifié sur la base d’une instance par effet. Cela permet à deux éléments visuels d’utiliser le même effet tout en étant affichés avec des propriétés d’effet différentes. Pour plus d’informations, voir l’[exemple](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/ColorSource%20and%20Blend) de code utilisant les paramètres ColorSource et Blend.
+En indiquant qu’un paramètre doit être dynamique lors de la compilation d’effet, le paramètre peut ensuite être modifié sur la base d’une instance par effet. Cela permet à deux éléments visuels d’utiliser le même effet tout en étant affichés avec des propriétés d’effet différentes. Pour plus d’informations, voir l’[exemple](http://go.microsoft.com/fwlink/?LinkId=785344) de code utilisant les paramètres ColorSource et Blend.
 
 ## Prise en main des effets de composition
 
@@ -139,7 +140,7 @@ Ce didacticiel de démarrage rapide vous montre comment utiliser certaines fonct
 
 ### Création d’un projet
 
--   Accédez à Fichier->Nouveau ->Projet...
+-   Accédez à Fichier-&gt;Nouveau -&gt;Projet...
 -   Sélectionnez Visual C#.
 -   Créez une application vide (Windows universelle) (Visual Studio 2015).
 -   Entrez le nom de projet de votre choix.
@@ -161,7 +162,7 @@ Dans les étapes suivantes, nous allons utiliser les API de composition pour app
 ![Image source](images/composition-cat-source.png)
 ### Définition des bases de votre composition
 
-Consultez l’[exemple d’arborescence d’éléments visuels de composition](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/CompositionVisual) sur notre GitHub pour obtenir un exemple de configuration de Windows.UI.Composition Compositor, du paramètre ContainerVisual racine, et l’associer à la fenêtre principale.
+Consultez l’[exemple d’arborescence d’éléments visuels de composition](http://go.microsoft.com/fwlink/?LinkId=785345) sur notre GitHub pour obtenir un exemple de configuration de Windows.UI.Composition Compositor, du paramètre ContainerVisual racine, et l’associer à la fenêtre principale.
 
 ```cs
 _compositor = new Compositor();
@@ -242,6 +243,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

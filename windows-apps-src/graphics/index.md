@@ -1,16 +1,17 @@
 ---
+author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
 title: Graphismes et animation
-description: Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
+description: Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
 ---
 # Graphismes et animation
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
+Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
 
 **Remarque**  
-Les graphismes et animations sont destinés aux développeurs d’applications en XAML. Si vous souhaitez ajouter des graphismes et animations à un jeu à l’aide de Microsoft DirectX, voir [Jeux et DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375).
+Les graphismes et animations sont destinés aux développeurs d’applications en XAML. Si vous souhaitez ajouter des graphismes et animations à un jeu à l’aide de Microsoft DirectX, voir [Jeux et DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375).
 
  
 
@@ -33,6 +34,6 @@ Les graphismes et animations sont destinés aux développeurs d’applications e
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

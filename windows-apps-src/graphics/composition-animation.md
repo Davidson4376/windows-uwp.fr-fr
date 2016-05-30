@@ -1,11 +1,12 @@
 ---
+author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: Animations de composition
 description: De nombreuses propriétés d’objet et d’effet de composition peuvent être animées à l’aide d’animations par images clés et expressions, ce qui permet aux propriétés d’un élément d’interface utilisateur de changer dans le temps ou en fonction d’un calcul.
 ---
 # Animations de composition
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 De nombreuses propriétés d’objet et d’effet de composition peuvent être animées à l’aide d’animations par images clés et expressions, ce qui permet aux propriétés d’un élément d’interface utilisateur de changer dans le temps ou en fonction d’un calcul. Il existe deux types d’animation, les animations par images clés, représentées par la classe [**KeyFrameAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706830), et les animations par expressions, représentées par la classe [**ExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706817).
 
@@ -100,7 +101,7 @@ Deux types de fonction d’accélération sont pris en charge :
 -   Linéaire ([**LinearEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706839))
 -   Courbe de Bézier cubique ([**CubicBezierEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706812))
 
-Pour créer une fonction d’accélération, utilisez la méthode [**CreateLinearEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706801) ou [**CreateCubicBezierEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706791) de la classe [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706761) :
+Pour créer une fonction d’accélération, utilisez la méthode [**CreateLinearEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706801) ou [**CreateCubicBezierEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706791) de la classe [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706761) :
 
 ```cs
 var linear = _compositor.CreateLinearEasingFunction();
@@ -122,7 +123,7 @@ Une fois que vous avez défini votre animation, les images clés et les proprié
 Syntaxe générale et exemple :
 
 ```cs
-targetVisual.StartAnimation(“Offset”, animation);
+targetVisual.StartAnimation("Offset", animation);
 ```
 
 Après le démarrage de votre animation, vous pouvez également l’arrêter et la déconnecter. Pour ce faire, utilisez la méthode [**StopAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590841) et spécifiez la propriété souhaitée pour arrêter l’animation.
@@ -130,7 +131,7 @@ Après le démarrage de votre animation, vous pouvez également l’arrêter et 
 Par exemple :
 
 ```cs
-targetVisual.StopAnimation(“Offset”);
+targetVisual.StopAnimation("Offset");
 ```
 
 ### Événements d’achèvement d’animation
@@ -167,7 +168,7 @@ Par exemple :
 
 ```cs
 myScopedBatch = _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
-Visual.StartAnimation(“Opacity”, myAnimation);
+Visual.StartAnimation("Opacity", myAnimation);
 myScopedBatch.End();
 ```
 
@@ -181,7 +182,7 @@ myCommitBatch = _compositor.GetCommitBatch(CompositionBatchTypes.Animation);
 
 ### États de lot
 
-Pour déterminer si un lot est ouvert à l’agrégation des animations, vous pouvez utiliser la propriété **IsActive**. Si la propriété **IsEnded** retourne la valeur true, vous ne pouvez pas ajouter d’animation à ce lot spécifique. Les lots délimités sont « terminés » si vous les avez arrêtés explicitement en appelant la méthode [**End**](https://msdn.microsoft.com/library/windows/apps/Mt590844). Les lots de validation sont terminés lorsque le cycle de validation actuel prend fin.
+Pour déterminer si un lot est ouvert à l’agrégation des animations, vous pouvez utiliser la propriété **IsActive**. Si la propriété **IsEnded** retourne la valeur true, vous ne pouvez pas ajouter d’animation à ce lot spécifique. Les lots délimités sont « terminés » si vous les avez arrêtés explicitement en appelant la méthode [**End**](https://msdn.microsoft.com/library/windows/apps/Mt590844). Les lots de validation sont terminés lorsque le cycle de validation actuel prend fin.
 
 ## Expression Animations
 
@@ -189,10 +190,10 @@ Expression Animations are animations that use a mathematical expression to speci
 
 ### Création de votre expression
 
-Pour créer votre expression, vous devez appeler [**CreateExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt187002) dans votre objet compositeur en spécifiant l’expression que vous souhaitez utiliser :
+Pour créer votre expression, vous devez appeler [**CreateExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt187002) dans votre objet compositeur en spécifiant l’expression que vous souhaitez utiliser :
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“INSERT_EXPRESSION_STRING”)
+var expression = _compositor.CreateExpressionAnimation("INSERT_EXPRESSION_STRING")
 ```
 
 ### Opérateurs, priorité et associativité
@@ -217,7 +218,7 @@ One of the powerful components of the Expression language is being able use para
 ChildVisual.Offset.X / ParentVisual.Offset.Y
 ```
 
-Dans cet exemple, ChildOffset et ParentOffset sont des paramètres qui représentent la propriété Offset de deux éléments visuels. Vous définissez les paramètres en utilisant les méthodes **Set\*Parameter** de la classe [**CompositionAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706708) :
+Dans cet exemple, ChildOffset et ParentOffset sont des paramètres qui représentent la propriété Offset de deux éléments visuels. Vous définissez les paramètres en utilisant les méthodes **Set\*Parameter** de la classe [**CompositionAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706708) :
 
 -   Pour créer un paramètre de vecteur, vous utilisez [**SetVector2Parameter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setvector2parameter.aspx), [**SetVector3Parameter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setvector3parameter.aspx) ou [**SetVector4Parameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setvector4parameter).
 -   Pour créer un paramètre de matrice, vous utilisez [**SetMatrix3x2Parameter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setmatrix3x2parameter.aspx) ou [**SetMatrix4x4Parameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setmatrix4x4parameter).
@@ -229,8 +230,8 @@ Dans cet exemple, ChildOffset et ParentOffset sont des paramètres qui représen
 Dans la chaîne d’expression ci-dessus, nous devons créer deux paramètres pour définir les deux éléments visuels :
 
 ```cs
-Expression.SetReferenceParameter(“ChildVisual”, childVisual);
-Expression.SetReferenceParameter(“ParentVisual”, parentVisual);
+Expression.SetReferenceParameter("ChildVisual", childVisual);
+Expression.SetReferenceParameter("ParentVisual", parentVisual);
 ```
 
 ### Expression : Fonctions d’assistance
@@ -244,12 +245,12 @@ Outre l’accès aux opérateurs et aux paramètres de propriété, vous avez ac
 Voici un exemple de chaîne d’expression plus complexe qui utilise la fonction d’assistance Clamp :
 
 ```cs
-Clamp((scroller.Offset.y * -1.0) – container.Offset.y, 0, container.Size.y – header.Size.y)
+Clamp((scroller.Offset.y * -1.0) - container.Offset.y, 0, container.Size.y - header.Size.y)
 ```
 
 ### Démarrage et arrêt de l’animation par expressions
 
-Pour démarrer et arrêter les animations par expressions, vous utilisez les fonctions ([**StartAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590840), [**StopAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590841)) que vous utilisez avec les animations par images clés. Remarque : les animations par expressions continuent de s’exécuter tant qu’elles ne sont pas arrêtées à l’aide de **StopAnimation**, contrairement aux animations par images clés qui ont une durée limitée.
+Pour démarrer et arrêter les animations par expressions, vous utilisez les fonctions ([**StartAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590840), [**StopAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590841)) que vous utilisez avec les animations par images clés. Remarque : les animations par expressions continuent de s’exécuter tant qu’elles ne sont pas arrêtées à l’aide de **StopAnimation**, contrairement aux animations par images clés qui ont une durée limitée.
 
 ### Jeux de propriétés
 
@@ -264,14 +265,14 @@ _sharedProperties = _compositor.CreatePropertySet();
 Une fois que vous avez créé votre jeu de propriétés, vous pouvez ajouter une propriété et la valeur correspondante en utilisant l’une des méthodes **Insert\*** de [**CompositionPropertySet**](https://msdn.microsoft.com/library/windows/apps/Dn706772). Par exemple :
 
 ```cs
-_sharedProperties.InsertVector3(“NewOffset”, offset);
+_sharedProperties.InsertVector3("NewOffset", offset);
 ```
 
 Après avoir créé votre animation par expressions, vous pouvez référencer des propriétés du jeu de propriétés dans la chaîne d’expression en utilisant un paramètre de référence. Par exemple :
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“sharedProperties.NewOffset”);
-expression.SetReferenceParameter(“sharedProperties”, _sharedProperties);
+var expression = _compositor.CreateExpressionAnimation("sharedProperties.NewOffset");
+expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 ```
 
 ### Images clés d’expression
@@ -291,7 +292,7 @@ Par exemple, l’extrait de code suivant utilise une combinaison d’images clé
 
 ```cs
 var animation = _compositor.CreateScalarKeyFrameAnimation();
-animation.InsertExpressionKeyFrame(0.25, “VisualBOffset.X / VisualAOffset.Y”);
+animation.InsertExpressionKeyFrame(0.25, "VisualBOffset.X / VisualAOffset.Y");
 animation.InsertKeyFrame(1.00f, 0.8f);
 ```
 
@@ -305,7 +306,7 @@ In the expression language, it is possible to reference both the current and the
 Exemple d’utilisation de ces valeurs dans une image clé d’expression :
 
 ```cs
-animation.InsertExpressionKeyFrame(0.0f, “this.CurrentValue + delta”);
+animation.InsertExpressionKeyFrame(0.0f, "this.CurrentValue + delta");
 ```
 
 ### Expressions conditionnelles
@@ -320,21 +321,21 @@ Dans les expressions proprement dites, les opérateurs conditionnels suivants so
 
 -   Equals (==)
 -   Not Equals (!=)
--   Less than (<)
--   Less than or equal to (<=)
--   Great than (>)
--   Great than or equal to (>=)
+-   Less than (&lt;)
+-   Less than or equal to (&lt;=)
+-   Great than (&gt;)
+-   Great than or equal to (&gt;=)
 
 Finally, the following conjunctions are supported as operators or functions in the condition statement:
 
 -   Not: ! / Not(bool1)
--   And: && / And(bool1, bool2)
+-   And: &amp;&amp; / And(bool1, bool2)
 -   Or: || / Or(bool1, bool2)
 
 L’extrait de code suivant illustre un exemple d’utilisation des instructions conditionnelles dans une expression :
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f”);
+var expression = _compositor.CreateExpressionAnimation("target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f");
 ```
 
  
@@ -346,6 +347,6 @@ var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ?
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
