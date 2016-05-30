@@ -1,11 +1,12 @@
 ---
+author: mcleblanc
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: Optimiser l’interruption/la reprise
-description: Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
+description: Créez des applications UWP qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 ---
 # Optimiser l’interruption/la reprise
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 
@@ -51,12 +52,12 @@ De nombreuses applications sérialisent toutes leurs données lors de la mise en
 
 ### Sérialiser les données en C# et en Visual Basic
 
-Pour la sérialisation des applications .NET, vous avez le choix entre les classes suivantes : [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) et [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx)
+Pour la sérialisation des applications .NET, vous avez le choix entre les classes suivantes : [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) et [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx)
 
-Pour obtenir des performances optimales, utilisez la classe [**XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx). Avec **XmlSerializer**, la sérialisation et la désérialisation sont rapides, et l’encombrement mémoire reste faible. La classe **XmlSerializer** est peu dépendante de .NET Framework. Par conséquent, contrairement aux autres méthodes de sérialisation, **XmlSerializer** peut être utilisée en chargeant un nombre réduit de modules.
+Pour obtenir des performances optimales, utilisez la classe [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx). Avec **XmlSerializer**, la sérialisation et la désérialisation sont rapides, et l’encombrement mémoire reste faible. La classe **XmlSerializer** est peu dépendante de .NET Framework. Par conséquent, contrairement aux autres méthodes de sérialisation, **XmlSerializer** peut être utilisée en chargeant un nombre réduit de modules.
 
 [
-            **DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) simplifie la sérialisation des classes personnalisées, bien que son impact sur les performances soit supérieur à celui de **XmlSerializer**. Si vous voulez obtenir de meilleures performances, il est préférable de changer. En général, il vaut mieux ne pas charger plus d’un sérialiseur et **XmlSerializer** est préférable, à moins que vous n’ayez besoin des fonctionnalités d’un autre sérialiseur.
+            **DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) simplifie la sérialisation des classes personnalisées, bien que son impact sur les performances soit supérieur à celui de **XmlSerializer**. Si vous voulez obtenir de meilleures performances, il est préférable de changer. En général, il vaut mieux ne pas charger plus d’un sérialiseur et **XmlSerializer** est préférable, à moins que vous n’ayez besoin des fonctionnalités d’un autre sérialiseur.
 
 ### Réduire l’encombrement mémoire
 
@@ -87,6 +88,6 @@ La plupart des applications n’ont pas besoin de gérer l’événement [**Resu
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

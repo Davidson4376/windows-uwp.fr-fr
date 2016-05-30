@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: Tester à l’aide de l’émulateur Microsoft pour Windows 10 Mobile
 description: Simulez une interaction réaliste avec un appareil et testez les fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft pour Windows 10 Mobile.
@@ -33,7 +34,7 @@ Système d’exploitation
 -   64 bits
 -   Édition Professionnelle ou version supérieure
 
-Pour vérifier la configuration requise du BIOS, consultez [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj863509.aspx).
+Pour vérifier la configuration requise du BIOS, consultez [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx).
 
 Pour vérifier la configuration requise en termes de RAM et de système d’exploitation, dans le Panneau de configuration, cliquez sur **Système et sécurité**, puis sur **Système**.
 
@@ -63,10 +64,6 @@ Outre la prise en charge de la plateforme Windows universelle (UWP, Universal Wi
 -   Prise en charge de la communication en champ proche (NFC, Near Field Communication) L’émulateur permet de simuler la communication NFC et de tester et développer des applications universelles de proximité et NFC.
 -   L’accélération matérielle native améliore les performances graphiques dans l’émulateur à l’aide de la carte graphique locale. Vous devez disposer d’une carte graphique prise en charge et activer l’accélération dans l’onglet **Capteurs** de l’interface utilisateur des paramètres **Outils supplémentaires** de l’émulateur pour utiliser l’accélération.
 
-> **Remarque** L’interface utilisateur a subi une modification importante. Dans cette version de l’émulateur, le raccourci clavier permettant d’afficher ou de masquer le clavier matériel est désormais F4, qui joue le rôle de bouton bascule, en lieu et place de la paire de touches Page précédente/Page suivante utilisée dans les versions antérieures de l’émulateur.
-
- 
-
 ## Fonctionnalités que vous pouvez tester dans l’émulateur
 
 Outre les nouvelles fonctionnalités mentionnées dans la section précédente, vous pouvez tester les fonctionnalités couramment utilisées suivantes dans l’émulateur Microsoft pour Windows 10 Mobile.
@@ -85,11 +82,13 @@ Outre les nouvelles fonctionnalités mentionnées dans la section précédente, 
 
     Sur l’émulateur en cours d’exécution, accédez à l’application **Paramètres**, sélectionnez les paramètres **système**, puis sélectionnez **langue** ou **région**. Modifiez les paramètres que vous voulez tester. Si vous y êtes invité, cliquez sur **redémarrer le téléphone** pour appliquer les nouveaux paramètres et redémarrer l’émulateur.
 
--   **Cycle de vie des applications et « tombstoning »**. Testez le comportement de votre application quand elle est désactivée ou « tombstoned » en modifiant la valeur de l’option **Tombstone sur désactivation lors du débogage** dans la page **Débogage** des propriétés du projet.
+-   **Cycle de vie des applications et « tombstoning »**. Testez le comportement de votre application quand elle est désactivée ou « tombstoned » en modifiant la valeur de l’option **Tombstone sur désactivation lors du débogage** dans la page **Débogage** des propriétés du projet.
 
 -   **Stockage de dossiers local (précédemment appelé stockage isolé)**. Les données d’un stockage isolé sont conservées pendant que l’émulateur est en cours d’exécution, mais perdues une fois qu’il se ferme.
 
 -   **Microphone**. Nécessite et utilise le microphone de l’ordinateur hôte.
+
+-   **Clavier du téléphone**. L’émulateur prend en charge le mappage du clavier matériel de votre ordinateur de développement sur le clavier d’un Windows Phone. Le comportement des clés est le même que sur un appareil Windows Phone
 
 -   **Écran de verrouillage**. L’émulateur étant ouvert, appuyez deux fois sur la touche F12 du clavier de votre ordinateur. La touche F12 émule le bouton Marche/Arrêt du téléphone. Le premier appui éteint l’affichage. Le second appui rallume l’affichage et active l’écran de verrouillage. Déverrouillez l’écran en le faisant glisser vers le haut à l’aide de la souris.
 
@@ -117,9 +116,40 @@ Appuyez sur le bouton d’entrée de souris de la barre d’outils de l’émula
 
 Bouton d’entrée de souris de la barre d’outils de l’émulateur.
 
+## Saisie au clavier
+
+L’émulateur prend en charge le mappage du clavier matériel de votre ordinateur de développement sur le clavier d’un Windows Phone. Le comportement des clés est le même que sur un appareil Windows Phone. 
+
+Par défaut, le clavier matériel n’est pas activé. Cette implémentation est équivalente à un clavier coulissant qui doit être déployé avant de pouvoir être utilisé. Avant d’activer le clavier matériel, l’émulateur n’accepte d’entrée par touche qu’à partir des touches de contrôle.
+
+Les caractères spéciaux sur le clavier d’une version localisée d’un ordinateur de développement Windows ne sont pas pris en charge par l’émulateur. Pour entrer les caractères spéciaux présents sur un clavier localisé, utilisez plutôt le panneau de saisie. 
+
+Pour utiliser le clavier de votre ordinateur dans l’émulateur, appuyez sur F4.
+
+Pour arrêter d’utiliser le clavier de votre ordinateur dans l’émulateur, appuyez sur F4.
+
+Le tableau suivant répertorie les touches d’un clavier matériel que vous pouvez utiliser pour émuler les boutons et d’autres contrôles sur un Windows Phone.
+
+Notez que dans l’émulateur build 10.0.14332, le mappage de clés matérielles de l’ordinateur a été modifié. Les valeurs dans la deuxième colonne du tableau ci-dessous représentent ces nouvelles clés. 
+
+Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Remarques
+--------------------- | ------------------------- | ----------------------------- | -----
+F1 | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
+F2 | WIN + F2 | ÉCRAN D’ACCUEIL | Les pressions longues fonctionnent comme prévu.
+F3 | WIN + F3 | RECHERCHER |  
+F4 | F4 (aucune modification) | Bascule entre l’utilisation du clavier de l’ordinateur local et la non utilisation du clavier de l’ordinateur local. | 
+F6 | WIN + F6 | APPAREIL PHOTO, À MOITIÉ | Bouton d’appareil photo enfoncé à moitié.
+F7 | WIN + F7 | APPAREIL PHOTO, COMPLET | Bouton d’appareil photo dédié.
+F9 | WIN + F9 | MONTER LE VOLUME | 
+F10 | WIN + F10 | BAISSER LE VOLUME | 
+F12 | WIN + F12 | ALIMENTATION | Appuyez sur la touche F12 à deux reprises pour activer l’écran de verrouillage. Les pressions longues fonctionnent comme prévu.
+ÉCHAP | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
+ 
+
+
 ## Communication en champ proche (NFC)
 
-Générez et testez les applications qui utilisent des fonctionnalités NFC sur Windows 10 Mobile à l’aide de l’onglet **NFC** du menu **Outils supplémentaires** de l’émulateur. Ces fonctionnalités sont utiles dans de nombreuses situations : des scénarios de proximité (par exemple, Toucher pour partager) à l’émulation de carte (par exemple, Toucher pour payer).
+Générez et testez les applications qui utilisent des fonctionnalités NFC sur Windows 10 Mobile à l’aide de l’onglet **NFC** du menu **Outils supplémentaires** de l’émulateur. Ces fonctionnalités sont utiles dans de nombreuses situations : des scénarios de proximité (par exemple, Toucher pour partager) à l’émulation de carte (par exemple, Toucher pour payer).
 
 Vous pouvez tester votre application en simulant deux téléphones rapprochés à l’aide de deux émulateurs ou en simulant une approche auprès d’une balise. Dans Windows 10, les appareils mobiles bénéficient de la fonction d’émulation de la carte hôte (HCE, Host Card Emulation). À l’aide de l’émulateur de téléphone, vous pouvez simuler l’approche de votre appareil auprès d’un terminal de paiement pour le trafic de réponse à la commande APDU.
 
@@ -152,9 +182,9 @@ Une fois que les deux émulateurs sont en cours d’exécution :
 -   Sélectionnez l’émulateur que vous voulez cibler dans la liste **Appareil homologue**.
 -   Sélectionnez la case d’option **Envoyer à l’appareil homologue**.
 -   Cliquez sur le bouton **Approcher**. Cela simule le rapprochement des deux appareils. Vous devriez entendre la notification sonore d’approche NFC.
--   Pour déconnecter les 2 appareils, appuyez simplement sur le bouton **Déconnecter**.
+-   Pour déconnecter les 2 appareils, appuyez simplement sur le bouton **Déconnecter**.
 
-Vous pouvez également activer la case à cocher **Déconnecter automatiquement dans (secondes)** et spécifier le nombre de secondes durant lesquelles vous souhaitez approcher les appareils avant que ceux-ci ne soient automatiquement déconnectés. Cela simule les attentes d’un utilisateur dans une situation réelle : il ne tiendrait ses téléphones à proximité l’un de l’autre que pendant une courte durée. Actuellement, le journal des messages n’est pas disponible après la déconnexion.
+Vous pouvez également activer la case à cocher **Déconnecter automatiquement dans (secondes)** et spécifier le nombre de secondes durant lesquelles vous souhaitez approcher les appareils avant que ceux-ci ne soient automatiquement déconnectés. Cela simule les attentes d’un utilisateur dans une situation réelle : il ne tiendrait ses téléphones à proximité l’un de l’autre que pendant une courte durée. Actuellement, le journal des messages n’est pas disponible après la déconnexion.
 
 Pour simuler la lecture des messages à partir d’une balise ou la réception de messages à partir d’un autre appareil :
 
@@ -195,11 +225,11 @@ Vous pouvez également utiliser l’outil de simulation de terminal de MasterCar
 -   Activez la case à cocher de l’écouteur **Activer MasterCard** sous les fenêtres de l’éditeur de script et lancez le simulateur de MasterCard.
 -   Grâce à cet outil, vous pouvez générer des commandes qui sont transmises à votre application exécutée sur l’émulateur par le biais de l’outil NFC.
 
-Pour en savoir plus sur la prise en charge de l’émulation HCE et le développement d’applications HCE dans Windows 10 Mobile, consultez le [blog de l’équipe NFC de Microsoft](http://go.microsoft.com/fwlink/?LinkId=534749).
+Pour en savoir plus sur la prise en charge de l’émulation HCE et le développement d’applications HCE dans Windows 10 Mobile, consultez le [blog de l’équipe NFC de Microsoft](http://go.microsoft.com/fwlink/?LinkId=534749).
 
 ### Création de scripts pour les tests HCE
 
-Les scripts sont écrits en code C# et la méthode d’exécution de votre script est appelée lorsque vous cliquez sur le bouton **Lire**. Cette méthode exploite une interface IScriptProcessor utilisée pour émettre les commandes APDU, générer la fenêtre de journal et contrôler le délai d’attente de réponse APDU à partir du téléphone.
+Les scripts sont écrits en code C# et la méthode d’exécution de votre script est appelée lorsque vous cliquez sur le bouton **Lire**. Cette méthode exploite une interface IScriptProcessor utilisée pour émettre les commandes APDU, générer la fenêtre de journal et contrôler le délai d’attente de réponse APDU à partir du téléphone.
 
 Vous trouverez ci-dessous une référence sur les fonctionnalités disponibles :
 
@@ -226,7 +256,7 @@ Vous trouverez ci-dessous une référence sur les fonctionnalités disponibles :
 
 ### Mode Lecteur de carte à puce
 
-L’émulateur peut être connecté à un lecteur de carte à puce sur votre ordinateur hôte, de sorte que les cartes à puce insérées ou approchées s’affichent dans l’application de votre téléphone et puissent communiquer avec des commandes APDU à l’aide de la classe [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002). Pour cela, un lecteur de carte à puce compatible doit être connecté à votre ordinateur. Des lecteurs de carte à puce USB (NFC/sans contact et de type insertion/contact) sont largement disponibles sur le marché. Pour permettre à l’émulateur de fonctionner avec un lecteur de carte à puce connecté, vous devez d’abord choisir le mode **Lecteur de carte**. Dans ce mode, une zone de liste déroulante répertoriant tous les lecteurs de carte à puce compatibles connectés au système hôte s’affiche. Choisissez le lecteur de carte à puce à connecter dans la liste déroulante.
+L’émulateur peut être connecté à un lecteur de carte à puce sur votre ordinateur hôte, de sorte que les cartes à puce insérées ou approchées s’affichent dans l’application de votre téléphone et puissent communiquer avec des commandes APDU à l’aide de la classe [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002). Pour cela, un lecteur de carte à puce compatible doit être connecté à votre ordinateur. Des lecteurs de carte à puce USB (NFC/sans contact et de type insertion/contact) sont largement disponibles sur le marché. Pour permettre à l’émulateur de fonctionner avec un lecteur de carte à puce connecté, vous devez d’abord choisir le mode **Lecteur de carte**. Dans ce mode, une zone de liste déroulante répertoriant tous les lecteurs de carte à puce compatibles connectés au système hôte s’affiche. Choisissez le lecteur de carte à puce à connecter dans la liste déroulante.
 
 Notez que certains lecteurs de carte à puce NFC ne prennent pas en charge les commandes APDU de carte de stockage PC/SC standard et certains types de cartes NFC.
 
@@ -283,7 +313,7 @@ L’onglet **Emplacement** prend en charge trois modes. Dans tous les modes, qua
 
 -   En mode **Réel**, vous placez les punaises sur la carte. Le simulateur d’emplacement envoie l’emplacement de chaque punaise à l’émulateur aussitôt que vous les avez placées sur la carte.
 
--   En mode **Itinéraire**, vous placez les punaises sur la carte pour signaler les points de navigation et le simulateur d’emplacement calcule automatiquement un itinéraire. L’itinéraire inclut les punaises non visibles à un intervalle d’une seconde le long de l’itinéraire. Par exemple, si vous avez sélectionné le profil de vitesse **Marche**, qui présume une vitesse de 5 km/h, les punaises invisibles sont générées à des intervalles de 1,39 m. Lorsque vous cliquez sur **Lire tous les points**, le simulateur d’emplacement envoie l’emplacement de chaque punaise à l’émulateur l’un après l’autre, selon l’intervalle déterminé par le profil de vitesse sélectionné dans la liste déroulante.
+-   En mode **Itinéraire**, vous placez les punaises sur la carte pour signaler les points de navigation et le simulateur d’emplacement calcule automatiquement un itinéraire. L’itinéraire inclut les punaises non visibles à un intervalle d’une seconde le long de l’itinéraire. Par exemple, si vous avez sélectionné le profil de vitesse **Marche**, qui présume une vitesse de 5 km/h, les punaises invisibles sont générées à des intervalles de 1,39 m. Lorsque vous cliquez sur **Lire tous les points**, le simulateur d’emplacement envoie l’emplacement de chaque punaise à l’émulateur l’un après l’autre, selon l’intervalle déterminé par le profil de vitesse sélectionné dans la liste déroulante.
 
 Dans tous les modes du simulateur d’emplacement, vous pouvez exécuter les tâches suivantes.
 
@@ -358,13 +388,13 @@ Testez votre application avec différentes vitesses du réseau et forces du sign
 La simulation du réseau vous permet de vous assurer que votre application s’exécutera correctement dans la réalité. L’émulateur Windows Phone s’exécute sur un ordinateur qui possède généralement une connexion Wi-Fi ou Ethernet rapide. Votre application, cependant, s’exécute sur des téléphones qui sont généralement connectés via une connexion cellulaire plus lente.
 
 1.  Activez **Activer la simulation de réseau** pour tester votre application avec différentes vitesses du réseau et forces du signal.
-2.  Dans la liste déroulante **Vitesse du réseau**, sélectionnez l’une des options suivantes :
+2.  Dans la liste déroulante **Vitesse du réseau**, sélectionnez l’une des options suivantes :
     -   Pas de réseau
     -   2G
     -   3G
     -   4G
 
-3.  Dans la liste déroulante **Force du signal**, sélectionnez l’une des options suivantes :
+3.  Dans la liste déroulante **Force du signal**, sélectionnez l’une des options suivantes :
     -   Bonne
     -   Moyenne
     -   Médiocre
@@ -385,7 +415,7 @@ L’onglet **Carte SD** utilise un dossier de l’ordinateur de développement p
 
 1.  **Sélectionnez un dossier**.
 
-    Cliquez sur **Parcourir** pour sélectionner un dossier sur l’ordinateur de développement où sera placé le contenu de la carte SD simulée.
+    Cliquez sur **Parcourir** pour sélectionner un dossier sur l’ordinateur de développement où sera placé le contenu de la carte SD simulée.
 
 2.  **Insérez la carte SD**.
 
@@ -410,7 +440,7 @@ L’onglet **Carte SD** utilise un dossier de l’ordinateur de développement p
         -   Si vous cliquez sur **Annuler la synchronisation** pendant que l’opération de synchronisation est en cours, la carte est éjectée et les résultats de l’opération de synchronisation sont incomplets.
     -   Le bouton **Éjecter la carte SD** se change à nouveau en **Insérer la carte SD**.
 
-> **Remarque** Comme les cartes SD utilisées par le téléphone sont formatées avec le système de fichiers FAT32, la taille maximale est de 32 Go.
+> **Remarque** Comme les cartes SD utilisées par le téléphone sont formatées avec le système de fichiers FAT32, la taille maximale est de 32 Go.
 
 La vitesse de lecture et d’écriture de la carte SD simulée est limitée afin de reproduire les vitesses réelles. L’accès à une carte SD est plus lent que l’accès au disque dur de l’ordinateur.
 
@@ -493,7 +523,7 @@ Testez comment votre application fonctionne sur les téléphones à bas prix qui
 -   Par défaut, tous les capteurs sont activés dans la liste **Capteurs facultatifs**. Activez ou désactivez les cases à cocher pour activer ou désactiver les capteurs correspondants.
 -   Une fois que vous avez modifié vos sélections, cliquez sur **Appliquer**. Puis, redémarrez l’émulateur.
 -   Si vous avez effectué des modifications, puis que vous passez d’un onglet à un autre ou que vous fermez la fenêtre **Outils supplémentaires** sans cliquer sur **Appliquer**, vos modifications sont ignorées.
--   Vos paramètres sont conservés d’une session de l’émulateur à l’autre tant que vous ne les modifiez pas ou ne les réinitialisez pas. Si vous capturez un point de contrôle, les paramètres sont enregistrés avec le point de contrôle. Les paramètres ne sont conservés que pour l’émulateur particulier que vous utilisez : par exemple, l’**émulateur 8.1 WVGA 4" 512 Mo**.
+-   Vos paramètres sont conservés d’une session de l’émulateur à l’autre tant que vous ne les modifiez pas ou ne les réinitialisez pas. Si vous capturez un point de contrôle, les paramètres sont enregistrés avec le point de contrôle. Les paramètres ne sont conservés que pour l’émulateur particulier que vous utilisez : par exemple, l’**émulateur 8.1 WVGA 4" 512 Mo**.
 
 ![Page Capteurs des Outils supplémentaires de l’émulateur](images/em-sensors.png)
 
@@ -583,11 +613,11 @@ Dans certains cas, y compris lorsque vous avez procédé à une mise à jour ver
 
 Pour résoudre ce problème, exécutez « netcfg -d » à partir d’une invite de commandes administrateur : `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. À l’issue de l’exécution de la commande, redémarrez votre ordinateur pour terminer le processus de récupération.
 
-**Remarque** Cette commande supprime tous les périphériques réseau, pas seulement ceux qui sont associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
+**Remarque** Cette commande supprime tous les appareil réseau, pas seulement ceux qui sont associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
  
 ### Impossible de lancer les émulateurs
 
-L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les ordinateurs virtuels, les disques différentiels et les commutateurs réseau propres à l’émulateur ; il est déjà fourni avec les fichiers binaires de l’émulateur (XDE). Vous devez utiliser cet outil pour nettoyer les ordinateurs virtuels d’émulateur si leur état est incorrect. Exécutez l’outil à partir d’une invite de commandes administrateur : `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
+L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les ordinateurs virtuels, les disques différentiels et les commutateurs réseau propres à l’émulateur ; il est déjà fourni avec les fichiers binaires de l’émulateur (XDE). Vous devez utiliser cet outil pour nettoyer les ordinateurs virtuels d’émulateur si leur état est incorrect. Exécutez l’outil à partir d’une invite de commandes administrateur :`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
 > **Remarque** XDECleanup.exe supprime tous les ordinateurs virtuels Hyper-V propres à l’émulateur, ainsi que les points de contrôle des ordinateurs virtuels ou les états de mise en mémoire.
 
@@ -604,9 +634,8 @@ Par défaut, l’émulateur Windows 10 Mobile utilise des graphiques à accél
 Pour désactiver l’accélération matérielle :
 
 1. Démarrez l’Éditeur du Registre.
-2. Créez la sous-clé de Registre suivante si elle n’existe pas déjà :
-   HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
-3. Cliquez avec le bouton droit de la souris sur le dossier 10.0, pointez sur **Nouveau**, puis cliquez sur **Valeur DWORD**.
+2. Créez la sous-clé de Registre suivante si elle n’existe pas : HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
+3. Cliquez avec le bouton droit de la souris sur le dossier 10.0, pointez sur **Nouveau**, puis cliquez sur **Valeur DWORD**.
 4. Tapez **DisableRemoteFx**, puis appuyez sur Entrer.
 5. Double-cliquez sur **DisableRemoteFx**, entrez 1 dans la zone de données **Valeur**, sélectionnez l’option **Décimal**, puis cliquez sur **OK**.
 6. Fermez l’Éditeur du Registre.
@@ -615,16 +644,16 @@ Pour désactiver l’accélération matérielle :
 
 ## Ressources de support
 
-Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque vous commencez à travailler avec les outils Windows 10, consultez le [forum sur les outils Windows 10](http://go.microsoft.com/fwlink/?LinkId=534765). Pour voir tous les forums ayant trait au développement Windows 10, cliquez sur [ce lien](http://go.microsoft.com/fwlink/?LinkId=535000).
+Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque vous commencez à travailler avec les outils Windows 10, consultez le [forum sur les outils Windows 10](http://go.microsoft.com/fwlink/?LinkId=534765). Pour voir tous les forums ayant trait au développement Windows 10, cliquez sur [ce lien](http://go.microsoft.com/fwlink/?LinkId=535000).
 
 ## Rubriques connexes
 
-* [Exécuter les applications du Windows Phone dans l’émulateur](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn632391.aspx)
+* [Exécuter les applications du Windows Phone dans l’émulateur](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
 * [Archive du kit de développement logiciel (SDK) Windows et Windows Phone](https://dev.windows.com/downloads/sdk-archive)
  
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

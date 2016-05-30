@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Kit de certification des applications Windows
 description: Pour maximiser les chances de publication sur le Windows Store ou de certification Windows de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows.
@@ -15,7 +16,7 @@ Pour maximiser les chances de [publication sur le Windows Store](https://msdn.mi
 Conditions préalables pour tester une application Windows universelle :
 
 -   Vous devez installer et exécuter Windows 10.
--   Vous devez installer le [Kit de certification des applications Windows version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows 10.
+-   Vous devez installer le [Kit de certification des applications Windows version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows 10.
 -   Vous devez posséder une licence de développeur valide pour votre ordinateur. Pour plus d’informations, voir [Obtenir une licence de développeur](https://msdn.microsoft.com/library/windows/apps/Hh974578).
 -   Vous devez déployer l’application Windows que vous voulez tester sur votre ordinateur.
 
@@ -71,13 +72,13 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
 **Remarque** Le Kit de certification des applications Windows peut être exécuté à partir d’un service, mais le service doit initialiser le processus du Kit dans une session utilisateur active et ne peut pas être exécuté au sein de Session0.
 
-**Remarque** Pour en savoir plus sur la ligne de commande du Kit de certification des applications Windows, entrez la commande `appcert.exe /?`.
+**Remarque** Pour en savoir plus sur la ligne de commande du Kit de certification des applications Windows, entrez la commande. `appcert.exe /?`
 
 ## Test avec un ordinateur à faible consommation d’énergie
 
 Les seuils du test de performances du Kit de certification des applications Windows sont basés sur les performances d’un ordinateur à faible consommation d’énergie.
 
-Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répondent aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur équipé d’un processeur Intel Atom, d’une résolution d’écran de 1366 x 768 (ou supérieure) et d’un disque dur rotatif (par opposition à un disque SSD).
+Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répondent aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur équipé d’un processeur Intel Atom, d’une résolution d’écran de 1366 x 768 (ou supérieure) et d’un disque dur rotatif (par opposition à un disque SSD).
 
 À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) les plus récentes et testez votre application avec la dernière version du Kit de certification des applications Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
 
@@ -94,6 +95,6 @@ Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

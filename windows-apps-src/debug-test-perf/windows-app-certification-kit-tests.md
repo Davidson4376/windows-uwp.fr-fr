@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Tests du Kit de certification des applications Windows
 description: Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store.
@@ -83,9 +84,9 @@ Ce test a été implémenté conformément à la politique du Windows Store.
 
 ### Détails du test
 
-Pour les applications Windows Phone 8.1, le test vérifie que le nombre total de packages .appx de l’ensemble est inférieur à 512, qu’il n’y a qu’un seul package principal dans l’ensemble et que l’architecture du package principal de l’ensemble est marquée comme ARM ou neutre.
+Pour les applications Windows Phone 8.1, le test vérifie que le nombre total de packages appx de l’ensemble est inférieur à (&lt; ) 512, qu’il n’y a qu’un seul package principal dans l’ensemble et que l’architecture du package principal de l’ensemble est marquée comme ARM ou neutre.
 
-Pour les applications Windows 10, le test vérifie que le numéro de révision de la version de l’ensemble est défini sur 0.
+Pour les applications Windows 10, le test vérifie que le numéro de révision de la version de l’ensemble est défini sur 0.
 
 ### Action corrective
 
@@ -115,7 +116,7 @@ Examine le manifeste de l’application afin de vérifier que son contenu est co
 
 -   **Vérification de la communication entre processus (IPC)**
 
-    Ce test applique la spécification selon laquelle les applications du Windows Store ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) avec « DesktopApplicationPath » comme nom échouent à ce test.
+    Ce test applique la spécification selon laquelle les applications du Windows Store ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) avec « DesktopApplicationPath » comme nom échouent à ce test.
 
 ### Action corrective
 
@@ -153,7 +154,7 @@ Les tests BinScope Binary Analyzer vérifient que les fonctionnalités de sécur
 -   [ExecutableImportsCheck](#binscope-7)
 -   [WXCheck](#binscope-8)
 
-### <span id="binscope-1"> </span>AllowPartiallyTrustedCallersAttribute
+### <span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
 **Message d’erreur du Kit de certification des applications Windows :** Échec du test APTCACheck
 
@@ -167,7 +168,7 @@ N’utilisez pas l’attribut APTCA sur les assemblys portant un nom fort, à mo
 
 Ce test est uniquement réalisé sur le code managé (C#, .NET, etc.).
 
-### <span id="binscope-2"> </span>Protection de la gestion des exceptions /SafeSEH
+### <span id="binscope-2"></span>Protection de la gestion des exceptions /SafeSEH
 
 **Message d’erreur du Kit de certification des applications Windows :** Échec du test SafeSEHCheck
 
@@ -181,7 +182,7 @@ Activez l’option /SAFESEH dans la commande de l’éditeur de liens lorsque vo
 
 Le test n’est pas effectué sur les binaires 64 bits ni sur les binaires du circuit microprogrammé ARM, ceux-ci ne stockant pas les adresses du gestionnaire d’exceptions sur la pile.
 
-### <span id="binscope-3"> </span>Prévention de l’exécution des données
+### <span id="binscope-3"></span>Prévention de l’exécution des données
 
 **Message d’erreur du Kit de certification des applications Windows :** Échec du test NXCheck
 
@@ -195,7 +196,7 @@ Activez l’option /NXCOMPAT dans la commande de l’éditeur de liens lorsque v
 
 Nous vous recommandons de tester vos applications sur une unité centrale compatible avec PED et de corriger toutes les erreurs résultant de cette fonction.
 
-### <span id="binscope-4"> </span>Randomisation du format d’espace d’adresse
+### <span id="binscope-4"></span>Randomisation du format d’espace d’adresse
 
 **Message d’erreur du Kit de certification des applications Windows :** Échec du test DBCheck
 
@@ -211,7 +212,7 @@ En règle générale, ASLR n’affecte pas les performances. Toutefois, dans cer
 
 Ce test est réalisé uniquement sur les applications écrites en code managé, par exemple en utilisant C# ou le .NET Framework.
 
-### <span id="binscope-5"> </span>Section PE partagée en lecture/écriture
+### <span id="binscope-5"></span>Section PE partagée en lecture/écriture
 
 **Message d’erreur du Kit de certification des applications Windows :** Échec du test SharedSectionsCheck.
 
@@ -239,9 +240,9 @@ Si un exécutable managé échoue au test, vérifiez que vous avez utilisé le c
 
 **Remarques**
 
-Ce test est réalisé sur tous les fichiers .exe et les DLL non managées.
+Ce test est réalisé sur tous les fichiers .exe et DLL non managées.
 
-### <span id="binscope-7"> </span>ExecutableImportsCheck
+### <span id="binscope-7"></span>ExecutableImportsCheck
 
 **Message d’erreur du Kit de certification des applications Windows :** Échec du test ExecutableImportsCheck.
 
@@ -255,7 +256,7 @@ Ne fusionnez pas la table d’importation dans une section de code exécutable. 
 
 Ce test est réalisé sur l’ensemble du code binaire, à l’exception des assemblys purement managés.
 
-### <span id="binscope-8"> </span>WXCheck
+### <span id="binscope-8"></span>WXCheck
 
 **Message d’erreur du Kit de certification des applications Windows :** Échec du test WXCheck.
 
@@ -269,7 +270,7 @@ Assurez-vous que le binaire n’a pas de section accessible en écriture et exé
 
 Ce test est effectué sur tous les fichiers .exe, ainsi que sur les DLL natives, non managées.
 
-Un exécutable peut avoir une section accessible en écriture et exécutable s’il est généré quand Modifier & Continuer est activé (/ZI). Si Modifier & Continuer est désactivé, la section non valide n’est pas présente.
+Un exécutable peut avoir une section accessible en écriture et exécutable s’il est généré quand Modifier &amp; Continuer est activé (/ZI). Si Modifier &amp; Continuer est désactivé, la section non valide n’est pas présente.
 
 *PAGE\-SIZE* est la valeur de *SectionAlignment* par défaut pour les exécutables.
 
@@ -306,11 +307,11 @@ Les applications doivent utiliser les API pour applications du Windows Store (AP
 
 Vérifiez que l’application a été compilée en tant que version de publication et non en tant que version de débogage.
 
-> [Remarque** La version de débogage d’une application échouera à ce test même si l’application utilise uniquement des **API pour applications du Windows Store](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx).
+> [Remarque**La version de débogage d’une application échouera à ce test même si l’application utilise uniquement des**API pour applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour applications du Windows Store](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx).
+Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Remarque** Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications du Windows Store. Pour plus d’informations, voir [Solutions de rechange aux API Windows dans les applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=244022).
+> **Remarque** Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications du Windows Store. Pour plus d’informations, voir [Solutions de rechange aux API Windows dans les applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=244022).
 
 ## Tests de performances
 
@@ -403,7 +404,7 @@ Inspirez-vous du tableau suivant.
 <tr><td>
 <p>L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.</p>
 </td><td>
-<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn958435.aspx">Conception réactive 101 pour les applications UWP</a> et <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">Recommandations en matière de ressources d’application</a>.</p>
+<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">Conception réactive 101 pour les applications UWP</a> et <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Recommandations en matière de ressources d’application</a>.</p>
 </td></tr>
 <tr><td>
 <p>Un fichier « resources.pri » manque dans le package.</p>
@@ -425,7 +426,7 @@ Inspirez-vous du tableau suivant.
 <tr><td>
 <p>La chaîne « {string} » ne respecte pas la limite maximale de {number} caractères.</p>
 </td><td>
-<p>Consultez les <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">Exigences relatives aux packages d’applications</a>.</p>
+<p>Consultez les <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">Exigences relatives aux packages d’applications</a>.</p>
 <p>Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale.</p>
 </td></tr>
 <tr><td>
@@ -438,12 +439,12 @@ Inspirez-vous du tableau suivant.
 <tr><td>
 <p>La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).</p>
 </td><td>
-<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">Exigences relatives aux packages d’applications</a>.</p>
+<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">Exigences relatives aux packages d’applications</a>.</p>
 </td></tr>
 <tr><td>
 <p>Il n’y a aucune ressource par défaut spécifiée dans le fichier « resources.pri ».</p>
 </td><td>
-<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">Recommandations en matière de ressources de l’application</a>.</p>
+<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Recommandations en matière de ressources de l’application</a>.</p>
 <p>Dans la configuration de build par défaut, Visual Studio inclut uniquement les ressources d’image avec qualificateur « Scale-200 » dans le package d’application lors de la génération des offres groupées, et place les autres ressources dans le package de ressources. Prenez soin d’inclure les ressources d’image avec qualificateur « Scale-200 » ou de configurer votre projet pour qu’il intègre les ressources dont vous disposez.</p>
 </td></tr>
 <tr><td>
@@ -542,7 +543,7 @@ Assurez-vous que votre application s’affiche correctement avec le niveau de fo
 
 ### Contexte
 
-Si l’application n’appelle pas [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) sur son périphérique Direct3D, elle ne libère pas la mémoire allouée pour sa précédente tâche 3D. Cela augmente le risque que les applications soient arrêtées en raison de la sollicitation de la mémoire système.
+Si l’application n’appelle pas [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) sur son périphérique Direct3D, elle ne libère pas la mémoire allouée pour sa précédente tâche 3D. Cela augmente le risque que les applications soient arrêtées en raison de la sollicitation de la mémoire système.
 
 ### Détails du test
 
@@ -575,48 +576,88 @@ Si au moins une de ces fonctionnalités est déclarée, le test affiche un messa
 Envisagez de supprimer la fonctionnalité à usage spécial si votre application n’en a pas besoin. De plus, l’utilisation de ces fonctionnalités est sujette à un examen supplémentaire de la stratégie d’accueil.
 <!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
-## Validation des métadonnées Windows Runtime ### Contexte S’assure que les composants fournis avec une application sont conformes au système de type UWP.
+## Validation des métadonnées Windows Runtime
 
-### Détails du test Vérifie que les fichiers **.winmd** du package sont conformes aux règles UWP.
+### Arrière-plan
 
-### Actions correctives -   **Test de l’attribut ExclusiveTo :** s’assure que les classes UWP n’implémentent pas d’interfaces marquées comme étant des interfaces exclusives d’une autre classe.
--   **Test d’emplacement du type :** s’assure que les métadonnées de tous les types UWP se trouvent dans le fichier .winmd dont le nom correspondant à l’espace de noms est le plus long du package d’application.
--   **Test de respect de la casse du nom du type :** s’assure que tous les types UWP de votre package d’application ont un nom unique qui ne respecte pas la casse. S’assure également qu’aucun nom de type UWP n’est utilisé comme nom d’espace de noms dans votre package d’application.
--   **Test d’exactitude du nom du type :** s’assure qu’aucun type UWP ne se trouve dans l’espace de noms global ni dans l’espace de noms Windows de niveau supérieur.
--   **Test d’exactitude des métadonnées générales :** s’assure que le compilateur que vous utilisez pour générer vos types est conforme aux dernières spécifications UWP.
--   **Test des propriétés :** s’assure que toutes les propriétés d’une classe UWP disposent d’une méthode Get (les méthodes Set sont facultatives). S’assure que le type de la valeur renvoyée par la méthode Get correspond au type du paramètre d’entrée de la méthode Set pour toutes les propriétés des types UWP.
+S’assure que les composants fournis avec une application sont conformes au système de type UWP.
 
-## Tests de validité des packages ### Test des fichiers appropriés à la plateforme Les applications qui installent des fichiers mixtes binaires peuvent se bloquer ou ne pas s’exécuter correctement selon l’architecture du processeur de l’utilisateur.
+### Détails du test
 
-### Contexte Ce test valide les conflits d’architecture sur les fichiers binaires stockés dans un package d’application. Un package d’application ne doit pas inclure des fichiers binaires qui ne peuvent pas être utilisés sur l’architecture de processeur spécifiée dans le manifeste. L’inclusion de fichiers binaires non pris en charge peut entraîner le blocage de votre application ou une augmentation inutile de la taille de son package.
+Vérifie que les fichiers **.winmd** du package sont conformes aux règles UWP.
 
-### Détails du test S’assure que le nombre de bits figurant dans l’en-tête PE de chaque fichier est approprié en cas de référence croisée avec la déclaration de l’architecture de processeur du package d’application. ### Actions correctives Suivez les recommandations ci-après pour vous assurer que votre package d’application contient uniquement des fichiers pris en charge par l’architecture spécifiée dans le manifeste d’application : - Si l’architecture du processeur cible de votre application a un type de processeur Neutre, le package d’application ne peut pas contenir des fichiers binaires x86, x64 ou ARM, ni de fichiers de types d’images.
+### Actions correctives
 
-- Si l’architecture du processeur cible de votre application a un type de processeur x86, le package d’application doit uniquement contenir des fichiers binaires x86 ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou ARM, ou des fichiers de types d’images, il échouera au test.
+-   **Test de l’attribut ExclusiveTo :** s’assure que les classes UWP n’implémentent pas d’interfaces marquées comme étant des interfaces exclusives d’une autre classe.
+-   **Test d’emplacement du type :** s’assure que les métadonnées de tous les types UWP se trouvent dans le fichier winmd dont le nom correspondant à l’espace de noms est le plus long du package d’application.
+-   **Test de respect de la casse du nom du type :** s’assure que tous les types UWP de votre package d’application ont un nom unique qui ne respecte pas la casse. S’assure également qu’aucun nom de type UWP n’est utilisé comme nom d’espace de noms dans votre package d’application.
+-   **Test d’exactitude du nom du type :** s’assure qu’aucun type UWP ne se trouve dans l’espace de noms global ni dans l’espace de noms Windows de niveau supérieur.
+-   **Test d’exactitude des métadonnées générales :** s’assure que le compilateur que vous utilisez pour générer vos types est conforme aux dernières spécifications UWP.
+-   **Test des propriétés :** s’assure que toutes les propriétés d’une classe UWP disposent d’une méthode Get (les méthodes Set sont facultatives). S’assure que le type de la valeur retournée par la méthode Get correspond au type du paramètre d’entrée de la méthode Set pour toutes les propriétés des types UWP.
 
-- Si l’architecture du processeur cible de votre application a un type de processeur x64, le package d’application doit contenir des fichiers binaires x64 ou des fichiers de types d’images. Notez que, dans ce cas, le package peut également inclure des fichiers x86, mais l’expérience d’application principale doit utiliser le fichier binaire x64.
+## Tests de validité des packages
 
-    Toutefois, si le package contient des fichiers binaires ARM ou des fichiers de types d’images, ou s’il contient uniquement des fichiers binaires x86 ou des fichiers de types d’images, il échouera au test.
+### Test des fichiers appropriés à la plateforme
 
-- Si l’architecture du processeur cible de votre application a un type de processeur ARM, le package d’application doit uniquement contenir des fichiers binaires ARM ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou x86, ou des fichiers de types d’images, il échouera au test.
+Les applications qui installent des fichiers mixtes binaires peuvent se bloquer ou ne pas s’exécuter correctement selon l’architecture du processeur de l’utilisateur.
 
-### Test de la structure de répertoires prise en charge S’assure que les applications ne créent pas de sous-répertoires plus longs que MAX\-PATH dans le cadre de l’installation.
+### Contexte
 
-### Contexte Les composants du système d’exploitation (notamment Trident, WWAHost, etc.) sont limités en interne à MAX\-PATH pour les chemins d’accès au système de fichiers et ne fonctionnent pas correctement pour les chemins plus longs.
+Ce test valide les conflits d’architecture sur les fichiers binaires stockés dans un package d’application. Un package d’application ne doit pas inclure des fichiers binaires qui ne peuvent pas être utilisés sur l’architecture de processeur spécifiée dans le manifeste. Inclure des fichiers binaires non pris en charge peut entraîner le blocage de votre application ou une augmentation inutile de la taille de son package.
 
-### Détails du test Vérifie qu’aucun chemin d’accès dans le répertoire d’installation de l’application ne dépasse MAX\-PATH.
+### Détails du test
 
-### Action corrective Utilisez une structure de répertoires ou un nom de fichier plus court.
+S’assure que le nombre de bits figurant dans l’en-tête PE de chaque fichier est approprié en cas de référence croisée avec la déclaration de l’architecture de processeur du package d’application.
 
-## Test d’utilisation des ressources ### Test de la tâche en arrière-plan WinJS Le test de la tâche en arrière-plan WinJS s’assure que les applications JavaScript comportent les instructions close adéquates afin que l’application ne consomme pas inutilement la batterie.
+### Action corrective
 
-### Contexte Les applications comportant des tâches en arrière-plan JavaScript doivent appeler Close() en dernière instruction dans leur tâche en arrière-plan. Les applications qui ne respectent pas cette règle risquent d’empêcher le système de retourner au mode de veille connectée et d’entraîner le déchargement de la batterie.
+Suivez les recommandations suivantes pour vous assurer que votre package d’application contient uniquement des fichiers pris en charge par l’architecture spécifiée dans le manifeste d’application :
 
-### Détails du test Si aucun fichier de tâche en arrière-plan n’est spécifié dans le manifeste de l’application, le test réussit. Dans le cas contraire, le test analyse le fichier de tâche en arrière-plan JavaScript qui est spécifié dans le package d’application et recherche une instruction Close(). S’il trouve l’instruction, le test réussit ; sinon, le test échoue.
+-   Si l’architecture du processeur cible de votre application a un type de processeur Neutre, le package d’application ne peut pas contenir des fichiers binaires x86, x64 ou ARM, ni de fichiers de types d’images.
 
-### Action corrective Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correctement.
+-   Si l’architecture du processeur cible de votre application a un type de processeur x86, le package d’application doit uniquement contenir des fichiers binaires x86 ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou ARM, ou des fichiers de types d’images, il échouera au test.
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, consultez la [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+-   Si l’architecture du processeur cible de votre application a un type de processeur x64, le package d’application doit contenir des fichiers binaires x64 ou des fichiers de types d’images. Notez que, dans ce cas, le package peut également inclure des fichiers x86, mais l’expérience d’application principale doit utiliser le fichier binaire x64.
+
+    Toutefois, si le package contient des fichiers binaires ARM ou des fichiers de types d’images, ou s’il contient uniquement des fichiers binaires x86 ou des fichiers de types d’images, il échouera au test.
+
+-   Si l’architecture du processeur cible de votre application a un type de processeur ARM, le package d’application doit uniquement contenir des fichiers binaires ARM ou des fichiers de types d’images. Si le package contient des fichiers binaires x64 ou x86, ou des fichiers de types d’images, il échouera au test.
+
+### Test de la structure de répertoires prise en charge
+
+S’assure que les applications ne créent pas de sous-répertoires plus longs que MAX\-PATH dans le cadre de l’installation.
+
+### Arrière-plan
+
+Les composants du système d’exploitation (notamment Trident, WWAHost, etc.) sont limités en interne à MAX\-PATH pour les chemins d’accès au système de fichiers et ne fonctionnent pas correctement pour les chemins plus longs.
+
+### Détails du test
+
+Vérifie qu’aucun chemin d’accès dans le répertoire d’installation de l’application ne dépasse MAX\-PATH.
+
+### Action corrective
+
+Utilisez une structure de répertoires et/ou un nom de fichier plus court.
+
+## Test d’utilisation des ressources
+
+### Test de la tâche en arrière-plan WinJS
+
+Le test de la tâche en arrière-plan WinJS s’assure que les applications JavaScript comportent les instructions close adéquates afin que l’application ne consomme pas inutilement la batterie.
+
+### Arrière-plan
+
+Les applications comportant des tâches en arrière-plan JavaScript doivent appeler Close() en dernière instruction dans leur tâche en arrière-plan. Les applications qui ne respectent pas cette règle risquent d’empêcher le système de retourner au mode de veille connectée et entraîner le déchargement de la batterie.
+
+### Détails du test
+
+Si aucun fichier de tâche en arrière-plan n’est spécifié dans le manifeste de l’application, le test réussit. Dans le cas contraire, le test analyse le fichier de tâche en arrière-plan JavaScript qui est spécifié dans le package d’application et recherche une instruction Close(). S’il trouve l’instruction, le test réussit, sinon le test échoue.
+
+### Action corrective
+
+Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correctement.
+
+> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -625,10 +666,6 @@ Envisagez de supprimer la fonctionnalité à usage spécial si votre application
  
 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,12 @@
 ---
+author: mcleblanc
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
 title: Tests bêta
 description: Le test de la version bêta vous permet d’améliorer votre application en fonction des commentaires des personnes ne faisant pas partie de votre équipe de développement d’applications, qui essaient votre application non publiée sur leur propre appareil.
 ---
 # Bêta-test
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Le *bêta-test* vous donne la possibilité d’améliorer votre application en fonction des commentaires d’utilisateurs ne faisant pas partie de votre équipe de développement qui essaient la version non publiée de votre application sur leur propre appareil.
@@ -44,6 +45,6 @@ Pour savoir comment soumettre votre application au Windows Store pour le bêta-t
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

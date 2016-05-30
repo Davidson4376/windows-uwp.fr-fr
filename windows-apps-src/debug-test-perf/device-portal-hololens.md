@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal pour HoloLens
 description: Découvrez comment Windows Device Portal pour HoloLens vous permet de configurer et de gérer à distance votre appareil HoloLens.
@@ -26,10 +27,10 @@ description: Découvrez comment Windows Device Portal pour HoloLens vous permet 
 ### Se connecter via Wi-Fi 
 
 1. Connectez votre HoloLens au Wi-Fi.
-2. Recherchez l’adresse IP de votre appareil. Recherchez l’adresse IP de l’appareil sous Paramètres > Réseau et Internet > Wi-Fi > Options avancées.
+2. Recherchez l’adresse IP de votre appareil. Recherchez l’adresse IP de l’appareil sous Paramètres &gt; Réseau et Internet &gt; Wi-Fi &gt; Options avancées.
     Vous pouvez également demander : « Hey Cortana, quelle est mon adresse IP ? »
 
-3. À partir d’un navigateur web sur votre PC, accédez à `https://<YOUR_HOLOLENS_IP_ADDRESS>`.
+3. À partir d’un navigateur web sur votre PC, accédez à `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - Le navigateur affiche le message suivant : « Le certificat de sécurité de ce site web pose problème. ». Cela se produit car le certificat envoyé à Device Portal est un certificat de test. Vous pouvez ignorer cette erreur de certificat pour le moment et continuer.
 
 ### Se connecter via USB 
@@ -48,12 +49,12 @@ Vous pouvez également utiliser Device Portal avec votre émulateur. Pour vous c
 Vous devrez créer un nom d’utilisateur et un mot de passe sur Device Portal de votre HoloLens lors de votre première connexion.
 1. Dans un navigateur web sur votre PC, entrez l’adresse IP de l’HoloLens. La page d’accès à la configuration s’affiche.
 2. Cliquez ou appuyez sur Demander un code confidentiel et regardez l’écran HoLolens pour obtenir le code confidentiel généré.
-3. Entrez le code confidentiel la zone de texte prévue à cet effet de votre appareil.
+3. Entrez le code confidentiel dans la zone de texte prévue à cet effet de votre appareil.
 4. Entrez le nom d’utilisateur que vous utiliserez pour vous connecter à Device Portal. Il n’est pas nécessaire qu’il s’agisse d’un nom de compte Microsoft (MSA) ou de domaine.
 5. Entrez un mot de passe et confirmez-le. Le mot de passe doit comporter au moins sept caractères. Il n’est pas nécessaire qu’il s’agisse d’un mot de passe de compte Microsoft (MSA) ou de domaine.
 6. Cliquez sur Coupler pour se connecter à Windows Device Portal sur le HoloLens.
 
-Si vous souhaitez modifier ce nom d’utilisateur ou ce mot de passe, vous pouvez à tout moment répéter ce processus en accédant à la page de sécurité de l’appareil en cliquant sur le lien Sécurité situé en haut à droite ou en accédant à : `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`.
+Si vous souhaitez modifier ce nom d’utilisateur ou ce mot de passe, vous pouvez à tout moment répéter ce processus en accédant à la page de sécurité de l’appareil en cliquant sur le lien Sécurité situé en haut à droite ou en accédant à : `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`.
 
 ### Certificat de sécurité 
 
@@ -61,18 +62,18 @@ Si une « erreur de certificat » s’affiche dans votre navigateur, vous pouv
 
 Chaque HoloLens génère un certificat auto-signé unique pour sa connexion SSL. Par défaut, ce certificat n’est pas approuvé par le navigateur web de votre PC, c’est la raison pour laquelle vous obtiendrez peut-être une « erreur de certificat ». En téléchargeant ce certificat à partir de votre HoloLens (via une connexion USB ou Wi-Fi approuvée) et en l’approuvant sur votre PC, vous pouvez vous connecter en toute sécurité à votre appareil.
 1. Vérifiez que vous vous trouvez sur un réseau sécurisé (USB ou réseau Wi-Fi approuvé).
-2. Téléchargez le certificat de cet appareil à partir de la page Sécurité sur Device Portal soit en cliquant sur le lien Sécurité à partir de la liste des icônes située en haut à droite ou en accédant à : `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`
+2. Téléchargez le certificat de cet appareil à partir de la page Sécurité sur Device Portal soit en cliquant sur le lien Sécurité à partir de la liste des icônes située en haut à droite, soit en accédant à : `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`
 
 3. Installez le certificat dans le magasin Autorités de certification racines de confiance sur votre PC. À partir du menu Windows, tapez : Gérer les certificats d’ordinateur et démarrer l’applet.
     - Développez le dossier Autorité de certification racine de confiance.
     - Cliquez sur le dossier Certificats.
-    - Dans le menu Action, sélectionnez : Toutes les tâches > Importer...
+    - Dans le menu Action, sélectionnez : Toutes les tâches &gt; Importer...
     - Terminez l’Assistant Importation de certificat en utilisant le fichier de certificat que vous avez téléchargé à partir de Device Portal.
 
 4. Redémarrez le navigateur.
 
 
-## Page Device Portal 
+## Pages de Device Portal 
 
 ### Accueil 
 
@@ -102,7 +103,7 @@ Utilisez la page Vue 3D pour voir comment HoloLens interprète votre environneme
 - **Mouvement panoramique** : clic droit + souris ;
 - **Zoom** : défilement à l’aide de la souris.
 - **Options de suivi** : activez le suivi visuel en continu en cochant suivi visuel Forcer le suivi visuel. La mise en pause arrête le suivi visuel.
-- **Options d’affichage** : définit les options relatives à la vue 3D : Suivi : indique si le suivi visuel est actif.
+- **Options d’affichage** : définit les options relatives à la vue 3D : Suivi : indique si le suivi visuel est actif.
 - **Afficher le sol** : affiche un plan de sol en damier.
 - **Afficher le tronc de cône** : affiche le tronc de cône de l’affichage.
 - **Afficher le plan de stabilisation** : affiche le plan utilisé par HoloLens pour stabiliser le mouvement.
@@ -165,6 +166,6 @@ Envoie la saisie au clavier de l’ordinateur distant au casque HoloLens.
 Cliquez ou appuyez sur la zone située sous le clavier virtuel pour permettre l’envoi de séquences de touches au casque HoloLens. Saisissez du texte dans la zone de saisie de texte, puis cliquez ou appuyez sur Envoyer pour envoyer les séquences de touches à l’application active.
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

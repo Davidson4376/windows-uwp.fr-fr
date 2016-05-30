@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: Informations de référence sur les API Device Portal pour HoloLens
 description: Découvrez les API REST Windows Device Portal pour HoloLens que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
@@ -15,7 +16,7 @@ Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utilise
 
 Vous pouvez obtenir la spécification HTTPS pour Device Portal en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/os/webmanagement/settings/https
 
@@ -47,7 +48,7 @@ GET | /api/holographic/os/webmanagement/settings/https
 
 Vous pouvez obtenir la valeur de l’écart pupillaire stocké en utilisant le format de requête suivant. La valeur renvoyée est exprimée en millimètres.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/os/settings/ipd
 
@@ -79,7 +80,7 @@ GET | /api/holographic/os/settings/ipd
 
 Vous pouvez obtenir une liste des fournisseurs ETW spécifiques HoloLens qui ne sont pas enregistrés avec le système en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/os/etw/customproviders
 
@@ -111,7 +112,7 @@ GET | /api/holographic/os/etw/customproviders
 
 Vous pouvez obtenir l’état de tous les services en cours d’exécution en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/os/services
 
@@ -143,7 +144,7 @@ GET | /api/holographic/os/services
 
 Vous pouvez obtenir la spécification HTTPS pour Device Portal en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/management/settings/https
 
@@ -179,7 +180,7 @@ required   | (**requis**) Détermine si HTTPS est requis pour Device Portal. Les
 
 Vous pouvez définir l’écart pupillaire stocké en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/os/settings/ipd
 
@@ -255,7 +256,7 @@ clientmode   | (**requis**) Détermine le mode de suivi. La valeur **active** fo
 
 Vous pouvez obtenir la phase thermique de l’appareil en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/
 
@@ -294,7 +295,7 @@ Valeur | Description
 
 Vous pouvez créer un flux de contrôle ou publier des données dans un flux créé en utilisant le format de requête suivant. Les données publiées doivent être de type **application/octet-stream**.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/control/stream
 
@@ -395,7 +396,7 @@ GET/WebSocket | /api/holographic/simulation/control/stream
 
 Vous pouvez obtenir le mode de simulation en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/control/mode
 
@@ -427,7 +428,7 @@ GET | /api/holographic/simulation/control/mode
 
 Vous pouvez définir le mode de simulation en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simluation/control/mode
 
@@ -501,7 +502,7 @@ recording   | (**requis**) Nom de l’enregistrement à supprimer.
 
 Vous pouvez obtenir tous les enregistrements disponibles en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/playback/files
 
@@ -533,7 +534,7 @@ GET | /api/holographic/simulation/playback/files
 
 Vous pouvez obtenir les types de données dans un enregistrement chargé en utilisant le format suivant de la demande.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/playback/session/types
 
@@ -569,7 +570,7 @@ recording   | (**requis**) Nom de l’enregistrement qui vous intéresse.
 
 Vous pouvez obtenir tous les enregistrements chargés en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/playback/session/files
 
@@ -601,7 +602,7 @@ GET | /api/holographic/simulation/playback/session/files
 
 Vous pouvez obtenir l’état actuel de lecture d’un enregistrement en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/playback/session
 
@@ -637,7 +638,7 @@ recording   | (**requis**) Nom de l’enregistrement qui vous intéresse.
 
 Vous pouvez charger un enregistrement en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/file
 
@@ -673,7 +674,7 @@ recording   | (**requis**) Nom de l’enregistrement à charger.
 
 Vous pouvez suspendre un enregistrement en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/pause
 
@@ -709,7 +710,7 @@ recording   | (**requis**) Nom de l’enregistrement à suspendre.
 
 Vous pouvez lire un enregistrement en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/play
 
@@ -745,7 +746,7 @@ recording   | (**requis**) Nom de l’enregistrement à lire.
 
 Vous pouvez arrêter un enregistrement en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/stop
 
@@ -817,7 +818,7 @@ recording   | (**requis**) Nom de l’enregistrement à décharger.
 
 Vous pouvez décharger un enregistrement en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/file
 
@@ -851,7 +852,7 @@ POST | /api/holographic/simulation/playback/file
 
 Vous pouvez obtenir l’état d’enregistrement actuel en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/recording/status
 
@@ -883,7 +884,7 @@ GET | /api/holographic/simulation/recording/status
 
 Vous pouvez démarrer un enregistrement en utilisant le format de requête suivant. Vous ne pouvez effectuer qu’un seul enregistrement actif à la fois. 
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/recording/start
 
@@ -901,7 +902,7 @@ environment   | (**voir ci-dessous**) Définissez cette valeur sur 1 pour indiqu
 name   | (**requis**) Nom de l’enregistrement.
 singleSpatialMappingFrame   | (**facultatif**) Définissez cette valeur à 1 pour indiquer qu’une seule trame de mappage spatial doit être enregistrée.
 
-Pour ces paramètres, un des paramètres suivants doit être défini sur 1 : *head*, *hands*, *spatialMapping*, ou *environment*.
+Pour ces paramètres, un des paramètres suivants doit être défini sur 1 : *head*, *hands*, *spatialMapping*, ou *environment*.
 
 **En-têtes de requête**
 
@@ -926,7 +927,7 @@ Pour ces paramètres, un des paramètres suivants doit être défini sur 1 : *h
 
 Vous pouvez arrêter l’enregistrement en cours en utilisant le format de requête suivant. L’enregistrement est renvoyé sous forme de fichier.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/recording/stop
 
@@ -996,7 +997,7 @@ filename   | (**requis**) Nom du fichier vidéo à supprimer. Ce nom doit être 
 
 Vous pouvez télécharger un fichier MRC à partir de l’appareil en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/file
 
@@ -1033,7 +1034,7 @@ op   | (**facultatif**) Définissez cette valeur sur **stream** si vous voulez t
 
 Vous pouvez obtenir les paramètres MRC en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/settings
 
@@ -1065,7 +1066,7 @@ GET | /api/holographic/mrc/settings
 
 Vous pouvez obtenir l’état de l’enregistrement MRC en utilisant le format de requête suivant. Les valeurs possibles sont **running** et **stopped**.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/status
 
@@ -1097,7 +1098,7 @@ GET | /api/holographic/mrc/status
 
 Vous pouvez obtenir les fichiers MRC stockés sur l’appareil en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/files
 
@@ -1129,7 +1130,7 @@ GET | /api/holographic/mrc/files
 
 Vous pouvez définir les paramètres MRC en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/mrc/settings
 
@@ -1161,7 +1162,7 @@ POST | /api/holographic/mrc/settings
 
 Vous pouvez démarrer un enregistrement MRC en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/mrc/video/control/start
 
@@ -1193,7 +1194,7 @@ POST | /api/holographic/mrc/video/control/start
 
 Vous pouvez arrêter l’enregistrement MRC actuel en utilisant le format de requête suivant.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/mrc/video/control/stop
 
@@ -1225,7 +1226,7 @@ POST | /api/holographic/mrc/video/control/stop
 
 Vous pouvez prendre une photo MRC en utilisant le format de requête suivant. La photo est renvoyée au format JPEG.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/photo
 
@@ -1259,7 +1260,7 @@ GET | /api/holographic/mrc/photo
 
 Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise la qualité par défaut.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/stream/live.mp4
 
@@ -1270,7 +1271,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 Paramètre d’URI | Description
 :---          | :---
-pv   | (**facultatif**) Indique si vous souhaitez capturer l’appareil photo PV. La valeur doit être **true** ou **false**.
+pv   | (**facultatif**) Indique si vous souhaitez capturer la caméra PV. La valeur doit être **true** ou **false**.
 holo   | (**facultatif**) Indique si vous souhaitez capturer des hologrammes. La valeur doit être **true** ou **false**.
 mic   | (**facultatif**) Indique si vous souhaitez capturer le microphone. La valeur doit être **true** ou **false**.
 loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’application. La valeur doit être **true** ou **false**.
@@ -1298,7 +1299,7 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 
 Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau élevé.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/stream/live_high.mp4
 
@@ -1309,7 +1310,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 Paramètre d’URI | Description
 :---          | :---
-pv   | (**facultatif**) Indique si vous souhaitez capturer l’appareil photo PV. La valeur doit être **true** ou **false**.
+pv   | (**facultatif**) Indique si vous souhaitez capturer la caméra PV. La valeur doit être **true** ou **false**.
 holo   | (**facultatif**) Indique si vous souhaitez capturer des hologrammes. La valeur doit être **true** ou **false**.
 mic   | (**facultatif**) Indique si vous souhaitez capturer le microphone. La valeur doit être **true** ou **false**.
 loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’application. La valeur doit être **true** ou **false**.
@@ -1337,7 +1338,7 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 
 Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau faible.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/stream/live_low.mp4
 
@@ -1376,7 +1377,7 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 
 Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau moyenne.
  
-Méthode      | URI de requête
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/stream/live_med.mp4
 
@@ -1409,6 +1410,6 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 - Codes d’état standard.
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

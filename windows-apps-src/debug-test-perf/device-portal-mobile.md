@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal pour appareils mobiles
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil mobile.
@@ -39,7 +40,7 @@ Vous pouvez vous connecter à Device Portal de 3 façons : USB, hôte local et
 
     utilisez cette adresse pour établir la connexion par le biais d’un réseau local.
 
-    L’adresse IP du téléphone est affichée dans les paramètres Device Portal sur le téléphone. Une connexion HTTPS est requise pour l’authentification et la communication sécurisée. Le nom d’hôte (modifiable dans Paramètres > Système > À propos) peut également permettre d’accéder à Device Portal sur le réseau local (par exemple, http://Phone360), ce qui est utile pour les appareils changeant fréquemment de réseaux ou d’adresses IP ou devant être partagés. 
+    L’adresse IP du téléphone est affichée dans les paramètres Device Portal sur le téléphone. Une connexion HTTPS est requise pour l’authentification et la communication sécurisée. Le nom d’hôte (modifiable dans Paramètres &gt; Système &gt; À propos) peut également permettre d’accéder à Device Portal sur le réseau local (par exemple, http://Phone360), ce qui est utile pour les appareils changeant fréquemment de réseaux ou d’adresses IP ou devant être partagés. 
 
 2. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code de sécurité requis.
 
@@ -71,6 +72,6 @@ Device Portal sur les appareils mobiles propose les pages standard. Pour obtenir
 - Mise en réseau
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

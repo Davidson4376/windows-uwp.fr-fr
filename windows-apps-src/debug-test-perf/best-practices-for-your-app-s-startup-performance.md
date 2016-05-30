@@ -1,11 +1,12 @@
 ---
+author: mcleblanc
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: Meilleures pratiques en matière de performances lors du démarrage de votre application
 description: Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 ---
 # Meilleures pratiques en matière de performances lors du démarrage de votre application
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 
@@ -17,7 +18,7 @@ Les utilisateurs jugent les performances d’une application en partie sur le te
 
 Démarrez l’application plusieurs fois avant de pouvoir évaluer son temps de démarrage. Cela vous servira de référence afin d’estimer un temps de démarrage aussi court que possible, tout en restant dans la mesure du raisonnable.
 
-Au moment où votre application UWP arrive sur les ordinateurs de vos clients, votre application a été compilée à l’aide de la chaîne d’outils .NET Native. .NET Native est une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET Native démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL. Les applications générées avec .NET Native se lient de manière statistique dans le cadre d’une exécution personnalisée et dans le nouveau .NET Core convergé pouvant s’exécuter sur tous les appareils, afin qu’elles ne dépendent pas de l’implémentation de .NET fournie. Sur l’ordinateur de développement, votre application utilise .NET Native par défaut si vous la créez en mode « Publication », et CoreCLR si vous la créez en mode « Débogage ». Vous pouvez configurer cette option dans Visual Studio à partir de la page de génération dans « Propriétés » (C#) ou Compiler -> Avancé dans « Mon projet » (VB). Recherchez une case à cocher indiquant « Compiler avec la chaîne d’outils .NET Native ».
+Au moment où votre application UWP arrive sur les ordinateurs de vos clients, votre application a été compilée à l’aide de la chaîne d’outils .NET Native. .NET Native est une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET Native démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL. Les applications générées avec .NET Native se lient de manière statistique dans le cadre d’une exécution personnalisée et dans le nouveau .NET Core convergé pouvant s’exécuter sur tous les appareils, afin qu’elles ne dépendent pas de l’implémentation de .NET fournie. Sur l’ordinateur de développement, votre application utilise .NET Native par défaut si vous la créez en mode « Publication », et CoreCLR si vous la créez en mode « Débogage ». Vous pouvez configurer cette option dans Visual Studio à partir de la page de génération dans « Propriétés » (C#) ou Compiler -&gt; Avancé dans « Mon projet » (VB). Recherchez une case à cocher indiquant « Compiler avec la chaîne d’outils .NET Native ».
 
 Bien entendu, vous devez obtenir des évaluations représentatives de ce que l’utilisateur final constatera. Par conséquent, si vous n’êtes pas certain de compiler votre application en code natif sur l’ordinateur de développement, vous pouvez exécuter l’outil Native Image Generator (Ngen.exe) pour précompiler votre application avant d’évaluer son temps de démarrage.
 
@@ -35,7 +36,7 @@ La procédure suivante décrit comment exécuter Ngen.exe pour précompiler votr
 6.  Sélectionnez **.NET Framework**.
 7.  Sélectionnez **.NET Framework NGEN 4.x** dans la liste des tâches.
 
-    Si vous utilisez un ordinateur 64 bits, **.NET Framework NGEN v4.x 64** est également disponible. Si vous créez une application 64 bits, sélectionnez .**NET Framework NGEN v4.x 64**.
+    Si vous utilisez un ordinateur 64 bits, **.NET Framework NGEN v4.x 64** est également disponible. Si vous créez une application 64 bits, sélectionnez .**NET Framework NGEN v4.x 64**.
 
 8.  Dans le menu **Action**, cliquez sur **Exécuter**.
 
@@ -146,173 +147,173 @@ Utilisez le constructeur de l’application uniquement pour initialiser les stru
 Une application peut être activée pour plusieurs raisons, chacune pouvant être gérée différemment si vous le souhaitez. Vous pouvez substituer les méthodes [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330), [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801), [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) et [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) pour gérer chaque raison de l’activation. Dans ces méthodes, l’application doit notamment créer une interface utilisateur, affecter cette dernière à [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051), puis appelez [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046). À ce stade, l’écran de démarrage est remplacé par l’interface utilisateur que l’application a créée. Le contenu affiché peut être la page de chargement, ou l’interface utilisateur actuelle de l’application si toutes les informations nécessaires à sa création sont disponibles au moment de l’activation.
 
 > [!div class="tabbedCodeSnippets"]
-```csharp
-public partial class App : Application
-{
-    // A handler for regular activation.
-    async protected override void OnLaunched(LaunchActivatedEventArgs args)
-    {
-        base.OnLaunched(args);
-
-        // Asynchronously restore state based on generic launch.
-
-        // Create the ExtendedSplash screen which serves as a loading page while the
-        // reader downloads the section information.
-        ExtendedSplash eSplash = new ExtendedSplash();
-
-        // Set the content of the window to the extended splash screen.
-        Window.Current.Content = eSplash;
-
-        // Notify the Window that the process of activation is completed
-        Window.Current.Activate();
-    }
-
-    // a different handler for activation via the search contract
-    async protected override void OnSearchActivated(SearchActivatedEventArgs args)
-    {
-        base.OnSearchActivated(args);
-
-        // Do an asynchronous restore based on Search activation
-
-        // the rest of the code is the same as the OnLaunched method
-    }
-}
-
-partial class ExtendedSplash : Page
-{
-    // This is the UIELement that's the game's home page.
-    private GameHomePage homePage;
-
-    public ExtendedSplash()
-    {
-        InitializeComponent();
-        homePage = new GameHomePage();
-    }
-
-    // Shown for demonstration purposes only.
-    // This is typically autogenerated by Visual Studio.
-    private void InitializeComponent()
-    {
-    }
-}
-```
-```vb
-    Partial Public Class App
-    Inherits Application
-
-    ' A handler for regular activation.
-    Protected Overrides Async Sub OnLaunched(ByVal args As LaunchActivatedEventArgs)
-        MyBase.OnLaunched(args)
-
-        ' Asynchronously restore state based on generic launch.
-
-        ' Create the ExtendedSplash screen which serves as a loading page while the
-        ' reader downloads the section information.
-        Dim eSplash As New ExtendedSplash()
-
-        ' Set the content of the window to the extended splash screen.
-        Window.Current.Content = eSplash
-
-        ' Notify the Window that the process of activation is completed
-        Window.Current.Activate()
-    End Sub
-
-    ' a different handler for activation via the search contract
-    Protected Overrides Async Sub OnSearchActivated(ByVal args As SearchActivatedEventArgs)
-        MyBase.OnSearchActivated(args)
-
-        ' Do an asynchronous restore based on Search activation
-
-        ' the rest of the code is the same as the OnLaunched method
-    End Sub
-End Class
-
-Partial Friend Class ExtendedSplash
-    Inherits Page
-
-    Public Sub New()
-        InitializeComponent()
-
-        ' Downloading the data necessary for 
-        ' initial UI on a background thread.
-        Task.Run(Sub() DownloadData())
-    End Sub
-
-    Private Sub DownloadData()
-        ' Download data to populate the initial UI.
-
-        ' Create the first page. 
-        Dim firstPage As New MainPage()
-
-        ' Add the data just downloaded to the first page
-
-        ' Replace the loading page, which is currently 
-        ' set as the window’s content, with the initial UI for the app
-        Window.Current.Content = firstPage
-    End Sub
-
-    ' Shown for demonstration purposes only.
-    ' This is typically autogenerated by Visual Studio.
-    Private Sub InitializeComponent()
-    End Sub
-End Class 
-```
+> ```csharp
+> public partial class App : Application
+> {
+>     // A handler for regular activation.
+>     async protected override void OnLaunched(LaunchActivatedEventArgs args)
+>     {
+>         base.OnLaunched(args);
+> 
+>         // Asynchronously restore state based on generic launch.
+> 
+>         // Create the ExtendedSplash screen which serves as a loading page while the
+>         // reader downloads the section information.
+>         ExtendedSplash eSplash = new ExtendedSplash();
+> 
+>         // Set the content of the window to the extended splash screen.
+>         Window.Current.Content = eSplash;
+> 
+>         // Notify the Window that the process of activation is completed
+>         Window.Current.Activate();
+>     }
+> 
+>     // a different handler for activation via the search contract
+>     async protected override void OnSearchActivated(SearchActivatedEventArgs args)
+>     {
+>         base.OnSearchActivated(args);
+> 
+>         // Do an asynchronous restore based on Search activation
+> 
+>         // the rest of the code is the same as the OnLaunched method
+>     }
+> }
+> 
+> partial class ExtendedSplash : Page
+> {
+>     // This is the UIELement that's the game's home page.
+>     private GameHomePage homePage;
+> 
+>     public ExtendedSplash()
+>     {
+>         InitializeComponent();
+>         homePage = new GameHomePage();
+>     }
+> 
+>     // Shown for demonstration purposes only.
+>     // This is typically autogenerated by Visual Studio.
+>     private void InitializeComponent()
+>     {
+>     }
+> }
+> ```
+> ```vb
+>     Partial Public Class App
+>     Inherits Application
+> 
+>     ' A handler for regular activation.
+>     Protected Overrides Async Sub OnLaunched(ByVal args As LaunchActivatedEventArgs)
+>         MyBase.OnLaunched(args)
+> 
+>         ' Asynchronously restore state based on generic launch.
+> 
+>         ' Create the ExtendedSplash screen which serves as a loading page while the
+>         ' reader downloads the section information.
+>         Dim eSplash As New ExtendedSplash()
+> 
+>         ' Set the content of the window to the extended splash screen.
+>         Window.Current.Content = eSplash
+> 
+>         ' Notify the Window that the process of activation is completed
+>         Window.Current.Activate()
+>     End Sub
+> 
+>     ' a different handler for activation via the search contract
+>     Protected Overrides Async Sub OnSearchActivated(ByVal args As SearchActivatedEventArgs)
+>         MyBase.OnSearchActivated(args)
+> 
+>         ' Do an asynchronous restore based on Search activation
+> 
+>         ' the rest of the code is the same as the OnLaunched method
+>     End Sub
+> End Class
+> 
+> Partial Friend Class ExtendedSplash
+>     Inherits Page
+> 
+>     Public Sub New()
+>         InitializeComponent()
+> 
+>         ' Downloading the data necessary for 
+>         ' initial UI on a background thread.
+>         Task.Run(Sub() DownloadData())
+>     End Sub
+> 
+>     Private Sub DownloadData()
+>         ' Download data to populate the initial UI.
+> 
+>         ' Create the first page. 
+>         Dim firstPage As New MainPage()
+> 
+>         ' Add the data just downloaded to the first page
+> 
+>         ' Replace the loading page, which is currently 
+>         ' set as the window's content, with the initial UI for the app
+>         Window.Current.Content = firstPage
+>     End Sub
+> 
+>     ' Shown for demonstration purposes only.
+>     ' This is typically autogenerated by Visual Studio.
+>     Private Sub InitializeComponent()
+>     End Sub
+> End Class 
+> ```
 
 Les applications affichant une page de chargement dans le gestionnaire d’activation commencent à créer l’interface utilisateur en arrière-plan. Une fois que cet élément a été créé, l’événement [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) associé est déclenché. Dans le gestionnaire d’événements, vous remplacez le contenu de la fenêtre, à savoir la page de chargement, par la nouvelle page d’accueil.
 
-Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. Outre que cette page informe l’utilisateur sur la progression du processus d’activation, elle empêche que ce processus d’activation ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15 secondes suivant son lancement.
+Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. Outre que cette page informe l’utilisateur sur la progression du processus d’activation, elle empêche que ce processus d’activation ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15 secondes suivant son lancement.
 
 > [!div class="tabbedCodeSnippets"]
-```csharp
-partial class GameHomePage : Page
-{
-    public GameHomePage()
-    {
-        InitializeComponent();
-
-        // add a handler to be called when the home page has been loaded
-        this.Loaded += ReaderHomePageLoaded;
-
-        // load the minimal amount of image and sound data from disk necessary to create the home page.        
-    }
-    
-    void ReaderHomePageLoaded(object sender, RoutedEventArgs e)
-    {
-        // set the content of the window to the home page now that it’s ready to be displayed.
-        Window.Current.Content = this;
-    }
-
-    // Shown for demonstration purposes only.
-    // This is typically autogenerated by Visual Studio.
-    private void InitializeComponent()
-    {
-    }
-}
-```
-```vb
-    Partial Friend Class GameHomePage
-    Inherits Page
-
-    Public Sub New()
-        InitializeComponent()
-
-        ' add a handler to be called when the home page has been loaded
-        AddHandler Me.Loaded, AddressOf ReaderHomePageLoaded
-
-        ' load the minimal amount of image and sound data from disk necessary to create the home page.        
-    End Sub
-
-    Private Sub ReaderHomePageLoaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
-        ' set the content of the window to the home page now that it’s ready to be displayed.
-        Window.Current.Content = Me
-    End Sub
-
-    ' Shown for demonstration purposes only.
-    ' This is typically autogenerated by Visual Studio.
-    Private Sub InitializeComponent()
-    End Sub
-End Class
-```
+> ```csharp
+> partial class GameHomePage : Page
+> {
+>     public GameHomePage()
+>     {
+>         InitializeComponent();
+> 
+>         // add a handler to be called when the home page has been loaded
+>         this.Loaded += ReaderHomePageLoaded;
+> 
+>         // load the minimal amount of image and sound data from disk necessary to create the home page.        
+>     }
+>     
+>     void ReaderHomePageLoaded(object sender, RoutedEventArgs e)
+>     {
+>         // set the content of the window to the home page now that it's ready to be displayed.
+>         Window.Current.Content = this;
+>     }
+> 
+>     // Shown for demonstration purposes only.
+>     // This is typically autogenerated by Visual Studio.
+>     private void InitializeComponent()
+>     {
+>     }
+> }
+> ```
+> ```vb
+>     Partial Friend Class GameHomePage
+>     Inherits Page
+> 
+>     Public Sub New()
+>         InitializeComponent()
+> 
+>         ' add a handler to be called when the home page has been loaded
+>         AddHandler Me.Loaded, AddressOf ReaderHomePageLoaded
+> 
+>         ' load the minimal amount of image and sound data from disk necessary to create the home page.        
+>     End Sub
+> 
+>     Private Sub ReaderHomePageLoaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
+>         ' set the content of the window to the home page now that it's ready to be displayed.
+>         Window.Current.Content = Me
+>     End Sub
+> 
+>     ' Shown for demonstration purposes only.
+>     ' This is typically autogenerated by Visual Studio.
+>     Private Sub InitializeComponent()
+>     End Sub
+> End Class
+> ```
 
 Pour obtenir un exemple d’utilisation d’un écran de démarrage étendu, voir cet [exemple d’écran de démarrage](http://go.microsoft.com/fwlink/p/?linkid=234889).
 
@@ -330,7 +331,7 @@ C’est vous qui définissez le comportement de l’application à chaque phase 
 
 Le code réutilisable prend souvent la forme de modules (DLL) inclus dans un projet. Le chargement de ces modules nécessite des accès au disque, ce qui peut évidemment être coûteux en ressources. Cela peut avoir un impact sur les démarrages à chaud, même si c’est dans une moindre mesure que lors des démarrages à froid. En C# et Visual Basic, le CLR essaie le plus possible de différer ce coût en chargeant les assemblys à la demande : il ne charge un module que si celui-ci est référencé par une méthode exécutée. Par conséquent, dans le code de démarrage, référencez uniquement les assemblys nécessaires au lancement de votre application afin que le CLR ne charge pas de modules inutiles. Si le chemin de démarrage comporte des chemins de code inutilisés avec des références superflues, vous pouvez déplacer ces chemins de code vers d’autres méthodes pour éviter les chargements non nécessaires.
 
-Pour réduire les chargements de modules, vous pouvez aussi combiner les modules de votre application. En effet, le chargement d’un assembly volumineux est généralement plus rapide que celui de deux assemblys plus petits. Notez que la combinaison des modules n’est pas toujours possible. Par ailleurs, optez pour cette solution seulement si elle n’a pas d’impact significatif sur la productivité du développeur ni sur la réutilisation du code. Utilisez des outils tels que [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) ou l’[Analyseur de performance Windows](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/ff191077.aspx) pour identifier les modules chargés au démarrage.
+Pour réduire les chargements de modules, vous pouvez aussi combiner les modules de votre application. En effet, le chargement d’un assembly volumineux est généralement plus rapide que celui de deux assemblys plus petits. Notez que la combinaison des modules n’est pas toujours possible. Par ailleurs, optez pour cette solution seulement si elle n’a pas d’impact significatif sur la productivité du développeur ni sur la réutilisation du code. Utilisez des outils tels que [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) ou l’[Analyseur de performance Windows](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) pour identifier les modules chargés au démarrage.
 
 ### Effectuer des requêtes Web intelligentes
 
@@ -358,6 +359,6 @@ C’est la raison pour laquelle nous vous conseillons d’utiliser la mise en ca
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,12 @@
 ---
+author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: Assurer la réactivité du thread de l’interface utilisateur
 description: Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur.
 ---
 # Assurer la réactivité du thread de l’interface utilisateur
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur. Les implications sont différentes selon les applications. Pour certaines applications, cela implique de fournir des propriétés physiques plus réalistes, d’accélérer le chargement des données à partir d’un disque ou du Web, de représenter des scènes complexes et naviguer entre les pages plus vite, de trouver un itinéraire en un clin d’œil ou encore de traiter rapidement les données. Quel que soit le type de calcul effectué, les utilisateurs veulent que leur application continue de réagir à leurs interactions et qu’elle ne donne pas l’impression de ne plus répondre pendant l’opération de calcul.
 
@@ -32,7 +33,7 @@ Pour que l’application reste réactive, la plateforme fournit des versions asy
 
 Codez les gestionnaires d’événements de sorte qu’ils effectuent rapidement leur retour. Dans les cas où une quantité considérable de tâches doivent être effectuées, planifiez-les sur un thread en arrière-plan et revenez.
 
-Vous pouvez planifier les tâches de manière asynchrone en utilisant l’opérateur **await** dans C#, l’opérateur **Await** dans Visual Basic ou des délégués dans C++. Cependant, cela ne garantit pas que les tâches ainsi planifiées seront toujours exécutées sur un thread en arrière-plan. La plupart des API de plateforme Windows universelle (UWP) planifient automatiquement les tâches sur le thread en arrière-plan, mais si vous appelez le code de votre application seulement avec l’opérateur **await** ou un délégué, ce délégué ou cette méthode s’exécute sur le thread de l’interface utilisateur. Vous devez indiquer explicitement que vous voulez exécuter le code de votre application sur un thread en arrière-plan. En C# et en Visual Basic, vous avez la possibilité de le faire en transmettant le code à [**Task.Run**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
+Vous pouvez planifier les tâches de manière asynchrone en utilisant l’opérateur **await** dans C#, l’opérateur **Await** dans Visual Basic ou des délégués dans C++. Cependant, cela ne garantit pas que les tâches ainsi planifiées seront toujours exécutées sur un thread en arrière-plan. La plupart des API de plateforme Windows universelle (UWP) planifient automatiquement les tâches sur le thread en arrière-plan, mais si vous appelez le code de votre application seulement avec l’opérateur **await** ou un délégué, ce délégué ou cette méthode s’exécute sur le thread de l’interface utilisateur. Vous devez indiquer explicitement que vous voulez exécuter le code de votre application sur un thread en arrière-plan. En C# et en Visual Basic, vous avez la possibilité de le faire en transmettant le code à [**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
 
 Gardez à l’esprit que les éléments d’interface utilisateur sont accessibles uniquement à partir du thread d’interface utilisateur. Utilisez le thread d’interface utilisateur pour accéder aux éléments d’interface utilisateur avant de lancer le travail en arrière-plan et/ou utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) ou [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) sur le thread d’arrière-plan.
 
@@ -58,41 +59,41 @@ public class AsyncExample
 ```
 
 > [!div class="tabbedCodeSnippets"]
-```csharp
-public class Example
-{
-    // ...
-    private async void NextMove-Click(object sender, RoutedEventArgs e)
-    {
-        await Task.Run(() => ComputeNextMove());
-        // Update the UI with results
-    }
-
-    private async Task ComputeNextMove()
-    {
-        // ...
-    }
-    // ...
-}
-```
-```vb
-Public Class Example
-    ' ...
-    Private Async Sub NextMove-Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-        Await Task.Run(Function() ComputeNextMove())
-        ' update the UI with results
-    End Sub
-
-    Private Async Function ComputeNextMove() As Task
-        ' ...
-    End Function
-    ' ...
-End Class
-```
+> ```csharp
+> public class Example
+> {
+>     // ...
+>     private async void NextMove-Click(object sender, RoutedEventArgs e)
+>     {
+>         await Task.Run(() => ComputeNextMove());
+>         // Update the UI with results
+>     }
+> 
+>     private async Task ComputeNextMove()
+>     {
+>         // ...
+>     }
+>     // ...
+> }
+> ```
+> ```vb
+> Public Class Example
+>     ' ...
+>     Private Async Sub NextMove-Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+>         Await Task.Run(Function() ComputeNextMove())
+>         ' update the UI with results
+>     End Sub
+> 
+>     Private Async Function ComputeNextMove() As Task
+>         ' ...
+>     End Function
+>     ' ...
+> End Class
+> ```
 
 Dans cet exemple, le gestionnaire `NextMove-Click` effectue son retour lorsqu’il reçoit l’instruction **await** afin d’assurer la réactivité du thread d’interface utilisateur. Toutefois, l’exécution reprend dans ce gestionnaire à la fin de l’opération `ComputeNextMove` (qui est exécutée sur un thread en arrière-plan). Le reste du code du gestionnaire permet de mettre à jour l’interface utilisateur avec les résultats.
 
-> **Remarque** Il existe également des API [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) et [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR229621timer) pour UWP qui peuvent être utilisées pour des scénarios similaires. Pour plus d’informations, voir [Threads et programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/Mt187340).
+> **Remarque** Il existe également des API [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) et [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) pour UWP qui peuvent être utilisées pour des scénarios similaires. Pour plus d’informations, voir [Threads et programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/Mt187340).
 
 ## Rubriques connexes
 
@@ -100,6 +101,6 @@ Dans cet exemple, le gestionnaire `NextMove-Click` effectue son retour lorsqu’
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

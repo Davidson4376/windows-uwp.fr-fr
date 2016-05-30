@@ -1,11 +1,12 @@
 ---
+author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Vue d’ensemble de Windows Device Portal
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB.
 ---
 # Vue d’ensemble de Windows Device Portal
 
-Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous permettre de résoudre les problèmes et d’afficher les performances en temps réel de votre appareil Windows. 
+Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous permettre de résoudre les problèmes et d’afficher les performances en temps réel de votre appareil Windows.
 
 Device Portal est un serveur web sur l’appareil auquel vous pouvez vous connecter à partir d’un navigateur web sur votre PC. Si votre appareil dispose d’un navigateur web, vous pouvez également vous connecter localement avec le navigateur sur votre appareil.
 
@@ -13,7 +14,7 @@ Windows Device Portal est disponible sur chaque famille d’appareils. Toutefois
 
 Dans Windows Device Portal, tout repose sur les [API REST](device-portal-api-core.md) que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
 
-## Configuration
+## Installation
 
 Chaque appareil possède des instructions spécifiques concernant la connexion à Device Portal. Toutefois, chacun nécessite d’effectuer les étapes générales suivantes.
 1. Activez le mode développeur et Device Portal sur votre appareil.
@@ -25,14 +26,15 @@ Famille d’appareils | Activé par défaut ? | HTTP | HTTPS | USB
 HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | localhost:10080
 IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | Non applicable
 Xbox | Activer dans le mode de développement | Désactivé | 11443 | Non applicable
-Bureau| Activer dans le mode de développement | Aléatoire > 50 000 (xx080) | Aléatoire > 50 000 (xx443) | Non applicable
+Bureau| Activer dans le mode de développement | Aléatoire &gt; 50 000 (xx080) | Aléatoire &gt; 50 000 (xx443) | Non applicable
 Téléphone | Activer dans le mode de développement | 80| 443 | localhost:10080
 
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
 - [Device Portal pour HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
-- [Device Portal pour IoT](http://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
-- [Device Portal pour appareils mobiles](device-portal-mobile.md#setup)
+- [Device Portal pour IoT](http://ms-iot.github.io/content/win10/tools/DevicePortal.htm)
+- [Device Portal pour appareils mobiles](device-portal-mobile.md#set-up-device-portal-on-window-phone)
 - [Device Portal pour Xbox](device-portal-xbox.md)
+- [Device Portal pour Bureau](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
 ## Fonctionnalités
 
@@ -65,27 +67,27 @@ Propose des fonctionnalités d’installation/de désinstallation et de gestion 
 
 **Pour installer une application**
 
-1.  Lorsque vous avez [créé un package d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré. 
+1.  Lorsque vous avez [créé un package d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
 
-    ![Installation d’applications](images/device-portal/iot-installapp0.png)    
+    ![Installation d’applications](images/device-portal/iot-installapp0.png)
 2.  Cliquez sur Parcourir et recherchez votre package d’application (.appx).
 3.  Cliquez sur Parcourir et recherchez le fichier de certificat (.cer). (Non requis sur tous les appareils.)
 4.  Ajoutez des dépendances. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
-5.  Sous Déployer, cliquez sur OK. 
-6.  Pour installer une autre application, cliquez sur le bouton Réinitialiser pour effacer les champs.
+5.  Sous **Déployer**, cliquez sur **OK**. 
+6.  Pour installer une autre application, cliquez sur le bouton **Réinitialiser** pour effacer les champs.
 
 
 **Pour désinstaller une application**
 
 1.  Assurez-vous que votre application n’est pas en cours d’exécution. 
 2.  Si c’est le cas, passez à Applications en cours d’exécution et fermez l’application en question. Si vous essayez de désinstaller une application en cours d’exécution, celle-ci provoquera des problèmes lors de sa réinstallation. 
-3.  Dès que vous êtes prêt, cliquez sur Désinstaller.
+3.  Dès que vous êtes prêt, cliquez sur **Désinstaller**.
 
 ### Processus
 
 Affiche les détails concernant les processus en cours d’exécution. Cela comprend les processus relatifs aux applications au système.
 
-Comme le Gestionnaire de tâches sur votre PC, cette page vous permet de voir les processus en cours d’exécution, ainsi que leur utilisation de la mémoire.  Sur certaines plateformes (Desktop, IoT et HoloLens), vous pouvez mettre fin aux processus. 
+Comme le Gestionnaire de tâches sur votre PC, cette page vous permet de voir les processus en cours d’exécution, ainsi que leur utilisation de la mémoire.  Sur certaines plateformes (Desktop, IoT et HoloLens), vous pouvez mettre fin aux processus.
 
 ![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-processes.png)
 
@@ -108,19 +110,19 @@ Gère en temps réel le suivi d’événements pour Windows (ETW) sur l’appare
 
 ![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-etw.png)
 
-Cochez la case Masquer les fournisseurs pour n’afficher que la liste des événements.
-- **Fournisseurs enregistrés**  sélectionnez le fournisseur ETW et le niveau de suivi. Le niveau de suivi est l’une des valeurs suivantes :
+Cochez la case **Masquer les fournisseurs** pour n’afficher que la liste des événements.
+- **Fournisseurs enregistrés** sélectionnez le fournisseur ETW et le niveau de suivi. Le niveau de suivi est l’une des valeurs suivantes :
     1. Sortie ou arrêt anormal
     2. Erreurs graves
     3. Avertissements
     4. Avertissements sans erreur
     5. Suivi détaillé (*)
 
-Cliquez ou appuyez sur Activer pour démarrer le suivi. Le fournisseur est ajouté à la liste déroulante Fournisseurs activés.
-- **Fournisseurs personnalisés**  sélectionnez un fournisseur ETW personnalisé et le niveau de suivi. Identifiez le fournisseur par son GUID. N’insérez pas de crochets dans le GUID.
-- **Fournisseurs activés** : répertorie les fournisseurs activés. Sélectionnez un fournisseur dans la liste déroulante, puis cliquez sur ou appuyez sur Désactiver pour arrêter le suivi. Cliquez ou appuyez sur Arrêter tout pour suspendre tout le suivi.
-- **Historique des fournisseurs** : affiche les fournisseurs ETW activés pendant la session active. Cliquez ou appuyez sur Activer pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur Effacer pour supprimer l’historique.
-- **Événements** : répertorie les événements ETW des fournisseurs sélectionnés sous forme de tableau. Le tableau suivant est mis à jour en temps réel. En dessous du tableau, cliquez sur le bouton Effacer pour supprimer tous les événements ETW du tableau. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur Enregistrer dans le fichier pour exporter vers un fichier CSV en local les événements ETW actuellement collectés.
+Cliquez ou appuyez sur **Activer** pour démarrer le suivi. Le fournisseur est ajouté à la liste déroulante **Fournisseurs activés**.
+- **Fournisseurs personnalisés** sélectionnez un fournisseur ETW personnalisé et le niveau de suivi. Identifiez le fournisseur par son GUID. N’insérez pas de crochets dans le GUID.
+- **Fournisseurs activés** : répertorie les fournisseurs activés. Sélectionnez un fournisseur dans la liste déroulante, puis cliquez sur ou appuyez sur **Désactiver** pour arrêter le suivi. Cliquez ou appuyez sur **Arrêter tout** pour suspendre tout le suivi.
+- **Historique des fournisseurs** : affiche les fournisseurs ETW activés pendant la session active. Cliquez ou appuyez sur **Activer** pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur **Effacer** pour supprimer l’historique.
+- **Événements** : répertorie les événements ETW des fournisseurs sélectionnés sous forme de tableau. Le tableau suivant est mis à jour en temps réel. En dessous du tableau, cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW du tableau. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **Enregistrer dans le fichier** pour exporter vers un fichier CSV en local les événements ETW actuellement collectés.
 
 ### Suivi des performances
 
@@ -128,10 +130,10 @@ Capturez les suivis de l’[Enregistreur de performance Windows](https://msdn.mi
 
 ![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **Profils disponibles** : sélectionnez le profil WPR dans la liste déroulante, puis cliquez ou appuyez sur Démarrer pour commencer le suivi.
-- **Profils personnalisés** : cliquez ou appuyez sur Parcourir pour choisir un profil WPR depuis votre PC. Cliquez ou appuyez sur Charger et démarrer pour commencer le suivi.
+- **Profils disponibles** : sélectionnez le profil WPR dans la liste déroulante, puis cliquez ou appuyez sur **Démarrer** pour commencer le suivi.
+- **Profils personnalisés** : cliquez ou appuyez sur **Parcourir** pour choisir un profil WPR depuis votre PC. Cliquez ou appuyez sur **Charger et démarrer** pour commencer le suivi.
 
-Pour arrêter le suivi, cliquez sur le lien d’arrêt. Restez sur cette page jusqu’à ce que le fichier de suivi (. ETL) a terminé le téléchargement.
+Pour arrêter le suivi, cliquez sur **Arrêter**. Restez sur cette page jusqu’à ce que le fichier de suivi (. ETL) a terminé le téléchargement.
 
 Les fichiers ETL capturés peuvent être ouverts pour analyse dans [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx).
 
@@ -143,14 +145,13 @@ Les fichiers ETL capturés peuvent être ouverts pour analyse dans [Windows Perf
 
 ### Mise en réseau
 
-Gère les connexions réseau sur l’appareil.  Sauf si vous êtes connecté à Device Portal via USB, la modification de ces paramètres entraînera certainement la déconnexion de Device Portal. 
+Gère les connexions réseau sur l’appareil.  Sauf si vous êtes connecté à Device Portal via USB, la modification de ces paramètres entraînera certainement la déconnexion de Device Portal.
 - **Profils** : sélectionnez un autre profil Wi-Fi à utiliser.  
-- **Réseaux disponibles** : réseaux Wi-Fi disponibles sur l’appareil.  Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire.  Remarque : Device Portal ne gère pas encore l’authentification en entreprise. 
+- **Réseaux disponibles** : réseaux Wi-Fi disponibles sur l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Remarque : Device Portal ne gère pas encore l’authentification en entreprise. 
 
 ![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-network.png)
 
 
-
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
