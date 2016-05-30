@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: ID de classe de service AEP
 description: Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement.
 ---
 # ID de classe de service AEP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 <span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
@@ -125,6 +126,6 @@ System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

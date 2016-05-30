@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: Obtenir des informations sur la batterie
-description: Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API dans l’espace de noms Windows.Devices.Power.
+description: Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API de l’espace de noms Windows.Devices.Power.
 ---
 # Obtenir des informations sur la batterie
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -21,7 +22,7 @@ Certains appareils utilisent plusieurs batteries et il n’est pas toujours évi
 
 **Remarque** Une classe [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) correspond en réalité à un contrôleur de batterie. Le contrôleur est tantôt relié à la batterie physique de l’appareil, tantôt à son boîtier. Par conséquent, il est possible de créer un objet batterie, même en l’absence de toute batterie. Dans certains cas, l’objet batterie peut être **null**.
 
-Lorsque vous disposez d’un groupe de batteries, appelez la méthode [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) pour obtenir le rapport [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) correspondant.
+Lorsque vous disposez d’un objet groupe de batteries, appelez la méthode [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) pour obtenir le rapport [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) correspondant.
 
 ```csharp
 private void RequestAggregateBatteryReport()
@@ -123,9 +124,9 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## Exemple : application de batterie de base
 
-Testez ces API en créant l’application suivante de batterie de base dans Microsoft Visual Studio. Dans la page d’accueil de Visual Studio, cliquez sur **Nouveau projet**, puis, sous les modèles **Visual C# &gt; Windows &gt; universel**, créez une application à l’aide du modèle **Application vide**.
+Testez ces API en créant l’application suivante de batterie de base dans Microsoft Visual Studio. Dans la page d’accueil de Visual Studio, cliquez sur **Nouveau projet**, puis, sous les modèles **Visual C# &gt; Windows &gt; Universel**, créez une application à l’aide du modèle **Application vide**.
 
-Ensuite, ouvrez le fichier **MainPage.xaml** et copiez le code XML suivant dans ce fichier (en remplaçant son contenu d’origine).
+Ensuite, ouvrez le fichier **MainPage.xaml** et copiez le code XML suivant dans ce fichier (en remplaçant son contenu d’origine).
 
 ```xml
 <Page
@@ -250,7 +251,7 @@ namespace App1
             TextBlock txt5 = new TextBlock { Text = "Fully-charged energy capacity (mWh): " + report.FullChargeCapacityInMilliwattHours.ToString() };
             TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + report.RemainingCapacityInMilliwattHours.ToString() };
 
-            // Create energy capacity progress bar &amp; labels
+            // Create energy capacity progress bar & labels
             TextBlock pbLabel = new TextBlock { Text = "Percent remaining energy capacity" };
             pbLabel.Margin = new Thickness(0,10, 0, 5);
             pbLabel.FontFamily = new FontFamily("Segoe UI");
@@ -327,12 +328,12 @@ Si votre application n’est pas nommée **App1**, vous devez renommer l’espac
 
 Enfin, pour exécuter cette application de batterie de base, dans le menu **Déboguer**, cliquez sur **Démarrer le débogage** afin de tester la solution.
 
-**Conseil** Pour recevoir des valeurs numériques de l’objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), déboguez votre application sur l’**ordinateur local** ou un **appareil** externe (par exemple, un téléphone Windows Phone). Lors du débogage sur un émulateur d’appareil, l’objet **BatteryReport** renvoie **null** aux propriétés de capacité et de vitesse.
+**Conseil** Pour recevoir les valeurs numériques de l’objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), déboguez votre application sur l’**ordinateur local** ou sur un **appareil** externe (par exemple, un téléphone Windows Phone). Lors du débogage sur un émulateur d’appareil, l’objet **BatteryReport** renvoie **null** aux propriétés de capacité et de vitesse.
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

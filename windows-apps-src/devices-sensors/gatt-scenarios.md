@@ -1,13 +1,14 @@
 ---
+author: DBirtolo
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: Bluetooth GATT
-description: Cet article fournit une vue d’ensemble du profil d’attribut générique (GATT) Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant les trois utilisations communes de GATT.
+description: Cet article fournit une vue d’ensemble du profil d’attribut générique (GATT) Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant les trois utilisations communes de GATT.
 ---
 # Bluetooth GATT
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** API importantes
+** API importantes **
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
@@ -43,7 +44,7 @@ Pour des raisons pratiques, le Bluetooth SIG gère une [liste de profils publics
 
 Dans cet exemple, l’application utilise des mesures de température d’un appareil Bluetooth LE qui implémente le service Health Thermometer Bluetooth LE. L’application spécifie qu’elle doit être avertie quand une nouvelle mesure de température est disponible. Grâce à l’inscription d’un gestionnaire d’événements pour la « modification de la valeur de la caractéristique Thermometer », l’application reçoit des notifications liées à la modification de la valeur de la caractéristique tout en s’exécutant au premier plan.
 
-Quand l’application est suspendue, elle doit libérer toutes les ressources d’appareil, tandis qu’à sa reprise, elle doit réexécuter l’initialisation et l’énumération des appareils.
+Quand l’application est suspendue, elle doit libérer toutes les ressources d’appareil, tandis qu’à sa reprise, elle doit réexécuter l’initialisation et l’énumération des appareils. Si l’interaction avec l’appareil en arrière-plan est souhaité, veuillez examiner [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) ou [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger convient généralement mieux aux événements fréquents tandis que GattCharacteristicNotificationTrigger est mieux approprié pour gérer les événements plus rares.  
 
 ```csharp
 double convertTemperatureData(byte[] temperatureData)
@@ -132,7 +133,7 @@ void MainPage::Initialize()
                 ref new TypedEventHandler<
                     GattCharacteristic^, 
                     GattValueChangedEventArgs^>(
-                        this, &amp;MainPage::TemperatureMeasurementChanged);
+                        this, &MainPage::TemperatureMeasurementChanged);
 
             create_task(thermometerCharacteristic->
                 WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -162,7 +163,7 @@ void MainPage::TemperatureMeasurementChanged(
 
 ## Contrôler un appareil de thermométrie Bluetooth LE
 
-Dans cet exemple, une application UWP sert de contrôleur pour un appareil de thermométrie Bluetooth LE fictif. Outre les caractéristiques standard du profil [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603), l’appareil déclare également une caractéristique Format qui permet aux utilisateurs de récupérer la valeur en degrés Celsius ou Fahrenheit. L’application utilise des transactions d’écriture fiables pour que le format et l’intervalle de mesure soient définis en tant que valeur unique.
+Dans cet exemple, une application UWP sert de contrôleur pour un appareil de thermométrie Bluetooth LE fictif. Outre les caractéristiques standard du profil [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603), l’appareil déclare une caractéristique Format qui permet aux utilisateurs de récupérer la valeur en degrés Celsius ou Fahrenheit. L’application utilise des transactions d’écriture fiables pour que le format et l’intervalle de mesure soient définis en tant que valeur unique.
 
 ```csharp
 // Uuid of the "Format" Characteristic Value
@@ -354,7 +355,7 @@ void MainPage::Initialize()
                 ref new TypedEventHandler<
                     GattCharacteristic^, 
                     GattValueChangedEventArgs^>
-                    (this, &amp;MainPage::BatteryLevelChanged);
+                    (this, &MainPage::BatteryLevelChanged);
 
             create_task(batteryLevelCharacteristic
                 ->WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -395,6 +396,6 @@ void MainPage::BatteryLevelChanged(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

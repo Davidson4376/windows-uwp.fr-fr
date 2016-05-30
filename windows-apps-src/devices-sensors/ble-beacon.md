@@ -1,27 +1,29 @@
 ---
-title: Bluetooth Advertisements
-description: This section contains articles on how to integrate Bluetooth Low Energy (LE) Advertisements into Universal Windows Platform (UWP) apps through the user of AdvertisementWatcher and AdvertisementPublisher APIs.
+author: DBirtolo
+title: Annonces publicitaires Bluetooth
+description: Cette section contient des articles expliquant comment intégrer des annonces Bluetooth Low Energy (LE) dans les applications de plateforme Windows universelle (UWP) par le biais de l’utilisateur des API AdvertisementWatcher et AdvertisementPublisher.
 ---
 
-# Bluetooth Advertisements
+# Annonces publicitaires Bluetooth
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs ** 
+** API importantes ** 
 
 -   [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.aspx)
 
-This article provides an overview of Bluetooth Advertisements (Beacons) for Universal Windows Platform (UWP) apps.  
+Cet article offre une vue d’ensemble des annonces Bluetooth (beacons) pour les applications de plateforme Windows universelle (UWP).  
 
-## Overview
+## Vue d’ensemble
 
-There are two main functions that a developer can perform using the Advertisement APIs:
+Un développeur peut exécuter deux fonctions principales à l’aide des API d’annonce Advertisement :
 
--   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): listen for nearby beacons and filter them out based on payload or proximity.  
--   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): define a payload for Windows to advertise on a developers behalf.  
+-   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx) : écouter les beacons proches et les filtrer en fonction de la charge utile ou de la proximité.  
+-   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx) : définir une charge utile pour Windows afin de créer des annonces au nom des développeurs.  
 
-Full sample code is found in the [Bluetooth Advertisement Sample](http://go.microsoft.com/fwlink/p/?LinkId=619990) on Github
+L’exemple de code complet est disponible dans [l’exemple d’annonce Bluetooth](http://go.microsoft.com/fwlink/p/?LinkId=619990) sur Github
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

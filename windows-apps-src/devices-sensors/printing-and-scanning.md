@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-title: Impression et numérisation
+title: Impression et de numérisation
 description: Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
 ---
 # Impression et numérisation
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
 
@@ -25,6 +26,6 @@ Cette section décrit comment imprimer et numériser à partir de votre applicat
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

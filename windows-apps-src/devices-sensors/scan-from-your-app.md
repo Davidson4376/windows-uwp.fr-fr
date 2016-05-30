@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: Numériser à partir de votre application
 description: Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement.
 ---
 # Numériser à partir de votre application
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -54,9 +55,9 @@ Windows ne détecte pas les scanneurs automatiquement. Vous devez effectuer cett
        await
        MainPage.Current.Dispatcher.RunAsync(
              Windows.UI.Core.CoreDispatcherPriority.Normal,
-             () =&gt;
+             () =>
              {
-                MainPage.Current.NotifyUser(String.Format(&quot;Scanner with device id {0} has been added&quot;, deviceInfo.Id), NotifyType.StatusMessage);
+                MainPage.Current.NotifyUser(String.Format("Scanner with device id {0} has been added", deviceInfo.Id), NotifyType.StatusMessage);
 
                 // search the device list for a device with a matching device id
                 ScannerDataItem match = FindInList(deviceInfo.Id);
@@ -122,7 +123,7 @@ Vous pouvez ajouter du code pour obtenir un aperçu de la numérisation avant de
 ```csharp
 if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
 {
-    rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
+    rootPage.NotifyUser("Scanning", NotifyType.StatusMessage);
                 // Scan API call to get preview from the flatbed.
                 var result = await myScanner.ScanPreviewToStreamAsync(
                     ImageScannerScanSource.Flatbed, stream);
@@ -159,8 +160,8 @@ cancellationToken = new CancellationTokenSource();
 2.  Configurez le gestionnaire d’événements de progression et récupérez la progression de la numérisation.
 
 ```csharp
-    rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
-    var progress = new Progress&lt;UInt32&gt;(ScanProgress);
+    rootPage.NotifyUser("Scanning", NotifyType.StatusMessage);
+    var progress = new Progress<UInt32>(ScanProgress);
 ```
 
 ## Numériser vers la bibliothèque d’images
@@ -169,6 +170,6 @@ Grâce à la classe [**FolderPicker**](https://msdn.microsoft.com/library/window
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

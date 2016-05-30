@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: Orientation de capteur
 description: Les données du capteur provenant des classes Accelerometer, Gyrometer, Compass, Inclinometer et OrientationSensor sont définies par leurs axes de référence. Ces axes sont définis par l’orientation paysage de l’appareil et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner.
 ---
 # Orientation de capteur
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -152,11 +153,9 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 Les données [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) doivent être modifiées d’une autre façon. Considérez ces différentes orientations comme des rotations dans le sens inverse des aiguilles d’une montre appliquées à l’axe des Z. Nous devons donc inverser la rotation pour revenir à l’orientation de l’utilisateur. Pour les données de quaternion, nous pouvons utiliser la formule d’Euler pour définir une rotation avec un quaternion de référence. Nous pouvons également utiliser une matrice de rotation de référence.
 
-![Formule d’Euler](images/eulers-formula.png)
-Pour obtenir l’orientation relative souhaitée, multipliez l’objet de référence par l’objet absolu. Notez que cette formule mathématique n’est pas commutative.
+![Formule d’Euler](images/eulers-formula.png) Pour obtenir l’orientation relative souhaitée, multipliez l’objet de référence par l’objet absolu. Notez que cette formule mathématique n’est pas commutative.
 
-![Multipliez l’objet de référence par l’objet absolu](images/orientation-formula.png)
-Dans l’expression précédente, l’objet absolu est retourné par les données du capteur.
+![Multipliez l’objet de référence par l’objet absolu](images/orientation-formula.png) Dans l’expression précédente, l’objet absolu est retourné par les données du capteur.
 
 | Orientation de l’affichage  | Rotation dans le sens inverse des aiguilles d’une montre autour de Z | Quaternion de référence (rotation inverse) | Matrice de rotation de référence (rotation inverse) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
@@ -167,6 +166,6 @@ Dans l’expression précédente, l’objet absolu est retourné par les donnée
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: Propriétés d’informations d’appareil
-description: Chaque appareil a associé des propriétés DeviceInformation que vous pouvez utiliser lorsque vous avez besoin d’informations spécifiques ou lorsque vous créez un sélecteur d’appareil.
+description: Chaque appareil a associé des propriétés DeviceInformation que vous pouvez utiliser en cas de lorsque vous avez besoin d’informations spécifiques ou lorsque vous créez un sélecteur d’appareil.
 ---
 # Propriétés d’informations d’appareil
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -22,7 +23,7 @@ Un objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps
 
 Un objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) a des propriétés de base, telles que [**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) et [**Kind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx), mais la plupart des propriétés sont stockée dans un conteneur des propriétés sous [**Properties**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx). De ce fait, le conteneur des propriétés comprend les propriétés utilisées pour obtenir les propriétés du conteneur des propriétés. Par exemple, utilisez [System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) pour obtenir la propriété [**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name). Voici un cas de propriété commune et bien connue qui a un nom convivial. Windows fournit plusieurs de ces noms conviviaux pour faciliter l’interrogation des propriétés.
 
-Lorsque vous demandez des propriétés, vous n’êtes pas limité aux propriétés communes avec des noms conviviaux. Vous pouvez spécifier le GUID sous-jacent et l’ID de propriété (PID) pour demander toute propriété disponible, même une propriété personnalisée fournie par un appareil ou un pilote individuel. Le format pour spécifier une propriété personnalisée est « `{GUID} PID` ». Par exemple : « `{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7` »
+Lorsque vous demandez des propriétés, vous n’êtes pas limité aux propriétés communes avec des noms conviviaux. Vous pouvez spécifier le GUID sous-jacent et l’ID de propriété (PID) pour demander toute propriété disponible, même une propriété personnalisée fournie par un appareil ou un pilote individuel. Le format pour spécifier une propriété personnalisée est « `{GUID} PID` ». Par exemple : « `{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7` »
 
 Certaines propriétés sont communes à tous les objets [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind), mais la plupart sont propres à un genre spécifique. Les sections suivantes répertorient certaines propriétés communes triées par **DeviceInformationKind**. Pour plus d’informations sur les relations entre les différents genres, voir **DeviceInformationKind**.
 
@@ -156,6 +157,6 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

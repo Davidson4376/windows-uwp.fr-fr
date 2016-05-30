@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: Utiliser l’inclinomètre
 description: Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 ---
 # Utiliser l’inclinomètre
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -123,11 +124,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **InclinometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="InclinometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:InclinometerCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de l’inclinomètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ###  Explication
 
@@ -149,7 +150,7 @@ _inclinometer.ReportInterval = reportInterval;
 
 Les nouvelles données de l’inclinomètre sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
-```
+```csharp
 _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
@@ -171,6 +172,6 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

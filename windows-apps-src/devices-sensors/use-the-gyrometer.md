@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: Utiliser le gyromètre
 description: Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur.
 ---
 # Utiliser le gyromètre
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -125,11 +126,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **GyrometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="GyrometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:GyrometerCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs du gyromètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ###  Explication
 
@@ -164,7 +165,7 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,52,0,0" TextWrapping="Wrap" Text="Y Axis:" VerticalAlignment="Top" Width="46" Foreground="White"/>
         <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="24" Margin="54,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Foreground="#FFFBFBFB"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="8,93,0,0" TextWrapping="Wrap" Text="Z Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFEFBFB"/>
-        <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/></code></pre></td>
+        <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
  ## Rubriques connexes
@@ -173,6 +174,6 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
