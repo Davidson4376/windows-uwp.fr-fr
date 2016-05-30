@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 238
+ Total Files | 246
 
 ## File List
  Source File | Status | Details 
@@ -244,6 +244,14 @@
  [windows-apps-src\gaming\working-with-2d-graphics-in-your-directx-game.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/gaming/working-with-2d-graphics-in-your-directx-game.md) | InSyncHandedBackSuccess | [Details](#50782c5923f9c811f5d8e91aa9aee897876e6c242201)
  [windows-apps-src\gaming\working-with-audio-in-your-directx-game.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/gaming/working-with-audio-in-your-directx-game.md) | InSyncHandedBackSuccess | [Details](#98896d4966ee2adb3bf494dcba22656fc8bb64142202)
  [windows-apps-src\gaming\work-with-networking-in-your-directx-game.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/gaming/work-with-networking-in-your-directx-game.md) | InSyncHandedBackSuccess | [Details](#63a40f5853740d1053449e1b1839f5b0232ce28e2200)
+ [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md) | InSyncHandedBackSuccess | [Details](#0d6b6421b4f5ebc01c865e80db96d1158b9bd8252205)
+ [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/enable-your-device-for-development.md) | InSyncHandedBackSuccess | [Details](#4c890d6202a3151e8fc0cf03b3ff33b98cd6a8632206)
+ [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/get-set-up.md) | InSyncHandedBackSuccess | [Details](#8c5dfb692d647a25eea13036cd320366f3c5a09c2207)
+ [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/learn-more.md) | InSyncHandedBackSuccess | [Details](#cb77a32f99bc6e27cfe87af16d6cd4e08855d7b62562)
+ [windows-apps-src\get-started\plan-your-app.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/plan-your-app.md) | InSyncHandedBackSuccess | [Details](#9a3058aabdc6f710149a14d8f125b66efd0760072563)
+ [windows-apps-src\get-started\sign-up.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/sign-up.md) | InSyncHandedBackSuccess | [Details](#53d23b3f8502e1f182c728b9f787fbbc4b694d422564)
+ [windows-apps-src\get-started\whats-a-uwp.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/whats-a-uwp.md) | InSyncHandedBackSuccess | [Details](#f02851d848a82af7104a6038c5d8850d5362c8322566)
+ [windows-apps-src\get-started\your-first-app.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/your-first-app.md) | InSyncHandedBackSuccess | [Details](#e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d2567)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -3100,6 +3108,102 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [work-with-networking-in-your-directx-game.6503f26f5fe6ff23aa8836c749b168ca76941ad9.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/a7cc11fdb4fe3a288dfa2749f927dd88181b9e41/ol-handback/Microsoft/windows-apps.fr-fr/master/gaming/work-with-networking-in-your-directx-game.6503f26f5fe6ff23aa8836c749b168ca76941ad9.fr-fr.xlf)
 * Handback Datetime: 2016-05-30 22:14:03
+* [Back to Top](#report-top)
+
+##### <a name='0d6b6421b4f5ebc01c865e80db96d1158b9bd8252205'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/6f0ad98577dfa2305a3b1d883f21433ac24fd42a/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
+* Handoff File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3bf18bc17bbd458179ab808141361141c0873f72/ol-handback/Microsoft/windows-apps.fr-fr/master/get-started/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:14:11
+* [Back to Top](#report-top)
+
+##### <a name='4c890d6202a3151e8fc0cf03b3ff33b98cd6a8632206'></a> Source: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/enable-your-device-for-development.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/6f0ad98577dfa2305a3b1d883f21433ac24fd42a/windows-apps-src/get-started/enable-your-device-for-development.md)
+* Handoff File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3bf18bc17bbd458179ab808141361141c0873f72/ol-handback/Microsoft/windows-apps.fr-fr/master/get-started/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:14:11
+* [Back to Top](#report-top)
+
+##### <a name='8c5dfb692d647a25eea13036cd320366f3c5a09c2207'></a> Source: [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/get-set-up.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/6f0ad98577dfa2305a3b1d883f21433ac24fd42a/windows-apps-src/get-started/get-set-up.md)
+* Handoff File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3bf18bc17bbd458179ab808141361141c0873f72/ol-handback/Microsoft/windows-apps.fr-fr/master/get-started/get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:14:11
+* [Back to Top](#report-top)
+
+##### <a name='cb77a32f99bc6e27cfe87af16d6cd4e08855d7b62562'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/learn-more.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/6f0ad98577dfa2305a3b1d883f21433ac24fd42a/windows-apps-src/get-started/learn-more.md)
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3bf18bc17bbd458179ab808141361141c0873f72/ol-handback/Microsoft/windows-apps.fr-fr/master/get-started/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:14:11
+* [Back to Top](#report-top)
+
+##### <a name='9a3058aabdc6f710149a14d8f125b66efd0760072563'></a> Source: [windows-apps-src\get-started\plan-your-app.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/plan-your-app.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\plan-your-app.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/6f0ad98577dfa2305a3b1d883f21433ac24fd42a/windows-apps-src/get-started/plan-your-app.md)
+* Handoff File: [plan-your-app.96433e3c23cb6ab47cd852804f47526706d28e0c.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/plan-your-app.96433e3c23cb6ab47cd852804f47526706d28e0c.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [plan-your-app.96433e3c23cb6ab47cd852804f47526706d28e0c.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3bf18bc17bbd458179ab808141361141c0873f72/ol-handback/Microsoft/windows-apps.fr-fr/master/get-started/plan-your-app.96433e3c23cb6ab47cd852804f47526706d28e0c.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:14:11
+* [Back to Top](#report-top)
+
+##### <a name='53d23b3f8502e1f182c728b9f787fbbc4b694d422564'></a> Source: [windows-apps-src\get-started\sign-up.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/sign-up.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\sign-up.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/6f0ad98577dfa2305a3b1d883f21433ac24fd42a/windows-apps-src/get-started/sign-up.md)
+* Handoff File: [sign-up.fefeb297a3ebea5ac1ee0627e1761cd0abb00f62.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/sign-up.fefeb297a3ebea5ac1ee0627e1761cd0abb00f62.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [sign-up.fefeb297a3ebea5ac1ee0627e1761cd0abb00f62.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3bf18bc17bbd458179ab808141361141c0873f72/ol-handback/Microsoft/windows-apps.fr-fr/master/get-started/sign-up.fefeb297a3ebea5ac1ee0627e1761cd0abb00f62.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:14:11
+* [Back to Top](#report-top)
+
+##### <a name='f02851d848a82af7104a6038c5d8850d5362c8322566'></a> Source: [windows-apps-src\get-started\whats-a-uwp.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/whats-a-uwp.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\whats-a-uwp.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/6f0ad98577dfa2305a3b1d883f21433ac24fd42a/windows-apps-src/get-started/whats-a-uwp.md)
+* Handoff File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3bf18bc17bbd458179ab808141361141c0873f72/ol-handback/Microsoft/windows-apps.fr-fr/master/get-started/whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:14:11
+* [Back to Top](#report-top)
+
+##### <a name='e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d2567'></a> Source: [windows-apps-src\get-started\your-first-app.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/get-started/your-first-app.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\your-first-app.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/6f0ad98577dfa2305a3b1d883f21433ac24fd42a/windows-apps-src/get-started/your-first-app.md)
+* Handoff File: [your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3bf18bc17bbd458179ab808141361141c0873f72/ol-handback/Microsoft/windows-apps.fr-fr/master/get-started/your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:14:11
 * [Back to Top](#report-top)
 
 
