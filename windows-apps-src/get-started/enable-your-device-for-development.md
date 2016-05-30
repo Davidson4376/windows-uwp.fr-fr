@@ -1,17 +1,12 @@
 ---
-ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
-title: Activer votre appareil pour le développement
-description: Il existe une approche différente pour le développement des appareils Windows 10.
-mots-clés : Prise en main
-mots-clés : Licence de développeur
-mots-clés : Visual Studio, licence de développeur
-mots-clés : activer le périphérique
+description&#58; auteur &#58; martinekuan ms.assetid &#58; 54973C62-9669-4988-934E-9273FB0425FD titre &#58; Activer votre appareil pour le développement Voici une approche différente pour le développement des appareils Windows 10.
+mots-clés &#58; prise en main mots-clés &#58; licence de développeur mots-clés &#58; Visual Studio, licence de développeur mots-clés &#58; activer un appareil
 ---
 # Activer votre appareil pour le développement
 
 Il existe une approche différente pour le développement des appareils Windows 10. Il n’est plus nécessaire de disposer d’une licence de développeur pour chacun des appareils que vous souhaitez utiliser pour développer, installer ou tester votre application. Il vous suffit de configurer votre appareil une seule fois pour ces tâches, à partir des paramètres. Et le tour est joué. Plus de renouvellement de vos licences de développeur tous les 30 ou 90 jours !
 
-Si vous utilisez toujours un appareil Windows 8.1 pour développer ou tester vos applications avec Microsoft Visual Studio 2013 ou Microsoft Visual Studio 2015, il vous faut [obtenir une licence de développeur](https://msdn.microsoft.com/library/windows/apps/Hh974578) ou [enregistrer votre Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
+Si vous utilisez toujours un appareil Windows 8.1 pour développer ou tester vos applications avec Microsoft Visual Studio 2013 ou Microsoft Visual Studio 2015, il vous faut [obtenir une licence de développeur](https://msdn.microsoft.com/library/windows/apps/Hh974578) ou [enregistrer votre Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
 
 ## Utiliser les fonctionnalités de développement
 
@@ -21,21 +16,21 @@ Si vous utilisez Microsoft Visual Studio sur un appareil Windows 10 et que vous 
 
 ![Boîte de dialogue d’activation du mode développeur affichée dans Visual Studio](images/latestenabledialog.png)
 
-Lorsque cette boîte de dialogue s’affiche, cliquez sur **Paramètres pour les développeurs** pour accéder directement à la page **Mise à jour et sécurité**, comme illustré ci-dessous. Ou bien cliquez sur **OK**, puis suivez les étapes ci-dessous pour activer votre appareil Windows 10 pour le développement.
+Lorsque cette boîte de dialogue s’affiche, cliquez sur **Paramètres pour les développeurs** pour accéder directement à la page **Mise à jour et sécurité**, comme illustré ci-dessous. Vous pouvez également cliquer sur **OK**, puis suivre les étapes ci-dessous pour activer votre appareil Windows 10 pour le développement.
 
 ### Activer vos appareils Windows 10
 
 Pour Windows 10, vous sélectionnez les fonctionnalités de développement que vous souhaitez activer sur l’appareil. Cela vaut pour tous les appareils Windows 10 : ordinateurs de bureau, tablettes et téléphones. Vous pouvez activer un appareil pour le développement, ou simplement pour procéder à un chargement indépendant.
 
--   Le *chargement indépendant* consiste en l’installation puis à l’exécution ou au test d’une application qui n’a pas été certifiée par le Windows Store. Il peut par exemple s’agir d’une application utilisée en interne au sein de votre entreprise.
--   Le *mode développeur* vous permet de procéder au chargement indépendant des applications et d’exécuter des applications à partir de Visual Studio en mode débogage.
+-   Le *chargement indépendant* consiste à installer, puis à exécuter ou tester une application qui n’a pas été certifiée par le Windows Store. Il peut par exemple s’agir d’une application utilisée en interne au sein de votre entreprise.
+-   Le *mode développeur* vous permet de procéder au chargement indépendant des applications et d’exécuter des applications à partir de Visual Studio en mode débogage.
 
-**Remarque** Si vous effectuez un chargement indépendant des applications, veillez à recourir à des sources fiables. Lorsque vous procédez au chargement indépendant d’une application qui n’a pas été certifiée par le Windows Store, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement indépendant de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; Windows Store de cette [déclaration de confidentialité](http://go.microsoft.com/fwlink/?LinkId=521839).
+**Remarque** Si vous effectuez un chargement indépendant des applications, veillez à recourir à des sources fiables. Lorsque vous procédez au chargement indépendant d’une application qui n’a pas été certifiée par le Windows Store, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement indépendant de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; Windows Store de cette [déclaration de confidentialité](http://go.microsoft.com/fwlink/?LinkId=521839).
 
 **Pour utiliser les fonctionnalités de développement**
 
 1.  Sur l’appareil que vous souhaitez activer, accédez aux **Paramètres**. Choisissez **Mise à jour et sécurité**, puis **Pour les développeurs**.
-2.  Choisissez le niveau d’accès dont vous avez besoin. Pour plus d’informations sur les options, voir [Quels paramètres choisir : Charger la version test des applications ou Mode développeur ?](#WhichSettings)
+2.  Choisissez le niveau d’accès dont vous avez besoin. Pour plus d’informations sur les options, voir [Quels paramètres choisir : Charger la version test des applications ou Mode développeur ?](#WhichSettings)
 3.  Lisez la clause d’exclusion de responsabilité pour le paramètre choisi, puis cliquez sur **Oui** pour accepter la modification.
 
 Voici la page des paramètres relative à la famille d’appareils de bureau.
@@ -52,7 +47,7 @@ Par défaut, vous pouvez installer des applications de plateforme Windows univer
 
 **Charger la version test des applications**
 
-Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés sans passer par le Windows Store. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications du Windows Store*, comme illustré précédemment dans l’image de la page des paramètres du téléphone. L’organisation fournit également le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test d’applications dans Windows 10](https://technet.microsoft.com/library/mt269549.aspx) et [Prendre en main le déploiement d’applications dans Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés sans passer par le Windows Store. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications du Windows Store*, comme illustré précédemment dans l’image de la page des paramètres du téléphone. L’organisation fournit également le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows 10](https://technet.microsoft.com/library/mt269549.aspx) et [Prendre en main le déploiement d’applications dans Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
 
 Informations spécifiques à la famille d’appareils
 
@@ -82,11 +77,11 @@ Informations spécifiques à la famille d’appareils
 Vous pouvez utiliser plusieurs outils pour déployer une application à partir d’un PC Windows 10 sur un appareil mobile Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB. Dans tous les cas, seul le package d’application (.appx) est installé et non les certificats.
 
 -   Utilisez l’outil de déploiement d’applications Windows 10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   À partir de Windows 10 version 1511, vous pouvez utiliser [Device Portal](#device_portal) pour effectuer un déploiement à partir de votre navigateur sur un appareil mobile exécutant Windows 10 version 1511 ou ultérieure. Utilisez la page **Applications** dans Device Portal (&lt;IP&gt;/appmanager.md) pour charger un package d’application (.appx) et l’installer sur l’appareil.
+-   Depuis Windows 10 version 1511, vous pouvez utiliser [Device Portal](#device_portal) pour effectuer un déploiement à partir de votre navigateur sur un appareil mobile exécutant Windows 10 version 1511 ou ultérieure. Utilisez la page **Applications** dans Device Portal (&lt;IP&gt;/appmanager.md) pour charger un package d’application (.appx) et l’installer sur l’appareil.
 
  
 
-### Définir des stratégies de groupe ou des clés de registre
+### Définir des stratégies de groupe ou des clés de Registre
 
 Vous pouvez également utiliser des stratégies de groupe ou des clés de Registre pour activer votre appareil de bureau Windows 10 pour le développement.
 
@@ -97,7 +92,7 @@ Utilisez gpedit.msc pour définir les stratégies de groupe afin d’activer vot
 **Utiliser gpedit afin d’activer votre appareil**
 
 1.  Exécutez **Gpedit.msc**.
-2.  Accédez à Local Computer Policy &gt; Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; App Package Deployment.
+2.  Accédez à Stratégie de l’ordinateur local &gt; Configuration ordinateur &gt; Modèles d’administration &gt; Composants Windows &gt; Déploiement du package d’application
 3.  Pour activer le chargement indépendant, modifiez les stratégies afin d’activer :
 
     -   **Autoriser l’installation des applications approuvées**
@@ -137,17 +132,17 @@ Utilisez gpedit.msc pour définir les stratégies de groupe afin d’activer vot
 
     -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
 
-## Fonctionnalités du Mode développeur
+## Fonctionnalités du mode développeur
 
-Pour chaque famille d’appareils, des fonctionnalités de développement supplémentaires peuvent être disponibles. Ces fonctionnalités sont disponibles uniquement lorsque le **Mode développeur** est activé sur l’appareil et peuvent varier en fonction de la version de votre système d’exploitation.
+Pour chaque famille d’appareils, des fonctionnalités de développement supplémentaires peuvent être disponibles. Ces fonctionnalités sont disponibles uniquement lorsque le **Mode développeur** est activé sur l’appareil, et peuvent varier en fonction de la version de votre système d’exploitation.
 
 Cette image illustre les fonctionnalités de développement pour la famille d’appareils mobiles sur Windows 10, Version 1511.
 
-![Options du Mode développeur pour les appareils mobiles](images/devmode-mob-options.png)
+![Options du mode développeur pour les appareils mobiles](images/devmode-mob-options.png)
 
-### <span id="device-discovery-and-pairing"> </span>Détection d’appareils et Device Portal
+### <span id="device-discovery-and-pairing"></span>Détection d’appareils et Device Portal
 
-Pour en savoir plus sur la détection des appareils et Device Portal, voir [Vue d’ensemble de Windows Device Portal](../debug-test-perf/device-portal.md).
+Pour en savoir plus sur la détection des appareils et Device Portal, voir [Vue d’ensemble de Windows Device Portal](../debug-test-perf/device-portal.md).
 
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
 - [Device Portal pour HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
@@ -168,7 +163,7 @@ Après avoir créé des applications ou effectué un chargement indépendant d�
 **Pour annuler l’inscription d’une licence de développeur**
 
 1.  Exécutez PowerShell avec des privilèges administrateur.
-2.  Exécutez la commande suivante : **unregister-windowsdeveloperlicense**.
+2.  Exécutez la commande suivante : **unregister-windowsdeveloperlicense**.
 
 Après cela, vous devez activer votre appareil pour le développement, comme décrit dans cette rubrique, afin de pouvoir continuer à développer dessus. Si vous ne le faites, vous risquez d’obtenir une erreur quand vous déboguez votre application ou tentez de créer un package pour celle-ci. Voici un exemple de cette erreur :
 
@@ -177,6 +172,6 @@ Erreur : DEP0700 : Échec de l’inscription de l’application.
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

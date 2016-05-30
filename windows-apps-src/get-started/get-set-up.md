@@ -1,6 +1,7 @@
 ---
+author: martinekuan
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: Préparation
+title: Se préparer
 description: Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et commencez à créer des applications de la plateforme Windows universelle (UWP) pour Windows 10.
 ---
 # Préparation
@@ -50,6 +51,6 @@ Pour obtenir la liste complète des outils et des téléchargements, visitez la 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

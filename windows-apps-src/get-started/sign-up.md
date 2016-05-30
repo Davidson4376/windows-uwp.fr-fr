@@ -1,9 +1,10 @@
 ---
+author: martinekuan
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: Êtes-vous prêt à vous inscrire ?
 description: Inscrivez-vous maintenant pour obtenir un compte de développeur qui vous permettra d’ajouter vos applications au Windows Store et de participer à d’autres programmes Microsoft.
 ---
-# Êtes-vous prêt à vous inscrire ?
+# Êtes-vous prêt à vous inscrire ?
 
 Inscrivez-vous maintenant pour obtenir un compte de développeur qui vous permettra d’ajouter vos applications au Windows Store et de participer à d’autres programmes Microsoft.
 
@@ -19,6 +20,6 @@ Dès que vous ouvrez votre compte de développeur, vous pouvez [créer votre app
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

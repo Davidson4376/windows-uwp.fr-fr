@@ -1,7 +1,8 @@
 ---
+author: martinekuan
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Créer votre première application
-description: Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez.
+description: Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez.
 ---
 # Créer votre première application
 
@@ -57,7 +58,7 @@ Nous supposons que vous connaissez bien HTML5, CSS3 et JavaScript. Si vous souha
 
 Si vous souhaitez développer des jeux à l’aide de C++ et de Microsoft DirectX, voir [Développement de jeux sur Windows 10](https://dev.windows.com/games).
 
-Vous avez déjà une expérience d’iOS ou d’Android ? La section [Portage d’applications vers Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) vous aidera à vous lancer.
+Vous avez déjà une expérience d’iOS ou d’Android ? La section [Portage d’applications vers Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) vous aidera à vous lancer.
 
 # Rubriques connexes
 
@@ -68,6 +69,6 @@ Vous avez déjà une expérience d’iOS ou d’Android ? La section [Portage d�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

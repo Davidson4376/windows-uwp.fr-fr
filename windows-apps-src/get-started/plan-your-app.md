@@ -1,6 +1,7 @@
 ---
+author: martinekuan
 title: Planifier votre application de plateforme Windows universelle (UWP)
-description: Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
+description: Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes &#58; concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 ---
 
@@ -16,7 +17,7 @@ Durant la planification de votre application de plateforme Windows universelle (
 
 Supposons que vous souhaitiez créer une application de photographie. En cherchant les raisons qui pousseraient quelqu’un à utiliser votre application, à l’enregistrer et à partager ses photos, vous arrivez à la conclusion que ses objectifs seraient de faire revivre des souvenirs, de rester en contact avec des proches grâce aux photos et de conserver celles-ci en lieu sûr. Voilà en quoi votre application doit exceller. Ces objectifs doivent vous guider tout au long du processus de conception.
 
-**Quel est l’objet de votre application ?** Commencez avec un concept élargi et faites l’inventaire des tâches que votre application peut aider à effectuer.
+**Quel est l’objet de votre application ?** Commencez avec un concept élargi et faites l’inventaire des tâches que votre application peut aider à effectuer.
 
 Par exemple, imaginons que vous souhaitiez créer une application qui aide les utilisateurs à planifier leurs voyages. Voici quelques idées que vous pourriez commencer par noter :
 
@@ -72,9 +73,9 @@ Techniques courantes :
 
 -   Présentez le flux : qu’est-ce qui arrive en premier, et ensuite ?
 -   Détaillez le flux : comment les utilisateurs doivent-ils progresser au niveau de l’interface pour réaliser le flux ?
--   Prototype : testez le flux avec un prototype rapide.
+-   Prototype : testez le flux avec un prototype rapide.
 
-**Que doivent pouvoir faire les utilisateurs ?** Par exemple, l’application de voyage est « excellente pour aider des amis à créer ensemble des itinéraires pour des voyages en groupe ». Établissons la liste des flux à activer :
+**Que doivent pouvoir faire les utilisateurs ?** Par exemple, l’application de voyage est « excellente pour aider des amis à créer ensemble des itinéraires pour des voyages en groupe ». Établissons la liste des flux à activer :
 
 -   Créer un voyage en utilisant des informations générales.
 -   Inviter des amis à se joindre à un voyage.
@@ -107,9 +108,11 @@ Le prototypage est une étape de l’*entonnoir de conception* (technique dont n
 Une fois que vous savez ce que veulent vos utilisateurs et comment les aider à y parvenir, vous pouvez étudier les outils spécifiques de votre boîte à outils. Passez la plateforme Windows universelle (UWP) en revue et associez des fonctionnalités pour répondre aux besoins de votre application. Veillez à suivre les [recommandations relatives à l’expérience utilisateur](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx) pour chaque fonctionnalité.
 <!--need URL for landing page -->
 
-Techniques courantes : - Recherche au niveau de la plateforme : recherchez les fonctionnalités de la plateforme et comment vous pouvez les utiliser.
-- Diagrammes d’association : mettez en relation vos flux et les fonctionnalités.
-- Prototype : testez les fonctionnalités pour vérifier qu’elles répondent à vos besoins.
+Techniques courantes :
+
+-   Recherche au niveau de la plateforme : recherchez les fonctionnalités de la plateforme et comment vous pouvez les utiliser.
+-   Diagrammes d’association : mettez en relation vos flux et les fonctionnalités.
+-   Prototype : testez les fonctionnalités pour vérifier qu’elles répondent à vos besoins.
 
 **Contrats d’application** Votre application peut participer à des contrats d’application qui autorisent les flux d’utilisateurs importants entre applications et fonctionnalités.
 
@@ -117,7 +120,7 @@ Techniques courantes : - Recherche au niveau de la plateforme : recherchez les
 -   **Lire sur** Permet aux utilisateurs de lire du contenu audio et vidéo ou des images, diffusés en continu depuis votre application sur d’autres appareils de leur réseau domestique.
 -   **Sélecteur de fichiers et extensions du sélecteur de fichiers** Permet aux utilisateurs de charger et d’enregistrer leurs fichiers à partir du système de fichiers local, leurs dispositifs de stockage connectés, leur groupe résidentiel et d’autres applications. Vous pouvez également fournir une extension du sélecteur de fichiers pour permettre à d’autres applications de charger le contenu de votre application.
 
-Pour plus d’informations, voir [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
+Pour plus d’informations, voir [Contrats et extensions d’application](https://msdn.microsoft.com/library/windows/apps/hh464906).
 <!-- Win 8 page. Should have replacement. -->
 
 **Différents affichages, facteurs de forme et configurations matérielles** Windows met les utilisateurs aux commandes et place votre application en première ligne. Vous voulez que l’interface utilisateur de votre application ressorte sur tous les appareils, à l’aide de n’importe quel mode d’entrée, avec toutes les orientations et configurations matérielles et dans toutes les circonstances d’utilisation.
@@ -164,7 +167,7 @@ Il existe un grand nombre d’options vous permettant de gagner de l’argent av
 
 Il s’agit de partir sur la bonne base. Maintenant que vous connaissez les points forts de votre application et les flux à prendre en charge, vous pouvez réfléchir aux principes de base de la conception de l’expérience utilisateur.
 
-**Comment organiser le contenu de l’interface utilisateur ?** La majorité du contenu de l’application peut être organisée sous forme de regroupements ou hiérarchique. Ce que vous choisissez comme groupe de premier niveau pour votre contenu doit correspondre à votre liste de points forts.
+**Comment organiser le contenu de l’interface utilisateur ?**   La plupart du contenu de l’application peut être organisé sous forme de regroupements ou de hiérarchies. Ce que vous choisissez comme groupe de premier niveau pour votre contenu doit correspondre à votre liste de points forts.
 
 Pour reprendre l’exemple de l’application de voyage, il existe de nombreuses façons de regrouper des itinéraires. Si l’objet principal de l’application est de découvrir des destinations intéressantes, vous pouvez les regrouper par centre d’intérêt : aventure, plaisirs ensoleillés ou destinations romantiques. Si votre application sert cependant à planifier des voyages avec des amis, il est plus sensé d’organiser des itinéraires en fonction des cercles sociaux, comme la famille, les amis ou les collègues.
 
@@ -178,7 +181,7 @@ Dans l’application de voyage, l’utilisateur souhaitera probablement trouver 
 
 Une fois la liste des voyages affichée, vous pouvez charger d’autres fonctionnalités, par exemple un flux d’actualités relatif aux voyages des amis.
 
-**De quelle interface utilisateur et de quelles commandes avez-vous besoin ?** Passez en revue les flux identifiés précédemment. Pour chaque flux, esquissez les étapes des utilisateurs.
+**De quelle interface utilisateur et de quelles commandes avez-vous besoin ?**   Passez en revue les flux identifiés précédemment. Pour chaque flux, créez une ébauche des étapes entreprises par les utilisateurs.
 
 Analysons le flux « Permettre à des amis et à la famille de suivre les itinéraires ». Supposons que l’utilisateur a déjà créé un voyage. Pour partager l’itinéraire d’un voyage, les étapes suivantes sont nécessaires :
 
@@ -196,7 +199,7 @@ Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Com
 
 **À quoi doit ressembler le flux ?** Une fois les étapes de l’utilisateur définies, vous pouvez transformer ce flux en objectifs de performances. Pour plus d’informations, voir [Planifier les performances](../debug-test-perf/planning-and-measuring-performance.md).
 
-**Comment organiser les commandes ?** Utilisez votre esquisse des étapes du flux pour identifier les commandes pour lesquelles vous devez effectuer la conception. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
+**Comment organiser les commandes ?**  Utilisez votre esquisse des étapes du flux pour identifier les commandes pour lesquelles vous devez effectuer la conception. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
 
 -   **Essayez toujours d’utiliser le contenu.**  Laissez les utilisateurs manipuler directement, autant que possible, le contenu sur la zone de dessin, au lieu d’ajouter des commandes qui agissent sur le contenu. Par exemple, dans l’application de voyage, permettez aux utilisateurs de réorganiser leur itinéraire en faisant glisser et en déplaçant des activités d’une liste de la zone de dessin, plutôt qu’en sélectionnant l’activité et en utilisant les boutons haut et bas de la barre de commandes.
 -   **Si vous ne pouvez pas utiliser le contenu.** Placez les commandes sur l’une des surfaces suivantes de l’interface utilisateur :
@@ -225,11 +228,11 @@ Gardez à l’esprit ce que vous voulez que vos utilisateurs pensent, ressentent
 
 ## Valider votre conception
 
-Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. À chaque fonctionnalité correspondent des recommandations d’expérience utilisateur pour vous aider à perfectionner votre application, et des conditions à remplir pour la publication de votre application dans le Windows Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://dev.windows.com/develop/app-certification-kit) pour tester la conformité technique aux exigences du Windows Store. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
+Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. À chaque fonctionnalité correspondent des recommandations d’expérience utilisateur pour vous aider à perfectionner votre application, et des conditions à remplir pour la publication de votre application dans le Windows Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://dev.windows.com/develop/app-certification-kit) pour tester la conformité technique aux exigences du Windows Store. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
 
-Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh465424) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) pour analyser les performances de chacun des scénarios de votre application.
+Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh465424) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) pour analyser les performances de chacun des scénarios de votre application.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
