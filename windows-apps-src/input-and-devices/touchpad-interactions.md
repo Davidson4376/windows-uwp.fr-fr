@@ -1,17 +1,16 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour le pavé tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
 title: Interactions du pavé tactile
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
-label: Interactions du pavé tactile
+label: Touchpad interactions
 template: detail.hbs
 ---
 
 # Recommandations en matière de conception pour le pavé tactile
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Concevez votre application de façon que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Grâce à cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
+Concevez votre application afin que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Grâce à cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
 
  
 
@@ -39,18 +38,18 @@ Outre la prise en charge intégrée de l’entrée tactile, nous vous recommando
 
 Les mouvements et les instructions abordés ici permettent de vérifier que votre application prend en charge les entrées du pavé tactile de façon transparente, et avec un minimum de code.
 
-## <span id="The_touchpad_language"> </span> <span id="the_touchpad_language"> </span> <span id="THE_TOUCHPAD_LANGUAGE"> </span>Langue du pavé tactile
+## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>Langue du pavé tactile
 
 
-Un ensemble concis d’interactions du pavé tactile est utilisé de façon uniforme dans l’ensemble du système. Optimisez votre application pour les entrées tactiles et de la souris. Ce langage confère un aspect familier à votre application, qui sera plus facile à appréhender. Les utilisateurs n’en seront que plus confiants.
+Un ensemble concis d’interactions avec le pavé tactile est utilisé de façon uniforme dans l’ensemble du système. Optimisez votre application pour les entrées tactiles et de la souris. Ce langage confère un aspect familier à votre application, qui sera plus facile à appréhender. Les utilisateurs n’en seront que plus confiants.
 
 Le pavé tactile de précision permet aux utilisateurs de définir bien plus de mouvements et de comportements d’interaction que le pavé tactile standard. Ces deux images illustrent les différents paramètres disponibles dans Paramètres &gt; Périphériques &gt; Souris et pavé tactile pour un pavé tactile standard et un pavé tactile de précision, respectivement.
 
-![Paramètres du pavé tactile standard](images/mouse-touchpad-settings-standard.png)
+![paramètres du pavé tactile standard](images/mouse-touchpad-settings-standard.png)
 
 <sup>Paramètres\\ du pavé tactile\\ standard</sup>
 
-![Paramètres du pavé tactile de précision Windows](images/mouse-touchpad-settings-ptp.png)
+![paramètres du pavé tactile de précision Windows](images/mouse-touchpad-settings-ptp.png)
 
 <sup>Paramètres\\ du pavé tactile\\ de précision\\ Windows</sup>
 
@@ -109,17 +108,17 @@ Voici quelques exemples de mouvements optimisés pour le pavé tactile qui perme
 
  
 
-## <span id="Hardware"> </span> <span id="hardware"> </span> <span id="HARDWARE"> </span>Matériel
+## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>Matériel
 
 
 Interrogez les fonctionnalités de la souris ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) pour identifier les aspects de l’interface utilisateur de votre application auxquels le pavé tactile peut accéder directement. Nous vous conseillons de fournir une interface utilisateur pour les entrées tactiles et de la souris.
 
 Pour plus d’informations concernant l’interrogation des fonctionnalités du périphérique, voir [Identifier des périphériques d’entrée](identify-input-devices.md).
 
-## <span id="Visual_feedback"> </span> <span id="visual_feedback"> </span> <span id="VISUAL_FEEDBACK"> </span>Retour visuel
+## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>Retour visuel
 
 
--   Quand des événements de déplacement ou de pointage permettent de détecter un curseur de pavé tactile, affichez une interface utilisateur propre à la souris pour indiquer la fonctionnalité exposée par l’élément. Si le curseur de pavé tactile ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur du pavé tactile. Cela maintient l’interface utilisateur propre et aérée.
+-   Quand des événements de déplacement ou de pointage permettent de détecter un curseur de pavé tactile, affichez une interface utilisateur spécifique à la souris pour indiquer la fonctionnalité exposée par l’élément. Si le curseur de pavé tactile ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur du pavé tactile. Cela maintient l’interface utilisateur propre et aérée.
 -   N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir la section [Curseurs](#Cursors), ci-dessous).
 -   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
 -   N’utilisez pas de rectangles de sélection avec les interactions de pavé tactile. Réservez ceux-ci aux interactions avec le clavier.
@@ -127,12 +126,12 @@ Pour plus d’informations concernant l’interrogation des fonctionnalités du 
 
 Pour obtenir des conseils plus généraux concernant le retour visuel, voir [Recommandations en matière de retour visuel](https://msdn.microsoft.com/library/windows/apps/hh465342).
 
-## <span id="Cursors"> </span> <span id="cursors"> </span> <span id="CURSORS"> </span>Curseurs
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Curseurs
 
 
-Plusieurs curseurs standard sont utilisables en tant que pointeurs de pavé tactile. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
+Un ensemble de curseurs standard est disponible pour servir de pointeurs de pavé tactile. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
 
-Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications du Windows Store spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
+Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications du Windows Store spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
 
 Si vous avez besoin de personnaliser le curseur de la souris :
 
@@ -142,17 +141,17 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 -   Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
 -   Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
-* [Identifier des périphériques d’entrée](identify-input-devices.md)
-**Exemples**
+* [Identifier des périphériques d’entrée](identify-input-devices.md) 
+           **Exemples**
 * [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Exemples d’archive**
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **Exemples d’archive**
 * [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -163,6 +162,6 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

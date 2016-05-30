@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Découvrez comment accéder à la liste des expressions prises en charge (éléments PhraseList) d’un fichier de définition des commandes vocales (VCD) et comment la mettre à jour à l’aide du résultat de reconnaissance vocale au moment de l’exécution.
 title: Modifier de manière dynamique les listes d’expressions de définition des commandes vocales (VCD)
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
@@ -9,7 +10,7 @@ template: detail.hbs
 # Modifier de manière dynamique les listes d’expressions de définition des commandes vocales (VCD)
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **API importantes**
@@ -21,28 +22,28 @@ Découvrez comment accéder à la liste des expressions prises en charge (élém
 
 Il peut être utile de modifier de manière dynamique une liste d’expressions au moment de l’exécution si la commande vocale est propre à une tâche impliquant un certain type de données d’application définies par l’utilisateur ou provisoires. 
 
-Supposons par exemple que vous ayez une application de voyage dans laquelle les utilisateurs peuvent entrer des destinations, et que vous souhaitiez que les utilisateurs puissent la démarrer en disant son nom suivi de la mention « Afficher le voyage à &lt; destination &gt; ». Dans l’élément **ListenFor** proprement dit, vous pourriez indiquer par exemple `<ListenFor> Show trip to {destination}  </ListenFor>`, où la « destination » est la valeur de l’attribut **Label** pour l’élément **PhraseList**.
+Supposons par exemple que vous ayez une application de voyage dans laquelle les utilisateurs peuvent entrer des destinations, et que vous souhaitiez qu’ils puissent la démarrer en disant son nom suivi de la mention « Afficher le voyage à &lt;destination&gt; ». Dans l’élément **ListenFor** proprement dit, vous pouvez indiquer par exemple `<ListenFor> Show trip to {destination}  </ListenFor>`, où la « destination » est la valeur de l’attribut **Label** pour l’élément **PhraseList**.
 
 La mise à jour de la liste d’expressions au moment de l’exécution permet d’éliminer le besoin de créer un objet distinct **ListenFor** élément pour chaque destination possible. Au lieu de cela, vous pouvez remplir dynamiquement **PhraseList** avec des destinations spécifiées par l’utilisateur lors de la saisie de ses itinéraires. 
 
-Pour plus d’informations sur **PhraseList** et d’autres éléments du fichier VCD, voir la documentation de référence [**Éléments et attributs VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593).
+Pour plus d’informations sur **PhraseList** et d’autres éléments du fichier VCD, voir la documentation de référence [**Éléments et attributs VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593).
 
-**Prérequis : **
+**Éléments requis :  **
 
 Cette rubrique s’appuie sur [Lancer une application au premier plan avec les commandes vocales de Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md). Nous continuons ici à illustrer ces fonctionnalités avec une application de planification et de gestion de voyages nommée **Adventure Works**.
 
 Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
 -   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Recommandations en matière d’expérience utilisateur : **
+**Recommandations en matière d’expérience utilisateur :  **
 
-Pour des informations sur la manière d’intégrer votre application à **Cortana**, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233). Pour obtenir de précieux conseils sur la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121).
+Pour plus d’informations sur la manière d’intégrer votre application à **Cortana**, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233). Pour obtenir de précieux conseils sur la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
-## <span id="Identify_the_command"> </span> <span id="identify_the_command"> </span> <span id="IDENTIFY_THE_COMMAND"> </span>Identifier la commande et mettre à jour la liste d’expressions
+## <span id="Identify_the_command"></span><span id="identify_the_command"></span><span id="IDENTIFY_THE_COMMAND"></span>Identifier la commande et mettre à jour la liste d’expressions
 
-Voici un exemple de fichier VCD qui définit une **commande** « showTripToDestination » et une **PhraseList** qui définit trois options permettant de sélectionner une destination dans notre application de voyage **Adventure Works**. Lorsque l’utilisateur enregistre et supprime des destinations dans l’application, celle-ci met à jour les options de la **PhraseList**.
+Voici un exemple de fichier VCD qui définit une **commande** « showTripToDestination » et une **PhraseList** qui définit trois options permettant de sélectionner une destination dans notre application de voyage **Adventure Works**. Lorsque l’utilisateur enregistre et supprime des destinations dans l’application, celle-ci met à jour les options de la **PhraseList**.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -76,7 +77,7 @@ Pour mettre à jour un élément **PhraseList** du fichier VCD, obtenez l’él�
 
 Après avoir identifié l’ensemble de commandes, obtenez une référence à la liste d’expressions à modifier, puis appelez la méthode [**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261), utilisez l’attribut **Label** de l’élément **PhraseList** et un tableau de chaînes comme nouveau contenu de la liste d’expressions.
 
-**Remarque** Si vous modifiez une liste d’expressions, la totalité de la liste d’expressions est remplacée. Si vous voulez insérer de nouveaux éléments dans une liste d’expressions, vous devez spécifier à la fois les éléments existants et les nouveaux éléments dans l’appel à [**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261).
+**Remarque** Si vous modifiez une liste d’expressions, la totalité de la liste d’expressions est remplacée. Si vous voulez insérer de nouveaux éléments dans une liste d’expressions, vous devez spécifier à la fois les éléments existants et nouveaux dans l’appel à [**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261).
 
 Dans cet exemple, nous mettons à jour la **PhraseList** affichée dans l’exemple précédent en ajoutant Phoenix comme destination.
 
@@ -92,12 +93,12 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 }
 ```
 
-## <span id="Remarks"> </span> <span id="remarks"> </span> <span id="REMARKS"> </span>Remarques
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Remarques
 
 
 L’utilisation d’une **PhraseList** pour limiter la reconnaissance est appropriée pour une phrase relativement courte. Si la phrase est trop longue (si elle contient des centaines de mots par exemple) ou si elle ne doit pas être limitée du tout, utilisez l’élément **PhraseTopic** et un élément **Subject** pour affiner la pertinence des résultats de reconnaissance vocale et améliorer l’évolutivité.
 
-Dans notre exemple, la **PhraseTopic** contient un élément **Scenario** « Search » (Recherche), affiné par un élément **Subject** « City/State  (Ville/État).
+Dans notre exemple, la **PhraseTopic** contient un élément **Scenario** « Search » (Recherche), affiné par un élément **Subject** « City/State » (Ville/État).
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -126,7 +127,7 @@ Dans notre exemple, la **PhraseTopic** contient un élément **Scenario** « Se
   </CommandSet>
 ```
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
 **Développeurs**
@@ -150,6 +151,6 @@ Dans notre exemple, la **PhraseTopic** contient un élément **Scenario** « Se
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

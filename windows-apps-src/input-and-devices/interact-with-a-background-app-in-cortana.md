@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Découvrez comment un utilisateur peut interagir avec une application en arrière-plan via les fonctions vocales et le canevas de Cortana pendant l’exécution d’une commande vocale.
 title: Interagir avec une application en arrière-plan
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
@@ -8,16 +9,15 @@ template: detail.hbs
 
 # Interagir avec une application en arrière-plan dans Cortana
 
+Permettez l’interaction de l’utilisateur avec une application en arrière-plan, par le biais de la saisie vocale et de texte dans le canevas de **Cortana**, pendant l’exécution d’une commande vocale.
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
 
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-Permettez l’interaction de l’utilisateur avec une application en arrière-plan, par le biais de la saisie vocale et de texte dans le canevas de **Cortana**, pendant l’exécution d’une commande vocale.
 
 Cortana prend en charge un flux de travail complet étape par étape avec votre application. Ce flux de travail est défini par votre application et peut prendre en charge des fonctionnalités telles que les suivantes : 
 
@@ -30,26 +30,26 @@ Cortana prend en charge un flux de travail complet étape par étape avec votre 
 
 **Éléments requis :**
 
-Cette rubrique s’appuie sur l’article [Lancer une application en arrière-plan avec les commandes vocales de Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). Nous continuons ici à illustrer ces fonctionnalités avec une application de planification et de gestion de voyages nommée **Adventure Works**.
+Cette rubrique s’appuie sur l’article [Lancer une application en arrière-plan à l’aide des commandes vocales de Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). Nous continuons ici à illustrer ces fonctionnalités avec une application de planification et de gestion de voyages nommée **Adventure Works**.
 
 Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
 -   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Recommandations en matière d’expérience utilisateur : **
+**Recommandations en matière d’expérience utilisateur :  **
 
-Pour des informations sur la manière d’intégrer votre application à **Cortana**, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233). Pour obtenir de précieux conseils sur la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121).
+Pour plus d’informations sur l’intégration de votre application à **Cortana**, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233). Pour obtenir de précieux conseils sur la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
-## <span id="Feedback_strings"> </span> <span id="feedback_strings"> </span> <span id="FEEDBACK_STRINGS"> </span>Chaînes de commentaires
+## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>Chaînes de commentaires
 
-Choisir les chaînes de commentaires qui sont affichées et dictées par **Cortana**.
+Composez les chaînes de commentaires qui sont affichées et dictées par **Cortana**.
 
-Les [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233) fournissent des conseils sur la composition de chaînes pour **Cortana**.
+L’article [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233) fournit des conseils sur la composition de chaînes pour **Cortana**.
 
-## <span id="Feedback_strings"> </span> <span id="feedback_strings"> </span> <span id="FEEDBACK_STRINGS"> </span>Chaînes de commentaires
+## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>Chaînes de commentaires
 
-Les cartes de contenu peuvent fournir à l’utilisateur un contexte supplémentaire et aider à conserver des chaînes de commentaires concises.
+Les cartes de contenu peuvent fournir à l’utilisateur un contexte supplémentaire et vous aider à conserver des chaînes de commentaires concises.
 
 **Cortana** prend en charge les modèles de carte de contenu suivants (un seul modèle peut être utilisé dans l’écran d’achèvement) :
 
@@ -66,7 +66,7 @@ L’image peut être :
 
 Vous pouvez également permettre aux utilisateurs de lancer votre application au premier plan en cliquant sur une carte ou sur le lien de texte de votre application.
 
-## <span id="Completion_screen"> </span> <span id="completion_screen"> </span> <span id="COMPLETION_SCREEN"> </span>Écran d’achèvement
+## <span id="Completion_screen"></span><span id="completion_screen"></span><span id="COMPLETION_SCREEN"></span>Écran d’achèvement
 
 Un écran d’achèvement fournit à l’utilisateur des informations sur la tâche de commande vocale terminée.
 
@@ -174,23 +174,23 @@ private async Task SendCompletionMessageForDestination(string destination)
 }
 ```
 
-## <span id="Hand-off_screen"> </span> <span id="hand-off_screen"> </span> <span id="HAND-OFF_SCREEN"> </span>Écran relais
+## <span id="Hand-off_screen"></span><span id="hand-off_screen"></span><span id="HAND-OFF_SCREEN"></span>Écran relais
 
-Lorsqu’une commande vocale est reconnue, **Cortana** doit appeler la méthode ReportSuccessAsync et afficher le commentaire dans un délai approximatif de 500 ms. Si le service d’application ne peut pas exécuter l’action spécifiée par la commande vocale pendant ce laps de temps, **Cortana** affiche un écran relais jusqu’à ce que votre application appelle la méthode ReportSuccessAsync ou pendant 5 secondes au plus.
+Lorsqu’une commande vocale est reconnue, **Cortana** doit appeler la méthode ReportSuccessAsync et afficher le commentaire dans un délai approximatif de 500 ms. Si le service d’application ne peut pas exécuter l’action spécifiée par la commande vocale pendant ce laps de temps, **Cortana** affiche un écran relais jusqu’à ce que votre application appelle la méthode ReportSuccessAsync ou pendant 5 secondes au plus.
 
 Si le service d’application n’appelle pas ReportSuccessAsync ni aucune des méthodes VoiceCommandServiceConnection, l’utilisateur reçoit un message d’erreur et l’appel du service d’application est annulé.
 
-Voici un exemple d’écran relais pour l’application **Adventure Works**. Dans cet exemple, un utilisateur a interrogé **Cortana** pour obtenir les prochains voyages. L’écran relais inclut un message personnalisé avec le nom du service d’application, une icône et la chaîne **Feedback** déclarée dans le fichier VCD.
+Voici un exemple d’écran relais pour l’application **Adventure Works**. Dans cet exemple, un utilisateur a interrogé **Cortana** pour obtenir les prochains voyages. L’écran relais inclut un message personnalisé avec le nom du service d’application, une icône et la chaîne **Commentaires** déclarée dans le fichier VCD.
 
-![Écran relais de l’application en arrière-plan de Cortana](images/cortana-backgroundapp-progress-result.png)
+![écran relais de l’application en arrière-plan de cortana](images/cortana-backgroundapp-progress-result.png)
 
 
-## <span id="Progress_screen"> </span> <span id="progress_screen"> </span> <span id="PROGRESS_SCREEN"> </span>Écran de progression
+## <span id="Progress_screen"></span><span id="progress_screen"></span><span id="PROGRESS_SCREEN"></span>Écran de progression
 
 
 Si le service d’application appelle ReportSuccessAsync après le délai de 500 ms, **Cortana** affiche un écran de progression à l’attention de l’utilisateur. L’icône de l’application s’affiche. Vous devez fournir les chaînes de progression de l’interface graphique utilisateur et de TTS permettant d’indiquer que la tâche est en cours de gestion.
 
-**Cortana** affiche un écran de progression pendant 5 secondes au plus. Au terme de ces 5 secondes, **Cortana** présente à l’utilisateur un message d’erreur, et le service d’application est fermé. Si le service d’application a besoin de plus de 5 secondes pour effectuer l’action, il peut continuer à mettre à jour **Cortana** avec des écrans de progression.
+**Cortana** affiche un écran de progression pendant 5 secondes au plus. Au terme de ces 5 secondes, **Cortana** présente à l’utilisateur un message d’erreur, et le service d’application est fermé. Si le service d’application a besoin de plus de 5 secondes pour effectuer l’action, il peut continuer à mettre à jour **Cortana** avec des écrans de progression.
 
 Voici un exemple d’écran de progression pour l’application **Adventure Works**. Dans cet exemple, un utilisateur a annulé un voyage à Las Vegas. L’écran de progression inclut un message personnalisé pour l’action, une icône et une vignette de contenu avec des informations sur le voyage annulé.
 
@@ -216,7 +216,7 @@ private async Task ShowProgressScreen(string message)
 }
 ```
 
-## <span id="Confirmation_screen"> </span> <span id="confirmation_screen"> </span> <span id="CONFIRMATION_SCREEN"> </span>Écran de confirmation
+## <span id="Confirmation_screen"></span><span id="confirmation_screen"></span><span id="CONFIRMATION_SCREEN"></span>Écran de confirmation
 
 
 Quand une action spécifiée par une commande vocale est irréversible, a un impact important ou bien encore lorsque la fiabilité de la reconnaissance est faible, un service d’application peut demander confirmation.
@@ -225,13 +225,13 @@ Voici un exemple d’écran de confirmation pour l’application **Adventure Wor
 
 Si l’utilisateur dit autre chose que Oui ou Non, **Cortana** ne peut pas déterminer la réponse à la question. Le cas échéant, **Cortana** invite l’utilisateur à répondre à une question similaire fournie par le service d’application.
 
-À la deuxième invite, si l’utilisateur ne répond toujours pas par Oui ou Non, **Cortana** interroge l’utilisateur une troisième fois en posant la même question précédée d’une excuse. Si l’utilisateur ne répond encore une fois ni par Oui ni par Non, **Cortana** cesse d’écouter l’entrée vocale et demande à l’utilisateur d’appuyer plutôt sur l’un des boutons.
+À la deuxième invite, si l’utilisateur ne répond toujours pas par Oui ou Non, **Cortana** l’interroge une troisième fois en posant la même question précédée d’une excuse. Si l’utilisateur ne répond encore une fois ni par Oui ni par Non, **Cortana** cesse d’écouter l’entrée vocale et demande à l’utilisateur d’appuyer plutôt sur l’un des boutons.
 
 L’écran de confirmation inclut un message personnalisé pour l’action, une icône et une vignette de contenu avec des informations sur le voyage annulé.
 
 ![Écran de confirmation de l’application en arrière-plan de Cortana](images/cortana-confirmation-screen.png)
 
-AdventureWorksVoiceCommandService.cs contient la méthode de message de progression suivant, qui appelle [**RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) pour afficher un écran de confirmation dans **Cortana**.
+AdventureWorksVoiceCommandService.cs contient la méthode d’annulation de voyage suivante, qui appelle [**RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) pour afficher un écran de confirmation dans **Cortana**.
 
 ```    CSharp
 /// <summary>
@@ -343,7 +343,7 @@ private async Task SendCompletionMessageForCancellation(string destination)
 }
 ```
 
-## <span id="Disambiguation_screen"> </span> <span id="disambiguation_screen"> </span> <span id="DISAMBIGUATION_SCREEN"> </span>Écran de levée d’ambiguïté
+## <span id="Disambiguation_screen"></span><span id="disambiguation_screen"></span><span id="DISAMBIGUATION_SCREEN"></span>Écran de levée d’ambiguïté
 
 
 Lorsqu’une action spécifiée par une commande vocale peut avoir plusieurs résultats, un service d’application peut demander des informations supplémentaires à l’utilisateur.
@@ -360,7 +360,7 @@ L’écran de levée d’ambiguïté inclut un message personnalisé pour l’ac
 
 ![Écran de levée d’ambiguïté de l’application en arrière-plan de Cortana ](images/cortana-disambiguation-screen.png)
 
-AdventureWorksVoiceCommandService.cs contient la méthode de message de progression suivant, qui appelle [**RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) pour afficher l’écran de levée d’ambiguïté dans **Cortana**.
+AdventureWorksVoiceCommandService.cs contient la méthode d’annulation de voyage suivante, qui appelle [**RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) pour afficher l’écran de levée d’ambiguïté dans **Cortana**.
 
 ```csharp
 /// <summary>
@@ -428,7 +428,7 @@ private async Task<Model.Trip> DisambiguateTrips(IEnumerable<Model.Trip> trips, 
 }
 ```
 
-## <span id="Error_screen"> </span> <span id="error_screen"> </span> <span id="ERROR_SCREEN"> </span>Écran de notification d’erreur
+## <span id="Error_screen"></span><span id="error_screen"></span><span id="ERROR_SCREEN"></span>Écran de notification d’erreur
 
 
 Si une action spécifiée par une commande vocale ne peut pas être effectuée, un service d’application peut fournir un écran de notification d’erreur.
@@ -450,7 +450,7 @@ var userMessage = new VoiceCommandUserMessage();
     await voiceServiceConnection.ReportFailureAsync(response);
 ```
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
 **Développeurs**
@@ -472,6 +472,6 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

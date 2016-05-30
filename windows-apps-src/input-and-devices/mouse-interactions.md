@@ -1,15 +1,14 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Répondez à l’entrée de souris dans vos applications en gérant les mêmes événements de pointeur de base que ceux utilisés pour l’entrée tactile et du stylo.
 title: Interactions avec la souris
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
-label: Souris
+label: Mouse
 template: detail.hbs
 ---
 
 # Interactions avec la souris
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Optimisez la conception de votre application de plateforme Windows universelle (UWP) pour l’entrée tactile, et définissez la prise en charge de la souris de base par défaut.
 
@@ -25,7 +24,7 @@ Les entrées tactiles et de la souris divergent en raison de la capacité de l�
 
 Cette rubrique décrit les considérations relatives à la conception pour les interactions avec la souris.
 
-## <span id="The_UWP_app_mouse_language"> </span> <span id="the_uwp_app_mouse_language"> </span> <span id="THE_UWP_APP_MOUSE_LANGUAGE"> </span>Langage de souris d’application UWP
+## <span id="The_UWP_app_mouse_language"></span><span id="the_uwp_app_mouse_language"></span><span id="THE_UWP_APP_MOUSE_LANGUAGE"></span>Langage de souris d’application UWP
 
 
 Un ensemble concis d’interactions avec la souris est utilisé de façon uniforme dans l’ensemble du système.
@@ -56,7 +55,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
-<td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application avec des commandes contextuelles pour l’élément sélectionné.</p>
+<td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application contenant des commandes contextuelles pour l’élément sélectionné.</p>
 <div class="alert">
 <strong>Remarque</strong> Effectuez un clic droit pour afficher un menu contextuel si les commandes de la sélection ou de la barre de l’application ne correspondent pas à des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
 </div>
@@ -87,21 +86,21 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 
 Répondez à l’entrée de souris dans vos applications en gérant les mêmes événements de pointeur de base que ceux utilisés pour l’entrée tactile et du stylo.
 
-Utilisez les événements [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) pour implémenter une fonctionnalité de base d’entrée sans avoir à rédiger de code pour chaque appareil d’entrée de pointeur. Toutefois, vous pouvez toujours tirer parti des fonctionnalités spéciales de chaque appareil (telles que les événements de roulette de souris) à l’aide des événements de pointeur, de mouvement et de manipulation de cet objet.
+Utilisez les événements [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) pour implémenter des fonctionnalités de base d’entrée sans avoir à rédiger de code pour chaque appareil d’entrée de pointeur. Toutefois, vous pouvez toujours tirer parti des fonctionnalités spéciales de chaque appareil (telles que les événements de roulette de souris) à l’aide des événements de pointeur, de mouvement et de manipulation de cet objet.
 
-**Exemples : **Découvrez cette fonctionnalité en action dans nos [exemples d’applications](http://go.microsoft.com/fwlink/p/?LinkID=264996).
+**Exemples : **découvrez ces fonctionnalités en action dans nos [exemples d’applications](http://go.microsoft.com/fwlink/p/?LinkID=264996).
 
 
-- [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [Entrée : Exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
 
 - [Exemple d’entrée](http://go.microsoft.com/fwlink/p/?linkid=226855)
 
-- [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+- [Entrée : Mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## <span id="Guidelines_for_visual_feedback"> </span> <span id="guidelines_for_visual_feedback"> </span> <span id="GUIDELINES_FOR_VISUAL_FEEDBACK"> </span>Recommandations en matière de retour visuel
+## <span id="Guidelines_for_visual_feedback"></span><span id="guidelines_for_visual_feedback"></span><span id="GUIDELINES_FOR_VISUAL_FEEDBACK"></span>Recommandations en matière de retour visuel
 
 
--   Quand des événements de déplacement ou de pointage permettent de détecter une souris, affichez une interface utilisateur spécifique à la souris pour indiquer la fonctionnalité exposée par l’élément. Si la souris ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur de la souris. Cela maintient l’interface utilisateur propre et aérée.
+-   Quand des événements de déplacement ou de pointage permettent de détecter une souris, affichez une interface utilisateur propre à la souris pour indiquer les fonctionnalités exposées par l’élément. Si la souris ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur de la souris. Cela maintient l’interface utilisateur propre et aérée.
 -   N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir la section Curseurs, ci-dessous).
 -   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
 -   N’utilisez pas de rectangles de sélection avec les interactions avec la souris. Réservez ceux-ci aux interactions avec le clavier.
@@ -111,7 +110,7 @@ Utilisez les événements [**UIElement**](https://msdn.microsoft.com/library/win
 Pour obtenir des recommandations plus générales sur le retour visuel, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
 
-## <span id="Cursors"> </span> <span id="cursors"> </span> <span id="CURSORS"> </span>Curseurs
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Curseurs
 
 
 Un ensemble de curseurs standard est disponible pour servir de pointeurs de souris. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
@@ -126,7 +125,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 -   Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
 -   Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
 * [Identifier des périphériques d’entrée](identify-input-devices.md)
@@ -152,6 +151,6 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

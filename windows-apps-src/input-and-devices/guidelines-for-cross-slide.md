@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
 title: Recommandations en matière de glisser transversal
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
-label: Glisser transversal
+label: Cross-slide
 template: detail.hbs
 ---
 
 # Recommandations en matière de glisser transversal
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -20,14 +21,14 @@ template: detail.hbs
 
 Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>Pratiques conseillées et déconseillées
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
 
 
 -   Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction.
 -   Utilisez le glisser transversal pour la sélection d’éléments lorsque l’interaction d’appui n’est pas possible.
 -   N’utilisez pas le glisser transversal pour ajouter des éléments à une file d’attente.
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>Indications d’utilisation supplémentaires
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
 
 
 La sélection et le déplacement par glissement sont possibles uniquement à l’intérieur d’une zone de contenu capable de défiler en panoramique dans une direction (verticale or horizontale). Pour que chacune de ces interactions fonctionne, l’une des directions de mouvement panoramique doit être verrouillée. De plus, le mouvement doit être effectué perpendiculairement à la direction du mouvement panoramique.
@@ -48,9 +49,9 @@ Cette image montre comment un utilisateur appuie sur un élément dans l’inter
 
 Voici quelques recommandations à prendre en compte quand vous ajoutez la fonctionnalité de glisser transversal dans votre application.
 
-Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir la rubrique concernant l’[ajout de contrôles ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
+Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
 
-**Remarque** Dans les cas où la zone de contenu prend en charge le mouvement panoramique dans deux directions (par exemple, des navigateurs Web ou des lecteurs électroniques), l’interaction chronométrée de la séquence Appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour des objets du type image ou lien hypertexte.
+**Remarque** Dans les cas où la zone de contenu prend en charge le mouvement panoramique dans deux directions (par exemple, des navigateurs web ou des lecteurs électroniques), l’interaction chronométrée de la séquence Appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour des objets du type image ou lien hypertexte.
 
  
 
@@ -121,17 +122,17 @@ C’est la raison pour laquelle l’interaction de sélection par glisser transv
 
 Utilisez l’action de glissement pour déplacer un ou plusieurs objets d’un emplacement à l’autre.
 
-Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sélectionner plusieurs éléments, puis de tous les faire glisser en même temps.
+Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sélectionner plusieurs éléments, puis de les faire glisser en même temps.
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
 **Exemples**
 * [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Exemples d’archive**
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **Exemples d’archive**
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
@@ -149,6 +150,6 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

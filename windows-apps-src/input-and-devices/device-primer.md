@@ -1,22 +1,23 @@
 ---
+author: mijacobs
 Description: Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
-title: Notions fondamentales sur les appareils pour les applications de plateforme Windows universelle (UWP)
+title: Notions fondamentales sur les appareils pour les applications UWP
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 ---
 
-#  Notions fondamentales sur les appareils pour les applications de plateforme Windows universelle (UWP)
+#  Notions fondamentales sur les appareils pour les applications UWP
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 
 ![appareils fonctionnant sous Windows](images/device-primer/1894834-hig-device-primer-01-500.png)
 
-Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme. Lors de la conception d’une application pour un appareil particulier, vous devez surtout prendre en compte l’affichage de l’application dans cet appareil, ainsi que le moment, l’endroit ou la façon dont l’application sera utilisée sur cet appareil et le type d’interaction de l’utilisateur avec ce dernier.
+Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme. Lors de la conception d’une application pour un appareil particulier, vous devez surtout prendre en compte l’affichage de l’application sur cet appareil, ainsi que le moment, l’endroit ou la façon dont l’application sera utilisée sur cet appareil et le type d’interaction de l’utilisateur avec ce dernier.
 
-## <span id="Phones_and_phablets"> </span> <span id="phones_and_phablets"> </span> <span id="PHONES_AND_PHABLETS"> </span>Téléphones et phablettes
+## <span id="Phones_and_phablets"></span><span id="phones_and_phablets"></span><span id="PHONES_AND_PHABLETS"></span>Téléphones et phablettes
 
 
 Appareils informatiques parmi les plus utilisés actuellement, les téléphones peuvent proposer de nombreuses fonctions, malgré un espace à l’écran réduit et des commandes d’entrée limitées. Les téléphones sont disponibles dans différentes tailles. Les téléphones de grande taille sont appelés des phablettes. L’expérience liée à l’utilisation de l’application sur une phablette est similaire à celle que propose un téléphone, mais l’espace disponible sur l’écran d’une phablette permet d’apporter des modifications significatives au comportement de consommation du contenu de l’utilisateur.
@@ -56,7 +57,7 @@ Fonctionnalités de l’appareil type
 
  
 
-## <span id="Tablets"> </span> <span id="tablets"> </span> <span id="TABLETS"> </span>Tablettes
+## <span id="Tablets"></span><span id="tablets"></span><span id="TABLETS"></span>Tablettes
 
 
 Les tablettes PC ultra-portables sont dotées d’un écran tactile, d’un appareil photo, de microphones et d’accéléromètres. En général, leur écran mesure entre 7 et 13,3 pouces.
@@ -91,7 +92,7 @@ Fonctionnalités de l’appareil type
 
  
 
-## <span id="PCs_and_laptops"> </span> <span id="pcs_and_laptops"> </span> <span id="PCS_AND_LAPTOPS"> </span>PC et ordinateurs portables
+## <span id="PCs_and_laptops"></span><span id="pcs_and_laptops"></span><span id="PCS_AND_LAPTOPS"></span>PC et portables
 
 
 Les PC et portables Windows comprennent une large gamme d’appareils et de tailles d’écran. En règle générale, les PC et les portables peuvent afficher davantage d’informations que les téléphones ou les tablettes.
@@ -123,10 +124,10 @@ Fonctionnalités de l’appareil type
 
  
 
-## <span id="Surface_Hub_devices"> </span> <span id="surface_hub_devices"> </span> <span id="SURFACE_HUB_DEVICES"> </span>Appareils Surface Hub
+## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Appareils Surface Hub
 
 
-L’appareil de collaboration d’équipe à écran large Microsoft Surface Hub est conçu pour être utilisé simultanément par plusieurs utilisateurs.
+L’appareil de collaboration d’équipe à écran large Microsoft Surface Hub est conçu pour être utilisé simultanément par plusieurs personnes.
 
 Tailles d’écran
 -   55 et 84 pouces
@@ -156,7 +157,7 @@ Fonctionnalités classiques d’appareil
 
  
 
-## <span id="Windows_IoT_devices"> </span> <span id="windows_iot_devices"> </span> <span id="WINDOWS_IOT_DEVICES"> </span>Appareils IoT Windows
+## <span id="Windows_IoT_devices"></span><span id="windows_iot_devices"></span><span id="WINDOWS_IOT_DEVICES"></span>Appareil Windows IoT
 
 
 Les appareils IoT Windows sont une nouvelle catégorie d’appareils centrés sur l’ajout de petits composants électroniques, de capteurs et de la connectivité aux objets physiques. Ces appareils sont généralement connectés à un réseau ou à Internet afin d’envoyer les données captées et d’interagir avec elles, le cas échéant. Ces appareils peuvent être dépourvus d’écran (on dit alors de ces appareils qu’ils sont « sans périphérique de contrôle ») ou connectés à un écran de petite taille (on parle alors d’appareils « avec périphérique de contrôle ») avec une taille d’écran généralement de 3,5 pouces ou plus petite.
@@ -186,13 +187,13 @@ Fonctionnalités de l’appareil type
 
  
 
-\[Cet article contient des informations propres aux applications UWP et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
  
 
  
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

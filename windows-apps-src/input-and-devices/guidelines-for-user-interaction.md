@@ -1,20 +1,21 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
 title: Recommandations en matière de conception pour l’interface tactile
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
-label: Recommandations en matière de conception pour l’interface tactile
+label: Touch design guidelines
 template: detail.hbs
 ---
 
 # Recommandations en matière de conception pour l’interface tactile
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x articles, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 
 Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>Pratiques conseillées et déconseillées
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
 
 
 -   Concevez des applications en utilisant l’interaction tactile comme méthode d’entrée principale.
@@ -25,7 +26,7 @@ Créez des applications de plateforme Windows universelle (UWP) offrant des exp�
 -   Évitez dans la mesure du possible d’utiliser des interactions chronométrées (exemple d’utilisation appropriée : maintenir appuyé).
 -   Évitez d’utiliser le nombre de doigts servant à distinguer la manipulation.
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>Indications d’utilisation supplémentaires
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
 
 
 Avant tout, concevez votre application en ayant comme objectif que l’entrée tactile sera la principale méthode d’entrée de vos utilisateurs. Si vous utilisez les contrôles de la plateforme, la prise en charge du pavé tactile, de la souris et du stylo/stylet ne demande pas plus de programmation car Windows 8 fournit cela gratuitement.
@@ -36,14 +37,9 @@ Les recommandations suivantes vous permettront de découvrir que l’entrée tac
 
 **Comparer les critères de l’interaction tactile**
 
-Le tableau suivant présente certaines différences qui existent entre les périphériques d’entrée dont vous devez tenir compte quand vous concevez des applications du Windows Store optimisées pour l’interaction tactile.
+Le tableau suivant présente certaines différences qui existent entre les périphériques d’entrée dont vous devez tenir compte quand vous concevez des applications du Windows Store optimisées pour l’interaction tactile.
 
-Facteur
-Interactions tactiles
-Interactions à l’aide de la souris, du clavier, du stylo/stylet
-Pavé tactile
-Précision
-La zone de contact au bout du doigt est plus importante qu’une simple coordonnées x-y, ce qui augmente le risque d’activations involontaires de commandes.
+Interactions facteur tactile Interactions souris, clavier, stylo/stylet Pavé tactile de précision La zone de contact au bout du doigt est plus importante qu’une simple coordonnées x-y, ce qui augmente le risque d’activations involontaires de commandes.
 La souris et le stylo/stylet répondent à une coordonnée x-y précise.
 Comme la souris.
 La forme de la zone de contact change tout au long du mouvement.
@@ -52,8 +48,7 @@ Comme la souris.
 Il n’y a pas de curseur de souris pour aider au ciblage.
 Le curseur de la souris, le curseur du stylo/stylet et le focus du clavier constituent tous une aide au ciblage.
 Comme la souris.
-Anatomie humaine
-Les mouvements effectués avec le bout du doigt sont imprécis, car le traçage d’une ligne droite avec un ou plusieurs doigts est difficile à réaliser. Cela s’explique par la courbure des articulations de la main et le nombre d’articulations impliquées dans le mouvement.
+Anatomie humaine Les mouvements effectués avec le bout du doigt sont imprécis, car le traçage d’une ligne droite avec un ou plusieurs doigts est difficile à réaliser. Cela s’explique par la courbure des articulations de la main et le nombre d’articulations impliquées dans le mouvement.
 Il est plus facile de tracer un mouvement de ligne droite avec la souris ou le stylo/stylet, car la main qui les contrôle parcourt une distance plus courte que le curseur sur l’écran.
 Comme la souris.
 Certaines zones situées sur la surface tactile d’un périphérique d’affichage peuvent être difficiles à atteindre en raison de la posture des doigts et de la prise en main du périphérique par l’utilisateur.
@@ -62,15 +57,13 @@ La posture des doigts et la prise en main peuvent poser problème.
 Le bout des doigts ou la main de l’utilisateur peuvent masquer des objets. C’est ce que l’on appelle l’« occlusion ».
 Les périphériques d’entrée indirects ne provoquent pas d’occlusion.
 Comme la souris.
-État de l’objet
-L’interaction tactile utilise un modèle à deux états : la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.
+État de l’objet L’interaction tactile utilise un modèle à deux états : la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.
 Une souris, un stylo/stylet et un clavier exposent tous un modèle à trois états : soulevé (activé), appuyé (activé) et pointé (focus).
 
 Le pointage permet à l’utilisateur d’explorer et de découvrir les éléments à l’aide d’info-bulles associées aux éléments de l’interface utilisateur. Les effets de pointage et de focus peuvent transmettre les objets qui sont interactifs et aident également au ciblage.
 
 Comme la souris.
-Interaction évoluée
-Prend en charge l’interaction tactile multipoint : plusieurs points d’entrée (bout des doigts) sur une surface tactile.
+Interaction évoluée Prend en charge l’interaction tactile multipoint : plusieurs points d’entrée (bout des doigts) sur une surface tactile.
 Prend en charge un point d’entrée unique.
 Comme l’entrée tactile.
 Prend en charge la manipulation directe des objets par le biais de gestes tels que l’appui, le glissement, le pincement et la rotation.
@@ -138,7 +131,7 @@ Pour éviter l’occlusion du doigt et de la main, respectez les recommandations
 
 -   Poignées de précision
 
-    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications Windows Runtime)](guidelines-for-textselection.md).
+    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications Windows Runtime)](guidelines-for-textselection.md).
 
 **Chronométrage**
 
@@ -159,13 +152,13 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 -   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
 -   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-    **Remarque** Il existe une exception à cette règle : quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
+    **Remarque** Il existe une exception à cette règle : quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
 
      
 
 -   Les descriptions appropriées et les signaux visuels influent très favorablement sur l’utilisation des interactions avancées.
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 **Pour les développeurs (XAML)**
 * [Interactions tactiles](https://msdn.microsoft.com/library/windows/apps/mt185617)
@@ -179,6 +172,6 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

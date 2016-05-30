@@ -1,16 +1,14 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
 title: Définir des délais d’expiration de reconnaissance vocale
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
-label: Délais d’expiration de reconnaissance vocale
+label: Speech recognition timeouts
 template: detail.hbs
 ---
 
 # Définir des délais d’expiration de reconnaissance vocale
 Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
 
 **API importantes**
 
@@ -18,7 +16,7 @@ Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore
 -   [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 
-## <span id="Set_a_timeout"> </span> <span id="set_a_timeout"> </span> <span id="SET_A_TIMEOUT"> </span>Définir un délai d’expiration
+## <span id="Set_a_timeout"></span><span id="set_a_timeout"></span><span id="SET_A_TIMEOUT"></span>Définir un délai d’expiration
 
 
 Ici, nous spécifions différentes valeurs [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) :
@@ -38,11 +36,11 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
-* [Interactions vocales](speech-interactions.md)
-**Exemples**
+* [Interactions vocales](speech-interactions.md) 
+           **Exemples**
 * [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -53,6 +51,6 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

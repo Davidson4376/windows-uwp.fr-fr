@@ -1,27 +1,23 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Cette rubrique décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
 title: Recommandations en matière de zoom optique et de redimensionnement
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
-label: Zoom optique et redimensionnement
+label: Optical zoom and resizing
 template: detail.hbs
 ---
 
 # Zoom optique et redimensionnement
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
+Cet article décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
 
 **API importantes**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-Cet article décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
 
-
-
-Le zoom optique permet à l’utilisateur d’agrandir la vue du contenu au sein d’une zone de contenu (l’interaction s’effectue sur la zone de contenu elle-même), tandis que le redimensionnement lui permet de modifier la taille relative d’un ou de plusieurs objets sans modifier la vue dans la zone de contenu (dans ce cas, l’interaction s’effectue sur les objets figurant dans la zone de contenu).
+Le zoom optique permet à l’utilisateur d’agrandir la vue du contenu au sein d’une zone de contenu (l’interaction s’effectue sur la zone de contenu elle-même), tandis que le redimensionnement permet de modifier la taille relative d’un ou de plusieurs objets sans modifier la vue dans la zone de contenu (dans ce cas, l’interaction s’effectue sur les objets figurant dans la zone de contenu).
 
 Les interactions de zoom optique et de redimensionnement s’effectuent à l’aide des gestes de pincement et d’étirement (resserrez les doigts pour faire un zoom avant et écartez-les pour faire un zoom arrière) ou en maintenant la touche Ctrl enfoncée tout en faisant défiler la roulette de la souris, ou encore en maintenant la touche Ctrl enfoncée (ou la touche Maj s’il n’y a pas de clavier numérique) et en appuyant sur la touche plus (+) ou moins (-).
 
@@ -33,14 +29,14 @@ Les schémas suivants montrent les différences entre le redimensionnement et le
 
 **Redimensionnement** : l’utilisateur sélectionne un objet au sein d’une zone et le redimensionne.
 
-![resserrez les doigts pour rétrécir un objet et écartez-les pour l’agrandir](images/objectresize.png)
+![resserrer les doigts pour rétrécir un objet et les écarter pour l’agrandir](images/objectresize.png)
 
 **Remarque**  
-Ne confondez pas le zoom optique avec le [zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestions sont utilisés pour les deux interactions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
+Ne confondez pas le zoom optique avec le [zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deux interactions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
 
  
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>Pratiques conseillées et déconseillées
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
 
 
 Pour les applications prenant en charge le redimensionnement ou le zoom optique, tenez compte des recommandations suivantes :
@@ -62,14 +58,14 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 -   N’utilisez pas la fonction de zoom pour parcourir l’interface utilisateur ou exposer des contrôles supplémentaires au sein de votre application ; utilisez plutôt une région de mouvement panoramique. Pour plus d’informations sur le mouvement panoramique, voir [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md).
 -   Ne placez pas d’objets redimensionnables dans une zone de contenu redimensionnable. Les exceptions à cette règle sont les suivantes :
     -   Applications de dessin dans lesquelles des éléments redimensionnables peuvent s’afficher sur une zone de dessin ou un carton redimensionnable.
-    -   Pages Web comportant un objet incorporé, tel qu’une carte.
+    -   Pages web comportant un objet incorporé, tel qu’une carte.
 
     **Remarque**  
     Dans tous les cas, la zone de contenu sera redimensionnée, sauf si tous les points tactiles figurent dans l’objet redimensionnable.
 
      
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
 **Exemples**
@@ -77,8 +73,9 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 * [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -95,6 +92,6 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

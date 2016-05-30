@@ -1,5 +1,6 @@
 ---
-Description: Recevez, traitez et gérez les données d’entrée à partir de dispositifs de pointage, tels que l’interaction tactile, la souris, le stylet et le pavé tactile, dans les applications de la plateforme Windows universelle (UWP).
+author: Karl-Bridge-Microsoft
+Description: Recevez, traitez et gérez les données d’entrée à partir de dispositifs de pointage, tels que l’interaction tactile, la souris, le stylet et le pavé tactile, dans les applications UWP.
 title: Gérer les entrées du pointeur
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,11 +9,7 @@ template: detail.hbs
 
 # Gérer les entrées du pointeur
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Recevez, traitez et gérez les données d’entrée à partir de dispositifs de pointage, tels que l’interaction tactile, la souris, le stylet et le pavé tactile, dans les applications de la plateforme Windows universelle (UWP).
+Recevez, traitez et gérez les données d’entrée à partir de dispositifs de pointage, tels que l’interaction tactile, la souris, le stylet et le pavé tactile, dans les applications UWP.
 
 **API importantes**
 
@@ -22,28 +19,28 @@ Recevez, traitez et gérez les données d’entrée à partir de dispositifs de 
 
 
 **Important**  
-Si vous implémentez votre propre prise en charge d’interaction, gardez à l’esprit que les utilisateurs s’attendent à disposer d’une expérience intuitive impliquant une interaction directe avec les éléments d’interface utilisateur de votre application. Nous vous recommandons de modeler vos interactions personnalisées sur la [liste de contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406) par souci de cohérence et de possibilité de détection. Les contrôles de plateforme fournissent l’intégralité de l’expérience d’interaction utilisateur de la plateforme Windows universelle (UWP), notamment pour les interactions standard, les effets physiques animés, le retour visuel et l’accessibilité. Ne créez des interactions personnalisées que pour répondre à des exigences claires et bien définies, notamment en l’absence d’interactions de base prenant en charge votre scénario.
+Si vous implémentez votre propre prise en charge d’interaction, gardez à l’esprit que les utilisateurs s’attendent à disposer d’une expérience intuitive impliquant une interaction directe avec les éléments d’interface utilisateur de votre application. Nous vous recommandons de modéliser vos interactions personnalisées dans la [liste des contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406) par souci de cohérence et de possibilité de détection. Les contrôles de plateforme fournissent l’intégralité de l’expérience d’interaction utilisateur de la plateforme Windows universelle (UWP), notamment pour les interactions standard, les effets physiques animés, le retour visuel et l’accessibilité. Ne créez des interactions personnalisées que pour répondre à des exigences claires et bien définies, notamment en l’absence d’interactions de base prenant en charge votre scénario.
 
 
-## <span id="Pointers"> </span> <span id="pointers"> </span> <span id="POINTERS"> </span>Pointeurs
+## <span id="Pointers"></span><span id="pointers"></span><span id="POINTERS"></span>Pointeurs
 
 
-De nombreuses expériences d’interaction impliquent que l’utilisateur identifie l’objet avec lequel il souhaite interagir en pointant dessus à l’aide de périphériques d’entrée comme l’interaction tactile, la souris, le stylet et le pavé tactile. Les données brutes HID (périphérique d’interface utilisateur) fournies par ces périphériques d’entrée ont de nombreuses propriétés communes. Par conséquent, les informations sont promues dans une pile d’entrée unifiée et exposées sous la forme de données de pointeur consolidées, indépendantes du périphérique. Vos applications UWP peuvent alors utiliser ces données quel que soit le périphérique d’entrée utilisé.
+De nombreuses expériences d’interaction impliquent que l’utilisateur identifie l’objet avec lequel il souhaite interagir en pointant dessus à l’aide de périphériques d’entrée comme l’interaction tactile, la souris, le stylo/stylet et le pavé tactile. Les données brutes HID (périphérique d’interface utilisateur) fournies par ces périphériques d’entrée ont de nombreuses propriétés communes. Par conséquent, les informations sont promues dans une pile d’entrée unifiée et exposées sous la forme de données de pointeur consolidées, indépendantes du périphérique. Vos applications UWP peuvent alors utiliser ces données quel que soit le périphérique d’entrée utilisé.
 
-**Remarque** Les informations spécifiques au périphérique sont également promues à partir des données brutes HID si votre application l’exige.
+**Remarque** Les informations propres au périphérique sont également promues à partir des données brutes HID si votre application l’exige.
 
  
 
 Chaque point (ou contact) d’entrée sur la pile d’entrée est représenté par un objet [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) exposé via le paramètre [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) fourni par différents événements de pointeur. En cas d’entrées multistylets ou tactiles multipoints, chaque contact est considéré comme un point d’entrée unique.
 
-## <span id="Pointer_events"> </span> <span id="pointer_events"> </span> <span id="POINTER_EVENTS"> </span>Événements de pointeur
+## <span id="Pointer_events"></span><span id="pointer_events"></span><span id="POINTER_EVENTS"></span>Événements de pointeur
 
 
 Les événements de pointeur exposent des informations de base, telles que l’état de détection (dans la plage ou au contact) et le type de périphérique. Ils exposent également des informations détaillées, telles que l’emplacement, la pression et la géométrie du contact. D’autres propriétés de périphérique spécifiques sont également disponibles. Elles indiquent sur quel bouton de souris l’utilisateur a appuyé ou si la gomme du stylet a été utilisée. Si une différenciation entre les périphériques d’entrée et leurs fonctionnalités est nécessaire dans le cadre de votre application, voir [Identifier des périphériques d’entrée](identify-input-devices.md).
 
 Les applications UWP peuvent écouter les événements de pointeur suivants :
 
-**Remarque** Appelez [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) pour limiter les entrées de pointeur à un élément d’interface utilisateur spécifique. Lorsqu’un pointeur est capturé par un élément, seul cet objet reçoit les événements d’entrée de pointeur, même lorsque le pointeur se déplace à l’extérieur de la zone de délimitation de l’objet. Vous capturez généralement le pointeur dans un gestionnaire d’événement [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) car [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (bouton de souris enfoncé, contact tactile ou contact du style) doit valoir true pour que **CapturePointer** réussisse.
+**Remarque** Appelez [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) pour limiter les entrées de pointeur à un élément d’interface utilisateur spécifique. Lorsqu’un pointeur est capturé par un élément, seul cet objet reçoit les événements d’entrée de pointeur, même lorsque le pointeur se déplace à l’extérieur de la zone de délimitation de l’objet. Vous capturez généralement le pointeur dans un gestionnaire d’événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), car [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (bouton de souris enfoncé, interaction tactile ou stylet en contact) doit être défini sur true pour que **CapturePointer** réussisse.
 
  
 
@@ -95,7 +92,7 @@ Les applications UWP peuvent écouter les événements de pointeur suivants :
 <ul>
 <li>L’interaction tactile nécessite un contact du doigt et déclenche cet événement lorsque le pointeur se déplace hors de la zone de délimitation de l’élément.</li>
 <li>La souris et le pavé tactile ont un curseur à l’écran qui est toujours visible et qui déclenche cet événement même si aucun bouton de la souris ni aucun bouton du pavé tactile n'est enfoncé.</li>
-<li>Comme l’interaction tactile, le stylet déclenche cet événement lorsqu’il sort de la zone de délimitation de l’élément. Toutefois, le stylet présente également un état de pointage ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) qui déclenche cet événement lorsque la valeur passe de true à false.</li>
+<li>Comme l’interaction tactile, le stylet déclenche cet événement lorsqu’il sort de la zone de délimitation de l’élément. Toutefois, le stylet présente également un état de pointage ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) qui déclenche cet événement lorsque l’état passe de la valeur true à false.</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -119,25 +116,25 @@ Les applications UWP peuvent écouter les événements de pointeur suivants :
 <tr class="even">
 <td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
 <td align="left"><p>Se produit lors de la rotation de la roulette de la souris.</p>
-<p>L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Le fait de cliquer sur un bouton de la souris (gauche, roulette ou droit) crée une association secondaire entre le pointeur et ce bouton via l’événement  [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970).</p></td>
+<p>L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Cliquer sur un bouton de souris (gauche, roulette ou droit) crée une association secondaire entre le pointeur et ce bouton via l’événement [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970).</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Example"> </span> <span id="example"> </span> <span id="EXAMPLE"> </span>Exemple
+## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
 
 
 Voici des exemples de code d’une application de base de suivi du pointeur. Ils montrent comment écouter et gérer les événements de pointeur, mais aussi comment obtenir différentes propriétés pour les pointeurs actifs.
 
-### <span id="Create_the_UI"> </span> <span id="create_the_ui"> </span> <span id="CREATE_THE_UI"> </span>Création de l’interface utilisateur
+### <span id="Create_the_UI"></span><span id="create_the_ui"></span><span id="CREATE_THE_UI"></span>Créer l’interface utilisateur
 
 Dans le cadre de cet exemple, nous utilisons un rectangle (`targetContainer`) comme objet cible de l’entrée du pointeur. La couleur de la cible change lorsque l’état du pointeur change.
 
 Les détails pour chaque pointeur sont affichés dans un bloc de texte flottant qui se déplace avec le pointeur. Les événements de pointeur eux-mêmes sont affichés à gauche du rectangle (pour signaler la séquence d’événements).
 
-Voici le code XAML (Extensible Application Markup Language) correspondant à cet exemple.
+Voici le code XAML (Extensible Application Markup Language) correspondant à cet exemple.
 
 ```XAML
 <Page
@@ -194,7 +191,7 @@ Voici le code XAML (Extensible Application Markup Language) correspondant à cet
 </Page>
 ```
 
-### <span id="Listen_for_pointer_events"> </span> <span id="listen_for_pointer_events"> </span> <span id="LISTEN_FOR_POINTER_EVENTS"> </span>Écoute des événements de pointeur
+### <span id="Listen_for_pointer_events"></span><span id="listen_for_pointer_events"></span><span id="LISTEN_FOR_POINTER_EVENTS"></span>Écouter des événements de pointeur
 
 Dans la plupart des cas, nous vous conseillons d’obtenir les informations sur le pointeur via la classe [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) du gestionnaire d’événements.
 
@@ -243,13 +240,13 @@ Le code suivant comporte la configuration de l’objet cible, la déclaration de
 
 ```
 
-### <span id="Handle_pointer_events"> </span> <span id="handle_pointer_events"> </span> <span id="HANDLE_POINTER_EVENTS"> </span>Gestion des événements de pointeur
+### <span id="Handle_pointer_events"></span><span id="handle_pointer_events"></span><span id="HANDLE_POINTER_EVENTS"></span>Gérer des événements de pointeur
 
 Nous allons maintenant utiliser le retour d’interface utilisateur dans le cadre de la démonstration des gestionnaires d’événements de pointeur de base.
 
 -   Ce gestionnaire gère un événement [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). L’événement est ajouté au journal des événements, le pointeur est ajouté au tableau de pointeurs utilisé pour le suivi des pointeurs d’intérêt et les détails de pointeur sont affichés.
 
-    **Remarque** Les événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) et [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) ne se produisent pas toujours ensemble. L’application doit écouter et gérer tout événement susceptible de conclure une action de pointeur appuyé (tel que [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969), [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) et [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)).
+    **Remarque** Les événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) et [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) ne se produisent pas toujours ensemble. L’application doit écouter et gérer tout événement susceptible de conclure une action de pointeur appuyé (comme [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969), [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) et [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)).
 
      
 
@@ -330,7 +327,7 @@ Nous allons maintenant utiliser le retour d’interface utilisateur dans le cadr
 
 -   Ce gestionnaire gère un événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970). L’événement est ajouté au journal des événements et les détails de pointeur sont mis à jour.
 
-    **Important** L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Le fait de cliquer sur un bouton de la souris (gauche, roulette ou droit) crée une association secondaire entre le pointeur et ce bouton via l’événement [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). L’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) est déclenché uniquement lorsque ce même bouton de souris est relâché. (Aucun autre bouton ne peut être associé au pointeur tant que cet événement n’est pas terminé.) En raison de cette association exclusive, les autres clics de bouton de la souris sont routés via l’événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970).
+    **Important** L’entrée de souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de souris. Cliquer sur un bouton de souris (gauche, roulette ou droit) crée une association secondaire entre le pointeur et ce bouton via l’événement [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). L’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) est déclenché uniquement lorsque ce même bouton de souris est relâché (aucun autre bouton ne peut être associé au pointeur tant que cet événement n’est pas terminé). En raison de cette association exclusive, les autres clics de bouton de souris sont routés via l’événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970).
 
      
 
@@ -406,7 +403,7 @@ private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   Ce gestionnaire gère un événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) lorsque le contact avec le digitaliseur est interrompu. L’événement est ajouté au journal des événements, le pointeur est supprimé de la collection de pointeurs et les détails de pointeur sont mis à jour.
+-   Ce gestionnaire gère un événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) lorsque le contact avec le numériseur est interrompu. L’événement est ajouté au journal des événements, le pointeur est supprimé de la collection de pointeurs et les détails de pointeur sont mis à jour.
 
 ```    CSharp
 void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
@@ -452,7 +449,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   Ce gestionnaire gère un événement [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) lorsque le contact avec le digitaliseur est maintenu. L’événement est ajouté au journal des événements, le pointeur est supprimé du tableau de pointeurs et les détails de pointeur sont mis à jour.
+-   Ce gestionnaire gère un événement [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) lorsque le contact avec le numériseur est maintenu. L’événement est ajouté au journal des événements, le pointeur est supprimé du tableau de pointeurs et les détails de pointeur sont mis à jour.
 
 ```    CSharp
 private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
@@ -519,7 +516,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 
 -   Ce gestionnaire gère un événement [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965). L’événement est ajouté au journal des événements, le pointeur est supprimé du tableau de pointeurs et les détails de pointeur sont mis à jour.
 
-    **Remarque ** [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) peut se produire au lieu de [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). La capture de pointeur peut être interrompue pour diverses raisons.
+    **Remarque** [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) peut se produire au lieu de [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). La capture de pointeur peut être interrompue pour diverses raisons.
 
      
 
@@ -555,7 +552,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### <span id="Get_pointer_properties"> </span> <span id="get_pointer_properties"> </span> <span id="GET_POINTER_PROPERTIES"> </span>Obtention des propriétés du pointeur
+### <span id="Get_pointer_properties"></span><span id="get_pointer_properties"></span><span id="GET_POINTER_PROPERTIES"></span>Obtenir les propriétés du pointeur
 
 Comme indiqué précédemment, vous devez obtenir les informations de pointeur les plus détaillées via un objet [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) obtenu par le biais des méthodes [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) et [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) de [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076).
 
@@ -651,9 +648,9 @@ Comme indiqué précédemment, vous devez obtenir les informations de pointeur l
              }
 ```
 
-### <span id="Complete_example"> </span> <span id="complete_example"> </span> <span id="COMPLETE_EXAMPLE"> </span>Exemple complet
+### <span id="Complete_example"></span><span id="complete_example"></span><span id="COMPLETE_EXAMPLE"></span>Exemple complet
 
-Voici le code C# de cet exemple. Pour des liens vers des exemples plus complexes, voir la section Articles connexes, en bas de cette page.
+Le code C# correspondant à cet exemple est indiqué ci-après. Pour des liens vers des exemples plus complexes, voir la section Articles connexes, en bas de cette page.
 
 ```CSharp
 using System;
@@ -1079,7 +1076,7 @@ namespace PointerInput
 }
 ```
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
 **Exemples**
@@ -1087,6 +1084,7 @@ namespace PointerInput
 * [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **Exemples d’archive**
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -1103,6 +1101,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

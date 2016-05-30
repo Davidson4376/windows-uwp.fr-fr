@@ -1,17 +1,13 @@
 ---
-Description: Étendre Cortana avec la fonctionnalité fournie par votre application, à l’aide des commandes vocales.
+author: Karl-Bridge-Microsoft
+Description: Compléter Cortana avec les fonctionnalités fournies par votre application, à l’aide des commandes vocales.
 title: Recommandations relatives à la conception de Cortana
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
-label: Recommandations
+label: Guidelines
 template: detail.hbs
 ---
 
 # Recommandations relatives à la conception de Cortana
-
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
 
 
 Ces recommandations et ces instructions décrivent comment votre application peut utiliser **Cortana** au mieux pour interagir avec l’utilisateur, l’aider à accomplir une tâche et indiquer clairement comment tout cela se passe.
@@ -22,9 +18,9 @@ Si l’utilisateur doit avoir l’impression que **Cortana** contribue à rendre
 
 Nous utilisons une application de planification et de gestion de voyages nommée **Adventure Works** intégrée à l’interface utilisateur **Cortana**, affichée ici, pour illustrer un grand nombre de concepts et de fonctionnalités traités.
 
-![vue d’ensemble du canevas de cortana](images/speech/cortana-overview.png)
+![vue d’ensemble du canevas de Cortana](images/speech/cortana-overview.png)
 
-## <span id="Conversational_writing_"> </span> <span id="conversational_writing_"> </span> <span id="CONVERSATIONAL_WRITING_"> </span>Écriture interactive
+## <span id="Conversational_writing_"></span><span id="conversational_writing_"></span><span id="CONVERSATIONAL_WRITING_"></span>Écriture interactive
 
 
 Pour garantir la réussite des interactions de **Cortana**, vous êtes tenu de suivre certains principes fondamentaux lors de l’élaboration des chaînes de synthèse vocale (TTS) et d’interface graphique utilisateur.
@@ -96,7 +92,7 @@ Utilisez des variantes pour donner un ton plus naturel à votre application. Pro
 
 Utilisez judicieusement les expressions telles que « OK » et « D’accord » dans vos réponses. Si elles peuvent indiquer une reconnaissance et un sentiment de progression, elles peuvent également devenir répétitives si elles sont utilisées trop souvent et sans variante.
 
-**Remarque** Utilisez des expressions de reconnaissance dans TTS uniquement. En raison de l’espace limité sur le canevas **Cortana**, ne les répétez pas dans les chaînes correspondantes de l’interface graphique utilisateur.
+**Remarque** Utilisez des expressions de reconnaissance dans TTS uniquement. En raison de l’espace limité dans le canevas **Cortana**, ne les répétez pas dans les chaînes correspondantes de l’interface graphique utilisateur.
 
  
 
@@ -106,21 +102,21 @@ Utilisez une langue comprise par le système. Les utilisateurs ont tendance à r
 
 Variez vos réponses en les faisant tourner ou en sélectionnant de façon aléatoire dans une collection d’alternatives. Par exemple, « Quel film voulez-vous voir ? » et « Quel film voulez-vous regarder ? ». De cette façon, le ton de votre application est plus naturel et unique.
 
-## <span id="Localization_"> </span> <span id="localization_"> </span> <span id="LOCALIZATION_"> </span>Localisation
+## <span id="Localization_"></span><span id="localization_"></span><span id="LOCALIZATION_"></span>Localisation
 
 
 Pour lancer une action à l’aide d’une commande vocale, votre application doit enregistrer les commandes vocales dans la langue sélectionnée par l’utilisateur sur son appareil (Paramètres &gt; Système &gt; Voix &gt; Langue vocale).
 
 Vous devez localiser les commandes vocales correspondant aux réponses de l’application, et l’ensemble des chaînes TTS et de l’interface graphique utilisateur.
 
-Vous devez éviter les longues chaînes d’interface graphique utilisateur. Le canevas **Cortana** fournit trois lignes pour les réponses et tronque les chaînes plus longues.
+Vous devez éviter les longues chaînes d’interface graphique utilisateur. Le canevas **Cortana** fournit trois lignes pour les réponses et tronque les chaînes plus longues.
 
-Pour plus d’informations, voir la [Section Globlisation et localisation](../globalizing/globalizing-portal.md).
+Pour plus d’informations, voir la section [Globalisation et localisation](../globalizing/globalizing-portal.md).
 
-## <span id="Image_resources_and_scaling"> </span> <span id="image_resources_and_scaling"> </span> <span id="IMAGE_RESOURCES_AND_SCALING"> </span>Ressources d’images et mise à l’échelle
+## <span id="Image_resources_and_scaling"></span><span id="image_resources_and_scaling"></span><span id="IMAGE_RESOURCES_AND_SCALING"></span>Ressources d’images et mise à l’échelle
 
 
-Les applications de plateforme Windows universelle (UWP) peuvent sélectionner automatiquement le logo d’application le plus approprié en fonction de paramètres spécifiques et des fonctionnalités de l’appareil (contraste élevé, pixels effectifs, paramètres régionaux, etc.). Il vous suffit de fournir les images et de vérifier que vous utilisez la convention d’affectation de noms et l’organisation de dossiers appropriées dans le projet d’application pour les différentes versions de ressources. Si vous ne fournissez les versions de ressources recommandées, l’accessibilité, la localisation et la qualité des images peuvent être affectées, en fonction des préférences de l’utilisateur, de ses aptitudes, du type d’appareil utilisé et de l’emplacement.
+Les applications de plateforme Windows universelle (UWP) peuvent sélectionner automatiquement le logo d’application le mieux approprié en fonction des paramètres spécifiques et des fonctionnalités de l’appareil (contraste élevé, pixels effectifs, paramètres régionaux, etc.). Il vous suffit de fournir les images et de vérifier que vous utilisez la convention d’affectation de noms et l’organisation de dossiers appropriées dans le projet d’application pour les différentes versions de ressources. Si vous ne fournissez les versions de ressources recommandées, l’accessibilité, la localisation et la qualité des images peuvent être affectées, en fonction des préférences de l’utilisateur, de ses aptitudes, du type d’appareil utilisé et de l’emplacement.
 
 Pour plus d’informations sur les ressources d’image pour les facteurs de contraste élevé et d’échelle, voir [Recommandations en matière de ressources de vignette et d’icône](../controls-and-patterns/tiles-and-notifications-app-assets.md).
 
@@ -128,30 +124,48 @@ Les ressources sont nommées à l’aide de qualificateurs. Les qualificateurs d
 
 La convention d’affectation de noms standard est « foldername/qualifiername-value\[\_qualifiername-value\]/filename.qualifiername-value\[\_qualifiername-value\].ext ». Par exemple : dans le code, images/en-US/logo.scale-100\_contrast-white.png est simplement identifié par le dossier racine et le nom de fichier : images/logo.png. Voir [Globalisation et localisation](../globalizing/globalizing-portal.md) et [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
 
-Nous vous conseillons de marquer la langue par défaut dans les fichiers de ressources de type chaîne (par exemple, « en-US\\resources.resw ») et le facteur d’échelle par défaut dans les images (par exemple, « logo.scale-100.png »), même si dans l’immédiat, vous ne pensez localiser ces ressources, ni les proposer avec plusieurs résolutions. Toutefois, nous vous recommandons au minimum de fournir des ressources pour les facteurs d’échelle 100, 200 et 400.
+Nous vous conseillons de marquer la langue par défaut dans les fichiers de ressources de type chaîne (par exemple, « en-US\\resources.resw ») et le facteur d’échelle par défaut dans les images (par exemple, « logo.scale-100.png »), même si dans l’immédiat, vous ne pensez localiser ces ressources, ni les proposer avec plusieurs résolutions. Toutefois, nous vous recommandons de fournir au minimum des ressources pour les facteurs d’échelle 100, 200 et 400.
 
 **Important**  
-L’icône de l’application utilisée dans la zone de titre du canevas Cortana est l’icône Square44x44Logo spécifiée dans le fichier « Package.appxmanifest ». 
+L’icône de l’application utilisée dans la zone de titre du canevas Cortana est l’icône Square44x44Logo spécifiée dans le fichier Package.appxmanifest. 
 
-Vous pouvez également spécifier une icône pour chaque résultat d’une requête affiché dans la zone de contenu du canevas Cortana. Les formats d’image valides pour les icônes de résultats sont :
+Vous pouvez également spécifier une icône pour chaque vignette de résultats d’une requête utilisateur. Tailles d’image valides pour les icônes de résultats :
 
 -   68 x 68
 -   68 x 92
--   280 x 140
+-   280 x 140
+
+## <span id="Result_tile_templates"></span><span id="result_tile_templates"></span><span id="RESULT_TILE_TEMPLATES"></span>Modèles de vignette de résultats
+
+Un ensemble de modèles est fourni pour les vignettes de résultats affichées dans le canevas Cortana. Utilisez ces modèles pour spécifier le titre de la vignette et indiquer si la vignette comprend du texte et une image d’icône de résultats. Chaque vignette peut inclure une image et jusqu’à trois lignes de texte, en fonction du modèle spécifié.
+
+Voici les modèles pris en charge (ainsi que des exemples) :
+
+| Nom | Exemple |
+| --- | --- |
+| Titre seul  | ![Titre seul](images/cortana/voicecommandcontenttiletype_titleonly_small.png) |
+| Titre avec texte   | ![Titre avec texte](images/cortana/voicecommandcontenttiletype_titlewithtext_small.png) |
+| Titre avec icône 68 x 68   | pas d’image |
+| Titre avec texte et icône 68 x 68   | ![Titre avec texte et icône 68 x 68](images/cortana/voicecommandcontenttiletype_titlewith68x68iconandtext_small.png) |
+| Titre avec icône 68 x 92   | pas d’image |
+| Titre avec texte et icône 68 x 92    | ![Titre avec texte et icône 68 x 92](images/cortana/voicecommandcontenttiletype_titlewith68x92iconandtext_small.png) |
+| Titre avec icône 280 x 140   | pas d’image |
+| Titre avec texte et icône 280 x 140    | ![Titre avec texte et icône 280 x 140](images/cortana/voicecommandcontenttiletype_titlewith280x140iconandtext_small.png) |
+
+Pour plus d’informations sur les modèles Cortana, voir [VoiceCommandContentTileType](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttiletype.aspx).
+
+## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
 
 
-## <span id="Example"> </span> <span id="example"> </span> <span id="EXAMPLE"> </span>Exemple
+Cet exemple illustre un flux de tâches de bout en bout pour une application en arrière-plan dans **Cortana**. Nous utilisons l’application **Adventure Works** pour annuler un voyage à Las Vegas. Cet exemple utilise le modèle « Titre avec texte et icône 68 x 68 ».
 
-
-Cet exemple illustre un flux de tâches de bout en bout pour une application en arrière-plan dans **Cortana**. Nous utilisons l’application **Adventure Works** pour annuler un voyage à Las Vegas.
-
-![flux de bout en bout de l’application en arrière-plan cortana](images/speech/e2e-canceltrip.png)
+![flux de bout en bout de l’application en arrière-plan dans cortana](images/speech/e2e-canceltrip.png)
 
 Voici les étapes décrites dans cette image :
 
 1.  L’utilisateur appuie sur le microphone pour lancer **Cortana**.
-2.  L’utilisateur dit « Annuler mon voyage Adventure Works à Vegas » pour lancer l’application **Adventure Works en arrière-plan**. L’application utilise à la fois la reconnaissance vocale et le canevas **Cortana** pour interagir avec l’utilisateur.
-3.  **Cortana** se transforme en un écran de transfert qui indique le commentaire de reconnaissance de l’utilisateur (« Je vais contacter Adventure Works pour ce projet »), une barre d’état et un bouton d’annulation.
+2.  L’utilisateur dit « Annuler mon voyage Adventure Works à Vegas » pour lancer l’application **Adventure Works** en arrière-plan. L’application utilise à la fois la reconnaissance vocale et le canevas **Cortana** pour interagir avec l’utilisateur.
+3.  **Cortana** se transforme en écran relais qui indique le commentaire de reconnaissance de l’utilisateur (« Je vais contacter Adventure Works pour ce projet »), une barre d’état et un bouton d’annulation.
 4.  Dans ce cas, l’utilisateur dispose de plusieurs voyages correspondant à la requête et l’application affiche un écran permettant de lever l’ambiguïté, dans lequel tous les résultats sont répertoriés et où le message « Lequel voulez-vous annuler ? » s’affiche.
 5.  L’utilisateur indique l’élément « Conférence technique à Las Vegas ».
 6.  L’annulation est irréversible, c’est la raison pour laquelle un écran s’affiche dans l’application pour demander à l’utilisateur de confirmer son intention.
@@ -160,22 +174,21 @@ Voici les étapes décrites dans cette image :
 
 Ces étapes sont expliquées ici plus en détail.
 
-### <span id="Handoff"> </span> <span id="handoff"> </span> <span id="HANDOFF"> </span>Transfert
+### <span id="Handoff"></span><span id="handoff"></span><span id="HANDOFF"></span>Transfert
 
-|                                                                                                          |
-|----------------------------------------------------------------------------------------------------------|
-| ![bout en bout : recherche du voyage sans écran de transfert ](images/speech/cortana-backgroundapp-result.png)              |
-| Recherche du voyage sans écran de transfert                                                                              |
+| ![bout en bout : recherche du voyage sans écran relais ](images/speech/cortana-backgroundapp-result.png) |
+|--- |
+| Recherche du voyage sans écran de transfert |
+
 | ![bout en bout : annulation du voyage avec écran de transfert ](images/speech/cortana-backgroundapp-progress-result.png) |
-| Annulation du voyage avec écran de transfert                                                                          |
-
- 
+|--- |
+| Annulation du voyage avec écran de transfert | 
 
 Les tâches auxquelles l’application peut répondre en moins de 500 ms et qui ne nécessitent pas d’informations supplémentaires de la part de l’utilisateur peuvent être effectuées sans aucune autre action de **Cortana**, excepté celle d’afficher l’écran d’achèvement.
 
-Si votre application met plus de 500 ms à répondre, **Cortana** propose un écran de transfert. L’icône et le nom de l’application s’affichent. Vous devez fournir à l’interface graphique utilisateur et à TTS des chaînes de transfert indiquant que la commande vocale a été correctement comprise. L’écran de transfert s’affiche pendant 5 secondes maximum ; si votre application ne répond pas dans cet intervalle, **Cortana** affiche un écran d’erreur générique.
+Si votre application met plus de 500 ms à répondre, **Cortana** propose un écran relais. L’icône et le nom de l’application s’affichent. Vous devez fournir à l’interface graphique utilisateur et à TTS des chaînes de transfert indiquant que la commande vocale a été correctement comprise. L’écran relais s’affiche pendant 5 secondes maximum ; si votre application ne répond pas dans cet intervalle, **Cortana** affiche un écran d’erreur générique.
 
-### <span id="GUI_and_TTS_guidelines_for_handoff_screens"> </span> <span id="gui_and_tts_guidelines_for_handoff_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_HANDOFF_SCREENS"> </span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans de transfert
+### <span id="GUI_and_TTS_guidelines_for_handoff_screens"></span><span id="gui_and_tts_guidelines_for_handoff_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_HANDOFF_SCREENS"></span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans relais
 
 Indiquez clairement que la tâche est en cours.
 
@@ -192,22 +205,19 @@ Les chaînes de l’interface graphique utilisateur et de TTS peuvent être iden
 | TTS                                                    | INTERFACE GRAPHIQUE UTILISATEUR                                 |
 |--------------------------------------------------------|-------------------------------------|
 | Recherche de votre prochain voyage Adventure Works.            | Recherche de votre prochain voyage...         |
-| Recherche de votre voyage Adventure Works à Falls City. | Recherche de voyage à Falls City… |
+| Recherche de votre voyage Adventure Works à Falls City. | Recherche de voyage à Falls City... |
 
  
 
-### <span id="Progress"> </span> <span id="progress"> </span> <span id="PROGRESS"> </span>Progression
+### <span id="Progress"></span><span id="progress"></span><span id="PROGRESS"></span>Progression
 
-|                                                                                             |
-|---------------------------------------------------------------------------------------------|
 | ![bout en bout : annulation du voyage avec écran de progression ](images/speech/e2e-canceltrip-progress.png) |
-| Annulation du voyage avec écran de progression                                                            |
-
- 
+| --- |
+| Annulation du voyage avec écran de progression |  
 
 Lorsque les étapes d’une tâche prennent du temps, votre application doit intervenir pour tenir l’utilisateur au courant du déroulement de la progression par le biais d’un écran. L’icône de l’application s’affiche. Vous devez fournir les chaînes de progression de l’interface graphique utilisateur et de TTS permettant d’indiquer que la tâche est en cours.
 
-Vous devez fournir un lien vers votre application accompagné des paramètres de lancement pour démarrer l’application dans l’état approprié. Cela permet à l’utilisateur d’afficher ou d’effectuer la tâche lui-même. **Cortana** fournit le texte du lien (tel que, « Accéder à Adventure Works »).
+Vous devez fournir un lien vers votre application accompagné des paramètres de lancement pour démarrer l’application dans l’état approprié. Cela permet à l’utilisateur d’afficher ou d’effectuer la tâche lui-même. **Cortana** fournit le texte du lien (par exemple « Accéder à Adventure Works »).
 
 Les écrans de progression s’affichent pendant 5 secondes chacun. Ils doivent ensuite être remplacés par un autre écran, sans quoi la tâche expire.
 
@@ -218,13 +228,13 @@ Ces écrans peuvent suivre un écran de progression :
 -   Levée d’ambiguïté
 -   Achèvement
 
-### <span id="GUI_and_TTS_guidelines_for_progress_screens"> </span> <span id="gui_and_tts_guidelines_for_progress_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_PROGRESS_SCREENS"> </span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans de progression
+### <span id="GUI_and_TTS_guidelines_for_progress_screens"></span><span id="gui_and_tts_guidelines_for_progress_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_PROGRESS_SCREENS"></span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans de progression
 
 Utilisez le présent.
 
 Utilisez un verbe d’action qui confirme que la tâche est en cours.
 
-**Interface graphique utilisateur** : si l’entité s’affiche, faites-y référence (« Annulation de ce voyage… ») ; si aucune entité ne s’affiche, indiquez explicitement l’entité (« Annulation de « Conférence technique à Las Vegas »).
+**Interface graphique utilisateur** : si l’entité s’affiche, faites-y référence (« Annulation de ce voyage… ») ; si aucune entité ne s’affiche, indiquez explicitement l’entité (« Annulation de Conférence technique à Las Vegas »).
 
 **TTS** : vous devez inclure uniquement une chaîne TTS sur le premier écran de progression. Si d’autres écrans de progression sont nécessaires, envoyez une chaîne vide, {}, comme chaîne de texte TTS et fournissez uniquement une chaîne d’interface graphique utilisateur.
 
@@ -232,18 +242,15 @@ Utilisez un verbe d’action qui confirme que la tâche est en cours.
 |---------------------------------------------------------|--------------------------------|--------------------------------|
 | ENTITÉ LUE LORS DE LA TENTATIVE PRÉCÉDENTE/ ENTITÉ AFFICHÉE À L’ÉCRAN     | Annulation de ce voyage...          | Annulation de ce voyage...          |
 | ENTITÉ NON LUE LORS DE LA TENTATIVE PRÉCÉDENTE/ENTITÉ AFFICHÉE À L’ÉCRAN | Annulation de votre voyage à Vegas... | Annulation de ce voyage...          |
-| ENTITÉ NON LUE LORS DE LA TENTATIVE PRÉCÉDENTE/ ENTITÉ NON AFFICHÉE        | Annulation de votre voyage à Vegas... | Annulation de votre voyage à Vegas… |
+| ENTITÉ NON LUE LORS DE LA TENTATIVE PRÉCÉDENTE/ ENTITÉ NON AFFICHÉE        | Annulation de votre voyage à Vegas... | Annulation de votre voyage à Vegas... |
 
  
 
-### <span id="Confirmation"> </span> <span id="confirmation"> </span> <span id="CONFIRMATION"> </span>Confirmation
+### <span id="Confirmation"></span><span id="confirmation"></span><span id="CONFIRMATION"></span>Confirmation
 
-|                                                                                                     |
-|-----------------------------------------------------------------------------------------------------|
 | ![bout en bout : annulation du voyage avec écran de confirmation ](images/speech/e2e-canceltrip-confirmation.png) |
-| Annulation du voyage avec écran de confirmation                                                                |
-
- 
+| --- |
+| Annulation du voyage avec écran de confirmation | 
 
 Certaines tâches peuvent être confirmées implicitement par la nature de la commande utilisateur ; d’autres sont potentiellement plus sensibles et requièrent une confirmation explicite. Voici quelques recommandations indiquant dans quels cas utiliser la confirmation implicite ou explicite.
 
@@ -265,7 +272,7 @@ Utilisez la confirmation implicite dans les cas suivants :
 -   La tâche doit être rapide (comme saisir une idée avant de l’oublier)
 -   La précision est élevée (comme un menu simple)
 
-### <span id="GUI_and_TTS_guidelines_for_confirmation_screens"> </span> <span id="gui_and_tts_guidelines_for_confirmation_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_CONFIRMATION_SCREENS"> </span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans de confirmation
+### <span id="GUI_and_TTS_guidelines_for_confirmation_screens"></span><span id="gui_and_tts_guidelines_for_confirmation_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_CONFIRMATION_SCREENS"></span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans de confirmation
 
 Utilisez le présent.
 
@@ -273,9 +280,9 @@ Posez à l’utilisateur une question permettant de lever l’ambiguïté à laq
 
 Fournissez une variante de la question pour une nouvelle invite, au cas où la commande vocale n’ait pas été comprise la première fois.
 
-**Interface graphique utilisateur** : si l’entité est affichée, faites-y référence. Si aucune entité n’est affichée, mentionnez-la explicitement.
+**Interface graphique utilisateur** : si l’entité est affichée, faites-y référence. Si aucune entité n’est affichée, mentionnez-la explicitement.
 
-**TTS** : par souci de clarté, faites toujours référence à l’élément ou à l’entité spécifique à moins qu’elle n’ait été lue à haute voix par le système dès la première tentative.
+**TTS** : par souci de clarté, faites toujours référence à l’élément ou à l’entité spécifique à moins qu’ils n’aient été lus à haute voix par le système dès la première tentative.
 
 | Conditions                                              | TTS                                        | INTERFACE GRAPHIQUE UTILISATEUR                                           |
 |---------------------------------------------------------|--------------------------------------------|-----------------------------------------------|
@@ -287,14 +294,11 @@ Fournissez une variante de la question pour une nouvelle invite, au cas où la c
 
  
 
-### <span id="Disambiguation"> </span> <span id="disambiguation"> </span> <span id="DISAMBIGUATION"> </span>Levée d’ambiguïté
+### <span id="Disambiguation"></span><span id="disambiguation"></span><span id="DISAMBIGUATION"></span>Levée d’ambiguïté
 
-|                                                                                                        |
-|--------------------------------------------------------------------------------------------------------|
 | ![bout en bout : annulation du voyage avec écran de levée d’ambiguïté](images/speech/cortana-disambiguation-screen.png) |
-| Annulation du voyage avec écran de levée d’ambiguïté                                                                 |
-
- 
+| --- |
+| Annulation du voyage avec écran de levée d’ambiguïté | 
 
 L’exécution de certaines tâches peut nécessiter que l’utilisateur effectue une sélection dans une liste d’entités.
 
@@ -302,7 +306,7 @@ Les chaînes de l’interface graphique utilisateur et TTS figurant sur l’écr
 
 Une fois que le client a répondu à la question permettant de lever l’ambiguïté, votre application doit afficher l’écran suivant dans les 500 ms pour éviter le recours à un écran de progression.
 
-### <span id="GUI_and_TTS_guidelines_for_disambiguation_screens"> </span> <span id="gui_and_tts_guidelines_for_disambiguation_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_DISAMBIGUATION_SCREENS"> </span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans de levée d’ambiguïté
+### <span id="GUI_and_TTS_guidelines_for_disambiguation_screens"></span><span id="gui_and_tts_guidelines_for_disambiguation_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_DISAMBIGUATION_SCREENS"></span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans de levée d’ambiguïté
 
 Utilisez le présent.
 
@@ -314,9 +318,9 @@ Chaque entité doit avoir un titre unique.
 
 Fournissez une variante de la question pour une nouvelle invite, au cas où la commande vocale n’ait pas été comprise la première fois.
 
-**TTS**: par souci de clarté, faites toujours référence à l’élément ou à l’entité spécifique à moins qu’elle n’ait été prononcée lors de la tentative précédente.
+**TTS** : par souci de clarté, faites toujours référence à l’élément ou à l’entité spécifique à moins qu’ils n’aient été prononcés dès la première tentative.
 
-**TTS** : ne lisez pas à haute voix la liste des entités à moins qu’elles ne soient qu’au nombre de trois ou moins et qu’elles soient courtes.
+**TTS** : ne lisez pas à haute voix la liste des entités à moins qu’elles ne soient qu’au nombre de trois ou moins et qu’elles soient courtes.
 
 | Conditions                 | TTS                                                                            | INTERFACE GRAPHIQUE UTILISATEUR                              |
 |----------------------------|--------------------------------------------------------------------------------|----------------------------------|
@@ -326,12 +330,11 @@ Fournissez une variante de la question pour une nouvelle invite, au cas où la c
 
  
 
-### <span id="Completion"> </span> <span id="completion"> </span> <span id="COMPLETION"> </span>Achèvement
+### <span id="Completion"></span><span id="completion"></span><span id="COMPLETION"></span>Achèvement
 
-|                                                                                                 |
-|-------------------------------------------------------------------------------------------------|
 | ![bout en bout : annulation du voyage avec écran d’achèvement ](images/speech/e2e-canceltrip-completion.png) |
-| Annulation du voyage avec écran d’achèvement                                                              |
+| --- |
+| Annulation du voyage avec écran d’achèvement |
 
  
 
@@ -339,9 +342,9 @@ Une fois la tâche terminée avec succès, votre application doit informer l’u
 
 Les chaînes de l’interface graphique utilisateur et TTS figurant sur l’écran d’achèvement sont définies par votre application. L’icône de l’application, si elle est fournie, s’affiche à la place de l’avatar **Cortana**.
 
-Vous devez fournir un lien vers votre application accompagné des paramètres de lancement pour démarrer l’application dans l’état approprié. Cela permet à l’utilisateur d’afficher ou d’effectuer la tâche lui-même. **Cortana** fournit le texte du lien (tel que, « Accéder à Adventure Works »).
+Vous devez fournir un lien vers votre application accompagné des paramètres de lancement pour démarrer l’application dans l’état approprié. Cela permet à l’utilisateur d’afficher ou d’effectuer la tâche lui-même. **Cortana** fournit le texte du lien (par exemple « Accéder à Adventure Works »).
 
-### <span id="GUI_and_TTS_guidelines_for_completion_screens"> </span> <span id="gui_and_tts_guidelines_for_completion_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_COMPLETION_SCREENS"> </span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans d’achèvement
+### <span id="GUI_and_TTS_guidelines_for_completion_screens"></span><span id="gui_and_tts_guidelines_for_completion_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_COMPLETION_SCREENS"></span>Recommandations relatives à l’interface graphique utilisateur et à TTS pour les écrans d’achèvement
 
 Utilisez le passé.
 
@@ -356,12 +359,11 @@ Si l’entité est affichée, ou s’il y a été fait référence lors de la te
 
  
 
-### <span id="Error"> </span> <span id="error"> </span> <span id="ERROR"> </span>Erreur
+### <span id="Error"></span><span id="error"></span><span id="ERROR"></span>Erreur
 
-|                                                                                      |
-|--------------------------------------------------------------------------------------|
 | ![bout en bout : annulation du voyage avec écran d’erreur](images/speech/e2e-canceltrip-error.png) |
-| Annulation du voyage avec écran d’erreur                                                        |
+| --- |
+| Annulation du voyage avec écran d’erreur |
 
  
 
@@ -371,10 +373,11 @@ Lorsque l’une des erreurs suivantes survient, **Cortana** affiche le même mes
 -   **Cortana** ne parvient pas à communiquer avec le service de l’application.
 -   L’application ne parvient pas à afficher d’écran après que **Cortana** a affiché un écran de transfert ou de progression pendant 5 secondes.
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
-* [Interactions vocales](speech-interactions.md)
+* [Interactions vocales](speech-interactions.md)  
+
 **Développeurs**
 * [Interactions avec Cortana](https://msdn.microsoft.com/library/windows/apps/mt185598)
 * [Interactions vocales](https://msdn.microsoft.com/library/windows/apps/mt185614)
@@ -387,6 +390,6 @@ Lorsque l’une des erreurs suivantes survient, **Cortana** affiche le même mes
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

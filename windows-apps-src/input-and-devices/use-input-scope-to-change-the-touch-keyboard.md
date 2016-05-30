@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de façon qu’elle corresponde au type de données attendu de la part de l’utilisateur.
 MS-HAID: 'dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -10,18 +11,18 @@ template: detail.hbs
 
 # Utiliser l’étendue des entrées pour modifier le clavier tactile
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou clavier virtuel, définissez l’étendue des entrées du contrôle de texte de façon qu’elle corresponde au type de données attendu par l’utilisateur.
 
 **API importantes**
 
 -   [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632)
 -   [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028)
 
-Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de façon qu’elle corresponde au type de données attendu de la part de l’utilisateur.
+
 
 Le clavier tactile permet d’entrer du texte lorsque l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé lorsque l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) ou [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548). Vous pouvez considérablement faciliter et accélérer la saisie de données par les utilisateurs dans votre application en définissant l’*étendue des entrées* du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
 
-Par exemple, si une zone de texte est utilisée uniquement pour saisir un code confidentiel à 4 chiffres, définissez la propriété [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui facilite la saisie d’un code confidentiel par l’utilisateur.
+Par exemple, si une zone de texte est utilisée uniquement pour saisir un code confidentiel à 4 chiffres, définissez la propriété [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui facilite la saisie d’un code confidentiel par l’utilisateur.
 
 > **Important**&nbsp;&nbsp;
 - Ces informations s’appliquent uniquement au clavier virtuel. Elles ne concernent pas les claviers matériels ou visuels figurant dans les Options d’ergonomie de Windows.
@@ -31,7 +32,7 @@ Par exemple, si une zone de texte est utilisée uniquement pour saisir un code c
 
 Les étendues d’entrées disponibles pour votre application appartiennent à l’énumération [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028). Vous pouvez définir la propriété **InputScope** d’un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) ou [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) sur l’une de ces valeurs.
 
-> **Important**&nbsp;&nbsp;La propriété [**InputScope**](https://msdn.microsoft.com/library/windows/apps/dn996570) de l’élément [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) prend uniquement en charge les valeurs **Password** et **NumericPin**. Toute autre valeur est ignorée.
+> **Important** &nbsp;&nbsp;La propriété [**InputScope**](https://msdn.microsoft.com/library/windows/apps/dn996570) de l’élément [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) prend uniquement en charge les valeurs **Password** et **NumericPin**. Toute autre valeur est ignorée.
 
 Ici, vous modifiez l’étendue des entrées de plusieurs zones de texte afin qu’elle corresponde aux données attendues pour chaque zone de texte.
 
@@ -122,7 +123,7 @@ Les contrôles [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br2
 
     La prédiction de texte peut être désactivée si l’étendue des entrées est différente de **Default**, même si la propriété [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) présente la valeur **true**. Pour en savoir plus, consultez les tableaux présentés plus loin dans cette rubrique.
 
-    **emarque**&nbsp;&nbsp;Sur la famille d’appareils mobiles, les prédictions de texte et les corrections orthographiques sont affichées dans le panneau de saisie, dans la zone située au-dessus du clavier. Si l’élément [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) est défini sur **false**, cette partie du panneau de saisie est masquée et la correction automatique est désactivée, même si l’élément [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) présente la valeur **true**.
+    **Remarque** &nbsp;&nbsp;Sur la famille d’appareils mobiles, les prédictions de texte et les corrections orthographiques sont affichées dans le panneau de saisie, dans la zone située au-dessus du clavier. Si l’élément [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) est défini sur **false**, cette partie du panneau de saisie est masquée et la correction automatique est désactivée, même si l’élément [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) présente la valeur **true**.
 
 -   [
             **PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273) : définissez cette propriété sur **true** pour empêcher l’affichage du panneau de saisie quand le focus est défini par programme sur un contrôle de texte. Au lieu de cela, le clavier s’affiche uniquement lorsque l’utilisateur interagit avec le contrôle.
@@ -131,9 +132,9 @@ Les contrôles [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br2
 
 Les tableaux suivants illustrent les différentes dispositions du panneau de saisie sur des appareils mobiles et de bureau pour les valeurs d’étendue d’entrées communes. L’effet de l’étendue des entrées sur les fonctionnalités activées par les propriétés **IsSpellCheckEnabled** et **IsTextPredictionEnabled** est répertorié pour chaque étendue des entrées. Cependant, il ne s’agit pas d’une liste complète des étendues d’entrées disponibles.
 
-> **Remarque**&nbsp;&nbsp;Comme le panneau de saisie est plus petit sur les appareils mobiles, il est très important que vous définissiez une étendue d’entrées adéquate pour les applications mobiles. Comme illustré ici, Windows Phone fournit une plus grande variété de dispositions de clavier spécialisées. Pour un champ de texte dont l’étendue d’entrées n’a pas besoin d’être définie dans une application du Windows Store, il peut être bénéfique que cette étendue soit définie dans une application du Windows Phone Store.
+> **Remarque** &nbsp;&nbsp;Comme le panneau de saisie est plus petit sur les appareils mobiles, il est très important que vous définissiez une étendue d’entrées adéquate pour les applications mobiles. Comme illustré ici, Windows Phone fournit une plus grande variété de dispositions de clavier spécialisées. Pour un champ de texte dont l’étendue d’entrées n’a pas besoin d’être définie dans une application du Windows Store, il peut être bénéfique que cette étendue soit définie dans une application du Windows Phone Store.
 
-> **Conseil**&nbsp;&nbsp;Vous pouvez basculer la plupart des claviers tactiles entre une disposition alphabétique et une disposition numérique et symbolique. Sur Windows, activez la touche **&123**. Sur Windows Phone, appuyez sur la touche **& 123** pour adopter la disposition numérique et symbolique, et sur la touche **abcd** pour sélectionner la disposition alphabétique.
+> **Conseil** &nbsp;&nbsp;Vous pouvez basculer la plupart des claviers tactiles entre une disposition alphabétique et une disposition numérique et symbolique. Sur Windows, activez la touche **&amp;123**. Sur Windows Phone, appuyez sur la touche **&amp; 123** pour adopter la disposition numérique et symbolique, et sur la touche **abcd** pour sélectionner la disposition alphabétique.
 
 ### Par défaut
 
@@ -147,10 +148,10 @@ Clavier par défaut.
 
 Disponibilité des fonctionnalités :
 
--   Vérification orthographique : activée si **IsSpellCheckEnabled** = **true** ; désactivée si **IsSpellCheckEnabled** =**false**.
--   Correction automatique : activée si **IsSpellCheckEnabled** = **true** ; désactivée si **IsSpellCheckEnabled** =**false**.
--   Mise en majuscules automatique : activée si **IsSpellCheckEnabled** = **true**, désactivée si **IsSpellCheckEnabled** = **false**.
--   Prédiction de texte : activée si **IsTextPredictionEnabled** = **true** ; désactivée si **IsTextPredictionEnabled** = **false**.
+-   Vérification orthographique : activée si **IsSpellCheckEnabled** = **true** ; désactivée si **IsSpellCheckEnabled** = **false**.
+-   Correction automatique : activée si **IsSpellCheckEnabled** = **true** ; désactivée si **IsSpellCheckEnabled** = **false**.
+-   Mise en majuscule automatique : activée si **IsSpellCheckEnabled** = **true** ; désactivée si **IsSpellCheckEnabled** = **false**.
+-   Prédiction de texte : activée si **IsTextPredictionEnabled** = **true** ; désactivée si **IsTextPredictionEnabled** = **false**.
 
 ### CurrencyAmountAndSymbol
 
@@ -171,7 +172,7 @@ Inclut les touches **.com** et ![touche OK](images/input-scopes/kbdgokey.png) (O
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Clavier tactile Windows pour les URL](images/input-scopes/kbdpcurl.png)<br>Inclut également les éléments **: touches**, **-** et **/**.| ![Clavier tactile Windows Phone pour les URL](images/input-scopes/kbdwpurl.png)<br>Appuyez longuement sur la touche de période pour afficher des options supplémentaires ( - + &quot; / &amp; : , ). |
+| ![Clavier tactile Windows pour les URL](images/input-scopes/kbdpcurl.png)<br>Inclut également les touches **:**, **-** et **/**.| ![Clavier tactile Windows Phone pour les URL](images/input-scopes/kbdwpurl.png)<br>Appuyez longuement sur la touche du point pour afficher des options supplémentaires ( - + &quot; / &amp; : , ). |
 |Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : sur par défaut, peut être désactivée</li><li>Vérification orthographique : activée par défaut ; peut être désactivée</li><li>Mise en majuscules automatique : toujours désactivée</li><li>Prédiction de texte : toujours désactivée</li></ul> | Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : désactivée par défaut ; peut être activée</li><li>Correction automatique : désactivée par défaut ; peut être activée</li><li>Mise en majuscules automatique : désactivée par défaut ; peut être activée</li><li>Prédiction de texte : désactivée par défaut ; peut être activée</li></ul> |
 
 ### EmailSmtpAddress
@@ -182,7 +183,7 @@ Inclut les touches **@** et **.com**. Appuyez longuement sur la touche **.com** 
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Clavier tactile Windows pour les adresses de messagerie](images/input-scopes/kbdpcemailsmtpaddress.png)<br>Inclut également les touches **_** et **-**.| ![Clavier tactile Windows Phone pour les adresses de messagerie](images/input-scopes/kbdwpemailsmtpaddress.png)<br>Appuyez longuement sur la touche du point pour afficher des options supplémentaires ( - _ , ; ). |
+| ![Clavier tactile Windows pour les adresses de messagerie](images/input-scopes/kbdpcemailsmtpaddress.png)<br>Inclut également les touches **_** et **-**.| ![Clavier tactile Windows Phone pour les adresses de messagerie](images/input-scopes/kbdwpemailsmtpaddress.png)<br>Appuyez longuement sur la touche du point pour afficher des options supplémentaires ( - _ , ; ). |
 |Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : sur par défaut, peut être désactivée</li><li>Vérification orthographique : activée par défaut ; peut être désactivée</li><li>Mise en majuscules automatique : toujours désactivée</li><li>Prédiction de texte : toujours désactivée</li></ul> | Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : désactivée par défaut ; peut être activée</li><li>Correction automatique : désactivée par défaut ; peut être activée</li><li>Mise en majuscules automatique : désactivée par défaut ; peut être activée</li><li>Prédiction de texte : désactivée par défaut ; peut être activée</li></ul> |
 
 ### Number
@@ -200,7 +201,7 @@ Inclut les touches **@** et **.com**. Appuyez longuement sur la touche **.com** 
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Clavier tactile Windows pour les numéros de téléphone](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![Clavier tactile Windows Phone pour les numéros de téléphone](images/input-scopes/kbdwptelephonenumber.png)<br>Le clavier simule le clavier d’un téléphone. Appuyez longuement sur la touche de période pour afficher des options supplémentaires ( , ( ) X . ). Appuyez longuement sur la touche 0 pour saisir +. |
+| ![Clavier tactile Windows pour les numéros de téléphone](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![Clavier tactile Windows Phone pour les numéros de téléphone](images/input-scopes/kbdwptelephonenumber.png)<br>Le clavier simule le clavier d’un téléphone. Appuyez longuement sur la touche de période pour afficher des options supplémentaires ( , ( ) X . ). Appuyez longuement sur la touche 0 pour saisir +. |
 |Identique à **CurrencyAmountAndSymbol** et **TelephoneNumber**. | Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : toujours désactivée</li><li>Correction automatique : toujours désactivée</li><li>Mise en majuscules automatique : toujours désactivée</li><li>Prédiction de texte : toujours désactivée</li></ul> |
 
 ### Recherche
@@ -221,7 +222,7 @@ Inclut la touche **Rechercher** plutôt que la touche **Entrée**.
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
 | ![Clavier tactile Windows par défaut](images/input-scopes/kbdpcdefault.png)<br>Même disposition que **Default**.| ![Clavier tactile Windows Phone par défaut](images/input-scopes/kbdwpdefault.png)|
-|Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : désactivée par défaut ; peut être activée</li><li>Correction automatique : toujours désactivée</li><li>Mise en majuscules automatique : toujours désactivée</li><li>Prédiction de texte : toujours désactivée</li></ul> | Identique à **Default.**. |
+|Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : désactivée par défaut ; peut être activée</li><li>Correction automatique : toujours désactivée</li><li>Mise en majuscules automatique : toujours désactivée</li><li>Prédiction de texte : toujours désactivée</li></ul> | Identique à **Default**. |
 
 ### Formule
 
@@ -231,7 +232,7 @@ Inclut la touche **=**.
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Clavier tactile Windows pour les formules de téléphone](images/input-scopes/kbdpcformula.png)<br>Inclut également les touches **%**, **$** et **+**.| ![Clavier tactile Windows Phone pour les formules](images/input-scopes/kbdwpformula.png)<br>Appuyez longuement sur la touche du point pour afficher des options supplémentaires (- ! ? , ). Appuyez longuement sur la touche **=** pour afficher des options supplémentaires ( ( ) : &lt; &gt; ). |
+| ![Clavier tactile Windows pour les formules de téléphone](images/input-scopes/kbdpcformula.png)<br>Inclut également les touches **%**, **$** et **+**.| ![Clavier tactile Windows Phone pour les formules](images/input-scopes/kbdwpformula.png)<br>Appuyez longuement sur la touche du point pour afficher des options supplémentaires (- ! ? , ). Appuyez longuement sur la touche **=** pour afficher des options supplémentaires ( ( ) : &lt;&gt; ). |
 |Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : désactivée par défaut ; peut être activée</li><li>Correction automatique : toujours désactivée</li><li>Mise en majuscules automatique : toujours désactivée</li><li>Prédiction de texte : toujours désactivée</li></ul> | Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : sur par défaut, peut être désactivée</li><li>Vérification orthographique : activée par défaut ; peut être désactivée</li><li>Mise en majuscules automatique : toujours désactivée</li><li>Prédiction de texte : activée par défaut ; peut être désactivée</li></ul> |
 
 ### Conversation
@@ -253,6 +254,6 @@ Inclut la touche **=**.
 |Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : activée par défaut ; peut être désactivée</li><li>Correction automatique : toujours désactivée</li><li>Mise en majuscules automatique : toujours activée</li><li>Prédiction de texte : toujours désactivée</li></ul> | Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : désactivée par défaut ; peut être activée</li><li>Correction automatique : désactivée par défaut ; peut être activée</li><li>Mise en majuscules automatique : désactivée par défaut ; peut être activée La première lettre de chaque mot est en majuscule.</li><li>Prédiction de texte : désactivée par défaut ; peut être activée</li></ul> |
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

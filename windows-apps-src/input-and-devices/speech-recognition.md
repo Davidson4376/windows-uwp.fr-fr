@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
 title: Reconnaissance vocale
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
@@ -8,8 +9,6 @@ template: detail.hbs
 
 # Reconnaissance vocale
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
 
@@ -22,7 +21,7 @@ La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une 
 La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API de reconnaissance vocale pour programmer le runtime, de grammaires prêtes à l’emploi pour la dictée et la recherche web, ainsi que d’une interface utilisateur système par défaut permettant aux utilisateurs de découvrir et d’utiliser les fonctionnalités de reconnaissance vocale.
 
 
-## <span id="Set_up_the_audio_feed"> </span> <span id="set_up_the_audio_feed"> </span> <span id="SET_UP_THE_AUDIO_FEED"> </span>Configurer le flux audio
+## <span id="Set_up_the_audio_feed"></span><span id="set_up_the_audio_feed"></span><span id="SET_UP_THE_AUDIO_FEED"></span>Configurer le flux audio
 
 
 Assurez-vous que votre appareil est équipé d’un microphone ou d’un dispositif équivalent.
@@ -31,7 +30,7 @@ Définissez la fonctionnalité de l’appareil **Microphone** ([**DeviceCapabili
 
 Voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
-## <span id="Recognize_speech_input"> </span> <span id="recognize_speech_input"> </span> <span id="RECOGNIZE_SPEECH_INPUT"> </span>Reconnaître la saisie vocale
+## <span id="Recognize_speech_input"></span><span id="recognize_speech_input"></span><span id="RECOGNIZE_SPEECH_INPUT"></span>Reconnaître la saisie vocale
 
 
 Une *contrainte* définit les mots et expressions (vocabulaire) qu’une application reconnaît dans la saisie vocale. Les contraintes sont au centre de la reconnaissance vocale. Elles permettent à votre application de contrôler sa précision.
@@ -50,13 +49,13 @@ Vous pouvez utiliser différents types de contraintes lors de l’exécution d�
 
      
 
-    These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.
+    Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 
-    To use web-service constraints, speech input and dictation support must be enabled in **Settings** by turning on the "Get to know me" option in the Settings -&gt; Privacy -&gt; Speech, inking, and typing page.
+    Pour utiliser les contraintes de service web, vous devez activer la prise en charge de la saisie vocale et de la dictée dans **Paramètres** en activant l’option Reconnaître ma voix dans la page Paramètres -&gt; Confidentialité -&gt; Voix, entrée manuscrite et frappe.
 
-    Here, we show how to test whether speech input is enabled and open the Settings -&gt; Privacy -&gt; Speech, inking, and typing page, if not.
+    Nous indiquons ici comment vérifier si la saisie vocale est activée et comment ouvrir la page Paramètres -&gt; Confidentialité -&gt; Voix, entrée manuscrite et frappe si cette fonction n’est pas activée.
 
-    First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See [Exception handling for in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+    Nous commençons par initialiser une variable globale (HResultPrivacyStatementDeclined) sur la valeur HResult de 0x80045509. Voir [Gestion des exceptions pour les applications en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -144,22 +143,22 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Customize_the_recognition_UI"> </span> <span id="customize_the_recognition_ui"> </span> <span id="CUSTOMIZE_THE_RECOGNITION_UI"> </span>Personnaliser l’interface utilisateur de reconnaissance vocale
+## <span id="Customize_the_recognition_UI"></span><span id="customize_the_recognition_ui"></span><span id="CUSTOMIZE_THE_RECOGNITION_UI"></span>Personnaliser l’interface utilisateur de reconnaissance vocale
 
 
 Quand votre application tente une reconnaissance vocale en appelant la méthode [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), plusieurs écrans s’affichent dans l’ordre suivant.
 
 Si vous utilisez une contrainte basée sur une grammaire prédéfinie (dictée ou recherche web) :
 
--   Écran **Listening**
+-   Écran **Écoute**
 -   Écran **Réflexion**
--   Écran **Heard you say** ou écran de notification d’erreur
+-   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
 Si vous utilisez une contrainte basée sur une liste de mots ou d’expressions ou une contrainte basée sur un fichier de grammaire SRGS :
 
--   Écran **Listening**
+-   Écran **Écoute**
 -   Écran **Nous vous avons entendu dire**, si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
--   Écran **Heard you say** ou écran de notification d’erreur
+-   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
 L’image suivante présente un exemple du flux entre des écrans d’un moteur de reconnaissance vocale qui utilise une contrainte basée sur un fichier de grammaire SGRS. Dans cet exemple, la reconnaissance vocale a réussi.
 
@@ -201,14 +200,14 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
 **Développeurs**
-* [Interactions vocales](speech-interactions.md)
-**Concepteurs**
-* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**Exemples**
+* [Interactions vocales](speech-interactions.md) 
+           **Concepteurs**
+* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **Exemples**
 * [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -219,6 +218,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,15 +1,15 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
 title: Répondre à la présence du clavier tactile
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
-label: Répondre à la présence du clavier tactile
+label: Respond to the presence of the touch keyboard
 template: detail.hbs
 ---
 
 # Répondre à la présence du clavier tactile
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
 
 
 **API importantes**
@@ -17,11 +17,11 @@ template: detail.hbs
 -   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
 -   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
 
-Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
 
-![Clavier tactile en mode de disposition classique](images/touchkeyboard-standard.png)
 
-<sup>Clavier\\ tactile\\ en\\ mode\\ de\\ disposition\\ classique</sup>
+![clavier tactile en mode de disposition classique](images/touchkeyboard-standard.png)
+
+<sup>Clavier tactile en mode de disposition classique</sup>
 
 Le clavier tactile permet l’entrée de texte pour les appareils qui prennent en charge les fonctions tactiles. Les contrôles de saisie de texte de la plateforme Windows universelle (UWP) appellent le clavier tactile par défaut quand un utilisateur appuie sur un champ d’entrée modifiable. Le clavier tactile reste généralement visible pendant que l’utilisateur navigue entre les contrôles d’un formulaire, mais ce comportement peut varier selon les autres types de contrôles que contient le formulaire.
 
@@ -29,7 +29,7 @@ Pour prendre en charge le comportement de clavier tactile correspondant dans un 
 
 Une fois cette prise en charge ajoutée à votre contrôle personnalisé, vous pouvez répondre de manière appropriée à la présence du clavier tactile.
 
-**Prérequis : **
+**Éléments requis :  **
 
 Cette rubrique s’appuie sur l’article [Interactions avec le clavier](keyboard-interactions.md).
 
@@ -38,20 +38,20 @@ Vous devez posséder des connaissances de base sur les interactions avec le clav
 Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
 -   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Recommandations en matière d’expérience utilisateur :**
+**Recommandations en matière d’expérience utilisateur :  **
 
 Pour obtenir de précieux conseils concernant la conception d’une application optimisée pour la saisie au clavier à la fois utile et conviviale, voir [Recommandations en matière de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345).
 
-## <span id="Touch_keyboard_and_a_custom_UI"> </span> <span id="touch_keyboard_and_a_custom_ui"> </span> <span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"> </span>Clavier tactile et interface utilisateur personnalisée
+## <span id="Touch_keyboard_and_a_custom_UI"></span><span id="touch_keyboard_and_a_custom_ui"></span><span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"></span>Clavier tactile et interface utilisateur personnalisée
 
 
 Voici quelques recommandations de base concernant les contrôles de saisie de texte personnalisés.
 
 -   Affichez le clavier tactile tout au long de l’interaction avec votre formulaire.
 
--   Assurez-vous que vos contrôles personnalisés ont le [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/br209182) UI Automation approprié pour que le clavier reste affiché quand un champ d’entrée de texte perd le focus dans le contexte d’une entrée de texte. Par exemple, si vous avez un menu qui est ouvert au milieu d’un scénario d’entrée de texte et que vous souhaitez que le clavier reste affiché, le menu doit avoir le **AutomationControlType** Menu.
+-   Assurez-vous que vos contrôles personnalisés ont le [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/br209182) UI Automation approprié pour que le clavier reste affiché quand un champ d’entrée de texte perd le focus dans le contexte d’une entrée de texte. Par exemple, si vous avez un menu qui est ouvert au milieu d’un scénario d’entrée de texte et que vous souhaitez que le clavier reste affiché, le menu doit avoir le **AutomationControlType** de Menu.
 
 -   Ne manipulez pas les propriétés UI Automation pour contrôler le clavier tactile. D’autres outils d’accessibilité reposent sur la précision des propriétés UI Automation.
 
@@ -65,9 +65,9 @@ Voici quelques recommandations de base concernant les contrôles de saisie de te
 
     Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple :
 
-    ![Formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
+    ![formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
 
-## <span id="handling_events"> </span> <span id="HANDLING_EVENTS"> </span>Gestion des événements d’affichage et de masquage
+## <span id="handling_events"></span><span id="HANDLING_EVENTS"></span>Gestion des événements d’affichage et de masquage
 
 
 Voici un exemple d’association de gestionnaires d’événements pour les événements [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) et [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) du clavier tactile.
@@ -120,9 +120,7 @@ public class MyApplication
 }
 ```
 
-## <span id="related_topics"> </span>Articles connexes
-
-
+## <span id="related_topics"></span>Articles connexes
 
 * [Interactions avec le clavier](keyboard-interactions.md)
 * [Accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -143,6 +141,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Complétez la fonctionnalité de base de Cortana avec des commandes vocales qui lancent et exécutent une action unique dans une application externe.
 title: Interactions avec Cortana
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
@@ -9,17 +10,17 @@ template: detail.hbs
 # Interactions avec Cortana dans les applications UWP
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Complétez la fonctionnalité de base de **Cortana** avec des commandes vocales qui lancent et exécutent une action unique dans une application externe. 
+
+Complétez les fonctionnalités de base de **Cortana** avec des commandes vocales qui lancent et exécutent une action unique dans une application externe. 
 
 
 **Autres fonctions vocales**
 
--   Voir les [recommandations en matière de conception de fonctions vocales](speech-interactions.md) si vous intégrez la reconnaissance vocale et la conversion de texte par synthèse vocale (également appelée TTS ou synthèse vocale) directement dans votre application.
+-   Voir [Recommandations en matière de conception de fonctions vocales](speech-interactions.md) si vous intégrez la reconnaissance vocale et la conversion de texte par synthèse vocale (également appelée TTS ou synthèse vocale) directement dans votre application.
 
 > **Remarque**  
-> Une commande vocale est un énoncé unique avec une intention spécifique, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée via **Cortana**.
+> Une commande vocale est un énoncé unique avec une intention spécifique, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée par le biais de **Cortana**.
 
 > Un fichier VCD définit une ou plusieurs commandes vocales, chacune avec une intention unique.
 
@@ -46,31 +47,31 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Design guidelines](cortana-design-guidelines.md)</p></td>
+<td align="left"><p>[Recommandations en matière de conception](cortana-design-guidelines.md)</p></td>
 <td align="left"><p>Ces recommandations et ces instructions décrivent comment votre application peut utiliser **Cortana** au mieux pour interagir avec l’utilisateur, l’aider à accomplir une tâche et indiquer clairement comment tout cela se passe.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Launch a foreground app with voice commands](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
-<td align="left"><p>Vous pouvez utiliser des commandes vocales dans <strong>Cortana</strong> pour accéder aux fonctionnalités système, mais il est également possible d’utiliser ces commandes de <strong>Cortana</strong> pour démarrer une application au premier plan, ou spécifier une action ou une commande à exécuter au sein de l’application.</p></td>
+<td align="left"><p>[Lancer une application au premier plan à l’aide de commandes vocales](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>Vous pouvez utiliser des commandes vocales dans <strong>Cortana</strong> pour accéder aux fonctionnalités système, mais il est également possible d’utiliser ces commandes via <strong>Cortana</strong> pour démarrer une application au premier plan et spécifier une action ou une commande à exécuter au sein de l’application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Dynamically modify VCD phrase lists](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
-<td align="left"><p>Découvrez comment accéder à la liste des expressions prises en charge (éléments <strong>PhraseList</strong>) d’un fichier VCD et comment la mettre à jour à l’aide du résultat de reconnaissance vocale en cours d’exécution.</p></td>
+<td align="left"><p>[Modifier de manière dynamique les listes d’expressions de définition des commandes vocales (VCD)](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
+<td align="left"><p>Découvrez comment accéder à la liste des expressions prises en charge (éléments <strong>PhraseList</strong>) d’un fichier VCD et comment la mettre à jour à l’aide du résultat de reconnaissance vocale à l’exécution.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Launch a background app with voice commands](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
-<td align="left"><p>Vous pouvez utiliser des commandes vocales dans <strong>Cortana</strong> pour accéder aux fonctionnalités système. Vous pouvez également étendre <strong>Cortana</strong> avec les fonctionnalités d’une application en arrière-plan à l’aide des commandes vocales qui spécifient une action ou une commande à exécuter au sein de l’application.</p></td>
+<td align="left"><p>[Lancer une application en arrière-plan à l’aide de commandes vocales](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>Vous pouvez utiliser des commandes vocales dans <strong>Cortana</strong> pour accéder aux fonctionnalités système. Vous pouvez également compléter <strong>Cortana</strong> avec les fonctionnalités d’une application en arrière-plan à l’aide des commandes vocales qui spécifient une action ou une commande à exécuter au sein de l’application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Interact with a background app](interact-with-a-background-app-in-cortana.md)</p></td>
+<td align="left"><p>[Interagir avec une application en arrière-plan](interact-with-a-background-app-in-cortana.md)</p></td>
 <td align="left"><p>Découvrez comment un utilisateur peut interagir avec une application en arrière-plan via les fonctions vocales et le canevas de <strong>Cortana</strong> pendant l’exécution d’une commande vocale.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Deep link to a background app](deep-link-into-your-app-from-cortana.md)</p></td>
+<td align="left"><p>[Lien ciblé vers une application en arrière-plan](deep-link-into-your-app-from-cortana.md)</p></td>
 <td align="left"><p>Indiquez des liens ciblés à partir du service d’application en arrière-plan dans <strong>Cortana</strong> pour lancer l’application au premier plan dans un état ou un contexte spécifique.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Support natural language voice commands](support-natural-language-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[Prendre en charge des commandes vocales en langage naturel](support-natural-language-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p>Découvrez comment enrichir <strong>Cortana</strong> avec des commandes vocales plus souples et plus naturelles qui permettent à un utilisateur de prononcer le nom de votre application n’importe où dans la commande.</p></td>
 </tr>
 </tbody>
@@ -78,10 +79,10 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 
  
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
-* [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+* [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
 **Concepteurs**
 * [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
@@ -98,6 +99,6 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

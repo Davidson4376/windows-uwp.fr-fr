@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: TODO
 title: Interactions entre le boîtier de commande et la télécommande
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
@@ -17,16 +18,16 @@ Vous pouvez maintenant brancher le boîtier de commande et l’utiliser avec des
 
 Pour garantir une expérience utilisateur réussie et agréable avec l’application UWP lors de l’utilisation d’un boîtier de commande ou d’une télécommande, envisagez ce qui suit :
 
-* [Boutons matériels](designing-for-tv.md#hardware-buttons) -
+* [Boutons matériels](designing-for-tv.md#hardware-buttons)  -
 Le boîtier de commande et la télécommande ont des configurations et des boutons très différents.
 
-* [Interaction et navigation en mode focus XY](designing-for-tv.md#xy-focus-navigation-and-interaction) -
+* [Navigation et interaction en mode focus XY](designing-for-tv.md#xy-focus-navigation-and-interaction)  -
 La navigation en mode focus XY permet à l’utilisateur de naviguer dans l’interface utilisateur de votre application.
 
-* [Mode souris](designing-for-tv.md#mouse-mode) -
+* [Mode souris](designing-for-tv.md#mouse-mode)  -
 Le mode souris permet à votre application d’émuler l’utilisation de la souris lorsque la navigation en mode focus n’est pas suffisante.
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
