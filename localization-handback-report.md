@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 97
+ Total Files | 100
 
 ## File List
  Source File | Status | Details 
@@ -103,6 +103,9 @@
  [windows-apps-src\controls-and-patterns\toggles.md](https://github.com/Microsoft/windows-apps/blob/c183f7390c5b4f99cf0f31426c1431066e1bc96d/windows-apps-src/controls-and-patterns/toggles.md) | InSyncHandedBackSuccess | [Details](#e90760c6894ee5d32ba1063993a703023d23c1521882)
  [windows-apps-src\controls-and-patterns\tooltips.md](https://github.com/Microsoft/windows-apps/blob/a4e9a90edd2aae9d2fd5d7bead948422d43dad59/windows-apps-src/controls-and-patterns/tooltips.md) | InSyncHandedBackSuccess | [Details](#0529f212e9fac290bb58925e992518ab0e803bfa1883)
  [windows-apps-src\controls-and-patterns\xaml-theme-resources.md](https://github.com/Microsoft/windows-apps/blob/a4e9a90edd2aae9d2fd5d7bead948422d43dad59/windows-apps-src/controls-and-patterns/xaml-theme-resources.md) | InSyncHandedBackSuccess | [Details](#fa0d0881eee0f87b549a7d053e75882ffd2afa6e1885)
+ [windows-apps-src\data-access\entity-framework-7-with-sqlite-for-csharp-apps.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/entity-framework-7-with-sqlite-for-csharp-apps.md) | InSyncHandedBackSuccess | [Details](#4c9b674445e901a370f9822f8f11acdeba6061b61886)
+ [windows-apps-src\data-access\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/index.md) | InSyncHandedBackSuccess | [Details](#007e07d05f4f89771f6a0b93fb4279783ca170f61889)
+ [windows-apps-src\data-access\sqlite-databases.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/sqlite-databases.md) | InSyncHandedBackSuccess | [Details](#dd628d16b3ee230ddc0c56b47fd381a518b8af001890)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -1267,6 +1270,42 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-theme-resources.44ab71091ba985b4a3127b7f58980eecf9a95090.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/0b628021f43f4ecd8e15a15150384e9d7984f729/ol-handback/Microsoft/windows-apps.fr-fr/master/controls-and-patterns/xaml-theme-resources.44ab71091ba985b4a3127b7f58980eecf9a95090.fr-fr.xlf)
 * Handback Datetime: 2016-05-30 22:12:46
+* [Back to Top](#report-top)
+
+##### <a name='4c9b674445e901a370f9822f8f11acdeba6061b61886'></a> Source: [windows-apps-src\data-access\entity-framework-7-with-sqlite-for-csharp-apps.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/entity-framework-7-with-sqlite-for-csharp-apps.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\data-access\entity-framework-7-with-sqlite-for-csharp-apps.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/b5adbe808b760830591a78ba93abb32f452fab15/windows-apps-src/data-access/entity-framework-7-with-sqlite-for-csharp-apps.md)
+* Handoff File: [entity-framework-7-with-sqlite-for-csharp-apps.34dd6b3a2e763696267c5bd1ba05fe4b8a216b82.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/entity-framework-7-with-sqlite-for-csharp-apps.34dd6b3a2e763696267c5bd1ba05fe4b8a216b82.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [entity-framework-7-with-sqlite-for-csharp-apps.34dd6b3a2e763696267c5bd1ba05fe4b8a216b82.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/860d5863558bbaae880a7fba5aed1a2bb368d6ec/ol-handback/Microsoft/windows-apps.fr-fr/master/data-access/entity-framework-7-with-sqlite-for-csharp-apps.34dd6b3a2e763696267c5bd1ba05fe4b8a216b82.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:12:52
+* [Back to Top](#report-top)
+
+##### <a name='007e07d05f4f89771f6a0b93fb4279783ca170f61889'></a> Source: [windows-apps-src\data-access\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/index.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\data-access\index.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/b5adbe808b760830591a78ba93abb32f452fab15/windows-apps-src/data-access/index.md)
+* Handoff File: [index.c0aaa8e5db778e8986e94720948552900bdf3c54.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/index.c0aaa8e5db778e8986e94720948552900bdf3c54.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [index.c0aaa8e5db778e8986e94720948552900bdf3c54.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/860d5863558bbaae880a7fba5aed1a2bb368d6ec/ol-handback/Microsoft/windows-apps.fr-fr/master/data-access/index.c0aaa8e5db778e8986e94720948552900bdf3c54.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:12:52
+* [Back to Top](#report-top)
+
+##### <a name='dd628d16b3ee230ddc0c56b47fd381a518b8af001890'></a> Source: [windows-apps-src\data-access\sqlite-databases.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/data-access/sqlite-databases.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\data-access\sqlite-databases.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/b5adbe808b760830591a78ba93abb32f452fab15/windows-apps-src/data-access/sqlite-databases.md)
+* Handoff File: [sqlite-databases.f4387e213ddb4a29512c35ee365fe2025795d608.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/sqlite-databases.f4387e213ddb4a29512c35ee365fe2025795d608.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [sqlite-databases.f4387e213ddb4a29512c35ee365fe2025795d608.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/860d5863558bbaae880a7fba5aed1a2bb368d6ec/ol-handback/Microsoft/windows-apps.fr-fr/master/data-access/sqlite-databases.f4387e213ddb4a29512c35ee365fe2025795d608.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:12:52
 * [Back to Top](#report-top)
 
 
