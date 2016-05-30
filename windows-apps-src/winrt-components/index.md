@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Composants Windows Runtime
 description: Les composants Windows Runtime sont des objets autonomes que vous pouvez instancier et utiliser dans n’importe quel langage, notamment C\#, Visual Basic, JavaScript et C++.
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
@@ -7,7 +8,7 @@ ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 # Composants Windows Runtime
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Les composants Windows Runtime sont des objets autonomes que vous pouvez instancier et utiliser dans n’importe quel langage, notamment C#, Visual Basic, JavaScript et C++.
 
@@ -30,6 +31,6 @@ Vous pouvez utiliser Visual Studio et C#, Visual Basic ou C++ pour créer des co
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

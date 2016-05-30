@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Déclenchement d’événements dans les composants Windows Runtime
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
@@ -7,7 +8,7 @@ description:
 # Déclenchement d’événements dans les composants Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -131,8 +132,8 @@ Cette procédure pas à pas inclut les parties suivantes :
 
 ## Pour créer le composant Windows Runtime
 
-1.  Dans la barre de menus de Visual Studio, choisissez **Fichier &gt; Nouveau projet**. Dans la boîte de dialogue **Nouveau projet**, développez **JavaScript &gt; Windows universel**, puis sélectionnez **Application vide**. Nommez le projet ToasterApplication, puis cliquez sur le bouton **OK**.
-2.  Ajoutez un composant Windows Runtime C# à la solution : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Ajouter &gt; Nouveau projet**. Développez **Visual C# &gt; Windows Store**, puis sélectionnez **Composant Windows Runtime**. Nommez le projet ToasterComponent, puis cliquez sur le bouton **OK**. ToasterComponent sera l’espace de noms racine pour les composants que vous créerez lors des étapes ultérieures.
+1.  Dans la barre de menus de Visual Studio, choisissez **Fichier &gt; Nouveau projet**. Dans la boîte de dialogue **Nouveau projet**, développez **JavaScript &gt; Windows universel**, puis sélectionnez **Application vide**. Nommez le projet ToasterApplication, puis cliquez sur le bouton **OK**.
+2.  Ajoutez un composant Windows Runtime C# à la solution : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Ajouter &gt; Nouveau projet**. Développez **Visual C# &gt; Windows Store**, puis sélectionnez **Composant Windows Runtime**. Nommez le projet ToasterComponent, puis cliquez sur le bouton **OK**. ToasterComponent sera l’espace de noms racine pour les composants que vous créerez lors des étapes ultérieures.
 
     Dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Propriétés**. Dans la boîte de dialogue **Pages de propriétés**, sélectionnez **Propriétés de configuration** dans le volet gauche, puis en haut de la boîte de dialogue, définissez **Configuration** sur **Déboguer** et **Plateforme** sur x86, x64 ou ARM. Cliquez sur le bouton **OK**.
 
@@ -142,13 +143,13 @@ Cette procédure pas à pas inclut les parties suivantes :
 4.  Dans le fichier .cs, ajoutez une directive using pour l’espace de noms Windows.Foundation afin d’inclure TypedEventHandler dans la portée.
 5.  Lorsque vous avez besoin de proxys et de stubs, votre composant doit utiliser des interfaces pour exposer ses membres publics. Dans ToasterComponent.cs, définissez une interface pour le générateur de toasts et une autre pour le toast que le générateur produit.
 
-    > **Remarque** En C#, vous pouvez ignorer cette étape. À la place, créez d’abord une classe, puis ouvrez son menu contextuel et choisissez **Refactoriser &gt; Extraire l’interface**. Dans le code généré, donnez manuellement aux interfaces une accessibilité publique.
+    > **Remarque** En C#, vous pouvez ignorer cette étape. À la place, créez d’abord une classe, puis ouvrez son menu contextuel et choisissez **Refactoriser &gt; Extraire l’interface**. Dans le code généré, donnez manuellement aux interfaces une accessibilité publique.
 
     ```csharp
     public interface IToaster
         {
             void MakeToast(String message);
-            event TypedEventHandler&lt;Toaster, Toast> ToastCompletedEvent;
+            event TypedEventHandler<Toaster, Toast> ToastCompletedEvent;
 
         }
         public interface IToast
@@ -181,7 +182,7 @@ Cette procédure pas à pas inclut les parties suivantes :
         }
         public sealed class Toaster : IToaster
         {
-            public event TypedEventHandler&lt;Toaster, Toast> ToastCompletedEvent;
+            public event TypedEventHandler<Toaster, Toast> ToastCompletedEvent;
 
             private void OnToastCompleted(Toast args)
             {
@@ -294,7 +295,7 @@ Cette procédure pas à pas inclut les parties suivantes :
 2.  Paste the GUID just before the IToaster interface definition. After you paste, the GUID should resemble the following example. (Don't use the GUID in the example. Every unique interface should have its own GUID.)
 
     ```cpp 
-      <Extensions> <!—Use your own GUIDs!!!-->
+      <Extensions> <!--Use your own GUIDs!!!-->
         <Extension Category="windows.activatableClass.proxyStub">
           <ProxyStub ClassId="1ecafeff-1ee1-504a-9af5-a68c6fb2b47d">
             <Path>Proxies.dll</Path>
@@ -326,6 +327,6 @@ Cette procédure pas à pas inclut les parties suivantes :
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

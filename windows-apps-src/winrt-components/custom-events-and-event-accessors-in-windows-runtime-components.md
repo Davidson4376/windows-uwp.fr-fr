@@ -1,13 +1,14 @@
 ---
+author: martinekuan
 title: Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime
-description: La prise en charge de .NET Framework pour les composants Windows Runtime facilite la déclaration de composants d’événements, car les différences entre le modèle d’événement de la plateforme Windows universelle (UWP) et le modèle d’événement .NET Framework sont masquées.
+description: La prise en charge de .NET Framework pour les composants Windows Runtime facilite la déclaration de composants d’événements, car les différences entre le modèle d’événement de la plateforme UWP et le modèle d’événement .NET Framework sont masquées.
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 ---
 
 # Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -125,6 +126,6 @@ Utilisateurs de Visual Basic : dans .NET Framework, un événement est simplemen
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

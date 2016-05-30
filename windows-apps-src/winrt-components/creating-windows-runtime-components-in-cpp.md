@@ -1,6 +1,7 @@
 ---
+author: martinekuan
 title: Création de composants Windows Runtime en C++
-description: Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application Windows universelle générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++.
+description: Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application UWP générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++.
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ---
 
@@ -8,7 +9,7 @@ ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 # Création de composants Windows Runtime en C++
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -572,7 +573,7 @@ C# et Visual Basic disposent tous les deux de la prise en charge des langages po
 
 Pour utiliser des méthodes asynchrones exposées par d’autres objets Windows Runtime, utilisez la [classe de tâche (runtime d’accès concurrentiel)](https://msdn.microsoft.com/library/hh750113.aspx). Pour plus d’informations, voir [Parallélisme des tâches (runtime d’accès concurrentiel)](https://msdn.microsoft.com/library/dd492427.aspx).
 
-Pour implémenter des méthodes asynchrones en C++, utilisez la fonction [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) définie dans ppltasks.h. Pour plus d’informations, voir [Création d’opérations asynchrones en C++ pour les applications Windows Store.](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). Pour obtenir un exemple, voir [Procédure pas à pas : création d’un composant Windows Runtime de base en C++ et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Les langages .NET utilisent des méthodes asynchrones C++ de la même manière que n’importe quelle méthode asynchrone définie dans le .NET Framework.
+Pour implémenter des méthodes asynchrones en C++, utilisez la fonction [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) définie dans ppltasks.h. Pour plus d’informations, voir [Création d’opérations asynchrones en C++ pour les applications Windows Store.](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). Pour obtenir un exemple, voir [Procédure pas à pas : création d’un composant Windows Runtime de base en C++ et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Les langages .NET utilisent des méthodes asynchrones C++ de la même manière que n’importe quelle méthode asynchrone définie dans le .NET Framework.
 
 ## Exceptions
 
@@ -596,6 +597,6 @@ Si vous supprimez un projet de composant Windows Runtime C++ dans une solution, 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

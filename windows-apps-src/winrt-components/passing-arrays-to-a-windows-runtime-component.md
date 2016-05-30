@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Transmission de tableaux à un composant Windows Runtime
 description: Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie.
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
@@ -7,7 +8,7 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 # Transmission de tableaux à un composant Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -16,7 +17,7 @@ Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à 
 
 -   Pour la valeur de retour ou un paramètre out (un paramètre **ByRef** avec l’attribut [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) en Visual Basic), le tableau est toujours destiné à la sortie. N’appliquez pas l’attribut ReadOnlyArrayAttribute. L’attribut WriteOnlyArrayAttribute est autorisé sur les paramètres de sortie, mais il est redondant.
 
-    > **Attention** Le compilateur Visual Basic n’applique pas les règles de sortie uniquement. Vous ne devez jamais lire un paramètre de sortie ; il peut contenir **Nothing**. Assignez toujours un nouveau tableau.
+    > **Attention** Le compilateur Visual Basic n’applique pas les règles de sortie uniquement. Vous ne devez jamais lire un paramètre de sortie ; il peut contenir **Nothing**. Assignez toujours un nouveau tableau.
  
 -   Les paramètres qui présentent le modificateur **ref** (**ByRef** en Visual Basic) ne sont pas autorisés. Winmdexp.exe génère une erreur.
 -   Pour un paramètre transmis par valeur, vous devez indiquer si le contenu du tableau est destiné à l’entrée ou à la sortie en appliquant l’attribut [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) ou [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx). La spécification des deux attributs génère une erreur.
@@ -62,6 +63,6 @@ Si l’appelant est du code managé, le tableau d’origine est disponible pour 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Diagnostic des conditions d’erreur d’un composant Windows Runtime
 description: Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé.
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
@@ -7,7 +8,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 # Diagnostic des conditions d’erreur d’un composant Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
@@ -18,7 +19,7 @@ Cet article ne couvre pas toutes les erreurs. Les erreurs décrites ici sont reg
 ## Message d’erreur pour l’implémentation d’interface asynchrone qui fournit un type incorrect
 
 
-Les composants Windows Runtime managés ne peuvent pas implémenter les interfaces de plateforme Windows universelle (UWP) qui représentent des opérations ou des actions asynchrones ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx), ou [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). À la place, le .NET Framework fournit la classe [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) pour générer des opérations asynchrones dans les composants Windows Runtime. Le message d’erreur affiché par Winmdexp.exe quand vous essayez d’implémenter une interface asynchrone de façon incorrecte fait référence à cette classe en utilisant son ancien nom, AsyncInfoFactory. Le .NET Framework n’inclut plus la classe AsyncInfoFactory.
+Les composants Windows Runtime managés ne peuvent pas implémenter les interfaces de plateforme Windows universelle (UWP) qui représentent des opérations ou actions asynchrones : ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) ou [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). À la place, le .NET Framework fournit la classe [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) pour générer des opérations asynchrones dans les composants Windows Runtime. Le message d’erreur affiché par Winmdexp.exe quand vous essayez d’implémenter une interface asynchrone de façon incorrecte fait référence à cette classe en utilisant son ancien nom, AsyncInfoFactory. Le .NET Framework n’inclut plus la classe AsyncInfoFactory.
 
 | Numéro d’erreur | Texte du message                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -26,14 +27,14 @@ Les composants Windows Runtime managés ne peuvent pas implémenter les interfa
 
  
 
-> **Remarque** Les messages d’erreur qui font référence au Windows Runtime utilisent une ancienne terminologie. On utilise maintenant l’appellation « plateforme Windows universelle (UWP) ». Par exemple, les types Windows Runtime sont désormais appelés types UWP.
+> **Remarque** Les messages d’erreur qui font référence au Windows Runtime utilisent une ancienne terminologie. On utilise maintenant l’appellation « plateforme Windows universelle (UWP) ». Par exemple, les types Windows Runtime sont désormais appelés types UWP.
 
  
 
 ## Références manquantes à mscorlib.dll ou System.Runtime.dll
 
 
-Ce problème se produit uniquement lorsque vous utilisez Winmdexp.exe à partir de la ligne de commande. Nous vous recommandons d’utiliser l’option /reference pour inclure des références à mscorlib.dll et System.Runtime.dll à partir des assemblys de référence principale du.NET Framework, qui se trouvent dans « %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" ("%ProgramFiles%\... » sur un ordinateur 32 bits).
+Ce problème se produit uniquement lorsque vous utilisez Winmdexp.exe à partir de la ligne de commande. Nous vous recommandons d’utiliser l’option /reference pour inclure des références à mscorlib.dll et System.Runtime.dll à partir des assemblys de référence principale du.NET Framework, qui se trouvent dans « %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" ("%ProgramFiles%\\... » sur un ordinateur 32 bits).
 
 | Numéro d’erreur | Texte du message                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -238,7 +239,7 @@ Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par 
 | Numéro d’erreur | Texte du message |
 |---------------|------------|
 | WME1091 | La méthode « {0} » a la valeur de retour nommée « {1} » qui est identique à un nom de paramètre. Les paramètres de méthode Windows Runtime et la valeur de retour doivent avoir des noms uniques. |
-| WME1092 | La méthode « {0} » a un paramètre nommé « {1} » qui est identique au nom par défaut de la valeur de retour. Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour.<br/>**Remarque** Le nom par défaut est « returnValue » pour les accesseurs de propriété et « value » pour toutes les autres méthodes. |
+| WME1092 | La méthode « {0} » a un paramètre nommé « {1} » qui est identique au nom par défaut de la valeur de retour. Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour.<br/>**Remarque** Le nom par défaut est « returnValue » pour les accesseurs de propriété et « value » pour toutes les autres méthodes. |
  
 
 ## Rubriques connexes
@@ -247,6 +248,6 @@ Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par 
 * [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

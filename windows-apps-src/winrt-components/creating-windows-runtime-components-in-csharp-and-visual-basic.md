@@ -1,13 +1,14 @@
 ---
-title: Création de composants Windows Runtime en C# et Visual Basic
+author: martinekuan
+title: Création de composants Windows Runtime en C# et Visual Basic
 description: Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime.
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ---
 
-# Création de composants Windows Runtime en C# et Visual Basic
+# Création de composants Windows Runtime en C# et Visual Basic
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -25,7 +26,7 @@ En interne, les types Windows Runtime de composant peuvent utiliser n’importe 
 
 -   Les champs, paramètres et valeurs de retour de tous les types et membres publics de votre composant doivent être de type Windows Runtime.
 
-    Cette restriction comprend les types Windows Runtime que vous créez, ainsi que les types qui sont fournis directement par Windows Runtime. Elle inclut également un certain nombre de types .NET Framework. L’inclusion de ces types fait partie de la prise en charge fournie par le .NET Framework pour permettre l’utilisation naturelle du Windows Runtime en code managé : votre code utilise les types .NET Framework familiers plutôt que les types Windows Runtime sous-jacents. Par exemple, vous pouvez utiliser les types primitifs .NET Framework tels que Int32 et Double, certains types fondamentaux tels que DateTimeOffset et Uri, et certains types d’interface générique couramment utilisés comme IEnumerable&lt;T&gt; (IEnumerable(Of T) en Visual Basic et IDictionary&lt;TKey,TValue&gt;. (Notez que les arguments de type de ces types génériques doivent être des types Windows Runtime.) Ce point est expliqué dans les sections Passage de types Windows Runtime au code managé et Passage de types managés au Windows Runtime, plus loin dans cet article.
+    Cette restriction comprend les types Windows Runtime que vous créez, ainsi que les types qui sont fournis directement par Windows Runtime. Elle inclut également un certain nombre de types .NET Framework. L’inclusion de ces types fait partie de la prise en charge fournie par le .NET Framework pour permettre l’utilisation naturelle du Windows Runtime en code managé : votre code utilise les types .NET Framework familiers plutôt que les types Windows Runtime sous-jacents. Par exemple, vous pouvez utiliser les types primitifs .NET Framework tels que Int32 et Double, certains types fondamentaux tels que DateTimeOffset et Uri, et certains types d’interface générique comme IEnumerable&lt;T&gt; (IEnumerable(Of T) en Visual Basic) et IDictionary&lt;TKey,TValue&gt;, couramment utilisés. (Notez que les arguments de type de ces types génériques doivent être des types Windows Runtime.) Ce point est expliqué dans les sections Passage de types Windows Runtime au code managé et Passage de types managés au Windows Runtime, plus loin dans cet article.
 
 -   Les interfaces et classes publiques peuvent contenir des méthodes, propriétés et événements. Vous pouvez déclarer des délégués pour vos événements ou utiliser le délégué EventHandler&lt;T&gt;. Une classe ou interface publique ne peut pas :
 
@@ -96,7 +97,7 @@ Pour certains types de collection couramment utilisés, le mappage est compris e
 
  
 
-Lorsqu’un type implémente plusieurs interfaces, vous pouvez utiliser n’importe quelle interface qu’il implémente comme type de paramètre ou type de retour d’un membre. Par exemple, vous pouvez passer ou retourner un Dictionary&lt;int, string&gt; (Dictionary(Of Integer, String) en Visual Basic) comme IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, ou IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
+Lorsqu’un type implémente plusieurs interfaces, vous pouvez utiliser n’importe quelle interface qu’il implémente comme type de paramètre ou type de retour d’un membre. Par exemple, vous pouvez passer ou retourner un Dictionary&lt;int, string&gt; (Dictionary(Of Integer, String) en Visual Basic) comme IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt; ou IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
 
 **Important** JavaScript utilise l’interface qui s’affiche en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
 
@@ -181,7 +182,7 @@ Notez que dans diverses conditions, les appels à partir de code natif à un typ
 
 Pour implémenter une méthode asynchrone dans votre composant, ajoutez « Async » à la fin du nom de méthode et retournez l’une des interfaces Windows Runtime qui représentent des opérations ou actions asynchrones : IAsyncAction, IAsyncActionWithProgress&lt;TProgress&gt;, IAsyncOperation&lt;TResult&gt; ou IAsyncOperationWithProgress&lt;TResult, TProgress&gt;.
 
-Vous pouvez utiliser des tâches .NET Framework (la classe [Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) générique et la classe [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) générique) pour implémenter votre méthode asynchrone. Vous devez retourner une tâche qui représente une opération en cours, par exemple une tâche qui est retournée à partir d’une méthode asynchrone écrite en C# ou Visual Basic, ou une tâche retournée à partir de la méthode [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx). Si vous utilisez un constructeur pour créer la tâche, vous devez appeler sa méthode [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) avant de la retourner.
+Vous pouvez utiliser des tâches .NET Framework (la classe [Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) générique et la classe [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) générique) pour implémenter votre méthode asynchrone. Vous devez retourner une tâche qui représente une opération en cours, par exemple une tâche qui est retournée à partir d’une méthode asynchrone écrite en C# ou Visual Basic, ou une tâche retournée à partir de la méthode [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx). Si vous utilisez un constructeur pour créer la tâche, vous devez appeler sa méthode [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) avant de la retourner.
 
 Une méthode qui utilise await (Await en Visual Basic) requiert le mot clé **async** (**Async** en Visual Basic). Si vous exposez une telle méthode à partir d’un composant Windows Runtime, appliquez le mot clé **async** au délégué que vous passez à la méthode Run.
 
@@ -222,9 +223,9 @@ function asyncExample(id) {
 }
 ```
 
-Pour les actions et opérations asynchrones qui prennent en charge l’annulation ou le rapport de progression, utilisez la classe [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) pour générer une tâche démarrée et pour connecter l’annulation et la progression des fonctionnalités de création de rapports de la tâche avec l’annulation et la progression des fonctionnalités de création de rapports de l’interface appropriée de Windows Runtime. Pour obtenir un exemple qui prend en charge l’annulation et le rapport de progression, voir [Procédure pas à pas : création d’un composant simple en C# ou Visual Basic et appel de ce composant depuis JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+Pour les actions et opérations asynchrones qui prennent en charge l’annulation ou le rapport de progression, utilisez la classe [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) pour générer une tâche démarrée et pour connecter l’annulation et la progression des fonctionnalités de création de rapports de la tâche avec l’annulation et la progression des fonctionnalités de création de rapports de l’interface appropriée de Windows Runtime. Pour obtenir un exemple qui prend en charge l’annulation et le rapport de progression, voir [Procédure pas à pas : création d’un composant simple en C# ou Visual Basic et appel de ce composant depuis JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-Notez que vous pouvez utiliser les méthodes de la classe AsyncInfo même si votre méthode asynchrone ne prend pas en charge l’annulation ou le rapport de progression. Si vous utilisez une fonction lambda Visual Basic ou une méthode anonyme C\#, ne fournissez pas de paramètres pour le jeton et l’interface [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx). Si vous utilisez une fonction lambda en C#, fournissez un paramètre de jeton, mais ignorez-le. L’exemple précédent, qui a utilisé la méthode AsAsyncOperation&lt;TResult&gt;, se présente comme suit quand vous utilisez la surcharge de méthode [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) à la place :
+Notez que vous pouvez utiliser les méthodes de la classe AsyncInfo même si votre méthode asynchrone ne prend pas en charge l’annulation ou le rapport de progression. Si vous utilisez une fonction lambda Visual Basic ou une méthode anonyme C#, ne fournissez pas de paramètres pour le jeton et l’interface [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx). Si vous utilisez une fonction lambda en C#, fournissez un paramètre de jeton, mais ignorez-le. L’exemple précédent, qui a utilisé la méthode AsAsyncOperation&lt;TResult&gt;, se présente comme suit quand vous utilisez la surcharge de méthode [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) à la place :
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -273,16 +274,16 @@ Lorsque vous levez une exception de votre composant, vous pouvez permettre plus 
 
 Lorsque vous déclarez un type pour contenir les données de votre événement, dérivez de Object au lieu de EventArgs, car EventArgs n’est pas un type Windows Runtime. Utilisez [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) comme type de l’événement, et utilisez votre type d’argument d’événement comme argument de type générique. Déclenchez l’événement comme dans une application .NET Framework.
 
-Lorsque votre composant Windows Runtime est utilisé à partir de JavaScript ou C++, l’événement suit le modèle d’événement Windows Runtime attendu par ces langages. Lorsque vous utilisez le composant à partir de C# ou Visual Basic, l’événement s’affiche en tant qu’événement .NET Framework ordinaire. Un exemple est fourni dans [Procédure pas à pas : création d’un composant simple en C# ou Visual Basic et appel de ce composant depuis JavaScript]().
+Lorsque votre composant Windows Runtime est utilisé à partir de JavaScript ou C++, l’événement suit le modèle d’événement Windows Runtime attendu par ces langages. Lorsque vous utilisez le composant à partir de C# ou Visual Basic, l’événement s’affiche en tant qu’événement .NET Framework ordinaire. Un exemple est fourni dans [Procédure pas à pas : création d’un composant simple en C# ou Visual Basic et appel de ce composant depuis JavaScript]().
 
-Si vous implémentez les accesseurs d’événement personnalisés (si vous déclarez un événement avec le mot-clé **Custom** en Visual Basic), vous devez suivre le modèle d’événement Windows Runtime dans votre implémentation. Voir [Événements personnalisés et accesseurs d’événement dans les composants Windows Runtime](custom-events-and-event-accessors-in-windows-runtime-components.md). Notez que lorsque vous gérez l’événement à partir du code C# ou Visual Basic, il apparaît toujours comme un événement .NET Framework ordinaire.
+Si vous implémentez les accesseurs d’événement personnalisés (si vous déclarez un événement avec le mot-clé **Custom** en Visual Basic), vous devez suivre le modèle d’événement Windows Runtime dans votre implémentation. Voir [Événements personnalisés et accesseurs d’événement dans les composants Windows Runtime](custom-events-and-event-accessors-in-windows-runtime-components.md). Notez que lorsque vous gérez l’événement à partir du code C# ou Visual Basic, il apparaît toujours comme un événement .NET Framework ordinaire.
 
 ## Étapes suivantes
 
 
 Une fois que vous avez créé un composant Windows Runtime pour votre propre usage, vous découvrirez peut-être que la fonctionnalité qu’il encapsule est utile à d’autres développeurs. Vous avez deux possibilités pour empaqueter un composant afin de le distribuer à d’autres développeurs. Voir [Distribution d’un composant Windows Runtime managé](https://msdn.microsoft.com/library/jj614475.aspx).
 
-Pour plus d’informations sur les fonctionnalités de langage Visual Basic et C# ainsi que sur la prise en charge de .NET Framework pour Windows Runtime, voir [Informations de référence sur les langages Visual Basic et C#](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx).
+Pour plus d’informations sur les fonctionnalités de langage Visual Basic et C# ainsi que sur la prise en charge de .NET Framework pour Windows Runtime, voir [Informations de référence sur les langages Visual Basic et C#](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx).
 
 ## Rubriques connexes
 
@@ -293,6 +294,6 @@ Pour plus d’informations sur les fonctionnalités de langage Visual Basic et 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
