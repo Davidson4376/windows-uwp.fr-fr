@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier. 
 title: Sélecteur de dates
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
@@ -44,7 +45,7 @@ Le sélecteur de dates qui en résulte se présente comme suit :
 
 ![Exemple de sélecteur de dates](images/date-picker-closed.png)
 
-> **Remarque** Pour obtenir des informations importantes sur les valeurs de date, voir [Valeurs de date, d’heure et de calendrier](date-and-time.md#datetime-and-calendar-values) dans l’article relatif aux contrôles de date et d’heure.
+> **Remarque** &nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
 
 
 
@@ -56,6 +57,6 @@ Le sélecteur de dates qui en résulte se présente comme suit :
 - [Sélecteur d’heure](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

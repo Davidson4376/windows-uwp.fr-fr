@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options.
 title: Recommandations en matière de boutons bascule
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-label: Boutons bascule
+label: Toggle switches
 template: detail.hbs
 ---
 # Boutons bascule
@@ -156,6 +157,6 @@ Vous pouvez également utiliser un contenu plus complexe en définissant les pro
 - [**Classe ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

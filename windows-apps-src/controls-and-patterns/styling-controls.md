@@ -1,24 +1,25 @@
 ---
+author: Jwmsft
 Description: Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.
-MS-HAID : « dev\_ctrl\_layout\_txt.styling\_controls »
-MSHAttr : « PreferredLib:/library/windows/apps »
-Search.Product : eADQiWindows 10XVcnh
+MS-HAID: 'dev\_ctrl\_layout\_txt.styling\_controls'
+MSHAttr: 'PreferredLib:/library/windows/apps'
+Search.Product: eADQiWindows 10XVcnh
 title: Application de styles aux contrôles
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
-label: Application de styles aux contrôles
+label: Styling controls
 template: detail.hbs
 ---
 
 # Application de styles aux contrôles
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Vous pouvez personnaliser l’apparence de vos applications de nombreuses manières à l’aide de l’infrastructure XAML. Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.
 
 ## Bases des styles
 
 
-Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3 boutons avec un style définissant les propriétés [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
+Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3 boutons avec un style définissant les propriétés [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
 
 ![Boutons stylés](images/styles-rainbow-buttons.png)
 
@@ -146,10 +147,8 @@ Lorsque vous le pouvez, vous devez utiliser les styles provenant des ressources 
 
 Il est possible d’utiliser un setter de style pour la propriété [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) d’un élément [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390). En réalité, cela constitue la majorité d’un style XAML classique et des ressources XAML d’une application . Ce sujet est abordé de manière plus détaillée dans la rubrique [Modèles de contrôles](control-templates.md).
 
-**Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

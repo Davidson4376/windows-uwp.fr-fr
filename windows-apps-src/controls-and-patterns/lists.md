@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Les listes affichent et activent l’interaction avec du contenu basé sur des collections.
 title: Listes
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-label: Listes
+label: Lists
 template: detail.hbs
 ---
 # Listes
@@ -18,9 +19,9 @@ Des recommandations en matière de conception, des fonctionnalités et des exemp
 
 ## API importantes
 
--   [**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
+-   [**Classe ListView **](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**Classe GridView **](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**Classe ComboBox **](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 ## Affichages de liste
@@ -174,7 +175,6 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 
 ## Articles connexes
 
-**Pour les concepteurs**
 - [Hub](hub.md)
 - [Maître/détails](master-details.md)
 - [Volet de navigation](nav-pane.md)
@@ -189,6 +189,6 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

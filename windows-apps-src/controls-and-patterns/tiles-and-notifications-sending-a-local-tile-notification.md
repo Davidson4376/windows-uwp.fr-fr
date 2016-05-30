@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative.
 title: Envoyer une notification par vignette locale
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
-label: À déterminer
+label: TBD
 template: detail.hbs
 ---
 
 # Envoyer une notification par vignette locale
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 
 Les vignettes d’application principales de Windows 10 sont définies dans le manifeste de votre application, tandis que les vignettes secondaires sont créées et définies par programme par le code de votre application. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
@@ -20,14 +21,14 @@ Les vignettes d’application principales de Windows 10 sont définies dans le 
 
  
 
-## <span id="Install_the_NuGet_package"> </span> <span id="install_the_nuget_package"> </span> <span id="INSTALL_THE_NUGET_PACKAGE"> </span>Installer le package NuGet
+## <span id="Install_the_NuGet_package"></span><span id="install_the_nuget_package"></span><span id="INSTALL_THE_NUGET_PACKAGE"></span>Installation du package NuGet
 
 
-Nous vous recommandons d’installer le [package NuGet NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/) qui simplifie les choses en générant les charges utiles de vignettes à l’aide d’objets au lieu de code XML brut.
+Nous vous recommandons d’installer le [package NotificationsExtensions NuGet](https://www.nuget.org/packages/NotificationsExtensions.Win10/) qui simplifie les choses en générant les charges utiles de vignettes à l’aide d’objets au lieu de code XML brut.
 
-Les exemples de code inclus dans cet article concernent C# avec le package NuGet [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) installé. (Si vous préférez créer votre propre code XML, vous trouverez des exemples de code sans [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) vers la fin de l’article.)
+Les exemples de code inclus dans cet article concernent C# avec le package NuGet [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) installé. (Si vous préférez créer votre propre code XML, vous trouverez des exemples de code sans [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) vers la fin de l’article.)
 
-## <span id="Add_namespace_declarations"> </span> <span id="add_namespace_declarations"> </span> <span id="ADD_NAMESPACE_DECLARATIONS"> </span>Ajouter des déclarations d’espace de noms
+## <span id="Add_namespace_declarations"></span><span id="add_namespace_declarations"></span><span id="ADD_NAMESPACE_DECLARATIONS"></span>Ajouter des déclarations d’espace de noms
 
 
 Pour accéder aux API de vignette, incluez l’espace de noms [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661). Nous vous recommandons également d’inclure l’espace de noms **NotificationsExtensions.Tiles** pour tirer parti de nos API d’assistance de vignette (vous devez installer le package NuGet [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) pour accéder à ces API).
@@ -37,7 +38,7 @@ using Windows.UI.Notifications;
 using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
 ```
 
-## <span id="Create_the_notification_content"> </span> <span id="create_the_notification_content"> </span> <span id="CREATE_THE_NOTIFICATION_CONTENT"> </span>Créer le contenu d’une notification
+## <span id="Create_the_notification_content"></span><span id="create_the_notification_content"></span><span id="CREATE_THE_NOTIFICATION_CONTENT"></span>Créer le contenu d’une notification
 
 
 Dans Windows 10, les charges utiles de vignette sont définies à l’aide de modèles de vignette adaptative qui vous permettent de créer des dispositions visuelles personnalisées pour vos notifications. (Pour plus de possibilités avec les vignettes adaptatives, voir les articles [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md) et [Modèles de vignette adaptative](tiles-and-notifications-adaptive-tiles-schema.md).)
@@ -116,7 +117,7 @@ Le contenu de la notification se présente comme suit pour une vignette moyenne�
 
 ![Contenu de la notification sur une vignette moyenne](images/sending-local-tile-02.png)
 
-## <span id="Create_the_notification"> </span> <span id="create_the_notification"> </span> <span id="CREATE_THE_NOTIFICATION"> </span>Créer la notification
+## <span id="Create_the_notification"></span><span id="create_the_notification"></span><span id="CREATE_THE_NOTIFICATION"></span>Créer la notification
 
 
 Une fois que vous disposez de votre contenu de notification, vous devez créer un élément [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). Le constructeur **TileNotification** prend un objet Windows Runtime [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) que vous pouvez obtenir à partir de la méthode **TileContent.GetXml** si vous utilisez [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki).
@@ -128,10 +129,10 @@ Cet exemple de code crée une notification pour une nouvelle vignette.
 var notification = new TileNotification(content.GetXml());
 ```
 
-## <span id="Set_an_expiration_time_for_the_notification__optional_"> </span> <span id="set_an_expiration_time_for_the_notification__optional_"> </span> <span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_"> </span>Définir un délai d’expiration pour la notification (facultatif)
+## <span id="Set_an_expiration_time_for_the_notification__optional_"></span><span id="set_an_expiration_time_for_the_notification__optional_"></span><span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_"></span>Définir un délai d’expiration pour la notification (facultatif)
 
 
-Par défaut, les notifications locales par vignette et de badge n’arrivent pas à expiration, alors que les notifications Push, périodiques et planifiées expirent au bout de trois jours. Étant donné que le contenu de la vignette ne doit pas être conservé plus longtemps que nécessaire, il est recommandé de définir un délai d’expiration approprié pour votre application, en particulier sur les notifications locales par vignette et de badge.
+Par défaut, les notifications locales par vignette et de badge n’expirent pas, alors que les notifications Push, périodiques et planifiées expirent après trois jours. Étant donné que le contenu de la vignette ne doit pas être conservé plus longtemps que nécessaire, il est recommandé de définir un délai d’expiration approprié pour votre application, en particulier sur les notifications locales par vignette et de badge.
 
 Cet exemple de code crée une notification qui arrive à expiration et est supprimée de la vignette au bout de 10 minutes.
 
@@ -142,14 +143,14 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></
 </table>
 ```
 
-## <span id="Send_the_notification"> </span> <span id="send_the_notification"> </span> <span id="SEND_THE_NOTIFICATION"> </span>Envoyer la notification
+## <span id="Send_the_notification"></span><span id="send_the_notification"></span><span id="SEND_THE_NOTIFICATION"></span>Envoyer la notification
 
 
 Bien que l’envoi local d’une notification par vignette soit simple, l’envoi de la notification à une vignette principale ou secondaire est légèrement différent.
 
 **Vignette principale**
 
-Pour envoyer une notification à une vignette principale, utilisez le [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) pour créer une mise à jour de vignette pour la vignette principale et envoyez la notification en appelant la méthode « Update ». Qu’elle soit visible ou non, la vignette principale de votre application existe toujours ; vous pouvez donc lui envoyer des notifications même si elle n’est pas épinglée. Si l’utilisateur épingle votre vignette principale ultérieurement, les notifications que vous avez envoyées seront alors affichées.
+Pour envoyer une notification à une vignette principale, utilisez le [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) pour créer une mise à jour de vignette pour la vignette principale et envoyez la notification en appelant la méthode « Update ». Qu’elle soit visible ou non, la vignette principale de votre application existe toujours ; vous pouvez donc lui envoyer des notifications même si elle n’est pas épinglée. Si l’utilisateur épingle votre vignette principale ultérieurement, les notifications que vous avez envoyées seront alors affichées.
 
 Cet exemple de code envoie une notification à une vignette principale.
 
@@ -184,7 +185,7 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 
 ![Vignette par défaut et vignette avec notification](images/sending-local-tile-01.png)
 
-## <span id="Clear_notifications_on_the_tile__optional_"> </span> <span id="clear_notifications_on_the_tile__optional_"> </span> <span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_"> </span>Effacer des notifications sur la vignette (facultatif)
+## <span id="Clear_notifications_on_the_tile__optional_"></span><span id="clear_notifications_on_the_tile__optional_"></span><span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_"></span>Effacer des notifications sur la vignette (facultatif)
 
 
 Dans la plupart des cas, vous devez effacer une notification une fois que l’utilisateur a interagi avec ce contenu. Par exemple, lorsque l’utilisateur lance votre application, il peut être judicieux d’effacer toutes les notifications de la vignette. Si vos modifications sont temporaires, nous vous recommandons de définir un délai d’expiration au niveau de la notification au lieu de l’effacer explicitement.
@@ -204,7 +205,7 @@ Les notifications périodiques ou Push peuvent uniquement ajouter de nouvelles n
 
 ![Vignette avec notification et vignette après effacement](images/sending-local-tile-03.png)
 
-## <span id="Next_steps"> </span> <span id="next_steps"> </span> <span id="NEXT_STEPS"> </span>Étapes suivantes
+## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>Étapes suivantes
 
 
 **Utilisation de la file d’attente de notifications**
@@ -238,7 +239,7 @@ public string XmlEncode(string text)
 }
 ```
 
-## <span id="Code_examples_without_NotificationsExtensions"> </span> <span id="code_examples_without_notificationsextensions"> </span> <span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS"> </span>Exemples de code sans NotificationsExtensions
+## <span id="Code_examples_without_NotificationsExtensions"></span><span id="code_examples_without_notificationsextensions"></span><span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS"></span>Exemples de code sans NotificationsExtensions
 
 
 Si vous préférez travailler avec du code XML brut à la place du package NuGet [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki), utilisez ces autres exemples de code pour les trois premiers exemples fournis dans cet article. Les exemples de code restants peuvent être utilisés avec [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) ou avec du code XML brut.
@@ -294,7 +295,7 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## <span id="related_topics"> </span>Rubriques connexes
+## <span id="related_topics"></span>Rubriques connexes
 
 
 * [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
@@ -314,6 +315,6 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

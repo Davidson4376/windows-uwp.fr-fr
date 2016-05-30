@@ -1,11 +1,11 @@
 ---
+author: Jwmsft
 Description: Le lecteur multimédia permet d’afficher et d’écouter des fichiers vidéo, audio et image.
 title: Lecteur multimédia
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
-author: mijacobs
 ---
 # Lecteur multimédia
 
@@ -116,7 +116,7 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-Pour définir un fichier multimédia incorporé dans l’application comme source de média, créez un objet [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) avec le chemin d’accès précédé du préfixe **ms-appx:///**, puis affectez ce dernier à [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419). Par exemple, pour un fichier nommé **video1.mp4** situé dans un sous-dossier **Videos**, le chemin d’accès se présenterait ainsi : **ms-appx:///Videos/video1.mp4**
+Pour définir un fichier multimédia incorporé dans l’application comme source de média, créez un objet [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) avec le chemin d’accès précédé du préfixe **ms-appx:///**, puis affectez ce dernier à [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419). Par exemple, pour un fichier nommé **video1.mp4** situé dans un sous-dossier **Videos**, le chemin d’accès se présenterait ainsi : **ms-appx:///Videos/video1.mp4**
 
 Ce code attribue à la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) de l’objet [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) défini précédemment en XAML la valeur **ms-appx:///Videos/video1.mp4**.
 
@@ -343,8 +343,7 @@ Utilisez la propriété [**Stretch**](https://msdn.microsoft.com/library/windows
 -   [
             **Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) remplit l’espace entier, mais ne conserve pas les proportions. Si l’image n’est pas rognée, un étirement peut en revanche être observé. L’effet obtenu est comparable aux modes Étirer.
 
-![Valeurs de l’énumération Stretch](images/Image_Stretch.jpg)
-Ici, une classe [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) est utilisée pour faire défiler les options [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968). Une instruction **switch** vérifie l’état actif de la propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) et lui attribue la valeur suivante dans l’énumération **Stretch**. Cela permet à l’utilisateur de parcourir les différents états d’étirement.
+![Valeurs de l’énumération Stretch](images/Image_Stretch.jpg) Ici, une classe [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) est utilisée pour faire défiler les options [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968). Une instruction **switch** vérifie l’état actif de la propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) et lui attribue la valeur suivante dans l’énumération **Stretch**. Cela permet à l’utilisateur de parcourir les différents états d’étirement.
 
 ```xaml
 <AppBarButton Icon="Switch" 
@@ -405,14 +404,12 @@ Ajoutez toutes les options personnalisées dont vous avez besoin pour le lecteur
 -   Essayez de ne pas charger la barre de contrôle en ajoutant trop d’options.
 -   Ne réduisez pas la chronologie de médias en dessous de sa taille minimale par défaut. Cela limitera considérablement son efficacité.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
-
 ## Articles connexes
 
 - [Informations de base relatives à la conception des commandes pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [Informations de base relatives à la conception de contenu pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958434)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

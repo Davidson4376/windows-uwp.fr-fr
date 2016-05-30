@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Permet de sélectionner ou de désélectionner des éléments d’action. Peut être utilisée pour un ou plusieurs éléments de liste.
 title: Cases à cocher
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
@@ -70,7 +71,7 @@ Utilisez la propriété [**IsChecked**](https://msdn.microsoft.com/library/windo
 
 Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepter les conditions d’utilisation est liée à la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) du bouton Envoyer. Le bouton Envoyer est activé uniquement si l’utilisateur accepte les conditions d’utilisation.
 
-> Remarque Nous affichons ici uniquement le code approprié. Pour en savoir plus sur les convertisseurs de valeurs et la liaison de données, voir [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md).
+> Remarque&nbsp;&nbsp;Nous affichons ici uniquement le code approprié. Pour en savoir plus sur les convertisseurs de valeurs et la liaison de données, voir [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md).
 
 ```xaml
 ...
@@ -287,6 +288,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

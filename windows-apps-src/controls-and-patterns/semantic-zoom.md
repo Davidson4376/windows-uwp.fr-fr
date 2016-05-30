@@ -1,14 +1,15 @@
 ---
+author: Jwmsft
 Description: Un contrôle de zoom sémantique permet à l’utilisateur d’effectuer un zoom entre deux affichages sémantiques différents du même jeu de données.
 title: Zoom sémantique
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
-label: Zoom sémantique
+label: Semantic zoom
 template: detail.hbs
 ---
 
 # Zoom sémantique
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Le contrôle zoom sémantique permet à l’utilisateur de zoomer entre deux vues du même contenu pour pouvoir rapidement naviguer dans un jeu de données volumineux. La vue avec zoom avant est la vue principale du contenu. Vous affichez le jeu de données complet dans cette vue. La vue avec zoom arrière est une vue plus générale du même contenu. En règle générale, vous affichez les en-têtes de groupe pour un jeu de données groupé dans cette vue. Par exemple, lorsque l’utilisateur affiche son carnet d’adresses, il peut faire un zoom avant sur une lettre pour voir tous les noms associés à cette lettre. 
 
@@ -41,7 +42,7 @@ Un carnet d’adresses est un exemple de jeu de données dont la navigation peut
 -   Utilisez des noms de groupe pour les éléments d’une collection groupée.
 -   Utilisez un ordre de tri pour une collection non groupée, mais triée, par exemple l’ordre chronologique pour des dates ou l’ordre alphabétique pour une liste de noms.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Articles connexes
 
@@ -64,6 +65,6 @@ Un carnet d’adresses est un exemple de jeu de données dont la navigation peut
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

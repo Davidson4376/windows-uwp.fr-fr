@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 label: Buttons
 template: detail.hbs
 ---
@@ -73,7 +74,7 @@ Vous pouvez modifier la façon dont un bouton déclenche l’événement Click e
 
 ### Contenu du bouton
 
-Le bouton est un [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Sa propriété de contenu XAML est [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation sous forme de chaîne est affichée dans le bouton.
+Le bouton est un [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Sa propriété de contenu XAML est [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation sous forme de chaîne est affichée dans le bouton.
 
 Ici, un objet **StackPanel** qui contient une image d’une banane et du texte est défini comme le contenu d’un bouton.
 
@@ -149,20 +150,17 @@ Le bouton Précédent est une affordance de l’interface utilisateur fournie pa
 
 L’étendue de l’historique de navigation (intégré à l’application ou global) dépend de l’appareil et du mode de ce dernier.
 
-## <span id="examples"> </span> <span id="EXAMPLES"> </span>Exemple
+## <span id="examples"></span><span id="EXAMPLES"></span>Exemple
 
 
-L’interface utilisateur pour le bouton Précédent du système est optimisée pour chaque type d’appareil et d’entrée, mais l’expérience de navigation est globale et cohérente sur les différents appareils et applications pour plateforme Windows universelle (UWP). Voici quelques exemples d’expérience :
+L’interface utilisateur pour le bouton Précédent du système est optimisée pour chaque type d’appareil et d’entrée, mais l’expérience de navigation est globale et cohérente sur les différents appareils et applications pour plateforme Windows universelle (UWP). Voici quelques exemples d’expérience :
 
-Appareils
-Téléphone
-![système de retour sur un téléphone](images/nav-back-phone.png)
+Téléphone ![système de retour sur un téléphone](images/nav-back-phone.png)
 -   Toujours présent.
 -   Bouton logiciel ou matériel en bas de l’appareil.
 -   Navigation vers l’arrière globale au sein de l’application et entre les applications.
 
-<span id="Tablet"> </span> <span id="tablet"> </span> <span id="TABLET"> </span>Tablette
-![système de retour sur une tablette (en mode tablette)](images/nav-back-tablet.png)
+<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>Tablette ![système de retour sur une tablette (en mode tablette)](images/nav-back-tablet.png)
 -   Toujours présent en mode tablette.
 
     Non disponible en mode bureau. Le bouton Précédent de la barre de titre peut être activé à la place. Voir [PC, ordinateur portable, tablette](#PC).
@@ -172,8 +170,7 @@ Téléphone
 -   Bouton logiciel dans la barre de navigation en bas de l’appareil.
 -   Navigation vers l’arrière globale au sein de l’application et entre les applications.
 
-<span id="PC"> </span> <span id="pc"> </span>PC, ordinateur portable, tablette
-![système de retour sur un pc ou un portable](images/nav-back-pc.png)
+<span id="PC"></span><span id="pc"></span>PC, ordinateur portable, tablette ![système de retour sur un pc ou un portable](images/nav-back-pc.png)
 -   Facultatif en mode bureau.
 
     Non disponible en mode tablette. Voir [Tablette](#Tablet).
@@ -185,8 +182,7 @@ Téléphone
 -   Bouton logiciel dans la barre de titre de l’application.
 -   Navigation vers l’arrière au sein de l’application uniquement. Ne prend pas en charge la navigation entre les applications.
 
-Surface Hub
-![système de retour sur un surface hub](images/nav-back-surfacehub.png)
+Surface Hub ![système de retour sur un surface hub](images/nav-back-surfacehub.png)
 -   Toujours présent.
 -   Bouton logiciel en bas de l’appareil.
 -   Navigation vers l’arrière au sein de l’application et entre les applications.
@@ -228,6 +224,6 @@ Surface Hub
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

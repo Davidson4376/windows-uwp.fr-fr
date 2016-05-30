@@ -1,36 +1,37 @@
 ---
+author: mijacobs
 Description: Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran.
 title: Créer des vignettes adaptatives
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
-label: Créer des vignettes adaptatives
+label: Create adaptive tiles
 template: detail.hbs
 ---
 
 # Créer des vignettes adaptatives
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 
 Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md).
 
-(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette Windows 8](https://msdn.microsoft.com/library/windows/apps/hh761491) lors de la conception de notifications pour Windows 10.)
+(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette Windows 8](https://msdn.microsoft.com/library/windows/apps/hh761491) lors de la conception de notifications pour Windows 10.)
 
-## <span id="Getting_started"> </span> <span id="getting_started"> </span> <span id="GETTING_STARTED"> </span>Prise en main
+## <span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>Prise en main
 
 
-**Installez NotificationsExtensions.** Si vous préférez utiliser C# plutôt que XML pour générer des notifications, installez le package NuGet nommé [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). Les exemples de code C# indiqués dans cet article utilisent NotificationsExtensions.
+**Installez NotificationsExtensions.** Si vous préférez utiliser C# plutôt que XML pour générer des notifications, installez le package NuGet nommé [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). Les exemples de code C# indiqués dans cet article utilisent NotificationsExtensions.
 
 **Installez Notifications Visualizer.** Cette application UWP gratuite vous permet de concevoir des vignettes dynamiques adaptatives en fournissant un aperçu visuel instantané de votre vignette lorsque vous la modifiez, comparable au mode Création/Éditeur XAML de Visual Studio. Pour plus d’informations, vous pouvez lire [ce billet de blog](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx). Vous pouvez également télécharger Notifications Visualizer [ici](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
-## <span id="Usage_guidance"> </span> <span id="usage_guidance"> </span> <span id="USAGE_GUIDANCE"> </span>Conseils d’utilisation
+## <span id="Usage_guidance"></span><span id="usage_guidance"></span><span id="USAGE_GUIDANCE"></span>Conseils d’utilisation
 
 
-Les modèles adaptatifs sont conçus pour fonctionner dans différents facteurs de forme et types de notifications. Les éléments tels qu’un groupe ou un sous-groupe, relient du contenu et n’impliquent pas de comportement visuel particulier. L’apparence finale d’une notification varie en fonction de l’appareil sur lequel elle s’affiche, selon qu’il s’agit d’un téléphone, d’une tablette, d’un ordinateur de bureau ou d’un autre appareil.
+Les modèles adaptatifs sont conçus pour fonctionner dans différents facteurs de forme et types de notification. Les éléments tels qu’un groupe ou un sous-groupe, relient du contenu et n’impliquent pas de comportement visuel particulier. L’apparence finale d’une notification varie en fonction de l’appareil sur lequel elle s’affiche, selon qu’il s’agit d’un téléphone, d’une tablette, d’un ordinateur de bureau ou d’un autre appareil.
 
 Les indications sont des attributs facultatifs qui peuvent être ajoutés à des éléments afin d’obtenir un comportement visuel spécifique. Elles peuvent être propres à un appareil ou à une notification.
 
-## <span id="A_basic_example"> </span> <span id="a_basic_example"> </span> <span id="A_BASIC_EXAMPLE"> </span>Exemple de base
+## <span id="A_basic_example"></span><span id="a_basic_example"></span><span id="A_BASIC_EXAMPLE"></span>Exemple de base
 
 
 Cet exemple montre ce que les modèles de vignette adaptative peuvent produire.
@@ -98,19 +99,19 @@ TileContent content = new TileContent()
 
 **Résultat :**
 
-![Exemple de vignette rapide](images/adaptive-tiles-quicksample.png)
+![exemple de vignette rapide](images/adaptive-tiles-quicksample.png)
 
-## <span id="Tile_sizes"> </span> <span id="tile_sizes"> </span> <span id="TILE_SIZES"> </span>Tailles des vignettes
+## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>Tailles des vignettes
 
 
-Le contenu de chaque taille de vignette est spécifié individuellement dans des éléments [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) distincts au sein de la charge utile XML. Choisissez la taille cible en définissant l’attribut de modèle sur l’une des valeurs suivantes :
+Le contenu de chaque taille de vignette est spécifié individuellement dans des éléments [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) distincts au sein de la charge utile XML. Choisissez la taille cible en définissant l’attribut de modèle sur l’une des valeurs suivantes :
 
 -   TileSmall
 -   TileMedium
 -   TileWide
 -   TileLarge (uniquement pour les ordinateurs de bureau)
 
-Pour une charge utile XML de notification par vignette, indiquez des éléments &lt;binding&gt; pour chaque taille de vignette que vous souhaitez prendre en charge, comme illustré dans cet exemple :
+Pour une charge utile XML de notification par vignette, indiquez des éléments &lt;binding&gt; pour chaque taille de vignette que vous souhaitez prendre en charge, comme illustré dans cet exemple :
 
 ```XML
 <tile>
@@ -190,14 +191,14 @@ TileContent content = new TileContent()
 
 **Résultat :**
 
-![Tailles de vignettes adaptatives : petite, moyenne, large et grande](images/adaptive-tiles-sizes.png)
+![tailles de vignettes adaptatives : petite, moyenne, large et grande](images/adaptive-tiles-sizes.png)
 
-## <span id="Branding"> </span> <span id="branding"> </span> <span id="BRANDING"> </span>Personnalisation
+## <span id="Branding"></span><span id="branding"></span><span id="BRANDING"></span>Personnalisation
 
 
-Vous pouvez contrôler la personnalisation en bas d’une vignette dynamique (nom d’affichage et logo d’angle) à l’aide de l’attribut « branding » de la charge utile de notification. Vous pouvez choisir de ne rien afficher (valeur « none »), d’afficher uniquement le nom (valeur « name »), d’afficher uniquement le logo (valeur « logo ») ou d’afficher à la fois le nom et le logo (valeur « nameAndLogo »).
+Vous pouvez contrôler la personnalisation en bas d’une vignette dynamique (nom d’affichage et logo d’angle) à l’aide de l’attribut branding de la charge utile de notification. Vous pouvez choisir de ne rien afficher (valeur « none »), d’afficher uniquement le nom (valeur « name »), d’afficher uniquement le logo (valeur « logo ») ou d’afficher à la fois le nom et le logo (valeur « nameAndLogo »).
 
-**Remarque** Étant donné que Windows Phone ne prend pas en charge le logo d’angle, les valeurs « logo » et « nameAndLogo » sont redéfinies par défaut sur « name » sur un téléphone.
+**Remarque** Étant donné que Windows Phone ne prend pas en charge le logo d’angle, les valeurs « logo » et « nameAndLogo » sont redéfinies par défaut sur « name » sur un téléphone.
 
  
 
@@ -227,9 +228,8 @@ new TileVisual()
 
 Vous pouvez appliquer une personnalisation à des tailles de vignettes spécifiques en procédant de l’une des deux manières suivantes :
 
-1. en appliquant l’attribut à l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) ;
-2. en appliquant l’attribut à l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte l’intégralité de la charge utile de notification.
-Si vous ne spécifiez pas de personnalisation pour une liaison, la personnalisation indiquée pour l’élément visuel sera utilisée.
+1. En appliquant l’attribut à l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md)
+2. En appliquant l’attribut sur l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) (qui affecte la charge utile de notification entière si vous ne spécifiez pas de personnalisation pour une liaison), la personnalisation fournie sur l’élément visuel est utilisée.
 
 ```XML
 <tile>
@@ -280,10 +280,10 @@ Si vous ne spécifiez aucune personnalisation dans votre charge utile de notific
 
  
 
-## <span id="Display_name"> </span> <span id="display_name"> </span> <span id="DISPLAY_NAME"> </span>Nom d’affichage
+## <span id="Display_name"></span><span id="display_name"></span><span id="DISPLAY_NAME"></span>Nom d’affichage
 
 
-Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cet aspect dans l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte toute la charge utile de notification, ou bien le spécifier dans l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte uniquement les vignettes individuelles.
+Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cela dans l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte toute la charge utile de notification. Vous pouvez également spécifier cela dans l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte uniquement les vignettes individuelles.
 
 ```XML
 <tile>
@@ -329,7 +329,7 @@ TileContent content = new TileContent()
 
 ![Nom d’affichage des vignettes adaptatives](images/adaptive-tiles-displayname.png)
 
-## <span id="Text"> </span> <span id="text"> </span> <span id="TEXT"> </span>Texte
+## <span id="Text"></span><span id="text"></span><span id="TEXT"></span>Texte
 
 
 L’élément [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) permet d’afficher un texte. Vous pouvez utiliser des indications pour en modifier l’apparence.
@@ -363,7 +363,7 @@ new TileText()
 
 ![Texte de vignette adaptative](images/adaptive-tiles-text.png)
 
-## <span id="Text_wrapping"> </span> <span id="text_wrapping"> </span> <span id="TEXT_WRAPPING"> </span>Renvoi de texte à la ligne
+## <span id="Text_wrapping"></span><span id="text_wrapping"></span><span id="TEXT_WRAPPING"></span>Habillage du texte
 
 
 Par défaut, le texte n’est pas renvoyé à la ligne et déborde de la vignette. Utilisez l’attribut **hint-wrap** pour définir le renvoi de texte à la ligne sur un élément de texte. Vous pouvez également contrôler les nombres minimal et maximal de lignes à l’aide des éléments **hint-minLines** et **hint-maxLines**, qui acceptent des entiers positifs.
@@ -398,7 +398,7 @@ new TileText()
 
 ![Vignette adaptative avec renvoi de texte à la ligne](images/adaptive-tiles-textwrapping.png)
 
-## <span id="Text_styles"> </span> <span id="text_styles"> </span> <span id="TEXT_STYLES"> </span>Styles de texte
+## <span id="Text_styles"></span><span id="text_styles"></span><span id="TEXT_STYLES"></span>Styles de texte
 
 
 Les styles contrôlent la taille de police, la couleur et l’épaisseur des éléments de texte. Plusieurs styles sont disponibles, notamment une variation « subtile » de chaque style qui définit l’opacité sur 60 %, ce qui transforme généralement la couleur du texte en nuance de gris clair.
@@ -426,7 +426,7 @@ new TileText()
 
 ![Styles de texte des vignettes adaptatives](images/adaptive-tiles-textstyles.png)
 
-**Remarque** Par défaut, le style est défini sur « caption » si aucun élément hint-style n’est spécifié.
+**Remarque** Par défaut, le style est défini sur « caption » si aucun élément hint-style n’est spécifié.
 
  
 
@@ -476,10 +476,10 @@ Chaque style dispose d’une variation de sous-titre qui octroie au texte une op
 
  
 
-## <span id="Text_alignment"> </span> <span id="text_alignment"> </span> <span id="TEXT_ALIGNMENT"> </span>Alignement du texte
+## <span id="Text_alignment"></span><span id="text_alignment"></span><span id="TEXT_ALIGNMENT"></span>Alignement du texte
 
 
-Le texte peut être aligné horizontalement à gauche, au centre ou à droite. Pour les langues qui s’écrivent de gauche à droite, par exemple l’anglais, le texte est aligné à gauche par défaut. Pour les langues qui s’écrivent de droite à gauche, telles que l’arabe, le texte est aligné à droite par défaut. Vous pouvez définir l’alignement manuellement en utilisant l’attribut **hint-align** dans des éléments.
+Le texte peut être horizontalement aligné à gauche, au centre ou à droite. Pour les langues qui s’écrivent de gauche à droite, par exemple l’anglais, le texte est aligné à gauche par défaut. Pour les langues qui s’écrivent de droite à gauche, telles que l’arabe, le texte est aligné à droite par défaut. Vous pouvez définir l’alignement manuellement en utilisant l’attribut **hint-align** dans des éléments.
 
 ```XML
 <text hint-align="center">Hello</text></code></pre></td>
@@ -511,10 +511,10 @@ new TileText()
 
 ![Alignement du texte des vignettes adaptatives](images/adaptive-tiles-textalignment.png)
 
-## <span id="Groups_and_subgroups"> </span> <span id="groups_and_subgroups"> </span> <span id="GROUPS_AND_SUBGROUPS"> </span>Groupes et sous-groupes
+## <span id="Groups_and_subgroups"></span><span id="groups_and_subgroups"></span><span id="GROUPS_AND_SUBGROUPS"></span>Groupes et sous-groupes
 
 
-Les groupes vous permettent de déclarer au niveau sémantique que le contenu à l’intérieur du groupe est lié et qu’il doit être affiché dans son intégralité pour avoir du sens. Par exemple, vous pouvez avoir deux éléments de texte, un en-tête et un sous-titre, et il ne serait pas logique de n’afficher que l’en-tête. En regroupant ces éléments à l’intérieur d’un sous-groupe, les éléments sont tous affichés (s’ils peuvent s’ajuster à la vignette) ou pas affichés du tout (s’ils ne peuvent pas s’ajuster à la vignette).
+Les groupes vous permettent de déclarer au niveau sémantique que le contenu à l’intérieur du groupe est lié et qu’il doit être affiché dans son intégralité pour qu’il ait du sens. Par exemple, vous pouvez avoir deux éléments de texte, un en-tête et un sous-titre, et il ne serait pas logique de n’afficher que l’en-tête. En regroupant ces éléments à l’intérieur d’un sous-groupe, les éléments sont tous affichés (s’ils peuvent s’ajuster à la vignette) ou pas affichés du tout (s’ils ne peuvent pas s’ajuster à la vignette).
 
 Pour que l’expérience soit la meilleure possible sur les appareils et les écrans, indiquez plusieurs groupes. L’indication de plusieurs groupes permet à votre vignette de s’adapter aux écrans plus grands.
 
@@ -613,7 +613,7 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![Groupes et sous-groupes de vignettes adaptatives](images/adaptive-tiles-groups-subgroups.png)
 
-## <span id="Subgroups__columns_"> </span> <span id="subgroups__columns_"> </span> <span id="SUBGROUPS__COLUMNS_"> </span>Sous-groupes (colonnes)
+## <span id="Subgroups__columns_"></span><span id="subgroups__columns_"></span><span id="SUBGROUPS__COLUMNS_"></span>Sous-groupes (colonnes)
 
 
 Les sous-groupes vous permettent également de répartir les données en sections sémantiques au sein d’un groupe. Pour les vignettes dynamiques, cela se traduit visuellement par des colonnes.
@@ -838,7 +838,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![Exemple d’une vignette météo](images/adaptive-tiles-weathertile.png)
 
-## <span id="Images"> </span> <span id="images"> </span> <span id="IMAGES"> </span>Images
+## <span id="Images"></span><span id="images"></span><span id="IMAGES"></span>Images
 
 
 L’élément &lt;image&gt; permet d’afficher des images dans la notification par vignette. Les images peuvent être incorporées au sein du contenu de la vignette (par défaut), en tant qu’image d’arrière-plan derrière le contenu ou en tant qu’image furtive qui s’anime à partir du haut de la notification.
@@ -934,9 +934,9 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![Exemple d’image](images/adaptive-tiles-images01.png)
 
-Les images placées à la racine de &lt;binding&gt; ou dans le premier groupe sont également étirées pour s’ajuster à la hauteur disponible.
+Les images placées à la racine &lt;binding&gt; ou dans le premier groupe sont également étirées pour s’ajuster à la hauteur disponible.
 
-### <span id="Image_alignment"> </span> <span id="image_alignment"> </span> <span id="IMAGE_ALIGNMENT"> </span>Alignement d’images
+### <span id="Image_alignment"></span><span id="image_alignment"></span><span id="IMAGE_ALIGNMENT"></span>Alignement d’images
 
 Les images peuvent être définies pour s’aligner à gauche, au centre ou à droite à l’aide de l’attribut **hint-align**. Cela entraîne également leur affichage à leur résolution native, et non leur étirement pour remplir la largeur.
 
@@ -971,7 +971,7 @@ TileLarge = new TileBinding()
 
 ![Exemple d’alignement d’images (à gauche, au centre, à droite)](images/adaptive-tiles-imagealignment.png)
 
-### <span id="Image_margins"> </span> <span id="image_margins"> </span> <span id="IMAGE_MARGINS"> </span>Marges d’images
+### <span id="Image_margins"></span><span id="image_margins"></span><span id="IMAGE_MARGINS"></span>Marges d’images
 
 Par défaut, une marge de 8 pixels est insérée dans les images incluses entre le contenu et l’image située au-dessus ou au-dessous. Cette marge peut être supprimée à l’aide de l’attribut **hint-removeMargin** dans l’image. Toutefois, les images conservent toujours la marge de 8 pixels à partir du bord de la vignette, et les sous-groupes (colonnes) conservent toujours le remplissage de 8 pixels entre les colonnes.
 
@@ -1061,7 +1061,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![Exemple d’indication de suppression de marge](images/adaptive-tiles-removemargin.png)
 
-### <span id="Image_cropping"> </span> <span id="image_cropping"> </span> <span id="IMAGE_CROPPING"> </span>Rognage d’images
+### <span id="Image_cropping"></span><span id="image_cropping"></span><span id="IMAGE_CROPPING"></span>Rognage d’images
 
 Les images peuvent être rognées dans un cercle à l’aide de l’attribut **hint-crop**, qui ne prend actuellement en charge que les valeurs « none » (par défaut) ou « circle ».
 
@@ -1137,9 +1137,9 @@ TileLarge = new TileBinding()
 
 **Résultat :**
 
-![Exemple de rognage d’image](images/adaptive-tiles-imagecropping.png)
+![exemple de rognage d’image](images/adaptive-tiles-imagecropping.png)
 
-### <span id="Background_image"> </span> <span id="background_image"> </span> <span id="BACKGROUND_IMAGE"> </span>Image d’arrière-plan
+### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>Image d’arrière-plan
 
 Pour définir une image d’arrière-plan, placez un élément image à la racine de &lt;binding&gt; et définissez l’attribut placement sur « background ».
 
@@ -1263,7 +1263,7 @@ TileWide = new TileBinding()
 
 ![Exemple d’image avec superposition](images/adaptive-tiles-image-hintoverlay.png)
 
-### <span id="Peek_image"> </span> <span id="peek_image"> </span> <span id="PEEK_IMAGE"> </span>Image furtive
+### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>Image furtive
 
 Vous pouvez spécifier une image qui défile furtivement à partir du haut de la vignette. L’image furtive utilise une animation qui glisse vers le bas/haut à partir du haut de la vignette, puis rebascule pour afficher le contenu principal de la vignette. Pour définir une image furtive, placez un élément image à la racine de &lt;binding&gt; et définissez l’attribut placement sur « peek ».
 
@@ -1341,12 +1341,12 @@ Cet exemple illustre une image d’arrière-plan avec une opacité de 20 % (à g
 
 ![Attribut hint-overlay sur une image furtive](images/hintoverlay.png)
 
-## <span id="Vertical_alignment__text_stacking_"> </span> <span id="vertical_alignment__text_stacking_"> </span> <span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"> </span>Alignement vertical (empilement de texte)
+## <span id="Vertical_alignment__text_stacking_"></span><span id="vertical_alignment__text_stacking_"></span><span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"></span>Alignement vertical (empilement de texte)
 
 
 Vous pouvez contrôler l’alignement vertical du contenu sur votre vignette à l’aide de l’attribut **hint-textStacking** à la fois sur l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) et sur l’élément [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md). Par défaut, tous les éléments sont alignés verticalement vers le haut, mais vous pouvez également aligner le contenu vers le bas ou le centre.
 
-### <span id="Text_stacking_on_binding_element"> </span> <span id="text_stacking_on_binding_element"> </span> <span id="TEXT_STACKING_ON_BINDING_ELEMENT"> </span>Empilement de texte dans l’élément de liaison
+### <span id="Text_stacking_on_binding_element"></span><span id="text_stacking_on_binding_element"></span><span id="TEXT_STACKING_ON_BINDING_ELEMENT"></span>Empilement de texte sur l’élément de liaison
 
 Lorsqu’il est appliqué au niveau [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), l’empilement de texte définit l’alignement vertical du contenu de la notification dans son ensemble, en s’alignant dans l’espace vertical disponible au-dessus de la zone de personnalisation/badge.
 
@@ -1394,7 +1394,7 @@ TileMedium = new TileBinding()
 
 ![Empilement de texte dans l’élément de liaison](images/adaptive-tiles-textstack-bindingelement.png)
 
-### <span id="Text_stacking_on_subgroup_element"> </span> <span id="text_stacking_on_subgroup_element"> </span> <span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"> </span>Empilement de texte dans l’élément de sous-groupe
+### <span id="Text_stacking_on_subgroup_element"></span><span id="text_stacking_on_subgroup_element"></span><span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"></span>Empilement de texte dans l’élément de sous-groupe
 
 Lorsqu’il est appliqué au niveau [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md), l’empilement de texte définit l’alignement vertical du contenu du sous-groupe (colonne), en s’alignant dans l’espace vertical disponible au sein du groupe tout entier.
 
@@ -1473,7 +1473,7 @@ TileWide = new TileBinding()
 ...
 ```
 
-## <span id="related_topics"> </span>Rubriques connexes
+## <span id="related_topics"></span>Rubriques connexes
 
 
 * [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md)
@@ -1488,6 +1488,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

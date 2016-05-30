@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Suivez ces recommandations pour sélectionner des polices et spécifier leur taille et leur couleur.
 title: Polices
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
@@ -8,10 +9,6 @@ template: detail.hbs
 
 # Recommandations en matière de polices
 
-
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
 **API importantes**
 
 -   [**Propriété FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209655)
@@ -20,7 +17,7 @@ Une utilisation appropriée des polices, aussi bien en termes de taille, d’ép
 
 Si vous recherchez une liste d’icônes Segoe UI Symbol, voir [**Guidelines for Segoe UI Symbol icons**](segoe-ui-symbol-font.md).
 
-## <span id="The_Windows_10_type_ramp"> </span> <span id="the_windows_10_type_ramp"> </span> <span id="THE_WINDOWS_10_TYPE_RAMP"> </span>Gamme de type Windows 10
+## <span id="The_Windows_10_type_ramp"></span><span id="the_windows_10_type_ramp"></span><span id="THE_WINDOWS_10_TYPE_RAMP"></span>Gamme de types Windows 10
 
 
 La gamme de types établit une relation fondamentale entre les titres et le corps du texte et garantit une hiérarchie claire et compréhensible entre les différents niveaux. Les utilisateurs comprennent immédiatement où se trouvent les informations et comment analyser la page.
@@ -39,10 +36,10 @@ Voici la gamme que nous recommandons pour les applications UWP :
 
  
 
-## <span id="Recommended_fonts"> </span> <span id="recommended_fonts"> </span> <span id="RECOMMENDED_FONTS"> </span>Polices recommandées
+## <span id="Recommended_fonts"></span><span id="recommended_fonts"></span><span id="RECOMMENDED_FONTS"></span>Polices recommandées
 
 
-Vous n’êtes pas obligé d’utiliser la police Segoe UI pour tous les éléments. Vous pouvez utiliser d’autres polices dans certains cas de figure, notamment pour la lecture, ou pour l’affichage de textes rédigés dans une autre langue que l’anglais.
+Vous n’êtes pas obligé d’utiliser la police Segoe UI pour tous les éléments. Vous pouvez utiliser d’autres polices dans certains cas de figure, notamment pour la lecture, ou pour l’affichage de textes rédigés dans une autre langue que l’anglais.
 
 Voici la liste des polices systématiquement disponibles dans toutes les éditions de Windows 10 prenant en charge les applications UWP.
 
@@ -269,13 +266,12 @@ Voici la liste des polices systématiquement disponibles dans toutes les éditio
 
  
 
-## <span id="related_topics"> </span>Rubriques connexes
-
+## <span id="related_topics"></span>Rubriques connexes
 
 **Pour les concepteurs**
 * [Étiquette (ou bloc de texte)](labels.md)
-* [Icônes Segoe UI Symbol](segoe-ui-symbol-font.md)
-**Pour les développeurs (XAML)**
+* [Icônes Segoe UI Symbol](segoe-ui-symbol-font.md) 
+           **Pour les développeurs (XAML)**
 * [Ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [Disposition d’une page d’application](https://msdn.microsoft.com/library/windows/apps/hh872191)
 * [Icônes Segoe UI Symbol](segoe-ui-symbol-font.md)
@@ -294,6 +290,6 @@ Voici la liste des polices systématiquement disponibles dans toutes les éditio
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,31 +1,30 @@
 ---
+author: Jwmsft
 Description: Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets.
-Search.Refinement.TopicID : 184
+Search.Refinement.TopicID: 184
 title: Recommandations en matière d’icônes Segoe MDL2
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Icônes Segoe MDL2
+label: Segoe MDL2 icons
 template: detail.hbs
 ---
 
 # Recommandations en matière d’icônes Segoe MDL2
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
+Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets. Pour obtenir la police, vous devez installer Windows 10.
 
 **API importantes**
 
 -   [**Énumération Symbol (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 -   [**Énumération AppBarIcon (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
 
-Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets. Pour obtenir la police, vous devez installer Windows 10.
 
-## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>Recommandations
+
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommandations
 
 
 -   Utilisez ces glyphes uniquement si vous pouvez spécifier explicitement la police **Segoe MDL2 Assets**.
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>Indications d’utilisation supplémentaires
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
 
 
 La police d’icône **Segoe UI Symbol** Windows 8/8.1 a été remplacée par la police **Segoe MDL2 Assets** dans la version Windows 10. Elle peut être utilisée de la même manière que l’ancienne police, mais de nombreux glyphes ont été redessinés dans le style d’icône Windows 10, les mesures de la police étant définies de façon à ce que les icônes s’inscrivent à l’intérieur du pica carré plutôt que sur une ligne de base typographique.
@@ -54,7 +53,7 @@ Si vous développez une application en C#/VB/C++ et XAML, vous pouvez utiliser l
 
 En outre, gardez à l’esprit que la police **Segoe MDL2 Assets** comprend beaucoup plus d’icônes que ce que nous pouvons afficher ici. Bon nombre de celles-ci sont destinées à un usage particulier et généralement non utilisées ailleurs.
 
-## <span id="Hearts"> </span> <span id="hearts"> </span> <span id="HEARTS"> </span>Cœurs
+## <span id="Hearts"></span><span id="hearts"></span><span id="HEARTS"></span>Cœurs
 
 
 <table>
@@ -108,7 +107,7 @@ En outre, gardez à l’esprit que la police **Segoe MDL2 Assets** comprend beau
 
  
 
-## <span id="Rating_stars"> </span> <span id="rating_stars"> </span> <span id="RATING_STARS"> </span>Étoiles d’évaluation
+## <span id="Rating_stars"></span><span id="rating_stars"></span><span id="RATING_STARS"></span>Étoiles d’évaluation
 
 
 <table>
@@ -167,14 +166,14 @@ En outre, gardez à l’esprit que la police **Segoe MDL2 Assets** comprend beau
 <td align="left"><p>U+E7C7</p></td>
 <td align="left"><img src="images/halfstarright.png" alt="HalfStarRight" /></td>
 <td align="left">HalfStarRight</td>
-<td align="left">Demi-étoile, côté droit</td>
+<td align="left">Demie étoile, côté droit</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Checkbox_components"> </span> <span id="checkbox_components"> </span> <span id="CHECKBOX_COMPONENTS"> </span>Composants de case à cocher
+## <span id="Checkbox_components"></span><span id="checkbox_components"></span><span id="CHECKBOX_COMPONENTS"></span>Composants de case à cocher
 
 
 |        |                                                                                |                                 |                         |
@@ -197,7 +196,7 @@ En outre, gardez à l’esprit que la police **Segoe MDL2 Assets** comprend beau
 
  
 
-## <span id="Miscellaneous"> </span> <span id="miscellaneous"> </span> <span id="MISCELLANEOUS"> </span>Divers
+## <span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>Divers
 
 
 <table>
@@ -341,7 +340,7 @@ En outre, gardez à l’esprit que la police **Segoe MDL2 Assets** comprend beau
 
  
 
-## <span id="Scroll_bar_arrows"> </span> <span id="scroll_bar_arrows"> </span> <span id="SCROLL_BAR_ARROWS"> </span>Flèches de barre de défilement
+## <span id="Scroll_bar_arrows"></span><span id="scroll_bar_arrows"></span><span id="SCROLL_BAR_ARROWS"></span>Flèches de barre de défilement
 
 
 | Code   | Symbole                                                                   | Énumération                         |
@@ -357,7 +356,7 @@ En outre, gardez à l’esprit que la police **Segoe MDL2 Assets** comprend beau
 
  
 
-## <span id="Back_buttons"> </span> <span id="back_buttons"> </span> <span id="BACK_BUTTONS"> </span>Boutons Précédent
+## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>Boutons Précédent
 
 
 Les glyphes hérités des boutons Précédent sont disponibles dans 2 tailles différentes afin que l’épaisseur de l’anneau extérieur soit homogène à 20 pt et à 42 pt. Deux nouveaux boutons Précédent de chrome proportionnels sont également disponibles. Ces glyphes sont conçus de sorte à prendre en charge la superposition.
@@ -373,7 +372,7 @@ Les glyphes hérités des boutons Précédent sont disponibles dans 2 tailles d
 
  
 
-## <span id="Back_arrows_for_HTML"> </span> <span id="back_arrows_for_html"> </span> <span id="BACK_ARROWS_FOR_HTML"> </span>Flèches Précédent en HTML
+## <span id="Back_arrows_for_HTML"></span><span id="back_arrows_for_html"></span><span id="BACK_ARROWS_FOR_HTML"></span>Flèches Précédent en HTML
 
 
 Ajoutez du code supplémentaire pour créer des cercles autour de ces glyphes.
@@ -385,7 +384,7 @@ Ajoutez du code supplémentaire pour créer des cercles autour de ces glyphes.
 
  
 
-## <span id="AppBar_glyphs"> </span> <span id="appbar_glyphs"> </span> <span id="APPBAR_GLYPHS"> </span>Glyphes AppBar
+## <span id="AppBar_glyphs"></span><span id="appbar_glyphs"></span><span id="APPBAR_GLYPHS"></span>Glyphes AppBar
 
 
 Utilisez les glyphes de la liste suivante pour une [**AppBar**](https://msdn.microsoft.com/library/windows/apps/br229670). Par convention, ils sont mentionnés par leurs noms d’énumération. Et ils sont conçus en tant qu’icônes 20 x 20 px sans cercle.
@@ -1551,7 +1550,7 @@ Utilisez les glyphes de la liste suivante pour une [**AppBar**](https://msdn.mic
 
  
 
-## <span id="Battery_icons"> </span> <span id="battery_icons"> </span> <span id="BATTERY_ICONS"> </span>Icônes de batterie
+## <span id="Battery_icons"></span><span id="battery_icons"></span><span id="BATTERY_ICONS"></span>Icônes de batterie
 
 
 | Code | Symbole                                             | Énumération              | Code | Symbole                                                  | Énumération                |
@@ -1593,13 +1592,13 @@ Utilisez les glyphes de la liste suivante pour une [**AppBar**](https://msdn.mic
 
  
 
-## <span id="related_topics"> </span>Rubriques connexes
+## <span id="related_topics"></span>Rubriques connexes
 
 
 **Pour les concepteurs**
 * [Recommandations en matière de polices](fonts.md)
-* [W3C sur les langues écrites de droite à gauche (DàG) ?](http://www.i18nguy.com/temp/rtl.mdl)
-**Pour les développeurs (XAML)**
+* [W3C sur les langues écrites de droite à gauche (DàG) ?](http://www.i18nguy.com/temp/rtl.mdl) 
+           **Pour les développeurs (XAML)**
 * [**Énumération Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
 
@@ -1610,6 +1609,6 @@ Utilisez les glyphes de la liste suivante pour une [**AppBar**](https://msdn.mic
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

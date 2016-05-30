@@ -1,20 +1,17 @@
 ---
+author: mijacobs
 Description: Voici les éléments et attributs permettant de créer des vignettes adaptatives.
 title: Schéma et modèles de vignette adaptative
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
-label: Schéma et modèles de vignette adaptative
+label: Adaptive tile schema and templates
 template: detail.hbs
 ---
 
-# Modèles de vignette adaptative : schéma et conseils
+# Modèles de vignette adaptative &#58; schéma et conseils
 
+Voici les éléments et attributs permettant de créer des vignettes adaptatives. Consultez les instructions et les exemples indiqués dans [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md).
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-Voici les éléments et attributs permettant de créer des vignettes adaptatives. Pour consulter des instructions et des exemples, voir [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md).
-
-## <span id="tile_element"> </span> <span id="TILE_ELEMENT"> </span>Élément de vignette
+## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>élément de vignette
 
 
 ``` syntax
@@ -26,7 +23,7 @@ Voici les éléments et attributs permettant de créer des vignettes adaptatives
 </tile>
 ```
 
-## <span id="visual_element"> </span> <span id="VISUAL_ELEMENT"> </span>Élément visuel
+## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>élément visuel
 
 
 ``` syntax
@@ -45,7 +42,7 @@ Voici les éléments et attributs permettant de créer des vignettes adaptatives
 </visual>
 ```
 
-## <span id="binding_element"> </span> <span id="BINDING_ELEMENT"> </span>Élément de liaison
+## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>élément de liaison
 
 
 ``` syntax
@@ -70,7 +67,7 @@ Voici les éléments et attributs permettant de créer des vignettes adaptatives
 </binding>
 ```
 
-## <span id="image_element"> </span> <span id="IMAGE_ELEMENT"> </span>Élément d’image
+## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>élément d’image
 
 
 ``` syntax
@@ -84,7 +81,7 @@ Voici les éléments et attributs permettant de créer des vignettes adaptatives
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## <span id="text_element"> </span> <span id="TEXT_ELEMENT"> </span>Élément de texte
+## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>élément de texte
 
 
 ``` syntax
@@ -103,7 +100,7 @@ Voici les éléments et attributs permettant de créer des vignettes adaptatives
 
 Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
-## <span id="group_element"> </span> <span id="GROUP_ELEMENT"> </span>Élément de groupe
+## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>élément de groupe
 
 
 ``` syntax
@@ -115,7 +112,7 @@ Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle su
 </group>
 ```
 
-## <span id="subgroup_element"> </span> <span id="SUBGROUP_ELEMENT"> </span>Élément de sous-groupe
+## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>élément de sous-groupe
 
 
 ``` syntax
@@ -131,12 +128,7 @@ Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle su
 </subgroup>
 ```
 
-**Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## <span id="related_topics"> </span>Rubriques connexes
+## <span id="related_topics"></span>Rubriques connexes
 
 
 * [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
@@ -149,6 +141,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,6 +1,7 @@
 ---
+author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-label: Zone de texte
+label: Text box
 template: detail.hbs
 ---
 # Zone de texte
@@ -89,7 +90,7 @@ Deux propriétés vous permettent d’indiquer si le contrôle TextBox peut ou n
 - Pour que la zone de texte autorise et afficher les caractères de saut de ligne ou de retour chariot, définissez la propriété [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) sur **true**.
 - Pour activer la fonctionnalité de renvoi de texte à la ligne, définissez la propriété [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) sur **Wrap**. Le texte est alors automatiquement renvoyé à la ligne lorsqu’il atteint le bord de la zone de texte, indépendamment des caractères séparateurs de ligne.
 
-> **Remarque**&nbsp;&nbsp;Les contrôles TextBox et RichEditBox ne prennent pas en charge la valeur **WrapWholeWords** pour leur propriété TextWrapping. Si vous tentez d’utiliser WrapWholeWords comme valeur pour TextBox.TextWrapping ou pour RichEditBox.TextWrapping, une exception d’argument non valide sera levée.
+> **Remarque** &nbsp;&nbsp;Les contrôles TextBox et RichEditBox ne prennent pas en charge la valeur **WrapWholeWords** pour leur propriété TextWrapping. Si vous tentez d’utiliser WrapWholeWords comme valeur pour TextBox.TextWrapping ou pour RichEditBox.TextWrapping, une exception d’argument non valide sera levée.
 
 À mesure que l’utilisateur saisit du texte dans un contrôle TextBox multiligne, la hauteur de ce dernier s’accroît progressivement, sauf si le contrôle est restreint par ses propriétés [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) ou [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) ou par un conteneur parent. Vous devez vérifier qu’une zone de texte multiligne ne dépasse pas les limites de sa zone visible, et restreindre son extension dans le cas contraire. Nous vous recommandons de configurer systématiquement une zone de texte multiligne sur une hauteur appropriée, et de ne pas autoriser l’augmentation progressive de cette hauteur à mesure que l’utilisateur tape du texte. 
 
@@ -201,13 +202,13 @@ Voici le résultat de ce code :
 
 ## Choisir le clavier adapté à votre contrôle de texte
 
-Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou clavier virtuel, définissez l’étendue des entrées du contrôle de texte de façon qu’elle corresponde au type de données attendu par l’utilisateur.
+Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou clavier virtuel, définissez l’étendue des entrées du contrôle de texte de façon qu’elle corresponde au type de données attendu de la part de l’utilisateur.
 
 Le clavier tactile permet d’entrer du texte lorsque l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé lorsque l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un contrôle TextBox ou RichEditBox. Vous pouvez nettement faciliter et accélérer la saisie de données par les utilisateurs dans votre application en définissant l’étendue des entrées du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
 
 Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un code confidentiel à 4 chiffres, définissez la propriété [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui facilite la saisie d’un code confidentiel par l’utilisateur.
 
-> **Important**&nbsp;&nbsp;L’étendue des entrées n’entraîne l’exécution d’aucune validation des entrées et n’empêche pas l’utilisateur de saisir des données par le biais d’un clavier matériel ou d’un autre dispositif du même ordre. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.
+> **Important** &nbsp;&nbsp;L’étendue des entrées n’entraîne l’exécution d’aucune validation des entrées et n’empêche pas l’utilisateur de saisir des données par le biais d’un clavier matériel ou d’un autre dispositif du même ordre. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.
 
 Les autres propriétés qui affectent le clavier tactile sont [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) et [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (La propriété IsSpellCheckEnabled a également une incidence sur le contrôle TextBox lorsqu’un clavier matériel est utilisé.) 
 
@@ -256,7 +257,7 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 -   N’utilisez pas de zone de texte de plusieurs lignes quand les utilisateurs n’ont besoin que d’une seule ligne.
 -   N’utilisez pas de contrôle de texte enrichi si un contrôle de texte brut est approprié.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Articles connexes
 
@@ -276,6 +277,6 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

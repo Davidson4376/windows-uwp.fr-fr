@@ -1,13 +1,14 @@
 ---
+author: Jwmsft
 Description: Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte.
 title: Liens hypertexte
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
-label: Liens hypertexte
+label: Hyperlinks
 template: detail.hbs
 ---
 # Liens hypertexte
 
-Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
+Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
@@ -49,7 +50,7 @@ Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure :
 
 ![Exemple de lien hypertexte en tant qu’élément de texte](images/controls_hyperlink-element.png) 
 
-> **Conseil**&nbsp;&nbsp;Lorsque vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte dans le code XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx)  et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
+> **Conseil** &nbsp;&nbsp;Lorsque vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte dans le code XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut`xml:space="preserve"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
 
 ## Créer un HyperlinkButton
 
@@ -80,7 +81,7 @@ Pour les deux types de liens hypertexte, vous gérez navigation de la même mani
 
 Pour utiliser le lien hypertexte afin d’accéder à un URI, définissez la propriété NavigateUri. Lorsqu’un utilisateur clique ou appuie sur le lien hypertexte, l’URI spécifié s’ouvre dans le navigateur par défaut. Le navigateur par défaut s’exécute dans un processus distinct de votre application.
 
-> **Remarque**&nbsp;&nbsp;Vous n’êtes pas obligé d’utiliser les schémas http: ou https:. Vous pouvez utiliser des schémas tels que ms-appx:, ms-appdata: ou ms-ressources: si le contenu des ressources de ces emplacements peut être chargé dans un navigateur. Toutefois, le schéma file: est bloqué. Pour plus d’informations, voir [Schémas d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> **Remarque** &nbsp;&nbsp;Vous n’êtes pas obligé d’utiliser les schémas http: ou https:.ous n’êtes pas obligé d’utiliser les schémas http: ou https:. Vous pouvez utiliser des schémas tels que ms-appx:, ms-appdata: ou ms-ressources: si le contenu des ressources de ces emplacements peut être chargé dans un navigateur. Toutefois, le schéma file: est bloqué. Pour plus d’informations, voir [Schémas d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
 
 > Quand un utilisateur clique sur le lien hypertexte, la valeur de la propriété NavigateUri est transmise à un gestionnaire de système pour les schémas et types d’URI. Ensuite, le système lance l’application qui est inscrite pour le schéma d’URI fourni pour NavigateUri.
 
@@ -137,13 +138,11 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 -   Gardez les liens hypertexte suffisamment éloignés les uns des autres pour que l’utilisateur puisse les distinguer et les sélectionner aisément.
 -   Ajoutez des info-bulles aux liens hypertexte pour indiquer à l’utilisateur l’emplacement vers lequel il va être dirigé. Si l’utilisateur est dirigé vers un site externe, insérez le nom de domaine de niveau supérieur dans l’info-bulle, puis appliquez un style au texte avec une couleur de police secondaire.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Articles connexes
 
-[Contrôles de texte](text-controls.md)
-
-**Pour les concepteurs**
+- [Contrôles de texte](text-controls.md)
 - [Recommandations en matière d’info-bulles](tooltips.md)
 
 **Pour les développeurs (XAML)**
@@ -151,6 +150,6 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 - [**Classe Windows.UI.Xaml.Controls.HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

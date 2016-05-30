@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Utilisez une info-bulle pour fournir plus d’informations sur un contrôle avant d’inviter l’utilisateur à effectuer une action.
 title: Info-bulles
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
@@ -9,7 +10,7 @@ template: detail.hbs
 
 # Info-bulles
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Une info-bulle est une brève description qui est liée à un autre contrôle ou objet. Les info-bulles aident à comprendre des objets peu familiers qui ne sont pas directement décrits dans l’interface utilisateur. Une info-bulle s’affiche automatiquement lorsque l’utilisateur déplace le focus, appuie de façon prolongée ou pointe avec sa souris sur un contrôle. L’info-bulle disparaît après quelques secondes, ou lorsque l’utilisateur déplace le focus du doigt, du pointeur ou du clavier/boîtier de commande.
 
@@ -63,12 +64,12 @@ Une info-bulle dans l’application Bing Cartes.
 -   Ne placez pas de contrôles interactifs à l’intérieur de l’info-bulle.
 -   Ne placez pas d’images qui semblent être interactives à l’intérieur de l’info-bulle.
 
-<span id="related_topics"> </span>Rubriques connexes
+<span id="related_topics"></span>Rubriques connexes
 -----------------------------------------------
 
 * [**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

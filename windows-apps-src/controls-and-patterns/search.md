@@ -1,24 +1,23 @@
 ---
+author: Jwmsft
 Description: L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
 title: Recherche et recherche dans la page
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
-label: Recherche
+label: Search
 template: detail.hbs
 ---
 
 # Recherche et recherche dans la page
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
+L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
 
 **API importantes**
 
 -   [**Classe AutoSuggestBox (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
-L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
 
-## <span id="Elements_of_the_search_experience"> </span> <span id="elements_of_the_search_experience"> </span> <span id="ELEMENTS_OF_THE_SEARCH_EXPERIENCE"> </span>Aspects de l’expérience de recherche
+
+## <span id="Elements_of_the_search_experience"></span><span id="elements_of_the_search_experience"></span><span id="ELEMENTS_OF_THE_SEARCH_EXPERIENCE"></span>Aspects de l’expérience de recherche
 
 
 **Entrée.**  La saisie de texte est le mode d’entrée de recherche le plus courant et le sujet principal de ce guide. Les modes d’entrée Voix et Webcam sont également couramment utilisés, mais ils nécessitent généralement de pouvoir communiquer avec le matériel et, dans certains cas, l’ajout de contrôles ou d’une interface utilisateur personnalisée au sein de l’application.
@@ -41,14 +40,14 @@ Vous pouvez faciliter l’accès aux fonctions de modification de la dernière r
 
 L’affichage du jeu de résultats peut prendre différentes formes en fonction du contenu. Le [mode Liste](lists.md) offre une grande flexibilité et convient parfaitement à la plupart des recherches. Le mode Grille fonctionne bien pour les images ou les autres contenus multimédias. Vous pouvez utiliser une carte pour indiquer la distribution spatiale.
 
-## <span id="Search_scopes"> </span> <span id="search_scopes"> </span> <span id="SEARCH_SCOPES"> </span>Étendues de recherche
+## <span id="Search_scopes"></span><span id="search_scopes"></span><span id="SEARCH_SCOPES"></span>Zones de recherche
 
 
-La fonction de recherche est couramment utilisée. Les interfaces utilisateur de recherche sont intégrées à l’interpréteur de commandes et à de nombreuses applications. Bien que les points d’entrée de recherche présentent généralement un aspect similaire, ils permettent d’obtenir des résultats aussi larges (recherche sur le web ou sur un périphérique) que précis (liste de contacts d’un utilisateur). Le point d’entrée de recherche doit être juxtaposé au contenu en cours de recherche.
+La fonction recherche est d’utilisation. Les interfaces utilisateur de recherche sont intégrées à l’interpréteur de commandes et à de nombreuses applications. Bien que les points d’entrée de recherche présentent généralement un aspect similaire, ils permettent d’obtenir des résultats aussi larges (recherche sur le web ou sur un périphérique) que précis (liste de contacts d’un utilisateur). Le point d’entrée de recherche doit être juxtaposé au contenu en cours de recherche.
 
 Voici quelques exemples d’étendues de recherche courantes :
 
-**Global** et **contextuel/optimal.** Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
+**Global** et **contextuel/optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
 
 **Web.**  Rechercher dans un index Web. Les résultats peuvent contenir des pages, des entités et des réponses.
 
@@ -72,7 +71,7 @@ Utilisez un texte d’information afin d’indiquer l’étendue de la recherche
 
 En délimitant précisément l’étendue d’un point d’entrée de recherche, vous permettez à l’utilisateur de s’assurer que ses critères correspondent bien à la fonction de recherche et vous limitez ainsi les désagréments éventuels.
 
-## <span id="Implementation"> </span> <span id="implementation"> </span> <span id="IMPLEMENTATION"> </span>Implémentation
+## <span id="Implementation"></span><span id="implementation"></span><span id="IMPLEMENTATION"></span>Implémentation
 
 
 Les champs d’entrée de texte sont recommandés pour la plupart des applications, car ils offrent un point d’entrée de recherche bien visible. Les textes d’information facilitent également la découverte et la communication avec l’étendue de la recherche. Lorsque la recherche est une fonction plus secondaire, ou lorsque l’espace est limité, l’icône de recherche peut servir de point d’entrée, sans qu’un champ d’entrée ne lui soit associé. Lorsque la recherche est affichée sous forme d’une icône, assurez-vous qu’il reste suffisamment d’espace pour afficher la zone de recherche modale, comme illustré dans les exemples ci-dessous.
@@ -97,9 +96,9 @@ Le point d’entrée de recherche peut être placé à différents endroits. Son
 
 Dans le cas des listes de défilement, il est utile d’afficher systématiquement les entrées de recherche. Nous vous recommandons de rendre l’entrée de recherche rémanente et de faire défiler le contenu en arrière-plan.
 
-Les fonctionnalités d’entrée nulle et de formulation de requêtes sont facultatives pour les recherches contextuelles/optimales, dans lesquelles la liste est filtrée en temps réel par l’entrée de l’utilisateur. Des exceptions existent, notamment lorsque les suggestions de mise en forme des requêtes sont disponibles, comme les options de filtrage de la boîte de réception (à : &lt;input string&gt;, de : &lt;input string&gt;, objet : &lt;input string&gt;, etc.).
+Les fonctionnalités d’entrée nulle et de formulation de requêtes sont facultatives pour les recherches contextuelles/optimales, dans lesquelles la liste est filtrée en temps réel par l’entrée de l’utilisateur. Des exceptions existent, notamment lorsque les suggestions de mise en forme des requêtes sont disponibles, comme les options de filtrage de la boîte de réception (à :&lt;input string&gt;, de : &lt;input string&gt;, objet : &lt;input string&gt;, etc.).
 
-## <span id="examples"> </span> <span id="EXAMPLES"> </span>Exemple
+## <span id="examples"></span><span id="EXAMPLES"></span>Exemple
 
 
 Cette section présente des exemples de recherche en contexte.
@@ -132,7 +131,7 @@ La recherche en ligne est réservée au cas où la recherche est rarement utilis
 
 La recherche dans la page permet aux utilisateurs de trouver des correspondances dans le corps du texte affiché. Les visionneuses de documents, lecteurs et navigateurs constituent les types d’applications les plus classiques offrant cette fonctionnalité.
 
-## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>Recommandations
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommandations
 
 
 -   Placez une barre de commandes dans votre application avec la fonctionnalité de recherche dans la page pour permettre à l’utilisateur d’y trouver du texte. Pour plus d’informations sur le placement, voir la section Exemples.
@@ -158,7 +157,7 @@ La recherche dans la page permet aux utilisateurs de trouver des correspondances
 -   Incluez un compteur de correspondances pour indiquer à l’utilisateur le nombre de correspondances de texte sur la page.
 -   Implémentez le raccourci clavier (Ctrl+F).
 
-## <span id="Examples"> </span> <span id="examples"> </span> <span id="EXAMPLES"> </span>Exemples
+## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>Exemples
 
 
 Fournissez un moyen facile d’accéder à la fonctionnalité de recherche dans la page. Dans cet exemple sur une interface utilisateur mobile, la fonctionnalité « Rechercher dans la page » s’affiche après deux commandes « Ajouter à... » dans un menu extensible :
@@ -203,7 +202,7 @@ Pour plus d’informations sur l’ajout de commandes à votre barre de commande
 
 
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 * [**Zone de suggestion automatique**](auto-suggest-box.md)
 
@@ -217,6 +216,6 @@ Pour plus d’informations sur l’ajout de commandes à votre barre de commande
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

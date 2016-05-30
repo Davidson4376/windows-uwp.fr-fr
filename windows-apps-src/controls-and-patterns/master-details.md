@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes de messages électroniques et de contacts ou les carnets d’adresses.
 title: Maître/détails
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
-label: Maître/détails
+label: Master/details
 template: detail.hbs
 ---
 # Modèle Maître/Détails
@@ -71,7 +72,7 @@ La conception d’application ci-dessous qui suit la bourse utilise un modèle M
 
 ![Exemple d’application utilisant le modèle Maître/Détails sur un ordinateur](images/uap-finance-desktop700.png)
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Articles connexes
 
@@ -81,6 +82,6 @@ La conception d’application ci-dessous qui suit la bourse utilise un modèle M
 - [**Classe ListView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

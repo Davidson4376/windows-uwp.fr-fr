@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélection d’une heure à l’aide d’une entrée tactile, de la souris ou du clavier.
 title: Sélecteur d’heure
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
-label: Sélecteur d’heure
+label: Time picker
 template: detail.hbs
 ---
 
@@ -43,9 +44,9 @@ Le sélecteur d’heure qui en résulte se présente comme suit :
 
 ![Exemple de sélecteur d’heure](images/time-picker-closed.png)
 
-> **Remarque**&nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date et d’heure, voir [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article *Contrôles de date et d’heure*.
+> **Remarque** &nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date et d’heure, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article *Contrôles de date et d’heure*.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Rubriques connexes
 
@@ -55,6 +56,6 @@ Le sélecteur d’heure qui en résulte se présente comme suit :
 - [Sélecteur de dates](date-picker.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

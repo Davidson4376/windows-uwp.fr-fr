@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des documents au format RTF qui contiennent du texte mis en forme, des liens hypertexte et des images. Vous pouvez faire en sorte que RichEditBox soit en lecture seule en définissant sa propriété IsReadOnly sur true.
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
-label: Zone d’édition enrichie
+label: Rich edit box
 template: detail.hbs
 ---
 # Zone d’édition enrichie
@@ -193,7 +194,7 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 
 
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Articles connexes
 
@@ -209,10 +210,7 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**Pour les développeurs (autres)**
-- [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

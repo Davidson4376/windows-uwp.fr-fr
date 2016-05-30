@@ -1,29 +1,30 @@
 ---
+author: mijacobs
 Description: Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP).
 title: Ressources de vignette et d’icône
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-label: Ressources de vignette et d’icône
+label: Tile and icon assets
 template: detail.hbs
 ---
 
 # Recommandations en matière de ressources de vignette et d’icône
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 
 Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP). Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes.
 
 ![Écran d’accueil et vignettes de Windows 10](images/assetguidance01.jpg)
 
-## <span id="Adaptive_scaling"> </span> <span id="adaptive_scaling"> </span> <span id="ADAPTIVE_SCALING"> </span>Mise à l’échelle adaptative
+## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>Mise à l’échelle adaptative
 
 
 Tout d’abord, voici une brève vue d’ensemble de la mise à l’échelle adaptative pour mieux comprendre comment fonctionne la mise à l’échelle avec des ressources. Windows 10 introduit une évolution du modèle de mise à l’échelle existant. En plus de la mise à l’échelle du contenu vectoriel, il existe un ensemble unifié de facteurs d’échelle qui assurent la cohérence de taille des éléments d’interface utilisateur en fonction de diverses tailles d’écran et résolutions d’affichage. Ces facteurs d’échelle sont également compatibles avec les facteurs d’échelle d’autres systèmes d’exploitation tels qu’iOS et Android. Cela facilite le partage de ressources entre ces plateformes.
 
-Le Store sélectionne les ressources à télécharger notamment en fonction de la résolution de l’appareil. Seules les ressources les mieux adaptées à l’appareil sont téléchargées.
+Le Store sélectionne les ressources à télécharger notamment en fonction de la résolution de l’appareil. Seules les ressources correspondant au mieux à l’appareil sont téléchargées.
 
-## <span id="Tile_elements"> </span> <span id="tile_elements"> </span> <span id="TILE_ELEMENTS"> </span>Éléments de vignette
+## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>Éléments de vignette
 
 
 Les composants de base d’une vignette de démarrage comprennent une plaque de fond, une icône, une barre de marque, des marges et un titre d’application :
@@ -62,7 +63,7 @@ La largeur des marges dépend du facteur d’échelle de l’appareil sur lequel
 
  
 
-## <span id="Tile_assets"> </span> <span id="tile_assets"> </span> <span id="TILE_ASSETS"> </span>Ressources de vignette
+## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>Ressources de vignette
 
 
 Chaque ressource de vignette a la même taille que la vignette sur laquelle elle est positionnée. Vous pouvez personnaliser les vignettes de votre application avec deux représentations différentes d’une ressource :
@@ -131,7 +132,7 @@ Dans cet exemple, les marges sont trop étroites :
 
 ![Vignette pleine page avec marges trop étroites](images/assetguidance15.png)
 
-## <span id="Tile_assets_in_list_views"> </span> <span id="tile_assets_in_list_views"> </span> <span id="TILE_ASSETS_IN_LIST_VIEWS"> </span>Ressources de vignette dans les affichages Liste
+## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>Ressources de vignette dans les affichages Liste
 
 
 Les vignettes peuvent également apparaître dans un affichage Liste. Les recommandations de dimensionnement des ressources de vignette qui apparaissent dans les affichages Liste diffèrent légèrement de celles des ressources de vignette décrites précédemment. Cette section détaille ces caractéristiques de dimensionnement spécifiques.
@@ -158,10 +159,10 @@ Dans cet exemple, l’icône est trop petite pour la vignette :
 
 ![Icône trop petite pour la vignette](images/assetguidance20b.png)
 
-## <span id="Target-based_assets"> </span> <span id="target-based_assets"> </span> <span id="TARGET-BASED_ASSETS"> </span>Ressources basées sur la cible
+## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>Ressources basées sur la taille de la cible avec plaque
 
 
-Les ressources basées sur la cible sont destinées aux icônes et vignettes qui apparaissent dans la barre des tâches Windows, dans Applications actives, dans l’affichage Alt+Tab, dans l’alignement automatique et dans le coin inférieur droit des vignettes de démarrage. Vous n’avez pas besoin d’ajouter du remplissage à ces ressources ; Windows s’en charge le cas échéant. Ces ressources doivent présenter un encombrement minimal de 16 pixels. Voici un exemple de ces ressources telles qu’elles apparaissent dans les icônes de la barre des tâches Windows :
+Les ressources basées sur la cible sont destinées aux icônes et vignettes qui apparaissent dans la barre des tâches Windows, dans les applications actives, dans l’affichage Alt+Tab, dans l’alignement automatique et dans le coin inférieur droit des vignettes de démarrage. Vous n’avez pas besoin d’ajouter du remplissage à ces ressources ; Windows s’en charge le cas échéant. Ces ressources doivent présenter un encombrement minimal de 16 pixels. Voici un exemple de ces ressources telles qu’elles apparaissent dans les icônes de la barre des tâches Windows :
 
 ![Ressources dans la barre des tâches Windows](images/assetguidance21.png)
 
@@ -191,10 +192,10 @@ Pour les ressources non carrées, un centrage horizontal/vertical automatique et
 
 ![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26b.png)
 
-## <span id="Splash_screen_assets"> </span> <span id="splash_screen_assets"> </span> <span id="SPLASH_SCREEN_ASSETS"> </span>Ressources d’écran de démarrage
+## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>Ressources d’écran de démarrage
 
 
-L’image d’écran de démarrage peut être fournie sous la forme d’un chemin d’accès direct à un fichier image ou sous la forme d’une ressource. En utilisant une référence à une ressource, vous pouvez fournir des images d’échelles différentes afin que Windows puisse choisir la taille la mieux adaptée à l’appareil et à la résolution d’écran. Vous pouvez également fournir des images à contraste élevé pour l’accessibilité et des images localisées correspondant aux différentes langues d’interface utilisateur.
+L’image d’écran de démarrage peut être fournie sous la forme d’un chemin d’accès direct à un fichier image ou en tant que ressource. En utilisant une référence à une ressource, vous pouvez fournir des images d’échelles différentes afin que Windows puisse choisir la taille la mieux adaptée à l’appareil et à la résolution d’écran. Vous pouvez également fournir des images à contraste élevé pour l’accessibilité et des images localisées correspondant aux différentes langues d’interface utilisateur.
 
 Si vous ouvrez le fichier « Package.appxmanifest » dans un éditeur de texte, l’élément [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) s’affiche en tant qu’enfant de l’élément [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471). Le balisage de l’écran de démarrage par défaut dans le fichier manifeste ressemble à ceci dans un éditeur de texte :
 
@@ -209,7 +210,7 @@ Les ressources d’écran de démarrage sont centrées sur chaque appareil sur l
 
 ![Dimensionnement des ressources d’écran de démarrage](images/assetguidance27.png)
 
-## <span id="High-contrast_assets"> </span> <span id="high-contrast_assets"> </span> <span id="HIGH-CONTRAST_ASSETS"> </span>Ressources à contraste élevé
+## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>Ressources à contraste élevé
 
 
 Le mode de contraste élevé utilise des jeux de ressources distincts pour le blanc à contraste élevé (arrière-plan blanc avec texte noir) et le noir à contraste élevé (arrière-plan noir avec texte blanc). Si vous ne fournissez pas de ressources à contraste élevé pour votre application, les ressources standard seront utilisées.
@@ -220,7 +221,7 @@ Si les ressources standard de votre application offrent un affichage acceptable 
 
 Si vous décidez de fournir des ressources à contraste élevé, vous devez inclure les deux types de ressources : blanc sur noir et noir sur blanc. Au moment d’ajouter ces ressources à votre package, vous pouvez créer un dossier « contraste noir » pour les ressources blanc sur noir et un dossier « contraste blanc » pour les ressources noir sur blanc.
 
-## <span id="Asset_size_tables"> </span> <span id="asset_size_tables"> </span> <span id="ASSET_SIZE_TABLES"> </span>Tableaux des tailles de ressource
+## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>Tableaux des tailles de ressource
 
 
 Nous vous recommandons vivement de fournir au moins des ressources pour les facteurs d’échelle 100, 200 et 400. Si vous fournissez des ressources pour tous les facteurs d’échelle, l’expérience utilisateur sera optimale.
@@ -288,7 +289,7 @@ Le tableau suivant répertorie toutes les tailles de ressources basées sur la c
 
 \* Fournissez ces tailles de ressource à titre de référence
 
-## <span id="Asset_types"> </span> <span id="asset_types"> </span> <span id="ASSET_TYPES"> </span>Types de ressources
+## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>Types de ressources
 
 
 Voici tous les types de ressources, leur utilisation et les noms de fichier recommandés.
@@ -367,9 +368,9 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 -   Utilisations :
     -   Vignette sous forme d’icône
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
-## <span id="related_topics"> </span>Rubriques connexes
+
+## <span id="related_topics"></span>Rubriques connexes
 
 
 
@@ -383,6 +384,6 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

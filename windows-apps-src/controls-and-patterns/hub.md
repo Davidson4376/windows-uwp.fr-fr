@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Le contrôle hub utilise un modèle de navigation hiérarchique pour prendre en charge les applications avec une architecture d’informations relationnelle.
 title: Contrôles hub
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
@@ -99,21 +100,16 @@ Sur les appareils mobiles, une seule section du hub est visible à la fois.
     -   Style du texte et taille des en-têtes et du contenu
     -   Couleur de l’arrière-plan, des sections, des en-têtes de section et du contenu des sections
 
-\[Cet article contient des informations propres aux applications UWP et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Articles connexes
------------------------------------------------
 
-**Pour les concepteurs**
 - [Notions de base sur la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438)
-
-**Pour les développeurs (XAML)**
-- [Navigation hiérarchique de A à Z](https://msdn.microsoft.com/library/windows/apps/xaml/dn440585)
 - [**Classe Hub Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/dn251843)
 - [Exemple de contrôle hub XAML](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 - [Utilisation d’un hub](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

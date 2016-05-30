@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Zone de texte qui fournit une suggestion à mesure que l’utilisateur tape.
 title: Recommandations concernant les zones de suggestion automatique
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
@@ -151,6 +152,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,22 +1,23 @@
 ---
-Description: Grâce à un Assistant Visual Studio, vous pouvez générer des notifications Push à partir d’un service mobile créé par le biais de Microsoft Azure Mobile Services.
+author: mijacobs
+Description: Grâce à un Assistant Visual Studio, vous pouvez générer des notifications Push à partir d’un service mobile créé par le biais de Microsoft Azure Mobile Services.
 title: Code généré par l’Assistant Notification Push
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
-label: À déterminer
+label: TBD
 template: detail.hbs
 ---
 
 # Code généré par l’Assistant Notification Push
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Grâce à un Assistant Visual Studio, vous pouvez générer des notifications Push à partir d’un service mobile créé par le biais de Microsoft Azure Mobile Services. L’Assistant Visual Studio génère du code qui devrait vous aider à démarrer. Cette rubrique explique comment l’Assistant modifie votre projet, ce que le code généré fait, comment utiliser ce code et ce que vous pouvez faire ensuite pour tirer le meilleur parti des notifications Push. Voir [Vue d’ensemble des services de notifications Push Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md).
-
-## <span id="How_the_wizard_modifies_your_project"> </span> <span id="how_the_wizard_modifies_your_project"> </span> <span id="HOW_THE_WIZARD_MODIFIES_YOUR_PROJECT"> </span>Comment l’Assistant modifie votre projet
 
 
-L’Assistant Notification Push modifie votre projet comme suit :
+Grâce à un Assistant Visual Studio, vous pouvez générer des notifications Push à partir d’un service mobile créé via Microsoft Azure Mobile Services. L’Assistant Visual Studio génère du code qui devrait vous aider à démarrer. Cette rubrique explique comment l’Assistant modifie votre projet, ce que le code généré fait, comment utiliser ce code et ce que vous pouvez faire ensuite pour tirer le meilleur parti des notifications Push. Consultez [Vue d’ensemble des services de notifications Push Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md).
+
+## <span id="How_the_wizard_modifies_your_project"></span><span id="how_the_wizard_modifies_your_project"></span><span id="HOW_THE_WIZARD_MODIFIES_YOUR_PROJECT"></span>Comment l’Assistant modifie votre projet
+
+
+L’Assistant de notifications Push modifie votre projet comme suit :
 
 -   Il ajoute une référence au client géré des services mobiles (MobileServicesManagedClient.dll). Ne s’applique pas aux projets JavaScript.
 -   Il ajoute un fichier dans un sous-dossier sous services, puis nomme le fichier push.register.cs, push.register.vb, push.register.cpp ou push.register.js.
@@ -33,7 +34,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
                 "<your client secret>");
 ```
 
-## <span id="Registration_for_push_notifications"> </span> <span id="registration_for_push_notifications"> </span> <span id="REGISTRATION_FOR_PUSH_NOTIFICATIONS"> </span>Inscription aux notifications Push
+## <span id="Registration_for_push_notifications"></span><span id="registration_for_push_notifications"></span><span id="REGISTRATION_FOR_PUSH_NOTIFICATIONS"></span>Inscription aux notifications Push
 
 
 Dans push.register.\*, la méthode UploadChannel inscrit l’appareil pour la réception des notifications Push. Le Windows Store effectue le suivi des instances installées de votre application et fournit le canal de notification Push. Voir [**PushNotificationChannelManager**](https://msdn.microsoft.com/library/windows/apps/br241284).
@@ -165,12 +166,12 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 
 Les balises de notification Push permettent de restreindre les notifications à un sous-ensemble de clients. Vous pouvez utiliser la méthode registerNative (ou la méthode RegisterNativeAsync) pour inscrire toutes les notifications Push sans spécifier de balises ou vous pouvez effectuer l’inscription avec des balises en fournissant le deuxième argument, un tableau de balises. Si vous effectuez l’inscription avec une ou plusieurs balises, vous ne recevrez que les notifications correspondant à ces balises.
 
-## <span id="Server-side_scripts__JavaScript_backend_only_"> </span> <span id="server-side_scripts__javascript_backend_only_"> </span> <span id="SERVER-SIDE_SCRIPTS__JAVASCRIPT_BACKEND_ONLY_"> </span>Scripts côté serveur (système principal JavaScript uniquement)
+## <span id="Server-side_scripts__JavaScript_backend_only_"></span><span id="server-side_scripts__javascript_backend_only_"></span><span id="SERVER-SIDE_SCRIPTS__JAVASCRIPT_BACKEND_ONLY_"></span>Scripts côté serveur (système principal JavaScript uniquement)
 
 
-Pour les services mobiles qui utilisent le système principal JavaScript, les scripts côté serveur s’exécutent quand des opérations de suppression, d’insertion, de lecture ou de mise à jour se produisent. Les scripts n’implémentent pas ces opérations, mais ils s’exécutent quand un appel d’un client vers l’API REST de Windows Mobile déclenche ces événements. Les scripts passent ensuite le contrôle aux opérations elles-mêmes en appelant request.execute ou request.respond pour répondre au contexte d’appel. Voir [Informations de référence sur l’API REST d’Azure Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=511139).
+Pour les services mobiles qui utilisent le système principal JavaScript, les scripts côté serveur s’exécutent quand des opérations de suppression, insertion, lecture ou mise à jour se produisent. Les scripts n’implémentent pas ces opérations, mais ils s’exécutent quand un appel d’un client vers l’API REST de Windows Mobile déclenche ces événements. Les scripts passent ensuite le contrôle aux opérations elles-mêmes en appelant request.execute ou request.respond pour répondre au contexte d’appel. Voir [Informations de référence sur l’API REST d’Azure Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=511139).
 
-De nombreuses fonctions sont disponibles dans le script côté serveur. Voir [Inscrire des opérations de table dans Azure Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=511140). Pour obtenir des informations de référence sur toutes les fonctions disponibles, voir [Informations de référence sur les scripts serveur de Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=257676).
+De nombreuses fonctions sont disponibles dans le script côté serveur. Voir [Inscrire des opérations de table dans Azure Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=511140). Pour obtenir des informations de référence sur toutes les fonctions disponibles, consultez [Informations de référence sur les scripts serveur de Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=257676).
 
 Le code d’API personnalisé suivant est également créé dans Notifyallusers.js :
 
@@ -201,14 +202,14 @@ function sendNotifications(request) {
 
 La fonction sendNotifications envoie une seule notification sous forme d’une notification toast. Vous pouvez également utiliser d’autres types de notifications Push.
 
-**Conseil** Pour plus d’informations sur la manière d’obtenir de l’aide lors de la modification de scripts, voir [Activation d’IntelliSense pour JavaScript côté serveur](http://go.microsoft.com/fwlink/p/?LinkId=309275).
+**Conseil** Pour plus d’informations sur la manière d’obtenir de l’aide lors de la modification de scripts, consultez [Activation d’IntelliSense pour JavaScript côté serveur](http://go.microsoft.com/fwlink/p/?LinkId=309275).
 
  
 
-## <span id="Push_notification_types"> </span> <span id="push_notification_types"> </span> <span id="PUSH_NOTIFICATION_TYPES"> </span>Types de notifications Push
+## <span id="Push_notification_types"></span><span id="push_notification_types"></span><span id="PUSH_NOTIFICATION_TYPES"></span>Types de notifications Push
 
 
-Windows prend en charge les notifications qui ne sont pas des notifications Push. Pour obtenir des informations générales sur ces notifications, voir [Remise de notifications planifiées, périodiques et Push](https://msdn.microsoft.com/library/windows/apps/hh761484).
+Windows prend en charge les notifications qui ne sont pas des notifications Push. Pour obtenir des informations générales sur ces notifications, consultez [Remise de notifications planifiées, périodiques et Push](https://msdn.microsoft.com/library/windows/apps/hh761484).
 
 Les notifications toast sont faciles à utiliser. Vous pouvez retrouver un exemple dans le code du fichier Insert.js, dans la table du canal générée automatiquement. Si vous envisagez d’utiliser des notifications par vignette ou des notifications de badge, vous devez non seulement créer un modèle XML pour la vignette ou pour le badge, mais aussi spécifier l’encodage des informations empaquetées dans le modèle. Voir [Utilisation de vignettes, de badges et de notifications toast](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
 
@@ -218,12 +219,12 @@ Utilisez les notifications Push conformément aux recommandations sur les applic
 
 Si vous mettez à jour des vignettes dynamiques avec des notifications Push, suivez également les recommandations énumérées dans [Recommandations et liste de vérification sur les vignettes et les badges](https://msdn.microsoft.com/library/windows/apps/hh465403).
 
-## <span id="Next_steps"> </span> <span id="next_steps"> </span> <span id="NEXT_STEPS"> </span>Étapes suivantes
+## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>Étapes suivantes
 
 
-### <span id="Using_the_Windows_Push_Notification_Services__WNS_"> </span> <span id="using_the_windows_push_notification_services__wns_"> </span> <span id="USING_THE_WINDOWS_PUSH_NOTIFICATION_SERVICES__WNS_"> </span>Utilisation des Services de notifications Push Windows (WNS)
+### <span id="Using_the_Windows_Push_Notification_Services__WNS_"></span><span id="using_the_windows_push_notification_services__wns_"></span><span id="USING_THE_WINDOWS_PUSH_NOTIFICATION_SERVICES__WNS_"></span>Utilisation des Services de notifications Push Windows (WNS)
 
-Vous pouvez appeler les Services de notifications Push Windows (WNS) directement si les services mobiles n’offrent pas suffisamment de flexibilité, si vous souhaitez écrire le code du serveur en C# ou Visual Basic, ou si vous disposez déjà d’un service cloud et souhaitez envoyer des notifications Push à partir de celui-ci. En appelant WNS directement, vous pouvez envoyer des notifications Push à partir de votre propre service cloud, par exemple un rôle de travail qui surveille des données à partir d’une base de données ou d’un autre service web. Votre service cloud doit s’authentifier auprès de WNS pour envoyer des notifications Push à vos applications. Voir [Comment s’authentifier auprès des services de notifications Push Windows (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) ou [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206).
+Vous pouvez appeler les Services de notifications Push Windows (WNS) directement si les services mobiles n’offrent pas suffisamment de flexibilité, si vous souhaitez écrire le code du serveur en C# ou Visual Basic, ou si vous disposez déjà d’un service cloud et souhaitez envoyer des notifications Push à partir de celui-ci. En appelant WNS directement, vous pouvez envoyer des notifications Push à partir de votre propre service cloud, par exemple un rôle de travail qui surveille des données à partir d’une base de données ou d’un autre service web. Votre service cloud doit s’authentifier auprès de WNS pour envoyer des notifications Push à vos applications. Voir [Comment s’authentifier auprès des services de notifications Push Windows (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) ou [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206).
 
 Vous pouvez également envoyer des notifications Push en exécutant une tâche planifiée dans votre service mobile. Voir [Planifier des travaux périodiques dans Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=301694).
 
@@ -231,7 +232,7 @@ Vous pouvez également envoyer des notifications Push en exécutant une tâche p
 
  
 
-## <span id="related_topics"> </span>Rubriques connexes
+## <span id="related_topics"></span>Rubriques connexes
 
 
 * [Vue d’ensemble des services de notifications Push Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
@@ -248,6 +249,6 @@ Vous pouvez également envoyer des notifications Push en exécutant une tâche p
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

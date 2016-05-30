@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Le mouvement panoramique et le défilement permettent aux utilisateurs d’atteindre du contenu qui s’étend au-delà des limites de l’écran.
 title: Recommandations en matière de barres de défilement
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-label: Barres de défilement
+label: Scroll bars
 template: detail.hbs
 ---
 # Barres de défilement
@@ -16,7 +17,7 @@ Le mouvement panoramique et le défilement permettent aux utilisateurs d’attei
 
 Un contrôle de visionneuse à défilement est composé d’autant de contenu que la fenêtre d’affichage peut en contenir et d’une ou deux barres de défilement. Vous pouvez utiliser des mouvements tactiles pour agrandir ou effectuer un panoramique (les barres de défilement apparaissent en fondu uniquement durant la manipulation) et utiliser le pointeur pour le défilement. Le mouvement de raccourci effectue un panoramique avec l’inertie.
 
-**Remarque** Windows : il existe deux modes d’affichage de panoramique en fonction du périphérique d’entrée détecté : les indicateurs de mouvement panoramique pour l’interaction tactile et les barres de défilement pour les autres périphériques d’entrée, notamment la souris, le pavé tactile, le clavier et le stylet.
+**Remarque** Windows : il existe deux modes d’affichage de panoramique en fonction de l’appareil d’entrée détecté : les indicateurs de mouvement panoramique pour l’interaction tactile et les barres de défilement pour les autres appareils d’entrée, notamment la souris, le pavé tactile, le clavier et le stylet.
 
 ![Un exemple de contrôles de barre de défilement et d’indicateur de mouvement panoramique standard](images/SCROLLBAR.png)
 
@@ -24,7 +25,7 @@ Un contrôle de visionneuse à défilement est composé d’autant de contenu qu
 
 Un [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) permet d’afficher le contenu dans une zone plus petite que sa taille réelle. Lorsque le contenu de la visionneuse à défilement n’est pas entièrement visible, celle-ci affiche des barres de défilement que l’utilisateur peut utiliser pour déplacer la zone de contenu visible. La zone qui inclut tout le contenu de la visionneuse à défilement est l’*étendue*. La zone visible du contenu est la *fenêtre d’affichage*.
 
-![Capture d’écran du contrôle de barre de défilement standard](images/SCROLLBAR_STANDARD.jpg)
+![Capture d’écran du contrôle de barre de défilement standard](images/ScrollBar_Standard.jpg)
 
 ## Créer une visionneuse à défilement
 
@@ -40,7 +41,7 @@ Ce code XAML montre comment placer une image dans une visionneuse à défilement
 
 ## ScrollViewer dans un modèle de contrôle
 
-Souvent, un ScrollViewer est un élément composite d’autres contrôles. Un élément ScrollViewer, avec la classe [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) pour la prise en charge, présente une fenêtre d’affichage ainsi que des barres de défilement uniquement lorsque l’espace de disposition du contrôle hôte est limité et plus petit que la taille du contenu étendu. C’est souvent le cas pour les listes : les modèles [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) incluent toujours un ScrollViewer. [
+Souvent, un ScrollViewer est un élément composite d’autres contrôles. Un élément ScrollViewer, avec la classe [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) pour la prise en charge, présente une fenêtre d’affichage ainsi que des barres de défilement uniquement lorsque l’espace de disposition du contrôle hôte est limité et plus petit que la taille du contenu étendu. C’est souvent le cas pour les listes : les modèles [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) incluent toujours un ScrollViewer. [
             **TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) et [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) incluent également un ScrollViewer dans leurs modèles.
 
 Quand un élément **ScrollViewer** existe dans un contrôle, le contrôle hôte dispose souvent d’une gestion des événements intégrée pour certains événements d’entrée et de manipulations qui permettent de faire défiler le contenu. Par exemple, un contrôle GridView interprète un mouvement de balayage, entraînant un défilement horizontal du contenu. Les événements d’entrée et manipulations de données brutes reçus par le contrôle hôte sont considérés comme étant gérés par le contrôle, et les événements de bas niveau tels que [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) ne sont pas déclenchés ni propagés vers des conteneurs parents. Vous pouvez modifier certains aspects de la gestion des contrôles intégrée en remplaçant une classe de contrôle et les méthodes virtuelles **On*** pour les événements, ou en redéfinissant le modèle du contrôle. Toutefois, dans les deux cas, il n’est pas très simple de reproduire le comportement par défaut d’origine, qui a généralement pour but de faire réagir le contrôle d’une façon spécifique aux événements et aux mouvements et actions d’entrée de l’utilisateur. Par conséquent, vous devez déterminer si cet événement d’entrée doit vraiment se déclencher. Vous pouvez rechercher s’il existe d’autres mouvements ou événements d’entrée qui ne sont pas gérés par le contrôle et les exploiter dans la conception de l’interaction de votre application ou de votre contrôle.
@@ -89,6 +90,6 @@ Pour les cas où un ScrollViewer est explicite dans votre code XAML, comme indiq
 * [**Classe ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

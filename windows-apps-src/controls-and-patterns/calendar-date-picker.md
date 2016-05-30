@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes.
 title: Sélecteur de dates du calendrier
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
@@ -63,7 +64,7 @@ Lorsque vous définissez la date dans le code, la valeur est limitée par les pr
 
 Vous pouvez gérer l’événement [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) pour être averti lorsque la valeur Date a changé.
 
-> **Remarque** Pour obtenir des informations importantes sur les valeurs de date, voir [Valeurs de date, d’heure et de calendrier](date-and-time.md#datetime-and-calendar-values) dans l’article relatif aux contrôles de date et d’heure.
+> **Remarque** &nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
 
 ### Définition d’un texte d’en-tête et d’espace réservé
 
@@ -84,6 +85,6 @@ Le texte d’espace réservé par défaut est « sélectionner une date ». Vo
 - [Sélecteur d’heure](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,20 +1,21 @@
 ---
+author: mijacobs
 Description: Les services de notifications Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
 title: Vue d’ensemble des services de notifications Push Windows (WNS)
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
-label: À déterminer
+label: TBD
 template: detail.hbs
 ---
 
 # Vue d’ensemble des services de notifications Push Windows (WNS)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Les services de notifications Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
 
-## <span id="How_it_works"> </span> <span id="how_it_works"> </span> <span id="HOW_IT_WORKS"> </span>Fonctionnement
+Les services de notification Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
+
+## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>Fonctionnement
 
 
 Le diagramme ci-après présente l’intégralité du flux de données impliqué dans l’envoi d’une notification Push. Les étapes nécessaires sont les suivantes :
@@ -28,35 +29,35 @@ Le diagramme ci-après présente l’intégralité du flux de données impliqué
 
 ![Diagramme du flux de données WNS relatif aux notifications Push](images/wns-diagram-01.png)
 
-## <span id="registering_wit_store"> </span> <span id="REGISTERING_WIT_STORE"> </span>Inscription de votre application et réception des informations d’identification de votre service cloud
+## <span id="registering_wit_store"></span><span id="REGISTERING_WIT_STORE"></span>Inscription de votre application et réception des informations d’identification de votre service cloud
 
 
-Pour que vous puissiez envoyer des notifications à l’aide des services WNS, votre application doit au préalable être inscrite auprès du Tableau de bord du Windows Store. Cela vous fournit les informations d’identification de votre application que votre service cloud utilisera lors de l’authentification à l’aide des services WNS. Ces informations d’identification se composent d’un identificateur de sécurité du package (SID) et d’une clé secrète. Pour effectuer cette inscription, accédez au [Centre de développement Windows](http://go.microsoft.com/fwlink/p/?linkid=511146) et sélectionnez **Tableau de bord**.
+Pour que vous puissiez envoyer des notifications à l’aide des services WNS, votre application doit au préalable être inscrite auprès du Tableau de bord du Store. Cela vous fournit les informations d’identification de votre application que votre service cloud utilisera lors de l’authentification à l’aide des services WNS. Ces informations d’identification se composent d’un identificateur de sécurité du package (SID) et d’une clé secrète. Pour effectuer cette inscription, accédez au [Centre de développement Windows](http://go.microsoft.com/fwlink/p/?linkid=511146) et sélectionnez **Tableau de bord**.
 
 Chaque application dispose de son propre ensemble d’informations d’identification pour son service cloud. Ces informations d’identification ne peuvent pas être utilisées pour envoyer des notifications à une autre application.
 
 Pour plus d’informations sur l’inscription de votre application, voir [Comment s’authentifier auprès des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407).
 
-## <span id="Requesting_a_notification_channel"> </span> <span id="requesting_a_notification_channel"> </span> <span id="REQUESTING_A_NOTIFICATION_CHANNEL"> </span>Demande d’un canal de notification
+## <span id="Requesting_a_notification_channel"></span><span id="requesting_a_notification_channel"></span><span id="REQUESTING_A_NOTIFICATION_CHANNEL"></span>Demande d’un canal de notification
 
 
 Lorsqu’une application capable de recevoir des notifications Push est en cours d’exécution, elle doit d’abord demander un canal de notification par le biais de [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241285). Pour obtenir une description complète et un exemple de code, voir [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/library/windows/apps/hh465412). Cette API renvoie un URI de canal qui est lié de manière unique à l’application appelante et sa vignette, par l’intermédiaire duquel tous les types de notifications peuvent être envoyés.
 
-Une fois que l’application a créé un URI de canal, elle l’envoie à son service cloud, ainsi que toutes les métadonnées propres à l’application qui doivent être associées à cet URI.
+Une fois que l’application a créé un URI de canal, elle l’envoie à son service cloud, ainsi que toutes les métadonnées spécifiques à l’application qui doivent être associées à cet URI.
 
-### <span id="important_notes1"> </span> <span id="IMPORTANT_NOTES1"> </span>Remarques importantes
+### <span id="important_notes1"></span><span id="IMPORTANT_NOTES1"></span>Remarques importantes
 
--   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows 10 renouvelle périodiquement son canal en arrière-plan, vous pouvez télécharger l’[exemple de notifications Push et périodiques](http://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows 8.1, et réutiliser son code source et/ou le modèle qu’il présente.
+-   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows 10 renouvelle périodiquement son canal en arrière-plan, vous pouvez télécharger l’[exemple de notifications Push et périodiques](http://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows 8.1, et réutiliser son code source et/ou le modèle qu’il présente.
 -   C’est vous, le développeur, qui implémentez l’interface entre le service cloud et l’application cliente. Nous recommandons que l’application passe par un processus d’authentification auprès de son propre service et qu’elle transmette les données par le biais d’un protocole sécurisé tel que HTTPS.
 -   Il est important que le service cloud offre toujours la garantie que l’URI de canal utilise le domaine « notify.windows.com ». Le service ne doit jamais effectuer une transmission de type push de notifications vers un canal se trouvant sur un autre domaine. Si jamais le rappel pour votre application était compromis, une personne malveillante pourrait soumettre un URI de canal pour tromper WNS. Sans une inspection du domaine, votre service cloud pourrait divulguer des informations à cette personne malveillante sans le savoir.
--   Si votre service cloud tente d'envoyer une notification à un canal ayant expiré, le service WNS renvoie le [code de réponse 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). En réponse à ce code, votre service ne doit plus chercher à envoyer des notifications à cet URI.
+-   Si votre service cloud tente d'envoyer une notification à un canal ayant expiré, le service WNS renvoie le [code de réponse 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). En réponse à ce code, votre service ne doit plus chercher à envoyer des notifications à cet URI.
 
-## <span id="Authenticating_your_cloud_service"> </span> <span id="authenticating_your_cloud_service"> </span> <span id="AUTHENTICATING_YOUR_CLOUD_SERVICE"> </span>Authentification de votre service cloud
+## <span id="Authenticating_your_cloud_service"></span><span id="authenticating_your_cloud_service"></span><span id="AUTHENTICATING_YOUR_CLOUD_SERVICE"></span>Authentification de votre service cloud
 
 
-Pour envoyer une notification, le service cloud doit être authentifié par le biais de WNS. La première étape de ce processus a lieu lorsque vous inscrivez votre application auprès du Tableau de bord du Windows Store. Pendant le processus d’inscription, un ID de sécurité (SID) de package et une clé secrète sont attribués à votre application. Ces informations sont utilisées par votre service cloud pour s’authentifier auprès de WNS.
+Pour envoyer une notification, le service cloud doit être authentifié via WNS. La première étape de ce processus a lieu lorsque vous inscrivez votre application auprès du Tableau de bord du Windows Store. Pendant le processus d’inscription, un ID de sécurité (SID) de package et une clé secrète sont attribués à votre application. Ces informations sont utilisées par votre service cloud pour s’authentifier auprès de WNS.
 
-Le schéma d’authentification WNS est implémenté à l’aide du profil d’informations d’authentification du client à partir du protocole [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=226787). Le service cloud s’authentifie auprès de WNS en fournissant ses informations d’identification (SID de package et clé secrète). En retour, il reçoit un jeton d’accès. Ce jeton d’accès permet à un service cloud d’envoyer une notification. Le jeton est requis avec chaque demande de notification envoyée aux services WNS.
+Le schéma d’authentification WNS est implémenté à l’aide du profil d’informations d’authentification du client à partir du protocole [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=226787). Le service cloud s’authentifie auprès de WNS en fournissant ses informations d’identification (SID de package et clé secrète). En retour, il reçoit un jeton d’accès. Ce jeton d’accès permet à un service cloud d’envoyer une notification. Le jeton est requis avec chaque demande de notification envoyée aux services WNS.
 
 Au niveau le plus élevé, la chaîne d’informations se présente comme suit :
 
@@ -96,14 +97,14 @@ L’exemple suivant présente une réponse d’authentification réussie, inclua
  }
 ```
 
-### <span id="important_notes2"> </span> <span id="IMPORTANT_NOTES2"> </span>Remarques importantes
+### <span id="important_notes2"></span><span id="IMPORTANT_NOTES2"></span>Remarques importantes
 
--   Le protocole OAuth 2.0 pris en charge dans cette procédure suit la version brouillon V16.
+-   Le protocole OAuth 2.0 pris en charge dans cette procédure suit la version brouillon V16.
 -   Le document RFC (Request For Comments) relatif à OAuth utilise le terme « client » pour faire référence au service cloud.
 -   Cette procédure pourra faire l’objet de modifications lorsque l’ébauche sur le protocole OAuth sera finalisée.
--   Le jeton d’accès peut être réutilisé pour plusieurs demandes de notification. Cela permet au service cloud d’effectuer une seule fois l’authentification pour envoyer plusieurs notifications. Toutefois, lorsque le jeton d’accès arrive à expiration, le service cloud doit de nouveau s’authentifier pour recevoir un nouveau jeton d’accès.
+-   Le jeton d’accès peut être réutilisé pour plusieurs demandes de notification. Cela permet au service cloud d’effectuer une seule fois l’authentification pour envoyer plusieurs notifications. Toutefois, lorsque le jeton d’accès expire, le service cloud doit à nouveau s’authentifier pour recevoir un nouveau jeton d’accès.
 
-## <span id="Sending_a_notification"> </span> <span id="sending_a_notification"> </span> <span id="SENDING_A_NOTIFICATION"> </span>Envoi d’une notification
+## <span id="Sending_a_notification"></span><span id="sending_a_notification"></span><span id="SENDING_A_NOTIFICATION"></span>Envoi d’une notification
 
 
 À l’aide de l’URI de canal, le service cloud peut envoyer une notification chaque fois qu’il dispose d’une mise à jour pour l’utilisateur.
@@ -114,7 +115,7 @@ Le jeton d’accès décrit ci-dessus peut être réutilisé pour plusieurs dema
 
     Voici un exemple de requête : Pour obtenir des détails sur la syntaxe, voir [Codes de réponse de notification Push](https://msdn.microsoft.com/library/windows/apps/hh465435).
 
-    Pour obtenir des détails sur la composition de la charge utile de notification, voir [Démarrage rapide : envoi d’une notification Push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252). La charge utile d’une notification Push par vignette, toast ou badge est fournie sous la forme d’un contenu XML qui respecte le [schéma de vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md) ou le [schéma de vignettes héritées](https://msdn.microsoft.com/library/windows/apps/br212853) définis. La charge utile d’une notification brute ne dispose d’aucune structure spécifique. Elle est strictement définie pour l’application.
+    Pour obtenir des détails sur la composition de la charge utile de notification, consultez [Démarrage rapide : envoi d’une notification Push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252). La charge utile d’une notification Push par vignette, toast ou badge est fournie sous la forme d’un contenu XML qui respecte le [schéma de vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md) ou le [schéma de vignettes héritées](https://msdn.microsoft.com/library/windows/apps/br212853) définis. La charge utile d’une notification brute ne dispose d’aucune structure spécifique. Elle est strictement définie pour l’application.
 
     ``` syntax
      POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
@@ -134,7 +135,7 @@ Le diagramme ci-après illustre le flux de données :
 
 ![Diagramme WNS concernant l’envoi d’une notification](images/wns-diagram-03.png)
 
-### <span id="important_notes3"> </span> <span id="IMPORTANT_NOTES3"> </span>Remarques importantes
+### <span id="important_notes3"></span><span id="IMPORTANT_NOTES3"></span>Remarques importantes
 
 -   Les services WNS ne garantissent pas la fiabilité ou la latence d’une notification.
 -   Les notifications ne doivent jamais inclure des données confidentielles ou sensibles.
@@ -143,22 +144,22 @@ Le diagramme ci-après illustre le flux de données :
 -   Lorsque le périphérique est hors connexion, les services WNS stockent par défaut jusqu’à cinq notifications par vignette (si la mise en file d’attente est activée ; sinon, une notification par vignette) et une notification de badge pour chaque URI de canal et pas de notification brute. Ce comportement de mise en cache par défaut peut être modifié par l'intermédiaire de l'[en-tête X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache). Notez que les notifications toast ne sont jamais stockées lorsque l’appareil est hors connexion.
 -   Dans les scénarios où le contenu de notification est personnalisé pour l’utilisateur, les services WNS recommandent que le service cloud envoie immédiatement ces mises à jour lorsqu’elles sont reçues. C’est le cas, par exemple, des mises à jour de flux de médias sociaux, des invitations à des communications instantanées, des notifications de nouveau message ou des alertes. D’autres scénarios peuvent impliquer l’envoi fréquent d’une même mise à jour générique à un vaste sous-ensemble de vos utilisateurs ; par exemple, des mises à jour relatives à la météo, à la bourse et aux actualités. Selon les recommandations WNS, la fréquence de ces mises à jour doit être au maximum d’une fois toutes les 30 minutes. L’utilisateur final ou les services WNS peuvent déterminer comme abusives des mises à jour de routine plus fréquentes.
 
-## <span id="expiry"> </span> <span id="EXPIRY"> </span>Expiration des notifications par vignette et par badge
+## <span id="expiry"></span><span id="EXPIRY"></span>Expiration des notifications par vignette et par badge
 
 
 Par défaut, les notifications par vignette et par badge arrivent à expiration trois jours après avoir été téléchargées. Quand une notification arrive à expiration, le contenu est supprimé de la vignette ou de la file d’attente et n’est plus présenté à l’utilisateur. Il est préférable de définir une expiration (en utilisant un délai approprié pour votre application) pour toutes les notifications par vignette et par badge, afin de vous assurer que le contenu de votre vignette ne persiste pas plus longtemps que nécessaire. Un délai d’expiration explicite est essentiel pour les contenus dont la durée de vie est limitée. Cette approche assure également la suppression du contenu périmé si votre service cloud arrête d’envoyer des notifications, ou que l’utilisateur se déconnecte du réseau pour une période prolongée.
 
 Votre service cloud peut définir une expiration pour chaque notification en définissant l’en-tête HTTP X-WNS-Expires pour spécifier la durée (en secondes) durant laquelle votre notification restera valide après son envoi. Pour plus d’informations, voir [En-têtes des demandes et des réponses du service de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
 
-Par exemple, au cours d’une journée active d’échanges sur le marché boursier, vous pouvez doubler le délai d’expiration de la mise à jour du cours d’une action par rapport à l’intervalle d’envoi (par exemple une heure après la réception du contenu, si vous envoyez des notifications chaque demi-heure). Autre exemple, dans une application d’actualités, le délai d’expiration approprié pour la mise à jour quotidienne des vignettes d’actualités est d’une journée.
+Par exemple, au cours d’une journée active d’échanges sur le marché boursier, vous pouvez doubler le délai d’expiration de la mise à jour du cours d’une action par rapport à l’intervalle d’envoi (par exemple une heure après la réception du contenu, si vous envoyez des notifications chaque demi-heure). Autre exemple, dans une application d’infos, le délai d’expiration approprié pour la mise à jour quotidienne des vignettes d’infos est d’une journée.
 
-## <span id="Push_notifications_and_battery_saver"> </span> <span id="push_notifications_and_battery_saver"> </span> <span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER"> </span>Notifications Push et économiseur de batterie
+## <span id="Push_notifications_and_battery_saver"></span><span id="push_notifications_and_battery_saver"></span><span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER"></span>Notifications Push et économiseur de batterie
 
 
-L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 permet à l’utilisateur de configurer l’économiseur de batterie de sorte qu’il s’active automatiquement lorsque le niveau de la batterie descend en dessous d’un seuil défini. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. Les paramètres d’économiseur de batterie Windows 10 suivants (disponibles dans l’application **Paramètres**) permettent à votre application de recevoir des notifications Push même lorsque l’économiseur de batterie est activé.
+L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 permet à l’utilisateur de configurer l’économiseur de batterie de sorte qu’il s’active automatiquement lorsque le niveau de la batterie descend en dessous d’un seuil défini. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. Les paramètres d’économiseur de batterie Windows 10 suivants (disponibles dans l’application **Paramètres**) permettent à votre application de recevoir des notifications Push même lorsque l’économiseur de batterie est activé.
 
--   **Autoriser les notifications Push d’une application en cas d’utilisation d’un économiseur de batterie** : ce paramètre permet à toutes les applications de recevoir des notifications Push lorsque l’économiseur de batterie est activé. Notez que ce paramètre s’applique uniquement à Windows 10 pour éditions de bureau (Famille, Professionnel, Entreprise et Éducation).
--   **Toujours autoriser** : ce paramètre permet à des applications spécifiques de s’exécuter en arrière-plan lorsque l’économiseur de batterie est activé (réception de notifications Push comprise). Cette liste est mise à jour manuellement par l’utilisateur.
+-   **Autoriser les notifications Push d’une application en cas d’utilisation d’un économiseur de batterie** : ce paramètre permet à toutes les applications de recevoir des notifications Push lorsque l’économiseur de batterie est activé. Notez que ce paramètre s’applique uniquement à Windows 10 pour éditions de bureau (Famille, Professionnel, Entreprise et Éducation).
+-   **Toujours autoriser** : ce paramètre permet à des applications spécifiques de s’exécuter en arrière-plan lorsque l’économiseur de batterie est activé (réception de notifications Push comprise). Cette liste est mise à jour manuellement par l’utilisateur.
 
 Il n’existe aucun moyen de vérifier l’état de ces deux paramètres, mais vous pouvez vérifier l’état de l’économiseur de batterie. Dans Windows 10, utilisez la propriété [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) pour vérifier l’état de l’économiseur de batterie. Votre application peut également utiliser l’événement [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) pour détecter les changements d’état de l’économiseur de batterie.
 
@@ -236,11 +237,11 @@ Voici le code XAML pour l’élément [**ContentDialog**](https://msdn.microsoft
 ```
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## <span id="related_topics"> </span>Rubriques connexes
+## <span id="related_topics"></span>Rubriques connexes
 
 
 * [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md)
@@ -261,6 +262,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

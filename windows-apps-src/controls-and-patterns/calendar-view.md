@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Un affichage Calendrier permet à un utilisateur d’afficher un calendrier qu’il peut parcourir par mois, par année ou par décennie, et d’interagir avec celui-ci.
 title: Affichage Calendrier
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
@@ -57,7 +58,7 @@ Un utilisateur peut désélectionner une date sélectionnée en cliquant ou en a
 
 Vous pouvez gérer l’événement [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) pour être averti lorsque la collection [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) a changé.
 
-> **Remarque** Pour obtenir des informations importantes sur les valeurs de date, voir [Valeurs de date, d’heure et de calendrier](date-and-time.md#datetime-and-calendar-values) dans l’article relatif aux contrôles de date et d’heure.
+> **Remarque** &nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
 
 ### Personnalisation de l’apparence de l’affichage Calendrier
 
@@ -190,6 +191,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [Sélecteur d’heure](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,9 +1,10 @@
 ---
+author: Jwmsft
 Description: Une zone de mot de passe (PasswordBox) est une zone d’entrée de texte qui masque les caractères saisis, pour des raisons de confidentialité.
 title: Recommandations en matière de zones de mot de passe
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
-label: Zone de mot de passe
+label: Password box
 template: detail.hbs
 ---
 # Zone de mot de passe
@@ -111,7 +112,7 @@ Par défaut, le bouton d’affichage du mot de passe (ou « bouton d’aperçu�
 
 La valeur de la propriété [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) n’est pas le seul facteur déterminant si un bouton d’affichage du mot de passe est visible à l’utilisateur. Parmi les autres facteurs, figurent ceux indiquant si le contrôle est affiché au-dessus d’une largeur minimale, si le focus porte sur PasswordBox et si le champ de texte contient au moins un caractère. Le bouton d’affichage du mot de passe apparaît uniquement lorsque le focus porte sur PasswordBox pour la première fois et si un caractère est saisi. Si PasswordBox perd le focus, puis le reprend, le bouton d’affichage n’apparaît plus, sauf si le mot de passe est effacé et que la saisie de caractères recommence.
 
-> **Attention**&nbsp;&nbsp;Avant Windows 10, le bouton d’affichage du mot de passe ne s’affichait pas par défaut. Si la sécurité de votre application requiert que le mot de passe soit toujours masqué, veillez à définir PasswordRevealMode sur Hidden.
+> **Attention** &nbsp;&nbsp;Avant Windows 10, le bouton d’affichage du mot de passe ne s’affichait pas par défaut. Si la sécurité de votre application requiert que le mot de passe soit toujours masqué, veillez à définir PasswordRevealMode sur Hidden.
 
 ### Modes Masqué et Visible
 
@@ -166,7 +167,7 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 -   Affichez une seule zone de mot de passe pour les connexions.
 -   Quand une zone de mot de passe est utilisée pour entrer un code confidentiel, pensez à fournir une réponse dès l’entrée du dernier chiffre au lieu d’utiliser un bouton de confirmation.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Articles connexes
 
@@ -186,6 +187,6 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

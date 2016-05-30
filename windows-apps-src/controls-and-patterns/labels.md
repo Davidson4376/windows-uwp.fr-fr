@@ -1,15 +1,13 @@
 ---
+author: Jwmsft
 Description: Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
 title: Étiquettes
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
-label: Étiquettes
+label: Labels
 template: detail.hbs
 ---
 
 # Étiquettes
-
-
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Une étiquette correspond au nom ou au titre d’un contrôle ou d’un groupe de contrôles associés.
 
@@ -27,16 +25,14 @@ En XAML, de nombreux contrôles disposent d’une propriété Header intégrée 
 
 ![capture d’écran du contrôle d’étiquette standard](images/label-standard.png)
 
-## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>Recommandations
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommandations
 
 
 -   Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
 -   Si vous étiquetez des contrôles, écrivez l’étiquette sous forme de nom ou de groupe nominal, et non sous la forme d’une phrase ou d’un texte d’instructions. Évitez d’utiliser le signe deux-points ou tout autre signe de ponctuation.
 -   Lorsque vous insérez un texte d’instructions dans une étiquette, vous pouvez utiliser davantage de caractères, ainsi que des signes de ponctuation.
 
-## <span id="related_topics"> </span>Rubriques connexes
-
-
+## <span id="related_topics"></span>Rubriques connexes
 * [Contrôles de texte](text-controls.md)
 
 **Pour les développeurs**
@@ -59,6 +55,6 @@ En XAML, de nombreux contrôles disposent d’une propriété Header intégrée 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

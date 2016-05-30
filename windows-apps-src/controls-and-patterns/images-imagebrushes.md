@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Découvrez comment intégrer des images dans votre application et comment utiliser les API des deux principales classes XAML, Image et ImageBrush.
 title: Images et pinceaux image
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
-label: Images et pinceaux image
+label: Images and image brushes
 template: detail.hbs
 ---
 # Images et pinceaux image
@@ -61,7 +62,7 @@ Voici l’objet Ellipse peint par l’objet ImageBrush.
 
 ### Étirer une image
 
-Si vous ne définissez pas les valeurs [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) ou [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) d’un objet **Image**, ce dernier est affiché avec les dimensions de l’image spécifiée par la propriété **Source**. Le fait de définir les valeurs **Width** et **Height** crée une zone rectangulaire dans laquelle l’image est affichée. Vous pouvez spécifier la façon dont l’image remplit cette zone à l’aide de la propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx). La propriété Stretch accepte ces valeurs qui sont définies par l’énumération [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) :
+Si vous ne définissez pas les valeurs [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) ou [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) d’un objet **Image**, ce dernier est affiché avec les dimensions de l’image spécifiée par la propriété **Source**. Le fait de définir les valeurs **Width** et **Height** crée une zone rectangulaire dans laquelle l’image est affichée. Vous pouvez spécifier la façon dont l’image remplit cette zone à l’aide de la propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx). La propriété Stretch accepte ces valeurs qui sont définies par l’énumération [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) :
 
 -   **None** : l’image n’est pas étirée pour remplir les dimensions de sortie. Faites preuve de prudence avec le paramètre Stretch : si l’image source est plus grande que la zone qui doit la contenir, votre image sera découpée. Cela n’est pas généralement souhaitable car, contrairement à une propriété [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) délibérée, vous n’avez aucun contrôle sur la fenêtre d’affichage.
 -   **Uniform** : l’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Mais les proportions du contenu sont conservées. Il s’agit de la valeur par défaut.
@@ -74,7 +75,7 @@ Si vous ne définissez pas les valeurs [**Width**](https://msdn.microsoft.com/li
 
 Vous pouvez utiliser la propriété [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) pour découper une zone de la sortie image. Vous affectez à la propriété Clip la valeur [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx). Le découpage non rectangulaire n’est actuellement pas pris en charge.
 
-L’exemple suivant montre comment utiliser un objet [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) en tant que région de découpage pour une image. Dans cet exemple, nous définissons un objet **Image** et affectons à la propriété Height la valeur 200. Un objet **RectangleGeometry** définit un rectangle pour la zone de l’image à afficher. La propriété [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) a la valeur 25,25,100,150, ce qui définit un rectangle avec pour position de départ 25,25, une largeur de 100 et une hauteur de 150. Seule la partie de l’image qui se trouve dans la zone du rectangle est affichée.
+L’exemple suivant montre comment utiliser un objet [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) en tant que région de découpage pour une image. Dans cet exemple, nous définissons un objet **Image** et affectons à la propriété Height la valeur 200. Un objet **RectangleGeometry** définit un rectangle pour la zone de l’image à afficher. La propriété [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) a la valeur 25,25,100,150, ce qui définit un rectangle avec pour position de départ 25,25, une largeur de 100 et une hauteur de 150. Seule la partie de l’image qui se trouve dans la zone du rectangle est affichée.
 
 ```xaml
 <Image Source="licorice.jpg" Height="200">
@@ -136,20 +137,10 @@ Il est courant de spécifier les éléments Image et ImageBrush en XAML plutôt 
 
 Si vous définissez un élément Image ou ImageBrush à l’aide de code, utilisez les constructeurs par défaut, puis définissez la propriété Source appropriée ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) ou [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)). Celle-ci nécessite un élément [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (et non un URI) quand vous la définissez à l’aide de code. Si votre source est un flux, utilisez la méthode [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) pour initialiser la valeur. Si votre source est un URI incluant du contenu de votre application qui utilise les modèles **ms-appx** ou **ms-resource**, utilisez le constructeur [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) qui prend un URI. Vous pouvez également envisager de gérer l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) s’il existe des problèmes de délai liés à la récupération ou au décodage de la source de l’image, auquel cas un contenu alternatif peut s’avérer nécessaire à afficher tant que la source de l’image n’est pas disponible. Pour obtenir un exemple de code, voir [Exemples d’images XAML](http://go.microsoft.com/fwlink/p/?linkid=238575).
 
-> **Remarque**&nbsp;&nbsp;Si vous établissez des images à l’aide de code, vous pouvez utiliser la gestion automatique pour l’accès aux ressources non qualifiées avec les qualificateurs d’échelle et de culture actuels, ou vous pouvez utiliser [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) et [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) avec des qualificateurs pour la culture et l’échelle afin d’obtenir les ressources directement. Pour plus d’informations, voir [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
-
-## Recommandations
+> **Note** &nbsp;&nbsp;Si vous établissez des images à l’aide de code, vous pouvez utiliser la gestion automatique pour l’accès aux ressources non qualifiées avec les qualificateurs d’échelle et de culture actuels, ou vous pouvez utiliser les classes [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) et [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) avec des qualificateurs pour la culture et l’échelle afin d’obtenir les ressources directement. Pour plus d’informations, voir [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
 
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
-## Articles connexes
-
-**Pour les concepteurs**
-
-**Pour les développeurs (XAML)**
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

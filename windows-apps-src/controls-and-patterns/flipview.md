@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Permet d’afficher les images d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, image par image.
 title: Recommandations en matière de contrôles de vue symétrique
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
@@ -101,7 +102,7 @@ Dans le cas présent, la propriété ItemsSource est liée à un objet [**Collec
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Remarque**&nbsp;&nbsp;Vous pouvez remplir une vue symétrique en ajoutant des éléments directement dans sa collection Items ou en définissant sa propriété ItemsSource, mais vous ne pouvez pas faire les deux à la fois. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément en XAML, l’élément ajouté est alors ignoré. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément à la collection Items dans le code, une exception est levée.
+>**Remarque** &nbsp;&nbsp;Vous pouvez remplir un contrôle FlipView en ajoutant des éléments directement dans sa collection Items ou en définissant sa propriété ItemsSource, mais vous ne pouvez pas faire les deux à la fois. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément en XAML, l’élément ajouté est alors ignoré. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément à la collection Items dans le code, une exception est levée.
 
 ### Spécifier l’accès des éléments
 
@@ -201,11 +202,11 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 ## Articles connexes
 
-[Recommandations en matière de listes](https://msdn.microsoft.com/library/windows/apps/mt186889)
+- [Recommandations en matière de listes](https://msdn.microsoft.com/library/windows/apps/mt186889)
 - [**Classe FlipView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
 - [**Classe CarouselPanel (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

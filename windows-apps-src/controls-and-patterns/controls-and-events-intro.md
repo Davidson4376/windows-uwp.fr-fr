@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application.
 title: Ajouter des contrôles et gérer les événements
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: Présentation des contrôles et des événements
+label: Intro to controls and events
 template: detail.hbs
 ---
 # Présentation des contrôles et des événements
@@ -93,7 +94,7 @@ Pour créer un gestionnaire d’événements, sélectionnez le contrôle, puis c
 
 ![Liste des événements Visual Studio](images/add-controls-add-event-designer.png)
 
-Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2 paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
+Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2 paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
 
 Voici le code qui gère l’événement Click d’un objet Button nommé `Button1`. Lorsque vous cliquez sur le bouton, la propriété Foreground de l’objet Button sur lequel vous avez cliqué a la valeur blue. 
 
@@ -105,7 +106,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Vous pouvez également associer un gestionnaire d’événements en XAML. Dans l’éditeur XAML, tapez le nom de l’événement à gérer. Visual Studio affiche une fenêtre IntelliSense lorsque vous commencez à taper. Après avoir spécifié l’événement, vous pouvez double-cliquer sur `<New Event Handler>` dans la fenêtre IntelliSense pour créer un gestionnaire d’événements portant le nom par défaut, ou sélectionner un gestionnaire d’événements existant dans la liste. 
+Vous pouvez également associer un gestionnaire d’événements en XAML. Dans l’éditeur XAML, tapez le nom de l’événement à gérer. Visual Studio affiche une fenêtre IntelliSense lorsque vous commencez à taper. Après avoir spécifié l’événement, vous pouvez double-cliquer sur `<New Event Handler>` dans la fenêtre IntelliSense pour créer un gestionnaire d’événements portant le nom par défaut, ou sélectionner un gestionnaire d’événements existant dans la liste. 
 
 Voici la fenêtre IntelliSense qui apparaît. Elle vous permet de créer un gestionnaire d’événements ou de sélectionner un gestionnaire d’événements existants.
 
@@ -123,7 +124,7 @@ Vous pouvez également associer un événement à son gestionnaire d’événeme
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 ## Rubriques connexes
 
@@ -132,6 +133,6 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -   [Menus volants](dialogs-popups-menus.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

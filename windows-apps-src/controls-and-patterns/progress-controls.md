@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours.
 title: Recommandations en matière de contrôles de progression
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
-label: Contrôles de progression
+label: Progress controls
 template: detail.hbs
 ---
 # Contrôles de progression
@@ -283,7 +284,7 @@ stackPanel1.Children.Add(progressRing1);
                 -   **Oui :** utilisez un anneau de progression indéterminée inséré avec texte d’état en regard de son élément d’interface utilisateur associé.
                 -   **Non :** **une grande quantité de données est-elle chargée dans une liste ?**
                     -   **Oui :** utilisez la barre de progression indéterminée en haut avec des espaces réservés pour représenter le contenu entrant.
-                    -   **Non :** utilisez la barre de progression indéterminée en haut de l’écran ou de la surface.
+                    -   **Non :** utilisez la barre de progression indéterminée en haut de l’écran ou de la surface.
             -   **Non :** utilisez du texte d’état dans un angle supérieur de l’écran.
 
 ## Articles connexes
@@ -297,6 +298,6 @@ stackPanel1.Children.Add(progressRing1);
 - [Comment créer une barre de progression indéterminée personnalisée pour Windows Phone](http://go.microsoft.com/fwlink/p/?LinkID=392426)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités.
 title: Recommandations en matière de cases d’option
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
-label: Cases d’option
+label: Radio buttons
 template: detail.hbs
 ---
 # Cases d’option
@@ -53,7 +54,7 @@ Les cases d’option s’utilisent en groupes. Les 2 méthodes permettant de gr
 - Placez-les dans le même conteneur parent.
 - Définissez la propriété [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) de chaque case d’option sur la même valeur.
 
-> **Remarque**&nbsp;&nbsp;Un groupe de cases d’option se comporte comme un seul contrôle quand l’utilisateur y accède via le clavier. Seule l’option sélectionnée est accessible à l’aide de la touche Tabulation, mais les utilisateurs peuvent passer d’une option à l’autre dans le groupe à l’aide des touches de direction.
+> **Remarque** &nbsp;&nbsp;Un groupe de cases d’options se comporte comme un seul contrôle quand l’utilisateur y accède via le clavier. Seule l’option sélectionnée est accessible à l’aide de la touche Tabulation, mais les utilisateurs peuvent passer d’une option à l’autre dans le groupe à l’aide des touches de direction.
 
 Dans cet exemple, le premier groupe de cases d’option est implicitement formé en raison de son appartenance au même panneau d’empilement. Le second groupe est divisé entre 2 panneaux d’empilement, si bien que les cases d’option sont explicitement groupées par GroupName.
 
@@ -179,6 +180,6 @@ Cette illustration montre la manière convenable de positionner et espacer les c
 - [**Classe Windows.UI.Xaml.Controls RadioButton**](https://msdn.microsoft.com/library/windows/apps/br227544)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

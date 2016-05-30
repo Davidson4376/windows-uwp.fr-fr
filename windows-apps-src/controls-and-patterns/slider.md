@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Permet à l’utilisateur de définir une valeur comprise dans une plage donnée.
 title: Curseurs
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
-label: Curseurs
+label: Sliders
 template: detail.hbs
 ---
 # Curseurs
@@ -27,11 +28,11 @@ N’utilisez pas un curseur pour les paramètres binaires. Utilisez un [bouton b
 
 Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur :
 
--   **Le paramètre ressemble-t-il à une quantité relative ?** Dans la négative, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
--   **Le paramètre est-il une valeur numérique connue, exacte ?** Si oui, utilisez une [zone de texte](text-box.md) numérique.
--   **L’ utilisateur bénéficiera-t-il du résultat instantané des modifications de ses paramètres ?** Si c’est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
--   **La plage du paramètre comporte-t-elle quatre valeurs ou davantage ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
--   **L’utilisateur peut-il modifier la valeur ?** Les curseurs sont destinés à l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
+-   **Le paramètre s’apparente-t-il à une quantité relative ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
+-   **Le paramètre est-il une valeur numérique exacte connue ?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
+-   **Un utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres ?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
+-   **Le paramètre a-t-il une plage de quatre valeurs ou plus ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
+-   **L’utilisateur peut-il changer la valeur ?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
 
 Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si :
 
@@ -162,11 +163,11 @@ Lors de la conception d’un curseur personnalisé, réfléchissez à la meilleu
 ## Rubriques connexes
 
 **Pour les concepteurs**
-- [Recommandations en matière de boutons bascule](toggles.md)
-**Pour les développeurs (XAML)**
+- [Recommandations en matière de boutons bascule](toggles.md) 
+           **Pour les développeurs (XAML)**
 - [**Classe Slider**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
