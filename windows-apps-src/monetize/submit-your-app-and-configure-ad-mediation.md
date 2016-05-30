@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 69E05E56-B5F0-4D4C-A1FF-B6EAFF5D0E28
 description: Lors du processus de soumission, vous pouvez configurer le comportement de médiation publicitaire que vous souhaitez. Vous pourrez l’ajuster ultérieurement sans devoir modifier le code ni soumettre de nouveaux packages.
 title: Soumettre votre application et configurer une médiation publicitaire
@@ -7,7 +8,7 @@ title: Soumettre votre application et configurer une médiation publicitaire
 # Soumettre votre application et configurer une médiation publicitaire
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Une fois que vous avez développé votre application pour inclure tous les réseaux publicitaires que vous voudrez peut-être utiliser et que vous l’avez testée pour vérifier son bon fonctionnement, vous êtes prêt à la soumettre. Lors du processus de soumission, vous pouvez configurer le comportement de médiation publicitaire que vous souhaitez. Vous pourrez l’ajuster ultérieurement sans devoir modifier le code ni soumettre de nouveaux packages.
@@ -24,7 +25,8 @@ Les étapes suivantes décrivent comment créer une configuration de base dans l
 1.  Sous **Configurer la médiation pour**, vérifiez que le package d’application que vous voulez configurer est sélectionné.
 2.  Sous **Cible**, assurez-vous que l’option **De base** est sélectionnée.
 3.  Sous **Fréquence d’actualisation**, définissez la durée du cycle de médiation (fréquence à laquelle les nouvelles publicités doivent être affichées). Cette durée doit être comprise entre 30 et 120 secondes.
-    **Remarque** Si vous avez déjà configuré une fréquence d’actualisation dans l’un de vos portails de réseau publicitaire, vérifiez que vous définissez la même fréquence d’actualisation ici.
+  > **Remarque** Si vous avez déjà configuré une fréquence d’actualisation dans l’un de vos portails de réseau publicitaire, vérifiez que vous définissez la même fréquence d’actualisation ici.
+
 4.  Ensuite, la liste **Médiation publicitaire Windows** répertorie tous les réseaux publicitaires utilisés par votre application et propose deux façons de spécifier la fréquence à laquelle votre application doit utiliser chaque réseau. Choisissez l’une de ces options dans la liste déroulante **Type de médiation** :
 
     -   **Classer par poids**. Choisissez cette option pour appliquer des valeurs de pourcentage à chaque réseau publicitaire pour indiquer à quelle fréquence l’application doit les utiliser. Le total des pourcentages que vous définissez pour tous les réseaux publicitaires doit correspondre exactement à 100 %. Pour en savoir plus, voir [Classer les réseaux publicitaires par poids](#order-ad-networks-by-weight).
@@ -34,7 +36,7 @@ Les étapes suivantes décrivent comment créer une configuration de base dans l
 
 5.  Dans la liste des réseaux publicitaires utilisés par votre application, cliquez sur la flèche déroulante vers le bas de chaque fournisseur de réseau publicitaire afin d’afficher les paramètres obligatoires pour chaque réseau, puis entrez les paramètres obligatoires. Pour obtenir la liste des paramètres, voir [Sélectionner et gérer vos réseaux publicitaires](select-and-manage-your-ad-networks.md).
 
-    Dans la liste développée des paramètres de chaque réseau, vous pouvez éventuellement utiliser le champ **Délai d’attente** pour spécifier le nombre de secondes (de 2 à 120) définissant le temps d’attente de la médiation publicitaire après qu’elle a demandé une publicité au réseau publicitaire, avant qu’elle n’abandonne cette demande et n’en adresse une autre à un autre réseau. Si vous avez déjà [spécifié cette valeur dans votre code](add-and-use-the-ad-mediator-control.md#set-timeouts), la valeur spécifiée dans le code remplace la valeur définie ici.
+    Dans la liste développée des paramètres de chaque réseau, vous pouvez éventuellement utiliser le champ **Délai d’attente** pour spécifier le nombre de secondes (de 2 à 120) définissant le temps d’attente de la médiation publicitaire après qu’elle a demandé une publicité au réseau publicitaire, avant qu’elle n’abandonne cette demande et n’en adresse une autre à un autre réseau. Si vous avez déjà [spécifié cette valeur dans votre code](add-and-use-the-ad-mediator-control.md#set-timeouts), la valeur spécifiée dans le code remplace la valeur définie ici.
 
     Si vous utilisez Microsoft Advertising, notez les éléments suivants :
 
@@ -52,7 +54,7 @@ Pour répartir automatiquement les demandes de manière égale entre tous vos r�
 -   Si vous faites glisser le curseur vers un chiffre, celui-ci indique le pourcentage de temps pendant lequel ce réseau publicitaire est appelé en tant que premier choix de l’application dans un cycle de médiation.
 -   Si vous faites glisser le curseur vers **Réserve**, cela indique que le réseau publicitaire doit être appelé uniquement si aucun des réseaux publicitaires dotés d’un pourcentage désigné ne peut fournir de publicité. Cela revient à définir le pourcentage sur 0 %.
 -   Si vous faites glisser le curseur vers **Inactif**, cela indique que ce réseau publicitaire ne sera jamais appelé. Les assemblys du réseau publicitaire restent dans le package, mais le médiateur ne tente pas de les appeler. Vous pouvez définir cette option dans des configurations propres aux marchés pour exclure les réseaux publicitaires qui sont connus pour leurs faibles résultats ou qui ne prennent pas en charge un certain marché.
--   Lorsque vous ajustez le pourcentage d’un réseau publicitaire, n’importe quel autre contrôle de curseur dans lequel vous avez sélectionné une valeur autre que **Réserve** s’ajuste automatiquement afin que la distribution totale atteigne 100 %. Si vous coché la case **Verrouillage** pour un réseau publicitaire, ce dernier conserve sa valeur actuelle. Vous pouvez ajuster les valeurs des autres réseaux publicitaires sans affecter la valeur du réseau publicitaire verrouillé
+-   Lorsque vous ajustez le pourcentage d’un réseau publicitaire, n’importe quel autre contrôle de curseur dans lequel vous avez sélectionné une valeur autre que **Réserve** s’ajuste automatiquement afin que la distribution totale atteigne 100 %. Si vous coché la case **Verrouillage** pour un réseau publicitaire, ce dernier conserve sa valeur actuelle. Vous pouvez ajuster les valeurs des autres réseaux publicitaires sans affecter la valeur du réseau publicitaire verrouillé
 
 ### Classer des réseaux publicitaires par classement
 
@@ -98,7 +100,7 @@ Lorsque vous envoyez une mise à jour de l’application, les informations de co
 
 Si l’une de ces conditions n’est pas respectée, vous devez recréer la configuration de base et les configurations cibles propres au marché applicables à votre application.
 
-**Remarque** L’ID d’un **AdMediatorControl** est généré lorsque vous faites glisser le contrôle vers une aire de conception dans votre application. Cet ID ne change pas, sauf si vous supprimez le contrôle et que vous le remplacez en faisant glisser un nouveau contrôle vers la même aire de conception.
+> **Remarque** L’ID d’un **AdMediatorControl** est généré lorsque vous faites glisser le contrôle vers une aire de conception dans votre application. Cet ID ne change pas, sauf si vous supprimez le contrôle et que vous le remplacez en faisant glisser un nouveau contrôle vers la même aire de conception.
 
  
 
@@ -162,6 +164,6 @@ Vous souhaitez utiliser Microsoft Advertising et Inneractive de façon équitabl
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

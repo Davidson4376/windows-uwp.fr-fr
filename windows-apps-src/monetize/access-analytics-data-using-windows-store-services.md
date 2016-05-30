@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Utilisez l’API d’analyse du Windows Store pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows.
 title: Accéder aux données d’analyse à l’aide des services du Windows Store
@@ -7,7 +8,7 @@ title: Accéder aux données d’analyse à l’aide des services du Windows Sto
 # Accéder aux données d’analyse à l’aide des services du Windows Store
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Utilisez l*’API d’analyse du Windows Store* pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte, ou celui de votre organisation, du Centre de développement Windows. Cette API permet de récupérer les données pour les acquisitions de produits in-app et d’applications, les erreurs, ainsi que les évaluations et avis relatifs aux applications. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels à partir de votre application ou service.
@@ -49,18 +50,18 @@ Après avoir associé l’application Azure AD à votre compte du Centre de dév
 
 Pour obtenir le jeton d’accès, suivez les instructions de [Appels de service à service à l’aide des informations d’identification du client](https://msdn.microsoft.com/library/azure/dn645543.aspx) pour envoyer une requête HTTP POST au point de terminaison Azure AD suivant.
 
-```
+```syntax
 https://login.microsoftonline.com/<tenant id>/oauth2/token
 ```
 
 -   Pour obtenir votre ID de locataire, se connecter au [portail de gestion Azure](http://manage.windowsazure.com/), accédez à **Active Directory**, puis cliquez sur l’annuaire que vous avez lié à votre compte du Centre de développement. L’ID de locataire pour ce répertoire est intégré à l’URL de cette page, comme illustré par la chaîne *your\_tenant\_ID* dans l’exemple ci-dessous.
 
-  ```
+  ```syntax
   https://manage.windowsazure.com/@<your_tenant_name>#Workspaces/ActiveDirectoryExtension/Directory/<your_tenant_ID>/directoryQuickStart
   ```
 
 -   Pour les paramètres *client\_id* et *client\_secret*, spécifiez l’ID client et la clé de votre application récupérée précédemment à partir du Centre de développement.
--   Pour le paramètre *resource*, spécifiez l’URI suivant : ```https://manage.devcenter.microsoft.com```.
+-   Pour le paramètre *resource*, spécifiez l’URI suivant : ```https://manage.devcenter.microsoft.com```.
 
 
 ### Appeler l’API d’analyse du Windows Store
@@ -236,6 +237,6 @@ L’API d’analyse du Windows Store renvoie les réponses d’erreur dans un ob
  
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

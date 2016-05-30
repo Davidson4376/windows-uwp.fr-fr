@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Utilisez cette méthode pour renouveler une clé du Windows Store.
 title: Renouveler une clé d’ID du Windows Store
@@ -7,7 +8,7 @@ title: Renouveler une clé d’ID du Windows Store
 # Renouveler une clé d’ID du Windows Store
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous générez une clé d’ID du Windows Store en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675), la clé est valide pendant 90 jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
 
@@ -16,7 +17,7 @@ Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous 
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
--   un jeton d’accès Azure AD créé avec l’URI d’audience **https://onestore.microsoft.com** ;
+-   un jeton d’accès Azure AD créé avec l’URI d’audience **https://onestore.microsoft.com** ;
 -   une clé d’ID du Windows Store arrivée à expiration, qui a été générée en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) à partir du code côté client de votre application.
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
@@ -54,7 +55,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 ### Exemple de requête
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
 Content-Length: 2774
 Content-Type: application/json
@@ -79,7 +80,7 @@ Host: collections.mp.microsoft.com
 
 ### Exemple de réponse
 
-```
+```syntax
 HTTP/1.1 200 OK
 Content-Length: 1646
 Content-Type: application/json
@@ -114,6 +115,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

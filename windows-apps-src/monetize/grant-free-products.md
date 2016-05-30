@@ -1,6 +1,7 @@
 ---
+author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit in-app gratuit à un utilisateur donné.
+description: Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit intégré à l’application (PIA) gratuit à un utilisateur donné.
 title: Octroyer des produits gratuits
 ---
 
@@ -16,8 +17,8 @@ Actuellement, vous ne pouvez octroyer que des produits gratuits. Si votre servic
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
--   un jeton d’accès Azure AD créé avec l’URI d’audience **https://onestore.microsoft.com** ;
--   une clé d’ID du Windows Store générée en appelant la méthode [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) à partir du code côté client de votre application.
+-   un jeton d’accès Azure AD créé avec l’URI d’audience **https://onestore.microsoft.com** ;
+-   une clé d’ID du Windows Store générée en appelant la méthode [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) à partir du code côté client de votre application.
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
@@ -36,7 +37,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 | En-tête         | Type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*token*&gt;.                           |
+| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;.                           |
 | Host           | chaîne | Doit être défini sur la valeur **collections.mp.microsoft.com**.                                            |
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
@@ -53,7 +54,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | language       | chaîne | Langue de l’utilisateur.                                                                                                                                                                                                                                                                                              | Oui      |
 | market         | chaîne | Marché de l’utilisateur.                                                                                                                                                                                                                                                                                                | Oui      |
 | orderId        | GUID   | GUID généré pour la commande. Cette valeur doit être propre à l’utilisateur, mais il n’est pas impératif qu’elle soit unique dans toutes les commandes.                                                                                                                                                                                              | Oui      |
-| productId      | chaîne | ID produit du catalogue du Windows Store. Pour obtenir votre ID produit, accédez à votre application dans le tableau de bord du Centre de développement Windows, puis à la page **Gestion des applications** &gt; **Identité des applications**, et récupérez le suffixe de la chaîne indiquée dans le champ **URL de Windows 10**. Exemple d’ID produit : 9WZDNCRFJ3Q8. | Oui      |
+| productId      | chaîne | ID produit du catalogue du Windows Store. Pour obtenir votre ID produit, accédez à votre application dans le tableau de bord du Centre de développement Windows, puis à la page **Gestion des applications**&gt;**Identité des applications**, et récupérez le suffixe de la chaîne indiquée dans le champ **URL de Windows 10**. Exemple d’ID produit : 9WZDNCRFJ3Q8. | Oui      |
 | quantity       | entier    | Quantité à acheter. Actuellement, la seule valeur prise en charge est 1. Si aucune valeur n’est spécifiée, la valeur par défaut est 1.                                                                                                                                                                                                                | Non       |
 | skuId          | chaîne | ID de référence du catalogue du Windows Store. Exemple d’ID de référence : 0010.                                                                                                                                                                                                                                                | Oui      |
 
@@ -61,7 +62,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 ### Exemple de requête
 
-```
+```syntax
 POST https://purchase.mp.microsoft.com/v6.0/purchases/grant HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJK……
 Content-Length: 1863
@@ -85,7 +86,7 @@ Content-Type: application/json
 
 | Paramètre                 | Type                        | Description                                                                                                                                              | Obligatoire |
 |---------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| clientContext             | ClientContextV6             | Informations contextuelles client de cette commande. Ce paramètre est affecté à la valeur *clientID* du jeton Azure AD.                                     | Oui      |
+| clientContext             | ClientContextV6             | Informations contextuelles client de cette commande. Ce paramètre est affecté à la valeur *clientID* du jeton Azure AD.                                     | Oui      |
 | createdtime               | datetimeoffset              | Heure de création de la commande.                                                                                                                          | Oui      |
 | currencyCode              | chaîne                      | Code devise pour *totalAmount* et *totalTaxAmount*. Non applicable pour les articles gratuits.                                                                                | Oui      |
 | friendlyName              | chaîne                      | Nom convivial de la commande. Non applicable pour les commandes passées à l’aide de l’API d’achat du Windows Store.                                                               | Oui      |
@@ -150,13 +151,13 @@ L’objet IdentityV6 contient les paramètres ci-dessous.
 | Paramètre     | Type   | Description                                                                        | Obligatoire |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | chaîne | Contient la valeur **"pub"**.                                                      | Oui      |
-| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du Windows Store. | Oui      |
+| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du Windows Store. | Oui      |
 
  
 
 ### Exemple de réponse
 
-```
+```syntax
 Content-Length: 1203
 Content-Type: application/json
 MS-CorrelationId: fb2e69bc-f26a-4aab-a823-7586c19f5762
@@ -222,7 +223,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 |------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
 | 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.                                                                                                   |
-| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store du corps de la requête et la revendication *appid* du jeton d’accès Azure AD de l’en-tête d’autorisation ne correspondent pas.                     |
+| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store du corps de la demande et la revendication *appid* du jeton d’accès Azure AD de l’en-tête d’autorisation ne correspondent pas.                     |
 | 400  | BadRequest   | InvalidParameter           | Les détails contiennent des informations relatives au corps de la requête et aux champs comprenant une valeur non valide.                                                                                    |
 
  
@@ -242,6 +243,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

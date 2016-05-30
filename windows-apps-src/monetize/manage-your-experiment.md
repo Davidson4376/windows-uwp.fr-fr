@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: Après avoir défini votre expérience dans le tableau de bord du Centre de développement et codé cette expérience dans votre application, vous voici prêt à activer l’expérience et à en visualiser les résultats dans le tableau de bord du Centre de développement.
 title: Gérer votre expérience dans le tableau de bord du Centre de développement
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
@@ -10,7 +11,7 @@ Après avoir [défini votre expérience dans le tableau de bord du Centre de dé
 
 > **Remarque** Lorsque vous activez une expérience, le Centre de développement lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. L’apparition des données de l’expérience dans le tableau de bord peut cependant prendre plusieurs heures.
 
-Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
+Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 ## Activer votre expérience
 
@@ -32,13 +33,13 @@ Une fois que vous êtes satisfait des paramètres de votre expérience dans le t
   * La section **Résumé des résultats** répertorie les objectifs de votre expérience et le taux de conversion pour chaque variante.
   * La section **Détails des résultats** fournit des informations supplémentaires sur chacun des objectifs de votre expérience, notamment les vues, les conversions, le taux de conversion, le pourcentage d’écart, la confiance et l’importance. La *confiance* est une mesure statistique de la fiabilité d’une estimation, qui calcule la marge d’erreur. L’*importance* est une mesure statistique, reposant sur la taille de l’échantillon, qui détermine la probabilité qu’un résultat ne soit pas dû au hasard, mais qu’il soit plutôt attribué à une cause spécifique.
 
-  >**Remarque** Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Cette approche est destinée à éviter qu’un utilisateur unique avec de nombreux événements de conversion ne fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
+  >**Remarque** Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Cette approche est destinée à éviter qu’un utilisateur unique avec de nombreux événements de conversion ne fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
 
 
 ## Terminer votre expérience
 
 1. Dans le tableau de bord, revenez à la page de votre expérience. Pour obtenir les instructions correspondantes, voir la section précédente.
-2. Dans la section **Résumé des résultats**, effectuez l’une des opérations suivantes :
+2. Dans la section **Résumé des résultats**, effectuez l’une des opérations suivantes :
   * Si vous souhaitez mettre fin à l’expérience et continuer à utiliser les paramètres dans la variante de contrôle de votre application, cliquez sur **Conserver**.
   * Si vous souhaitez mettre fin à l’expérience, mais utiliser les paramètres dans une autre variante de votre application, cliquez sur **Basculer** sous la variante vers laquelle vous voulez basculer.
 3. Cliquez sur **OK** pour confirmer que vous souhaitez mettre fin à l’expérience.
@@ -52,6 +53,6 @@ Une fois que vous êtes satisfait des paramètres de votre expérience dans le t
   * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

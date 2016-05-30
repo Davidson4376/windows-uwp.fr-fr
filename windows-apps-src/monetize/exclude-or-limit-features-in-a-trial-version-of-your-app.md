@@ -1,11 +1,6 @@
 ---
-Description: Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
-title: Exclure ou limiter des fonctionnalités de la version d’évaluation
-ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-Mots-clés : évaluation gratuite
-Mots-clés : période d’évaluation gratuite
-Mots-clés : exemple de code d’évaluation gratuit
-Mots-clés : exemple de code d’évaluation gratuite
+Description&#58; auteur &#58; mcleanbyron Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez les inciter à procéder à une mise à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
+title&#58; Exclure ou limiter des fonctionnalités de la version d’évaluation ms.assetid &#58; 1B62318F-9EF5-432A-8593-F3E095CA7056 mots-clés &#58; essai gratuit mots-clés &#58; période d’évaluation gratuite mots-clés &#58; exemple de code d’évaluation gratuite mots-clés &#58; exemple de code d’évaluation gratuite
 ---
 
 # Exclure ou limiter des fonctionnalités de la version d’évaluation
@@ -167,7 +162,8 @@ void DisplayTrialVersionExpirationTime()
 Vous pouvez maintenant tester votre application à l’aide d’appels simulés au serveur de licences. En JavaScript, C#, Visual Basic ou Visual C++, remplacez les références à [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) par [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) dans le code d’initialisation de l’application.
 
 [
-            **CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) obtient les informations de licence spécifiques au test à partir d’un fichier XML appelé « WindowsStoreProxy.xml », situé dans %userprofile%\AppData\local\packages\%%amp;lt;package name%%amp;gt;\LocalState\Microsoft\Windows Store\ApiData. Si ce chemin d’accès et ce fichier n’existent pas, vous devez les créer lors de l’installation ou de l’exécution. Si vous essayez d’accéder à la propriété [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) sans que le fichier WindowsStoreProxy.xml ne soit présent à cet emplacement spécifique, vous obtiendrez une erreur.
+              **CurrentAppSimulator**
+            ](https://msdn.microsoft.com/library/windows/apps/hh779766) obtient les informations de licence propres au test à partir d’un fichier XML appelé WindowsStoreProxy.xml, situé dans %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Si ce chemin d’accès et ce fichier n’existent pas, vous devez les créer lors de l’installation ou de l’exécution. Si vous essayez d’accéder à la propriété [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) sans que le fichier WindowsStoreProxy.xml ne soit présent à cet emplacement spécifique, vous obtenez une erreur.
 
 Cet exemple illustre l’ajout à votre application de code permettant de tester les divers états possibles de sa licence.
 
@@ -192,9 +188,9 @@ Vous pouvez modifier le fichier WindowsStoreProxy.xml afin de changer les dates 
 
 ## Étape 6 : Remplacement des méthodes d’API de licences simulées par l’API réelle
 
-Après avoir testé votre application à l’aide du serveur de licences simulées et avant d’envoyer votre application à un Store pour certification, remplacez [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) par [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765), comme indiqué dans l’exemple de code suivant.
+Après avoir testé votre application à l’aide du serveur de licences simulées et avant de soumettre votre application au Windows Store pour certification, remplacez [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) par [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765), comme indiqué dans l’exemple de code suivant.
 
-**Important** Votre application doit utiliser l’objet [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) quand vous la soumettez à un Windows Store. Dans le cas contraire, elle échoue à l’étape de certification.
+**Important** Votre application doit utiliser l’objet [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) quand vous la soumettez au Windows Store. Dans le cas contraire, elle échoue à l’étape de certification.
 
 ```CSharp
 void appInit()
@@ -217,7 +213,7 @@ void appInit()
 
 Prenez soin d’expliquer à vos clients comment votre application se comportera pendant et après la période d’évaluation gratuite afin qu’ils ne soient pas surpris par le comportement de l’application.
 
-Pour plus d’informations sur la description de votre application, voir [Création de descriptions d’applications](https://msdn.microsoft.com/library/windows/apps/mt148529).
+Pour plus d’informations sur la description de votre application, voir [Créer des descriptions d’application](https://msdn.microsoft.com/library/windows/apps/mt148529).
 
 ## Rubriques connexes
 
@@ -234,6 +230,6 @@ Pour plus d’informations sur la description de votre application, voir [Créat
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

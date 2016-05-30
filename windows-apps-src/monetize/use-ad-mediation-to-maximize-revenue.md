@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 772DEBF2-1578-4330-9C14-70BCC6F55005
 description: Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos revenus publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires.
 title: Utiliser la médiation publicitaire pour optimiser les revenus
@@ -7,7 +8,7 @@ title: Utiliser la médiation publicitaire pour optimiser les revenus
 #  Utiliser la médiation publicitaire pour optimiser les revenus
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos revenus publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires. Différents réseaux publicitaires peuvent avoir leurs propres points forts, certains ayant un coût supérieur par milliers de vues (eCPM) ou un taux de remplissage supérieur (pourcentage de publicités fournies lorsque votre application effectue une demande) dans certains marchés que d’autres. Avec un réseau publicitaire unique, vous risquez de vous retrouver avec des demandes de publicité non satisfaites, entraînant ainsi une perte de recettes potentielles. La médiation publicitaire vous permet d’optimiser la monétisation de vos publicités en vérifiant que vous avez toujours une publicité active.
 
@@ -20,7 +21,7 @@ Procédez comme suit pour installer et configurer la médiation publicitaire dan
 
 1.  Passez en revue la liste des réseaux publicitaires et des types de projets pris en charge par la médiation publicitaire, configurez les comptes avec les réseaux publicitaires utilisés, et suivez les instructions de chaque réseau pour intégrer une application. Pour en savoir plus, voir [Sélectionner et gérer vos réseaux publicitaires](select-and-manage-your-ad-networks.md).
 
-2.  Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) avec Visual Studio 2015 ou Visual Studio 2013.
+2.  Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) avec Visual Studio 2015 ou Visual Studio 2013.
 
 3.  Dans Visual Studio, ouvrez votre projet ou créez-en un. Ouvrez la page dans laquelle vous voulez héberger les publicités, et faites glisser un élément **AdMediatorControl** dans la page. Si vous utilisez Microsoft Advertising, ajustez la hauteur et la largeur du contrôle pour l’adapter aux tailles de publicité prises en charge. Pour plus d’informations, voir [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md).
 
@@ -35,7 +36,7 @@ Procédez comme suit pour installer et configurer la médiation publicitaire dan
 ## Utilisation de Microsoft Advertising sans médiation publicitaire
 
 
-Si vous ne voulez pas utiliser de médiation publicitaire ou si votre type de projet n’est actuellement pas pris en charge par celle-ci, vous pouvez toujours fournir des bannières publicitaires à partir de Microsoft sans utiliser de médiation publicitaire. Pour plus d’informations, voir [AdControl et XAML et .NET](https://msdn.microsoft.com/library/mt313186.aspx) et [AdControl en HTML 5 et JavaScript](https://msdn.microsoft.com/library/mt313130.aspx).
+Si vous ne voulez pas utiliser de médiation publicitaire ou si votre type de projet n’est actuellement pas pris en charge par celle-ci, vous pouvez toujours fournir des bannières publicitaires à partir de Microsoft sans utiliser de médiation publicitaire. Pour plus d’informations, voir [AdControl et XAML et .NET](https://msdn.microsoft.com/library/mt313186.aspx) et [AdControl en HTML 5 et JavaScript](https://msdn.microsoft.com/library/mt313130.aspx).
 
 ## Rubriques connexes
 
@@ -49,6 +50,6 @@ Si vous ne voulez pas utiliser de médiation publicitaire ou si votre type de pr
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

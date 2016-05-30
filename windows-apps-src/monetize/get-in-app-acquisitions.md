@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les données d’acquisition agrégées d’un produit in-app pour une plage de dates données, et en fonction de filtres facultatifs.
 title: Obtenir les acquisitions de produits in-app
@@ -20,7 +21,7 @@ Pour utiliser cette méthode, procédez comme suit :
 
 -   Obtenez un jeton d’accès Azure AD pour votre application.
 
-Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md).
+Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md).
 
 ## Requête
 
@@ -37,13 +38,13 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
 
  
 
-### Corps de demande
+### Corps de la demande
 
-Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer les données d’acquisition de l’ensemble des produits in-app inscrits sur l’application, spécifiez le paramètre *applicationId*. Pour récupérer les données d’acquisition d’un produit in-app donné, spécifiez le paramètre *inAppProductId*. Si vous spécifiez les deux valeurs, le paramètre *inAppProductId* est ignoré.
+Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer les données d’acquisition de l’ensemble des PIA inscrits dans l’application, spécifiez le paramètre *applicationId*. Pour récupérer les données d’acquisition d’un PIA donné, spécifiez le paramètre *inAppProductId*. Si vous spécifiez les deux valeurs, le paramètre *inAppProductId* est ignoré.
 
 <table>
 <colgroup>
@@ -64,7 +65,7 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">chaîne</td>
-<td align="left">L’ID produit de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app. L’ID produit est intégré dans le lien de la description de l’application, disponible sur la [App identity page](https://msdn.microsoft.com/library/windows/apps/mt148561) du tableau de bord du Centre de développement. Exemple d’ID produit : 9WZDNCRFJ3Q8.</td>
+<td align="left">ID produit de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de PIA. L’ID produit est intégré dans le lien de la description de l’application, disponible dans la [page Identité des applications](https://msdn.microsoft.com/library/windows/apps/mt148561) du tableau de bord du Centre de développement. Exemple d’ID produit : 9WZDNCRFJ3Q8.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="even">
@@ -100,19 +101,19 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 <tr class="odd">
 <td align="left">filter</td>
 <td align="left">chaîne</td>
-<td align="left">Une ou plusieurs instructions qui filtrent les lignes de la réponse. Pour plus d’informations, consultez la section [filter fields](#filter-fields) ci-dessous.</td>
+<td align="left">Une ou plusieurs instructions qui filtrent les lignes de la réponse. Pour plus d’informations, voir la section [Champs de filtre](#filter-fields) ci-dessous.</td>
 <td align="left">Non</td>
 </tr>
 <tr class="even">
 <td align="left">aggregationLevel</td>
 <td align="left">chaîne</td>
-<td align="left">Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong>, ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>.</td>
+<td align="left">Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>.</td>
 <td align="left">Non</td>
 </tr>
 <tr class="odd">
 <td align="left">orderby</td>
 <td align="left">chaîne</td>
-<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque acquisition de produit in-app. La syntaxe est <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter les chaînes suivantes :
+<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque acquisition de produit in-app. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
 <ul>
 <li><strong>date</strong></li>
 <li><strong>acquisitionType</strong></li>
@@ -124,7 +125,7 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 <li><strong>deviceType</strong></li>
 <li><strong>orderName</strong></li>
 </ul>
-<p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre ascendant ou descendant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p>
+<p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p>
 <p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
 <td align="left">Non</td>
 </tr>
@@ -135,7 +136,7 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 
 ### Champs de filtrage
 
-Le paramètre *filter* du corps de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter* :
+Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter* :
 
 -   *filter=market eq ’US’ and gender eq ’m’*
 -   *filter=(market ne ’US’) and (gender ne ’Unknown’) and (gender ne ’m’) and (market ne ’NO’) and (ageGroup ne ’greater than 55’ or ageGroup ne ‘less than 13’)*
@@ -242,9 +243,9 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 
 ### Exemple de requête
 
-L’exemple suivant illustre quelques requêtes de récupération de données d’acquisition de produits in-app. Remplacez les valeurs *inAppProductId* ou *applicationId* par l’ID produit approprié associé à votre application ou votre produit in-app.
+L’exemple suivant illustre quelques requêtes de récupération de données d’acquisition de produits in-app. Remplacez les valeurs *inAppProductId* ou *applicationId* par l’ID produit approprié associé à votre application ou votre PIA.
 
-```
+```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
@@ -263,7 +264,7 @@ Authorization: Bearer <your access token>
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                                |
 |------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Valeur      | tableau  | Tableau d’objets contenant les données agrégées d’acquisition de produits in-app. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs d’acquisition des produits in-app](#iap-acquisition-values) ci-dessous.                                                                                                              |
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que plus de 10000 lignes de données d’acquisition de produits in-app sont associées à la requête. |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10 000 lignes de données d’acquisition de PIA sont associées à la requête. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                                 |
 
 
@@ -278,14 +279,14 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 | inAppProductName    | chaîne  | Nom d’affichage du produit in-app.                                                                                                                                                                                                             |
 | applicationId       | chaîne  | L’ID produit de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
 | applicationName     | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
-| deviceType          | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
+| deviceType          | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
 | orderName           | chaîne  | Le nom de la commande.                                                                                                                                                                                                                   |
-| storeClient         | chaîne  | La version du Store dans laquelle l’acquisition s’est produite. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                            |
-| osVersion           | chaîne  | La version de système d’exploitation sur laquelle l’acquisition s’est produite. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                   |
+| storeClient         | chaîne  | La version du Store dans laquelle l’acquisition s’est produite. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                            |
+| osVersion           | chaîne  | La version de système d’exploitation sur laquelle l’acquisition s’est produite. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                   |
 | market              | chaîne  | Le code pays ISO 3166 du marché dans lequel l’acquisition s’est produite.                                                                                                                                                                  |
-| gender              | chaîne  | Le sexe de l’utilisateur qui a effectué l’acquisition. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
-| ageGroup            | chaîne  | Le groupe d’âge de l’utilisateur qui a effectué l’acquisition. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                 |
-| acquisitionType     | chaîne  | Le type d’acquisition (gratuite, payante, etc.). Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
+| gender              | chaîne  | Le sexe de l’utilisateur qui a effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
+| ageGroup            | chaîne  | Le groupe d’âge de l’utilisateur qui a effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                 |
+| acquisitionType     | chaîne  | Le type d’acquisition (gratuite, payante, etc.). Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
 | acquisitionQuantity | nombre entier | Le nombre d’acquisitions qui se sont produites.                                                                                                                                                                                                |
 
  
@@ -332,6 +333,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
  
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

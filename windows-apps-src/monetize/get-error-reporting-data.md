@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs.
 title: Obtenir les données de rapport d’erreurs
@@ -20,7 +21,7 @@ Pour utiliser cette méthode, procédez comme suit :
 
 -   Obtenez un jeton d’accès Azure AD pour votre application.
 
-Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md).
+Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md).
 
 ## Requête
 
@@ -37,11 +38,11 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
 
  
 
-### Corps de demande
+### Corps de la demande
 
 <table>
 <colgroup>
@@ -62,7 +63,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">chaîne</td>
-<td align="left">L’ID produit de l’application pour laquelle vous souhaitez récupérer des données de rapport d’erreurs. L’ID produit est intégré dans le lien de la description de l’application, disponible sur la [App identity page](https://msdn.microsoft.com/library/windows/apps/mt148561) du tableau de bord du Centre de développement. Exemple d’ID produit : 9WZDNCRFJ3Q8.</td>
+<td align="left">ID produit de l’application pour laquelle vous souhaitez récupérer des données de rapport d’erreurs. L’ID produit est intégré dans le lien de la description de l’application, disponible dans la [page Identité des applications](https://msdn.microsoft.com/library/windows/apps/mt148561) du tableau de bord du Centre de développement. Exemple d’ID produit : 9WZDNCRFJ3Q8.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="even">
@@ -92,13 +93,13 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="even">
 <td align="left">filter</td>
 <td align="left">chaîne</td>
-<td align="left">Une ou plusieurs instructions qui filtrent les lignes de la réponse. Pour plus d’informations, consultez la section [filter fields](#filter-fields) ci-dessous.</td>
+<td align="left">Une ou plusieurs instructions qui filtrent les lignes de la réponse. Pour plus d’informations, voir la section [Champs de filtre](#filter-fields) ci-dessous.</td>
 <td align="left">Non</td>
 </tr>
 <tr class="odd">
 <td align="left">aggregationLevel</td>
 <td align="left">chaîne</td>
-<td align="left">Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong>, ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. Si vous spécifiez <strong>week</strong> ou <strong>month</strong>, les valeurs <em>failureName</em> et <em>failureHash</em> sont limitées à 1 000 compartiments.</td>
+<td align="left">Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. Si vous spécifiez <strong>week</strong> ou <strong>month</strong>, les valeurs <em>failureName</em> et <em>failureHash</em> sont limitées à 1 000 compartiments.</td>
 <td align="left">Non</td>
 </tr>
 <tr class="even">
@@ -124,13 +125,13 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <li><strong>deviceCount</strong></li>
 <li><strong>eventCount</strong></li>
 </ul>
-<p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Par exemple : <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></td>
+<p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Exemple : <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">orderby</td>
 <td align="left">chaîne</td>
-<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque acquisition. La syntaxe est <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter les chaînes suivantes :
+<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque acquisition. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
 <ul>
 <li><strong>date</strong></li>
 <li><strong>failureName</strong></li>
@@ -143,7 +144,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <li><strong>packageName</strong></li>
 <li><strong>packageVersion</strong></li>
 </ul>
-<p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre ascendant ou descendant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p>
+<p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p>
 <p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
 <td align="left">Non</td>
 </tr>
@@ -153,7 +154,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
  
 ### Champs de filtrage
 
-Le paramètre *filter* du corps de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter* :
+Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter* :
 
 -   *filter=market eq ’US’ and gender eq ’m’*
 -   *filter=(market ne ’US’) and (gender ne ’Unknown’) and (gender ne ’m’) and (market ne ’NO’) and (ageGroup ne ’greater than 55’ or ageGroup ne ‘less than 13’)*
@@ -243,7 +244,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 
 Les exemples suivants fournissent font figurer plusieurs requêtes de récupération des données de rapport d’erreurs. Remplacez la valeur *applicationId* par l’ID produit de votre application.
 
-```
+```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
@@ -259,7 +260,7 @@ Authorization: Bearer <your access token>
 | Valeur      | Type    | Description                                                                                                                                                                                                                                                                    |
 |------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Valeur      | tableau   | Tableau d’objets comportant les données agrégées de rapport d’erreurs. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs des erreurs](#error-values) ci-dessous.                                                                                                          |
-| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que plus de 10 000 lignes d’erreurs sont associées à la requête. |
+| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10 000 lignes d’erreurs sont associées à la requête. |
 | TotalCount | nombre entier | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                     |
 
  
@@ -275,10 +276,10 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 | failureName     | chaîne  | Le nom de l’erreur.                                                                                                                                                                                                                 |
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.                                                                                                                                                                                                   |
 | symbol          | chaîne  | Le symbole affecté à cette erreur.                                                                                                                                                                                                       |
-| osVersion       | chaîne  | La version de système d’exploitation sur laquelle l’erreur s’est produite. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                       |
-| eventType       | chaîne  | Le type d’événement d’erreur. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                                          |
+| osVersion       | chaîne  | La version de système d’exploitation sur laquelle l’erreur s’est produite. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                       |
+| eventType       | chaîne  | Le type d’événement d’erreur. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                                          |
 | market          | chaîne  | Code pays ISO 3166 du marché des appareils.                                                                                                                                                                                          |
-| deviceType      | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir une liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
+| deviceType      | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
 | packageName     | chaîne  | Nom unique du package applicatif associé à cette erreur.                                                                                                                                                                 |
 | packageVersion  | chaîne  | Version du package applicatif associé à cette erreur.                                                                                                                                                                     |
 | eventCount      | nombre entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.                                                                                                                                            |
@@ -325,6 +326,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir les avis sur les applications](get-app-reviews.md)
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

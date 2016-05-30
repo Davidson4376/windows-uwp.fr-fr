@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
 description: Avant de soumettre votre application, nous vous recommandons de tester l’implémentation de votre médiation publicitaire.
 title: Tester l’implémentation de votre médiation publicitaire
@@ -7,7 +8,7 @@ title: Tester l’implémentation de votre médiation publicitaire
 # Tester l’implémentation de votre médiation publicitaire
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Avant de soumettre votre application, nous vous recommandons de tester l’implémentation de votre médiation publicitaire.
 
@@ -20,7 +21,7 @@ Les réseaux publicitaires tournent de manière séquentielle, un réseau étant
 
 Les publicités test seront affichées pour les réseaux publicitaires qui les prennent en charge. Notez que les publicités test peuvent parfois ressembler à des erreurs. Veillez à vérifier vos événements pour déterminer si des erreurs se sont produites.
 
-**Remarque** Lorsque vous testez une application Silverlight pour Windows Phone, Google AdMob renvoie toujours une erreur **Demande non valide**, car il n’utilise pas de métadonnées de test. Pour vérifier votre implémentation Google AdMob, vous devez entrer les paramètres requis conformément à la description de la section suivante.
+> **Remarque** Lorsque vous testez une application Silverlight pour Windows Phone, Google AdMob renvoie toujours une erreur **Demande non valide**, car il n’utilise pas de métadonnées de test. Pour vérifier votre implémentation Google AdMob, vous devez entrer les paramètres requis conformément à la description de la section suivante.
 
  
 
@@ -31,7 +32,7 @@ Si vous avez utilisé le code de gestion des événements indiqué dans [Ajouter
 
 Après avoir testé votre application avec les données de configuration de test, vous devez la tester avec les valeurs de configuration des réseaux publicitaires que vous envisagez d’utiliser pour la version publiée dans le Windows Store.
 
-Tout d’abord, ouvrez la fenêtre **Ajouter un service connecté** (Visual Studio 2015) ou la fenêtre **Gestionnaire de services** (Visual Studio 2013), et configurez chaque réseau publicitaire conformément à la procédure décrite dans [Ajouter et utiliser le contrôle Ad Mediator](add-and-use-the-ad-mediator-control.md). Entrez les paramètres requis pour chaque réseau publicitaire.
+Tout d’abord, ouvrez la fenêtre **Ajouter un service connecté** (Visual Studio 2015) ou la fenêtre **Gestionnaire de services** (Visual Studio 2013), et configurez chaque réseau publicitaire conformément à la procédure décrite dans [Ajouter et utiliser le contrôle Ad Mediator](add-and-use-the-ad-mediator-control.md). Entrez les paramètres requis pour chaque réseau publicitaire.
 
 Vous êtes maintenant prêt à tester votre application. Veillez à exécuter l’application suffisamment longtemps pour vérifier que chaque réseau publicitaire peut afficher correctement une publicité. Vérifiez les exceptions et corrigez les erreurs de codage avant de soumettre votre application.
 
@@ -48,9 +49,6 @@ Lorsque vous soumettez votre package d’application au tableau de bord du Centr
  
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

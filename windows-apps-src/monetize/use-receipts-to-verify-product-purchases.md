@@ -1,13 +1,14 @@
 ---
+author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
+description: Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
 title: Utiliser des reçus pour vérifier les achats de produits
 ---
 
 # Utiliser des reçus pour vérifier les achats de produits
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -22,7 +23,7 @@ L’accès à ces informations permet les scénarios dans lesquels votre applica
 ## Demande d’un reçu
 
 
-L’espace de noms **Windows.ApplicationModel.Store** prend en charge deux façons d’obtenir un reçu : en utilisant la méthode [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) ou [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) et le paramètre *includeReceipt*, ou en appelant la méthode [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811). Un reçu d’application ressemble à ceci.
+L’espace de noms **Windows.ApplicationModel.Store** prend en charge deux façons d’obtenir un reçu : en utilisant la méthode [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) ou [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) et le paramètre *includeReceipt*, ou en appelant la méthode [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811). Un reçu d’application ressemble à ceci.
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:10:05Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -154,7 +155,7 @@ namespace ReceiptVerificationSample
                 // We are attempting to retrieve the following url. The getAppReceiptAsync website at 
                 // http://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.getappreceiptasync.aspx
                 // lists the following format for the certificate url.
-                String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&amp;cid={0}", certificateId);
+                String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&cid={0}", certificateId);
 
                 // Make an HTTP GET request for the certificate
                 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(certificateUrl);
@@ -238,6 +239,6 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
