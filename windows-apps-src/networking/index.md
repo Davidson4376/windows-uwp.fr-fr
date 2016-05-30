@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: Technologies d’accès aux services réseau et web.
 title: Réseau et services web
@@ -6,7 +7,7 @@ title: Réseau et services web
 
 # Réseau et services web
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Les technologies de réseau et services web suivantes sont disponibles pour les développeurs de plateforme Windows universelle (UWP).
 
@@ -22,6 +23,7 @@ Les technologies de réseau et services web suivantes sont disponibles pour les 
 | [Transferts en arrière-plan](background-transfers.md)                                         | Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau.           |
 | [Marquage de connexions réseau avec l’identité EDP](tagging_network_connections_with_edp_identity.md) | Cette rubrique vous explique comment générer un contexte de thread protégé avant de créer les connexions réseau dans un scénario de protection des données d’entreprise (EDP, Enterprise Data Protection). |
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

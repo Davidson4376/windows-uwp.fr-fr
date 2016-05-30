@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant Windows.Networking.Sockets que Winsock pour communiquer avec d’autres appareils.
 title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
@@ -6,7 +7,7 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 
 # Sockets
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -14,6 +15,8 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 -   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) que [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) pour communiquer avec d’autres appareils. Cette rubrique fournit des instructions détaillées sur l’utilisation de l’espace de noms **Windows.Networking.Sockets** pour les opérations réseau.
+
+>**Remarque** Dans le cadre de [l’isolement réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), le système refuse l’établissement de connexions de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur via soit l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Cela signifie que vous ne pouvez pas utiliser des sockets pour faire communiquer deux applications UWP. UWP fournit d’autres mécanismes permettant de faire communiquer les applications. Voir [Communication entre les applications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) pour plus d’informations.
 
 ## Opérations de base d’un socket TCP
 
@@ -228,7 +231,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-Cet exemple montre une autre façon d’envoyer un grand nombre de tampons d’une manière compatible avec les envois par lot. Par ailleurs, dans la mesure où il n’utilise pas de fonctionnalités spécifiques de C#, il est applicable pour tous les langages (même s’il est illustré ici en C#). Au lieu de cela, il utilise un comportement modifié dans le membre **OutputStream** des classes [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) et [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), qui constitue une nouveauté dans Windows 10.
+Cet exemple montre une autre façon d’envoyer un grand nombre de tampons d’une manière compatible avec les envois par lot. Par ailleurs, dans la mesure où il n’utilise pas de fonctionnalités spécifiques de C#, il est applicable pour tous les langages (même s’il est illustré ici en C#). Au lieu de cela, il utilise un comportement modifié dans le membre **OutputStream** des classes [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) et [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), qui constitue une nouveauté dans Windows 10.
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -254,12 +257,12 @@ Certaines limitations importantes découlent de l’utilisation d’écritures p
 
 -   Vous ne pouvez pas modifier le contenu des instances **IBuffer** en cours d’écriture tant que l’écriture asynchrone n’est pas terminée.
 -   Le modèle **FlushAsync** fonctionne uniquement sur **StreamSocket.OutputStream** et **DatagramSocket.OutputStream**.
--   Le modèle **FlushAsync** fonctionne uniquement à partir de Windows 10.
+-   Le modèle **FlushAsync** fonctionne uniquement à partir de Windows 10.
 -   Dans les autres cas, utilisez **Task.WaitAll** au lieu du modèle **FlushAsync**.
 
 ## Partage de port pour DatagramSocket
 
-Windows 10 introduit une nouvelle propriété [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190), [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), qui permet de spécifier que le **DatagramSocket** en question est en mesure de coexister avec d’autres sockets multidiffusion Win32 ou WinRT liés à la même adresse/au même port.
+Windows 10 introduit une nouvelle propriété [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190), [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), qui permet de spécifier que le **DatagramSocket** en question est en mesure de coexister avec d’autres sockets multidiffusion Win32 ou WinRT liés à la même adresse/au même port.
 
 ## Fourniture d’un certificat client avec la classe StreamSocket
 
@@ -293,6 +296,6 @@ Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/win
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
