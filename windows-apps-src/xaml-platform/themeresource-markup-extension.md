@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Fournit une valeur pour un attribut XAML en évaluant une référence à une ressource, avec une logique système supplémentaire qui récupère différentes ressources en fonction du thème actuellement actif.
 title: Extension de balisage ThemeResource
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
@@ -6,7 +7,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 # Extension de balisage {ThemeResource}
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Fournit une valeur pour un attribut XAML en évaluant une référence à une ressource, avec une logique système supplémentaire qui récupère différentes ressources en fonction du thème actuellement actif. À l’image de l’[extension de balisage {StaticResource}](staticresource-markup-extension.md), les ressources sont définies dans un élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), et une utilisation **ThemeResource** référence la clé de cette ressource dans l’élément **ResourceDictionary**.
 
@@ -20,7 +21,7 @@ Fournit une valeur pour un attribut XAML en évaluant une référence à une res
 
 | Terme | Description |
 |------|-------------|
-| key | Clé de la ressource demandée. Cette clé est initialement affectée par l’élément [**ResourceDictionary**>](https://msdn.microsoft.com/library/windows/apps/br208794). Une clé de ressource peut correspondre à toute chaîne définie dans la grammaire XamlName. |
+| key | Clé de la ressource demandée. Cette clé est initialement affectée par l’élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). Une clé de ressource peut correspondre à toute chaîne définie dans la grammaire XamlName. |
  
 ## Remarques
 
@@ -49,7 +50,7 @@ L’ensemble de clés dans chaque dictionnaire de thème doit fournir le même e
 
 En général, vous ne devez placer les ressources dans les dictionnaires de thème et établir des références à ces ressources à l’aide de **ThemeResource** que quand ces valeurs peuvent changer d’un thème à l’autre ou qu’elles sont prises en charge par des valeurs qui évoluent. Cette approche est appropriée pour les types de ressources suivants :
 
--   Pinceaux, notamment les couleurs pour [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962). Ces derniers représentent environ 80 % des utilisations de **ThemeResource** dans les modèles de contrôle XAML par défaut (generic.xaml).
+-   Pinceaux, notamment les couleurs pour [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962). Ces derniers représentent environ 80 % des utilisations de **ThemeResource** dans les modèles de contrôle XAML par défaut (generic.xaml).
 -   Valeurs de pixel pour les bordures, les décalages, les marges et les remplissages, etc.
 -   Propriétés de police telles que **FontFamily** ou **FontSize**.
 -   Modèles complets pour un nombre limité de contrôles dont le style est généralement défini par le système et qui sont couramment utilisés pour une présentation dynamique, comme [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) et [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919).
@@ -61,7 +62,7 @@ Les définitions XAML des états visuels dans un modèle de contrôle doivent ut
 
 Les utilisations de **ThemeResource** peuvent être considérées comme une série de valeurs dépendantes. Par exemple, une valeur [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) utilisée par un élément [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) qui est également une ressource à clé peut utiliser une référence **ThemeResource**. Toutefois, toutes les propriétés d’interface utilisateur qui utilisent la ressource **SolidColorBrush** à clé utilisent également une référence **ThemeResource**, de sorte que chaque propriété de type [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) autorise spécifiquement une modification de valeur dynamique quand le thème change.
 
-**Remarque** L’évaluation de `{ThemeResource}` et des ressources à l’exécution lors du changement du thème est prise en charge dans le XAML Windows 8.1, mais non dans le XAML des applications qui ciblent Windows 8.
+**Remarque** L’évaluation de `{ThemeResource}` et des ressources à l’exécution lors du changement du thème est prise en charge dans le XAML Windows 8.1, mais non dans le XAML des applications qui ciblent Windows 8.
 
 ### Ressources système
 
@@ -73,7 +74,7 @@ Les ressources système sont souvent les valeurs sous-jacentes d’un thème à 
 
 Voici un exemple de XAML tiré des fichiers generic.xaml et themeresources.xaml par défaut et illustrant l’utilisation de **ThemeResource**. Nous n’allons examiner qu’un seul modèle (l’élément [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) par défaut) et analyser comment deux propriétés ([**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)) sont déclarées pour réagir aux changements de thème.
 
-```xaml
+```xml
     <!-- Default style for Windows.UI.Xaml.Controls.Button -->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}" />
@@ -85,7 +86,7 @@ Ici, les propriétés prennent une valeur [**Brush**](https://msdn.microsoft.com
 
 Ces mêmes propriétés sont également ajustées par certains états visuels pour un élément [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). En particulier, la couleur d’arrière-plan change quand l’utilisateur clique sur un bouton. Ici également, les animations [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) dans la table de montage séquentiel des états visuels utilisent des objets [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) et des références aux pinceaux avec **ThemeResource** comme valeur d’image clé.
 
-```xaml
+```xml
 <VisualState x:Name="Pressed">
   <Storyboard>
     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
@@ -102,7 +103,7 @@ Ces mêmes propriétés sont également ajustées par certains états visuels po
 
 Chacun de ces pinceaux est défini précédemment dans generic.xaml : le fait qu’ils soient définis avant tout modèle qui les utilise évite des références XAML anticipées. Voici ces définitions pour le dictionnaire de thème « Default ».
 
-```xaml
+```xml
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
 ... 
@@ -116,7 +117,7 @@ Chacun de ces pinceaux est défini précédemment dans generic.xaml : le fait q
 
 Ensuite, ces pinceaux sont également définis pour chacun des autres dictionnaires de thème, par exemple :
 
-```xaml
+```xml
         <ResourceDictionary x:Key="HighContrast">
             <!-- High Contrast theme resources -->
 ...
@@ -132,13 +133,13 @@ Ici, la valeur [**Color**](https://msdn.microsoft.com/library/windows/apps/br242
 
 ## Comportement de Windows 8
 
-Windows 8 ne prenait pas en charge l’extension de balisage **ThemeResource**, contrairement à Windows 8.1. En outre, Windows 8 ne gérait pas le changement dynamique des ressources liées aux thèmes pour une application Windows Runtime. Vous deviez redémarrer l’application pour que le changement de thème soit activé pour les styles et les modèles XAML. Cette expérience utilisateur n’est pas adéquate. Nous vous recommandons de recompiler les applications et de faire en sorte qu’elles ciblent Windows 8.1 afin que leurs styles soient utilisés avec **ThemeResource** et que leurs thèmes changent quand l’utilisateur passe d’un thème à l’autre. Les applications qui ont été compilées pour Windows 8, mais qui sont exécutées dans Windows 8.1, continuent d’appliquer le comportement Windows 8.
+Windows 8 ne prenait pas en charge l’extension de balisage **ThemeResource**, contrairement à Windows 8.1. En outre, Windows 8 ne gérait pas le changement dynamique des ressources liées aux thèmes pour une application Windows Runtime. Vous deviez redémarrer l’application pour que le changement de thème soit activé pour les styles et les modèles XAML. Cette expérience utilisateur n’est pas adéquate. Nous vous recommandons de recompiler les applications et de faire en sorte qu’elles ciblent Windows 8.1 afin que leurs styles soient utilisés avec **ThemeResource** et que leurs thèmes changent quand l’utilisateur passe d’un thème à l’autre. Les applications qui ont été compilées pour Windows 8, mais qui sont exécutées dans Windows 8.1, continuent d’appliquer le comportement Windows 8.
 
 ## Prise en charge d’outils au moment de la conception pour l’extension de balisage **{ThemeResource}**
 
-Microsoft Visual Studio 2013 peut inclure les valeurs de clés possibles dans les listes déroulantes Microsoft IntelliSense lorsque vous utilisez l’extension de balisage **{ThemeResource}** dans une page XAML. Par exemple, dès que vous tapez « {ThemeResource », toute clé de ressource provenant des [ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274) s’affiche.
+Microsoft Visual Studio 2013 peut inclure les valeurs de clés possibles dans les listes déroulantes Microsoft IntelliSense lorsque vous utilisez l’extension de balisage **{ThemeResource}** dans une page XAML. Par exemple, dès que vous tapez « {ThemeResource », toute clé de ressource provenant des [ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274) s’affiche.
 
-Lorsqu’une clé de ressource fait partie intégrante d’une utilisation quelconque de **{ThemeResource}**, la fonctionnalité **Atteindre la définition **(F12) peut résoudre cette ressource et vous présenter le fichier generic.xaml, dans lequel la ressource de thème est définie, à utiliser au moment de la conception. Les ressources de thème étant définies plus d’une fois (par thème), la fonctionnalité **Atteindre la définition** vous conduit à la première définition trouvée dans le fichier, c’est-à-dire la définition de **Default**. Si vous souhaitez obtenir les autres définitions, vous pouvez rechercher le nom de la clé dans le fichier et accéder aux définitions des autres thèmes.
+Lorsqu’une clé de ressource fait partie intégrante d’une utilisation quelconque de **{ThemeResource}**, la fonctionnalité **Atteindre la définition**(F12) peut résoudre cette ressource et vous présenter le fichier generic.xaml, dans lequel la ressource de thème est définie, à utiliser au moment de la conception. Les ressources de thème étant définies plus d’une fois (par thème), la fonctionnalité **Atteindre la définition** vous conduit à la première définition trouvée dans le fichier, c’est-à-dire la définition de **Default**. Si vous souhaitez obtenir les autres définitions, vous pouvez rechercher le nom de la clé dans le fichier et accéder aux définitions des autres thèmes.
 
 ## Rubriques connexes
 
@@ -150,6 +151,6 @@ Lorsqu’une clé de ressource fait partie intégrante d’une utilisation quelc
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

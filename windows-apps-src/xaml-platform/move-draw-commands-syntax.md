@@ -1,12 +1,13 @@
 ---
-description: Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML.
+author: jwmsft
+description: Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML.
 title: Syntaxe des commandes de déplacement et de dessin
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ---
 
 # Syntaxe des commandes de déplacement et de dessin
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML. Les commandes de déplacement et de dessin sont utilisées par de nombreux outils de conception et de création de graphiques capables de générer un graphique ou une forme de type vectoriel comme format de sérialisation et d’échange.
 
@@ -14,9 +15,9 @@ Découvrez les commandes de déplacement et de dessin (ou « mini langage ») 
 
 La syntaxe des commandes de déplacement et de dessin est prise en charge par un convertisseur de type interne pour XAML qui analyse les commandes et produit une représentation graphique au moment de l’exécution. Cette représentation consiste essentiellement en un ensemble fini de vecteurs prêts pour la présentation. Les vecteurs ne représentent pas en eux-mêmes la totalité des détails de la présentation, et vous devez définir d’autres valeurs sur les éléments. Pour un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355), vous avez aussi besoin de valeurs pour [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) et d’autres propriétés. Ensuite, cet objet **Path** doit être connecté d’une façon ou d’une autre à l’arborescence visuelle. Pour un objet [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722), définissez la propriété [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974).
 
-Windows Runtime comprend deux propriétés qui peuvent utiliser une chaîne représentant des commandes de déplacement et de dessin : [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) et [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). Si vous définissez l’une de ces propriétés en spécifiant des commandes de déplacement et de dessin, vous définissez généralement cette propriété comme une valeur d’attribut XAML avec d’autres attributs requis de cet élément. Sans entrer dans les détails, voici à quoi cela ressemble :
+Windows Runtime comprend deux propriétés qui peuvent utiliser une chaîne représentant des commandes de déplacement et de dessin : [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) et [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). Si vous définissez l’une de ces propriétés en spécifiant des commandes de déplacement et de dessin, vous définissez généralement cette propriété comme une valeur d’attribut XAML avec d’autres attributs requis de cet élément. Sans entrer dans les détails, voici à quoi cela ressemble :
 
-```xaml
+```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
@@ -50,13 +51,13 @@ De nombreuses commandes de dessin utilisent des points qui nécessitent la défi
 
 L’espace blanc peut souvent être omis lorsque le résultat n’est pas ambigu. Vous pouvez en effet omettre les espaces blancs si vous utilisez des virgules comme séparateurs pour tous vos ensembles de nombres (points et taille). Par exemple, cette utilisation est légale :`F1M0,58L2,56L6,60L13,51L15,53L6,64z` Il est toutefois plus courant d’inclure un espace blanc entre les commandes pour plus de clarté.
 
-N’utilisez pas la virgule comme séparateur décimal pour les nombres décimaux ; la chaîne de commande est interprétée par XAML et ne tient pas compte des conventions de mise en forme des nombres spécifiques à la culture qui diffèrent de celles utilisées dans les paramètres régionaux **en-us**.
+N’utilisez pas la virgule comme séparateur décimal pour les nombres décimaux ; la chaîne de commande est interprétée par XAML et ne tient pas compte des conventions de mise en forme des nombres spécifiques à la culture qui diffèrent de celles utilisées dans les paramètres régionaux **en-us**.
 
 ## Spécificités de la syntaxe
 
 **Règle de remplissage**
 
-Il existe deux valeurs possibles pour la règle de remplissage facultative : **F0** ou **F1**. (**F** est toujours en majuscule.) **F0** est la valeur par défaut qui produit le comportement de remplissage **EvenOdd** (donc, vous ne la spécifiez généralement pas). Utilisez **F1** pour obtenir le comportement de remplissage **Nonzero**. Ces valeurs de remplissage sont alignées avec les valeurs de l’énumération [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030).
+Il existe deux valeurs possibles pour la règle de remplissage facultative : **F0** ou **F1**. (**F** est toujours en majuscule.) **F0** est la valeur par défaut qui produit le comportement de remplissage **EvenOdd** (donc, vous ne la spécifiez généralement pas). Utilisez **F1** pour obtenir le comportement de remplissage **Nonzero**. Ces valeurs de remplissage sont alignées avec les valeurs de l’énumération [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030).
 
 **Commande de déplacement**
 
@@ -64,14 +65,13 @@ Spécifie le point de départ d’une nouvelle figure.
 
 | Syntaxe |
 |--------|
-| `M ` _startPoint_ <br/>- ou -<br/>`m` _startPoint_|
+| `M ` _startPoint_ <br/>- ou -<br/>`m` _startPoint_|
 
 | Terme | Description |
 |------|-------------|
-| _startPoint_ | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>Point de départ d’une nouvelle figure.|
+| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>Point de départ d’une nouvelle figure.|
 
-Un **M** majuscule indique que *startPoint* est une coordonnée absolue ; un **m** minuscule indique que *startPoint* est décalé par rapport au point précédent ou (0,0) s’il n’y avait pas de point précédent.
+Un **M** majuscule indique que *startPoint* est une coordonnée absolue ; un **m** minuscule indique que *startPoint* est décalé par rapport au point précédent ou (0,0) s’il n’y avait pas de point précédent.
 
 **Remarque** Vous pouvez spécifier plusieurs points après la commande de déplacement. Une ligne est tracée jusqu’à ces points comme si vous aviez spécifié une commande de ligne. Toutefois, ce style n’est pas recommandé ; utilisez plutôt une commande de ligne dédiée.
 
@@ -89,12 +89,11 @@ Crée une ligne droite entre le point actuel et le point de terminaison spécifi
 
 | Syntaxe |
 |--------|
-| `L` _endPoint_ <br/>- ou -<br/>`l` _endPoint_ |
+| `L` _endPoint_ <br/>- ou -<br/>`l` _endPoint_ |
 
 | Terme | Description |
 |------|-------------|
-| endPoint | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>Point de terminaison de la ligne.|
+| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>Point de terminaison de la ligne.|
 
 **Commande de ligne horizontale**
 
@@ -102,12 +101,11 @@ Crée une ligne horizontale entre le point actuel et la coordonnée x spécifi�
 
 | Syntaxe |
 |--------|
-| `H ` _x_ <br/> - ou - <br/>`h ` _x_ |
+| `H ` _x_ <br/> - ou - <br/>`h ` _x_ |
 
 | Terme | Description |
 |------|-------------|
-| x | [
-            **Double**](T:System.Double) <br/> Coordonnée x du point final de la ligne. |
+| x | [**Double**](T:System.Double) <br/> Coordonnée x du point final de la ligne. |
 
 **Commande de ligne verticale**
 
@@ -115,12 +113,11 @@ Crée une ligne verticale entre le point actuel et la coordonnée y spécifiée
 
 | Syntaxe |
 |--------|
-| `V ` _y_ <br/> - ou - <br/> `v ` _y_ |
+| `V ` _y_ <br/> - ou - <br/> `v ` _y_ |
 
 | Terme | Description |
 |------|-------------|
-| *y* | [
-            **Double**](T:System.Double) <br/> Coordonnée y du point final de la ligne. |
+| *y* | [**Double**](T:System.Double) <br/> Coordonnée y du point final de la ligne. |
 
 **Commande de courbe de Bézier cubique**
 
@@ -128,16 +125,13 @@ Crée une courbe de Bézier cubique entre le point actuel et le point de termina
 
 | Syntaxe |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - ou - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - ou - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
 | Terme | Description |
 |------|-------------|
-| *controlPoint1* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Premier point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
-| *controlPoint2* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Second point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel la courbe est tracée. | 
+| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Premier point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
+| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Second point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel la courbe est tracée. | 
 
 **Commande de courbe de Bézier quadratique**
 
@@ -145,14 +139,12 @@ Crée une courbe de Bézier quadratique entre le point actuel et le point de ter
 
 | Syntaxe |
 |--------|
-| `Q ` *controlPoint endPoint* <br/> - ou - <br/> `q ` *controlPoint endPoint* |
+| `Q ` *controlPoint endPoint* <br/> - ou - <br/> `q ` *controlPoint endPoint* |
 
 | Terme | Description |
 |------|-------------|
-| *controlPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine les tangentes de début et de fin de la courbe. |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
+| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine les tangentes de début et de fin de la courbe. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
 **Commande de courbe de Bézier cubique lisse**
 
@@ -160,14 +152,12 @@ Crée une courbe de Bézier cubique entre le point actuel et le point de termina
 
 | Syntaxe |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - ou - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2* *endPoint* <br/> - ou - <br/>`s` *controlPoint2 endPoint* |
 
 | Terme | Description |
 |------|-------------|
-| *controlPoint2* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
+| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
 **Commande de courbe de Bézier quadratique lisse**
 
@@ -175,14 +165,12 @@ Crée une courbe de Bézier quadratique entre le point actuel et le point de ter
 
 | Syntaxe |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - ou - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint* *endPoint* <br/> - ou - <br/> `t` *controlPoint* *endPoint* |
 
 | Terme | Description |
 |------|-------------|
-| *controlPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
+| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
 **Commande d’arc elliptique**
 
@@ -190,18 +178,15 @@ Crée un arc elliptique entre le point actuel et le point de terminaison spécif
 
 | Syntaxe |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - ou - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - ou - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | Terme | Description |
 |------|-------------|
-| *size* | [
-            **Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Rayon x et rayon y de l’arc. |
-| *rotationAngle* | [
-            **Double**](T:System.Double) <br/> Rotation de l’ellipse, en degrés. |
+| *size* | [**Taille**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Rayon x et rayon y de l’arc. |
+| *rotationAngle* | [**Double**](T:System.Double) <br/> Rotation de l’ellipse, en degrés. |
 | *isLargeArcFlag* | Affectez la valeur 1 si l’angle de l’arc doit être de 180 degrés ou plus ; sinon, affectez la valeur 0. |
 | *sweepDirectionFlag* | Affectez la valeur 1 si l’arc est dessiné dans la direction de l’angle positif ; sinon, affectez la valeur 0. |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel l’arc est tracé.|
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel l’arc est tracé.|
  
 **Bouton de fermeture**
 
@@ -221,18 +206,16 @@ Décrit la coordonnée x et la coordonnée y d’un point. Voir aussi [**Point**
 
 | Terme | Description |
 |------|-------------|
-| *x* | [
-            **Double**](T:System.Double) <br/> Coordonnée x du point. |
-| *y* | [
-            **Double**](T:System.Double) <br/> Coordonnée y du point. |
+| *x* | [**Double**](T:System.Double) <br/> Coordonnée x du point. |
+| *y* | [**Double**](T:System.Double) <br/> Coordonnée y du point. |
 
 **Remarques supplémentaires**
 
 Au lieu d’une valeur numérique standard, vous pouvez également utiliser les valeurs spéciales suivantes. Ces valeurs respectent la casse.
 
--   **Infinity** : représente **PositiveInfinity**.
--   **\-Infinity** : représente **NegativeInfinity**.
--   **NaN** : représente **NaN**.
+-   **Infinity** : représente **PositiveInfinity**.
+-   **\-Infinity** : représente **NegativeInfinity**.
+-   **NaN** : représente **NaN**.
 
 Au lieu d’utiliser des nombres décimaux ou entiers, vous pouvez utiliser la notation scientifique. Par exemple, `+1.e17` est une valeur valide.
 
@@ -253,6 +236,6 @@ Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conc
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

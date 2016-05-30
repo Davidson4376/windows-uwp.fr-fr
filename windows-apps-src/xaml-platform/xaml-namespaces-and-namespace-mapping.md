@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Cette rubrique fournit des explications sur les mappages d’espaces de noms XML/XAML (xmlns) tels qu’ils existent dans l’élément racine de la plupart des fichiers XAML. Elle explique également comment produire des mappages similaires pour les assemblys et les types personnalisés.
 title: Espaces de noms XAML et mappage d’espaces de noms
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
@@ -6,7 +7,7 @@ ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 
 # Espaces de noms XAML et mappage d’espaces de noms
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique fournit des explications sur les mappages d’espaces de noms XML/XAML (**xmlns**) tels qu’ils existent dans l’élément racine de la plupart des fichiers XAML. Elle explique également comment produire des mappages similaires pour les assemblys et les types personnalisés.
 
@@ -35,7 +36,7 @@ Il s’agit du même identificateur d’espace de noms XAML que celui utilisé d
 
 La seconde déclaration mappe un espace de noms XAML distinct pour les éléments de langage définis en XAML, en le mappant (généralement) au préfixe « x: » : `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
 
-Cette valeur **xmlns**, ainsi que le préfixe « x: » auquel elle est mappée, est également identique aux définitions utilisées dans plusieurs technologies Microsoft antérieures qui utilisent le langage XAML.
+Cette valeur **xmlns**, ainsi que le préfixe « x: » auquel elle est mappée, est également identique aux définitions utilisées dans plusieurs technologies Microsoft antérieures qui utilisent le langage XAML.
 
 La relation entre ces déclarations est que XAML est une définition de langage et le Windows Runtime est une implémentation qui utilise XAML comme langage et définit un vocabulaire spécifique où ses types sont référencés en XAML.
 
@@ -45,29 +46,29 @@ Le langage XAML spécifie certains éléments linguistiques, chacun d’eux deva
 
 Outre l’espace de noms par défaut et l’espace de noms XAML de langage XAML « x: », il se peut que vous rencontriez d’autres espaces de noms XAML mappés dans le code XAML par défaut initial de certaines applications générées par Microsoft Visual Studio.
 
-### **d: (http://schemas.microsoft.com/expression/blend/2008)**
+### **d: (`http://schemas.microsoft.com/expression/blend/2008`)**
 
 L’espace de noms XAML « d: » est destiné à la prise en charge de concepteur, plus spécifiquement à la prise en charge de concepteur dans les aires de conception XAML de Microsoft Visual Studio. L’espace de noms XAML « d: » permet de disposer d’attributs de concepteur ou au moment du design sur des éléments XAML. Ces attributs de concepteur affectent uniquement les aspects du comportement XAML liés à la conception. Ils sont ignorés quand le même code XAML est chargé par l’analyseur XAML Windows Runtime lors de l’exécution d’une application. En règle générale, les attributs de concepteur sont valides sur tout élément XAML, mais en pratique il n’y a que certains scénarios où il convient d’appliquer soi-même un attribut de concepteur. Une grande partie des attributs de concepteur ont pour but de procurer une meilleure expérience pour l’interaction avec des contextes de données et des sources de données pendant que vous développez du code et des applications XAML qui utilisent la liaison de données.
 
--   **d:DesignHeight and d:DesignWidth attributes :** ces attributs sont parfois appliqués à la racine d’un fichier XAML créé automatiquement par Visual Studio ou tout autre concepteur XAML. Par exemple, ces attributs sont définis sur la racine [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) du code XAML qui est créé si vous ajoutez un nouvel objet **UserControl** à votre projet d’application. Ils facilitent la conception de la composition du contenu XAML, afin que vous ayez une certaine anticipation des contraintes de disposition qui peuvent exister une fois que le contenu XAML est utilisé pour une instance de contrôle ou une autre partie d’une page d’interface utilisateur plus grande.
+-   **d:DesignHeight and d:DesignWidth attributes :** ces attributs sont parfois appliqués à la racine d’un fichier XAML créé automatiquement par Visual Studio ou tout autre concepteur XAML. Par exemple, ces attributs sont définis sur la racine [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) du code XAML qui est créé si vous ajoutez un nouvel objet **UserControl** à votre projet d’application. Ils facilitent la conception de la composition du contenu XAML, afin que vous ayez une certaine anticipation des contraintes de disposition qui peuvent exister une fois que le contenu XAML est utilisé pour une instance de contrôle ou une autre partie d’une page d’interface utilisateur plus grande.
 
    **Remarque** Si vous migrez du code XAML à partir de Microsoft Silverlight, vous pouvez voir ces attributs sur les éléments racines qui représentent la totalité d’une page d’interface utilisateur. Dans ce cas, vous pouvez supprimer les attributs. D’autres fonctionnalités des concepteurs XAML, telles que le simulateur, sont probablement plus utiles pour la conception de dispositions de pages qui gèrent correctement la mise à l’échelle et les états d’affichage qu’une disposition de page de taille fixe utilisant **d:DesignHeight** et **d:DesignWidth**.
 
--   **Attribut d:DataContext :** vous pouvez définir cet attribut sur une racine de page ou un contrôle pour remplacer tout [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) explicite ou hérité que cet objet a sans cela.
--   **Attribut d:DesignSource :** spécifie une source de données au moment de la conception pour un [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), en remplacement de [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
--   **Extensions de balisage d:DesignInstance et d:DesignData :** ces extensions de balisage sont utilisées pour fournir les ressources de données au moment de la conception pour **d:DataContext** ou **d:DesignSource**. Nous ne documentons pas de manière exhaustive ici l’utilisation des ressources de données au moment de la conception. Pour plus d’informations, voir [Attributs au moment de la conception](http://go.microsoft.com/fwlink/p/?LinkId=272504). Pour obtenir des exemples d’utilisation, voir [Exemples de données sur l’aire de conception et pour la création d’un prototype](https://msdn.microsoft.com/library/windows/apps/mt517866).
+-   **Attribut d:DataContext :** vous pouvez définir cet attribut sur une racine de page ou un contrôle pour remplacer tout [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) explicite ou hérité que cet objet a sans cela.
+-   **Attribut d:DesignSource :** spécifie une source de données au moment de la conception pour un [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), en remplacement de [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
+-   **Extensions de balisage d:DesignInstance et d:DesignData :** ces extensions de balisage sont utilisées pour fournir les ressources de données au moment de la conception pour **d:DataContext** ou **d:DesignSource**. Nous ne documentons pas de manière exhaustive ici l’utilisation des ressources de données au moment de la conception. Pour plus d’informations, voir [Attributs au moment de la conception](http://go.microsoft.com/fwlink/p/?LinkId=272504). Pour obtenir des exemples d’utilisation, voir [Exemples de données sur l’aire de conception et pour la création d’un prototype](https://msdn.microsoft.com/library/windows/apps/mt517866).
 
-### **mc: (http://schemas.openxmlformats.org/markup-compatibility/2006) **
+### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
-« mc: » indique et prend en charge un mode de compatibilité de balisage pour la lecture de code XAML. Généralement, le préfixe « d: » est associé à l’attribut **mc:Ignorable**. Cette technique permet aux analyseurs XAML au moment de l’exécution d’ignorer les attributs de conception décrits dans « d: ».
+« mc: » indique et prend en charge un mode de compatibilité de balisage pour la lecture de code XAML. Généralement, le préfixe « d: » est associé à l’attribut **mc:Ignorable**. Cette technique permet aux analyseurs XAML au moment de l’exécution d’ignorer les attributs de conception décrits dans « d: ».
 
 ### **local:** et **common:**
 
-« local: » est un préfixe qui est souvent mappé pour vous dans les pages XAML d’un projet d’application du Windows Store basée sur un modèle. Ce préfixe est mappé pour faire référence au même espace de noms qui est créé pour contenir l’[attribut x:Class](x-class-attribute.md) et le code pour tous les fichiers XAML, y compris app.xaml. Tant que vous définissez les classes personnalisées que vous souhaitez utiliser en XAML dans ce même espace de noms, vous pouvez utiliser le préfixe **local:** pour faire référence à vos types personnalisés en XAML. **common:** est un préfixe connexe qui provient d’un projet d’application du Windows Store basée sur un modèle. Ce préfixe fait référence à un espace de noms « Common » imbriqué qui contient des classes utilitaires, notamment des convertisseurs et des commandes. Les définitions figurent dans le dossier Common de l’affichage **Explorateur de solutions**.
+« local: » est un préfixe qui est souvent mappé pour vous dans les pages XAML d’un projet d’application du Windows Store basée sur un modèle. Ce préfixe est mappé pour faire référence au même espace de noms qui est créé pour contenir l’[attribut x:Class](x-class-attribute.md) et le code pour tous les fichiers XAML, y compris app.xaml. Tant que vous définissez les classes personnalisées que vous souhaitez utiliser en XAML dans ce même espace de noms, vous pouvez utiliser le préfixe **local:** pour faire référence à vos types personnalisés en XAML. **common:** est un préfixe connexe qui provient d’un projet d’application du Windows Store basée sur un modèle. Ce préfixe fait référence à un espace de noms « Common » imbriqué qui contient des classes utilitaires, notamment des convertisseurs et des commandes. Les définitions figurent dans le dossier Common de l’affichage **Explorateur de solutions**.
 
 ### **vsm:**
 
-À ne pas utiliser. « vsm: » est un préfixe que l’on rencontre parfois dans les anciens modèles XAML importés à partir d’autres technologies Microsoft. À l’origine, l’espace de noms avait pour but de résoudre un problème lié à un outil d’espace de noms hérité. Supprimez les définitions d’espaces de noms XAML pour « vsm: » dans tout code XAML que vous utilisez pour Windows Runtime et modifiez les utilisations de préfixe pour [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) et les objets connexes de façon à utiliser plutôt l’espace de noms XAML par défaut. Pour plus d’informations sur la migration XAML, voir [Migration de code Silverlight ou XAML WPF vers une application Windows Runtime](https://msdn.microsoft.com/library/windows/apps/br229571).
+À ne pas utiliser. « vsm: » est un préfixe que l’on rencontre parfois dans les anciens modèles XAML importés à partir d’autres technologies Microsoft. À l’origine, l’espace de noms avait pour but de résoudre un problème lié à un outil d’espace de noms hérité. Supprimez les définitions d’espaces de noms XAML pour « vsm: » dans tout code XAML que vous utilisez pour Windows Runtime et modifiez les utilisations de préfixe pour [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) et les objets connexes de façon à utiliser plutôt l’espace de noms XAML par défaut. Pour plus d’informations sur la migration XAML, voir [Migration de code Silverlight ou XAML WPF vers une application Windows Runtime](https://msdn.microsoft.com/library/windows/apps/br229571).
 
 ## Mappage de types personnalisés à des préfixes et des espaces de noms XAML
 
@@ -108,6 +109,6 @@ Si vous référencez des propriétés jointes, la partie du type de propriétair
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

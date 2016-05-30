@@ -1,12 +1,13 @@
 ---
+author: jwmsft
 description: Identifie de manière unique les éléments qui sont créés et référencés en tant que ressources, et qui existent au sein d’une classe ResourceDictionary.
-title: Attribut x:Key
+title: Attribut x&#58;Key
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ---
 
-# Attribut x:Key
+# Attribut x&#58;Key
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Identifie de manière unique les éléments qui sont créés et référencés en tant que ressources, et qui existent au sein d’une classe [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
 
@@ -41,7 +42,7 @@ Les points suivants représentent la grammaire normative qui régit une chaîne 
 XamlName ::= NameStartChar (NameChar)*
 NameStartChar ::= LetterCharacter | '_'
 NameChar ::= NameStartChar | DecimalDigit
-LetterCharacter ::= ('a'-'z') | ('A'–'Z')
+LetterCharacter ::= ('a'-'z') | ('A'-'Z')
 DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
@@ -60,10 +61,10 @@ Notez que dans la syntaxe implicite présentée, l’objet [**ResourceDictionary
 
 Le code qui équivaut à spécifier **x:Key** est une opération qui utilise une clé avec la classe [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) sous-jacente. Par exemple, un **x:Key** appliqué dans un balisage pour une ressource équivaut à la valeur du paramètre *key* de **Insert** lorsque vous ajoutez la ressource à une classe **ResourceDictionary**.
 
-Un élément d’un dictionnaire de ressource peut ignorer une valeur pour **x:Key** s’il s’agit d’un [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) ou [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) ciblé ; dans chacun des cas, la clé implicite de la ressource est la valeur **TargetType** interprétée comme une chaîne. Pour plus d’informations, voir [Démarrage rapide : application de styles aux contrôles](https://msdn.microsoft.com/library/windows/apps/hh465498) et [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
+Un élément d’un dictionnaire de ressource peut ignorer une valeur pour **x:Key** s’il s’agit d’un [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) ou [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) ciblé ; dans chacun des cas, la clé implicite de la ressource est la valeur **TargetType** interprétée comme une chaîne. Pour plus d’informations, voir [Démarrage rapide : application de styles aux contrôles](https://msdn.microsoft.com/library/windows/apps/hh465498) et [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

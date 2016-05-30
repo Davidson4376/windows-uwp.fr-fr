@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. TemplateBinding peut uniquement être utilisé dans une définition ControlTemplate en XAML.
 title: Extension de balisage TemplateBinding
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
@@ -6,7 +7,7 @@ ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 
 # Extension de balisage {TemplateBinding}
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. **TemplateBinding** peut uniquement être utilisé dans une définition [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) en XAML.
 
@@ -31,7 +32,7 @@ Lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’
 
 ## Remarques
 
-L’utilisation de **TemplateBinding** est un élément fondamental de la définition d’un modèle de contrôle, si vous êtes l’auteur d’un contrôle personnalisé ou si vous remplacez un modèle de contrôle pour des contrôles existants. Pour plus d’informations, voir [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+L’utilisation de **TemplateBinding** est un élément fondamental de la définition d’un modèle de contrôle, si vous êtes l’auteur d’un contrôle personnalisé ou si vous remplacez un modèle de contrôle pour des contrôles existants. Pour plus d’informations, voir [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
 Il est relativement courant pour *propertyName* et *targetProperty* d’utiliser le même nom de propriété. Dans ce cas, un contrôle peut définir une propriété sur elle-même et la transmettre à une propriété existante nommée de manière intuitive de l’une de ses parties de composants. Par exemple, un contrôle qui incorpore un [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) dans sa composition, lequel est utilisé pour afficher la propre propriété **Text** du contrôle, peut inclure ce code XAML en tant que partie dans le modèle du contrôle : `<TextBlock Text="{TemplateBinding Text}" .... />`
 
@@ -58,6 +59,6 @@ Vous pouvez utiliser **TemplateBinding** lorsque la valeur du parent basé sur u
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

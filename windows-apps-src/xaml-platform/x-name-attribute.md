@@ -1,12 +1,13 @@
 ---
+author: jwmsft
 description: Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général.
 title: Attribut xName
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ---
 
-# Attribut x:Name
+# Attribut x&#58;Name
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général. Une fois appliqué à un modèle de programmation de stockage, **x:Name** peut être considéré comme équivalent à la variable qui contient une référence d’objet, telle que renvoyée par un constructeur.
 
@@ -30,7 +31,7 @@ Les points suivants représentent la grammaire normative qui régit une chaîne 
 XamlName ::= NameStartChar (NameChar)*
 NameStartChar ::= LetterCharacter | '_'
 NameChar ::= NameStartChar | DecimalDigit
-LetterCharacter ::= ('a'-'z') | ('A'–'Z')
+LetterCharacter ::= ('a'-'z') | ('A'-'Z')
 DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
@@ -45,7 +46,7 @@ Le **x:Name** spécifié devient le nom d’un champ créé dans le code sous-ja
 
 Chaque **x:Name** défini doit être unique au sein d’un namescope XAML. En général, un namescope XAML est défini au niveau de l’élément racine d’une page chargée et contient tous les éléments sous cet élément dans une seule page XAML. D’autres namescopes XAML sont définis par n’importe quel modèle de contrôle ou modèle de données défini sur cette page. Au moment de l’exécution, un autre namescope XAML est créé pour la racine de l’arborescence d’objets créée à partir d’un modèle de contrôle appliqué, ainsi que par les arborescences d’objets créées à partir d’un appel à la méthode [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048). Pour plus d’informations, voir [Namescopes XAML](xaml-namescopes.md).
 
-Les outils de conception génèrent souvent automatiquement des valeurs **x:Name** pour les éléments lorsqu’ils sont introduits dans l’aire de conception. Le schéma de génération automatique varie selon le concepteur que vous utilisez, mais le schéma habituel consiste à générer une chaîne qui commence par le nom de la classe qui stocke l’élément, suivi d’un entier progressif. Par exemple, si vous introduisez le premier élément [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) dans le concepteur, vous pouvez constater que dans le code XAML, la valeur d’attribut **x:Name** de cet élément est « Button1 ».
+Les outils de conception génèrent souvent automatiquement des valeurs **x:Name** pour les éléments lorsqu’ils sont introduits dans l’aire de conception. Le schéma de génération automatique varie selon le concepteur que vous utilisez, mais le schéma habituel consiste à générer une chaîne qui commence par le nom de la classe qui stocke l’élément, suivi d’un entier progressif. Par exemple, si vous introduisez le premier élément [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) dans le concepteur, vous pouvez constater que dans le code XAML, la valeur d’attribut **x:Name** de cet élément est « Button1 ».
 
 Il n’est pas possible de définir **x:Name** dans la syntaxe de l’élément de propriété XAML, ou dans le code à l’aide de [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361). **x:Name** peut uniquement être défini à l’aide de la syntaxe de l’attribut XAML sur les éléments.
 
@@ -65,6 +66,6 @@ Si **Name** est disponible en tant que propriété définissable sur un élémen
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

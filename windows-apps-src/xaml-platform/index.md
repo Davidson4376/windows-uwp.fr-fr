@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
 description: Cette section contient des rubriques qui décrivent des concepts de programmation généralement applicables aux applications que vous écrivez.
 title: Plateforme XAML
@@ -6,7 +7,7 @@ title: Plateforme XAML
 
 # Plateforme XAML
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section comprend des rubriques qui décrivent des concepts de programmation généralement applicables aux applications que vous écrivez, dans la mesure où vous utilisez C#, Microsoft Visual Basic ou des extensions de composant Visual C++ (C++/CX) comme langage de programmation et XAML pour la définition de votre interface utilisateur. Il s’agit notamment de concepts de programmation de base tels que l’utilisation des propriétés et des événements, et la façon dont ces derniers s’appliquent à la programmation d’applications de plateforme Windows universelle (UWP). La plateforme Windows universelle (UWP) étend les concepts des propriétés C#, Visual Basic et C++/CX et leurs valeurs en ajoutant le système de propriétés de dépendance. Les rubriques de cette section documentent également le langage XAML tel qu’utilisé par UWP, et couvrent des cas de base et des sujets avancés sur l’utilisation du code XAML pour définir l’interface utilisateur de votre application UWP.
  
@@ -22,6 +23,6 @@ Cette section comprend des rubriques qui décrivent des concepts de programmatio
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

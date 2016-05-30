@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
 title: Vue d’ensemble des propriétés de dépendance
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
@@ -6,7 +7,7 @@ ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 
 # Vue d’ensemble des propriétés de dépendance
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
 
@@ -132,7 +133,7 @@ Vous pouvez définir la valeur d’une propriété de dépendance en appliquant 
 
 L’exemple suivant définit la valeur [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) d’un élément [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), à l’aide d’une liaison en XAML. La liaison utilise un contexte de données hérité et une source de données d’objet. (Aucun des deux n’est présenté dans l’exemple réduit ; pour obtenir un exemple plus complet qui montre le contexte et la source, voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).)
 
-```XAML
+```XML
 <Canvas>
   <TextBlock Text="{Binding Team.TeamName}"/>
 </Canvas>
@@ -156,7 +157,7 @@ Connecter la liaison n’est pas la seule chose nécessaire dans la plupart des 
 
 ### Styles et modèles
 
-Les styles et modèles constituent deux des scénarios pour la définition de propriétés en tant que propriétés de dépendance. Les styles s’avèrent utiles pour définir les propriétés qui déterminent l’interface utilisateur de l’application. Les styles sont définis en tant que ressources en XAML, soit comme entrée dans une collection [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740), soit dans des fichiers XAML distincts tels que des dictionnaires de ressources de thème. Les styles interagissent avec le système de propriétés car ils contiennent des méthodes setter pour les propriétés. La propriété la plus importante ici est la propriété [**Control.Template**](https://msdn.microsoft.com/library/windows/apps/br209465) d’une classe [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) : elle définit la majeure partie de l’aspect visuel et de l’état visuel d’une classe **Control**. Pour plus d’informations sur les styles et pour obtenir un exemple XAML qui définit une classe [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) et utilise des méthodes setter, voir [Application de styles aux contrôles](https://msdn.microsoft.com/library/windows/apps/mt210950).
+Les styles et modèles constituent deux des scénarios pour la définition de propriétés en tant que propriétés de dépendance. Les styles s’avèrent utiles pour définir les propriétés qui déterminent l’interface utilisateur de l’application. Les styles sont définis en tant que ressources en XAML, soit comme entrée dans une collection [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740), soit dans des fichiers XAML distincts tels que des dictionnaires de ressources de thème. Les styles interagissent avec le système de propriétés car ils contiennent des méthodes setter pour les propriétés. La propriété la plus importante ici est la propriété [**Control.Template**](https://msdn.microsoft.com/library/windows/apps/br209465) d’une classe [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) : elle définit la majeure partie de l’aspect visuel et de l’état visuel d’une classe **Control**. Pour plus d’informations sur les styles et pour obtenir un exemple XAML qui définit une classe [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) et utilise des méthodes setter, voir [Application de styles aux contrôles](https://msdn.microsoft.com/library/windows/apps/mt210950).
 
 Les valeurs qui proviennent des styles ou des modèles sont des valeurs différées, semblables aux liaisons. Il en est ainsi pour que les utilisateurs de contrôles puissent remodéliser les contrôles ou redéfinir les styles. Et c’est pourquoi les méthodes setter de propriété dans les styles peuvent uniquement agir sur les propriétés de dépendance, pas sur les propriétés ordinaires.
 
@@ -168,7 +169,7 @@ Pour être animée, la propriété cible de l’animation doit être une propri�
 
 Lorsqu’une animation est appliquée et exécutée, la valeur animée fonctionne à un niveau de priorité supérieur à toute valeur (telle qu’une valeur locale) autrement affectée à la propriété. Les animations ont également un comportement [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) optionnel pouvant entraîner leur application aux valeurs de propriété même si elles semblent visuellement arrêtées.
 
-Le principe de machine à états est incarné par l’utilisation d’animations dans une table de montage séquentiel dans le cadre du modèle d’état [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) pour les contrôles. Pour plus d’informations sur les animations dans une table de montage séquentiel, voir [Animations dans une table de montage](https://msdn.microsoft.com/library/windows/apps/mt187354). Pour plus d’informations sur **VisualStateManager** et sur la définition des états visuels des contrôles, voir [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) ou [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+Le principe de machine à états est incarné par l’utilisation d’animations dans une table de montage séquentiel dans le cadre du modèle d’état [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) pour les contrôles. Pour plus d’informations sur les animations dans une table de montage séquentiel, voir [Animations dans une table de montage](https://msdn.microsoft.com/library/windows/apps/mt187354). Pour plus d’informations sur **VisualStateManager** et sur la définition des états visuels des contrôles, voir [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) ou [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
 ### Comportement modifié par une propriété
 
@@ -194,13 +195,13 @@ Les aspects relatifs aux threads de [**DependencyObject**](https://msdn.microsof
 * [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [Exemple de contrôles personnalisés et utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=238581)
-**API en rapport avec les propriétés de dépendance**
+* [Exemple de contrôles personnalisés et utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=238581) 
+           **API en rapport avec les propriétés de dépendance**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

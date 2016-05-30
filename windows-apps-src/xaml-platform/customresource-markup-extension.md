@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Fournit une valeur pour tout attribut XAML en évaluant une référence à une ressource qui provient de l’implémentation d’une recherche de ressource personnalisée. La recherche de ressource est effectuée via l’implémentation d’une classe CustomXamlResourceLoader.
 title: Extension de balisage CustomResource
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
@@ -6,7 +7,7 @@ ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 
 # Extension de balisage {CustomResource}
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Fournit une valeur pour tout attribut XAML en évaluant une référence à une ressource qui provient de l’implémentation d’une recherche de ressource personnalisée. La recherche de ressource est effectuée via l’implémentation d’une classe [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327).
 
@@ -30,7 +31,7 @@ Le mode de résolution de **CustomResource** en dictionnaire de ressources n’e
 
 La méthode [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) de l’implémentation de [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) est appelée par l’analyseur XAML Windows Runtime chaque fois qu’il rencontre l’utilisation de `{CustomResource}` dans le balisage. Le *resourceId* passé à **GetResource** vient de l’argument *key*. Par ailleurs, les autres paramètres d’entrée proviennent du contexte, par exemple la propriété à laquelle l’utilisation s’applique.
 
-L’utilisation de `{CustomResource}` ne fonctionne pas par défaut (l’implémentation de base de [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) est incomplète). Pour créer une référence valide à `{CustomResource}`, vous devez effectuer chacune des étapes suivantes :
+L’utilisation de `{CustomResource}` ne fonctionne pas par défaut (l’implémentation de base de [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) est incomplète). Pour créer une référence valide à `{CustomResource}`, vous devez effectuer chacune des étapes suivantes :
 
 1.  Dérivez une classe personnalisée de [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) et substituez la méthode [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340). N’appelez pas la base dans l’implémentation.
 2.  Définissez [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) de manière à référencer votre classe dans une logique d’initialisation. Cette opération doit intervenir avant le chargement de tout code XAML de niveau page comprenant l’utilisation d’une extension `{CustomResource}`. Vous pouvez définir **CustomXamlResourceLoader.Current** dans le constructeur de sous-classe [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) qui est automatiquement généré dans les modèles code-behind App.xaml.
@@ -46,6 +47,6 @@ L’utilisation de `{CustomResource}` ne fonctionne pas par défaut (l’implém
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

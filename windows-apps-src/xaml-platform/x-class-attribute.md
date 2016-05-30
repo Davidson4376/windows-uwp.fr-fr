@@ -1,12 +1,13 @@
 ---
+author: jwmsft
 description: Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML.
-title: Attribut x:Class
+title: Attribut x&#58;Class
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ---
 
-# Attribut x:Class
+# Attribut x&#58;Class
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML.
 
@@ -36,10 +37,10 @@ La valeur de l’attribut **x:Class** doit être une chaîne qui spécifie le no
 
 ## Règle du langage CLR
 
-Bien que votre fichier code-behind puisse être un fichier C++, il existe certaines conventions qui suivent quand même la forme du langage CLR, afin qu’il n’y ait aucune différence dans la syntaxe XAML. En particulier, le séparateur entre l’espace de noms et les composants de nom de classe d’une valeur **x:Class** est toujours un point (« . »), même si le séparateur entre l’espace de noms et le nom de classe dans le fichier de code C++ associé au XAML est « :: ». Si vous déclarez des espaces de noms imbriqués en C++, le séparateur entre les chaînes d’espaces de noms imbriquées successives doit être également « . » plutôt que « :: » quand vous spécifiez la partie *namespace* de la valeur **x:Class**.
+Bien que votre fichier code-behind puisse être un fichier C++, il existe certaines conventions qui suivent quand même la forme du langage CLR, afin qu’il n’y ait aucune différence dans la syntaxe XAML. En particulier, le séparateur entre l’espace de noms et les composants de nom de classe d’une valeur **x:Class** est toujours un point (« . »), même si le séparateur entre l’espace de noms et le nom de classe dans le fichier de code C++ associé au XAML est « :: ». Si vous déclarez des espaces de noms imbriqués en C++, le séparateur entre les chaînes d’espaces de noms imbriquées successives doit être également « . » plutôt que « :: » quand vous spécifiez la partie *namespace* de la valeur **x:Class**.
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

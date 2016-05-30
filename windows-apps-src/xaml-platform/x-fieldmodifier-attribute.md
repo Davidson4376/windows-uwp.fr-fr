@@ -1,12 +1,13 @@
 ---
+author: jwmsft
 description: Modifie le comportement de la compilation XAML pour que les champs des références d’objet nommé soient définis avec l’accès public au lieu de suivre le comportement private par défaut.
 title: Attribut xFieldModifier
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 ---
 
-# Attribut x:FieldModifier
+# Attribut x&#58;FieldModifier
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Modifie le comportement de la compilation XAML pour que les champs des références d’objet nommé soient définis avec l’accès **public** au lieu de suivre le comportement **private** par défaut.
 
@@ -32,6 +33,6 @@ Vous pouvez également spécifier **NonPublic** (**internal** en C# ou C++/CX, *
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Vous pouvez utiliser la classe PropertyPath et la syntaxe de chaîne pour instancier une valeur PropertyPath en XAML ou dans le code.
 title: Syntaxe de Property-path
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
@@ -6,7 +7,7 @@ ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 
 # Syntaxe de Property-path
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous pouvez utiliser la classe [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) et la syntaxe de chaîne pour instancier une valeur **PropertyPath** en XAML ou dans le code. Les valeurs **PropertyPath** sont utilisées par la liaison de données. Une syntaxe similaire est utilisée pour cibler les animations dans une table de montage séquentiel. Toutefois, le ciblage d’animations ne crée pas de valeurs de syntaxe Property-path sous-jacentes, mais conserve l’information sous forme de chaîne. Dans les deux scénarios, un chemin de propriété décrit la traversée d’une ou de plusieurs relations de propriétés d’objet qui finissent par devenir une seule propriété.
 
@@ -28,7 +29,7 @@ L’élément de la syntaxe qui désigne la traversée d’une relation de propr
 
 Voici comment ce chemin d’accès est évalué :
 
-1.  L’objet de contexte de données (ou un [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) spécifié par le même [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) donne lieu à la recherche de la propriété nommée « Customer ».
+1.  L’objet de contexte de données (ou un [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) spécifié par le même [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) donne lieu à la recherche de la propriété nommée « Customer ».
 2.  L’objet qui a la valeur de la propriété « Customer » donne lieu à la recherche de la propriété nommée « Address ».
 3.  L’objet qui a la valeur de la propriété « Address » donne lieu à la recherche de la propriété nommée « StreetAddress1 ».
 
@@ -46,11 +47,11 @@ Un chemin de propriété pour la liaison de données peut inclure des référenc
 
 Prenons par exemple un objet métier qui contient une liste de « Teams » (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de « Players » où chaque joueur est indexé par le nom de famille. Voici un exemple de chemin de propriété pour un joueur spécifique de la deuxième équipe : « Teams\[1\].Players\[Smith\] ». (Vous utilisez 1 pour indiquer le deuxième élément de « Teams », car la liste est indexée à partir de zéro.)
 
-**Remarque** La prise en charge de l’indexation pour les sources de données C++ est limitée ; voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque** La prise en charge de l’indexation pour les sources de données C++ est limitée ; voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### Propriétés jointes
 
-Les chemins de propriété peuvent inclure des références à des propriétés jointes. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, la chaîne qui permet de spécifier l’utilisation de [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) en tant que chemin de liaison est « (Canvas.ZIndex) ». Pour plus d’informations sur les propriétés jointes, voir [Vue d’ensemble des propriétés jointes](attached-properties-overview.md).
+Les chemins de propriété peuvent inclure des références à des propriétés jointes. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, la chaîne qui permet de spécifier l’utilisation de [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) en tant que chemin de liaison est « (Canvas.ZIndex) ». Pour plus d’informations sur les propriétés jointes, voir [Vue d’ensemble des propriétés jointes](attached-properties-overview.md).
 
 ### Combinaison d’éléments de la syntaxe du chemin de propriété
 
@@ -68,23 +69,23 @@ Pour plus d’informations sur la définition d’animations en XAML, voir [Anim
 
 ## Ciblage simple
 
-Si vous animez une propriété qui existe sur l’objet ciblé lui-même et si une animation peut être appliquée directement au type de cette propriété (au lieu d’une sous-propriété de la valeur d’une propriété), il vous suffit de nommer la propriété animée sans qualification supplémentaire. Par exemple, si vous ciblez une sous-classe de [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) telle que [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), et si vous appliquez un [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animé à la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), votre chemin de propriété peut être « Fill ».
+Si vous animez une propriété qui existe sur l’objet ciblé lui-même et si une animation peut être appliquée directement au type de cette propriété (au lieu d’une sous-propriété de la valeur d’une propriété), il vous suffit de nommer la propriété animée sans qualification supplémentaire. Par exemple, si vous ciblez une sous-classe de [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) telle que [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), et si vous appliquez un [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animé à la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), votre chemin de propriété peut être « Fill ».
 
 ## Ciblage de propriété indirect
 
-Vous pouvez animer une propriété qui représente une sous-propriété de l’objet cible. En d’autres termes, s’il existe une propriété de l’objet cible qui est un objet lui-même et si cet objet a des propriétés, vous devez définir un chemin de propriété qui explique comment exécuter le code pas à pas de cette relation de propriété d’objet. Chaque fois que vous spécifiez un objet pour lequel vous souhaitez animer une sous-propriété, mettez entre parenthèses le nom de la propriété et spécifiez cette dernière en respectant le format *typename*.*propertyname*. Par exemple, pour spécifier la valeur d’objet de la propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) d’un objet cible, spécifiez « (UIElement.RenderTransform) » en tant que première étape du chemin de propriété. Il ne s’agit pas d’un chemin d’accès complet, car aucune animation ne peut s’appliquer directement à une valeur [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006). Par conséquent, pour cet exemple, vous complétez à présent le chemin de propriété afin que la propriété de fin soit une propriété de la sous-classe **Transform** pouvant être animée par une valeur **Double** : « (UIElement.RenderTransform).(CompositeTransform.TranslateX) »
+Vous pouvez animer une propriété qui représente une sous-propriété de l’objet cible. En d’autres termes, s’il existe une propriété de l’objet cible qui est un objet lui-même et si cet objet a des propriétés, vous devez définir un chemin de propriété qui explique comment exécuter le code pas à pas de cette relation de propriété d’objet. Chaque fois que vous spécifiez un objet pour lequel vous souhaitez animer une sous-propriété, mettez entre parenthèses le nom de la propriété et spécifiez cette dernière en respectant le format *typename*.*propertyname*. Par exemple, pour spécifier la valeur d’objet de la propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) d’un objet cible, spécifiez « (UIElement.RenderTransform) » en tant que première étape du chemin de propriété. Il ne s’agit pas d’un chemin d’accès complet, car aucune animation ne peut s’appliquer directement à une valeur [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006). Par conséquent, pour cet exemple, vous complétez à présent le chemin de propriété afin que la propriété de fin soit une propriété de la sous-classe **Transform** pouvant être animée par une valeur **Double** : « (UIElement.RenderTransform).(CompositeTransform.TranslateX) »
 
 ## Spécification d’un enfant particulier dans une collection
 
 Pour spécifier un élément enfant dans une propriété de collection, vous pouvez utiliser un indexeur numérique. Utilisez des crochets « \[\] » autour de la valeur d’index de l’entier. Vous ne pouvez référencer que des listes ordonnées, pas des dictionnaires. Dans la mesure où une collection n’est pas une valeur qui peut être animée, l’utilisation d’un indexeur ne peut jamais représenter la propriété de fin d’un chemin de propriété.
 
-Par exemple, pour indiquer que vous voulez animer la première couleur d’interruption de couleur dans un [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) appliqué à la propriété [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) d’un contrôle, voici le chemin de propriété correspondant : « (Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color) ». Notez que l’indexeur n’est pas la dernière étape du chemin d’accès et que la dernière étape, en particulier, doit faire référence à la propriété [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) de l’élément 0 de la collection pour lui appliquer une valeur animée [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723).
+Par exemple, pour indiquer que vous voulez animer la première couleur d’interruption de couleur dans un [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) appliqué à la propriété [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) d’un contrôle, voici le chemin de propriété correspondant : « (Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color) ». Notez que l’indexeur n’est pas la dernière étape du chemin d’accès et que la dernière étape, en particulier, doit faire référence à la propriété [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) de l’élément 0 de la collection pour lui appliquer une valeur animée [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723).
 
 ## Animation d’une propriété jointe
 
-Il ne s’agit pas d’un scénario répandu. Toutefois, il est possible d’animer une propriété jointe, du moment que cette dernière possède une valeur de propriété qui correspond à un type d’animation. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, pour spécifier l’animation de la propriété jointe [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) d’un objet, utilisez le chemin de propriété « (Grid.Row) ».
+Il ne s’agit pas d’un scénario répandu. Toutefois, il est possible d’animer une propriété jointe, du moment que cette dernière possède une valeur de propriété qui correspond à un type d’animation. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, pour spécifier l’animation de la propriété jointe [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) d’un objet, utilisez le chemin de propriété « (Grid.Row) ».
 
-**Remarque** Pour cet exemple, la valeur de [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) correspond au type de propriété **Int32**. Par conséquent, vous ne pouvez pas l’animer avec une animation **Double**. À la place, définissez un [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) qui a des composants [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132), où [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) a la valeur d’un entier tel que « 0 » ou « 1 ».
+**Remarque** Pour cet exemple, la valeur de [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) correspond au type de propriété **Int32**. Par conséquent, vous ne pouvez pas l’animer avec une animation **Double**. À la place, définissez un [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) qui a des composants [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132), où [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) a la valeur d’un entier tel que « 0 » ou « 1 ».
 
 ## Règles des propriétés dans un chemin de propriété de ciblage d’animation
 
@@ -114,6 +115,6 @@ La plupart du temps, vous pouvez appliquer [**PropertyPath**](https://msdn.micro
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

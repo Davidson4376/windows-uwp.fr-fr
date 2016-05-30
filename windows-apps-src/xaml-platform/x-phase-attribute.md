@@ -1,12 +1,13 @@
 ---
+author: jwmsft
 title: Attribut xPhase
-description: Utilisez xPhase avec l’extension de balisage {x:Bind} pour rendre les éléments ListView et GridView de façon incrémentielle et améliorer l’expérience de mouvement panoramique.
+description: Utilisez xPhase avec l’extension de balisage {x&#58;Bind} pour rendre les éléments ListView et GridView de façon incrémentielle et améliorer l’expérience de mouvement panoramique.
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ---
 
-# Attribut x:Phase
+# Attribut x&#58;Phase
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Utilisez **x:Phase** avec l’[extension de balisage {x:Bind}](x-bind-markup-extension.md) pour rendre les éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) de façon incrémentielle et améliorer l’expérience de mouvement panoramique. **x:Phase** offre un moyen déclaratif d’obtenir le même effet que l’utilisation de l’événement [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) pour contrôler manuellement le rendu des éléments de liste. Voir aussi [Mettre à jour les éléments ListView et GridView de façon incrémentielle](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
 
@@ -32,7 +33,7 @@ L’exécution par phases permet un rendu incrémentiel du modèle de données a
 
 ## Exemple
 
-```xaml
+```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
     <Grid Width="200" Height="80">
         <Grid.ColumnDefinitions>
@@ -71,10 +72,10 @@ Les numéros de phase ne doivent pas nécessairement être contigus, et sont ide
 
 L’exécution par phases affecte uniquement les liaisons [{x:Bind}](x-bind-markup-extension.md), pas les liaisons [{Binding}](binding-markup-extension.md).
 
-L’exécution par phases s’applique uniquement quand le modèle d’élément est rendu à l’aide d’un contrôle qui la prend en charge. Dans Windows 10, cela signifie [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). L’exécution par phases ne s’applique pas aux modèles de données utilisés dans d’autres contrôles d’élément, ou pour d’autres cas de figure tels que [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) ou des sections de [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843). Dans ces situations, tous les éléments d’interface utilisateur sont liés aux données en une fois.
+L’exécution par phases s’applique uniquement quand le modèle d’élément est rendu à l’aide d’un contrôle qui la prend en charge. Dans Windows 10, cela signifie [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). L’exécution par phases ne s’applique pas aux modèles de données utilisés dans d’autres contrôles d’élément, ou pour d’autres cas de figure tels que [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) ou des sections de [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843). Dans ces situations, tous les éléments d’interface utilisateur sont liés aux données en une fois.
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

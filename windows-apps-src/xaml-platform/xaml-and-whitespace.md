@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
 title: XAML et espace blanc
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
@@ -6,7 +7,7 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 
 # XAML et espace blanc
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
 
@@ -21,7 +22,7 @@ En accord avec le langage XML, les caractères d’espace blanc en langage XAML 
 -   Un espace qui précède immédiatement la balise de fin est supprimé.
 -   Les *caractères d’Asie orientale* correspondent à un ensemble de plages de caractères Unicode allant de U+20000 à U+2FFFD et de U+30000 à U+3FFFD. Parfois, ce sous-ensemble est également appelé *idéogrammes CJC*. Pour plus d’informations, voir http://www.unicode.org.
 
-« Par défaut » correspond à l’état indiqué par la valeur par défaut de l’attribut **xml:space**.
+« Par défaut » correspond à l’état indiqué par la valeur par défaut de l’attribut **xml:space**.
 
 ### Espace blanc dans le texte interne et primitives de chaîne
 
@@ -42,12 +43,12 @@ Même pour les modèles de contenu qui peuvent prendre des chaînes, le comporte
 
 Plusieurs techniques pour conserver l’espace blanc dans le code XAML source à des fins de présentation finale ne sont pas affectées par la normalisation de l’espace blanc par le processeur XAML.
 
-`xml:space="preserve"` : spécifiez cet attribut au niveau de l’élément quand l’espace blanc doit être conservé. Notez que ceci conserve tous les espaces blancs, y compris ceux qui peuvent être ajoutés par des éditeurs de code ou des aires de conception pour aligner les éléments de balisage en guise d’imbrication visuellement intuitive. Le rendu de ces espaces dépend là encore du modèle de contenu de l’élément contenant. Nous vous déconseillons de spécifier `xml:space="preserve"` au niveau de la racine, car la plupart des modèles objet ne considèrent pas l’espace blanc comme étant significatif. Il est préférable de définir uniquement l’attribut de manière spécifique au niveau des éléments qui rendent l’espace blanc au sein de chaînes ou qui sont des collections significatives d’espace blanc.
+`xml:space="preserve"`: spécifiez cet attribut au niveau de l’élément quand l’espace blanc doit être conservé. Notez que ceci conserve tous les espaces blancs, y compris ceux qui peuvent être ajoutés par des éditeurs de code ou des aires de conception pour aligner les éléments de balisage en guise d’imbrication visuellement intuitive. Le rendu de ces espaces dépend là encore du modèle de contenu de l’élément contenant. Nous vous déconseillons de spécifier `xml:space="preserve"` au niveau de la racine, car la plupart des modèles objet ne considèrent pas l’espace blanc comme étant significatif. Il est préférable de définir uniquement l’attribut de manière spécifique au niveau des éléments qui rendent l’espace blanc au sein de chaînes ou qui sont des collections significatives d’espace blanc.
 
 Entités et espaces insécables : le code XAML prend en charge le placement d’une entité Unicode au sein d’un modèle objet texte. Vous pouvez utiliser des entités dédiées telles que l’espace insécable (en codage UTF-8). Vous pouvez également utiliser des contrôles de texte enrichi qui prennent en charge les caractères d’espace insécable. Procédez avec caution si vous utilisez des entités pour simuler des caractéristiques de disposition telles que les retraits, car la sortie au moment de l’exécution des entités varie en fonction d’un nombre supérieur de facteurs que celui des fonctionnalités de disposition générales, telles que l’utilisation propre des volets et marges.
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

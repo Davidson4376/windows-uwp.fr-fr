@@ -1,12 +1,13 @@
 ---
+author: jwmsft
 title: Attribut xDeferLoadStrategy
-description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire.
+description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ---
 
-# Attribut x:DeferLoadStrategy
+# Attribut x&#58;DeferLoadStrategy
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **x:DeferLoadStrategy="Lazy"** retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire. Plus l’arborescence d’éléments que vous différez est importante, plus vous gagnez du temps de démarrage, mais au prix d’un encombrement mémoire supérieur. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
 
@@ -18,7 +19,7 @@ ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 
 ## Remarques
 
-Les restrictions pour l’utilisation de **x:DeferLoadStrategy** sont les suivantes :
+Les restrictions pour l’utilisation de **x:DeferLoadStrategy** sont les suivantes :
 
 -   Nécessite un [x: Name](x-name-attribute.md) défini, car il doit être possible de trouver l’élément ultérieurement.
 -   Seul un [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) peut être marqué comme différé, à l’exception des types dérivés de [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
@@ -54,7 +55,7 @@ Il est généralement conseillé de mesurer votre application avant et après af
 
 ## Exemple
 
-```xaml
+```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
@@ -82,6 +83,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
