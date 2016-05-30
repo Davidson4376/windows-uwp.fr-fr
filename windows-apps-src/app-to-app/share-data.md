@@ -1,4 +1,4 @@
-﻿---
+---
 description: Cet article explique comment prendre en charge le contrat de partage dans une application de plateforme Windows universelle (UWP).
 title: Partager des données
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
@@ -15,11 +15,11 @@ Cet article explique comment prendre en charge le contrat de partage dans une ap
 
 Ajoutez un gestionnaire d’événements [**DataRequested**][DataRequested] à appeler lorsque l’utilisateur appelle l’option Partager. Cela peut se produire lorsque l’utilisateur appuie sur un contrôle dans votre application (par exemple, une commande de barre d’application ou un bouton) ou automatiquement dans un scénario spécifique (par exemple, si l’utilisateur a terminé un niveau et obtient un score élevé).
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
 Lorsqu’un événement [**DataRequested**][DataRequested] survient, votre application reçoit un objet [**DataRequest**][DataRequest]. Cet objet contient une classe [**DataPackage**][DataPackage] que vous pouvez utiliser pour fournir le contenu qu’un utilisateur souhaite partager. Vous devez fournir un titre et des données à partager. La description est facultative, mais recommandée.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
 ## Choisir les données
 
@@ -36,21 +36,21 @@ Vous pouvez partager différents types de données, notamment :
 
 L’objet [**DataPackage**][DataPackage] peut contenir un ou plusieurs de ces formats, dans n’importe quelle combinaison. L’exemple suivant illustre le partage de texte.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## Définir des propriétés
 
-Lorsque vous créez un package de données en vue de le partager, vous pouvez définir diverses propriétés qui fournissent des informations supplémentaires sur le contenu partagé. Ces propriétés aident les applications cibles à améliorer l’expérience utilisateur. Par exemple, une description se révèle utile lorsque l’utilisateur partage du contenu avec plusieurs applications. De même, un lien vers une page web ou une miniature ajoutée à une image partagée servent de référence visuelle à l’utilisateur. Pour plus d’informations, voir [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet].
+Lorsque vous créez un package de données en vue de le partager, vous pouvez définir diverses propriétés qui fournissent des informations supplémentaires sur le contenu partagé. Ces propriétés aident les applications cibles à améliorer l’expérience utilisateur. Par exemple, une description se révèle utile lorsque l’utilisateur partage du contenu avec plusieurs applications. De même, un lien vers une page web ou une miniature ajoutée à une image partagée servent de référence visuelle à l’utilisateur. Pour plus d’informations, consultez [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet].
 
 Toutes les propriétés sont facultatives, à l’exception du titre. La propriété title est obligatoire et doit être définie.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## Lancer l’interface utilisateur de partage
 
 Une interface utilisateur pour le partage est fournie par le système. Pour la lancer, appelez la méthode [**ShowShareUI**][ShowShareUi].
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## Gérer les erreurs
 
@@ -102,6 +102,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

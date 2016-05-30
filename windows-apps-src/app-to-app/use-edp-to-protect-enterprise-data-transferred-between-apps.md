@@ -1,5 +1,6 @@
 ---
-Description: 'Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs au transfert de fichiers les plus courants.'
+author: awkoren
+Description: 'Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios EDP relatifs au transfert de fichiers les plus courants.'
 MS-HAID: 'dev\_app\_to\_app.use\_edp\_to\_protect\_enterprise\_data\_transferred\_between\_apps'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
@@ -8,9 +9,9 @@ title: Utiliser EDP pour protéger les données d’entreprise transférées ent
 
 # Utiliser EDP pour protéger les données d’entreprise transférées entre les applications
 
-__Remarque__ La stratégie de protection des données d’entreprise (EDP) ne peut pas être appliquée sur Windows 10, version 1511 (build 10586) ou antérieure.
+__Remarque__ La stratégie de protection des données d’entreprise (EDP) ne peut pas être appliquée sur Windows 10, version 1511 (build 10586) ou antérieure.
 
-Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs au transfert de fichiers les plus courants. Pour un aperçu complet du point de vue des développeurs de la manière dont la fonctionnalité EDP est liée aux fichiers, aux flux, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées, voir [protection des données d’entreprise (EDP)](../enterprise/edp-hub.md).
+Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios EDP relatifs au transfert de fichiers les plus courants. Pour un aperçu complet du point de vue des développeurs de la manière dont la fonctionnalité EDP est liée aux fichiers, aux flux, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées, voir [protection des données d’entreprise (EDP)](../enterprise/edp-hub.md).
 
 **Remarque** L’[exemple de protection des données d’entreprise (EDP)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) couvre nombre des scénarios expliqués dans cette rubrique.
 
@@ -51,7 +52,7 @@ private void OnFileLoaded(FileProtectionInfo fileProtectionInfo, string contents
         }
         else
         {
-            // Enterprise policy is not in effect, because the file&#39;s identity
+            // Enterprise policy is not in effect, because the file's identity
             // is not managed. In this case, we have a file protected to an
             // unmanaged identity, which is not a valid situation.
             // We still have to call ClearProcessUIPolicy if we want to clear the policy.
@@ -123,7 +124,7 @@ private async void OnPasteWithApplyPolicy()
         {
             ProtectionPolicyEvaluationResult policyResult =
                 await dataPackageView.RequestAccessAsync(dataPackageView.Properties.EnterpriseId);
-            if (this.isNewEmptyDocument &amp;&amp;
+            if (this.isNewEmptyDocument &&
                 policyResult == ProtectionPolicyEvaluationResult.Allowed)
             {
                 // If this is a new and empty document, and we're allowed to access
@@ -264,7 +265,7 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
             if (this.isNewEmptyDocument && protectionPolicyEvaluationResult ==
                 ProtectionPolicyEvaluationResult.Allowed)
             {
-                // If this is a new and empty document, and we&#39;re allowed to access
+                // If this is a new and empty document, and we're allowed to access
                 // the data, then we can avoid popping the consent dialog.
                 bool isIdentityManaged = ProtectionPolicyManager.TryApplyProcessUIPolicy
                     (shareOperation.Data.Properties.EnterpriseId);
@@ -377,7 +378,7 @@ private async void OnPasteWithRequestAccess()
 }
 ```
 
-**Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 
 
@@ -394,6 +395,6 @@ private async void OnPasteWithRequestAccess()
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

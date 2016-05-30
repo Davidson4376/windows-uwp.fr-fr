@@ -14,7 +14,7 @@ Cet article explique comment prendre en charge le copier-coller dans les applica
 ## Rechercher la prise en charge intégrée du Presse-papiers
 
 
-Le plus souvent, vous n’avez pas besoin d’écrire de code supplémentaire pour fournir une prise en charge des opérations du Presse-papiers. De nombreux contrôles XAML par défaut disponibles pour créer les applications offrent déjà une prise en charge des opérations du Presse-papiers. Pour plus d’informations sur les contrôles disponibles, voir [Liste des contrôles][ControlsList].
+Le plus souvent, vous n’avez pas besoin d’écrire de code supplémentaire pour fournir une prise en charge des opérations du Presse-papiers. De nombreux contrôles XAML par défaut disponibles pour créer les applications offrent déjà une prise en charge des opérations du Presse-papiers. Pour plus d’informations sur les contrôles disponibles, consultez la [liste des contrôles][ControlsList].
 
 ## Préparation
 
@@ -49,7 +49,7 @@ Clipboard.SetContent(dataPackage);
 ```
 ## Coller
 
-Pour obtenir le contenu du Presse-papiers, appelez la méthode statique **Clipboard.getContent**[GetContent]. Cette méthode renvoie un objet [**DataPackageView**][DataPackageView] avec son contenu. Cet objet est identique à l’objet [**DataPackage**][DataPackage], sauf qu’il est en lecture seule. Avec cet objet, vous pouvez utiliser la propriété [**AvailableFormats**][AvailableFormats] ou la méthode [**Contains**][Contains] pour identifier les formats disponibles. Ensuite, appelez la méthode **DataPackageView** correspondante pour obtenir les données.
+Pour obtenir le contenu du Presse-papiers, appelez la méthode statique [**Clipboard.GetContent**[GetContent]. Cette méthode renvoie un objet [**DataPackageView**][DataPackageView] avec son contenu. Cet objet est identique à l’objet [**DataPackage**][DataPackage], sauf qu’il est en lecture seule. Avec cet objet, vous pouvez utiliser la propriété [**AvailableFormats**][AvailableFormats] ou la méthode [**Contains**][Contains] pour identifier les formats disponibles. Ensuite, appelez la méthode **DataPackageView** correspondante pour obtenir les données.
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
@@ -97,6 +97,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

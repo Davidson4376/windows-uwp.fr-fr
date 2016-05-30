@@ -1,4 +1,4 @@
-﻿---
+---
 description: Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager.
 title: Recevoir des données
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
@@ -42,8 +42,6 @@ Pour définir les formats de données :
 
 Lorsqu’un utilisateur choisit votre application (généralement en la sélectionnant dans une liste d’applications cibles disponibles affichée dans l’interface utilisateur de partage), un événement [**Application.OnShareTargetActivated**][OnShareTargetActivated] est déclenché. Votre application doit gérer cet événement afin de traiter les données que l’utilisateur veut partager.
 
-Si votre application s’exécute quand elle est activée en tant que cible de partage, l’instance existante de votre application est arrêtée et une nouvelle instance de votre application est lancée pour gérer le contrat.
-
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -61,8 +59,8 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
     string text = await shareOperation.Data.GetTextAsync();
 
     // To output the text from this example, you need a TextBlock control
-    // with a name of &quot;sharedContent&quot;.
-    sharedContent.Text = &quot;Text: &quot; + text;
+    // with a name of "sharedContent".
+    sharedContent.Text = "Text: " + text;
 } 
 ```
 
@@ -85,7 +83,7 @@ shareOperation.ReportSubmittedBackgroundTask();
 En cas de problème, appelez [**ReportError**][ReportError] pour envoyer un message d’erreur au système. L’utilisateur voit le message quand il vérifie l’état du partage. À ce stade, votre application est arrêtée et le partage est terminé. L’utilisateur devra recommencer pour partager le contenu vers votre application. Selon la situation, vous pouvez décider qu’un certain type d’erreur ne suffit pas pour mettre fin à l’opération de partage. Dans ce cas, vous pouvez omettre d’appeler **ReportError** et continuer le partage.
 
 ```cs
-shareOperation.ReportError(&quot;Could not reach the server! Try again later.&quot;); 
+shareOperation.ReportError("Could not reach the server! Try again later."); 
 ```
 
 Enfin, lorsque votre application a fini de traiter le contenu partagé, appelez la méthode [**ReportCompleted**][ReportCompleted] qui notifie au système la fin de l’opération.
@@ -114,13 +112,13 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
         // For quicklinks, the supported FileTypes and DataFormats are set 
         // independently from the manifest
-        SupportedFileTypes = { &quot;*&quot; },
+        SupportedFileTypes = { "*" },
         SupportedDataFormats = { StandardDataFormats.Text, StandardDataFormats.Uri, 
                 StandardDataFormats.Bitmap, StandardDataFormats.StorageItems }
     };
 
     StorageFile iconFile = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFileAsync(
-            &quot;assets\\user.png&quot;, CreationCollisionOption.OpenIfExists);
+            "assets\\user.png", CreationCollisionOption.OpenIfExists);
     quickLinkInfo.Thumbnail = RandomAccessStreamReference.CreateFromFile(iconFile);
     shareOperation.ReportCompleted(quickLinkInfo);
 }
@@ -142,6 +140,6 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
