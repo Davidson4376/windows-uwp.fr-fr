@@ -8,7 +8,7 @@ author: awkoren
 # Entreprise
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windows universelle (UWP) Windows 10. Windows 10 vous permet d’écrire une application une seule fois, de la déployer sur tous les appareils, et se charge d’adapter cette application à tous les appareils. Vous pouvez ainsi concevoir des expériences exceptionnelles, à la hauteur des attentes de vos utilisateurs, tout en fournissant le contrôle que votre organisation exige en termes de sécurité, de gestion et de configuration.
 
@@ -19,7 +19,7 @@ Cette feuille de route propose une vue d’ensemble sur les fonctionnalités pri
 ## Sécurité
 
 
-Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les développeurs d’applications destinées à protéger l’identité de leurs utilisateurs, la sécurité des réseaux d’entreprise et les données professionnelles stockées sur des appareils. Nouveauté de Windows 10, Microsoft Passport constitue une alternative à l’utilisation de mot de passe. Il s’agit d’une solution d’authentification à deux facteurs facile à déployer et accessible à l’aide d’un PIN ou de Windows Hello, qui fournit une sécurité d’entreprise et prend en charge la reconnaissance des empreintes digitales, de l’iris et la reconnaissance faciale.
+Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les développeurs d’applications destinées à protéger l’identité de leurs utilisateurs, la sécurité des réseaux d’entreprise et les données professionnelles stockées sur des appareils. Nouveauté de Windows 10, Microsoft Passport constitue une alternative à l’utilisation de mot de passe. Il s’agit d’une solution d’authentification à deux facteurs facile à déployer et accessible à l’aide d’un PIN ou de Windows Hello, qui fournit une sécurité de qualité professionnelle et prend en charge la reconnaissance des empreintes digitales, de l’iris et la reconnaissance faciale.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -37,7 +37,7 @@ La liaison de données est un moyen dont dispose l’interface utilisateur de vo
 
 | Rubrique | Description |
 |-------|-------------|
-| [Vue d’ensemble de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt269383) | Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à une collection d’éléments dans une application de plateforme Windows universelle (UWP). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage détails en fonction d’une sélection et convertir des données pour l’affichage. |
+| [Vue d’ensemble de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt269383) | Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à une collection d’éléments dans une application de plateforme Windows universelle (UWP). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage des détails en fonction d’une sélection et convertir des données pour l’affichage. |
 | [Entity Framework 7 pour UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Entity Framework 7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez créer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
 | [Base de données SQLite locale.](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Cette vidéo est un guide du développeur complet sur l’utilisation de SQLite, la solution recommandée pour les bases de données d’applications locales. Visitez [SQLite](https://www.sqlite.org/download.html) pour télécharger la dernière version pour UWP, ou utilisez la version fournie avec le Kit de développement logiciel (SDK) Windows 10. |
 
@@ -74,7 +74,7 @@ Afin d’interagir avec des outils métier comme des imprimantes, des scanneurs 
 ## Ciblage des appareils
 
 
-Aujourd’hui, de nombreux utilisateurs utilisent leur propre téléphone ou tablette pour travailler, des appareils qui présentent des facteurs de forme et des tailles d’écran différents. Avec la plateforme Windows universelle (UWP), vous pouvez écrire une application métier unique qui s’exécute en toute transparence sur tous les types d’appareils, y compris les ordinateurs de bureau et quel que soit le nombre de PPP de l’écran, ce qui vous permet d’optimiser la portée de votre application ainsi que l’efficacité de votre code.
+Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone ou tablette, des appareils qui présentent des facteurs de forme et des tailles d’écran différents. Avec la plateforme Windows universelle (UWP), vous pouvez écrire une application métier unique qui s’exécute en toute transparence sur tous les types d’appareils, y compris les ordinateurs de bureau et quel que soit le nombre de PPP de l’écran, ce qui vous permet d’optimiser la portée de votre application ainsi que l’efficacité de votre code.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -111,6 +111,6 @@ Pour plus d’informations sur Prism, voir le [référentiel GitHub](https://git
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
