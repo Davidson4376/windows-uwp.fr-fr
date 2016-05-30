@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "845d5e29c24629c7b9a95979b1eb3584124ff29f",
-  "LastTranslatedCommit": "0fe28b15f9c37b083b96cb53e93f8962552f3527",
+  "LastTranslatedCommit": "e63a92547c6609b07a1de50e14d42cdc4554a16b",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -792,14 +792,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": null,
-      "TargetFilePath": null,
-      "HandbackFilePath": null,
-      "HandbackFileCommit": null,
-      "HandbackDateTime": "0001-01-01T00:00:00",
+      "TargetFileCommit": "e63a92547c6609b07a1de50e14d42cdc4554a16b",
+      "TargetFilePath": "windows-apps-src\\app-settings\\guidelines-for-app-settings.md",
+      "HandbackFilePath": "ol-handback\\Microsoft\\windows-apps.fr-fr\\master\\app-settings\\guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.fr-fr.xlf",
+      "HandbackFileCommit": "f414c41bef7bf8d3d9a1df18bf80a2aa117e7343",
+      "HandbackDateTime": "2016-05-30T22:12:02.9021989Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "UpdatedDateTime": "2016-05-30T22:12:02.9021989Z",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
       "ArchiveFileDateTime": "0001-01-01T00:00:00",
