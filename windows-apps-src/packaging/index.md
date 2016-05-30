@@ -1,11 +1,12 @@
 ---
+author: msatranjr
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
-title: Création de packages d’application
+title: Empaquetage d’applications
 description: Cette section contient ou associe des articles sur la création de packages d’application de plateforme Windows universelle (UWP).
 ---
 # Création de packages d’application
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## Objectif
 
@@ -20,6 +21,6 @@ Cette section contient ou associe des articles sur l’empaquetage d’applicati
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

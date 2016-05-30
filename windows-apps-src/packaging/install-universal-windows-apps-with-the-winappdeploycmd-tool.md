@@ -1,11 +1,12 @@
 ---
+author: msatranjr
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: Installer des applications avec l’outil WinAppDeployCmd.exe
 description: Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un ordinateur Windows 10 et vers tout appareil Windows 10 Mobile.
 ---
 # Installer des applications avec l’outil WinAppDeployCmd.exe
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un ordinateur Windows 10 et vers tout appareil Windows 10 Mobile. Vous pouvez utiliser cet outil pour déployer un package .appx lorsque l’appareil Windows 10 Mobile est connecté via un port USB ou disponible sur le même sous-réseau, sans avoir besoin de Microsoft Visual Studio ni de la solution pour cette application. Cet article décrit comment installer des applications UWP à l’aide de cet outil.
 
@@ -13,7 +14,7 @@ Vous devez simplement installer le kit de développement logiciel (SDK) Windows 
 
 Avant de pouvoir déployer votre application pour les appareils Windows 10 Mobile, vous devez d’abord créer un package. Pour plus d’informations, voir \[lien parent ici \].
 
-L’outil **WinAppDeployCmd.exe** se trouve ici sur votre ordinateur Windows 10 : **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (selon le chemin d’installation du Kit de développement logiciel (SDK) sur votre ordinateur). Tout d’abord, connectez votre appareil Windows 10 Mobile au même sous-réseau ou connectez-le directement à votre ordinateur Windows 10 via un port USB. Utilisez ensuite la syntaxe et les exemples suivants de la commande présentés plus loin dans cet article pour déployer votre package .appx :
+L’outil **WinAppDeployCmd.exe** se trouve ici sur votre ordinateur Windows 10 : **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (selon le chemin d’installation du Kit de développement logiciel (SDK) sur votre ordinateur). Tout d’abord, connectez votre appareil Windows 10 Mobile au même sous-réseau ou connectez-le directement à votre ordinateur Windows 10 via un port USB. Utilisez ensuite la syntaxe et les exemples suivants de la commande présentés plus loin dans cet article pour déployer votre package .appx :
 
 ## Options et syntaxe WinAppDeployCmd
 
@@ -70,7 +71,7 @@ Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 |------------------------|------------------------------------------------------------------------------|
 | **Argument**           | **Description**                                                              |
 | &lt;x&gt;              | Délai d’expiration en secondes. (La valeur par défaut est 10)                                          |
-| &lt;address&gt;        | Adresse IP ou identificateur unique de l’appareil cible.                        |
+| &lt;adresse&gt;        | Adresse IP ou identificateur unique de l’appareil cible.                        |
 | &lt;a&gt;&lt;b&gt; ... | Chemin d’accès de dépendance pour chacune des dépendances du package d’application.                    |
 | &lt;p&gt;              | Un PIN alphanumérique indiqué dans les paramètres de l’appareil pour établir une connexion. |
 | &lt;path&gt;           | Chemin d’accès au système de fichiers.                                                            |
@@ -107,6 +108,6 @@ WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
