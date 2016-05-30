@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe task qui est définie dans l’espace de noms concurrency dans ppltasks.h.
 title: Programmation asynchrone en C++
@@ -6,9 +7,9 @@ title: Programmation asynchrone en C++
 
 # Programmation asynchrone en C++
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe `task` qui est définie dans l’espace de noms `concurrency` dans ppltasks.h.
+Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe `task` qui est définie dans l’espace de noms `concurrency` dans ppltasks.h.
 
 ## Types asynchrones de plateforme Windows universelle (UWP)
 
@@ -53,7 +54,7 @@ void App::TestAsync()
     // Recommended:
     auto deviceEnumTask = create_task(deviceOp);
 
-    // Call the task’s .then member function, and provide
+    // Call the task's .then member function, and provide
     // the lambda to be invoked when the async operation completes.
     deviceEnumTask.then( [this] (DeviceInformationCollection^ devices ) 
     {       
@@ -111,16 +112,16 @@ L’exemple précédent illustre quatre points importants :
 
 ## Types de retour de la fonction lambda et types de retour d’une tâche
 
-Dans une continuation de tâche, le type de retour de la fonction lambda est encapsulé dans un objet **task**. Si l’expression lambda retourne une valeur **double**, le type de la tâche de continuation est **task<double>**. Toutefois, l’objet task est conçu de façon à ne pas produire inutilement des types de retour imbriqués. Si une expression lambda retourne un **IAsyncOperation<SyndicationFeed^>^**, la continuation retourne un **task<SyndicationFeed^>**, et non un **task<task<SyndicationFeed^>>** ou **task<IAsyncOperation<SyndicationFeed^>^>^**. Ce processus, qui porte le nom de *désencapsulation asynchrone*, garantit également l’achèvement de l’opération asynchrone à l’intérieur de la continuation avant l’appel de la continuation suivante.
+Dans une continuation de tâche, le type de retour de la fonction lambda est encapsulé dans un objet **task**. Si l’expression lambda retourne une valeur **double**, le type de la tâche de continuation est **task<double>**. Toutefois, l’objet task est conçu de façon à ne pas produire inutilement des types de retour imbriqués. Si une expression lambda retourne un **IAsyncOperation&lt;SyndicationFeed^&gt;^**, la continuation retourne un **task&lt;SyndicationFeed^&gt;**, et non un **task&lt;task&lt;SyndicationFeed^&gt;&gt;** ou **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**. Ce processus, qui porte le nom de *désencapsulation asynchrone*, garantit également l’achèvement de l’opération asynchrone à l’intérieur de la continuation avant l’appel de la continuation suivante.
 
 Dans l’exemple précédent, notez que la tâche retourne un type **task<void>** en dépit du fait que l’expression lambda ait renvoyé un objet [**IAsyncInfo**][IAsyncInfo]. Le tableau suivant résume les conversions de types qui se produisent entre une fonction lambda et la tâche englobante :
 
 | | |
 |--------------------------------------------------------|---------------------|
-| Type de retour de la fonction lambda                                     | Type de retour `.then` |
+| type de retour de la fonction lambda                                     | `.then` type de retour |
 | TResult                                                | tâche<TResult> |
 | IAsyncOperation<TResult>^                        | tâche<TResult> |
-| IAsyncOperationWithProgress<TResult, TProgress>^ | tâche<TResult> |
+| IAsyncOperationWithProgress&lt;TResult, TProgress&gt;^ | tâche<TResult> |
 |IAsyncAction^                                           | tâche<void>    |
 | IAsyncActionWithProgress<TProgress>^             |tâche<void>     |
 | tâche<TResult>                                    |tâche<TResult>  |
@@ -145,7 +146,7 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 
 Lorsqu’une tâche est annulée, une exception [**task\_canceled**][taskCanceled] est propagée vers la chaîne de tâches. Les continuations basées sur les valeurs ne s’exécutent simplement pas, mais les continuations basées sur les tâches entraînent la levée d’une exception lorsque la méthode [**task::get**][taskGet] est appelée. Si vous avez une continuation de gestion des erreurs, assurez-vous qu’elle intercepte l’exception **task\_canceled** de manière explicite. (Cette exception n’est pas dérivée de [**Platform::Exception**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh755825.aspx).)
 
-L’annulation est coopérative. Si votre continuation effectue un travail de longue durée au-delà du simple appel de méthode UWP, il vous incombe de vérifier régulièrement l’état du jeton d’annulation et d’arrêter l’exécution s’il est annulé. Après avoir nettoyé toutes les ressources qui ont été allouées dans la continuation, appelez [**cancel\_current\_task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx) pour annuler la tâche et propager l’annulation à toutes les continuations basées sur les valeurs qui la suivent. Voici un autre exemple : vous pouvez créer une chaîne de tâches qui représente le résultat d’une opération [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871). Si l’utilisateur choisit le bouton **Cancel**, la méthode [**IAsyncInfo::Cancel**][IAsyncInfoCancel] n’est pas appelée. Au lieu de cela, l’opération réussit mais renvoie **nullptr**. La continuation peut tester le paramètre d’entrée et appeler **cancel\_current\_task** si l’entrée est **nullptr**.
+L’annulation est coopérative. Si votre continuation effectue un travail de longue durée au-delà du simple appel de méthode UWP, il vous incombe de vérifier régulièrement l’état du jeton d’annulation et d’arrêter l’exécution s’il est annulé. Après avoir nettoyé toutes les ressources qui ont été allouées dans la continuation, appelez [**cancel\_current\_task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx) pour annuler la tâche et propager l’annulation à toutes les continuations basées sur les valeurs qui la suivent. Voici un autre exemple : vous pouvez créer une chaîne de tâches qui représente le résultat d’une opération [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871). Si l’utilisateur choisit le bouton **Cancel**, la méthode [**IAsyncInfo::Cancel**][IAsyncInfoCancel] n’est pas appelée. Au lieu de cela, l’opération réussit mais renvoie **nullptr**. La continuation peut tester le paramètre d’entrée et appeler **cancel\_current\_task** si l’entrée est **nullptr**.
 
 Pour plus d’informations, voir [Annulation dans la bibliothèque de modèles parallèles](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd984117.aspx)
 
@@ -233,7 +234,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
     {
         // Create the async operation. feedOp is an 
         // IAsyncOperationWithProgress<SyndicationFeed^, RetrievalProgress>^
-        // but we don’t handle progress in this example.
+        // but we don't handle progress in this example.
 
         auto feedUri = ref new Uri(ref new String(url.c_str()));
         auto feedOp = client->RetrieveFeedAsync(feedUri);
@@ -293,11 +294,11 @@ Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://m
 * [Informations de référence en matière de langage Visual C++](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Programmation asynchrone][AsyncProgramming]
 * [Parallélisme des tâches (runtime d’accès concurrentiel)][taskParallelism]
-* [classe Task][task-class]
+* [classe de tâche][task-class]
  
 <!-- LINKS -->
 [AsyncProgramming]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
-[concurrencyNamespace]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx> "Concurrency Namespace"
+[concurrencyNamespace]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx> "Espace de noms concurrency"
 [createTask]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh913025.aspx> "CreateTask"
 [createAsyncCpp]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx> "CreateAsync"
 [deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
@@ -306,13 +307,13 @@ Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://m
 [IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
 [IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
 [taskCanceled]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750106.aspx> "TaskCancelled"
-[task-class]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx> "Task Class"
+[task-class]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx> "Classe de tâche"
 [taskGet]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
-[taskParallelism]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx> "Task Parallelism"
+[taskParallelism]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx> "Parallélisme des tâches"
 [taskThen]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
 [useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

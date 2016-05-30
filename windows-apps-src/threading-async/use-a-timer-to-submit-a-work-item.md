@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: Utiliser un minuteur pour envoyer un élément de travail
 description: Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé.
 ---
 # Utiliser un minuteur pour envoyer un élément de travail
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -69,7 +70,7 @@ L’exemple suivant crée un élément de travail qui s’exécute dans trois mi
 >                     // UI components can be accessed within this scope.
 >                     // 
 > 
->                     ExampleUIUpdateMethod(&quot;Timer completed.&quot;);
+>                     ExampleUIUpdateMethod("Timer completed.");
 > 
 >                 }));
 > 
@@ -148,7 +149,7 @@ L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis 
 > completed = false;
 > 
 > ThreadPoolTimer ^ DelayTimer = ThreadPoolTimer::CreateTimer(
->         ref new TimerElapsedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerElapsedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Work
@@ -158,7 +159,7 @@ L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis 
 >             // Update the UI thread by using the UI core dispatcher.
 >             // 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // UI components can be accessed within this scope.
@@ -170,14 +171,14 @@ L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis 
 > 
 >         }),
 >         delay,
->         ref new TimerDestroyedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Handle work cancellation/completion.
 >             // 
 > 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // Update the UI thread by using the UI core dispatcher.
@@ -227,6 +228,6 @@ Pour plus d’informations sur la répétition de minuteurs, voir [Créer un él
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

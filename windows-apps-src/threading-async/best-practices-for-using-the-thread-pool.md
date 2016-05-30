@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: Meilleures pratiques pour l’utilisation du pool de threads
 description: Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
 ---
 # Meilleures pratiques pour l’utilisation du pool de threads
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
@@ -32,7 +33,7 @@ Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du 
 ## Pratiques déconseillées
 
 
--   Ne créez pas de minuteurs périodiques avec une valeur *period* inférieure à 1 milliseconde (y compris 0). Cela amène l’élément de travail à se comporter comme un minuteur à déclenchement unique.
+-   Ne créez pas de minuteurs périodiques avec une valeur *period* inférieure à &lt;1 milliseconde (y compris 0). Cela amène l’élément de travail à se comporter comme un minuteur à déclenchement unique.
 
 -   N’envoyez pas d’éléments de travail périodiques dont l’exécution est plus longue que la durée spécifiée dans le paramètre *period*.
 
@@ -51,6 +52,6 @@ Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
