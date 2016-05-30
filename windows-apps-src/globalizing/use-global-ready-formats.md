@@ -1,15 +1,16 @@
 ---
+author: DelfCo
 Description: Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises.
 title: Utiliser des formats compatibles avec la globalisation
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-label: Utiliser des formats compatibles avec la globalisation
+label: Use global-ready formats
 template: detail.hbs
 ---
 
-# <span id="dev_globalizing.use_global-ready_formats"> </span>Utiliser des formats compatibles avec la globalisation
+# <span id="dev_globalizing.use_global-ready_formats"></span>Utiliser des formats compatibles avec la globalisation
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 
 **API importantes**
@@ -18,20 +19,20 @@ template: detail.hbs
 -   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 -   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
 
-Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises. Cela vous permet de l’adapter par la suite à d’autres cultures, régions et langues pour le marché international.
+Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises. Cela vous permet de l’adapter plus tard à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international.
 
-## <span id="Introduction"> </span> <span id="introduction"> </span> <span id="INTRODUCTION"> </span>Introduction
-
-
-De nombreux développeurs créent spontanément leurs applications en pensant seulement à les adapter à leurs propres langue et culture. Or, lorsqu’une application commence à avoir du succès sur d’autres marchés, il peut s’avérer difficile de l’adapter ensuite pour d’autres langues et régions. Par exemple, les dates, les heures, les nombres, les calendriers, les devises, les numéros de téléphone, les unités de mesure et les formats du papier sont des éléments susceptibles de s’afficher différemment selon la culture ou la langue.
-
-Le processus d’adaptation d’une application à de nouveaux marchés peut être simplifié si vous prenez en compte certains éléments lorsque vous développez l’application.
-
-## <span id="Prerequisites"> </span> <span id="prerequisites"> </span> <span id="PREREQUISITES"> </span>Prérequis
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
 
 
-[Planifier en vue d’un marché international](https://msdn.microsoft.com/library/windows/apps/hh465405)
-## <span id="Tasks"> </span> <span id="tasks"> </span> <span id="TASKS"> </span>Tâches
+Beaucoup de développeurs créent spontanément leurs applications en pensant seulement à les adapter à leurs propres langue et culture. Or, lorsqu’une application commence à avoir du succès sur d’autres marchés, il peut s’avérer difficile de l’adapter ensuite pour d’autres langues et régions. Par exemple, les dates, les heures, les nombres, les calendriers, les devises, les numéros de téléphone, les unités de mesure et les formats du papier sont des éléments susceptibles de s’afficher différemment selon la culture ou la langue.
+
+Le processus d’adaptation d’une application à de nouveaux marchés peut être simplifié si vous prenez en compte certains éléments lorsque vous la développez.
+
+## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>Conditions préalables
+
+
+[Planification en vue d’un marché international](https://msdn.microsoft.com/library/windows/apps/hh465405)
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tâches
 
 
 1.  **Mettez en forme les dates et l’heure de façon appropriée.**
@@ -117,7 +118,7 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -149,7 +150,7 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -164,7 +165,7 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 
     Pour les scénarios dans lesquels les fonctionnalités offertes varient en fonction des préférences définies par l’utilisateur pour la langue, la région ou la culture, Windows fournit la classe [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825) qui permet d’accéder à ces préférences. Si nécessaire, utilisez la classe **GlobalizationPreferences** pour obtenir les préférences actuelles de l’utilisateur (emplacement géographique, langues par défaut, devises par défaut, etc.).
 
-## <span id="related_topics"> </span>Rubriques connexes
+## <span id="related_topics"></span>Rubriques connexes
 
 
 * [Planifier en vue d’un marché international](https://msdn.microsoft.com/library/windows/apps/hh465405)
@@ -189,6 +190,6 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en localisant vos applications pour un marché spécifique.
 Search.Refinement.TopicID: 180
 title: Indications de globalisation et de localisation
@@ -10,7 +11,7 @@ template: detail.hbs
 # Pratiques conseillées et déconseillées en matière de globalisation et de localisation
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 
 **API importantes**
@@ -21,13 +22,13 @@ template: detail.hbs
 -   [**Ressources**](https://msdn.microsoft.com/library/windows/apps/br206022)
 -   [**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)
 
-Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en localisant vos applications pour un marché spécifique.
+Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en les localisant pour un marché spécifique.
 
 
 
-## <span id="guidelines_for_internationalization"> </span> <span id="GUIDELINES_FOR_INTERNATIONALIZATION"> </span>Globalisation
+## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>Globalisation
 
-Préparez votre application pour l’adapter simplement à différents marchés. Pour cela, choisissez des termes et des images mondialement appropriés pour votre interface utilisateur, utilisez des API [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) pour mettre en forme les données de l’application et évitez les hypothèses fondées sur un lieu géographique ou une langue.
+Préparez votre application pour l’adapter simplement à différents marchés. Pour ce faire, choisissez des termes et des images mondialement appropriés pour votre interface utilisateur, utilisez des API [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) pour mettre en forme les données de l’application et évitez les hypothèses fondées sur un lieu géographique ou une langue.
 
 <table>
 <colgroup>
@@ -64,7 +65,7 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 </tr>
 <tr class="even">
 <td align="left"><p>Enregistrez la langue de saisie.</p></td>
-<td align="left"><p>Lorsque votre application demande aux utilisateurs d’entrer du texte, enregistrez la langue de saisie. Cela garantit que, lorsque l’entrée est affichée ultérieurement, elle sera présentée à l’utilisateur dans le format approprié. Utilisez la propriété [<strong>CurrentInputMethodLanguage</strong>](https://msdn.microsoft.com/library/windows/apps/hh700658) pour obtenir la langue d’entrée actuel.</p></td>
+<td align="left"><p>Lorsque votre application demande aux utilisateurs d’entrer du texte, enregistrez la langue de saisie. Cela garantit que, lorsque l’entrée est affichée ultérieurement, elle sera présentée à l’utilisateur dans le format approprié. Utilisez la propriété [<strong>CurrentInputMethodLanguage</strong>](https://msdn.microsoft.com/library/windows/apps/hh700658) pour obtenir la langue d’entrée actuelle.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>N’utilisez pas la langue pour supposer l’emplacement géographique d’un utilisateur et n’utilisez pas l’emplacement géographique pour supposer la langue d’un utilisateur.</p></td>
@@ -73,7 +74,7 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 </tr>
 <tr class="even">
 <td align="left"><p>N’utilisez pas d’expressions familières ni de métaphores.</p></td>
-<td align="left"><p>Le langage propre à une tranche de population, telle qu’une culture ou une classe d’âge, peut être difficile à comprendre, car seuls les représentants de cette tranche de population emploient ce langage. De la même façon, les métaphores peuvent avoir un sens pour une personne, mais ne rien évoquer pour une autre. Par exemple, « vendanger » a un sens précis dans le jargon du football, qui échappe aux non-initiés. Si vous envisagez de localiser votre application et que vous adoptez un ton informel, veillez à expliquer clairement aux traducteurs le sens et le style à reproduire.</p></td>
+<td align="left"><p>Le langage propre à une tranche de population, telle qu’une culture ou une classe d’âge, peut être difficile à comprendre, car seuls les représentants de cette tranche de population emploient ce langage. De la même façon, les métaphores peuvent avoir un sens pour une personne, mais ne rien évoquer pour une autre. Par exemple, &quot;vendanger&quot; a un sens précis dans le jargon du football, qui échappe aux non-initiés. Si vous envisagez de localiser votre application et que vous adoptez un ton informel, veillez à expliquer clairement aux traducteurs le sens et le style à reproduire.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>N’utilisez pas de jargon, d’abréviations ni d’acronymes.</p></td>
@@ -85,7 +86,7 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 </tr>
 <tr class="odd">
 <td align="left"><p>Évitez toute infraction politique dans les cartes ou en faisant référence à des régions.</p></td>
-<td align="left"><p>Les cartes peuvent inclure des frontières nationales ou régionales controversées et représentent une source fréquente d’infraction politique. Veillez à ce que toute interface utilisateur utilisée pour la sélection d’une nation lui fasse référence en tant que « pays/région ». Placer un territoire contesté dans une liste intitulée « Pays », comme dans un formulaire de déclaration d’adresse, pourrait vous attirer des ennuis.</p></td>
+<td align="left"><p>Les cartes peuvent inclure des frontières nationales ou régionales controversées et représentent une source fréquente d’infraction politique. Veillez à ce que toute interface utilisateur utilisée pour la sélection d’une nation lui fasse référence en tant que &quot;pays/région&quot;. Placer un territoire contesté dans une liste intitulée &quot;Pays&quot;, comme dans un formulaire de déclaration d’adresse, pourrait vous attirer des ennuis.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>N’utilisez pas la seule comparaison de chaînes pour comparer des balises de langue.</p></td>
@@ -101,7 +102,7 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 
  
 
-## <span id="guidelines_for_localization"> </span> <span id="GUIDELINES_FOR_LOCALIZATION"> </span>Localisation
+## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>Localisation
 
 <table>
 <colgroup>
@@ -166,14 +167,14 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 </tr>
 <tr class="even">
 <td align="left"><p>Ne réutilisez pas des chaînes dans des contextes différents.</p></td>
-<td align="left"><p>Ne réutilisez pas des chaînes dans des contextes différents, car même des mots simples tels que « on » et « off » peuvent être traduits différemment selon le contexte.</p></td>
+<td align="left"><p>Ne réutilisez pas des chaînes dans des contextes différents, car même des mots simples tels que &quot;on&quot; et &quot;off&quot; peuvent être traduits différemment selon le contexte.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 
 **Exemples**
@@ -187,6 +188,6 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
