@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 386
+ Total Files | 390
 
 ## File List
  Source File | Status | Details 
@@ -392,6 +392,10 @@
  [windows-apps-src\networking\web-feeds.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/networking/web-feeds.md) | InSyncHandedBackSuccess | [Details](#625a18203bd2d60acc97a6243d4f3e1e0cf2b2973355)
  [windows-apps-src\networking\websockets.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/networking/websockets.md) | InSyncHandedBackSuccess | [Details](#7e9ee140914718ce71357ba8ecaf10116949b87b3356)
  [windows-apps-src\networking\which-networking-technology.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/networking/which-networking-technology.md) | InSyncHandedBackSuccess | [Details](#d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd653357)
+ [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps/blob/bf0acf2e16b6260fafc34f4159653da1d34c2b59/windows-apps-src/packaging/app-capability-declarations.md) | InSyncHandedBackSuccess | [Details](#9d0749aac4cdcad282b2082b351962d3cd0b0ec83358)
+ [windows-apps-src\packaging\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/packaging/index.md) | InSyncHandedBackSuccess | [Details](#6f50874ceb5e133f2b1b764bfc6fcff6422172db3366)
+ [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | InSyncHandedBackSuccess | [Details](#d3135724e092495e8f937e6d53bdfbaa9e7cf4503367)
+ [windows-apps-src\packaging\packaging-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/packaging/packaging-uwp-apps.md) | InSyncHandedBackSuccess | [Details](#a77e441cbd1b6826e06064dbd4be449813754b253368)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -5024,6 +5028,54 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [which-networking-technology.bee564cf29cf0c4ee0b51e6199c54cb19addb93d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/0983cdeb148b2242257a14e91a05b396e50112b2/ol-handback/Microsoft/windows-apps.fr-fr/master/networking/which-networking-technology.bee564cf29cf0c4ee0b51e6199c54cb19addb93d.fr-fr.xlf)
 * Handback Datetime: 2016-05-30 22:15:39
+* [Back to Top](#report-top)
+
+##### <a name='9d0749aac4cdcad282b2082b351962d3cd0b0ec83358'></a> Source: [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps/blob/bf0acf2e16b6260fafc34f4159653da1d34c2b59/windows-apps-src/packaging/app-capability-declarations.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/85738b9d578ca296718ba4cfc743f50e40007e99/windows-apps-src/packaging/app-capability-declarations.md)
+* Handoff File: [app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/d86b37c4078c3162f1fe3f0ee9bf0c1cd3660611/ol-handback/Microsoft/windows-apps.fr-fr/master/packaging/app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:15:46
+* [Back to Top](#report-top)
+
+##### <a name='6f50874ceb5e133f2b1b764bfc6fcff6422172db3366'></a> Source: [windows-apps-src\packaging\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/packaging/index.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\packaging\index.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/85738b9d578ca296718ba4cfc743f50e40007e99/windows-apps-src/packaging/index.md)
+* Handoff File: [index.4eb3a86427b760af0fe03321faacbb40d33523b8.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/index.4eb3a86427b760af0fe03321faacbb40d33523b8.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [index.4eb3a86427b760af0fe03321faacbb40d33523b8.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/d86b37c4078c3162f1fe3f0ee9bf0c1cd3660611/ol-handback/Microsoft/windows-apps.fr-fr/master/packaging/index.4eb3a86427b760af0fe03321faacbb40d33523b8.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:15:46
+* [Back to Top](#report-top)
+
+##### <a name='d3135724e092495e8f937e6d53bdfbaa9e7cf4503367'></a> Source: [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/85738b9d578ca296718ba4cfc743f50e40007e99/windows-apps-src/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)
+* Handoff File: [install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/d86b37c4078c3162f1fe3f0ee9bf0c1cd3660611/ol-handback/Microsoft/windows-apps.fr-fr/master/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:15:46
+* [Back to Top](#report-top)
+
+##### <a name='a77e441cbd1b6826e06064dbd4be449813754b253368'></a> Source: [windows-apps-src\packaging\packaging-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/packaging/packaging-uwp-apps.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\packaging\packaging-uwp-apps.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/85738b9d578ca296718ba4cfc743f50e40007e99/windows-apps-src/packaging/packaging-uwp-apps.md)
+* Handoff File: [packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/d86b37c4078c3162f1fe3f0ee9bf0c1cd3660611/ol-handback/Microsoft/windows-apps.fr-fr/master/packaging/packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:15:46
 * [Back to Top](#report-top)
 
 
