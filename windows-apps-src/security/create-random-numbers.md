@@ -1,6 +1,6 @@
 ---
 title: Créer des nombres aléatoires
-description: Cet exemple de code indique comment créer un nombre aléatoire ou une mémoire tampon à utiliser pour le chiffrement dans une application de plateforme Windows universelle (UWP).
+description: Cet exemple de code indique comment créer un nombre aléatoire ou une mémoire tampon à utiliser pour le chiffrement dans une application UWP.
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 author: awkoren
 ---
@@ -8,7 +8,7 @@ author: awkoren
 # Créer des nombres aléatoires
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cet exemple de code indique comment créer un nombre aléatoire ou une mémoire tampon à utiliser pour le chiffrement dans une application de plateforme Windows universelle (UWP).
 
@@ -35,6 +35,6 @@ public uint GenerateRandomNumber()
 }
 ```
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

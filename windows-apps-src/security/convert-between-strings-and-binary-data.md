@@ -8,7 +8,7 @@ author: awkoren
 # Convertir entre chaînes et données binaires
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet exemple de code indique comment convertir les chaînes et les données binaires dans une application de plateforme Windows universelle (UWP).
 
@@ -29,6 +29,6 @@ public void ConvertData()
 }
 ```
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

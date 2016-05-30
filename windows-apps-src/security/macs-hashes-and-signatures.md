@@ -1,6 +1,6 @@
 ---
 title: Codes d’authentification des messages, hachages et signatures
-description: Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications de plateforme Windows universelle (UWP) pour détecter une falsification des messages.
+description: Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications UWP pour détecter une falsification des messages.
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
 ---
@@ -8,7 +8,7 @@ author: awkoren
 # Codes d’authentification des messages, hachages et signatures
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications de plateforme Windows universelle (UWP) pour détecter une falsification des messages.
@@ -186,6 +186,6 @@ La signature permet uniquement de s’assurer que le message d’origine n’a p
 
 Vous pouvez utiliser un objet [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) pour énumérer les algorithmes de signature disponibles et générer ou importer une paire de clés. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) pour signer un message ou vérifier une signature.
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

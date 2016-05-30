@@ -8,7 +8,7 @@ author: awkoren
 # Présentation du développement d’applications Windows sécurisées
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP). Il explique en détail comment utiliser les fonctionnalités de sécurité Windows disponibles à chacune des phases suivantes : authentification, données en transit et données au repos. Vous pourrez accéder à des informations plus détaillées sur les différents sujets en consultant les ressources supplémentaires mentionnées dans chaque chapitre.
@@ -37,9 +37,9 @@ Pour protéger les données, le système doit identifier la personne qui demande
 
 Pour s’authentifier auprès d’un service et/ou d’une application spécifiques, l’utilisateur a recours à des informations d’identification composées d’éléments qu’il connaît, dont il dispose et/ou qui le caractérisent. Chacun de ces éléments constitue un facteur d’authentification.
 
--   **Something the user knows** prend généralement la forme d’un mot de passe, mais peut également correspondre à un PIN ou à une question secrète et à sa réponse.
--   **Something the user has** constitue le plus souvent un appareil de mémoire matériel comme une clé USB contenant les données d’authentification propres à l’utilisateur.
--   **Something the user is** correspond fréquemment aux empreintes digitales de l’utilisateur, mais les caractéristiques vocales, faciales ou oculaires ou les modèles comportementaux de l’utilisateur sont de nouveaux facteurs dont l’emploi se généralise. Ces mesures stockées sous forme de données sont appelées biométrie.
+-   **Quelque chose que l’utilisateur connaît** prend généralement la forme d’un mot de passe, mais peut également correspondre à un PIN ou à une question secrète et à sa réponse.
+-   **Quelque chose dont dispose l’utilisateur** constitue le plus souvent un appareil de mémoire matériel comme une clé USB contenant les données d’authentification propres à l’utilisateur.
+-   **Quelque chose qui caractérise l’utilisateur** correspond fréquemment aux empreintes digitales de l’utilisateur, mais les caractéristiques vocales, faciales ou oculaires ou les modèles comportementaux de l’utilisateur sont de nouveaux facteurs dont l’emploi se généralise. Ces mesures stockées sous forme de données sont appelées biométrie.
 
 Un mot de passe créé par l’utilisateur est un facteur d’authentification en soi, mais se révèle généralement insuffisant ; en effet, toute personne connaissant ce mot de passe peut emprunter l’identité de son propriétaire légitime. Une carte à puce peut offrir un niveau de sécurité supérieur, mais risque d’être volée, perdue ou rangée au mauvais endroit. Enfin, un système capable d’authentifier un utilisateur par ses empreintes digitales ou par une analyse oculaire peut garantir le niveau de sécurité le plus élevé et le plus commode, mais nécessite un matériel onéreux et spécialisé (tel qu’une caméra Intel RealSense pour la reconnaissance faciale) non accessible à tous.
 
@@ -219,7 +219,7 @@ private async Task ValidateSSLRoot()
         await httpClient.GetAsync(bingUri);
 
     // Get the list of certificates that were used to
-    // validate the server&#39;s identity
+    // validate the server's identity
     IReadOnlyList<Certificate> serverCertificates = response.RequestMessage.TransportInformation.ServerIntermediateCertificates;
   
     // Perform validation
@@ -342,7 +342,7 @@ private PasswordCredential GetCredentialFromLocker()
     else if (credentialList.Count > 0)
     {
         // When there are multiple usernames,
-        // retrieve the default username. If one doesn’t
+        // retrieve the default username. If one doesn't
         // exist, then display UI to have the user select
         // a default username.
         defaultUserName = GetDefaultUserNameUI();
@@ -496,6 +496,6 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

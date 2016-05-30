@@ -1,6 +1,6 @@
 ---
 title: Service Broker d’authentification web
-description: Cet article explique comment connecter votre application de plateforme Windows universelle (UWP) à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.).
+description: Cet article explique comment connecter votre application UWP à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.).
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
 ---
@@ -8,7 +8,7 @@ author: awkoren
 # Service Broker d’authentification web
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article explique comment connecter votre application de plateforme Windows universelle (UWP) à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.). La méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) envoie une demande au fournisseur d’identité en ligne, puis obtient en retour un jeton d’accès qui décrit les ressources du fournisseur auxquelles l’application a accès.
@@ -32,7 +32,7 @@ L’URI de la demande est envoyé en tant que paramètre *requestUri* de la mét
 L’exemple suivant explique comment créer l’URI de la demande.
 
 ```cs
-string startURL = "https://<providerendpoint>?client_id=<clientid>&amp;scope=<scopes>&amp;response_type=token";
+string startURL = "https://<providerendpoint>?client_id=<clientid>&scope=<scopes>&response_type=token";
 string endURL = "http://<appendpoint>";
 
 System.Uri startURI = new System.Uri(startURL);
@@ -148,7 +148,7 @@ Le débogueur web Fiddler peut être utilisé avec des applications.
 
 1.  Étant donné qu’AuthHost s’exécute dans son propre conteneur d’application pour lui donner la fonctionnalité réseau privé, vous devez définir une clé de Registre : Windows Registry Editor Version 5.00
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE** \\ **SOFTWARE** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File Execution Options** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
@@ -173,6 +173,6 @@ Le débogueur web Fiddler peut être utilisé avec des applications.
 
 3.  Ajoutez une règle de pare-feu pour le trafic entrant vers Fiddler.
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

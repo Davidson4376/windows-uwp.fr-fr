@@ -8,7 +8,7 @@ author: awkoren
 # Empreinte digitale biométrique
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article explique comment ajouter des empreintes digitales biométriques à votre application de plateforme Windows universelle (UWP). L’inclusion d’une demande d’authentification par empreinte digitale (biométrique) lorsque l’utilisateur doit valider une action particulière renforce la sécurité de votre application. Par exemple, vous pouvez exiger une authentification par empreinte digitale avant d’autoriser un achat in-app ou avant l’accès à des ressources restreintes. L’authentification par empreinte digitale est gérée par l’intermédiaire de la classe [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) dans l’espace de noms [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356).
@@ -79,7 +79,7 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 
     try
     {
-        // Request the logged on user&#39;s consent via fingerprint swipe.
+        // Request the logged on user's consent via fingerprint swipe.
         var consentResult = await Windows.Security.Credentials.UI.UserConsentVerifier.RequestVerificationAsync(userMessage);
 
         switch (consentResult)
@@ -120,6 +120,6 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 }
 ```
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,6 +1,6 @@
 ---
 title: Stockage sécurisé des informations d’identification
-description: Cet article décrit comment des applications de plateforme Windows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
+description: Cet article décrit comment des applications UWP peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
 ---
@@ -8,7 +8,7 @@ author: awkoren
 # Stockage sécurisé des informations d’identification
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article décrit comment des applications de plateforme Windows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
@@ -86,7 +86,7 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
         else
         {
             // When there are multiple usernames,
-            // retrieve the default username. If one doesn’t
+            // retrieve the default username. If one doesn't
             // exist, then display UI to have the user select
             // a default username.
 
@@ -127,6 +127,6 @@ Enregistrez les mots de passe dans le stockage sécurisé des informations d’i
 
 Ne stockez jamais d’informations d’identification en texte brut en utilisant des données d’application ou des paramètres d’itinérance.
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

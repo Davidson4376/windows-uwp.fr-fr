@@ -8,7 +8,7 @@ author: awkoren
 # Restrictions à l’exportation liées à l’utilisation du chiffrement
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le Windows Store.
 
@@ -18,9 +18,9 @@ Le « Bureau of Industry and Security » (Bureau de l’industrie et de la sécu
 
  
 
-Pour obtenir plus d’informations sur le Département du Commerce des États-Unis et le « Bureau of Industry and Security » (Bureau de l’industrie et de la sécurité ou BIS), voir [À propos du Bureau de l’industrie et de la sécurité](http://go.microsoft.com/fwlink/p/?LinkID=245644).
+Pour obtenir plus d’informations sur le Département du Commerce des États-Unis et le « Bureau of Industry and Security » (Bureau de l’industrie et de la sécurité ou BIS), voir [À propos du Bureau de l’industrie et de la sécurité](http://go.microsoft.com/fwlink/p/?LinkID=245644).
 
-Pour plus d’informations sur la réglementation en vigueur aux États-Unis en matière de contrôle des exportations (« Export Administration Regulations » ou EAR) en ce qui concerne les technologies utilisant le chiffrement, voir [Contrôles EAR des éléments utilisant le chiffrement](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+Pour plus d’informations sur la réglementation en vigueur aux États-Unis en matière de contrôle des exportations (« Export Administration Regulations » ou EAR) en ce qui concerne les technologies utilisant le chiffrement, voir [Contrôles EAR des éléments utilisant le chiffrement](http://go.microsoft.com/fwlink/p/?LinkID=245645).
 
 ## Utilisations régies
 
@@ -55,6 +55,6 @@ Si votre application appelle, prend en charge, contient ou utilise un chiffremen
 Si vous ne possédez pas de numéro ECCN, consultez l’article [Questions et réponses sur les numéros ECCN](http://go.microsoft.com/fwlink/p/?LinkID=245646).
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

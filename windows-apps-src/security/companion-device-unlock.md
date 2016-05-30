@@ -1,83 +1,85 @@
-# Déverrouillage Windows avec dispositifs complémentaires
+---
+title: Déverrouillage Windows avec appareils (IoT) complémentaires
+description: Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure Companion Device Framework, un dispositif complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
+author: awkoren
+---
+# Déverrouillage Windows avec appareils (IoT) complémentaires
 
 Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure Companion Device Framework, un dispositif complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
 
-> **Remarque** L’infrastructure Companion Device Framework est une fonctionnalité spécialisée qui n’est pas disponible pour tous les développeurs d’applications. Pour utiliser cette infrastructure, votre application doit être spécialement approvisionnée par Microsoft et répertorier la fonctionnalité *secondaryAuthenticatorFactor* dans son manifeste. Pour obtenir une approbation, contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com). 
+> **Remarque** L’infrastructure Companion Device Framework est une fonctionnalité spécialisée qui n’est pas disponible pour tous les développeurs d’applications. Pour utiliser cette infrastructure, votre application doit être spécialement approvisionnée par Microsoft et répertorier la fonctionnalité *secondaryAuthenticationFactor* dans son manifeste. Pour obtenir une approbation, contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 
-## Introduction 
+## Introduction
 
-### Cas d’utilisation 
+> Pour obtenir un aperçu vidéo, voir la session [Déverrouillage Windows avec appareils IoT](https://channel9.msdn.com/Events/Build/2016/P491) à partir de la Build 2016 sur le canal 9.
 
-Plusieurs méthodes existent pour créer une excellente expérience de déverrouillage Windows avec un dispositif complémentaire à l’aide de l’infrastructure Companion Device Framework. Les utilisateurs peuvent, par exemple : 
+### Cas d’utilisation
 
-- attacher leurs dispositifs complémentaires aux PC via USB, puis effleurer le bouton sur le dispositif complémentaire pour déverrouiller automatiquement leur PC ; 
+Plusieurs méthodes existent pour créer une excellente expérience de déverrouillage Windows avec un dispositif complémentaire à l’aide de l’infrastructure Companion Device Framework. Les utilisateurs peuvent, par exemple :
+
+- attacher leurs dispositifs complémentaires aux PC via USB, puis effleurer le bouton sur le dispositif complémentaire pour déverrouiller automatiquement leur PC ;
 - porter sur eux un téléphone déjà couplé à un PC via Bluetooth. Le fait d’appuyer sur la barre d’espace du PC envoie une notification au téléphone. L’approbation de ce message par l’utilisateur déverrouille le PC ;
-- poser rapidement leur dispositif complémentaire contre un lecteur NFC pour déverrouiller leur ordinateur en toute rapidité ; 
-- porter des bracelets connectés ayant déjà authentifié l’utilisateur. Lorsque l’utilisateur s’approche du PC et effectue un mouvement spécial, comme se frapper dans les mains, le PC se déverrouille. 
+- poser rapidement leur dispositif complémentaire contre un lecteur NFC pour déverrouiller leur ordinateur en toute rapidité ;
+- porter des bracelets connectés ayant déjà authentifié l’utilisateur. Lorsque l’utilisateur s’approche du PC et effectue un mouvement spécial, comme se frapper dans les mains, le PC se déverrouille.
 
-### Dispositifs complémentaires fonctionnant par biométrie 
+### Dispositifs complémentaires fonctionnant par biométrie
 
-Si le dispositif complémentaire prend en charge la biométrie, l’infrastructure Companion Device Framework peut être utilisée seulement si l’appareil remplit l’une des conditions suivantes :
-
-- Il dispose d’une interface utilisateur et d’un système d’exploitation autre que Windows pouvant guider l’utilisateur dans l’inscription et la gestion biométriques (par exemple, un téléphone fonctionnant avec la biométrie). Si le dispositif complémentaire s’exécute sur Windows et prend en charge la biométrie (reconnaissance faciale et des empreintes digitales), il doit être conforme à l’infrastructure [Windows Biometric Framework](https://msdn.microsoft.com/en-us/library/windows/hardware/mt608302(v=vs.85).aspx). 
-- Il ne dispose pas d’une interface utilisateur (par exemple, un dongle USB) et ne fonctionne pas par reconnaissance faciale, reconnaissance de l’iris ou reconnaissance des empreintes digitales. 
-
-Si le dispositif complémentaire prend en charge la biométrie sans remplir l’une de ces conditions, vous devez suivre les recommandations en matière de [scénarios d’application de fabricant de matériel et d’OEM Windows Hello](https://msdn.microsoft.com/en-us/library/windows/hardware/mt608302(v=vs.85).aspx). 
+Si l’appareil complémentaire prend en charge la biométrie, [Windows Biometric Framework](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx) peut parfois s’avérer une meilleure solution que Companion Device Framework. Veuillez contacter [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) pour que nous vous aidions à choisir l’approche la plus adaptée.
 
 ### Composants de la solution
 
-Le diagramme ci-dessous illustre les composants de la solution et leurs fabricants respectifs. 
+Le diagramme ci-dessous illustre les composants de la solution et leurs fabricants respectifs.
 
 ![vue d’ensemble de l’infrastructure](images/companion-device-1.png)
 
-L’infrastructure Companion Device Framework est implémentée en tant que service exécuté sur Windows (appelé service d’authentification par dispositif complémentaire dans cet article). Ce service génère un jeton de déverrouillage qui doit être protégé par une clé HMAC stockée sur un dispositif complémentaire. Cela garantit un accès au jeton de déverrouillage nécessitant la présence d’un dispositif complémentaire. Chaque tuple (PC, utilisateur Windows) se voit affecter un seul jeton de déverrouillage. 
+L’infrastructure Companion Device Framework est implémentée en tant que service exécuté sur Windows (appelé service d’authentification par dispositif complémentaire dans cet article). Ce service génère un jeton de déverrouillage qui doit être protégé par une clé HMAC stockée sur un dispositif complémentaire. Cela garantit un accès au jeton de déverrouillage nécessitant la présence d’un dispositif complémentaire. Chaque tuple (PC, utilisateur Windows) se voit affecter un seul jeton de déverrouillage.
 
 L’intégration avec l’infrastructure Companion Device Framework nécessite :
 
-- une application de [plateforme Windows universelle (UWP)](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) pour le dispositif complémentaire, téléchargée à partir du Windows Store ; 
-- la possibilité de créer deux clés HMAC 256 bits sur le dispositif complémentaire et générer un HMAC avec ce dernier (à l’aide de SHA-256). 
-- une bonne configuration des paramètres de sécurité sur le Bureau Windows 10. Le service d’authentification par dispositif complémentaire nécessite un PIN avant de pouvoir accueillir un dispositif complémentaire. Les utilisateurs doivent configurer ce PIN dans Paramètres > Comptes > Options de connexion.
+- une application de [plateforme Windows universelle (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) pour le dispositif complémentaire, téléchargée à partir du Windows Store ; 
+- la possibilité de créer deux clés HMAC 256 bits sur le dispositif complémentaire et générer un HMAC avec ce dernier (à l’aide de SHA-256).
+- une bonne configuration des paramètres de sécurité sur le Bureau Windows 10. Le service d’authentification par dispositif complémentaire nécessite un PIN avant de pouvoir accueillir un dispositif complémentaire. Les utilisateurs doivent configurer ce PIN dans Paramètres &gt; Comptes &gt; Options de connexion.
 
 Outre les exigences ci-dessus, l’application pour le dispositif complémentaire est responsable de :
 
 - l’expérience utilisateur et la personnalisation lors de l’inscription initiale, puis la désinscription du dispositif complémentaire ;
-- l’exécution en arrière-plan, la prise en main du dispositif complémentaire, la communication avec ce dernier ainsi que le service d’authentification par dispositif complémentaire. 
+- l’exécution en arrière-plan, la prise en main du dispositif complémentaire, la communication avec ce dernier ainsi que le service d’authentification par dispositif complémentaire.
 - Gestion des erreurs
 
 Les dispositifs complémentaires sont généralement fournis avec une application pour leur configuration initiale, comme les bracelets connectés. Les fonctionnalités décrites dans le présent document peuvent faire partie de l’application en question ; une application distincte ne devrait pas être requise.  
 
 ### Signaux utilisateur
 
-Chaque dispositif complémentaire doit être associé à une application qui prend en charge trois signaux utilisateur. Ces signaux peuvent être exprimés sous forme d’une action ou d’un geste. 
+Chaque dispositif complémentaire doit être associé à une application qui prend en charge trois signaux utilisateur. Ces signaux peuvent être exprimés sous forme d’une action ou d’un geste.
 
-- **Signal d’intention** : permet à l’utilisateur d’indiquer sa volonté de déverrouiller l’appareil, en appuyant sur un bouton du dispositif complémentaire, par exemple. Le signal d’intention doit être capturé du côté du **dispositif complémentaire**.
-- **Signal de présence de l’utilisateur** : apporte la preuve de la présence de l’utilisateur. Le dispositif complémentaire devrait, par exemple, être activé par PIN ou un bouton avant de pouvoir être utilisé pour déverrouiller le PC (à ne pas confondre avec le PIN du PC). 
-- **Signal de levée d’ambiguïté** : lève l’ambiguïté sur quel Bureau Windows 10 l’utilisateur souhaite déverrouiller lorsque plusieurs options se présentent au dispositif complémentaire. 
+- **Signal d’intention** : permet à l’utilisateur d’indiquer sa volonté de déverrouiller l’appareil, en appuyant sur un bouton du dispositif complémentaire, par exemple. Le signal d’intention doit être capturé du côté du **dispositif complémentaire**.
+- **Signal de présence de l’utilisateur** : apporte la preuve de la présence de l’utilisateur. Le dispositif complémentaire devrait, par exemple, être activé par PIN ou un bouton avant de pouvoir être utilisé pour déverrouiller le PC (à ne pas confondre avec le PIN du PC).
+- **Signal de levée d’ambiguïté** : lève l’ambiguïté sur quel Bureau Windows 10 l’utilisateur souhaite déverrouiller lorsque plusieurs options se présentent au dispositif complémentaire.
 
-Un nombre quelconque de ces signaux utilisateur peut être combiné en un seul signal. La présence de l’utilisateur et les signaux d’intention doivent être obligatoires à chaque utilisation. 
+Un nombre quelconque de ces signaux utilisateur peut être combiné en un seul signal. La présence de l’utilisateur et les signaux d’intention doivent être obligatoires à chaque utilisation.
 
 ### Inscription et communication future entre un PC et dispositifs complémentaires
 
-Un dispositif complémentaire doit être inscrit auprès de l’infrastructure Companion Device Framework avant de pouvoir le relier à cette dernière. L’expérience d’inscription est entièrement dictée par l’application du dispositif complémentaire. L’infrastructure Companion Device Framework n’impose aucune limitation sur cette expérience utilisateur. 
+Un dispositif complémentaire doit être inscrit auprès de l’infrastructure Companion Device Framework avant de pouvoir le relier à cette dernière. L’expérience d’inscription est entièrement dictée par l’application du dispositif complémentaire.
 
 Une interconnexion entre le dispositif complémentaire et l’appareil de bureau Windows 10 ayant fait l’objet d’une inscription peut servir plusieurs appareils ; un seul dispositif complémentaire peut être utilisé pour plusieurs appareils de bureau Windows 10. Toutefois, chaque dispositif complémentaire peut uniquement être utilisé pour un seul utilisateur sur chaque appareil de bureau Windows 10.   
 
 Le type de transport entre le PC et le dispositif doit être configuré avant de pouvoir établir une communication entre les deux appareils. Ce choix est fait par l’application du dispositif complémentaire ; l’infrastructure Companion Device Framework n’impose aucune restriction sur le type de transport (USB, NFC, Wi-Fi, BT, BLE, etc.) ou le protocole utilisé entre le dispositif complémentaire et l’application du dispositif complémentaire du côté de l’appareil de bureau Windows 10. Elle soulève cependant certaines considérations de sécurité liées à la couche transport, indiquées à la section « Exigences de sécurité » du présent document. Il incombe au fournisseur de l’appareil de faire respecter ces exigences. Cela n’est pas du ressort de l’infrastructure.
 
 
-## Modèle d’interaction utilisateur 
+## Modèle d’interaction utilisateur
 
-### Découverte, installation et première inscription de l’application du dispositif complémentaire 
+### Découverte, installation et première inscription de l’application du dispositif complémentaire
 
 Un flux de travail classique se présente de la manière suivante :
 
 - L’utilisatrice configure le PIN sur chacun des appareils de bureau Windows 10 cibles qu’elle souhaite déverrouiller avec le dispositif complémentaire.
-- Elle exécute l’application du dispositif complémentaire sur son appareil de bureau Windows 10 pour l’inscrire auprès du Bureau Windows 10. 
+- Elle exécute l’application du dispositif complémentaire sur son appareil de bureau Windows 10 pour l’inscrire auprès du Bureau Windows 10.
 
-Remarques : 
+Remarques :
 
 - Nous vous recommandons la rationalisation, voire l’automatisation si possible, de la découverte, du téléchargement et de l’exécution de l’application du dispositif complémentaire (l’application peut, par exemple, être téléchargée en posant brièvement le dispositif complémentaire sur un lecteur NFC du côté de l’appareil de bureau Windows 10). Le dispositif complémentaire et son application doivent cependant les appliquer automatiquement.
-- Dans un environnement d’entreprise, l’application de dispositif complémentaire peut être déployée via GPM. 
+- Dans un environnement d’entreprise, l’application de dispositif complémentaire peut être déployée via GPM.
 - L’application de dispositif complémentaire doit afficher à l’utilisateur tout message d’erreur lié à l’inscription.
 
 ### Protocole d’inscription et de désinscription
@@ -88,47 +90,47 @@ Le schéma suivant illustre la façon dont le dispositif complémentaire interag
 
 Deux clés sont utilisées dans notre protocole :
 
-- La clé de périphérique (**devicekey**) : permet de protéger les jetons de déverrouillage que nécessitent les PC pour déverrouiller Windows. 
-- La clé d’authentification (**authkey**) : permet d’authentifier mutuellement le dispositif complémentaire et le service d’authentification par dispositif complémentaire. 
+- La clé de périphérique (**devicekey**) : permet de protéger les jetons de déverrouillage que nécessitent les PC pour déverrouiller Windows.
+- La clé d’authentification (**authkey**) : permet d’authentifier mutuellement le dispositif complémentaire et le service d’authentification par dispositif complémentaire.
 
-La clé de périphérique et les clés d’authentification sont échangées entre l’application du dispositif complémentaire et le dispositif complémentaire au moment de l’inscription. Par conséquent, l’application du dispositif complémentaire et le dispositif complémentaire doivent utiliser un transport sécurisé pour protéger les clés. 
+La clé de périphérique et les clés d’authentification sont échangées entre l’application du dispositif complémentaire et le dispositif complémentaire au moment de l’inscription. Par conséquent, l’application du dispositif complémentaire et le dispositif complémentaire doivent utiliser un transport sécurisé pour protéger les clés.
 
-Notez également que, même si le schéma ci-dessus présente deux clés HMAC générées sur le dispositif complémentaire, l’application peut également les générer pour ensuite les envoyer au dispositif complémentaire à des fins de stockage. 
+Notez également que, même si le schéma ci-dessus présente deux clés HMAC générées sur le dispositif complémentaire, l’application peut également les générer pour ensuite les envoyer au dispositif complémentaire à des fins de stockage.
 
 ### Lancer le flux d’authentification
 
 L’utilisateur peut lancer le flux d’authentification vers le Bureau Windows 10 à l’aide de l’infrastructure Companion Device Framework de deux façons (c’est-à-dire, avec un signal d’intention) :
 
-- Ouvrez l’ordinateur portable ou appuyez sur la barre d’espace/effectuez un balayage vers le haut sur PC. 
-- Faites un geste ou une action du côté du dispositif complémentaire. 
+- Ouvrez l’ordinateur portable ou appuyez sur la barre d’espace/effectuez un balayage vers le haut sur PC.
+- Faites un geste ou une action du côté du dispositif complémentaire.
 
-Ce dernier choisit lequel d’entre eux constitue un point de départ. L’infrastructure Companion Device Framework informera l’application du dispositif complémentaire lorsque vous effectuez la première option. Pour la deuxième option, l’application du dispositif complémentaire interroge le dispositif complémentaire pour savoir si cet événement a été capturé. Cela permet au dispositif complémentaire de capturer le signal d’intention pour le déverrouillage. 
+Ce dernier choisit lequel d’entre eux constitue un point de départ. L’infrastructure Companion Device Framework informera l’application du dispositif complémentaire lorsque vous effectuez la première option. Pour la deuxième option, l’application du dispositif complémentaire interroge le dispositif complémentaire pour savoir si cet événement a été capturé. Cela permet au dispositif complémentaire de capturer le signal d’intention pour le déverrouillage.
 
 ### Fournisseur d’informations d’identification du dispositif complémentaire
 
-Un nouveau fournisseur d’informations d’identification dans Windows 10 gère tous les dispositifs complémentaires. 
+Un nouveau fournisseur d’informations d’identification dans Windows 10 gère tous les dispositifs complémentaires.
 
-Le fournisseur d’informations d’identification du dispositif complémentaire est responsable de l’exécution des tâches d’arrière-plan dudit dispositif par l’activation d’un déclencheur. Le déclencheur est activé une première fois lorsque le PC démarre et l’écran de verrouillage s’affiche. Il l’est une deuxième fois lorsque le PC lance l’IU d’ouverture de session et que la vignette du fournisseur d’informations d’identification du dispositif complémentaire est sélectionnée. 
+Le fournisseur d’informations d’identification du dispositif complémentaire est responsable de l’exécution des tâches d’arrière-plan dudit dispositif par l’activation d’un déclencheur. Le déclencheur est activé une première fois lorsque le PC démarre et l’écran de verrouillage s’affiche. Il l’est une deuxième fois lorsque le PC lance l’IU d’ouverture de session et que la vignette du fournisseur d’informations d’identification du dispositif complémentaire est sélectionnée.
 
 La bibliothèque d’aide de l’application du dispositif complémentaire écoutera le changement du statut de l’écran de verrouillage et enverra l’événement correspondant à la tâche en arrière-plan du dispositif complémentaire.
 
-Si plusieurs tâches sont exécutées en arrière-plan du dispositif complémentaire, la première tâche en arrière-plan ayant terminé le processus d’authentification déverrouillera le PC. Le service d’authentification du dispositif complémentaire ignore tous les appels d’authentification restants. 
+Si plusieurs tâches sont exécutées en arrière-plan du dispositif complémentaire, la première tâche en arrière-plan ayant terminé le processus d’authentification déverrouillera le PC. Le service d’authentification du dispositif complémentaire ignore tous les appels d’authentification restants.
 
-L’expérience du côté du dispositif complémentaire est gérée par l’application du dispositif complémentaire, qui en est également le propriétaire. L’infrastructure Companion Device Framework ne contrôle en aucun cas cette partie de l’expérience utilisateur. Plus précisément, le fournisseur d’authentification du dispositif complémentaire informe l’application du dispositif complémentaire (via son application en arrière-plan) des changements de statut dans l’IU d’ouverture de session (par exemple, l’écran de verrouillage s’est activé, ou l’utilisateur l’a désactivé en appuyant sur la barre d’espace). L’application du dispositif complémentaire doit alors prendre le relais et créer une expérience autour de cette action (elle se met par exemple à chercher un appareil via USB lorsque l’utilisateur appuie sur la barre d’espace pour désactiver l’écran de verrouillage). 
+L’expérience du côté du dispositif complémentaire est gérée par l’application du dispositif complémentaire, qui en est également le propriétaire. L’infrastructure Companion Device Framework ne contrôle en aucun cas cette partie de l’expérience utilisateur. Plus précisément, le fournisseur d’authentification du dispositif complémentaire informe l’application du dispositif complémentaire (via son application en arrière-plan) des changements de statut dans l’IU d’ouverture de session (par exemple, l’écran de verrouillage s’est activé, ou l’utilisateur l’a désactivé en appuyant sur la barre d’espace). L’application du dispositif complémentaire doit alors prendre le relais et créer une expérience autour de cette action (elle se met par exemple à chercher un appareil via USB lorsque l’utilisateur appuie sur la barre d’espace pour désactiver l’écran de verrouillage).
 
 L’infrastructure Companion Device Framework fournira un ensemble de textes et de messages d’erreur (localisés) à partir desquels l’application pour le dispositif complémentaire fait son choix. Ceux-ci apparaissent en haut de l’écran de verrouillage (ou sur l’interface utilisateur d’ouverture de session). Pour en savoir plus, voir la section Messages et erreurs.
 
 ### Protocole d’authentification
 
-Une fois la tâche en arrière-plan associée à une application de dispositif complémentaire démarrée par déclenchement, celle-ci doit envoyer une requête au dispositif complémentaire pour calculer deux valeurs HMAC : 
-- La valeur HMAC de la clé de périphérique avec un nonce. 
-- La valeur HMAC de la clé d’authentification ; la première valeur HMAC est concaténée avec un nonce généré par le service d’authentification par dispositif complémentaire. 
+Une fois la tâche en arrière-plan associée à une application de dispositif complémentaire démarrée par déclenchement, celle-ci doit envoyer une requête au dispositif complémentaire pour calculer deux valeurs HMAC :
+- La valeur HMAC de la clé de périphérique avec un nonce.
+- La valeur HMAC de la clé d’authentification ; la première valeur HMAC est concaténée avec un nonce généré par le service d’authentification par dispositif complémentaire.
 
 La seconde valeur est utilisée par le service pour authentifier l’appareil et pour empêcher les attaques par relecture dans le canal de transport.
 
 ![Flux d’inscription](images/companion-device-3.png)
 
-## Gestion du cycle de vie 
+## Gestion du cycle de vie
 
 ### Une seule inscription pour une utilisation en tout lieu
 
@@ -138,13 +140,13 @@ Un fournisseur de périphérique ou OEM de dispositifs complémentaires peut fai
 
 ### Gestion du PIN
 
-L’utilisation d’un dispositif complémentaire nécessite d’abord la configuration d’un PIN sur un appareil de bureau Windows 10. Cela garantit à l’utilisateur une sauvegarde au cas où son dispositif complémentaire ne fonctionne pas. Le PIN est géré par Windows ; les applications ne le découvrent jamais. Pour le changer, accédez à Paramètres > Comptes > Options de connexion. 
+L’utilisation d’un dispositif complémentaire nécessite d’abord la configuration d’un PIN sur un appareil de bureau Windows 10. Cela garantit à l’utilisateur une sauvegarde au cas où son dispositif complémentaire ne fonctionne pas. Le PIN est géré par Windows ; les applications ne le découvrent jamais. Pour le changer, accédez à Paramètres &gt; Comptes &gt; Options de connexion.
 
 ### Gestion et stratégie
 
-Les utilisateurs peuvent supprimer un dispositif complémentaire d’un Bureau Windows 10 en exécutant une application de dispositif complémentaire sur le bureau en question. 
+Les utilisateurs peuvent supprimer un dispositif complémentaire d’un Bureau Windows 10 en exécutant une application de dispositif complémentaire sur le bureau en question.
 
-Les entreprises disposent de deux options pour contrôler l’infrastructure Companion Device Framework : 
+Les entreprises disposent de deux options pour contrôler l’infrastructure Companion Device Framework :
 
 - L’activation/désactivation de la fonctionnalité
 - L’établissement d’une liste blanche de dispositifs complémentaires autorisés à l’aide de Windows AppLocker
@@ -153,7 +155,7 @@ L’infrastructure Companion Device Framework ne tient pas d’inventaire des 
 
 ### Révocation
 
-L’infrastructure Companion Device Framework ne prend pas en charge la suppression à distance d’un dispositif complémentaire d’un appareil de bureau Windows 10 spécifique. Au lieu de cela, les utilisateurs peuvent supprimer le dispositif complémentaire par le biais de l’application de dispositif complémentaire en cours d’exécution sur ce Bureau Windows 10. 
+L’infrastructure Companion Device Framework ne prend pas en charge la suppression à distance d’un dispositif complémentaire d’un appareil de bureau Windows 10 spécifique. Au lieu de cela, les utilisateurs peuvent supprimer le dispositif complémentaire par le biais de l’application de dispositif complémentaire en cours d’exécution sur ce Bureau Windows 10.
 
 Les fournisseurs complémentaires peuvent toutefois créer un service de fonctionnalités de révocation à distance. Pour en savoir plus, voir la section Itinérance, révocation et service de filtre.
 
@@ -186,7 +188,7 @@ Le processus global de l’API se déroule comme suit :
 3. Attendre l’événement approprié dans la tâche en arrière-plan
     * WaitingForUserConfirmation : attendre cet événement si l’action/le geste de l’utilisateur est nécessaire au lancement du flux d’authentification du côté du dispositif complémentaire
     * CollectingCredential : attendre cet événement si le dispositif complémentaire repose sur une action/geste de l’utilisateur pour lancer le flux d’authentification du côté du PC (par exemple, en appuyant sur la barre d’espace)
-    * Autres déclencheurs, tels qu’une carte à puce : envoyer une requête à l’état d’authentification actuel pour qu’il appelle les API appropriées. 
+    * Autres déclencheurs, tels qu’une carte à puce : envoyer une requête à l’état d’authentification actuel pour qu’il appelle les API appropriées.
 4. Tenir l’utilisateur informé des messages d’erreur ou des étapes suivantes nécessaires en appelant la méthode ShowNotificationMessageAsync. Appeler uniquement cette API une fois qu’un signal d’intention est capturé.
 5. Déverrouiller
     * S’assurer que les signaux d’intention et de présence de l’utilisateur ont été capturés
@@ -205,7 +207,7 @@ Avant d’effectuer ces appels, l’application du dispositif complémentaire do
 
 En outre, dans le cadre du premier appel d’API (RequestStartRegisteringDeviceAsync), l’application du dispositif complémentaire doit évaluer la fonctionnalité du dispositif (par exemple, si le dispositif complémentaire prend en charge le stockage sécurisé des clés HMAC) et être prête à l’intégrer à l’appel d’API. Si la même application est utilisée pour gérer plusieurs versions du même dispositif complémentaire, et si ces fonctionnalités changent (et nécessitent une requête envoyée à l’appareil), nous recommandons d’envoyer cette requête avant d’effectuer le premier appel d’API.   
 
-La première API (RequestStartRegisteringDeviceAsync) retourne un handle utilisé par la deuxième API (FinishRegisteringDeviceAsync). Le premier appel d’inscription lance l’invite de saisie du PIN pour s’assurer de la présence de l’utilisateur. Si aucun PIN n’est défini, cet appel échouera. L’application du dispositif complémentaire peut envoyer une requête par le biais de KeyCredentialManager.IsSupportedAsync pour savoir si le PIN est configuré ou non. L’appel RequestStartRegisteringDeviceAsync peut également échouer si la stratégie a désactivé l’utilisation d’un dispositif complémentaire. 
+La première API (RequestStartRegisteringDeviceAsync) retourne un handle utilisé par la deuxième API (FinishRegisteringDeviceAsync). Le premier appel d’inscription lance l’invite de saisie du PIN pour s’assurer de la présence de l’utilisateur. Si aucun PIN n’est défini, cet appel échouera. L’application du dispositif complémentaire peut envoyer une requête par le biais de KeyCredentialManager.IsSupportedAsync pour savoir si le PIN est configuré ou non. L’appel RequestStartRegisteringDeviceAsync peut également échouer si la stratégie a désactivé l’utilisation d’un dispositif complémentaire.
 
 Le résultat du premier appel est retourné par le biais de l’énumération SecondaryAuthenticationFactorRegistrationStatus :
 
@@ -219,13 +221,13 @@ Le résultat du premier appel est retourné par le biais de l’énumération Se
 }
 ```
 
-Le deuxième appel (FinishRegisteringDeviceAsync) termine l’inscription. Dans le cadre du processus d’inscription, l’application du dispositif complémentaire peut stocker les données de configuration de ce dernier à l’aide du service d’authentification par dispositif complémentaire. La limite de taille pour ces données est de 4 Ko. Ces données seront mises à la disposition de l’application du dispositif complémentaire au moment de l’authentification. Ces données peuvent par exemple être utilisées pour se connecter à un dispositif complémentaire, tel qu’une adresse MAC. Si un dispositif complémentaire n’a pas de stockage et veut utiliser le PC à cette fin, les données de configuration peuvent alors être utilisées. Remarque : toute donnée sensible stockée parmi les données de configuration doit être chiffrée à l’aide d’une clé que seul le dispositif complémentaire connaît. En outre, étant donné que les données de configuration sont stockées par un service Windows, celles-ci sont disponibles pour les applications de dispositif complémentaire sur des profils utilisateur différents. 
+Le deuxième appel (FinishRegisteringDeviceAsync) termine l’inscription. Dans le cadre du processus d’inscription, l’application du dispositif complémentaire peut stocker les données de configuration de ce dernier à l’aide du service d’authentification par dispositif complémentaire. La limite de taille pour ces données est de 4 Ko. Ces données seront mises à la disposition de l’application du dispositif complémentaire au moment de l’authentification. Ces données peuvent par exemple être utilisées pour se connecter à un dispositif complémentaire, tel qu’une adresse MAC. Si un dispositif complémentaire n’a pas de stockage et veut utiliser le PC à cette fin, les données de configuration peuvent alors être utilisées. Remarque : toute donnée sensible stockée parmi les données de configuration doit être chiffrée à l’aide d’une clé que seul le dispositif complémentaire connaît. En outre, étant donné que les données de configuration sont stockées par un service Windows, celles-ci sont disponibles pour les applications de dispositif complémentaire sur des profils utilisateur différents.
 
-L’application de dispositif complémentaire peut appeler la méthode AbortRegisteringDeviceAsync pour annuler l’inscription et transférer un code d’erreur. Le service d’authentification par dispositif complémentaire consigne l’erreur dans les données de télémétrie. Un bon exemple de cet appel serait une erreur survenue dans le dispositif complémentaire, qui n’a donc pas pu terminer l’inscription (il ne peut pas stocker des clés HMAC ou la connexion BT a été interrompue, par exemple). 
+L’application de dispositif complémentaire peut appeler la méthode AbortRegisteringDeviceAsync pour annuler l’inscription et transférer un code d’erreur. Le service d’authentification par dispositif complémentaire consigne l’erreur dans les données de télémétrie. Un bon exemple de cet appel serait une erreur survenue dans le dispositif complémentaire, qui n’a donc pas pu terminer l’inscription (il ne peut pas stocker des clés HMAC ou la connexion BT a été interrompue, par exemple).
 
-L’application du dispositif complémentaire doit proposer à l’utilisateur l’option de désinscrire son dispositif complémentaire du Bureau Windows 10 (par exemple, s’il a perdu son dispositif complémentaire ou acheté une version plus récente). Lorsque l’utilisateur sélectionne cette option, l’application du dispositif complémentaire doit appeler la méthode UnregisterDeviceAsync. Cet appel effectué par l’application du dispositif complémentaire déclenchera la suppression (par le service d’authentification par le dispositif complémentaire) de toutes les données (y compris les clés HMAC) correspondant à l’Id de l’appareil ainsi qu’à l’AppId spécifiques de l’application à l’origine de l’appel du côté du PC. Cet appel d’API ne tente pas de supprimer des clés HMAC du côté de l’application du dispositif complémentaire ou du côté du dispositif complémentaire. C’est à l’application du dispositif complémentaire de l’implémenter. 
+L’application du dispositif complémentaire doit proposer à l’utilisateur l’option de désinscrire son dispositif complémentaire du Bureau Windows 10 (par exemple, s’il a perdu son dispositif complémentaire ou acheté une version plus récente). Lorsque l’utilisateur sélectionne cette option, l’application du dispositif complémentaire doit appeler la méthode UnregisterDeviceAsync. Cet appel effectué par l’application du dispositif complémentaire déclenchera la suppression (par le service d’authentification par le dispositif complémentaire) de toutes les données (y compris les clés HMAC) correspondant à l’Id de l’appareil ainsi qu’à l’AppId spécifiques de l’application à l’origine de l’appel du côté du PC. Cet appel d’API ne tente pas de supprimer des clés HMAC du côté de l’application du dispositif complémentaire ou du côté du dispositif complémentaire. C’est à l’application du dispositif complémentaire de l’implémenter.
 
-L’application du dispositif complémentaire est responsable de l’affichage des messages d’erreur se produisent au moment de l’inscription et de la désinscription. 
+L’application du dispositif complémentaire est responsable de l’affichage des messages d’erreur se produisent au moment de l’inscription et de la désinscription.
 
 ```C#
 using System;
@@ -249,11 +251,11 @@ namespace SecondaryAuthFactorSample
             IBuffer deviceKey = CryptographicBuffer.GenerateRandom(256/8);
             IBuffer mutualAuthenticationKey = CryptographicBuffer.GenerateRandom(256/8);
 
-            SecondaryAuthenticationFactorRegistration registrationResult = 
+            SecondaryAuthenticationFactorRegistration registrationResult =
                 await SecondaryAuthenticationFactorRegistration.RequestStartRegisteringDeviceAsync(
                     deviceId,  // deviceId: max 40 wide characters. For example, serial number of the device
-                    SecondaryAuthenticaitonFactorDeviceCapabilities.SupportSecureStorage | 
-                        SecondaryAuthenticaitonFactorDeviceCapabilities.SupportSha2 | 
+                    SecondaryAuthenticaitonFactorDeviceCapabilities.SupportSecureStorage |
+                        SecondaryAuthenticaitonFactorDeviceCapabilities.SupportSha2 |
                         SecondaryAuthenticaitonFactorDeviceCapabilities.StoreKeys,
                     "My test device 1", // deviceFriendlyName: max 64 wide characters. For example: John's card
                     "SAMPLE-001", // deviceModelNumber: max 32 wide characters. The app should read the model number from device.
@@ -263,10 +265,10 @@ namespace SecondaryAuthFactorSample
             switch(registerResult.Status)
             {
             case SecondaryAuthenticationFactorRegistrationStatus.Started:
-                // 
+                //
                 // Pseudo function:
                 // The app needs to retrieve the value from device and set into opaqueBlob
-                // 
+                //
                 IBuffer deviceConfigData = ReadConfigurationDataFromDevice();
 
                 if (deviceConfigData != null)
@@ -302,7 +304,7 @@ namespace SecondaryAuthFactorSample
 
         public void async UpdateDeviceList()
         {
-            IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList = 
+            IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList =
                 await SecondaryAuthenticationFactorRegistration.FindAllRegisteredDeviceInfoAsync(
                     SecondaryAuthenticaitonFactorDeviceFindScope.User);
 
@@ -331,7 +333,7 @@ namespace SecondaryAuthFactorSample
 
 ### Authentification
 
-L’authentification nécessite deux appels d’API vers le service d’authentification par dispositif complémentaire : StartAuthenticationAsync et FinishAuthencationAsync. 
+L’authentification nécessite deux appels d’API vers le service d’authentification par dispositif complémentaire : StartAuthenticationAsync et FinishAuthencationAsync.
 
 La première API d’initiation retourne un handle utilisé par la deuxième API.  Le premier appel retourne entre autres un nonce qui, une fois concaténé avec d’autres éléments, doit faire l’objet d’un HMAC avec la clé de périphérique stockée sur le dispositif complémentaire. Le deuxième appel retourne les résultats HMAC avec une clé de périphérique et peut potentiellement réussir l’authentification (c’est-à-dire que l’utilisateur voit son bureau).
 
@@ -344,11 +346,11 @@ La première API d’initiation (StartAuthenticationAsync) peut échouer si la s
     UnknownDevice,                  // Companion device app is not registered with framework
     DisabledByPolicy,               // Policy disabled this device after registration
     InvalidAuthenticationStage,     // Companion device framework is not currently accepting
-                                    // incoming authentication requests 
+                                    // incoming authentication requests
 }
 ```
 
-Le deuxième appel d’API (FinishAuthencationAsync) peut échouer si le nonce fourni dans le premier appel a expiré (20 secondes). L’énumération SecondaryAuthenticationFactorAuthenticationStatus résume les résultats possibles. 
+Le deuxième appel d’API (FinishAuthencationAsync) peut échouer si le nonce fourni dans le premier appel a expiré (20 secondes). L’énumération SecondaryAuthenticationFactorAuthenticationStatus résume les résultats possibles.
 
 ```C#
 {
@@ -360,11 +362,11 @@ Le deuxième appel d’API (FinishAuthencationAsync) peut échouer si le nonce f
 
 Le minutage de deux appels d’API (StartAuthenticationAsync et FinishAuthencationAsync) doit coïncider avec la façon dont le dispositif complémentaire capture les signaux d’intention, la présence de l’utilisateur ainsi que les signaux de levée d’ambiguïté (pour en savoir plus, voir Signaux utilisateur). Par exemple, le deuxième appel ne doit pas être envoyé tant qu’un signal d’intention n’est pas disponible. En d’autres termes, le PC ne doit pas se déverrouiller si l’utilisateur n’en a pas exprimé son intention. Par exemple : supposons que la proximité d’un dispositif Bluetooth soit nécessaire pour déverrouiller le PC. Un signal d’intention explicite doit être capturé ; sinon, le PC se déverrouille dès lors que l’utilisateur passe à côté de son PC. Par ailleurs, le nonce retourné par le premier appel est limité dans le temps (20 secondes) et expire au bout d’un certain temps. Par conséquent, le premier appel doit seulement être effectué lorsque l’application du dispositif complémentaire dispose d’une bonne indication de la présence d’un dispositif complémentaire. C’est-à-dire qu’un dispositif complémentaire est inséré dans un port USB ou posé sur un lecteur NFC. Avec Bluetooth, il faut veiller à ne pas affecter l’autonomie de la batterie du côté du PC ou affecter d’autres activités Bluetooth lors de la recherche de la présence d’un dispositif complémentaire. En outre, si le signal de présence de l’utilisateur doit être fourni (par exemple, en tapant le PIN), il est recommandé que le premier appel d’authentification soit émis uniquement lorsque ce signal a été capturé.
 
-L’infrastructure Companion Device Framework aide l’application du dispositif complémentaire à décider quand émettre les deux appels susmentionnés en établissant clairement la position de l’utilisateur au sein du flux d’authentification. L’infrastructure Companion Device Framework propose cette fonctionnalité en envoyant la notification de changement d’état de verrouillage à l’application en arrière-plan. 
+L’infrastructure Companion Device Framework aide l’application du dispositif complémentaire à décider quand émettre les deux appels susmentionnés en établissant clairement la position de l’utilisateur au sein du flux d’authentification. L’infrastructure Companion Device Framework propose cette fonctionnalité en envoyant la notification de changement d’état de verrouillage à l’application en arrière-plan.
 
 ![flux de dispositif complémentaire](images/companion-device-4.png)
 
-Voici les détails de chacun de ces états : 
+Voici les détails de chacun de ces états :
 
 | État                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
@@ -377,16 +379,16 @@ Voici les détails de chacun de ces états :
 
 
 
-Les applications de dispositif complémentaire doivent uniquement appeler les deux API d’authentification dans les deux premiers états.  Les applications de dispositif complémentaire doivent vérifier le scénario dans lequel cet événement est déclenché. Deux possibilités existent : le déverrouillage ou le post-déverrouillage. Seul le déverrouillage est pris en charge pour l’instant. Dans les versions à venir, les scénarios de post-déverrouillage peuvent être pris en charge. L’énumération SecondaryAuthenticationFactorAuthenticationScenario capture ces deux options : 
+Les applications de dispositif complémentaire doivent uniquement appeler les deux API d’authentification dans les deux premiers états.  Les applications de dispositif complémentaire doivent vérifier le scénario dans lequel cet événement est déclenché. Deux possibilités existent : le déverrouillage ou le post-déverrouillage. Seul le déverrouillage est pris en charge pour l’instant. Dans les versions à venir, les scénarios de post-déverrouillage peuvent être pris en charge. L’énumération SecondaryAuthenticationFactorAuthenticationScenario capture ces deux options :
 
 ```C#
 {
-    SignIn = 0,         // Running under lock screen mode 
-    CredentialPrompt,   // Running post unlock 
+    SignIn = 0,         // Running under lock screen mode
+    CredentialPrompt,   // Running post unlock
 }
 ```
 
-Exemple de code complet : 
+Exemple de code complet :
 
 ```C#
 using System;
@@ -415,8 +417,8 @@ namespace SecondaryAuthFactorSample
                 // Pseudo code, the svcAuthNonce should be passed to device or generated from device
                 //
                 IBuffer svcAuthNonce = CryptographicBuffer.GenerateRandom(256/8);
-                
-                SecondaryAuthenticationFactorAuthenticationResult authResult = await 
+
+                SecondaryAuthenticationFactorAuthenticationResult authResult = await
                     SecondaryAuthenticationFactorAuthentication.StartAuthenticationAsync(
                         _deviceId,
                         svcAuthNonce);
@@ -440,10 +442,10 @@ namespace SecondaryAuthFactorSample
                     return;
                 }
 
-                // 
+                //
                 // Pseudo function:
                 // The device calculates and returns sessionHmac and deviceHmac
-                // 
+                //
                 await GetHmacsFromDevice(
                     authResult.Authentication.ServiceAuthenticationHmac,
                     authResult.Authentication.DeviceNonce,
@@ -458,7 +460,7 @@ namespace SecondaryAuthFactorSample
                     return;
                 }
 
-                SecondaryAuthenticationFactorFinishAuthenticationStatus status = 
+                SecondaryAuthenticationFactorFinishAuthenticationStatus status =
                     await authResult.Authentication.FinishAuthencationAsync(deviceHmac, sessionHmac);
                 if (status == SecondaryAuthenticationFactorFinishAuthenticationStatus.NonceExpired)
                 {
@@ -501,7 +503,7 @@ namespace SecondaryAuthFactorSample
                 break;
 
             case SecondaryAuthenticationFactorAuthenticationStage.StoppingAuthentication:
-                // Quit from background task 
+                // Quit from background task
                 _exitTaskEvent.Set();
                 break;
             }
@@ -521,7 +523,7 @@ namespace SecondaryAuthFactorSample
             taskInstance.Canceled += TaskInstanceCanceled;
 
             // Find all device registred by this application
-            IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList = 
+            IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList =
                 await SecondaryAuthenticationFactorRegistration.FindAllRegisteredDeviceInfoAsync(
                     SecondaryAuthenticaitonFactorDeviceFindScope.AllUsers);
 
@@ -532,7 +534,7 @@ namespace SecondaryAuthFactorSample
             }
             _deviceId = deviceInfoList[0].DeviceId;
             Debug.WriteLine("Use first device '" + _deviceId + "' in the list to signin");
-     
+
             // Register AuthenticationStageChanged event
             SecondaryAuthenticationFactorRegistration.AuthenticationStageChanged += OnAuthenticationStageChanged;
 
@@ -607,43 +609,42 @@ L’infrastructure Companion Device Framework est chargée d’envoyer à l’
 
 ![erreur de dispositif complémentaire](images/companion-device-5.png)
 
-Les applications de dispositif complémentaire peuvent utiliser ShowNotificationMessageAsync pour afficher des messages à l’utilisateur sur l’interface utilisateur d’ouverture de session. Appelez cette API lorsque le signal d’intention est disponible. Le signal d’intention doit toujours être capturé du côté du dispositif complémentaire. 
+Les applications de dispositif complémentaire peuvent utiliser ShowNotificationMessageAsync pour afficher des messages à l’utilisateur sur l’interface utilisateur d’ouverture de session. Appelez cette API lorsque le signal d’intention est disponible. Le signal d’intention doit toujours être capturé du côté du dispositif complémentaire.
 
-Il existe deux types de messages : les aides et les erreurs. 
+Il existe deux types de messages : les aides et les erreurs.
 
-Les messages d’aide sont conçus pour montrer à l’utilisateur comment lancer le processus de déverrouillage. Ces messages ne s’affichent qu’une fois, lors de la première inscription. 
+Les messages d’aide sont conçus pour montrer à l’utilisateur comment lancer le processus de déverrouillage. Ces messages ne s’affichent qu’une fois, lors de la première inscription.
 
 En revanche, les messages d’erreur s’affichent à chaque fois. Les messages d’erreur s’affichent pendant 5 secondes, puis disparaissent. Étant donné qu’un signal d’intention doit être capturé pour que les messages s’affichent, et que l’utilisateur fournit ce signal à l’aide d’un seul dispositif complémentaire, en aucun cas doit se produire un scénario dans lequel plusieurs dispositifs complémentaires tentent d’afficher des messages d’erreur. Par conséquent, l’infrastructure Companion Device Framework ne comporte pas de file d’attente. Lorsqu’un appelant demande un message d’erreur, ce dernier s’affiche pendant 5 secondes et toutes les autres demandes de message d’erreur survenant dans ce délai de 5 secondes sont ignorées. Une fois que ces 5 secondes sont écoulées, un autre appelant peut demander l’affichage d’un message d’erreur. Nous empêchons tout appelant de bloquer le canal d’erreur.
 
 Les messages d’erreur et d’aide sont les suivants. Le nom de l’appareil est un paramètre transmis par l’application du dispositif complémentaire dans le cadre de la méthode ShowNotificationMessageAsync.
 
-**Messages d’aide**
+**Indications**
 
-- Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*
-- Posez *nom de l’appareil* sur le lecteur NFC pour vous connecter
-- Branchez *nom de l’appareil* sur un port USB pour vous connecter
-- Recherche en cours de *nom de l’appareil*...
+- « Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*. »
+- « Posez *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
+- « Recherche en cours de *nom de l’appareil*... »
+- « Branchez *nom de l’appareil* sur un port USB pour vous connecter. »
 
-**Messages d’erreur**
+**Erreurs**
 
-- Voir *nom de l’appareil* pour obtenir des instructions de connexion
-- Branchez *nom de l’appareil* sur un port USB pour vous connecter
-- Activez le Bluetooth pour utiliser *nom de l’appareil* pour vous connecter
-- Activez le NFC pour utiliser *nom de l’appareil* pour vous connecter
-- Connectez-vous à un réseau Wi-Fi afin d’utiliser *nom de l’appareil* pour vous connecter
-- Un problème est survenu. Veuillez vous connecter avec votre mot de passe ou PIN, puis reconfigurer *nom de l’appareil*.
-- Appuyez sur *nom de l’appareil* à nouveau
-- Votre entreprise empêche la connexion avec *nom de l’appareil*. Utilisez une autre option de connexion.
-- Appuyez sur *nom de l’appareil* pour vous connecter
-- Maintenez votre doigt sur *nom de l’appareil* pour vous connecter
-- Effectuez un balayage avec votre doigt sur *nom de l’appareil* pour vous connecter
-- Impossible de se connecter avec *nom de l’appareil*. Utilisez une autre option de connexion. 
-- Réessayez.
-- Énoncez votre mot de passe dans *nom de l’appareil*
-- Prêt pour la connexion avec *nom de l’appareil*.
+- « Voir *nom de l’appareil* pour obtenir des instructions de connexion. »
+- « Activez le Bluetooth pour utiliser *nom de l’appareil* pour vous connecter. »
+- « Activez le NFC pour utiliser *nom de l’appareil* pour vous connecter. »
+- « Connectez-vous à un réseau Wi-Fi afin d’utiliser *nom de l’appareil* pour vous connecter. »
+- « Appuyez sur *nom de l’appareil* à nouveau. »
+- « Votre entreprise empêche la connexion avec *nom de l’appareil*. Utilisez une autre option de connexion. »
+- « Appuyez sur *nom de l’appareil* pour vous connecter. »
+- « Maintenez votre doigt sur *nom de l’appareil* pour vous connecter. »
+- « Effectuez un balayage avec votre doigt sur *nom de l’appareil* pour vous connecter. »
+- « Impossible de se connecter avec *nom de l’appareil*. Utilisez une autre option de connexion. »
+- « Un problème est survenu. Utilisez une autre option de connexion, puis configurez de nouveau *nom de l’appareil*. »
+- « Réessayez. »
+- « Dites votre phrase secrète à *nom de l’appareil*. »
+- « Prêt pour la connexion avec *nom de l’appareil*. »
+- « Utilisez d’abord une autre option de connexion, puis vous pourrez utiliser *nom de l’appareil* pour vous connecter. »
 
-
-### Énumérer les dispositifs complémentaires inscrits 
+### Énumérer les dispositifs complémentaires inscrits
 
 L’application du dispositif complémentaire peut énumérer les dispositifs complémentaires inscrits via l’appel FindAllRegisteredDeviceInfoAsync. Cette API prend en charge deux types de requête définis par le biais de l’énumération SecondaryAuthenticaitonFactorDeviceFindScope :
 
@@ -654,28 +655,27 @@ L’application du dispositif complémentaire peut énumérer les dispositifs co
 }
 ```
 
-La première étendue retourne la liste des dispositifs complémentaires pour l’utilisateur connecté. La seconde retourne la liste pour tous les utilisateurs de ce PC. La première étendue doit être utilisée au moment de la désinscription pour éviter de désinscrire les dispositifs complémentaires des autres utilisateurs. La deuxième doit être utilisée au moment de l’authentification ou de l’enregistrement : au moment de l’inscription, cette énumération peut aider à éviter la double inscription d’un même dispositif complémentaire. 
+La première étendue retourne la liste des dispositifs complémentaires pour l’utilisateur connecté. La seconde retourne la liste pour tous les utilisateurs de ce PC. La première étendue doit être utilisée au moment de la désinscription pour éviter de désinscrire les dispositifs complémentaires des autres utilisateurs. La deuxième doit être utilisée au moment de l’authentification ou de l’enregistrement : au moment de l’inscription, cette énumération peut aider à éviter la double inscription d’un même dispositif complémentaire.
 
-Notez que, même si l’application n’effectue pas cette vérification, le PC l’effectue et rejettera une deuxième inscription du dispositif complémentaire. Au moment de l’authentification, l’utilisation de l’étendue AllUsers permet d’aider l’application du dispositif complémentaire à prendre en charge le changement de flux d’utilisateur : connexion de l’utilisateur A lorsque l’utilisateur B est déjà connecté (cela nécessite que les deux utilisateurs aient installé l’application du dispositif complémentaire et que l’utilisateur A ait inscrit ses dispositifs complémentaires auprès du PC. Le PC doit également présenter l’écran de verrouillage (ou l’écran d’ouverture de session)). 
-    
+Notez que, même si l’application n’effectue pas cette vérification, le PC l’effectue et rejettera une deuxième inscription du dispositif complémentaire. Au moment de l’authentification, l’utilisation de l’étendue AllUsers permet d’aider l’application du dispositif complémentaire à prendre en charge le changement de flux d’utilisateur : connexion de l’utilisateur A lorsque l’utilisateur B est déjà connecté (cela nécessite que les deux utilisateurs aient installé l’application du dispositif complémentaire et que l’utilisateur A ait inscrit ses dispositifs complémentaires auprès du PC. Le PC doit également présenter l’écran de verrouillage (ou l’écran d’ouverture de session)).
+
 ## Exigences de sécurité
 
 Le service d’authentification par dispositif complémentaire fournit les protections de sécurité suivantes :
 
 - Les programmes malveillants, s’exécutant en tant qu’utilisateur moyen ou conteneur d’application sur un appareil de bureau Windows 10, ne peuvent pas utiliser le dispositif complémentaire pour accéder aux clés d’informations d’identification utilisateur (stockées dans Microsoft Passport) sur les PC de manière silencieuse.
 - Un utilisateur malveillant sur un appareil de bureau Windows 10 ne peut pas utiliser de dispositif complémentaire appartenant à un autre utilisateur, sur l’appareil en question, pour obtenir un accès en mode silencieux à ses clés d’information d’identification utilisateur (sur le même appareil de bureau Windows 10).
-- Les programmes malveillants sur le dispositif complémentaire ne peuvent pas obtenir un accès silencieux aux clés d’information d’identification utilisateur sur l’appareil de bureau Windows 10, ni tirer parti des fonctionnalités ou du code développés spécifiquement pour l’infrastructure Companion Device Framework. 
+- Les programmes malveillants sur le dispositif complémentaire ne peuvent pas obtenir un accès silencieux aux clés d’information d’identification utilisateur sur l’appareil de bureau Windows 10, ni tirer parti des fonctionnalités ou du code développés spécifiquement pour l’infrastructure Companion Device Framework.
 - Un utilisateur malveillant ne peut pas déverrouiller un appareil de bureau Windows 10 en capturant le trafic entre le dispositif complémentaire et l’appareil de bureau Windows 10, puis en le relisant ultérieurement. L’utilisation de nonces, d’authkey et de HMAC dans notre protocole garantit la protection contre les attaques par relecture.
-- Les programmes malveillants ou un utilisateur malveillant sur un PC non autorisé ne peuvent pas utiliser un dispositif complémentaire pour accéder au PC d’un utilisateur honnête. Ce résultat est obtenu par l’authentification mutuelle entre le service d’authentification par dispositif complémentaire et le dispositif complémentaire, en utilisant authkey et HMAC dans notre protocole. 
+- Les programmes malveillants ou un utilisateur malveillant sur un PC non autorisé ne peuvent pas utiliser un dispositif complémentaire pour accéder au PC d’un utilisateur honnête. Ce résultat est obtenu par l’authentification mutuelle entre le service d’authentification par dispositif complémentaire et le dispositif complémentaire, en utilisant authkey et HMAC dans notre protocole.
 
 Ces protections de sécurité sont possibles grâce à la protection des clés HMAC contre tout accès non autorisé et en vérifiant la présence de l’utilisateur. Plus précisément, elles doivent satisfaire les exigences suivantes :
 
 - La protection contre le clonage du dispositif complémentaire
 - La protection contre l’espionnage lors de l’envoi de clés HMAC au moment de l’inscription auprès d’un PC
-- La garantie de l’existence du signal de présence de l’utilisateur. 
+- La garantie de l’existence du signal de présence de l’utilisateur.
 
 
-
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
