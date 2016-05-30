@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 559
+ Total Files | 570
 
 ## File List
  Source File | Status | Details 
@@ -565,6 +565,17 @@
  [windows-apps-src\xaml-platform\x-null-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xaml-platform/x-null-markup-extension.md) | InSyncHandedBackSuccess | [Details](#96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a093809)
  [windows-apps-src\xaml-platform\x-phase-attribute.md](https://github.com/Microsoft/windows-apps/blob/98b9bca2528c041d2fdfc6a0adead321737932b4/windows-apps-src/xaml-platform/x-phase-attribute.md) | InSyncHandedBackSuccess | [Details](#dfa12909d19a44ed38939c612712c8fe90f3f5843810)
  [windows-apps-src\xaml-platform\x-uid-directive.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xaml-platform/x-uid-directive.md) | InSyncHandedBackSuccess | [Details](#4f8aa553c99b6071cedc4f9d93cf8258b75eca493811)
+ [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/adf2d16f9c208631f91fbcad19d1ea8087cd9cb5/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md) | InSyncHandedBackSuccess | [Details](#ae2f80a915f4aed90c269c37a11d01a2f6c9849e3818)
+ [windows-apps-src\xbox-apps\development-environment-setup.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/development-environment-setup.md) | InSyncHandedBackSuccess | [Details](#71a7404e17f37b5243ee229b6c12fabd8f0544883820)
+ [windows-apps-src\xbox-apps\devkit-activation.md](https://github.com/Microsoft/windows-apps/blob/7d832fee5bcd3a15cee1e7d8f4c66da9b0afa5e1/windows-apps-src/xbox-apps/devkit-activation.md) | InSyncHandedBackSuccess | [Details](#9ad9904150acb00982c96eebeaf010f7023d33203821)
+ [windows-apps-src\xbox-apps\devkit-deactivation.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/devkit-deactivation.md) | InSyncHandedBackSuccess | [Details](#0751598ba50d69e1667b20ddc03f30d65ce080023822)
+ [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/getting-started.md) | InSyncHandedBackSuccess | [Details](#d14691f0421c94bbb58e86dfb0dca5741beb14ca3824)
+ [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/10df9956cd7d7d61a62d26a299242d17f900e5ad/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md) | InSyncHandedBackSuccess | [Details](#ad714bfbb9b095e98c242d6203888f712c9bea203873)
+ [windows-apps-src\xbox-apps\multi-user-applications.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/multi-user-applications.md) | InSyncHandedBackSuccess | [Details](#ca464c64c620a3b36086289b62150ffc0a6aef1b3875)
+ [windows-apps-src\xbox-apps\samples.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/samples.md) | InSyncHandedBackSuccess | [Details](#6f38f5aabb6a409fab894bf7127ad4011162f7c63878)
+ [windows-apps-src\xbox-apps\samples-xaml-dev.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/samples-xaml-dev.md) | InSyncHandedBackSuccess | [Details](#68e330dbc17557447bef8ddec76f71442e47594d3876)
+ [windows-apps-src\xbox-apps\samples-xaml-media.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/samples-xaml-media.md) | InSyncHandedBackSuccess | [Details](#b7c1817bfb375c42262bac8d8e3768e93b4c26353877)
+ [windows-apps-src\xbox-apps\system-resource-allocation.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/system-resource-allocation.md) | InSyncHandedBackSuccess | [Details](#6b5ef763c41af65aecf02aaa550b84a3d524d25f3879)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -7273,6 +7284,138 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-uid-directive.98148749f4ac1e90764998cc5371534cadfea313.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/420f037ff2a67345b24723c230e881ff75bfed3f/ol-handback/Microsoft/windows-apps.fr-fr/master/xaml-platform/x-uid-directive.98148749f4ac1e90764998cc5371534cadfea313.fr-fr.xlf)
 * Handback Datetime: 2016-05-30 22:17:18
+* [Back to Top](#report-top)
+
+##### <a name='ae2f80a915f4aed90c269c37a11d01a2f6c9849e3818'></a> Source: [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/adf2d16f9c208631f91fbcad19d1ea8087cd9cb5/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md)
+* Handoff File: [automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='71a7404e17f37b5243ee229b6c12fabd8f0544883820'></a> Source: [windows-apps-src\xbox-apps\development-environment-setup.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/development-environment-setup.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\development-environment-setup.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/development-environment-setup.md)
+* Handoff File: [development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='9ad9904150acb00982c96eebeaf010f7023d33203821'></a> Source: [windows-apps-src\xbox-apps\devkit-activation.md](https://github.com/Microsoft/windows-apps/blob/7d832fee5bcd3a15cee1e7d8f4c66da9b0afa5e1/windows-apps-src/xbox-apps/devkit-activation.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\devkit-activation.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/devkit-activation.md)
+* Handoff File: [devkit-activation.22024c3019b2f91b62bafe755f4aefb6138eab84.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/devkit-activation.22024c3019b2f91b62bafe755f4aefb6138eab84.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [devkit-activation.22024c3019b2f91b62bafe755f4aefb6138eab84.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/devkit-activation.22024c3019b2f91b62bafe755f4aefb6138eab84.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='0751598ba50d69e1667b20ddc03f30d65ce080023822'></a> Source: [windows-apps-src\xbox-apps\devkit-deactivation.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/devkit-deactivation.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\devkit-deactivation.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/devkit-deactivation.md)
+* Handoff File: [devkit-deactivation.803081fa0e1b79fb529f2a31e9460932158677ef.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/devkit-deactivation.803081fa0e1b79fb529f2a31e9460932158677ef.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [devkit-deactivation.803081fa0e1b79fb529f2a31e9460932158677ef.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/devkit-deactivation.803081fa0e1b79fb529f2a31e9460932158677ef.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='d14691f0421c94bbb58e86dfb0dca5741beb14ca3824'></a> Source: [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/getting-started.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/getting-started.md)
+* Handoff File: [getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='ad714bfbb9b095e98c242d6203888f712c9bea203873'></a> Source: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/10df9956cd7d7d61a62d26a299242d17f900e5ad/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
+* Handoff File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='ca464c64c620a3b36086289b62150ffc0a6aef1b3875'></a> Source: [windows-apps-src\xbox-apps\multi-user-applications.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/multi-user-applications.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\multi-user-applications.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/multi-user-applications.md)
+* Handoff File: [multi-user-applications.97809b3b26d2830393fd92b4d9676f9963a2786c.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/multi-user-applications.97809b3b26d2830393fd92b4d9676f9963a2786c.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [multi-user-applications.97809b3b26d2830393fd92b4d9676f9963a2786c.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/multi-user-applications.97809b3b26d2830393fd92b4d9676f9963a2786c.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='6f38f5aabb6a409fab894bf7127ad4011162f7c63878'></a> Source: [windows-apps-src\xbox-apps\samples.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/samples.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\samples.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/samples.md)
+* Handoff File: [samples.056115dee4683cc17215f8c28c7e85077378007e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/samples.056115dee4683cc17215f8c28c7e85077378007e.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [samples.056115dee4683cc17215f8c28c7e85077378007e.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/samples.056115dee4683cc17215f8c28c7e85077378007e.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='68e330dbc17557447bef8ddec76f71442e47594d3876'></a> Source: [windows-apps-src\xbox-apps\samples-xaml-dev.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/samples-xaml-dev.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\samples-xaml-dev.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/samples-xaml-dev.md)
+* Handoff File: [samples-xaml-dev.2fc54a6cdb962bcd0775c02c293d8cefe012291d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/samples-xaml-dev.2fc54a6cdb962bcd0775c02c293d8cefe012291d.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [samples-xaml-dev.2fc54a6cdb962bcd0775c02c293d8cefe012291d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/samples-xaml-dev.2fc54a6cdb962bcd0775c02c293d8cefe012291d.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='b7c1817bfb375c42262bac8d8e3768e93b4c26353877'></a> Source: [windows-apps-src\xbox-apps\samples-xaml-media.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/samples-xaml-media.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\samples-xaml-media.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/samples-xaml-media.md)
+* Handoff File: [samples-xaml-media.dc79cf8379f13a1916181cb9dae07c5ba487720c.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/samples-xaml-media.dc79cf8379f13a1916181cb9dae07c5ba487720c.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [samples-xaml-media.dc79cf8379f13a1916181cb9dae07c5ba487720c.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/samples-xaml-media.dc79cf8379f13a1916181cb9dae07c5ba487720c.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
+* [Back to Top](#report-top)
+
+##### <a name='6b5ef763c41af65aecf02aaa550b84a3d524d25f3879'></a> Source: [windows-apps-src\xbox-apps\system-resource-allocation.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xbox-apps/system-resource-allocation.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\system-resource-allocation.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3ea60356b38977df36b7ce7c113af1fab87fc507/windows-apps-src/xbox-apps/system-resource-allocation.md)
+* Handoff File: [system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/00a0ba049bb79e8e26e362d449caf03dcb2e9d8b/ol-handback/Microsoft/windows-apps.fr-fr/master/xbox-apps/system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:17:27
 * [Back to Top](#report-top)
 
 
