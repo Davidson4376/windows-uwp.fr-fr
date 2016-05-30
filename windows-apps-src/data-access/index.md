@@ -1,11 +1,12 @@
 ---
+author: mcleblanc
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
 title: Accès aux données
-description: Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications de plateforme Windows universelle (UWP).
+description: Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications UWP.
 ---
 # Accès aux données
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications de plateforme Windows universelle (UWP).
 
@@ -18,6 +19,6 @@ SQLite est inclus dans le SDK UWP. Entity Framework 7 fonctionne avec SQLite d
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

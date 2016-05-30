@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: Entity Framework (EF) est un mappeur relationnel objet qui vous permet de travailler avec les données relationnelles en utilisant des objets spécifiques au domaine.
 title: Entity Framework 7 avec des applications SQLite pour C#
@@ -6,7 +7,7 @@ title: Entity Framework 7 avec des applications SQLite pour C#
 
 # Entity Framework 7 avec des applications SQLite pour C#
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Entity Framework (EF) est un mappeur relationel objet qui vous permet de travailler avec les données relationnelles en utilisant des objets spécifiques au domaine. Cet article explique comment utiliser Entity Framework 7 avec une base de données SQLite dans une application Windows universelle.
 
@@ -23,6 +24,6 @@ Pour le moment, EF prend uniquement en charge SQLite sur UWP. Vous trouverez une
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

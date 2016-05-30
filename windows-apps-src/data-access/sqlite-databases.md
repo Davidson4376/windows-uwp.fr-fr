@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
 title: Bases de données SQLite
 description: SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source.
@@ -34,7 +35,7 @@ Pour référencer le Kit de développement logiciel (SDK) SQLite, incluez l’en
 
 `#include <winsqlite/winsqlite3.h>`
 
-Configurer le projet pour créer un lien vers winsqlite3.lib. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur votre projet. Sélectionnez **Propriétés** &gt; **Éditeur de liens** &gt; **Entrée**, puis ajoutez winsqlite3.lib à **Dépendances supplémentaires**.
+Configurer le projet pour créer un lien vers winsqlite3.lib. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur votre projet. Sélectionnez **Propriétés**&gt;**Éditeur de liens**&gt;**Entrée**, puis ajoutez winsqlite3.lib à **Dépendances supplémentaires**.
 
 ### 2. Inclusion de SQLite dans le package d’application
 
@@ -89,6 +90,6 @@ Six interfaces permettent d’effectuer des opérations de base de données sur 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
