@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: Utilisez l’animation de repositionnement pour déplacer un ou des éléments à un autre endroit.
 title: Animations de repositionnement dans les applications UWP
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
@@ -9,7 +10,7 @@ template: detail.hbs
 # Animations de repositionnement
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Utilisez l’animation de repositionnement pour déplacer un ou des éléments à un autre endroit.
 
@@ -43,6 +44,6 @@ Utilisez l’animation de repositionnement pour déplacer un ou des éléments �
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

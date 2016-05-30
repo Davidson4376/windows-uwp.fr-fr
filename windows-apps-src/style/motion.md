@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles.
 title: Animations dans les applications UWP
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
@@ -10,7 +11,7 @@ template: detail.hbs
 
 Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles.
 
-## <span id="Benefits_of_animation"> </span> <span id="benefits_of_animation"> </span> <span id="BENEFITS_OF_ANIMATION"> </span>Avantages de l’animation
+## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>Avantages de l’animation
 
 
 Une animation ne consiste pas simplement à faire bouger des objets. L’animation est un outil qui permet de créer un écosystème physique dans lequel l’utilisateur peut évoluer et qu’il peut manipuler de façon tactile. La qualité de l’expérience dépend de la façon dont l’application répond à l’utilisateur et du type de personnalité communiqué par l’interface utilisateur.
@@ -43,7 +44,7 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
 
     Les animations peuvent permettre d’indiquer à l’utilisateur que son téléphone n’est pas figé et qu’il traite actuellement une opération, et elles peuvent exposer de manière passive de nouvelles informations susceptibles d’intéresser l’utilisateur.
 
-<h2>Dans cette section</h2>
+## Dans cette section
 <table>
 <thead>
 <tr class="header">
@@ -53,13 +54,13 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
 </thead>
 <tbody>
     <tr>
-        <td>[Add and delete](motion-list.md)
+        <td>[Ajouter et supprimer](motion-list.md)
         </td>
         <td>Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
         </td>
     </tr> 
     <tr>
-        <td>[Drag and drop](motion-dragdrop.md)
+        <td>[Glisser-déplacer](motion-dragdrop.md)
         </td>
         <td>Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre.
         </td>
@@ -71,25 +72,25 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
         </td>
     </tr>   
     <tr>
-        <td>[Fade](motion-fade.md)
+        <td>[Fondu](motion-fade.md)
         </td>
         <td>Utilisez les animations en fondu pour faire apparaître ou disparaître des éléments. Les deux animations en fondu les plus courantes sont l’apparition en fondu et la disparition en fondu.
         </td>
     </tr>   
     <tr>
-        <td>[Pointer](motion-pointer.md)
+        <td>[Pointeur](motion-pointer.md)
         </td>
         <td>Les animations de pointeur fournissent un retour visuel lorsqu’un utilisateur appuie sur un élément. L’animation de pointeur vers le bas réduit et incline légèrement l’élément sélectionné. Elle est lue lorsque l’utilisateur appuie pour la première fois sur un élément. L’animation de pointeur vers le haut, qui restaure l’élément à sa position d’origine, est lue quand l’utilisateur relâche le pointeur.
         </td>
     </tr>   
     <tr>
-        <td>[Pop-up animations](motion-popup-animations.md)
+        <td>[Animations contextuelles](motion-popup-animations.md)
         </td>
         <td>Utilisez les animations contextuelles pour afficher ou masquer l’interface utilisateur contextuelle de menus volants ou des éléments d’interface utilisateur contextuels personnalisés. Les éléments contextuels sont des conteneurs qui se superposent au contenu de l’application et qui disparaissent si l’utilisateur appuie ou clique en dehors de ces éléments contextuels.
         </td>
     </tr>     
     <tr>
-        <td>[Reposition](motion-reposition.md)
+        <td>[Repositionner](motion-reposition.md)
         </td>
         <td>Déplacez les éléments à un nouvel emplacement.
         </td>
@@ -109,6 +110,6 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

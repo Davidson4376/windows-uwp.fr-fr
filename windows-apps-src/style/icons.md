@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: Des icônes efficaces s’harmonisent avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent uniquement les informations nécessaires, le plus rapidement et simplement possible. 
 title: Icônes
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
@@ -82,7 +83,7 @@ Vous pouvez combiner, joindre, faire pivoter et refléter ces lignes lorsque vou
     </tr>  
 </table>
 
-### Exemples
+<p>En voici quelques exemples :</p>
 
 <table>
     <tr>
@@ -152,9 +153,7 @@ L’utilisation d’une couleur de badge ne doit être utilisée que pour commun
 
 <table>
 <tr><td>Vert : #128B44</td><td>Bleu : #2C71B9</td><td>Jaune : #FDC214</td></tr>
-<tr><td>Positif : effectué, 
-terminé </td><td>Neutre : aide, 
-notification </td><td>Mise en garde : alerte, avertissement </td></tr>
+<tr><td>Positif : effectué, terminé </td><td>Neutre : aide, notification </td><td>Mise en garde : alerte, avertissement </td></tr>
 <tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
 <td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
 </table>
@@ -172,6 +171,7 @@ Les badges doivent présenter une taille de 10 à 18 px sur une grille de 32 p
 
 * [Recommandations en matière de ressources de vignette et d’icône](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 
