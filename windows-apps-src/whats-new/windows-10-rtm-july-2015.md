@@ -1,12 +1,13 @@
 ---
-Description: Windows 10 et les nouveaux outils de développement proposent les outils, les fonctionnalités et les expériences pris en charge par la  nouvelle plateforme Windows universelle (UWP).
+author: QuinnRadich
+Description: Windows 10 et les nouveaux outils de développement proposent les outils, les fonctionnalités et les expériences pris en charge par la  nouvelle plateforme UWP.
 title: Nouveautés pour les développeurs dans Windows 10, version finale - Juillet 2015
 ---
 
-# Nouveautés pour les développeurs dans Windows 10, version finale : Juillet 2015
+# Nouveautés pour les développeurs dans Windows 10, version finale &#58; Juillet 2015
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Windows 10 et les nouveaux outils de développement proposent les outils, les fonctionnalités et les expériences pris en charge par la  nouvelle plateforme Windows universelle (UWP). Après avoir [installé les outils et le Kit de développement logiciel](https://dev.windows.com/downloads) sur Windows 10, vous êtes prêt à [créer une nouvelle application Windows universelle](https://msdn.microsoft.com/library/windows/apps/bg124288) ou à découvrir comment utiliser votre [code d’application existant sur Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
@@ -65,7 +66,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">SplitView</td>
-<td align="left">Le nouveau contrôle [<strong>SplitView</strong>](https://msdn.microsoft.com/library/windows/apps/dn864360) vous procure un moyen d’afficher et de masquer aisément du contenu temporaire. Il est généralement utilisé pour les scénarios de navigation de niveau supérieur de type « menu façon hamburger », dans lesquels le contenu de navigation est masqué, et apparaît au besoin suite à une action de l’utilisateur.</td>
+<td align="left">Le nouveau contrôle [<strong>SplitView</strong>](https://msdn.microsoft.com/library/windows/apps/dn864360) vous procure un moyen d’afficher et de masquer aisément du contenu temporaire. Il est généralement utilisé dans les scénarios de navigation de niveau supérieur comme le &quot;hamburger menu&quot;, dans lequel le contenu de navigation est masqué puis affiché si nécessaire en résultat d’une action de l’utilisateur.</td>
 </tr>
 <tr class="odd">
 <td align="left">RelativePanel</td>
@@ -73,7 +74,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">CalendarView</td>
-<td align="left">Le contrôle [<strong>CalendarView</strong>](https://msdn.microsoft.com/library/windows/apps/dn890052) facilite l’affichage et la sélection de date et de plages de dates à l’aide d’une vue personnalisable, par mois. <strong>CalendarView</strong> prend en charge les fonctions de dates minimales, maximales et grisées et limite ainsi la liste des dates pouvant être sélectionnées. Vous pouvez également définir des barres de densité personnalisées, à utiliser pour afficher le « remplissage » général du calendrier d’un jour donné.</td>
+<td align="left">Le contrôle [<strong>CalendarView</strong>](https://msdn.microsoft.com/library/windows/apps/dn890052) facilite l’affichage et la sélection de date et de plages de dates à l’aide d’une vue personnalisable, par mois. <strong>CalendarView</strong> prend en charge les fonctions de dates minimales, maximales et grisées et limite ainsi la liste des dates pouvant être sélectionnées. Vous pouvez également définir des barres de densités personnalisées pouvant être utilisées pour afficher &quot;l’exhaustivité&quot; générale de la planification d’un jour donné.</td>
 </tr>
 <tr class="odd">
 <td align="left">CalendarDatePicker</td>
@@ -90,12 +91,12 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Cartes</td>
-<td align="left"><p>La classe [<strong>MapControl</strong>](https://msdn.microsoft.com/library/windows/apps/dn637004) a été mise à jour pour fournir des images aériennes 3D et des vues au niveau de la rue. Ces nouvelles fonctionnalités et une autre fonctionnalité de mappage antérieure sont désormais disponibles pour les applications Windows universelles. Ajouter du mappage à votre application à l’aide des API suivantes :</p>
+<td align="left"><p>La classe [<strong>MapControl</strong>](https://msdn.microsoft.com/library/windows/apps/dn637004) a été mise à jour pour fournir des images aériennes 3D et des vues au niveau de la rue. Ces nouvelles fonctionnalités et une autre fonctionnalité de mappage antérieure sont désormais disponibles pour les applications Windows universelles. Ajouter du mappage à votre application à l’aide des API suivantes :</p>
 <ul>
-<li>Espace de noms [<strong>Windows.UI.Xaml.Controls.Maps</strong>](https://msdn.microsoft.com/library/windows/apps/dn610751) : affiche les cartes.</li>
-<li>Espace de noms [<strong>Windows.Services.Maps</strong>](https://msdn.microsoft.com/library/windows/apps/dn636979) : recherche les emplacements et les itinéraires.</li>
+<li>Espace de noms [<strong>Windows.UI.Xaml.Controls.Maps</strong>](https://msdn.microsoft.com/library/windows/apps/dn610751) : affiche les cartes.</li>
+<li>Espace de noms [<strong>Windows.Services.Maps</strong>](https://msdn.microsoft.com/library/windows/apps/dn636979) : recherche les emplacements et les itinéraires.</li>
 </ul>
-<p>Pour commencer à utiliser ces API dans une application Windows universelle dès aujourd’hui, solliciter une clé dans le [Bing Maps Developer Center](https://www.bingmapsportal.com/). Pour plus d’informations, voir [How to authenticate a Maps app](https://msdn.microsoft.com/library/windows/apps/xaml/dn741528). Autre nouveauté dans Windows 10, les utilisateurs de PC et de téléphones peuvent télécharger des cartes hors connexion à partir de l’application Paramètres. Lorsqu’elles sont disponibles, les cartes hors connexion sont utilisées par l’élément[<strong>MapControl</strong>](https://msdn.microsoft.com/library/windows/apps/dn637004), qui prend en charge l’affichage des cartes en cas d’indisponibilité d’accès Internet.</p></td>
+<p>Pour commencer à utiliser ces API dans une application Windows universelle dès aujourd’hui, demandez une clé auprès du [Centre de développement de Bing Cartes](https://www.bingmapsportal.com/). Pour en savoir plus, voir [Comment authentifier une application Cartes](https://msdn.microsoft.com/library/windows/apps/xaml/dn741528). Autre nouveauté dans Windows 10, les utilisateurs de PC et de téléphones peuvent télécharger des cartes hors connexion à partir de l’application Paramètres. Lorsqu’elles sont disponibles, les cartes hors connexion sont utilisées par l’élément[<strong>MapControl</strong>](https://msdn.microsoft.com/library/windows/apps/dn637004), qui prend en charge l’affichage des cartes en cas d’indisponibilité d’accès Internet.</p></td>
 </tr>
 <tr class="odd">
 <td align="left">Mappage de bouton d'entrée</td>
@@ -103,7 +104,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Entrée manuscrite</td>
-<td align="left"><p>Il est désormais plus simple d’utiliser la fonctionnalité robuste d’entrée manuscrite dans les applications Windows Runtime à l’aide de C++, C#, ou Visual Basic, grâce au contrôle [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) et aux classes sous-jacentes [<strong>InkPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn922011).</p>
+<td align="left"><p>Il est désormais plus simple d’utiliser la fonctionnalité robuste d’entrée manuscrite dans les applications Windows Runtime à l’aide de C++, C#, ou Visual Basic, grâce au contrôle [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) et aux classes sous-jacentes [<strong>InkPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn922011).</p>
 <p>Le contrôle [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) définit une zone de superposition dédiée à la rédaction et au rendu des entrées manuscrites. La fonctionnalité associée à ce contrôle (entrée, traitement et rendu) provient des classes [<strong>InkPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn922011), [<strong>InkStroke</strong>](https://msdn.microsoft.com/library/windows/apps/br208485), [<strong>InkRecognizer</strong>](https://msdn.microsoft.com/library/windows/apps/br208478) et [<strong>InkSynchronizer</strong>](https://msdn.microsoft.com/library/windows/apps/dn903979).</p>
 <p></p>
 <div class="alert">
@@ -129,16 +130,16 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 <tbody>
 <tr class="odd">
 <td align="left">Mises à jour CommandBar et AppBar</td>
-<td align="left"><p>Les contrôles [<strong>CommandBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn279427) et [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) ont été mis à jour pour présenter une API, un comportement et une expérience utilisateur uniformes sur les applications UWP, sur toutes les gammes d’appareils.</p>
-<p>Le contrôle [<strong>CommandBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn279427) pour les applications Windows universelles a été amélioré pour présenter un sur-ensemble de fonctionnalité [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) et une plus grande flexibilité de son utilisation dans votre application. Vous devez utiliser <strong>CommandBar</strong> pour l’ensemble des nouvelles applications Windows universelles sur Windows 10. Dans un contrôle <strong>CommandBar</strong>, dans Windows 8.1, vous pourriez utiliser uniquement les contrôles ayant implémenté l’élément [<strong>ICommandBarElement</strong>](https://msdn.microsoft.com/library/windows/apps/dn251969), comme [<strong>AppBarButton</strong>](https://msdn.microsoft.com/library/windows/apps/dn279244). Dans les applications Windows universelle, vous pouvez désormais placer du contenu personnalisé dans le contrôle <strong>CommandBar</strong>, en plus des éléments <strong>AppBarButton</strong>s.</p>
-<p>Le contrôle [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) a été mis à jour pour faciliter le déplacement de vos applications Windows 8.1 utilisant <strong>AppBar</strong> vers la plateforme Windows universelle. Le contrôle <strong>AppBar</strong> a été conçu pour être utilisé avec des applications en plein écran, et être sollicité à l’aide de mouvements latéraux. Les mises à jour du contrôle sont relatives aux problèmes associés aux applications fenêtrées et au manque de mouvements latéraux dans Windows 10.</p>
-<p>Le contrôle masqué [<strong>AppBar.ClosedDisplayMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn633872), auparavant dédié aux appareils Windows Phone, est désormais pris en charge sur l’ensemble des gammes d’appareils. Dès lors, vous pouvez choisir différents niveaux d’indication pour les commandes. Par défaut, le contrôle [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) procure une indication minimale afin de garantir la cohérence lors des mises à niveau de vos applications Windows 8.1 vers les applications Windows universelles, dans les situations où les mouvements latéraux ne sont plus pris en charge sur la plateforme.</p>
-<p><strong>Nouvelle API</strong> [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) <strong> :</strong>[<strong>Closing</strong>](https://msdn.microsoft.com/library/windows/apps/dn996483), [<strong>OnClosing</strong>](https://msdn.microsoft.com/library/windows/apps/dn996484), [<strong>Opening</strong>](https://msdn.microsoft.com/library/windows/apps/dn996486), [<strong>OnOpening</strong>](https://msdn.microsoft.com/library/windows/apps/dn996485), [<strong>TemplateSettings</strong>](https://msdn.microsoft.com/library/windows/apps/dn996487).</p>
-<p><strong>Nouvelle API</strong> [<strong>CommandBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn279427) <strong> :</strong>[<strong>CommandBarOverflowPresenterStyle</strong>](https://msdn.microsoft.com/library/windows/apps/dn975227) et [<strong>CommandBarOverflowPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn975225).</p></td>
+<td align="left"><p>Les contrôles [<strong>CommandBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn279427) et [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) ont été mis à jour pour présenter une API, un comportement et une expérience utilisateur uniformes sur les applications UWP, sur toutes les gammes d’appareils.</p>
+<p>Le contrôle [<strong>CommandBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn279427) pour les applications Windows universelles a été amélioré pour présenter un sur-ensemble de fonctionnalité [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) et une plus grande flexibilité de son utilisation dans votre application. Vous devez utiliser <strong>CommandBar</strong> pour l’ensemble des nouvelles applications Windows universelles sur Windows 10. Dans un contrôle <strong>CommandBar</strong>, dans Windows 8.1, vous pourriez utiliser uniquement les contrôles ayant implémenté l’élément [<strong>ICommandBarElement</strong>](https://msdn.microsoft.com/library/windows/apps/dn251969), comme [<strong>AppBarButton</strong>](https://msdn.microsoft.com/library/windows/apps/dn279244). Dans les applications Windows universelle, vous pouvez désormais placer du contenu personnalisé dans le contrôle <strong>CommandBar</strong>, en plus des éléments <strong>AppBarButton</strong>s.</p>
+<p>Le contrôle [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) a été mis à jour pour faciliter le déplacement de vos applications Windows 8.1 utilisant <strong>AppBar</strong> vers la plateforme Windows universelle. <strong>AppBar</strong> a été conçu pour être utilisé avec des applications en plein écran, et être sollicité à l’aide de mouvements latéraux. Les mises à jour du contrôle sont relatives aux problèmes associés aux applications fenêtrées et au manque de mouvements latéraux dans Windows 10.</p>
+<p>Le contrôle masqué [<strong>AppBar.ClosedDisplayMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn633872), auparavant dédié aux appareils Windows Phone, est désormais pris en charge sur l’ensemble des gammes d’appareils. Dès lors, vous pouvez choisir différents niveaux d’indication pour les commandes. Par défaut, le contrôle [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) procure une indication minimale afin de garantir la cohérence lors des mises à niveau de vos applications Windows 8.1 vers les applications Windows universelles, dans les situations où les mouvements latéraux ne sont plus pris en charge sur la plateforme.</p>
+<p><strong>Nouvelle API</strong> [<strong>AppBar</strong>](https://msdn.microsoft.com/library/windows/apps/hh701927) <strong> :</strong>[<strong>Closing</strong>](https://msdn.microsoft.com/library/windows/apps/dn996483), [<strong>OnClosing</strong>](https://msdn.microsoft.com/library/windows/apps/dn996484), [<strong>Opening</strong>](https://msdn.microsoft.com/library/windows/apps/dn996486), [<strong>OnOpening</strong>](https://msdn.microsoft.com/library/windows/apps/dn996485), [<strong>TemplateSettings</strong>](https://msdn.microsoft.com/library/windows/apps/dn996487).</p>
+<p><strong>Nouvelle API</strong> [<strong>CommandBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn279427) <strong> :</strong>[<strong>CommandBarOverflowPresenterStyle</strong>](https://msdn.microsoft.com/library/windows/apps/dn975227) et [<strong>CommandBarOverflowPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn975225).</p></td>
 </tr>
 <tr class="even">
 <td align="left">Mises à jour GridView</td>
-<td align="left">Avant Windows 10, l’orientation de disposition [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/br242705) par défaut était horizontale sur Windows et verticale sur Windows Phone. Dans les applications UWP, <strong>GridView</strong> utilise une disposition verticale par défaut sur l’ensemble des gammes d’appareils, afin de vous garantir une expérience par défaut cohérente.</td>
+<td align="left">Avant Windows 10, l’orientation de disposition [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/br242705) par défaut était horizontale sur Windows et verticale sur Windows Phone. Dans les applications UWP, <strong>GridView</strong> utilise une disposition verticale par défaut sur l’ensemble des gammes d’appareils, afin de vous garantir une expérience par défaut cohérente.</td>
 </tr>
 <tr class="odd">
 <td align="left">Propriété AreStickyGroupHeadersEnabled</td>
@@ -159,7 +160,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 <tr class="odd">
 <td align="left">Virtualisation du défilement des listes</td>
 <td align="left"><p>Les contrôles XAML [<strong>ListView</strong>](https://msdn.microsoft.com/library/windows/apps/br242878) et [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/br242705) présentent un nouvel événement [<strong>ListViewBase.ChoosingItemContainer</strong>](https://msdn.microsoft.com/library/windows/apps/dn903989) qui améliore les performances du contrôle en cas de modification dans la collecte de données.</p>
-<p>Au lieu de réinitialiser entièrement la liste et d’activer une nouvelle lecture de l’animation d’entrée, le système gère désormais les éléments actuellement affichés, avec le focus et l’état de sélection. Les nouveaux éléments et les éléments supprimés de la fenêtre d’affichage entrent et sortent sans heurt de l’animation. Après une modification dans la collecte de données dans laquelle les conteneurs ne sont pas détruits, une application peut rapidement mettre des « anciens » éléments en correspondance avec leur précédent conteneur et passer le traitement approfondi des méthodes de remplacement de cycle de vie de conteneur. Seuls les « nouveaux » éléments sont traités et associés à des conteneurs recyclés ou nouveaux.</p></td>
+<p>Au lieu de réinitialiser entièrement la liste et d’activer une nouvelle lecture de l’animation d’entrée, le système gère désormais les éléments actuellement affichés, avec le focus et l’état de sélection. Les nouveaux éléments et les éléments supprimés de la fenêtre d’affichage entrent et sortent sans heurt de l’animation. Lorsqu’une modification est apportée à la collecte de données dans laquelle des conteneurs ne sont pas détruits, une application peut rapidement faire correspondre des &quot;anciens&quot; éléments à leur conteneur précédent et ignorer le traitement plus approfondi des méthodes de remplacement de cycle de vie de conteneur. Seuls les &quot;nouveaux&quot; éléments sont traités et associés aux conteneurs recyclés ou nouveaux.</p></td>
 </tr>
 <tr class="even">
 <td align="left">Méthode SelectRange et propriété SelectedRanges</td>
@@ -167,17 +168,17 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="odd">
 <td align="left">Nouvelles API ListViewItemPresenter</td>
-<td align="left">[<strong>ListView</strong>](https://msdn.microsoft.com/library/windows/apps/br242878) et [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/br242705) utilisent des présentateurs d’éléments pour fournir les éléments visuels par défaut pour la sélection et le focus. Dans les applications UWP, [<strong>ListViewItemPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn298500) et [<strong>GridViewItemPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn279298) présentent de nouvelles propriétés permettant de personnaliser les effets visuels des éléments de listes. Les nouvelles propriétés sont [<strong>CheckBoxBrush</strong>](https://msdn.microsoft.com/library/windows/apps/dn913905), [<strong>CheckMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn913923), [<strong>FocusSecondaryBorderBrush</strong>](https://msdn.microsoft.com/library/windows/apps/dn898370), [<strong>PointerOverForeground</strong>](https://msdn.microsoft.com/library/windows/apps/dn898372), [<strong>PressedBackground</strong>](https://msdn.microsoft.com/library/windows/apps/dn913931) et [<strong>SelectedPressedBackground</strong>](https://msdn.microsoft.com/library/windows/apps/dn913937).</td>
+<td align="left">[<strong>ListView</strong>](https://msdn.microsoft.com/library/windows/apps/br242878) et [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/br242705) utilisent des présentateurs d’éléments pour fournir les éléments visuels par défaut pour la sélection et le focus. Dans les applications UWP, [<strong>ListViewItemPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn298500) et [<strong>GridViewItemPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn279298) présentent de nouvelles propriétés permettant de personnaliser les effets visuels des éléments de listes. Les nouvelles propriétés sont [<strong>CheckBoxBrush</strong>](https://msdn.microsoft.com/library/windows/apps/dn913905), [<strong>CheckMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn913923), [<strong>FocusSecondaryBorderBrush</strong>](https://msdn.microsoft.com/library/windows/apps/dn898370), [<strong>PointerOverForeground</strong>](https://msdn.microsoft.com/library/windows/apps/dn898372), [<strong>PressedBackground</strong>](https://msdn.microsoft.com/library/windows/apps/dn913931) et [<strong>SelectedPressedBackground</strong>](https://msdn.microsoft.com/library/windows/apps/dn913937).</td>
 </tr>
 <tr class="even">
 <td align="left">Mises à jour SemanticZoom</td>
-<td align="left"><p>Le contrôle [<strong>SemanticZoom</strong>](https://msdn.microsoft.com/library/windows/apps/hh702601) affiche désormais un comportement uniforme pour les applications UWP, sur l’ensemble des familles d’appareils.</p>
+<td align="left"><p>Le contrôle [<strong>SemanticZoom</strong>](https://msdn.microsoft.com/library/windows/apps/hh702601) affiche désormais un comportement uniforme pour les applications UWP, sur l’ensemble des familles d’appareils.</p>
 <p>L’action par défaut pour le basculement entre les zooms avant et arrière consiste à appuyer sur un en-tête de groupe dans le zoom avant. Il s’agit du comportement identifié sur Windows Phone 8.1, différent de celui respecté sur Windows 8.1. En effet, sur cette version, le basculement s’effectue à l’aide d’un pincement. Pour modifier l’affichage à l’aide de la fonctionnalité de zoom par pincement, définissez l’élément [<strong>ScrollViewer.ZoomMode</strong>](https://msdn.microsoft.com/library/windows/apps/br209601)=&quot;Enabled&quot; sur le contrôle interne de [<strong>SemanticZoom</strong>](https://msdn.microsoft.com/library/windows/apps/hh702601), [<strong>ScrollViewer</strong>](https://msdn.microsoft.com/library/windows/apps/br209527).</p>
 <p>Sur les applications Windows universelles, le zoom arrière remplace le zoom avant. Il présente la même taille que la vue remplacée. S’il s’agit du comportement rencontré sur Windows 8.1, il est différent de celui de Windows Phone 8.1, où le zoom arrière prenait toute la largeur de l’écran et apparaissait par-dessus l’ensemble des autres contenus.</p></td>
 </tr>
 <tr class="odd">
 <td align="left">Mises à jour DatePicker et TimePicker</td>
-<td align="left">Les contrôles [<strong>DatePicker</strong>](https://msdn.microsoft.com/library/windows/apps/dn298584) et [<strong>TimePicker</strong>](https://msdn.microsoft.com/library/windows/apps/dn299280) présentent désormais une implémentation cohérente pour les applications Windows universelles, sur l’ensemble des familles d’appareils. Ils ont également une nouvelle apparence pour Windows 10. La portion contextuelle utilise désormais les contrôles [<strong>DatePickerFlyout</strong>](https://msdn.microsoft.com/library/windows/apps/dn625013) et [<strong>TimePickerFlyout</strong>](https://msdn.microsoft.com/library/windows/apps/dn608313) sur l’ensemble des appareils. Si ce comportement est identique à celui rencontré sur Windows Phone 8.1, il est différent de celui de Windows 8.1, qui tirait partie des contrôles [<strong>ComboBox</strong>](https://msdn.microsoft.com/library/windows/apps/br209348). Les menus volants vous permettent de créer plus facilement des sélecteurs personnalisés de date et d’heure.</td>
+<td align="left">Les contrôles [<strong>DatePicker</strong>](https://msdn.microsoft.com/library/windows/apps/dn298584) et [<strong>TimePicker</strong>](https://msdn.microsoft.com/library/windows/apps/dn299280) présentent désormais une implémentation cohérente pour les applications Windows universelles, sur l’ensemble des familles d’appareils. Ils ont également une nouvelle apparence pour Windows 10. La portion contextuelle utilise désormais les contrôles [<strong>DatePickerFlyout</strong>](https://msdn.microsoft.com/library/windows/apps/dn625013) et [<strong>TimePickerFlyout</strong>](https://msdn.microsoft.com/library/windows/apps/dn608313) sur l’ensemble des appareils. Si ce comportement est identique à celui rencontré sur Windows Phone 8.1, il est différent de celui de Windows 8.1, qui tirait partie des contrôles [<strong>ComboBox</strong>](https://msdn.microsoft.com/library/windows/apps/br209348). Les menus volants vous permettent de créer plus facilement des sélecteurs personnalisés de date et d’heure.</td>
 </tr>
 <tr class="even">
 <td align="left">Nouvelles API ScrollViewer</td>
@@ -189,11 +190,11 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Nouvelles propriétés Border pour ContentPresenter, Grid et StackPanel</td>
-<td align="left">Les contrôles de conteneurs communs présentent de nouvelles propriétés de bordure. Grâce à ces dernières, vous pouvez tracer une bordure, sans ajouter aucun élément Border supplémentaire dans votre code XAML. [<strong>ContentPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/br209378), [<strong>Grid</strong>](https://msdn.microsoft.com/library/windows/apps/br242704) et [<strong>StackPanel</strong>](https://msdn.microsoft.com/library/windows/apps/br209635) présentent ces nouvelles propriétés : [<strong>BorderBrush</strong>](https://msdn.microsoft.com/library/windows/apps/dn960179), [<strong>BorderThickness</strong>](https://msdn.microsoft.com/library/windows/apps/dn960181), [<strong>CornerRadius</strong>](https://msdn.microsoft.com/library/windows/apps/dn960183) et [<strong>Padding</strong>](https://msdn.microsoft.com/library/windows/apps/dn960187).</td>
+<td align="left">Les contrôles de conteneurs communs présentent de nouvelles propriétés de bordure. Grâce à ces dernières, vous pouvez tracer une bordure, sans ajouter aucun élément Border supplémentaire dans votre code XAML. [<strong>ContentPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/br209378), [<strong>Grid</strong>](https://msdn.microsoft.com/library/windows/apps/br242704) et [<strong>StackPanel</strong>](https://msdn.microsoft.com/library/windows/apps/br209635) présentent ces nouvelles propriétés : [<strong>BorderBrush</strong>](https://msdn.microsoft.com/library/windows/apps/dn960179), [<strong>BorderThickness</strong>](https://msdn.microsoft.com/library/windows/apps/dn960181), [<strong>CornerRadius</strong>](https://msdn.microsoft.com/library/windows/apps/dn960183) et [<strong>Padding</strong>](https://msdn.microsoft.com/library/windows/apps/dn960187).</td>
 </tr>
 <tr class="odd">
 <td align="left">Nouvelles API textuelles sur ContentPresenter</td>
-<td align="left">[<strong>ContentPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/br209378) possède de nouvelles API qui vous octroient un contrôle supérieur sur l’affichage du texte : [<strong>LineHeight</strong>](https://msdn.microsoft.com/library/windows/apps/dn903982), [<strong>LineStackingStrategy</strong>](https://msdn.microsoft.com/library/windows/apps/dn831933), [<strong>MaxLines</strong>](https://msdn.microsoft.com/library/windows/apps/dn831935) et [<strong>TextWrapping</strong>](https://msdn.microsoft.com/library/windows/apps/dn831937).</td>
+<td align="left">[<strong>ContentPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/br209378) possède de nouvelles API qui vous octroient un contrôle supérieur sur l’affichage du texte : [<strong>LineHeight</strong>](https://msdn.microsoft.com/library/windows/apps/dn903982), [<strong>LineStackingStrategy</strong>](https://msdn.microsoft.com/library/windows/apps/dn831933), [<strong>MaxLines</strong>](https://msdn.microsoft.com/library/windows/apps/dn831935) et [<strong>TextWrapping</strong>](https://msdn.microsoft.com/library/windows/apps/dn831937).</td>
 </tr>
 <tr class="even">
 <td align="left">Visuels de focus système</td>
@@ -212,19 +213,19 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Control.IsTextScaleFactorEnabled</td>
-<td align="left">La propriété [<strong>IsTextScaleFactorEnabled</strong>](https://msdn.microsoft.com/library/windows/apps/dn624997) disponible auparavant sur Windows Phone 8.1 est désormais accessible sur les applications Windows universelles, sur l’ensemble des familles d’appareils.</td>
+<td align="left">La propriété [<strong>IsTextScaleFactorEnabled</strong>](https://msdn.microsoft.com/library/windows/apps/dn624997) disponible auparavant sur Windows Phone 8.1 est désormais accessible sur les applications Windows universelles, sur l’ensemble des familles d’appareils.</td>
 </tr>
 <tr class="odd">
 <td align="left">AutoSuggestBox</td>
-<td align="left">Le contrôle [<strong>AutoSuggestBox</strong>](https://msdn.microsoft.com/library/windows/apps/dn633874) de Windows Phone 8.1 est désormais accessible pour les applications Windows universelles sur l’ensemble des familles d’appareils. Il est recommandé de l’utiliser en lieu et place de [<strong>SearchBox</strong>](https://msdn.microsoft.com/library/windows/apps/dn252771). <strong>AutoSuggestBox</strong> fournit des suggestions, relatives notamment aux types d’utilisateur. Ce contrôle est parfaitement compatible avec différents types d’entrées, comme la fonction tactile, le clavier et des éditeurs de méthode d’entrée. Il présente par ailleurs quelques nouveaux membres qui optimisent la fonctionnalité de la zone de recherche : la propriété [<strong>QueryIcon</strong>](https://msdn.microsoft.com/library/windows/apps/dn996494) et l’événement [<strong>QuerySubmitted</strong>](https://msdn.microsoft.com/library/windows/apps/dn996497).</td>
+<td align="left">Le contrôle [<strong>AutoSuggestBox</strong>](https://msdn.microsoft.com/library/windows/apps/dn633874) de Windows Phone 8.1 est désormais accessible pour les applications Windows universelles sur l’ensemble des familles d’appareils. Il est recommandé de l’utiliser en lieu et place de [<strong>SearchBox</strong>](https://msdn.microsoft.com/library/windows/apps/dn252771). <strong>AutoSuggestBox</strong> fournit des suggestions, relatives notamment aux types d’utilisateur. Ce contrôle est parfaitement compatible avec différents types d’entrées, comme la fonction tactile, le clavier et des éditeurs de méthode d’entrée. Il présente par ailleurs quelques nouveaux membres qui optimisent la fonctionnalité de la zone de recherche : la propriété [<strong>QueryIcon</strong>](https://msdn.microsoft.com/library/windows/apps/dn996494) et l’événement [<strong>QuerySubmitted</strong>](https://msdn.microsoft.com/library/windows/apps/dn996497).</td>
 </tr>
 <tr class="even">
 <td align="left">ContentDialog</td>
-<td align="left">Le contrôle [<strong>ContentDialog</strong>](https://msdn.microsoft.com/library/windows/apps/dn633972) de Windows Phone 8.1 est désormais disponible pour les applications Windows universelles, sur toutes les familles d’appareils. <strong>ContentDialog</strong> vous permet d’afficher une boîte de dialogue modale personnalisable qui fonctionne parfaitement sur l’ensemble des familles d’appareils.</td>
+<td align="left">Le contrôle [<strong>ContentDialog</strong>](https://msdn.microsoft.com/library/windows/apps/dn633972) de Windows Phone 8.1 est désormais disponible pour les applications Windows universelles, sur toutes les familles d’appareils. <strong>ContentDialog</strong> vous permet d’afficher une boîte de dialogue modale personnalisable qui fonctionne parfaitement sur l’ensemble des familles d’appareils.</td>
 </tr>
 <tr class="odd">
 <td align="left">Pivot</td>
-<td align="left">Le contrôle [<strong>Pivot</strong>](https://msdn.microsoft.com/library/windows/apps/dn608241) de Windows 8.1 est désormais disponible pour l’ensemble des applications Windows universelles, sur l’ensemble des familles d’appareils. Vous pouvez désormais utiliser le même contrôle <strong>Pivot</strong> pour vos applications exécutées sur les appareils mobiles et de bureau. <strong>Pivot</strong> offre un comportement adaptatif, en fonction de la taille de l’écran et du type d’entrée. Vous pouvez styliser un contrôle <strong>Pivot</strong> pour offrir une configuration à onglets, avec différentes vues des informations sur chaque élément pivot.</td>
+<td align="left">Le contrôle [<strong>Pivot</strong>](https://msdn.microsoft.com/library/windows/apps/dn608241) de Windows 8.1 est désormais disponible pour l’ensemble des applications Windows universelles, sur l’ensemble des familles d’appareils. Vous pouvez désormais utiliser le même contrôle <strong>Pivot</strong> pour vos applications exécutées sur les appareils mobiles et de bureau. <strong>Pivot</strong> offre un comportement adaptatif, en fonction de la taille de l’écran et du type d’entrée. Vous pouvez styliser un contrôle <strong>Pivot</strong> pour offrir une configuration à onglets, avec différentes vues des informations sur chaque élément pivot.</td>
 </tr>
 </tbody>
 </table>
@@ -255,7 +256,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Événements de composition de texte</td>
-<td align="left">[<strong>TextBox</strong>](https://msdn.microsoft.com/library/windows/apps/br209683) et [<strong>RichEditBox</strong>](https://msdn.microsoft.com/library/windows/apps/br227548) présentent de nouveaux événements conçus pour prévenir votre application de la composition de contenu textuel à l’aide de l’Éditeur de méthode d’entrée : [<strong>TextCompositionStarted</strong>](https://msdn.microsoft.com/library/windows/apps/dn891458), [<strong>TextCompositionEnded</strong>](https://msdn.microsoft.com/library/windows/apps/dn891457) et [<strong>TextCompositionChanged</strong>](https://msdn.microsoft.com/library/windows/apps/dn891456). Vous pouvez gérer ces événements afin de coordonner votre code d’application avec le processus de composition textuelle de l’Éditeur de méthode d'entrée. Par exemple, vous pouvez implémenter une fonctionnalité de saisie automatique inline pour les langues d’Asie orientale.</td>
+<td align="left">[<strong>TextBox</strong>](https://msdn.microsoft.com/library/windows/apps/br209683) et [<strong>RichEditBox</strong>](https://msdn.microsoft.com/library/windows/apps/br227548) présentent de nouveaux événements conçus pour prévenir votre application de la composition de contenu textuel à l’aide de l’Éditeur de méthode d’entrée : [<strong>TextCompositionStarted</strong>](https://msdn.microsoft.com/library/windows/apps/dn891458), [<strong>TextCompositionEnded</strong>](https://msdn.microsoft.com/library/windows/apps/dn891457) et [<strong>TextCompositionChanged</strong>](https://msdn.microsoft.com/library/windows/apps/dn891456). Vous pouvez gérer ces événements afin de coordonner votre code d’application avec le processus de composition textuelle de l’Éditeur de méthode d'entrée. Par exemple, vous pouvez implémenter une fonctionnalité de saisie automatique inline pour les langues d’Asie orientale.</td>
 </tr>
 <tr class="odd">
 <td align="left">Gestion améliorée du texte bidirectionnel</td>
@@ -285,7 +286,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 <td align="left">Cortana</td>
 <td align="left"><p>Complétez la fonctionnalité de base de <strong>Cortana</strong> avec des commandes vocales qui lancent et exécutent une action unique dans une application externe.</p>
 <p>L’intégration des fonctionnalités de base de votre application et la fourniture d’un point d’entrée central pour que l’utilisateur accomplisse la plupart des tâches sans ouvrir directement votre application permet à <strong>Cortana</strong> de devenir un intermédiaire entre votre application et l’utilisateur. Dans de nombreux cas, cela permet à l’utilisateur de gagner beaucoup de temps et d’énergie.</p>
-<p>Apprenez à [integrate your app into the Cortana canvas](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230). Si vous êtes à court d’idées, vous pouvez vous référer aux recommandations de conception et en matière d’expérience utilisateur spécifiques à <strong>Cortana</strong> dans [Design basics for Universal Windows apps](https://dev.windows.com/design/design-basics).</p></td>
+<p>Découvrez comment [intégrer votre application au canevas Cortana](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230). Si vous cherchez des idées, consultez les recommandations en matière de conception et d’expérience utilisateur propres à <strong>Cortana</strong> dans les [Notions de base pour la conception d’applications Windows universelles](https://dev.windows.com/design/design-basics).</p></td>
 </tr>
 <tr class="even">
 <td align="left">Explorateur de fichiers</td>
@@ -299,12 +300,12 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 <td align="left">Paramètres</td>
 <td align="left"><p>Affichez des pages intégrées de paramètres en appliquant le protocole ms-settings avec la méthode [<strong>LaunchUriAsync</strong>](https://msdn.microsoft.com/library/windows/apps/hh701476). Par exemple, le code suivant affiche la page des paramètres Wi-Fi.</p>
 <p><code>bool result = await Launcher.LaunchUriAsync(new Uri(&quot;ms-settings://network/wifi&quot;));</code></p>
-<p>Pour obtenir une liste des pages de paramètres pouvant être affichées, voir [How to display built-in settings pages by using the ms-settings protocol](https://msdn.microsoft.com/library/windows/apps/jj207014.aspx).</p></td>
+<p>Pour obtenir la liste des pages de paramètres que vous pouvez afficher, voir [Comment afficher les pages de paramètres intégrés à l’aide du protocole ms-settings](https://msdn.microsoft.com/library/windows/apps/jj207014.aspx).</p></td>
 </tr>
 <tr class="odd">
 <td align="left">Communication entre les applications</td>
-<td align="left"><p>Les nouvelles API [app-to-app communication](https://msdn.microsoft.com/library/windows/apps/xaml/dn997827) de Windows 10 permettent aux applications Windows (ainsi qu’aux applications web Windows) de se lancer les unes les autres et d’échanger des données et des fichiers.</p>
-<p>Grâce à ces nouvelles API, les tâches complexes qui, auparavant, auraient obligé l’utilisateur à lancer plusieurs applications peuvent désormais être gérées de manière transparente. Ainsi, votre application peut démarrer une application de réseau social pour choisir un contact, ou une application de validation pour effectuer un processus de paiement.</p></td>
+<td align="left"><p>Dans Windows 10, les nouvelles API de [communication entre les applications](https://msdn.microsoft.com/library/windows/apps/xaml/dn997827) permettent aux applications Windows (ainsi qu’aux applications Web Windows) de se lancer les unes les autres et d’échanger des données et des fichiers.</p>
+<p>Grâce à ces nouvelles API, les tâches complexes qui, auparavant, auraient obligé l’utilisateur à lancer plusieurs applications, peuvent désormais être gérées de manière transparente. Ainsi, votre application peut démarrer une application de réseau social pour choisir un contact, ou une application de validation pour effectuer un processus de paiement.</p></td>
 </tr>
 <tr class="even">
 <td align="left">Services d’application</td>
@@ -312,15 +313,15 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="odd">
 <td align="left">Manifeste du package de l’application</td>
-<td align="left"><p>Les mises à jour de la référence [package manifest schema](https://msdn.microsoft.com/library/windows/apps/br211474) pour Windows 10 incluent les ajouts, les suppressions et les modifications d’éléments.</p>
-<p>Pour plus d’informations de référence sur l’ensemble des éléments, attributs et types du schéma, voir [Element Hierarchy](https://msdn.microsoft.com/library/windows/apps/dn934819).</p></td>
+<td align="left"><p>Dans les mises à jour apportées à la référence de [schéma de manifeste de package](https://msdn.microsoft.com/library/windows/apps/br211474) de Windows 10, certains éléments ont été ajoutés, supprimés et modifiés.</p>
+<p>Pour consulter des informations de référence sur l’ensemble des éléments, attributs et types du schéma, voir [Hiérarchie d’éléments](https://msdn.microsoft.com/library/windows/apps/dn934819).</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Appareils
+## Devices
 
 
 <table>
@@ -333,17 +334,17 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 <td align="left">Microsoft Surface Hub</td>
 <td align="left"><p>Le Microsoft Surface Hub est un puissant appareil de collaboration en équipe et une plateforme à grand écran pour les applications Windows universelles s’exécutant en mode natif à partir de Surface Hub ou de votre appareil connecté.</p>
 <p>Développez vos propres applications en fonction de votre activité, et valorisez le grand écran, les fonctionnalités de saisie tactile et manuscrite tout en profitant du nombre important de matériel intégré, comme les appareils photo et les capteurs.</p>
-<p>Pour bénéficier de recommandations de conception et sur l’expérience utilisateur relatives à Surface Hub, voir [Design basics for Universal Windows apps](https://dev.windows.com/design/design-basics). Ces documents fournissent des techniques de conception réactives pour les applications Windows universelles.</p>
+<p>Consultez les recommandations en matière de conception et d’expérience utilisateur propres au hub Surface dans les [Notions de base pour la conception d’applications Windows universelles](https://dev.windows.com/design/design-basics). Ces documents fournissent des techniques de conception réactives pour les applications Windows universelles.</p>
 <p>Pour plus de détails sur la prise en charge des applications partagées collectives, voir [<strong>SharedModeSettings</strong>](https://msdn.microsoft.com/library/windows/apps/dn949019).</p>
 <p>Pour plus d’informations sur l’entrée manuscrite et pour la prise en charge d’une entrée manuscrite multipoint sur le nouveau contrôle [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535), voir [<strong>Windows.UI.Input.Inking</strong>](https://msdn.microsoft.com/library/windows/apps/br208524) et [<strong>Windows.UI.Input.Inking.Core</strong>](https://msdn.microsoft.com/library/windows/apps/dn958452).</p>
-<p>Pour plus d’informations sur la gestion des entrées de capteurs, voir [Integrating devices, printers, and sensors](https://msdn.microsoft.com/library/windows/apps/br229563).</p></td>
+<p>Pour plus d’informations sur la gestion de l’entrée du capteur, voir [Intégration des appareils, des imprimantes et des capteurs](https://msdn.microsoft.com/library/windows/apps/br229563).</p></td>
 </tr>
 <tr class="even">
-<td align="left">Emplacement</td>
+<td align="left">Location</td>
 <td align="left"><p>Windows 10 lance une nouvelle méthode pour solliciter l’autorisation des utilisateurs pour accéder à leur emplacement, [<strong>RequestAccessAsync</strong>](https://msdn.microsoft.com/library/windows/apps/dn859152).</p>
 <p>L’utilisateur définit la confidentialité de ses données d’emplacement avec les <strong>paramètres de confidentialité d’emplacement</strong> de l’application <strong>Paramètres</strong>. Votre application peut accéder à l’emplacement de l’utilisateur dans les cas suivants uniquement :</p>
 <ul>
-<li><strong>Le paramètre Emplacement de cet appareil</strong> est activé (non applicable pour la version de Windows 10 pour les téléphones).</li>
+<li><strong>Le paramètre Emplacement de cet appareil</strong> est activé (non applicable pour la version de Windows 10 pour les téléphones).</li>
 <li>Le paramètre des services de localisation <strong>Emplacement</strong> est <strong>activé</strong>.</li>
 <li>Sous <strong>Choisir les applications qui peuvent utiliser votre emplacement</strong>, votre application est <strong>activée</strong>.</li>
 </ul>
@@ -351,10 +352,10 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="odd">
 <td align="left">AllJoyn</td>
-<td align="left"><p>L’espace de noms [<strong>Windows.Devices.AllJoyn</strong>](https://msdn.microsoft.com/library/windows/apps/dn894971) Windows Runtime introduit l’implémentation par Microsoft de la structure logicielle et des services open source AllJoyn. Grâce à ces API, votre application pour appareil Windows universel peut participer avec d’autres appareils aux scénarios AllJoyn, d’Internet des objets). Pour plus de détails sur les API AllJoyn C, téléchargez la documentation à l’adresse [The AllSeen Alliance](https://allseenalliance.org/).</p>
-<p>Utilisez l’outil [AllJoynCodeGen tool](https://msdn.microsoft.com/library/windows/apps/dn913809) inclus dans cette version pour générer un composant Windows à utiliser pour activer les scénarios AllJoyn dans votre application pour appareil.</p>
+<td align="left"><p>L’espace de noms [<strong>Windows.Devices.AllJoyn</strong>](https://msdn.microsoft.com/library/windows/apps/dn894971) Windows Runtime introduit l’implémentation par Microsoft de la structure logicielle et des services open source AllJoyn. Grâce à ces API, votre application pour appareil Windows universel peut participer avec d’autres appareils aux scénarios AllJoyn, d’Internet des objets). Pour plus d’informations sur les API AllJoyn, téléchargez la documentation à l’adresse [The AllSeen Alliance](https://allseenalliance.org/).</p>
+<p>Utilisez l’outil [AllJoynCodeGen](https://msdn.microsoft.com/library/windows/apps/dn913809) inclus dans cette publication pour générer un composant Windows qui vous permet d’activer des scénarios AllJoyn dans l’application de votre appareil.</p>
 <div class="alert">
-<strong>Remarque</strong> Windows 10 IoT Core est désormais disponible pour une nouvelle classe de petits appareils. Ainsi, vous êtes en mesure de créer des appareils dédiés à l’Internet des objets à l’aide de Windows et de Visual Studio. Pour en savoir plus sur Windows IoT, accédez à l’adresse [WindowsOnDevices.com](http://www.windowsondevices.com/).
+<strong>Remarque</strong> Windows 10 IoT Standard est désormais disponible pour une nouvelle classe de petits appareils. Ainsi, vous êtes en mesure de créer des appareils dédiés à l’Internet des objets à l’aide de Windows et de Visual Studio. Pour en savoir plus sur Windows IoT, accédez à [WindowsOnDevices.com](http://www.windowsondevices.com/).
 </div>
 <div>
  
@@ -372,7 +373,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Périphériques MIDI</td>
-<td align="left"><p>Le nouvel espace de noms [<strong>Windows.Devices.Midi</strong>](https://msdn.microsoft.com/library/windows/apps/dn895002) vous permet de créer les éléments suivants :</p>
+<td align="left"><p>Le nouvel espace de noms [<strong>Windows.Devices.Midi</strong>](https://msdn.microsoft.com/library/windows/apps/dn895002) vous permet de créer les éléments suivants :</p>
 <ul>
 <li>Applications pouvant communiquer avec des périphériques MIDI externes.</li>
 <li>Applications et périphériques externes communiquant directement avec le synthétiseur logiciel Microsoft GS MIDI.</li>
@@ -420,8 +421,8 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Le processeur XVP (Transcode Video Processor) de Media Foundation prend en charge Media Foundation Transforms (MFT).</td>
-<td align="left"><p>Les applications Windows qui utilisent Media Foundation Transforms peuvent désormais utiliser le <strong>processeur XVP (Transcode Video Processor) de Media Foundation </strong> pour convertir, mettre à l’échelle et transformer des données vidéo brutes :</p>
-<p>Le nouvel attribut [MF_XVP_CALLER_ALLOCATES_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/dn803919) active la sortie sur des textures allouées à l’appelant, même en mode Microsoft DirectX Video Acceleration (DXVA).</p>
+<td align="left"><p>Les applications Windows qui utilisent Media Foundation Transforms peuvent désormais utiliser le <strong>processeur XVP (Transcode Video Processor) de Media Foundation </strong> pour convertir, mettre à l’échelle et transformer des données vidéo brutes :</p>
+<p>Le nouvel attribut [MF_XVP_CALLER_ALLOCATES_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/dn803919) permet d’effectuer des sorties vers les textures allouées de l’appelant, même en mode DXVA (Microsoft DirectX Video Acceleration).</p>
 <p>La nouvelle interface [<strong>IMFVideoProcessorControl2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn800741) permet à votre application d’activer les effets matériels, d’interroger les effets matériels pris en charge et de remplacer l’opération de rotation exécutée par le processeur vidéo.</p></td>
 </tr>
 <tr class="odd">
@@ -446,7 +447,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Codage et décodage JPEG à accès aléatoire</td>
-<td align="left">Les nouvelles méthodes WIC [<strong>IWICJpegFrameEncode</strong>](https://msdn.microsoft.com/library/windows/desktop/dn903864) et [<strong>IWICJpegFrameDecode</strong>](https://msdn.microsoft.com/library/windows/desktop/dn903834) prennent en charge le codage et le décodage des images JPEG. Vous pouvez également activer l’indexation des données d’image, qui fournit un accès aléatoire efficace aux images de grande taille, contre un plus grand encombrement mémoire.</td>
+<td align="left">Les nouvelles méthodes WIC [<strong>IWICJpegFrameEncode</strong>](https://msdn.microsoft.com/library/windows/desktop/dn903864) et [<strong>IWICJpegFrameDecode</strong>](https://msdn.microsoft.com/library/windows/desktop/dn903834) prennent en charge le codage et le décodage des images JPEG. Vous pouvez également activer l’indexation des données d’image, qui fournit un accès aléatoire efficace aux images de grande taille, contre un plus grand encombrement mémoire.</td>
 </tr>
 <tr class="odd">
 <td align="left">Superpositions pour compositions multimédias</td>
@@ -498,7 +499,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="odd">
 <td align="left">Améliorations de la prise en charge JSON</td>
-<td align="left">L’espace de noms [<strong>Windows.Data.Json</strong>](https://msdn.microsoft.com/library/windows/apps/br240639) prend désormais en charge plus efficacement les définitions standard existantes et l’expérience du développeur lors de la conversion des objets JSON au cours des sessions de débogage.</td>
+<td align="left">L’espace de noms [<strong>Windows.Data.Json</strong>](https://msdn.microsoft.com/library/windows/apps/br240639) prend désormais en charge plus efficacement les définitions standard existantes et l’expérience du développeur lors de la conversion des objets JSON au cours des sessions de débogage.</td>
 </tr>
 </tbody>
 </table>
@@ -510,7 +511,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 
 |                             |                                                                      |
 |-----------------------------|----------------------------------------------------------------------|
-| Chiffrement ECC              | Les nouvelles API de l’espace de noms [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) prennent en charge le chiffrement à courbe elliptique (ECC), une implémentation de chiffrement à clé publique basée sur des courbes elliptiques sur des champs finis. ECC est plus complexe mathématiquement que RSA, fournit des clés de format plus réduit, réduit la consommation de mémoire et améliore les performances. Cette solution offre aux services et aux clients Microsoft une alternative aux clés RSA et aux paramètres de courbe approuvés par le NIST. |
+| Chiffrement ECC              | Les nouvelles API de l’espace de noms [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) prennent en charge le chiffrement à courbe elliptique (ECC), une implémentation de chiffrement à clé publique basée sur des courbes elliptiques sur des champs finis. ECC est plus complexe mathématiquement que RSA, fournit des clés de format plus réduit, réduit la consommation de mémoire et améliore les performances. Cette solution offre aux services et aux clients Microsoft une alternative aux clés RSA et aux paramètres de courbe approuvés par le NIST. |
 | Microsoft Passport          | Microsoft Passport est une autre méthode d'authentification, qui remplace les mots de passe par un chiffrement asymétrique associé à un mouvement. Grâce aux classes de l’espace de noms [**Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089), comme [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043), les développeurs peuvent créer des applications en toute simplicité à l’aide de Microsoft Passport, sans la complexité du chiffrement ou de la biométrique.  |
 | Microsoft Passport for Work | Microsoft Passport for Work est une autre méthode de connexion à Windows à l’aide de votre compte Azure Active Directory qui n’utilise pas de mot de passe, de carte à puce ou de cartes à puce virtuelles. Vous pouvez décider de désactiver ou d’activer ce paramètre de stratégie. |
 | Broker à jetons                | Le broker à jetons est une nouvelle infrastructure d’authentification qui simplifie pour les applications la procédure de connexion aux fournisseurs d’identité en ligne, comme Facebook. Les fonctionnalités telles que la gestion du nom d’utilisateur et du mot de passe du compte, associées à une interface utilisateur rationalisée, fournissent une expérience d’authentification considérablement améliorée aux utilisateurs. |
@@ -529,14 +530,14 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 <tr class="odd">
 <td align="left">Alimentation</td>
 <td align="left"><p>Il est désormais possible de signaler à votre application de bureau Windows l’activation et la désactivation de l’économiseur de batterie. En réagissant à l’évolution des conditions d’alimentation, votre application peut étendre l’autonomie de la batterie.</p>
-<p>[<strong>GUID_POWER_SAVING_STATUS</strong>](https://msdn.microsoft.com/library/windows/desktop/hh448380) : utilisez cette nouvelle propriété GUID avec la fonction [<strong>PowerSettingRegisterNotification</strong>](https://msdn.microsoft.com/library/windows/desktop/hh769082) afin d’être informé de l’activation et de la désactivation de l’économiseur de batterie.</p>
-<p>[<strong>SYSTEM_POWER_STATUS</strong>](https://msdn.microsoft.com/library/windows/desktop/aa373232) : cette structure a été mise à jour pour prendre en charge l’économiseur de batterie. Le quatrième membre, <strong>SystemStatusFlag</strong> (auparavant appelé Reserved1) indique si l’économiseur de batterie est activé. Utilisez la fonction [<strong>GetSystemPowerStatus</strong>](https://msdn.microsoft.com/library/windows/desktop/aa372693) afin de récupérer un pointeur dans cette structure.</p></td>
+<p>[<strong>GUID_POWER_SAVING_STATUS</strong>](https://msdn.microsoft.com/library/windows/desktop/hh448380) : utilisez cette nouvelle propriété GUID avec la fonction [<strong>PowerSettingRegisterNotification</strong>](https://msdn.microsoft.com/library/windows/desktop/hh769082) afin d’être informé de l’activation et de la désactivation de l’économiseur de batterie.</p>
+<p>[<strong>SYSTEM_POWER_STATUS</strong>](https://msdn.microsoft.com/library/windows/desktop/aa373232) : cette structure a été mise à jour pour prendre en charge l’économiseur de batterie. Le quatrième membre, <strong>SystemStatusFlag</strong> (auparavant appelé Reserved1) indique si l’économiseur de batterie est activé. Utilisez la fonction [<strong>GetSystemPowerStatus</strong>](https://msdn.microsoft.com/library/windows/desktop/aa372693) afin de récupérer un pointeur dans cette structure.</p></td>
 </tr>
 <tr class="even">
 <td align="left">Version</td>
-<td align="left"><p>Vous pouvez utiliser les [Version Helper functions](https://msdn.microsoft.com/library/windows/desktop/dn424972) pour déterminer la version du système d’exploitation. Dans Windows 10, ces fonctions d’assistance incluent une nouvelle fonction, [<strong>IsWindows10OrGreater</strong>](https://msdn.microsoft.com/library/windows/desktop/dn905474). Pour déterminer la version du système, nous vous recommandons de préférer les fonctions d’assistance aux fonctions [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) et [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439), obsolètes. Pour plus d’informations sur la procédure de récupération de la version du système, voir [Getting the System Version](https://msdn.microsoft.com/library/windows/desktop/ms724429).</p>
-<p>Si vous utilisez la fonction obsolète [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) ou [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) pour obtenir les informations de version dans une structure [<strong>OSVERSIONINFOEX</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724833) ou [<strong>OSVERSIONINFO</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724834), notez que le numéro de version indiqué par ces structures augmente de 6.3 pour Windows 8.1 et Windows Server 2012 R2 à 10.0 pour Windows 10. Pour plus d’informations sur les numéros de versions du système d’exploitation, voir [Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832).</p>
-<p>Par ailleurs, il vous faudra cibler spécifiquement Windows 8.1 ou Windows 10 dans votre application pour obtenir les informations de version appropriées avec la fonction [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) ou [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439). Pour plus d’informations sur le ciblage de votre application pour ces versions de Windows, voir [Targeting your application for Windows](https://msdn.microsoft.com/library/windows/desktop/dn481241).</p></td>
+<td align="left"><p>Vous pouvez utiliser les [fonctions d’assistance de version](https://msdn.microsoft.com/library/windows/desktop/dn424972) pour déterminer la version du système d’exploitation. Dans Windows 10, ces fonctions d’assistance incluent une nouvelle fonction, [<strong>IsWindows10OrGreater</strong>](https://msdn.microsoft.com/library/windows/desktop/dn905474). Pour déterminer la version du système, nous vous recommandons de préférer les fonctions d’assistance aux fonctions [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) et [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439), obsolètes. Pour plus d’informations sur la procédure à suivre pour connaître la version du système, voir [Obtention de la version du système](https://msdn.microsoft.com/library/windows/desktop/ms724429).</p>
+<p>Si vous utilisez la fonction obsolète [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) ou [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) pour obtenir les informations de version dans une structure [<strong>OSVERSIONINFOEX</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724833) ou [<strong>OSVERSIONINFO</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724834), notez que le numéro de version indiqué par ces structures augmente de 6.3 pour Windows 8.1 et Windows Server 2012 R2 à 10.0 pour Windows 10. Pour plus d’informations sur les numéros de version du système d’exploitation, voir [Version du système d’exploitation](https://msdn.microsoft.com/library/windows/desktop/ms724832).</p>
+<p>Par ailleurs, il vous faudra cibler spécifiquement Windows 8.1 ou Windows 10 dans votre application pour obtenir les informations de version appropriées avec la fonction [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) ou [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439). Pour en savoir plus sur le ciblage de votre application pour ces versions de Windows, voir [Ciblage de votre application pour Windows](https://msdn.microsoft.com/library/windows/desktop/dn481241).</p></td>
 </tr>
 <tr class="odd">
 <td align="left">Informations utilisateur</td>
@@ -585,8 +586,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Journalisation du suivi</td>
-<td align="left"><p>[
-            TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636) est une nouvelle API de suivi des événements dédiée aux applications en mode utilisateurs et aux pilotes en mode noyau ; elle s’appuie sur [Event Tracing for Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803) (ETW). Cette API fournit un moyen simple d’instrumenter du code et d’inclure des données structurées avec des événements, sans nécessiter de fichier XML distinct de manifeste d’instrumentation.</p>
+<td align="left"><p>[TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636) est une nouvelle API de suivi d’événements pour les applications en mode utilisateur et les pilotes en mode noyau ; elle repose sur le [suivi d’événements pour Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803) (ETW). Cette API fournit un moyen simplifié d’orchestrer le code et d’inclure des données structurées avec des événements sans nécessiter de fichier manifeste XML d’instrumentation distinct.</p>
 <p>Les API WinRT, .NET et C/C++ TraceLogging satisfont différents publics de développeurs.</p></td>
 </tr>
 </tbody>
@@ -613,7 +613,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 <p>Pour la prise en charge de la fonctionnalité glisser-déplacer entre les applications, ces nouvelles API ont été ajoutées au code XAML :</p>
 <ul>
 <li>[<strong>ListViewBase.DragItemsCompleted</strong>](https://msdn.microsoft.com/library/windows/apps/dn831959)</li>
-<li>[<strong>UIElement</strong>](https://msdn.microsoft.com/library/windows/apps/br208911) : [<strong>CanDrag</strong>](https://msdn.microsoft.com/library/windows/apps/dn903558), [<strong>DragStarting</strong>](https://msdn.microsoft.com/library/windows/apps/dn903560), [<strong>StartDragAsync</strong>](https://msdn.microsoft.com/library/windows/apps/dn903562), [<strong>DropCompleted</strong>](https://msdn.microsoft.com/library/windows/apps/dn903561)</li>
+<li>[<strong>UIElement</strong>](https://msdn.microsoft.com/library/windows/apps/br208911) : [<strong>CanDrag</strong>](https://msdn.microsoft.com/library/windows/apps/dn903558), [<strong>DragStarting</strong>](https://msdn.microsoft.com/library/windows/apps/dn903560), [<strong>StartDragAsync</strong>](https://msdn.microsoft.com/library/windows/apps/dn903562), [<strong>DropCompleted</strong>](https://msdn.microsoft.com/library/windows/apps/dn903561)</li>
 <li>[<strong>DragOperationDeferral</strong>](https://msdn.microsoft.com/library/windows/apps/dn831917), [<strong>DragUI</strong>](https://msdn.microsoft.com/library/windows/apps/dn985714), [<strong>DragUIOverride</strong>](https://msdn.microsoft.com/library/windows/apps/dn985715)</li>
 <li>[<strong>DragEventArgs</strong>](https://msdn.microsoft.com/library/windows/apps/br242372): [<strong>AcceptedOperation</strong>](https://msdn.microsoft.com/library/windows/apps/dn831912), [<strong>DataView</strong>](https://msdn.microsoft.com/library/windows/apps/dn831913), [<strong>DragUIOverride</strong>](https://msdn.microsoft.com/library/windows/apps/dn985710), [<strong>GetDeferral</strong>](https://msdn.microsoft.com/library/windows/apps/dn831914), [<strong>Modifiers</strong>](https://msdn.microsoft.com/library/windows/apps/dn831915)</li>
 <li>[<strong>DragItemsCompletedEventArgs</strong>](https://msdn.microsoft.com/library/windows/apps/dn831953), [<strong>DropCompletedEventArgs</strong>](https://msdn.microsoft.com/library/windows/apps/dn903549), [<strong>DragStartingEventArgs</strong>](https://msdn.microsoft.com/library/windows/apps/dn903540)</li>
@@ -621,7 +621,7 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="odd">
 <td align="left">Barres de titre des fenêtres personnalisées</td>
-<td align="left">Pour les applications UWP utilisées avec la famille d’appareils de bureau, vous pouvez désormais utiliser la classe [<strong>ApplicationViewTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906115) avec la propriété [<strong>ApplicationView.TitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906131) et la méthode [<strong>Window.SetTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn965560) afin de remplacer le contenu par défaut de la barre de titre Windows par votre propre contenu XAML personnalisé. Votre code XAML étant considéré comme un « chrome système », Windows traite des événements d’entrée en lieu et place de votre application. Dès lors, l’utilisateur peut toujours déplacer et redimensionner la fenêtre, même en cliquant sur le contenu de la barre de titre personnalisée.</td>
+<td align="left">Pour les applications UWP utilisées avec la famille d’appareils de bureau, vous pouvez désormais utiliser la classe [<strong>ApplicationViewTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906115) avec la propriété [<strong>ApplicationView.TitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906131) et la méthode [<strong>Window.SetTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn965560) afin de remplacer le contenu par défaut de la barre de titre Windows par votre propre contenu XAML personnalisé. Votre XAML est considéré comme du &quot;superflu système&quot;, et Windows gérera donc les événements d’entrée au lieu de votre application. Dès lors, l’utilisateur peut toujours déplacer et redimensionner la fenêtre, même en cliquant sur le contenu de la barre de titre personnalisée.</td>
 </tr>
 </tbody>
 </table>
@@ -639,12 +639,10 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 <tbody>
 <tr class="odd">
 <td align="left">Internet Explorer</td>
-<td align="left"><p>Internet Explorer lance le mode edge : un nouveau mode de document dynamique conçu pour une interopérabilité maximale avec d’autres navigateurs modernes et le contenu web contemporain. Ce mode expérimental est progressivement déployé sur un ensemble d’utilisateurs de Windows 10, sélectionné aléatoirement. Vous pouvez activer ou désactiver manuellement le mode Edge par le biais du nouveau mécanisme <strong>about:flags</strong> d’IE. Pour plus d’informations, voir :</p>
+<td align="left"><p>Internet Explorer introduit le mode Bord : un nouveau mode de document &quot;dynamique&quot; conçu pour une interopérabilité optimale avec les autres navigateurs modernes et le contenu web contemporain. Ce mode expérimental est progressivement déployé sur un ensemble d’utilisateurs de Windows 10, sélectionné aléatoirement. Vous pouvez activer ou désactiver manuellement le mode Edge par le biais du nouveau mécanisme <strong>about:flags</strong> d’IE. Pour plus d’informations, voir :</p>
 <ul>
-<li>[
-            Living on the Edge – our next step in helping the web just work](http://blogs.msdn.com/b/ie/archive/2014/11/11/living-on-the-edge-our-next-step-in-interoperability.aspx).</li>
-<li>[
-            The Internet Explorer for Windows 10 Developer Guide](https://dev.windows.com/microsoft-edge/).</li>
+<li>[Utilisation du mode Bord, notre prochaine étape pour contribuer au bon fonctionnement du web](http://blogs.msdn.com/b/ie/archive/2014/11/11/living-on-the-edge-our-next-step-in-interoperability.aspx).</li>
+<li>[Guide du développeur d’Internet Explorer pour Windows 10](https://dev.windows.com/microsoft-edge/).</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -667,17 +665,17 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 </tr>
 <tr class="even">
 <td align="left">Événement WebView.PermissionRequested</td>
-<td align="left"><p>Grâce au nouvel événement [<strong>WebView.PermissionRequested</strong>](https://msdn.microsoft.com/library/windows/apps/dn974398), le contenu WebView peut valoriser de nouvelles API HTML5 riches qui nécessitent une autorisation spéciale de l’utilisateur, comme la géolocalisation.</p>
+<td align="left"><p>Grâce au nouvel événement [<strong>WebView.PermissionRequested</strong>](https://msdn.microsoft.com/library/windows/apps/dn974398), le contenu WebView peut valoriser de nouvelles API HTML5 riches qui nécessitent une autorisation spéciale de l’utilisateur, comme la géolocalisation.</p>
 <p>Pour le contrôle HTML WebView, voir l’événement [<strong>MSWebViewPermissionRequested</strong>](https://msdn.microsoft.com/library/windows/apps/dn806030.aspx).</p></td>
 </tr>
 <tr class="odd">
 <td align="left">Événement WebView.UnviewableContentIdentified</td>
-<td align="left"><p>Le nouvel événement [<strong>WebView.UnviewableContentIdentified</strong>](https://msdn.microsoft.com/library/windows/apps/dn299351) vous permet de répondre lorsque le contrôle [<strong>WebView</strong>](https://msdn.microsoft.com/library/windows/apps/br227702) navigue vers le contenu hors connexion, comme un fichier PDF ou un document Office.</p>
+<td align="left"><p>Le nouvel événement [<strong>WebView.UnviewableContentIdentified</strong>](https://msdn.microsoft.com/library/windows/apps/dn299351) vous permet de répondre lorsque le contrôle [<strong>WebView</strong>](https://msdn.microsoft.com/library/windows/apps/br227702) navigue vers le contenu hors connexion, comme un fichier PDF ou un document Office.</p>
 <p>Pour les contrôles HTML WebView, voir l’événement [<strong>MSWebViewUnviewableContentIdentified</strong>](https://msdn.microsoft.com/library/windows/apps/dn609716).</p></td>
 </tr>
 <tr class="even">
 <td align="left">Méthode WebView.AddWebAllowedObject</td>
-<td align="left"><p>Vous pouvez appeler la nouvelle méthode [<strong>WebView.AddWebAllowedObject</strong>](https://msdn.microsoft.com/library/windows/apps/dn903993) pour injecter un objet WinRT dans un code XAML [<strong>WebView</strong>](https://msdn.microsoft.com/library/windows/apps/br227702), puis appeler ses fonctions à partir d’un contenu Javascript approuvé hébergé dans ce contrôle <strong>WebView</strong>. Par exemple, le contenu web peut afficher les notifications système en demandant que son application parente appelle l’API WinRT [<strong>ToastNotificationManager</strong>](https://msdn.microsoft.com/library/windows/apps/br208642).</p>
+<td align="left"><p>Vous pouvez appeler la nouvelle méthode [<strong>WebView.AddWebAllowedObject</strong>](https://msdn.microsoft.com/library/windows/apps/dn903993) pour injecter un objet WinRT dans un code XAML [<strong>WebView</strong>](https://msdn.microsoft.com/library/windows/apps/br227702), puis appeler ses fonctions à partir d’un contenu Javascript approuvé hébergé dans ce contrôle <strong>WebView</strong>. Par exemple, le contenu web peut afficher les notifications système en demandant que son application parente appelle l’API WinRT [<strong>ToastNotificationManager</strong>](https://msdn.microsoft.com/library/windows/apps/br208642).</p>
 <p>Pour le contrôle HTML [<strong>WebView</strong>](https://msdn.microsoft.com/library/windows/apps/br227702), voir la méthode [<strong>addWebAllowedObject</strong>](https://msdn.microsoft.com/library/windows/apps/dn926632).</p></td>
 </tr>
 <tr class="odd">
@@ -689,6 +687,6 @@ Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
