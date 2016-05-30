@@ -1,5 +1,5 @@
-﻿---
-Description: Voici les informations dont vous avez besoin pour créer une application Windows universelle pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC.
+---
+Description: Voici les informations dont vous avez besoin pour créer une application UWP pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC.
 title: Guides de procédure pour les applications Windows 10 - Développement d’applications Windows
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
@@ -9,7 +9,7 @@ redirect_url: https://developer.microsoft.com/en-us/windows/develop
 
 # Guides de procédure pour les applications UWP sur Windows 10
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Voici les informations dont vous avez besoin pour créer une application Windows universelle pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC. Cette section fournit des instructions et des exemples de code organisés par le type de tâche à accomplir.
 
@@ -21,6 +21,6 @@ Si vous souhaitez une présentation de la plateforme Windows universelle (UWP) e
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
