@@ -1,18 +1,15 @@
 ---
-Description: La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures de navigation, d’éléments de navigation et de fonctionnalités au niveau du système.
+author: mijacobs
+Description: La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, et de fonctionnalités au niveau du système.
 title: Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
-label: Informations de base relatives à la conception de la navigation
+label: Navigation design basics
 template: detail.hbs
 ---
 
 #  Informations de base relatives à la conception de la navigation pour les applications UWP
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures de navigation, d’éléments de navigation et de fonctionnalités au niveau du système. Ensemble, ces composantes permettent d’offrir diverses expériences utilisateur intuitives de déplacement entre les applications, les pages et dans leur contenu.
+La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, et de fonctionnalités au niveau du système. Ensemble, ces composantes permettent d’offrir diverses expériences utilisateur intuitives de déplacement entre les applications, les pages et dans leur contenu.
 
 Dans certains cas, vous pouvez faire tenir la totalité du contenu et des fonctionnalités de votre application sur une seule page, de sorte que l’utilisateur n’ait plus qu’à faire défiler celle-ci pour en parcourir le contenu. Toutefois, la plupart des applications comptent généralement plusieurs pages de contenu et fonctionnalités permettant d’explorer et d’interagir. Si une application possède plusieurs pages, vous devez fournir une expérience de navigation adaptée.
 
@@ -22,15 +19,15 @@ Pour être réussie et sensée pour l’utilisateur, une expérience de navigati
 
     La création d’une structure de navigation logique pour l’utilisateur est essentielle pour assurer une expérience de navigation intuitive.
 
--   **Éléments de navigation compatibles** qui prennent en charge la structure choisie
+-   **Éléments de navigation compatibles** qui prennent en charge la structure choisie.
 
     Les éléments de navigation aident l’utilisateur à accéder au contenu souhaité et à savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 
 -   **Réponses appropriées aux fonctionnalités de navigation au niveau système (par exemple, au bouton Précédent)**
 
-    Pour fournir une expérience cohérente et intuitive, répondez aux fonctionnalités de navigation de niveau système de manière à satisfaire les attentes des utilisateurs.
+    Pour fournir une expérience cohérente qui semble intuitive, répondez aux fonctionnalités de navigation de niveau système de manière à satisfaire les attentes des utilisateurs.
 
-## <span id="Build_the_right_navigation_structure"> </span> <span id="build_the_right_navigation_structure"> </span> <span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"> </span>Créer la structure de navigation appropriée
+## <span id="Build_the_right_navigation_structure"></span><span id="build_the_right_navigation_structure"></span><span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"></span>Créer la structure de navigation appropriée
 
 
 Considérons une application comme une collection de groupes de pages, chaque page contenant un ensemble unique de contenu ou de fonctionnalités. Par exemple, une application de photos peut avoir une page pour la prise des photos, une page pour la modification d’image et une autre pour la gestion de votre bibliothèque d’images. La manière dont vous organisez ces pages en groupes définit la structure de navigation de l’application. Deux méthodes sont couramment utilisées pour organiser un groupe de pages :
@@ -93,12 +90,12 @@ Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les org
 
  
 
-## <span id="Use_the_right_navigation_elements"> </span> <span id="use_the_right_navigation_elements"> </span> <span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"> </span>Utiliser les éléments de navigation appropriés
+## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>Utiliser les éléments de navigation appropriés
 
 
-Les éléments de navigation peuvent fournir deux services : ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
+Les éléments de navigation peuvent fournir deux services : ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 
-### <span id="Peer-to-peer_navigation_elements"> </span> <span id="peer-to-peer_navigation_elements"> </span> <span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"> </span>Éléments de navigation pair à pair
+### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>Éléments de navigation pair à pair
 
 Les éléments de navigation pair à pair permettent de naviguer entre les pages d’un même niveau d’une même sous-arborescence.
 
@@ -119,7 +116,7 @@ Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou u
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)</p>
+<td align="left"><p>[Onglets et pivot](../controls-and-patterns/tabs-pivot.md)</p>
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
 <td align="left">Affiche une liste permanente de liens vers les pages du même niveau.
 <p>Utilisez les onglets/pivots lorsque...</p>
@@ -132,7 +129,7 @@ Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou u
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Nav pane](../controls-and-patterns/nav-pane.md)</p>
+<td align="left"><p>[Volet de navigation](../controls-and-patterns/nav-pane.md)</p>
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
 <td align="left">Affiche une liste de liens vers les pages de niveau supérieur.
 <p>Utilisez un volet de navigation lorsque...</p>
@@ -156,9 +153,9 @@ Si votre structure de navigation comporte plusieurs niveaux, nous vous recommand
 -   Pour le niveau 1, l’élément de navigation pair à pair doit permettre d’accéder aux pages A, B, C et D.
 -   Au niveau 2, les éléments de navigation pair à pair des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau 2 de la sous-arborescence C.
 
-![Application avec deux sous-arborescences](images/nav/nav-subtrees2.png)
+![Application avec deux sous-arborescences](images/nav/nav-subtrees2.png)
 
-### <span id="Hierarchical_navigation_elements"> </span> <span id="hierarchical_navigation_elements"> </span> <span id="HIERARCHICAL_NAVIGATION_ELEMENTS"> </span>Éléments de navigation hiérarchique
+### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>Éléments de navigation hiérarchique
 
 Les éléments de navigation hiérarchique permettent de naviguer entre une page parente et ses pages enfants.
 
@@ -188,7 +185,7 @@ Les éléments de navigation hiérarchique permettent de naviguer entre une page
 <p></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Master/details](../controls-and-patterns/master-details.md)</p>
+<td align="left"><p>[Maître/Détails](../controls-and-patterns/master-details.md)</p>
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
 <td align="left">Affiche la liste (affichage Maître) des résumés des éléments. La sélection d’un élément affiche sa page d’éléments correspondante dans la section Détails.
 <p>Utilisez l’élément maître/détails lorsque...</p>
@@ -205,7 +202,7 @@ Les éléments de navigation hiérarchique permettent de naviguer entre une page
 
  
 
-### <span id="Historical_navigation_elements"> </span> <span id="historical_navigation_elements"> </span> <span id="HISTORICAL_NAVIGATION_ELEMENTS"> </span>Éléments de navigation historique
+### <span id="Historical_navigation_elements"></span><span id="historical_navigation_elements"></span><span id="HISTORICAL_NAVIGATION_ELEMENTS"></span>Éléments de navigation historique
 
 <table>
 <colgroup>
@@ -221,14 +218,14 @@ Les éléments de navigation hiérarchique permettent de naviguer entre une page
 <tbody>
 <tr class="odd">
 <td align="left">Précédent</td>
-<td align="left"><p>Permet à l’utilisateur de parcourir l’historique de navigation dans une application et, en fonction de l’appareil, d’une application à l’autre. Pour plus d’informations, voir la section [Make your app work well with system-level navigation features](#backnavigation) plus loin dans cet article.</p></td>
+<td align="left"><p>Permet à l’utilisateur de parcourir l’historique de navigation dans une application et, en fonction de l’appareil, d’une application à l’autre. Pour plus d’informations, voir la section [Garantir la compatibilité entre votre application et les fonctionnalités de navigation de niveau système](#backnavigation) plus loin dans cet article.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Content-embedded_navigation_elements"> </span> <span id="content-embedded_navigation_elements"> </span> <span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"> </span>Éléments de navigation incorporés au contenu
+### <span id="Content-embedded_navigation_elements"></span><span id="content-embedded_navigation_elements"></span><span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"></span>Éléments de navigation incorporés au contenu
 
 <table>
 <colgroup>
@@ -251,12 +248,12 @@ Les éléments de navigation hiérarchique permettent de naviguer entre une page
 
  
 
-### <span id="Combining_navigation_elements"> </span> <span id="combining_navigation_elements"> </span> <span id="COMBINING_NAVIGATION_ELEMENTS"> </span>Combinaison d’éléments de navigation
+### <span id="Combining_navigation_elements"></span><span id="combining_navigation_elements"></span><span id="COMBINING_NAVIGATION_ELEMENTS"></span>Combinaison d’éléments de navigation
 
 Vous pouvez combiner des éléments de navigation pour créer une expérience de navigation appropriée pour votre application. Par exemple, votre application peut utiliser un volet de navigation pour accéder aux pages de niveau supérieur et des onglets pour accéder aux pages de deuxième niveau.
 
 
-\[Cet article contient des informations propres aux applications UWP et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 
 
@@ -267,6 +264,6 @@ Vous pouvez combiner des éléments de navigation pour créer une expérience de
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

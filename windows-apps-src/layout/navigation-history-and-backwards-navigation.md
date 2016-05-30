@@ -1,17 +1,14 @@
 ---
-Description: La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures de navigation, d’éléments de navigation et de fonctionnalités au niveau du système.
+author: mijacobs
+Description: La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, et de fonctionnalités au niveau du système.
 title: Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
-label: Navigation dans l’historique et navigation vers l’arrière
+label: History and backwards navigation
 template: detail.hbs
 ---
 
 #  Navigation dans l’historique et navigation vers l’arrière
-
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
 
 Sur le web, les sites web individuels fournissent leurs propres systèmes de navigation, tels que des tables des matières, des boutons, des menus, des listes simples de liens, etc. L’expérience de navigation peut varier sensiblement d’un site web à l’autre. Il existe toutefois une expérience de navigation cohérente : le bouton Précédent. La plupart des navigateurs fournissent un bouton Précédent qui a le même comportement, quel que soit le site web consulté.
 
@@ -97,7 +94,7 @@ Voici d’autres types d’entrée qui ne font pas appel à une interface utilis
 Lorsque votre application est exécutée sur un téléphone, une tablette, un PC ou un ordinateur portable sur lequel un retour système est activé, le système informe votre application lorsque l’utilisateur appuie sur le bouton Précédent. Lorsqu’il appuie sur le bouton Précédent, l’utilisateur s’attend à accéder à l’emplacement précédent dans l’historique de navigation de l’application. C’est à vous qu’il incombe de décider des actions de navigation à ajouter à l’historique de navigation et de la réponse à un appui sur le bouton Précédent.
 
 
-## <span id="Enable_system_back_navigation_support"> </span> <span id="enable_system_back_navigation_support"> </span> <span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"> </span>Comment activer la prise en charge de la navigation vers l’arrière du système
+## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>Comment activer la prise en charge de la navigation vers l’arrière du système
 
 
 Les applications doivent activer la navigation vers l’arrière pour tous les boutons Précédent des systèmes matériels et logiciels. Pour ce faire, vous devez inscrire un écouteur pour l’événement [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) et définir un gestionnaire correspondant.
@@ -156,7 +153,7 @@ private void App_BackRequested(object sender,
     }
 }
 ```
-## <span id="Enable_the_title_bar_back_button"> </span> <span id="enable_the_title_bar_back_button"> </span> <span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"> </span>Comment activer le bouton Précédent de la barre de titre
+## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>Comment activer le bouton Précédent de la barre de titre
 
 
 Les appareils qui prennent en charge le mode bureau (en règle générale, les PC et ordinateurs portables, mais également certaines tablettes) et sur lesquels le paramètre est activé (**Paramètres &gt; Système &gt; Mode tablette**) ne fournissent pas de barre de navigation globale avec le bouton Précédent du système.
@@ -256,7 +253,8 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Page à page, différents groupes d’homologues</strong></p></td>
-<td align="left"><strong>Oui</strong><p>Dans cette illustration, l’utilisateur navigue du niveau 1 de l’application vers le niveau 2, en traversant des groupes d’homologues. La navigation est donc ajoutée à l’historique de navigation.</p>
+<td align="left"><strong>Oui</strong>
+<p>Dans cette illustration, l’utilisateur navigue du niveau 1 de l’application vers le niveau 2, en traversant des groupes d’homologues. La navigation est donc ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>Dans l’illustration suivante, l’utilisateur navigue entre deux groupes d’homologues du même niveau. La navigation est donc ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
@@ -264,35 +262,41 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 <tr class="even">
 <td align="left"><p><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong></p>
 <p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Aucun élément de navigation (par exemple les onglets/tableaux croisés dynamiques ou un volet de navigation ancré) fournissant une navigation directe vers les deux pages n’est toujours présent.</p></td>
-<td align="left"><strong>Oui</strong><p>Dans l’illustration suivante, l’utilisateur navigue entre deux pages dans le même groupe d’homologues. Comme les pages n’utilisent pas d’onglets ni de volet de navigation ancré, la navigation est ajoutée à l’historique de navigation.</p>
+<td align="left"><strong>Oui</strong>
+<p>Dans l’illustration suivante, l’utilisateur navigue entre deux pages dans le même groupe d’homologues. Comme les pages n’utilisent pas d’onglets ni de volet de navigation ancré, la navigation est ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Page à page, même groupe d’homologues, avec un élément de navigation à l’écran</strong></p>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deux pages utilisent le même élément onglets/tableaux croisés dynamiques, ou elles s’affichent dans un volet de navigation ancré.</p></td>
-<td align="left"><strong>Non</strong><p>Lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel.</p>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deux pages utilisent le même élément onglets/tableaux croisés dynamiques, ou elles s’affichent dans un volet de navigation ancré.</p></td>
+<td align="left"><strong>Non</strong>
+<p>Lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Afficher une interface utilisateur temporaire</strong><p>L’application affiche une fenêtre indépendante ou une fenêtre enfant, comme une boîte de dialogue, un écran de démarrage ou un clavier visuel. Elle passe également en mode spécial, comme le mode de sélection multiple.</p></td>
-<td align="left"><strong>Non</strong><p>Lorsque l’utilisateur appuie sur le bouton Précédent, il ignore l’interface utilisateur temporaire (masque le clavier visuel, annule la boîte de dialogue, etc.) et retourne dans la page qui a généré l’interface utilisateur temporaire.</p>
+<td align="left"><strong>Afficher une interface utilisateur temporaire</strong>
+<p>L’application affiche une fenêtre indépendante ou une fenêtre enfant, comme une boîte de dialogue, un écran de démarrage ou un clavier visuel. Elle passe également en mode spécial, comme le mode de sélection multiple.</p></td>
+<td align="left"><strong>Non</strong>
+<p>Lorsque l’utilisateur appuie sur le bouton Précédent, il ignore l’interface utilisateur temporaire (masque le clavier visuel, annule la boîte de dialogue, etc.) et retourne dans la page qui a généré l’interface utilisateur temporaire.</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>Énumérer les éléments</strong><p>L’application affiche le contenu d’un élément visuel, tel que les détails de l’élément sélectionné dans la liste des éléments maîtres/détails.</p></td>
-<td align="left"><strong>Non.</strong><p>L’énumération des éléments est semblable à la navigation au sein d’un groupe d’homologues. Lorsque l’utilisateur appuie sur le bouton Précédent, il navigue vers la page qui a précédé la page actuelle qui comporte l’énumération d’éléments.</p>
+<td align="left"><strong>Énumérer les éléments</strong>
+<p>L’application affiche le contenu d’un élément visuel, tel que les détails de l’élément sélectionné dans la liste des éléments maîtres/détails.</p></td>
+<td align="left"><strong>Non</strong>
+<p>L’énumération des éléments est semblable à la navigation au sein d’un groupe d’homologues. Lorsque l’utilisateur appuie sur le bouton Précédent, il navigue vers la page qui a précédé la page actuelle qui comporte l’énumération d’éléments.</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
 </tbody>
 </table>
 
 
-### <span id="Resuming"> </span> <span id="resuming"> </span> <span id="RESUMING"> </span>Reprise
+### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>Reprise
 
 Lorsque l’utilisateur bascule vers une autre application et retourne vers votre application, nous recommandons de retourner à la dernière page de l’historique de navigation.
 
 
-\[Cet article contient des informations propres aux applications UWP et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+
 
 
 
@@ -303,6 +307,6 @@ Lorsque l’utilisateur bascule vers une autre application et retourne vers votr
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Utilisez les panneaux de disposition pour organiser et regrouper des éléments d’interface utilisateur dans votre application.
-title: Panneaux de disposition pour les applications de plateforme Windows universelle (UWP)
+title: Panneaux de disposition des applications de plateforme Windows universelle (UWP)
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
-label: Panneaux de disposition
+label: Layout panels
 template: detail.hbs
 ---
 # Panneaux de disposition
@@ -30,7 +31,7 @@ Voici un exemple de la façon dont vous pouvez définir la propriété jointe [*
 
 Pour plus d’informations sur les propriétés jointes, voir [Vue d’ensemble des propriétés jointes](../xaml-platform/attached-properties-overview.md).
 
-> **Remarque**&nbsp;&nbsp;Une propriété jointe est un concept XAML qui requiert une syntaxe spéciale pour obtenir ou définir à partir du code. Pour utiliser des propriétés jointes dans le code, voir la section *Propriétés jointes dans le code* de l’article *Vue d’ensemble des propriétés jointes*.
+> **Remarque** &nbsp;&nbsp;Une propriété jointe est un concept XAML qui requiert une syntaxe spéciale à obtenir ou définir dans le code. Pour utiliser des propriétés jointes dans le code, voir la section *Propriétés jointes dans le code* de l’article *Vue d’ensemble des propriétés jointes*.
 
 **Bordures des panneaux**
 
@@ -123,7 +124,7 @@ Dans un panneau StackPanel, si la taille d’un élément enfant n’est pas dé
 
 ## Grid
 
-Le panneau [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) permet d’organiser des contrôles dans des dispositions constituées de plusieurs lignes et colonnes. Vous pouvez spécifier les lignes et les colonnes d’un panneau Grid à l’aide des propriétés [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) et [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx). En XAML, utilisez la syntaxe de l’élément de propriété pour déclarer les lignes et colonnes au sein de l’élément Grid. Vous pouvez répartir l’espace au sein d’une colonne ou d’une ligne en utilisant le dimensionnement **Auto** ou proportionnel.
+Le panneau [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) permet d’organiser des contrôles dans des dispositions constituées de plusieurs lignes et colonnes. Vous pouvez spécifier les lignes et les colonnes d’un panneau Grid à l’aide des propriétés [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) et [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx). En XAML, utilisez la syntaxe de l’élément de propriété pour déclarer les lignes et colonnes au sein de l’élément Grid. Vous pouvez répartir l’espace au sein d’une colonne ou d’une ligne en utilisant le redimensionnement **Auto** ou proportionnel.
 
 Les objets peuvent être positionnés dans des cellules spécifiques du panneau Grid à l’aide des propriétés jointes [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.column.aspx) et [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.row.aspx).
 
@@ -161,9 +162,9 @@ Dans cet exemple, le dimensionnement fonctionne comme suit.
 ## VariableSizedWrapGrid
 
 [
-            **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) fournit un panneau de disposition dans lequel les éléments sont organisés en lignes et en colonnes qui sont automatiquement renvoyés à la ligne ou dans une nouvelle colonne lorsque la valeur [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) est atteinte. 
+            **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) fournit un panneau de disposition dans lequel les éléments sont organisés en lignes et en colonnes, et sont automatiquement renvoyés à la ligne ou dans une nouvelle colonne lorsque la valeur [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) est atteinte. 
 
-La propriété [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) spécifie si la grille ajoute ses éléments en lignes ou en colonnes avant leur renvoi. L’orientation par défaut est **Vertical**, ce qui signifie que la grille ajoute des éléments du haut vers le bas jusqu’à ce qu’une colonne soit remplie, puis passe à une nouvelle colonne. Lorsque la valeur est **Horizontal**, la grille ajoute des éléments de gauche à droite, puis passe à la ligne suivante.
+La propriété [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) spécifie si la grille ajoute ses éléments en lignes ou en colonnes avant leur renvoi. L’orientation par défaut est **Vertical**, ce qui signifie que la grille ajoute des éléments de haut en bas jusqu’à ce qu’une colonne soit remplie, puis passe à une nouvelle colonne. Lorsque la valeur est **Horizontal**, la grille ajoute des éléments de gauche à droite, puis passe à la ligne suivante.
 
 Les dimensions des cellules sont spécifiées par [**ItemHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight.aspx) et [**ItemWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth.aspx). Chaque cellule a la même taille. Si les valeurs ItemHeight ou ItemWidth ne sont pas spécifiées, la première cellule est redimensionnée pour s’adapter à son contenu, et toutes les autres cellules prennent la même taille.
 
@@ -193,7 +194,7 @@ Dans cet exemple, le nombre maximal de lignes dans chaque colonne est 3. La prem
 
 ## Zone de dessin
 
-Le panneau [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) positionne ses éléments enfants à l’aide de points de coordonnées fixes. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) de chaque élément. Durant la disposition, l’élément Canvas parent lit les valeurs de propriétés jointes de ses enfants, puis utilise ces valeurs pendant la transmission de disposition [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx).
+Le panneau [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) positionne ses éléments enfants à l’aide de points de coordonnées fixes. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) de chaque élément. Durant la disposition, l’élément Canvas parent lit les valeurs des propriétés jointes de ses enfants, puis utilise ces valeurs pendant la transmission de disposition [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx).
 
 Dans un élément Canvas, les objets peuvent se chevaucher, auquel cas un objet est dessiné sur un autre objet. Par défaut, l’élément Canvas restitue les objets enfants dans l’ordre dans lequel ils sont déclarés, de sorte que le dernier enfant est restitué en haut (chaque élément a une valeur ZIndex par défaut de 0). Il en va de même pour les autres panneaux intégrés. Toutefois, l’élément Canvas prend également en charge la propriété jointe [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) que vous pouvez définir sur chacun des éléments enfants. Vous pouvez définir cette propriété dans le code pour changer l’ordre de dessin des éléments pendant l’exécution. L’élément avec la valeur Canvas.ZIndex la plus élevée est dessiné en dernier. Ainsi, il est dessiné au-dessus des autres éléments qui partagent le même espace ou qui se chevauchent. Notez que la valeur alpha (transparence) est respectée. Ainsi, même si des éléments se chevauchent, le contenu affiché dans les zones de chevauchement peut être fusionné si le contenu supérieur a une valeur alpha non maximale.
 
@@ -222,6 +223,6 @@ Utilisez le panneau Canvas en fonction de vos besoins. Bien qu’il soit pratiqu
 Il existe plusieurs panneaux à usage spécifique qui peuvent être utilisés uniquement comme un contrôle [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) pour afficher des éléments dans un contrôle [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Il s’agit de [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) et [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). Vous ne pouvez pas utiliser ces panneaux pour créer une disposition générale de l’interface utilisateur.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

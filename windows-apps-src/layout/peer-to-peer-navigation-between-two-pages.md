@@ -1,17 +1,15 @@
 ---
-Description: Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
-title: Navigation pair à pair entre deux pages
+author: Jwmsft
+Description: Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
+title: Navigation pair à pair entre deux pages
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
-label: Navigation pair à pair entre deux pages
+label: Peer-to-peer navigation between two pages
 template: detail.hbs
 ---
 
-# <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"> </span>Navigation pair à pair entre deux pages
+# <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"></span>Navigation pair à pair entre deux pages
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
+Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
 
 ![Exemple de navigation pair à pair sur deux pages](images/nav-peertopeer-2page.png)
 
@@ -23,27 +21,27 @@ Découvrez comment naviguer dans une application de base à deux pages pair à p
 -   [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)
 
 
-## <span id="Create_the_blank_app"> </span> <span id="create_the_blank_app"> </span> <span id="CREATE_THE_BLANK_APP"> </span>Créer l’application vide
+## <span id="Create_the_blank_app"></span><span id="create_the_blank_app"></span><span id="CREATE_THE_BLANK_APP"></span>Créer l’application vide
 
 
-1.  Dans le menu Microsoft Visual Studio, choisissez **Fichier &gt; Nouveau Projet**.
-2.  Dans le volet gauche de la boîte de dialogue **Nouveau projet**, choisissez le nœud **Visual C# -&gt; Windows -&gt; Universel** ou **Visual C++ -&gt; Windows -&gt; Universel**.
+1.  Dans le menu Microsoft Visual Studio, choisissez **Fichier &gt; Nouveau projet**.
+2.  Dans le volet gauche de la boîte de dialogue **Nouveau projet**, choisissez le nœud **Visual C# -&gt; Windows -&gt; Universel** ou **Visual C++ -&gt; Windows -&gt; Universel**.
 3.  Dans le volet central, choisissez **Application vide**.
 4.  Dans le champ **Nom**, entrez **NavApp1**, puis choisissez le bouton **OK**.
 
-    La solution est créée et les fichiers du projet apparaissent dans l’**Explorateur de solutions**.
+    La solution est créée, et les fichiers du projet apparaissent dans l’**Explorateur de solutions**.
 
-    **Important** Lorsque vous exécutez Visual Studio pour la première fois, vous êtes invité à vous procurer une licence de développeur. Pour plus d’informations, voir [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/dn706236).
+    **Important** Lorsque vous exécutez Visual Studio pour la première fois, vous êtes invité à vous procurer une licence de développeur. Pour plus d’informations, voir [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/dn706236).
 
      
 
-5.  Pour exécuter le programme, choisissez **Déboguer** &gt; **Démarrer le débogage** dans le menu, ou appuyez sur F5.
+5.  Pour exécuter le programme, choisissez **Déboguer**&gt;**Démarrer le débogage** dans le menu, ou appuyez sur F5.
 
     Une page vide s’affiche.
 
 6.  Appuyez sur Maj+F5 pour interrompre le débogage et revenir à Visual Studio.
 
-## <span id="Add_basic_pages"> </span> <span id="add_basic_pages"> </span> <span id="ADD_BASIC_PAGES"> </span>Ajouter des pages de base
+## <span id="Add_basic_pages"></span><span id="add_basic_pages"></span><span id="ADD_BASIC_PAGES"></span>Ajouter des pages de base
 
 
 Ensuite, ajoutez deux pages de contenu au projet.
@@ -51,7 +49,7 @@ Ensuite, ajoutez deux pages de contenu au projet.
 Effectuez les étapes suivantes deux fois de suite pour ajouter les deux pages qui vont vous permettre d’effectuer la navigation.
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de projet **BlankApp** pour ouvrir le menu contextuel.
-2.  Choisissez **Ajouter** &gt; **Nouvel élément** dans le menu contextuel.
+2.  Choisissez **Ajouter**&gt;**Nouvel élément** dans le menu contextuel.
 3.  Dans la boîte de dialogue **Ajouter un nouvel élément**, choisissez **Page vide** dans le volet du milieu.
 4.  Dans le champ **Nom**, entrez **Page1** (ou **Page2**), puis appuyez sur le bouton **Ajouter**.
 
@@ -84,7 +82,8 @@ Ces fichiers doivent maintenant être répertoriés comme faisant partie de votr
 <li>Page2.xaml.cpp</li>
 <li>Page2.xaml.h
 <div class="alert">
-<strong>Remarque</strong><p>Les fonctions sont déclarées dans le fichier d’en-tête (.h) et implémentées dans le fichier code-behind (.cpp).</p>
+<strong>Remarque</strong>  
+<p>Les fonctions sont déclarées dans le fichier d’en-tête (.h) et implémentées dans le fichier code-behind (.cpp).</p>
 </div>
 <div>
  
@@ -188,7 +187,7 @@ Apportez les modifications suivantes à l’interface utilisateur de Page2.xaml.
 Ajoutez le code suivant à la classe `Page2` dans le fichier code-behind Page2.xaml pour gérer l’événement `Click` du [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) que vous avez ajouté précédemment. Ici, nous naviguons vers Page1.xaml.
 
 **Remarque**  
-Pour les projets C++, vous devez ajouter une directive `#include` dans le fichier d’en-tête de chaque page faisant référence à une autre page. Pour l’exemple de navigation entre les pages présenté ici, le fichier page1.xaml.h contient `#include "Page2.xaml.h"`, et à son tour, page2.xaml.h contient `#include "Page1.xaml.h"`.
+Pour les projets C++, vous devez ajouter une directive `#include` dans le fichier d’en-tête de chaque page faisant référence à une autre page. Pour l’exemple de navigation entre les pages présenté ici, le fichier page1.xaml.h contient `#include "Page2.xaml.h"`, et à son tour, page2.xaml.h contient `#include "Page1.xaml.h"`.
 
  
 
@@ -317,7 +316,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 À présent, générez et exécutez l’application. Cliquez sur le lien « Click to go to page 2 ». La deuxième page indiquant « Page 2 » en haut doit être chargée et affichée dans le cadre.
 
-## <span id="Frame_and_Page_classes"> </span> <span id="frame_and_page_classes"> </span> <span id="FRAME_AND_PAGE_CLASSES"> </span>Classes Frame et Page
+## <span id="Frame_and_Page_classes"></span><span id="frame_and_page_classes"></span><span id="FRAME_AND_PAGE_CLASSES"></span>Classes Frame et Page
 
 
 Avant d’ajouter d’autres fonctionnalités à notre application, examinons la façon dont les pages que nous venons d’ajouter prennent en charge la navigation dans l’application.
@@ -335,7 +334,7 @@ Dans notre exemple, `Page1` est passé à la méthode [**Navigate**](https://msd
 
 Chaque fois qu’une page est chargée dans le cadre, cette page est ajoutée comme une [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) à la [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) ou [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) de la [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504).
 
-## <span id="Pass_information_between_pages"> </span> <span id="pass_information_between_pages"> </span> <span id="PASS_INFORMATION_BETWEEN_PAGES"> </span>Passer des informations entre les pages
+## <span id="Pass_information_between_pages"></span><span id="pass_information_between_pages"></span><span id="PASS_INFORMATION_BETWEEN_PAGES"></span>Passer des informations entre les pages
 
 
 Notre application navigue entre deux pages, mais elle n’effectue pour le moment rien d’intéressant. Souvent, lorsqu’une application possède plusieurs pages, celles-ci doivent partager des informations. Passons des informations de la première page à la deuxième page.
@@ -352,7 +351,7 @@ Ici, nous ajoutons une étiquette [**TextBlock**](https://msdn.microsoft.com/lib
 </StackPanel>
 ```
 
-Dans le gestionnaire d’événements `HyperlinkButton_Click` du fichier code-behind Page1.xaml, ajoutez un paramètre faisant référence à la propriété `Text` de `name` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) à la méthode `Navigate`.
+Dans le gestionnaire d’événements `HyperlinkButton_Click` du fichier code-behind Page1.xaml, ajoutez un paramètre faisant référence à la propriété `Text` de `name`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) à la méthode `Navigate`.
 
 ```ManagedCPlusPlus
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
@@ -400,12 +399,12 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Exécutez l’application, tapez votre nom dans la zone de texte, puis cliquez sur le lien indiquant **Click to go to page 2**. Lorsque vous avez appelé `this.Frame.Navigate(typeof(Page2), tb1.Text)` dans l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) de [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), la propriété `name.Text` a été passée à `Page2` et la valeur de données d’événement est utilisée pour le message affiché sur la page.
+Exécutez l’application, tapez votre nom dans la zone de texte, puis cliquez sur le lien indiquant **Click to go to page 2**. Lorsque vous avez appelé `this.Frame.Navigate(typeof(Page2), tb1.Text)` dans l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) de [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), la propriété `name.Text` a été transmise à `Page2`, et la valeur de données d’événement est utilisée pour le message affiché sur la page.
 
-## <span id="Cache_a__page"> </span> <span id="cache_a__page"> </span> <span id="CACHE_A__PAGE"> </span>Mettre en cache une page
+## <span id="Cache_a__page"></span><span id="cache_a__page"></span><span id="CACHE_A__PAGE"></span>Mettre en cache une page
 
 
-Le contenu et l’état de la page ne sont pas mis en cache par défaut, vous devez l’activer dans chaque page de votre application.
+Le contenu et l’état de la page ne sont pas mis en cache par défaut, vous devez les activer dans chaque page de votre application.
 
 Dans notre exemple pair à pair de base, il n’existe aucun bouton Précédent (nous expliquons la navigation vers l’arrière dans [Navigation via le bouton Précédent](navigation-history-and-backwards-navigation.md)), mais si vous aviez cliqué sur un bouton Précédent dans `Page2`, le [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (et tout autre champ) sur `Page1` serait défini à son état par défaut. Un moyen de contourner ce problème consiste à utiliser la propriété [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) pour spécifier l’ajout d’une page dans le cache de la page du cadre.
 
@@ -433,7 +432,7 @@ public Page1()
 }
 ```
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 * [Informations de base relatives à la conception de la navigation pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958438)
 * [Recommandations relatives aux onglets et aux sélecteurs de vue](https://msdn.microsoft.com/library/windows/apps/dn997788)
@@ -447,6 +446,6 @@ public Page1()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

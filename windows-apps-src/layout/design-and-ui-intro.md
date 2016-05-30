@@ -1,18 +1,15 @@
 ---
+author: mijacobs
 Description: Cet article décrit les fonctionnalités, avantages et configurations requises de la plateforme Windows universelle (UWP, Universal Windows Platform) du point de vue de la conception. Découvrez ce que la plateforme met gratuitement à votre disposition, ainsi que les outils qu’elle propose.
-title: Présentation de la conception des applications de la plateforme Windows universelle (UWP)
+title: Présentation de la conception des applications de plateforme Windows universelle (UWP)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-label: Présentation des applications UWP
+label: Intro to UWP app design
 template: detail.hbs
 ---
 
 #  Présentation de la conception des applications UWP 
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-Une application Universal Windows Platform (UWP) peut s’exécuter sur tout appareil sous Windows, qu’il s’agisse de votre téléphone, de votre tablette ou de votre PC.
+Une application de plateforme Windows universelle (UWP) peut s’exécuter sur tout appareil Windows, qu’il s’agisse de votre téléphone, de votre tablette ou de votre PC.
 
 ![appareils fonctionnant sous Windows](images/1894834-hig-device-primer-01-500.png)
 
@@ -34,7 +31,7 @@ Lorsque votre application est exécutée sur un appareil, le système utilise un
 
 En raison du mode de fonctionnement du système de mise à l’échelle, lorsque vous concevez une application UWP, la conception est effectuée en *pixels effectifs* et non en pixels physiques réels. Quels en sont les effets sur la façon dont vous concevez vos applications ?
 
--   Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle lors de la conception. Effectuez plutôt une conception pour la résolution effective (la résolution en pixels effectifs) d’une classe de taille (nous définissons les classes de taille [plus loin dans cet article](#sizeclasses)).
+-   Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle lors de la conception. Effectuez plutôt une conception pour la résolution réelle (résolution en pixels effectifs) d’une classe de taille (nous définissons les classes de taille [plus loin dans cet article](#sizeclasses)).
 
 -   Lorsque le système met à l’échelle l’interface utilisateur, il le fait par multiples de 4. Pour garantir une apparence nette, alignez vos conceptions sur la grille de pixels 4 x 4 : faites des marges, des tailles et des positions des éléments d’interface utilisateur et de l’emplacement du texte (mais pas la taille, car le texte peut être de toute taille) un multiple de 4 pixels effectifs.
 
@@ -46,7 +43,7 @@ Cette illustration présente des éléments de conception non alignés sur la gr
 
 ![éléments de conception non alignés sur la grille de pixels 4 x 4](images/rsp-design/offthegridillustration.png)
 
-**Conseil** Lors de la création de maquettes d’écran dans des programmes d’édition d’image, définissez les PPP sur 72 et les dimensions d’image sur la résolution réelle pour la classe de taille que vous ciblez. (Pour obtenir la liste des classes de taille et des résolutions réelles, voir la section [Points d’arrêt de conception pour des classes de taille spécifiques](#sizeclasses) de cet article.)
+**Conseil** Lors de la création de maquettes d’écran dans des programmes d’édition d’image, définissez les PPP sur 72 et les dimensions d’image sur la résolution réelle pour la classe de taille que vous ciblez. (Pour obtenir la liste des classes de taille et des résolutions réelles, voir la section [Recommandations pour des classes de taille spécifiques](#sizeclasses) de cet article.)
 
 
 ### Entrée universelle et interactions intelligentes
@@ -89,7 +86,7 @@ Maintenant que nous avons décrit les blocs de construction des applications UW
 
 Une interface utilisateur moderne est un mécanisme complexe, qui inclut du texte, des formes, des couleurs et des animations, lesquelles sont constituées des pixels de l’écran de l’appareil que vous utilisez. Lorsque vous démarrez la conception d’une interface utilisateur, le nombre d’options disponibles peut être accablant.
 
-Pour simplifier les choses, nous allons définir l’anatomie d’une application d’un point de vue conceptuel. Disons qu’une application se compose d’écrans et de pages. Chaque page possède une interface utilisateur, composée de trois types d’éléments d’interface utilisateur : éléments de navigation, de commande et de contenu.
+Pour simplifier les choses, nous allons définir l’anatomie d’une application d’un point de vue conceptuel. Disons qu’une application se compose d’écrans et de pages. Chaque page possède une interface utilisateur composée de trois types d’élément d’interface utilisateur : éléments de navigation, de commande et de contenu.
 
 
 
@@ -102,12 +99,15 @@ Pour simplifier les choses, nous allons définir l’anatomie d’une applicatio
 <tr class="odd">
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
-<td align="left"><strong>Éléments de navigation</strong><p>Les éléments de navigation permettent aux utilisateurs de choisir le contenu à afficher. Parmi les éléments de navigation, citons [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), et [nav panes](../controls-and-patterns/nav-pane.md).</p>
-<p>Les éléments de navigation sont décrits en détail dans l’article [Navigation design basics](navigation-basics.md).</p>
-<strong>Éléments de commande</strong><p>Les éléments de commande permettent d’initier des actions (de manipulation, d’enregistrement ou de partage de contenu, par exemple). Parmi les éléments de commande, citons [button](../controls-and-patterns/buttons.md) et [command bar](../controls-and-patterns/app-bars.md). Les éléments de commande peuvent également inclure des raccourcis clavier qui ne sont pas visibles à l’écran.</p>
-<p>Les éléments de commande sont décrits plus en détail dans l’article [Command design basics](commanding-basics.md).</p>
-<strong>Éléments de contenu</strong><p>Les éléments de contenu affichent le contenu de l’application. Pour une application de peinture, ce contenu peut correspondre à un dessin ; pour une application d’actualités, il peut s’agir d’un article de presse.</p>
-<p>Les éléments de contenu sont décrits plus en détail dans l’article [Content design basics](content-basics.md).</p></td>
+<td align="left"><strong>Éléments de navigation</strong>
+<p>Les éléments de navigation permettent aux utilisateurs de choisir le contenu à afficher. Les éléments de navigation incluent les [onglets et pivots](../controls-and-patterns/tabs-pivot.md), les [liens hypertexte](../controls-and-patterns/hyperlinks.md) et les [volets de navigation](../controls-and-patterns/nav-pane.md).</p>
+<p>Les éléments de navigation sont traités en détail dans l’article [Informations de base relatives à la conception de la navigation](navigation-basics.md).</p>
+<strong>Éléments de commande</strong>
+<p>Les éléments de commande permettent d’initier des actions (de manipulation, d’enregistrement ou de partage de contenu, par exemple). Les éléments de commande incluent les [boutons](../controls-and-patterns/buttons.md) et la [barre de commandes](../controls-and-patterns/app-bars.md). Les éléments de commande peuvent également inclure des raccourcis clavier qui ne sont pas visibles à l’écran.</p>
+<p>Les éléments de commande sont traités en détail dans l’article [Informations de base relatives à la conception des commandes](commanding-basics.md).</p>
+<strong>Éléments de contenu</strong>
+<p>Les éléments de contenu affichent le contenu de l’application. Pour une application de peinture, ce contenu peut correspondre à un dessin ; pour une application d’actualités, il peut s’agir d’un article de presse.</p>
+<p>Les éléments de contenu sont traités en détail dans l’article [Informations de base relatives à la conception du contenu](content-basics.md).</p></td>
 </tr>
 </tbody>
 </table>
@@ -118,7 +118,7 @@ Au minimum, une application inclut un écran de démarrage et une page d’accue
 
 Lorsque vous choisissez les éléments d’interface utilisateur appropriés pour votre application, vous devez également tenir compte des appareils et de la taille des écrans sur lesquels vous l’exécuterez.
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"> </span> <span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"> </span> <span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"> </span>Personnalisation de votre application pour des appareils et des tailles d’écrans spécifiques.
+## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>Personnalisation de votre application pour des appareils et des tailles d’écrans spécifiques.
 
 
 Les applications UWP utilisent les pixels effectifs pour garantir la lisibilité et la convivialité de vos éléments de conception sur tous les appareils Windows. Dès lors, pourquoi souhaiteriez-vous personnaliser l’interface utilisateur de votre application pour une famille d’appareils spécifique ?
@@ -142,12 +142,12 @@ Avant d’aller plus loin, Windows ne permet pas à votre application de détect
 
     La bibliothèque de contrôles universels fonctionne avec tous les types d’entrée (tactile, stylet, clavier, souris), mais vous pouvez toujours optimiser certains types d’entrée en réorganisant vos éléments d’interface utilisateur. Par exemple, si vous placez des éléments de navigation en bas de l’écran, ils seront plus facilement accessibles aux utilisateurs de téléphone, mais la plupart des utilisateurs de PC s’attendent à voir des éléments de navigation en haut de l’écran.
 
-## <span id="Responsive_design_techniques"> </span> <span id="responsive_design_techniques"> </span> <span id="RESPONSIVE_DESIGN_TECHNIQUES"> </span>Techniques de conception réactive
+## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>Techniques de conception réactive
 
 
-Lorsque vous optimisez l’interface utilisateur de votre application pour des largeurs d’écran spécifiques, nous disons que vous créez une conception réactive. Voici six techniques de conception réactive que vous pouvez utiliser pour personnaliser l’interface utilisateur de votre application.
+Lorsque vous optimisez l’interface utilisateur de votre application pour des largeurs d’écran spécifiques, nous disons que vous créez une conception réactive. Voici six techniques de conception réactive que vous pouvez utiliser pour personnaliser l’interface utilisateur de votre application.
 
-### <span id="Reposition"> </span> <span id="reposition"> </span> <span id="REPOSITION"> </span>Repositionner
+### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>Repositionner
 
 Vous pouvez modifier l’emplacement et la position des éléments de l’interface utilisateur de l’application pour tirer le meilleur parti de chaque appareil. Dans cet exemple, le mode portrait sur un téléphone ou une phablette nécessite une interface utilisateur de défilement, car une seule trame complète est visible à la fois. Lorsque l’application translate vers un appareil qui autorise deux trames complètes à l’écran, la trame B peut occuper un espace dédié que ce soit en orientation portrait ou paysage. Si vous utilisez une grille de positionnement, vous pouvez utiliser cette même grille lorsque des éléments d’interface utilisateur sont repositionnés.
 
@@ -157,13 +157,13 @@ Dans cet exemple de conception pour une application de photos, l’application r
 
 ![conception d’une application repositionnant du contenu sur des écrans plus grands](images/rsp-design/rspd-reposition-type1.png)
 
-### <span id="Resize"> </span> <span id="resize"> </span> <span id="RESIZE"> </span>Redimensionner
+### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>Redimensionner
 
 Vous pouvez optimiser la taille de la trame en ajustant les marges et la taille des éléments de l’interface utilisateur. Cela peut vous permettre, comme dans l’exemple indiqué ici, d’enrichir l’expérience de lecture sur un écran plus grand en augmentant simplement le cadre de contenu.
 
 ![redimensionnement des éléments de conception](images/rsp-design/rspd-resize.png)
 
-### <span id="Reflow"> </span> <span id="reflow"> </span> <span id="REFLOW"> </span>Ajuster dynamiquement
+### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>Ajuster dynamiquement
 
 En modifiant le flux des éléments de l’interface utilisateur en fonction de l’appareil et de l’orientation, votre application peut offrir un affichage de contenu optimal. Par exemple, lors du passage à un écran plus grand, il peut être judicieux d’activer des conteneurs plus grands, d’ajouter des colonnes et de générer des éléments de liste d’une manière différente.
 
@@ -171,7 +171,7 @@ Cet exemple indique comment une colonne unique de contenu à défilement vertica
 
 ![ajustement dynamique des éléments de conception](images/rsp-design/rspd-reflow.png)
 
-### <span id="_____________Reveal___________"> </span> <span id="_____________reveal___________"> </span> <span id="_____________REVEAL___________"> </span> Révéler
+### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> Révéler
 
 Vous pouvez révéler l’interface utilisateur en fonction de l’espace disponible à l’écran, ou lorsque l’appareil prend en charge des fonctionnalités supplémentaires, des situations spécifiques ou des orientations d’écran favorites.
 
@@ -187,13 +187,13 @@ Une partie de la technique de révélation ou de masquage comprend le choix de l
 -   Dans n’importe quelle application, vous pouvez décomposer les colonnes et révéler plus de détails.
 -   Dans n’importe quelle application, vous pouvez disposer un élément à l’horizontal alors qu’il était empilé verticalement. Lorsque vous passez d’un téléphone ou d’une phablette à un appareil plus grand, les éléments de liste empilés peuvent changer pour faire apparaître des lignes d’éléments de liste et des colonnes de métadonnées.
 
-### <span id="Replace"> </span> <span id="replace"> </span> <span id="REPLACE"> </span>Remplacer
+### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>Remplacer
 
 Cette technique vous permet de changer d’interface utilisateur en fonction de la classe de taille ou de l’orientation de l’appareil. Dans cet exemple, le volet de navigation et son interface utilisateur compacte et temporaire fonctionnent bien pour un petit appareil, mais des onglets peuvent être mieux appropriés pour un appareil plus grand.
 
 ![remplacement des éléments de conception](images/rsp-design/rspd-replace.png)
 
-### <span id="_____________Re-architect___________"> </span> <span id="_____________re-architect___________"> </span> <span id="_____________RE-ARCHITECT___________"> </span> Remodéliser
+### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> Remodéliser
 
 Vous pouvez réduire ou répliquer l’architecture de votre application pour mieux cibler des appareils spécifiques. Dans cet exemple, la jonction des pages est montrée de l’appareil de gauche à l’appareil de droite.
 
@@ -215,6 +215,6 @@ Voici un exemple de cette technique appliquée à la conception d’une applicat
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
