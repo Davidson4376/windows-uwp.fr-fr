@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: Présentation des applications multi-utilisateur
 description: 
 area: Xbox
@@ -8,14 +9,14 @@ area: Xbox
 
 Cette rubrique est une simple présentation générale du modèle multi-utilisateur Xbox.
 
-> **Remarque**&nbsp;&nbsp;Dans cette première version préliminaire pour développeurs, les applications multi-utilisateur ne sont pas activées. Ces applications seront activées dans une future version préliminaire pour développeurs, et nous publierons alors une documentation, des recommandations et des exemples plus détaillés sur le sujet. 
+> **Remarque** &nbsp;&nbsp;Dans cette première version préliminaire pour développeurs, les applications multi-utilisateur ne sont pas activées. Ces applications seront activées dans une future version préliminaire pour développeurs, et nous publierons alors une documentation, des recommandations et des exemples plus détaillés sur le sujet. 
 
 Le modèle utilisateur Xbox One répond aux exigences d’une console de jeu qui prend en charge plusieurs utilisateurs jouant ensemble sur un seul et même appareil. 
 Ce modèle permet à plusieurs utilisateurs, disposant chacun de leur propre manette, de se connecter et d’accéder à la console simultanément dans le cadre d’une même session interactive. 
 Cette technique diffère de celle mise en œuvre sur d’autres appareils Windows. Par exemple :
 * Les **PC de bureau Windows** permettent à plusieurs utilisateurs d’utiliser le même appareil, mais chaque utilisateur dispose de sa propre session interactive, et chacune des sessions est totalement indépendante des autres sessions sur l’appareil.
 * Les **téléphones Windows** ne sont utilisables que par une seule personne. Cet utilisateur unique est déterminé lors de la phase OOBE (out-of-box experience) et ne peut plus se déconnecter une fois connecté. En effet, si une autre personne veut utiliser l’appareil, ce dernier doit être réinitialisé. 
-* Les **consoles Xbox One** permettent à plusieurs utilisateurs de se connecter et d’utiliser l’appareil en même temps au cours d’une seule et même session interactive.
+* Les **consoles Xbox One** permettent à plusieurs utilisateurs de se connecter et d’utiliser l’appareil en même temps au cours d’une seule et même session interactive.
 
 Chaque utilisateur du modèle utilisateur Xbox One dispose d’un compte d’utilisateur local. 
 Ce compte d’utilisateur local est associé à un compte Xbox Live (et donc à un compte Microsoft). 
@@ -33,8 +34,7 @@ Ces « applications multi-utilisateur » s’exécutent dans le contexte d’u
 Dans le cas de ces jeux, le modèle utilisateur Xbox ne gère pas l’utilisateur associé au jeu et n’exige même pas qu’un utilisateur soit connecté pour que le jeu s’exécute. 
 Cela implique que ces jeux soient écrits pour reconnaître explicitement et gérer leurs exigences vis-à-vis des utilisateurs, notamment la nécessité ou non qu’un utilisateur soit connecté, l’éventuelle implémentation du concept d’utilisateur actuel, l’autorisation ou l’interdiction des entrées simultanées par plusieurs utilisateurs, etc.
 
-##Aide concernant le modèle à utiliser
-Toutes les applications UWP et la majorité des jeux pour joueur unique peuvent être écrits sous la forme d’applications mono-utilisateur. 
+##Aide concernant le modèle à utiliser Toutes les applications UWP et la majorité des jeux pour joueur unique peuvent être écrits sous la forme d’applications mono-utilisateur. 
 Le choix du modèle multi-utilisateur Xbox One n’est recommandé que pour les jeux multijoueur coopératifs. 
 Nous fournirons une documentation, des recommandations et des exemples plus détaillés à ce sujet dans une future version préliminaire pour développeurs.
 
@@ -42,6 +42,6 @@ Nous fournirons une documentation, des recommandations et des exemples plus dét
 - [UWP sur Xbox One](index.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

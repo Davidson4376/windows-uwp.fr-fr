@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: Désactivation du Mode développeur Xbox One
 description: Comment désactiver le Mode développeur
 area: Xbox
@@ -40,7 +41,7 @@ La méthode recommandée pour désactiver le Mode développeur sur votre console
 
 Vous pouvez également désactiver le Mode développeur en réinitialisant votre console.  
 
-> **Remarque**&nbsp;&nbsp;La réinitialisation de votre console entraîne la perte de toutes les données de jeu enregistrées localement.
+> **Remarque** &nbsp;&nbsp;La réinitialisation de votre console entraîne la perte de toutes les données de jeu enregistrées localement.
 
 Pour réinitialiser votre console procédez comme suit :
 
@@ -75,13 +76,13 @@ Si vous n’avez pas encore basculé votre console Xbox One en Mode commercial, 
 1. Lancez **Dev Home**.
 2. Cliquez sur **Quitter le mode développeur**.  Votre console redémarre en Mode commercial.
 
-![Activation - Étape 13](images/activation-step-13.png)
+![Activation - Étape 13](images/deactivation-leave-dev-mode.png)
 
 ## Voir aussi
 - [Activation du Mode développeur Xbox One](devkit-activation.md)
 - [UWP sur Xbox One](index.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

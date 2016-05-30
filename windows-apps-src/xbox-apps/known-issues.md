@@ -1,24 +1,30 @@
 ---
-title: Problèmes connus avec UWP sur la version préliminaire pour développeurs de Xbox One
+author: Mtoepke
+title: Problèmes connus avec UWP sur la version prélim. pour dév. Xbox One
 description: 
 area: Xbox
 ---
 
-# Problèmes connus avec UWP sur la version préliminaire pour développeurs de Xbox One
+# Problèmes connus avec UWP sur la version préliminaire pour développeurs de Xbox
+
+Cette rubrique décrit les problèmes connus liés à la plateforme UWP sur la version préliminaire pour développeurs de Xbox. 
+Pour plus d’informations sur cette version préliminaire pour développeurs, voir [UWP sur Xbox](index.md). 
+
+\[Si vous avez accédé à cette page à partir d’un lien dans une rubrique de référence d’une API et que vous recherchez des informations sur les API pour la famille d’appareils universels, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/?LinkID=760755).\]
 
 La Mise à jour système de la version préliminaire pour développeurs du programme Xbox inclut des versions logicielles préliminaires anticipées et expérimentales. 
 Cela signifie que certains jeux et applications courants ne fonctionneront pas comme prévu, et que vous risquez d’être confronté à des blocages occasionnels et à une perte de données. 
-Si vous quittez la version préliminaire pour développeurs, votre console procédera à une réinitialisation aux paramètres d’usine. Vous devrez, par conséquent, réinstaller l’ensemble de vos jeux, de vos applications et de votre contenu.
+Si vous quittez la version d’évaluation pour développeurs, votre console procédera à une réinitialisation aux paramètres d’usine. Vous devrez, par conséquent, réinstaller l’ensemble de vos jeux, de vos applications et de votre contenu.
 
 Pour les développeurs, cela implique que certains outils et API de développement ne fonctionneront pas correctement. 
-Cela signifie également que les fonctionnalités destinées à la version finale ne seront pas toutes incluses ou de qualité de mise en production. 
+Les fonctionnalités destinées à la version finale ne seront pas toutes incluses ou de qualité de mise en production. 
 **En conséquence, les performances système de cette version préliminaire ne refléteront pas celles de la version finale.**
 
 La liste ci-après met en relief certains problèmes connus que vous pouvez rencontrer dans cette version, mais cette liste n’est pas exhaustive. 
 
 **Vos commentaires nous intéressent**. Par conséquent, n’hésitez pas à nous faire part de vos éventuels problèmes sur le forum [Développement d’applications Windows universelles](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
 
-Si vous êtes bloqué, consultez cette page ainsi que la rubrique [Forum Aux Questions](frequently-asked-questions.md), et utilisez le forum pour demander de l’aide.
+Si vous êtes bloqué, lisez les informations présentées dans cette rubrique, consultez le [Forum aux questions](frequently-asked-questions.md) et utilisez les forums pour demander de l’aide.
 
 
 ## Développement de jeux
@@ -37,7 +43,11 @@ Reportez-vous également à la section [Alternance de configurations de build po
 
 Nous n’avons testé que quelques-uns des moteurs de jeu les plus courants, et notre couverture des tests de cette version préliminaire est incomplète. 
 Votre propre expérience peut donc différer. 
-Nous souhaiterions obtenir vos commentaires sur les problèmes que vous rencontrez. 
+
+Le bon fonctionnement des moteurs de jeu suivants a été vérifié :
+* [Construct 2](https://www.scirra.com/)
+
+D’autres fonctionnent sans doute également. Nous souhaiterions obtenir vos commentaires sur les problèmes que vous rencontrez. 
 Utilisez le forum pour nous faire part de vos difficultés.
 
 ### Prise en charge de DirectX 12
@@ -45,14 +55,33 @@ Utilisez le forum pour nous faire part de vos difficultés.
 UWP sur Xbox One prend en charge la fonctionnalité DirectX 11 niveau 10. 
 DirectX 12 n’est pas pris en charge pour l’instant. 
 À l’instar de toutes les consoles de jeu traditionnelles, Xbox One est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. 
-Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
+Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
 
+### La version préliminaire pour développeurs de Xbox One désactive la diffusion de jeux pour Windows 10
 
-## Ressources système pour les applications et jeux UWP sur Xbox One
+L’activation de la version préliminaire pour développeurs de Xbox One sur votre console vous empêche de diffuser des jeux depuis votre Xbox One vers l’application Xbox sur Windows 10, même si votre console est configurée en mode commercial. Pour restaurer la fonctionnalité de diffusion des jeux, vous devez quitter la version préliminaire pour développeurs.
+
+### Problème connu avec la zone adaptée à l’écran de TV
+
+Par défaut, la zone d’affichage des applications UWP sur Xbox doit être insérée dans la zone adaptée à l’écran de TV. Toutefois, il existe un bogue connu dans la version préliminaire pour développeurs de Xbox One : la zone adaptée à l’écran de TV commence à [0, 0] plutôt qu’à [_décalage_, _décalage_].
+
+Pour plus d’informations sur la zone adaptée à l’écran de TV, voir [https://msdn.microsoft.com/fr-fr/windows/uwp/input-and-devices/designing-for-tv](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv). 
+
+La meilleure façon de contourner ce problème consiste à désactiver la zone adaptée à l’écran de TV, comme illustré dans l’exemple JavaScript suivant.
+
+    var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
+
+    applicationView.setDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.useCoreWindow);
+
+### Le mode souris n’est pas encore pris en charge.
+
+Le _mode souris_ décrit dans la rubrique [https://msdn.microsoft.com/fr-fr/windows/uwp/input-and-devices/designing-for-tv] (https://msdn.microsoft.com/fr-fr/windows/uwp/input-and-devices/designing-for-tv?f=255&amp;MSPPError=-2147217396#mouse-mode) n’est pas encore pris en charge par la version préliminaire pour développeurs de Xbox One.
+
+## Ressources système pour les applications UWP et les jeux sur Xbox One
 
 Les applications et jeux UWP qui s’exécutent sur Xbox One partagent des ressources avec le système et d’autres applications. Par conséquent, les ressources disponibles pour un jeu ou une application quelconques sont régies par le système. 
 Vos éventuels problèmes de mémoire ou de performances peuvent donc découler de cette situation. 
-Pour plus d’informations, voir [Ressources système pour les applications et jeux UWP sur Xbox One](system-resource-allocation.md).
+Pour plus d’informations, voir [Ressources système pour les applications et jeux UWP sur Xbox One](system-resource-allocation.md).
 
 
 ## Mise en réseau à l’aide de sockets traditionnels
@@ -64,7 +93,7 @@ Les développeurs peuvent toujours utiliser HTTP et WebSockets.
 ## Couverture des API UWP
 
 Les API UWP ne fonctionnent pas toutes comme prévu sur Xbox dans cette version préliminaire. 
-Pour obtenir la liste des API inopérantes, voir [Limitations des fonctionnalités de la famille d’appareils UWP sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). 
+Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). 
 Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
 
 ## Différences d’aspect et de comportement entre les contrôles XAML et les contrôles de l’interpréteur de commandes Xbox One
@@ -78,7 +107,7 @@ Ces problèmes seront résolus dans une future version préliminaire pour dével
 
 ## Problèmes Visual Studio et de déploiement
 
-### Alternance de configurations de build pouvant entraîner des problèmes de déploiement
+### L’alternance de configurations de build peut entraîner des problèmes de déploiement
 
 Le fait d’alterner entre des builds de débogage et de mise en production, entre x86 et x64, ou entre des builds managées et natives .Net peut entraîner l’échec des déploiements. 
 
@@ -86,11 +115,11 @@ La solution la plus simple pour éviter ces problèmes dans cette version préli
 
 Si vous rencontrez ce problème, vous pourrez généralement le résoudre en désinstallant votre application dans l’application Collections de votre console Xbox One.
 
-> **Remarque**&nbsp;&nbsp;La désinstallation de votre application à partir de Windows Device Portal (WDP) ne résoudra pas le problème.
+> **Remarque** &nbsp;&nbsp;La désinstallation de votre application à partir de Windows Device Portal (WDP) ne résoudra pas le problème.
 
 Si vos problèmes persistent, désinstallez votre application ou jeu dans l’application Collections, quittez le mode développeur, redémarrez en mode commercial, puis rebasculez en mode développeur.
 
-Pour plus d’informations, voir la section « Résolution des problèmes de déploiement » de la rubrique [Forum aux questions](frequently-asked-questions.md).
+Pour plus d’informations, voir la section « Résolution des problèmes de déploiement » de la rubrique [Forum aux questions](frequently-asked-questions.md).
 
 ### Échec silencieux de la désinstallation d’une application en cours de débogage dans Visual Studio
 
@@ -115,12 +144,12 @@ Vous pouvez lancer WDP en redémarrant Xbox One.
 
 Si vous désactivez WDP dans l’outil Accueil du développeur, WDP se désactive. 
 Toutefois, le redémarrage de votre console Xbox One entraînera automatiquement celui de WDP. 
-Vous pouvez contourner ce problème en utilisant **Réinitialiser et conserver mes jeux et applications** pour supprimer tous les états stockés sur votre console Xbox One. 
-Accédez à Paramètres > Système > Informations et mise à jour de la console > Réinitialiser la console, puis sélectionnez le bouton **Réinitialiser et conserver mes jeux et applications**.
+Vous pouvez contourner ce problème en utilisant **Réinitialiser et conserver mes jeux et applications** pour supprimer tous les états stockés sur votre console Xbox One. 
+Accédez à Paramètres &gt; Système &gt; Informations et mise à jour de la console &gt; Réinitialiser la console, puis sélectionnez le bouton **Réinitialiser et conserver mes jeux et applications**.
 
-> **Attention**&nbsp;&nbsp;Cette opération supprimera tous les paramètres enregistrés sur votre console Xbox One, notamment les paramètres sans fil, les comptes d’utilisateurs et tous les états d’avancement de jeu non enregistrés dans le stockage cloud.
+> **Attention** &nbsp;&nbsp;Cette opération supprimera tous les paramètres enregistrés sur votre console Xbox One, notamment les paramètres sans fil, les comptes d’utilisateurs et tous les états d’avancement de jeu non enregistrés dans le stockage cloud.
 
-> **Attention**&nbsp;&nbsp;Ne sélectionnez PAS le bouton **Réinitialiser et supprimer tous les éléments**.
+> **Attention** &nbsp;&nbsp;Ne sélectionnez PAS le bouton **Réinitialiser et supprimer tous les éléments**.
 Cette opération supprimera tous vos jeux, applications, paramètres et contenus, désactivera le mode développeur et supprimera votre console du groupe Developer Preview.
 
 ### Mise à jour incorrecte des colonnes du tableau « Applications en cours d’exécution » 
@@ -134,13 +163,13 @@ Vous pouvez résoudre ce problème en désactivant l’Affichage de compatibilit
 
 ### Avertissement de sécurité déclenché par l’accès à WDP
 
-Vous recevrez un avertissement concernant le certificat fourni, semblable à celui illustré ci-dessous, 
-car le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. 
+Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. 
 Cliquez sur « Poursuivre sur ce site web » pour accéder à Windows Device Portal.
 
 ![Avertissement concernant le certificat de sécurité d’un site web](images/security_cert_warning.jpg)
 
 ## Accueil du développeur
+
 La sélection de l’option « Gérer Windows Device Portal » dans l’outil Accueil du développeur entraîne parfois une fermeture silencieuse et le réaffichage de l’écran d’accueil de l’outil Accueil du développeur. 
 Ce problème est dû à une défaillance de l’infrastructure WDP sur la console et peut être résolu grâce au redémarrage de la console.
 
@@ -149,6 +178,6 @@ Ce problème est dû à une défaillance de l’infrastructure WDP sur la consol
 - [UWP sur Xbox One](index.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

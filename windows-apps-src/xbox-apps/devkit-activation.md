@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: Activation du Mode développeur Xbox One
 description: Comment activer le Mode développeur afin de pouvoir basculer du Mode commercial au Mode développeur et inversement.
 area: Xbox
@@ -11,12 +12,12 @@ area: Xbox
 * [Basculer entre le Mode commercial et développeur](#switch-between-retail-and-developer-mode)
 
 ## Fonctionnement du Mode développeur
-La console Xbox One possède deux modes : le Mode *commercial* (1) et le Mode *développeur* (2). En Mode commercial, la console permet à n’importe quel utilisateur de jouer et d’exécuter des applications en tant qu’utilisateur. Le Mode développeur, vous permet de développer des logiciels pour la console, mais pas de jouer à des jeux commerciaux ou d’exécuter des applications commerciales.
+La console Xbox One possède deux modes : le Mode *commercial* (1) et le Mode *développeur* (2). En Mode commercial, la console permet à n’importe quel utilisateur de jouer et d’exécuter des applications en tant qu’utilisateur. Le Mode développeur, vous permet de développer des logiciels pour la console, mais pas de jouer à des jeux commerciaux ou d’exécuter des applications commerciales.
 Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. Une fois le Mode développeur activé, vous pouvez basculer entre le mode commercial (2a) et développeur (2b).
 
-> **Important**&nbsp;&nbsp;Quand vous activez le Mode développeur sur Xbox One, vous optez pour les mises à jour du système Xbox pour une version d’évaluation destinée aux développeurs comprenant des logiciels expérimentaux et préliminaires. Cela implique que certains jeux et applications les plus courants ne fonctionneront pas comme prévu, et que vous risquez d’être confronté à des blocages occasionnels et à une perte de données. Si vous quittez la version d’évaluation pour développeurs, votre console procédera à une réinitialisation aux paramètres d’usine. Vous devrez, par conséquent, réinstaller l’ensemble de vos jeux, de vos applications et de votre contenu. 
+> **Important** &nbsp;&nbsp;Quand vous activez le Mode développeur sur Xbox One, vous optez pour les mises à jour du système Xbox pour une version d’évaluation destinée aux développeurs comprenant des logiciels expérimentaux et préliminaires. Cela signifie que certains jeux et applications courants ne fonctionneront pas comme prévu, et que vous risquez d’être confronté à des blocages occasionnels et à une perte de données. Si vous quittez la version d’évaluation pour développeurs, votre console procédera à une réinitialisation aux paramètres d’usine. Vous devrez, par conséquent, réinstaller l’ensemble de vos jeux, de vos applications et de votre contenu. 
 
-> **Remarque**&nbsp;&nbsp;Vous ne pouvez activer le Mode développeur sur Xbox One si vous faites partie d’un programme d’évaluation existant, tel que le programme Xbox One Beta. Vous pouvez quitter un programme d’évaluation existant à l’aide de l’application Xbox Preview Dashboard. 
+> **Remarque** &nbsp;&nbsp;Vous ne pouvez activer le Mode développeur sur Xbox One si vous faites partie d’un programme d’évaluation existant, tel que le programme Xbox One Beta. Vous pouvez quitter un programme d’évaluation existant à l’aide de l’application Xbox Preview Dashboard. 
 
 ![Modes Xbox One](images/dev-mode-flow.png)
 
@@ -32,7 +33,7 @@ Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. 
     ![Application Dev Mode Activation](images/activation-step-3.png)
 4. Ouvrez l’application Dev Mode Activation.    
     
-    > **Remarque**&nbsp;&nbsp;Assurez-vous de lire attentivement les clauses d’exclusion de responsabilité. Dans le cadre de l’activation Xbox pour le développement, vous obtiendrez des versions préliminaires. Pour jouer à des jeux et utiliser des applications, vous devez passer en Mode commercial. Les applications chargées de manière indépendante fonctionnent uniquement en Mode développeur.
+    > **Remarque** &nbsp;&nbsp;Assurez-vous de lire attentivement les clauses d’exclusion de responsabilité. Dans le cadre de l’activation Xbox pour le développement, vous obtiendrez des versions préliminaires. Pour jouer à des jeux et utiliser des applications, vous devez passer en Mode commercial. Les applications chargées de manière indépendante fonctionnent uniquement en Mode développeur.
 
 5.  Notez le code affiché dans l’application Dev Mode Activation.  
 
@@ -42,11 +43,14 @@ Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. 
 7.  Connectez-vous au Centre de développement à l’aide du compte correspondant.  
 8.  Entrez le code d’activation affiché dans l’application Dev Mode Activation.   
    
-     > **Remarque**&nbsp;&nbsp;Vous disposez d’un nombre limité d’activations associées à votre compte. Une fois le Mode développeur activé, le Centre de développement indique que vous avez utilisé une des activations associées à votre compte. 
+     > **Remarque** &nbsp;&nbsp;Vous disposez d’un nombre limité d’activations associées à votre compte. Une fois le Mode développeur activé, le Centre de développement indique que vous avez utilisé une des activations associées à votre compte. 
     
     ![Activation - Étape 8](images/activation-step-8.png)    
     
-9.  Cliquez sur **Accepter et activer**. La page sera rechargée et votre appareil apparaîtra dans le tableau.  
+9.  Cliquez sur **Accepter et activer**. La page sera rechargée et votre appareil apparaîtra dans le tableau.
+    
+    > **Remarque** &nbsp;&nbsp;Les conditions du contrat régissant le programme d’activation du Mode développeur Xbox One peuvent être consultées [ici](http://go.microsoft.com/fwlink/?LinkId=760399).
+
 10. Après avoir saisi votre code d’activation, votre console affiche un écran de progression pour le processus d’activation.  
 11. Une fois l’activation terminée, vous devez attendre que votre console soit mise à jour vers la version d’évaluation requise. Ce processus peut prendre plusieurs heures. Soyez patient.  
 
@@ -74,6 +78,6 @@ Une fois le Mode développeur activé sur votre console, utilisez **Dev Home** p
 - [UWP sur Xbox One](index.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

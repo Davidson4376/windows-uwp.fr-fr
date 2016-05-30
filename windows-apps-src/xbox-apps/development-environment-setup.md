@@ -1,10 +1,11 @@
 ---
-title: Configurer votre plateforme Windows universelle sur l’environnement de développement Xbox
+author: Mtoepke
+title: Configurer votre plateforme UWP sur l’environnement de développement Xbox
 description: Étapes relatives à la configuration et au test de votre plateforme Windows universelle sur l’environnement de développement Xbox.
 area: Xbox
 ---
 
-# Configurer votre plateforme Windows universelle sur l’environnement de développement Xbox
+# Configurer votre plateforme UWP sur l’environnement de développement Xbox
 
 La plateforme Windows universelle (UWP) sur l’environnement de développement Xbox se compose d’un ordinateur dédié au développement connecté à une console Xbox One via un réseau local.
 L’ordinateur de développement requiert Windows 10, Visual Studio 2015 Update 2, la version d’évaluation 14295 du kit de développement logiciel (SDK) Windows 10 et divers outils de prise en charge.
@@ -14,9 +15,9 @@ Cet article couvre les étapes relatives à la configuration et au test de votre
 
 ## Installation de Visual Studio
 
-1. Installez Visual Studio 2015 Update 2 ou version ultérieure. Pour en savoir plus et pour l’installation, voir [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads).
+1. Installez Visual Studio 2015 Update 2 ou version ultérieure. Pour en savoir plus et pour l’installation, voir [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads).
 
-1. Lorsque vous installez Visual Studio 2015 Update 2, assurez-vous que la case **Outils de développement d’applications Windows universelles** est cochée.
+1. Lorsque vous installez Visual Studio 2015 Update 2, assurez-vous que la case **Outils de développement d’applications Windows universelles** est cochée.
 
   ![Installer Visual Studio 2015 Update 2 ou version ultérieure.](images/vs_install_tools.png)
 
@@ -24,7 +25,7 @@ Cet article couvre les étapes relatives à la configuration et au test de votre
 
 Installez la version d’évaluation 14295 du Kit de développement logiciel (SDK) Windows 10. Pour obtenir des informations sur l’installation, voir [Télécharger les mises à jour Insider Preview pour les développeurs](http://go.microsoft.com/fwlink/p/?LinkId=780552).
 
-  > **Important**&nbsp;&nbsp;Vous devez installer la dernière version du Kit de développement logiciel (SDK), toutefois, vous n’avez _pas_ à installer la dernière version de Windows Insider Preview du système d’exploitation.
+  > **Important** &nbsp;&nbsp;Vous devez installer la dernière version du Kit de développement logiciel (SDK), toutefois, vous n’avez _pas_ à installer la dernière version de Windows Insider Preview du système d’exploitation.
 
 ## Créer votre première application
 
@@ -49,7 +50,7 @@ Installez la version d’évaluation 14295 du Kit de développement logiciel (S
   1. Dans **Ordinateur distant**, entrez l’adresse IP du système ou le nom d’hôte de la console Xbox One. Pour plus d’informations sur l’obtention de l’adresse IP ou du nom d’hôte, consultez [Présentation des outils Xbox One](introduction-to-xbox-tools.md).
   1. Dans la liste déroulante **Mode d’authentification**, sélectionnez **Universel (protocole non chiffré)**.
 
-    ![C# BlankApp Property Pages](images/vs_remote.jpg)
+    ![Pages de propriétés BlankApp C#](images/vs_remote.jpg)
 
 ### Démarrage d’un projet C++
 
@@ -77,11 +78,11 @@ Installez la version d’évaluation 14295 du Kit de développement logiciel (S
   1. Pour obtenir un code confidentiel, ouvrez **Dev Home** à partir de l’écran d’accueil sur votre console Xbox One.
   1. Sélectionnez **Jumeler avec Visual Studio**.
 
-    ![Pair with Visual Studio dialog](images/devhome_visualstudio.png)
+    ![Boîte de dialogue Jumeler avec Visual Studio](images/devhome_visualstudio.png)
 
   1. Entrez votre code confidentiel dans la boîte de dialogue **Jumeler avec Visual Studio**. Le code confidentiel suivant est juste un exemple. Le vôtre sera différent.
 
-    ![Pair with Visual Studio PIN dialog](images/devhome_pin.png)
+    ![Boîte de dialogue du code confidentiel Jumeler avec Visual Studio](images/devhome_pin.png)
 
   1. Des erreurs de déploiement, le cas échéant, s’afficheront dans la fenêtre **Sortie**.
 
@@ -99,6 +100,6 @@ Félicitations, vous avez correctement créé et déployé votre première appli
 ----
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
