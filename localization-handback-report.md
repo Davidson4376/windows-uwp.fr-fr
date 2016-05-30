@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 319
+ Total Files | 321
 
 ## File List
  Source File | Status | Details 
@@ -325,6 +325,8 @@
  [windows-apps-src\layout\peer-to-peer-navigation-between-two-pages.md](https://github.com/Microsoft/windows-apps/blob/a4e9a90edd2aae9d2fd5d7bead948422d43dad59/windows-apps-src/layout/peer-to-peer-navigation-between-two-pages.md) | InSyncHandedBackSuccess | [Details](#ec1c0339017fb60ed37f45dfa6f809a5eba6fbb13209)
  [windows-apps-src\layout\screen-sizes-and-breakpoints-for-responsive-design.md](https://github.com/Microsoft/windows-apps/blob/a4e9a90edd2aae9d2fd5d7bead948422d43dad59/windows-apps-src/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | InSyncHandedBackSuccess | [Details](#153652c9fcc9745bdee087033d65eec2bc860e533210)
  [windows-apps-src\layout\show-multiple-views.md](https://github.com/Microsoft/windows-apps/blob/a4e9a90edd2aae9d2fd5d7bead948422d43dad59/windows-apps-src/layout/show-multiple-views.md) | InSyncHandedBackSuccess | [Details](#23e999f86fb0552b96cddbd3b9d11803106bf6c23211)
+ [windows-apps-src\maps-and-location\get-location.md](https://github.com/Microsoft/windows-apps/blob/98b9bca2528c041d2fdfc6a0adead321737932b4/windows-apps-src/maps-and-location/get-location.md) | InSyncHandedBackSuccess | [Details](#d35bf3ef13e2b36dfed6613a00f65d19b90134643217)
+ [windows-apps-src\maps-and-location\guidelines-for-geofencing.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/maps-and-location/guidelines-for-geofencing.md) | InSyncHandedBackSuccess | [Details](#d631885eced58d360d3e0442cbb49ede7b9b86c33219)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -4153,6 +4155,30 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/cced1df86622661a14d8a7bd66dca902cb39b4a9/ol-handback/Microsoft/windows-apps.fr-fr/master/layout/show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.fr-fr.xlf)
 * Handback Datetime: 2016-05-30 22:15:07
+* [Back to Top](#report-top)
+
+##### <a name='d35bf3ef13e2b36dfed6613a00f65d19b90134643217'></a> Source: [windows-apps-src\maps-and-location\get-location.md](https://github.com/Microsoft/windows-apps/blob/98b9bca2528c041d2fdfc6a0adead321737932b4/windows-apps-src/maps-and-location/get-location.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\maps-and-location\get-location.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/932b4242beba0e7fad89f3591691bec04cbf00cf/windows-apps-src/maps-and-location/get-location.md)
+* Handoff File: [get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/ea79569f19ee9b5ffc472feb2ffc1b301d582e0e/ol-handback/Microsoft/windows-apps.fr-fr/master/maps-and-location/get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:15:14
+* [Back to Top](#report-top)
+
+##### <a name='d631885eced58d360d3e0442cbb49ede7b9b86c33219'></a> Source: [windows-apps-src\maps-and-location\guidelines-for-geofencing.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/maps-and-location/guidelines-for-geofencing.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\maps-and-location\guidelines-for-geofencing.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/932b4242beba0e7fad89f3591691bec04cbf00cf/windows-apps-src/maps-and-location/guidelines-for-geofencing.md)
+* Handoff File: [guidelines-for-geofencing.34e1970cfcb024f200e86ae0b1f0f9c518f79830.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/guidelines-for-geofencing.34e1970cfcb024f200e86ae0b1f0f9c518f79830.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [guidelines-for-geofencing.34e1970cfcb024f200e86ae0b1f0f9c518f79830.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/ea79569f19ee9b5ffc472feb2ffc1b301d582e0e/ol-handback/Microsoft/windows-apps.fr-fr/master/maps-and-location/guidelines-for-geofencing.34e1970cfcb024f200e86ae0b1f0f9c518f79830.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:15:14
 * [Back to Top](#report-top)
 
 
