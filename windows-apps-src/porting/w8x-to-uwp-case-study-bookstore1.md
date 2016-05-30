@@ -1,12 +1,13 @@
 ---
-title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
+author: mcleblanc
+title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10.
+description: Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10.
 ---
 
-# Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
+# Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; Bookstore1
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10. Une application 8.1 universelle génère un package d’application pour Windows 8.1 et un autre pour Windows Phone 8.1. Grâce à Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
@@ -14,13 +15,13 @@ L’application que nous porterons se compose d’une classe **ListBox** liée �
 
 Les rubriques précédentes de cette section décrivent les différences entre les plateformes et fournissent des détails et des recommandations sur le processus de portage des différents aspects d’une application dans le balisage XAML, de la liaison à un modèle d’affichage à l’accès aux données. Une étude de cas vise à compléter ces recommandations en les appliquant à un exemple concret. Elle part du principe que vous avez lu les recommandations, qui ne sont donc pas répétées.
 
-**Remarque** Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**Remarque** Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
 ## Téléchargements
 
 [Téléchargez l’application 8.1 universelle Bookstore1\_81](http://go.microsoft.com/fwlink/?linkid=532946).
 
-[Téléchargez l’application Windows 10 Bookstore1Universal\_10](http://go.microsoft.com/fwlink/?linkid=532950).
+[Téléchargez l’application Windows 10 Bookstore1Universal\_10](http://go.microsoft.com/fwlink/?linkid=532950).
 
 ## Application 8.1 universelle
 
@@ -56,7 +57,7 @@ La procédure consistant à créer un projet dans Visual Studio, puis à copier
 
 -   Copiez le fichier BookstoreStyles.xaml. Nous l’utiliserons comme point de départ, car l’ensemble des clés de ressources figurant dans ce fichier sera résolu dans une application Windows 10, alors que certaines clés de ressources du fichier Windows Phone correspondant ne le seront pas.
 
-Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore1\_81 par Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Aucune modification du code n’est nécessaire dans le modèle d’affichage, ni dans tout autre code impératif. Toutefois, pour simplifier l’identification de la version de l’application en cours d’exécution, modifiez la valeur renvoyée par la propriété **Bookstore1Universal\_10.BookstoreViewModel.AppName** « BOOKSTORE1\_81 » en « BOOKSTORE1UNIVERSAL\_10 ».
+Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore1\_81 par Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Aucune modification du code n’est nécessaire dans le modèle d’affichage, ni dans tout autre code impératif. Toutefois, pour simplifier l’identification de la version de l’application en cours d’exécution, modifiez la valeur renvoyée par la propriété **Bookstore1Universal\_10.BookstoreViewModel.AppName** « BOOKSTORE1\_81 » en « BOOKSTORE1UNIVERSAL\_10 ».
 
 Vous pouvez maintenant générer l’application et l’exécuter. Voici à quoi ressemble notre nouvelle application UWP, sans aucun effort de portage vers Windows 10 pour l’instant.
 
@@ -103,7 +104,7 @@ Ajoutez un nouvel élément de projet **ResourceDictionary** et nommez-le Bookst
 
 Modifiez une copie du modèle de contrôle de la zone de liste et stockez-la avec la clé de `BookstoreListBoxStyle` dans le nouveau dictionnaire de ressources, BookstoreStyles.DeviceFamily-Mobile.xaml. Maintenant, nous allons apporter des modifications simples à trois méthodes setter.
 
--   Dans la méthode setter de premier plan, remplacez la valeur par `"{x:Null}"`. Notez que la définition d’une propriété sur `"{x:Null}"` directement dans un élément revient à définir la valeur `null` dans le code. Mais l’utilisation de la valeur `"{x:Null}"` dans une méthode setter a un seul effet : elle remplace la méthode setter dans le style par défaut (pour la même propriété) et rétablit la valeur par défaut de la propriété sur l’élément cible.
+-   Dans la méthode setter de premier plan, remplacez la valeur par `"{x:Null}"`. Notez que la définition d’une propriété sur `"{x:Null}"` directement dans un élément revient à définir la valeur `null` dans le code. Mais l’utilisation de la valeur `"{x:Null}"` dans une méthode setter a un seul effet : elle remplace la méthode setter dans le style par défaut (pour la même propriété) et rétablit la valeur par défaut de la propriété sur l’élément cible.
 -   Dans la méthode setter d’arrière-plan, remplacez la valeur par `"Transparent"` pour supprimer cet arrière-plan clair.
 -   Dans la méthode setter de modèle, recherchez l’état visuel nommé `Focused` et supprimez sa table de montage séquentielle, la rendant ainsi dans une balise vide.
 -   Supprimez toutes les autres méthodes setter du balisage.
@@ -123,6 +124,6 @@ Nous avons également pu constater que le processus de portage des modèles d’
 Dans l’étude de cas suivante, [Bookstore2](w8x-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et leur affichage.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

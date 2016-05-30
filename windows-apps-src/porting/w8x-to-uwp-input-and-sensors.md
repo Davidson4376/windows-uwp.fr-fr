@@ -1,16 +1,17 @@
 ---
+author: mcleblanc
 description: Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique une entrée de l’utilisateur et une sortie vers ce dernier.
-title: Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
+title: Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ---
 
-# Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
+# Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Rubrique précédente : [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md).
+Rubrique précédente : [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md).
 
 Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique l’entrée de l’utilisateur et la sortie vers ce dernier. Il peut également impliquer le traitement des données. Néanmoins, ce code n’est généralement pas pensé comme la couche interface utilisateur *ni* comme la couche de données. Ce code inclut l’intégration au contrôleur de vibrations, à l’accéléromètre, au gyroscope, au microphone et au haut-parleur (qui rejoignent la reconnaissance et la synthèse vocales), à la (géo)localisation et aux modalités d’entrée telles que l’écran tactile, la souris, le clavier et le stylet.
 
@@ -24,7 +25,7 @@ Pour plus d’informations, voir [Cycle de vie de l’application](https://msdn.
 ## Contenu audio en arrière-plan
 
 
-Dans le cas de la propriété [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352), les valeurs **ForegroundOnlyMedia** et **BackgroundCapableMedia** sont déconseillées pour les applications Windows 10. Utilisez plutôt le modèle d’application du Windows Phone Store. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140).
+Dans le cas de la propriété [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352), les valeurs **ForegroundOnlyMedia** et **BackgroundCapableMedia** sont déconseillées pour les applications Windows 10. Utilisez plutôt le modèle d’application du Windows Phone Store. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140).
 
 ## Détection de la plateforme d’exécution de votre application
 
@@ -37,7 +38,7 @@ Si votre application 8.1 universelle intègre du code qui détecte le système 
 
  
 
-Pour adapter l’interface utilisateur à différents appareils, plusieurs techniques sont recommandées. Continuez à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans le balisage XAML, continuez à utiliser les tailles en pixels effectifs (auparavant appelés « pixels d’affichage ») afin que votre interface utilisateur s’adapte à différentes résolutions et différents facteurs d’échelle (voir [Pixels effectifs, distance d’affichage et facteurs d’échelle](w8x-to-uwp-porting-xaml-and-ui.md#effective-pixels)). Utilisez également les déclencheurs adaptatifs et les méthodes setter du Gestionnaire d’état visuel pour adapter votre interface utilisateur à la taille de la fenêtre (voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631)).
+Pour adapter l’interface utilisateur à différents appareils, plusieurs techniques sont recommandées. Continuez à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans le balisage XAML, continuez à utiliser les tailles en pixels effectifs (auparavant appelés « pixels d’affichage ») afin que votre interface utilisateur s’adapte à différentes résolutions et différents facteurs d’échelle (voir [Pixels effectifs, distance d’affichage et facteurs d’échelle](w8x-to-uwp-porting-xaml-and-ui.md#effective-pixels)). Utilisez également les déclencheurs adaptatifs et les méthodes setter du Gestionnaire d’état visuel pour adapter votre interface utilisateur à la taille de la fenêtre (voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631)).
 
 Toutefois, si l’un de vos scénarios implique nécessairement la détection de la famille d’appareils, vous pouvez mettre celle-ci en œuvre. Dans cet exemple, nous faisons appel à la classe [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) pour naviguer vers une page adaptée à la famille d’appareils mobiles lorsqu’un tel appareil est utilisé, en veillant à revenir vers une page par défaut dans le cas contraire.
 
@@ -72,6 +73,6 @@ Lorsqu’une application déclarant la fonctionnalité de localisation dans son 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

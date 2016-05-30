@@ -1,12 +1,13 @@
 ---
+author: mcleblanc
 description: Lorsque vous commencez le processus de portage, vous avez le choix entre deux options.
-title: Portage d’un projet Windows Runtime 8.x vers un projet UWP
+title: Portage d’un projet Windows Runtime 8.x vers un projet UWP
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 ---
 
-# Portage d’un projet Windows Runtime 8.x vers un projet UWP
+# Portage d’un projet Windows Runtime 8.x vers un projet UWP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Lorsque vous commencez le processus de portage, vous avez le choix entre deux options. La première consiste à modifier une copie de vos fichiers de projet existants, y compris le manifeste de package d’application (pour cette option, voir les informations sur la mise à jour de vos fichiers de projet dans [Migrer des applications vers la plateforme Windows universelle](https://msdn.microsoft.com/library/mt148501.aspx)). La seconde consiste à créer un projet Windows 10 dans Visual Studio et à copier vos fichiers dans ce projet. La première section de cette rubrique décrit la seconde option, mais le reste de la rubrique comporte des informations supplémentaires applicables aux deux options. Vous pouvez également décider de conserver votre nouveau projet Windows 10 dans la même solution que vos projets existants et de partager les fichiers de code source à l’aide d’un projet partagé. Ou vous pouvez conserver le nouveau projet dans une solution propre à celui-ci et partager les fichiers de code source à l’aide de la fonctionnalité de fichiers liés offerte par Visual Studio.
@@ -18,8 +19,8 @@ Cette procédure est axée sur l’option consistant à créer un projet Windows
 1.  Lancez Microsoft Visual Studio 2015 et créez un projet d’application vide (Windows universelle). Pour en savoir plus, voir [Modèles de projet en C#, VB et C++ pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/hh768232). Votre nouveau projet crée un package d’application (fichier APPX) exécutable sur toutes les familles d’appareils.
 2.  Dans votre projet d’application 8.1 universelle, identifiez tous les fichiers de code source et les fichiers de ressources visuelles que vous souhaitez réutiliser. Au moyen de l’Explorateur de fichiers, copiez les modèles de données, les modèles d’affichage, les ressources visuelles, les dictionnaires de ressources, la structure des dossiers et toute information que vous souhaitez réutiliser dans votre nouveau projet. Copiez ou créez des sous-dossiers sur le disque, si nécessaire.
 3.  Copiez également les vues (par exemple, les fichiers MainPage.xaml et MainPage.xaml.cs) dans le nouveau projet. Là encore, créez autant de sous-dossiers que nécessaire, puis supprimez les affichages existants du projet. Toutefois, avant de remplacer ou de supprimer un affichage généré par Visual Studio, créez-en une copie, car vous pourrez avoir besoin de vous y référer ultérieurement. La première phase du portage d’une application 8.1 universelle se focalise sur l’obtention d’une application qui s’affiche et fonctionne correctement sur une famille d’appareils spécifique. Par la suite, vous ferez en sorte que les vues s’adaptent bien à tous les facteurs de forme et aurez la possibilité d’ajouter du code adaptatif pour tirer le meilleur parti d’une famille d’appareils spécifique.
-4.  Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Sélectionnez les fichiers que vous avez copiés, cliquez dessus avec le bouton droit de la souris et sélectionnez **Inclure dans le projet**. Les dossiers conteneurs sont automatiquement inclus. Vous pouvez ensuite désactiver l’option **Afficher tous les fichiers**, si vous le souhaitez. Vous pouvez également opter pour un flux de travail alternatif, qui repose sur l’utilisation de la commande **Ajouter un élément existant** après la création des sous-dossiers requis dans l’**Explorateur de solutions** de Visual Studio. Pour les ressources visuelles, vérifiez que l’option **Action de génération** est définie sur **Contenu** et que l’option **Copier dans le répertoire de sortie** est définie sur **Ne pas copier**.
-5.  À ce stade, il est possible que vous rencontriez des erreurs de génération. Toutefois, si vous savez ce que vous devez modifier, vous pouvez utiliser la commande **Rechercher et remplacer** de Visual Studio pour apporter des modifications en bloc à votre code source. Puis, dans l’éditeur de code impératif, utilisez les commandes **Résoudre** et **Organiser les instructions Using** du menu contextuel pour effectuer des modifications plus ciblées.
+4.  Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Sélectionnez les fichiers que vous avez copiés, cliquez dessus avec le bouton droit de la souris et sélectionnez **Inclure dans le projet**. Les dossiers conteneurs sont automatiquement inclus. Vous pouvez ensuite désactiver l’option **Afficher tous les fichiers**, si vous le souhaitez. Vous pouvez également opter pour un flux de travail alternatif, qui repose sur l’utilisation de la commande **Ajouter un élément existant** après la création des sous-dossiers requis dans l’**Explorateur de solutions** de Visual Studio. Pour les ressources visuelles, vérifiez que l’option **Action de génération** est définie sur **Contenu** et que l’option **Copier dans le répertoire de sortie** est définie sur **Ne pas copier**.
+5.  À ce stade, il est possible que vous rencontriez des erreurs de génération. Toutefois, si vous savez ce que vous devez modifier, vous pouvez utiliser la commande **Rechercher et remplacer** de Visual Studio pour apporter des modifications en bloc à votre code source. Puis, dans l’éditeur de code impératif, utilisez les commandes **Résoudre** et **Organiser les instructions Using** du menu contextuel pour effectuer des modifications plus ciblées.
 
 ## Valorisation de la réutilisation du code et du balisage
 
@@ -39,7 +40,7 @@ La plupart des API Windows Runtime déjà appelées par votre application 8.1 
 
 Si vous obtenez des erreurs de compilation à propos d’espaces de noms, de types ou de membres introuvables, cela en est probablement la cause. Ouvrez la rubrique concernant l’API dans la documentation de référence sur les API et accédez à la section Configuration requise pour connaître la famille d’appareils d’implémentation. Si celle-ci ne correspond pas à votre famille d’appareils cible, vous avez besoin d’ajouter une référence au SDK d’extension pour cette famille d’appareils afin que l’API soit disponible pour votre projet.
 
-Cliquez sur **Projet** &gt; **Ajouter une référence** &gt; **Windows universel** &gt; **Extensions** et sélectionnez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version 10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
+Cliquez sur **Projet**&gt;**Ajouter une référence**&gt;**Applications universelles Windows**&gt;**Extensions** et cochez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version 10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
 
 La référence suivante sera ajoutée à votre fichier de projet :
 
@@ -63,9 +64,9 @@ Voir également [Manifeste du package de l’application](#appxpackage).
 
 Si vous utilisez la compilation conditionnelle (avec des directives de préprocesseur C#) afin que vos fichiers de code fonctionnent à la fois sur Windows 8.1 et sur Windows Phone 8.1, vous pouvez à présent revoir cette compilation conditionnelle à la lumière du travail de convergence effectué dans Windows 10. Cette convergence signifie que certaines conditions peuvent être complètement supprimées de votre application Windows 10. D’autres sont remplacées par des vérifications à l’exécution, comme illustré dans les exemples ci-dessous.
 
-**Remarque** Si vous le souhaitez, vous pouvez également prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10 dans un seul fichier de code. Si vous examinez les pages de propriétés de votre projet Windows 10, vous verrez que le projet définit WINDOWS\_UAP en tant que symbole de compilation conditionnelle. Par conséquent, vous pouvez l’utiliser en association avec WINDOWS\_APP et WINDOWS\_PHONE\_APP. Les exemples suivants illustrent le cas de figure plus simple impliquant la suppression de la compilation conditionnelle d’une application 8.1 universelle et le remplacement par le code équivalent pour une application Windows 10.
+**Remarque** Si vous le souhaitez, vous pouvez également prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10 dans un seul fichier de code. Si vous examinez les pages de propriétés de votre projet Windows 10, vous verrez que le projet définit WINDOWS\_UAP en tant que symbole de compilation conditionnelle. Par conséquent, vous pouvez l’utiliser en association avec WINDOWS\_APP et WINDOWS\_PHONE\_APP. Les exemples suivants illustrent le cas de figure plus simple impliquant la suppression de la compilation conditionnelle d’une application 8.1 universelle et le remplacement par le code équivalent pour une application Windows 10.
 
-Le premier exemple illustre le modèle d’utilisation pour l’API **PickSingleFileAsync** (qui s’applique uniquement à Windows 8.1) et l’API **PickSingleFileAndContinue** (qui concerne uniquement Windows Phone 8.1).
+Le premier exemple illustre le modèle d’utilisation pour l’API **PickSingleFileAsync** (qui s’applique uniquement à Windows 8.1) et l’API **PickSingleFileAndContinue** (qui concerne uniquement Windows Phone 8.1).
 
 ```csharp
 #if WINDOWS_APP
@@ -75,10 +76,10 @@ Le premier exemple illustre le modèle d’utilisation pour l’API **PickSingle
 #endif // WINDOWS_APP
 ```
 
-Windows 10 converge vers l’API [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275). Votre code est donc simplifié comme suit :
+Windows 10 converge vers l’API [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275). Votre code est donc simplifié comme suit :
 
 ```csharp
-    // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync</code></pre></td>
+    // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
 ```
 
 Dans cet exemple, nous gérons le bouton matériel Précédent, mais uniquement sur Windows Phone.
@@ -154,13 +155,13 @@ Voir également [Détection de la plateforme d’exécution de votre application
 
 ## Manifeste du package de l’application
 
-La rubrique [Nouveautés de Windows 10](https://msdn.microsoft.com/library/windows/apps/dn705793) répertorie les modifications apportées à la référence du schéma de manifeste de package pour Windows 10, y compris les éléments qui ont été ajoutés, supprimés et modifiés. Pour consulter des informations de référence sur l’ensemble des éléments, attributs et types du schéma, voir [Hiérarchie d’éléments](https://msdn.microsoft.com/library/windows/apps/dn934819). Si vous portez une application du Windows Phone Store, assurez-vous que l’élément **pm:PhoneIdentity** du manifeste de l’application portée correspond au contenu du manifeste de l’application que vous portez (pour plus de détails, voir la rubrique [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763)).
+La rubrique [Nouveautés de Windows 10](https://msdn.microsoft.com/library/windows/apps/dn705793) répertorie les modifications apportées à la référence du schéma de manifeste de package pour Windows 10, y compris les éléments qui ont été ajoutés, supprimés et modifiés. Pour consulter des informations de référence sur l’ensemble des éléments, attributs et types du schéma, voir [Hiérarchie d’éléments](https://msdn.microsoft.com/library/windows/apps/dn934819). Si vous portez une application du Windows Phone Store, assurez-vous que l’élément **pm:PhoneIdentity** du manifeste de l’application portée correspond au contenu du manifeste de l’application que vous portez (pour plus de détails, voir la rubrique [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763)).
 
 Les paramètres de votre projet (y compris les références aux SDK d’extension) déterminent la surface d’exposition d’API que votre application peut appeler. Mais le manifeste de votre package d’application est ce qui détermine l’ensemble réel d’appareils sur lesquels vos clients peuvent installer votre application à partir du Windows Store. Pour plus d’informations, voir la section d’exemples de [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
 
 Vous pouvez modifier le manifeste de package d’application pour définir diverses déclarations, fonctionnalités et autres paramètres requis par certaines fonctionnalités. Vous pouvez utiliser l’éditeur de manifeste de package d’application proposé par Visual Studio pour effectuer vos modifications. Si l’**Explorateur de solutions** ne s’affiche pas, sélectionnez-le dans le menu **Affichage**. Double-cliquez sur **Package.appxmanifest**. Cette opération affiche la fenêtre de l’éditeur de manifeste. Sélectionnez l’onglet approprié pour vos modifications, puis enregistrez-les.
 
-Rubrique suivante : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md).
+Rubrique suivante : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md).
 
 ## Rubriques connexes
 
@@ -171,6 +172,6 @@ Rubrique suivante : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

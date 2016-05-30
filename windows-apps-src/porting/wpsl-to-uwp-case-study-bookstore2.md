@@ -1,22 +1,23 @@
 ---
+author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément LongListSelector.
 title: Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2
 ---
 
-# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore2
+# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP &#58; Bookstore2
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément **LongListSelector**. Dans le modèle d’affichage, chaque instance de la classe **Author** représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément **LongListSelector**, nous pouvons visualiser la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Nous suivons la procédure de portage de l’application vers une application de plateforme Windows universelle (UWP) Windows 10.
+Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément **LongListSelector**. Dans le modèle d’affichage, chaque instance de la classe **Author** représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément **LongListSelector**, nous pouvons visualiser la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Nous suivons la procédure de portage de l’application vers une application de plateforme Windows universelle (UWP) Windows 10.
 
-**Remarque** Lorsque vous ouvrez Bookstore2Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**Remarque** Lorsque vous ouvrez Bookstore2Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
 ## Téléchargements
 
 [Téléchargez l’application Silverlight pour Windows Phone Bookstore2WPSL8](http://go.microsoft.com/fwlink/p/?linkid=522601).
 
-[Téléchargez l’application Windows 10 Bookstore2Universal\_10](http://go.microsoft.com/fwlink/?linkid=532952).
+[Téléchargez l’application Windows 10 Bookstore2Universal\_10](http://go.microsoft.com/fwlink/?linkid=532952).
 
 ##  Application Silverlight pour Windows Phone
 
@@ -36,11 +37,11 @@ Nous pouvons conserver les fichiers App.xaml et App.xaml.cs générés par Visua
 
 Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore2WPSL8 par Bookstore2Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Dans le code impératif du fichier source du modèle d’affichage, apportez les modifications de portage ci-après.
 
--   Remplacez `System.ComponentModel.DesignerProperties` par `DesignMode`, puis appliquez-lui la commande **Résoudre**. Supprimez la propriété `IsInDesignTool` et utilisez IntelliSense pour ajouter le nom de propriété correct : `DesignModeEnabled`.
+-   Remplacez `System.ComponentModel.DesignerProperties` par `DesignMode`, puis appliquez-lui la commande **Résoudre**. Supprimez la propriété `IsInDesignTool` et utilisez IntelliSense pour ajouter le nom de propriété correct : `DesignModeEnabled`.
 -   Utilisez la commande **Résoudre** sur `ImageSource`.
 -   Utilisez la commande **Résoudre** sur `BitmapImage`.
 -   Supprimez les éléments `using System.Windows.Media;` et `using System.Windows.Media.Imaging;`.
--   Modifiez la valeur renvoyée par la propriété **Bookstore2Universal\_10.BookstoreViewModel.AppName**, « BOOKSTORE2WPSL8 », par « BOOKSTORE2UNIVERSAL ».
+-   Modifiez la valeur renvoyée par la propriété **Bookstore2Universal\_10.BookstoreViewModel.AppName**, « BOOKSTORE2WPSL8 », par « BOOKSTORE2UNIVERSAL ».
 -   Comme nous l’avons fait dans le cas de [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), mettez à jour l’implémentation de la propriété **BookSku.CoverImage** (voir [Liaison d’une propriété Image à un modèle d’affichage](wpsl-to-uwp-case-study-bookstore1.md#binding-an-image)).
 
 Dans le fichier MainPage.xaml, apportez les modifications de portage initiales ci-après.
@@ -59,9 +60,9 @@ Dans le fichier MainPage.xaml, apportez les modifications de portage initiales c
 ## Remplacement de l’élément LongListSelector
 
 
-La procédure de remplacement de l’élément **LongListSelector** par un contrôle [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) comprend plusieurs étapes. Nous allons nous concentrer sur ces dernières. Un élément **LongListSelector** est directement lié à la source de données groupées, mais un élément **SemanticZoom** contient des contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) ou [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) qui sont liés de manière indirecte aux données, par l’intermédiaire d’un adaptateur [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833). L’élément **CollectionViewSource** doit être présent dans le balisage en tant que ressource ; nous pouvons donc commencer par l’ajouter au balisage dans le fichier MainPage.xaml, dans `<Page.Resources>`.
+La procédure de remplacement de l’élément **LongListSelector** par un contrôle [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) comprend plusieurs étapes. Nous allons nous concentrer sur ces dernières. Un élément **LongListSelector** est directement lié à la source de données groupées, mais un élément **SemanticZoom** contient des contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) ou [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) qui sont liés de manière indirecte aux données, par l’intermédiaire d’un adaptateur [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833). L’élément **CollectionViewSource** doit être présent dans le balisage en tant que ressource ; nous pouvons donc commencer par l’ajouter au balisage dans le fichier MainPage.xaml, dans `<Page.Resources>`.
 
-```xaml
+```xml
     <CollectionViewSource
         x:Name="AuthorHasACollectionOfBookSku"
         Source="{Binding Authors}"
@@ -70,9 +71,9 @@ La procédure de remplacement de l’élément **LongListSelector** par un contr
 
 Notez que la liaison sur **LongListSelector.ItemsSource** devient la valeur de **CollectionViewSource.Source**, et l’élément **LongListSelector.IsGroupingEnabled** devient **CollectionViewSource.IsSourceGrouped**. L’élément **CollectionViewSource** présente un nom (et non une clé, comme on pourrait s’y attendre), donc nous pouvons effectuer la liaison vers ce dernier.
 
-Ensuite, remplacez l’élément `phone:LongListSelector` par ce balisage. Cela nous permet de proposer une version préliminaire de **SemanticZoom** que nous pouvons utiliser :
+Ensuite, remplacez l’élément `phone:LongListSelector` par ce balisage. Cela nous permet de proposer une version préliminaire de **SemanticZoom** que nous pouvons utiliser :
 
-```xaml
+```xml
     <SemanticZoom>
         <SemanticZoom.ZoomedInView>
             <ListView
@@ -97,7 +98,7 @@ La notion d’élément **LongListSelector** des modes de liste plate et de list
 
 Nous n’avons plus besoin de l’élément `AuthorNameJumpListStyle`, pas dans son intégralité, en tout cas. Nous avons uniquement besoin du modèle de données associé aux groupes (qui sont les auteurs dans cette application) dans la vue avec zoom arrière. Pour cette raison, nous allons supprimer le style `AuthorNameJumpListStyle` et le remplacer par le modèle de données ci-après.
 
-```xaml
+```xml
    <DataTemplate x:Key="ZoomedOutAuthorTemplate">
         <Border Margin="9.6,0.8" Background="{Binding Converter={StaticResource JumpListItemBackgroundConverter}}">
             <TextBlock Margin="9.6,0,9.6,4.8" Text="{Binding Group.Name}" Style="{StaticResource SubtitleTextBlockStyle}"
@@ -140,7 +141,7 @@ Avant d’aborder la partie consacrée au Gestionnaire d’état visuel adaptati
 -   Remplacez le contenu de l’élément `AuthorGroupHeaderTemplateWide` par `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
 -   Remplacez le contenu de l’élément `ZoomedOutAuthorTemplateWide` par :
 
-```xaml
+```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250" >
         <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"/>
         <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
@@ -153,7 +154,7 @@ Avant d’aborder la partie consacrée au Gestionnaire d’état visuel adaptati
 
 -   Remplacez le contenu de l’élément `BookTemplateWide` par :
 
-```xaml
+```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250">
         <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"/>
         <Image Source="{Binding CoverImage}" Stretch="UniformToFill"/>
@@ -171,7 +172,7 @@ Avant d’aborder la partie consacrée au Gestionnaire d’état visuel adaptati
 
 -   Pour l’état large, les groupes présentés dans la vue avec zoom avant devront être entourés de davantage d’espace sur le plan vertical. Pour obtenir les résultats voulus, nous devons créer et référencer un modèle de panneau d’éléments. Voici comment se présente le balisage.
 
-```xaml
+```xml
    <ItemsPanelTemplate x:Key="ZoomedInItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal" GroupPadding="0,0,0,20"/>
     </ItemsPanelTemplate>
@@ -187,7 +188,7 @@ Avant d’aborder la partie consacrée au Gestionnaire d’état visuel adaptati
 
 -   Enfin, ajoutez le balisage du Gestionnaire d’état visuel approprié en tant que premier enfant de l’élément `LayoutRoot`.
 
-```xaml
+```xml
     <Grid x:Name="LayoutRoot" ... >
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -214,7 +215,7 @@ Il ne reste plus qu’à procéder à quelques adaptations de stylisation finale
 -   Ajoutez `FontWeight="SemiBold"` à l’élément **TextBlock** dans `AuthorGroupHeaderTemplate` et `ZoomedOutAuthorTemplate`.
 -   Dans `narrowSeZo`, les en-têtes de groupe et les auteurs affichés dans la vue avec zoom arrière sont alignés à gauche et non étirés. Nous allons donc travailler sur cet aspect. Nous allons créer un élément [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) pour la vue avec zoom avant, l’élément [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) étant défini sur la valeur `Stretch`. Nous créerons également un élément [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) pour la vue avec zoom arrière contenant ce même élément [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). Voici ce que cela donne.
 
-```xaml
+```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
     </Style>
@@ -245,9 +246,8 @@ Une fois cette séquence d’opérations de stylisation effectuée, l’applicat
 
 ![Application Windows 10 portée, exécutée sur un appareil de bureau (vue avec zoom avant et deux tailles de fenêtres)](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil de bureau (vue avec zoom avant et deux tailles de fenêtres)
- 
-![Application Windows 10 portée, exécutée sur un appareil de bureau (vue avec zoom arrière et deux tailles de fenêtres)](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
+L’application Windows 10 portée, exécutée sur un appareil de bureau, vue zoom avant, deux tailles de fenêtres  
+![l’application windows 10 portée, exécutée sur un appareil de bureau, vue zoom arrière, deux tailles de fenêtres](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
 Application Windows 10 portée, exécutée sur un appareil de bureau (vue avec zoom arrière et deux tailles de fenêtres)
 
@@ -263,16 +263,16 @@ Application Windows 10 portée, exécutée sur un appareil mobile (vue avec zoo
 
 Cette section contient un exemple illustrant les fonctions qui s’offrent à nous suite au déplacement de notre application dans le but d’utiliser UWP. Nous décrivons ici certaines étapes facultatives que vous pouvez effectuer pour optimiser la flexibilité de votre modèle d’affichage en cas d’accès par le biais d’un élément **CollectionViewSource**. Le modèle d’affichage (dont le fichier source se trouve à l’emplacement ViewModel\BookstoreViewModel.cs) porté à partir de l’application Silverlight pour Windows Phone appelée Bookstore2WPSL8 contient une classe nommée « Author », dérivée de **List&lt;T&gt;**, dans laquelle l’élément **T** a pour valeur BookSku. Cela signifie que la classe Author *est* un groupe associé à BookSku.
 
-Lorsque nous lions l’élément **CollectionViewSource.Source** à « Authors », nous signalons simplement que chaque auteur de la liste d’auteurs est un groupe d’*éléments quelconques*. Nous laissons à l’élément **CollectionViewSource** le soin de déterminer que la classe Author est, en l’occurrence, un groupe associé à BookSku. Cela fonctionne, mais peut s’avérer rigide. Que se passe-t-il si nous voulons que la classe Author corresponde *aussi bien* à un groupe de BookSku *qu’à* un groupe d’adresses géographiques correspondant aux lieux où l’auteur a vécu ? La classe Author ne peut pas *correspondre* à ces deux groupes. En revanche, elle peut *inclure* autant de groupes que vous le souhaitez. La solution est là : utilisons le modèle *has-a-group* à la place (ou en plus) du modèle *is-a-group* que nous avons appliqué jusqu’à présent. Voici comment procéder :
+Lorsque nous lions l’élément **CollectionViewSource.Source** à « Authors », nous signalons simplement que chaque auteur de la liste d’auteurs est un groupe d’*éléments quelconques*. Nous laissons à l’élément **CollectionViewSource** le soin de déterminer que la classe Author est, en l’occurrence, un groupe associé à BookSku. Cela fonctionne, mais peut s’avérer rigide. Que se passe-t-il si nous voulons que la classe Author corresponde *aussi bien* à un groupe de BookSku *qu’à* un groupe d’adresses géographiques correspondant aux lieux où l’auteur a vécu ? La classe Author ne peut pas *correspondre* à ces deux groupes. En revanche, elle peut *inclure* autant de groupes que vous le souhaitez. La solution est là : utilisons le modèle *has-a-group* à la place (ou en plus) du modèle *is-a-group* que nous avons appliqué jusqu’à présent. Voici comment procéder :
 
 -   Modifiez la classe Author afin qu’elle ne dérive plus de l’élément **List&lt;T&gt;**.
 -   Ajoutez ce champ à la classe Author : `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
--   Ajoutez cette propriété à la classe Author : `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
+-   Ajoutez cette propriété à la classe Author : `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
 -   Bien entendu, nous pouvons répéter ces deux étapes de manière à ajouter autant de groupes que nous le voulons.
 -   Remplacez l’implémentation de la méthode AddBookSku par `this.BookSkus.Add(bookSku);`.
--   Maintenant que la classe Author *inclut* au moins un groupe, nous devons indiquer à l’élément **CollectionViewSource** quel groupe utiliser. Pour ce faire, ajoutez à l’élément **CollectionViewSource** la propriété `ItemsPath="BookSkus"`.
+-   Maintenant que la classe Author *inclut* au moins un groupe, nous devons indiquer à l’élément **CollectionViewSource** quel groupe utiliser. Pour ce faire, ajoutez à l’élément **CollectionViewSource** la propriété : `ItemsPath="BookSkus"`
 
-Ces modifications ne touchent pas les fonctionnalités de l’application, mais vous savez désormais comment étendre la classe Author et l’élément **CollectionViewSource**, si nécessaire. Il nous faut apporter une dernière modification à la classe Author, afin qu’un groupe par défaut (défini par nos soins) soit utilisé lorsque nous tirons parti de cette classe *sans* indiquer l’élément **CollectionViewSource.ItemsPath** :
+Ces modifications ne touchent pas les fonctionnalités de l’application, mais vous savez désormais comment étendre la classe Author et l’élément **CollectionViewSource**, si nécessaire. Il nous faut apporter une dernière modification à la classe Author, afin qu’un groupe par défaut (défini par nos soins) soit utilisé lorsque nous tirons parti de cette classe *sans* indiquer l’élément **CollectionViewSource.ItemsPath** :
 
 ```csharp
     public class Author : IEnumerable<BookSku>
@@ -290,13 +290,13 @@ Ces modifications ne touchent pas les fonctionnalités de l’application, mais 
     }
 ```
 
-Nous pouvons désormais décider de supprimer l’élément `ItemsPath="BookSkus"` si nous le souhaitons : l’application continuera de se comporter comme d’habitude.
+Nous pouvons désormais décider de supprimer l’élément `ItemsPath="BookSkus"` si nous le souhaitons : l’application continuera de se comporter comme d’habitude.
 
 ## Conclusion
 
 Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. L’ensemble des fonctions et concepts de l’élément  **LongListSelector** de l’application Silverlight pour Windows Phone et d’autres informations utiles se sont révélés disponibles pour une application UWP, sous la forme d’éléments **SemanticZoom**, **ListView**, **GridView** et **CollectionViewSource**. Nous vous avons montré comment réutiliser (ou copier et modifier) le code impératif et le balisage dans une application UWP, afin d’obtenir les fonctionnalités, l’interface utilisateur et les interactions adaptées à tous les facteurs de forme des appareils Windows, des plus étroits aux plus larges, en passant par toutes les tailles intermédiaires.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

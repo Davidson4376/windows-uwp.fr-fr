@@ -1,13 +1,14 @@
 ---
+author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
 description: Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT 8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows 10.
-title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP : exemple d’application d’homologue à homologue QuizGame
+title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; exemple d’application d’homologue à homologue QuizGame
 ---
 
-# Étude de cas de portage d’application Windows Runtime 8.x vers UWP : exemple d’application d’homologue à homologue QuizGame
+# Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; exemple d’application d’homologue à homologue QuizGame
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT 8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows 10.
@@ -22,7 +23,7 @@ L’application utilise des modèles qui exploitent des affichages et des modèl
 
  
 
-**Remarque** Lorsque vous ouvrez QuizGame10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », vous devez suivre les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**Remarque** Lorsque vous ouvrez QuizGame10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », vous devez suivre les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
  
 
@@ -82,11 +83,11 @@ En nous appuyant sur ces options, nous allons porter l’élément QuizGame.Wind
 
 **Solution QuizGame10**
 
--   Créez une solution (**Nouveau projet** &gt; **Autres types de projets** &gt; **Solutions Visual Studio**) et appelez-la « QuizGame10 ».
+-   Créez une solution (**Nouveau projet**&gt;**Autres types de projets**&gt;**Solutions Visual Studio**) et appelez-la « QuizGame10 ».
 
 **P2PHelper**
 
--   Dans la solution, créez un projet de bibliothèque de classes Windows 10 (**Nouveau projet** &gt; **Windows universel** &gt; **Bibliothèque de classes (Universelle Windows)**) et appelez-le « P2PHelper ».
+-   Dans la solution, créez un projet de bibliothèque de classes Windows 10 (**Nouveau projet**&gt;**Windows universel**&gt;**Bibliothèque de classes (Universelle Windows)**) et appelez-le « P2PHelper ».
 -   Dans le nouveau projet, supprimez le fichier Class1.cs.
 -   Copiez les fichiers P2PSession.cs, P2PSessionClient.cs et P2PSessionHost.cs dans le dossier du nouveau projet, puis insérez les fichiers copiés dans le nouveau projet.
 -   Le projet est généré, aucune autre modification n’était nécessaire.
@@ -98,9 +99,9 @@ En nous appuyant sur ces options, nous allons porter l’élément QuizGame.Wind
 
 **QuizGameHost**
 
--   Créez un projet d’application Windows 10 (**Ajouter** &gt; **Nouveau projet** &gt; **Windows universel** &gt; **Application vide (universelle Windows)**) et appelez-le « QuizGameHost ».
--   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence** &gt; **Projets** &gt; **Solution** &gt; **P2PHelper**).
--   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter** &gt; **Élément existant**, puis accédez au dossier du niveau immédiatement supérieur. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
+-   Créez un projet d’application Windows 10 (**Ajouter**&gt;**Nouveau projet**&gt;**Universelle Windows**&gt;**Application vide (Universelle Windows)**) et appelez-le « QuizGameHost ».
+-   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence**&gt;**Projets**&gt;**Solution**&gt;**ReferenceProjectsSolutionP2PHelper**).
+-   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter**&gt;**Élément existant**, puis accédez au dossier immédiatement supérieur. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
 -   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.Windows\\ vers \\QuizGameHost\\ et remplacez l’espace de noms par « QuizGameHost ».
 -   Copiez le fichier App.xaml de l’emplacement \\QuizGame.Shared\\ vers \\QuizGameHost\\ et remplacez l’espace de noms par « QuizGameHost ».
 -   Au lieu de remplacer le fichier app.xaml.cs, nous allons conserver sa version dans le nouveau projet en lui apportant une seule modification ciblée afin d’assurer la prise en charge du mode test local. Dans le fichier app.xaml.cs, remplacez cette ligne de code :
@@ -119,15 +120,15 @@ par :
 #endif
 ```
 
--   Dans **Propriétés** &gt; **Générer** &gt; **Symboles de compilation conditionnelle**, ajoutez l’élément LOCALTESTMODEON.
+-   Dans **Propriétés**&gt;**Générer**&gt;**Symboles de compilation conditionnelle**, ajoutez l’élément LOCALTESTMODEON.
 -   Vous pourrez maintenant revenir au code que vous avez ajouté dans le fichier app.xaml.cs et résoudre le type TestView.
 -   Dans le fichier package.appxmanifest, remplacez le nom de la fonctionnalité « internetClient » par « internetClientServer ».
 
 **QuizGameClient**
 
--   Créez un projet d’application Windows 10 (**Ajouter** &gt; **Nouveau projet** &gt; **Windows universel** &gt; **Application vide (universelle Windows)**) et appelez-le « QuizGameClient ».
--   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence** &gt; **Projets** &gt; **Solution** &gt; **P2PHelper**).
--   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter** &gt; **Élément existant**, puis accédez au dossier du niveau immédiatement supérieur. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
+-   Créez un projet d’application Windows 10 (**Ajouter**&gt;**Nouveau projet**&gt;**Universelle Windows**&gt;**Application vide (Universelle Windows)**) et appelez-le « QuizGameClient ».
+-   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence**&gt;**Projets**&gt;**Solution**&gt;**ReferenceProjectsSolutionP2PHelper**).
+-   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter**&gt;**Élément existant**, puis accédez au dossier immédiatement supérieur. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
 -   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.WindowsPhone\\ vers \\QuizGameClient\\ et remplacez l’espace de noms par « QuizGameClient ».
 -   Copiez le fichier App.xaml de l’emplacement \\QuizGame.Shared\\ vers \\QuizGameClient\\ et remplacez l’espace de noms par « QuizGameClient ».
 -   Dans le fichier package.appxmanifest, remplacez le nom de la fonctionnalité « internetClient » par « internetClientServer ».
@@ -140,16 +141,16 @@ L’application Windows 10 QuizGameHost apparaît correctement lorsqu’elle s�
 
 Nous pouvons utiliser la fonction adaptative de gestionnaire d’état visuel pour remédier au problème, comme nous l’avons expliqué dans la section [Étude de cas : Bookstore2](w8x-to-uwp-case-study-bookstore2.md). Tout d’abord, définissez les propriétés sur les éléments visuels afin que, par défaut, l’interface utilisateur soit affichée selon une disposition étroite. Toutes ces modifications sont effectuées dans le fichier \\View\\HostView.xaml.
 
--   Dans l’élément **Grid** principal, modifiez le paramètre **Height** du premier **RowDefinition** en remplaçant « 140 » par « Auto ».
+-   Dans l’élément **Grid** principal, modifiez le paramètre **Height** du premier **RowDefinition** en remplaçant « 140 » par « Auto ».
 -   Sur l’élément **Grid** qui contient le **TextBlock** nommé `pageTitle`, définissez `x:Name="pageTitleGrid"` et `Height="60"`. Ces deux premières étapes sont organisées de telle sorte que nous puissions contrôler efficacement la hauteur de ce paramètre **RowDefinition** par le biais d’une méthode setter dans un état visuel.
 -   Sur `pageTitle`, définissez `Margin="-30,0,0,0"`.
 -   Sur l’élément **Grid** signalé par le commentaire `<!-- Content -->`, définissez `x:Name="contentGrid"` et `Margin="-18,12,0,0"`.
 -   Sur l’élément **TextBlock** situé juste au-dessus du commentaire `<!-- Options -->`, définissez `Margin="0,0,0,24"`.
--   Dans le style **TextBlock** par défaut (première ressource du fichier), remplacez la valeur de la méthode setter **FontSize** par « 15 ».
--   Dans `OptionContentControlStyle`, remplacez la valeur de la méthode setter **FontSize** par « 20 ». Cette étape et l’étape précédente nous permettent d’obtenir une rampe d’un type correct, qui fonctionnera efficacement sur tous les appareils. Ces tailles sont nettement plus flexibles que la taille de « 30 » que nous utilisions pour l’application Windows 8.1.
+-   Dans le style **TextBlock** par défaut (première ressource du fichier), remplacez la valeur de la méthode setter **FontSize** par « 15 ».
+-   Dans `OptionContentControlStyle`, remplacez la valeur de la méthode setter **FontSize** par « 20 ». Cette étape et l’étape précédente nous permettent d’obtenir une rampe d’un type correct, qui fonctionnera efficacement sur tous les appareils. Ces tailles sont nettement plus flexibles que la taille de « 30 » que nous utilisions pour l’application Windows 8.1.
 -   Enfin, ajoutez le balisage du Gestionnaire d’état visuel approprié à l’élément **Grid** racine.
 
-```xaml
+```xml
 <VisualStateManager.VisualStateGroups>
     <VisualStateGroup>
         <VisualState x:Name="WideState">
@@ -171,7 +172,7 @@ Nous pouvons utiliser la fonction adaptative de gestionnaire d’état visuel po
 
 Vous remarquerez que, dans Windows 10, le modèle des boutons ne présente pas le même remplissage de cible tactile. Deux petites modifications devraient résoudre le problème. Tout d’abord, ajoutez ce balisage dans le fichier app.xaml des projets QuizGameHost et QuizGameClient.
 
-```xaml
+```xml
 <Style TargetType="Button">
     <Setter Property="Margin" Value="12"/>
 </Style>
@@ -179,7 +180,7 @@ Vous remarquerez que, dans Windows 10, le modèle des boutons ne présente pas l
 
 Ensuite, ajoutez cette méthode setter à l’élément `OptionButtonStyle` dans le fichier \\View\\ClientView.xaml.
 
-```xaml
+```xml
 <Setter Property="Margin" Value="6"/>
 ```
 
@@ -190,6 +191,6 @@ Grâce à ce dernier ajustement, l’application se comportera comme auparavant 
 L’application que nous avons portée dans le cadre de cette étude de cas était relativement complexe, car elle impliquait plusieurs projets, une bibliothèque de classes, une interface utilisateur assez volumineuse et une grande quantité de code. Pourtant, son portage s’est révélé très simple. La simplicité de ce portage repose en partie sur la similarité entre la plate-forme de développement Windows 10 et les plates-formes Windows 8.1 et Windows Phone 8.1. Le mode de conception de l’application d’origine, qui séparait les modèles, les modèles d’affichage et les affichages, contribue également à simplifier cette opération.
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

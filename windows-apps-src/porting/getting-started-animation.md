@@ -1,12 +1,13 @@
 ---
+author: mcleblanc
 title: Prise en main de l’application Animation
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher.
 ---
 
-# Prise en main : Animation
+# Prise en main &#58; Animation
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## Ajout d’animations
 
@@ -48,7 +49,7 @@ Pour finir, cliquez sur le bouton **Lecture** pour voir ce qu’il se passe.
 
 Vous pouvez générer et exécuter le projet en cliquant sur le bouton d’exécution vert en haut de la fenêtre (ou en appuyant simplement sur F5). Si vous procédez de la sorte, votre projet sera en effet généré et exécuté, mais le rectangle vert restera obstinément immobile, comme un bambin auquel on refuse un bonbon dans une allée de supermarché. Pour démarrer l’animation, vous devez ajouter une ligne de code au projet. Voici comment procéder.
 
-Enregistrez le projet en ouvrant le menu **Fichier**, puis en sélectionnant **Enregistrer MainPage.xaml**. Retournez à Visual Studio. Si Visual Studio affiche une boîte de dialogue qui vous demande si vous souhaitez recharger le fichier modifié, sélectionnez **Oui**. Double-cliquez sur le fichier **MainPage.xaml.cs**, masqué sous **MainPage.xaml**, pour l’ouvrir, puis ajoutez le code suivant juste au-dessus de la méthode public MainPage() :
+Enregistrez le projet en ouvrant le menu **Fichier**, puis en sélectionnant **Enregistrer MainPage.xaml**. Retournez à Visual Studio. Si Visual Studio affiche une boîte de dialogue qui vous demande si vous souhaitez recharger le fichier modifié, sélectionnez **Oui**. Double-cliquez sur le fichier **MainPage.xaml.cs**, masqué sous **MainPage.xaml**, pour l’ouvrir, puis ajoutez le code suivant juste au-dessus de la méthode public MainPage() :
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -62,7 +63,7 @@ Exécutez de nouveau le projet et regardez le rectangle s’animer. Hourra !
 
 Si vous ouvrez le fichier MainPage.xaml, dans la vue **XAML**, vous verrez le code XAML ajouté par Blend tandis que vous travaillez dans le concepteur. Examinez surtout le code dans les éléments `<Storyboard>` et `<Rectangle>`. Le code qui suit montre un exemple. Les points de suspension représentent du code sans rapport omis par souci de concision et des sauts de line ont été ajoutés pour rendre le code plus lisible.
 
-```xaml
+```xml
 ...
 <Storyboard 
         x:Name="Storyboard1" 
@@ -125,6 +126,6 @@ Vous pouvez modifier ce code XAML manuellement, ou retourner à Blend pour conti
 [Prise en main : Et ensuite ?](getting-started-what-next.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

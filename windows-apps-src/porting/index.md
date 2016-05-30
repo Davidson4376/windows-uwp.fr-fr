@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
 description: Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales.
 title: Portage d’applications vers Windows 10
@@ -6,7 +7,7 @@ title: Portage d’applications vers Windows 10
 
 # Portage d’applications vers Windows 10
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, ainsi que les fonctionnalités tactiles et vocales.
 
@@ -21,6 +22,7 @@ Ce guide relatif au portage explique les différences entre la technologie de vo
 | [Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM](update-your-visual-studio-2015-rc-project-to-rtm.md) | Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM. La méthode recommandée consiste à créer un projet Windows 10 dans Visual Studio 2015 RTM et à y copier vos fichiers. Vous pouvez également vous reporter à la documentation avancée pour savoir comment modifier vos fichiers de projet existants et les convertir au nouveau format. |
 | [Mappage de concepts d’applications Windows pour développeurs iOS et Android](android-ios-uwp-map.md) | Si vous êtes un développeur doté de compétences relatives aux systèmes d’exploitation Android ou iOS ou au code et que vous souhaitez migrer vers Windows 10 et la plateforme Windows universelle, cette ressource vous permettra de mapper les fonctionnalités de la plateforme, et vos connaissances, entre les trois plateformes. |
 | [Passer d’iOS à UWP](ios-to-uwp-root.md) | Êtes-vous un développeur iOS vous demandant comment faire pour passer à Windows 10 et UWP ? Cette opération n’est pas aussi effrayante que vous l’imaginez. Nous avons les outils, les techniques et les informations nécessaires pour créer des applications fantastiques qui fonctionnent aussi bien sur Windows que sur vos appareils iOS, et même peut-être mieux ! |
+| [Passer des applications de bureau à la plateforme UWP](desktop-to-uwp-root.md) | Transformez vos applications de bureau Win32 et .NET 4.6.1 en applications de plateforme Windows universelle (UWP). |
  
 ## Rubriques connexes
 
@@ -29,6 +31,6 @@ Ce guide relatif au portage explique les différences entre la technologie de vo
 * [Passer du web à WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

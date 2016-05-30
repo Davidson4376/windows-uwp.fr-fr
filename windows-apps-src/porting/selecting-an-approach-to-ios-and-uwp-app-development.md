@@ -1,12 +1,13 @@
 ---
-description: Quels sont les choix possibles lors du développement d’applications multiplateformes ?
+author: mcleblanc
+description: Quels sont les choix possibles lors du développement d’applications multiplateformes ?
 title: Sélection d’une approche d’iOS et développement d’applications UWP
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ---
 
 # Sélection d’une approche d’iOS et développement d’applications UWP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Quels sont les choix possibles lors du développement d’applications multiplateformes ?
 
@@ -90,6 +91,6 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

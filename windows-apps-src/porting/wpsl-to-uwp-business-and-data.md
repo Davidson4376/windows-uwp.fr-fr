@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: Derrière votre interface utilisateur se trouvent les couches métier et les couches de données.
 title: Portage des couches métier et des couches de données de Silverlight pour Windows Phone vers UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
@@ -6,15 +7,15 @@ ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 
 #  Portage des couches métier et des couches de données de Silverlight pour Windows Phone vers UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Rubrique précédente : [Portage pour le modèle d’E/S, d’appareil et d’application](wpsl-to-uwp-input-and-sensors.md).
+Rubrique précédente : [Portage pour le modèle d’E/S, d’appareil et d’application](wpsl-to-uwp-input-and-sensors.md).
 
 Derrière votre interface utilisateur se trouvent les couches métier et les couches de données. Le code de ces couches appelle le système d’exploitation et les API .NET Framework (par exemple, pour le traitement en arrière-plan, l’emplacement, l’appareil photo, le système de fichiers, le réseau et l’accès à d’autres données). La grande majorité de ces éléments sont [disponibles pour une application de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/br211369). Vous pouvez donc espérer être en mesure de porter la plus grande partie de ce code sans avoir à le modifier.
 
 ## Méthodes asynchrones
 
-L’une des priorités de la plateforme Windows universelle (UWP) consiste à vous permettre de générer des applications qui réagissent efficacement et de manière cohérente. Les animations sont toujours fluides, et les interactions tactiles (telles que le balayage et les mouvements panoramiques) sont instantanées, sans retard, ce qui donne le sentiment que l’interface utilisateur ne fait qu’un avec votre doigt. Pour ce faire, toute API UWP qui ne peut pas garantir qu’elle s’exécutera en 50 millisecondes maximum est rendue asynchrone ; son nom comprend le suffixe suivant : **Async**. Votre thread d’interface utilisateur réapparaît immédiatement suite à l’appel d’une méthode **Async** ; le travail est alors effectué sur un autre thread. L’utilisation d’une méthode **Async** a été facilitée via l’optimisation de la syntaxe, au moyen de l’opérateur C# **await**, des objets de promesse JavaScript et des continuations C++. Pour en savoir plus, voir [Programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/mt187335).
+L’une des priorités de la plateforme Windows universelle (UWP) consiste à vous permettre de générer des applications qui réagissent efficacement et de manière cohérente. Les animations sont toujours fluides, et les interactions tactiles (telles que le balayage et les mouvements panoramiques) sont instantanées, sans retard, ce qui donne le sentiment que l’interface utilisateur ne fait qu’un avec votre doigt. Pour ce faire, toute API UWP qui ne peut pas garantir qu’elle s’exécutera en 50 millisecondes maximum est rendue asynchrone ; son nom comprend le suffixe suivant : **Async**. Votre thread d’interface utilisateur réapparaît immédiatement suite à l’appel d’une méthode **Async** ; le travail est alors effectué sur un autre thread. L’utilisation d’une méthode **Async** a été facilitée via l’optimisation de la syntaxe, au moyen de l’opérateur C# **await**, des objets de promesse JavaScript et des continuations C++. Pour en savoir plus, voir [Programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/mt187335).
 
 ## Traitement en arrière-plan
 
@@ -42,7 +43,7 @@ Une application Silverlight pour Windows Phone peut être placée à l’état d
 
 ## Monétisation (mode d’évaluation et achats dans l’application)
 
-Une application Silverlight pour Windows Phone peut utiliser la classe UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) pour la plupart de ses fonctionnalités d’achat dans l’application et de mode d’évaluation. Ainsi, le code n’a pas besoin d’être porté. Toutefois, une application Silverlight pour Windows Phone appelle l’élément **MarketplaceDetailTask.Show** pour proposer l’application à l’achat :
+Une application Silverlight pour Windows Phone peut utiliser la classe UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) pour la plupart de ses fonctionnalités d’achat dans l’application et de mode d’évaluation. Ainsi, le code n’a pas besoin d’être porté. Toutefois, une application Silverlight pour Windows Phone appelle l’élément **MarketplaceDetailTask.Show** pour proposer l’application à l’achat :
 
 ```csharp
     private void Buy()
@@ -53,7 +54,7 @@ Une application Silverlight pour Windows Phone peut utiliser la classe UWP [**
     }
 ```
 
-Portez le code suivant pour appeler la méthode UWP [**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) :
+Portez le code suivant pour appeler la méthode UWP [**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) :
 
 ```csharp
     private async void Buy()
@@ -93,7 +94,7 @@ Et son équivalent UWP :
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-Bien qu’un sous-ensemble de l’espace de noms **Windows.Storage** soit mis à leur disposition, de nombreuses applications Silverlight pour Windows Phone effectuent les E/S de fichiers avec la classe **IsolatedStorageFile**, car elle est prise en charge depuis plus longtemps. Si l’on part du principe que l’élément **IsolatedStorageFile** est utilisé, voici un exemple d’écriture et de lecture d’un fichier (avant et après l’opération), dans la version Silverlight pour Windows Phone pour commencer :
+Bien qu’un sous-ensemble de l’espace de noms **Windows.Storage** soit mis à leur disposition, de nombreuses applications Silverlight pour Windows Phone effectuent les E/S de fichiers avec la classe **IsolatedStorageFile**, car elle est prise en charge depuis plus longtemps. Si l’on part du principe que l’élément **IsolatedStorageFile** est utilisé, voici un exemple d’écriture et de lecture d’un fichier (avant et après l’opération), dans la version Silverlight pour Windows Phone pour commencer :
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";
@@ -127,7 +128,7 @@ Pour plus d’informations sur l’accès aux fichiers photo, musique et vidéo 
 
 Pour plus d’informations, voir [Fichiers, dossiers et bibliothèques](https://msdn.microsoft.com/library/windows/apps/mt185399).
 
-Rubrique suivante : [Portage pour différents facteurs de forme et expériences utilisateur](wpsl-to-uwp-form-factors-and-ux.md).
+Rubrique suivante : [Portage pour différents facteurs de forme et expériences utilisateur](wpsl-to-uwp-form-factors-and-ux.md).
 
 ## Rubriques connexes
 
@@ -136,6 +137,6 @@ Rubrique suivante : [Portage pour différents facteurs de forme et expériences
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

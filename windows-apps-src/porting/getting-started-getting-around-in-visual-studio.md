@@ -1,10 +1,11 @@
 ---
+author: mcleblanc
 description: Savoir maîtriser Visual Studio
 title: Savoir maîtriser Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ---
 
-# Prise en main : Savoir maîtriser Visual Studio
+# Prise en main &#58; Savoir maîtriser Visual Studio
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -16,7 +17,7 @@ Si vous êtes développeur Xcode, l’affichage par défaut ci-dessous vous semb
 
 ![environnement de développement xcode](images/ios-to-uwp/xcode-ide.png)
 
-L’apparence de Microsoft Visual Studio est similaire mais, dans l’affichage par défaut, les contrôles apparaissent sur le côté gauche à l’intérieur de la **boîte à outils**. Les fichiers sources figurent dans l’**Explorateur de solutions** sur le côté droit, et les propriétés sous **Propriétés** dans le volet **Explorateur de solutions**, comme ceci :
+L’apparence de Microsoft Visual Studio est similaire mais, dans l’affichage par défaut, les contrôles apparaissent sur le côté gauche à l’intérieur de la **boîte à outils**. Les fichiers sources figurent dans l’**Explorateur de solutions** sur le côté droit, et les propriétés sous **Propriétés** dans le volet **Explorateur de solutions**, comme ceci :
 
 ![environnement de développement visual studio](images/ios-to-uwp/vs-ide.png)
 
@@ -26,13 +27,13 @@ Même si cela peut sembler un peu surprenant, vous serez peut-être heureux d’
 
 À présent, ajoutons quelques contrôles à votre projet. Nous allons ensuite changer certaines de leurs propriétés et écrire un code pour répondre à l’un des événements du contrôle.
 
-Pour ajouter des contrôles dans Xcode, vous ouvrez le fichier .xib ou la table de montage séquentiel souhaités, puis glissez-déplacez des contrôles tels qu’un **bouton rectangulaire arrondi** ou une **étiquette**, comme illustré ci-dessous :
+Pour ajouter des contrôles dans Xcode, vous ouvrez le fichier .xib ou la table de montage séquentiel souhaités, puis glissez-déplacez des contrôles tels qu’un **bouton rectangulaire arrondi** ou une **étiquette**, comme illustré ci-dessous :
 
 ![conception de l’interface utilisateur dans xcode](images/ios-to-uwp/xcode-add-button-label.png)
 
 Tentons une opération similaire dans Visual Studio. Dans la **boîte à outils**, faites glisser le contrôle **Bouton**, puis déposez-le dans l’aire de conception du fichier MainPage.xaml.
 
-Faites de même avec le contrôle **TextBlock**, afin qu’il se présente comme suit :
+Faites de même avec le contrôle **TextBlock**, afin qu’il se présente comme suit :
 
 ![conception de l’interface utilisateur dans visual studio](images/ios-to-uwp/vs-add-button-label.png)
 
@@ -40,11 +41,11 @@ Contrairement à Xcode, qui masque les informations de disposition et de liaison
 
 Modifions les détails du bouton. Comme vous le savez, pour modifier le nom du bouton dans Xcode, vous devez modifier la valeur du champ **Titre** dans son panneau de propriétés.
 
-Lorsque vous utilisez Visual Studio vous procédez de manière très similaire. Dans le volet **Conception**, appuyez sur le bouton afin de positionner le focus sur celui-ci. Ensuite, dans le volet **Propriétés**, modifiez la valeur de **Contenu** de « Bouton » en « Appuyez ici ». Enfin, mettez à jour le nom du contrôle de bouton, en remplaçant la valeur de **Nom** « &lt;No Name&gt;» par « myButton », comme illustré ici :
+Lorsque vous utilisez Visual Studio vous procédez de manière très similaire. Dans le volet **Conception**, appuyez sur le bouton afin de positionner le focus sur celui-ci. Ensuite, dans le volet **Propriétés**, modifiez la valeur de **Contenu** de « Bouton » en « Appuyez ici ». Enfin, mettez à jour le nom du contrôle de bouton, en remplaçant la valeur de **Name** « &lt;Sans nom&gt; » par « myButton », comme illustré ici :
 
 ![fenêtre des propriétés du bouton dans visual studio](images/ios-to-uwp/vs-button-properties.png)
 
-Écrivons maintenant un code pour changer le contenu du contrôle **TextBlock** en « Hello, World! » après que l’utilisateur a appuyé sur le bouton.
+Écrivons maintenant un code pour changer le contenu du contrôle **TextBlock** en « Hello, World! » après que l’utilisateur a appuyé sur le bouton.
 
 Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un code, puis en associant celui-ci au contrôle, souvent en faisant glisser le bouton dans le code source en maintenant la touche Contrôle appuyée, comme suit :
 
@@ -62,7 +63,7 @@ Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se tr
 
 ![liste des événements du bouton dans visual studio](images/ios-to-uwp/vs-button-event.png)
 
-Pour ajouter du code à l’événement Click du bouton, commencez par sélectionner le bouton dans le volet **Conception**. Ensuite, cliquez sur le bouton identifié par un éclair, puis double-cliquez sur la zone vide à côté du mot **Click**. Visual Studio ajoute l’événement « myButton_Click » à la zone **Click**, puis ajoute et affiche le gestionnaire d’événements correspondant dans le fichier MainPage.xaml.cs, comme ceci.
+Pour ajouter du code à l’événement Click du bouton, commencez par sélectionner le bouton dans le volet **Conception**. Ensuite, cliquez sur le bouton identifié par un éclair, puis double-cliquez sur la zone vide à côté du mot **Click**. Visual Studio ajoute l’événement « myButton_Click » à la zone **Click**, puis ajoute et affiche le gestionnaire d’événements correspondant dans le fichier MainPage.xaml.cs, comme ceci.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -86,7 +87,7 @@ Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela
 1.  Appuyez sur l’onglet du fichier MainPage.xaml.
 2.  Dans le volet **Conception**, appuyez sur le contrôle **TextBlock**.
 3.  Dans le volet **Propriétés**, appuyez sur le bouton doté d’une clé à molette pour afficher ses propriétés.
-4.  Dans la zone **Nom**, changez et remplacez « &lt;No Name&gt; » par « myLabel ».
+4.  Dans la zone **Nom**, changez et remplacez « &lt;Sans nom&gt; » par « myLabel ».
 
 ![fenêtre des propriétés du libellé dans visual studio](images/ios-to-uwp/vs-label-properties.png)
 
@@ -120,6 +121,6 @@ Pour quitter l’application, revenez à Visual Studio, appuyez sur le menu **D�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

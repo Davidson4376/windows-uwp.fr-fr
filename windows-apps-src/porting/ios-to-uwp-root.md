@@ -1,31 +1,25 @@
 ---
-description: Passer d’iOS à UWP
-Search.SourceType : vidéo
-title: Passer d’iOS à UWP
+author: mcleblanc
+description: Migrer d’iOS vers UWP
+Search.SourceType: Video
+title: Migrer d’iOS vers UWP
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ---
 
 # Passer d’iOS à UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Réutiliser votre code Objective-C avec le pont Windows pour iOS**
 
--   Ce guide est conçu pour vous aider à porter manuellement votre application iOS vers Windows 10. Si votre application est écrite entièrement en Objective-C, vous pouvez également utiliser le pont de Windows pour iOS afin d’assurer une migration rapide de votre application vers Windows 10, tout en réutilisant une grande partie de votre code existant. Le pont iOS vous permet de créer des applications de plateforme Windows universelle (UWP, Universal Windows Platform) dans Visual Studio 2015 en utilisant les bibliothèques d’API iOS et le code Objective-C. Vous pouvez également utiliser le pont pour étendre votre code Objective-C avec des fonctionnalités Windows 10 uniques comme Cortana et les vignettes dynamiques.
--   [En savoir plus sur le pont Windows pour iOS](https://dev.windows.com/bridges/ios)
+Si vous êtes un développeur iOS et que vous vous demandez comment développer votre base d’utilisateurs pour inclure Windows 10 et la plateforme Windows universelle (UWP), il existe un nombre croissant d’outils pour vous aider. Les approches que vous pouvez adopter dépendent du type d’application sur lesquelles vous travaillez (jeux, style de vie, entreprise, etc.) et de l’étape où vous vous trouvez dans le processus de développement. Par exemple, un jeu terminé ou presque terminé dépendant fortement d’OpenGL ou de Cocos2D est un candidat idéal pour le [pont Windows pour iOS](https://dev.windows.com/bridges/ios), tandis que si vous envisagez une application interplateforme pour une petite entreprise, vous devriez privilégier [Xamarin.Forms](https://www.xamarin.com/forms). Et si vous avez écrit votre application dans un outil interplateforme comme Unity, [la publication sur Windows](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) est assez simple.
 
 ## Pourquoi Windows ?
 
-Êtes-vous un développeur iOS vous demandant comment faire pour passer à Windows 10 et UWP ? Cette opération n’est pas aussi effrayante que vous l’imaginez. Nous avons les outils, les techniques et les informations nécessaires pour créer des applications fantastiques qui fonctionnent aussi bien sur Windows que sur vos appareils iOS, et même peut-être mieux !<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/019d3337-80cf-4817-b50a-58f9463a4d27/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Portage de votre application Android ou iOS vers Windows et Windows Phone</iframe>
+Aujourd’hui, Windows est exécuté sur un nombre considérable d’appareils. La plateforme UWP offre aux développeurs un ensemble d’API modernes, conçues pour créer des interfaces utilisateur très réactives sur des appareils aussi variés que les ordinateurs de bureau, les consoles de jeu et les affichages holographiques. Avec une solution Visual Studio et des contrôles d’interface utilisateur suffisamment intelligents pour s’optimiser automatiquement pour plusieurs plateformes, vous constaterez souvent que vous écrivez moins de code et que vous l’exécutez sur davantage de matériel.
 
-Si vous envisagez le portage de vos applications ou le développement de nouvelles applications pour Windows 10, nous avons la solution. Dans cette section, vous trouverez des présentations concernant l’utilisation de Visual Studio, ainsi qu’un exemple de code que vous comprendrez, en tant que développeur iOS. Nous tenons à ce que vous preniez plaisir à écrire des applications pour Windows 10, et nous pensons que ce sera le cas.
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/019d3337-80cf-4817-b50a-58f9463a4d27/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Portage de votre application Android ou iOS vers Windows et Windows Phone</iframe>
 
-Imaginez un monde dans lequel vous écririez une seule fois un code qui s’exécuterait sur des ordinateurs de bureau, ordinateurs portables, téléphones, consoles de jeu, périphériques intégrés et autres systèmes d’affichage holographique. Bienvenue dans Windows 10 et la plateforme Windows universelle (UWP) !
 
-![Vous voulez découvrir la face obscure ?](images/ios-to-uwp/mixedup.png)
-
-Si vous connaissez Windows et souhaitez vous étendre à iOS, envisagez d’utiliser Microsoft Visual Studio 2015. Avec la prise en charge intégrale du développement d’applications mobiles basées sur Xamarin, vous pouvez créer des applications pour appareils iOS dans Visual Studio, en compilant et exécutant du code à l’aide d’un ordinateur Mac couplé. Visual Studio peut devenir le cœur de votre monde de développement mobile, grâce au partage des outils de développement entre Windows, Android et iOS.
- 
 
 | Rubrique | Description |
 |-------|-------------|
@@ -41,7 +35,6 @@ Si vous connaissez Windows et souhaitez vous étendre à iOS, envisagez d’util
  
 
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,12 +1,13 @@
 ---
+author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10.
+description: Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10.
 title: Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1
 ---
 
-# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1
+# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP &#58; Bookstore1
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP) Windows 10. Grâce à Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
@@ -14,13 +15,13 @@ L’application que nous porterons se compose d’une classe **ListBox** liée �
 
 Les rubriques précédentes de cette section décrivent les différences entre les plateformes et fournissent des détails et des recommandations sur le processus de portage des différents aspects d’une application dans le balisage XAML, de la liaison à un modèle d’affichage à l’accès aux données. Une étude de cas vise à compléter ces recommandations en les appliquant à un exemple concret. Elle part du principe que vous avez lu les recommandations, qui ne sont donc pas répétées.
 
-**Remarque** Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md#targetplatformversion).
+**Remarque** Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md#targetplatformversion).
 
 ## Téléchargements
 
 [Téléchargez l’application Silverlight pour Windows Phone Bookstore1WPSL8](http://go.microsoft.com/fwlink/?linkid=517053).
 
-[Téléchargez l’application Windows 10 Bookstore1Universal\_10](http://go.microsoft.com/fwlink/?linkid=532950).
+[Téléchargez l’application Windows 10 Bookstore1Universal\_10](http://go.microsoft.com/fwlink/?linkid=532950).
 
 ## Application Silverlight pour Windows Phone
 
@@ -40,11 +41,11 @@ Nous pouvons conserver les fichiers App.xaml et App.xaml.cs générés par Visua
 
 Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore1WPSL8 par Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Dans le code impératif du fichier source du modèle d’affichage, apportez les modifications de portage suivantes :
 
--   Remplacez `System.ComponentModel.DesignerProperties` par `DesignMode`, puis appliquez-lui la commande **Résoudre**. Supprimez la propriété `IsInDesignTool` et utilisez IntelliSense pour ajouter le nom de propriété correct : `DesignModeEnabled`.
+-   Remplacez `System.ComponentModel.DesignerProperties` par `DesignMode`, puis appliquez-lui la commande **Résoudre**. Supprimez la propriété `IsInDesignTool` et utilisez IntelliSense pour ajouter le nom de propriété correct : `DesignModeEnabled`.
 -   Utilisez la commande **Résoudre** sur `ImageSource`.
 -   Utilisez la commande **Résoudre** sur `BitmapImage`.
 -   Supprimez using `System.Windows.Media;` et `using System.Windows.Media.Imaging;`.
--   Modifiez la valeur renvoyée par la propriété **Bookstore1Universal\_10.BookstoreViewModel.AppName** en remplaçant « BOOKSTORE1WPSL8 » par « BOOKSTORE1UNIVERSAL ».
+-   Modifiez la valeur renvoyée par la propriété **Bookstore1Universal\_10.BookstoreViewModel.AppName** en remplaçant « BOOKSTORE1WPSL8 » par « BOOKSTORE1UNIVERSAL ».
 
 Dans le fichier MainPage.xaml, apportez les modifications de portage suivantes :
 
@@ -68,9 +69,9 @@ L’association de l’affichage et du modèle d’affichage fonctionne correcte
 
 ## Récupération des éléments supprimés et stylisation initiale
 
-Par défaut, toutes les orientations sont prises en charge. L’application Silverlight pour Windows Phone se limite explicitement à l’orientation portrait. Les éléments supprimés n\º 1 et n\º 2 sont donc compensés par l’accès au manifeste du package d’application dans le nouveau projet et par la sélection de l’option **Portrait** sous **Orientations prises en charge**.
+Par défaut, toutes les orientations sont prises en charge. L’application Silverlight pour Windows Phone se limite explicitement à l’orientation portrait. Les éléments supprimés n\º 1 et n\º 2 sont donc compensés par l’accès au manifeste du package d’application dans le nouveau projet et par la sélection de l’option **Portrait** sous **Orientations prises en charge**.
 
-Pour cette application, l’élément n\º 3 n’est pas manquant, puisque la barre d’état (appelée auparavant barre d’état système) est affichée par défaut. Pour les éléments n\º 4 et n\º 5, nous devons rechercher quatre styles  **TextBlock** de plateforme Windows universelle (UWP) correspondant aux styles que nous utilisions dans Silverlight pour Windows Phone. Vous pouvez exécuter l’application Silverlight pour Windows Phone dans l’émulateur et la comparer côte à côte avec l’illustration de la section [Texte](wpsl-to-uwp-porting-xaml-and-ui.md#text). À partir de là et en examinant les propriétés des styles système Silverlight pour Windows Phone, nous pouvons élaborer le tableau ci-après.
+Pour cette application, l’élément n\º 3 n’est pas manquant, puisque la barre d’état (appelée auparavant barre d’état système) est affichée par défaut. Pour les éléments n\º 4 et n\º 5, nous devons rechercher quatre styles  **TextBlock** de plateforme Windows universelle (UWP) correspondant aux styles que nous utilisions dans Silverlight pour Windows Phone. Vous pouvez exécuter l’application Silverlight pour Windows Phone dans l’émulateur et la comparer côte à côte avec l’illustration de la section [Texte](wpsl-to-uwp-porting-xaml-and-ui.md#text). À partir de là et en examinant les propriétés des styles système Silverlight pour Windows Phone, nous pouvons élaborer le tableau ci-après.
 
 | Clé de style Silverlight pour Windows Phone | Clé de style UWP          |
 |-------------------------------------|------------------------|
@@ -79,7 +80,7 @@ Pour cette application, l’élément n\º 3 n’est pas manquant, puisque la b
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-Pour définir ces styles, il vous suffit de les taper dans l’éditeur de balisage. Vous pouvez également utiliser les outils XAML de Visual Studio et les définir sans rien taper. Pour ce faire, cliquez avec le bouton droit sur un **TextBlock**, puis cliquez sur **Modifier le style** &gt; **Appliquer la ressource**. Pour procéder ainsi avec les **TextBlock** dans le modèle d’élément, cliquez avec le bouton droit sur la **ListBox**, puis cliquez sur **Modifier des modèles supplémentaires** &gt; **Modifier les éléments générés (ItemTemplate)**.
+Pour définir ces styles, il vous suffit de les taper dans l’éditeur de balisage. Vous pouvez également utiliser les outils XAML de Visual Studio et les définir sans rien taper. Pour ce faire, cliquez avec le bouton droit sur un **TextBlock**, puis cliquez sur **Modifier le style**&gt;**Appliquer la ressource**. Pour procéder ainsi avec les **TextBlock** dans le modèle d’élément, cliquez avec le bouton droit sur la **ListBox**, puis cliquez sur **Modifier des modèles supplémentaires**&gt;**Modifier les éléments générés (ItemTemplate)**.
 
 Il existe un arrière-plan blanc opaque à 80 % derrière les éléments, car le style par défaut du contrôle **ListBox** définit son arrière-plan sur la ressource système `ListBoxBackgroundThemeBrush`. Définissez `Background="Transparent"` sur l’élément **ListBox** pour effacer cet arrière-plan. Pour aligner à gauche les objets **TextBlock** dans le modèle d’élément, modifiez-les de nouveau comme décrit ci-dessus et définissez un élément **Margin** de `"9.6,0"` dans les deux objets **TextBlock**.
 
@@ -130,6 +131,6 @@ Cette étude de cas vous a décrit le processus de portage d’une application t
 Dans l’étude de cas suivante, [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et l’affichage de ces dernières.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

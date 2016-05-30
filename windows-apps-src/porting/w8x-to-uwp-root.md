@@ -1,12 +1,13 @@
 ---
-description: Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence.
-title: Passer de Windows Runtime 8.x à UWP
+author: mcleblanc
+description: Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence.
+title: Passer de Windows Runtime 8.x à UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ---
 
-# Passer de Windows Runtime 8.x à UWP
+# Passer de Windows Runtime 8.x à UWP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence. Grâce à Windows 10, vous pouvez créer une application de plateforme Windows universelle (UWP), à savoir un package d’application unique que vos clients peuvent installer sur tout type d’appareil. Pour en savoir plus sur Windows 10, sur les applications UWP et sur les concepts de code adaptatif et d’interface utilisateur adaptative que nous mentionnerons dans ce guide de portage, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
@@ -53,7 +54,7 @@ Avant ou pendant le portage, vérifiez si vous pouvez améliorer votre applicati
 
 ## Si vous disposez d’un projet Microsoft Visual Studio 2015 RC
 
-Si vous disposez d’un projet Windows 10 que vous avez créé avec Visual Studio 2015 RC, voir [Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM](update-your-visual-studio-2015-rc-project-to-rtm.md).
+Si vous disposez d’un projet Windows 10 que vous avez créé avec Visual Studio 2015 RC, voir [Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM](update-your-visual-studio-2015-rc-project-to-rtm.md).
  
 | Rubrique | Description |
 |-------|-------------|
@@ -74,6 +75,6 @@ Si vous disposez d’un projet Windows 10 que vous avez créé avec Visual Stu
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
