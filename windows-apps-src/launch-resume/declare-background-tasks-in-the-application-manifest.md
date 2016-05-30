@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Déclarer des tâches en arrière-plan dans le manifeste de l’application
 description: Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
@@ -7,7 +8,7 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 # Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -26,7 +27,7 @@ Cette rubrique suppose que vous avez créé une ou plusieurs classes de tâche e
 
 Ouvrez le manifeste de l’application (Package.appxmanifest) et accédez à l’élément Application. Créez un élément Extensions (s’il n’en existe pas).
 
-L’extrait de code suivant provient de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) :
+L’extrait de code suivant provient de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) :
 
 ```xml
 <Application Id="App"
@@ -64,7 +65,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
       </Extensions>
 ```
 
-1.  Modifiez l’attribut EntryPoint de sorte que votre code utilise la même chaîne comme point d’entrée lors de l’inscription de votre tâche en arrière-plan (**namespace.classname**).
+1.  Modifiez l’attribut EntryPoint afin que votre code utilise la même chaîne comme point d’entrée lors de l’inscription de votre tâche en arrière-plan (**namespace.classname**).
 
     Dans cet exemple, le point d’entrée est ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName :
 
@@ -91,16 +92,16 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
                     <Task Type="pushNotification" />
                   </BackgroundTasks>
                 </Extension>
-                ```
+    ```
 
-    > **Note**  Normally, an app will run in a special process called "BackgroundTaskHost.exe". It is possible to add an Executable element to the Extension element, allowing the background task to run in the context of the app. Only use the Executable element with background tasks that require it, such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
+    > **Remarque** Normalement, une application s’exécute dans un processus spécial appelé BackgroundTaskHost.exe. Il est possible d’ajouter un élément Executable à l’élément Extension et de permettre ainsi à la tâche en arrière-plan de s’exécuter dans le contexte de l’application. Utilisez uniquement l’élément Executable avec les tâches en arrière-plan qui le requièrent, telles que [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
 
-## Add Additional Background Task Extensions
+## Ajouter des extensions de tâche en arrière-plan supplémentaires
 
 
-Repeat step 2 for each additional background task class registered by your app.
+Répétez l’étape 2 pour chaque classe de tâche en arrière-plan supplémentaire inscrite par votre application.
 
-The following example is the complete Application element from the [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
+L’exemple suivant représente l’élément Application complet de l’[exemple de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509). Il illustre l’utilisation de deux classes de tâche en arrière-plan avec au total trois types de déclencheur. Copiez la section Extensions de cet exemple et modifiez-la si nécessaire pour déclarer des tâches en arrière-plan dans le manifeste de l’application.
 
 ```xml
 <Applications>
@@ -112,7 +113,7 @@ The following example is the complete Application element from the [background t
           Square150x150Logo="Assets\StoreLogo-sdk.png"
           Square44x44Logo="Assets\SmallTile-sdk.png"
           Description="BackgroundTask"
-          
+
           BackgroundColor="#00b2f0">
           <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\smalltile-Windows-sdk.png" />
             <uap:SplashScreen Image="Assets\Splash-sdk.png" />
@@ -147,14 +148,7 @@ The following example is the complete Application element from the [background t
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
 
- 
 
- 
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

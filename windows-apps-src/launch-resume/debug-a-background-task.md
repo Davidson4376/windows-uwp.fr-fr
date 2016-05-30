@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Déboguer une tâche en arrière-plan
 description: Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
@@ -7,7 +8,7 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 # Déboguer une tâche en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -22,7 +23,7 @@ Cette rubrique part du principe que vous disposez d’une application existante 
 
 
 -   En C# et C++, vérifiez que le projet principal fait référence au projet de tâche en arrière-plan. En l’absence de cette référence, la tâche en arrière-plan n’est pas incluse dans le package d’application.
--   En C\# et C++, vérifiez que le **Output type** du projet de tâche en arrière-plan est « Composant Windows Runtime ».
+-   En C# et C++, vérifiez que le **Output type** du projet de tâches en arrière-plan est « Composant Windows Runtime ».
 -   La classe en arrière-plan doit être déclarée dans l’attribut de point d’entrée dans le manifeste du package.
 
 ## Déclencher des tâches en arrière-plan manuellement pour déboguer le code de la tâche en arrière-plan
@@ -30,9 +31,9 @@ Cette rubrique part du principe que vous disposez d’une application existante 
 
 Les tâches en arrière-plan peuvent être déclenchées manuellement par le biais de Microsoft Visual Studio. Vous pouvez ensuite exécuter pas à pas le code et le déboguer.
 
-1.  En C#, insérez un point d’arrêt dans la méthode Run et/ou écrivez la sortie de débogage à l’aide de l’espace de noms [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
+1.  En C#, insérez un point d’arrêt dans la méthode Run de la classe en arrière-plan et/ou écrivez la sortie de débogage à l’aide de l’espace de noms [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
 
-    En C++, insérez un point d’arrêt dans la fonction Run de la classe en arrière-plan, ou écrivez la sortie de débogage au moyen de la fonction [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
+    En C++, insérez un point d’arrêt dans la fonction Run de la classe en arrière-plan, et/ou écrivez la sortie de débogage au moyen de la fonction [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
 
 2.  Exécutez votre application dans le débogueur, puis déclenchez la tâche en arrière-plan via le menu déroulant Suspendre dans la barre d’outils **Événements de cycle de vie**. Ce menu déroulant affiche les noms des tâches en arrière-plan qui peuvent être activées par Visual Studio.
 
@@ -68,8 +69,8 @@ L’activation de la tâche en arrière-plan dépend de la correspondance correc
     Si vous suivez cette procédure et que le journal des événements indique un déclencheur ou point d’entrée incorrect pour la tâche en arrière-plan, votre application n’inscrit pas correctement la tâche en arrière-plan. Pour obtenir de l’aide sur cette tâche, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
     1.  Ouvrez l’observateur d’événements en accédant à l’écran de démarrage et en recherchant eventvwr.exe.
-    2.  Accédez à **Journaux des applications et des services** -&gt; **Microsoft** -&gt; **Windows** -&gt; **BackgroundTaskInfrastructure** dans l’observateur d’événements.
-    3.  Dans le volet Actions, sélectionnez **Affichage** -&gt; **Afficher les journaux d’analyse et de débogage** pour activer la journalisation des diagnostics.
+    2.  Accédez à **Journaux des applications et des services** -&gt;**Microsoft** -&gt;**Windows** -&gt;**BackgroundTaskInfrastructure** dans l’observateur d’événements.
+    3.  Dans le volet Actions, sélectionnez **Affichage** -&gt;**Afficher les journaux d’analyse et de débogage** pour activer la journalisation des diagnostics.
     4.  Sélectionnez le **journal de diagnostic**, puis cliquez sur **Activer le journal**.
     5.  Essayez à présent d’utiliser votre application pour inscrire et activer la tâche en arrière-plan une nouvelle fois.
     6.  Consultez les journaux de diagnostic à la recherche d’informations détaillées sur l’erreur. Cela comprend le point d’entrée inscrit pour la tâche en arrière-plan.
@@ -93,7 +94,7 @@ Si vous déployez une application utilisant des tâches en arrière-plan à l’
 -   Sur Windows, si la tâche en arrière-plan requiert un accès à l’écran de verrouillage, veillez à placer l’application sur l’écran de verrouillage avant d’essayer de déboguer la tâche en arrière-plan. Pour plus d’informations sur la spécification des options de manifeste pour les applications compatibles avec l’écran de verrouillage, voir [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 -   Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan, voir [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan, voir [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
 
 ## Rubriques connexes
 
@@ -112,6 +113,6 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

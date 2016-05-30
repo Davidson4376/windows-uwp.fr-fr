@@ -1,13 +1,14 @@
 ---
-title: Lancer l’application du Windows Store
-description: Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store en ouvrant des pages spécifiques dans le Windows Store.
+author: mcleblanc
+title: Lancer l’application du Windows Store
+description: Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store sur des pages spécifiques du Windows Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ---
 
-# Lancer l’application du Windows Store
+# Lancer l’application du Windows Store
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique décrit le schéma d’URI **ms-windows-store:**. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store en ouvrant des pages spécifiques dans le Windows Store.
 
@@ -26,11 +27,11 @@ Cette rubrique décrit le schéma d’URI **ms-windows-store:**. Votre applicati
 </td>
 </tr>
 <tr>
-<td rowspan="4">Lance la page de détails du produit (PDP) pour un produit. <p>Un ID de produit est recommandé pour les clients sur Windows 10, mais les méthodes antérieures (par exemple, PFN, ou nom de la famille de packages) fonctionnent toujours.</p>
-<p>Ces valeurs sont disponibles dans le tableau de bord du Centre de développement Windows à la page <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">Identité de l’application</a> de la section Gestion des applications pour chaque application.</p>
+<td rowspan="4">Lance la page de détails d’un produit (PDP). <p>L’ID Windows Store est recommandé pour les clients Windows 10 et fonctionne sur toutes les versions du système d’exploitation, mais les méthodes antérieures de lancement (ex : PFN) sont toujours prises en charge.</p>
+<p>Ces valeurs sont disponibles dans le tableau de bord du Centre de développement Windows à la page <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">Identité de l’application</a> de la section Gestion des applications de chaque application.</p>
 </td>
 <td>
-ID de produit <p>(Recommandé)</p>
+ID Windows Store <p>(recommandé)</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -38,7 +39,7 @@ ID de produit <p>(Recommandé)</p>
 </tr>
 <tr>
 <td>Nom de la famille de packages (PFN)</td>
-<td>ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe 
+<td>ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe
 </td>
 </tr>
 <tr>
@@ -47,17 +48,17 @@ ID de produit <p>(Recommandé)</p>
 </tr>
 <tr>
 <td>ID de produit (Windows 8.x)</td>
-<td>ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117 
+<td>ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117
 </td>
 </tr>
 <tr>
 <td rowspan="4">Lance la procédure d’écriture d’un avis pour un produit.</td>
-<td>ID de produit <p>(Recommandé)</p></td>
+<td>ID Windows Store <p>(recommandé)</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>
 <td>Nom de la famille de packages (PFN)</td>
-<td>ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe 
+<td>ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe
 </td>
 </tr>
 <tr>
@@ -71,7 +72,7 @@ ID de produit <p>(Recommandé)</p>
 <tr>
 <td>Lance une recherche de produits associés à une extension de fichier. </td>
 <td />
-<td>ms-windows-store://assoc/?FileExt=pdf 
+<td>ms-windows-store://assoc/?FileExt=pdf
 </td>
 </tr>
 <tr>
@@ -107,7 +108,7 @@ Lance une recherche pour la requête spécifiée. Les espaces sont autorisées d
 <td>Lance une recherche de produits de l’éditeur spécifié. Les espaces sont autorisées dans le nom. 
 </td>
 <td />
-<td>ms-windows-store://publisher/?name=Microsoft Corporation 
+<td>ms-windows-store://publisher/?name=Microsoft Corporation
 </td>
 </tr>
 <tr><td>Lance les téléchargement et mises à jour de page.</td>
@@ -129,6 +130,6 @@ Lance une recherche pour la requête spécifiée. Les espaces sont autorisées d
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

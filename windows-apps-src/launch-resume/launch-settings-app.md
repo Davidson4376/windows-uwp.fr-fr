@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Lancer l’application Paramètres Windows
 description: Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
@@ -7,7 +8,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 # Lancer l’application Paramètres Windows
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -29,7 +30,7 @@ Pour lancer directement l’application **Paramètres**, utilisez le schéma d�
 
 Dans cet exemple, un contrôle Hyperlink XAML est utilisé pour ouvrir la page des paramètres de confidentialité relatifs au microphone en utilisant l’URI `ms-settings:privacy-microphone`.
 
-```xaml
+```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -125,6 +126,6 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

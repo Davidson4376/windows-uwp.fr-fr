@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Exécuter une tâche en arrière-plan en fonction d’un minuteur
 description: Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique.
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
@@ -7,7 +8,7 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 # Exécuter une tâche en arrière-plan en fonction d’un minuteur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -28,15 +29,15 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 
     Le minuteur intégré pour les applications de plateforme Windows universelle (UWP) exécute des tâches en arrière-plan par intervalles de 15 minutes.
 
-    -   Si *FreshnessTime* indique une fréquence de 15 minutes et si *OneShot* a la valeur True, la tâche sera exécutée une seule fois entre 0 et 15 minutes à partir du moment où elle sera inscrite.
+    -   Si *FreshnessTime* indique une fréquence de 15 minutes et si *OneShot* a la valeur True, la tâche sera exécutée une seule fois entre 0 et 15 minutes à partir du moment où elle sera inscrite.
 
-    -   Si *FreshnessTime* indique une fréquence de 15 minutes et si *OneShot* a la valeur False, la tâche sera exécutée toutes les 15 minutes, entre 0 et 15 minutes à partir du moment où elle sera inscrite.
+    -   Si *FreshnessTime* indique une fréquence de 15 minutes et si *OneShot* a la valeur False, la tâche sera exécutée toutes les 15 minutes, entre 0 et 15 minutes à partir du moment où elle sera inscrite.
 
     **Remarque** Si *FreshnessTime* présente une fréquence inférieure à 15 minutes, une exception est levée lors de la tentative d’inscription de la tâche en arrière-plan.
 
      
 
-    For example, this trigger will cause a background task to run once an hour:
+    Par exemple, ce déclencheur entraîne l’exécution d’une tâche en arrière-plan une fois par heure :
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -51,7 +52,7 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 
 -   Si besoin est, créez une condition de tâche en arrière-plan afin de contrôler le moment où la tâche est exécutée. Une condition empêche la tâche en arrière-plan de s’exécuter tant que la condition n’est pas satisfaite. Pour plus d’informations, voir [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
 
-    Dans cet exemple, la condition est définie à **UserPresent**. Ainsi, une fois déclenchée, la tâche s’exécute une fois que l’utilisateur est actif. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+    Dans cet exemple, la condition est définie sur **UserPresent**. Ainsi, une fois déclenchée, la tâche s’exécute une fois que l’utilisateur est actif. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -83,14 +84,14 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
-    > string entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > string taskName   = “Example hourly background task”;
+    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > string taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     > ```cpp
-    > String ^ entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > String ^ taskName   = “Example hourly background task”;
+    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > String ^ taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
@@ -100,9 +101,9 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
    
 ## Remarques
 
-> **Remarque** À partir de Windows 10, il n’est plus nécessaire pour l’utilisateur d’ajouter votre application à l’écran de verrouillage pour utiliser des tâches en arrière-plan. Pour obtenir des indications sur les types de déclencheurs de tâche en arrière-plan, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
+> **Remarque** Depuis Windows 10, il n’est plus nécessaire pour l’utilisateur d’ajouter votre application à l’écran de verrouillage pour utiliser des tâches en arrière-plan. Pour obtenir des indications sur les types de déclencheur de tâche en arrière-plan, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 
 ## Rubriques connexes
@@ -130,6 +131,6 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Gérer la reprise d’une application
 description: Apprenez à actualiser le contenu à l’écran lorsque le système reprend l’exécution de votre application.
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
@@ -7,7 +8,7 @@ ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 # Gérer la reprise d’une application
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -51,7 +52,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
     Application::Current->Resuming += 
-        ref new EventHandler<Platform::Object^>(this, &amp;MainPage::App_Resuming);
+        ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
 }
 ```
 
@@ -96,9 +97,9 @@ Le système suspend votre application chaque fois que l’utilisateur bascule ve
 
 Si votre application ne contient pas de contenu à actualiser, il n’y a alors pas besoin de gérer l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339).
 
-**Remarque concernant le débogage à l’aide de Visual Studio : ** Lorsque votre application est jointe au débogueur Visual Studio, vous pouvez lui envoyer un événement **Resume**. Assurez-vous que la **barre d’outils Emplacement de débogage** est visible, et cliquez sur la liste déroulante à côté de l’icône **Suspendre**. Puis, choisissez **Reprendre**.
+**Remarque concernant le débogage à l’aide de Visual Studio :** Lorsque votre application est jointe au débogueur Visual Studio, vous pouvez lui envoyer un événement **Resume**. Assurez-vous que la **barre d’outils Emplacement de débogage** est visible, et cliquez sur la liste déroulante à côté de l’icône **Suspendre**. Ensuite, choisissez **Reprendre**.
 
-> **Remarque** Dans les applications du Windows Phone Store, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications. Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.
+> **Remarque** Dans les applications du Windows Phone Store, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications. Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.
 
 ## Rubriques connexes
 
@@ -110,6 +111,6 @@ Si votre application ne contient pas de contenu à actualiser, il n’y a alors 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

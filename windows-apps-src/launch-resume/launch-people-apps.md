@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Lancer l’application Contacts
 description: Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
@@ -7,7 +8,7 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 # Lancer l’application Contacts
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
@@ -38,7 +39,8 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 <tr class="odd">
 <td align="left">Permet à d’autres applications de fournir une chaîne de recherche qui lance l’application Contacts avec la page de résultats de la recherche.
 <div class="alert">
-**Remarque** <p>Les paramètres respectent la casse.</p>
+**Remarque**  
+<p>Les paramètres respectent la casse.</p>
 <p>Si vous n’entrez pas la syntaxe correctement ou si la valeur de chaîne de recherche est manquante, le comportement par défaut consiste à renvoyer la liste complète des contacts sans aucun filtrage.</p>
 </div>
 <div>
@@ -47,9 +49,10 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 <td align="left">ms-people:search?SearchString=&lt;contactsearchinfo&gt;</td>
 </tr>
 <tr class="even">
-<td align="left">Ouvre une carte de visite existante si le contact est trouvé. Ou bien ouvre une carte de visite temporaire si aucun contact n’est détecté. Si aucun paramètre n’est fourni, nous lançons l’application Contacts avec une liste de contacts.
+<td align="left">Ouvre une carte de visite existante si le contact est trouvé. Ou bien ouvre une carte de visite temporaire si aucun contact n’est détecté. Si aucun paramètre d’entrée n’est fourni, nous lançons l’application Contacts avec une liste de contacts.
 <div class="alert">
-**Remarque** <p>Les paramètres respectent la casse.</p>
+**Remarque**  
+<p>Les paramètres respectent la casse.</p>
 <p>Peu importe l’ordre des paramètres.</p>
 <p>S’il existe plusieurs correspondances, nous renvoyons la première correspondance du contact.</p>
 </div>
@@ -61,8 +64,9 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 <tr class="odd">
 <td align="left">Ouvre une page d’enregistrement de contact dans l’application Contacts, permettant d’enregistrer le contact donné avec le numéro de téléphone ou l’adresse électronique fournis.
 <div class="alert">
-**Remarque** <p>Les paramètres respectent la casse.</p>
-<p>Peu importe l’ordre des paramètres.</p>
+**Remarque**  
+<p>Les paramètres respectent la casse.</p>
+<p>L’ordre des paramètres n’a pas d’importance.</p>
 </div>
 <div>
  
@@ -203,6 +207,6 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

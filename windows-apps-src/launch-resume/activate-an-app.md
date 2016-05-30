@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Gérer l’activation d’une application
 description: Découvrez comment gérer l’activation d’une application en remplaçant la méthode OnLaunched.
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
@@ -7,7 +8,7 @@ ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 # Gérer l’activation d’une application
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -24,7 +25,7 @@ La classe [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/w
 
 Définissez la classe pour votre application.
 
-```xaml
+```xml
 <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              x:Class="AppName.App" >
@@ -180,6 +181,6 @@ Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

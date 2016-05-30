@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Inscrire une tâche en arrière-plan
 description: Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité.
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
@@ -7,7 +8,7 @@ ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 # Inscrire une tâche en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -42,7 +43,7 @@ Cette méthode contient le point d’entrée de la tâche, son nom, un déclench
 >                                                 IBackgroundCondition condition)
 > {
 >     
->     // We’ll add code to this function in subsequent steps.
+>     // We'll add code to this function in subsequent steps.
 > 
 > }
 > ```
@@ -54,7 +55,7 @@ Cette méthode contient le point d’entrée de la tâche, son nom, un déclench
 >                                              IBackgroundCondition ^ condition)
 > {
 >     
->     // We’ll add code to this function in subsequent steps.
+>     // We'll add code to this function in subsequent steps.
 > 
 > }
 > ```
@@ -68,7 +69,7 @@ Pour rechercher des inscriptions existantes, vous pouvez interroger la propriét
 
 > **Remarque** Utilisez des noms de tâches en arrière-plan uniques à votre application. Assurez-vous que chaque tâche en arrière-plan possède un nom unique.
 
-Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) créé au cours de la dernière étape :
+Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) créé au cours de la dernière étape :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -95,7 +96,7 @@ Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [*
 >         }
 >     }
 >     
->     // We’ll register the task in the next step.
+>     // We'll register the task in the next step.
 > }
 > ```
 > ```cpp
@@ -128,7 +129,7 @@ Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [*
 >         hascur = iter->MoveNext();
 >     }
 >     
->     // We’ll register the task in the next step.
+>     // We'll register the task in the next step.
 > }
 > ```
 
@@ -361,7 +362,7 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 > }
 > ```
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 ## Rubriques connexes
@@ -393,6 +394,6 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

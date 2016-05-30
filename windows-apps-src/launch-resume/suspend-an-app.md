@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Gérer la suspension d’une application
 description: Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application.
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
@@ -7,7 +8,7 @@ ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 # Gérer la suspension d’une application
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -58,7 +59,7 @@ MainPage::MainPage()
 {
    InitializeComponent();
    Application::Current->Suspending += 
-       ref new SuspendingEventHandler(this, &amp;MainPage::App_Suspending);
+       ref new SuspendingEventHandler(this, &MainPage::App_Suspending);
 }
 ```
 
@@ -109,9 +110,9 @@ Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit
 
 > **Remarque** Si vous devez effectuer des tâches asynchrones lorsque votre application est en cours de suspension, vous devez différer l’exécution de la suspension tant que vos tâches ne sont pas terminées. Vous pouvez utiliser la méthode [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) sur l’objet [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) (disponible via les arguments de l’événement) pour retarder la suspension jusqu’à ce que vous appeliez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) et qu’elle soit appliquée sur l’objet [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) retourné.
 
-> **Remarque** Pour améliorer la réactivité du système dans Windows 8.1, les applications disposent d’un accès à faible priorité aux ressources en cas de suspension. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5 secondes en priorité normale sur Windows ou de 1 à 10 secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
+> **Remarque** Pour améliorer la réactivité du système dans Windows 8.1, les applications disposent d’un accès à faible priorité aux ressources en cas de suspension. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5 secondes en priorité normale sur Windows ou de 1 à 10 secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
 
-> **Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
+> **Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
 
 ## Rubriques connexes
 
@@ -129,6 +130,6 @@ Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

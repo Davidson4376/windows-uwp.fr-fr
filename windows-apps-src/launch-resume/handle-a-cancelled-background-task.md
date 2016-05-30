@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Gérer une tâche en arrière-plan annulée
 description: Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant.
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
@@ -6,7 +7,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 
 # Gérer une tâche en arrière-plan annulée
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -53,9 +54,9 @@ Ajoutez une variable d’indicateur appelée **\_CancelRequested** à la classe 
 >     volatile bool CancelRequested;
 > ```
 
-Dans la méthode OnCanceled que vous avez créée à l’étape 1, attribuez à la variable d’indicateur **\_CancelRequested** la valeur **true**.
+Dans la méthode OnCanceled que vous avez créée à l’étape 1, attribuez à la variable d’indicateur **\_CancelRequested** la valeur **true**.
 
-La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) attribue à **_CancelRequested** la valeur **true** et écrit une sortie de débogage qui peut s’avérer utile :
+La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) attribue à **_CancelRequested** la valeur **true** et écrit une sortie de débogage qui peut s’avérer utile :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -98,11 +99,11 @@ Lors de la réception d’une demande d’annulation, la méthode Run doit arrê
 
 Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **_cancelRequested** a la valeur true, le travail s’arrête.
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan :
+L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
->     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -115,7 +116,7 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 >     }
 > ```
 > ```cpp
->     if ((CancelRequested == false) &amp;&amp; (Progress &lt; 100))
+>     if ((CancelRequested == false) && (Progress < 100))
 >     {
 >         Progress += 10;
 >         TaskInstance->Progress = Progress;
@@ -132,11 +133,11 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 
 Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé).
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings :
+L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
->     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -171,7 +172,7 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 >     }
 > ```
 > ```cpp
->     if ((CancelRequested == false) &amp;&amp; (Progress &lt; 100))
+>     if ((CancelRequested == false) && (Progress < 100))
 >     {
 >         Progress += 10;
 >         TaskInstance->Progress = Progress;
@@ -186,7 +187,7 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 >         
 >         auto settings = ApplicationData::Current->LocalSettings;
 >         auto key = TaskInstance->Task->Name;
->         settings->Values->Insert(key, (Progress &lt; 100) ? "Canceled" : "Completed");
+>         settings->Values->Insert(key, (Progress < 100) ? "Canceled" : "Completed");
 >         
 >         //
 >         // Indicate that the background task has completed.
@@ -204,7 +205,7 @@ Pour des raisons d’illustration, l’exemple de code présente uniquement des 
 
 ## Exemple de méthode Run
 
-L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour plus de contexte :
+L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour plus de contexte :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -243,7 +244,7 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 > //
 > private void PeriodicTimerCallback(ThreadPoolTimer timer)
 > {
->     if ((_cancelRequested == false) &amp;&amp; (_progress < 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -283,7 +284,7 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 >     //
 >     // Associate a cancellation handler with the background task.
 >     //
->     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &amp;SampleBackgroundTask::OnCanceled);
+>     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > 
 >     //
 >     // Get the deferral object from the task instance, and take a reference to the taskInstance.
@@ -293,7 +294,7 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 > 
 >     auto timerDelegate = [this](ThreadPoolTimer^ timer)
 >     {
->         if ((CancelRequested == false) &amp;&amp;
+>         if ((CancelRequested == false) &&
 >             (Progress < 100))
 >         {
 >             Progress += 10;
@@ -323,7 +324,7 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 > }
 > ```
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
@@ -345,6 +346,6 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

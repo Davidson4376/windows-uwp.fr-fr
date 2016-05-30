@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Surveiller la progression et l’achèvement des tâches en arrière-plan
 description: Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan.
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
@@ -7,7 +8,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 # Surveiller la progression et l’achèvement des tâches en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -18,7 +19,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
 Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan. Les tâches en arrière-plan sont découplées de l’application et sont exécutées séparément. Toutefois, la progression et l’achèvement des tâches en arrière-plan peuvent être surveillés par le code de l’application. Pour ce faire, l’application s’abonne aux événements des tâches en arrière-plan qu’elle a inscrites auprès du système.
 
--   Cette rubrique suppose que vous disposez d’une application qui inscrit les tâches en arrière-plan. Pour vous lancer rapidement dans la génération d’une tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
+-   Cette rubrique suppose que vous disposez d’une application qui inscrit les tâches en arrière-plan. Pour vous lancer rapidement dans la génération d’une tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
 ## Créer un gestionnaire d’événements pour gérer les tâches en arrière-plan achevées
 
@@ -45,8 +46,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
     Par exemple, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur.
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"] ```cs
     >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
     >     {
     >         UpdateUI();
@@ -66,8 +66,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
     Utilisez l’empreinte suivante pour la méthode de gestionnaire d’événements de tâche en arrière-plan OnProgress :
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"] ```cs
     >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
     >         // TODO: Add code that deals with background task progress.
@@ -84,12 +83,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
     Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args* :
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
-    >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
-    >     {
-    >         var progress = "Progress: " + args.Progress + "%";
-    >         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
+    > [!div class="tabbedCodeSnippets"] ```cs private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args) { var progress = "Progress: " + args.Progress + "%"; BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
     > 
     >         UpdateUI();
     >     }
@@ -111,23 +105,15 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
     Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) appelle la fonction suivante pour chaque tâche en arrière-plan qu’il inscrit :
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"]     ```cs
     >     private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
     >     {
     >         task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
     >         task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
     >     }
     >     ```
-    >     ```cpp
-    >     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)
-    >     {
-    >         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-    >         {
-    >             auto progress = "Progress: " + args->Progress + "%";
-    >             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;
-    >             UpdateUI();
-    >         };
+    >  ```cpp void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task) { auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
+    >            { auto progress = "Progress: " + args-&gt;Progress + "%"; BackgroundTaskSample::SampleBackgroundTaskProgress = progress; UpdateUI(); };
     > 
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
     >         
@@ -141,22 +127,11 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     >     }
     >     ```
 
-2.  Lorsque l’application se lance ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire d’événements de progression et d’achèvement. La liste des tâches en arrière-plan actuellement inscrites par l’application est conservée dans la propriété [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
+2.  Lorsque l’application est lancée ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire d’événements de progression et d’achèvement. Cette liste est conservée dans la propriété [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
 
     Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask :
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
-    >     protected override void OnNavigatedTo(NavigationEventArgs e)
-    >     {
-    >         foreach (var task in BackgroundTaskRegistration.AllTasks)
-    >         {
-    >             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)
-    >             {
-    >                 AttachProgressAndCompletedHandlers(task.Value);
-    >                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);
-    >             }
-    >         }
+    > [!div class="tabbedCodeSnippets"] ```cs protected override void OnNavigatedTo(NavigationEventArgs e) { foreach (var task in BackgroundTaskRegistration.AllTasks) { if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName) { AttachProgressAndCompletedHandlers(task.Value); BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true); } }
     > 
     >         UpdateUI();
     >     }
@@ -219,6 +194,6 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
