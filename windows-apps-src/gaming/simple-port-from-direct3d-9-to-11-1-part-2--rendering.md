@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Convertir l’infrastructure de rendu
 description: Montre comment convertir une infrastructure de rendu simple de Direct3D 9 à Direct3D 11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D 11.
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
@@ -7,7 +8,7 @@ ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 # Convertir l’infrastructure de rendu
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -85,7 +86,7 @@ technique RenderSceneSimple
 }
 ```
 
-Dans Direct3D 11, nous pouvons toujours utiliser nos nuanceurs HLSL. Nous mettons chaque nuanceur dans son propre fichier HLSL afin que Visual Studio les compile dans des fichiers distincts et que nous les chargions plus tard en tant que ressources Direct3D distinctes. Nous définissons le niveau cible sur [Modèle de nuanceur 4 niveau 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876) car ces nuanceurs sont écrits pour les GPU DirectX 9.1.
+Dans Direct3D 11, nous pouvons toujours utiliser nos nuanceurs HLSL. Nous mettons chaque nuanceur dans son propre fichier HLSL afin que Visual Studio les compile dans des fichiers distincts et que nous les chargions plus tard en tant que ressources Direct3D distinctes. Nous définissons le niveau cible sur [Modèle de nuanceur 4 niveau 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876), car ces nuanceurs sont écrits pour les GPU DirectX 9.1.
 
 Quand nous avons défini le schéma d’entrée, nous avons vérifié qu’il représentait la même structure de données que celle que nous utilisons pour stocker les données par vertex dans la mémoire système et la mémoire GPU. De même, la sortie d’un nuanceur de vertex doit correspondre à la structure utilisée en tant qu’entrée du nuanceur de pixels. Les règles ne sont pas les mêmes que pour passer des données d’une fonction à une autre en C++ ; vous pouvez omettre les variables inutilisées à la fin de la structure. Mais il n’est pas possible de réorganiser l’ordre et vous ne pouvez pas ignorer le contenu du milieu de la structure de données.
 
@@ -227,9 +228,9 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-Pour inclure le bytecode de nuanceur dans votre package d’application compilé, il suffit d’ajouter le fichier HLSL au projet Visual Studio. Visual Studio va utiliser l’[Outil compilateur d’effet](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) pour compiler les fichiers HLSL dans des objets de nuanceur compilés (fichiers .CSO) et les inclure dans le package d’application.
+Pour inclure le bytecode de nuanceur dans votre package d’application compilé, il suffit d’ajouter le fichier HLSL au projet Visual Studio. Visual Studio va utiliser l’[Outil compilateur d’effet](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) pour compiler les fichiers HLSL dans des objets de nuanceur compilés (fichiers .CSO) et les inclure dans le package d’application.
 
-> **Remarque** Veillez à définir le niveau de fonctionnalité cible correct pour le compilateur HLSL : cliquez avec le bouton droit sur le fichier source HLSL dans Visual Studio, sélectionnez Propriétés, puis modifiez le paramètre **Modèle de nuanceur** sous **Compilateur HLSL -&gt; Général**. Direct3D vérifie cette propriété par rapport aux fonctionnalités matérielles quand votre application crée la ressource de nuanceur Direct3D.
+> **Remarque** Veillez à définir le niveau de fonctionnalité cible correct pour le compilateur HLSL : cliquez avec le bouton droit sur le fichier source HLSL dans Visual Studio, sélectionnez Propriétés, puis modifiez le paramètre **Modèle de nuanceur** sous **Compilateur HLSL -&gt; Général**. Direct3D vérifie cette propriété par rapport aux fonctionnalités matérielles quand votre application crée la ressource de nuanceur Direct3D.
 
  
 
@@ -239,8 +240,8 @@ Voici un bon endroit pour créer le schéma d’entrée, qui correspond à la d�
 
 Les données par vertex doivent être stockées dans des types compatibles dans la mémoire système. Les types de données DirectXMath peuvent s’avérer utiles. Par exemple, DXGI\_FORMAT\_R32G32B32\_FLOAT correspond à [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
 
-> **Remarque** Les tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [
-            **XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de tampons constants.
+> **Remarque** Les tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [
+            **XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
 
  
 
@@ -477,7 +478,7 @@ Présentation d’une image à l’écran avec DirectX 11
 m_swapChain->Present(1, 0);
 ```
 
-La chaîne de rendu que nous venons de créer sera appelée à partir d’une boucle de jeu implémentée dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505). Une illustration est proposée dans la [Partie 3 : fenêtre d’affichage et boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
+La chaîne de rendu que nous venons de créer sera appelée à partir d’une boucle de jeu implémentée dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505). Une illustration est proposée dans la [Partie 3 : Fenêtre d’affichage et boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
 
  
 
@@ -488,6 +489,6 @@ La chaîne de rendu que nous venons de créer sera appelée à partir d’une bo
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

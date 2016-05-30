@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Créer des ressources de périphérique pour un tampon de profondeur
 description: Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre.
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
@@ -7,7 +8,7 @@ ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 # Créer des ressources de périphérique pour un tampon de profondeur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre. Partie 1 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
@@ -109,7 +110,7 @@ hr = pD3DDevice->CreateShaderResourceView(
 
 Notez que vous pouvez spécifier le mode d’adresse D3D11\_TEXTURE\_ADDRESS\_BORDER pour qu’il fonctionne sur les périphériques de niveau de fonctionnalité 9\_1. Cela s’applique aux nuanceurs de pixels qui ne testent pas si le pixel figure dans le tronc de cône (frustrum) de vue de la lumière avant d’effectuer le test de profondeur. En définissant chaque bordure sur 0 ou 1, vous pouvez contrôler si les pixels en dehors du tronc de cône de vue de la lumière réussissent ou échouent au test de profondeur, et par conséquent s’ils sont éclairés ou dans l’ombre.
 
-Sur le niveau de fonctionnalité 9\_1, les valeurs requises suivantes doivent être définies comme suit : **MinLOD** sur zéro, **MaxLOD** sur **D3D11\_FLOAT32\_MAX** et **MaxAnisotropy** sur zéro.
+Sur le niveau de fonctionnalité 9\_1, les valeurs requises suivantes doivent être définies comme suit : **MinLOD** sur zéro, **MaxLOD** sur **D3D11\_FLOAT32\_MAX** et **MaxAnisotropy** sur zéro.
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -259,6 +260,6 @@ Dans la suite de cette procédure pas à pas, vous allez découvrir comment cré
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

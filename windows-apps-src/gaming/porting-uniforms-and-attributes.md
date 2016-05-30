@@ -1,13 +1,14 @@
 ---
-title: Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
-description: Au cours du processus de portage vers Direct3D 11 depuis OpenGL ES 2.0, vous devez modifier la syntaxe et le comportement de l’API pour passer des données entre l’application et les programmes de nuanceurs.
+author: mtoepke
+title: Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
+description: Au cours du processus de portage vers Direct3D 11 depuis OpenGL ES 2.0, vous devez modifier la syntaxe et le comportement de l’API pour passer des données entre l’application et les programmes de nuanceurs.
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ---
 
-# Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
+# Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -26,7 +27,7 @@ Voici les principales correspondances.
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | uniforme                   | Champ de tampon constant (**cbuffer**).                                                                                                                                                |
 | attribut                 | Champ d’élément de tampon de vertex, désigné par un schéma d’entrée et marqué à l’aide d’une sémantique HLSL spécifique.                                                                                |
-| objet de tampon             | Tampon ; voir [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) et [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) pour obtenir les définitions des tampons à usage général. |
+| objet de tampon             | Tampon ; voir [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) et [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) pour obtenir les définitions des tampons à usage général. |
 | objet de tampon de trame (FBO) | Cible(s) de rendu ; voir [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) avec [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
 | mémoire tampon d’arrière-plan               | Chaîne de permutation avec surface de « mémoire tampon d’arrière-plan » ; voir [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) avec [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) attaché.                       |
 
@@ -296,6 +297,6 @@ struct VertexShaderInput
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Structure de l’application Marble Maze
 description: La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique.
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
@@ -7,7 +8,7 @@ ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 # Structure de l’application Marble Maze
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique. Au lieu de fonctionner avec des types de handle tels que **HWND** et des fonctions telles que **CreateWindow**, Windows Runtime fournit des interfaces comme [**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296). Vous pouvez ainsi développer des applications pour UWP grâce à une approche orientée objet plus moderne. Cette section montre comment le code de l’application Marble Maze est structuré.
@@ -80,7 +81,7 @@ Après l’initialisation, les jeux exécutent généralement la *boucle de jeu*
 ##  Ajout au modèle
 
 
-Le modèle *Application DirectX 11 (Windows universel)* crée une fenêtre principale dont vous pouvez effectuer le rendu avec Direct3D. Le modèle comprend également la classe **DeviceResources** qui crée toutes les ressources d’appareil Direct3D nécessaires au rendu du contenu 3D dans une application UWP. La classe **AppMain** crée l’objet de classe **MarbleMaze**, démarre le chargement des ressources, effectue une boucle de mise à jour de la minuterie, puis appelle la méthode de rendu **MarbleMaze** pour chaque image. Les méthodes **CreateWindowSizeDependentResources**, Update et Render de cette classe appellent les méthodes correspondantes de la classe **MarbleMaze**. L’exemple suivant montre l’emplacement où le constructeur **AppMain** crée l’objet de classe **MarbleMaze**. La classe des ressources d’appareil est passée à la classe afin de permettre l’utilisation des objets Direct3D pour le rendu.
+Le modèle *Application DirectX 11 (Windows universel)* crée une fenêtre principale dont vous pouvez effectuer le rendu avec Direct3D. Le modèle comprend également la classe **DeviceResources** qui crée toutes les ressources d’appareil Direct3D nécessaires au rendu du contenu 3D dans une application UWP. La classe **AppMain** crée l’objet de classe **MarbleMaze**, démarre le chargement des ressources, effectue une boucle de mise à jour de la minuterie, puis appelle la méthode de rendu **MarbleMaze** pour chaque image. Les méthodes **CreateWindowSizeDependentResources**, Update et Render de cette classe appellent les méthodes correspondantes de la classe **MarbleMaze**. L’exemple suivant montre l’emplacement où le constructeur **AppMain** crée l’objet de classe **MarbleMaze**. La classe des ressources d’appareil est passée à la classe afin de permettre l’utilisation des objets Direct3D pour le rendu.
 
 ```cpp
     m_marbleMaze = std::unique_ptr<MarbleMaze>(new MarbleMaze(m_deviceResources));
@@ -350,7 +351,7 @@ void MarbleMaze::LoadState()
 
  
 
-Pour obtenir d’autres exemples illustrant comment stocker et récupérer des paramètres et des fichiers à partir des magasins de données d’application locales, voir [Démarrage rapide : données d’application locales](https://msdn.microsoft.com/library/windows/apps/hh465118). Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](https://msdn.microsoft.com/library/windows/apps/mt299098).
+Pour obtenir d’autres exemples illustrant comment stocker et récupérer des paramètres et des fichiers à partir des magasins de données d’application locales, voir [Démarrage rapide : données d’application locales](https://msdn.microsoft.com/library/windows/apps/hh465118). Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](https://msdn.microsoft.com/library/windows/apps/mt299098).
 
 ##  Étapes suivantes
 
@@ -372,6 +373,6 @@ Pour plus d’informations sur certaines pratiques importantes à garder à l’
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

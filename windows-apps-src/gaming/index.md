@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: Jeux et DirectX
-description: La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation de jeux. Découvrez comment créer un nouveau jeu ou porter un jeu existant.
+description: La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation des jeux. Découvrez comment créer un jeu ou porter un jeu existant.
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ---
 
 # Jeux et DirectX
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation de jeux. Découvrez comment créer un nouveau jeu ou porter un jeu existant.
 
@@ -27,7 +28,7 @@ La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le 
 | [Audio pour les jeux](working-with-audio-in-your-directx-game.md) | Apprenez à développer et à incorporer de la musique et des sons dans votre jeu DirectX, et à traiter les signaux audio afin de créer des sons dynamiques et positionnels. |
 | [Contrôles tactiles pour les jeux](tutorial--adding-touch-controls-to-your-directx-game.md) | Découvrez comment ajouter des contrôles tactiles de base à votre jeu UWP en C++ avec DirectX. Nous allons vous montrer comment ajouter des contrôles tactiles pour déplacer une caméra de plan fixe dans un environnement Direct3D, où le glissement avec un doigt ou un stylet décale la perspective de la caméra. |
 | [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md) | Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (également connus sous le nom de contrôles de vue à la souris) à votre jeu DirectX. |
-| [Optimiser la boucle d’entrée et de rendu](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) | La latence d’entrée peut avoir un impact important sur un jeu. Son optimisation peut rendre un jeu plus fluide. De plus, une optimisation appropriée des événements d’entrée peut améliorer l’autonomie de la batterie. Apprenez à choisir les options de traitement appropriées de l’événement d’entrée [CoreDispatcher](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) pour vous assurer que votre jeu gère les entrées de façon aussi fluide que possible. |
+| [Optimiser la boucle d’entrée et de rendu](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) | La latence d’entrée peut avoir un impact important sur un jeu. Son optimisation peut rendre un jeu plus fluide. De plus, une optimisation appropriée des événements d’entrée peut améliorer l’autonomie de la batterie. Découvrez comment choisir les options de traitement appropriées de l’événement d’entrée [CoreDispatcher](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) pour vous assurer que votre jeu gère les entrées de façon aussi fluide que possible. |
 | [Mise à l’échelle et superpositions de chaînes d’échange](multisampling--scaling--and-overlay-swap-chains.md) | Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle. |
 | [Réduire la latence avec des chaînes d’échange DXGI 1.3](reduce-latency-with-dxgi-1-3-swap-chains.md) | Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image. |
 | [Échantillonnage multiple dans les applications UWP](multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md) | Découvrez comment utiliser l’échantillonnage multiple dans des applications UWP générées avec Direct3D. |
@@ -37,12 +38,12 @@ La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le 
 | [Technologie interop DirectX et XAML](directx-and-xaml-interop.md) | Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu UWP. |
 | [Créer un package de votre jeu](package-your-windows-store-directx-game.md) | Certains jeux UWP qui prennent notamment en charge plusieurs langues et comprennent des éléments multimédias spécifiques à la région ou des éléments multimédias haute définition facultatifs peuvent facilement devenir très volumineux. Dans cette rubrique, découvrez comment utiliser les packages et ensembles d’applications pour personnaliser vos applications afin que vos clients ne reçoivent que les ressources dont ils ont réellement besoin. |
 | [Guides en matière de portage de jeu](porting-guides.md) | Fournit des guides relatifs au portage de vos jeux existants vers Direct3D 11, UWP et Windows 10. |
-| [Ressources de programmation de jeux](additional-directx-game-programming-resources.md) | Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes. |
+| [Ressources de programmation de jeux](additional-directx-game-programming-resources.md) | Pour plus d’informations sur la programmation des jeux sur Windows, consultez les ressources suivantes. |
 
  
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -62,6 +63,6 @@ Pour utiliser au mieux les vues d’ensemble du développement de jeux et des di
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

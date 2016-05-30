@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Générer le rendu du mappage d’ombre dans le tampon de profondeur
 description: Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre.
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
@@ -7,7 +8,7 @@ ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 # Générer le rendu du mappage d’ombre dans le tampon de profondeur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre. Le mappage de profondeur masque l’espace qui sera rendu dans l’ombre. Partie 2 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
@@ -117,7 +118,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimisez le tronc de cône de l’affichage :** assurez-vous que votre implémentation calcule un tronc de cône de l’affichage étroit afin d’obtenir le niveau de précision le plus élevé possible de votre tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324) pour obtenir plus de conseils sur la technique d’ombrage.
+**Optimisez le tronc de cône de l’affichage :** assurez-vous que votre implémentation calcule un tronc de cône de l’affichage étroit afin d’obtenir le niveau de précision le plus élevé possible de votre tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324) pour obtenir plus de conseils sur la technique d’ombrage.
 
 ## Nuanceur de vertex pour la passe d’ombre
 
@@ -151,6 +152,6 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment ajout
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

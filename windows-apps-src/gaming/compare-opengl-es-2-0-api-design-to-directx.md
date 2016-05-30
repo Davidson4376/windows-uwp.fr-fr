@@ -1,5 +1,6 @@
 ---
-title: Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
+author: mtoepke
+title: Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
 description: Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0.
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 ---
@@ -7,7 +8,7 @@ ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 # Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -114,6 +115,6 @@ Toutefois, Direct3D peut prendre en charge un système de coordonnées droitier.
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Mise en réseau pour les jeux
 description: Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
@@ -7,7 +8,7 @@ ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 # Mise en réseau pour les jeux
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX.
 
@@ -386,6 +387,6 @@ using namespace Windows::Web::Http;
 * [Exemple StreamSocket](http://go.microsoft.com/fwlink/p/?linkid=243037)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

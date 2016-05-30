@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Contrôles tactiles pour les jeux
 description: Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX.
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
@@ -7,7 +8,7 @@ ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 # Contrôles tactiles pour les jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX. Nous allons vous montrer comment ajouter des contrôles tactiles pour déplacer une caméra de plan fixe dans un environnement Direct3D, où le glissement avec un doigt ou un stylet décale la perspective de la caméra.
 
@@ -182,7 +183,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Enfin, nous devons désactiver le mouvement panoramique de la caméra lorsque le joueur cesse de toucher l’écran. Nous utilisons **OnPointerReleased**, qui est appelé lorsque [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est déclenché, pour affecter à **m\_panInUse** la valeur FALSE et désactiver le mouvement panoramique de la caméra, ainsi que pour affecter la valeur 0 à l’ID de pointeur.
+Enfin, nous devons désactiver le mouvement panoramique de la caméra lorsque le joueur cesse de toucher l’écran. Nous utilisons **OnPointerReleased**, qui est appelé lorsque [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est déclenché, pour affecter à **m\_panInUse** la valeur FALSE et désactiver le mouvement panoramique de la caméra, ainsi que pour affecter la valeur 0 à l’ID de pointeur.
 
 **OnPointerReleased**
 
@@ -270,7 +271,7 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 ## Mise à jour des informations sur l’état du contrôleur de la caméra
 
 
-Effectuons maintenant nos calculs pour convertir les informations de coordonnées du pointeur suivies dans **m\_panPointerPosition** en nouvelles informations de coordonnées respectives de notre espace de scène 3D. Notre application appelle cette méthode chaque fois que nous actualisons la boucle principale de l’application. Nous calculons alors les nouvelles informations de position que nous souhaitons transmettre à l’application utilisée pour la mise à jour de la matrice globale avant projection dans la fenêtre d’affichage.
+Effectuons maintenant nos calculs pour convertir les informations de coordonnées du pointeur suivies dans **m\_panPointerPosition** en nouvelles informations de coordonnées respectives de notre espace de scène 3D. Notre application appelle cette méthode chaque fois que nous actualisons la boucle principale de l’application. Nous calculons alors les nouvelles informations de position que nous souhaitons transmettre à l’application utilisée pour la mise à jour de la matrice globale avant projection dans la fenêtre d’affichage.
 
 ```cpp
 
@@ -334,7 +335,7 @@ Nous pouvons maintenant obtenir une coordonnée d’espace de scène sur laquell
 Félicitations ! Vous avez implémenté un ensemble simple de contrôles tactiles de panoramique de la caméra dans votre jeu.
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -347,6 +348,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

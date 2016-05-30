@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: Initialiser Direct3D 11
-description: Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange.
+description: Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange.
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ---
 
-# Initialiser Direct3D 11
+# Initialiser Direct3D 11
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -16,12 +17,12 @@ ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 -   [Partie 3 : porter la boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange. Partie 1 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et la plateforme Windows universelle (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
+Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange. Partie 1 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et la plateforme Windows universelle (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
 ## Initialiser le périphérique Direct3D
 
 
-Dans Direct3D 9, nous avons créé un handle vers le périphérique Direct3D en appelant la méthode [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). Nous avons commencé en obtenant un pointeur vers l’[**interface IDirect3D9**](https://msdn.microsoft.com/library/windows/desktop/bb174300) et nous avons spécifié plusieurs paramètres pour contrôler la configuration du périphérique Direct3D et de la chaîne d’échange. Avant cela, nous avons appelé la fonction [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) pour vérifier que nous n’étions pas en train de demander au périphérique quelque chose qu’il ne pourrait pas faire.
+Dans Direct3D 9, nous avons créé un handle vers le périphérique Direct3D en appelant la méthode [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). Nous avons commencé en obtenant un pointeur vers l’[**interface IDirect3D9**](https://msdn.microsoft.com/library/windows/desktop/bb174300) et nous avons spécifié plusieurs paramètres pour contrôler la configuration du périphérique Direct3D et de la chaîne d’échange. Avant cela, nous avons appelé la fonction [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) pour vérifier que nous n’étions pas en train de demander au périphérique quelque chose qu’il ne pourrait pas faire.
 
 Direct3D 9
 
@@ -139,7 +140,7 @@ dxgiAdapter->GetParent(
     );
 ```
 
-Maintenant que nous avons la fabrique DXGI, nous pouvons l’utiliser pour créer la chaîne d’échange. Définissons à présent les paramètres de cette chaîne d’échange. Nous avons besoin de spécifier le format de surface ; nous choisissons [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) car c’est un format compatible avec Direct2D. Nous désactivons l’échelle d’affichage, l’échantillonnage multiple et le rendu stéréo car ils ne sont pas utilisés dans cet exemple. Étant donné que l’exécution est directement effectuée dans un CoreWindow, nous pouvons laisser les valeurs 0 de la largeur et de la hauteur et obtenir automatiquement les valeurs de plein écran.
+Maintenant que nous avons la fabrique DXGI, nous pouvons l’utiliser pour créer la chaîne d’échange. Définissons à présent les paramètres de cette chaîne d’échange. Nous avons besoin de spécifier le format de surface ; nous choisissons [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) car c’est un format compatible avec Direct2D. Nous désactivons l’échelle d’affichage, l’échantillonnage multiple et le rendu stéréo car ils ne sont pas utilisés dans cet exemple. Étant donné que l’exécution est directement effectuée dans un CoreWindow, nous pouvons laisser les valeurs 0 de la largeur et de la hauteur et obtenir automatiquement les valeurs de plein écran.
 
 > **Remarque** Affectez toujours au paramètre *SDKVersion* la valeur D3D11\_SDK\_VERSION pour les applications UWP.
 
@@ -159,7 +160,7 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-Pour nous assurer de ne pas générer le rendu plus souvent que ne le peut l’écran, nous affectons à la latence d’image la valeur 1 et nous utilisons [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). Cela permet d’économiser de l’énergie et constitue une exigence de certification du Windows Store. Nous en saurons plus sur la présentation à l’écran dans la partie 2 de cette procédure pas à pas.
+Pour nous assurer de ne pas générer le rendu plus souvent que ne le peut l’écran, nous affectons à la latence d’image la valeur 1 et nous utilisons [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). Cela permet d’économiser de l’énergie et constitue une exigence de certification du Windows Store. Nous en saurons plus sur la présentation à l’écran dans la partie 2 de cette procédure pas à pas.
 
 > **Remarque** Vous pouvez utiliser le multithreading (par exemple, des éléments de travail [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642)) pour continuer un autre travail pendant que le thread de rendu est bloqué.
 
@@ -176,7 +177,7 @@ Nous pouvons maintenant configurer la mémoire tampon d’arrière-plan pour le 
 ## Configurer la mémoire tampon d’arrière-plan en tant que cible de rendu
 
 
-Nous devons d’abord obtenir un handle vers la mémoire tampon d’arrière-plan. (Notez que la mémoire tampon d’arrière-plan appartient à la chaîne d’échange DXGI, alors que dans DirectX 9, elle appartenait au périphérique Direct3D.) Ensuite, nous demandons au périphérique Direct3D de l’utiliser en tant que cible de rendu en créant un *affichage* de cible de rendu à l’aide de la mémoire tampon d’arrière-plan.
+Nous devons d’abord obtenir un handle vers la mémoire tampon d’arrière-plan. (Notez que la mémoire tampon d’arrière-plan appartient à la chaîne d’échange DXGI, alors que dans DirectX 9, elle appartenait au périphérique Direct3D.) Ensuite, nous demandons au périphérique Direct3D de l’utiliser en tant que cible de rendu en créant un *affichage* de cible de rendu à l’aide de la mémoire tampon d’arrière-plan.
 
 **Direct3D 11**
 
@@ -225,6 +226,6 @@ Maintenant que nous avons un handle de périphérique et une cible de rendu en p
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

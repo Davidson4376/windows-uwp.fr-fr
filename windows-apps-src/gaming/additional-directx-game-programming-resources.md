@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Ressources de programmation de jeux
 description: Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
@@ -7,7 +8,7 @@ ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 # Ressources de programmation de jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
@@ -79,6 +80,6 @@ Pour plus d’informations sur la programmation de jeux sur Windows, consultez l
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

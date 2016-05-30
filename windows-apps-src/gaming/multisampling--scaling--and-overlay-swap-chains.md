@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Mise à l’échelle et superpositions de chaînes d’échange
 description: Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle.
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
@@ -7,7 +8,7 @@ ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 # Mise à l’échelle et superpositions de chaînes d’échange
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle.
 
@@ -144,7 +145,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
 
      
 
-2.  Créez la chaîne d’échange de premier plan avec [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Les options suivantes doivent être définies dans le [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) fourni au paramètre *pDesc* :
+2.  Créez la chaîne d’échange de premier plan avec [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Les options suivantes doivent être définies dans le [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) fourni au paramètre *pDesc* :
 
     -   Utilisez l’indicateur de chaîne d’échange [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) pour spécifier qu’il s’agit d’une chaîne d’échange de premier plan.
     -   Utilisez l’indicateur de mode alpha [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496). Les chaînes d’échange de premier plan sont toujours prémultipliées.
@@ -158,7 +159,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
 
     > **Remarque** Redéfinissez [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) chaque fois que la chaîne d’échange est redimensionnée.
 
-     ```cpp
+    ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
         2, // Double-buffered swap chain.
         static_cast<UINT>(m_d3dRenderTargetSize.Width),
@@ -323,6 +324,6 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

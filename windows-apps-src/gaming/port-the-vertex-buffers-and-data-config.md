@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Porter les mémoires tampons et données de vertex
 description: Lors de cette étape, vous allez définir les mémoires tampons de vertex qui contiendront vos maillages ainsi que les mémoires tampons d’index qui permettront aux nuanceurs de parcourir les vertex dans l’ordre indiqué.
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
@@ -7,7 +8,7 @@ ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 # Porter les mémoires tampons et données de vertex
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -143,7 +144,7 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-Cette description de disposition d’entrée définit un vertex à l’aide d’une paire de vecteurs à trois coordonnées : le premier vecteur 3D indique la position du vertex dans le système de coordonnées du modèle et le second vecteur 3D contient la valeur de couleur RVB associée au vertex. Dans cet exemple, vous utilisez trois valeurs à virgule flottante 32 bits, représentées ainsi dans le code : `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. Vous devez utiliser des types de la bibliothèque [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574)si vous gérez des données qui seront utilisées par un nuanceur car ils garantissent un packaging et un alignement corrects de ces données. (Par exemple, choisissez le type [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) ou [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) pour les données de vecteur et le type [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) pour les matrices.)
+Cette description de disposition d’entrée définit un vertex à l’aide d’une paire de vecteurs à trois coordonnées : le premier vecteur 3D indique la position du vertex dans le système de coordonnées du modèle et le second vecteur 3D contient la valeur de couleur RVB associée au vertex. Dans cet exemple, vous utilisez trois valeurs à virgule flottante 32 bits, représentées ainsi dans le code : `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. Vous devez utiliser des types de la bibliothèque [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574)si vous gérez des données qui seront utilisées par un nuanceur car ils garantissent un packaging et un alignement corrects de ces données. (Par exemple, choisissez le type [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) ou [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) pour les données de vecteur et le type [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) pour les matrices.)
 
 Pour obtenir une liste de tous les types de format possibles, voir [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
 
@@ -180,7 +181,7 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-Dans Direct3D, les mémoires tampons accessibles par les nuanceurs sont représentées par des structures [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220). Pour lier l’emplacement d’une mémoire tampon à un objet nuanceur, vous devez créer une structure CD3D11\_BUFFER\_DESC pour chaque mémoire tampon, avec [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), puis définir la mémoire tampon du contexte de périphérique Direct3D en appelant la méthode « set » correspondant au type de cette mémoire tampon ([**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456), par exemple).
+Dans Direct3D, les mémoires tampons accessibles par les nuanceurs sont représentées par des structures [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220). Pour lier l’emplacement d’une mémoire tampon à un objet nuanceur, vous devez créer une structure CD3D11\_BUFFER\_DESC pour chaque mémoire tampon, avec [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), puis définir la mémoire tampon du contexte de périphérique Direct3D en appelant la méthode « set » correspondant au type de cette mémoire tampon ([**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456), par exemple).
 
 Lorsque vous définissez la mémoire tampon, vous devez configurer le stride (la taille de l’élément de données pour un vertex) ainsi que le décalage (là où commence le tableau des données de vertex) à partir du début de la mémoire.
 
@@ -312,6 +313,6 @@ Lorsque vous définissez vos structures Direct3D, séparez le code qui appelle l
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Code complet de BasicLoader
 description: Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs.
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
@@ -25,17 +26,14 @@ Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
-|                       |                 |
-|-----------------------|-----------------|
-| Langages de programmation | C++             |
-| Modèles de programmation    | Windows Runtime |
+**Langages de programmation** : C++  
+**Modèles de programmation** : Windows Runtime
 
-## Configuration requise
+## Conditions requises
 
-| Client minimal pris en charge | Windows 10                            |
-|--------------------------|---------------------------------------|
-| Serveur minimal pris en charge | Windows Server 2016 Technical Preview |
-| Kit de développement logiciel (SDK) au minimum requis     |                                       |
+**Client minimal pris en charge** : Windows 10                              
+**Serveur minimal pris en charge** : Windows Server 2016 Technical Preview 
+
 
 ## Afficher le code (C++)
 
@@ -1108,6 +1106,6 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

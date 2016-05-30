@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Configurer le projet de jeu
 description: La première étape de l’assemblage de votre jeu consiste à configurer un projet dans Microsoft Visual Studio de façon à réduire la quantité de travail nécessaire sur l’infrastructure de code.
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
@@ -7,7 +8,7 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 # Configurer le projet de jeu
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La première étape de l’assemblage de votre jeu consiste à configurer un projet dans Microsoft Visual Studio de façon à réduire la quantité de travail nécessaire sur l’infrastructure de code. Vous pouvez gagner du temps et éviter bien des tracas en utilisant le modèle approprié et en configurant le projet spécifiquement pour le développement de jeux. Nous vous guidons tout au long de l’installation et la configuration d’un projet de jeu simple.
 
@@ -26,10 +27,10 @@ Vous pouvez écrire un jeu depuis le début, juste avec un éditeur de texte à 
 
 Un modèle Visual Studio est une collection de paramètres et de fichiers de code qui ciblent un type spécifique d’application selon la technologie et le langage préférés. Dans Microsoft Visual Studio 2015, vous trouverez de nombreux modèles qui peuvent considérablement simplifier le développement d’applications graphiques et de jeux. Si vous n’utilisez pas de modèle, vous devez développer vous-même une grande partie de l’infrastructure d’affichage et du rendu graphique de base, ce qui peut représenter une corvée pour un développeur de jeux débutant.
 
-Le modèle approprié pour ce didacticiel est celui intitulé Application DirectX 11 (Windows universel). Dans Visual Studio 2015, cliquez sur **Fichier...** &gt; **Nouveau projet**, puis procédez comme suit :
+Le modèle approprié pour ce didacticiel est celui intitulé Application DirectX 11 (Windows universel). Dans Visual Studio 2015, cliquez sur **Fichier...**&gt;**Nouveau projet**, puis effectuez les opérations suivantes :
 
 1.  Dans **Modèles**, sélectionnez **Visual C++**, **Windows**, **Universel**.
-2.  Dans le volet central, sélectionnez **Application DirectX 11 (Windows universelle)**.
+2.  Dans le volet central, sélectionnez **Application DirectX 11 (Windows universel)**.
 3.  Attribuez un nom à votre projet de jeu, puis cliquez sur **OK**.
 
 ![Sélection du modèle Application Direct3D](images/simple-dx-game-vs-new-proj.png)
@@ -73,7 +74,7 @@ Ce modèle vous fournit l’infrastructure de base pour une application UWP util
     };
 ```
 
-Vous créez ces cinq méthodes, [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) et [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523), lors de l’implémentation de l’interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) qui définit un fournisseur de vues. Ces méthodes sont exécutées par le singleton de l’application qui est créé lors du lancement du jeu, chargent toutes les ressources de votre application et connectent les gestionnaires d’événements appropriés.
+Vous créez ces cinq méthodes, [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) et [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523), lors de l’implémentation de l’interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) qui définit un fournisseur de vues. Ces méthodes sont exécutées par le singleton de l’application qui est créé lors du lancement du jeu, chargent toutes les ressources de votre application et connectent les gestionnaires d’événements appropriés.
 
 Votre méthode **main** se trouve dans le fichier source **App.cpp**. Elle se présente comme suit :
 
@@ -130,7 +131,7 @@ Pour plus d’informations sur le fichier **package.appxmanifest** et sur la cr�
 
 Si vous ne sélectionnez pas les fonctionnalités utilisées par votre jeu, par exemple l’accès à **Internet** pour le tableau global des meilleurs scores, vous ne serez pas en mesure d’accéder aux fonctionnalités ou aux ressources correspondantes. Lorsque vous créez un jeu, veillez à sélectionner les fonctionnalités nécessaires au fonctionnement du jeu !
 
-Examinons maintenant le reste des fichiers qui accompagnent le modèle d’**application DirectX 11 (Windows universelle)**.
+Examinons maintenant le reste des fichiers qui accompagnent le modèle d’**application DirectX 11 (Windows universel)**.
 
 ## 3. Passer en revue les bibliothèques et en-têtes inclus
 
@@ -141,7 +142,7 @@ Il reste quelques fichiers que nous n’avons pas encore examinés. Ces fichiers
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | StepTimer.h                  | Définit un minuteur haute résolution utile pour les applications de rendu interactives ou les jeux.                                                                                                                                       |
 | Sample3DSceneRenderer.h/.cpp | Définit une implémentation de convertisseur de base qui connecte une chaîne de permutation Direct3D et une carte graphique à votre UWP utilisant DirectX.                                                                                            |
-| DirectXHelper.h              | Implémente une seule méthode, **DX::ThrowIfFailed**, qui permet de convertir les valeurs d’erreur HRESULT renvoyées par les API DirectX en exceptions Windows Runtime. Utilisez cette méthode pour placer un point d’arrêt pour le débogage des erreurs DirectX. |
+| DirectXHelper.h              | Implémente une seule méthode, **DX::ThrowIfFailed**, qui permet de convertir les valeurs d’erreur HRESULT renvoyées par les API DirectX en exceptions Windows Runtime. Utilisez cette méthode pour placer un point d’arrêt pour le débogage des erreurs DirectX. |
 | pch.h/.cpp                   | Contient tous les fichiers Include système Windows pour les API utilisées par une application Direct3D, notamment les API DirectX 11.                                                                                                           |
 | SamplePixelShader.hlsl       | Contient le code de langage HLSL (High-Level Shader Language) pour un nuanceur de pixels très simple.                                                                                                                                     |
 | SampleVertexShader.hlsl      | Contient le code de langage HLSL (High-Level Shader Language) pour un vertex shader très simple.                                                                                                                                    |
@@ -163,6 +164,6 @@ Dans le didacticiel suivant, [Définition de l’infrastructure UWP du jeu](tuto
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

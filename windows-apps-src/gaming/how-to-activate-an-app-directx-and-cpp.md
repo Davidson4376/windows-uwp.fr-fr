@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Comment activer une application (DirectX et C++)
 description: Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
@@ -7,7 +8,7 @@ ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 # Comment activer une application (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
 
@@ -16,7 +17,7 @@ Cette rubrique explique comment définir l’expérience d’activation d’une 
 
 Tout d’abord, inscrivez le gestionnaire de l’événement [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), lequel est déclenché au démarrage et à l’initialisation de votre application par le système d’exploitation.
 
-Ajoutez le code suivant à votre implémentation de la méthode [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) de votre fournisseur d’affichage (nommé **MyViewProvider** dans l’exemple) :
+Ajoutez le code suivant à votre implémentation de la méthode [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) de votre fournisseur d’affichage (nommé **MyViewProvider** dans l’exemple) :
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -89,6 +90,6 @@ void App::Run()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

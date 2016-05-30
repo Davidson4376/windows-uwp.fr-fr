@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
 description: Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux.
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
@@ -7,7 +8,7 @@ ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 #  Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux. Dans cette rubrique, découvrez comment utiliser les packages et ensembles d’applications pour personnaliser votre application afin que vos clients ne reçoivent que les ressources dont ils ont réellement besoin.
 
@@ -45,7 +46,7 @@ Les ressources utilisées pour la création de packs de ressources sont spécifi
 
 -   Les fichiers de ressources portent le même nom de fichier et les versions spécifiques du pack de ressources sont placées dans des répertoires nommés particuliers. Ces noms de répertoires sont réservés par le système. Par exemple, \\en-us, \\scale-140, \\dxfl-dx11.
 -   Les fichiers de ressources sont stockés dans des dossiers avec des noms arbitraires. Toutefois, les fichiers sont nommés avec une étiquette commune qui est ajoutée à l’aide des chaînes réservées par le système pour indiquer la langue ou d’autres qualificateurs. Plus précisément, les chaînes des qualificateurs sont ajoutées au nom de fichier généralisé après un trait de soulignement (« \_ »). Par exemple, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. Vous pouvez également combiner ces chaînes. Par exemple, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
-    > **Remarque** Quand il est utilisé dans un nom de fichier au lieu d’être utilisé seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme « lang-<tag>» (exemple : « lang-fr-fr »), comme décrit dans [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+    > **Remarque** Quand il est utilisé dans un nom de fichier au lieu d’être utilisé seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme « lang-<tag>» (exemple : « lang-fr-fr »), comme décrit dans [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
 
      
 
@@ -78,7 +79,7 @@ Lorsque vous configurez votre application pour prendre en charge les ressources 
      
 
 -   Utilisez les API dans [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) et [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour spécifier et charger les ressources spécifiques aux paramètres régionaux de votre application. En outre, utilisez des références de ressources qui n’incluent pas les paramètres régionaux spécifiques, car ces API déterminent les paramètres régionaux appropriés en fonction des paramètres de l’utilisateur, puis récupèrent la ressource appropriée pour l’utilisateur.
--   Dans Microsoft Visual Studio 2015, sélectionnez **PROJET->Windows Store->Créer un package d’application**, puis créez le package.
+-   Dans Microsoft Visual Studio 2015, sélectionnez **PROJET-&gt;Windows Store-&gt;Créer un package d’application**, puis créez le package.
 
 ## Définition des packs de ressources du facteur d’échelle
 
@@ -95,7 +96,7 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
      
 
 -   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté la variation d’échelle spécifique. Le système récupère la ressource d’échelle appropriée pour l’affichage et les paramètres de l’utilisateur.
--   Dans Visual Studio 2015, sélectionnez **PROJET->Windows Store->Créer un package d’application**, puis créez le package.
+-   Dans Visual Studio 2015, sélectionnez **PROJET-&gt;Windows Store-&gt;Créer un package d’application**, puis créez le package.
 
 ## Définition des packs de ressources de niveau de fonctionnalité DirectX
 
@@ -104,7 +105,7 @@ Les niveaux de fonctionnalités DirectX correspondent aux jeux de fonctionnalit�
 
 Votre package d’application de base doit utiliser les formats de compression de texture de base : BC1, BC2 ou BC3. Ces formats peuvent être consommés par tout appareil UWP, depuis les plateformes ARM à faible résolution jusqu’aux stations de travail multi-GPU et ordinateurs multimédias.
 
-La prise en charge du format de texture au niveau de fonctionnalité DirectX 10 ou supérieur doit être ajouté dans un pack de ressources pour conserver de l’espace disque en local et de la bande passante de téléchargement. Cela permet d’utiliser des schémas de compression avancés pour la version 11, comme BC6H et BC7. (Pour plus d’informations, voir [Compression de bloc de texture dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Ces formats sont plus efficaces pour les ressources de texture haute résolution prises en charge par les GPU modernes. Leur utilisation améliore l’apparence, les performances et les exigences en termes d’espace de votre jeu sur des plateformes de haute qualité.
+La prise en charge du format de texture au niveau de fonctionnalité DirectX 10 ou supérieur doit être ajouté dans un pack de ressources pour conserver de l’espace disque en local et de la bande passante de téléchargement. Cela permet d’utiliser des schémas de compression avancés pour la version 11, comme BC6H et BC7. (Pour plus d’informations, voir [Compression de bloc de texture dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Ces formats sont plus efficaces pour les ressources de texture haute résolution prises en charge par les GPU modernes. Leur utilisation améliore l’apparence, les performances et les exigences en termes d’espace de votre jeu sur des plateformes de haute qualité.
 
 | Niveau de fonctionnalité DirectX | Compression de texture prise en charge |
 |-----------------------|-------------------------------|
@@ -204,7 +205,7 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
     Platform::String^ resourceName = possibleResource->ValueAsString;
     ```
 
--   Dans Visual Studio 2015, sélectionnez **PROJET->Windows Store->Créer un package d’application**, puis créez le package.
+-   Dans Visual Studio 2015, sélectionnez **PROJET-&gt;Windows Store-&gt;Créer un package d’application**, puis créez le package.
 -   Veillez à activer les ensembles d’applications dans les paramètres du manifeste package.appxmanifest.
 
 ## Rubriques connexes
@@ -223,6 +224,6 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

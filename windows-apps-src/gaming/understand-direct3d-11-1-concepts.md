@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: Modifications importantes de Direct3D 9 à Direct3D 11
-description: Cette rubrique décrit les principales différences entre DirectX 9 et DirectX 11.
+description: Cette rubrique décrit les principales différences entre DirectX 9 et DirectX 11.
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 ---
 
-# Modifications importantes de Direct3D 9 à Direct3D 11
+# Modifications importantes de Direct3D 9 à Direct3D 11
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -37,7 +38,7 @@ Dans Direct3D 11, le handle de périphérique et le handle de contexte de périp
 ## Infrastructure de périphérique, tampons de trame et affichages de cibles de rendu
 
 
-Dans Direct3D 11, la carte de périphérique et la configuration matérielle sont définies avec l’API DXGI (DirectX Graphics Infrastructure) à l’aide des interfaces COM [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) et [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543). Les tampons et autres ressources de fenêtre (visibles ou hors écran) sont créés et configurés par des interfaces DXGI spécifiques ; l’implémentation du modèle de fabrique [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) acquiert les ressources DXGI telles que le tampon de trame. Étant donné que DXGI possède la chaîne d’échange, une interface DXGI est utilisée pour présenter les trames à l’écran ; voir [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631).
+Dans Direct3D 11, la carte de périphérique et la configuration matérielle sont définies avec l’API DXGI (DirectX Graphics Infrastructure) à l’aide des interfaces COM [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) et [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543). Les tampons et autres ressources de fenêtre (visibles ou hors écran) sont créés et configurés par des interfaces DXGI spécifiques ; l’implémentation du modèle de fabrique [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) acquiert les ressources DXGI telles que le tampon de trame. Étant donné que DXGI possède la chaîne d’échange, une interface DXGI est utilisée pour présenter les trames à l’écran ; voir [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631).
 
 Utilisez [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) pour créer une chaîne d’échange compatible avec votre jeu. Vous devez créer une chaîne de permutation pour une fenêtre principale, ou pour une composition (technologie interop XAML), plutôt que de créer une chaîne de permutation pour un HWND.
 
@@ -82,7 +83,7 @@ Quand vous portez des applications Direct3D 9 vers des objets d’état, sachez
 
 Direct3D possède un nouveau mécanisme pour déterminer la prise en charge matérielle, appelé niveaux de fonctionnalités. Les niveaux de fonctionnalités simplifient la tâche de détermination de ce que peut faire la carte graphique en vous permettant de demander un ensemble bien défini de fonctionnalités GPU. Par exemple, le niveau de fonctionnalité 9\_1 implémente la fonctionnalité fournie par les cartes graphiques Direct3D 9, notamment le modèle de nuanceur 2.x. Étant donné que 9\_1 correspond au niveau de fonctionnalité le plus bas, vous pouvez vous attendre à ce que tous les périphériques prennent en charge un nuanceur de vertex et un nuanceur de pixels, ce qui correspondait aux mêmes stades pris en charge par le modèle de nuanceur programmable de Direct3D 9.
 
-Votre jeu utilise la fonction [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) pour créer le périphérique Direct3D et le contexte de périphérique. Quand vous appelez cette fonction, vous fournissez la liste des niveaux de fonctionnalités que votre jeu peut prendre en charge. Elle renvoie le niveau de fonctionnalité pris en charge le plus élevé à partir de cette liste. Par exemple, si votre jeu peut utiliser des textures BC4/BC5 (une caractéristique du matériel DirectX 10), vous incluez au moins 9\_1 et 10\_0 dans la liste des niveaux de fonctionnalités pris en charge. Si le jeu s’exécute sur du matériel DirectX 9 et que les textures BC4/BC5 ne peuvent pas être utilisées, [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) renvoie 9\_1. Votre jeu peut alors revenir à un format de texture différent (et à des textures plus petites).
+Votre jeu utilise la fonction [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) pour créer le périphérique Direct3D et le contexte de périphérique. Quand vous appelez cette fonction, vous fournissez la liste des niveaux de fonctionnalités que votre jeu peut prendre en charge. Elle renvoie le niveau de fonctionnalité pris en charge le plus élevé à partir de cette liste. Par exemple, si votre jeu peut utiliser des textures BC4/BC5 (une caractéristique du matériel DirectX 10), vous incluez au moins 9\_1 et 10\_0 dans la liste des niveaux de fonctionnalités pris en charge. Si le jeu s’exécute sur du matériel DirectX 9 et que les textures BC4/BC5 ne peuvent pas être utilisées, [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) renvoie 9\_1. Votre jeu peut alors revenir à un format de texture différent (et à des textures plus petites).
 
 Si vous décidez d’étendre votre jeu Direct3D 9 pour prendre en charge des niveaux de fonctionnalités Direct3D supérieurs, alors il est préférable de d’abord terminer le portage de votre code graphique Direct3D 9 existant. Une fois que votre jeu fonctionne dans Direct3D 11, il est plus facile d’ajouter des chemins de rendu supplémentaires avec des graphiques améliorés.
 
@@ -97,7 +98,7 @@ Tous les nuanceurs sont écrits en HLSL à l’aide d’un profil de nuanceur qu
 
 Direct3D 9 gérait les constantes des nuanceurs en utilisant un tableau partagé avec SetVertexShaderConstant et SetPixelShaderConstant. Direct3D 11 utilise des tampons constants, lesquels sont des ressources comme un tampon de vertex ou un tampon d’index. Les tampons constants sont conçus pour être mis à jour de manière efficace. Au lieu d’organiser toutes les constantes de nuanceurs dans un seul tableau global, vous les organisez dans des groupes logiques et les gérez via un ou plusieurs tampons constants. Quand vous portez votre jeu Direct3D 9 vers Direct3D 11, envisagez d’organiser vos tampons constants afin de pouvoir les mettre à jour de manière appropriée. Par exemple, regroupez les constantes de nuanceurs dont toutes les trames ne sont pas mises à jour dans une mémoire tampon constante distincte, afin de ne pas avoir à charger constamment ces données sur la carte graphique avec vos constantes de nuanceurs plus dynamiques.
 
-> **Remarque** La plupart des applications Direct3D 9 utilisaient des nuanceurs de manière intensive, mais essayaient de les combiner de temps en temps avec l’utilisation du comportement de fonction fixe hérité. Notez que Direct3D 11 utilise uniquement un modèle de nuanceur programmable. Les fonctionnalités de fonction fixe héritées de Direct3D 9 sont obsolètes.
+> **Remarque** La plupart des applications Direct3D 9 utilisaient des nuanceurs de manière intensive, mais essayaient de les combiner de temps en temps avec l’utilisation du comportement de fonction fixe hérité. Notez que Direct3D 11 utilise uniquement un modèle de nuanceur programmable. Les fonctionnalités de fonction fixe héritées de Direct3D 9 sont obsolètes.
 
  
 
@@ -110,6 +111,6 @@ Direct3D 9 gérait les constantes des nuanceurs en utilisant un tableau partag�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Porter la boucle de jeu
 description: Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface IFrameworkView pour contrôler une classe CoreWindow en plein écran.
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
@@ -7,7 +8,7 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 # Porter la boucle de jeu
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -16,7 +17,7 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 -   Partie 3 : porter la boucle de jeu
 
 
-Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) pour contrôler une classe [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) en plein écran. Partie 3 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
+Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) pour contrôler une classe [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) en plein écran. Partie 3 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
 ## Créer une fenêtre
 
@@ -29,7 +30,7 @@ L’environnement UWP possède un système beaucoup plus simple. Au lieu de conf
 
  
 
-Votre « principale » classe doit hériter de l’interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) et implémenter les cinq méthodes **IFrameworkView** : [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) et [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). En plus de créer l’interface **IFrameworkView**, qui correspond (essentiellement) à l’emplacement auquel votre jeu va résider, vous devez implémenter une classe de fabrique qui crée une instance de votre interface **IFrameworkView**. Votre jeu possède quand même un exécutable avec une méthode appelée **main()**, mais celle-ci peut uniquement utiliser la fabrique pour créer l’instance **IFrameworkView**.
+Votre « principale » classe doit hériter de l’interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) et implémenter les cinq méthodes **IFrameworkView** : [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) et [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). En plus de créer l’interface **IFrameworkView**, qui correspond (essentiellement) à l’emplacement auquel votre jeu va résider, vous devez implémenter une classe de fabrique qui crée une instance de votre interface **IFrameworkView**. Votre jeu possède quand même un exécutable avec une méthode appelée **main()**, mais celle-ci peut uniquement utiliser la fabrique pour créer l’instance **IFrameworkView**.
 
 Fonction main
 
@@ -97,7 +98,7 @@ La boucle de jeu est similaire, mais plus facile, dans la version UWP de notre j
 
 La boucle de jeu va dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) (plutôt que **main()**) car notre jeu fonctionne au sein de la classe [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478).
 
-Au lieu d’implémenter une infrastructure de gestion des messages et d’appeler la fonction [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), nous pouvons appeler la méthode [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) intégrée dans la classe [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) de notre fenêtre d’application. La boucle de jeu n’a pas besoin de se ramifier et de gérer les messages : il suffit d’appeler la méthode **ProcessEvents** et de continuer.
+Au lieu d’implémenter une infrastructure de gestion des messages et d’appeler la fonction [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), nous pouvons appeler la méthode [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) intégrée dans la classe [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) de notre fenêtre d’application. La boucle de jeu n’a pas besoin de se ramifier et de gérer les messages : il suffit d’appeler la méthode **ProcessEvents** et de continuer.
 
 Boucle de jeu dans un jeu du Windows Store Direct3D 11
 
@@ -138,6 +139,6 @@ Consultez les articles détaillés suivants sur le développement des jeux du Wi
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

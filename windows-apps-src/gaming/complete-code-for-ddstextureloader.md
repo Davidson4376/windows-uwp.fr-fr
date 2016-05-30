@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: Code complet de DDSTextureLoader
-description: Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.
+description: Code complet pour une classe et la méthode permettant de charger une texture DDS à partir de la mémoire.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ---
 
@@ -25,17 +26,14 @@ Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
-|                       |                 |
-|-----------------------|-----------------|
-| Langages de programmation | C++             |
-| Modèles de programmation    | Windows Runtime |
+**Langages de programmation** : C++    
+**Modèles de programmation** : Windows Runtime
 
-## Configuration requise
+## Conditions requises
 
-| Client minimal pris en charge | Windows 10                            |
-|--------------------------|---------------------------------------|
-| Serveur minimal pris en charge | Windows Server 2016 Technical Preview |
-| Kit de développement logiciel (SDK) au minimum requis     |                                       |
+**Client minimal pris en charge** : Windows 10                               
+**Serveur minimal pris en charge** : Windows Server 2016 Technical Preview
+
 
 
 ## Afficher le code (C++)
@@ -1223,6 +1221,6 @@ void CreateDDSTextureFromMemory(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Visual Studio Tools pour la programmation de jeux
 description: Vue d’ensemble des outils propres à DirectX disponibles dans Visual Studio.
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
@@ -7,7 +8,7 @@ ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 # Visual Studio Tools pour la programmation de jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -133,7 +134,7 @@ Visual Studio fournit des outils de débogage propres aux graphiques. Utilisez c
 
 Pour plus d’informations, voir [Débogage de graphiques DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -146,6 +147,6 @@ Pour plus d’informations, voir [Débogage de graphiques DirectX](https://msdn.
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

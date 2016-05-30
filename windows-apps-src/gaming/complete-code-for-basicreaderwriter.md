@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: Code complet de BasicReaderWriter
-description: Code complet pour une classe et des méthodes permettant de lire et écrire des fichiers de données binaires en général.
+description: Code complet pour une classe et des méthodes permettant de lire et d’écrire des fichiers de données binaires en général.
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ---
 
@@ -25,19 +26,14 @@ Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
-|                       |                 |
-|-----------------------|-----------------|
-| Langages de programmation | C++             |
-| Modèles de programmation    | Windows Runtime |
+**Langages de programmation** : C++  
+**Modèles de programmation** : Windows Runtime
 
 
-## Configuration requise
+## Conditions requises
 
-| Client minimal pris en charge | Windows 10                            |
-|--------------------------|---------------------------------------|
-| Serveur minimal pris en charge | Windows Server 2016 Technical Preview |
-| Kit de développement logiciel (SDK) au minimum requis     |                                       |
-
+ **Client minimal pris en charge** : Windows 10       
+ **Serveur minimal pris en charge** : Windows Server 2016 Technical Preview 
 
 ## Afficher le code (C++)
 
@@ -265,6 +261,6 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,13 +1,14 @@
 ---
-title: Définir l’infrastructure d’application du jeu de plateforme Windows universelle (UWP)
+author: mtoepke
+title: Définir l’infrastructure d’application de plateforme Windows universelle (UWP) du jeu
 description: La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows.
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ---
 
-#  Définir l’infrastructure d’application du jeu de plateforme Windows universelle (UWP)
+#  Définir l’infrastructure d’application de plateforme Windows universelle (UWP) du jeu
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows. Cela inclut des propriétés Windows Runtime telles que la gestion des événements de pause/reprise, la sélection de fenêtre et l’ancrage, ainsi que les événements, interactions et transitions pour l’interface utilisateur. Nous passons en revue la façon dont l’exemple de jeu est structuré et la façon dont il définit la machine à états principale pour l’interaction du joueur avec le système.
 
@@ -21,7 +22,7 @@ La première partie du codage d’un jeu de plateforme Windows universelle (UWP)
 
 Dans tout jeu UWP DirectX, vous devez obtenir un fournisseur de vues que le singleton de l’application, l’objet Windows Runtime qui définit une instance de votre application en cours d’exécution, peut utiliser pour accéder aux ressources graphiques nécessaires. Windows Runtime permet à votre application d’avoir une connexion directe à l’interface graphique, mais vous devez spécifier les ressources nécessaires et la façon de les gérer.
 
-Comme nous l’avons indiqué dans [Configuration du projet de jeu](tutorial--setting-up-the-games-infrastructure.md), Microsoft Visual Studio 2015 fournit une implémentation d’un convertisseur de base pour DirectX dans le fichier **Sample3DSceneRenderer.cpp**, qui est disponible quand vous sélectionnez le modèle **Application DirectX 11 (Windows universel)**.
+Comme nous l’avons indiqué dans [Configuration du projet de jeu](tutorial--setting-up-the-games-infrastructure.md), Microsoft Visual Studio 2015 fournit une implémentation d’un convertisseur de base pour DirectX dans le fichier **Sample3DSceneRenderer.cpp**, qui est disponible quand vous sélectionnez le modèle **Application DirectX 11 (Windows universel)**.
 
 Pour plus d’informations sur la compréhension et la création d’un fournisseur de vues et d’un convertisseur, voir [Configuration de votre UWP avec C++ et DirectX pour afficher une vue DirectX](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
@@ -33,7 +34,7 @@ Inutile de préciser que vous devez fournir l’implémentation de 5 méthodes 
 -   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)
 -   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)
 
-Dans le modèle Application DirectX 11 (Windows universel), ces 5 méthodes sont définies sur l’objet **App** dans [App.h](#code_sample). Examinons la façon dont elles sont implémentées dans ce jeu.
+Dans le modèle Application DirectX 11 (Windows universel), ces 5 méthodes sont définies sur l’objet **App** dans [App.h](#code_sample). Examinons la façon dont elles sont implémentées dans ce jeu.
 
 Méthode Initialize du fournisseur de vues
 
@@ -312,7 +313,7 @@ Voici les gestionnaires d’événements de l’exemple et les événements qu�
 <td align="left">OnLogicalDpiChanged</td>
 <td align="left">Gère [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150). Les PPP de la fenêtre principale du jeu ont été modifiés, et l’application de jeu règle ses ressources en conséquence.
 <div class="alert">
-<strong>Remarque</strong> Les coordonnées de [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) sont affichées en DIP (pixels indépendants des appareils), comme dans [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants 2D.
+<strong>Remarque</strong> Les coordonnées de [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) sont affichées en DIP (pixels indépendants des appareils), comme dans [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants 2D.
 </div>
 <div>
  
@@ -1422,6 +1423,6 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

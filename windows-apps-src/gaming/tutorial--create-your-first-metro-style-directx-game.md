@@ -1,14 +1,15 @@
 ---
+author: mtoepke
 title: Créer un jeu de plateforme Windows universelle (UWP) simple avec DirectX
 description: Dans cet ensemble de didacticiels, vous allez apprendre à créer un jeu de plateforme Windows universelle (UWP) de base avec DirectX et C++.
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
-mots clés : [« exemple de jeu DirectX », « exemple de jeu, plateforme Windows universelle (UWP) », « jeu Direct3D 11 »]
+keywords: ["DirectX game sample", "game sample, Universal Windows Platform (UWP)", "Direct3D 11 game"]
 ---
 
 # Créer un jeu de plateforme Windows universelle (UWP) simple avec DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Dans cet ensemble de didacticiels, vous allez apprendre à créer un jeu de plateforme Windows universelle (UWP) de base avec DirectX et C++. Nous abordons toutes les principales parties d’un jeu, y compris les processus de chargement de composants tels que les illustrations et maillages, de création d’une boucle de jeu principale, d’implémentation d’un pipeline de rendu simple et d’ajout de son et de contrôles.
 
@@ -28,7 +29,7 @@ Avant de commencer ce didacticiel, vous devez être familiarisé avec les sujets
 -   Algèbre linéaire de base et concepts physiques newtoniens.
 -   Terminologie de programmation de graphiques de base.
 -   Concepts de programmation Windows de base.
--   Connaissances de base des API [Direct2D](https://msdn.microsoft.com/en-us/library/windows/apps/dd370990.aspx) et [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569).
+-   Connaissances de base des API [Direct2D](https://msdn.microsoft.com/en-us/library/windows/apps/dd370990.aspx) et [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569).
 
 ##  Exemple de jeu de tir Direct3D Windows Store
 
@@ -69,6 +70,6 @@ L’exemple illustre les concepts de jeu suivants :
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

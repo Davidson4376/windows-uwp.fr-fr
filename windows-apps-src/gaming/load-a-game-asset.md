@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Charger des ressources dans votre jeu DirectX
 description: La plupart des jeux, à un moment donné, chargent des ressources et des éléments multimédias (comme les nuanceurs, les textures, les maillages prédéfinis ou d’autres données graphiques) à partir d’un stockage local ou d’autres flux de données.
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
@@ -7,7 +8,7 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 # Charger des ressources dans votre jeu DirectX
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La plupart des jeux, à un moment donné, chargent des ressources et des éléments multimédias (comme les nuanceurs, les textures, les maillages prédéfinis ou d’autres données graphiques) à partir d’un stockage local ou d’autres flux de données. Cette rubrique offre une vue d’ensemble des éléments à prendre en compte lors du chargement de ces fichiers en vue de leur utilisation dans votre jeu de plateforme Windows universelle (UWP).
 
@@ -47,15 +48,15 @@ Vous pouvez trouver le code complet de ces exemples dans les liens suivants.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
+<td align="left"><p>[Code complet de BasicLoader](complete-code-for-basicloader.md)</p></td>
 <td align="left"><p>Code complet pour une classe et des méthodes qui convertissent et chargent des objets maillés graphiques en mémoire.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
+<td align="left"><p>[Code complet de BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
 <td align="left"><p>Code complet pour une classe et des méthodes permettant de lire et d’écrire des fichiers de données binaires en général. Utilisé par la classe [BasicLoader](complete-code-for-basicloader.md).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
+<td align="left"><p>[Code complet de DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
 <td align="left"><p>Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.</p></td>
 </tr>
 </tbody>
@@ -116,7 +117,7 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
     });
 ```
 
-Voici l’appel que vous faites pour lire de façon asynchrone : **ReadDataAsync**. Lorsque c’est terminé, votre code reçoit un tableau d’octets lus à partir du fichier fourni. Puisque **ReadDataAsync** est défini comme une tâche, vous pouvez utiliser une expression lambda pour exécuter une opération spécifique lorsque le tableau d’octets est renvoyé, comme transmettre ces données à une fonction DirectX qui peut les utiliser.
+Voici l’appel que vous effectuez pour lire de façon asynchrone : **ReadDataAsync**. Lorsque c’est terminé, votre code reçoit un tableau d’octets lus à partir du fichier fourni. Puisque **ReadDataAsync** est défini comme une tâche, vous pouvez utiliser une expression lambda pour exécuter une opération spécifique lorsque le tableau d’octets est renvoyé, comme transmettre ces données à une fonction DirectX qui peut les utiliser.
 
 Si votre jeu est assez simple, chargez vos ressources avec une méthode comme celle-ci lorsque l’utilisateur démarre le jeu. Vous pouvez le faire avant de démarrer la boucle principale du jeu à partir d’un certain point dans la séquence d’appels de votre implémentation [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505). Encore une fois, vous appelez les méthodes de chargement de vos ressources de façon asynchrone afin que le jeu puisse démarrer plus rapidement et que le joueur n’ait pas à attendre la fin du chargement pour s’engager dans les interactions précoces.
 
@@ -183,7 +184,7 @@ void ResourceLoading::CreateDeviceResources()
 }
 ```
 
-Notez que les tâches ont été agrégées à l’aide de l’opérateur && de sorte que l’expression lambda qui définit l’indicateur de chargement complet se déclenche uniquement une fois toutes les tâches terminées. Notez que si vous avez plusieurs indicateurs, vous avez la possibilité de conditions de concurrence critique. Par exemple, si l’expression lambda définit deux indicateurs séquentiellement sur la même valeur, un autre thread ne pourrait voir que le premier indicateur s’il les examine avant que le deuxième ne soit défini.
+Notez que les tâches ont été agrégées à l’aide de l’opérateur &amp;&amp; de sorte que l’expression lambda qui définit l’indicateur de chargement complet se déclenche uniquement une fois toutes les tâches terminées. Notez que si vous avez plusieurs indicateurs, vous avez la possibilité de conditions de concurrence critique. Par exemple, si l’expression lambda définit deux indicateurs séquentiellement sur la même valeur, un autre thread ne pourrait voir que le premier indicateur s’il les examine avant que le deuxième ne soit défini.
 
 Vous avez vu comment charger des fichiers de ressources de manière asynchrone. Les chargements synchrones de fichiers sont beaucoup plus simples, et vous en trouverez des exemples dans le [Code complet de BasicReaderWriter](complete-code-for-basicreaderwriter.md) et le [Code complet de BasicLoader](complete-code-for-basicloader.md).
 
@@ -197,11 +198,11 @@ Pour charger un maillage correctement, vous devez connaître le format des donn�
 
 (Vous devriez toujours essayer d’empaqueter les données des actifs du jeu dans un format aussi proche de la représentation interne que possible. Cela permet de réduire l’utilisation des ressources et de gagner du temps.)
 
-Nous allons récupérer les données octets du fichier de maillage. Le format de l’exemple suppose que le fichier est un format spécifique à l’exemple avec le suffixe .vbo. (Là encore, ce format est différent du format VBO de OpenGL.) Chaque vertex se mappe au type **BasicVertex**, qui est une structure définie dans le code de l’outil convertisseur obj2vbo. La disposition des données de vertex dans le fichier .vbo ressemble à ceci :
+Nous allons récupérer les données octets du fichier de maillage. Le format de l’exemple suppose que le fichier est un format spécifique à l’exemple avec le suffixe .vbo. (Là encore, ce format est différent du format VBO de OpenGL.) Chaque vertex est mappé au type **BasicVertex**, qui est une structure définie dans le code de l’outil convertisseur obj2vbo. La disposition des données de vertex dans le fichier .vbo ressemble à ceci :
 
 -   Les 32 premiers bits (4 octets) du flux de données contiennent le nombre de vertex (numVertices) dans le maillage, représenté par une valeur uint32.
 -   Les 32 bits suivants (4 octets) du flux de données contiennent le nombre d’index (numIndices) dans le maillage, représenté par une valeur uint32.
--   Après cela, les bits suivants (numVertices \* sizeof(**BasicVertex**)) contiennent les données de vertex.
+-   Après quoi, les bits suivants (numVertices \* sizeof(**BasicVertex**)) contiennent les données de vertex.
 -   Les derniers bits de données (numIndices \* 16) contiennent les données d’index, représentées comme une séquence de valeurs uint16.
 
 La clé est donc de connaître la disposition au niveau des bits des données de maillage chargées. Assurez-vous aussi d’être cohérent sur le plan endian. Toutes les plates-formes Windows 8 sont en mode Little Endian.
@@ -231,7 +232,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh** interprète les données d’octets chargées à partir du fichier et crée une mémoire tampon de vertex et une mémoire tampon d’index pour le maillage en transmettant les listes de vertex et d’index à [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) et en spécifiant respectivement D3D11\_BIND\_VERTEX\_BUFFER ou D3D11\_BIND\_INDEX\_BUFFER. Voici le code utilisé dans **BasicLoader** :
+**CreateMesh** interprète les données d’octets chargées à partir du fichier et crée un tampon vertex et un tampon d’index pour le maillage en transmettant les listes de vertex et d’index à [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) et en spécifiant respectivement D3D11\_BIND\_VERTEX\_BUFFER ou D3D11\_BIND\_INDEX\_BUFFER. Voici le code utilisé dans **BasicLoader** :
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -294,7 +295,7 @@ void BasicLoader::CreateMesh(
 
 En général, vous créez une paire de mémoires tampons vertex/index pour chaque maillage utilisé dans votre jeu. Où et quand vous chargez les maillages vous appartient. Si vous avez un grand nombre de maillages, vous pouvez n’en charger que certains à partir du disque à des points précis du jeu, comme durant les états de chargement prédéfinis spécifiques. Pour les grands maillages, comme les données de terrain, vous pouvez lire les vertex à partir d’un cache, mais cette procédure plus complexe sort du cadre de cette rubrique.
 
-Encore une fois, vous devez connaître le format des données de vertex ! Il existe de nombreuses façons de représenter les données de vertex selon les outils utilisés pour créer des modèles. Il existe également différentes façons de représenter la disposition d’entrée des données vertex pour Direct3D, comme les bandes et listes de triangles. Pour plus d’informations sur les données vertex, voir [Introduction aux tampons dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898) et [Primitives](https://msdn.microsoft.com/library/windows/desktop/bb147291).
+Encore une fois, vous devez connaître le format des données de vertex ! Il existe de nombreuses façons de représenter les données de vertex selon les outils utilisés pour créer des modèles. Il existe également différentes façons de représenter la disposition d’entrée des données vertex pour Direct3D, comme les bandes et listes de triangles. Pour plus d’informations sur les données vertex, voir [Présentation des mémoires tampons dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898) et [Primitives](https://msdn.microsoft.com/library/windows/desktop/bb147291).
 
 Maintenant, penchons-nous sur le chargement des textures.
 
@@ -312,14 +313,14 @@ Un fichier DDS est un fichier binaire qui contient les informations suivantes :
 
 -   Une description des données du fichier.
 
-    Les données sont décrites avec une description d’en-tête à l’aide de [**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982) ; le format de pixel est défini à l’aide de [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984). Notez que les structures **DDS\_HEADER** et **DDS\_PIXELFORMAT** remplacent les structures obsolètes DDSURFACEDESC2, DDSCAPS2 et DDPIXELFORMAT de DirectDraw 7. **DDS\_HEADER** est l’équivalent binaire de DDSURFACEDESC2 et DDSCAPS2. **DDS\_PIXELFORMAT** est l’équivalent binaire de DDPIXELFORMAT.
+    Les données sont décrites avec une description d’en-tête à l’aide de [**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982) ; le format de pixel est défini à l’aide de [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984). Notez que les structures **DDS\_HEADER** et **DDS\_PIXELFORMAT** remplacent les structures obsolètes DDSURFACEDESC2, DDSCAPS2 et DDPIXELFORMAT de DirectDraw 7. **DDS\_HEADER** est l’équivalent binaire de DDSURFACEDESC2 et DDSCAPS2. **DDS\_PIXELFORMAT** est l’équivalent binaire de DDPIXELFORMAT.
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    Si la valeur de **dwFlags** dans [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) est définie sur DDPF\_FOURCC et si **dwFourCC** est défini sur DX10, une structure [**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) supplémentaire sera présente pour accueillir les tableaux de texture ou les formats DXGI qui ne peuvent pas être exprimés par un format de pixel RVB, comme les formats à virgule flottante, les formats sRVB, etc. Lorsque la structure **DDS\_HEADER\_DXT10** est présente, la description entière des données ressemblera à ceci.
+    Si la valeur de **dwFlags** dans [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) est définie sur DDPF\_FOURCC et si **dwFourCC** est défini sur DX10, une structure [**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) supplémentaire sera présente pour accueillir les tableaux de texture ou les formats DXGI qui ne peuvent pas être exprimés par un format de pixel RVB, comme les formats à virgule flottante, les formats sRVB, etc. Lorsque la structure **DDS\_HEADER\_DXT10** est présente, la description entière des données ressemble à ceci.
 
     ```cpp
     DWORD               dwMagic;
@@ -332,13 +333,13 @@ Un fichier DDS est un fichier binaire qui contient les informations suivantes :
     BYTE bdata[]
     ```
 
--   Pointeur vers un tableau d’octets qui contient les surfaces restantes telles que niveaux de mipmap, faces dans un plan de cube, profondeurs dans une texture de volume. Suivez ces liens pour plus d’informations sur le schéma du fichier DDS pour : une [texture](https://msdn.microsoft.com/library/windows/desktop/bb205578), un [plan de cube](https://msdn.microsoft.com/library/windows/desktop/bb205577) ou une [texture de volume](https://msdn.microsoft.com/library/windows/desktop/bb205579).
+-   Pointeur vers un tableau d’octets qui contient les surfaces restantes telles que niveaux de mipmap, faces dans un plan de cube, profondeurs dans une texture de volume. Suivez ces liens pour plus d’informations sur le schéma du fichier DDS pour une [texture](https://msdn.microsoft.com/library/windows/desktop/bb205578), un [mappage de cube](https://msdn.microsoft.com/library/windows/desktop/bb205577) ou une [texture de volume](https://msdn.microsoft.com/library/windows/desktop/bb205579).
 
     ```cpp
     BYTE bdata2[]
     ```
 
-De nombreux outils permettent d’exporter vers le format DDS. Si vous n’avez pas d’outil pour exporter votre texture dans ce format, envisagez d’en créer un. Pour plus de détails sur le format DDS et savoir comment l’utiliser dans votre code, voir le [Guide de programmation pour DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991). Dans notre exemple, nous allons utiliser DDS.
+De nombreux outils permettent d’exporter vers le format DDS. Si vous n’avez pas d’outil pour exporter votre texture dans ce format, envisagez d’en créer un. Pour plus de détails sur le format DDS et pour savoir comment l’utiliser dans votre code, voir le [Guide de programmation pour DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991). Dans notre exemple, nous allons utiliser DDS.
 
 Comme avec d’autres types de ressources, vous lisez les données dans un fichier sous forme de flux d’octets. Une fois votre tâche de chargement terminée, l’appel lambda exécute du code (la méthode **CreateTexture**) pour traiter le flux d’octets dans un format utilisable par Direct3D.
 
@@ -363,7 +364,7 @@ task<void> BasicLoader::LoadTextureAsync(
 }
 ```
 
-Dans l’extrait de code précédent, l’appel lambda vérifie si le nom du fichier a une extension dds. Dans ce cas, vous supposez qu’il s’agit d’une texture DDS. Sinon, utilisez les API WIC (Windows Imaging Component) pour découvrir le format et décoder les données sous forme de bitmap. Qu’elle que soit la façon, le résultat est une image bitmap [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) (ou une erreur).
+Dans l’extrait de code précédent, l’appel lambda vérifie si le nom du fichier a une extension dds. Dans ce cas, vous supposez qu’il s’agit d’une texture DDS. Sinon, utilisez les API WIC (Windows Imaging Component) pour découvrir le format et décoder les données sous forme de bitmap. Quelle que soit la méthode utilisée, le résultat est une image bitmap [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) (ou une erreur).
 
 ```cpp
 void BasicLoader::CreateTexture(
@@ -543,7 +544,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-Dans cet exemple, vous utilisez l’instance de **BasicReaderWriter** (**m\_basicReaderWriter**) pour lire le fichier d’objet nuanceur compilé (.cso) fourni dans un flux d’octets. Une fois cette tâche terminée, l’appel lambda appelle [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) avec les données d’octets chargées à partir du fichier. Votre rappel doit définir un indicateur signalant que le chargement a réussi, et votre code doit vérifier cet indicateur avant l’exécution du nuanceur.
+Dans cet exemple, vous utilisez l’instance de **BasicReaderWriter** (**m\_basicReaderWriter**) pour lire le fichier d’objet nuanceur compilé (.cso) fourni dans un flux d’octets. Une fois cette tâche terminée, la lambda appelle [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) avec les données d’octets chargées à partir du fichier. Votre rappel doit définir un indicateur signalant que le chargement a réussi, et votre code doit vérifier cet indicateur avant l’exécution du nuanceur.
 
 Les nuanceurs de vertex sont un peu plus complexes. Pour un nuanceur de vertex, vous chargez également un schéma d’entrée distinct qui définit les données de vertex. Le code suivant permet de charger de façon asynchrone un nuanceur de vertex, ainsi qu’un schéma d’entrée de vertex personnalisé. N’oubliez pas que les informations de vertex que vous chargez à partir de vos maillages peuvent être correctement représentées par ce schéma d’entrée !
 
@@ -593,7 +594,7 @@ Dans ce schéma particulier, le nuanceur de vertex traite les données suivantes
 -   un vecteur normal pour le vertex, également représenté par trois valeurs à virgule flottante 32 bits ;
 -   une valeur de coordonnées de texture 2D (u, v) transformée, représentée par une paire de valeurs flottantes 32 bits.
 
-Ces éléments d’entrée par vertex sont appelés [sémantique HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509647) ; il s’agit d’ensembles de registres définis utilisés pour transmettre des données en direction et à partir de votre objet nuanceur compilé. Votre pipeline exécute le nuanceur de vertex une fois pour chaque vertex du maillage que vous avez chargé. La sémantique définit l’entrée (et la sortie) du nuanceur de vertex pour son exécution et fournit ces données pour vos calculs par vertex dans le code HLSL de votre nuanceur.
+Ces éléments d’entrée par vertex sont appelés [sémantique HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509647) ; il s’agit d’ensembles de registres définis, utilisés pour transmettre des données en direction et à partir de votre objet nuanceur compilé. Votre pipeline exécute le nuanceur de vertex une fois pour chaque vertex du maillage que vous avez chargé. La sémantique définit l’entrée (et la sortie) du nuanceur de vertex pour son exécution et fournit ces données pour vos calculs par vertex dans le code HLSL de votre nuanceur.
 
 Maintenant, chargez l’objet nuanceur de vertex.
 
@@ -704,6 +705,6 @@ D’autres types de nuanceurs, comme les nuanceurs de coque et de géométrie, p
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

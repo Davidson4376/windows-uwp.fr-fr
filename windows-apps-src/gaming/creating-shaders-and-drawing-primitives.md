@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Créer des nuanceurs et tracer des primitives
 description: Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez utiliser ensuite pour tracer des primitives à l’écran.
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
@@ -7,22 +8,22 @@ ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 # Créer des nuanceurs et tracer des primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez ensuite utiliser pour tracer des primitives à l’écran.
 
 Nous créons et traçons un triangle jaune à l’aide de nuanceurs de vertex et de pixels. Après avoir créé le périphérique Direct3D, la chaîne de permutation et la vue de cible de rendu, nous effectuons la lecture des données des fichiers binaires d’objets des nuanceurs sur le disque.
 
-**Objectif :** créer les nuanceurs et tracer des primitives.
+**Objectif :** créer les nuanceurs et tracer des primitives.
 
 ## Prérequis
 
 
 Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
 
-Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : configuration de ressources DirectX et affichage d’une image](setting-up-directx-resources.md).
+Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : configuration de ressources DirectX et affichage d’une image](setting-up-directx-resources.md).
 
-**Durée de réalisation :** 20 minutes
+**Durée de réalisation :** 20 minutes
 
 ## Instructions
 
@@ -290,6 +291,6 @@ Nous allons à présent créer un cube 3D en orbite et lui appliquer des effets 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

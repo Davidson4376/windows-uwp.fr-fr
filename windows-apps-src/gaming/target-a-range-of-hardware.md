@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Prendre en charge les mappages d’ombre sur une gamme de matériel
 description: Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants.
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
@@ -7,7 +8,7 @@ ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
 # Prendre en charge les mappages d’ombre sur une gamme de matériel
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants. Partie 4 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
@@ -114,7 +115,7 @@ Les applications de plateforme Windows universelle (UWP) peuvent utiliser la com
 
 L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur définit LINEAR :
 
-```
+```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Pixel</ShaderType>
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Pixel</ShaderType>
@@ -143,7 +144,7 @@ L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur 
 
 L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur n’inclut pas de définitions de préprocesseur :
 
-```
+```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Pixel</ShaderType>
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Pixel</ShaderType>
@@ -173,6 +174,6 @@ L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

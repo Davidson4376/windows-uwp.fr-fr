@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Définir l’objet jeu principal
 description: Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
@@ -7,7 +8,7 @@ ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 # Définir l’objet jeu principal
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 À ce stade, nous avons conçu l’infrastructure de base de l’exemple de jeu et implémenté une machine à états qui gère les comportements globaux du système et de l’utilisateur. Toutefois, nous n’avons pas étudié la partie qui transforme l’exemple de jeu en jeu réel : les règles et la mécanique, et leur implémentation ! Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
 
@@ -358,7 +359,7 @@ L’exemple de jeu configure les composants de l’objet jeu dans l’ordre suiv
 
 1.  Un nouvel objet lecture audio est créé.
 2.  Des tableaux pour les primitives graphiques du jeu sont créés, notamment des tableaux pour les primitives de niveau, les munitions et les obstacles.
-3.  Un emplacement pour enregistrer les données de l’état du jeu est créé : il est nommé *Game* et est placé dans l’emplacement de stockage des paramètres des données d’application spécifié par [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
+3.  Un emplacement pour enregistrer les données de l’état du jeu est créé : il est nommé *Game* et est placé dans l’emplacement de stockage des paramètres des données d’application spécifié par [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
 4.  Un minuteur de jeu et la bitmap de superposition initiale, intégrée au jeu, sont créés.
 5.  Une nouvelle caméra est créée avec un ensemble spécifique de paramètres de vue et de projection.
 6.  Le périphérique d’entrée (contrôleur) étant défini sur les mêmes tangage et lacet de départ que la caméra, le joueur a une correspondance un-à-un entre la position du contrôle de départ et la position de la caméra.
@@ -3601,7 +3602,7 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -3619,6 +3620,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

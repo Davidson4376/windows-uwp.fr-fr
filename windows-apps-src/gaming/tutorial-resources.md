@@ -1,14 +1,15 @@
 ---
+author: mtoepke
 title: Développer l’exemple de jeu
-description: Félicitations ! À ce stade, vous maîtrisez les principaux composants d’un jeu de plateforme Windows universelle (WUP) DirectX 3D de base.
+description: Félicitations ! À ce stade, vous maîtrisez les principaux composants d’un jeu WUP DirectX 3D de base.
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
-Mots clés : [« DirectX, XAML »]
+keywords: ["DirectX, XAML"]
 ---
 
 # Développer l’exemple de jeu
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Félicitations ! À ce stade, vous maîtrisez les principaux composants d’un jeu WUP DirectX 3D de base. Vous pouvez configurer l’infrastructure d’un jeu, y compris le fournisseur de vues et le pipeline de rendu, et implémenter une boucle de jeu de base. Vous pouvez également créer une superposition de l’interface utilisateur de base, et incorporer des sons et des contrôles. Vous allez créer votre propre jeu, et voici donc quelques ressources pour approfondir vos connaissances en matière de développement de jeux DirectX.
 
@@ -30,7 +31,7 @@ Quelle est donc la différence entre l’implémentation d’une interface utili
 
 Vous déclarez le code XAML pour **SwapChainBackgroundPanel** comme suit dans le fichier **Main.app.xaml** :
 
-```xaml
+```xml
 <Page
     x:Name="DXMainPage"
     x:Class="Simple3DGameXaml.MainPage"
@@ -863,7 +864,7 @@ void App::ResetGame()
 
 MainPage.xaml
 
-```xaml
+```xml
 <SwapChainBackgroundPanel
     x:Name="DXSwapChainPanel"
     x:Class="Simple3DGameXaml.MainPage"
@@ -1514,6 +1515,6 @@ Pour télécharger une version de l’exemple de jeu qui utilise XAML pour la su
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

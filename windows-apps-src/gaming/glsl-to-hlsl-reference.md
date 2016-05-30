@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: Informations de référence sur le passage de GLSL vers HLSL
-description: Si vous avez pour projet de créer un jeu pour UWP, vous allez porter votre architecture graphique OpenGL ES 2.0 sur Direct3D 11, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language).
+description: Si vous avez pour projet de créer un jeu pour UWP, vous allez porter votre architecture graphique OpenGL ES 2.0 sur Direct3D 11, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language).
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ---
 
@@ -9,7 +10,7 @@ ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Si vous avez pour projet de créer un jeu pour UWP, vous allez [porter votre architecture graphique OpenGL ES 2.0 sur Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md), ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language). Les exemples de cette rubrique utilisent du code GLSL et du code HLSL compatibles avec OpenGL ES 2.0 et avec Direct3D 11, respectivement. Pour plus d’informations sur les différences entre Direct3D 11 et les versions antérieures de Direct3D, voir [Mappage des fonctionnalités](feature-mapping.md).
+Si vous avez pour projet de créer un jeu pour UWP, vous allez [porter votre architecture graphique OpenGL ES 2.0 sur Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md), ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language). Les exemples de cette rubrique utilisent du code GLSL et du code HLSL compatibles avec OpenGL ES 2.0 et avec Direct3D 11, respectivement. Pour plus d’informations sur les différences entre Direct3D 11 et les versions antérieures de Direct3D, voir [Mappage des fonctionnalités](feature-mapping.md).
 
 -   [Comparaison entre OpenGL ES 2.0 et Direct3D 11](#compare)
 -   [Portage des variables GLSL vers HLSL](#variables)
@@ -55,7 +56,7 @@ GLSL et HLSL diffèrent généralement sur les points suivants :
 </tr>
 <tr class="even">
 <td align="left">Compilation des nuanceurs intégrée à l’API graphique</td>
-<td align="left">Le compilateur HLSL [compiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633) en une représentation binaire intermédiaire, que Direct3D transmet ensuite au pilote.
+<td align="left">Le compilateur HLSL [compile le nuanceur](https://msdn.microsoft.com/library/windows/desktop/bb509633) en une représentation binaire intermédiaire, que Direct3D transmet ensuite au pilote.
 <div class="alert">
 <strong>Remarque</strong> Cette représentation binaire est indépendante du matériel. Elle est généralement compilée au moment de la création de l’application, plutôt qu’au moment de l’exécution de cette dernière.
 </div>
@@ -64,7 +65,7 @@ GLSL et HLSL diffèrent généralement sur les points suivants :
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">Modificateurs de stockage des [Variable](#variables)</td>
+<td align="left">Modificateurs de stockage des [variables](#variables)</td>
 <td align="left">Mémoires tampons constantes et transferts de données via des déclarations de dispositions d’entrée</td>
 </tr>
 <tr class="even">
@@ -76,19 +77,17 @@ GLSL et HLSL diffèrent généralement sur les points suivants :
 </tr>
 <tr class="odd">
 <td align="left">texture2D [Function]</td>
-<td align="left">[
-            texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [datatype.Function]</td>
+<td align="left">[texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [datatype.Function]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [datatype]</td>
-<td align="left">[
-            Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
+<td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
 </tr>
 <tr class="odd">
 <td align="left">Matrices row-major (par défaut)</td>
 <td align="left">Matrices column-major (par défaut)
 <div class="alert">
-<strong>Remarque</strong> Utilisez le modificateur de type <strong>row_major</strong> pour modifier la disposition pour une seule variable. Pour plus d’informations, voir [Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706). Vous pouvez aussi spécifier un indicateur de compilateur ou une instruction pragma pour modifier la configuration globale par défaut.
+<strong>Remarque</strong> Utilisez le modificateur de type <strong>row_major</strong> pour modifier la disposition pour une seule variable. Pour plus d’informations, voir [Syntaxe des variables](https://msdn.microsoft.com/library/windows/desktop/bb509706). Vous pouvez aussi spécifier un indicateur de compilateur ou une instruction pragma pour modifier la configuration globale par défaut.
 </div>
 <div>
  
@@ -103,7 +102,7 @@ GLSL et HLSL diffèrent généralement sur les points suivants :
 
  
 
-> **Remarque** HLSL expose les textures et les échantillonneurs dans deux objets distincts, alors que dans GLSL (Direct3D 9, par exemple), la liaison des textures est incluse dans l’état de l’échantillonneur.
+> **Remarque** HLSL expose les textures et les échantillonneurs dans deux objets distincts, alors que dans GLSL (Direct3D 9, par exemple), la liaison des textures est incluse dans l’état de l’échantillonneur.
 
  
 
@@ -131,7 +130,7 @@ Dans GLSL, vous appliquez des modificateurs (qualificateurs) à la déclaration 
 <p>Vous passez une variable uniform du code de l’application au nuanceur de vertex et/ou au nuanceur de fragments. Vous devez définir les valeurs de toutes les variables uniform avant de dessiner des triangles avec ces nuanceurs. Ainsi, les valeurs ne changeront pas lors du processus de dessin d’un maillage de triangles. Ces valeurs sont uniformes. Certaines sont définies pour la trame entière, d’autres uniquement pour une paire spécifique de nuanceurs de vertex/pixels.</p>
 <p>Les variables uniform s’appliquent au niveau de chaque polygone.</p></td>
 <td align="left"><p>Utilisez une mémoire tampon constante.</p>
-<p>Voir [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896) et [Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581).</p></td>
+<p>Voir [Procédure : Création d’une mémoire tampon constante](https://msdn.microsoft.com/library/windows/desktop/ff476896) et [Constantes de nuanceur](https://msdn.microsoft.com/library/windows/desktop/bb509581).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>varying</strong></p>
@@ -141,8 +140,8 @@ Dans GLSL, vous appliquez des modificateurs (qualificateurs) à la déclaration 
 <tr class="odd">
 <td align="left"><p><strong>attribut</strong></p>
 <p>Un attribut est un élément de la description d’un vertex que vous passez du code de l’application au nuanceur de vertex (et seulement à lui). Contrairement à la variable uniform, vous définissez une variable attribute par vertex. Vous pouvez ainsi attribuer une valeur différente à chacun des vertex. Les variables attribute s’appliquent au niveau de chaque vertex.</p></td>
-<td align="left"><p>Définissez une mémoire tampon de vertex dans le code de votre application Direct3D, puis mappez-la à l’entrée de vertex que vous avez définie dans le nuanceur de vertex. Vous pouvez éventuellement définir une mémoire tampon d’index. Voir [How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899) et [How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897).</p>
-<p>Créez une disposition d’entrée dans le code de votre application Direct3D, puis mappez les valeurs de sémantiques à celles de l’entrée de vertex. Voir [Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout).</p></td>
+<td align="left"><p>Définissez une mémoire tampon de vertex dans le code de votre application Direct3D, puis mappez-la à l’entrée de vertex que vous avez définie dans le nuanceur de vertex. Vous pouvez éventuellement définir une mémoire tampon d’index. Voir [Procédure : Création d’une mémoire tampon de vertex](https://msdn.microsoft.com/library/windows/desktop/ff476899) et [Procédure : Création d’une mémoire tampon d’index](https://msdn.microsoft.com/library/windows/desktop/ff476897).</p>
+<p>Créez une disposition d’entrée dans le code de votre application Direct3D, puis mappez les valeurs de sémantiques à celles de l’entrée de vertex. Voir [Créer la disposition d’entrée](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
@@ -156,7 +155,7 @@ Dans GLSL, vous appliquez des modificateurs (qualificateurs) à la déclaration 
 
 Dans GLSL, les variables sans modificateurs sont simplement des variables globales standards qui sont privées pour chaque nuanceur.
 
-Lorsque vous passez des données à des textures ([Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) dans HLSL) et à leurs nuanceurs associés ([SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644) dans HLSL), vous les déclarez généralement en tant que variables globales dans le nuanceur de pixels.
+Lorsque vous transmettez des données à des textures ([Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) dans HLSL) et à leurs échantillonneurs associés ([SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644) dans HLSL), vous les déclarez généralement en tant que variables globales dans le nuanceur de pixels.
 
 ## Portage des types GLSL vers HLSL
 
@@ -179,7 +178,7 @@ Référez-vous au tableau ci-dessous lors du portage de vos types GLSL vers HLSL
 <td align="left">Types scalaires : float, int, bool</td>
 <td align="left"><p>Types scalaires : float, int, bool</p>
 <p>(et uint, double)</p>
-<p>Pour plus d’informations, voir [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646).</p></td>
+<p>Pour plus d’informations, voir [Types scalaires](https://msdn.microsoft.com/library/windows/desktop/bb509646).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Type vector</p>
@@ -201,8 +200,8 @@ Référez-vous au tableau ci-dessous lors du portage de vos types GLSL vers HLSL
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>Pour plus d’informations, voir [Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707) et [Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568).</p>
-<p>vector peut également être défini avec le type float4 (typedef vector &lt;float, 4&gt; vector;). Pour plus d’informations, voir [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>Pour plus d’informations, voir [Type vector](https://msdn.microsoft.com/library/windows/desktop/bb509707) et [Mots clés](https://msdn.microsoft.com/library/windows/desktop/bb509568).</p>
+<p>vector peut également être défini avec le type float4 (typedef vector &lt;float, 4&gt; vector;). Pour plus d’informations, voir [Type défini par l’utilisateur](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Type matrix</p>
@@ -225,12 +224,12 @@ Référez-vous au tableau ci-dessous lors du portage de vos types GLSL vers HLSL
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>Vous pouvez aussi définir une matrice avec le [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623).</p>
+<p>Vous pouvez aussi définir une matrice avec le [type matrix](https://msdn.microsoft.com/library/windows/desktop/bb509623).</p>
 <p>Exemple : matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>matrix peut également être défini avec le type float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). Pour plus d’informations, voir [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>matrix peut également être défini avec le type float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). Pour plus d’informations, voir [Type défini par l’utilisateur](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>qualificateurs de précision pour les types float, int, sampler</p>
+<td align="left"><p>Qualificateurs de précision pour les types float, int, sampler</p>
 <ul>
 <li><p>highp</p>
 <p>Ce qualificateur fournit une précision minimale requise supérieure à celle des valeurs min16float, mais inférieure à celle des valeurs flottantes 32 bits. Équivalence HLSL :</p>
@@ -247,11 +246,11 @@ Référez-vous au tableau ci-dessous lors du portage de vos types GLSL vers HLSL
 <li><p>min10float</p>
 <p>Valeur à virgule fixe signée sur 2,8 bits au minimum (2 bits pour la partie entière et 8 bits pour la partie fractionnaire). La partie fractionnaire sur 8 bits peut inclure la valeur 1, au lieu de l’exclure, afin de pouvoir attribuer n’importe quelle valeur de la plage de valeurs comprises entre -2 et 2.</p></li>
 <li>min16int : entier signé sur 16 bits au minimum</li>
-<li><p>min12int : entier signé sur 12 bits au minimum</p>
-<p>Ce type s’applique au niveau 10Level9 (voir les [9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876)) où les nombres entiers sont représentés par des valeurs à virgule flottante. C’est la précision que vous obtenez en émulant un nombre entier avec une valeur à virgule flottante sur 16 bits.</p></li>
-<li>min16uint : entier non signé sur 16 bits au minimum</li>
+<li><p>min12int : entier signé 12 bits au minimum</p>
+<p>Ce type s’applique au niveau 10Level9 (voir les [niveaux de fonctionnalité 9_x](https://msdn.microsoft.com/library/windows/desktop/ff476876)), où les entiers sont représentés par des valeurs à virgule flottante. C’est la précision que vous obtenez en émulant un entier avec une valeur à virgule flottante sur 16 bits.</p></li>
+<li>min16uint : entier non signé 16 bits au minimum</li>
 </ul>
-<p>Pour plus d’informations, voir [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646) et [Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108).</p></td>
+<p>Pour plus d’informations, voir [Types scalaires](https://msdn.microsoft.com/library/windows/desktop/bb509646) et [Utilisation de la précision HLSL minimale](https://msdn.microsoft.com/library/windows/desktop/hh968108).</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
@@ -323,7 +322,7 @@ Référez-vous au tableau ci-dessous lors du portage de vos variables globales p
 <p>Couleur du fragment pour l’association de couleur n</p></td>
 <td align="left"><p>SV_Target[n]</p>
 <p>Sémantique du type <strong>float4</strong>.</p>
-<p>Valeur de la sortie du nuanceur de pixels qui est stockée dans la cible de rendu n, où 0 &lt;= n &lt;= 7.</p></td>
+<p>Valeur de la sortie du nuanceur de pixels qui est stockée dans la cible de rendu n, où 0 &lt;= n &lt;= 7.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>gl_FragCoord</strong></p>
@@ -546,7 +545,7 @@ m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
 
-// Set the primitive’s topology.
+// Set the primitive's topology.
 m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 // Draw a triangle with 3 vertices. triangleVertices is an array of 3 vertices.
@@ -567,6 +566,6 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,13 +1,14 @@
 ---
-title: Porter les objets nuanceurs
-description: Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
+author: mtoepke
+title: Porter les objets nuanceur
+description: Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 ---
 
 # Porter les objets nuanceurs
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -17,7 +18,7 @@ ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 
 Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
 
-> **Remarque** Si vous n’avez pas encore créé de projet Direct3D, suivez les instructions fournies dans l’article [Créer un projet DirectX 11 pour la plateforme Windows universelle (UWP)](user-interface.md). Cette procédure pas à pas suppose que vous disposez des ressources DXGI et Direct3D nécessaires pour le dessin à l’écran (celles fournies dans le modèle).
+> **Remarque** Si vous n’avez pas encore créé de projet Direct3D, suivez les instructions fournies dans l’article [Créer un projet DirectX 11 pour la plateforme Windows universelle (UWP)](user-interface.md). Cette procédure pas à pas suppose que vous disposez des ressources DXGI et Direct3D nécessaires pour le dessin à l’écran (celles fournies dans le modèle).
 
  
 
@@ -178,14 +179,14 @@ m_d3dContext->PSSetShader(
 
 ### Étape 3 : Indiquer les données à transmettre aux nuanceurs
 
-Dans notre exemple de code OpenGL ES 2.0, nous devons déclarer la variable **uniform** pour le pipeline des nuanceurs :
+Dans notre exemple de code OpenGL ES 2.0, nous devons déclarer la variable **uniform** pour le pipeline des nuanceurs :
 
--   **u\_mvpMatrix** : tableau 4x4 de valeurs flottantes qui représente la matrice finale de transformation modèle-affichage-projection. Cette matrice traduit les coordonnées du modèle de cube en coordonnées de projection 2D en vue de la conversion de numérisation.
+-   **u\_mvpMatrix** : tableau 4x4 de valeurs flottantes qui représente la matrice finale de transformation modèle-affichage-projection. Cette matrice traduit les coordonnées du modèle de cube en coordonnées de projection 2D en vue de la conversion de numérisation.
 
-Nous devons également déclarer deux valeurs **attribute** pour les données de vertex :
+Nous devons également déclarer deux valeurs **attribute** pour les données de vertex :
 
--   **a\_position** : vecteur à quatre valeurs flottantes qui définit les coordonnées du modèle d’un vertex.
--   **a\_color** : vecteur à quatre valeurs flottantes qui définit la couleur RVBA associée au vertex.
+-   **a\_position** : vecteur à quatre valeurs flottantes qui définit les coordonnées du modèle d’un vertex.
+-   **a\_color** : vecteur à quatre valeurs flottantes qui définit la couleur RVBA associée au vertex.
 
 Open GL ES 2.0 : définitions GLSL pour les variables uniformes et les attributs
 
@@ -195,7 +196,7 @@ attribute vec4 a_position;
 attribute vec4 a_color;
 ```
 
-Ici, les variables du programme principal correspondantes sont définies sous forme de champs de l’objet convertisseur. (Voir l’en-tête dans [Procédure : portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md).) Nous devons ensuite indiquer à quels emplacements mémoire le programme principal doit fournir ces valeurs destinées au pipeline de nuanceurs. Cela se passe généralement juste avant un appel de dessin :
+Ici, les variables du programme principal correspondantes sont définies sous forme de champs de l’objet convertisseur. (Voir l’en-tête dans [Procédure : portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md).) Nous devons ensuite indiquer à quels emplacements mémoire le programme principal doit fournir ces valeurs destinées au pipeline de nuanceurs. Cela se passe généralement juste avant un appel de dessin :
 
 OpenGL ES 2.0 : marquage de l’emplacement des variables uniformes et des attributs
 
@@ -217,7 +218,7 @@ glEnableVertexAttribArray(loc);
 renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 ```
 
-Direct3D n’utilise pas le concept de variables uniformes (« uniform ») et d’attributs (« attribute ») sous le même angle (ou pas avec la même syntaxe). À la place, il se sert de mémoires tampons constantes, représentant des sous-ressources Direct3D qui sont partagées entre le programme principal et les programmes de nuanceur. Certaines de ces sous-ressources, telles que les positions et couleurs de vertex, sont décrites sous forme de sémantiques HLSL. Pour plus d’informations sur les mémoires tampons constantes et les sémantiques HLSL sous-jacentes aux concepts OpenGL ES 2.0, voir [Porter des objets tampon de trame, des variables uniformes et des attributs](porting-uniforms-and-attributes.md).
+Direct3D n’utilise pas le concept de variables uniformes (« uniform ») et d’attributs (« attribute ») sous le même angle (ou pas avec la même syntaxe). À la place, il se sert de mémoires tampons constantes, représentant des sous-ressources Direct3D qui sont partagées entre le programme principal et les programmes de nuanceur. Certaines de ces sous-ressources, telles que les positions et couleurs de vertex, sont décrites sous forme de sémantiques HLSL. Pour plus d’informations sur les mémoires tampons constantes et les sémantiques HLSL sous-jacentes aux concepts OpenGL ES 2.0, voir [Porter des objets tampon de trame, des variables uniformes et des attributs](porting-uniforms-and-attributes.md).
 
 Pour adapter ce processus à Direct3D, nous convertissons la variable uniforme en mémoire tampon constante Direct3D (cbuffer) et nous lui affectons un registre pour la recherche, avec la sémantique HLSL **register**. Les deux attributs de vertex sont gérés en tant qu’éléments d’entrée lors des étapes du pipeline de nuanceurs et sont également associés à des [sémantiques HLSL](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION et COLOR0) qui renseignent les nuanceurs sur la position et la couleur du vertex. Le nuanceur de pixels reçoit une valeur SV\_POSITION, où le préfixe SV\_ indique qu’il s’agit d’une valeur système générée par le processeur GPU. (Dans notre exemple, la valeur correspond à la position d’un pixel générée lors de la conversion de numérisation.) VertexShaderInput et PixelShaderInput ne sont pas déclarés en tant que mémoires tampons constantes, car VertexShaderInput est utilisé pour définir la mémoire tampon de vertex (voir [Porter les mémoires tampons et données de vertex](port-the-vertex-buffers-and-data-config.md)), et les données de PixelShaderInput sont générées lors d’une étape précédente dans le pipeline, à savoir ici le nuanceur de vertex.
 
@@ -317,6 +318,6 @@ La mémoire tampon de vertex est créée et mise à jour de manière similaire. 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

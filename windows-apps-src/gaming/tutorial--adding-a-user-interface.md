@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Ajouter une interface utilisateur
 description: Vous venez de voir comment l’exemple de jeu implémente l’objet jeu principal ainsi que l’infrastructure de rendu de base.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
@@ -7,7 +8,7 @@ ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 # Ajouter une interface utilisateur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous venez de voir comment l’exemple de jeu implémente l’objet jeu principal ainsi que l’infrastructure de rendu de base. Examinons maintenant la façon dont l’exemple de jeu fournit des informations sur l’état du jeu au joueur. Ici, vous allez apprendre à ajouter de simples options de menu et composants d’affichage à tête haute sur la sortie de chaîne de transformations graphiques 3-D.
 
@@ -35,7 +36,7 @@ Il s’agit de l’affichage à tête haute intégré au jeu sans les effets vis
 
 ![Capture d’écran de la superposition du jeu](images/sample3dgame-overlay-nogame.png)
 
-Comme vous pouvez le constater, la superposition se compose de primitives de base : deux segments de ligne qui se croisent pour le réticule et deux rectangles pour le [contrôleur de déplacement/vue](tutorial--adding-controls.md). Dans le coin supérieur droit, un texte DirectWrite informe le joueur du nombre actuel de coups réussis, du nombre de tirs qu’il a effectués, du temps restant à ce niveau et du numéro de niveau actuel. L’état d’affichage à tête haute intégré au jeu de la superposition est écrit dans la méthode **Render** de la classe **GameHud**, et est codé comme suit :
+Comme vous pouvez le constater, la superposition se compose de primitives de base : deux segments de ligne qui se croisent pour le réticule et deux rectangles pour le [contrôleur de déplacement/vue](tutorial--adding-controls.md). Dans le coin supérieur droit, un texte DirectWrite informe le joueur du nombre actuel de coups réussis, du nombre de tirs qu’il a effectués, du temps restant à ce niveau et du numéro de niveau actuel. L’état d’affichage à tête haute intégré au jeu de la superposition est écrit dans la méthode **Render** de la classe **GameHud**, et est codé comme suit :
 
 ```cpp
 void GameHud::Render(
@@ -369,7 +370,7 @@ Tout ce dont la superposition a besoin à présent est du texte à afficher !
 
 Chacun des cinq états de superposition dans l’exemple de jeu a une méthode correspondante sur l’objet **GameInfoOverlay**. Ces méthodes tracent une variation de la superposition pour communiquer des informations explicites au joueur sur le jeu proprement dit. Cette communication est, bien sûr, représentée sous la forme de deux chaînes : une chaîne de titre et une chaîne de corps. Dans la mesure où l’exemple a déjà configuré les ressources et la disposition pour ces informations dans la méthode **RecreateDeviceResources**, il doit uniquement fournir les chaînes propres à l’état de superposition.
 
-Désormais, dans la définition de la classe **GameInfoOverlay**, l’exemple a déclaré trois zones rectangulaires qui correspondent à des zones spécifiques de la superposition, comme suit :
+Désormais, dans la définition de la classe **GameInfoOverlay**, l’exemple a déclaré trois zones rectangulaires qui correspondent à des zones spécifiques de la superposition, comme suit :
 
 ```cpp
 static const D2D1_RECT_F titleRectangle = D2D1::RectF(50.0f, 50.0f, GameInfoOverlayConstant::Width - 50.0f, 100.0f);
@@ -437,9 +438,9 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 
 En utilisant le contexte de périphérique Direct2D que l’objet **GameInfoOverlay** a initialisé et configuré à l’aide d’**Initialize** et de **RecreateDirectXResources**, cette méthode remplit les rectangles de titre et de corps de noir avec le pinceau d’arrière-plan. Elle écrit le texte pour la chaîne « Meilleur score » dans le rectangle de titre, ainsi qu’une chaîne contenant les informations mises à jour sur l’état du jeu dans le rectangle de corps en utilisant le pinceau de texte blanc.
 
-Le rectangle d’action est mis à jour par un appel ultérieur de **GameInfoOverlay::SetAction** à partir d’une méthode sur l’objet **DirectXApp**, qui fournit les informations sur l’état du jeu nécessaires à **SetAction** pour déterminer le message approprié à l’intention du joueur (par exemple, « Appuyez pour continuer »).
+Le rectangle d’action est mis à jour par un appel ultérieur de **GameInfoOverlay::SetAction** à partir d’une méthode sur l’objet **DirectXApp**, qui fournit les informations sur l’état du jeu nécessaires à **SetAction** pour déterminer le message approprié à l’intention du joueur (par exemple, « Appuyez pour continuer »).
 
-La superposition pour tout état donné est choisie dans la méthode **SetGameInfoOverlay** sur **DirectXApp**, comme suit :
+La superposition pour tout état donné est choisie dans la méthode **SetGameInfoOverlay** sur **DirectXApp**, comme suit :
 
 ```cpp
 void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -1487,6 +1488,6 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

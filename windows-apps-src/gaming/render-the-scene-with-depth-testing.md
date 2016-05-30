@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Générer le rendu de la scène avec un test de profondeur
 description: Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels.
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
@@ -7,7 +8,7 @@ ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 # Générer le rendu de la scène avec un test de profondeur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels. Partie 3 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
@@ -159,6 +160,6 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment [pren
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

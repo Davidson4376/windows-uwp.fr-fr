@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: Prise en charge de l’orientation de l’écran (DirectX et C++)
-description: Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10.
+description: Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10.
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
 ---
 
 # Prise en charge de l’orientation de l’écran (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Votre application de plateforme Windows universelle (UWP) prend en charge plusieurs orientations d’écran lorsque vous gérez l’événement [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268). Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10.
 
@@ -316,15 +317,15 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 ```
 
-Après avoir enregistré les valeurs actuelles de hauteur et de largeur de la fenêtre pour le prochain appel de cette méthode, convertissez les valeurs DIP (Device Independent Pixel) pour les limites d’affichage en pixels. Dans l’exemple, vous appelez **ConvertDipsToPixels**, qui est une fonction simple qui exécute le code suivant :
+Après avoir enregistré les valeurs actuelles de hauteur et de largeur de la fenêtre pour le prochain appel de cette méthode, convertissez les valeurs DIP (Device Independent Pixel) pour les limites d’affichage en pixels. Dans l’exemple, vous appelez **ConvertDipsToPixels**, qui est une fonction simple qui exécute le code suivant :
 
 ` floor((dips * dpi / 96.0f) + 0.5f);`
 
 Vous ajoutez 0,5f pour garantir un arrondi à la valeur entière la plus proche.
 
-Notez en passant que les coordonnées [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) sont toujours définies en DIP. Pour Windows 10 et les versions antérieures de Windows, un DIP est défini comme 1/96e de pouce et aligné à la définition de *vers le haut* du système d’exploitation. Lorsque l’orientation de l’affichage bascule en mode portrait, l’application inverse la hauteur et la largeur de l’objet **CoreWindow** et la taille (limites) de la cible de rendu doit changer en conséquence. Les coordonnées Direct3D étant toujours en pixels physiques, vous devez effectuer une conversion des valeurs DIP de **CoreWindow** en valeurs de pixels entières avant de passer ces valeurs à Direct3D pour configurer la chaîne d’échange.
+Notez en passant que les coordonnées [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) sont toujours définies en DIP. Pour Windows 10 et les versions antérieures de Windows, un DIP est défini comme 1/96e de pouce et aligné à la définition de *vers le haut* du système d’exploitation. Lorsque l’orientation de l’affichage bascule en mode portrait, l’application inverse la hauteur et la largeur de l’objet **CoreWindow** et la taille (limites) de la cible de rendu doit changer en conséquence. Les coordonnées Direct3D étant toujours en pixels physiques, vous devez effectuer une conversion des valeurs DIP de **CoreWindow** en valeurs de pixels entières avant de passer ces valeurs à Direct3D pour configurer la chaîne d’échange.
 
-Du point de vue du traitement, vous effectuez un peu plus de travail que si vous redimensionniez simplement la chaîne d’échange : en fait, vous faites pivoter les composants Direct2D et Direct3D de votre image avant de les composer pour la présentation et vous signalez à la chaîne d’échange que vous avez rendu les résultats dans une nouvelle orientation. Voici quelques détails supplémentaires sur ce processus, comme illustré dans l’exemple de code pour **DX::DeviceResources::CreateWindowSizeDependentResources** :
+Du point de vue du traitement, vous effectuez un peu plus de travail que si vous redimensionniez simplement la chaîne d’échange : en fait, vous faites pivoter les composants Direct2D et Direct3D de votre image avant de les composer pour la présentation et vous signalez à la chaîne d’échange que vous avez rendu les résultats dans une nouvelle orientation. Voici quelques détails supplémentaires sur ce processus, comme illustré dans l’exemple de code pour **DX::DeviceResources::CreateWindowSizeDependentResources** :
 
 -   Déterminez la nouvelle orientation de l’affichage. Si l’affichage a basculé de paysage à portrait, ou inversement, permutez les valeurs de hauteur et de largeur (converties de valeurs DIP en pixels, bien entendu) pour les limites d’affichage.
 
@@ -337,13 +338,13 @@ Du point de vue du traitement, vous effectuez un peu plus de travail que si vous
     -   Paysage (renversé) (DXGI\_MODE\_ROTATION\_ROTATE180)
     -   Portrait (renversé) (DXGI\_MODE\_ROTATION\_ROTATE90)
 
-    La matrice correcte est sélectionnée en fonction des données fournies par Windows 10 (telles que les résultats de [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)) pour déterminer l’orientation de l’affichage et elle sera multipliée par les coordonnées de chaque pixel (Direct2D) ou vertex (Direct3D) dans la scène, ce qui entraîne leur rotation en vue de leur alignement avec l’orientation de l’écran. (Notez que dans Direct2D, l’origine de l’écran est définie comme le coin supérieur gauche, alors que dans Direct3D, elle est définie comme le centre logique de la fenêtre.)
+    La matrice correcte est sélectionnée en fonction des données fournies par Windows 10 (telles que les résultats de [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)) pour déterminer l’orientation de l’affichage et elle sera multipliée par les coordonnées de chaque pixel (Direct2D) ou vertex (Direct3D) dans la scène, ce qui entraîne leur rotation en vue de leur alignement avec l’orientation de l’écran. (Notez que dans Direct2D, l’origine de l’écran est définie comme le coin supérieur gauche, alors que dans Direct3D, elle est définie comme le centre logique de la fenêtre.)
 
 > **Remarque** Pour plus d’informations sur les transformations 2D utilisées pour la rotation et sur la façon de les définir, voir [Définition de matrices pour la rotation de l’écran (2D)](#defining_matrices_2d). Pour plus d’informations sur les transformations 3D utilisées pour la rotation, voir [Définition de matrices pour la rotation de l’écran (3D)](#defining_matrices_3d).
 
  
 
-Nous en arrivons maintenant au point important : appelez [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) et fournissez-lui votre matrice de rotation mise à jour, comme ceci :
+Nous en arrivons maintenant au point important : appelez [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) et fournissez-lui votre matrice de rotation mise à jour, comme ceci :
 
 `m_swapChain->SetRotation(rotation);`
 
@@ -360,9 +361,9 @@ Maintenant, présentez la chaîne d’échange.
 
 Par défaut, Windows 10 fournit à toute application, quel que soit le langage ou le modèle, un laps de temps bref mais remarquable pour effectuer la rotation de l’image. Il est toutefois probable que si votre application effectue le calcul de rotation à l’aide de l’une des techniques décrites ici, cette rotation sera terminée bien avant la fin de ce laps de temps. Vous souhaiteriez récupérer ce temps et terminer l’animation de rotation, n’est-ce pas ? C’est ici que [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) entre en jeu.
 
-Voici comment utiliser [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) : quand un événement [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) est déclenché, appelez [**CoreWindowResizeManager::GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh404170) dans le gestionnaire d’événements pour obtenir une instance de **CoreWindowResizeManager** et, une fois la disposition de la nouvelle orientation terminée et présentée, appelez la méthode [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) pour signaler à Windows qu’il peut terminer l’animation de rotation et afficher l’écran d’application.
+Voici comment utiliser [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) : quand un événement [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) est déclenché, appelez [**CoreWindowResizeManager::GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh404170) dans le gestionnaire d’événements pour obtenir une instance de **CoreWindowResizeManager** et, une fois la disposition de la nouvelle orientation terminée et présentée, appelez la méthode [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) pour signaler à Windows qu’il peut terminer l’animation de rotation et afficher l’écran d’application.
 
-Voici ce à quoi pourrait ressembler le code dans votre gestionnaire d’événements pour [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) :
+Voici ce à quoi pourrait ressembler le code dans votre gestionnaire d’événements pour [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) :
 
 ```cpp
 CoreWindowResizeManager^ resizeManager = Windows::UI::Core::CoreWindowResizeManager::GetForCurrentView();
@@ -520,7 +521,7 @@ static const XMFLOAT4X4 Rotation270(
     }
 ```
 
-Vous pouvez définir le type de rotation sur la chaîne d’échange à l’aide d’un appel à [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801), comme ceci :
+Vous pouvez définir le type de rotation sur la chaîne d’échange à l’aide d’un appel à [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801), comme ceci :
 
 `   m_swapChain->SetRotation(rotation);`
 
@@ -552,6 +553,6 @@ Désormais, lorsque vous appelez votre méthode de rendu, elle multiplie la matr
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

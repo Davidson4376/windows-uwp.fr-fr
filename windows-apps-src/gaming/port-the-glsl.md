@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Porter le langage GLSL
 description: Après avoir adapté le code utilisé pour créer et configurer vos mémoires tampons et vos objets nuanceurs, vous pouvez procéder au portage du code de ces nuanceurs du langage GLSL (GL Shader Language) d’OpenGL ES 2.0 vers le langage HLSL (High-level Shader Language) de Direct3D 11.
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
@@ -7,7 +8,7 @@ ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 # Porter le langage GLSL
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -148,18 +149,16 @@ La couleur du pixel situé à la position indiquée est transmise à la cible de
 ## Étape précédente
 
 
-[Porter les mémoires tampons et données de vertex](port-the-vertex-buffers-and-data-config.md)
-Étape suivante
+[Porter les données et tampons vertex](port-the-vertex-buffers-and-data-config.md) Étape suivante
 ---------
 
-[Dessiner à l’écran](draw-to-the-screen.md)
-Remarques
+[Dessiner à l’écran](draw-to-the-screen.md) Remarques
 -------
 
-Pour faciliter le débogage de votre code et avoir plus de latitude pour l’optimiser, il est essentiel de bien comprendre le fonctionnement des sémantiques HLSL et du packaging des mémoires tampons constantes. Si vous le pouvez, lisez les articles [Syntaxe des variables (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Présentation des mémoires tampons dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898) et [Procédure : création d’une mémoire tampon constante](https://msdn.microsoft.com/library/windows/desktop/ff476896). Sinon, prenez au moins connaissance des quelques conseils ci-dessous concernant l’utilisation des sémantiques et des mémoires tampons :
+Pour faciliter le débogage de votre code et avoir plus de latitude pour l’optimiser, il est essentiel de bien comprendre le fonctionnement des sémantiques HLSL et du packaging des mémoires tampons constantes. Si vous le pouvez, lisez les articles [Syntaxe des variables (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Présentation des mémoires tampons dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898) et [Procédure : Création d’une mémoire tampon constante](https://msdn.microsoft.com/library/windows/desktop/ff476896). Sinon, prenez au moins connaissance des quelques conseils ci-dessous concernant l’utilisation des sémantiques et des mémoires tampons :
 
 -   Vérifiez toujours le code de configuration Direct3D de votre convertisseur afin de vous assurer que les structures de vos mémoires tampons constantes correspondent aux déclarations de structure cbuffer indiquées dans votre code HLSL, et que les types scalaires des composants sont identiques dans l’ensemble des déclarations.
--   Dans le code C++ de votre convertisseur, utilisez les types [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) dans les déclarations de mémoires tampons constantes pour garantir un packaging correct des données.
+-   Dans le code C++ de votre convertisseur, utilisez les types [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) dans les déclarations de mémoires tampons constantes pour garantir un packaging correct des données.
 -   Pour optimiser l’utilisation des mémoires tampons constantes, classez les variables de nuanceur dans ces mémoires en fonction de la fréquence de leur mise à jour. Par exemple, si certaines de vos données uniformes sont mises à jour une fois par trame, alors que d’autres ne sont mises à jour qu’après un mouvement de la caméra, il vaut mieux placer ces données dans deux mémoires tampons constantes distinctes.
 -   Vérifiez soigneusement toutes les sémantiques utilisées. En effet, les premières erreurs de compilation d’un nuanceur (FXC) sont souvent dues à un oubli de sémantiques ou à leur utilisation incorrecte. La documentation fournie peut être confuse, du fait que beaucoup de pages et d’exemples publiés précédemment font référence aux différentes versions de sémantiques HLSL antérieures à Direct3D 11.
 -   Assurez-vous que le niveau de fonctionnalité Direct3D utilisé est approprié pour chaque nuanceur. Les sémantiques du niveau de fonctionnalité 9\_\* ne sont pas les mêmes que celles du niveau 11\_1.
@@ -185,6 +184,6 @@ Pour faciliter le débogage de votre code et avoir plus de latitude pour l’opt
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
