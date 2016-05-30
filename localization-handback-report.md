@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 33
+ Total Files | 38
 
 ## File List
  Source File | Status | Details 
@@ -39,6 +39,11 @@
  [windows-apps-src\audio-video-camera\supported-codecs.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/audio-video-camera/supported-codecs.md) | InSyncHandedBackSuccess | [Details](#1481f8bbb2c53f667d253e23af1422297e19c63d490)
  [windows-apps-src\audio-video-camera\transcode-media-files.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/audio-video-camera/transcode-media-files.md) | InSyncHandedBackSuccess | [Details](#06c452291f10acd35dde9659c08a386ea38fa90a492)
  [windows-apps-src\audio-video-camera\variable-photo-sequence.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/audio-video-camera/variable-photo-sequence.md) | InSyncHandedBackSuccess | [Details](#c6be6c0ea255c38bba65550ae44c7f88c140ca0f493)
+ [windows-apps-src\contacts-and-calendar\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/contacts-and-calendar/index.md) | InSyncHandedBackSuccess | [Details](#4e40ac413e021aba26776053871a4c6f1a215b2a494)
+ [windows-apps-src\contacts-and-calendar\managing-appointments.md](https://github.com/Microsoft/windows-apps/blob/08a293e0588ae6dc69c159b54254e8191e6cb2e0/windows-apps-src/contacts-and-calendar/managing-appointments.md) | InSyncHandedBackSuccess | [Details](#d28ea9a1e3b4855e5e87ab34ca7d4ea10bb94dab495)
+ [windows-apps-src\contacts-and-calendar\selecting-contacts.md](https://github.com/Microsoft/windows-apps/blob/0d62e3026af9f71940bd05d4e072d46cda51bbc0/windows-apps-src/contacts-and-calendar/selecting-contacts.md) | InSyncHandedBackSuccess | [Details](#12bf9361bb5fc2fb2dc7f28860a79cb67d661a5c496)
+ [windows-apps-src\contacts-and-calendar\sending-an-sms-message.md](https://github.com/Microsoft/windows-apps/blob/1395e342bb6ad6a2d4fa347f1797aeafd7a524a6/windows-apps-src/contacts-and-calendar/sending-an-sms-message.md) | InSyncHandedBackSuccess | [Details](#70dfce318d37d6790585b0fa5da50963f95495dc497)
+ [windows-apps-src\contacts-and-calendar\sending-email.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/contacts-and-calendar/sending-email.md) | InSyncHandedBackSuccess | [Details](#b4b5b029c321256028993e283395a91bd0ed3d7c498)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -435,6 +440,66 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [variable-photo-sequence.a67d245da390a2fc83e8528122606230ec7de7ba.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/ae74e21a527744d635c37eb856f60e2c39d99892/ol-handback/Microsoft/windows-apps.fr-fr/master/audio-video-camera/variable-photo-sequence.a67d245da390a2fc83e8528122606230ec7de7ba.fr-fr.xlf)
 * Handback Datetime: 2016-05-30 22:12:22
+* [Back to Top](#report-top)
+
+##### <a name='4e40ac413e021aba26776053871a4c6f1a215b2a494'></a> Source: [windows-apps-src\contacts-and-calendar\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/contacts-and-calendar/index.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\contacts-and-calendar\index.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/7d7985eda06c641f37c58c8caa2c48580c068d83/windows-apps-src/contacts-and-calendar/index.md)
+* Handoff File: [index.5d0ffa7bd75066bfaee54db1f51c0dcc87971c4f.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/index.5d0ffa7bd75066bfaee54db1f51c0dcc87971c4f.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [index.5d0ffa7bd75066bfaee54db1f51c0dcc87971c4f.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/b268854d5d6ee8e20fb79989e9c66e8dd7812ab9/ol-handback/Microsoft/windows-apps.fr-fr/master/contacts-and-calendar/index.5d0ffa7bd75066bfaee54db1f51c0dcc87971c4f.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:12:28
+* [Back to Top](#report-top)
+
+##### <a name='d28ea9a1e3b4855e5e87ab34ca7d4ea10bb94dab495'></a> Source: [windows-apps-src\contacts-and-calendar\managing-appointments.md](https://github.com/Microsoft/windows-apps/blob/08a293e0588ae6dc69c159b54254e8191e6cb2e0/windows-apps-src/contacts-and-calendar/managing-appointments.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\contacts-and-calendar\managing-appointments.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/7d7985eda06c641f37c58c8caa2c48580c068d83/windows-apps-src/contacts-and-calendar/managing-appointments.md)
+* Handoff File: [managing-appointments.7c845244161527d324bc93c626bcbcccc6abae92.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/managing-appointments.7c845244161527d324bc93c626bcbcccc6abae92.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [managing-appointments.7c845244161527d324bc93c626bcbcccc6abae92.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/b268854d5d6ee8e20fb79989e9c66e8dd7812ab9/ol-handback/Microsoft/windows-apps.fr-fr/master/contacts-and-calendar/managing-appointments.7c845244161527d324bc93c626bcbcccc6abae92.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:12:28
+* [Back to Top](#report-top)
+
+##### <a name='12bf9361bb5fc2fb2dc7f28860a79cb67d661a5c496'></a> Source: [windows-apps-src\contacts-and-calendar\selecting-contacts.md](https://github.com/Microsoft/windows-apps/blob/0d62e3026af9f71940bd05d4e072d46cda51bbc0/windows-apps-src/contacts-and-calendar/selecting-contacts.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\contacts-and-calendar\selecting-contacts.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/7d7985eda06c641f37c58c8caa2c48580c068d83/windows-apps-src/contacts-and-calendar/selecting-contacts.md)
+* Handoff File: [selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/b268854d5d6ee8e20fb79989e9c66e8dd7812ab9/ol-handback/Microsoft/windows-apps.fr-fr/master/contacts-and-calendar/selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:12:28
+* [Back to Top](#report-top)
+
+##### <a name='70dfce318d37d6790585b0fa5da50963f95495dc497'></a> Source: [windows-apps-src\contacts-and-calendar\sending-an-sms-message.md](https://github.com/Microsoft/windows-apps/blob/1395e342bb6ad6a2d4fa347f1797aeafd7a524a6/windows-apps-src/contacts-and-calendar/sending-an-sms-message.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\contacts-and-calendar\sending-an-sms-message.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/7d7985eda06c641f37c58c8caa2c48580c068d83/windows-apps-src/contacts-and-calendar/sending-an-sms-message.md)
+* Handoff File: [sending-an-sms-message.6e59626f54f56878997988e7bb5d2435a825e060.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/sending-an-sms-message.6e59626f54f56878997988e7bb5d2435a825e060.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [sending-an-sms-message.6e59626f54f56878997988e7bb5d2435a825e060.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/b268854d5d6ee8e20fb79989e9c66e8dd7812ab9/ol-handback/Microsoft/windows-apps.fr-fr/master/contacts-and-calendar/sending-an-sms-message.6e59626f54f56878997988e7bb5d2435a825e060.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:12:28
+* [Back to Top](#report-top)
+
+##### <a name='b4b5b029c321256028993e283395a91bd0ed3d7c498'></a> Source: [windows-apps-src\contacts-and-calendar\sending-email.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/contacts-and-calendar/sending-email.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\contacts-and-calendar\sending-email.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/7d7985eda06c641f37c58c8caa2c48580c068d83/windows-apps-src/contacts-and-calendar/sending-email.md)
+* Handoff File: [sending-email.51cdc9509f9f324caf7ff54b249fa98d5275a96e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/eda428b7993c53d71f601aaf2e937f45e085d3c6/ol-handoff/Microsoft/windows-apps.fr-fr/master/sending-email.51cdc9509f9f324caf7ff54b249fa98d5275a96e.fr-fr.xlf)
+* Handoff Datetime: 2016-05-12 15:01:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [sending-email.51cdc9509f9f324caf7ff54b249fa98d5275a96e.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/b268854d5d6ee8e20fb79989e9c66e8dd7812ab9/ol-handback/Microsoft/windows-apps.fr-fr/master/contacts-and-calendar/sending-email.51cdc9509f9f324caf7ff54b249fa98d5275a96e.fr-fr.xlf)
+* Handback Datetime: 2016-05-30 22:12:28
 * [Back to Top](#report-top)
 
 
