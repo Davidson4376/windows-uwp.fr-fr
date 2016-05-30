@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: Accéder à la carte SD
 description: Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité.
 ---
 # Accéder à la carte SD
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité.
@@ -53,7 +54,7 @@ Pour accéder aux fichiers sur la carte SD, vous devez généralement spécifier
 
 Vous pouvez également utiliser la méthode ci-dessus pour accéder aux fichiers multimédias figurant sur la carte SD sans référencer de dossier connu comme **KnownFolders.MusicLibrary**, ou pour accéder aux fichiers multimédias stockés hors des dossiers de bibliothèque multimédia.
 
-Pour accéder aux fichiers multimédias stockés dans les bibliothèques multimédias (Musique, Photos ou Vidéos) en utilisant les dossiers connus, il suffit de spécifier la fonctionnalité associée dans le fichier manifeste de l’application : **musicLibrary**, **picturesLibrary**, ou **videoLibrary**. Vous n’avez pas besoin de spécifier la fonctionnalité **removableStorage**. Pour plus d’informations, voir [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
+Pour accéder aux fichiers multimédias stockés dans les bibliothèques multimédias (Musique, Photos ou Vidéos) en utilisant les dossiers connus, il suffit de spécifier la fonctionnalité associée dans le fichier manifeste de l’application : **musicLibrary**, **picturesLibrary**, ou **videoLibrary**. Vous n’avez pas besoin de spécifier la fonctionnalité **removableStorage**. Pour plus d’informations, voir [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
 
 ## Accès aux fichiers sur la carte SD
 
@@ -146,6 +147,6 @@ using Windows.Storage;
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

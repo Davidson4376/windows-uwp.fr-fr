@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
 description: Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos.
@@ -7,7 +8,7 @@ description: Ajoutez les dossiers existants de musique, images ou vidéos dans l
 # Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque, et découvrir des photos, de la musique et des vidéos.
@@ -199,7 +200,7 @@ Voici quelques exemples de requêtes et les résultats qu’elles renvoient.
 
 Voici les fonctionnalités que vous pouvez spécifier dans le fichier manifeste de l’application pour accéder aux fichiers multimédias de votre application.
 
--   **Musique**. Spécifiez la fonctionnalité **Music Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
+-   **Musique**. Spécifiez la fonctionnalité **Music Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
 
     -   .qcp
     -   .wav
@@ -220,7 +221,7 @@ Voici les fonctionnalités que vous pouvez spécifier dans le fichier manifeste 
     -   .adt
     -   .adts
     -   .pya
--   **Photos**. Spécifiez la fonctionnalité **Pictures Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
+-   **Photos**. Spécifiez la fonctionnalité **Pictures Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
 
     -   .jpeg
     -   .jpe
@@ -233,7 +234,7 @@ Voici les fonctionnalités que vous pouvez spécifier dans le fichier manifeste 
     -   .wdp
     -   .jxr
     -   .hdp
--   **Vidéos**. Spécifiez la fonctionnalité **Video Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
+-   **Vidéos**. Spécifiez la fonctionnalité **Video Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
 
     -   .wm
     -   .m4v
@@ -321,6 +322,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

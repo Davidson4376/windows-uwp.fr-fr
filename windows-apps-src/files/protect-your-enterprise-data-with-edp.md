@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 Description: 'Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs aux fichiers les plus courants.'
 MS-HAID: 'dev\_files.protect\_your\_enterprise\_data\_with\_edp'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -26,7 +27,7 @@ Cette rubrique présente des exemples de tâches de codage nécessaires pour ré
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour savoir comment écrire des applications asynchrones en C\# ou Visual Basic, voir [Appeler des API asynchrones en C\# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour savoir comment écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour savoir comment écrire des applications asynchrones en C\# ou Visual Basic, voir [Appeler des API asynchrones en C\# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour savoir comment écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
 ## Chemin d’accès à vos dossiers locaux et affichage des fichiers protégés dans l’Explorateur de fichiers
 
@@ -41,7 +42,7 @@ string localFolderPath = ApplicationData.Current.LocalFolder.Path;
 
 Une fois que vous avez le chemin d’accès, vous êtes en mesure d’utiliser l’Explorateur de fichiers pour trouver facilement les fichiers que votre application crée. De cette façon, vous êtes en mesure de confirmer qu’ils sont protégés, et qu’ils sont protégés sur l’identité correcte.
 
-Dans l’Explorateur de fichiers, sélectionnez **Modifier les options des dossiers et de recherche** et sur l’onglet **Affichage**, cochez **Afficher les fichiers chiffrés en couleur**. Par ailleurs, utilisez la procédure  **Affichage** &gt; **Ajouter des colonnes** de l’Explorateur de fichiers pour ajouter la colonne **Chiffrement sur** afin de voir l’identité d’entreprise sur laquelle vous protégez vos fichiers.
+Dans l’Explorateur de fichiers, sélectionnez **Modifier les options des dossiers et de recherche** et dans l’onglet **Affichage**, cochez **Afficher les fichiers chiffrés en couleur**. Par ailleurs, utilisez la procédure **Affichage**&gt;**Ajouter des colonnes** de l’Explorateur de fichiers pour ajouter la colonne **Chiffrement sur** afin de voir l’identité d’entreprise sur laquelle vous protégez vos fichiers.
 
 ## Protéger les données d’entreprise dans un nouveau fichier (pour une application interactive)
 
@@ -82,7 +83,7 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
 L’API [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) que nous avons utilisée dans la section précédente est uniquement appropriée pour les applications interactives. Pour une tâche en arrière-plan, votre code peut s’exécuter dans l’écran de verrouillage. L’organisation peut administrer une stratégie sécurisée de protection des données verrouillées, dans laquelle les clés de chiffrement nécessaires pour accéder aux ressources protégées sont temporairement supprimées de la mémoire d’un appareil lorsqu’il est verrouillé. Cela empêche toute fuite de données si l’appareil est perdu. Cette fonctionnalité supprime également les clés associées aux fichiers protégés lorsque leurs descripteurs sont fermés. Toutefois, il est possible de créer des fichiers protégés au cours de la fenêtre de verrouillage (temps écoulé entre le verrouillage et le déverrouillage de l’appareil) et d’y accéder tout en gardant le descripteur de fichier ouvert. Comme **StorageFolder.CreateFileAsync** ferme le descripteur lors de la création du fichier, cet algorithme ne peut pas être utilisé.
 
 1.  Créez un fichier en utilisant **StorageFolder.CreateFileAsync**.
-2.  Chiffrez à l’aide de **FileProtectionManager.ProtectAsync**.
+2.  Chiffrez-le à l’aide de **FileProtectionManager.ProtectAsync**.
 3.  Écrivez dans le fichier après l’avoir ouvert.
 
 Comme l’étape 1 implique de fermer le descripteur de fichier (même si l’étape 1 ne fermait pas le descripteur l’étape 2 le ferait), l’étape 3 n’est pas possible, car les clés de chiffrement permettant d’accéder à ce fichier ne sont plus disponibles.
@@ -109,7 +110,7 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
         await FileProtectionManager.CreateProtectedAndOpenAsync(storageFolder,
             "sample.txt", identity, CreationCollisionOption.ReplaceExisting);
 
-    // It&#39;s important to successfully protect a file *before* writing enterprise data to it.
+    // It's important to successfully protect a file *before* writing enterprise data to it.
     if (protectedFileCreateResult.ProtectionInfo.Identity == identity &&
         protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
     {
@@ -194,7 +195,7 @@ private async void CopyProtectionFromOneFileToAnother
 ## Gérer le refus d’accès à un fichier que vous avez protégé
 
 
-Dans ce scénario, votre application essaie d’accéder à un fichier (précédemment protégé par votre application) et se voit refuser l’accès. Vous devez vérifier l’état du fichier pour déterminer où se trouve l’erreur. Dans cet exemple de code, l’application appelle l’API [**FileProtectionManager.GetProtectionInfoAsync**](https://msdn.microsoft.com/library/windows/apps/dn705154) pour interroger l’état et déterminer si la raison est la suivante : l’accès au fichier a maintenant été révoqué à la suite de la gestion à distance.
+Dans ce scénario, votre application essaie d’accéder à un fichier (précédemment protégé par votre application) et se voit refuser l’accès. Vous devez vérifier l’état du fichier pour déterminer où se trouve l’erreur. Dans cet exemple de code, l’application appelle l’API [**FileProtectionManager.GetProtectionInfoAsync**](https://msdn.microsoft.com/library/windows/apps/dn705154) pour interroger l’état et déterminer si la raison est la suivante : l’accès au fichier a maintenant été révoqué à la suite de la gestion à distance.
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -244,7 +245,7 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-**Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque** Cet article s’adresse aux développeurs Windows 10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -263,6 +264,6 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
