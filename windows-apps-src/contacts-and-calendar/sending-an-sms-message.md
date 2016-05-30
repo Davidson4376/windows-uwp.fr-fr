@@ -1,11 +1,12 @@
 ---
+author: Xansky
 description: Cette rubrique vous montre comment lancer la boîte de dialogue de rédaction d’un message SMS pour permettre à l’utilisateur d’envoyer un message SMS. Vous pouvez préremplir les champs du message SMS avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
-title: Envoyer un message SMS
+title: Envoyer un SMS
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
-Mots clés : contacts, SMS, envoi
+keywords: contacts, SMS, send
 ---
 
-# Envoyer un message SMS
+# Envoyer un SMS
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -14,12 +15,12 @@ Cette rubrique vous montre comment lancer la boîte de dialogue de rédaction d�
 
 ## Lancer la boîte de dialogue de rédaction d’un message SMS
 
-Créez un objet [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/Dn642160) et définissez les données à préremplir dans la boîte de dialogue de rédaction d’un message SMS. Appelez [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/Dn642160manager-showcomposesmsmessageasync) pour afficher la boîte de dialogue.
+Créez un objet [**ChatMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.chatmessage) et définissez les données à préremplir dans la boîte de dialogue de rédaction d’un message SMS. Appelez [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) pour afficher la boîte de dialogue.
 
 ```cs
-private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient, 
-    string messageBody, 
-    StorageFile attachmentFile, 
+private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,
+    string messageBody,
+    StorageFile attachmentFile,
     string mimeType)
 {
     var chatMessage = new Windows.ApplicationModel.Chat.ChatMessage();
@@ -36,7 +37,7 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
         chatMessage.Attachments.Add(attachment);
     }
 
-    var phone = recipient.Phones.FirstOrDefault&lt;Windows.ApplicationModel.Contacts.ContactPhone&gt;();
+    var phone = recipient.Phones.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactPhone>();
     if (phone != null)
     {
         chatMessage.Recipients.Add(phone.Number);
@@ -54,8 +55,6 @@ Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction
 * [Sélectionner des contacts](selecting-contacts.md)
 
 
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

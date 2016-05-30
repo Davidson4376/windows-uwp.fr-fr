@@ -1,11 +1,12 @@
 ---
-description: Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs du message électronique avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
-title: Envoyer un message électronique
+author: Xansky
+description: Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
+title: Envoyer un courrier électronique
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
-Mots clés : contacts, message électronique, envoi
+keywords: contacts, email, send
 ---
 
-# Envoyer un message électronique
+# Envoyer un courrier électronique
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -41,7 +42,7 @@ private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
         emailMessage.Attachments.Add(attachment);
     }
 
-    var email = recipient.Emails.FirstOrDefault&lt;Windows.ApplicationModel.Contacts.ContactEmail&gt;();
+    var email = recipient.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>();
     if (email != null)
     {
         var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient(email.Address);
@@ -70,6 +71,6 @@ Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

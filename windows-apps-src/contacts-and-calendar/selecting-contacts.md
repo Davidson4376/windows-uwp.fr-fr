@@ -1,14 +1,6 @@
 ---
-description: L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
-title: Sélectionner des contacts
-ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-Mots clés : contacts, sélection
-Mots clés : sélection d’un seul contact
-Mots clés : sélection de plusieurs contacts
-Mots clés : contacts, sélection multiple
-Mots clés : sélection de données de contact spécifiques
-Mots clés : contact, sélection de données spécifiques
-Mots clés : contact, sélection de champs spécifiques
+description&#58; auteur &#58; Xansky L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
+title&#58; Sélectionner des contacts ms.assetid &#58; 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 mots-clés &#58; contacts, sélection de mots clés &#58; sélectionner des mots-clés de contact uniques &#58; sélectionner plusieurs mots-clés de contact &#58; contacts, sélectionner plusieurs mots-clés &#58; sélectionner des mots-clés de données de contact spécifiques &#58; contact, sélection de mots clés de données spécifiques &#58; contact, sélection de champs spécifiques
 ---
 
 # Sélectionner des contacts
@@ -30,7 +22,7 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 
 Par défaut, le sélecteur de contacts récupère toutes les données disponibles des contacts que l’utilisateur sélectionne. La propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) vous permet de configurer le sélecteur de contacts pour récupérer uniquement les champs de données dont votre application a besoin. Il s’agit d’un moyen plus efficace pour utiliser le sélecteur de contacts, si vous avez seulement besoin d’un sous-ensemble des données de contact disponibles.
 
-Affectez d’abord à la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) la valeur **Fields** :
+Affectez d’abord à la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) la valeur **Fields** :
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
@@ -51,7 +43,7 @@ Contact contact = await contactPicker.PickContactAsync();
 Utilisez [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) si vous voulez que l’utilisateur sélectionne un ou plusieurs contacts.
 
 ```cs
-public IList&lt;Contact&gt; contacts;
+public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
@@ -68,14 +60,14 @@ if (contact != null)
 }
 else
 {
-    rootPage.NotifyUser(&quot;No contact was selected.&quot;, NotifyType.ErrorMessage);
+    rootPage.NotifyUser("No contact was selected.", NotifyType.ErrorMessage);
 }
 ```
 
 Cet exemple montre comment traiter plusieurs contacts.
 
 ```cs
-if (contacts != null &amp;&amp; contacts.Count &gt; 0)
+if (contacts != null && contacts.Count > 0)
 {
     foreach (Contact contact in contacts)
     {
@@ -121,36 +113,36 @@ private async void PickAContactButton-Click(object sender, RoutedEventArgs e)
     }
 }
 
-private void AppendContactFieldValues&lt;T&gt;(TextBlock content, IList&lt;T&gt; fields)
+private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 {
-    if (fields.Count &gt; 0)
+    if (fields.Count > 0)
     {
         StringBuilder output = new StringBuilder();
 
         if (fields[0].GetType() == typeof(ContactEmail))
         {
-            foreach (ContactEmail email in fields as IList&lt;ContactEmail&gt;)
+            foreach (ContactEmail email in fields as IList<ContactEmail>)
             {
-                output.AppendFormat(&quot;Email: {0} ({1})\n&quot;, email.Address, email.Kind);
+                output.AppendFormat("Email: {0} ({1})\n", email.Address, email.Kind);
             }
         }
         else if (fields[0].GetType() == typeof(ContactPhone))
         {
-            foreach (ContactPhone phone in fields as IList&lt;ContactPhone&gt;)
+            foreach (ContactPhone phone in fields as IList<ContactPhone>)
             {
-                output.AppendFormat(&quot;Phone: {0} ({1})\n&quot;, phone.Number, phone.Kind);
+                output.AppendFormat("Phone: {0} ({1})\n", phone.Number, phone.Kind);
             }
         }
         else if (fields[0].GetType() == typeof(ContactAddress))
         {
-            List&lt;String&gt; addressParts = null;
-            string unstructuredAddress = &quot;&quot;;
+            List<String> addressParts = null;
+            string unstructuredAddress = "";
 
-            foreach (ContactAddress address in fields as IList&lt;ContactAddress&gt;)
+            foreach (ContactAddress address in fields as IList<ContactAddress>)
             {
-                addressParts = (new List&lt;string&gt; { address.StreetAddress, address.Locality, address.Region, address.PostalCode });
-                unstructuredAddress = string.Join(&quot;, &quot;, addressParts.FindAll(s =&gt; !string.IsNullOrEmpty(s)));
-                output.AppendFormat(&quot;Address: {0} ({1})\n&quot;, unstructuredAddress, address.Kind);
+                addressParts = (new List<string> { address.StreetAddress, address.Locality, address.Region, address.PostalCode });
+                unstructuredAddress = string.Join(", ", addressParts.FindAll(s => !string.IsNullOrEmpty(s)));
+                output.AppendFormat("Address: {0} ({1})\n", unstructuredAddress, address.Kind);
             }
         }
 
@@ -170,18 +162,18 @@ Cet exemple utilise le sélecteur de contacts pour récupérer plusieurs contact
 
 ```cs
 MainPage rootPage = MainPage.Current;
-public IList&lt;Contact&gt; contacts;
+public IList<Contact> contacts;
 
 private async void PickContactsButton-Click(object sender, RoutedEventArgs e)
 {
     var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
-    contactPicker.CommitButtonText = &quot;Select&quot;;
+    contactPicker.CommitButtonText = "Select";
     contacts = await contactPicker.PickContactsAsync();
 
     // Clear the ListView.
     OutputContacts.Items.Clear();
 
-    if (contacts.Count &gt; 0)
+    if (contacts != null && contacts.Count > 0)
     {
         OutputContacts.Visibility = Windows.UI.Xaml.Visibility.Visible;
         OutputEmpty.Visibility = Visibility.Collapsed;
@@ -208,19 +200,19 @@ public class ContactItemAdapter
     public ContactItemAdapter(Contact contact)
     {
         Name = contact.DisplayName;
-        if (contact.Emails.Count &gt; 0)
+        if (contact.Emails.Count > 0)
         {
             SecondaryText = contact.Emails[0].Address;
         }
-        else if (contact.Phones.Count &gt; 0)
+        else if (contact.Phones.Count > 0)
         {
             SecondaryText = contact.Phones[0].Number;
         }
-        else if (contact.Addresses.Count &gt; 0)
+        else if (contact.Addresses.Count > 0)
         {
-            List&lt;string&gt; addressParts = (new List&lt;string&gt; { contact.Addresses[0].StreetAddress, 
+            List<string> addressParts = (new List<string> { contact.Addresses[0].StreetAddress,
               contact.Addresses[0].Locality, contact.Addresses[0].Region, contact.Addresses[0].PostalCode });
-              string unstructuredAddress = string.Join(&quot;, &quot;, addressParts.FindAll(s =&gt; !string.IsNullOrEmpty(s)));
+              string unstructuredAddress = string.Join(", ", addressParts.FindAll(s => !string.IsNullOrEmpty(s)));
             SecondaryText = unstructuredAddress;
         }
     }
@@ -233,6 +225,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

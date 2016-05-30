@@ -1,4 +1,5 @@
 ---
+author: Xansky
 description: Comment utiliser les informations relatives aux contacts et calendriers dans votre application UWP.
 title: Contacts et calendriers
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
@@ -6,7 +7,7 @@ ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 
 # Contacts et calendriers
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Vous pouvez permettre aux utilisateurs d’accéder à leurs contacts et rendez-vous afin de partager du contenu, des courriers électroniques, des informations de calendrier ou des messages, ou toute autre fonctionnalité de votre conception.
 
@@ -32,6 +33,6 @@ Pour en savoir plus sur les différentes façons d’accéder aux contacts et au
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
