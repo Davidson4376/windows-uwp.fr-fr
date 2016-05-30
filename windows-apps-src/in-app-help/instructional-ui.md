@@ -1,4 +1,5 @@
 ---
+author: QuinnRadich
 Description: Concevez une interface utilisateur d’instructions qui apprend aux utilisateurs comment utiliser votre application du Windows Store.
 title: Recommandations en matière de conception d’une interface utilisateur d’instructions
 label: Instructional UI
@@ -7,11 +8,11 @@ template: detail.hbs
 
 # Recommandations en matière d’interface utilisateur d’instructions
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Dans certains cas, il peut être utile de former l’utilisateur aux fonctions les plus subtiles de votre application, telles que des interactions tactiles spécifiques. Vous devez alors fournir des instructions par le biais de l’interface utilisateur pour signaler à l’utilisateur les fonctionnalités dont il risque de ne pas encore avoir eu connaissance.
 
-## <span id="when_to_use_instructional_ui"> </span> <span id="WHEN_TO_USE_INSTRUCTIONAL_UI"> </span>Quand utiliser l’interface utilisateur d’instructions
+## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>Quand utiliser l’interface utilisateur d’instructions
 
 L’interface utilisateur d’instructions doit être utilisée avec parcimonie. Si vous en abusez, cette interface risque d’être rapidement ignorée ou d’incommoder l’utilisateur, et donc de se révéler inefficace.
 
@@ -19,17 +20,17 @@ L’interface utilisateur d’instructions doit permettre à l’utilisateur de 
 
 À moins que votre application ne dépende des mouvements tactiles, l’interface utilisateur d’instructions ne doit pas être utilisée pour enseigner aux utilisateurs les fonctionnalités fondamentales de votre application.
 
-## <span id="writing_instructional_ui"> </span> <span id="WRITING_INSTRUCTIONAL_UI"> </span>Principes de création d’une interface utilisateur d’instructions
+## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>Principes de création d’une interface utilisateur d’instructions
 
 Une interface utilisateur d’instructions allie pertinence et pédagogie, et améliore l’expérience utilisateur. Elle doit présenter les caractéristiques suivantes :
 
 -   **Simplicité :** les utilisateurs ne veulent pas que leur expérience soit interrompue par des informations complexes.
--   **Facilité de mémorisation :** les utilisateurs ne veulent pas voir s’afficher les mêmes instructions chaque fois qu’ils tentent d’exécuter une tâche spécifique. Les instructions doivent donc se révéler faciles à mémoriser.
+-   **Facilité de mémorisation :** les utilisateurs ne veulent pas voir s’afficher les mêmes instructions chaque fois qu’ils tentent d’exécuter une tâche spécifique. Les instructions doivent donc être faciles à mémoriser.
 -   **Pertinence immédiate :** si l’interface utilisateur d’instructions ne présente pas une procédure directement liée à la tâche que l’utilisateur souhaite exécuter, celui-ci n’aura pas de raison d’y prêter attention.
 
 N’abusez pas de l’interface utilisateur d’instructions et prenez soin de choisir les rubriques adéquates. N’abordez pas les éléments suivants :
 
--   **Fonctionnalités fondamentales :** si les utilisateurs ont besoin de disposer d’instructions d’utilisation concernant votre application, envisagez de retravailler la conception de votre application pour la rendre plus intuitive.
+-   **Fonctionnalités fondamentales :** si les utilisateurs ont besoin de disposer d’instructions d’utilisation concernant votre application, envisagez de repenser la conception de votre application pour la rendre plus intuitive.
 -   **Fonctionnalités évidentes :** si un utilisateur peut comprendre le rôle d’une fonctionnalité sans aucune instruction, l’interface utilisateur d’instructions ne fera que le gêner.
 -   **Fonctionnalités complexes :** l’interface utilisateur d’instructions doit rester concise, et les utilisateurs intéressés par des fonctionnalités complexes sont généralement disposés à rechercher les instructions correspondantes sans avoir besoin qu’on les leur présente spontanément.
 
@@ -39,7 +40,7 @@ N’abusez pas de l’interface utilisateur d’instructions et prenez soin de c
 -   **Exiger la participation des utilisateurs :** les utilisateurs doivent avoir la possibilité d’ignorer l’interface utilisateur d’instructions et de continuer à parcourir l’application.
 -   **Afficher des informations répétées :** votre interface utilisateur d’instructions ne doit pas harceler l’utilisateur, même si ce dernier l’a ignorée la première fois. L’ajout d’un paramètre permettant de réafficher l’interface utilisateur d’instructions constitue une solution plus judicieuse.
 
-## <span id="examples_of_instructional_ui"> </span> <span id="EXAMPLES_OF_INSTRUCTIONAL_UI"> </span>Exemples d’interfaces utilisateur d’instructions
+## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>Exemples d’interfaces utilisateur d’instructions
 
 Voici quelques exemples dans lesquels une interface utilisateur d’instructions peut se révéler utile pour vos utilisateurs :
 
@@ -51,7 +52,7 @@ Voici quelques exemples dans lesquels une interface utilisateur d’instructions
 
     ![Écran de démarrage de l’application Instants vidéos](images/instructional-ui-movie.png)
 
--   **Guidez les utilisateurs pour effectuer une tâche compliquée.** Dans l’application Courrier Windows, un texte en bas de la Boîte de réception les invite à utiliser les **Paramètres** pour accéder à des messages plus anciens.
+-   **Guidez les utilisateurs pour effectuer une tâche compliquée.** Dans l’application Courrier Windows, un conseil au bas de la Boîte de réception les invite à utiliser **Paramètres** pour accéder à des messages plus anciens.
 
     ![partie d’une capture d’écran de l’application Courrier Windows qui montre un message d’interface utilisateur d’instruction](images/instructional-ui-mail-inbox.png)
 
@@ -59,13 +60,13 @@ Voici quelques exemples dans lesquels une interface utilisateur d’instructions
 
     | Avant                                                               | Après                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-    | ![Capture d’écran de l’application Courrier Windows](images/instructional-ui-mail.png) | ![Capture d’écran de l’application Courrier Windows avec un menu volant Paramètres étendu](images/instructional-ui-mail-flyout.png) |
+    | ![Capture d’écran de l’application Courrier Windows](images/instructional-ui-mail.png) | ![capture d’écran de l’application courrier windows avec un menu volant paramètres étendu](images/instructional-ui-mail-flyout.png) |
 
-## <span id="related_topics"> </span>Articles connexes
+## <span id="related_topics"></span>Articles connexes
 
 * [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
