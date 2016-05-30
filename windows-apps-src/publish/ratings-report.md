@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Le rapport Évaluations disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store.
 title: Rapport Évaluations
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
@@ -49,7 +50,7 @@ Le graphique **Évaluation moyenne dans le temps** illustre l'évolution de l'é
 
 Au lieu de calculer la moyenne de toutes les évaluations laissées au cours de la période sélectionnée (comme dans le graphique **Évaluation moyenne** graphique), le graphique **Évaluation moyenne dans le temps** indique l’évaluation laissée par les clients un jour ou une semaine donné(e) au cours de la période. Ce graphique vous permet d’identifier les tendances ou de déterminer dans quelle mesure les mises à jour ou autres modifications ont affecté ou non les évaluations.
 
-Si vous avez filtré les informations sur les **30 derniers jours** ou les **3 derniers mois**, le graphique affiche votre évaluation moyenne par jour. Si vous les avez filtrées sur les **6 derniers mois** ou les **12 derniers mois**, le graphique affiche votre évaluation moyenne par semaine (le lundi marquant le début de chaque nouvelle semaine ; l'évaluation moyenne indiquée concerne la semaine précédente).
+Si vous avez filtré les informations sur les **30 derniers jours** ou les **3 derniers mois**, le graphique affiche votre évaluation moyenne par jour. Si vous les avez filtrées sur les **6 derniers mois** ou les **12 derniers mois**, le graphique affiche votre évaluation moyenne par semaine (le lundi marquant le début de chaque nouvelle semaine ; l'évaluation moyenne indiquée concerne la semaine précédente).
 
 ## Marchés
 
@@ -67,6 +68,6 @@ Par défaut, les marchés ayant fait l’objet du plus grand nombre d’évaluat
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

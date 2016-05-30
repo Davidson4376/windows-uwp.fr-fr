@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Vous pouvez fournir des informations complémentaires sur votre application dans la section Déclarations d’application de la page Propriétés de l’application pendant le processus de soumission.
 title: Déclarations d’application
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
@@ -40,7 +41,7 @@ Si vous voulez empêcher les clients à installer votre application sur d'autres
 
 Notez qu’il n’existe aucune option permettant de restreindre l’installation d’une application sur un dispositif de stockage amovible.
 
-> **Remarque** Pour Windows Phone 8.1, cela était auparavant mentionné dans le fichier StoreManifest.xml.
+> **Remarque** Pour Windows Phone 8.1, cela était auparavant mentionné dans le fichier StoreManifest.xml.
 
 ## Windows peut intégrer les données de cette application dans les sauvegardes automatiques sur OneDrive.
 
@@ -48,7 +49,7 @@ Cette case est cochée par défaut pour permettre l'insertion des données de vo
 
 Si vous voulez empêcher l’insertion des données de votre application dans les sauvegardes automatiques, décochez cette case.
 
-> **Remarque** Pour Windows Phone 8.1, cela était auparavant mentionné dans le fichier StoreManifest.xml.
+> **Remarque** Pour Windows Phone 8.1, cela était auparavant mentionné dans le fichier StoreManifest.xml.
 
  
 
@@ -61,6 +62,6 @@ Si vous voulez empêcher l’insertion des données de votre application dans le
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

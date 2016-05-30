@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10.
 title: Apparence de votre application dans le Store pour les clients dotés de Windows 10
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
@@ -41,7 +42,7 @@ les options d’évaluation déféraient dans les deux anciens Stores. Ainsi, si
 Votre application sera disponible pour les clients Windows 10, sur tous les marchés où vous avez déjà publié l’application. Cela s’applique même si vous avez sélectionné des marchés différents pour chaque Store.
 
 ### Catégories
-Si votre application s’affichait dans des catégories différentes dans les deux Stores, nous utilisons la catégorie du Windows Store comme nouvelle catégorie. Remarque : certaines catégories sont différentes dans le Store pour les clients Windows 10. Veillez donc à consulter le [tableau](#cat) ci-dessous.
+Si votre application s’affichait dans des catégories différentes dans les deux Stores, nous utilisons la catégorie du Windows Store comme nouvelle catégorie. Remarque : certaines catégories sont différentes dans le Store pour les clients Windows 10. Veillez donc à consulter le [tableau](#cat) ci-dessous.
 
 ### Évaluation de l’âge
 Si vous avez fourni des évaluations d’âge différentes, la plus stricte (l’âge le plus élevé) est utilisée.
@@ -69,31 +70,31 @@ Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-a
 
 | Catégorie précédente                       | Nouvelle catégorie                  |
 |-----------------------------------------|-------------------------------|
-| Gouvernement + politique &gt; Commentaire   | Gouvernement + politique         |
-| Gouvernement + politique &gt; Questions juridiques | Gouvernement + politique         |
-| Gouvernement + politique &gt; Politique     | Gouvernement + politique         |
-| Gouvernement + politique &gt; Resources    | Gouvernement + politique         |
-| Santé + forme &gt; Alimentation + nutrition  | Santé + forme              |
-| Santé + forme &gt; Forme           | Santé + forme              |
-| Santé + forme &gt; Santé            | Santé + forme              |
-| Loisirs &gt; Art + divertissement      | Loisirs                     |
+| Gouvernement + politique &gt; Commentaire   | Gouvernement et politique         |
+| Gouvernement + politique &gt; Questions juridiques | Gouvernement et politique         |
+| Gouvernement + politique &gt; Politique     | Gouvernement et politique         |
+| Gouvernement + politique  &gt; Ressources    | Gouvernement et politique         |
+| Santé + forme &gt; Alimentation + nutrition  | Santé et bien-être              |
+| Santé + forme &gt; Forme           | Santé et bien-être              |
+| Santé + forme &gt; Santé            | Santé et bien-être              |
+| Loisirs &gt; Art + divertissement      | Loisirs                     |
 | Loisirs &gt; Sorties              | Loisirs                     |
-| Loisirs &gt; Gastronomie + restaurants            | Alimentation + cuisine                 |
-| Loisirs &gt; Achats                 | Achats                      |
-| Actualités + météo &gt; International       | Actualités + météo                |
-| Actualités + météo &gt; Local + national    | Actualités + météo                |
+| Loisirs &gt; Gastronomie + restaurants            | Alimentation et cuisine                 |
+| Loisirs &gt; Achats                 | Achats                      |
+| Actualités + météo &gt; Niveau international       | Actualités et météo                |
+| Actualités + météo &gt; Niveaux local + national    | Actualités et météo                |
 | Utilitaires + productivité                | Utilitaires + outils             |
-| Voyages + navigation                     | Voyages                        |
-| Voyages + navigation &gt; Planification       | Voyages                        |
-| Voyages + navigation  &gt; Outils          | Voyages                        |
-| Voyages + navigation &gt; Déplacements avec des enfants      | Enfants + famille &gt; Voyages     |
-| Voyages + navigation &gt; Langue       | Formation &gt; Langue       |
-| Voyages + navigation &gt; Cartographie        | Navigation + cartes             |
-| Voyages + navigation &gt; Navigation     | Navigation + cartes             |
-| Jeux &gt; Classiques                     | Jeux &gt; Action + aventure |
-| Jeux &gt; Famille                       | Jeux &gt; Famille + enfants      |
-| Jeux &gt; Sports + loisirs          | Jeux &gt; Sports             |
-| Jeux &gt; Stratégie + simulation        | Jeux &gt; Stratégie           |
+| Voyages + navigation                     | Voyage                        |
+| Voyages + navigation &gt; Planification       | Voyage                        |
+| Voyages + navigation &gt; Outils          | Voyage                        |
+| Voyages + navigation &gt; Déplacements avec des enfants      | Enfants + famille &gt; Voyages     |
+| Voyages + navigation &gt; Langue       | Formation &gt; Langue       |
+| Voyages + navigation &gt; Mappage        | Navigation et cartes             |
+| Voyages + navigation &gt; Navigation     | Navigation et cartes             |
+| Jeux &gt; Classiques                     | Jeux &gt; Action + aventure |
+| Jeux &gt; Famille                       | Jeux &gt; Famille + enfants      |
+| Jeux &gt; Sports + loisirs          | Jeux &gt; Sports             |
+| Jeux &gt; Stratégie + simulation        | Jeux &gt; Stratégie           |
 
  
 
@@ -101,21 +102,21 @@ Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-a
 
 | Catégorie précédente           | Nouvelle catégorie                         |
 |-----------------------------|--------------------------------------|
-| Livres + référence &gt; Enfants | Enfants + famille &gt; Livres + référence |
-| Musique + vidéos &gt; Vidéo   | Photo + vidéo                        |
-| Musique + vidéos &gt; Musique   | Musique                                |
+| Livres + référence &gt; Enfants | Enfants + famille &gt; Livres + référence |
+| Musique + vidéos &gt; Vidéo   | Photo et vidéo                        |
+| Musique + vidéos &gt; Musique   | Musique                                |
 | Gouvernement                  | Gouvernement + politique                |
 | Finance                     | Finances personnelles                     |
-| Jeux &gt; Action           | Jeux &gt; Action + aventure        |
-| Jeux &gt; Aventure        | Jeux &gt; Action + aventure        |
-| Jeux &gt; Arcade           | Jeux &gt; Action + aventure        |
-| Jeux &gt; Cartes             | Jeux &gt; Cartes + plateaux              |
-| Jeux &gt; Enfants             | Jeux &gt; Famille + enfants             |
-| Jeux &gt; Famille           | Jeux &gt; Famille + enfants             |
-| Jeux &gt; Puzzle           | Jeux &gt; Puzzle + jeux d’esprit           |
-| Jeux &gt; Courses           | Jeux &gt; Course + vol           |
+| Jeux &gt; Action           | Jeux &gt; Action + aventure        |
+| Jeux &gt; Aventure        | Jeux &gt; Action + aventure        |
+| Jeux &gt; Arcade           | Jeux &gt; Action + aventure        |
+| Jeux &gt; Jeux de cartes             | Jeux &gt; Jeux de cartes + plateau              |
+| Jeux &gt; Enfants             | Jeux &gt; Famille + enfants             |
+| Jeux &gt; Famille           | Jeux &gt; Famille + enfants             |
+| Jeux &gt; Puzzles           | Jeux &gt; Puzzles + jeux d’esprit           |
+| Jeux &gt; Course           | Jeux &gt; Course + vol           |
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

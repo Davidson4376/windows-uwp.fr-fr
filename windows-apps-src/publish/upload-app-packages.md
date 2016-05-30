@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Sur la page Packages, vous pouvez charger tous les fichiers de package (.xap, .appx, .appxupload et/ou .appxbundle) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application.
 title: Chargement des packages d’application
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
@@ -18,7 +19,7 @@ Pour charger des packages, faites-les glisser dans le champ de chargement, ou cl
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer la totalité ou uniquement une partie des packages dans cette soumission.
 
-> **Important** Pour Windows 10, vous devez toujours charger le fichier .appxupload, et non le fichier .appx ou .appxbundle. Pour plus d’informations sur l’empaquetage d’applications pour UWP pour le Windows Store, consultez [Empaquetage d’applications Windows universelles pour Windows 10](../packaging/packaging-uwp-apps.md).
+> **Important** Pour Windows 10, vous devez toujours charger le fichier .appxupload, et non le fichier .appx ou .appxbundle. Pour plus d’informations sur l’empaquetage d’applications pour UWP pour le Windows Store, consultez [Empaquetage d’applications Windows universelles pour Windows 10](../packaging/packaging-uwp-apps.md).
 
 Si nous détectons des problèmes liés à vos packages lors de leur validation, vous devrez supprimer le package et résoudre le problème avant d’essayer de le charger à nouveau. Pour plus d’informations, voir [Résolution des erreurs de chargement de package](resolve-package-upload-errors.md).
 
@@ -54,6 +55,6 @@ Nous vous recommandons d’utiliser [Visual Studio Application Insights](http://
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

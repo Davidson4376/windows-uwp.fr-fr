@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Les produits in-app sont publiés par le biais du tableau de bord du Centre de développement Windows.
 title: Soumissions des produits in-app
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
@@ -7,7 +8,7 @@ ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 # Soumissions des produits in-app
 
 
-Un produit intégré à l'application est un élément supplémentaire pour votre application qui peut être acheté par les clients. Il peut s'agir d'un composant additionnel permettant d'ajouter une nouvelle fonctionnalité amusante, un nouveau niveau de jeu ou tout ce qui selon vous contribuera à maintenir les utilisateurs impliqués. Les produits intégrés à l'application constituent non seulement une excellente façon de gagner de l'argent, mais également un bon moyen de renforcer le niveau d'interactivité et d'implication des clients avec votre application.
+Un produit intégré à l&#39;application est un élément supplémentaire pour votre application qui peut être acheté par les clients. Il peut s'agir d'un composant additionnel permettant d'ajouter une nouvelle fonctionnalité amusante, un nouveau niveau de jeu ou tout ce qui selon vous contribuera à maintenir les utilisateurs impliqués. Les produits intégrés à l'application constituent non seulement une excellente façon de gagner de l'argent, mais également un bon moyen de renforcer le niveau d'interactivité et d'implication des clients avec votre application.
 
 Les produits in-app sont publiés par le biais du tableau de bord du Centre de développement Windows. Vous devez également [activer les produits in-app](https://msdn.microsoft.com/library/windows/apps/mt219684) dans le code de votre application.
 
@@ -62,6 +63,6 @@ Si vous voulez supprimer un produit in-app précédemment proposé, vous pouvez 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

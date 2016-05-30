@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Quand vous envoyez un produit in-app, les options de la page Propriétés vous aident à déterminer le comportement de ce produit lorsqu’il est proposé aux clients.
 title: Entrer les propriétés d’un produit in-app
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
@@ -16,8 +17,8 @@ Vous devez commencer par indiquer le type de produit in-app que vous proposez. C
 
 > **Remarque** Vous ne pourrez plus modifier le type du produit in-app, une fois celui-ci publié.
 
--   **Consommable** : produit pouvant être acheté, utilisé (consommé), puis acheté de nouveau. Les produits in-app consommables sont souvent utilisés pour des éléments tels que la monnaie d’un jeu (or, pièces, etc.), qui peuvent être achetés en montants prédéfinis puis dépensés par le client.
--   **Durable** : produit acheté et détenu par l'acheteur pendant une période définie. Les produits in-app durables servent généralement à déverrouiller des fonctionnalités supplémentaires d’une application. Ils ne sont pas consommés, mais vous pouvez définir le champ **Durée de vie du produit** pour qu’ils arrivent à expiration au bout d’un laps de temps défini (compris entre 1 et 365 jours). Par défaut, le champ **Durée de vie du produit** d’un produit in-app durable affiche **Toujours**, ce qui signifie que ce produit n’expire jamais.
+-   **Consommable** : produit pouvant être acheté, utilisé (consommé), puis acheté de nouveau. Les produits in-app consommables sont souvent utilisés pour des éléments tels que la monnaie d’un jeu (or, pièces, etc.), qui peuvent être achetés en montants prédéfinis puis dépensés par le client.
+-   **Durable** : produit acheté et détenu par l'acheteur pendant une période définie. Les produits in-app durables servent généralement à déverrouiller des fonctionnalités supplémentaires d’une application. Ils ne sont pas consommés, mais vous pouvez définir le champ **Durée de vie du produit** pour qu’ils arrivent à expiration au bout d’un laps de temps défini (compris entre 1 et 365 jours). Par défaut, le champ **Durée de vie du produit** d’un produit in-app durable affiche **Toujours**, ce qui signifie que ce produit n’expire jamais.
 
 ## Type de contenu
 
@@ -60,6 +61,6 @@ Vous pouvez également entrer jusqu'à 3 000 caractères dans le champ **Identit
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

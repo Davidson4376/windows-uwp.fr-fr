@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenus Microsoft Advertising.
 title: Rémunération
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
@@ -55,6 +56,6 @@ Une fois que vous avez configuré l’état de mise en attente des paiements sur
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

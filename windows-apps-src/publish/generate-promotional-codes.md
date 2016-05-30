@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Vous pouvez générer des codes promotionnels pour une application ou un produit in-app que vous avez publiés dans le Windows Store.
 title: Générer des codes promotionnels
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
@@ -19,7 +20,7 @@ Dans le tableau de bord du Centre de développement Windows, vous pouvez :
     -   Récapitulatif des commandes de codes promotionnels pour toutes vos applications (dans la page **Présentation du tableau de bord**) et pour chaque application (dans la page **Vue d’ensemble de l’application** pour chaque application).
     -   Résumé détaillé des commandes de code promotionnel pour chaque application (sur la page **Codes promotionnels** pour chaque application).
 
-> **Remarque** Vous pouvez générer des codes promotionnels même si vous avez sélectionné l’option **Masquer cette application et empêcher l’acquisition. Les clients disposant d’un code promotionnel peuvent la télécharger sur les appareils Windows 10** de la page du tableau de bord [Tarification et disponibilité](set-app-pricing-and-availability.md) relative à votre application. Votre application doit exécuter la phase finale de publication du [processus de certification des applications](the-app-certification-process.md) avant que les utilisateurs ne puissent utiliser un code promotionnel pour l’installer.
+> **Remarque** Vous pouvez générer des codes promotionnels même si vous avez sélectionné l’option **Masquer cette application et empêcher l’acquisition. Les clients disposant d’un code promotionnel peuvent la télécharger sur les appareils Windows 10** de la page du tableau de bord [Tarification et disponibilité](set-app-pricing-and-availability.md) relative à votre application. Votre application doit exécuter la phase finale de publication du [processus de certification des applications](the-app-certification-process.md) avant que les utilisateurs ne puissent utiliser un code promotionnel pour l’installer.
 
 ## Stratégies de code promotionnel
 
@@ -40,7 +41,7 @@ Pour commander des codes promotionnels pour une application ou un produit in-app
     -   Dans la page **Vue d’ensemble de l’application** pour votre application, recherchez la section **Codes promotionnels**, puis cliquez sur **Commander des codes**.
     -   Dans n’importe quelle page du tableau de bord pour votre application, dans le menu de navigation à gauche, développez **Monétisation**, puis cliquez sur **Codes promotionnels**. Dans la page **Codes promotionnels**, cliquez sur **Commander des codes**.
 
-2.  Dans la page **Nouvelle commande de codes promotionnels**, entrez les informations suivantes :
+2.  Dans la page **Nouvelle commande de codes promotionnels**, entrez les informations suivantes :
     -   Sélectionnez l’application ou le produit in-app pour lequel vous voulez générer des codes.
     -   Spécifiez un nom pour la commande. Ce nom permet de différencier les différentes commandes de codes lors de l’examen des données d’utilisation de votre code promotionnel.
     -   Indiquez le nombre de codes à commander.
@@ -61,14 +62,14 @@ Pour télécharger une commande exécutée de codes promotionnels et distribuer 
     Le fichier contient les colonnes de données suivantes pour chaque code :
 
     -   **Nom du produit** : nom de l’application ou du produit in-app auquel le code est associé.
-    -   **Nom de la commande** : nom de la commande dans laquelle ce code a été exécuté.
-    -   **Code promotionnel** : code proprement dit. Il s’agit d’une chaîne de 5x5 caractères alphanumériques séparés par des traits d’union. Par exemple :
+    -   **Nom de la commande** : nom de la commande dans laquelle ce code a été exécuté.
+    -   **Code promotionnel** : code proprement dit. Il s’agit d’une chaîne de 5x5 caractères alphanumériques séparés par des traits d’union. Par exemple :
 
         DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
 
-    -   **URL donnant droit** : URL permettant à un utilisateur d’utiliser le code et d’installer votre application ou produit in-app. L’URL est au format suivant :
+    -   **URL donnant droit** : URL permettant à un utilisateur d’utiliser le code et d’installer votre application ou produit in-app. L’URL est au format suivant :
 
-        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code>
+        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code&gt;
 
     -   **Date de commande** : date à laquelle vous avez commandé ce code.
     -   **Date d’expiration** : date d’expiration de ce code.
@@ -88,15 +89,15 @@ Une fois l’URL donnant droit distribuée à un utilisateur, les étapes suivan
 
 1.  L’utilisateur clique sur l’URL donnant droit.
 
-    Le navigateur s’ouvre sur une page authentifiée **Utiliser votre code** à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder.
+    Le navigateur accède à une page authentifiée **Utiliser votre code** à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder.
 
 2.  L’utilisateur clique sur **Échanger.**
 
-    Le navigateur accède à une page **Merci** contenant un lien **Obtenir** ***&lt;your app name&gt;***.
+    Le navigateur accède à une page **Merci** contenant un lien **Obtenir*****&lt;nom de votre application&gt;***.
 
     > **Remarque** Si votre application n’est pas encore publiée à ce stade, les utilisateurs recevront un message d’erreur.
 
-3.  L’utilisateur clique sur **Obtenir** ***&lt;your app name&gt;***.
+3.  L’utilisateur clique sur **Obtenir*****&lt;nom de votre application&gt;***.
 
 4.  Si l’utilisateur se connecte à partir d’un ordinateur sur lequel le Windows Store pour Windows 10 ou Windows 8.1 est installé, le Windows Store s’ouvre à la page de présentation de l’application. L’utilisateur peut cliquer **Installer** pour installer l’application gratuitement.
 
@@ -129,6 +130,6 @@ Vous pouvez également télécharger une commande active à partir de ce tableau
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

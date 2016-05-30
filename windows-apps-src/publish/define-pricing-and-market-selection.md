@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Le Windows Store touche des clients dans plus de 200 pays et régions du monde.
 title: Définition des prix et sélection du marché
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
@@ -41,7 +42,7 @@ Si vous souhaitez définir des prix personnalisés pour votre application dans d
 
 Tenez compte du fait que même si vous sélectionnez tous les marchés, la législation et les restrictions locales ou d’autres facteurs peuvent empêcher certaines applications d’être référencées dans des pays ou régions spécifiques. Par ailleurs, certains marchés peuvent avoir établi des conditions spécifiques relatives à la classification par âge. Si votre application ne satisfait pas ces conditions, nous ne pourrons pas proposer votre application dans ce marché. Pour plus d’informations, consultez la section [Classification par âge](age-ratings.md).
 
-> **Remarque** Pour les applications destinées à Windows 8 ou Windows 8.1, certains marchés individuels sont traités comme un seul marché « Rest of World ». Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8-x). N’oubliez pas non plus que sur Windows 8 ou Windows 8.1, les clients verront uniquement l’application répertoriée avec son prix de base, même si vous avez changé le prix pour leur marché.
+> **Remarque** Pour les applications destinées à Windows 8 ou Windows 8.1, certains marchés individuels sont traités comme un seul marché « Rest of World ». Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8-x). N’oubliez pas non plus que sur Windows 8 ou Windows 8.1, les clients verront uniquement l’application répertoriée avec son prix de base, même si vous avez changé le prix pour leur marché.
 
  
 
@@ -282,8 +283,8 @@ Vous pouvez choisir de répertorier votre application (ou produit intégré à l
 -   Royaume-Uni
 -   États-Unis
 -   Uruguay
--   Îles mineures éloignées (É.-U.)
--   Îles mineures éloignées (É.-U.)
+-   Îles mineures éloignées des États-Unis
+-   Îles Vierges (É.-U.)
 -   Ouzbékistan
 -   Venezuela
 -   Vietnam
@@ -535,8 +536,8 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 -   Turks et Caïcos (îles)
 -   Tuvalu
 -   Ouganda
--   Îles mineures éloignées (É.-U.)
--   Îles mineures éloignées (É.-U.)
+-   Îles mineures éloignées des États-Unis
+-   Îles Vierges (É.-U.)
 -   Ouzbékistan
 -   Venezuela
 -   Vietnam
@@ -549,6 +550,6 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 > **Remarque** Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, voir [Types de compte, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/jj863494).
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

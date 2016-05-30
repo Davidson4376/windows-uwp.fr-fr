@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Le rapport Utilisation disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application.
 title: Rapport sur l’utilisation
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
@@ -7,7 +8,7 @@ ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 # Rapport sur l’utilisation
 
 
-> **Important** Le rapport **Utilisation** ne fournit des données que si vous avez activé le [Kit de développement logiciel (SDK) Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086) dans votre application (ou que vous l’avez activé en cochant la case « Afficher la télémétrie dans le Centre de développement Windows » lors de la construction de votre package). Pour que des données soient visibles dans ce rapport, vous devez également soumettre votre application dans le tableau de bord unifié du Centre de développement, et la fonction de télémétrie de l’utilisation des applications doit avoir été activée dans vos paramètres de compte.
+> **Important** Le rapport **Utilisation** ne fournit des données que si vous avez activé le [Kit de développement logiciel (SDK) Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086) dans votre application (ou que vous l’avez activé en cochant la case « Afficher la télémétrie dans le Centre de développement Windows » lors de la construction de votre package). Pour que des données soient visibles dans ce rapport, vous devez également soumettre votre application dans le tableau de bord unifié du Centre de développement, et la fonction de télémétrie de l’utilisation des applications doit avoir été activée dans vos paramètres de compte.
 
 Le rapport **Utilisation** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
 
@@ -65,6 +66,6 @@ Le graphique **Vues de page des 30 derniers jours** affiche le nombre total de v
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

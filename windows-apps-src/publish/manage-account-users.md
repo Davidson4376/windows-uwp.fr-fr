@@ -1,5 +1,6 @@
 ---
-Description: Vous pouvez utiliser Azure Active Directory pour ajouter des utilisateurs à votre compte du Centre de développement.
+author: jnHs
+Description: Ajoutez des utilisateurs à votre compte du Centre de développement, affectez-leur des rôles avec des autorisations spécifiques.
 title: Gérer des utilisateurs de compte
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ---
@@ -16,20 +17,32 @@ Vous pouvez utiliser Azure Active Directory pour ajouter des utilisateurs à vot
 ## Associer votre compte du Centre de développement au service Azure Active Directory de votre organisation
 
 
-Le Centre de développement Windows tire parti d’Azure Active Directory pour la gestion multi-utilisateurs et l’attribution des rôles. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757).
+Le Centre de développement Windows tire parti d’Azure Active Directory pour la gestion multi-utilisateurs et l’attribution des rôles. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Dans le cas contraire, vous pouvez créer un Azure AD depuis le Centre de développement sans frais supplémentaires. 
 
-Notez que vous ne pouvez associer qu’un seul compte du Centre de développement à un service Azure Active Directory. De même, il n’est possible d’associer qu’un seul service Azure Active Directory à un compte du Centre de développement.
+Notez que vous ne pouvez associer qu’un seul compte du Centre de développement à un service Azure AD. De même, il n’est possible d’associer qu’un seul service Azure AD à un compte du Centre de développement.
 
-Pour configurer l’association :
+> **Remarque** Vous ne pouvez ajouter des utilisateurs à votre compte du Centre de développement que s’ils font partie du service Azure AD de votre organisation (ou si vous créez des comptes Azure AD pour eux). Vous ne pourrez pas ajouter d’utilisateurs à votre compte du Centre de développement en utilisant leur compte Microsoft personnel.
+
+Pour associer votre compte du Centre de développement au service Azure AD existant de votre organisation :
 
 1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
-2.  Cliquez sur le bouton pour associer votre compte à Azure AD.
+2.  Cliquez sur le bouton **Associer Azure AD avec votre compte du Centre de développement**.
 3.  Connectez-vous à votre compte Azure AD. La configuration de l’association implique que ce compte dispose de l’autorisation [Administrateur général](http://go.microsoft.com/fwlink/?LinkId=746654).
 4.  Vérifiez le nom d’organisation et le nom de domaine pour votre compte Azure AD. Pour valider l’association, cliquez sur **Confirmer**.
+5.  Si l’association réussit, vous êtes prêt à ajouter et gérer des utilisateurs de comptes sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
+  
+Pour créer un tout nouvel Azure AD à associer à votre compte du Centre de développement :
+1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
+2.  Cliquez sur le bouton **Créer Azure AD**.
+3.  Entrez les informations de répertoire de votre nouvel Azure AD :
+- **Nom de domaine** : nom unique que nous utiliserons pour votre domaine Azure AD, avec « .onmicrosoft.com ». Par exemple, si vous avez entré « exemple », votre domaine Azure AD sera « exemple.onmicrosoft.com ». 
+- **E-mail de contact ** : adresse de messagerie à laquelle nous pouvons vous contacter à propos de votre compte si nécessaire.
+- **Informations de compte d’utilisateur administrateur général** : prénom, nom, nom d’utilisateur et mot de passe que vous souhaitez utiliser pour le nouveau compte d’administrateur. 
+4.  Cliquez sur **Créer** pour confirmer les nouvelles informations de domaine et de compte.
+5.  Connectez-vous avec vos nouveaux nom d’utilisateur et mot de passe d’administrateur général Azure AD pour commencer à ajouter et à gérer des utilisateurs de compte supplémentaires sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
 
-Si l’association réussit, vous êtes prêt à ajouter et gérer des utilisateurs de comptes sur la page **Gérer les utilisateurs** de votre compte.
 
-> **Remarque** Vous ne pouvez ajouter des utilisateurs à votre compte du Centre de développement que s’ils font partie du service Azure Active Directory de votre organisation. Vous ne pourrez pas ajouter d’utilisateurs à votre compte du Centre de développement en utilisant leur compte Microsoft.
+> **Important** Après avoir associé votre compte du Centre de développement Azure AD, vous aurez toujours besoin de vous connecter au Centre de développement à l’aide du compte d’administrateur général Azure AD (et non d’un compte Microsoft personnel) afin d’ajouter et de gérer les utilisateurs de compte.
 
 ## Ajouter et gérer des utilisateurs, des groupes et des applications Azure AD pour le compte
 
@@ -212,6 +225,6 @@ Pour supprimer un utilisateur, un groupe ou une application Azure AD de votre co
 
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

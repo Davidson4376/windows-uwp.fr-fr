@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Une description attrayante peut contribuer à attirer l’attention sur votre application dans le Windows Store et à inciter les clients à la télécharger.
 title: Rédiger une description convaincante de l’application
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
@@ -12,7 +13,7 @@ Une description attrayante peut contribuer à attirer l’attention sur votre ap
 
 Vous trouverez ci-après quelques conseils pour la rédaction d’une description d’application optimale.
 
--   **Suscitez l’attention dès les premières phrases.** Le début de votre description est le plus important. Vous devez donc faire en sorte d’attirer et de retenir l’attention. Réfléchissez à ce que vous pouvez dire en une ou deux phrases pour décrire l’attrait unique de votre application et convaincre de la nécessité de se la procurer.
+-   **Suscitez l’attention dès les premières phrases.** Le début de votre description est le plus important. Vous devez donc faire en sorte d’attirer et de retenir l’attention. Démarrez avec la propriété de valeur : pourquoi les clients potentiels doivent-ils consacrer du temps et de l’argent à votre application ? Quel est l’avantage de choisir votre application plutôt qu’une autre ? En une ou deux phrases, avec des mots simples et clairs, expliquez l’intérêt de votre application.
 -   **Permettez aux clients de découvrir facilement votre application.** Après l’accroche initiale, décrivez les avantages supplémentaires de votre application, les opportunités d’achat dans l’application, ainsi que d’autres détails de votre application qui sont susceptibles d’intéresser les clients. N’oubliez pas d’inclure les informations que vous êtes tenu de mentionner conformément aux lois des marchés dans lesquels vous distribuez votre application.
 -   **Utilisez des listes et de courts paragraphes.** Il est possible que des clients potentiels jettent simplement un œil rapide à la description de votre application. Découper le contenu à l’aide de courts paragraphes et de listes en facilite l’analyse.
     > **Remarque** L’ajout d’une liste de [fonctionnalités de l’application](create-app-descriptions.md#app-features) constitue également un excellent moyen de montrer rapidement sa finalité. Cette liste apparaît juste en dessous de la description de l’application.
@@ -34,6 +35,6 @@ Vous trouverez ci-après quelques conseils pour la rédaction d’une descriptio
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

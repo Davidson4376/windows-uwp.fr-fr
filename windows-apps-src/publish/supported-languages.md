@@ -1,5 +1,6 @@
 ---
-Description: Vous pouvez soumettre des applications dans le Windows Store dans plus de 100 langues.
+author: jnHs
+Description: Vous pouvez soumettre des applications dans le Windows Store dans plus de 100 langues.
 title: Langues prises en charge
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ---
@@ -133,6 +134,6 @@ Voici la liste des langues que le Windows Store prend en charge. Votre applicati
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

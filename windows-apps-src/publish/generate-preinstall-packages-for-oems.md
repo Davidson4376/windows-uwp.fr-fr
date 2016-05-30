@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d’ordinateurs OEM d’inclure votre application dans son image.
 title: Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
@@ -7,7 +8,7 @@ ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 # Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM
 
 
-Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d'ordinateurs OEM d'inclure votre application dans son image. Les autorisations de préinstallation sont uniquement activées sur les comptes de développeur qui sont sponsorisés par des OEM.
+Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d&#39;ordinateurs OEM d&#39;inclure votre application dans son image. Les autorisations de préinstallation sont uniquement activées sur les comptes de développeur qui sont sponsorisés par des OEM.
 
 ## Politique et limitations importantes en matière de préinstallation
 
@@ -34,7 +35,7 @@ Vous pouvez alors fournir ce fichier .zip à l'OEM pour qu'il puisse l'inclure d
 ## Support technique
 
 
-Si vous avez des questions sur la génération de packages de préinstallation, envoyez un e-mail à l’adresse <partnerops@microsoft.com>.
+Si vous avez des questions sur la génération de packages de préinstallation, envoyez un e-mail à l'adresse <partnerops@microsoft.com>.
 
  
 
@@ -45,6 +46,6 @@ Si vous avez des questions sur la génération de packages de préinstallation, 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

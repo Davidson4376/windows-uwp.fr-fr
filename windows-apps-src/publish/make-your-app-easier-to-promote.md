@@ -1,5 +1,6 @@
 ---
-Description: Faites en sorte que votre application soit remarquée ! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention.
+author: jnHs
+Description: Faites en sorte que votre application soit remarquée ! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention.
 title: Faciliter la promotion de votre application
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ---
@@ -43,6 +44,6 @@ Le fait de suivre ces recommandations permettra également à d’autres personn
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

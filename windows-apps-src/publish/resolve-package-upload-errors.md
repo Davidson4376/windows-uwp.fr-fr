@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Si vous rencontrez des erreurs de chargement des packages d’application au cours du processus de soumission d’application, vous devez les corriger avant de soumettre votre application au Windows Store.
 title: Résolution des erreurs de chargement de package
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
@@ -36,6 +37,6 @@ Sachez en outre que, si votre soumission comprend plusieurs XAP Windows Phone 8
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

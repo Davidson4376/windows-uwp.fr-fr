@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Vous pouvez faire la promotion croisée de votre application avec des applications publiées par d’autres développeurs. Nous appelons cette fonctionnalité « annonces de la communauté ».
 title: À propos des annonces de la communauté
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
@@ -6,7 +7,7 @@ ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 
 # À propos des annonces de la communauté
 
-Si votre application utilise **AdMediatorControl** ou **AdControl** pour afficher des bannières publicitaires, vous pouvez faire la promotion croisée et gratuite de votre application avec des applications du Windows Store créées par d’autres développeurs. Nous appelons cette fonctionnalité *annonces de la communauté*.  
+Si votre application utilise **AdMediatorControl** ou **AdControl** pour afficher des bannières publicitaires, vous pouvez faire la promotion croisée et gratuite de votre application avec des applications du Windows Store créées par d’autres développeurs. Nous appelons cette fonctionnalité *annonces de la communauté*.  
 
 Voici comment fonctionne ce programme :
 
@@ -21,7 +22,7 @@ Voici comment fonctionne ce programme :
 
 Suivez les étapes ci-dessous pour participer aux annonces de la communauté :
 
-1. Accédez à la page **Monétisation** & gt ; **Monétiser avec des publicités** dans le tableau de bord du Centre de développement Windows.
+1. Accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** dans le tableau de bord du Centre de développement Windows.
 2. Dans la section **Annonces de la communauté**, cochez la case **Afficher des annonces de la communauté dans mon application**.
    > **Remarque** Une fois que vous avez coché ou décoché cette case, il n’est pas nécessaire de republier l’application pour que les modifications prennent effet.
 
@@ -34,6 +35,6 @@ Suivez les étapes ci-dessous pour participer aux annonces de la communauté :
 * [Créer une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: En plus de créer une campagne de publicité pour votre application qui s’exécute dans des applications Windows, vous pouvez également promouvoir votre application à l’aide d’autres canaux.
 title: Créer une campagne personnalisée de promotion d’applications
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
@@ -40,7 +41,7 @@ Lorsque ses abonnés sur Facebook et Twitter cliquent sur l’URL, Microsoft sui
 
 Une *conversion* est une installation d’application qui fait suite au clic d’un client sur la page de votre application dans le Windows Store à partir d’une URL qui a fait l’objet d’une promotion via une campagne personnalisée. Diverses conditions sont requises pour qu’une conversion figure dans le [rapport Canaux et conversions](channels-and-conversions-report.md) sur le tableau de bord du Centre de développement, et pour qu’elle [récupère par programme de l’ID de campagne](#programmatically).
 
-Pour figurer comme une conversion dans le [rapport Canaux et conversions](channels-and-conversions-report.md), les conditions suivantes doivent être réunies :
+Pour figurer comme une conversion dans le [rapport Canaux et conversions](channels-and-conversions-report.md), les conditions suivantes doivent être réunies :
 
 -   Un client disposant d’un compte Microsoft reconnu clique sur une URL d’application contenant un ID de campagne personnalisée, et est redirigé vers la page de l’application dans le Windows Store.
 -   Le même client (identifié par le même compte Microsoft) installe l’application dans les 24 heures suivant le premier clic sur l’URL du Windows Store correspondant à l’ID de la campagne personnalisée. Cette action est éligible en tant que conversion, même si le client installe l’application sur un ordinateur ou appareil autre que celui à partir duquel il a cliqué sur l’URL du Windows Store correspondant à l’ID de la campagne personnalisée.
@@ -64,8 +65,8 @@ Pour créer une URL de page du Windows Store pour votre application avec un ID d
         > **Remarque** Les URL au format HTTP permettent d’accéder au Windows Store à l’aide d’un navigateur sur les ordinateurs et tablettes exécutant Windows 7 et versions ultérieures, et les téléphones Windows Phone 8 et versions ultérieures.
     - Utilisez le format de protocole si vous promouvez votre application à partir d’autres applications Windows s’exécutant sur un appareil ou un ordinateur sur lequel l’application Windows Store est installée, et souhaitez que les clients accèdent à la page de votre application dans l’application Windows Store. Cette URL est au format **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**. Par exemple, l’URL de protocole pour Skype est `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`.
 3.  Ajouter la chaîne suivante à la fin de l’URL de votre application :
-    -   Pour une URL au format HTTP, ajoutez **`?cid=*my custom campaign ID*`**. Par exemple, si Skype introduisait un ID de campagne avec la valeur **custom\_campaign**, la nouvelle URL HTTP incluant l’ID de campagne serait : `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`.
-    -   Pour une URL au format de protocole, ajoutez **`&cid=*my custom campaign ID*`**. Par exemple, si Skype introduisait un ID de campagne avec la valeur **custom\_campaign**, la nouvelle URL de protocole incluant l’ID de campagne serait : `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`
+    -   Pour une URL au format HTTP, ajoutez **`?cid=*my custom campaign ID*`**. Par exemple, si Skype introduisait un ID de campagne avec la valeur **custom\_campaign**, la nouvelle URL HTTP incluant l’ID de campagne serait : `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`.
+    -   Pour une URL au format de protocole, ajoutez **`&cid=*my custom campaign ID*`**. Par exemple, si Skype introduisait un ID de campagne avec la valeur **custom\_campaign**, la nouvelle URL de protocole incluant l’ID de campagne serait : `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`
 
 ## Récupérer par programme l’ID de campagne personnalisée pour une application
 
@@ -82,7 +83,7 @@ L’exemple suivant montre comment utiliser la méthode [**GetAppPurchaseCampaig
 string campaignId = await CurrentApp.GetAppPurchaseCampaignIdAsync();
 ```
 
-``` ManagedCPlusPlus
+``` cpp
 HString campaignId;
 HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf());
 ```
@@ -129,6 +130,6 @@ Avant de promouvoir une URL de campagne personnalisée, nous vous recommandons d
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

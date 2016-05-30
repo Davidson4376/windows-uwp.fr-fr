@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Le Windows Store offre la facturation de l’opérateur mobile comme mode de paiement des opérateurs mobiles qui prennent en charge cette fonctionnalité.
 title: Facturation de l’opérateur mobile
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
@@ -43,7 +44,7 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Australie            | Telstra                                                            |
 | Autriche              | A1 Telekom, T-Mobile                                               |
 | Bahreïn              | Zain, VIVA                                                         |
-| Belgique              | BASE, Mobistar                                                     |
+| Belgique              | BASE, Mobistar, Proximus                                                     |
 | Brésil               | Claro                                                              |
 | Bulgarie             | Telenor                                                            |
 | Canada               | Fido, Rogers, Telus                                                |
@@ -64,7 +65,7 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Hongrie              | Telenor, T-Mobile                                                  |
 | Inde                | Idea                                                               |
 | Indonésie            | Indosat, Telkomsel, XL Axiata                                |
-| Irlande              | O2, Vodafone                                                       |
+| Irlande              | O2, Vodafone, Three                                                      |
 | Italie                | Telecom Italia, Vodafone, Wind, 3 Italie                           |
 | Jordanie               | Zain, Umniah                                                       |
 | Kenya                | Safaricom                                                          |
@@ -82,7 +83,7 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Pologne               | T-Mobile, Orange, Polkomtel (Plus)                                 |
 | Porto Rico          | Claro                                                              |
 | Roumanie              | Orange, Vodafone                                                   |
-| Russie               | Beeline                                                            |
+| Russie               | Beeline, MTS                                                          |
 | Arabie saoudite         | Zain                                                               |
 | Singapour            | M1, SingTel, StarHub                                               |
 | Slovaquie             | T-Mobile                                                           |
@@ -94,7 +95,7 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Thaïlande             | DTAC                                                               |
 | Émirats arabes unis | Etisalat, Du                                                       |
 | Royaume-Uni       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
-| États-Unis        | AT&T, Sprint, T-Mobile, Verizon                                    |
+| États-Unis        | AT&amp;T, Sprint, T-Mobile, Verizon                                    |
 | Vietnam              | Viettel, Vietnamobile, Vinaphone, Mobifone                         |
 
  
@@ -110,6 +111,6 @@ Cette liste sera régulièrement mise à jour au fur et à mesure que nous déve
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

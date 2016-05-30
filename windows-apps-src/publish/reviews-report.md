@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Le rapport Avis disponible dans le tableau de bord du Centre de développement Windows vous permet de consulter les commentaires que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store.
 title: Rapport Avis
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
@@ -35,17 +36,17 @@ Dans la zone supérieure de la page, vous pouvez développer l’option **Appliq
 
 -   **Évaluation** : les évaluations Toutes les étoiles sont contrôlées par défaut, mais vous pouvez choisir une ou plusieurs évaluations spécifiques (entre 1 et 5 étoiles) si vous voulez ne visualiser que les avis associés à une évaluation donnée.
 -   **Date** : la valeur par défaut de ce filtre est **30 derniers jours**, mais vous pouvez étendre cette période aux **12 derniers mois**.
--   **Contenu d’avis** : par défaut, ce filtre est défini sur la valeur **Tous**, qui demande d’inclure les évaluations ne comportant aucun avis. Vous pouvez sélectionner l'option **Évaluations avec avis** pour ne visualiser que les évaluations qui comportent un avis.
--   **Système d’exploitation cible** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un système d'exploitation ciblé spécifique pour ne visualiser que les évaluations émanant de clients qui utilisent votre ou vos package(s) sur ce système d'exploitation.
--   **Réponses** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis pour lesquels vous avez [répondu aux clients](respond-to-customer-reviews.md), ou uniquement ceux auxquels vous n'avez pas encore répondu.
--   **Mises à jour** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis qui ont été mis à jour par le client depuis que vous avez [répondu à ces avis](respond-to-customer-reviews.md), ou uniquement ceux qui n'ont pas encore été mis à jour par le client.
--   **Marché** : la valeur par défaut de ce filtre est **Tous les marchés**. Vous pouvez choisir un marché spécifique si vous ne souhaitez visualiser que les avis de clients appartenant à ce marché.
+-   **Contenu d’avis** : par défaut, ce filtre est défini sur la valeur **Tous**, qui demande d’inclure les évaluations ne comportant aucun avis. Vous pouvez sélectionner l'option **Évaluations avec avis** pour ne visualiser que les évaluations qui comportent un avis.
+-   **Système d’exploitation cible** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un système d'exploitation ciblé spécifique pour ne visualiser que les évaluations émanant de clients qui utilisent votre ou vos package(s) sur ce système d'exploitation.
+-   **Réponses** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis pour lesquels vous avez [répondu aux clients](respond-to-customer-reviews.md), ou uniquement ceux auxquels vous n'avez pas encore répondu.
+-   **Mises à jour** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis qui ont été mis à jour par le client depuis que vous avez [répondu à ces avis](respond-to-customer-reviews.md), ou uniquement ceux qui n'ont pas encore été mis à jour par le client.
+-   **Marché** : la valeur par défaut de ce filtre est **Tous les marchés**. Vous pouvez choisir un marché spécifique si vous ne souhaitez visualiser que les avis de clients appartenant à ce marché.
 -   **Type d’appareil** : le filtre par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement les avis laissés par les clients utilisant celui-ci.
 -   **Version du package** : le filtre par défaut est **Tous les packages**. Vous pouvez choisir un package spécifique si vous souhaitez que cette page affiche uniquement les avis laissés par les clients possédant ce package lorsqu’ils on évalué l’application.
 
 Les informations figurant dans tous les graphiques répertoriés ci-après refléteront la période sélectionnée dans la section **Appliquer des filtres**, ainsi que d’autres filtres que vous avez choisis ici.
 
-> **Remarque** L’évaluation moyenne mise à disposition des clients du Windows Store tient compte du marché et du type d’appareil du client, ainsi que de l’évaluation de l’année passée. Dès lors, elle peut différer du contenu affiché dans le rapport. Pour afficher un aperçu de l’évaluation moyenne associée à un client donné dans le Windows Store, vous devez appliquer des filtres afin de sélectionner un marché et un type d’appareil spécifiques et définir la **Date** sur **12 derniers mois**.
+> **Remarque** L’évaluation moyenne mise à disposition des clients du Windows Store tient compte du marché et du type d’appareil du client, ainsi que de l’évaluation de l’année passée. Dès lors, elle peut différer du contenu affiché dans le rapport. Pour afficher un aperçu de l’évaluation moyenne associée à un client donné dans le Windows Store, vous devez appliquer des filtres afin de sélectionner un marché et un type d’appareil spécifiques et définir la **Date** sur **12 derniers mois**.
 
 ## Traduction des avis
 
@@ -78,6 +79,6 @@ Vous découvrirez ci-après certaines actions supplémentaires à envisager en f
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

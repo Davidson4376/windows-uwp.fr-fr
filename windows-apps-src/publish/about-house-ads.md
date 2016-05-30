@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Vous pouvez créer une publicité pour promouvoir l’une de vos applications dans vos autres applications, le tout gratuitement. C’est ce que nous appelons les « publicités maison ».
 title: À propos des publicités maison
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
@@ -7,7 +8,7 @@ ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 # À propos des publicités maison
 
 
-Vous pouvez créer une publicité pour promouvoir l’une de vos applications dans vos autres applications, le tout gratuitement. C’est ce que nous appelons les « *publicités maison* ».
+Vous pouvez créer une publicité pour promouvoir l’une de vos applications dans vos autres applications, le tout gratuitement. C’est ce que nous appelons les « *publicités maison* ».
 
 Pour en définir une, sélectionnez **Campagne gratuite** comme **Type de campagne** lorsque vous [créez une campagne de publicité](create-an-ad-campaign-for-your-app.md). Cette publicité apparaît alors automatiquement dans l’une de vos applications si celle-ci répond aux critères suivants :
 
@@ -31,6 +32,6 @@ Quand une publicité maison pour l’application A apparaît dans l’applicatio
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

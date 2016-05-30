@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Le rapport de médiation publicitaire vous permet de voir votre taux de remplissage effectif, ainsi que les taux de remplissage respectifs des réseaux publicitaires que vous utilisez.
 title: Rapport de médiation publicitaire
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
@@ -62,6 +63,6 @@ Le graphique **Erreurs par type** montre les erreurs rencontrées par chaque ré
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

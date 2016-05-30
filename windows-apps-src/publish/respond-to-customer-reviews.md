@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires.
 title: Répondre aux avis des clients
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
@@ -9,15 +10,15 @@ ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 
 Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vous pouvez également choisir d’afficher votre réponse dans le Windows Store pour qu’elle soit visible à tous les clients Windows 10.
 
-> **Remarque** Vous ne pourrez pas répondre directement aux avis rédigés par des clients ayant choisi de ne pas recevoir de réponses. Il est également impossible de laisser des réponses aux commentaires créés par des clients en dehors des États-Unis avec des appareils Windows Phone 8.
+> **Remarque** Vous ne pourrez pas répondre directement aux avis rédigés par des clients ayant choisi de ne pas recevoir de réponses. Il est également impossible de laisser des réponses aux commentaires créés par des clients en dehors des États-Unis avec des appareils Windows Phone 8.
 
-Pour visualiser les avis concernant votre application et y répondre, recherchez l’application appropriée dans votre tableau de bord du Centre de développement Windows. Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d'afficher le [Rapport sur les avis](reviews-report.md).
+Pour visualiser les avis concernant votre application et y répondre, recherchez l'application appropriée dans votre tableau de bord du Centre de développement Windows. Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d'afficher le [Rapport sur les avis](reviews-report.md).
 
 Lorsque vous répondez à un avis, le client reçoit un e-mail de Microsoft contenant votre réponse. Cet e-mail contient également l’adresse e-mail de support de votre application que votre client pourra utiliser par la suite pour vous contacter directement. Si vous n'avez pas ajouté d’adresse e-mail de support pour votre application au cours du processus de soumission, vous devrez en indiquer une pour pouvoir répondre.
 
 Par défaut, seul le client auquel vous répondez pourra lire votre réponse. Si vous voulez que votre réponse soit accessible aux autres clients, cochez la case **Rendre cette réponse publique**.
 
-> **Remarque** Les réponses publiques ne sont visibles que pour les clients qui utilisent des appareils Windows 10 pour accéder au Windows Store.
+> **Remarque** Les réponses publiques ne sont visibles que pour les clients qui utilisent des appareils Windows 10 pour accéder au Windows Store.
 
 En cochant la case **Rendre cette réponse publique**, vous pouvez afficher votre réponse dans la description Windows Store de votre application, juste au-dessous de l’avis du client. La réponse sera visible non pas uniquement au client qui a rédigé un avis, mais à l’ensemble des clients.
 
@@ -46,6 +47,6 @@ Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend
 Être à l'écoute de vos clients et leur fournir des réponses n'est qu'un début. Réagir à leurs commentaires est également un point essentiel. Si vous apportez des améliorations importantes, présentez-les dans le Windows Store en toute confiance en [créant une autre soumission](app-submissions.md) pour mettre à jour votre application.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion.
 title: Télécharger des rapports d’analyse
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
@@ -7,7 +8,7 @@ ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 # Télécharger des rapports d’analyse
 
 
-Vous pouvez télécharger des fichiers contenant vos données d'analyse afin d'examiner vos statistiques et informations hors connexion. Ces données sont fournies dans des fichiers TSV (valeurs séparées par une tabulation) exploitables dans différents programmes.
+Vous pouvez télécharger des fichiers contenant vos données d&#39;analyse afin d&#39;examiner vos statistiques et informations hors connexion. Ces données sont fournies dans des fichiers TSV (valeurs séparées par une tabulation) exploitables dans différents programmes.
 
 ## Pour télécharger un rapport spécifique
 
@@ -22,6 +23,6 @@ Vous pouvez télécharger des fichiers contenant vos données d'analyse afin d'e
 4.  Cliquez sur le bouton **Télécharger les rapports**, puis enregistrez ou ouvrez le fichier TSV.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

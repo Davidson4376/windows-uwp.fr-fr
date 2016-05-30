@@ -1,4 +1,5 @@
 ---
+author: jnHs
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Types de compte, emplacements et frais
 description: Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions.
@@ -6,11 +7,11 @@ description: Nous proposons des comptes de développeur individuels et d’entre
 
 # Types de compte, emplacements et frais
 
-Nous proposons deux types de comptes de développeur : les comptes pour les particuliers et les comptes pour les entreprises. Les comptes de développeur sont proposés dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Ces deux types de compte vous permettent de publier des applications dans le Windows Store et de participer à d’autres programmes pour développeurs Microsoft.
+Nous proposons deux types de comptes de développeur &#58; les comptes pour les particuliers et les comptes pour les entreprises. Les comptes de développeur sont proposés dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Ces deux types de compte vous permettent de publier des applications dans le Windows Store et de participer à d’autres programmes pour développeurs Microsoft.
 
 > **Remarque** Que vous créiez un compte pour une entreprise ou pour un particulier, vous ne pouvez associer qu’un seul compte Microsoft au compte de développeur. Quand vous vous inscrivez pour obtenir un compte, veillez à vous connecter à l’aide du compte Microsoft que vous voulez utiliser pour votre compte de développeur.
 
-Au [début du processus d’inscription](http://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise.
+Au [début du processus d’inscription](http://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les comptes personnels sont destinés aux développeurs indépendants. Les comptes d’entreprise s’adressent quant à eux aux organismes et aux entreprises. Les comptes d’entreprise vous permettent d’accéder à certaines fonctionnalités supplémentaires. Après l’ouverture d’un compte d’entreprise, nous mettons en place une série de vérifications afin de nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. Cette procédure de contrôle, qui peut prendre de quelques jours à quelques semaines, inclut un appel téléphonique à votre entreprise. Les deux types de compte vous permettent de soumettre des applications, des compléments et des services.
 
 > **Important** Choisissez bien le type de compte souhaité, car vous ne pourrez pas en changer par la suite.
 
@@ -18,7 +19,7 @@ Voici les principales différences entre les deux types de compte.
 
 | Compte individuel | Compte d’entreprise |
 |--------------------|-----------------|
-| <ul><li>Ne permet pas d’utiliser certaines fonctionnalités d’application</li><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> | <ul><li>Vérification requise via Symantec ou Dun & Bradstreet</li><li>Accès plus étendu aux fonctionnalités des applications</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> |
+| <ul><li>Ne permet pas d’utiliser certaines fonctionnalités d’application</li><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> | <ul><li>Vérification requise via Symantec ou Dun &amp; Bradstreet</li><li>Accès plus étendu aux fonctionnalités des applications</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> |
 
 > **Important** Si vous décidez de créer un compte d’entreprise, veillez à étudier nos [recommandations pour les comptes d’entreprise](opening-a-developer-account.md#additional-guidelines-for-company-accounts).
 
@@ -34,7 +35,7 @@ Vous devez notamment disposer d’un compte d’entreprise pour publier des appl
 
 Le fait de posséder un compte d’entreprise ne garantit pas que les applications qui utilisent ces fonctionnalités obtiennent la certification. Ces fonctionnalités sont destinées à des scénarios très spécifiques et la plupart des applications ne doivent pas les déclarer. Pour plus d’informations, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/Mt270968).
 
-Pour les comptes d’entreprise, nous utilisons Symantec ou Dun & Bradstreet pour vérifier que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. Ce processus peut durer de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas soumettre d’application à partir d’un compte d’entreprise tant qu’il n’a pas été vérifié. Toutefois, en attendant, vous pouvez [réserver des noms d’application](https://msdn.microsoft.com/library/windows/apps/JJ657967), accéder au tableau de bord du Centre de développement Windows et continuer à générer et à tester votre application.
+Pour les comptes d’entreprise, nous utilisons Symantec ou Dun &amp; Bradstreet pour vérifier que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. Ce processus peut durer de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas soumettre d’application à partir d’un compte d’entreprise tant qu’il n’a pas été vérifié. Toutefois, en attendant, vous pouvez [réserver des noms d’application](https://msdn.microsoft.com/library/windows/apps/JJ657967), accéder au tableau de bord du Centre de développement Windows et continuer à générer et à tester votre application.
 
 ## Compte de développeur et marchés sur lesquels soumettre vos applications
 
@@ -120,7 +121,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Grèce | 14 EUR | 75 EUR | EUR payé à la banque | Oui | 
 |  Groenland | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Grenade | 19 USD | 99 USD | Aucun revenu | Non | 
-|  Guatemala | 19 USD | 99 USD | GTQ payé à la banque | Non | 
+|  Guatemala | 145 GTQ | 750 GTQ | GTQ payé à la banque | Non | 
 |  Guinée | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Guinée-Bissau | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Guyana | 19 USD | 99 USD | Aucun revenu | Non | 
@@ -139,7 +140,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Japon | 1847 JPY | 9800 JPY | JPY payé à la banque | Oui | 
 |  Jordanie | 13 JOD | 70 JOD | JOD payé à la banque | Non | 
 |  Kazakhstan | 2897 KZT | 15038 KZT | KTZ payé à la banque | Non | 
-|  Kenya | 19 USD | 99 USD | KES payé à la banque | Non | 
+|  Kenya | 1900 KES | 9999 KES | KES payé à la banque | Non | 
 |  Kiribati | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Corée | 21216 KRW | 108000 KRW | USD payé à la banque | Non | 
 |  Koweït | 5 KWD | 28 KWD | KWD payé à la banque | Non | 
@@ -179,7 +180,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Nouvelle-Zélande | 24 NZD | 140 NZD | NZD payé à la banque | Oui | 
 |  Nicaragua | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Niger | 19 USD | 99 USD | XOF payé à la banque | Non | 
-|  Nigeria | 19 USD | 99 USD | NGN payé à la banque | Non | 
+|  Nigeria | 3700 NGN | 19500 NGN | NGN payé à la banque | Non | 
 |  Norvège | 113 NOK | 580 NOK | NOK payé à la banque | Oui | 
 |  Oman | 7 OMR | 40 OMR | OMR payé à la banque | Non | 
 |  Pakistan | 1959 PKR | 9000 PKR | PKR payé à la banque | Non | 
@@ -192,7 +193,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Pologne | 59 PLN | 280 PLN | PLN payé à la banque | Oui | 
 |  Portugal | 14 EUR | 75 EUR | EUR payé à la banque | Oui | 
 |  Qatar | 69 QAR | 360 QAR | QAR payé à la banque | Non | 
-|  Roumanie | 63 RON | 360 RON | USD payé à la banque | Non | 
+|  Roumanie | 14 EUR | 75 EUR | USD payé à la banque | Non | 
 |  Russie | 626 RUB | 3000 RUB | RUB payé à la banque | Oui* | 
 |  Rwanda | 19 USD | 99 USD | RWF payé à la banque | Non | 
 |  Saint Kitts et Nevis | 19 USD | 99 USD | Aucun revenu | Non | 
@@ -254,6 +255,6 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: La page Résumé du paiement affiche le détail des sommes rapportées par vos applications et produits in-app. Elle vous permet également de connaître les délais et les montants de vos paiements.
 title: Résumé du paiement
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
@@ -9,9 +10,9 @@ ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 
 La page **Résumé du paiement** affiche le détail des sommes rapportées par vos applications et produits in-app. Elle vous permet également de connaître les délais et les montants de vos paiements.
 
-Si vous utilisez Microsoft Advertising pour générer des revenus, à partir du 1er avril 2016, la page **Résumé du paiement** vous donnera aussi des informations de paiement concernant vos revenus publicitaires. Pour plus d’informations sur les stratégies de paiement de publicité, voir [Stratégies de paiement pubCenter](http://go.microsoft.com/fwlink/p/?LinkID=624469).
+Si vous utilisez Microsoft Advertising pour générer des revenus, à partir du 1er avril 2016, la page **Résumé du paiement** vous donnera aussi des informations de paiement concernant vos revenus publicitaires. Nous allons montrer l’application dans laquelle ces revenus ont été gagnés ou « non mappé » pour les unités publicitaires utilisées dans plusieurs applications ou qui ne peuvent pas être mappées à une application spécifique. Pour plus d’informations sur les stratégies de paiement de publicité, voir [Stratégies de paiement pubCenter](http://go.microsoft.com/fwlink/p/?LinkID=624469).
 
-Si vous vendez des produits dans Azure Marketplace, la page **Résumé du paiement** vous présente également des informations sur les paiements qui vous ont été versés depuis le 1er novembre 2015. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](http://go.microsoft.com/fwlink/p/?LinkId=722436) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). Des détails supplémentaires concernant la visualisation des informations de paiement Azure Marketplace antérieures sont disponibles [ici](http://go.microsoft.com/fwlink/p/?LinkID=722439).
+Si vous vendez des produits dans Azure Marketplace, la page **Résumé du paiement** vous présente également des informations sur les paiements qui vous ont été versés depuis le 1er novembre 2015. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](http://go.microsoft.com/fwlink/p/?LinkId=722436) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). Des détails supplémentaires concernant la visualisation des informations de paiement Azure Marketplace antérieures sont disponibles [ici](http://go.microsoft.com/fwlink/p/?LinkID=722439).
 
 > **Remarque** Pour que vous soyez autorisé à percevoir des revenus, votre application doit atteindre le seuil de paiement applicable. Si vos revenus sont inférieurs au seuil fixé, le montant restera dans la catégorie Réservé jusqu’à ce que ce seuil soit atteint. Pour en savoir plus, voir le [Contrat du développeur d’applications](https://msdn.microsoft.com/library/windows/apps/hh694058).
 >
@@ -44,7 +45,7 @@ Au-dessous de la section **Montant cumulé des paiements**, vous pouvez visualis
 
 En haut de chaque relevé figure le montant total de votre paiement mensuel. La section **Paiements émis**, située juste en dessous, résume le mode de calcul utilisé pour déterminer le montant du paiement.
 
-Au-dessous, dans la section **Répartition des revenus**, vous pouvez voir en détail le montant des revenus générés par marché, par source de revenus (par exemple, Windows Phone Store, Windows Store 8, Windows Store, etc.) et par application. Vous bénéficiez également d’informations sur les [ajustements](#proceeds-by-app-and-adjustments) effectués, comme la date, le montant et le motif de ces modifications.
+Au-dessous, dans la section **Répartition des revenus**, vous pouvez voir en détail le montant des revenus générés par marché, par source de revenus (par exemple, Windows Phone Store, Windows Store 8, Windows Store, etc.) et par application. Vous bénéficiez également d’informations sur les [ajustements](#proceeds-by-app-and-adjustments) effectués, comme la date, le montant et le motif de ces modifications.
 
 Notez que les sections mentionnées ci-dessus affichent uniquement des informations sur votre revenu (et sur les ajustements) compte tenu des ventes recensées pour votre application. Si vous avez généré des revenus grâce à la publicité, une autre section Microsoft Advertising regroupera les détails relatifs aux paiements et aux conversions de devises.
 
@@ -68,7 +69,7 @@ Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez
 
 | Nom du champ              | Description                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Source de revenu          | Votre source de revenu, en fonction de la transaction (par exemple, Windows Phone Store, Windows Store 8, Windows Store, etc.)  |
+| Source de revenu          | Votre source de revenu, en fonction de la transaction (par exemple, Windows Store, Windows Phone Store, Windows Store 8, Microsoft Advertising, etc.) |
 | ID de la transaction          | Identifiant unique de la transaction                                                                                                            |
 | Date et heure de la transaction   | Date et heure d'exécution de la transaction (UTC)                                                                                         |
 | ID de produit parent       | Identificateur unique du produit parent. Notez également que si la transaction ne présente aucun produit parent, l'ID du produit parent est l'ID du produit. |
@@ -76,8 +77,9 @@ Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez
 | Nom du produit parent     | Nom du produit parent. Notez également que si la transaction ne présente aucun produit parent, le nom du produit parent est identique au nom du produit.   |
 | Nom du produit            | Désignation du produit                                                                                                                      |
 | Type de produit            | Type du produit (par exemple, Application, Produit in-app, Jeu, etc.)                                                                                        |
+| Quantité                | Lorsque la Source de revenu est Windows Store pour Entreprises, la Quantité correspond au nombre de licences achetées. Pour toutes les autres Sources de revenu, la Quantité sera toujours 1. Remarque : même si une transaction unique est scindée en deux articles en raison du recours à deux méthodes de paiement différentes, chaque article affiche une Quantité égale à 1.                                                                     |
 | Type de transaction        | Type de la transaction (par exemple, achat, remboursement, contrepassation, rétrofacturation, etc.)                                                               |
-| Moyen de paiement          | Instrument de paiement client utilisé pour la transaction (par exemple, carte de crédit, opérateur mobile, etc.)                                        |
+| Moyen de paiement          | Instrument de paiement client utilisé pour la transaction (par exemple, carte, facturation de l’opérateur mobile, PayPal, etc.)                                        |
 | Pays / région        | Pays/région d'exécution de la transaction                                                                                            |
 | Fournisseur / vendeur local | Fournisseur/vendeur local de l'enregistrement                                                                                                          |
 | Devise de la transaction    | Devise utilisée pour la transaction                                                                                                              |
@@ -105,6 +107,6 @@ Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

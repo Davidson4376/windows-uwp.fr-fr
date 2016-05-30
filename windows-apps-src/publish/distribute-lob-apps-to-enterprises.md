@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Store de façon étendue.
 title: Distribuer des applications métier aux entreprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
@@ -7,16 +8,16 @@ ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 # Distribuer des applications métier aux entreprises
 
 
-Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Store de façon étendue.
+Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Windows Store de façon étendue.
 
-> **Important** Actuellement, seules les applications gratuites peuvent être distribuées exclusivement aux entreprises par le biais du Windows Store pour Entreprises. Si vous soumettez une application payante en tant qu’application métier, elle sera mise à disposition de l’entreprise ultérieurement, lorsque l’acquisition d’applications payantes en volume sera prise en charge. 
+> **Important** Actuellement, seules les applications gratuites peuvent être distribuées exclusivement aux entreprises par le biais du Windows Store pour Entreprises. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise à ce stade. 
 
-## Configuration de l'association d'entreprise
+## Configuration de l’association d’entreprise
 
 
 Lorsque vous envisagez de publier des applications métier exclusivement à l’attention d’une entreprise, la première étape consiste à établir l’association entre votre compte et le magasin privé de l’entreprise.
 
-> **Important** Ce processus d’association doit être initié par l’entreprise. Pour plus d’informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846).
+> **Important** Ce processus d’association doit être initié par l’entreprise et doit être envoyé à l’adresse de messagerie figurant dans les **Coordonnées** de votre compte. Pour plus d’informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846).
 
 Lorsqu'une entreprise vous invite à publier des applications destinées à son utilisation exclusive, vous recevez un e-mail contenant un lien pour confirmer l'association. Vous pouvez également confirmer ces associations dans la section **Associations d'entreprise**, sous **Paramètres de compte**.
 
@@ -74,6 +75,6 @@ Pour plus d'informations, voir [Charger la version test d'applications métier d
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
 title: Recommandations en matière de marketing adapté aux applications du Windows Store
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
@@ -33,9 +34,9 @@ Pour promouvoir votre application, vous pouvez afficher son aspect lors de son e
 
 *Marques Microsoft* désigne le *badge Microsoft* et la *vignette du Windows Store* décrits dans la page [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236). Pour utiliser ces badges, vous devez :
 
--   avoir votre application ou d’autres contenus disponibles dans le Windows Store, ou faire partie du [programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463) ;
+-   avoir votre application ou d’autres contenus disponibles dans le Windows Store, ou faire partie du [programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463) ;
 
--   si vous êtes inscrit au Centre de développement, vous conformer à la section [Licence d’utilisation de la marque Microsoft](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark) du Contrat du développeur de l’application ;
+-   si vous êtes inscrit au Centre de développement, vous conformer à la section [Licence d’utilisation de la marque Microsoft](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark) du Contrat du développeur de l’application ;
 
 -   si vous n’êtes pas inscrit au Centre de développement Windows, Microsoft vous accorde une licence gratuite internationale, non exclusive et non transférable pour l’utilisation des badges, uniquement conformément aux recommandations en matière de marketing adapté aux applications du Windows Store. Microsoft peut modifier ces recommandations, mais si tel est le cas, Microsoft utilisera tous les moyens raisonnables afin de vous rediriger vers les nouvelles URL auxquelles ces spécifications sont publiées. Microsoft se réserve tous les droits non expressément accordés ici.
 
@@ -52,6 +53,6 @@ Microsoft est l’unique propriétaire des Marques Microsoft et de son actif inc
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

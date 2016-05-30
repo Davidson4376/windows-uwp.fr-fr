@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description pour ces différents systèmes.
 title: Création de descriptions spécifiques à la plateforme
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
@@ -44,6 +45,6 @@ Si vous créez une description spécifique de la plateforme, puis décidez d’a
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

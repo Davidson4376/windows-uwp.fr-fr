@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Suivez ces instructions pour préparer les packages de votre application et les envoyer au Windows Store.
 title: Exigences relatives au package de l’application
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
@@ -21,7 +22,7 @@ Si vous utilisez Visual Studio comme environnement de développement, vous dispo
 
 Quand vous créez votre package dans Visual Studio, vérifiez que vous êtes connecté au même compte Microsoft que celui associé à votre compte de développeur. Les informations contenues dans certaines parties du manifeste du package font référence à votre compte. Ces informations sont automatiquement détectées et ajoutées.
 
-Quand vous générez les packages de votre application, Visual Studio peut créer un fichier .appx ou .appxupload (ou encore un fichier .xap pour Windows Phone 8.1 et versions antérieures). Pour les applications qui ciblent Windows 10, chargez toujours le fichier .appxupload dans la page [Packages](upload-app-packages.md). Pour plus d’informations sur l’empaquetage d’applications pour UWP pour le Windows Store, consultez [Empaquetage d’applications Windows universelles pour Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+Quand vous générez les packages de votre application, Visual Studio peut créer un fichier .appx ou .appxupload (ou encore un fichier .xap pour Windows Phone 8.1 et versions antérieures). Pour les applications qui ciblent Windows 10, chargez toujours le fichier .appxupload dans la page [Packages](upload-app-packages.md). Pour plus d’informations sur l’empaquetage d’applications pour UWP pour le Windows Store, consultez [Empaquetage d’applications Windows universelles pour Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
 
 Il n’est pas nécessaire que les packages de votre application soient signés avec un certificat provenant d’une autorité de certification approuvée.
 
@@ -79,6 +80,6 @@ Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

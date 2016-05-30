@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Le Windows Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
 title: Numérotation des versions de packages
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
@@ -9,12 +10,12 @@ ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 
 Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément **Package/Identity** dans le manifeste de l’application). Le Windows Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
 
-> **Remarque** Cette rubrique fait référence aux « packages ». Toutefois, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers .appx et .appxbundle.
+> **Remarque** Cette rubrique fait référence aux « packages ». Toutefois, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers .appx et .appxbundle.
 
 ## Numérotation des versions pour les packages Windows 10
 
 
-Le numéro de version de tous vos packages Windows 10 doit toujours être supérieur à ceux des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez (ou avez publié) pour la même application. (Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
+Le numéro de version de tous vos packages Windows 10 doit toujours être supérieur à ceux des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez (ou avez publié) pour la même application. (Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
 
 > **Remarque** La dernière partie (quatrième) du numéro de version est réservée à l’utilisation du Windows Store et doit demeurer 0.
 
@@ -22,7 +23,7 @@ Lors du choix d’un package Windows 10 à partir de votre soumission publiée,
 
 Vous pouvez même fournir plusieurs packages Windows 10 avec le même numéro de version. Toutefois, les packages qui partagent un même numéro de version ne peuvent pas avoir la même architecture, car l’identité complète que le Windows Store utilise pour chaque package doit être unique. Pour plus d’informations, voir [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441).
 
-Si vous fournissez plusieurs packages Windows 10 qui utilisent le même numéro de version, l’architecture (dans l’ordre x 64, x 86, ARM, neutre) permet de déterminer celui qui est de niveau supérieur lors du choix du package à fournir à un appareil donné. Lors du classement des ensembles d’applications qui utilisent la même version, le niveau d’architecture le plus élevé dans l’ensemble est pris en considération : un ensemble d’applications contenant un package x64 aura un classement plus élevé qu’un ensemble contenant uniquement un package x86.
+Si vous fournissez plusieurs packages Windows 10 qui utilisent le même numéro de version, l’architecture (dans l’ordre x64, x86, ARM, neutre) permet de déterminer celui qui est de niveau supérieur lors du choix du package à fournir à un appareil donné. Lors du classement des ensembles d’applications qui utilisent la même version, le niveau d’architecture le plus élevé dans l’ensemble est pris en considération : un ensemble d’applications contenant un package x64 aura un classement plus élevé qu’un ensemble contenant uniquement un package x86.
 
 Cela vous offre une grande souplesse pour faire évoluer votre application au fil du temps. Vous pouvez charger et soumettre de nouveaux packages utilisant des numéros de version inférieurs pour prendre en charge des appareils abordables qui ne sont pas encore pris en charge, ajouter des packages de version supérieure comprenant des dépendances plus strictes pour tirer parti de certaines fonctionnalités matérielles ou de système d’exploitation, ou ajouter des packages de version supérieure faisant office de mises à jour pour tout ou partie de vos clients existants.
 
@@ -38,7 +39,7 @@ Vous pouvez utiliser les règles de contrôle de version du package pour amener 
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1          | - Version de package : 1.1.10.0 <br> - Famille d’appareils : Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.1.0.0 <br> - Famille d’appareils : Windows.Mobile, minVersion 10.0.10240.0     | - Les appareils sous Windows 10 Desktop build 10.0.10240.0 et supérieure obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows 10 Mobile build 10.0.10240.0 et supérieure obtiendront le package 1.1.0.0 <br> - Les autres familles d’appareils ne peuvent acheter et installer l’application |
 | 2          | - Version de package : 1.1.10.0 <br> - Famille d’appareils : Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.1.0.0 <br> - Famille d’appareils : Windows.Mobile, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.0.0.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10240.0    | - Les appareils sous Windows 10 Desktop build 10.0.10240.0 et supérieure obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows 10 Mobile build 10.0.10240.0 et supérieure obtiendront le package 1.1.0.0 <br> - Les autres familles d’appareils (non de bureau, non mobiles) obtiendront le package 1.0.0.0 quand elles seront introduites <br> - Les appareils mobiles et de bureau sur lesquels l’application est déjà installée n’obtiendront aucune mise à jour (car ils ont déjà la meilleure version disponible : les versions 1.1.10.0 et 1.1.0.0 sont supérieures à la version 1.0.0.0) |
-| 3          | - Version de package : 1.1.10.0 <br> - Famille d’appareils : Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.1.5.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10250.0 <br> <br> - Version de package : 1.0.0.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10240.0    | - Les appareils sous Windows 10 Desktop build 10.0.10240.0 et supérieure obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows 10 Mobile build 10.0.10250.0 et supérieure obtiendront le package 1.1.5.0 <br> - Les appareils sous Windows 10 Mobile build >=10.0.10240.0 et < 10.010250.0 obtiendront le package 1.1.0.0 
+| 3          | - Version de package : 1.1.10.0 <br> - Famille d’appareils : Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.1.5.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10250.0 <br> <br> - Version de package : 1.0.0.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10240.0    | - Les appareils sous Windows 10 Desktop build 10.0.10240.0 et supérieure obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows 10 Mobile build 10.0.10250.0 et supérieure obtiendront le package 1.1.5.0 <br> - Les appareils sous Windows 10 Mobile build &gt;=10.0.10240.0 et &lt; 10.010250.0 obtiendront le package 1.1.0.0 
 | 4          | - Version de package : 2.0.0.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10240.0   | - Tous les clients sur toutes les familles d’appareils sous Windows 10 build v10.0.10240.0 et supérieure obtiendront le package 2.0.0.0 | 
 
 > **Remarque** Dans tous les cas, les appareils clients recevront le package associé au numéro de version le plus élevé possible pour lequel ils sont éligibles. Par exemple, dans la troisième soumission ci-dessus, tous les appareils de bureau recevront le package v1.1.10.0, même si leur système d’exploitation est de la version 10.0.10250.0 ou supérieure, et pourraient donc également accepter le package v1.1.5.0. Étant donné que le package 1.1.10.0 est celui dont le numéro de version est le plus élevé à leur disposition, ils obtiendront ce package.
@@ -59,7 +60,7 @@ Pour les packages .appx qui ciblent Windows 8 et Windows 8.1, la même règle s�
 
 De plus, le numéro de version des packages Windows 8.1 doit toujours être supérieur aux numéros de version de vos packages Windows 8 pour la même application. Autrement dit, le numéro de version d’un package Windows 8 que vous soumettez doit être inférieur au numéro de version de tout package Windows 8.1 que vous avez soumis pour la même application.
 
-> **Remarque** Si vous avez également des packages Windows 10, leur numéro de version doit être supérieur aux numéros de version des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez ou avez publiés. Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
+> **Remarque** Si vous avez également des packages Windows 10, leur numéro de version doit être supérieur aux numéros de version des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez ou avez publiés. Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
 
 Voici quelques exemples de ce qui se passe dans les différents scénarios de mise à jour de numéro de version pour Windows 8 et Windows 8.1.
 
@@ -76,6 +77,6 @@ Voici quelques exemples de ce qui se passe dans les différents scénarios de mi
 > **Remarque** À la différence des packages .appx, les numéros de version dans les packages .xap ne sont pas pris en compte lors de la détermination du package à fournir à un client donné. Pour mettre à jour un client d’un package .xap vers une version plus récente, veillez à supprimer l’ancien .xap dans la nouvelle soumission.
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 title: Rapport de publicité sur l’installation d’applications
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 
@@ -8,10 +9,10 @@ description:
 
 Il existe deux façons d’accéder à la page des **Rapports de publicité sur l’installation d’applications** dans le Centre de développement :
 
--   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Analyse** &gt; **Publicités d’installation d’application**.
--   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Monétisation** &gt; **Promouvoir votre application**, puis sur le lien **Rapport** d’une campagne.
+-   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Analyse**&gt;**Publicités d’installation d’application**.
+-   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Monétisation**&gt;**Promouvoir votre application**, puis sur le lien **Rapport** d’une campagne.
 
-Vous accédez à deux sections : **Performance de l’annonce** et **Historique de facturation du compte**.
+Vous accédez à deux sections : **Performance de l’annonce** et **Historique de facturation du compte**.
 
 ## Performance de l’annonce
 
@@ -64,6 +65,6 @@ Ici, vous pouvez voir toutes les transactions associées à votre compte. Pour c
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

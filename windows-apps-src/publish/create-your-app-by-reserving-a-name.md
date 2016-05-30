@@ -1,20 +1,21 @@
 ---
-Description: Quand vous créez une application dans le tableau de bord du Centre de développement Windows, le nom de celle-ci doit être unique dans le Windows Store. Cette rubrique explique comment réserver des noms, et propose des suggestions pour choisir un nom de l’application attractif.
+author: jnHs
+Description: La première étape de création d’une application dans votre tableau de bord du Centre de développement Windows consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour choisir un nom exceptionnel pour votre application.
 title: Créer votre application en réservant un nom
+keywords:
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ---
 
 # Créer votre application en réservant un nom
 
 
-Quand vous créez une application dans le tableau de bord du Centre de développement Windows, le nom de celle-ci doit être unique dans le Windows Store. Cette rubrique explique comment réserver des noms, et propose des suggestions pour [choisir un nom de l’application attractif](#choosing-your-app-s-name).
+La première étape de création d’une application dans votre tableau de bord du Centre de développement Windows consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour [choisir un nom exceptionnel pour votre application](#choosing-your-app-s-name). Chaque nom réservé doit être unique à travers le Windows Store.
 
 > **Remarque** Si vous venez de créer une application Windows Phone et que vous n’avez pas encore réservé de nom pour celle-ci, vous pouvez toujours gérer et soumettre cette application. Toutefois, pour charger des packages .appx pour celle-ci, ou pour [voir les détails relatifs à l’identité de l’application](view-app-identity-details.md) propres à la création de packages .appx, vous devez réserver un nom unique en procédant de la manière décrite ci-dessous. Cela empêche également quiconque de réserver ce nom.
 
 Au moment de [charger les packages de votre application](upload-app-packages.md), vérifiez que la valeur [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) correspond au nom que vous avez réservé pour votre application dans le **Tableau de bord**. Si vous utilisez Microsoft Visual Studio pour créer le package de votre application, cet attribut est rempli automatiquement.
 
 ## Création de votre application en réservant un nouveau nom
-
 
 Pour créer une application dans le tableau de bord, vous devez tout d'abord réserver un nom, même si vous n'avez pas encore commencé à la générer. Nous vous recommandons de le faire aussi vite que possible, pour que personne d'autre ne puisse utiliser ce nom.
 
@@ -30,7 +31,6 @@ Une fois le nom réservé, vous disposez d'un an pour soumettre l'application. S
 
 ## Choix du nom de votre application
 
-
 Il est important de bien choisir le nom de votre application. Choisissez un nom qui suscitera l'intérêt de vos clients et qui les incitera à en savoir davantage. Vous trouverez ci-dessous quelques conseils pour choisir un nom d'application attractif.
 
 -   **Choisissez un nom court.** L'espace disponible pour afficher le nom de l'application étant souvent limité, nous vous suggérons d'utiliser le nom le plus court possible. Le nom de votre application peut comporter jusqu’à 256 caractères, mais les clients ne le verront pas toujours en entier s’il est trop long.
@@ -42,7 +42,6 @@ Il est important de bien choisir le nom de votre application. Choisissez un nom 
 -   **N’utilisez pas de noms de marque qui sont la propriété de tiers** Assurez-vous de disposer des droits d’utilisation du nom que vous réservez. Si quelqu’un d’autre a déposé le nom en tant que marque, il peut dénoncer une violation de propriété et vous ne pourrez pas continuer à utiliser ce nom. Si cela se produit après la publication de votre application, celle-ci sera retirée du Windows Store. Vous devez alors modifier le nom de votre application, ainsi que toutes les instances du nom figurant dans celle-ci et son contenu, avant de [soumettre l’application](app-submissions.md) à nouveau pour certification.
 
 ## Gérer des noms d’application supplémentaires
-
 
 Vous pouvez gérer les noms de vos applications sur la page **Gérer les noms d’application** dans la section **Gestion des applications** pour chaque application figurant dans le tableau de bord du Centre de développement Windows.
 
@@ -61,6 +60,6 @@ Pour plus d’informations, voir [Gestion des noms d’application](manage-app-n
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

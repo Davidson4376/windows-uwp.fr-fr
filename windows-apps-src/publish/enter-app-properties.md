@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: La page Propriétés de l’application du processus de soumission d’application vous permet de définir la catégorie de votre application, ainsi que les préférences matérielles ou d’autres déclarations.
 title: Entrer les propriétés d’une application
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
@@ -39,6 +40,6 @@ Les cases à cocher de cette section vous permettent d'indiquer les déclaration
 Pour plus d'informations, voir l'article [Déclarations d'application](app-declarations.md).
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

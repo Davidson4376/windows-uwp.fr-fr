@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: La section Description du processus de soumission d’application vous permet de définir le texte et les images qui seront visibles par les clients dans la description de votre application dans le Windows Store.
 title: Création des descriptions d’application
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
@@ -7,7 +8,7 @@ ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 # Création des descriptions d’application
 
 
-La section **Description** du [processus de soumission d’application](app-submissions.md) vous permet de définir le texte et les [images](app-screenshots-and-images.md) qui seront visibles par les clients dans la description de votre application dans le Windows Store.
+La section **Description** du [processus de soumission d’application](app-submissions.md) vous permet de définir le texte et les [images](app-screenshots-and-images.md) qui seront visibles par les clients dans la description de votre application dans le Windows Store.
 
 Bien que la plupart des champs de la **Description** soient facultatifs, nous vous conseillons de fournir plusieurs images et autant d’informations que possible afin de mettre en valeur le contenu. Dans la page **Description**, vous devez impérativement renseigner une description textuelle et au moins une [capture d’écran](app-screenshots-and-images.md).
 
@@ -24,6 +25,8 @@ Pour ajouter ou supprimer des langues de description, cliquez sur **Gérer les l
 Pour ajouter ou supprimer des langues qui ne figurent pas dans vos packages, cliquez sur **Gérer les langues supplémentaires** dans la section **Langues de description supplémentaires**. Cochez les cases pour les langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour**. Les langues que vous avez sélectionnées s’afficheront dans la section **Langues de description supplémentaires**. Pour supprimer une ou plusieurs de ces langues, cliquez sur **Supprimer** (ou cliquez sur **Gérer les langues supplémentaires** et décochez la case pour les langues que vous souhaitez supprimer).
 
 Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de présentation de la soumission.
+
+> **Remarque** Lors de la création d’une description dans une langue qui n’est pas prise en charge par vos packages, vous devez indiquer lequel de vos noms d’application réservés doit être affiché dans cette description, dans la mesure où il n’y a pas de package associé dans cette langue à partir duquel extraire le nom. Le nom que vous choisissez ici s’applique seulement à la description du Windows Store pour cette langue et n’a aucune répercussion sur le nom affiché lorsqu’un client installe l’application.
 
 Pour modifier une description, cliquez sur son nom dans la page de présentation de la soumission. Les sections de la page **Description** sont décrites ci-dessous.
 
@@ -77,7 +80,7 @@ Contrairement aux champs décrits ci-dessus, les champs de la section **Champs p
 
 ### Mots clés
 
-Les mots clés sont des mots uniques ou des phrases courtes que vos clients ne voient pas, mais qui permettent d’afficher votre application dans les résultats de recherche liés à ces mots clés. Vous pouvez inclure jusqu’à 8 mots clés de 45 caractères maximum chacun.
+Les mots clés sont des mots uniques ou des phrases courtes que vos clients ne voient pas, mais qui permettent d’afficher votre application dans les résultats de recherche liés à ces mots clés. Vous pouvez inclure jusqu’à 7 mots clés de 30 caractères maximum chacun.
 
 Si vous voulez ajouter des mots clés, pensez aux termes que vos clients sont susceptibles d’utiliser pour rechercher des applications comme la vôtre, en particulier si ces mots ne figurent pas dans le nom de votre application. Veillez à n’utiliser aucun mot clé non véritablement pertinent pour votre application.
 
@@ -111,9 +114,9 @@ Entrez l’URL de la page web où vos clients peuvent obtenir un support concern
 
 Si vous disposez d’une politique de confidentialité pour votre application, entrez son URL dans ce champ. Votre application doit respecter les lois et règles applicables et proposer une politique de confidentialité s’il y a lieu.
 
-**Important** Microsoft ne fournit aucune politique de confidentialité par défaut pour votre application. De même, votre application n’est couverte par aucune politique de confidentialité Microsoft. Pour déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [politiques du Windows Store](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_5_1).
+**Important** Microsoft ne fournit aucune politique de confidentialité par défaut pour votre application. De même, votre application n’est couverte par aucune politique de confidentialité Microsoft. Pour déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [politiques du Windows Store](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_5_1).
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

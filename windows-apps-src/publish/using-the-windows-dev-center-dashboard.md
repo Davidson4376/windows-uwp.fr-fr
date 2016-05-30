@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Le tableau de bord du Centre de développement Windows vous permet de gérer et de soumettre toutes vos applications pour les appareils Windows à partir d’un seul et même emplacement.
 title: Utilisation du tableau de bord du Centre de développement Windows
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
@@ -11,7 +12,7 @@ Le tableau de bord du Centre de développement Windows vous permet de gérer et 
 
 > **Remarque** Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour accéder au tableau de bord du Centre de développement Windows.
 
-Lorsque vous [créez une soumission pour votre application](app-submissions.md) (pour la première fois ou en tant que mise à jour), vous pouvez [charger des packages d’application](upload-app-packages.md) pour tout système d’exploitation pris en charge. Le Windows Store propose automatiquement aux clients le package qui fonctionne le mieux pour eux. Vous pouvez utiliser les mêmes [descriptions](create-app-descriptions.md) et [conceptions graphiques](app-screenshots-and-images.md) pour tous les systèmes d’exploitation que votre application prend en charge, ou [personnaliser la description pour des plateformes spécifiques](create-platform-specific-descriptions.md).
+Lorsque vous [créez une soumission pour votre application](app-submissions.md) (pour la première fois ou en tant que mise à jour), vous pouvez [charger des packages d’application](upload-app-packages.md) pour tout système d’exploitation pris en charge. Le Windows Store propose automatiquement aux clients le package qui fonctionne le mieux pour eux. Vous pouvez utiliser les mêmes [descriptions](create-app-descriptions.md) et [conceptions graphiques](app-screenshots-and-images.md) pour tous les systèmes d’exploitation que votre application prend en charge, ou [personnaliser la description pour des plateformes spécifiques](create-platform-specific-descriptions.md).
 
 Les produits in-app peuvent désormais être gérés indépendamment de la soumission de l’application. Vous disposez ainsi d’une plus grande souplesse et de la possibilité d’effectuer des modifications de manière indépendante. Pour plus d'informations, voir l'article [Soumissions de Produits in-app](iap-submissions.md).
 
@@ -32,6 +33,6 @@ Les applications qui étaient liées pour partager l'identité dans les versions
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

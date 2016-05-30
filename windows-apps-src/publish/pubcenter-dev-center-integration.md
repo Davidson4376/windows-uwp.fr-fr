@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Microsoft Advertising pour pubCenter a été intégré au Centre de développement Windows.
 title: Intégration de pubCenter au Centre de développement
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
@@ -9,7 +10,7 @@ ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
 
 **Important**
 
--   Dès le 1er avril 2016, vos revenus Microsoft Advertising seront reversés sur le compte de paiement défini dans le Centre de développement. Désormais, vous devez gérer les mises à jour ou les modifications de votre compte de paiement et de votre profil fiscal uniquement dans le Centre de développement. Assurez-vous d'apporter les mises à jour nécessaires avant le 31 mars 2016. Pour en savoir plus, consultez l'article [Consolidation du profil fiscal et du compte de paiement de pubCenter dans le Centre de développement](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   Dès le 1er avril 2016, vos revenus Microsoft Advertising seront reversés sur le compte de paiement défini dans le Centre de développement. Désormais, vous devez gérer les mises à jour ou les modifications de votre compte de paiement et de votre profil fiscal uniquement dans le Centre de développement. Pour en savoir plus, consultez l’article [Consolidation du profil fiscal et du compte de paiement de pubCenter dans le Centre de développement](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
 -   Depuis le 1er décembre 2015, [votre compte pubCenter doit être lié à votre compte du Centre de développement](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) pour que vous puissiez recevoir les paiements.
 -   Votre historique de paiement ne sera plus mis à jour dans pubCenter. Pour consulter votre historique de paiement à l’avenir, [associez votre compte pubCenter à votre compte du Centre de développement](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts), puis consultez la page [Résumé du paiement](payout-summary.md) dans le tableau de bord du Centre de développement.
 
@@ -20,9 +21,9 @@ Vous possédez peut-être plusieurs comptes dans pubCenter et le Centre de déve
 ## Scénario nº 1 : vous possédez un compte du Centre de développement et un compte pubCenter avec le même compte Microsoft et enregistrés dans le même pays ou la même région
 
 
-**Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis.
+**Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis.
 
-**Résultat** : votre compte pubCenter est automatiquement lié à votre compte du Centre de développement. Aucune action n'est nécessaire de votre part.
+**Résultat** : votre compte pubCenter est automatiquement lié à votre compte du Centre de développement. Aucune action n'est nécessaire de votre part.
 
 -   Les rapports pour l'ensemble de vos unités publicitaires existantes dans pubCenter sont disponibles dans le [Rapport sur les performances publicitaires](advertising-performance-report.md) dans le Centre de développement, sous l'application à laquelle elles appartiennent.
 -   Si vous ne trouvez pas une unité publicitaire pubCenter particulière dans votre [Rapport sur les performances publicitaires](advertising-performance-report.md), nous n'avons peut-être pas réussi à lier cette unité à une application dans le Centre de développement. Cela peut se produire si votre application ne possède pas le même nom dans le Centre de développement et dans pubCenter. Pour afficher les unités publicitaires que nous n’avons pas réussi à lier à vos applications dans le Centre de développement, ouvrez le **Rapport sur les performances publicitaires** au niveau du compte et sélectionnez le nom de l’application pubCenter. Pour afficher le **Rapport sur les performances publicitaires** au niveau du compte, accédez à votre page de présentation du tableau de bord et cliquez sur **Performances des publicités** dans le volet de navigation.
@@ -39,9 +40,9 @@ Vous possédez peut-être plusieurs comptes dans pubCenter et le Centre de déve
 ## Scénario nº 2 : vous possédez un compte du Centre de développement et un compte pubCenter avec le même compte Microsoft, mais enregistrés dans des régions ou des pays différents
 
 
-**Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[nom\]@outlook.com en Inde.
+**Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[nom\]@outlook.com en Inde.
 
-**Résultat** : votre compte pubCenter est automatiquement lié à votre compte du Centre de développement. Aucune action n'est nécessaire de votre part.
+**Résultat** : votre compte pubCenter est automatiquement lié à votre compte du Centre de développement. Aucune action n'est nécessaire de votre part.
 
 -   Les rapports pour l'ensemble de vos unités publicitaires existantes dans pubCenter sont disponibles dans le [Rapport sur les performances publicitaires](advertising-performance-report.md) dans le Centre de développement, sous l'application à laquelle elles appartiennent.
 -   Si vous ne trouvez pas une unité publicitaire pubCenter particulière dans votre [Rapport sur les performances publicitaires](advertising-performance-report.md), nous n'avons peut-être pas réussi à lier cette unité à une application dans le Centre de développement. Cela peut se produire si votre application ne possède pas le même nom dans le Centre de développement et dans pubCenter. Pour afficher les unités publicitaires que nous n’avons pas réussi à lier à vos applications dans le Centre de développement, ouvrez le **Rapport sur les performances publicitaires** au niveau du compte et sélectionnez le nom de l’application pubCenter. Pour afficher le **Rapport sur les performances publicitaires** au niveau du compte, accédez à votre page de présentation du tableau de bord et cliquez sur **Performances des publicités** dans le volet de navigation.
@@ -57,14 +58,14 @@ Vous possédez peut-être plusieurs comptes dans pubCenter et le Centre de déve
 ## Scénario nº 3 : vous possédez un compte du Centre de développement et un compte pubCenter enregistrés avec des comptes Microsoft différents
 
 
-**Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[autre\_nom\]@outlook.com.
+**Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[autre\_nom\]@outlook.com.
 
-**Résultat** : vous devez lier manuellement vos comptes pubCenter à votre compte du Centre de développement. Pour cela :
+**Résultat** : vous devez lier manuellement vos comptes pubCenter à votre compte du Centre de développement. Pour cela :
 
 1.  Connectez-vous au compte pubCenter que vous souhaitez lier.
 2.  Sur la page **Mes informations** de ce compte, vous trouverez un **code de liaison du compte pubCenter**. Conservez ce code à portée de main.
 
-    > **Remarque** Un nouveau code de liaison du compte est généré toutes les 60 minutes.
+    > **Remarque** Un nouveau code de liaison du compte est généré toutes les 60 minutes.
 
 3.  Déconnectez-vous de votre compte pubCenter.
 4.  Connectez-vous à votre [compte du Centre de développement](https://dev.windows.com/).
@@ -113,7 +114,7 @@ La création de nouvelles unités publicitaires n'est plus prise en charge dans 
 
 ### Comment créer des unités publicitaires dans le Centre de développement ?
 
-Sur la page de votre application dans le Centre de développement, cliquez sur **Monétisation** &gt; **Monétisation à l’aide des publicités**. Pour plus d’informations sur la création d’unités publicitaires dans le Centre de développement, voir [Monétisation à l’aide des publicités](monetize-with-ads.md).
+Sur la page de votre application dans le Centre de développement, cliquez sur **Monétisation**&gt;**Monétisation à l’aide des publicités**. Pour plus d’informations sur la création d’unités publicitaires dans le Centre de développement, voir [Monétisation à l’aide des publicités](monetize-with-ads.md).
 
 ### J’ai installé la dernière version de l’extension Ad Mediator et j’ai ajouté le contrôle Ad Mediator à mon application. Dois-je également accéder à pubCenter pour y créer une nouvelle unité publicitaire ?
 
@@ -121,7 +122,7 @@ Si vous utilisez la dernière version de l'[extension Ad Mediator](http://go.mic
 
 ### J'utilise encore une ancienne version du contrôle Ad Mediator dans mon application et j'ai besoin d’un nouvel ID d’unité publicitaire. Comment créer des unités publicitaires ?
 
-Vous pouvez créer une unité publicitaire pour votre application dans le tableau de bord du Centre de développement. Sur la page de votre application dans le Centre de développement, cliquez sur **Monétisation** &gt; **Monétisation à l’aide des publicités**. Pour plus d’informations sur la création d’unités publicitaires dans le Centre de développement, voir [Monétisation à l’aide des publicités](monetize-with-ads.md).
+Vous pouvez créer une unité publicitaire pour votre application dans le tableau de bord du Centre de développement. Sur la page de votre application dans le Centre de développement, cliquez sur **Monétisation**&gt;**Monétisation à l’aide des publicités**. Pour plus d’informations sur la création d’unités publicitaires dans le Centre de développement, voir [Monétisation à l’aide des publicités](monetize-with-ads.md).
 
 ### Mes unités publicitaires ont été créées automatiquement car j’ai utilisé le contrôle Ad Mediator et j’ai confirmé que les publicités sont traitées. J'ai également créé manuellement d’autres unités publicitaires à partir du Centre de développement. Dois-je faire quelque chose d’autre pour obtenir le paiement des revenus de ces unités publicitaires ?
 
@@ -133,11 +134,11 @@ Ouvrez une session pubCenter avec le même compte Microsoft que vous utilisez po
 
 ### Comment créer des campagnes de promotion d’application dans le Centre de développement ?
 
-Sur la page de votre application dans le Centre de développement, cliquez sur **Monétisation** &gt; **Promouvoir votre application**. Pour plus d’informations sur la création de campagnes de publicité pour vos applications dans le Centre de développement, voir [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md).
+Sur la page de votre application dans le Centre de développement, cliquez sur **Monétisation**&gt;**Promouvoir votre application**. Pour plus d’informations sur la création de campagnes de publicité pour vos applications dans le Centre de développement, voir [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md).
 
 ### Où puis-je voir des données de performances dans le Centre de développement ?
 
-Sur la page de votre application dans le Centre de développement, cliquez sur **Analyse** &gt; **Performances de Microsoft Advertising**. Pour plus d’informations, voir [Rapport sur les performances publicitaires](advertising-performance-report.md).
+Sur la page de votre application dans le Centre de développement, cliquez sur **Analyse**&gt;**Performances de Microsoft Advertising**. Pour plus d’informations, voir [Rapport sur les performances publicitaires](advertising-performance-report.md).
 
 ### Comment gérer mon mode de paiement et mes informations fiscales dans le Centre de développement ?
 
@@ -180,6 +181,6 @@ Oui, il peut y avoir une légère différence entre les données affichées dans
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

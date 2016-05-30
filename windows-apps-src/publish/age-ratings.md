@@ -1,5 +1,6 @@
 ---
-Description: La page Classification par âge du processus de soumission d’application comporte des champs dans lesquels vous renseignez des informations sur votre application, afin que cette dernière puisse recevoir la classification par âge appropriée de l’International Age Ratings Coalition (IARC).
+author: jnHs
+Description: La page Classification par âge du processus de soumission d’application comporte des champs dans lesquels vous renseignez des informations sur votre application, afin que cette dernière puisse recevoir la classification par âge appropriée de l’IARC.
 title: Classification par âge
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ---
@@ -44,6 +45,6 @@ Auparavant, les développeurs spécifiaient la classification par âge pour leur
 | 18+ (Convient aux adultes)            | Les jeux appartenant à cette classification peuvent contenir des scènes de violence extrême, gratuite, réaliste ou spécifique destinées uniquement à un public adulte. Tout contenu doit être conforme aux critères établis dans les [Politiques de contenu](https://msdn.microsoft.com/library/windows/apps/dn764944).                                                                                                                                                            |
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
