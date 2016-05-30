@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: Obtenir l’emplacement de l’utilisateur
 description: Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
@@ -7,7 +8,7 @@ ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 # Obtenir l’emplacement de l’utilisateur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
@@ -224,7 +225,7 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 
 Si les paramètres de confidentialité d’emplacement n’autorisent pas votre application à accéder à l’emplacement de l’utilisateur, nous vous recommandons de fournir un lien pratique vers les **paramètres de confidentialité d’emplacement** dans l’application **Paramètres**. Dans cet exemple, un contrôle de lien hypertexte est utilisé pour accéder à l’URI `ms-settings:privacy-location`.
 
-```xaml
+```xml
 <!--Set Visibility to Visible when access to location is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -262,6 +263,6 @@ Pour que votre application puisse accéder à l’emplacement de l’utilisateur
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

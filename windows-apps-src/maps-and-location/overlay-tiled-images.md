@@ -1,6 +1,7 @@
 ---
+author: PatrickFarley
 title: Superposer des images sous forme de vignettes sur une carte
-description: Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut.
+description: Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ---
 
@@ -22,9 +23,9 @@ Superposez des images sous forme de vignettes tierces ou personnalisées sur une
 Les différents services de carte (cartes Nokia et cartes Bing, par exemple) découpent les cartes en vignettes de forme carrée, afin de permettre une récupération et un affichage rapides. Ces vignettes sont au format 256 x 256 pixels et font l’objet d’un rendu préalable, selon différents niveaux de détail. De nombreux services tiers fournissent également des données cartographiques divisées en vignettes. Utilisez des sources de vignette pour récupérer des vignettes tierces ou pour créer vos propres vignettes personnalisées, avant de les superposer sur la carte affichée dans la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
 **Important**  
-Lorsque vous utilisez des sources de vignettes, il est inutile d’écrire du code pour demander ou positionner des vignettes. La classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) demande les vignettes dont elle a besoin. Chaque demande spécifie les coordonnées X et Y et le niveau de zoom de la vignette individuelle. Il vous suffit de spécifier le format de l’URI ou le nom de fichier à utiliser pour récupérer les vignettes dans la propriété **UriFormatString**. Ainsi, vous insérez des paramètres remplaçables dans l’URI ou le nom de fichier de base afin d’indiquer où transmettre les coordonnées X et Y et le niveau de zoom de chaque vignette.
+Lorsque vous utilisez des sources de vignette, il est inutile d’écrire du code pour demander ou positionner des vignettes. La classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) demande les vignettes dont elle a besoin. Chaque demande spécifie les coordonnées X et Y et le niveau de zoom de la vignette individuelle. Il vous suffit de spécifier le format de l’URI ou le nom de fichier à utiliser pour récupérer les vignettes dans la propriété **UriFormatString**. Ainsi, vous insérez des paramètres remplaçables dans l’URI ou le nom de fichier de base afin d’indiquer où transmettre les coordonnées X et Y et le niveau de zoom de chaque vignette.
 
-Voici un exemple de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) pour une classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) qui affiche les paramètres remplaçables des coordonnées X et Y et le niveau de zoom.
+Voici un exemple de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) pour une classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) qui affiche les paramètres remplaçables des coordonnées X et Y et le niveau de zoom.
 
 ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -34,13 +35,13 @@ Voici un exemple de la propriété [**UriFormatString**](https://msdn.microsoft.
 
 (Les coordonnées X et Y représentent l’emplacement de la vignette individuelle au sein de la carte du monde, au niveau de détail spécifié. Le système de numérotation des vignettes démarre à partir de la valeur {0, 0}, dans le coin supérieur gauche de la carte. Par exemple, la vignette située à {1, 2} se trouve dans la deuxième colonne de la troisième ligne de la grille de vignettes.)
 
-Pour plus d’informations sur le système de vignettes utilisé par les services cartographiques, voir [Système de vignette Cartes Bing](http://go.microsoft.com/fwlink/p/?LinkId=626692).
+Pour plus d’informations sur le système de vignettes utilisé par les services cartographiques, voir [Système de vignette Cartes Bing](http://go.microsoft.com/fwlink/p/?LinkId=626692).
 
 ### Superposer des vignettes à partir d’une source de vignette
 
 Superposez des images sous forme de vignettes à partir d’une source de vignette sur une carte, à l’aide de la [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
-1.  Instanciez l’un des trois classes de source de données de vignette qui héritent des données de la classe [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
+1.  Instanciez l’une des trois classes de source de données de vignette qui héritent des données de la classe [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
     -   [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)
     -   [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)
@@ -52,7 +53,7 @@ Superposez des images sous forme de vignettes à partir d’une source de vignet
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-          "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+          "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
 2.  Instanciez et configurez une classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144). Spécifiez la classe [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) que vous avez configurée à l’étape précédente en tant que propriété [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) de la classe **MapTileSource**.
@@ -65,10 +66,10 @@ Superposez des images sous forme de vignettes à partir d’une source de vignet
 
     Vous pouvez restreindre les conditions dans lesquelles les vignettes sont affichées à l’aide des propriétés de la classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
-    -   Affichez les vignettes uniquement dans une zone géographique spécifique en affectant une valeur à la [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) propriété.
+    -   Affichez les vignettes uniquement dans une zone géographique spécifique en affectant une valeur à la propriété [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
     -   Affichez les vignettes selon certains niveaux de détail spécifiques en affectant une valeur à la propriété [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
 
-    Vous pouvez également configurer d’autres propriétés de la [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) qui affectent le chargement ou l’affichage de vignettes, tels que [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153), et [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
+    Vous pouvez également configurer d’autres propriétés de la [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) qui affectent le chargement ou l’affichage de vignettes, comme [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153) et [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
 
 3.  Ajoutez la [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) à la collection [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) du [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
@@ -79,7 +80,7 @@ Superposez des images sous forme de vignettes à partir d’une source de vignet
 ## Superposer des vignettes provenant d’un service web
 
 
-Superposez des images sous forme de vignettes récupérées à partir d’un service Web via la [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
+Superposez des images sous forme de vignettes récupérées à partir d’un service web via la [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
 
 1.  Instanciez une [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
 2.  Spécifiez le format de l’URI que le service web attend, en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992). Pour créer cette valeur, insérez les paramètres remplaçables dans l’URI de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément **UriFormatString** est la suivante :
@@ -109,7 +110,7 @@ L’exemple suivant illustre la superposition de vignettes provenant d’un serv
             // Create an HTTP data source.
             // This example retrieves tiles from a fictitious web service.
             HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-                "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+                "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
             // Optionally, add custom HTTP headers if the web service requires them.
             dataSource.AdditionalRequestHeaders.Add("header name", "header value");
@@ -128,7 +129,7 @@ void MainPage::AddHttpMapTileSource()
        GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
 
        auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
-             "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+             "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
        dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
 
@@ -145,7 +146,7 @@ void MainPage::AddHttpMapTileSource()
 Superposez des images sous forme de vignettes stockées en tant que fichiers dans le stockage local, à l’aide de la [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). En règle générale, vous placez ces fichiers dans un package, puis vous les distribuez avec votre application.
 
 1.  Instanciez une [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
-2.  Spécifiez le format des noms de fichier en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Pour créer cette valeur, insérez les paramètres remplaçables dans le nom de fichier de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est la suivante :
+2.  Spécifiez le format des noms de fichier en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Pour créer cette valeur, insérez les paramètres remplaçables dans le nom de fichier de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est la suivante :
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
@@ -215,7 +216,7 @@ using System.Threading.Tasks;
             MapTileUriRequestedEventArgs args)
         {
             // Get a deferral to do something asynchronously.
-            // Omit this line if you don&#39;t have to do something asynchronously.
+            // Omit this line if you don't have to do something asynchronously.
             var deferral = args.Request.GetDeferral();
 
             // Get the custom Uri.
@@ -225,7 +226,7 @@ using System.Threading.Tasks;
             args.Request.Uri = uri;
 
             // Notify the app that the custom Uri is ready.
-            // Omit this line also if you don&#39;t have to do something asynchronously.
+            // Omit this line also if you don't have to do something asynchronously.
             deferral.Complete();
         }
 
@@ -306,7 +307,7 @@ using System.Threading.Tasks;
         }
 ```
 
-```ManagedCPlusPlus
+```cpp
 InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 {
        int pixelHeight = 256;
@@ -363,6 +364,6 @@ Pour remplacer entièrement la carte par défaut par des vignettes personnalisé
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

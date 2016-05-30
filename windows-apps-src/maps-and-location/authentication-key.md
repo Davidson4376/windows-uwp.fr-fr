@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: Demander une clé d’authentification de cartes
 description: Votre application Windows universelle doit être authentifiée pour pouvoir utiliser le MapControl et les services cartographiques dans l’espace de noms Windows.Services.Maps.
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
@@ -7,12 +8,12 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 # Demander une clé d’authentification de cartes
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Votre [application Windows universelle](https://msdn.microsoft.com/library/windows/apps/dn894631) doit être authentifiée pour pouvoir utiliser le [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) et les services cartographiques dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cette rubrique décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application.
 
-**Conseil** Pour en savoir plus sur l’utilisation de cartes dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub :
+**Conseil** Pour en savoir plus sur l’utilisation de cartes dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub :
 
 -   [Exemple de carte pour la plateforme Windows universelle (UWP, Universal Windows Platform)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -29,7 +30,7 @@ Pour créer une clé
 
 3.  Choisissez le compte à associer à votre compte Bing Cartes. Si vous voulez utiliser votre compte Microsoft, cliquez sur **Oui**. Sinon, cliquez sur **Se connecter avec un autre compte**.
 
-4.  Si vous n’avez pas encore de compte Bing Cartes, créez-en un. Renseignez les champs suivants : **Nom du compte**, **Nom du contact**, **Nom de la société**, **Adresse e-mail** et **Numéro de téléphone**. Après avoir accepté les conditions d’utilisation, cliquez sur **Créer**.
+4.  Si vous n’avez pas encore de compte Bing Cartes, créez-en un. Renseignez les champs suivants : **Nom du compte**, **Nom du contact**, **Nom de la société**, **Adresse e-mail** et **Numéro de téléphone**. Après avoir accepté les conditions d’utilisation, cliquez sur **Créer**.
 
 5.  Dans le menu **Mon compte**, cliquez sur **Créer ou afficher des clés**.
 
@@ -38,9 +39,9 @@ Pour créer une clé
 7.  Complétez le formulaire **Créer une clé**, puis cliquez sur **Créer**.
 
     -   **Nom de l’application :** le nom de votre application.
-    -   **URL de l’application (facultatif) :** l’URL de votre application.
-    -   **Type de clé :** sélectionnez **De base** ou **Entreprise**.
-    -   **Type d’application :** sélectionnez **Application Windows universelle** pour utiliser la clé dans votre application Windows universelle.
+    -   **URL de l’application (facultatif) :** l’URL de votre application.
+    -   **Type de clé :** sélectionnez **De base** ou **Entreprise**.
+    -   **Type d’application :** sélectionnez **Application Windows universelle** pour utiliser la clé dans votre application Windows universelle.
 
     Voici un exemple de formulaire :
 
@@ -65,7 +66,7 @@ Pour authentifier le [**MapControl**](https://msdn.microsoft.com/library/windows
 
 -   Cet exemple définit le **MapServiceToken** sur la valeur de la clé d’authentification dans le balisage XAML.
 
-    ```xaml
+    ```xml
     <Maps:MapControl x:Name="MapControl1" MapServiceToken="abcdef-abcdefghijklmno"/>
     ```
 
@@ -90,6 +91,6 @@ Pour utiliser les services dans l’espace de noms [**Windows.Services.Maps**](h
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

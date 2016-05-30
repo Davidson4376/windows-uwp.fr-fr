@@ -1,13 +1,14 @@
 ---
-Description: Suivez ces meilleures pratiques pour geofencing dans votre application.
-title: Recommandations concernant les applications de clôture virtuelle
+author: PatrickFarley
+Description: Suivez ces meilleures pratiques pour définir la clôture virtuelle dans votre application.
+title: Recommandations concernant la clôture virtuelle des applications
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ---
 
-# Recommandations concernant les applications de clôture virtuelle
+# Recommandations concernant la clôture virtuelle des applications
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -15,7 +16,7 @@ ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 -   [**Geofence class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
 -   [**Geolocator class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
-Suivez ces meilleures pratiques pour [**geofencing**](https://msdn.microsoft.com/library/windows/apps/dn263744) dans votre application.
+Suivez ces meilleures pratiques pour définir la [**clôture virtuelle**](https://msdn.microsoft.com/library/windows/apps/dn263744) dans votre application.
 
 ## Recommandations
 
@@ -30,7 +31,7 @@ Suivez ces meilleures pratiques pour [**geofencing**](https://msdn.microsoft.com
     -   Appelez la méthode [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) pour savoir si un événement s’est produit.
     -   Désinscrivez votre détecteur d’événements au premier plan lorsque votre application n’est pas visible pour l’utilisateur et réinscrivez-le quand elle redevient visible.
 
-    Pour plus d’informations et obtenir des exemples de code, voir [Détecteurs en arrière-plan et au premier plan](#background-and-foreground-listeners).
+    Pour plus d’informations et pour obtenir des exemples de code, voir [Détecteurs en arrière-plan et au premier plan](#background-and-foreground-listeners).
 
 -   N’utilisez pas plus de 1000 clôtures virtuelles par application. Le système prend en charge plusieurs milliers de clôtures virtuelles par application, mais en limitant leur nombre à 1000, vous optimiserez les performances de votre application et contribuerez à réduire l’utilisation de la mémoire par l’application.
 -   Ne créez pas de clôtures virtuelles avec un rayon de moins de 50 mètres. Si votre application doit utiliser une clôture virtuelle avec un petit rayon, conseillez aux utilisateurs d’utiliser votre application sur un appareil équipé d’une radio GPS pour garantir des performances optimales.
@@ -51,7 +52,7 @@ Lorsqu’un événement indique un changement apporté à un état [**Entered**]
 
 ### Détecteurs en arrière-plan et au premier plan
 
-En règle générale, votre application n’a pas besoin de détecter les événements [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) au premier plan et en arrière-plan simultanément. Toutefois, si cela est nécessaire, la méthode la plus sûre est de confier la gestion des notifications à la tâche en arrière-plan. Si vous configurez des détecteurs de clôtures virtuelles (parfois appelées « géorepères ») tant au premier plan qu’en arrière-plan, il est impossible de savoir avec certitude lequel sera déclenché le premier et vous devez donc appeler en permanence la méthode [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) pour savoir si un événement s’est produit.
+En règle générale, votre application n’a pas besoin de détecter les événements [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) au premier plan et en arrière-plan simultanément. Toutefois, si cela est nécessaire, la méthode la plus sûre est de confier la gestion des notifications à la tâche en arrière-plan. Si vous configurez des détecteurs de clôtures virtuelles (parfois appelées « géorepères ») tant au premier plan qu’en arrière-plan, il est impossible de savoir avec certitude lequel sera déclenché le premier, et vous devez donc appeler en permanence la méthode [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) pour savoir si un événement s’est produit.
 
 Si vous avez configuré des détecteurs de clôtures virtuelles au premier plan et en arrière-plan, vous devez désinscrire votre détecteur d’événements au premier plan lorsque votre application n’est pas visible pour l’utilisateur et le réinscrire quand elle redevient visible. L’exemple de code présenté ci-dessous permet d’inscrire l’événement de visibilité.
 
@@ -121,7 +122,7 @@ Si votre application doit utiliser une clôture virtuelle avec un petit rayon, c
 * [Configurer une clôture virtuelle](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Obtenir l’emplacement actuel](https://msdn.microsoft.com/library/windows/apps/mt219698)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Exemple de géolocalisation UWP (géolocalisation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
@@ -131,6 +132,6 @@ Si votre application doit utiliser une clôture virtuelle avec un petit rayon, c
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
