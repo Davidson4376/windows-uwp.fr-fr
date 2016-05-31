@@ -1,6 +1,6 @@
 ---
-Description&#58; auteur &#58; jnHs Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission.
-title&#58; Soumissions d’applications ms.assetid &#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 mots clés &#58; soumettre une application mots clés &#58; informations requises mots clés &#58; champs requis mots clés &#58; données requises mots clés &#58; liste de contrôle
+Description: author: jnHs Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission.
+title: Soumissions d’applications ms.assetid &#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 mots clés &#58; soumettre une application mots clés &#58; informations requises mots clés &#58; champs requis mots clés &#58; données requises mots clés &#58; liste de contrôle
 ---
 
 # Soumissions d’application
