@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "bd2df770211332e2f6dba0bed0b1184836b81446",
-  "LastTranslatedCommit": "5e1f0a1f165d0e98ec95c4fe937c4e474b96a0a8",
+  "LastTranslatedCommit": "348d588d7ac6c8372cad96fea0f2b5356d01b76d",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -2430,14 +2430,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "7d7985eda06c641f37c58c8caa2c48580c068d83",
+      "TargetFileCommit": "348d588d7ac6c8372cad96fea0f2b5356d01b76d",
       "TargetFilePath": "windows-apps-src\\contacts-and-calendar\\selecting-contacts.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\windows-apps.fr-fr\\master\\contacts-and-calendar\\selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.fr-fr.xlf",
-      "HandbackFileCommit": "b268854d5d6ee8e20fb79989e9c66e8dd7812ab9",
-      "HandbackDateTime": "2016-05-30T22:12:28.1132792Z",
+      "HandbackFileCommit": "9e9aed21d05958d1d19442b24cc2f0cd4a4fca0a",
+      "HandbackDateTime": "2016-05-31T22:11:22.7979457Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-05-30T22:12:28.1132792Z",
+      "UpdatedDateTime": "2016-05-31T22:11:22.7979457Z",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
       "ArchiveFileDateTime": "0001-01-01T00:00:00",
