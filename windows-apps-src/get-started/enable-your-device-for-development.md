@@ -1,6 +1,6 @@
 ---
-description&#58; auteur &#58; martinekuan ms.assetid &#58; 54973C62-9669-4988-934E-9273FB0425FD titre &#58; Activer votre appareil pour le développement Voici une approche différente pour le développement des appareils Windows 10.
-mots-clés &#58; prise en main mots-clés &#58; licence de développeur mots-clés &#58; Visual Studio, licence de développeur mots-clés &#58; activer un appareil
+description: author: martinekuan ms.assetid &#58; 54973C62-9669-4988-934E-9273FB0425FD title: Activer votre appareil pour le développement Voici une approche différente pour le développement des appareils Windows 10.
+keywords: prise en main keywords: licence de développeur keywords: Visual Studio, licence de développeur keywords: activer un appareil
 ---
 # Activer votre appareil pour le développement
 
