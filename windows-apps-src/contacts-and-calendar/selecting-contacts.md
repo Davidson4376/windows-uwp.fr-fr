@@ -1,6 +1,6 @@
 ---
-description&#58; auteur &#58; Xansky L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
-title&#58; Sélectionner des contacts ms.assetid &#58; 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 mots-clés &#58; contacts, sélection de mots clés &#58; sélectionner des mots-clés de contact uniques &#58; sélectionner plusieurs mots-clés de contact &#58; contacts, sélectionner plusieurs mots-clés &#58; sélectionner des mots-clés de données de contact spécifiques &#58; contact, sélection de mots clés de données spécifiques &#58; contact, sélection de champs spécifiques
+description: author: Xansky L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
+title: Sélectionner des contacts ms.assetid &#58; 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keywords: contacts, sélection de mots clés &#58; sélectionner des mots-clés de contact uniques &#58; sélectionner plusieurs mots-clés de contact &#58; contacts, sélectionner plusieurs keywords: sélectionner des mots-clés de données de contact spécifiques &#58; contact, sélection de mots clés de données spécifiques &#58; contact, sélection de champs spécifiques
 ---
 
 # Sélectionner des contacts
