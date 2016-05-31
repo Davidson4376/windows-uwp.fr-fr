@@ -1,6 +1,6 @@
 ---
-Description&#58; auteur &#58; mcleanbyron Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez les inciter à procéder à une mise à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
-title&#58; Exclure ou limiter des fonctionnalités de la version d’évaluation ms.assetid &#58; 1B62318F-9EF5-432A-8593-F3E095CA7056 mots-clés &#58; essai gratuit mots-clés &#58; période d’évaluation gratuite mots-clés &#58; exemple de code d’évaluation gratuite mots-clés &#58; exemple de code d’évaluation gratuite
+Description: author: mcleanbyron Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez les inciter à procéder à une mise à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
+title: Exclure ou limiter des fonctionnalités de la version d’évaluation ms.assetid &#58; 1B62318F-9EF5-432A-8593-F3E095CA7056 keywords: essai gratuit keywords: période d’évaluation gratuite keywords: exemple de code d’évaluation gratuite keywords: exemple de code d’évaluation gratuite
 ---
 
 # Exclure ou limiter des fonctionnalités de la version d’évaluation

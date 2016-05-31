@@ -1,6 +1,6 @@
 ---
-Description&#58; auteur &#58; mcleanbyron Proposez des produits consommables intégrés à l’application (qui peuvent être achetés, utilisés et rachetés) via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable.
-title&#58; Activer les achats de produits consommables intégrés à l’application ms.assetid &#58; F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 mots-clés &#58; offre dans l’application mots-clés &#58; consommable mots-clés &#58; achat dans l’application mots-clés &#58; produit intégré à l’application mots-clés &#58; prise en charge in-app mots-clés &#58; exemple de code d’achat dans l’application mots-clés &#58; exemple de code d’offre dans l’application
+Description: author: mcleanbyron Proposez des produits consommables intégrés à l’application (qui peuvent être achetés, utilisés et rachetés) via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable.
+title: Activer les achats de produits consommables intégrés à l’application ms.assetid &#58; F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords: offre dans l’application keywords: consommable keywords: achat dans l’application keywords: produit intégré à l’application keywords: prise en charge in-app keywords: exemple de code d’achat dans l’application keywords: exemple de code d’offre dans l’application
 ---
 
 # Activer les achats de produits consommables intégrés à l’application

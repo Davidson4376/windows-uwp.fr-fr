@@ -1,6 +1,6 @@
 ---
-Description&#58; auteur &#58; mcleanbyron Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
-title&#58; Activer les achats de produits intégrés à l’application ms.assetid &#58; D158E9EB-1907-4173-9889-66507957BD6B mots-clés &#58; offre dans l’application mots-clés &#58; achat dans l’application mots-clés &#58; produit intégré à l’application mots-clés &#58; prise en charge in-app mots-clés &#58; exemple de code d’achat dans l’application mots-clés &#58; exemple de code d’offre dans l’application
+Description: author: mcleanbyron Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
+title: Activer les achats de produits intégrés à l’application ms.assetid &#58; D158E9EB-1907-4173-9889-66507957BD6B keywords: offre dans l’application keywords: achat dans l’application keywords: produit intégré à l’application keywords: prise en charge in-app keywords: exemple de code d’achat dans l’application keywords: exemple de code d’offre dans l’application
 ---
 
 # Activer les achats de produits intégrés à l’application
