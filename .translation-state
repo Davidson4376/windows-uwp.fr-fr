@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "204bace243fb082d3ca3b4259982d457f9c533da",
+  "LastProcessedCommit": "bb0941fb42eb14204a1e74e2d7002691071adedf",
   "LastTranslatedCommit": "4fd034ee0818d4ba89d02b1962907785cf482d02",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -78431,6 +78431,40 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.fr-fr.xlf",
       "HandoffFileCommit": "26ed19001e314857f62e4452ab32f000e7829287",
       "HandoffDateTime": "2016-06-08T18:00:57.2419608Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualException": null
+    },
+    "998fbbe4fe558e556b3eb6bf132531af28c13c62": {
+      "FileHash": "998fbbe4fe558e556b3eb6bf132531af28c13c62",
+      "SourceFileCommit": "bb0941fb42eb14204a1e74e2d7002691071adedf",
+      "SourceFilePath": "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.fr-fr\\master\\run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.fr-fr.xlf",
+      "HandoffFileCommit": "63a1c59d84c4a0d4857fe17bfa2d7a11d56ccd54",
+      "HandoffDateTime": "2016-06-08T20:01:23.5118863Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
