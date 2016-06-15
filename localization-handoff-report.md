@@ -6,20 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\images\windows-store-app-activation-error.jpg](https://github.com/Microsoft/windows-apps/blob/807670bc737153b77d57441461b9ca7c83a77a44/windows-apps-src/xbox-apps/images/windows-store-app-activation-error.jpg) | HandedOffSuccess | [Details](#766be26fa9692fb7d435e5b737eb73493659dead3888)
+ [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/836ffd3f1bc3a9d9be4fa510d5188b565972c130/windows-apps-src/publish/dev-center-insider-program.md) | OutofSyncHandedBackSuccess | [Details](#64b9327258d6116922d3e4cc097ed3dda08b541b3509)
 
 ## Item Details
-##### <a name='766be26fa9692fb7d435e5b737eb73493659dead3888'></a> Source: [windows-apps-src\xbox-apps\images\windows-store-app-activation-error.jpg](https://github.com/Microsoft/windows-apps/blob/807670bc737153b77d57441461b9ca7c83a77a44/windows-apps-src/xbox-apps/images/windows-store-app-activation-error.jpg)
-* Status: HandedOffSuccess
+##### <a name='64b9327258d6116922d3e4cc097ed3dda08b541b3509'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/836ffd3f1bc3a9d9be4fa510d5188b565972c130/windows-apps-src/publish/dev-center-insider-program.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [766be26fa9692fb7d435e5b737eb73493659dead.jpg](https://github.com/Microsoft/WDG.handoff/blob/68a7a24f9024fd6d5953f87a852f6f64e48a2124/ol-handoff/Microsoft/windows-apps.fr-fr/master/766be26fa9692fb7d435e5b737eb73493659dead.jpg)
-* Handoff Datetime: 2016-06-15 18:59:34
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\xbox-apps\known-issues.md
+* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/b8f7caae2f7449ef670ac0cc2bc8e754209e39d4/ol-handoff/Microsoft/windows-apps.fr-fr/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.fr-fr.xlf)
+* Handoff Datetime: 2016-06-15 20:02:57
+* Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/4fd034ee0818d4ba89d02b1962907785cf482d02/windows-apps-src/publish/dev-center-insider-program.md)
+* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3cd0211fda67d616b1db017fe2ea03a8b1a819f8/ol-handback/Microsoft/windows-apps.fr-fr/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.fr-fr.xlf)
+* Current Handback Datetime: 2016-06-01 11:14:55
 * [Back to Top](#report-top)
 
 
