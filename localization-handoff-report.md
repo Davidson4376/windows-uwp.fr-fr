@@ -1,24 +1,40 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\manage-iaps-in-bulk.md](https://github.com/Microsoft/windows-apps/blob/5b3c2ce50d4a71bc5813b6b3956bb36e25b7d7a7/windows-apps-src/publish/manage-iaps-in-bulk.md) | HandedOffSuccess | [Details](#81d00c0e2f0f797f07ed75ac3220a3fdfa29dbf63606)
+ [windows-apps-src\publish\manage-iaps-in-bulk.md](https://github.com/Microsoft/windows-apps/blob/17e18d53840336aae7701b452443d0910303f1a1/windows-apps-src/publish/manage-iaps-in-bulk.md) | HandedOffSuccess | [Details](#2a2a4696704ee1eb82a1255b7c6f6563abf830b53606)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/0a315e81a622dbdc8e50707e2eadc6d3e7bac47d/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#aac17146ef510f2b268b1271c0a03a32865cba5a3856)
 
 ## Item Details
-##### <a name='81d00c0e2f0f797f07ed75ac3220a3fdfa29dbf63606'></a> Source: [windows-apps-src\publish\manage-iaps-in-bulk.md](https://github.com/Microsoft/windows-apps/blob/5b3c2ce50d4a71bc5813b6b3956bb36e25b7d7a7/windows-apps-src/publish/manage-iaps-in-bulk.md)
+##### <a name='2a2a4696704ee1eb82a1255b7c6f6563abf830b53606'></a> Source: [windows-apps-src\publish\manage-iaps-in-bulk.md](https://github.com/Microsoft/windows-apps/blob/17e18d53840336aae7701b452443d0910303f1a1/windows-apps-src/publish/manage-iaps-in-bulk.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [manage-iaps-in-bulk.07639d5ddc04eb3def8be5984def3a4ebb9bc3db.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/081766dd48cb02779718a7462c2052b921145dc0/ol-handoff/Microsoft/windows-apps.fr-fr/master/manage-iaps-in-bulk.07639d5ddc04eb3def8be5984def3a4ebb9bc3db.fr-fr.xlf)
-* Handoff Datetime: 2016-06-22 02:23:58
+* Handoff File: [manage-iaps-in-bulk.07639d5ddc04eb3def8be5984def3a4ebb9bc3db.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/d527dd0c546d6ab33651b9686ccc1d5af5973c59/ol-handoff/Microsoft/windows-apps.fr-fr/master/manage-iaps-in-bulk.07639d5ddc04eb3def8be5984def3a4ebb9bc3db.fr-fr.xlf)
+* Handoff Datetime: 2016-06-22 14:11:54
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='aac17146ef510f2b268b1271c0a03a32865cba5a3856'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/0a315e81a622dbdc8e50707e2eadc6d3e7bac47d/windows-apps-src/TOC.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/d527dd0c546d6ab33651b9686ccc1d5af5973c59/ol-handoff/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
+* Handoff Datetime: 2016-06-22 14:11:54
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/4596458c846f55262831fad3329a9c1779b14488/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/8b4f0137ae305ee1e4c890ac57429e8b65413226/ol-handback/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
+* Current Handback Datetime: 2016-06-20 14:25:24
 * [Back to Top](#report-top)
 
 
