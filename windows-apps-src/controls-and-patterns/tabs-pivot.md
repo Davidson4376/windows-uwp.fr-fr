@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Les onglets et sélecteurs de vue permettent aux utilisateurs de naviguer entre les contenus fréquemment consultés.
-title: Onglets et sélecteurs de vue
+Description: "Les onglets et sélecteurs de vue permettent aux utilisateurs de naviguer entre les contenus fréquemment consultés."
+title: "Onglets et sélecteurs de vue"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6585a75f08a64b7bb8f27fd32a227fa49bb0f3f4
+
 ---
 # Sélecteur de vue et onglets
 
@@ -107,6 +110,7 @@ Le contrôle est disponible en deux modes :
 [Informations de base relatives à la conception de la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

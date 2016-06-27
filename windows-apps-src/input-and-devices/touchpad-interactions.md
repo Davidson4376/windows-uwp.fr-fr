@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour le pavé tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
-title: Interactions du pavé tactile
+Description: "Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour le pavé tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée."
+title: "Interactions du pavé tactile"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
+
 ---
 
 # Recommandations en matière de conception pour le pavé tactile
@@ -162,6 +165,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

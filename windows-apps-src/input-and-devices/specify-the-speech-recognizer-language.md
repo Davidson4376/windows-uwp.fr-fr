@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale.
-title: Spécifier la langue de reconnaissance vocale
+Description: "Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale."
+title: "Spécifier la langue de reconnaissance vocale"
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 24393ef52d72aa08f9aab2d541e65ccb5f2aceed
+
 ---
 
 # Spécifier la langue de reconnaissance vocale
@@ -107,9 +110,11 @@ Une grammaire SRGS est un format XML standard ouvert représenté par la classe 
 
 
 **Développeurs**
-* Interactions vocales
-* Concepteurs
-* [Recommandations en matière de conception de fonctions vocales](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Interactions vocales](speech-interactions.md) 
+           **Concepteurs**
+* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **Exemples**
+* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -119,6 +124,7 @@ Une grammaire SRGS est un format XML standard ouvert représenté par la classe 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

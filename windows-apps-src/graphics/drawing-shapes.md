@@ -2,7 +2,10 @@
 author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: Dessiner des formes
-description: Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe Path permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier.
+description: "Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe Path permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier."
+ms.sourcegitcommit: 04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f
+ms.openlocfilehash: 42514e5119b646d196e0a1c7d3099ebed2225c69
+
 ---
 # Dessiner des formes
 
@@ -102,7 +105,7 @@ Rendu de la forme [**Polygon**](https://msdn.microsoft.com/library/windows/apps/
 
 Un objet [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) représente simplement une ligne tracée entre deux points dans un espace de coordonnées. Un objet **Line** ignore toute valeur fournie pour [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), car il est dépourvu d’espace intérieur. Dans le cas d’un objet **Line**, veillez à spécifier des valeurs pour les propriétés [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) et [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness), sinon l’objet **Line** ne sera pas restitué.
 
-Vous n’utilisez pas de valeurs [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) pour spécifier une forme [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) ; à la place, vous utilisez des valeurs [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) discrète pour [**X1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx), [**Y1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx), [**X2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) et [**Y2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx). Cela permet un balisage minimal pour les lignes horizontales ou verticales. Par exemple, `<Line Stroke="Red" X2="400"/>` définit une ligne horizontale de 400 pixels de long. Les autres propriétés X,Y étant par défaut définies sur 0, ce code XAML trace une ligne entre les points `(0,0)` et `(400,0)`. Vous pouvez ensuite utiliser une classe [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) pour déplacer toute la classe **Line**, si vous voulez qu’elle commence à un point autre que (0,0).
+Vous n’utilisez pas de valeurs [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) pour spécifier une forme [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) ; à la place, vous utilisez des valeurs [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) discrète pour [**X1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx), [**Y1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx), [**X2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) et [**Y2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx). Cela permet un balisage minimal pour les lignes horizontales ou verticales. Par exemple, `<Line Stroke="Red" X2="400"/>` définit une ligne horizontale de 400 pixels de long. Les autres propriétés X,Y étant par défaut définies sur 0, ce code XAML trace une ligne entre les points `(0,0)` et `(400,0)`. Vous pouvez ensuite utiliser une classe [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) pour déplacer toute la classe **Line**, si vous voulez qu’elle commence à un point autre que (0,0).
 
 ## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyligne
 
@@ -116,7 +119,7 @@ Si vous spécifiez une propriété [**Fill**](https://msdn.microsoft.com/library
 
 Comme dans le cas d’une forme [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359), la propriété [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) définit l’ensemble des points constituant la limite. En langage XAML, vous devez définir les points à l’aide d’une liste séparée par des virgules. En code-behind, vous devez utiliser un élément [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) pour définir les points et ajouter chaque point à l’ensemble sous la forme d’une structure [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
 
-Cet exemple crée une forme [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) à quatre points définis sur `(10,200)`, `(60,140)`, `(130,140)` et `(180,200)`. Une propriété [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) est définie, contrairement à une propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+Cet exemple crée une forme [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) à quatre points définis sur `(10,200)`, `(60,140)`, `(130,140)` et `(180,200)`. Une propriété [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) est définie, contrairement à une propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
 
 ```xml
 <Polyline Stroke="Black"
@@ -141,9 +144,9 @@ L’exemple ci-dessous montre un objet [**Path**](https://msdn.microsoft.com/lib
 
 Cette propriété [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) commence avec une commande de mouvement, indiquée par la mention « M », qui établit un point de départ absolu du tracé.
 
-Le premier segment est une courbe de Bézier cubique commençant à `(100,200)` et se terminant à `(400,175)`. Elle est dessinée à l’aide des deux points de contrôle `(100,25)` et `(400,350)`. Ce segment est indiqué par la commande « C » dans la chaîne de l’attribut [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data).
+Le premier segment est une courbe de Bézier cubique commençant à `(100,200)` et se terminant à `(400,175)`. Elle est dessinée à l’aide des deux points de contrôle `(100,25)` et `(400,350)`. Ce segment est indiqué par la commande « C » dans la chaîne de l’attribut [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data).
 
-Le deuxième segment commence par une commande de ligne horizontale absolue « H », indiquant le dessin d’une ligne à partir du point final du sous-tracé précédent `(400,175)` jusqu’au nouveau point final `(280,175)`. Comme il s’agit d’une commande de ligne horizontale, la valeur spécifiée correspond à une coordonnée x.
+Le deuxième segment commence par une commande de ligne horizontale absolue « H », indiquant le dessin d’une ligne à partir du point final du sous-tracé précédent `(400,175)` jusqu’au nouveau point final `(280,175)`. Comme il s’agit d’une commande de ligne horizontale, la valeur spécifiée correspond à une coordonnée x.
 
 ```xml
 <Path Stroke="DarkGoldenRod" 
@@ -184,7 +187,7 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
           </Path>
 ```
 
-Une raison qui peut vous pousser à utiliser la classe [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) avec les diverses parties est que chacune des parties comporte des propriétés **Double** et **Point** que vous pouvez éventuellement cibler pour une animation de l’interface utilisateur. Vous ne pouvez pas le faire avec la forme de sérialisation de la propriété [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md).
+L’utilisation de [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) peut être plus lisible que le remplissage d’une chaîne [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). En revanche, [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) utilise une syntaxe compatible avec les définitions de chemin d’accès d’une image Scalable Vector Graphics (SVG) ; il peut donc être utile pour le portage des graphiques à partir de SVG, ou en tant que sortie à partir d’un outil comme Blend.
 
  
 
@@ -195,6 +198,7 @@ Une raison qui peut vous pousser à utiliser la classe [**PathGeometry**](https:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

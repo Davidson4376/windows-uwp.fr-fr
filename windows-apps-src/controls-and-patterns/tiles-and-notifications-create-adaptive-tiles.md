@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran.
-title: Créer des vignettes adaptatives
+Description: "Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran."
+title: "Créer des vignettes adaptatives"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
+
 ---
 
 # Créer des vignettes adaptatives
@@ -104,14 +107,14 @@ TileContent content = new TileContent()
 ## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>Tailles des vignettes
 
 
-Le contenu de chaque taille de vignette est spécifié individuellement dans des éléments [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) distincts au sein de la charge utile XML. Choisissez la taille cible en définissant l’attribut de modèle sur l’une des valeurs suivantes :
+Le contenu de chaque taille de vignette est spécifié individuellement dans des éléments [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) distincts au sein de la charge utile XML. Choisissez la taille cible en définissant l’attribut de modèle sur l’une des valeurs suivantes :
 
 -   TileSmall
 -   TileMedium
 -   TileWide
 -   TileLarge (uniquement pour les ordinateurs de bureau)
 
-Pour une charge utile XML de notification par vignette, indiquez des éléments &lt;binding&gt; pour chaque taille de vignette que vous souhaitez prendre en charge, comme illustré dans cet exemple :
+Pour une charge utile XML de notification par vignette, indiquez des éléments &lt;binding&gt; pour chaque taille de vignette que vous souhaitez prendre en charge, comme illustré dans cet exemple :
 
 ```XML
 <tile>
@@ -1141,7 +1144,7 @@ TileLarge = new TileBinding()
 
 ### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>Image d’arrière-plan
 
-Pour définir une image d’arrière-plan, placez un élément image à la racine de &lt;binding&gt; et définissez l’attribut placement sur « background ».
+Pour définir une image d’arrière-plan, placez un élément image à la racine de &lt;binding&gt; et définissez l’attribut placement sur « background ».
 
 ```XML
 ...
@@ -1265,7 +1268,7 @@ TileWide = new TileBinding()
 
 ### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>Image furtive
 
-Vous pouvez spécifier une image qui défile furtivement à partir du haut de la vignette. L’image furtive utilise une animation qui glisse vers le bas/haut à partir du haut de la vignette, puis rebascule pour afficher le contenu principal de la vignette. Pour définir une image furtive, placez un élément image à la racine de &lt;binding&gt; et définissez l’attribut placement sur « peek ».
+Vous pouvez spécifier une image qui défile furtivement à partir du haut de la vignette. L’image furtive utilise une animation qui glisse vers le bas/haut à partir du haut de la vignette, puis rebascule pour afficher le contenu principal de la vignette. Pour définir une image furtive, placez un élément image à la racine de &lt;binding&gt; et définissez l’attribut placement sur « peek ».
 
 ```XML
 ...
@@ -1335,7 +1338,7 @@ Le résultat présentera l’aspect suivant :
 
 Vous pouvez utiliser **hint-overlay** sur une image furtive pour augmenter l’opacité et améliorer la lisibilité du nom complet de la vignette. Si vous spécifiez **hint-overlay** sur l’élément &lt;binding&gt;, la superposition sera appliquée à l’image d’arrière-plan et à l’image furtive simultanément.
 
-Vous pouvez également appliquer **hint-overlay** à un élément &lt;image&gt; présentant le code « placement="peek" » ou « placement="background" » afin de disposer de niveaux d’opacité distincts pour chacune de ces images. Si vous ne spécifiez pas de superposition, la valeur d’opacité par défaut est de 20 % pour l’image d’arrière-plan et de 0 % pour l’image furtive.
+Vous pouvez également appliquer **hint-overlay** à un élément &lt;image&gt; présentant le code « placement="peek" » ou « placement="background" » afin de disposer de niveaux d’opacité distincts pour chacune de ces images. Si vous ne spécifiez pas de superposition, la valeur d’opacité par défaut est de 20 % pour l’image d’arrière-plan et de 0 % pour l’image furtive.
 
 Cet exemple illustre une image d’arrière-plan avec une opacité de 20 % (à gauche) et une opacité de 0 % (à droite) :
 
@@ -1488,6 +1491,7 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

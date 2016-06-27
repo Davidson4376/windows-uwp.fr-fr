@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications Windows Runtime.
+Description: "Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications Windows Runtime."
 title: Ciblage
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: c8244e1a103a1c57df92e54ceeaa02e9c363faa9
+
 ---
 
 # Recommandations en matière de ciblage
@@ -170,6 +173,7 @@ Pour concevoir des interactions de frottement, tenez compte des recommandations 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

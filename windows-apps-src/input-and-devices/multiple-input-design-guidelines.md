@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Tout comme les personnes ont recours à une combinaison de voix et de mouvement pour communiquer entre elles, plusieurs types et modes d’entrée peuvent également être utilisés lors de l’interaction avec une application.
-title: Recommandations en matière de conception d’entrées multiples
+Description: "Tout comme les personnes ont recours à une combinaison de voix et de mouvement pour communiquer entre elles, plusieurs types et modes d’entrée peuvent également être utilisés lors de l’interaction avec une application."
+title: "Recommandations en matière de conception d’entrées multiples"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
+
 ---
 
 # Entrées multiples
@@ -40,6 +43,7 @@ L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
 Description: Nous lisons du texte en permanence &#58; nos e-mails, un livre, un panneau routier, les prix sur un menu, la pression des pneus ou des affiches sur des poteaux.
-title: Contrôles de texte
+title: "Contrôles de texte"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 1fec4bf13567507087eef08feea0a3ebc255b43f
+
 ---
 # Contrôles de texte
 Les contrôles de texte comprennent les zones de saisie de texte, les zones de mot de passe, les zones de suggestion automatique et les blocs de texte. L’infrastructure XAML propose plusieurs contrôles de rendu, de saisie et de modification de texte, ainsi qu’un jeu de propriétés de mise en forme du texte.
@@ -160,6 +163,7 @@ Votre application peut insérer un séparateur de paragraphes entre les paragrap
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

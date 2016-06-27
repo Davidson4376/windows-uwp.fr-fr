@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application.
+Description: "Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application."
 title: Vignettes
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
+
 ---
 
 # Vignettes pour les applications UWP
@@ -55,7 +58,7 @@ Vous devez mettre à jour quelques éléments :
 
     Par exemple : SmallLogo.scale-100.png
 
-    Lorsque vous faites référence à l’image, vous spécifiez *&lt;nom de l’image&gt;*.*&lt;extension de fichier image&gt;* (« SmallLogo.png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
+    Lorsque vous faites référence à l’image, vous spécifiez *&lt;nom de l’image&gt;*.*&lt;extension de fichier image&gt;* (« SmallLogo.png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
 
 -   Nous vous conseillons vivement de fournir des logos pour les vignettes de grande taille afin que l’utilisateur puisse redimensionner la vignette de votre application si nécessaire. Pour fournir ces images supplémentaires, vous créez un élément `DefaultTile` et utilisez les attributs `Wide310x150Logo` et `Square310x310Logo` pour spécifier les images supplémentaires :
 ```    XML
@@ -106,6 +109,7 @@ Une fois votre application installée, vous pouvez utiliser les notifications po
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

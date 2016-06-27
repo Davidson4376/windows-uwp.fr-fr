@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio.
-title: Gérer les problèmes liés aux entrées audio
+Description: "Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio."
+title: "Gérer les problèmes liés aux entrées audio"
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6dcab14a290367250e152fb8a1944a924d5aaf46
+
 ---
 
 # Gérer les problèmes liés aux entrées audio
@@ -115,6 +118,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -2,6 +2,9 @@
 author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: a7abca8712d2b02eac8bfd150a9476a955e2982a
+
 ---
 
 # Barre de l’application et barre de commandes
@@ -34,7 +37,7 @@ Une barre de commandes dans le Calendrier Outlook sur Windows Phone.
 
 ## Anatomie
 
-Par défaut, la barre de commandes affiche une ligne de boutons d’icônes et un bouton « En savoir plus » facultatif, représentant des points de suspension \ [•••\]. Voici la barre de commandes créée par l’exemple de code présenté plus loin. Elle est présentée à l’état compact et fermé.
+Par défaut, la barre de commandes affiche une ligne de boutons d’icônes et un bouton « En savoir plus » facultatif, représentant des points de suspension \ \[•••\]. Voici la barre de commandes créée par l’exemple de code présenté plus loin. Elle est présentée à l’état compact et fermé.
 
 ![Barre de commandes fermée](images/command-bar-compact.png)
 
@@ -47,9 +50,9 @@ Voici la même barre de commandes à l’état ouvert. Les étiquettes identifie
 ![Barre de commandes fermée](images/commandbar_anatomy_open.png)
 
 La barre de commandes est divisée en 4 zones principales :
-- Le bouton « En savoir plus » \[•••\] apparaît à droite de la barre. Le fait d’appuyer sur « En savoir plus » \ [•••\] a 2 effets : cela fait apparaître les libellés sur les boutons de commande principaux, et ouvre le menu de dépassement en présence de commandes secondaires. Le bouton ne sera pas visible si aucune commande secondaire ni aucune étiquette masquée ne sont présentes. La propriété [`OverflowButtonVisibility`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) permet aux applications de modifier ce comportement de masquage automatique par défaut.
+- Le bouton « En savoir plus » \[•••\] apparaît à droite de la barre. Le fait d’appuyer sur « En savoir plus » \ \[•••\] a 2 effets : cela fait apparaître les libellés sur les boutons de commande principaux, et ouvre le menu de dépassement en présence de commandes secondaires. Le bouton ne sera pas visible si aucune commande secondaire ni aucune étiquette masquée ne sont présentes. La propriété [`OverflowButtonVisibility`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) permet aux applications de modifier ce comportement de masquage automatique par défaut.
 - La zone de contenu est alignée sur le côté gauche de la barre. Elle s’affiche si la propriété `Content` est remplie.
-- La zone de commande principale est alignée à droite de la barre, en regard du bouton « En savoir plus » \ [•••\]. Elle s’affiche si la propriété `PrimaryCommands` est remplie.  
+- La zone de commande principale est alignée à droite de la barre, en regard du bouton « En savoir plus » \ \[•••\]. Elle s’affiche si la propriété `PrimaryCommands` est remplie.  
 - Le menu de dépassement est visible uniquement quand la barre de commandes est ouverte et si la propriété `SecondaryCommands` est remplie. 
 
 La disposition est inversée lorsque [FlowDirection]() est défini sur **RightToLeft**.
@@ -84,7 +87,7 @@ Le contrôle CommandBar dispose de 3 propriétés qui vous permettent d’ajoute
 
 ### Actions principales et dépassement
 
-Par défaut, les éléments que vous ajoutez à la barre de commandes enrichissent la collection **PrimaryCommands**. Ces commandes apparaissent à gauche du bouton « En savoir plus » \ [•••\], dans ce que nous appelons l’espace d’action. Placez les commandes les plus importantes et celles que vous souhaitez laisser affichées, dans l’espace d’action. Sur les écrans plus petits (largeur de 320 epx), l’espace d’action de la barre de commandes peut contenir un maximum de 4 éléments.
+Par défaut, les éléments que vous ajoutez à la barre de commandes enrichissent la collection **PrimaryCommands**. Ces commandes apparaissent à gauche du bouton « En savoir plus » \ \[•••\], dans ce que nous appelons l’espace d’action. Placez les commandes les plus importantes et celles que vous souhaitez laisser affichées, dans l’espace d’action. Sur les écrans plus petits (largeur de 320 epx), l’espace d’action de la barre de commandes peut contenir un maximum de 4 éléments.
 
 Vous pouvez ajouter des commandes à la collection **SecondaryCommands**. Ces éléments sont affichés dans la zone de dépassement. Placez les commandes les moins importantes dans la zone de dépassement.
 
@@ -139,7 +142,7 @@ Lorsque [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/
 
 ## États ouvert et fermé
 
-La barre de commandes peut être ouverte ou fermée. Un utilisateur peut basculer entre ces états en appuyant sur le bouton « En savoir plus » \ [•••\]. Vous pouvez basculer d’un état à l’autre par programme en définissant la propriété [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx). Lorsque la barre de commandes est ouverte, les boutons de commandes principales s’affichent avec les libellés et le menu de dépassement est ouvert en présence de commandes secondaires, comme indiqué précédemment.
+La barre de commandes peut être ouverte ou fermée. Un utilisateur peut basculer entre ces états en appuyant sur le bouton « En savoir plus » \ \[•••\]. Vous pouvez basculer d’un état à l’autre par programme en définissant la propriété [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx). Lorsque la barre de commandes est ouverte, les boutons de commandes principales s’affichent avec les libellés et le menu de dépassement est ouvert en présence de commandes secondaires, comme indiqué précédemment.
 
 Vous pouvez utiliser les événements [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx), [**Opened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx), [**Closing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx), et [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) pour répondre à l’ouverture et à la fermeture de la barre de commandes.  
 - Les événements Opening et Closing se produisent avant le début de l’animation de transition.
@@ -175,8 +178,8 @@ private void CommandBar_Closing(object sender, object e)
 ### ClosedDisplayMode
 
 Vous pouvez contrôler la façon dont la barre de commandes est affichée à l’état fermé en définissant la propriété [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx). Vous avez le choix entre 3 modes d’affichage lorsque la barre est fermée :
-- **Compact** : mode par défaut. Affiche le contenu, les icônes de commande principale sans les libellés et le bouton e« Afficher plus » \ [•••\].
-- **Minimal** : affiche uniquement une fine barre qui agit comme le bouton « En savoir plus » \ [•••\]. L’utilisateur peut appuyer n’importe où sur la barre pour l’ouvrir.
+- **Compact** : mode par défaut. Affiche le contenu, les icônes de commande principale sans les libellés et le bouton e« Afficher plus » \ \[•••\].
+- Minimal : affiche uniquement une fine barre qui agit comme le bouton « En savoir plus » \ \[•••\]. L’utilisateur peut appuyer n’importe où sur la barre pour l’ouvrir.
 - **Hidden** : la barre de commandes ne s’affiche pas quand elle est fermée. Cela peut être utile pour afficher des commandes contextuelles avec une barre de commandes en ligne. Dans ce cas, vous devez ouvrir la barre de commandes par programme en définissant la propriété **IsOpen** ou en modifiant la propriété ClosedDisplayMode pour la définir sur **Minimal** ou **Compact**.
 
 Ici, une barre de commandes est utilisée pour contenir des commandes de mise en forme simples pour un élément [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx). Lorsque la zone d’édition n’a pas le focus, les commandes de mise en forme peuvent devenir gênantes, c’est pourquoi elles sont masquées. Lorsque la zone d’édition est utilisée, la propriété ClosedDisplayMode de la barre de commandes est définie sur Compact afin que les commandes de mise en forme soient visibles.
@@ -206,7 +209,8 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**Remarque** &nbsp;&nbsp; Cet exemple ne porte pas sur l’implémentation des commandes d’édition. Pour plus d’informations, voir l’article [RichEditBox](rich-edit-box.md).
+>**Remarque**
+            &nbsp;&nbsp; Cet exemple ne porte pas sur l’implémentation des commandes d’édition. Pour plus d’informations, voir l’article [RichEditBox](rich-edit-box.md).
 
 Bien que les modes Minimal et Hidden soient utiles dans certaines situations, n’oubliez pas que le masquage de toutes les actions peut prêter à confusion.
 
@@ -214,7 +218,7 @@ La modification de la propriété ClosedDisplayMode pour fournir plus ou moins d
 
 ### IsSticky
 
-Après l’ouverture de la barre de commandes, si l’utilisateur interagit avec l’application n’importe où en dehors du contrôle, le menu de dépassement se ferme et les libellés sont masqués par défaut. Une telle fermeture porte le nom d’*abandon interactif*. Vous pouvez contrôler la façon dont la barre est fermée en définissant la propriété [**IsSticky**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx). Si la barre est rémanente (`IsSticky="true"`), elle ne peut pas être fermée par un mouvement d’abandon interactif. La barre reste ouverte jusqu’à ce que l’utilisateur appuie sur le bouton « En savoir plus » \ [•••\] ou jusqu’à ce qu’il sélectionne un élément du menu de dépassement, si ce dernier est affiché.
+Après l’ouverture de la barre de commandes, si l’utilisateur interagit avec l’application n’importe où en dehors du contrôle, le menu de dépassement se ferme et les libellés sont masqués par défaut. Une telle fermeture porte le nom d’*abandon interactif*. Vous pouvez contrôler la façon dont la barre est fermée en définissant la propriété [**IsSticky**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx). Si la barre est rémanente (`IsSticky="true"`), elle ne peut pas être fermée par un mouvement d’abandon interactif. La barre reste ouverte jusqu’à ce que l’utilisateur appuie sur le bouton « En savoir plus » \ \[•••\] ou jusqu’à ce qu’il sélectionne un élément du menu de dépassement, si ce dernier est affiché.
 
 ## Pratiques conseillées et déconseillées
 
@@ -232,7 +236,7 @@ Les barres de commandes peuvent être placées dans les zones d’écran suivant
 
 ![Exemple 2 de placement de la barre de l’application](images/AppbarGuidelines_Placement2.png)
 
->**Appareils tactiles** : si la barre de commandes doit rester visible à l’utilisateur lorsque le clavier tactile, ou virtuel s’affiche, vous pouvez affecter la barre de commandes à la propriété `BottomAppBar` d’une page de sorte qu’elle reste visible en présence du clavier virtuel. Dans le cas contraire, vous devez placer la barre de commandes de sorte qu’elle soit alignée et positionnée par rapport au contenu de votre application.
+>**Appareils tactiles** : si la barre de commandes doit rester visible à l’utilisateur lorsque le clavier tactile, ou virtuel s’affiche, vous pouvez affecter la barre de commandes à la propriété `BottomAppBar` d’une page de sorte qu’elle reste visible en présence du clavier virtuel. Dans le cas contraire, vous devez placer la barre de commandes de sorte qu’elle soit alignée et positionnée par rapport au contenu de votre application.
 
 ### Actions
 
@@ -244,7 +248,7 @@ Classez les actions qui figurent dans la barre de commandes par ordre de priorit
 
 S’il existe une commande qui s’affiche de façon cohérente sur plusieurs pages, il est préférable de la laisser à un emplacement cohérent. Nous recommandons de placer les commandes Accepter, Oui et OK à gauche des commandes Rejeter, Non et Annuler. La cohérence permet aux utilisateurs de se déplacer en toute confiance dans le système et de réutiliser leur connaissance de navigation d’une application à l’autre.
 
-Vous pouvez également placer toutes les actions dans la zone de dépassement, afin que seul le bouton « En savoir plus » \ [•••\] soit visible dans la barre de commandes. N’oubliez pas que le masquage de toutes les actions peut prêter à confusion.
+Vous pouvez également placer toutes les actions dans la zone de dépassement, afin que seul le bouton « En savoir plus » \ \[•••\] soit visible dans la barre de commandes. N’oubliez pas que le masquage de toutes les actions peut prêter à confusion.
 
 ### Menus volants de barre de commandes
 
@@ -256,7 +260,7 @@ Envisagez le regroupement logique des commandes ; placez par exemple les comman
 
 ![Exemple d’une barre de commandes comportant une zone « Plus »](images/AppbarGuidelines_Illustration.png)
 
--   Le menu de dépassement est représenté par le bouton « En savoir plus » \ [•••\], qui est le point d’entrée visible du menu. Il se trouve à l’extrême droite de la barre d’outils située en regard des actions principales.
+-   Le menu de dépassement est représenté par le bouton « En savoir plus » \ \[•••\], qui est le point d’entrée visible du menu. Il se trouve à l’extrême droite de la barre d’outils située en regard des actions principales.
 -   L’espace du menu de dépassement est alloué aux actions qui sont moins fréquemment utilisées.
 -   Les actions peuvent aller et venir entre l’espace d’action principal et le menu de dépassement aux points d’arrêt. Vous pouvez également indiquer des actions devant rester constamment dans l’espace de l’action principal, quelle que soit la taille de l’écran ou de la fenêtre de l’application.
 -   Les actions rarement utilisées peuvent rester dans le menu de dépassement même si la barre d’application est développée sur les écrans plus grands.
@@ -272,13 +276,18 @@ Envisagez le regroupement logique des commandes ; placez par exemple les comman
 
 ## Articles connexes
 
-**Pour les concepteurs** 
-           [Informations de base relatives à la conception des commandes pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
+**Pour les concepteurs**
+            
+            [Informations de base relatives à la conception des commandes pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
 
-**Pour les développeurs (XAML)** 
-           [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+**Pour les développeurs (XAML)**
+            
+            [
+              **CommandBar**
+            ](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

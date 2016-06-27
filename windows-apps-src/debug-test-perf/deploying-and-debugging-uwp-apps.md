@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-description: Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
-title: Déploiement et débogage des applications UWP
+description: "Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage."
+title: "Déploiement et débogage des applications UWP"
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: eb639e78bf144572dfbfd2d65514bb4eff7c7be1
+
 ---
 
 # Déploiement et débogage des applications UWP
@@ -48,7 +51,7 @@ Une fois que l’ordinateur est spécifié, vous pouvez sélectionner **Ordinate
 
 ### Instructions pour un PC distant
 
-Pour effectuer un déploiement sur un PC distant, les outils de contrôle à distance Visual Studio doivent être installés sur ce PC cible. Le PC distant doit également exécuter une version de Windows supérieure ou égale à la propriété **Version minimale de la plateforme cible** de vos applications. Une fois que vous avez installé les outils de contrôle à distance, vous devez lancer le débogueur distant sur le PC cible. Pour ce faire, recherchez **Débogueur distant** dans le menu **Démarrer** pour le lancer, et si vous y êtes invité, autorisez le débogueur à configurer vos paramètres de pare-feu. Par défaut, le débogueur est lancé avec l’authentification Windows. Cela requiert les informations d’identification de l’utilisateur si l’utilisateur connecté n’est pas le même sur les deux PC. Pour le définir sur **Pas d’authentification**, accédez à **Outils** -&gt; **Options** dans le **Débogueur distant** et définissez-le sur **Pas d’authentification**. Une fois le débogueur distant configuré, vous pouvez procéder au déploiement à partir de votre ordinateur de développement.
+Pour effectuer un déploiement sur un PC distant, les outils de contrôle à distance Visual Studio doivent être installés sur ce PC cible. Le PC distant doit également exécuter une version de Windows supérieure ou égale à la propriété **Version minimale de la plateforme cible** de vos applications. Une fois que vous avez installé les outils de contrôle à distance, vous devez lancer le débogueur distant sur le PC cible. Pour ce faire, recherchez **Débogueur distant** dans le menu **Démarrer** pour le lancer, et si vous y êtes invité, autorisez le débogueur à configurer vos paramètres de pare-feu. Par défaut, le débogueur est lancé avec l’authentification Windows. Cela requiert les informations d’identification de l’utilisateur si l’utilisateur connecté n’est pas le même sur les deux PC. Pour le définir sur **Pas d’authentification**, accédez à **Outils** -&gt;**Options** dans le **Débogueur distant** et définissez-le sur **Pas d’authentification**. Une fois le débogueur distant configuré, vous pouvez procéder au déploiement à partir de votre ordinateur de développement.
 
 Pour plus d’informations, voir la page de téléchargement [Outils de contrôle à distance de Microsoft Visual Studio]( http://go.microsoft.com/fwlink/?LinkId=717039).
 
@@ -62,7 +65,7 @@ Il existe trois modes d’authentification de déploiement sur un ordinateur dis
 
 ## Options de débogage
 
-Sur Windows 10, les performances de démarrage des applications UWP sont améliorées en les lançant de manière proactive, puis en les suspendant dans une technique dite de [prélancement](https://msdn.microsoft.com/library/windows/apps/Mt593297). Nombre d’applications fonctionnent dans ce mode sans rien de spécial, mais certaines d’entre elles devront peut-être ajuster leur comportement. Pour permettre le débogage des problèmes dans ces chemins de code, vous pouvez commencer à déboguer l’application à partir de Visual Studio en mode de prélancement. Le débogage est pris en charge à la fois à partir d’un projet Visual Studio (**Déboguer** -&gt; **Autres cibles de débogage** -&gt; **Déboguer le prélancement d’application Windows universelle**) et pour les applications déjà installées sur l’ordinateur (**Déboguer** -&gt; **Autres cibles de débogage** -&gt; **Déboguer le package d’application installé**, puis cochez la case **Activer l’application par prélancement**). Pour plus d'informations, voir la page web [Déboguer le prélancement d’applications UWP]( http://go.microsoft.com/fwlink/?LinkId=717245).
+Sur Windows 10, les performances de démarrage des applications UWP sont améliorées en les lançant de manière proactive, puis en les suspendant dans une technique dite de [prélancement](https://msdn.microsoft.com/library/windows/apps/Mt593297). Nombre d’applications fonctionnent dans ce mode sans rien de spécial, mais certaines d’entre elles devront peut-être ajuster leur comportement. Pour permettre le débogage des problèmes dans ces chemins de code, vous pouvez commencer à déboguer l’application à partir de Visual Studio en mode de prélancement. Le débogage est pris en charge à la fois à partir d’un projet Visual Studio (**Déboguer** -&gt;**Autres cibles de débogage** -&gt;**Déboguer le prélancement d’application Windows universelle**) et pour les applications déjà installées sur l’ordinateur (**Déboguer** -&gt;**Autres cibles de débogage** -&gt;**Déboguer le package d’application installé**, puis cochez la case **Activer l’application par prélancement**). Pour plus d’informations, voir la page web [Debug UWP Prelaunch]( http://go.microsoft.com/fwlink/?LinkId=717245) (en anglais).
 
 Vous pouvez définir les options de déploiement suivantes dans la page de propriétés de **débogage** du projet de démarrage.
 
@@ -75,7 +78,7 @@ Pour supprimer l’exemption de bouclage réseau de l’application :
 -   Dans la page de propriétés de **débogage** en C# et Visual Basic, décochez la case **Autoriser le bouclage réseau**.
 -   Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Autoriser le bouclage réseau** sur **Non**.
 
-**Ne pas lancer, mais déboguer mon code au démarrage (C# et Visual Basic)/Lancer l’application (JavaScript et C++).**
+**Ne pas lancer, mais déboguer mon code au démarrage (C# et Visual Basic)/Lancer l’application (JavaScript et C++)**
 
 Pour configurer le déploiement afin de démarrer automatiquement une session de débogage au lancement de l’application :
 
@@ -85,6 +88,7 @@ Pour configurer le déploiement afin de démarrer automatiquement une session de
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

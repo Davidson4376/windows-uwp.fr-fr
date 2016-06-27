@@ -1,11 +1,14 @@
 ---
 author: eliotcowley
-Description: Concevez votre application pour une esthétique et un fonctionnement optimaux sur votre télévision.
-title: Conception pour Xbox et télévision
+Description: "Concevez votre application pour une esthétique et un fonctionnement optimaux sur votre télévision."
+title: "Conception pour Xbox et télévision"
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
+ms.sourcegitcommit: 21be5cd53ed124e3b35f5887fb16e7b0405f000b
+ms.openlocfilehash: daa1df78409bd10ee1d5c24e8874e011d4005a82
+
 ---
 
 > \[Cet article présente une fonctionnalité qui n’est pas encore disponible publiquement. Cette fonctionnalité est susceptible d’être considérablement modifiée avant d’être commercialisée. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -16,29 +19,21 @@ Concevez votre application de plateforme Windows universelle (UWP) pour une est
 
 ## Vue d’ensemble
 
-La plateforme Windows universelle vous permet de créer des expériences agréables sur plusieurs types d’appareils Windows 10. 
-La plupart des fonctionnalités fournies par l’infrastructure UWP permettent aux applications d’utiliser la même interface utilisateur sur ces appareils, sans travail supplémentaire. 
-Toutefois, des éléments particuliers sont à prendre en compte afin d’optimiser votre application et l’adapter pour un fonctionnement parfait sur les écrans de télévision et Xbox One.
+La plateforme Windows universelle vous permet de créer des expériences agréables sur plusieurs types d’appareils Windows 10. La plupart des fonctionnalités fournies par l’infrastructure UWP permettent aux applications d’utiliser la même interface utilisateur sur ces appareils, sans travail supplémentaire. Toutefois, des éléments particuliers sont à prendre en compte afin d’optimiser votre application et l’adapter pour un fonctionnement parfait sur les écrans de télévision et Xbox One.
 
-L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le « **10-foot experience** » 
-Ce nom vient du fait que l’utilisateur se trouve généralement à 3 mètres (10 pieds) de l’écran. 
-Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience « *2-foot experience* » ou lors d’interactions avec un PC. 
-Si vous développez une application pour Xbox One ou tout autre appareil dont la sortie et l’entrée se font respectivement sur télévision et par boîtier de commande, vous devez toujours garder ceci à l’esprit.
+L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le « **10-foot experience** » Ce nom vient du fait que l’utilisateur se trouve généralement à 3 mètres (10 pieds) de l’écran. Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience « *2-foot experience* » ou lors d’interactions avec un PC. Si vous développez une application pour Xbox One ou tout autre appareil dont la sortie et l’entrée se font respectivement sur télévision et par boîtier de commande, vous devez toujours garder ceci à l’esprit.
 
-Toutes les étapes décrites dans cet article ne sont pas nécessaires pour que votre application fonctionne pour les expériences « 10-foot experience », mais le fait de les comprendre et de prendre les décisions appropriées pour votre application créera une meilleure « 10-foot experience », mieux adaptée aux besoins spécifiques de votre application. 
-Lorsque vous concevez une application pour un environnement de 3 mètres, prenez en compte les principes de conception suivants.
+Toutes les étapes décrites dans cet article ne sont pas nécessaires pour que votre application fonctionne pour les expériences « 10-foot experience », mais le fait de les comprendre et de prendre les décisions appropriées pour votre application créera une meilleure « 10-foot experience », mieux adaptée aux besoins spécifiques de votre application. Lorsque vous concevez une application pour un environnement de 3 mètres, prenez en compte les principes de conception suivants.
 
 ### Simplicité
 
-La conception pour un environnement de 3 mètres présente des défis uniques. La résolution et la distance d’affichage peuvent rendre difficile pour les utilisateurs l’assimilation d’une trop grande quantité d’informations. 
-Faites en sorte que votre conception soit épurée et réduite aux composants les plus simples. La quantité d’informations affichées sur une télévision doit être comparable à ce que vous pourriez voir sur un téléphone mobile, plutôt que sur un bureau d’ordinateur.
+La conception pour un environnement de 3 mètres présente des défis uniques. La résolution et la distance d’affichage peuvent rendre difficile pour les utilisateurs l’assimilation d’une trop grande quantité d’informations. Faites en sorte que votre conception soit épurée et réduite aux composants les plus simples. La quantité d’informations affichées sur une télévision doit être comparable à ce que vous pourriez voir sur un téléphone mobile, plutôt que sur un bureau d’ordinateur.
 
 ![Écran d’accueil de Xbox One](images/designing-for-tv/xbox-home-screen.png)
 
 ### Cohérence
 
-Les applications UWP dans un environnement de 3 mètres doivent être intuitives et faciles d’utilisation. Le focus doit apparaître clairement. 
-Organisez le contenu de manière à ce que la navigation soit prévisible et cohérente. Fournissez à vos utilisateurs le chemin d’accès le plus rapide au contenu souhaité.
+Les applications UWP dans un environnement de 3 mètres doivent être intuitives et faciles d’utilisation. Le focus doit apparaître clairement. Organisez le contenu de manière à ce que la navigation soit prévisible et cohérente. Fournissez à vos utilisateurs le chemin d’accès le plus rapide au contenu souhaité.
 
 ![L’application Xbox One Movies](images/designing-for-tv/xbox-movies-app.png)
 
@@ -72,9 +67,7 @@ Les expériences les plus immersives et cinématographiques se passent sur grand
 
 ## Boîtier de commande et télécommande
 
-Comme le clavier et la souris pour PC et la fonction tactile pour les téléphones et tablettes, le boîtier de commande et la télécommande sont les principaux périphériques d’entrée pour l’expérience « 10-foot ». 
-Cette section présente les boutons matériels et leur fonction. 
-Dans les sections [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction) et [Mode souris](#mouse-mode), vous découvrirez comment optimiser votre application en cas d’utilisation de ces périphériques d’entrée.
+Comme le clavier et la souris pour PC et la fonction tactile pour les téléphones et tablettes, le boîtier de commande et la télécommande sont les principaux périphériques d’entrée pour l’expérience « 10-foot ». Cette section présente les boutons matériels et leur fonction. Dans les sections [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction) et [Mode souris](#mouse-mode), vous découvrirez comment optimiser votre application en cas d’utilisation de ces périphériques d’entrée.
 
 La qualité du comportement du boîtier de commande et de la télécommande lors de la première utilisation dépend de la prise en charge correcte du clavier dans votre application. Un moyen efficace de vous assurer que votre application fonctionne correctement avec le boîtier de commande/télécommande est de voir si celle-ci fonctionne correctement avec le clavier sur PC, puis testez-la avec un boîtier de commande/télécommande pour déterminer les points faibles dans votre interface utilisateur.
 
@@ -134,16 +127,13 @@ Le tableau suivant répertorie la prise en charge intégrée des accélérateurs
 
 ## Interaction et navigation en mode focus XY
 
-Si votre application prend en charge une navigation en mode focus appropriée pour le clavier, cela conviendra également pour le boîtier de commande et la télécommande. 
-La navigation avec les touches de direction est mappée au **bouton multidirectionnel** (ainsi qu’au **stick analogique gauche** sur le boîtier de commande), et l’interaction avec les éléments d’interface utilisateur est mappée à la touche **Entrée/Sélectionner** (voir [Boîtier de commande et télécommande](#gamepad-and-remote-control)). Pour des recommandations en matière de conception de clavier, voir [Interactions avec le clavier](keyboard-interactions.md).
+Si votre application prend en charge une navigation en mode focus appropriée pour le clavier, cela conviendra également pour le boîtier de commande et la télécommande. La navigation avec les touches de direction est mappée au **bouton multidirectionnel** (ainsi qu’au **stick analogique gauche** sur le boîtier de commande), et l’interaction avec les éléments d’interface utilisateur est mappée à la touche **Entrée/Sélectionner** (voir [Boîtier de commande et télécommande](#gamepad-and-remote-control)). Pour des recommandations en matière de conception de clavier, voir [Interactions avec le clavier](keyboard-interactions.md).
 
 Si la prise en charge du clavier est correctement implémentée, votre application fonctionnera assez bien ; toutefois, du travail supplémentaire peut être nécessaire pour la prise en charge de chaque scénario. Réfléchissez aux besoins spécifiques de votre application pour proposer une expérience utilisateur optimale.
 
 ### Interface utilisateur inaccessible
 
-Étant donné que la navigation en mode focus XY limite le déplacement vers le haut, le bas, à gauche et à droite, il existe des scénarios où certaines parties de l’interface utilisateur ne sont pas accessibles. 
-Le schéma suivant illustre un exemple du type de disposition d’interface utilisateur que la navigation en mode focus XY ne prend pas en charge. 
-Notez que l’élément au milieu n’est pas accessible à l’aide du boîtier de commande/télécommande dans la mesure où la navigation horizontale et la navigation verticale sont prioritaires ; l’élément du milieu ne sera jamais d’une priorité suffisamment élevée pour avoir le focus.
+Étant donné que la navigation en mode focus XY limite le déplacement vers le haut, le bas, à gauche et à droite, il existe des scénarios où certaines parties de l’interface utilisateur ne sont pas accessibles. Le schéma suivant illustre un exemple du type de disposition d’interface utilisateur que la navigation en mode focus XY ne prend pas en charge. Notez que l’élément au milieu n’est pas accessible à l’aide du boîtier de commande/télécommande dans la mesure où la navigation horizontale et la navigation verticale sont prioritaires ; l’élément du milieu ne sera jamais d’une priorité suffisamment élevée pour avoir le focus.
 
 ![Éléments dans les quatre coins avec un élément inaccessible au milieu](images/designing-for-tv/2d-navigation-best-practices-ui-layout-to-avoid.png)
 
@@ -151,8 +141,7 @@ Si, pour une raison quelconque, il n’est pas possible de réorganiser l’inte
 
 ### Remplacement de la navigation par défaut <a name="overriding-the-default-navigation"></a>
 
-Pendant que la plateforme UWP tente de garantir la convivialité de la navigation par bouton multidirectionnel/stick analogique gauche, elle ne peut cependant pas garantir un comportement optimisé pour les intentions de votre application. 
-Pour vous assurer que la navigation est optimisée pour votre application, la meilleure solution consiste à la tester avec un boîtier de commande et de vérifier que tous les éléments d’interface utilisateur sont accessibles par l’utilisateur, d’une manière qui soit pertinente pour les scénarios de votre application. Si les scénarios de votre application nécessitent un comportement ne pouvant être obtenu par le biais de la navigation en mode focus XY, envisagez de suivre les conseils indiqués dans les sections suivantes et/ou de remplacer le comportement afin de placer le focus sur un élément logique.
+Pendant que la plateforme UWP tente de garantir la convivialité de la navigation par bouton multidirectionnel/stick analogique gauche, elle ne peut cependant pas garantir un comportement optimisé pour les intentions de votre application. Pour vous assurer que la navigation est optimisée pour votre application, la meilleure solution consiste à la tester avec un boîtier de commande et de vérifier que tous les éléments d’interface utilisateur sont accessibles par l’utilisateur, d’une manière qui soit pertinente pour les scénarios de votre application. Si les scénarios de votre application nécessitent un comportement ne pouvant être obtenu par le biais de la navigation en mode focus XY, envisagez de suivre les conseils indiqués dans les sections suivantes et/ou de remplacer le comportement afin de placer le focus sur un élément logique.
 
 L’extrait de code suivant montre comment remplacer le comportement de navigation en mode focus XY :
 
@@ -174,9 +163,9 @@ L’extrait de code suivant montre comment remplacer le comportement de navigati
 </StackPanel>
 ```
 
-Dans ce cas, lorsque le focus est sur le bouton `Home` et que l’utilisateur navigue vers la gauche, le focus se déplace sur le bouton `MyBtnLeft` ; si l’utilisateur navigue vers la droite, le focus se déplace sur le bouton `MyBtnRight` et ainsi de suite.
+Dans ce cas, lorsque le focus est sur le bouton `Home` et que l’utilisateur navigue vers la gauche, le focus se déplace sur le bouton `MyBtnLeft` ; si l’utilisateur navigue vers la droite, le focus se déplace sur le bouton `MyBtnRight` et ainsi de suite.
 
-Pour empêcher le focus de se déplacer dans une certaine direction à partir d’un contrôle, utilisez la propriété `XYFocus*` pour pointer sur ce même contrôle :
+Pour empêcher le focus de se déplacer dans une certaine direction à partir d’un contrôle, utilisez la propriété `XYFocus*` pour pointer sur ce même contrôle :
 
 ```xml
 <Button Name="HomeButton"  
@@ -190,8 +179,7 @@ Permettez à l’utilisateur d’effectuer les tâches les plus courantes avec l
 
 ![Meilleures pratiques en matière de navigation nécessitant le moins de clics](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-Dans l’exemple suivant, la classe [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) est placée au-dessus du bouton **Lecture** à la place. 
-Le simple fait de réorganiser l’interface utilisateur afin que les éléments inutiles ne soient pas placés entre les tâches prioritaires améliore considérablement la facilité d’utilisation de votre application.
+Dans l’exemple suivant, la classe [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) est placée au-dessus du bouton **Lecture** à la place. Le simple fait de réorganiser l’interface utilisateur afin que les éléments inutiles ne soient pas placés entre les tâches prioritaires améliore considérablement la facilité d’utilisation de votre application.
 
 ![TextBlock déplacée au-dessus du bouton de lecture afin qu’elle ne soit plus entre les tâches prioritaires](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
 
@@ -201,7 +189,7 @@ Lorsque vous utilisez une [CommandBar](https://msdn.microsoft.com/en-us/library/
 
 ![CommandBar en bas de la liste/grille](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-Que se passe-t-il si vous placez la `CommandBar`*au-dessus* de la liste/grille ? Bien qu’un utilisateur ayant effectué un défilement vers le bas de la liste/grille doive en refaire un vers le haut pour atteindre la `CommandBar`, cette navigation est un peu plus courte que la configuration précédente. On suppose ici que le focus initial de votre application est placé à côté ou au-dessus de la `CommandBar` ; cette approche ne fonctionne pas aussi bien si le focus initial se trouve sous la liste/grille. Si ces éléments `CommandBar` sont des éléments d’action globale auxquels l’utilisateur n’accède que rarement (tels qu’un bouton **Synchronisation**), le fait de les disposer au-dessus de la liste/grille reste acceptable.
+Que se passe-t-il si vous placez la `CommandBar`*au-dessus* de la liste/grille ? Bien qu’un utilisateur ayant effectué un défilement vers le bas de la liste/grille doive en refaire un vers le haut pour atteindre la `CommandBar`, cette navigation est un peu plus courte que la configuration précédente. On suppose ici que le focus initial de votre application est placé à côté ou au-dessus de la `CommandBar` ; cette approche ne fonctionne pas aussi bien si le focus initial se trouve sous la liste/grille. Si ces éléments `CommandBar` sont des éléments d’action globale auxquels l’utilisateur n’accède que rarement (tels qu’un bouton **Synchronisation**), le fait de les disposer au-dessus de la liste/grille reste acceptable.
 
 Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’une `ContextFlyout` et les supprimer de la `CommandBar`. 
 
@@ -233,9 +221,7 @@ La [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.x
 
 ##### Réorganisation de l’interface utilisateur <a name="ui-rearrange"></a>
 
-À moins que le focus initial ne soit placé au bas de la page, les éléments d’interface utilisateur placés au-dessus d’une liste à long défilement sont en général plus facilement accessibles que s’ils étaient placés au-dessous. 
-Si cette nouvelle disposition fonctionne pour d’autres appareils, il serait moins coûteux en ressources de modifier la disposition pour toutes les familles d’appareils au lieu d’apporter des modifications d’interface utilisateur spécifiques pour Xbox One. 
-En outre, le fait de placer des éléments d’interface utilisateur à l’opposé du sens de défilement (autrement dit, horizontalement pour une liste à défilement vertical ou verticalement pour une liste à défilement horizontal) améliorera davantage l’accessibilité.
+À moins que le focus initial ne soit placé au bas de la page, les éléments d’interface utilisateur placés au-dessus d’une liste à long défilement sont en général plus facilement accessibles que s’ils étaient placés au-dessous. Si cette nouvelle disposition fonctionne pour d’autres appareils, il serait moins coûteux en ressources de modifier la disposition pour toutes les familles d’appareils au lieu d’apporter des modifications d’interface utilisateur spécifiques pour Xbox One. En outre, le fait de placer des éléments d’interface utilisateur à l’opposé du sens de défilement (autrement dit, horizontalement pour une liste à défilement vertical ou verticalement pour une liste à défilement horizontal) améliorera davantage l’accessibilité.
 
 ![Application pour le secteur immobilier : Placement des boutons au-dessus d’une liste à long défilement](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
@@ -247,27 +233,21 @@ Lorsqu’une activation est *requise*, la totalité de la `ListView` devient une
 
 #### Problème : ScrollViewer sans élément pouvant être actif
 
-Étant donné que la navigation en mode focus XY dépend de la navigation vers un seul élément d’interface utilisateur pouvant être actif à la fois, un [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) ne contenant aucun élément pouvant être actif (par exemple, contenant seulement du texte), peut provoquer un scénario dans lequel l’utilisateur n’est pas en mesure d’afficher l’ensemble du contenu dans le `ScrollViewer`. 
-Pour connaître les solutions de ce scénario et des scénarios connexes, voir [Activation du focus](#focus-engagement).
+Étant donné que la navigation en mode focus XY dépend de la navigation vers un seul élément d’interface utilisateur pouvant être actif à la fois, un [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) ne contenant aucun élément pouvant être actif (par exemple, contenant seulement du texte), peut provoquer un scénario dans lequel l’utilisateur n’est pas en mesure d’afficher l’ensemble du contenu dans le `ScrollViewer`. Pour connaître les solutions de ce scénario et des scénarios connexes, voir [Activation du focus](#focus-engagement).
 
 ![Application pour le secteur immobilier : ScrollViewer contenant uniquement du texte](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
 #### Problème : interface utilisateur à défilement libre
 
-Si votre application nécessite une interface utilisateur à défilement libre, telle qu’une surface de dessin ou, dans l’exemple présent, une carte, la navigation en mode focus XY ne fonctionne simplement pas. 
-Dans ce cas, vous pouvez activer le [mode souris](#mouse-mode) pour permettre à l’utilisateur de naviguer librement à l’intérieur d’un élément d’interface utilisateur.
+Si votre application nécessite une interface utilisateur à défilement libre, telle qu’une surface de dessin ou, dans l’exemple présent, une carte, la navigation en mode focus XY ne fonctionne simplement pas. Dans ce cas, vous pouvez activer le [mode souris](#mouse-mode) pour permettre à l’utilisateur de naviguer librement à l’intérieur d’un élément d’interface utilisateur.
 
 ![Mapper un élément d’interface utilisateur à l’aide du mode souris](images/designing-for-tv/map-mouse-mode.png)
 
 ## Mode souris
 
-Comme décrit dans [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction), le focus est déplacé à l’aide du système de navigation XY sur Xbox One, ce qui permet à l’utilisateur de déplacer le focus entre les contrôles en effectuant des déplacements vers le haut, le bas, la gauche et la droite. 
-Toutefois, certains contrôles comme [WebView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.webview.aspx) et [MapControl](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx) nécessitent une interaction semblable à celle faite avec la souris, avec laquelle les utilisateurs peuvent déplacer le pointeur librement à l’intérieur des limites du contrôle. 
-Certaines applications permettent également de déplacer le pointeur sur la page entière ; l’expérience boîtier de commande/télécommande est alors semblable à l’expérience souris sur PC.
+Comme décrit dans [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction), le focus est déplacé à l’aide du système de navigation XY sur Xbox One, ce qui permet à l’utilisateur de déplacer le focus entre les contrôles en effectuant des déplacements vers le haut, le bas, la gauche et la droite. Toutefois, certains contrôles comme [WebView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.webview.aspx) et [MapControl](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx) nécessitent une interaction semblable à celle faite avec la souris, avec laquelle les utilisateurs peuvent déplacer le pointeur librement à l’intérieur des limites du contrôle. Certaines applications permettent également de déplacer le pointeur sur la page entière ; l’expérience boîtier de commande/télécommande est alors semblable à l’expérience souris sur PC.
 
-Pour ces scénarios, demandez un pointeur (mode souris) pour la page entière, ou sur un contrôle à l’intérieur d’une page. 
-Par exemple, votre application peut contenir une page comportant un contrôle `WebView` qui utilise le mode souris uniquement à l’intérieur du contrôle tandis que la navigation en mode focus XY est utilisée partout ailleurs. 
-Pour demander un pointeur, vous pouvez spécifier si vous le voulez **lorsqu’un contrôle ou une page sont actifs** ou **lorsqu’une page a le focus**.
+Pour ces scénarios, demandez un pointeur (mode souris) pour la page entière, ou sur un contrôle à l’intérieur d’une page. Par exemple, votre application peut contenir une page comportant un contrôle `WebView` qui utilise le mode souris uniquement à l’intérieur du contrôle tandis que la navigation en mode focus XY est utilisée partout ailleurs. Pour demander un pointeur, vous pouvez spécifier si vous le voulez **lorsqu’un contrôle ou une page sont actifs** ou **lorsqu’une page a le focus**.
 
 > **Remarque** &nbsp;&nbsp;La demande de pointeur lorsqu’un contrôle a le focus n’est pas prise en charge.
 
@@ -275,9 +255,9 @@ Le schéma suivant montre les mappages de bouton pour le boîtier de commande/la
 
 ![Mappages de bouton pour boîtier de commande/télécommande en mode souris](images/designing-for-tv/mouse-mode.png)
 
-> **Remarque** &nbsp;&nbsp;Le mode souris est uniquement pris en charge sur Xbox One avec boîtier de commande/télécommande. Il est ignoré sans avertissement dans d’autres familles d’appareils et types d’entrée.
+> **Remarque** &nbsp;&nbsp;Le mode souris est uniquement pris en charge sur Xbox One avec boîtier de commande/télécommande. Il est ignoré sans avertissement dans d’autres familles d’appareils et types d’entrée.
 
-Utilisez la propriété `RequiresPointer` dans un contrôle ou une page pour activer le mode souris sur ceux-ci. `RequiresPointer` a trois valeurs possibles : `Never` (valeur par défaut), `WhenEngaged` et `WhenFocused`.
+Utilisez la propriété `RequiresPointer` dans un contrôle ou une page pour activer le mode souris sur ceux-ci. `RequiresPointer` a trois valeurs possibles : `Never` (valeur par défaut), `WhenEngaged` et `WhenFocused`.
 
 > **Remarque** &nbsp;&nbsp;`RequiresPointer` est une nouvelle API qui n’a pas encore été documentée. 
 
@@ -285,7 +265,7 @@ Utilisez la propriété `RequiresPointer` dans un contrôle ou une page pour act
 
 ### Activation du mode souris sur un contrôle
 
-Lorsque l’utilisateur active un contrôle avec `RequiresPointer="WhenEngaged"`, le mode souris est activé sur le contrôle en question jusqu’à ce que l’utilisateur le désactive. L’extrait de code suivant montre un `MapControl` simple qui, lorsqu’il est activé, active le mode souris :
+Lorsque l’utilisateur active un contrôle avec `RequiresPointer="WhenEngaged"`, le mode souris est activé sur le contrôle en question jusqu’à ce que l’utilisateur le désactive. L’extrait de code suivant montre un `MapControl` simple qui, lorsqu’il est activé, active le mode souris :
 
 ```xml
 <Page>
@@ -296,9 +276,9 @@ Lorsque l’utilisateur active un contrôle avec `RequiresPointer="WhenEngaged"`
 </Page> 
 ```
 
-> **Remarque** &nbsp;&nbsp;Si un contrôle active le mode souris lorsqu’il est employé, il doit également être employé avec `IsEngagementRequired="true"` ; sinon, le mode souris n’est pas activé.
+> **Remarque** &nbsp;&nbsp;Si un contrôle active le mode souris lorsqu’il est employé, il doit également être employé avec `IsEngagementRequired="true"` ; sinon, le mode souris n’est pas activé.
 
-Lorsqu’un contrôle est en mode souris, ses contrôles imbriqués le sont également. Le mode demandé de ses enfants est ignoré &mdash; un parent ne peut pas être en mode souris si ses enfants ne le sont pas également.
+Lorsqu’un contrôle est en mode souris, ses contrôles imbriqués le sont également. Le mode demandé de ses enfants est ignoré &mdash; un parent ne peut pas être en mode souris si ses enfants ne le sont pas également.
 
 En outre, le mode demandé d’un contrôle est examiné uniquement lorsqu’il a le focus ; le mode n’est pas changé dynamiquement tant qu’il a le focus.
 
@@ -356,8 +336,7 @@ L’exemple suivant montre une interface utilisateur provoquant l’interruption
 
 ![Boutons à gauche et à droite d’un curseur horizontal](images/designing-for-tv/focus-engagement-focus-trapping.png)
 
-Si l’utilisateur veut accéder au bouton droit à partir du bouton gauche, il serait logique de supposer que la seule action requise serait d’appuyer deux fois sur le bouton multidirectionnel/stick analogique gauche. 
-Toutefois, si le [Slider](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.slider.aspx) ne nécessite pas d’activation, le comportement suivant se produit : lorsque l’utilisateur appuie à droite pour la première fois, le focus est décalé vers le `Slider` ; lorsqu’il réappuie à droite, la poignée du `Slider` se déplace à droite. L’utilisateur continuerait de déplacer la poignée vers la droite sans toutefois réussir à atteindre le bouton.
+Si l’utilisateur veut accéder au bouton droit à partir du bouton gauche, il serait logique de supposer que la seule action requise serait d’appuyer deux fois sur le bouton multidirectionnel/stick analogique gauche. Toutefois, si le [Slider](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.slider.aspx) ne nécessite pas d’activation, le comportement suivant se produit : lorsque l’utilisateur appuie à droite pour la première fois, le focus est décalé vers le `Slider` ; lorsqu’il réappuie à droite, la poignée du `Slider` se déplace à droite. L’utilisateur continuerait de déplacer la poignée vers la droite sans toutefois réussir à atteindre le bouton.
 
 Plusieurs approches existent pour contourner ce problème. L’une consiste à concevoir une disposition différente, comme dans l’exemple d’application pour le secteur immobilier dans [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction), où nous avons déplacé les boutons **Précédent** et **Suivant** au-dessus de `ListView`. L’empilement vertical (et non horizontal) des contrôles, comme le montre l’image suivante, peut résoudre le problème.
 
@@ -369,7 +348,7 @@ Une autre approche pour résoudre ce problème consiste à demander une activati
 
 ![Nécessité d’activation du focus sur un curseur afin que l’utilisateur puisse accéder au bouton situé à droite](images/designing-for-tv/focus-engagement-slider.png)
 
-Lorsque le `Slider` nécessite une activation du focus, l’utilisateur peut accéder au bouton situé à droite en appuyant simplement deux fois à droite sur le bouton multidirectionnel/stick analogique gauche. Cette solution est excellente, car elle ne nécessite aucun ajustement de l’interface utilisateur et produit le comportement attendu.
+Lorsque le `Slider` nécessite une activation du focus, l’utilisateur peut accéder au bouton situé à droite en appuyant simplement deux fois à droite sur le bouton multidirectionnel/stick analogique gauche. Cette solution est excellente, car elle ne nécessite aucun ajustement de l’interface utilisateur et produit le comportement attendu.
 
 ### Contrôles d’éléments
 
@@ -380,18 +359,13 @@ Outre le contrôle [Slider](https://msdn.microsoft.com/en-us/library/windows/app
 - [GridView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 - [FlipView](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.flipview)
 
-Contrairement au contrôle `Slider`, ces contrôles n’interrompent pas le focus en leur sein ; cependant, ils peuvent poser des problèmes en matière de facilité d’utilisation s’ils contiennent de grandes quantités de données. Voici un exemple d’un contrôle `ListView` qui contient une grande quantité de données.
+Contrairement au contrôle `Slider`, ces contrôles n’interrompent pas le focus en leur sein ; cependant, ils peuvent poser des problèmes en matière de facilité d’utilisation s’ils contiennent de grandes quantités de données. Voici un exemple d’un contrôle `ListView` qui contient une grande quantité de données.
 
 ![Contrôle ListView avec une grande quantité de données et des boutons au-dessus et en dessous](images/designing-for-tv/focus-engagement-list-and-grid-controls.png)
 
-Comme pour l’exemple `Slider`, nous allons essayer de naviguer à partir du bouton du haut vers le bouton du bas avec un boîtier de commande/une télécommande. 
-En partant du bouton du haut, où se trouve le focus, le fait d’appuyer sur la flèche Bas sur le bouton multidirectionnel/stick analogique gauche déplace le focus sur le premier élément dans le contrôle `ListView` (« Item 1 »). 
-Lorsque l’utilisateur appuie à nouveau, le focus est déplacé sur l’élément suivant dans la liste, et non sur le bouton situé en bas. 
-Pour accéder au bouton du bas, l’utilisateur doit d’abord parcourir chaque élément du contrôle `ListView`. 
-Si le contrôle `ListView` contient une grande quantité de données, cela peut s’avérer peu pratique et dégrader l’expérience utilisateur.
+Comme pour l’exemple `Slider`, nous allons essayer de naviguer à partir du bouton du haut vers le bouton du bas avec un boîtier de commande/une télécommande. En partant du bouton du haut, où se trouve le focus, le fait d’appuyer sur la flèche Bas sur le bouton multidirectionnel/stick analogique gauche déplace le focus sur le premier élément dans le contrôle `ListView` (« Item 1 »). Lorsque l’utilisateur appuie à nouveau, le focus est déplacé sur l’élément suivant dans la liste, et non sur le bouton situé en bas. Pour accéder au bouton du bas, l’utilisateur doit d’abord parcourir chaque élément du contrôle `ListView`. Si le contrôle `ListView` contient une grande quantité de données, cela peut s’avérer peu pratique et dégrader l’expérience utilisateur.
 
-Pour résoudre ce problème, définissez la propriété `IsFocusEngagementEnabled="True"` sur `ListView` pour demander son activation. 
-Cela permet à l’utilisateur de traverser rapidement le contrôle `ListView` en appuyant simplement sur le bouton Bas. Néanmoins, l’utilisateur n’est pas en mesure de parcourir la liste ou de sélectionner un élément dans celle-ci, sauf s’il l’active en appuyant sur le bouton **A/Sélectionner** lorsqu’il a le focus, puis en appuyant sur le bouton **B/Précédent** pour le désactiver.
+Pour résoudre ce problème, définissez la propriété `IsFocusEngagementEnabled="True"` sur `ListView` pour demander son activation. Cela permet à l’utilisateur de traverser rapidement le contrôle `ListView` en appuyant simplement sur le bouton Bas. Néanmoins, l’utilisateur n’est pas en mesure de parcourir la liste ou de sélectionner un élément dans celle-ci, sauf s’il l’active en appuyant sur le bouton **A/Sélectionner** lorsqu’il a le focus, puis en appuyant sur le bouton **B/Précédent** pour le désactiver.
 
 ![Contrôle ListView avec activation requise](images/designing-for-tv/focus-engagement-list-and-grid-controls-2.png)
 
@@ -399,7 +373,7 @@ Cela permet à l’utilisateur de traverser rapidement le contrôle `ListView` e
 
 Le contrôle [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), qui possède des caractéristiques particulières, diffère légèrement des contrôles précédents. Si vous disposez d’un `ScrollViewer` avec du contenu pouvant être actif, par défaut, la navigation vers `ScrollViewer` vous permet de parcourir ses éléments pouvant être actifs. Comme pour un contrôle `ListView`, vous devez parcourir chaque élément pour naviguer en dehors du contrôle `ScrollViewer`. 
 
-Si le contrôle `ScrollViewer` n’a *pas* de contenu pouvant être actif &mdash; par exemple, s’il contient uniquement du texte&mdash;, vous pouvez définir `IsFocusEngagementEnabled="True"` afin que l’utilisateur puisse activer `ScrollViewer` à l’aide du bouton **A/Sélectionner**. Une fois activé, l’utilisateur peut faire défiler le texte à l’aide du **bouton multidirectionnel/stick analogique gauche**, puis appuyer sur le bouton **B/Précédent** pour le désactiver.
+Si le contrôle `ScrollViewer` n’a *pas* de contenu pouvant être actif &mdash; par exemple, s’il contient uniquement du texte&mdash;, vous pouvez définir `IsFocusEngagementEnabled="True"` afin que l’utilisateur puisse activer `ScrollViewer` à l’aide du bouton **A/Sélectionner**. Une fois activé, l’utilisateur peut faire défiler le texte à l’aide du **bouton multidirectionnel/stick analogique gauche**, puis appuyer sur le bouton **B/Précédent** pour le désactiver.
 
 Une autre approche consiste à définir `IsTabStop="True"` sur le contrôle `ScrollViewer` afin que l’utilisateur n’ait pas à activer le contrôle. Il peut simplement y placer le focus, puis le faire défiler à l’aide du **bouton multidirectionnel/stick analogique gauche** lorsqu’il n’existe pas d’éléments pouvant être actifs au sein du contrôle `ScrollViewer`.&mdash;
 
@@ -422,23 +396,17 @@ Aucun autre contrôle UWP n’a de modification comportementale ou visuelle lors
 
 ## Redimensionnement des éléments de l’interface utilisateur
 
-Étant donné que l’utilisateur d’une application dans un environnement de 3 mètres utilise un boîtier de commande ou une télécommande et se trouve à plusieurs mètres de l’écran, vous devez incorporer à votre conception certains éléments liés à l’interface utilisateur. 
-Assurez-vous que le contenu sur l’interface utilisateur présente la densité appropriée et que l’interface n’est pas trop encombrée, afin que l’utilisateur puisse la parcourir et sélectionner des éléments en toute simplicité. N’oubliez pas que la simplicité est le maître mot.
+Étant donné que l’utilisateur d’une application dans un environnement de 3 mètres utilise un boîtier de commande ou une télécommande et se trouve à plusieurs mètres de l’écran, vous devez incorporer à votre conception certains éléments liés à l’interface utilisateur. Assurez-vous que le contenu sur l’interface utilisateur présente la densité appropriée et que l’interface n’est pas trop encombrée, afin que l’utilisateur puisse la parcourir et sélectionner des éléments en toute simplicité. N’oubliez pas que la simplicité est le maître mot.
 
 ### Facteur d’échelle et disposition adaptative
 
-Le **facteur d’échelle** permet de s’assurer que le dimensionnement des éléments de l’interface utilisateur est approprié pour l’appareil sur lequel s’exécute l’application. 
-Sur le Bureau, ce paramètre se trouve dans **Paramètres &gt; Système &gt; Affichage** sous forme de curseur. 
-Ce paramètre existe également sur les appareils mobiles prenant en charge ce paramètre.
+Le **facteur d’échelle** permet de s’assurer que le dimensionnement des éléments de l’interface utilisateur est approprié pour l’appareil sur lequel s’exécute l’application. Sur le Bureau, ce paramètre se trouve dans **Paramètres &gt; Système &gt; Affichage** sous forme de curseur. Ce paramètre existe également sur les appareils mobiles prenant en charge ce paramètre.
 
 ![Modifier la taille du texte, des applications et des autres éléments](images/designing-for-tv/ui-scaling.png) 
 
-Xbox One ne présente pas ce paramètre système ; cependant pour que les éléments d’interface utilisateur de plateforme UWP aient une taille appropriée, ils sont mis à l’échelle à la valeur **200 %** par défaut. 
-Du moment que les éléments d’IU sont d’une taille appropriée pour les autres appareils, ils le seront également pour la TV. 
-Xbox One effectue le rendu de votre application à 1080p (1920 x 1080 pixels). Par conséquent, lorsque vous intégrez une application à partir d’autres appareils, par exemple un PC, assurez-vous de l’aspect correct de l’interface utilisateur à 960 x 540 pixels à une échelle de 100 % à l’aide des [techniques adaptatives](https://msdn.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
+Xbox One ne présente pas ce paramètre système ; cependant pour que les éléments d’interface utilisateur de plateforme UWP aient une taille appropriée, ils sont mis à l’échelle à la valeur **200 %** par défaut. Du moment que les éléments d’IU sont d’une taille appropriée pour les autres appareils, ils le seront également pour la TV. Xbox One effectue le rendu de votre application à 1080p (1920 x 1080 pixels). Par conséquent, lorsque vous intégrez une application à partir d’autres appareils, par exemple un PC, assurez-vous de l’aspect correct de l’interface utilisateur à 960 x 540 pixels à une échelle de 100 % à l’aide des [techniques adaptatives](https://msdn.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
-La conception pour Xbox diffère quelque peu de la conception pour PC, car une seule résolution est concernée : 1920 x 1080. 
-Peu importe si l’utilisateur possède une télévision dont la résolution est meilleure &mdash; les applications UWP sont toujours mises à l’échelle à 1080p.
+La conception pour Xbox diffère quelque peu de la conception pour PC, car une seule résolution est concernée : 1920 x 1080. Peu importe si l’utilisateur possède une télévision dont la résolution est meilleure &mdash; les applications UWP sont toujours mises à l’échelle à 1080p.
 
 Les tailles de ressources appropriées sont également extraites pour votre application à partir de l’échelle 200 % lorsque l’application est exécutée sur Xbox One, quelle que soit la résolution de la télévision.
 
@@ -469,8 +437,7 @@ Lorsque vous utilisez du texte supérieur à la normale dans votre interface uti
 
 ### Désactivation du facteur d’échelle
 
-Nous recommandons que votre application tire parti de la prise en charge du facteur d’échelle, ce qui lui permettra de s’exécuter correctement sur tous les appareils, ayant été mise à l’échelle pour chaque type d’appareil. 
-Il reste cependant possible de désactiver ce comportement et de concevoir toutes vos interfaces utilisateur à une échelle de 100 %. Notez que vous ne pouvez pas modifier la valeur du facteur d’échelle sur autre chose que 100 %.
+Nous recommandons que votre application tire parti de la prise en charge du facteur d’échelle, ce qui lui permettra de s’exécuter correctement sur tous les appareils, ayant été mise à l’échelle pour chaque type d’appareil. Il reste cependant possible de désactiver ce comportement et de concevoir toutes vos interfaces utilisateur à une échelle de 100 %. Notez que vous ne pouvez pas modifier la valeur du facteur d’échelle sur autre chose que 100 %.
 
 Vous pouvez choisir d’annuler le facteur d’échelle à l’aide de l’extrait de code suivant :
 
@@ -527,7 +494,7 @@ Il existe deux façons d’étendre l’interface utilisateur vers les bords de 
 
 Pour les applications UWP ciblant uniquement l’expérience « 10-foot », les limites de fenêtre principale constituent une option plus simple.
 
-Dans la méthode `OnLaunched` de `App.xaml.cs`, ajoutez le code suivant :
+Dans la méthode `OnLaunched` de `App.xaml.cs`, ajoutez le code suivant :
 
 ```csharp
 Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode
@@ -540,18 +507,15 @@ Avec cette ligne de code, la fenêtre d’application remplit l’écran. Vous d
 
 ### Marges négatives
 
-Pour les applications UWP ciblant un éventail d’appareils tels que les mobiles, les bureaux et Xbox One, les marges négatives peuvent constituer une méthode plus intuitive pour adapter les dispositions adaptatives. 
-Nous vous recommandons de créer un [déclencheur personnalisé](#custom-visual-state-trigger-for-xbox-one) et de modifier les marges pour les adapter aux dispositions des télévisions.
+Pour les applications UWP ciblant un éventail d’appareils tels que les mobiles, les bureaux et Xbox One, les marges négatives peuvent constituer une méthode plus intuitive pour adapter les dispositions adaptatives. Nous vous recommandons de créer un [déclencheur personnalisé](#custom-visual-state-trigger-for-xbox-one) et de modifier les marges pour les adapter aux dispositions des télévisions.
 
 #### Arrière-plans de volet de navigation 
 
-Les volets de navigation sont généralement placés près du bord de l’écran. L’arrière-plan doit donc s’étendre dans la zone inadaptée à l’écran de TV pour ne pas qu’il y ait d’espaces vides. 
-Vous pouvez faire ceci avec les marges négatives à l’aide du contrôle [SplitView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.splitview.aspx). Ce dernier est couramment utilisé en tant que bloc de construction. Vous pouvez également utiliser des marges positives dans le contenu de `SplitView` afin de le maintenir dans la zone adaptée à l’écran de TV.
+Les volets de navigation sont généralement placés près du bord de l’écran. L’arrière-plan doit donc s’étendre dans la zone inadaptée à l’écran de TV pour ne pas qu’il y ait d’espaces vides. Vous pouvez faire ceci avec les marges négatives à l’aide du contrôle [SplitView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.splitview.aspx). Ce dernier est couramment utilisé en tant que bloc de construction. Vous pouvez également utiliser des marges positives dans le contenu de `SplitView` afin de le maintenir dans la zone adaptée à l’écran de TV.
 
 ![Volet de navigation étendu aux bords de l’écran](images/designing-for-tv/tv-safe-areas-2.png)
 
-L’arrière-plan du volet de navigation a été étendu aux bords de l’écran, tandis que ses éléments de navigation sont conservés dans la zone adaptée à l’écran de TV. 
-Le contenu de `SplitView` (dans ce cas, une grille d’éléments) a été étendu vers le bas de l’écran pour ne pas avoir l’air tronqué. La partie supérieure de la grille reste toujours dans la zone adaptée à l’écran de TV. Plus loin dans cette section, vous apprendrez à conserver l’élément sélectionné dans la zone adaptée à l’écran de TV.
+L’arrière-plan du volet de navigation a été étendu aux bords de l’écran, tandis que ses éléments de navigation sont conservés dans la zone adaptée à l’écran de TV. Le contenu de `SplitView` (dans ce cas, une grille d’éléments) a été étendu vers le bas de l’écran pour ne pas avoir l’air tronqué. La partie supérieure de la grille reste toujours dans la zone adaptée à l’écran de TV. Plus loin dans cette section, vous apprendrez à conserver l’élément sélectionné dans la zone adaptée à l’écran de TV.
 
 L’extrait de code suivant permet de réaliser l’effet en question :
 
@@ -577,7 +541,7 @@ L’extrait de code suivant permet de réaliser l’effet en question :
 
 [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) est un autre exemple de volet généralement positionné près d’un ou plusieurs bords de l’application. Son arrière-plan doit donc s’étendre aux bords des écrans de TV. Il contient généralement un bouton **Plus** (...) sur le côté droit qui doit rester dans la zone adaptée à l’écran de TV. Voici quelques stratégies différentes permettant d’obtenir les interactions et effets visuels souhaités.
 
-**Option 1** : modifiez la couleur d’arrière-plan de `CommandBar` pour la définir sur transparent ou sur la même couleur que l’arrière-plan de la page :
+**Option 1** : modifiez la couleur d’arrière-plan de `CommandBar` pour la définir sur transparent ou sur la même couleur que l’arrière-plan de la page :
 
 ```xml
 <CommandBar x:Name="topbar" 
@@ -586,9 +550,9 @@ L’extrait de code suivant permet de réaliser l’effet en question :
 </CommandBar>
 ```
 
-`CommandBar` paraît ainsi avoir le même arrière-plan que le reste de la page ; l’arrière-plan s’étend donc vers le bord de l’écran en toute fluidité.
+`CommandBar` paraît ainsi avoir le même arrière-plan que le reste de la page ; l’arrière-plan s’étend donc vers le bord de l’écran en toute fluidité.
 
-**Option 2** : ajoutez un rectangle en arrière-plan dont le remplissage est de la même couleur que l’arrière-plan de `CommandBar`, puis étendez-le aux bords de l’écran avec des marges négatives :
+**Option 2** : ajoutez un rectangle en arrière-plan dont le remplissage est de la même couleur que l’arrière-plan de `CommandBar`, puis étendez-le aux bords de l’écran avec des marges négatives :
 
 ```xml
 <Rectangle VerticalAlignment="Top" 
@@ -747,20 +711,15 @@ Par défaut, la plateforme Windows universelle ne modifie pas les couleurs de v
 
 Vous pouvez choisir un **thème d’application** (clair ou foncé) en fonction de ce qui est approprié pour votre application, ou vous pouvez ignorer le thème. Pour en savoir plus sur les recommandations générales pour les thèmes, voir [Thèmes de couleur](../style/color.md#color-themes).
 
-L’UWP permet également aux applications de définir le thème de manière dynamique selon les paramètres système fournis par les appareils sur lesquels elles s’exécutent. 
-Bien que l’UWP respecte toujours les paramètres de thème spécifiés par l’utilisateur, chaque appareil fournit également un thème par défaut approprié. 
-En raison de la nature de Xbox One, qui génère plus d’expériences *multimédias* que d’expériences de *productivité*, son thème de système est foncé par défaut. 
-Si le thème de votre application est basé sur les paramètres système, celui-ci devrait être foncé sur Xbox One par défaut.
+L’UWP permet également aux applications de définir le thème de manière dynamique selon les paramètres système fournis par les appareils sur lesquels elles s’exécutent. Bien que l’UWP respecte toujours les paramètres de thème spécifiés par l’utilisateur, chaque appareil fournit également un thème par défaut approprié. En raison de la nature de Xbox One, qui génère plus d’expériences *multimédias* que d’expériences de *productivité*, son thème de système est foncé par défaut. Si le thème de votre application est basé sur les paramètres système, celui-ci devrait être foncé sur Xbox One par défaut.
 
 ### Couleur d’accentuation
 
 La plateforme UWP fournit un moyen pratique pour afficher la **couleur d’accentuation** que l’utilisateur a sélectionnée dans ses paramètres système.
 
-Sur Xbox One, l’utilisateur est en mesure de sélectionner une couleur utilisateur, comme il peut sélectionner une couleur d’accentuation sur un PC. 
-Dans la mesure où votre application appelle ces couleurs d’accentuation par le biais de pinceaux ou de ressources de couleur, la couleur sélectionnée par l’utilisateur dans les paramètres système sera utilisée. Notez que les couleurs d’accentuation sur Xbox One sont définies par l’utilisateur et non par le système.
+Sur Xbox One, l’utilisateur est en mesure de sélectionner une couleur utilisateur, comme il peut sélectionner une couleur d’accentuation sur un PC. Dans la mesure où votre application appelle ces couleurs d’accentuation par le biais de pinceaux ou de ressources de couleur, la couleur sélectionnée par l’utilisateur dans les paramètres système sera utilisée. Notez que les couleurs d’accentuation sur Xbox One sont définies par l’utilisateur et non par le système.
 
-Notez également que l’ensemble des couleurs utilisateur sur Xbox One n’est pas le même que sur les PC, téléphones et autres appareils. 
-C’est en partie dû au fait que ces couleurs sont triées sur le volet pour optimiser l’expérience « 10-foot » sur Xbox One, suivant les mêmes méthodologies et stratégies décrites dans cet article.
+Notez également que l’ensemble des couleurs utilisateur sur Xbox One n’est pas le même que sur les PC, téléphones et autres appareils. C’est en partie dû au fait que ces couleurs sont triées sur le volet pour optimiser l’expérience « 10-foot » sur Xbox One, suivant les mêmes méthodologies et stratégies décrites dans cet article.
 
 Tant que votre application utilise une ressource de pinceau, telle que **SystemControlForegroundAccentBrush**, ou une ressource de couleur (**SystemAccentColor**), ou appelle les couleurs d’accentuation directement via l’API [UIColorType.Accent*](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx), les couleurs sont remplacées par des couleurs d’accentuation qui conviennent pour la télévision. Les couleurs de pinceau à contraste élevé sont également extraites à partir du système de la même manière que sur un PC et téléphone, mais avec des couleurs qui conviennent pour la télévision.
 
@@ -870,7 +829,7 @@ L’exemple de code suivant fournit un thème de couleur optimisé pour l’util
 
 > **Remarque** &nbsp;&nbsp;Les couleurs hexadécimales s’écrivent sous la forme **ARVB** (Alpha, Rouge, Vert, Bleu).
 
-Nous déconseillons l’utilisation de couleurs adaptées aux écrans de TV sur un écran pouvant afficher la palette complète des couleurs (sans opération de déplacement), car les couleurs sembleraient délavées. Il est préférable de charger le dictionnaire de ressources (exemple précédent) lorsque votre application s’exécute sur Xbox, mais *pas* sur les autres plateformes. Dans la méthode `OnLaunched` de `App.xaml.cs`, ajoutez la vérification suivante :
+Nous déconseillons l’utilisation de couleurs adaptées aux écrans de TV sur un écran pouvant afficher la palette complète des couleurs (sans opération de déplacement), car les couleurs sembleraient délavées. Il est préférable de charger le dictionnaire de ressources (exemple précédent) lorsque votre application s’exécute sur Xbox, mais *pas* sur les autres plateformes. Dans la méthode `OnLaunched` de `App.xaml.cs`, ajoutez la vérification suivante :
 
 ```csharp
 if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
@@ -929,6 +888,7 @@ La conception pour l’expérience « 10-foot » implique de prendre en compte
 - [Son dans les applications UWP](../style/sound.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

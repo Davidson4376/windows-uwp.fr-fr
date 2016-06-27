@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Recevez, traitez et gérez les données d’entrée à partir de dispositifs de pointage, tels que l’interaction tactile, la souris, le stylet et le pavé tactile, dans les applications UWP.
-title: Gérer les entrées du pointeur
+Description: "Recevez, traitez et gérez les données d’entrée à partir de dispositifs de pointage, tels que l’interaction tactile, la souris, le stylet et le pavé tactile, dans les applications UWP."
+title: "Gérer les entrées du pointeur"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
+
 ---
 
 # Gérer les entrées du pointeur
@@ -1101,6 +1104,7 @@ namespace PointerInput
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,8 +1,11 @@
 ---
 author: mtoepke
 title: Jeux et DirectX
-description: La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation des jeux. Découvrez comment créer un jeu ou porter un jeu existant.
+description: "La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation des jeux. Découvrez comment créer un jeu ou porter un jeu existant."
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
+
 ---
 
 # Jeux et DirectX
@@ -63,6 +66,7 @@ Pour utiliser au mieux les vues d’ensemble du développement de jeux et des di
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

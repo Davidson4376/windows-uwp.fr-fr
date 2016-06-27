@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Permet d’afficher les images d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, image par image.
-title: Recommandations en matière de contrôles de vue symétrique
+Description: "Permet d’afficher les images d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, image par image."
+title: "Recommandations en matière de contrôles de vue symétrique"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+
 ---
 # Vue symétrique
 
@@ -207,6 +210,7 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 - [**Classe CarouselPanel (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

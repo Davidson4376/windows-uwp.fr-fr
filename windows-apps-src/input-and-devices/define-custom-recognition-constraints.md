@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
-title: Définir des contraintes de reconnaissance vocale personnalisées
+Description: "Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale."
+title: "Définir des contraintes de reconnaissance vocale personnalisées"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7d91cef0955dbf8544f658369ee488c47aaef787
+
 ---
 
 # Définir des contraintes de reconnaissance vocale personnalisées
@@ -18,7 +21,7 @@ Découvrez comment définir et utiliser des contraintes personnalisées pour la 
 -   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
-La reconnaissance vocale requiert au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, la grammaire de dictée prédéfinie des applications Windows universelles est utilisée. Voir [Reconnaissance vocale](speech-recognition.md)
+La reconnaissance vocale requiert au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, la grammaire de dictée prédéfinie des applications Windows universelles est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
 
 
 ## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>Ajouter des contraintes
@@ -29,7 +32,7 @@ Utilisez la propriété [**SpeechRecognizer.Constraints**](https://msdn.microsof
 Nous abordons ici les trois types de contraintes de reconnaissance vocale utilisés à partir d’une application. (Pour plus d’informations sur les contraintes de commandes vocales, voir [Lancer une application au premier plan avec les commandes vocales de Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
 
 -   [
-            **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) : contrainte basée sur une grammaire prédéfinie (dictée ou recherche web).
+            **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) : contrainte basée sur une grammaire prédéfinie (dictée ou recherche web).
 -   [
             **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) : contrainte basée sur une liste de mots ou d’expressions.
 -   [
@@ -239,6 +242,7 @@ Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez le
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

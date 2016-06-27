@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Un affichage Calendrier permet à un utilisateur d’afficher un calendrier qu’il peut parcourir par mois, par année ou par décennie, et d’interagir avec celui-ci.
+Description: "Un affichage Calendrier permet à un utilisateur d’afficher un calendrier qu’il peut parcourir par mois, par année ou par décennie, et d’interagir avec celui-ci."
 title: Affichage Calendrier
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75
+
 ---
 
 # Affichage Calendrier
@@ -47,7 +50,7 @@ L’affichage Calendrier obtenu se présente comme suit :
 
 Par défaut, la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) est définie sur **Single**. Cela permet à l’utilisateur de sélectionner une date unique dans le calendrier. Définissez SelectionMode sur **None** pour désactiver la sélection de date. 
 
-Définissez SelectionMode sur **Multiple** pour permettre à un utilisateur de sélectionner plusieurs dates. Vous pouvez sélectionner plusieurs dates par programme en ajoutant des objets [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) à la collection [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx), comme illustré ici :
+Définissez SelectionMode sur **Multiple** pour permettre à un utilisateur de sélectionner plusieurs dates. Vous pouvez sélectionner plusieurs dates par programme en ajoutant des objets [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) à la collection [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx), comme illustré ici :
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
@@ -191,6 +194,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [Sélecteur d’heure](time-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

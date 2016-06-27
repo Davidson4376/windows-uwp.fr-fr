@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-description: Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana.
+description: "Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana."
 title: Interactions vocales
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
+ms.sourcegitcommit: bcc401c515cdba899fb2202ddddf5bd98b64aecd
+ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
+
 ---
 
 # Interactions vocales
@@ -154,7 +157,7 @@ Les grammaires de dictée et de recherche web prédéfinies vous permettent d’
 -   La grammaire de dictée de texte libre par défaut peut reconnaître la plupart des mots et expressions prononcés par un utilisateur dans une langue spécifique. Elle est optimisée pour reconnaître les expressions courtes. La dictée de texte libre est utile si vous ne souhaitez pas limiter ce qu’un utilisateur peut dire. Elle est généralement utilisée pour créer des notes ou dicter le contenu d’un message.
 -   La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
-> [!NOTE] Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.
+> [!NOTE] Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.
 
 Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Elles nécessitent toutefois une connexion à un réseau.
 
@@ -234,6 +237,7 @@ Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal un
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

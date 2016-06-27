@@ -1,8 +1,11 @@
 ---
 author: Mtoepke
-title: Présentation des outils Xbox One
-description: Outil Accueil du développeur propre à Xbox One, utilisant Windows Device Portal.
+title: "Présentation des outils Xbox One"
+description: "Outil Accueil du développeur propre à Xbox One, utilisant Windows Device Portal."
 area: Xbox
+ms.sourcegitcommit: 4872ac9587b3e2e14860cb152bf33536faccc48d
+ms.openlocfilehash: c975cb07aa9b7f0d30a9905cbceba11e89c8f7df
+
 ---
 
 # Présentation des outils Xbox One
@@ -86,10 +89,6 @@ Pour définir un nom d’hôte pour un kit de développement, accédez à l’ou
 ## Windows Device Portal
 Windows Device Portal (WDP) est un outil de gestion d’appareils OneCore basé sur le navigateur.
 
-> **Remarque** &nbsp;&nbsp;Lorsque vous démarrez WDP dans cette version préliminaire d’Accueil du développeur, l’outil Accueil du développeur se bloque une fois que vous avez entré votre nom d’utilisateur et votre mot de passe et que vous avez cliqué sur **Enregistrer**.
-Les informations d’identification sont enregistrées, mais WDP ne démarre pas.
-Vous pouvez démarrer WDP en redémarrant Xbox One.
-
 Pour activer WDP sur votre console Xbox One :
 
 1. Sélectionnez la vignette Accueil du développeur sur l’écran d’accueil.
@@ -118,6 +117,7 @@ Pour activer WDP sur votre console Xbox One :
 ----
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

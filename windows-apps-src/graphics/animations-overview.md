@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
-title: Vue d’ensemble des animations
-description: Utilisez les animations de la bibliothèque d’animations du Windows Runtime pour intégrer l’apparence de Windows dans votre application.
+title: "Vue d’ensemble des animations"
+description: "Utilisez les animations de la bibliothèque d’animations du Windows Runtime pour intégrer l’apparence de Windows dans votre application."
+ms.sourcegitcommit: c8ba7f6303a05b8de03aa29199aaa444abf75827
+ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
+
 ---
 # Vue d’ensemble des animations
 
@@ -23,6 +26,8 @@ Par exemple, quand l’utilisateur ajoute un élément à une liste, au lieu que
 
 La bibliothèque d’animations ne fournit pas des animations pour chaque scénario possible. Il peut arriver que vous souhaitiez créer une animation personnalisée en XAML. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md).
 
+En outre, pour certains scénarios avancés, tels que l’animation d’un élément en fonction de la position de défilement d’une visionneuse à défilement, les développeurs peuvent utiliser l’interopération de couche visuelle afin d’implémenter des animations personnalisées. Pour plus d’informations, voir [Couche visuelle](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer).
+
 ## Types d’animations
 
 La bibliothèque d’animations et le système d’animations Windows Runtime ont pour but majeur de permettre aux contrôles et autres parties de l’interface utilisateur d’avoir un comportement animé. Il existe plusieurs types distincts d’animations.
@@ -30,12 +35,13 @@ La bibliothèque d’animations et le système d’animations Windows Runtime on
 -   Les *transitions thématiques* sont appliquées automatiquement quand certaines conditions sont modifiées dans l’interface utilisateur, impliquant des éléments ou contrôles provenant des types d’interface utilisateur XAML Windows Runtime prédéfinis. Elles sont appelées *transitions thématiques*, car elles prennent en charge l’apparence Windows et définissent les actions de toutes les applications pour des scénarios d’interface utilisateur particuliers quand elles passent d’un mode d’interaction à un autre. Les transitions thématiques font partie de la bibliothèque d’animations.
 -   Les *animations thématiques* sont des animations appliquées à une ou plusieurs propriétés de types d’interface utilisateur XAML Windows Runtime prédéfinis. Elles diffèrent des transitions thématiques car elles ciblent un élément spécifique et existent dans des états visuels spécifiques dans un contrôle, alors que les transitions thématiques sont affectées à des propriétés du contrôle qui existent en dehors des états visuels et influencent les transitions entre ces états. Une grande partie des contrôles XAML Windows Runtime comprennent des animations thématiques dans des storyboards qui font partie de leur modèle de contrôle, les animations étant déclenchées par les états visuels. Du moment que vous ne changez pas les modèles, vous disposez de ces animations thématiques intégrées pour les contrôles dans votre interface utilisateur. En revanche, si vous remplacez des modèles, vous supprimez également les animations thématiques de contrôle intégrées. Pour les récupérer, vous devez définir une table de montage séquentiel qui comprend des animations thématiques dans le jeu d’états visuels du contrôle. Vous pouvez aussi exécuter des animations thématiques à partir de storyboards qui ne sont pas dans des états visuels et les démarrer avec la méthode [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), mais ce scénario est moins courant. Les animations thématiques font partie de la bibliothèque d’animations.
 -   Les *transitions visuelles* sont appliquées quand un contrôle passe de l’un de ses états visuels définis à un autre état. Il s’agit d’animations personnalisées que vous créez et elles sont généralement associées au modèle personnalisé que vous créez pour un contrôle et aux définitions d’état visuel de ce modèle. L’animation est exécutée uniquement pendant le délai entre les états et celui-ci est généralement court, quelques secondes au plus. Pour plus d’informations, voir la [section « VisualTransition » dans Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition).
--   Les *tables de montage séquentiel* sont appliquées quand elles sont spécifiquement lancées par le code de votre application ou par le code qui accompagne un composant, par exemple un contrôle que vous avez inclus. Les animations dans une table de montage séquentiel peuvent changer la valeur de n’importe quelle propriété de dépendance Windows Runtime au fil du temps. Elles ne sont pas limitées aux scénarios d’interface utilisateur ; en fait, il peut être utile de les considérer comme une technique de machine à états, si vous connaissez ce concept. Une animation dans une table de montage séquentiel n’est pas limitée au délai de transition entre les états visuels ; elle peut être exécutée à tout moment indépendamment de la modification de l’état d’un contrôle et l’animation peut éventuellement être exécutée en continu. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md). Pour plus d’informations sur les propriétés de dépendance et sur l’emplacement où elles existent, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583).
+-   Les *animations dans une table de montage séquentiel* animent la valeur d’une propriété de dépendance Windows Runtime au fil du temps. Les tables de montage séquentiel peuvent être définies dans le cadre d’une transition visuelle ou déclenchées par l’application lors de l’exécution. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md). Pour plus d’informations sur les propriétés de dépendance et sur l’emplacement où elles existent, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583).
 
 ## Animations disponibles dans la bibliothèque
 
 Les animations suivantes sont fournies dans la bibliothèque d’animations. Cliquez sur le nom d’une animation pour en savoir plus sur ses principaux scénarios d’utilisation, comment la définir, ainsi que pour afficher un exemple de l’animation.
 
+-   [Transition de page](./animations-overview.md#page-transition) : anime les transitions entre les pages dans un [**cadre**](https://msdn.microsoft.com/library/windows/apps/br242682).
 -   [Transition de contenu et d’entrée](./animations-overview.md#content-transition-and-entrance-transition) : anime des éléments de contenu à l’intérieur ou en dehors de la vue.
 -   [Apparition/disparition en fondu et fondu enchaîné](./animations-overview.md#fade-in-out-and-crossfade) : affiche les éléments ou contrôles provisoires, ou actualise une zone de contenu.
 -   [Pointeur vers le haut/bas](./animations-overview.md#pointer-up-down) : affiche un retour visuel d’un appui ou d’un clic sur une vignette.
@@ -44,13 +50,20 @@ Les animations suivantes sont fournies dans la bibliothèque d’animations. Cli
 -   [Afficher/Masquer l’interface utilisateur latérale](./animations-overview.md#show-hide-edge-ui) : fait glisser l’interface utilisateur latérale, y compris les grands éléments d’interface utilisateur tels que les panneaux, dans ou en dehors de la vue.
 -   [Changements d’éléments de listes](./animations-overview.md#list-item-changes) : ajoute ou supprime un élément d’une liste, ou réorganise les éléments.
 -   [Glisser-déplacer](./animations-overview.md#drag-drop) : fournit un retour visuel durant une opération glisser-déplacer.
--   [Mouvements de balayage](./animations-overview.md#swipe-gestures) : indique qu’une vignette prend en charge l’interaction de balayage ou indique l’état de sélection par balayage.
+
+### Transition de page
+
+Utilisez les transitions de page pour animer la navigation au sein d’une application. Étant donné que la plupart des applications utilisent un type de navigation quelconque, les animations de transition de page constituent le type le plus courant d’animation de thème utilisé par les applications. Pour plus d’informations sur les API de transition de page, voir [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation. Therenavigationthemetransition)
+
+
 
 ### Transition de contenu et transition d’entrée
 
 Les animations de transition de contenu ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) permettent de déplacer des éléments de contenu dans ou en dehors de la vue actuelle. Par exemple, les animations de transition de contenu affichent du contenu qui n’était pas prêt à être affiché quand la page a été chargée pour la première fois, ou quand le contenu d’une section d’une page change.
 
-La bibliothèque d’animations XAML n’offre aucun concept d’animation qui s’applique à la page entière quand celle-ci est chargée, mais elle propose une transition distincte ([**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288)) qui peut s’appliquer au contenu quand la page contenant le contenu est chargée pour la première fois et que cette partie du contenu est affichée. Ainsi, la première apparence du contenu et un changement de contenu peuvent offrir un retour différent.
+La classe [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) représente un mouvement pouvant s’appliquer à du contenu lorsqu’une page ou une section importante de l’interface utilisateur est chargée pour la première fois. Ainsi, la première apparence du contenu et un changement de contenu peuvent offrir un retour différent. La classe [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) équivaut à [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) avec les paramètres par défaut, mais peut être utilisée en dehors d’un [**cadre**](https://msdn.microsoft.com/library/windows/apps/br242682).
+ 
+ 
 
 ### Apparition/disparition en fondu et fondu enchaîné
 
@@ -64,7 +77,7 @@ Utilisez les animations [**PointerUpThemeAnimation**](https://msdn.microsoft.com
 
 ### Repositionner
 
-Utilisez les animations de repositionnement ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) ou [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) pour déplacer un élément à un autre endroit. Par exemple, le déplacement des en-têtes dans un contrôle d’éléments d’en-tête a recours à l’animation de repositionnement.
+Utilisez les animations de repositionnement ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) ou [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) pour déplacer un élément à un autre endroit. Par exemple, le déplacement des en-têtes dans un contrôle d’éléments a recours à l’animation de repositionnement.
 
 ### Afficher/Masquer le menu contextuel
 
@@ -83,17 +96,13 @@ Utilisez l’animation [**AddDeleteThemeTransition**](https://msdn.microsoft.com
 
 Il existe aussi un objet [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) distinct que vous appliquez si un élément change de position dans une liste. Son animation diffère de la suppression d’un élément et de son ajout à un nouvel emplacement avec les animations d’ajout/suppression associées.
 
+Notez que ces animations sont incluses dans les modèles [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) par défaut. Vous n’avez donc pas besoin d’ajouter ces animations manuellement si vous utilisez déjà ces contrôles.
+
 ### Glisser-déplacer
 
 Utilisez les animations de glissement ([**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173), [**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)) et de déplacement ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) pour donner un retour visuel quand l’utilisateur fait glisser ou dépose un élément.
 
 Quand elles sont actives, les animations montrent à l’utilisateur que la liste peut être réorganisée autour d’un élément déposé. Il est utile pour les utilisateurs de savoir où l’élément va être placé dans une liste s’il est déposé à l’emplacement actuel. Les animations indiquent visuellement qu’un élément que l’utilisateur fait glisser peut être déposé entre deux autres éléments de la liste et que ces éléments vont disparaître.
-
-### Mouvements de balayage
-
-Utilisez l’animation [**SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) pour montrer qu’une vignette prend en charge l’interaction de balayage. Les utilisateurs peuvent effectuer un mouvement de balayage vers le bas pour sélectionner une vignette. Si un utilisateur ne sait pas s’il peut effectuer un mouvement de balayage sur une vignette, un appui prolongé sur la vignette va lire l’animation d’indicateur de balayage pour suggérer que l’utilisateur doit interagir avec la vignette par un balayage.
-
-Utilisez l’animation [**SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) pour montrer que la vignette a été sélectionnée et pour la renvoyer à son emplacement de pause.
 
 ## Utilisation d’animations avec des contrôles personnalisés
 
@@ -278,6 +287,7 @@ Plusieurs effets de transition permettent de créer des animations applicables �
 
 | API | Description |
 |-----|-------------|
+| [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | Fournit une animation de personnalité Windows pour la navigation de page dans un [**cadre**](https://msdn.microsoft.com/library/windows/apps/br242682). |
 | [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | Fournit le comportement de la transition animée pour les cas où les contrôles déclenchent l’ajout ou la suppression d’enfants ou de contenu. Généralement, le contrôle correspond à un conteneur d’éléments. |
 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | Fournit le comportement de la transition animée pour les cas où le contenu d’un contrôle change. Vous pouvez l’appliquer en plus de l’objet [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047). |
 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | Fournit le comportement de la transition animée pour la transition d’une (petite) interface utilisateur latérale. |
@@ -351,10 +361,10 @@ Vous pouvez appliquer plusieurs autres animations de thème à vos éléments d�
 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) | Animation préconfigurée qui s’applique à des composants contextuels de contrôles au fur et à mesure qu’ils apparaissent. Cette animation allie opacité et translation. |
 | [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) | Animation préconfigurée qui s’applique à des composants contextuels de contrôles au fur et à mesure de leur fermeture ou de leur suppression. Cette animation allie opacité et translation. |
 | [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | Animation préconfigurée pour un objet au fur et à mesure de son repositionnement. |
-| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | Animation préconfigurée qui masque un élément d’interface utilisateur cible par le biais d’une animation fractionnée. |
-| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | Animation préconfigurée qui dévoile un élément d’interface utilisateur cible par le biais d’une animation fractionnée |
-| [**SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) | Animation préconfigurée qui s’applique aux contrôles lorsqu’un élément revient en glissant à son emplacement dans la disposition après une interaction de balayage. |
-| [**SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) | Animation préconfigurée qui indique qu’un mouvement de balayage est maintenant possible. |
+| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | Animation préconfigurée, telle qu’une ouverture et fermeture [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), qui masque une interface utilisateur cible. |
+| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | Animation préconfigurée, telle qu’une ouverture et fermeture [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), qui affiche une interface utilisateur cible. |
+| [**DrillInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | Représente une animation préconfigurée qui s’exécute lorsqu’un utilisateur navigue vers l’avant dans une hiérarchie logique, par exemple, d’une page maître vers une page de détails. |
+| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | Représente une animation préconfigurée qui s’exécute lorsqu’un utilisateur navigue en arrière dans une hiérarchie logique, par exemple, d’une page de détails vers une page maître. |
 
  
 
@@ -364,7 +374,7 @@ Au cas où les animations de thème ne répondent pas à vos besoins, vous pouve
 
 Afin d’être animée, la propriété que vous animez doit être une *propriété de dépendance*. Pour plus d’informations sur les propriétés de dépendance, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583). Pour plus d’informations sur la création d’animations personnalisées dans une table de montage, notamment la façon de la cibler et de les contrôler, voir [Animations dans une table de montage](storyboarded-animations.md).
 
-Le scénario de définition d’interface utilisateur d’application le plus courant où vous définirez des animations dans une table de montage séquentiel personnalisées concerne la définition d’états visuels pour des contrôles en XAML. Cette opération sera nécessaire si vous créez une classe de contrôle ou si vous remodélisez un contrôle existant qui possède des états visuels dans son modèle de contrôle. Pour plus d’informations, voir [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808). Ces animations ne sont généralement pas du tout des transitions graduelles. Elles se produisent instantanément et constituent davantage une technique permettant de définir un ensemble de changements de propriétés pour un état. Elles n’appliquent pas nécessairement un comportement animé visuellement à une interface utilisateur bien que, comme vous le verrez, les états visuels des contrôles incluent souvent les animations de la bibliothèque proprement dites. Dans ce cas, les animations thématiques appliquent bien un changement au fil du temps, quoique généralement sur une courte durée.
+Le scénario de définition d’interface utilisateur d’application le plus courant où vous définirez des animations dans une table de montage séquentiel personnalisées concerne la définition d’états visuels pour des contrôles en XAML. Cette opération sera nécessaire si vous créez une classe de contrôle ou si vous remodélisez un contrôle existant qui possède des états visuels dans son modèle de contrôle. Pour plus d’informations, voir [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
  
 
@@ -375,6 +385,7 @@ Le scénario de définition d’interface utilisateur d’application le plus co
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

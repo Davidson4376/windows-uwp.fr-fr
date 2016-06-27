@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
-title: Vue d’ensemble de la liaison de données
-description: Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à ou un contrôle de liste à une collection d’éléments dans une application UWP.
+title: "Vue d’ensemble de la liaison de données"
+description: "Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à ou un contrôle de liste à une collection d’éléments dans une application UWP."
+ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
+ms.openlocfilehash: c30e048f450c062c6e0148e5040a58bfa47193bb
+
 ---
 Vue d’ensemble de la liaison de données
 =====================
@@ -451,6 +454,7 @@ Résultat :
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

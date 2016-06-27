@@ -1,9 +1,12 @@
 ---
 author: Xansky
-description: Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
-title: Envoyer un courrier électronique
+description: "Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi."
+title: "Envoyer un courrier électronique"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, email, send
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: b4b5b029c321256028993e283395a91bd0ed3d7c
+
 ---
 
 # Envoyer un courrier électronique
@@ -71,6 +74,7 @@ Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

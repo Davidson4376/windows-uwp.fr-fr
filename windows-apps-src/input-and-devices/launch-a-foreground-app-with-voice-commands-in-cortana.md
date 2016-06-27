@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Les commandes sont dédiées aux fonctionnalités système, mais vous pouvez lancer une application au premier plan, ou spécifier une action ou une commande.
+Description: "Les commandes sont dédiées aux fonctionnalités système, mais vous pouvez lancer une application au premier plan, ou spécifier une action ou une commande."
 title: Lancer une application au premier plan avec les commandes de Cortana
 ms.assetid: 8D3D1F66-7D17-4DD1-B426-DCCBD534EF00
 label: Cortana-Launch a foreground app
 template: detail.hbs
+ms.sourcegitcommit: 7cbea3c4e784fe024aef953e3ea757dad6c5e3b8
+ms.openlocfilehash: aa4d71525d4a41382b8bbe123ca1fa830a4fc720
+
 ---
 
 # Activer une application au premier plan avec les commandes vocales via Cortana
@@ -21,7 +24,7 @@ Lorsqu’une application gère une commande vocale au premier plan, elle prend l
 
 Les commandes vocales qui requièrent un contexte supplémentaire ou une entrée utilisateur (comme l’envoi d’un message à un contact spécifique) sont mieux gérées dans une application au premier plan, tandis que les commandes de base (comme la création de la liste des prochains voyages) peuvent être gérées dans **Cortana** par le biais d’une application en arrière-plan.
 
-Si vous souhaitez activer une application en arrière-plan à l’aide des commandes vocales, voir [Activer une application en arrière-plan avec les commandes vocales de Cortana](launch-a-background-app-with-voice-commands-in-cortana.md).
+Si vous souhaitez activer une application en arrière-plan à l’aide des commandes vocales, voir [Activer une application en arrière-plan avec des commandes vocales via Cortana](launch-a-background-app-with-voice-commands-in-cortana.md).
 
 > **Remarque**  
 > Une commande vocale est un énoncé unique avec une intention spécifique, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée par le biais de **Cortana**.
@@ -40,7 +43,7 @@ Pour créer un voyage **Adventure Works** sans **Cortana**, un utilisateur doit 
 
 Les étapes de base pour l’ajout de commandes vocales et l’intégration de Cortana à votre application en utilisant les fonctions vocale ou l’entrée au clavier sont les suivantes :
 
-1.  Créez un fichier VCD. Il s’agit d’un document XML qui définit toutes les commandes vocales que l’utilisateur peut prononcer pour lancer des actions ou appeler des commandes au moment de l’activation de votre application. Voir [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593).
+1.  Créez un fichier VCD. Il s’agit d’un document XML qui définit toutes les commandes vocales que l’utilisateur peut prononcer pour lancer des actions ou appeler des commandes au moment de l’activation de votre application. Voir [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593).
 2.  Enregistrez les jeux de commandes dans le fichier VCD lorsque l’application est lancée.
 3.  Gérez l’activation par commande vocale, la navigation dans l’application et l’exécution de la commande.
 
@@ -60,13 +63,13 @@ Pour des informations sur la manière d’intégrer votre application à **Corta
 
 1.  Lancez Microsoft Visual Studio 2015.
 
-    La page de démarrage de Visual Studio 2015 apparaît.
+    La page de démarrage de Visual Studio 2015 apparaît.
 
 2.  Dans le menu **Fichier**, sélectionnez **Nouveau** > **Projet**.
 
     La boîte de dialogue **Nouveau projet** s’affiche. Le volet gauche de la boîte de dialogue vous permet de sélectionner le type de modèle à afficher.
 
-3.  Dans le volet gauche, développez **Installé > Modèles > Visual C\# > Windows**, puis sélectionnez le groupe de modèles **Universel**. Le volet central de la boîte de dialogue affiche une liste de modèles de projets pour les applications de plateforme Windows universelle (UWP).
+3.  Dans le volet gauche, développez **Installé &gt; Modèles &gt; Visual C\# &gt; Windows**, puis sélectionnez le groupe de modèles **Universel**. Le volet central de la boîte de dialogue affiche une liste de modèles de projets pour les applications de plateforme Windows universelle (UWP).
 4.  Dans le volet central, sélectionnez le modèle **Application vide (Windows universelle)**.
 
     Le modèle **Application vide** crée une application UWP dépouillée qui peut être compilée et exécutée, mais qui ne contient aucun contrôle d’interface utilisateur ni aucune donnée. Au cours de ce didacticiel, vous allez ajouter des contrôles à l’application.
@@ -74,7 +77,7 @@ Pour des informations sur la manière d’intégrer votre application à **Corta
 5.  Dans la zone de texte **Nom**, tapez le nom de votre projet. Pour cet exemple, nous utilisons « AdventureWorks ».
 6.  Cliquez sur **OK** pour créer le projet.
 
-    Microsoft Visual Studio crée votre projet et l’affiche dans l’**Explorateur de solutions**.
+    Microsoft Visual Studio crée votre projet et l’affiche dans l’**Explorateur de solutions**.
 
 ## <span id="Add_image_assets_to_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>Ajouter des ressources d’image au projet et les spécifier dans le manifeste de l’application
       
@@ -84,9 +87,9 @@ Pour plus d’informations sur les ressources d’image pour les facteurs de con
 
 Les ressources sont nommées à l’aide de qualificateurs. Les qualificateurs de ressources sont des modificateurs de noms de fichiers et de dossiers qui identifient le contexte dans lequel une version particulière d’une ressource doit être utilisée.
 
-La convention d’affectation de noms standard est `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`. Par exemple, `images/en-US/logo.scale-100_contrast-white.png`, est identifié dans le code par le dossier racine et le nom de fichier : `images/logo.png`. Voir [Comment nommer des ressources à l’aide de qualificateurs (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx)
+La convention d’affectation de noms standard est `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`. Par exemple, `images/en-US/logo.scale-100_contrast-white.png`, est identifié dans le code par le dossier racine et le nom de fichier : `images/logo.png`. Voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx).
 
-Nous vous conseillons de marquer la langue par défaut dans les fichiers de ressources de type chaîne (par exemple, `en-US\resources.resw`) et le facteur d’échelle par défaut dans les images (par exemple,`logo.scale-100.png`), même si dans l’immédiat, vous ne pensez localiser ces ressources, ni les proposer avec plusieurs résolutions. Toutefois, nous vous recommandons de fournir au minimum des ressources pour les facteurs d’échelle 100, 200 et 400.
+Nous vous conseillons de marquer la langue par défaut dans les fichiers de ressources de type chaîne (par exemple, `en-US\resources.resw`) et le facteur d’échelle par défaut dans les images (par exemple,`logo.scale-100.png`), même si dans l’immédiat, vous ne pensez pas localiser ces ressources, ni les proposer avec plusieurs résolutions. Toutefois, nous vous recommandons de fournir au minimum des ressources pour les facteurs d’échelle 100, 200 et 400.
 
 > *Important
 
@@ -94,22 +97,22 @@ Nous vous conseillons de marquer la langue par défaut dans les fichiers de ress
     
 ## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>Créer un fichier VCD
 
-1. Dans Visual Studio, cliquez avec le bouton droit sur le nom du projet principal, sélectionnez **Ajouter > Nouvel élément**. Ajoutez un **fichier XML**.
-2. Tapez un nom pour le fichier [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) (dans cet exemple, « AdventureWorksCommands.xml »), puis cliquez sur Ajouter. 
+1. Dans Visual Studio, cliquez avec le bouton droit sur le nom du projet principal, sélectionnez **Ajouter &gt; Nouvel élément**. Ajoutez un **fichier XML**.
+2. Tapez le nom du fichier [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) (dans cet exemple, AdventureWorksCommands.xml), puis cliquez sur Ajouter. 
 3. Dans l’**Explorateur de solutions**, sélectionnez le fichier [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593).
-4.  Dans la fenêtre **Propriétés**, affectez à **Action de génération** la valeur **Contenu**, puis affectez à l’option **Copier dans le répertoire de sortie** la valeur **Copier si plus récent**.
+4.  Dans la fenêtre **Propriétés**, affectez à **Action de génération** la valeur **Contenu**, puis définissez **Copier dans le répertoire de sortie** sur **Copier si plus récent**.
 
 ## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>Modifier le fichier VCD
 
 
-Ajoutez un élément **VoiceCommands** avec un attribut **xmlns** pointant sur
+Ajoutez un élément **VoiceCommands** comportant un attribut **xmlns** pointant sur `http://schemas.microsoft.com/voicecommands/1.2`.
 
 2. Pour chaque langue prise en charge par votre application, créez un élément [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) contenant les commandes vocales prises en charge par votre application.
 
   Vous pouvez déclarer plusieurs éléments [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) en leur affectant un attribut [**xml:lang**](https://msdn.microsoft.com/library/windows/apps/dn722331) différent selon le marché dans lequel vous souhaitez rendre votre application disponible. Par exemple, une application destinée au marché américain peut inclure un élément [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) pour l’anglais et un autre élément [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) pour l’espagnol.
 
   >  **Attention**  
-  Pour activer une application et lancer une action à l’aide d’une commande vocale, l’application doit inscrire un fichier VCD contenant un élément [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) avec une langue qui correspond à la langue vocale sélectionnée par l’utilisateur sur son appareil. La langue vocale se trouve dans **Paramètres > Système > Voix > Langue vocale**.
+  Pour activer une application et lancer une action à l’aide d’une commande vocale, l’application doit inscrire un fichier VCD contenant un élément [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) avec une langue qui correspond à la langue vocale sélectionnée par l’utilisateur sur son appareil. La langue vocale se trouve dans **Paramètres &gt; Système &gt; Voix &gt; Langue vocale**.
 
 3. Ajoutez un élément **Command** pour chaque commande à prendre en charge.
 
@@ -119,7 +122,7 @@ Ajoutez un élément **VoiceCommands** avec un attribut **xmlns** pointant sur
   - Un élément **Example** contenant une expression qui explique comment un utilisateur peut appeler la commande. **Cortana** affiche cet exemple lorsque l’utilisateur dit « Qu’est-ce que je dis ? » ou « Aide », ou qu’il appuie sur **Plus**.    
   -   Un élément **ListenFor** contenant les mots ou expressions que l’application doit reconnaître en tant que commande. Chaque élément **ListenFor** peut contenir des références à un ou plusieurs éléments **PhraseList** contenant des mots pertinents pour la commande.
   > **Remarque**  
-Les éléments   **ListenFor** ne peuvent pas être modifiés par programme. Cependant, les éléments **PhraseList** associés à des éléments **ListenFor** peuvent être modifiés par programme. Les applications doivent modifier le contenu de l’élément **PhraseList** lors de l’exécution, en fonction de l’ensemble des données généré lorsque l’utilisateur exécute l’application. Voir [Modifier de manière dynamique les listes d’expressions de définition des commandes vocales (VCD)](dynamically-modify-voice-command-definition--vcd--phrase-lists.md).
+Les éléments   **ListenFor** ne peuvent pas être modifiés par programme. Cependant, les éléments **PhraseList** associés à des éléments **ListenFor** peuvent être modifiés par programme. Les applications doivent modifier le contenu de l’élément **PhraseList** lors de l’exécution, en fonction de l’ensemble des données généré lorsque l’application est utilisée. Voir [Modifier de manière dynamique les listes d’expressions de définition des commandes vocales (VCD)](dynamically-modify-voice-command-definition--vcd--phrase-lists.md).
 
   -   Un élément **Feedback** contenant le texte que **Cortana** affichera et prononcera lors du lancement de l’application.
 
@@ -224,11 +227,11 @@ catch (Exception ex)
 
 Spécifiez la manière dont votre application répond aux activations par commande vocale ultérieures (après au moins un lancement et une fois que les jeux de commande vocale ont été installés).
 
-1.  Vérifier que votre application a été activée par une commande vocale.
+1.  Vérifiez que votre application a été activée par une commande vocale.
 
-    Remplacer l’événement [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) et vérifier si [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) est [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693).
+    Remplacez l’événement [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) et vérifiez si [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) est [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693).
 
-2.  Identifiez le nom de la commande et le texte prononcé par l’utilisateur.
+2.  Identifier le nom de la commande et le texte prononcé.
 
     Obtenir une référence à un objet [**VoiceCommandActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn609755) à partir de [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727) et interroger la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn609758) d’un objet [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432).
 
@@ -395,6 +398,7 @@ private string SemanticInterpretation(string interpretationKey, SpeechRecognitio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

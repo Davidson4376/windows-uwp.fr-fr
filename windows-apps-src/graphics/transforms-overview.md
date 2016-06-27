@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
-title: Vue d’ensemble des transformations
-description: Apprenez à utiliser les transformations dans l’API Windows Runtime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur.
+title: "Vue d’ensemble des transformations"
+description: "Apprenez à utiliser les transformations dans l’API Windows Runtime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur."
+ms.sourcegitcommit: a429fa659caf6c8032ad615f1b850092545d4439
+ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
+
 ---
 
 # Vue d’ensemble des transformations
@@ -16,16 +19,16 @@ Apprenez à utiliser les transformations dans l’API Windows Runtime, en chang
 
 Une *transformation* définit la façon de mapper, ou transformer, les points d’un espace de coordonnées vers un autre espace de coordonnées. Quand une transformation est appliquée à un élément d’interface utilisateur, elle modifie le rendu de cet élément d’interface utilisateur à l’écran.
 
-On distingue quatre catégories de transformations : translation, rotation, mise à l’échelle et inclinaison. Pour pouvoir utiliser les API graphiques pour modifier l’apparence des éléments d’interface utilisateur, il est généralement plus facile de créer des transformations qui ne définissent qu’une seule opération à la fois. Ainsi, Windows Runtime définit une classe discrète pour chacune de ces catégories de transformation :
+On distingue quatre catégories de transformations : translation, rotation, mise à l’échelle et inclinaison. Pour pouvoir utiliser les API graphiques pour modifier l’apparence des éléments d’interface utilisateur, il est généralement plus facile de créer des transformations qui ne définissent qu’une seule opération à la fois. Ainsi, Windows Runtime définit une classe discrète pour chacune de ces catégories de transformation :
 
 -   [
-            **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) : permet de translater un élément dans l’espace x-y, en définissant les valeurs de [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) et [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y).
+            **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) : permet de translater un élément dans l’espace x-y, en définissant les valeurs de [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) et [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y).
 -   [
-            **ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) : permet de mettre à l’échelle la transformation en fonction d’un point central, en définissant les valeurs de [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx), [**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx), [**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) et [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty).
+            **ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) : permet de mettre à l’échelle la transformation en fonction d’un point central, en définissant les valeurs de [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx), [**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx), [**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) et [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty).
 -   [
-            **RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) : permet de pivoter dans l’espace x-y, en définissant les valeurs de [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx), [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) et [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery).
+            **RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) : permet de pivoter dans l’espace x-y, en définissant les valeurs de [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx), [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) et [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery).
 -   [
-            **SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) : permet d’incliner dans l’espace x-y, en définissant les valeurs de [**AngleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx), [**AngleY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx), [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) et [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty).
+            **SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) : permet d’incliner dans l’espace x-y, en définissant les valeurs de [**AngleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx), [**AngleY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx), [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) et [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty).
 
 Parmi elles, vous utiliserez sans doute plus souvent [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) et [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) dans vos scénario d’interface utilisateur.
 
@@ -65,7 +68,7 @@ En principe, vous devez utiliser une technique de ciblage indirect pour applique
 
 Les styles par défaut des contrôles définissent parfois les animations des transformations dans le cadre du comportement de leur état visuel. Par exemple, les états visuels de [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) utilisent des valeurs [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) animées pour « faire tourner » les points de l’anneau.
 
-Voici un exemple simple d’animation d’une transformation. Dans le cas présent, il s’agit d’animer l’élément [**Angle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rotatetransform.angle.aspx) d’un objet [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) pour faire tourner un [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) sur place autour de son centre visuel. Comme cet exemple nomme **RotateTransform**, le ciblage d’animation indirect n’est pas nécessaire. Toutefois, vous pouvez omettre de nommer la transformation, nommer l’élément auquel la transformation s’applique et utiliser le ciblage indirect tel que
+Voici un exemple simple d’animation d’une transformation. Dans le cas présent, il s’agit d’animer l’élément [**Angle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rotatetransform.angle.aspx) d’un objet [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) pour faire tourner un [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) sur place autour de son centre visuel. Comme cet exemple nomme **RotateTransform**, le ciblage d’animation indirect n’est pas nécessaire. Toutefois, vous pouvez omettre de nommer la transformation, nommer l’élément auquel la transformation s’applique et utiliser le ciblage indirect tel que `(UIElement.RenderTransform).(RotateTransform.Angle)`.
 
 ```xml
 <StackPanel Margin="15">
@@ -104,42 +107,43 @@ Les données d’événement obtenues à partir des événements de pointeur per
 
 Une transformation peut être décrite en termes de matrice de transformation. Une matrice 3x3 permet de décrire les transformations dans un plan x-y en deux dimensions. Les matrices de transformations affines peuvent être multipliées pour former un nombre quelconque de transformations linéaires, par exemple la rotation et l’inclinaison, puis la translation. La dernière colonne d’une matrice de transformation affine est égale à (0, 0, 1). Vous devez donc spécifier uniquement les membres des deux premières colonnes dans la description mathématique.
 
-La description mathématique d’une transformation peut vous être utile si vous avez des connaissances en mathématiques ou que vous êtes habitué aux techniques de programmation graphique qui utilisent également des matrices pour décrire les transformations de l’espace de coordonnées. Une classe dérivée de [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) vous permet d’exprimer une transformation directement à l’aune de sa matrice 3x3 : [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137). **MatrixTransform** possède une propriété [**Matrix**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.matrixtransform.matrix.aspx), qui contient une structure présentant 6 propriétés : [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847), [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853), [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851), [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849), [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) et [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816). Chaque propriété [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) utilise une valeur **Double** et correspond aux six valeurs pertinentes (colonnes 1 et 2) d’une matrice de transformation affine. M11
+La description mathématique d’une transformation peut vous être utile si vous avez des connaissances en mathématiques ou que vous êtes habitué aux techniques de programmation graphique qui utilisent également des matrices pour décrire les transformations de l’espace de coordonnées. Il existe une classe dérivée de [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) qui vous permet d’exprimer une transformation directement à partir de sa matrice 3x3 : [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137). **MatrixTransform** comporte une propriété [**Matrix**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.matrixtransform.matrix.aspx), qui possède une structure ayant six propriétés : [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847), [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853), [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851), [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849), [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) et [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816). Chaque propriété [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) utilise une valeur **Double** et correspond aux six valeurs pertinentes (colonnes 1 et 2) d’une matrice de transformation affine.
 
 |                                             |                                             |     |
 |---------------------------------------------|---------------------------------------------|-----|
-| [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673847)         | [**0**](https://msdn.microsoft.com/library/windows/apps/Hh673851)         | M12   |
-| [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**0**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | OffsetX   |
-| [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**1**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | Toute transformation que vous pouvez décrire avec un objet [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940), [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) ou [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) peut également être décrite par un objet [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) avec une valeur [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127).   |
+| [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847)         | [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851)         | 0   |
+| [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | 0   |
+| [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | 1   |
 
  
 
-Mais en général, vous n’utilisez que **TranslateTransform** et les autres, car il est plus facile de conceptualiser les propriétés de ces classes de transformation que de définir les composants de vecteur dans **Matrix**. Il est également plus facile d’animer les propriétés discrètes des transformations. **Matrix** est en fait une structure, et non un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356) ; c’est pourquoi il ne peut pas prendre en charge des valeurs individuelles animées. Certains outils de conception XAML qui vous permettent d’appliquer des opérations de transformation sérialisent les résultats en tant que [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137).
+Toute transformation que vous pouvez décrire avec un objet [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940), [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) ou [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) peut également être décrite par un objet [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) avec une valeur [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127). Mais en général, vous n’utilisez que **TranslateTransform** et les autres, car il est plus facile de conceptualiser les propriétés de ces classes de transformation que de définir les composants de vecteur dans **Matrix**. Il est également plus facile d’animer les propriétés discrètes des transformations. **Matrix** est en fait une structure, et non un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356) ; c’est pourquoi il ne peut pas prendre en charge des valeurs individuelles animées.
 
-Dans ce cas, il est peut-être préférable de réutiliser le même outil de conception pour changer l’effet de transformation et resérialiser le code XAML, au lieu d’essayer de manipuler les valeurs de [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) vous-même directement dans le code XAML. Transformations 3D
+Certains outils de conception XAML qui vous permettent d’appliquer des opérations de transformation sérialisent les résultats en tant que [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137). Dans ce cas, il est peut-être préférable de réutiliser le même outil de conception pour changer l’effet de transformation et resérialiser le code XAML, au lieu d’essayer de manipuler les valeurs de [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) vous-même directement dans le code XAML.
 
-## <span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>Vous pouvez appliquer des effets 3D à tout objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) à l’aide des *transformations de perspective*.
+## <span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>Transformations 3D
 
-Par exemple, vous pouvez donner l’illusion qu’un objet est tourné vers vous ou vers l’arrière, selon un plan de perspective. Pour ce faire, affectez la valeur [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) à la propriété [**Projection**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.projection.aspx) de l’objet **UIElement**. La classe **PlaneProjection** définit l’affichage de la transformation dans une simulation d’espace 3D. Ce type de transformation est décrit de manière plus détaillée dans [Effets de perspective 3D pour une interface utilisateur en XAML](3-d-perspective-effects.md). **Remarque** Il est techniquement possible d’obtenir des résultats similaires en combinant les classes [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006), mais la technique [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) produit généralement un meilleur effet avec des images en tant que pinceaux. En outre, il est beaucoup plus facile d’obtenir les valeurs de propriétés exactes.
+Dans Windows 10, XAML a introduit une nouvelle propriété, [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx), qui peut être utilisée pour créer des effets 3D dans l’interface utilisateur. Pour ce faire, utilisez [**PerspectiveTransform3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx) pour ajouter une perspective 3D partagée ou « caméra » à votre scène, puis utilisez [**CompositeTransform3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx) pour transformer un élément au sein d’un espace en 3D, comme si vous utilisiez [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105). Pour plus d’informations sur comment implémenter des transformations 3D, voir [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx).
 
-Rubriques connexes
+ La propriété [**UIElement.Projection**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.projection) peut être utilisée pour des effets 3D plus simples s’appliquant à un objet unique. L’utilisation de [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/br210192) en tant que valeur de cette propriété revient à appliquer une transformation de perspective fixe et une ou plusieurs transformations 3D à l’élément. Ce type de transformation est décrit de manière plus détaillée dans [Effets de perspective 3D pour une interface utilisateur en XAML](3-d-perspective-effects.md).
+
+## <span id="related_topics"></span>Rubriques connexes
+
+* [Dessiner des formes](drawing-shapes.md)
+* [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)
+* [Effets de perspective 3D pour une interface utilisateur en XAML](3-d-perspective-effects.md)
+* [**Classe Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)
+ 
 
  
 
-## <span id="related_topics"></span>Dessiner des formes
-
-* [Effets de perspective 3D pour une interface utilisateur en XAML](drawing-shapes.md)
-* [Classe Transform](3-d-perspective-effects.md)
-* [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)
- 
-
- 
 
 
 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

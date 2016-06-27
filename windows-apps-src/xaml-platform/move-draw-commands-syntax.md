@@ -1,8 +1,11 @@
 ---
 author: jwmsft
-description: Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML.
-title: Syntaxe des commandes de déplacement et de dessin
+description: "Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML."
+title: "Syntaxe des commandes de déplacement et de dessin"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
+ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+
 ---
 
 # Syntaxe des commandes de déplacement et de dessin
@@ -221,11 +224,11 @@ Au lieu d’utiliser des nombres décimaux ou entiers, vous pouvez utiliser la n
 
 ## Outils de conception qui produisent des commandes de déplacement et de dessin
 
-L’outil **Stylet** et d’autres outils de dessin dans Blend pour Microsoft Visual Studio 2013 produisent généralement un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) avec des commandes de déplacement et de dessin.
+L’outil **Stylet** et d’autres outils de dessin dans Blend pour Microsoft Visual Studio 2015 produisent généralement un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) avec des commandes de déplacement et de dessin.
 
 Il est possible que vous constatiez la présence de données de commandes de déplacement et de dessin dans certaines parties de contrôle définies dans les modèles par défaut XAML Windows Runtime de contrôles. Par exemple, certains contrôles utilisent un [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) dans lequel les données sont définies en tant que commandes de déplacement et de dessin.
 
-Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conception de graphiques vectoriels couramment utilisés pour générer le vecteur au format XAML. Ceux-ci créent généralement des objets [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) dans un conteneur de disposition avec des commandes de déplacement et de dessin pour [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Plusieurs éléments **Path** peuvent être présents dans le code XAML, ce qui permet d’appliquer différents types de pinceaux. Ces exportateurs ou plug-ins ont été écrits à l’origine pour le langage XAML dans Windows Presentation Foundation (WPF), mais cet aspect de la syntaxe XAML est identique dans le langage XAML Windows Runtime. Vous pouvez probablement utiliser des blocs de code XAML d’un exportateur et les coller directement dans une page XAML Windows Runtime. (Toutefois, si **RadialGradientBrush** faisait partie du code XAML converti, vous ne pourrez pas l’utiliser étant donné que le langage XAML Windows Runtime ne prend pas en charge ce pinceau.)
+Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conception de graphiques vectoriels couramment utilisés pour générer le vecteur au format XAML. Ceux-ci créent généralement des objets [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) dans un conteneur de disposition avec des commandes de déplacement et de dessin pour [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Plusieurs éléments **Path** peuvent être présents dans le code XAML, ce qui permet d’appliquer différents types de pinceaux. Plusieurs de ces exportateurs ou plug-ins ont été écrits à l’origine pour le langage XAML dans Windows Presentation Foundation (WPF) ou Silverlight, mais la syntaxe XAML est identique dans le langage XAML Windows Runtime. Vous pouvez généralement utiliser des blocs de code XAML d’un exportateur et les coller directement dans une page XAML Windows Runtime. (Toutefois, si **RadialGradientBrush** faisait partie du code XAML converti, vous ne pourrez pas l’utiliser étant donné que le langage XAML Windows Runtime ne prend pas en charge ce pinceau.)
 
 ## Rubriques connexes
 
@@ -236,6 +239,7 @@ Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conc
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

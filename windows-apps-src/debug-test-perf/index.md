@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
-title: Débogage, tests et analyse des performances
-description: Utilisez Microsoft Visual Studio pour déboguer et tester votre application. Pour préparer votre application pour le processus de certification du Windows Store, utilisez le Kit de certification des applications Windows.
+title: "Débogage, tests et analyse des performances"
+description: "Utilisez Microsoft Visual Studio pour déboguer et tester votre application. Pour préparer votre application pour le processus de certification du Windows Store, utilisez le Kit de certification des applications Windows."
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1d6187470e8e1578af833221089a76261ebad1e4
+
 ---
 # Débogage, tests et analyse des performances
 
@@ -22,6 +25,7 @@ Utilisez Microsoft Visual Studio pour déboguer et tester votre application. Pou
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

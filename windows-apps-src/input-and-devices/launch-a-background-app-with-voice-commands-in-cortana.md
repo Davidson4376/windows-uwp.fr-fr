@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Vous pouvez utiliser des commandes vocales dans Cortana pour accéder aux fonctionnalités système. Vous pouvez également étendre Cortana avec les fonctionnalités d’une application en arrière-plan à l’aide des commandes vocales qui spécifient une action ou une commande à exécuter au sein de l’application.
-title: Lancer une application en arrière-plan à l’aide des commandes vocales de Cortana
+Description: "Vous pouvez utiliser des commandes vocales dans Cortana pour accéder aux fonctionnalités système. Vous pouvez également étendre Cortana avec les fonctionnalités d’une application en arrière-plan à l’aide des commandes vocales qui spécifient une action ou une commande à exécuter au sein de l’application."
+title: "Lancer une application en arrière-plan à l’aide des commandes vocales de Cortana"
 ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
 label: Launch a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: c65abdda905a390567d3c2b199a891c0c3067df1
+
 ---
 
 # Activer une application en arrière-plan avec les commandes vocales de Cortana
@@ -37,7 +40,7 @@ Voici une vue d’ensemble de l’application **Adventure Works** intégrée dan
 
 Pour afficher un voyage **Adventure Works** sans **Cortana**, un utilisateur devrait lancer l’application et accéder à la page **Prochains voyages**.
 
-En ayant recours aux commandes vocales de **Cortana** pour lancer votre application en arrière-plan, l’utilisateur peut dire simplement « Adventure Works, quand a lieu mon prochain voyage pour Las Vegas ? ». Votre application traite la commande, et **Cortana** affiche les résultats avec l’icône de l’application et d’autres informations sur l’application, le cas échéant. Voici un exemple de requête de voyage de base et l’écran de résultats de **Cortana** qui affiche et dit « Votre prochain voyage pour Las Vegas aura lieu le 1er août ».
+En ayant recours aux commandes vocales de **Cortana** pour lancer votre application en arrière-plan, l’utilisateur peut dire simplement « Adventure Works, quand a lieu mon prochain voyage pour Las Vegas ? ». Votre application traite la commande, et **Cortana** affiche les résultats avec l’icône de l’application et d’autres informations sur l’application, le cas échéant. Voici un exemple de requête de voyage de base, et l’écran de résultats de **Cortana** qui s’affiche et dit : « Votre prochain voyage pour Las Vegas aura lieu le vendredi 31 juillet 2015 ».
 
 ![requête de base et écran de résultats utilisant l’application Adventure Works en arrière-plan](images/cortana-backgroundapp-result.png)
 
@@ -90,7 +93,7 @@ Pour plus d’informations sur les ressources d’image pour les facteurs de con
 
 Les ressources sont nommées à l’aide de qualificateurs. Les qualificateurs de ressources sont des modificateurs de noms de fichiers et de dossiers qui identifient le contexte dans lequel une version particulière d’une ressource doit être utilisée.
 
-La convention d’affectation de noms standard est `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`. Par exemple, `images/en-US/logo.scale-100_contrast-white.png`, est identifié dans le code par le dossier racine et le nom de fichier : `images/logo.png`. Voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx).
+La convention d’affectation de noms standard est `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`. Par exemple, `images/en-US/logo.scale-100_contrast-white.png`, est identifié dans le code par le dossier racine et le nom de fichier : `images/logo.png`. Voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx).
 
 Nous vous conseillons de marquer la langue par défaut dans les fichiers de ressources de type chaîne (par exemple, `en-US\resources.resw`) et le facteur d’échelle par défaut dans les images (par exemple,`logo.scale-100.png`), même si dans l’immédiat, vous ne pensez pas localiser ces ressources, ni les proposer avec plusieurs résolutions. Toutefois, nous vous recommandons de fournir au minimum des ressources pour les facteurs d’échelle 100, 200 et 400.
 
@@ -122,38 +125,37 @@ destinationTile.Image =
 
 <ol>
     <li>
-    Cliquez avec le bouton droit sur le nom de votre solution, puis sélectionnez **Nouveau &gt; Projet**.
+Cliquez avec le bouton droit sur le nom de votre solution, puis sélectionnez **Nouveau &gt; Projet**.
     </li>
     <li>
-    Sous **Installé &gt; Modèles &gt; Visual C# &gt; Windows &gt; Universel**, sélectionnez **Composant Windows Runtime**. Il s’agit du composant qui implémente le service d’application (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**).
+Sous **Installé &gt; Modèles &gt; Visual C# &gt; Windows &gt; Universel**, sélectionnez **Composant Windows Runtime**. Il s’agit du composant qui implémente le service d’application (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**).
     </li>
     <li>
-    Tapez le nom du projet (par exemple, VoiceCommandService), puis cliquez sur **OK**.
+Tapez le nom du projet (par exemple, VoiceCommandService), puis cliquez sur **OK**.
     </li>
     <li>
-    Dans l’**Explorateur de solutions**, sélectionnez le projet VoiceCommandService et renommez le fichier Class1.cs généré par Visual Studio. Pour l’exemple **Adventure Works**, nous utilisons le fichier AdventureWorksVoiceCommandService.cs.
+Dans l’**Explorateur de solutions**, sélectionnez le projet VoiceCommandService et renommez le fichier Class1.cs généré par Visual Studio. Pour l’exemple **Adventure Works**, nous utilisons le fichier AdventureWorksVoiceCommandService.cs.
     </li>
     <li>
-    Cliquez sur **Oui** lorsque le système vous demande si vous souhaitez renommer toutes les occurrences de Class1.cs. 
+Cliquez sur **Oui** lorsque le système vous demande si vous souhaitez renommer toutes les occurrences de Class1.cs. 
     </li>
     <li>
-    Dans le fichier AdventureWorksVoiceCommandService.cs :
-        <ol type="i">
+Dans le fichier AdventureWorksVoiceCommandService.cs : <ol type="i">
  <li>
- Ajoutez la directive using suivante.  
+Ajoutez la directive using suivante.  
  ```using Windows.ApplicationModel.Background;```
  </li>
  <li>
- Lorsque vous créez un projet, le nom du projet est utilisé comme espace de noms racine par défaut dans tous les fichiers. Renommez l’espace de noms pour incorporer le code du service d’application sous le projet principal. Exemple : `namespace AdventureWorks.VoiceCommands`. 
+Lorsque vous créez un projet, le nom du projet est utilisé comme espace de noms racine par défaut dans tous les fichiers. Renommez l’espace de noms pour incorporer le code du service d’application sous le projet principal. Exemple : `namespace AdventureWorks.VoiceCommands`. 
  </li>
  <li>
- Cliquez avec le bouton droit sur le nom du projet de service d’application dans l’Explorateur de solutions et sélectionnez **Propriétés**. 
+Cliquez avec le bouton droit sur le nom du projet de service d’application dans l’Explorateur de solutions et sélectionnez **Propriétés**. 
  </li>
  <li>
- Dans l’onglet **Bibliothèque**, mettez à jour le champ **Espace de noms par défaut** avec cette même valeur (dans cet exemple, AdventureWorks.VoiceCommands). 
+Dans l’onglet **Bibliothèque**, mettez à jour le champ **Espace de noms par défaut** avec cette même valeur (dans cet exemple, AdventureWorks.VoiceCommands). 
  </li>
  <li>
- Créez une classe qui implémente l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Cette classe nécessite une méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811), qui constitue le point d’entrée lorsque Cortana reconnaît la commande vocale. 
+Créez une classe qui implémente l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Cette classe nécessite une méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811), qui constitue le point d’entrée lorsque Cortana reconnaît la commande vocale. 
  </li>
         </ol>
     </li>
@@ -210,36 +212,36 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="7">
     <li>
-    Déclarez votre tâche en arrière-plan en tant que **AppService** dans le manifeste de l’application.
+Déclarez votre tâche en arrière-plan en tant que **AppService** dans le manifeste de l’application.
     <ol type="i">
         <li>
-        Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier Package.appxmanifest et sélectionnez **Afficher le code**. 
+Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier Package.appxmanifest et sélectionnez **Afficher le code**. 
         </li>
         <li>
-        Recherchez l’élément [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
+Recherchez l’élément [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
         </li>
         <li>
-        Ajoutez un élément [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) à l’élément [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
+Ajoutez un élément [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) à l’élément [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
         </li>
         <li>
-        Ajoutez un élément [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) à l’élément [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
+Ajoutez un élément [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) à l’élément [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
         </li>
         <li>Ajoutez un attribut **Category** à l’élément **uap:Extension**, et définissez la valeur de l’attribut **Category** sur windows.appService.
         </li>
         <li>
-        Ajoutez un attribut **EntryPoint** à l’élément **uap:Extension**, et définissez la valeur de l’attribut **EntryPoint** sur le nom de la classe qui implémente [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), dans ce cas AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService.
+Ajoutez un attribut **EntryPoint** à l’élément **uap:Extension**, et définissez la valeur de l’attribut **EntryPoint** sur le nom de la classe qui implémente [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), dans ce cas AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService.
         </li>
         <li>
-        Ajoutez un élément [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) à l’élément **uap:Extension**.
+Ajoutez un élément [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) à l’élément **uap:Extension**.
         </li>
         <li>
-        Ajoutez un attribut **Name** à l’élément [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779), et définissez la valeur de l’attribut **Name** sur le nom du service d’application, dans ce cas AdventureWorksVoiceCommandService.
+Ajoutez un attribut **Name** à l’élément [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779), et définissez la valeur de l’attribut **Name** sur le nom du service d’application, dans ce cas AdventureWorksVoiceCommandService.
         </li>
         <li>
-        Ajoutez un second élément [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) à l’élément [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
+Ajoutez un second élément [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) à l’élément [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
         </li>
         <li>
-        Ajoutez un attribut **Category** à cet élément [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788), et définissez la valeur de l’attribut **Category** sur windows.personalAssistantLaunch.
+Ajoutez un attribut **Category** à cet élément [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788), et définissez la valeur de l’attribut **Category** sur windows.personalAssistantLaunch.
         </li>
     </li> 
     </ol>
@@ -267,19 +269,19 @@ Voici le manifeste de l’application Adventure Works :
 
 <ol start="8">
     <li>
-    Ajoutez ce projet de service d’application en tant que référence dans le projet principal. 
+Ajoutez ce projet de service d’application en tant que référence dans le projet principal. 
     <ol type="i">
         <li>
-        Cliquez avec le bouton droit sur **Références**. 
+Cliquez avec le bouton droit sur **Références**. 
         </li>
         <li>
-        Sélectionnez **Ajouter une référence...** 
+Sélectionnez **Ajouter une référence...** 
         </li>
         <li>
-        Dans la boîte de dialogue **Gestionnaire de références**, développez **Projets**, puis sélectionnez le projet de service d’application. 
+Dans la boîte de dialogue **Gestionnaire de références**, développez **Projets**, puis sélectionnez le projet de service d’application. 
         </li>
         <li>
-        Cliquez sur OK. 
+Cliquez sur OK. 
         </li>
     </ol>
     </li>
@@ -767,6 +769,7 @@ Une fois activé, le service d’application a 0,5 seconde pour appeler [**Repo
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

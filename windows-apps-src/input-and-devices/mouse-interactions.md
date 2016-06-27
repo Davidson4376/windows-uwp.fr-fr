@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Répondez à l’entrée de souris dans vos applications en gérant les mêmes événements de pointeur de base que ceux utilisés pour l’entrée tactile et du stylo.
+Description: "Répondez à l’entrée de souris dans vos applications en gérant les mêmes événements de pointeur de base que ceux utilisés pour l’entrée tactile et du stylo."
 title: Interactions avec la souris
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
+
 ---
 
 # Interactions avec la souris
@@ -151,6 +154,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

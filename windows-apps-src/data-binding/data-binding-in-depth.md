@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
-title: Présentation détaillée de la liaison de données
-description: La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
+title: "Présentation détaillée de la liaison de données"
+description: "La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données."
+ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
+ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
+
 ---
 # Présentation détaillée de la liaison de données
 
@@ -19,7 +22,7 @@ description: La liaison est un moyen dont dispose l’interface de votre applica
 
  
 
-La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
+La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
 
 Vous pouvez utiliser la liaison de données pour simplement afficher des valeurs à partir d’une source de données lorsque l’interface utilisateur est affichée pour la première fois, et non pas pour répondre aux modifications apportées à ces valeurs. Cette liaison, dite ponctuelle, est particulièrement adaptée aux données dont les valeurs ne changent pas au cours de l’exécution. Vous pouvez également choisir d’« observer » les valeurs et de mettre à jour l’interface utilisateur lorsque ces valeurs changent. Cette liaison, dite à sens unique, est particulièrement adaptée aux données en lecture seule. Enfin, vous pouvez choisir d’observer les valeurs et de mettre à jour l’interface utilisateur de telle sorte que les modifications apportées par l’utilisateur aux valeurs de l’interface utilisateur soient transmises automatiquement à la source de données. Cette liaison, dite bidirectionnelle, est particulièrement adaptée aux données en lecture-écriture. Voici quelques exemples.
 
@@ -31,9 +34,9 @@ Il existe deux types de liaison, qui sont généralement tous deux déclarés da
 
 **Exemples d’applications illustrant {x:Bind}**
 
--   Exemple avec {x:Bind}
--   QuizGame
--   Exemple d’éléments de base d’une interface utilisateur XAML
+-   [Exemple avec {x:Bind}](http://go.microsoft.com/fwlink/p/?linkid=619989).
+-   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
+-   [Exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=619992).
 
 **Exemples d’applications illustrant {Binding}**
 
@@ -205,7 +208,7 @@ La propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/window
 
 **Objets faiblement typés dans votre chemin d'accès**
 
-Considérez par exemple que vous avez un type nommé SampleDataGroup, qui implémente une propriété de chaîne nommée Title. Vous avez également une propriété MainPage.SampleDataGroupAsObject, qui est de type objet mais qui retourne une instance de SampleDataGroup. La liaison `<TextBlock Text="{x:Bind SampleDataGroupAsObject.Title}"/>` génère alors une erreur de compilation parce que la propriété Title est introuvable sur l’objet de type. La solution à ce problème consiste à ajouter un transtypage à votre syntaxe du chemin d’accès comme suit : `<TextBlock Text="{x:Bind SampleDataGroupAsObject.(data:SampleDataGroup.Title)}"/>`. Voici un autre exemple où Element est déclaré comme objet mais est en fait un TextBlock : `<TextBlock Text="{x:Bind Element.Text}"/>`. Un transtypage résout le problème :
+Considérez par exemple que vous avez un type nommé SampleDataGroup, qui implémente une propriété de chaîne nommée Title. Vous avez également une propriété MainPage.SampleDataGroupAsObject, qui est de type objet mais qui retourne une instance de SampleDataGroup. La liaison `<TextBlock Text="{x:Bind SampleDataGroupAsObject.Title}"/>` génère alors une erreur de compilation parce que la propriété Title est introuvable sur l’objet de type. La solution à ce problème consiste à ajouter un transtypage à votre syntaxe du chemin d’accès comme suit : `<TextBlock Text="{x:Bind SampleDataGroupAsObject.(data:SampleDataGroup.Title)}"/>`. Voici un autre exemple où Element est déclaré comme objet mais est en fait un TextBlock : `<TextBlock Text="{x:Bind Element.Text}"/>`. Un transtypage résout le problème : `<TextBlock Text="{x:Bind Element.(TextBlock.Text)}"/>`.
 
 **En cas de chargement asynchrone des données**
 
@@ -477,7 +480,7 @@ Si vous prenez une collection plate d’éléments (des ouvrages, par exemple, r
 
 En règle générale, pour afficher une collection, vous liez la propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) d’un contrôle d’éléments (tel que [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) ou [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)) directement à une propriété qui renvoie une collection. S’il s’agit d’une collection plate d’éléments, vous n’avez pas besoin d’effectuer d’opération particulière. Mais s’il s’agit d’une collection d’objets de groupe (comme c’est le cas pour une liaison à des données groupées), vous avez besoin des services d’un objet intermédiaire appelé [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), qui se trouve entre le contrôle d’éléments et la source de liaison. Vous liez l’objet **CollectionViewSource** à la propriété qui renvoie les données groupées et vous liez le contrôle d’éléments à l’objet **CollectionViewSource**. L’objet **CollectionViewSource** a pour autre avantage d’assurer le suivi de l’élément actif, de sorte que vous pouvez synchroniser plusieurs contrôles d’éléments en permanence en les liant tous au même objet **CollectionViewSource**. Vous pouvez également accéder à l’élément actif par programme via la propriété [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/BR209857) de l’objet renvoyé par la propriété [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.view).
 
-Pour activer la fonctionnalité de regroupement d’un objet [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), définissez [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.issourcegrouped) sur **true**. La nécessité de définir également la propriété [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.itemspath) dépend de la manière dont vous créez vos objets de groupe. Vous pouvez créer un objet de groupe de deux manières : à l’aide d’un modèle « is-a-group » ou d’un modèle « has-a-group ». Dans le modèle «is-a-group», l’objet de groupe dérive d’un type de collection (par exemple, **List&lt;T&gt;**) et correspond donc en fait au groupe d’éléments. Avec ce modèle, vous n’avez pas besoin de définir **ItemsPath**. Dans le modèle « has-a-group », l’objet de groupe comporte une ou plusieurs propriétés d’un type de collection (par exemple, **List&lt;T&gt;**), de sorte que le groupe comporte un groupe d’éléments sous la forme d’une propriété (ou plusieurs groupes d’éléments sous la forme de plusieurs propriétés). Avec ce modèle, vous devez définir **ItemsPath** sur le nom de la propriété qui contient le groupe d’éléments.
+Pour activer la fonctionnalité de regroupement d’un objet [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), définissez [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.issourcegrouped) sur **true**. La nécessité de définir également la propriété [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.itemspath) dépend de la manière dont vous créez vos objets de groupe. Vous pouvez créer un objet de groupe de deux manières : à l’aide d’un modèle « is-a-group » ou d’un modèle « has-a-group ». Dans le modèle «is-a-group», l’objet de groupe dérive d’un type de collection (par exemple, **List&lt;T&gt;**) et correspond donc en fait au groupe d’éléments. Avec ce modèle, vous n’avez pas besoin de définir **ItemsPath**. Dans le modèle « has-a-group », l’objet de groupe comporte une ou plusieurs propriétés d’un type de collection (par exemple, **List&lt;T&gt;**), de sorte que le groupe comporte un groupe d’éléments sous la forme d’une propriété (ou plusieurs groupes d’éléments sous la forme de plusieurs propriétés). Avec ce modèle, vous devez définir **ItemsPath** sur le nom de la propriété qui contient le groupe d’éléments.
 
 L’exemple suivant illustre le modèle « has-a-group ». La classe de page comporte une propriété nommée [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713), qui renvoie une instance de notre modèle d’affichage. L’objet [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) se lie à la propriété **Authors** du modèle d’affichage (**Authors** est la collection d’objets de groupe) et indique que c’est la propriété **Author.BookSkus** qui contient les éléments groupés. Enfin, la classe [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) est liée à l’objet **CollectionViewSource** et son style de groupe est défini de manière à pouvoir afficher les éléments en groupes.
 
@@ -502,7 +505,7 @@ L’exemple suivant illustre le modèle « has-a-group ». La classe de page c
 
 Notez que la propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) doit utiliser [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) (et non[{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)), car elle doit définir la propriété **Source** sur une ressource. Pour voir l’exemple ci-dessus dans le contexte de l’application complète, téléchargez l’exemple d’application [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952). Contrairement au balisage ci-dessus, [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) utilise exclusivement {Binding}.
 
-Vous pouvez implémenter le modèle « is-a-group » de deux manières. La première consiste à créer votre propre classe de groupe. Dérivez la classe de **List&lt;T&gt;** (où *T* est le type des éléments). Exemple : `public class Author : List<BookSku>`. La deuxième consiste à utiliser une expression [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) afin de créer dynamiquement des objets de groupe (et une classe de groupe) à partir des valeurs de propriétés similaires des éléments **BookSku**. Cette approche, consistant à conserver simplement une liste plate d’éléments et à les regrouper à la volée, est courante pour les applications qui accèdent aux données à partir d’un service cloud. Elle vous offre la possibilité de regrouper les ouvrages par auteur et par genre (par exemple) sans avoir à recourir à des classes de groupes spécifiques, comme **Author** et **Genre**.
+Vous pouvez implémenter le modèle « is-a-group » de deux manières. La première consiste à créer votre propre classe de groupe. Dérivez la classe de **List&lt;T&gt;** (où *T* est le type des éléments). Exemple : `public class Author : List<BookSku>`. La deuxième consiste à utiliser une expression [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) afin de créer dynamiquement des objets de groupe (et une classe de groupe) à partir des valeurs de propriétés similaires des éléments **BookSku**. Cette approche, consistant à conserver simplement une liste plate d’éléments et à les regrouper à la volée, est courante pour les applications qui accèdent aux données à partir d’un service cloud. Elle vous offre la possibilité de regrouper les ouvrages par auteur et par genre (par exemple) sans avoir à recourir à des classes de groupes spécifiques, comme **Author** et **Genre**.
 
 L’exemple suivant illustre le modèle « is-a-group » avec [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). Cette fois-ci, nous regroupons les ouvrages par genre, avec le nom du genre affiché dans les en-têtes des groupes. Cela est indiqué par le chemin de la propriété « Key » en référence à la valeur du groupe [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx).
 
@@ -620,14 +623,14 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | Propriété Path | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | Dans x:Bind, Path a pour racine Page par défaut et non DataContext. | 
 | Indexeur | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Se lie à l’élément spécifié dans la collection. Seuls les index basés sur des entiers sont pris en charge. | 
 | Propriétés jointes | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Les propriétés jointes sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
-| Transtypage | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Inutile< | Les conversions de type (transtypage) sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
+| Transtypage | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Inutile&lt; | Les conversions de type (transtypage) sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
 | Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Les convertisseurs doivent être déclarés à la racine de Page/ResourceDictionary ou dans le fichier App.xaml. | 
 | ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Les convertisseurs doivent être déclarés à la racine de Page/ResourceDictionary ou dans le fichier App.xaml. | 
 | TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | Utilisée lorsque le nœud terminal de l’expression de liaison présente la valeur null. Utilisez des guillemets simples pour une valeur de chaîne. | 
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Utilisée lorsqu’une partie du chemin de la liaison (à l’exception du nœud terminal) présente la valeur null. | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | Avec {x:Bind}, vous créez une liaison à un champ ; Path a pour racine Page par défaut, de sorte que tout élément nommé est accessible via son champ. | 
 | RelativeSource : Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | Avec {x:Bind}, nommez l’élément et utilisez son nom dans Path. | 
-| RelativeSource : TemplatedParent | Non pris en charge | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | La liaison de modèle standard peut être utilisée dans les modèles de contrôle dans la plupart des cas. Toutefois, faites appel à TemplatedParent quand vous devez utiliser un convertisseur ou une liaison bidirectionnelle.< | 
+| RelativeSource : TemplatedParent | Non pris en charge | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | La liaison de modèle standard peut être utilisée dans les modèles de contrôle dans la plupart des cas. Toutefois, faites appel à TemplatedParent quand vous devez utiliser un convertisseur ou une liaison bidirectionnelle.&lt; | 
 | Source | Non pris en charge | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Pour {x:Bind}, utilisez une propriété ou un chemin statique à la place. | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode peut être défini sur OneTime (liaison ponctuelle), OneWay (liaison à sens unique) ou TwoWay (liaison bidirectionnelle). La valeur par défaut est OneTime pour {x:Bind} et OneWay pour {Binding}. | 
 | UpdateSourceTrigger | Non pris en charge | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} utilise le comportement PropertyChanged dans tous les cas, sauf pour TextBox.Text, où il attend la perte de focus mettre à jour la source. | 
@@ -635,6 +638,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

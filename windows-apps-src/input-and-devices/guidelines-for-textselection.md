@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Cette rubrique décrit la nouvelle interface utilisateur Windows pour la sélection et la manipulation de texte, d’images et de contrôles, et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ces nouveaux mécanismes de sélection et de manipulation dans votre application du Windows Store.
-title: Sélection de texte et d’images
+Description: "Cette rubrique décrit la nouvelle interface utilisateur Windows pour la sélection et la manipulation de texte, d’images et de contrôles, et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ces nouveaux mécanismes de sélection et de manipulation dans votre application du Windows Store."
+title: "Sélection de texte et d’images"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: a47b48f9315c51505b2c487c140011e053105556
+
 ---
 
 # Sélection de texte et d’images
@@ -131,6 +134,7 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

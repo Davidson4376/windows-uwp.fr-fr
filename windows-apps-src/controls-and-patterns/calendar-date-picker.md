@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes.
-title: Sélecteur de dates du calendrier
+Description: "Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes."
+title: "Sélecteur de dates du calendrier"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 75f6bb925db63838e4985df15b50977b93805ffe
+
 ---
 
 # Sélecteur de dates du calendrier
@@ -85,6 +88,7 @@ Le texte d’espace réservé par défaut est « sélectionner une date ». Vo
 - [Sélecteur d’heure](time-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

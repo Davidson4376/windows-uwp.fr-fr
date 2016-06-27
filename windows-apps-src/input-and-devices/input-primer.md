@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Dans la plateforme Windows universelle (UWP), les interactions utilisateur reposent sur une combinaison de sources d’entrée et de sortie (souris, clavier, stylet, interaction tactile, pavé tactile, fonctions vocales, Cortana, contrôleur, mouvement, regard, etc.), ainsi que sur différents modes ou modificateurs qui permettent des expériences étendues (roulette et boutons de souris, bouton et gomme du stylet, clavier tactile, services d’application en arrière-plan, etc.).
+Description: "Dans la plateforme Windows universelle (UWP), les interactions utilisateur reposent sur une combinaison de sources d’entrée et de sortie (souris, clavier, stylet, interaction tactile, pavé tactile, fonctions vocales, Cortana, contrôleur, mouvement, regard, etc.), ainsi que sur différents modes ou modificateurs qui permettent des expériences étendues (roulette et boutons de souris, bouton et gomme du stylet, clavier tactile, services d’application en arrière-plan, etc.)."
 title: Notions fondamentales sur les interactions
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
+ms.sourcegitcommit: 1221928ebea4a2a926154ed1148e49bdb1e0834c
+ms.openlocfilehash: 7c2d3bd1ab2d2f4923cf84834a73fd1c58113212
+
 ---
 
 # Notions fondamentales sur les interactions
@@ -12,7 +15,7 @@ template: detail.hbs
 
 ![types d’entrée Windows](images/input-interactions/icons-inputdevices03.png)
 
-Dans la plateforme Windows universelle (UWP), les interactions utilisateur reposent sur une combinaison de sources d’entrée et de sortie (souris, clavier, stylet, interaction tactile, pavé tactile, fonctions vocales, **Cortana**, contrôleur, mouvement, regard, etc.), ainsi que sur différents modes ou modificateurs qui permettent des expériences étendues (roulette et boutons de souris, bouton et gomme du stylet, clavier tactile, services d’application en arrière-plan, etc.).
+Dans la plateforme Windows universelle (UWP), les interactions utilisateur reposent sur une combinaison de sources d’entrée et de sortie (souris, clavier, stylet, interaction tactile, pavé tactile, fonctions vocales, **Cortana**, contrôleur, mouvement, regard, etc.), ainsi que sur différents modes ou modificateurs qui permettent des expériences étendues (roulette et boutons de souris, bouton et gomme du stylet, clavier tactile, services d’application en arrière-plan, etc.). 
 
 La plateforme UWP utilise un système d’interactions contextuelles intelligent qui, dans la plupart des cas, élimine la nécessité de traiter individuellement les types d’entrées uniques reçus par votre application. Cela inclut la gestion des entrées effectuées par le biais d’une interface tactile, d’un pavé tactile, d’une souris et d’un stylet en tant que type de pointeur générique pour prendre en charge les actions statiques (comme l’appui ou l’appui long), les actions de manipulation (comme le glissement pour le mouvement panoramique) ou le rendu d’entrée manuscrite.
 
@@ -300,6 +303,7 @@ Utilisation standard Tout comme les personnes ont recours à une combinaison de 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

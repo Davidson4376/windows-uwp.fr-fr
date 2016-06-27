@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Créez des applications UWP offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
+Description: "Créez des applications UWP offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée."
 title: Interactions tactiles
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
+
 ---
 
 # Interactions tactiles
@@ -108,7 +111,7 @@ Le ciblage est optimisé par les éléments suivants :
 Pour les interactions imprécises, utilisez :
 
 -   des points d’ancrage qui permettent à l’utilisateur de s’arrêter plus facilement aux emplacements souhaités quand il interagit avec le contenu ;
--   des « rails » d’orientation qui permettent d’aider l’utilisateur à effectuer un mouvement panoramique vertical ou horizontal, même si la main se déplace avec un léger mouvement d’arc. Pour plus d’informations, voir [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md).
+-   des « rails » d’orientation qui permettent d’aider l’utilisateur à effectuer un mouvement panoramique vertical ou horizontal, même si la main se déplace avec un léger mouvement d’arc. Pour plus d’informations, voir [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md).
 
 ## Occlusion
 
@@ -128,7 +131,7 @@ Pour éviter l’occlusion du doigt et de la main, respectez les recommandations
 
 -   Poignées de précision
 
-    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Sélection de texte et d’images](guidelines-for-textselection.md).
+    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications Windows Runtime)](guidelines-for-textselection.md).
 
 ## Chronométrage
 
@@ -209,7 +212,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 ## <span id="gestures"></span><span id="GESTURES"></span>Événements de mouvement
 
 
-Pour plus d’informations concernant les contrôles individuels, voir [Liste des contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406).
+Pour plus d’informations concernant les contrôles individuels, voir [Liste de contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
 ## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>Événements de pointeur
 
@@ -616,15 +619,17 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 ## <span id="related_topics"></span>Articles connexes
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
-* Identifier des périphériques d’entrée
-* [Exemples](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* Exemple de mode d’interaction utilisateur
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Exemples d’archive](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Identifier des périphériques d’entrée](identify-input-devices.md) 
+           **Exemples**
+* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **Exemples d’archive**
+* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  
@@ -634,6 +639,7 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

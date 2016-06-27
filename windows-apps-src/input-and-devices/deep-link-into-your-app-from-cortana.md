@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Indiquez des liens ciblés à partir du service d’application en arrière-plan dans Cortana pour lancer l’application au premier plan dans un état ou un contexte spécifique.
-title: Lien ciblé de Cortana vers une application en arrière-plan
+Description: "Indiquez des liens ciblés à partir du service d’application en arrière-plan dans Cortana pour lancer l’application au premier plan dans un état ou un contexte spécifique."
+title: "Lien ciblé de Cortana vers une application en arrière-plan"
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
 label: Deep link to a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: b89aa43dffa69d092615e1b408feac77d0caa87c
+
 ---
 
 # Lien ciblé de Cortana vers une application en arrière-plan
@@ -52,24 +55,24 @@ La création de liens ciblés est utile lorsque Cortana et le service de votre a
 
 Il existe trois manières de fournir des liens ciblés :
 
--   un lien « Atteindre &lt;application&gt; » dans différents écrans **Cortana** ;
+-   un lien « Atteindre &lt;application&gt; » dans différents écrans **Cortana** ;
 -   un lien incorporé dans une vignette de contenu dans différents écrans **Cortana** ;
 -   le lancement par programme de l’application au premier plan à partir du service d’application en arrière-plan.
 
-## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>Lien ciblé « Atteindre &lt;application&gt; »
+## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>Lien ciblé « Atteindre &lt;application&gt; »
 
 
-**Cortana** affiche un lien ciblé « Atteindre &lt;application&gt; » sous la carte de contenu dans la plupart des écrans.
+**Cortana** affiche un lien ciblé « Atteindre &lt;application&gt; » sous la carte de contenu dans la plupart des écrans.
 
 ![écran d’achèvement de l’application en arrière-plan de cortana](images/cortana-completion-screen.png)
 
 Vous pouvez fournir un argument de lancement pour ce lien qui ouvre votre application avec un contexte similaire au service d’application. Si vous ne fournissez pas d’argument de lancement, l’application est lancée sur l’écran principal.
 
-Dans cet exemple du fichier AdventureWorksVoiceCommandService.cs de l’exemple **AdventureWorks**, nous transmettons la destination spécifiée à la méthode SendCompletionMessageForDestination, qui récupère tous les voyages correspondants et fournit un lien ciblé vers l’application.
+Dans cet exemple du fichier AdventureWorksVoiceCommandService.cs de l’exemple **AdventureWorks**, nous transmettons la chaîne de destination spécifiée (`destination`) à la méthode SendCompletionMessageForDestination, qui récupère tous les voyages correspondants et fournit un lien ciblé vers l’application.
 
 Tout d’abord, nous créons un message [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```), qui est prononcé par **Cortana** et affiché sur le canevas de **Cortana**. Un objet de liste [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) est ensuite créé pour afficher la collection de cartes de résultat sur le canevas. 
 
-Ces deux objets sont ensuite transmis à la méthode [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) de l’objet [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (```response```). Nous définissons ensuite la propriété [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) sur la valeur de la destination dans la commande vocale.
+Ces deux objets sont ensuite transmis à la méthode [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) de l’objet [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (`response`). Nous définissons ensuite la valeur de la propriété [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) de l’objet de réponse sur la valeur de `destination` transmise à cette fonction. Lorsque l’utilisateur appuie sur une vignette de contenu dans la zone de dessin de Cortana, les valeurs de paramètres sont transmises à l’application par le biais de l’objet de réponse.
 
 Enfin, nous appelons la méthode [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) de la classe [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
 
@@ -106,13 +109,13 @@ Vous pouvez ajouter des liens ciblés vers des cartes de contenu dans différent
 
 ![écran de transfert de l’application en arrière-plan de Cortana ](images/cortana-backgroundapp-progress-result.png)
 
-À l’instar des liens « Atteindre &lt;application&gt; », vous pouvez fournir un argument de lancement pour ouvrir votre application avec un contexte similaire au service d’application. Si vous ne fournissez pas d’argument de lancement, la vignette de contenu n’est pas liée à votre application.
+À l’instar des liens « Atteindre &lt;application&gt; », vous pouvez fournir un argument de lancement pour ouvrir votre application avec un contexte similaire au service d’application. Si vous ne fournissez pas d’argument de lancement, la vignette de contenu n’est pas liée à votre application.
 
 Dans cet exemple du fichier AdventureWorksVoiceCommandService.cs de l’exemple **AdventureWorks**, nous transmettons la destination spécifiée à la méthode SendCompletionMessageForDestination, qui récupère tous les voyages correspondants et fournit aux cartes de contenu un lien ciblé vers l’application.
 
 Tout d’abord, nous créons un message [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```), qui est prononcé par **Cortana** et affiché sur le canevas de **Cortana**. Un objet de liste [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) est ensuite créé pour afficher la collection de cartes de résultat sur le canevas. 
 
-Ces deux objets sont ensuite transmis à la méthode [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) de l’objet [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (```response```). Nous définissons ensuite la propriété [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) sur la valeur de la destination dans la commande vocale.
+Ces deux objets sont ensuite transmis à la méthode [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) de l’objet [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (```response```). Nous définissons ensuite la propriété [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) sur la valeur de la destination dans la commande vocale.
 
 Enfin, nous appelons la méthode [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) de la classe [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
 Ici, nous ajoutons deux vignettes de contenu avec différentes valeurs de paramètre [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) à une liste [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) utilisée dans l’appel [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) de l’objet [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
@@ -288,6 +291,7 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

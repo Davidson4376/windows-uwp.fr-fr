@@ -1,11 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Créer des applications de plateforme Windows universelle (UWP) qui prennent en charge les interactions personnalisées à partir de stylos et de stylets, y compris l’encre numérique pour des expériences de dessin et d’écriture naturelles.
-title: Interactions avec le stylo et le stylet dans les applications UWP
+Description: "Créer des applications de plateforme Windows universelle (UWP) qui prennent en charge les interactions personnalisées à partir de stylos et de stylets, y compris l’encre numérique pour des expériences de dessin et d’écriture naturelles."
+title: "Interactions avec le stylo et le stylet dans les applications UWP"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+
 ---
 
 # Interactions avec le stylo et le stylet dans les applications UWP
@@ -490,6 +493,7 @@ Pour voir un exemple complet de cette fonctionnalité, reportez-vous à l’[exe
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

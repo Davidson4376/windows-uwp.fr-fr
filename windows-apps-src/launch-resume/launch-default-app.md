@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Lancer l’application par défaut pour un URI
-description: Découvrez comment lancer l’application par défaut d’un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique donne également une vue d’ensemble des nombreux schémas d’URI intégrés à Windows.
+author: TylerMSFT
+title: "Lancer l’application par défaut pour un URI"
+description: "Découvrez comment lancer l’application par défaut d’un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique donne également une vue d’ensemble des nombreux schémas d’URI intégrés à Windows."
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: b593a43bc5b95dd0880af972ca1514e657bbd9e3
+
 ---
 
 # Lancer l’application par défaut pour un URI
@@ -96,7 +99,7 @@ var options = new Windows.System.LauncherOptions();
 options.PreferredApplicationPackageFamilyName = "Contoso.URIApp_8wknc82po1e";
 options.PreferredApplicationDisplayName = "Contoso URI Ap";
 
-// Launch the URI and pass in the recommended app 
+// Launch the URI and pass in the recommended app
 // in case the user has no apps installed to handle the URI
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
@@ -114,7 +117,7 @@ Les applications sources qui appellent la méthode [**LaunchUriAsync**](https://
 var options = new Windows.System.LauncherOptions();
 options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseLess;
 
-// Launch the URI 
+// Launch the URI
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
@@ -170,7 +173,7 @@ Votre application peut utiliser le schéma d’URI **ms-chat:** pour lancer l’
 | ms-chat:                                 | Lance l’application de messagerie.                                                                                                                                                            |
 | ms-chat:?ContactID={contacted}           | Permet le lancement de l’application de messagerie avec les informations d’un contact spécifique.                                                                                               |
 | ms-chat:?Body={body}                     | Permet le lancement de l’application de messagerie avec une chaîne à utiliser en tant que contenu du message.                                                                                    |
-| ms-chat:?Addresses={address}&Body={body} | Permet le lancement de l’application de messagerie avec les informations d’adresse d’une personne particulière et une chaîne à utiliser en tant que contenu du message. Remarque : les adresses peuvent être concaténées. |
+| ms-chat:?Addresses={address}&amp;Body={body} | Permet le lancement de l’application de messagerie avec les informations d’adresse d’une personne particulière et une chaîne à utiliser en tant que contenu du message. Remarque : les adresses peuvent être concaténées. |
 | ms-chat:?TransportId={transportId}       | Permet le lancement de l’application de messagerie avec un ID de transport particulier.                                                                                                        |
 
  
@@ -205,7 +208,7 @@ Votre application peut utiliser le schéma d’URI **ms-yellowpage:** pour lance
 
 | Schéma d’URI                                            | Résultats                                                                               |
 |-------------------------------------------------------|---------------------------------------------------------------------------------------|
-| ms-yellowpage:?input=\[keyword\]&method=\[String|T9\] | Lance l’application de recherche de points d’intérêt installée qui prend en charge ce nouvel URI. |
+| ms-yellowpage:?input=\[keyword\]&amp;method=\[String|T9\] | Lance l’application de recherche de points d’intérêt installée qui prend en charge ce nouvel URI. |
 
  
 
@@ -222,8 +225,6 @@ Pour plus d’informations, voir [Lancer l’application Contacts](launch-people
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

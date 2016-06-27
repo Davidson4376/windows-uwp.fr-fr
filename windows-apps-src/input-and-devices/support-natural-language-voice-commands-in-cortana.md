@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Découvrez comment enrichir Cortana avec des commandes vocales plus souples et plus naturelles qui permettent à un utilisateur de prononcer le nom de votre application n’importe où dans la commande.
+Description: "Découvrez comment enrichir Cortana avec des commandes vocales plus souples et plus naturelles qui permettent à un utilisateur de prononcer le nom de votre application n’importe où dans la commande."
 title: Prendre en charge des commandes vocales en langage naturel dans Cortana
 ms.assetid: 281E068A-336A-4A8D-879A-D8715C817911
 label: Support natural language voice commands
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: c9cd6894c61f3d6cfe770d197317a97a804b4119
+
 ---
 
 # Prendre en charge des commandes vocales en langage naturel dans Cortana
@@ -209,6 +212,7 @@ Voici un fichier VCD qui illustre différentes manières de fournir des commande
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

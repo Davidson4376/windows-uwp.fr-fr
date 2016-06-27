@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Le contrôle hub utilise un modèle de navigation hiérarchique pour prendre en charge les applications avec une architecture d’informations relationnelle.
-title: Contrôles hub
+Description: "Le contrôle hub utilise un modèle de navigation hiérarchique pour prendre en charge les applications avec une architecture d’informations relationnelle."
+title: "Contrôles hub"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
+
 ---
 # Modèle/contrôle hub
 
@@ -110,6 +113,7 @@ Sur les appareils mobiles, une seule section du hub est visible à la fois.
 - [Utilisation d’un hub](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

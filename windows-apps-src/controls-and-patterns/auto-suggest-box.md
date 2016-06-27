@@ -1,11 +1,14 @@
 ---
 author: Jwmsft
-Description: Zone de texte qui fournit une suggestion à mesure que l’utilisateur tape.
+Description: "Zone de texte qui fournit une suggestion à mesure que l’utilisateur tape."
 title: Recommandations concernant les zones de suggestion automatique
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
+
 ---
 # Zone de suggestion automatique
 Utilisez un objet AutoSuggestBox pour fournir une liste de suggestions afin que les utilisateurs puissent sélectionner des options au fil de leur saisie.
@@ -152,6 +155,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

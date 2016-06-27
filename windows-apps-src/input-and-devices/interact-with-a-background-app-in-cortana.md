@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Découvrez comment un utilisateur peut interagir avec une application en arrière-plan via les fonctions vocales et le canevas de Cortana pendant l’exécution d’une commande vocale.
-title: Interagir avec une application en arrière-plan
+Description: "Découvrez comment un utilisateur peut interagir avec une application en arrière-plan via les fonctions vocales et le canevas de Cortana pendant l’exécution d’une commande vocale."
+title: "Interagir avec une application en arrière-plan"
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
 label: Interact with a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: 675553f5c3954597982360900e965b2a756d7f63
+
 ---
 
 # Interagir avec une application en arrière-plan dans Cortana
@@ -30,7 +33,7 @@ Cortana prend en charge un flux de travail complet étape par étape avec votre 
 
 **Éléments requis :**
 
-Cette rubrique s’appuie sur l’article [Lancer une application en arrière-plan à l’aide des commandes vocales de Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). Nous continuons ici à illustrer ces fonctionnalités avec une application de planification et de gestion de voyages nommée **Adventure Works**.
+Cette rubrique s’appuie sur l’article [Lancer une application en arrière-plan avec les commandes vocales de Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). Nous continuons ici à illustrer ces fonctionnalités avec une application de planification et de gestion de voyages nommée **Adventure Works**.
 
 Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
 
@@ -180,7 +183,9 @@ Lorsqu’une commande vocale est reconnue, **Cortana** doit appeler la méthode 
 
 Si le service d’application n’appelle pas ReportSuccessAsync ni aucune des méthodes VoiceCommandServiceConnection, l’utilisateur reçoit un message d’erreur et l’appel du service d’application est annulé.
 
-Voici un exemple d’écran relais pour l’application **Adventure Works**. Dans cet exemple, un utilisateur a interrogé **Cortana** pour obtenir les prochains voyages. L’écran relais inclut un message personnalisé avec le nom du service d’application, une icône et la chaîne **Commentaires** déclarée dans le fichier VCD.
+Voici un exemple d’écran relais pour l’application **Adventure Works**. Dans cet exemple, un utilisateur a interrogé **Cortana** pour obtenir les prochains voyages. L’écran relais inclut un message personnalisé avec le nom du service d’application, une icône et la chaîne **Commentaires**. 
+
+[!NOTE] Vous pouvez déclarer une chaîne **Commentaires** dans le fichier VCD. Cette chaîne n’affecte pas le texte de l’interface utilisateur affiché dans la zone de dessin de Cortana, mais uniquement le texte prononcé par **Cortana**.
 
 ![écran relais de l’application en arrière-plan de cortana](images/cortana-backgroundapp-progress-result.png)
 
@@ -472,6 +477,7 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

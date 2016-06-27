@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Les listes affichent et activent l’interaction avec du contenu basé sur des collections.
+Description: "Les listes affichent et activent l’interaction avec du contenu basé sur des collections."
 title: Listes
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
+
 ---
 # Listes
 
@@ -189,6 +192,7 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

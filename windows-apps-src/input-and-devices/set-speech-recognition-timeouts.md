@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
-title: Définir des délais d’expiration de reconnaissance vocale
+Description: "Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale."
+title: "Définir des délais d’expiration de reconnaissance vocale"
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: e0dbc43cba4556674a4d96013b65837d95044622
+
 ---
 
 # Définir des délais d’expiration de reconnaissance vocale
@@ -51,6 +54,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

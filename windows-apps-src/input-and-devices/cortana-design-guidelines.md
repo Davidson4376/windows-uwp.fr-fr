@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Compléter Cortana avec les fonctionnalités fournies par votre application, à l’aide des commandes vocales.
-title: Recommandations relatives à la conception de Cortana
+Description: "Compléter Cortana avec les fonctionnalités fournies par votre application, à l’aide des commandes vocales."
+title: "Recommandations relatives à la conception de Cortana"
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
 label: Guidelines
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 31442ed17b9b463cbf10cecb564278b86086bbf2
+
 ---
 
 # Recommandations relatives à la conception de Cortana
@@ -390,6 +393,7 @@ Lorsque l’une des erreurs suivantes survient, **Cortana** affiche le même mes
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

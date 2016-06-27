@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles.
+Description: "Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles."
 title: Animations dans les applications UWP
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
+
 ---
 
 # Animations pour les applications UWP
@@ -110,6 +113,7 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

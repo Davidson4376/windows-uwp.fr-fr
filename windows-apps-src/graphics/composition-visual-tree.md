@@ -1,8 +1,11 @@
 ---
 author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
-title: Arborescence d’éléments visuels de composition
-description: Les éléments visuels de composition constituent la structure de l’arborescence des éléments visuels sur laquelle reposent toutes les autres fonctionnalités de l’API Composition. L’API permet aux développeurs de définir et de créer un ou plusieurs objets visuels, qui représentent chacun un nœud unique dans une arborescence d’éléments visuels.
+title: "Arborescence d’éléments visuels de composition"
+description: "Les éléments visuels de composition constituent la structure de l’arborescence des éléments visuels sur laquelle reposent toutes les autres fonctionnalités de l’API Composition. L’API permet aux développeurs de définir et de créer un ou plusieurs objets visuels, qui représentent chacun un nœud unique dans une arborescence d’éléments visuels."
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: e31d3b23871bd37cde26fb3e9414e8cfae340d3d
+
 ---
 # Arborescence d’éléments visuels de composition
 
@@ -103,9 +106,9 @@ Comme la rotation, la propriété [**Opacity**](https://msdn.microsoft.com/libra
 
 ## Modification de la position de l’élément visuel dans la collection
 
-L’API Composition permet de modifier la position d’un élément visuel dans une [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) de plusieurs façons : vous pouvez le placer au-dessus d’un autre élément visuel avec [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove), le placer au-dessous avec [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow), le déplacer vers le haut avec [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) ou vers le bas avec [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom).
+L’API Composition permet de modifier la position d’un élément visuel dans une [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) de plusieurs façons : vous pouvez le placer au-dessus d’un autre élément visuel avec [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove), le placer au-dessous avec [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow), le déplacer vers le haut avec [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) ou vers le bas avec [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom).
 
-L’exemple illustre un [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) sur lequel un utilisateur a cliqué et qui est classé vers le haut :
+L’exemple illustre un [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) sur lequel un utilisateur a cliqué et qui est classé vers le haut :
 
 ```cs
 parent.Children.InsertAtTop(_currentVisual);
@@ -510,6 +513,7 @@ namespace compositionvisual
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

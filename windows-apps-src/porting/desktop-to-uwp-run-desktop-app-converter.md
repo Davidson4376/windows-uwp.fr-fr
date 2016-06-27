@@ -1,8 +1,11 @@
 ---
 author: awkoren
-Description: Exécutez le Convertisseur d’applications de bureau pour convertir une application de bureau Windows (Win32, WPF, Windows Forms) en une application UWP.
+Description: "Exécutez le Convertisseur d’applications de bureau pour convertir une application de bureau Windows (Win32, WPF, Windows Forms) en une application UWP."
 Search.Product: eADQiWindows 10XVcnh
-title: Aperçu du Convertisseur d’applications de bureau (projet Centennial)
+title: "Aperçu du Convertisseur d’applications de bureau (projet Centennial)"
+ms.sourcegitcommit: 6d1c6e836d666972641320c73896459490f45924
+ms.openlocfilehash: 874b6452386526d66062a27a5b520cb1a232ae64
+
 ---
 
 # Aperçu du Convertisseur d’applications de bureau (projet Centennial)
@@ -19,7 +22,17 @@ Le convertisseur exécute le programme d’installation de bureau dans un enviro
 
 Cette section présente les modifications entre les versions du Convertisseur d’applications de bureau. 
 
-### 05/04/2016
+### 6/8/2016
+
+* Ajout d’une prise en charge pour la génération de packages appx x86 sur des machines hôtes AMD64 exécutant le convertisseur.
+* Utilisation réduite de l’espace disque par la suppression d’images de base développées précédemment.
+* Ajout d’une prise en charge supplémentaire pour le nettoyage de fichiers temporaires et d’images de base inutiles.
+* Prise en charge étoffée pour la détection d’associations de types de fichier et de protocoles.
+* Amélioration d’une logique permettant de détecter la propriété AppExecutable pour un vaste ensemble d’applications.
+* Ajout d’une prise en charge pour la fourniture d’arguments –InstallerArguments supplémentaires pour les programmes d’installation basés sur MSI.
+* Résolutions de bogues pour l’ensemble des erreurs PathTooLongException survenant au cours du processus de conversion.
+
+### 5/12/2016
 
 - Restauration de la prise en charge de l’édition professionnelle de Windows. 
 - L’indicateur ```-Setup``` du Convertisseur active désormais la fonctionnalité Conteneurs Windows et gère l’extension de l’image de base. Pour effectuer une installation unique, à partir d’une invite de commandes avec élévation de privilèges PowerShell, exécutez les éléments suivants : ```PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage BaseImage-12345.wim -Verbose```
@@ -28,12 +41,12 @@ Cette section présente les modifications entre les versions du Convertisseur d�
 - Ajout de la détection automatique pour les associations et protocoles de types de fichiers.
 - Amélioration de la logique de détection du raccourci du Menu Démarrer.
 - Amélioration du filtrage du système de fichiers pour conserver les fichiers MUI installés de l’application.
-- Mise à jour de la version de bureau prise en charge minimum (10.0.14316.0) pour le projet Centennial dans le manifeste.
+- Mise à jour de la version de bureau minimale prise en charge (10.0.14342.0) pour le projet Centennial dans le manifeste.
 
 ## Configuration système
 
 ### Système d’exploitation pris en charge
-+ Version d’évaluation de la mise à jour anniversaire de Windows 10 édition Entreprise (Build 10.0.14316.0 et versions ultérieures)
++ Version d’évaluation de la mise à jour anniversaire de Windows 10 édition Entreprise (Build 10.0.14342.0 et versions ultérieures)
 
 ### Configuration matérielle requise
 
@@ -48,8 +61,8 @@ Votre ordinateur doit disposer des fonctionnalités minimales suivantes :
 ## Configurer le Convertisseur d’applications de bureau   
 Le Convertisseur d’applications de bureau s’appuie sur les fonctionnalités de Windows 10 fournies comme versions d’évaluation des builds Windows Insider Preview. Assurez-vous que vous exécutez la dernière build pour utiliser le convertisseur.
 
-1. Assurez-vous que vous disposez de la dernière version du système d’exploitation Windows 10 Insider Preview Édition Entreprise (Build 10.0.14316.0 et versions ultérieures).
-2. Téléchargez DesktopAppConverter.zip et BaseImage-14316.wim.
+1. Assurez-vous que vous disposez de la dernière version du système d’exploitation Windows 10 Insider Preview Édition Entreprise ou Pro (http://insider.windows.com). 
+2. Téléchargez DesktopAppConverter.zip et le fichier .wim d’image de base qui correspond à votre build d’Insider Preview (http://aka.ms/converter). 
 3. Extrayez DesktopAppConverter.zip dans un dossier local.
 4. À partir d’une fenêtre administrateur PowerShell :  
 ```CMD
@@ -57,7 +70,7 @@ PS C:\> Set-ExecutionPolicy bypass
 ```
 5. Exécutez la commande suivante depuis une fenêtre administrateur PowerShell pour installer le convertisseur :
 ```CMD
-PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-14316.wim
+PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose
 ```
 6. Si l’exécution de la commande précédente vous invite à redémarrer votre ordinateur, faites-le, puis réexécutez la commande.
 
@@ -67,12 +80,12 @@ Le Convertisseur d’applications de bureau est doté de deux points d’entrée
 ### Utilisation
 ```CMD
 DesktopAppConverter.ps1
--ExpandedBaseImage <String> (optional)
 -Installer <String> [-InstallerArguments <String>] [-InstallerValidExitCodes <Int32>]
 -Destination <String>
 -PackageName <String>
 -Publisher <String>
 -Version <Version>
+[-ExpandedBaseImage <String>]
 [-AppExecutable <String>]
 [-AppFileTypes <String>]
 [-AppId <String>]
@@ -81,7 +94,6 @@ DesktopAppConverter.ps1
 [-PackageDisplayName <String>]
 [-PackagePublisherDisplayName <String>]
 [-MakeAppx]
-[-NatSubnetPrefix <String>]
 [-LogFile <String>]
 [<CommonParameters>]  
 ```
@@ -126,8 +138,13 @@ Pour plus d’informations sur les certificats et la signature, consultez :
   + Registre : `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
   + Système de fichiers : %windir%\\SideBySide
 
+## Problèmes connus
+
++ Si vous obtenez une version d’évaluation Windows Insider sur un ordinateur de développement sur lequel était installé l’aperçu du Convertisseur d’applications de bureau, l’erreur `New-ContainerNetwork: The object already exists` peut s’afficher lorsque vous configurez la nouvelle image de base. Pour contourner ce problème, exécutez la commande `Netsh int ipv4 reset` à partir d’une invite de commandes avec élévation des privilèges, puis redémarrez votre ordinateur. 
++ Une application .NET compilée avec l’option de build « AnyCPU » ne peut être installée si l’exécutable principal ou l’une des dépendances ont été placés sous « Program Files » ou « Windows\System32 ». Pour contourner ce problème, utilisez un programme d’installation spécifique à votre architecture (32 bits ou 64 bits) pour générer correctement un package AppX.
+
 ## Télémétrie d’un Convertisseur d’applications de bureau  
-Le Convertisseur d’applications de bureau peut collecter des informations sur vous et votre utilisation du logiciel et les envoyer à Microsoft. Vous pouvez en savoir plus sur la collecte et l’utilisation de données de Microsoft dans la documentation des produits et dans le [Déclaration de confidentialité Microsoft](http://go.microsoft.com/fwlink/?LinkId=521839). Vous acceptez de respecter toutes les dispositions applicables de la Déclaration de confidentialité de Microsoft.
+Le Convertisseur d’applications de bureau peut collecter des informations sur vous et votre utilisation du logiciel et les envoyer à Microsoft. Vous pouvez en savoir plus sur la collecte et l’utilisation de données de Microsoft dans la documentation des produits et dans la [Déclaration de confidentialité Microsoft](http://go.microsoft.com/fwlink/?LinkId=521839). Vous acceptez de respecter toutes les dispositions applicables de la Déclaration de confidentialité de Microsoft.
 
 Par défaut, la télémétrie est activée pour le Convertisseur d’applications de bureau. Ajoutez la clé de Registre suivante pour configurer la télémétrie selon un paramètre de votre choix :  
 ```CMD
@@ -145,16 +162,17 @@ get-help .\DesktopAppConverter.ps1 -detailed
 ### Paramètres d’installation  
 |Paramètre|Description|
 |---------|-----------|
-|```-Setup [<SwitchParameter>]``` | Cet indicateur permet d’exécuter DesktopAppConverter en mode installation. Le mode d’installation prend en charge le développement d’une image de base fournie.|
+|```-Setup [<SwitchParameter>]``` | Exécute DesktopAppConverter en mode installation. Le mode d’installation prend en charge le développement d’une image de base fournie.|
 |```-BaseImage <String>``` | Chemin d’accès complet vers une image de base non développée. Ce paramètre est obligatoire si -Setup est spécifié.|
 |```-LogFile <String>``` [facultatif] | Spécifie un fichier journal. S’il est omis, un emplacement temporaire du fichier journal est créé.|
+|```-NatSubnetPrefix <String>``` [facultatif] | La valeur de préfixe à utiliser pour l’instance NAT. En règle générale, vous souhaiterez changer cela uniquement si votre ordinateur hôte est attaché à la même plage de sous-réseau que le NetNat du convertisseur. Vous pouvez interroger la configuration actuelle du convertisseur NetNat à l’aide de l’applet de commande **Get-NetNat**. |
+|```-NoRestart [<SwitchParameter>]``` | N’exécutez pas de commande de redémarrage lors de l’exécution du programme d’installation (le redémarrage est nécessaire pour activer la fonctionnalité de conteneur). |
 
 ### Paramètres de conversion  
 |Paramètre|Description|
 |---------|-----------|
-|```-ExpandedBaseImage <String>``` | Chemin d’accès complet vers une image de base déjà développée.|
 |```-Installer <String>``` | Le chemin d’accès du programme d’installation de votre application doit être en mesure de s’exécuter sans assistance/silencieusement|
-|```-InstallerArguments <String>``` [facultatif] | Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès ```<log_folder>```, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE : les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation.** <br><br>Exemple d’utilisation de ce paramètre : ```-InstallerArguments "/silent /log <log_folder>\install.log"``` Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci : ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton ```<log_folder>``` si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
+|```-InstallerArguments <String>``` [facultatif] | Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès ```<log_folder>```, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE : les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation.** <br><br>Exemple d’utilisation de ce paramètre : ```-InstallerArguments "/silent /log <log_folder>\install.log"``` Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci : ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton ```<log_folder>``` si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
 |```-InstallerValidExitCodes <Int32>``` [facultatif] | Une liste séparée par des virgules des codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple : 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
 |```-Destination <String>``` | La destination souhaitée pour la sortie d’appx du convertisseur : DesktopAppConverter peut créer cet emplacement s’il n’existe pas déjà.|
 
@@ -179,10 +197,25 @@ get-help .\DesktopAppConverter.ps1 -detailed
 ### Autres paramètres de conversion  
 |Paramètre|Description|
 |---------|-----------|
+|```-ExpandedBaseImage <String>``` [facultatif] | Chemin d’accès complet vers une image de base déjà développée.|
 |```-MakeAppx [<SwitchParameter>]``` [facultatif] | Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
-|```-NatSubnetPrefix <String>``` [facultatif] | La valeur de préfixe à utiliser pour l’instance NAT. En règle générale, vous souhaiterez changer cela uniquement si votre ordinateur hôte est attaché à la même plage de sous-réseau que le NetNat du convertisseur. Vous pouvez interroger la configuration actuelle du convertisseur NetNat à l’aide de l’applet de commande **Get-NetNat**. |
 |```-LogFile <String>``` [facultatif] | Spécifie un fichier journal. S’il est omis, un emplacement temporaire du fichier journal est créé. |
 |```<Common parameters>``` | Cette applet de commande prend en charge les paramètres courants : *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* et *OutVariable*. Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
+
+### Paramètres de nettoyage
+|Paramètre|Description|
+|---------|-----------|
+|```Cleanup [<Option>]``` | Exécute le nettoyage pour les artefacts DesktopAppConverter. Il existe trois options valides pour le mode de nettoyage. |
+|```Cleanup All``` | Supprime toutes les images de base développées, supprime les fichiers de conversion temporaires, supprime le réseau de conteneurs et désactive la fonctionnalité Windows facultative, Conteneurs. |
+|```Cleanup WorkDirectory``` | Supprime tous les fichiers de conversion temporaires. |
+|```Cleanup ExpandedImages``` | Supprime toutes les images de base développées installées sur votre ordinateur hôte. |
+
+### Paramètres de package x86
+L’aperçu du Convertisseur d’applications de bureau prend désormais en charge la création de packages d’applications x86 que vous pouvez installer et exécuter sur des ordinateurs x86 et amd64. Notez que le Convertisseur d’applications de bureau doit toujours s’exécuter sur un ordinateur AMD64 pour effectuer une conversion réussie.
+
+|Paramètre|Description|
+|---------|-----------|
+|```-CreateX86Package[<SwitchParameter>]``` | Génère un package 32 bits pouvant être installé et exécuté sur un système d’exploitation hôte 32 bits et 64 bits. Par défaut, le convertisseur tente de détecter une architecture de package à partir de l’exécutable principal d’une application. Si aucun exécutable n’est trouvé, le système 64 bits sera sélectionné par défaut. |
 
 ## Voir également
 + [Obtenir le Convertisseur d’applications de bureau](http://go.microsoft.com/fwlink/?LinkId=785437)
@@ -190,8 +223,10 @@ get-help .\DesktopAppConverter.ps1 -detailed
 + [Porter les applications de bureau vers UWP à l’aide du Convertisseur d’applications de bureau](https://channel9.msdn.com/events/Build/2016/P504)
 + [Projet Centennial : Porter des applications de bureau existantes vers la plateforme Windows universelle](https://channel9.msdn.com/events/Build/2016/B829)  
 + [UserVoice pour Desktop Bridge (projet Centennial)](http://aka.ms/UserVoiceDesktopToUwp)
++ [Pont d’application de bureau pour les exemples de code UWP dans GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

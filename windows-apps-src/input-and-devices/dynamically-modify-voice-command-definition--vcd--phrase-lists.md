@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Découvrez comment accéder à la liste des expressions prises en charge (éléments PhraseList) d’un fichier de définition des commandes vocales (VCD) et comment la mettre à jour à l’aide du résultat de reconnaissance vocale au moment de l’exécution.
-title: Modifier de manière dynamique les listes d’expressions de définition des commandes vocales (VCD)
+Description: "Découvrez comment accéder à la liste des expressions prises en charge (éléments PhraseList) d’un fichier de définition des commandes vocales (VCD) et comment la mettre à jour à l’aide du résultat de reconnaissance vocale au moment de l’exécution."
+title: "Modifier de manière dynamique les listes d’expressions de définition des commandes vocales (VCD)"
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
 label: Modify VCD phrase lists
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 623243b94cf8ef6b276f8f2971af7bbdbdece81c
+
 ---
 
 # Modifier de manière dynamique les listes d’expressions de définition des commandes vocales (VCD)
@@ -22,7 +25,7 @@ Découvrez comment accéder à la liste des expressions prises en charge (élém
 
 Il peut être utile de modifier de manière dynamique une liste d’expressions au moment de l’exécution si la commande vocale est propre à une tâche impliquant un certain type de données d’application définies par l’utilisateur ou provisoires. 
 
-Supposons par exemple que vous ayez une application de voyage dans laquelle les utilisateurs peuvent entrer des destinations, et que vous souhaitiez qu’ils puissent la démarrer en disant son nom suivi de la mention « Afficher le voyage à &lt;destination&gt; ». Dans l’élément **ListenFor** proprement dit, vous pouvez indiquer par exemple `<ListenFor> Show trip to {destination}  </ListenFor>`, où la « destination » est la valeur de l’attribut **Label** pour l’élément **PhraseList**.
+Supposons par exemple que vous ayez une application de voyage dans laquelle les utilisateurs peuvent entrer des destinations, et que vous souhaitiez qu’ils puissent la démarrer en disant son nom suivi de la mention « Afficher le voyage à &lt;destination&gt; ». Dans l’élément **ListenFor** proprement dit, vous pouvez indiquer par exemple `<ListenFor> Show trip to {destination}  </ListenFor>`, où la « destination » est la valeur de l’attribut **Label** pour l’élément **PhraseList**.
 
 La mise à jour de la liste d’expressions au moment de l’exécution permet d’éliminer le besoin de créer un objet distinct **ListenFor** élément pour chaque destination possible. Au lieu de cela, vous pouvez remplir dynamiquement **PhraseList** avec des destinations spécifiées par l’utilisateur lors de la saisie de ses itinéraires. 
 
@@ -151,6 +154,7 @@ Dans notre exemple, la **PhraseTopic** contient un élément **Scenario** « Se
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 
