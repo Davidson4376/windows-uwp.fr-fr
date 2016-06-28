@@ -1,24 +1,40 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\usage-report.md](https://github.com/Microsoft/windows-apps/blob/056642044953bab02f78912c7611ddcf5d6d48e6/windows-apps-src/publish/usage-report.md) | HandedBackFailed | [Details](#476e7ee0c9c7ea7dce7f5e3a0389091ede9132c43648)
+ [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/87b34cd37c7594bb76dbf0f1cd388dbba73ea456/windows-apps-src/publish/microsoft-advertising-payment-process.md) | HandedOffSuccess | [Details](#b265fb5c6d01f083fac16c36f4d1c12e023a62b63623)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/87b34cd37c7594bb76dbf0f1cd388dbba73ea456/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#6a7cc6d96969e6c5899d4aa209a6456e7b7869813873)
 
 ## Item Details
-##### <a name='476e7ee0c9c7ea7dce7f5e3a0389091ede9132c43648'></a> Source: [windows-apps-src\publish\usage-report.md](https://github.com/Microsoft/windows-apps/blob/056642044953bab02f78912c7611ddcf5d6d48e6/windows-apps-src/publish/usage-report.md)
-* Status: HandedBackFailed
+##### <a name='b265fb5c6d01f083fac16c36f4d1c12e023a62b63623'></a> Source: [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/87b34cd37c7594bb76dbf0f1cd388dbba73ea456/windows-apps-src/publish/microsoft-advertising-payment-process.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/3240d86c206b3248acfa210e69deb3f8da5c44d2/ol-handoff/Microsoft/windows-apps.fr-fr/master/usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.fr-fr.xlf)
-* Handoff Datetime: 2016-06-28 21:06:49
+* Handoff File: [microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/9b36729d4871c92333d16562053630faa62ee3f2/ol-handoff/Microsoft/windows-apps.fr-fr/master/microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.fr-fr.xlf)
+* Handoff Datetime: 2016-06-28 22:40:02
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='6a7cc6d96969e6c5899d4aa209a6456e7b7869813873'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/87b34cd37c7594bb76dbf0f1cd388dbba73ea456/windows-apps-src/TOC.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/9b36729d4871c92333d16562053630faa62ee3f2/ol-handoff/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
+* Handoff Datetime: 2016-06-28 22:40:02
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/4596458c846f55262831fad3329a9c1779b14488/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/8b4f0137ae305ee1e4c890ac57429e8b65413226/ol-handback/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
+* Current Handback Datetime: 2016-06-20 14:25:24
 * [Back to Top](#report-top)
 
 
