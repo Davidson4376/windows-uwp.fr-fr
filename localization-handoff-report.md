@@ -1,19 +1,35 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/eb1a5970e83e30439108e627cc6f26f9271f5dff/windows-apps-src/publish/microsoft-advertising-payment-process.md) | HandedOffSuccess | [Details](#7916d14e58e751dc33e2d46e7e151b7943952b9d3623)
+ [windows-apps-src\controls-and-patterns\images-imagebrushes.md](https://github.com/Microsoft/windows-apps/blob/fe179ec3c26d5bcbcbb1a80926e887186d8e4e39/windows-apps-src/controls-and-patterns/images-imagebrushes.md) | OutofSyncHandedBackSuccess | [Details](#36dd0614e9b552d9fa56a6c68479f9578fcada13520)
+ [windows-apps-src\debug-test-perf\optimize-animations-and-media.md](https://github.com/Microsoft/windows-apps/blob/622df404dbf85740aa0029f53a0b4e0d541608f9/windows-apps-src/debug-test-perf/optimize-animations-and-media.md) | HandedBackFailed | [Details](#8fd9ce5f43159ae00414d05ddb757c507aaa370d2034)
 
 ## Item Details
-##### <a name='7916d14e58e751dc33e2d46e7e151b7943952b9d3623'></a> Source: [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/eb1a5970e83e30439108e627cc6f26f9271f5dff/windows-apps-src/publish/microsoft-advertising-payment-process.md)
-* Status: HandedOffSuccess
+##### <a name='36dd0614e9b552d9fa56a6c68479f9578fcada13520'></a> Source: [windows-apps-src\controls-and-patterns\images-imagebrushes.md](https://github.com/Microsoft/windows-apps/blob/fe179ec3c26d5bcbcbb1a80926e887186d8e4e39/windows-apps-src/controls-and-patterns/images-imagebrushes.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/c77967decd293ba4b9d482b645baef15aa9c4b7f/ol-handoff/Microsoft/windows-apps.fr-fr/master/microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.fr-fr.xlf)
-* Handoff Datetime: 2016-06-29 19:03:01
+* Handoff File: [images-imagebrushes.be026313239477287e7b41feead3448fe405f215.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/f02838f9309a047d7dc28d2c4d93574ebb6482b2/ol-handoff/Microsoft/windows-apps.fr-fr/master/images-imagebrushes.be026313239477287e7b41feead3448fe405f215.fr-fr.xlf)
+* Handoff Datetime: 2016-06-29 19:58:38
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\controls-and-patterns\images-imagebrushes.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/159c194bd81873c71310602211786a2761f0487e/windows-apps-src/controls-and-patterns/images-imagebrushes.md)
+* Current Handback File: [images-imagebrushes.be026313239477287e7b41feead3448fe405f215.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/f103cf9015ec0c6c1a3232d943580078ac85b652/ol-handback/Microsoft/windows-apps.fr-fr/master/images-imagebrushes.be026313239477287e7b41feead3448fe405f215.fr-fr.xlf)
+* Current Handback Datetime: 2016-06-27 14:46:59
+* [Back to Top](#report-top)
+
+##### <a name='8fd9ce5f43159ae00414d05ddb757c507aaa370d2034'></a> Source: [windows-apps-src\debug-test-perf\optimize-animations-and-media.md](https://github.com/Microsoft/windows-apps/blob/622df404dbf85740aa0029f53a0b4e0d541608f9/windows-apps-src/debug-test-perf/optimize-animations-and-media.md)
+* Status: HandedBackFailed
+* Target File: 
+* Handoff File: [optimize-animations-and-media.f36e3a17ca5943f6bdaee4e3c1edf5f4f8c2436c.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/f02838f9309a047d7dc28d2c4d93574ebb6482b2/ol-handoff/Microsoft/windows-apps.fr-fr/master/optimize-animations-and-media.f36e3a17ca5943f6bdaee4e3c1edf5f4f8c2436c.fr-fr.xlf)
+* Handoff Datetime: 2016-06-29 19:58:38
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
