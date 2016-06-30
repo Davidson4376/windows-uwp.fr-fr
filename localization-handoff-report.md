@@ -1,27 +1,37 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/d2ae82dddf2b7a2f9fd44355e9cc4f8777f42fb7/windows-apps-src/publish/dev-center-insider-program.md) | OutofSyncHandedBackSuccess | [Details](#790f87e2f6c915a2d6e27b15b3e3da37356ab7023598)
+ [windows-apps-src\publish\managing-your-profile.md](https://github.com/Microsoft/windows-apps/blob/a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f/windows-apps-src/publish/managing-your-profile.md) | HandedBackFailed | [Details](#20a995f1a67bfdf0d52340c0964eb05c10935af13622)
+ [windows-apps-src\publish\upload-app-packages.md](https://github.com/Microsoft/windows-apps/blob/7f1a40f33a3137e4e0ded674b5bfdf35f11135dc/windows-apps-src/publish/upload-app-packages.md) | HandedBackFailed | [Details](#f628820747f51f7200e2748c2c3f41b58455b2fa3648)
 
 ## Item Details
-##### <a name='790f87e2f6c915a2d6e27b15b3e3da37356ab7023598'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/d2ae82dddf2b7a2f9fd44355e9cc4f8777f42fb7/windows-apps-src/publish/dev-center-insider-program.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='20a995f1a67bfdf0d52340c0964eb05c10935af13622'></a> Source: [windows-apps-src\publish\managing-your-profile.md](https://github.com/Microsoft/windows-apps/blob/a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f/windows-apps-src/publish/managing-your-profile.md)
+* Status: HandedBackFailed
 * Target File: 
-* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/6e5eb688e2d07b08e666310df06d95d58fcece0d/ol-handoff/Microsoft/windows-apps.fr-fr/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.fr-fr.xlf)
-* Handoff Datetime: 2016-06-30 01:47:36
+* Handoff File: [managing-your-profile.f3a7df74ed9253782e6c19996129d2978404e992.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/60356b344e7d95730102ff21788379f415c2c2db/ol-handoff/Microsoft/windows-apps.fr-fr/master/managing-your-profile.f3a7df74ed9253782e6c19996129d2978404e992.fr-fr.xlf)
+* Handoff Datetime: 2016-06-30 02:43:07
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/159c194bd81873c71310602211786a2761f0487e/windows-apps-src/publish/dev-center-insider-program.md)
-* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/f103cf9015ec0c6c1a3232d943580078ac85b652/ol-handback/Microsoft/windows-apps.fr-fr/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.fr-fr.xlf)
-* Current Handback Datetime: 2016-06-27 14:46:59
+* [Back to Top](#report-top)
+
+##### <a name='f628820747f51f7200e2748c2c3f41b58455b2fa3648'></a> Source: [windows-apps-src\publish\upload-app-packages.md](https://github.com/Microsoft/windows-apps/blob/7f1a40f33a3137e4e0ded674b5bfdf35f11135dc/windows-apps-src/publish/upload-app-packages.md)
+* Status: HandedBackFailed
+* Target File: 
+* Handoff File: [upload-app-packages.1fcac0810d4be7ba7a71b9a407f69f6f47c18472.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/60356b344e7d95730102ff21788379f415c2c2db/ol-handoff/Microsoft/windows-apps.fr-fr/master/upload-app-packages.1fcac0810d4be7ba7a71b9a407f69f6f47c18472.fr-fr.xlf)
+* Handoff Datetime: 2016-06-30 02:43:07
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
