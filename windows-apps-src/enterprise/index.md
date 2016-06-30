@@ -1,8 +1,12 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windows universelle (UWP)&\#160;Windows 10.
+description: "Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windows universelle (UWP)&amp;\\#160;Windows 10."
 title: Entreprise
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
+ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+
 ---
 
 # Entreprise
@@ -111,6 +115,7 @@ Pour plus d’informations sur Prism, voir le [référentiel GitHub](https://git
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

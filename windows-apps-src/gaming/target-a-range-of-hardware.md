@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Prendre en charge les mappages d’ombre sur une gamme de matériel
-description: Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants.
+title: "Prendre en charge les mappages d’ombre sur une gamme de matériel"
+description: "Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants."
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: 0cdc31f07560e7f1747806d1436bccbc1e50f8b9
+
 ---
 
 # Prendre en charge les mappages d’ombre sur une gamme de matériel
@@ -174,6 +178,7 @@ L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

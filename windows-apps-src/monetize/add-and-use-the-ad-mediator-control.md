@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 3C03FDD8-FA61-4E7B-BDCA-3C29DFEA20E4
-description: Après avoir installé le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft, suivez les instructions de cette rubrique pour utiliser le contrôle Ad Mediator dans votre application.
-title: Ajouter et utiliser le contrôle Ad Mediator
+description: "Après avoir installé le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft, suivez les instructions de cette rubrique pour utiliser le contrôle Ad Mediator dans votre application."
+title: "Ajouter et utiliser le contrôle Ad Mediator"
+translationtype: Human Translation
+ms.sourcegitcommit: 8c3f1997427a7c3d4f4b4b7acc876a2a091e4553
+ms.openlocfilehash: a0d73b50207d251c079714265845a816f4ac23da
+
 ---
 
 # Ajouter et utiliser le contrôle Ad Mediator
@@ -29,7 +33,7 @@ Ajouter une instance du contrôle Ad Mediator à votre projet :
     -   Dans un projet Windows 8.1 ou Windows Phone 8.1 utilisant C# ou Visual Basic avec XAML, utilisez l’élément **AdMediatorControl** de la section **AdMediator**.
     -   Dans un projet Silverlight Windows Phone, utilisez l’élément **AdMediatorControl** de la section **Tous les contrôles Windows Phone**.
 
-    > **Remarque** Lorsque vous faites glisser le contrôle **AdMediatorControl** vers le concepteur pour la première fois dans un projet UWP, Windows 8.1 ou Windows Phone 8.1 à l’aide de C# ou de Visual Basic avec XAML, Visual Studio ajoute la référence appropriée d’assembly Ad Mediator à votre projet, mais le contrôle n’est, à ce stade, pas encore ajouté au concepteur. Pour ajouter le contrôle, cliquez sur OK dans le message apparaissant dans Visual Studio, attendez quelques secondes que le concepteur s’actualise, puis faites glisser de nouveau le contrôle vers le concepteur. Si vous ne réussissez toujours pas à ajouter le contrôle au concepteur, vérifiez que votre projet cible l’architecture de processeur requise par votre application (par exemple, **x86**), et pas **Toute UC**. Le contrôle ne peut pas être ajouté au concepteur si le projet cible **Toute UC** pour la plateforme de génération.
+    > **Remarque** Lorsque vous faites glisser le contrôle **AdMediatorControl** vers le concepteur pour la première fois dans un projet UWP, Windows 8.1 ou Windows Phone 8.1 à l’aide de C# ou de Visual Basic avec XAML, Visual Studio ajoute la référence appropriée d’assembly Ad Mediator à votre projet, mais le contrôle n’est, à ce stade, pas encore ajouté au concepteur. Pour ajouter le contrôle, cliquez sur OK dans le message apparaissant dans Visual Studio, attendez quelques secondes que le concepteur s’actualise, puis faites glisser de nouveau le contrôle vers le concepteur. Si vous ne réussissez toujours pas à ajouter le contrôle dans le concepteur, vérifiez que votre projet cible l’architecture de processeur requise par votre application (par exemple, **x86**), et non pas **Toute CPU**. Le contrôle ne peut pas être ajouté au concepteur si le projet cible **Toute UC** pour la plateforme de génération.
 
 5.  Visual Studio ajoute une référence d’assembly Ad Mediator à votre projet et insère XAML pour le contrôle Ad Mediator dans la page actuelle, en lui associant un identifiant unique et un nom. La référence d’assembly et le code XAML varient en fonction de votre plateforme cible. Par exemple, pour une application UWP, le nom de l’assembly est **Microsoft.AdMediator.Universal**, et le code XAML généré ressemble à l’exemple suivant.
 
@@ -288,6 +292,7 @@ if (Debugger.IsAttached)
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

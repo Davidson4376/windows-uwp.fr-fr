@@ -3,8 +3,8 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "Arborescence d’éléments visuels de composition"
 description: "Les éléments visuels de composition constituent la structure de l’arborescence des éléments visuels sur laquelle reposent toutes les autres fonctionnalités de l’API Composition. L’API permet aux développeurs de définir et de créer un ou plusieurs objets visuels, qui représentent chacun un nœud unique dans une arborescence d’éléments visuels."
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: e31d3b23871bd37cde26fb3e9414e8cfae340d3d
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 ---
 # Arborescence d’éléments visuels de composition
@@ -44,7 +44,7 @@ Cet exemple illustre également trois éléments visuels :
 -   [
             **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
 -   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive d’un élément visuel, et ajoute la possibilité de créer des enfants.
+            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de Visual et ajoute la possibilité de créer des enfants.
 -   [
             **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) : dérive d’un élément visuel, et offre la possibilité d’associer un pinceau afin que l’élément visuel puisse rendre les pixels notamment des images, des effets ou une couleur unie.
 
@@ -106,7 +106,7 @@ Comme la rotation, la propriété [**Opacity**](https://msdn.microsoft.com/libra
 
 ## Modification de la position de l’élément visuel dans la collection
 
-L’API Composition permet de modifier la position d’un élément visuel dans une [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) de plusieurs façons : vous pouvez le placer au-dessus d’un autre élément visuel avec [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove), le placer au-dessous avec [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow), le déplacer vers le haut avec [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) ou vers le bas avec [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom).
+L’API Composition permet de modifier la position d’un élément visuel dans une [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) de plusieurs façons : vous pouvez le placer au-dessus d’un autre élément visuel avec [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove), le placer au-dessous avec [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow), le déplacer vers le haut avec [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) ou vers le bas avec [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom).
 
 L’exemple illustre un [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) sur lequel un utilisateur a cliqué et qui est classé vers le haut :
 
@@ -514,6 +514,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

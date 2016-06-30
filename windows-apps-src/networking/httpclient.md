@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: Utilisez HttpClient et le reste de l’API d’espace Windows.Web.Http pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1.
+description: "Utilisez HttpClient et le reste de l’API d’espace de noms Windows.Web.Http pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1."
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b1908e83ffcab562c12c82cfcf7b5fe281d7ada1
+
 ---
 
 # HttpClient
@@ -121,6 +125,7 @@ Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** r
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

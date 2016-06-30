@@ -3,6 +3,10 @@ author: Jwmsft
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
 label: Text block
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7666c7a82b2959aa1329bbfe2532dccdc7fb38a5
+
 ---
 # Bloc de texte
  Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications. Ce contrôle vous permet d’afficher une ou plusieurs lignes de texte, des liens hypertexte inclus et du texte avec mise en forme de type gras, italique ou souligné.
@@ -76,7 +80,7 @@ Certaines conditions exigent un contrôle TextBlock afin de revenir à un chemin
 
 Vous pouvez définir la propriété [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) sur **true** pendant le débogage pour déterminer si le texte utilise le chemin rapide pour le rendu. Lorsque cette propriété est définie sur true, le texte qui utilise le chemin rapide s’affiche en vert clair. 
 
->**Conseil** &nbsp;&nbsp;Cette fonctionnalité est expliquée en détail dans cette session [Build 2015 - Performances XAML : techniques d’optimisation de l’expérience avec les applications Windows universelles en XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
+>**Conseil** &nbsp;&nbsp;Cette fonctionnalité est expliquée en détail dans cette session [Build 2015 - Performances XAML : techniques d’optimisation de l’expérience avec les applications Windows universelles en XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
 
  
 
@@ -184,6 +188,7 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

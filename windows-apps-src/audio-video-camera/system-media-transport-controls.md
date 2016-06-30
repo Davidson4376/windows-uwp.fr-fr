@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: La classe SystemMediaTransportControls permet à votre application d’utiliser les contrôles de transport de média système intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application.
-title: Contrôles de transport de média système
+description: "La classe SystemMediaTransportControls permet à votre application d’utiliser les contrôles de transport de média système intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application."
+title: "Contrôles de transport de média système"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+
 ---
 
 # Contrôles de transport de média système
@@ -39,7 +43,7 @@ Ajoutez un gestionnaire de clics sur le bouton qui utilise une classe [**FileOpe
 
 Pour obtenir une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), appelez [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708).
 
-Activez les boutons utilisés par votre application en définissant la propriété « is enabled » correspondante de l’objet **SystemMediaTransportControls**, telle que [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714), [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713), [**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) et [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715). Voir la documentation de référence de **SystemMediaTransportControls** pour obtenir la liste complète des contrôles disponibles.
+Activez les boutons utilisés par votre application en définissant la propriété « is enabled » correspondante de l’objet **SystemMediaTransportControls**, telle que [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714), [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713), [**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) et [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715). Voir la documentation de référence de **SystemMediaTransportControls** pour obtenir la liste complète des contrôles disponibles.
 
 Enregistrez un gestionnaire pour l’événement [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) afin de recevoir des notifications dès que l’utilisateur appuie sur un bouton.
 
@@ -124,6 +128,7 @@ Pour plus d’informations sur la lecture audio en arrière-plan, voir [Audio d�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

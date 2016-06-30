@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
-description: Obtenir les informations nécessaires à l’utilisation des bibliothèques de publicités Microsoft pour ajouter des bannières et spots vidéo publicitaires à vos applications.
-title: Prise en main des bibliothèques de publicités Microsoft
+description: "Obtenir les informations nécessaires à l’utilisation des bibliothèques de publicités Microsoft pour ajouter des bannières et spots vidéo publicitaires à vos applications."
+title: "Prise en main des bibliothèques de publicités Microsoft"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 08168dc15b33d99a044eedd7864848ed7a858991
+
 
 ---
 
@@ -37,6 +41,7 @@ Pour obtenir des exemples complets de projet qui montrent comment ajouter des ba
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

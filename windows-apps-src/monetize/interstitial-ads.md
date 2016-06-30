@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: Découvrez comment utiliser les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft pour insérer des spots publicitaires dans une application pour Windows 10, Windows 8.1 ou Windows Phone 8.1.
+description: "Découvrez comment utiliser les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft pour insérer des spots publicitaires dans une application pour Windows 10, Windows 8.1 ou Windows Phone 8.1."
 title: Spots publicitaires
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
+
 ---
 
 # Spots publicitaires
@@ -350,7 +354,7 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
 
 ### Publier l’application avec des publicités dynamiques à l’aide du Centre de développement Windows
 
-1.  Dans le tableau de bord du Centre de développement, accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** de votre application, puis [créez une unité Microsoft Advertising autonome](../publish/monetize-with-ads.md). Pour le type d’unité publicitaire, spécifiez **Spot vidéo**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+1.  Dans le tableau de bord du Centre de développement, accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** de votre application, puis [créez une unité Microsoft Advertising autonome](../publish/monetize-with-ads.md). Pour le type d’unité publicitaire, spécifiez **Spot vidéo**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
 
 2.  Dans votre code, remplacez les valeurs de test de l’unité publicitaire par les valeurs dynamiques que vous avez générées dans le Centre de développement.
 
@@ -382,6 +386,7 @@ Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouve
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

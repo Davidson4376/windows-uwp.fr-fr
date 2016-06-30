@@ -1,7 +1,11 @@
 ---
-title: Connexion à un fournisseur d’identité avec Gestionnaire de compte web
-description: Cet article explique comment utiliser la classe AccountsSettingsPane pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10. 
+title: "Connexion à un fournisseur d’identité avec Gestionnaire de compte web"
+description: "Cet article explique comment utiliser la classe AccountsSettingsPane pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10."
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: c9f6a0183edc3c01566311360417c256329ef904
+ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
+
 ---
 # Connexion à un fournisseur d’identité avec Gestionnaire de compte web
 
@@ -383,6 +387,7 @@ En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutef
 [Exemple de WebAccountManagement](http://go.microsoft.com/fwlink/p/?LinkId=620621)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

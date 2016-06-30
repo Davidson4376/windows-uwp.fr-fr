@@ -3,8 +3,8 @@ author: jwmsft
 description: "Explique comment définir et implémenter des propriétés de dépendance personnalisées pour une application Windows Runtime en C++, C# ou Visual Basic."
 title: "Propriétés de dépendance personnalisées"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 63301870ab53f4061cac9b9ad87a5fb75e8c48da
+ms.sourcegitcommit: d50b73fcf78c28157cff7003dc3e180de9d69f70
+ms.openlocfilehash: 80a42040887818a0c6a66ed32327144bed586dc2
 
 ---
 
@@ -251,7 +251,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     String s = e.NewValue as String; //null checks omitted
     if (s == String.Empty)
     {
-        iwlc.HasLabelValue = false;
+        iwlc.HasLabelValue = false;s
     } else {
         iwlc.HasLabelValue = true;
     }
@@ -276,7 +276,7 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
     if (s->IsEmpty()) {
         iwlc->HasLabelValue=false;
     }
-}
+}s
 ```
 
 ### Comportement des modifications de propriétés pour les structures et les énumérations
@@ -337,7 +337,7 @@ Les propriétés de dépendance de type collection sont relativement rares dans 
 -   Vous n’animez généralement pas une collection.
 -   Vous ne préremplissez généralement pas les éléments d’une collection avec des styles ou un modèle.
 -   Bien que la liaison à des collections soit un scénario majeur, il n’est pas obligatoire qu’une collection soit une propriété de dépendance pour être une source de liaison. Pour les cibles de liaison, il est plus courant d’utiliser des sous-classes de [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) ou [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) pour prendre en charge les éléments de collection ou pour utiliser des modèles d’affichage. Pour plus d’informations sur la liaison vers et à partir de collections, voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
--   Il est préférable de gérer les notifications de modification de collection par le biais d’interfaces telles que **INotifyPropertyChanged** ou **INotifyCollectionChanged**, ou en dérivant le type de collection de [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601).
+-   Il est préférable de gérer les notifications de modification de collection par le biais d’interfaces telles que **INotifyPropertyChanged** ou **INotifyCollectionChanged**, ou en dérivant le type de collection de [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx).
 
 Néanmoins, il existe certains scénarios impliquant des propriétés de dépendance de type collection. Les trois sections qui suivent fournissent quelques recommandations quant à la manière d’implémenter une propriété de dépendance de type collection.
 
@@ -376,6 +376,6 @@ L’inscription d’une propriété en C++/CX est plus compliquée à implément
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

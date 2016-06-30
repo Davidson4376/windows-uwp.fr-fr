@@ -5,8 +5,8 @@ title: "Cases à cocher"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
 ---
 # Cases à cocher
@@ -15,7 +15,7 @@ Une case à cocher permet de sélectionner ou de désélectionner des éléments
 
 ![Exemple d’états de case à cocher](images/templates-checkbox-states-default.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+
 -   [**Classe CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)
 -   [**Événement Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
 -   [**Propriété IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 
@@ -26,7 +26,7 @@ Utilisez une **case à cocher unique** pour un choix binaire Oui/Non, comme avec
 
 ![Case à cocher unique pour un choix individuel](images/checkbox1.png)
 
-Dans le cas d’un choix binaire, la seule différence entre une **case à cocher** et un **bouton bascule** est que le premier désigne un état, tandis que le deuxième indique une action. Vous pouvez retarder la validation d’une opération de case à cocher (par exemple, dans le cadre de l’envoi d’un formulaire) alors que l’utilisation d’un bouton bascule nécessite une action immédiate de votre part. Seules les cases à cocher autorisent une sélection multiple.
+Dans le cas d’un choix binaire, la seule différence entre une **case à cocher** et un [**bouton bascule**](toggles.md) est que le premier désigne un état, tandis que le deuxième indique une action. Vous pouvez retarder la validation d’une opération de case à cocher (par exemple, dans le cadre de l’envoi d’un formulaire) alors que l’utilisation d’un bouton bascule nécessite une action immédiate de votre part. Seules les cases à cocher autorisent une sélection multiple.
 
 Utilisez **plusieurs cases à cocher** pour les scénarios à sélection multiple dans lesquels un utilisateur choisit un ou plusieurs éléments à partir d’un groupe d’options qui ne s’excluent pas mutuellement.
 
@@ -287,11 +287,13 @@ private void SetCheckedState()
 ## Articles connexes
 
 -   [**Classe CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [Cases d’option](radio-button.md)
+-   [Commutateur bascule](toggles.md)
 
 
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

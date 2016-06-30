@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Utiliser la profondeur et les effets sur des primitives
-description: Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur et d’autres effets sur des primitives.
+description: "Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur et d’autres effets sur des primitives."
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 47547a226a69b2631313972ed67b39b1f29de402
+
 ---
 
 # Utiliser la profondeur et les effets sur des primitives
@@ -19,9 +23,9 @@ Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur e
 
 Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
 
-Nous supposons en outre que vous avez suivi les rubriques [Configurer des ressources DirectX et afficher une image](setting-up-directx-resources.md) et [Créer des nuanceurs et tracer des primitives](creating-shaders-and-drawing-primitives.md).
+Nous supposons en outre que vous avez suivi les rubriques [Démarrage rapide : configuration de ressources DirectX et affichage d’une image](setting-up-directx-resources.md) et [Création de nuanceurs et traçage de primitives](creating-shaders-and-drawing-primitives.md).
 
-**Durée de réalisation :** 20 minutes.
+**Durée de réalisation :** 20 minutes.
 
 Instructions
 ------------
@@ -453,6 +457,7 @@ L’étape suivante consiste à appliquer des textures aux primitives.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: Affichage Calendrier
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 466d8fe25cb2dfe8ce3b4efef995d9e3cb682dc1
 
 ---
 
@@ -14,10 +14,8 @@ ms.openlocfilehash: 7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75
 
 Un affichage Calendrier permet à un utilisateur d’afficher un calendrier qu’il peut parcourir par mois, par année ou par décennie, et d’interagir avec celui-ci. Un utilisateur peut sélectionner une seule date ou une plage de dates. Il n’y a pas de surface de sélection et le calendrier est toujours visible. 
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
-
 - [**Classe CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
-- [**Propriété Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
+- [**Événement SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
 
 ## Est-ce le contrôle approprié ?
 Utilisez un affichage Calendrier pour permettre à un utilisateur de sélectionner une date unique ou une plage de dates à partir d’un calendrier toujours visible.
@@ -195,6 +193,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

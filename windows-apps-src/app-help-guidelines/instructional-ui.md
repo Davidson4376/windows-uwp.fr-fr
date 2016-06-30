@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: Concevez une interface utilisateur d’instructions qui apprend aux utilisateurs comment utiliser votre application du Windows Store.
-title: Recommandations en matière de conception d’une interface utilisateur d’instructions
+Description: "Concevez une interface utilisateur d’instructions qui apprend aux utilisateurs comment utiliser votre application du Windows Store."
+title: "Recommandations en matière de conception d’une interface utilisateur d’instructions"
 label: Instructional UI
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 1c8ab97a5625243a50fa3b40ae93f5928dc7d851
+
 ---
 
 # Recommandations en matière d’interface utilisateur d’instructions
@@ -67,6 +71,7 @@ Voici quelques exemples dans lesquels une interface utilisateur d’instructions
 * [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

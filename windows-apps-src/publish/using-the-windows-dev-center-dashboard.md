@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Le tableau de bord du Centre de développement Windows vous permet de gérer et de soumettre toutes vos applications pour les appareils Windows à partir d’un seul et même emplacement.
-title: Utilisation du tableau de bord du Centre de développement Windows
+Description: "Le tableau de bord du Centre de développement Windows vous permet de gérer et de soumettre toutes vos applications pour les appareils Windows à partir d’un seul et même emplacement."
+title: "Utilisation du tableau de bord du Centre de développement Windows"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
+
 ---
 
 # Utilisation du tableau de bord du Centre de développement Windows
@@ -33,6 +37,7 @@ Les applications qui étaient liées pour partager l'identité dans les versions
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

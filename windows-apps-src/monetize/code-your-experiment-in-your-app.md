@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Après avoir défini votre expérience dans le tableau de bord du Centre de développement, vous êtes prêt pour coder l’expérience dans votre application.
-title: Coder votre application à des fins d’expérimentation
+Description: "Après avoir défini votre expérience dans le tableau de bord du Centre de développement, vous êtes prêt pour coder l’expérience dans votre application."
+title: "Coder votre application à des fins d’expérimentation"
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: 4e6706624e71c6d448a3d457c27d11c9f6ecc156
+
 ---
 
 # Coder votre application à des fins d’expérimentation
@@ -97,6 +101,7 @@ Après avoir défini votre expérience dans le tableau de bord du Centre de dév
   * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

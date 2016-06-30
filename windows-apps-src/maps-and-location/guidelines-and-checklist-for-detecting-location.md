@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-Description: Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
-title: Recommandations pour les applications avec la géolocalisation
+author: msatranjr
+Description: "Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur."
+title: "Recommandations pour les applications avec la géolocalisation"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
+
 ---
 
 # Recommandations pour les applications avec la géolocalisation
@@ -89,7 +92,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
 -   Prenez en compte le comportement en arrière-plan. Si votre application n’a pas le focus, elle ne reçoit pas les événements de mise à jour de localisation tant qu’elle est interrompue en arrière-plan. Si votre application assure le suivi des mises à jour de localisation en les enregistrant dans un journal, tenez-en compte. Une fois que l’application récupère le focus, elle reçoit uniquement les nouveaux événements. Elle ne récupère aucune des mises à jour survenues pendant qu’elle était inactive.
 
--   Utilisez efficacement les capteurs bruts et de fusion. Il y a deux types de capteurs : *bruts* et *fusion*.
+-   Utilisez efficacement les capteurs bruts et de fusion. Il y a deux types de capteurs : *bruts* et *fusion*.
 
     -   Les capteurs bruts comprennent l’accéléromètre, le gyromètre et le magnétomètre.
     -   Les capteurs de fusion comprennent l’orientation, l’inclinomètre et la boussole. Les capteurs de fusion obtiennent les données d’un ensemble de capteurs bruts.
@@ -167,6 +170,7 @@ La géolocalisation d’un utilisateur correspond à des informations d’identi
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

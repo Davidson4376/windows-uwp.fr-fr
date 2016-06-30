@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
-title: Fichiers, dossiers et bibliothèques
-description: Découvrez la lecture et l’écriture de paramètres d’application, les sélecteurs de fichiers et de dossiers, et les emplacements de bac à sable « sandbox » tels que la bibliothèque de musique/vidéos.
+title: "Fichiers, dossiers et bibliothèques"
+description: "Découvrez la lecture et l’écriture de paramètres d’application, les sélecteurs de fichiers et de dossiers, et les emplacements de bac à sable « sandbox » tels que la bibliothèque de musique/vidéos."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2056a5adee0ce6e65962eeba21fccbfe976c811a
+
 ---
  # Fichiers, dossiers et bibliothèques
 
@@ -41,6 +45,7 @@ Vous utilisez les API dans les espaces de noms [Windows.Storage](https://msdn.mi
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Identifie de manière unique les éléments qui sont créés et référencés en tant que ressources, et qui existent au sein d’une classe ResourceDictionary.
+description: "Identifie de manière unique les éléments qui sont créés et référencés en tant que ressources, et qui existent au sein d’une classe ResourceDictionary."
 title: Attribut x&#58;Key
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
+
 ---
 
 # Attribut x&#58;Key
@@ -32,7 +36,7 @@ Identifie de manière unique les éléments qui sont créés et référencés en
 | Terme | Description |
 |------|-------------|
 | object | Tout objet partageable. Voir [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273). |
-| stringKeyValue | Chaîne vraie utilisée en tant que clé, qui doit être conforme à la grammaire _XamlName_>. Voir « Grammaire XamlName » ci-dessous. | 
+| stringKeyValue | Chaîne vraie utilisée en tant que clé, qui doit être conforme à la grammaire _XamlName_&gt;. Voir « Grammaire XamlName » ci-dessous. | 
 
 ##  Grammaire XamlName
 
@@ -65,6 +69,7 @@ Un élément d’un dictionnaire de ressource peut ignorer une valeur pour **x:K
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

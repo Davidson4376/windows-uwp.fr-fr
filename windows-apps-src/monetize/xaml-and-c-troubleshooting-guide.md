@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
-description: Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML.
-title: Guide de résolution des problèmes pour XAML et C#
+description: "Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML."
+title: "Guide de résolution des problèmes pour XAML et C#"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
+
 ---
 
 # Guide de résolution des problèmes pour XAML et C#
@@ -335,6 +339,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

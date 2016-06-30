@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Si votre application utilise AdMediatorControl ou AdControl pour afficher des bannières publicitaires, vous pourriez augmenter votre taux de remplissage publicitaire ainsi que vos revenus en affichant des annonces des affiliés de Microsoft dans votre application.
-title: À propos des annonces des affiliés
+Description: "Si votre application utilise AdMediatorControl ou AdControl pour afficher des bannières publicitaires, vous pourriez augmenter votre taux de remplissage publicitaire ainsi que vos revenus en affichant des annonces des affiliés de Microsoft dans votre application."
+title: "À propos des annonces des affiliés"
 ms.assetid: 7B5478FB-7E68-4956-82EF-B43C2873E3EF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
+
 ---
 
 # À propos des annonces des affiliés
@@ -31,7 +35,7 @@ Voici comment fonctionne ce programme :
 
 Suivez les étapes ci-dessous pour participer au programme d’annonces des affiliés de Microsoft :
 
-1. Accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** dans le tableau de bord du Centre de développement Windows.
+1. Accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** dans le tableau de bord du Centre de développement Windows.
 2. Dans la section **Annonces des affiliés de Microsoft**, cochez la case **Afficher les annonces des affiliés de Microsoft dans mon application**.
 
 Une fois que vous avez coché ou décoché cette case, il n’est pas nécessaire de republier l’application pour que les modifications prennent effet.
@@ -44,6 +48,7 @@ Une fois que vous avez coché ou décoché cette case, il n’est pas nécessair
 * [Rapport de performances des annonces des affiliés](affiliates-performance-report.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

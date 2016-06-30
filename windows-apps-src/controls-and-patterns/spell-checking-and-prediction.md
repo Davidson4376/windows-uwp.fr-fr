@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur.
-title: Vérification de l’orthographe et prédiction de texte
+Description: "Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur."
+title: "Vérification de l’orthographe et prédiction de texte"
 ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
 label: Spell checking and text prediction
 template: detail.hbs
+redirect_url: text-controls
+ms.sourcegitcommit: 08f982f5c54d596a7624fe63528f91375e7761ca
+ms.openlocfilehash: 8954b14a84241686a7c784c3d250f197bed7c8b6
+
 ---
 
 # Recommandations en matière de vérification orthographique
@@ -64,6 +68,7 @@ Pour les contrôles de zone de texte XAML, la vérification orthographique est d
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

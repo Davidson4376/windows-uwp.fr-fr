@@ -2,7 +2,11 @@
 author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: Utiliser la boussole
-description: Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
+description: "Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2c2135867586909328b8d1080c413b3524322246
+
 ---
 # Utiliser la boussole
 
@@ -124,11 +128,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **CompassCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="CompassCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:CompassCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de la boussole en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ### Explication
 
@@ -176,6 +180,7 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

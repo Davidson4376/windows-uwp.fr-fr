@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: b307fc7d-0424-459d-8c20-e37e5cfec0d0
-description: Découvrez les conditions qui doivent être respectées par les applications qui utilisent les bibliothèques de publicités Microsoft avant de pouvoir être publiées dans le Windows Store.
-title: Soumettre une application contenant des publicités au Windows Store
+description: "Découvrez les conditions qui doivent être respectées par les applications qui utilisent les bibliothèques de publicités Microsoft avant de pouvoir être publiées dans le Windows Store."
+title: "Soumettre une application contenant des publicités au Windows Store"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: d2e6f9873b2539f9c0558abdc9ee936b938a03b1
+
 
 ---
 
@@ -25,6 +29,7 @@ Toutes les applications soumises au Windows Store doivent respecter les [Politi
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML.
+description: "Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML."
 title: Attribut x&#58;Class
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
+
 ---
 
 # Attribut x&#58;Class
@@ -41,6 +45,7 @@ Bien que votre fichier code-behind puisse être un fichier C++, il existe certai
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

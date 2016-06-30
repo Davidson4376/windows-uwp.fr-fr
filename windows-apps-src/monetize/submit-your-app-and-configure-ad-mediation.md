@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 69E05E56-B5F0-4D4C-A1FF-B6EAFF5D0E28
-description: Lors du processus de soumission, vous pouvez configurer le comportement de médiation publicitaire que vous souhaitez. Vous pourrez l’ajuster ultérieurement sans devoir modifier le code ni soumettre de nouveaux packages.
-title: Soumettre votre application et configurer une médiation publicitaire
+description: "Lors du processus de soumission, vous pouvez configurer le comportement de médiation publicitaire que vous souhaitez. Vous pourrez l’ajuster ultérieurement sans devoir modifier le code ni soumettre de nouveaux packages."
+title: "Soumettre votre application et configurer une médiation publicitaire"
+translationtype: Human Translation
+ms.sourcegitcommit: ec7ce299545de8e5c167e1934fb9a0b4f4370948
+ms.openlocfilehash: 13dd6a9c38d85ead29a43f470b7c0f63d025d612
+
 ---
 
 # Soumettre votre application et configurer une médiation publicitaire
@@ -164,6 +168,7 @@ Vous souhaitez utiliser Microsoft Advertising et Inneractive de façon équitabl
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

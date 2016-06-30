@@ -1,8 +1,12 @@
 ---
-title: Stockage sécurisé des informations d’identification
-description: Cet article décrit comment des applications UWP peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
+title: "Stockage sécurisé des informations d’identification"
+description: "Cet article décrit comment des applications UWP peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur."
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c
+
 ---
 
 # Stockage sécurisé des informations d’identification
@@ -127,6 +131,7 @@ Enregistrez les mots de passe dans le stockage sécurisé des informations d’i
 
 Ne stockez jamais d’informations d’identification en texte brut en utilisant des données d’application ou des paramètres d’itinérance.
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

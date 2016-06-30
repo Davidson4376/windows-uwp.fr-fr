@@ -1,8 +1,11 @@
 ---
-author: martinekuan
+author: TylerMSFT
 title: Guide des applications de plateforme Windows universelle (UWP)
-description: Ce guide décrit les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un vaste éventail d’appareils.
+description: "Ce guide décrit les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un vaste éventail d’appareils."
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 191a7aef1a027747379c991e17afc1580a9ec549
+
 ---
 
 # Guide des applications de plateforme Windows universelle (UWP)
@@ -213,7 +216,7 @@ Il est possible que, lorsque vous voulez appeler une API, votre famille d’appa
 
 **Écriture de code adaptatif avec la classe ApiInformation**
 
-Deux étapes sont nécessaires pour écrire du code adaptatif. La première consiste à rendre les API auxquelles vous voulez accéder disponibles pour votre projet. Pour ce faire, ajoutez une référence au Kit de développement logiciel (SDK) d’extension qui représente la famille d’appareils possédant les API que vous voulez appeler de manière conditionnelle. Consultez [Kits d'extension](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks).
+Deux étapes sont nécessaires pour écrire du code adaptatif. La première consiste à rendre les API auxquelles vous voulez accéder disponibles pour votre projet. Pour ce faire, ajoutez une référence au Kit de développement logiciel (SDK) d’extension qui représente la famille d’appareils possédant les API que vous voulez appeler de manière conditionnelle. Consultez [Kits de développement logiciel (SDK) d’extension](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks).
 
 La deuxième étape consiste à utiliser la classe [**Windows.Foundation.Metadata.ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) dans une condition à l’intérieur de votre code pour tester la présence de l’API que vous voulez appeler. Cette condition est évaluée à chaque exécution de votre application, mais sa valeur est true uniquement sur les appareils sur lesquels l’API est présente et donc disponible pour un appel.
 
@@ -288,6 +291,7 @@ Pour savoir comment soumettre vos applications en vue de leur publication dans l
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

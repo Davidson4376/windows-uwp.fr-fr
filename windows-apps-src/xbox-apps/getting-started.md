@@ -1,8 +1,11 @@
 ---
 author: Mtoepke
-title: Prise en main du développement d’applications UWP sur Xbox One
-description: Procédure de configuration de votre PC et de votre console Xbox One pour le développement UWP.
+title: "Prise en main du développement d’applications UWP sur Xbox One"
+description: "Procédure de configuration de votre PC et de votre console Xbox One pour le développement UWP."
 area: Xbox
+ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
+ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
+
 ---
 
 #Prise en main du développement d’applications UWP sur Xbox One
@@ -14,15 +17,15 @@ Avant de commencer, vous devez effectuer les opérations suivantes :
 -   Créez un compte du [Centre de développement Windows](https://dev.windows.com).
 -   Inscrivez-vous au [Programme Windows Insider](https://insider.windows.com/). Vous devrez effectuer cette opération pour obtenir la version d’évaluation du SDK Windows.
 -   Configurez un PC Windows 10 (toute version conviendra, y compris la dernière version d’évaluation Windows 10 Insider). Dans le cadre de cette version préliminaire, nos outils de développement nécessitent l’exécution de Windows 10. 
--   Connectez votre console Xbox One à un réseau câblé (même s’il est possible qu’une connexion sans fil fonctionne, une connexion câblée offre actuellement de bien meilleures performances).
-- Vérifiez que vous disposez d’au moins 30 Go d’espace libre sur votre console Xbox One.
+-   Connectez votre console Xbox One à un réseau. Pour des performances optimales, utilisez une connexion câblée.
+- Vérifiez que vous disposez d’au moins 5 Go d’espace libre sur votre console Xbox One.
 
 ## Configuration de votre PC de développement
 1.  Installez Visual Studio 2015 Update 2. Veillez à choisir l’installation **Personnalisée** et à cocher la case **Outils de développement d’applications Windows universelles**, car ces outils ne font pas partie intégrante de l’installation par défaut. Pour plus d’informations, voir [Configuration de l’environnement de développement](development-environment-setup.md) (si vous êtes un développeur C++, prenez soin de choisir l’installation personnalisée et de sélectionner également C++).
 
-2.  Installez la version d’évaluation 14295 du Kit de développement logiciel (SDK) Windows 10. Vous pouvez l’obtenir à partir du [Programme Windows Insider](http://go.microsoft.com/fwlink/p/?LinkId=780552).
+2.  Installez la dernière version d’évaluation du Kit de développement logiciel (SDK) Windows 10. Vous pouvez l’obtenir à partir du [Programme Windows Insider](http://go.microsoft.com/fwlink/p/?LinkId=780552).
   
-  > **Important** &nbsp;&nbsp;L’installation de cette version d’évaluation du SDK sur votre PC n’autorisera pas la soumission d’applications créées sur ce PC au Windows Store ; par conséquent, n’installez pas cette version sur votre PC de développement de production. 
+  > **Important** &nbsp;&nbsp;L’installation de cette version d’évaluation du SDK sur votre PC n’autorisera pas la soumission d’applications créées sur ce PC au Windows Store ; par conséquent, n’installez pas cette version sur votre PC de développement de production. 
 
 ## Configuration de votre console Xbox One
 1.  Activez le mode développeur sur votre console Xbox One. Téléchargez l’application, obtenez le code d’activation, puis entrez-le sur la page xboxactivate de votre compte du Centre de développement. Pour plus d’informations, voir [Activation du Mode développeur sur Xbox One](devkit-activation.md). 
@@ -32,6 +35,8 @@ Avant de commencer, vous devez effectuer les opérations suivantes :
 3.  Accédez à l’application Dev Mode Activation, puis sélectionnez **Basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console Xbox One en mode développeur !
   
   > **Remarque** &nbsp;&nbsp;Vos applications et jeux commerciaux ne s’exécuteront pas en mode développeur, mais les applications ou jeux que vous créerez le feront sans problème. Pour exécuter vos applications et jeux favoris, rebasculez en mode commercial.
+  
+  > **Remarque** &nbsp;&nbsp;Avant de pouvoir déployer une application vers votre Xbox One en Mode développeur, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte Xbox Live existant ou créer un compte pour votre console en Mode développeur. 
 
 ## Création de votre premier projet dans Visual Studio 2015
 
@@ -59,6 +64,7 @@ Pour plus d’informations, voir [Configuration de l’environnement de dévelop
 - [UWP sur Xbox One](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

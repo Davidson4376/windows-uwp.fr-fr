@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Le tableau de bord du Centre de développement Windows vous permet de rendre votre application accessible uniquement à des utilisateurs spécifiés. Vous pouvez ainsi demander à des testeurs de l’essayer avant de la proposer au public.
-title: Tests bêta et distribution ciblée
+Description: "Le tableau de bord du Centre de développement Windows vous permet de rendre votre application accessible uniquement à des utilisateurs spécifiés. Vous pouvez ainsi demander à des testeurs de l’essayer avant de la proposer au public."
+title: "Tests bêta et distribution ciblée"
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a544565bf7bb82f2be1ded3e60836d5d191c6e93
+
 ---
 
 # Tests bêta et distribution ciblée
@@ -81,6 +85,7 @@ Si vous choisissez cette option, gardez à l’esprit les points suivants :
 -   Après que vos testeurs ont téléchargé l’application, vous ne pouvez plus révoquer l’accès à celle-ci. Après avoir téléchargé l’application, les testeurs peuvent l’utiliser et recevoir les mises à jour éventuelles que vous soumettez.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

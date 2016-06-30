@@ -1,17 +1,20 @@
 ---
 author: Xansky
-Description: Si le clavier n’est pas optimal, les non-voyants ou les personnes à mobilité réduite rencontrent des difficultés ou sont totalement démunis.
+Description: "Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout."
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
-title: Accessibilité du clavier
+title: "Accessibilité du clavier"
 label: Keyboard accessibility
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: c5b5ca247e3999850d7bf9b81347c201204db7e8
+
 ---
 
 # Accessibilité du clavier  
 
 
 
-Si le clavier n’est pas optimal, les non-voyants ou les personnes à mobilité réduite rencontrent des difficultés ou sont totalement démunis.
+Si votre application ne fournit pas un bon accès par le clavier, les utilisateurs aveugles ou ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
 
 <span id="keyboard_navigation_among_UI_elements"/>
 <span id="keyboard_navigation_among_ui_elements"/>
@@ -57,7 +60,7 @@ Que vous ajustiez les valeurs [**TabIndex**](https://msdn.microsoft.com/library/
 <span id="keyboard_navigation_within_a_ui_element"/>
 <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
 ## Navigation au clavier à l’intérieur d’un élément d’interface utilisateur  
-Pour les éléments composites, il est important de garantir une navigation interne correcte entre les éléments contenus. Un élément composite peut gérer son enfant actif actuel pour réduire la surcharge que représenterait le fait que tous les éléments enfants puissent avoir le focus. Un tel élément composite est inclus dans l’ordre de tabulation et il gère les événements de navigation au clavier lui-même. Une grande partie des contrôles composites ont déjà une logique de navigation interne intégrée à la gestion des événements du contrôle. Par exemple, la navigation à travers les éléments via les touches de direction est activée par défaut sur les contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242704view), [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) et [**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678).
+Pour les éléments composites, il est important de garantir une navigation interne correcte entre les éléments contenus. Un élément composite peut gérer son enfant actif actuel pour réduire la surcharge que représenterait le fait que tous les éléments enfants puissent avoir le focus. Un tel élément composite est inclus dans l’ordre de tabulation et il gère les événements de navigation au clavier lui-même. Une grande partie des contrôles composites ont déjà une logique de navigation interne intégrée à la gestion des événements du contrôle. Par exemple, la navigation à travers les éléments via les touches de direction est activée par défaut sur les contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview), [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) et [**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678).
 
 <span id="keyboard_activation"/>
 <span id="KEYBOARD_ACTIVATION"/>
@@ -152,7 +155,7 @@ Pour obtenir un exemple de code qui illustre l’écriture d’un gestionnaire d
 ## Navigation au clavier pour les contrôles personnalisés  
 Nous recommandons l’utilisation des touches de direction comme raccourcis clavier pour la navigation parmi les éléments enfants, dans les cas où ceux-ci entretiennent une relation spatiale. Si les nœuds de l’arborescence ont des sous-éléments distincts pour la gestion de la fonctionnalité développer-réduire et l’activation des nœuds, utilisez les touches de direction Gauche et Droite pour fournir au clavier la fonctionnalité développer-réduire. Si vous avez un contrôle orienté qui prend en charge la traversée directionnelle dans le contenu du contrôle, utilisez les touches de direction appropriées.
 
-En règle générale, on met en œuvre la gestion des touches personnalisée pour des contrôles personnalisés en incluant une substitution des méthodes [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeydown) et [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeyup) dans le cadre de la logique de classe.
+En règle générale, on met en œuvre la gestion des touches personnalisée pour des contrôles personnalisés en incluant une substitution des méthodes [**OnKeyDown**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967982.aspx) et [**OnKeyUp**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967983.aspx) dans le cadre de la logique de classe.
 
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
@@ -237,6 +240,7 @@ En règle générale, les raccourcis clavier ne concernent pas les applications 
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

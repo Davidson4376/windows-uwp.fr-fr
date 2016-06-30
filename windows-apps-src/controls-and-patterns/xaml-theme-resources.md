@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: Les ressources de thème de XAML sont un ensemble de ressources qui s’appliquent à différentes valeurs en fonction desquelles le thème du système est actif.
-MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Les ressources de thème de XAML sont un ensemble de ressources qui s’appliquent à différentes valeurs en fonction desquelles le thème du système est actif."
+MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Ressources de thème XAML
+title: "Ressources de thème XAML"
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
+
 ---
 
 # Ressources de thème XAML
@@ -57,7 +61,7 @@ L’ensemble des couleurs pour les thèmes « Light », « Dark » et « Hi
 
 ### Couleurs des thèmes Light et Dark
 
-L’infrastructure XAML fournit un ensemble de ressources [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) nommées, avec des valeurs adaptées aux thèmes « Light » et « Dark ». Les clés que vous utilisez pour référencer ces ressources respectent le format d’attribution de noms : `System[Simple Light/Dark Name]Color`.
+L’infrastructure XAML fournit un ensemble de ressources [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) nommées, avec des valeurs adaptées aux thèmes « Light » et « Dark ». Les clés que vous utilisez pour référencer ces ressources respectent le format d’attribution de noms : `System[Simple Light/Dark Name]Color`.
 
 Le tableau ci-dessous répertorie la clé, le nom simple et la représentation sous forme de chaîne de la couleur (au format #aarrggbb) pour les ressources « Light » et « Dark » fournies par l’infrastructure XAML. La clé sert à référencer la ressource dans une application. Le « nom simple Light/Dark » est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard.
 
@@ -91,7 +95,7 @@ Le tableau ci-dessous répertorie la clé, le nom simple et la représentation s
 
 ### Couleurs à contraste élevé du système Windows
 
-Outre l’ensemble des ressources fournies par l’infrastructure XAML, il existe un ensemble de valeurs de couleur dérivé de la palette du système Windows. Ces couleurs ne sont pas spécifiques aux applications Windows Runtime ou aux applications de plateforme Windows universelle (UWP). Toutefois, la majeure partie des ressources [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) XAML utilisent ces couleurs lorsque le système fonctionne (et lorsque l’application est en cours d’exécution) avec le thème « HighContrast ». L’infrastructure XAML fournit ces couleurs système en tant que ressources à clé. Les clés respectent le format d’attribution de noms : `SystemColor[name]Color`.
+Outre l’ensemble des ressources fournies par l’infrastructure XAML, il existe un ensemble de valeurs de couleur dérivé de la palette du système Windows. Ces couleurs ne sont pas spécifiques aux applications Windows Runtime ou aux applications de plateforme Windows universelle (UWP). Toutefois, la majeure partie des ressources [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) XAML utilisent ces couleurs lorsque le système fonctionne (et lorsque l’application est en cours d’exécution) avec le thème « HighContrast ». L’infrastructure XAML fournit ces couleurs système en tant que ressources à clé. Les clés respectent le format d’attribution de noms : `SystemColor[name]Color`.
 
 Le tableau suivant répertorie les couleurs système fournies par l’infrastructure XAML en tant qu’objets de ressources dérivés de la palette du système Windows. La colonne « Nom d’options d’ergonomie » indique le nom porté par la couleur dans les paramètres Windows. La colonne « Nom simple HighContrast » fournit une description en un mot de la façon dont la couleur est appliquée dans les contrôles XAML courants. Ce nom est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard. La colonne « Valeur initiale par défaut » indique les valeurs que vous obtenez si le système ne s’exécute pas du tout en mode de contraste élevé.
 
@@ -121,7 +125,7 @@ En plus des couleurs de thème à contraste élevé du système, la couleur d’
 
 ### Pinceaux dépendants du thème
 
-Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) des ressources [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Exemple : `SystemControlBackroundAltHighBrush`.
+Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) des ressources [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Exemple : `SystemControlBackroundAltHighBrush`.
 
 Examinons à présent comment la valeur de couleur de ce pinceau est déterminée au moment de l’exécution. Dans les dictionnaires de ressources « Light » et « Dark », ce pinceau est défini comme ceci :
 
@@ -145,7 +149,7 @@ Vous pouvez utiliser le schéma de nommage `SystemControl[Simple HighContrast na
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **Remarque** &nbsp;&nbsp;Toutes les combinaisons de  \[*Simple HighContrast name*\]\[*Simple light/dark name*\] ne sont pas fournies en tant que ressource de pinceau.
+> **Remarque** &nbsp;&nbsp;Toutes les combinaisons de \[*Simple HighContrast name*\]\[*Simple light/dark name*\] ne sont pas fournies en tant que ressource de pinceau.
 
 ## Gamme de type XAML
 
@@ -438,6 +442,7 @@ Notez que l’[extension de balisage {ThemeResource}](../xaml-platform/themereso
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

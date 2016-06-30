@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Si par le passé vous avez configuré un compte de paiement pubCenter pour vos gains Microsoft Advertising, ce compte ne sera plus utilisé à partir du 1er avril 2016. Les transactions seront effectuées via le compte de paiement du Centre de développement.
-title: Consolidation du profil fiscal et du compte de paiement de pubCenter dans le Centre de développement
+Description: "Si par le passé vous avez configuré un compte de paiement pubCenter pour vos gains Microsoft Advertising, ce compte ne sera plus utilisé à partir du 1er avril 2016. Les transactions seront effectuées via le compte de paiement du Centre de développement."
+title: "Consolidation du profil fiscal et du compte de paiement de pubCenter dans le Centre de développement"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
+
 ---
 
 # Consolidation du profil fiscal et du compte de paiement de pubCenter dans le Centre de développement
@@ -80,6 +84,7 @@ Pour toute questions, nous vous conseillons d'ouvrir un [ticket de support](http
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: 'Vous pouvez définir des panneaux personnalisés pour la disposition XAML en dérivant une classe personnalisée à partir de la classe Panel.'
-MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Vous pouvez définir des panneaux personnalisés pour la disposition XAML en dérivant une classe personnalisée à partir de la classe Panel."
+MS-HAID: dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Vue d’ensemble des panneaux personnalisés XAML
+title: "Vue d’ensemble des panneaux personnalisés XAML"
 ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
 label: XAML custom panels overview
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
+
 ---
 
 # Vue d’ensemble des panneaux personnalisés XAML
@@ -65,14 +69,14 @@ De nombreuses propriétés et valeurs contribuent au fonctionnement de la logiqu
 
 La disposition candidate doit être ajustée à la fenêtre d’application active, sinon certaines parties de l’interface utilisateur seront coupées. La logique de coupe est souvent déterminée au niveau des panneaux. La logique de panneau peut souvent déterminer la taille qui est disponible à partir de l’implémentation de [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) et peut devoir pousser les restrictions de taille vers les enfants et diviser l’espace parmi les enfants pour que tous les éléments soient ajustés du mieux possible. Le résultat de la disposition est, dans l’idéal, quelque chose qui utilise différentes propriétés de toutes les parties de la disposition tout en étant ajusté à la fenêtre de l’application. Cela nécessite à la fois une bonne implémentation de la logique de disposition des panneaux et une conception judicieuse de l’interface utilisateur de la part du code d’application qui génère une interface utilisateur à l’aide de ce panneau. Votre conception de panneau ne pourra pas être attrayante si la conception globale de l’interface utilisateur comporte plus d’éléments enfants que l’application ne peut en contenir.
 
-Le bon fonctionnement du système de disposition est dû en grande partie au fait que tout élément basé sur [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) possède déjà une partie de son propre comportement inhérent quand il joue le rôle d’enfant dans un conteneur. Par exemple, il y a plusieurs API de **FrameworkElement** qui informent le comportement de disposition ou qui sont nécessaires au fonctionnement de la disposition. Il s’agit des éléments suivants :
+Le bon fonctionnement du système de disposition est dû en grande partie au fait que tout élément basé sur [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) possède déjà une partie de son propre comportement inhérent quand il joue le rôle d’enfant dans un conteneur. Par exemple, il y a plusieurs API de **FrameworkElement** qui informent le comportement de disposition ou qui sont nécessaires au fonctionnement de la disposition. y compris :
 
 -   [
             **DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) (en réalité une propriété [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)) ;
 -   [
             **ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) et [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) ;
 -   [
-            **Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) ;
+            **Hauteur**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**largeur**](https://msdn.microsoft.com/library/windows/apps/br208751)
 -   [**Marge**](https://msdn.microsoft.com/library/windows/apps/br208724)
 -   l’événement [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) ;
 -   [
@@ -157,7 +161,7 @@ L’entrée de [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br2
 
 Ce qui varie en général entre les implémentations de [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), c’est la logique par laquelle le panneau détermine le composant [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) pour l’organisation de chaque enfant. Un panneau de positionnement absolu tel que [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)utilise les informations de placement explicites qu’il obtient à partir de chaque élément par l’intermédiaire des valeurs [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772). Un panneau de division de l’espace tel que [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) aurait des opérations mathématiques qui diviseraient l’espace disponible en cellules et chaque cellule aurait une valeur x-y indiquant où son contenu devrait être placé et organisé. Un panneau adaptatif tel que [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) pourrait s’étendre pour s’ajuster au contenu dans sa dimension d’orientation.
 
-Il existe d’autres influences sur le positionnement des éléments dans la disposition, au-delà de ce que vous contrôlez directement et passez à [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914). Ces influences proviennent de l’implémentation native interne de **Arrange** qui est commune à tous les types dérivés [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) et augmentée par d’autres types tels que les éléments de texte. Par exemple, des éléments peuvent avoir une marge et un alignement, tandis que d’autres peuvent avoir un espacement. Ces propriétés interagissent souvent. Pour plus d’informations, voir [Vue d'ensemble de l'alignement, des marges et du remplissage](alignment-margin-padding.md).
+Il existe d’autres influences sur le positionnement des éléments dans la disposition, au-delà de ce que vous contrôlez directement et passez à [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914). Ces influences proviennent de l’implémentation native interne de **Arrange** qui est commune à tous les types dérivés [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) et augmentée par d’autres types tels que les éléments de texte. Par exemple, des éléments peuvent avoir une marge et un alignement, tandis que d’autres peuvent avoir un espacement. Ces propriétés interagissent souvent. Pour plus d’informations, voir [Alignement, marge et espacement](alignment-margin-padding.md).
 
 ## Panneaux et contrôles
 
@@ -176,7 +180,7 @@ D’autres API font partie du système de disposition mais ne sont pas déclaré
 -   [
             **UpdateLayout**](https://msdn.microsoft.com/library/windows/apps/br208989), [**InvalidateMeasure**](https://msdn.microsoft.com/library/windows/apps/br208930) et [**InvalidateArrange**](https://msdn.microsoft.com/library/windows/apps/br208929) sont des méthodes qui initient une passe de disposition. **InvalidateArrange** peut ne pas déclencher de passe de mesure, mais les deux autres en déclenchent une. N’appelez jamais ces méthodes à partir d’une substitution de méthode de disposition, car elles provoqueront presque à coup sûr une boucle de disposition. Le code de contrôle n’a généralement pas besoin de les appeler non plus. La plupart des aspects de la disposition sont déclenchés automatiquement grâce à la détection des modifications apportées aux propriétés de disposition définies par l’infrastructure, telles que [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) et ainsi de suite.
 -   [
-            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) est un événement déclenché quand un aspect de disposition de l’élément a changé. Cela n’est pas spécifique aux panneaux ; l’événement est défini par [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706).
+            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) est un événement déclenché quand un aspect de disposition de l’élément a changé. Cela n’est pas spécifique aux panneaux ; l’événement est défini par [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706).
 -   [
             **SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742) est un événement déclenché seulement une fois que les passes de disposition ont été finalisées. Il indique que [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) ou [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) a changé en conséquence. Il s’agit d’un autre événement [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706). Dans certains cas, [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) se déclenche, mais pas **SizeChanged**. Par exemple, le contenu interne peut être réorganisé, mais la taille de l’élément n’a pas changé.
 
@@ -196,6 +200,7 @@ D’autres API font partie du système de disposition mais ne sont pas déclaré
 [Alignement, marge et espacement](alignment-margin-padding.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

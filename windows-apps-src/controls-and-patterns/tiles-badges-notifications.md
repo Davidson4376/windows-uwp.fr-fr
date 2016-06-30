@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
+Description: "Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés."
 title: Vignettes, badges et notifications
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 32b1c3ec674a84ca4ed08d98119fe21f77e15554
+
 ---
 
 # Vignettes, badges et notifications pour les applications UWP
@@ -22,7 +26,7 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 <tbody>
 <tr class="odd">
 <td align="left"><img src="images/tile-and-live-tile.png" alt="Breakdown of tile elements" /></td>
-<td align="left"><p>Chaque application dispose d’une vignette. Une <em>vignette</em> est la représentation d’une application dans le menu Démarrer. Vous pouvez activer différentes tailles de vignettes (petite, moyenne, large et grande). Vous pouvez utiliser une <em>notification par vignette</em> pour mettre à jour la vignette afin de communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités ou l’objet du dernier message non lu. Vous pouvez utiliser un <em>badge</em> ou un <em>badge de notification</em> pour fournir des informations d’état ou de résumé sous la forme d’un glyphe fourni par le système ou d’un nombre compris entre 1 et 99.</p>
+<td align="left"><p>Chaque application dispose d’une vignette. Une <em>vignette</em> est la représentation d’une application dans le menu Démarrer. Vous pouvez activer différentes tailles de vignettes (petite, moyenne, large et grande). Vous pouvez utiliser une <em>notification par vignette</em> pour mettre à jour la vignette afin de communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités ou l’objet du dernier message non lu. Vous pouvez utiliser un <em>badge</em> ou un <em>badge de notification</em> pour fournir des informations d’état ou de résumé sous la forme d’un glyphe fourni par le système ou d’un nombre compris entre 1 et 99.</p>
 <p>Une <em>notification toast</em> est une notification que votre application envoie à l’utilisateur par le biais d’un élément de l’interface utilisateur contextuelle appelé <em>toast</em> (ou <em>bannière</em>). La notification est visible, que l’utilisateur se trouve dans votre application ou non.</p>
 <p>Une <em>notification Push</em>, ou <em>notification brute</em>, est une notification envoyée à votre application à partir du service de notifications Push Windows (WNS) ou d’une tâche en arrière-plan. Votre application peut répondre à ces notifications soit en informant l’utilisateur qu’un événement l’intéressant s’est produit (par le biais d’une mise à jour de badge, d’une mise à jour de vignette ou d’un toast), soit de la manière de votre choix.</p></td>
 </tr>
@@ -127,6 +131,7 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

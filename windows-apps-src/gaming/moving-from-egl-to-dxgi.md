@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Comparer le code EGL avec DXGI et Direct3D
-description: L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même rôle qu’EGL. Cette rubrique vous aidera à comprendre le fonctionnement de DXGI et Direct3D 11 sous l’ange d’EGL.
+description: "L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même rôle qu’EGL. Cette rubrique vous aidera à comprendre le fonctionnement de DXGI et Direct3D 11 sous l’ange d’EGL."
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
+
 ---
 
 # Comparer le code EGL avec DXGI et Direct3D
@@ -412,6 +416,7 @@ Dans une application UWP, vous pouvez fermer le CoreWindow avec [**CoreWindow::C
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

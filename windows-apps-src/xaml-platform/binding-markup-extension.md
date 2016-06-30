@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: L’extension de balisage Binding est convertie au moment du chargement XAML en une instance de la classe Binding.
+description: "L’extension de balisage Binding est convertie au moment du chargement XAML en une instance de la classe Binding."
 title: Extension de balisage Binding
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
+
 ---
 
 # Extension de balisage {Binding}
@@ -79,8 +83,7 @@ Pour plus d’informations sur la syntaxe de chaîne d’un chemin de propriét�
 
 **Important** Si vous convertissez un balisage de **{x:Bind}** en **{Binding}**, soyez attentif aux différences de valeur par défaut de la propriété **Mode**.
 
-[
-            **Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de la rubrique [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+[ **Converter** ](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de la rubrique [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 [
             **Source**](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) et [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) spécifient une source de liaison, ils s’excluent donc mutuellement.
@@ -126,6 +129,7 @@ Microsoft IntelliSense dans Microsoft Visual Studio affiche les propriétés du 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

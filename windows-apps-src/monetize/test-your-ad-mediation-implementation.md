@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
-description: Avant de soumettre votre application, nous vous recommandons de tester l’implémentation de votre médiation publicitaire.
-title: Tester l’implémentation de votre médiation publicitaire
+description: "Avant de soumettre votre application, nous vous recommandons de tester l’implémentation de votre médiation publicitaire."
+title: "Tester l’implémentation de votre médiation publicitaire"
+translationtype: Human Translation
+ms.sourcegitcommit: ec7ce299545de8e5c167e1934fb9a0b4f4370948
+ms.openlocfilehash: 0805ed5462a4b100b837ed9c11ec2d9e7caabc34
+
 ---
 
 # Tester l’implémentation de votre médiation publicitaire
@@ -15,7 +19,7 @@ Avant de soumettre votre application, nous vous recommandons de tester l’impl�
 ## Test avec les valeurs de test de configuration des réseaux publicitaires
 
 
-Si vous exécutez votre application sans entrer de configuration des réseaux publicitaires en lançant **Services connectés** pour votre projet dans Visual Studio, la médiation publicitaire utilise automatiquement les valeurs de configuration de test lorsque vous exécutez votre application sur votre ordinateur de développement (pour les applications de la plateforme Windows universelle [UWP]) et Windows 8.1 XAML) ou sur l’émulateur ou l’appareil (pour les applications Windows Phone). Cela vous permet de tester rapidement votre application et de vous assurer qu’elle est codée correctement avant d’entrer les paramètres requis pour vos réseaux publicitaires.
+Si vous exécutez votre application sans entrer de configuration des réseaux publicitaires en lançant Services connectés pour votre projet dans Visual Studio, la médiation publicitaire utilise automatiquement les valeurs de configuration de test lorsque vous exécutez votre application sur votre ordinateur de développement (pour les applications de la plateforme Windows universelle \[UWP\]) et Windows 8.1 XAML) ou sur l’émulateur ou l’appareil (pour les applications Windows Phone). Cela vous permet de tester rapidement votre application et de vous assurer qu’elle est codée correctement avant d’entrer les paramètres requis pour vos réseaux publicitaires.
 
 Les réseaux publicitaires tournent de manière séquentielle, un réseau étant affiché après un autre pendant une durée égale. Veillez à attendre suffisamment longtemps pour que l’exécution se déroule sur quelques cycles afin de pouvoir visualiser tous les réseaux publicitaires et de réduire le risque de problèmes de connectivité temporaires.
 
@@ -49,6 +53,7 @@ Lorsque vous soumettez votre package d’application au tableau de bord du Centr
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

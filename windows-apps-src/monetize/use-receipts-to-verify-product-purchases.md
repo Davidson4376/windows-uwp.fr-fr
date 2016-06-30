@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
-title: Utiliser des reçus pour vérifier les achats de produits
+description: "Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction."
+title: "Utiliser des reçus pour vérifier les achats de produits"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
+
 ---
 
 # Utiliser des reçus pour vérifier les achats de produits
@@ -239,6 +243,7 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

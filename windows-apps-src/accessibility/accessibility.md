@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: Présente les concepts d’accessibilité associés aux applications de plateforme Windows universelle (UWP).
+Description: "Présente les concepts d’accessibilité associés aux applications de plateforme Windows universelle (UWP)."
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: Accessibilité
+title: "Accessibilité"
 label: Accessibility
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
+
 ---
 
 # Accessibilité  
@@ -15,6 +19,7 @@ Présente les concepts d’accessibilité associés aux applications de platefor
 
 L’accessibilité consiste en des expériences rendant votre application disponible aux utilisateurs qui utilisent les technologies au sein d’un large éventail d’environnements et valorisent votre interface utilisateur pour satisfaire des expériences et des besoins variés. Pour certaines situations, les exigences en matière d’accessibilité sont imposées par la loi. Il est toutefois préférable de gérer les aspects liés à l’accessibilité quelles que soient les exigences juridiques, afin que votre application ait l’audience la plus étendue possible. Il existe également une déclaration du Windows Store concernant l’accessibilité de votre application.
 
+> [!NOTE]
 > Déclarer l’application comme accessible n’est pertinent que pour le Windows Store.
 
 | Article | Description |
@@ -38,6 +43,7 @@ L’accessibilité consiste en des expériences rendant votre application dispon
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

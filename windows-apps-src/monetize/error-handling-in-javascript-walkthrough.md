@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: Découvrez comment intercepter les erreurs AdControl dans votre application.
-title: Gestion des erreurs dans la procédure pas à pas pour JavaScript
+description: "Découvrez comment intercepter les erreurs AdControl dans votre application."
+title: "Gestion des erreurs dans la procédure pas à pas pour JavaScript"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
+
 
 ---
 
@@ -82,6 +86,7 @@ Vous pouvez voir la publicité d’origine de l’exemple d’application géné
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

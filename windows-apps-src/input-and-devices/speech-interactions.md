@@ -1,12 +1,12 @@
 ---
 author: Karl-Bridge-Microsoft
-description: "Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana."
+Description: "Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana."
 title: Interactions vocales
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
-ms.sourcegitcommit: bcc401c515cdba899fb2202ddddf5bd98b64aecd
-ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: ecd002e6f3a92702459426858693dd7547b0ca02
 
 ---
 
@@ -23,15 +23,16 @@ Intégrez la reconnaissance vocale et la conversion de texte par synthèse vocal
 
 **Reconnaissance vocale :** convertit en texte les mots prononcés par l’utilisateur pour remplir des formulaires, dicter du texte, spécifier une action ou une commande ou accomplir des tâches. Les deux grammaires prédéfinies pour la dictée de texte libre et la recherche web, ainsi que les grammaires personnalisées basées sur la norme SRGS (Speech Recognition Grammar Specification) version 1.0 sont prises en charge.
 
-**Conversion de texte par synthèse vocale (TTS) :** utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en parole. La chaîne d’entrée peut être du texte basique sans aucune fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse et l’accentuation.
+**Conversion de texte par synthèse vocale (TTS) :** utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en parole. La chaîne d’entrée peut être du texte basique sans aucune fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse, et l’accentuation.
 
-> [!NOTE] À l’aide de **Cortana** et des commandes vocales personnalisées, votre application peut être lancée au premier plan (l’application prend le focus, comme si elle avait été lancée à partir du menu Démarrer) ou activée en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). 
-> Les commandes vocales qui requièrent un contexte supplémentaire ou une entrée utilisateur (par exemple, l’envoi d’un message à un contact spécifique) sont mieux gérées dans une application au premier plan, tandis que les commandes de base peuvent être gérées dans **Cortana** par le biais d’une application en arrière-plan.
-> Si vous exposez la fonctionnalité en tant que service en arrière-plan par le biais des commandes vocales dans l’interface utilisateur **Cortana**, voir [Recommandations en matière de conception de Cortana](cortana-design-guidelines.md).
+**Remarque** À l’aide de **Cortana** et des commandes vocales personnalisées, votre application peut être lancée au premier plan (l’application prend le focus, comme si elle avait été lancée à partir du menu Démarrer) ou activée en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). Les commandes vocales qui requièrent un contexte supplémentaire ou une entrée utilisateur (par exemple, l’envoi d’un message à un contact spécifique) sont mieux gérées dans une application au premier plan, tandis que les commandes de base peuvent être gérées dans **Cortana** par le biais d’une application en arrière-plan.
+Si vous exposez la fonctionnalité en tant que service en arrière-plan par le biais des commandes vocales dans l’interface utilisateur **Cortana**, voir [Recommandations en matière de conception de Cortana](cortana-design-guidelines.md).
+
+ 
 
 Conçues et mises en œuvre efficacement, les fonctions vocales peuvent permettre aux utilisateurs d’interagir avec votre application de manière fiable et agréable. Elles peuvent aussi compléter, voire remplacer le clavier, la souris, l’écran tactile et les mouvements.
 
-## <span id="Speech_interaction_design"></span><span id="speech_interaction_design"></span><span id="SPEECH_INTERACTION_DESIGN"></span>Conception de l’interaction vocale
+## Conception de l’interaction vocale
 
 
 Ces instructions et recommandations décrivent comment intégrer au mieux la reconnaissance vocale et la TTS dans l’expérience d’interaction de votre application.
@@ -48,7 +49,7 @@ Si vous envisagez de prendre en charge des interactions vocales dans votre appli
 -   Un vocabulaire personnalisé ou restreint (médical, scientifique ou régional) est-il requis pour le contexte de votre application ?
 -   La connectivité réseau est-elle nécessaire ?
 
-## <span id="Text_input"></span><span id="text_input"></span><span id="TEXT_INPUT"></span>Saisie de texte
+## Saisie de texte
 
 
 Les fonctions vocales pour la saisie de texte peuvent varier du court (un seul mot ou une seule expression) au long (dictée en continu). L’entrée courte doit être inférieure à 10 secondes, tandis que l’entrée longue peut durer jusqu’à 2 minutes. (L’entrée longue peut être redémarrée sans intervention de l’utilisateur afin de donner l’impression d’une dictée en continu).
@@ -65,7 +66,7 @@ Spécifiez la durée maximale sans entrée vocale indiquant que la reconnaissanc
 
 Désactivez la reconnaissance vocale continue de l’interface utilisateur et mettez fin à la session de reconnaissance si aucune connexion réseau n’est disponible. La reconnaissance continue nécessite une connexion réseau.
 
-## <span id="Commanding"></span><span id="commanding"></span><span id="COMMANDING"></span>Commandes
+## Commandes
 
 
 La saisie vocale permet d’initier des actions, d’appeler des commandes et d’accomplir des tâches.
@@ -110,14 +111,14 @@ Voici un exemple du flux de reconnaissance intégrée pour un module de reconnai
 
 ![Écran final de la reconnaissance vocale correspondant à une contrainte basée sur un fichier de grammaire SGRS](images/speech/speech-listening-complete.png)
 
-## <span id="Always_listening"></span><span id="always_listening"></span><span id="ALWAYS_LISTENING"></span>Toujours à l’écoute
+## Toujours à l’écoute
 
 
 Votre application peut écouter et reconnaître la saisie vocale dès que l’application est lancée, sans intervention de l’utilisateur.
 
 Vous devez personnaliser les contraintes de grammaire en fonction du contexte de l’application. Cela permet non seulement de cibler l’expérience de reconnaissance vocale sur les tâches en cours afin de la rendre plus pertinente, mais également de minimiser les erreurs.
 
-## <span id="What_can_I_say_"></span><span id="what_can_i_say_"></span><span id="WHAT_CAN_I_SAY_"></span>Qu’est-ce que je dis ?
+## Qu’est-ce que je dis ?
 
 
 Lorsque la saisie vocale est activée, il est important d’aider les utilisateurs à cerner ce qui est compréhensible et les actions qui peuvent être effectuées.
@@ -126,7 +127,7 @@ Si la reconnaissance vocale est activée par l’utilisateur, envisagez d’util
 
 Si la reconnaissance vocale est toujours activée, pensez à ajouter l’expression « Que puis-je dire ? » à chaque page. Lorsque l’utilisateur prononce cette phrase, affichez tous les mots et expressions pris en charge dans le contexte actuel. Cette expression fournit un moyen cohérent pour les utilisateurs de découvrir les fonctionnalités vocales du système.
 
-## <span id="Recognition_failures"></span><span id="recognition_failures"></span><span id="RECOGNITION_FAILURES"></span>Gestion des échecs de la reconnaissance
+## Gestion des échecs de la reconnaissance
 
 
 La reconnaissance vocale peut échouer. Les échecs se produisent lorsque la qualité audio est médiocre, qu’une seule partie d’une expression est reconnue, ou qu’aucune entrée n’est détectée.
@@ -145,23 +146,25 @@ Utilisez l’expérience de la reconnaissance vocale intégrée, car elle compre
 
 Détectez et corrigez les problèmes liés à l’entrée audio. Le module de reconnaissance vocale peut détecter les problèmes liés à la qualité audio, susceptibles d’affecter la précision de la reconnaissance vocale. Vous pouvez utiliser les informations fournies par le module de reconnaissance vocale pour informer l’utilisateur du problème et lui permettre de le résoudre, le cas échéant. Par exemple, si le paramètre du volume sur le microphone est trop faible, vous pouvez inviter l’utilisateur à parler plus fort ou à augmenter le volume.
 
-## <span id="Constraints"></span><span id="constraints"></span><span id="CONSTRAINTS"></span>Contraintes
+## Contraintes
 
 
 Les contraintes, ou les grammaires, définissent les mots et les expressions qui peuvent être détectés par le module de reconnaissance vocale. Vous pouvez spécifier l’une des grammaires de service web prédéfinies ou encore créer une grammaire personnalisée installée sur votre application.
 
-### <span id="Predefined_grammars"></span><span id="predefined_grammars"></span><span id="PREDEFINED_GRAMMARS"></span>Grammaires prédéfinies
+### Grammaires prédéfinies
 
 Les grammaires de dictée et de recherche web prédéfinies vous permettent d’activer la reconnaissance vocale dans votre application sans créer votre propre grammaire. Si vous optez pour ces grammaires, la reconnaissance vocale est effectuée par un service web distant qui renvoie les résultats à l’appareil.
 
 -   La grammaire de dictée de texte libre par défaut peut reconnaître la plupart des mots et expressions prononcés par un utilisateur dans une langue spécifique. Elle est optimisée pour reconnaître les expressions courtes. La dictée de texte libre est utile si vous ne souhaitez pas limiter ce qu’un utilisateur peut dire. Elle est généralement utilisée pour créer des notes ou dicter le contenu d’un message.
 -   La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
-> [!NOTE] Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.
+**Remarque** Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.
+
+ 
 
 Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Elles nécessitent toutefois une connexion à un réseau.
 
-### <span id="Custom_grammars"></span><span id="custom_grammars"></span><span id="CUSTOM_GRAMMARS"></span>Grammaires personnalisées
+### Grammaires personnalisées
 
 Une grammaire personnalisée est conçue et créée par vous-même, et installé sur votre application. La reconnaissance vocale à l’aide d’une contrainte personnalisée est effectuée sur l’appareil.
 
@@ -177,10 +180,11 @@ Une grammaire personnalisée est conçue et créée par vous-même, et installé
     -   Évitez de définir des expressions dans votre grammaire qui ne contiennent qu’une seule syllabe. La reconnaissance tend à être plus précise pour les expressions contenant au moins deux syllabes.
     -   Évitez d’utiliser des expressions qui se ressemblent. Par exemple, les expressions telles que « matin », « châtain » et « latin » peuvent induire en erreur le module de reconnaissance et affecter le degré de précision de la reconnaissance.
 
-> [!NOTE]
-> Le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous voulez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
+**Remarque** Le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous voulez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
 
-### <span id="Custom_pronunciations"></span><span id="custom_pronunciations"></span><span id="CUSTOM_PRONUNCIATIONS"></span>Prononciations personnalisées
+ 
+
+### Prononciations personnalisées
 
 Si votre application contient un vocabulaire spécialisé avec des mots inhabituels, fictifs ou dont la prononciation est particulière, vous pouvez améliorer leur reconnaissance en définissant des prononciations personnalisées.
 
@@ -188,14 +192,14 @@ Pour une petite liste de mots et d’expressions, ou une liste de mots et d’ex
 
 Pour les listes de mots et d’expressions plus conséquentes, ou pour les mots et les expressions fréquemment utilisés, vous pouvez créer des documents de lexique de prononciation distincte. Pour plus d’informations, voir [À propos des lexiques et des alphabets phonétiques](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx).
 
-## <span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>Test
+## Test
 
 
 Testez la précision de la reconnaissance vocale et l’interface utilisateur prise en charge auprès du public cible de votre application. C’est la meilleure façon de déterminer l’efficacité de l’expérience d’interaction vocale de votre application. Par exemple, vos utilisateurs ont-ils obtenu de mauvais résultats de reconnaissance, car votre application n’est pas à l’écoute d’une expression courante ?
 
 Changez la grammaire de manière à prendre en charge cette expression ou fournissez aux utilisateurs une liste d’expressions prises en charge. Si vous fournissez une liste des expressions prises en charge, assurez-vous qu’elle est facilement accessible.
 
-## <span id="Text-to-speech__TTS_"></span><span id="text-to-speech__tts_"></span><span id="TEXT-TO-SPEECH__TTS_"></span>Conversion de texte par synthèse vocale
+## Conversion de texte par synthèse vocale
 
 
 TTS génère la sortie vocale à partir du texte brut ou du langage SSML.
@@ -213,7 +217,7 @@ Vous devez écouter toutes les chaînes de texte TTS pour vous assurer qu’elle
 
 Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal une entrée basée sur le langage SSML plutôt que sur du texte brut. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
 
-## <span id="Other_articles"></span><span id="other_articles"></span><span id="OTHER_ARTICLES"></span>Autres articles de cette section 
+## Autres articles de cette section 
 | Rubrique | Description |
 | --- | --- |
 | [Reconnaissance vocale](speech-recognition.md) | La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches. |
@@ -223,7 +227,7 @@ Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal un
 | [Gérer les problèmes liés aux entrées audio](manage-issues-with-audio-input.md) | Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio. |
 | [Définir des délais d’expiration de reconnaissance vocale](set-speech-recognition-timeouts.md) | Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale. |
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 * [Interactions vocales](https://msdn.microsoft.com/library/windows/apps/mt185614)
 * [Interactions avec Cortana](https://msdn.microsoft.com/library/windows/apps/mt185598) 
@@ -238,6 +242,6 @@ Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal un
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

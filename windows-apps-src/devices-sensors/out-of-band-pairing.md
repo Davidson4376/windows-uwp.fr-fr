@@ -2,7 +2,11 @@
 author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
 title: Couplage hors-bande
-description: Le couplage hors-bande permet aux applications de se connecter à un périphérique de point de service sans qu’une découverte soit requise.
+description: "Le couplage hors-bande permet aux applications de se connecter à un périphérique de point de service sans qu’une découverte soit requise."
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
+
 ---
 # Couplage hors-bande
 
@@ -85,6 +89,7 @@ printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 ```
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

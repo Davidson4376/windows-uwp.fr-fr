@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-description: Cet article vous montre comment utiliser MediaProcessingTrigger et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan.
-title: Traiter des fichiers multimédias en arrière-plan
+description: "Cet article vous montre comment utiliser MediaProcessingTrigger et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan."
+title: "Traiter des fichiers multimédias en arrière-plan"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
+
 ---
 
 # Traiter des fichiers multimédias en arrière-plan
@@ -135,6 +139,7 @@ Le gestionnaire d’événements **OnCompleted** est appelé lorsque l’exécut
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

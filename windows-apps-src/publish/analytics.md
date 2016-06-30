@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows.
+Description: "Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows."
 title: Analyses
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
+translationtype: Human Translation
+ms.sourcegitcommit: dfaf348956b19746aa5332aeb7ad5cbc4b224e8c
+ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
+
 ---
 
 # Analyses
@@ -64,13 +68,14 @@ Utilisez les ressources suivantes pour commencer à utiliser Power BI pour acc�
 * [Découvrez comment utiliser Power BI](https://powerbi.microsoft.com/guided-learning/)
 * [Découvrez comment utiliser le pack de contenu du Centre de développement Windows pour Power BI pour se connecter à vos données d’analyse](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
-> **Remarque** &nbsp;&nbsp;Pour connecter le pack de contenu du Centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification à partir d’un répertoire Azure AD associé à votre compte du Centre de développement. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans Power BI ne sont pas actualisées automatiquement et vous devez ouvrir une session Power BI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur l’association de votre compte du Centre de développement avec Azure AD, consultez [Gérer les utilisateurs de compte](manage-account-users.md).
+> **Remarque** &nbsp;&nbsp;Pour connecter le pack de contenu du Centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification à partir d’un répertoire Azure AD associé à votre compte du Centre de développement. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans Power BI ne sont pas actualisées automatiquement et vous devez ouvrir une session Power BI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur l’association de votre compte du Centre de développement avec Azure AD, consultez [Gérer les utilisateurs de compte](manage-account-users.md).
 
 ### Application Centre de développement
 
 Installez l’application [Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour afficher rapidement des informations sur l’intégrité et les performances de vos applications sur tout appareil Windows 10. 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

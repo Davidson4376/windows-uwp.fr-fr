@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Cette section contient des recommandations d’expérience utilisateur en lien avec la présentation de paramètres et le stockage en tant que données applicatives.
-title: Paramètres et données d’application
+Description: "Cette section contient des recommandations en matière d’expérience utilisateur en rapport avec la présentation de paramètres d’application et leur stockage en tant que données d’application."
+title: "Paramètres et données d’application"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
+
 ---
 
 # Paramètres et données d’application
@@ -45,6 +49,7 @@ Des données d’application que l’application crée et gère elle-même. Elle
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

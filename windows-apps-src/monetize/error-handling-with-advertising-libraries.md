@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
-description: Découvrez comment gérer les erreurs générées par la classe AdControl dans les bibliothèques de publicités Microsoft.
-title: Gestion des erreurs liées aux bibliothèques de publicités Microsoft
+description: "Découvrez comment gérer les erreurs générées par la classe AdControl dans les bibliothèques de publicités Microsoft."
+title: "Gestion des erreurs liées aux bibliothèques de publicités Microsoft"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 5e0c7e6328247e5f686b14b10c80d8aafc13e0e4
+
 ---
 
 # Gestion des erreurs liées aux bibliothèques de publicités Microsoft
@@ -76,6 +80,7 @@ Voir [Gestion des erreurs dans la procédure pas à pas pour XAML/C#](error-hand
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

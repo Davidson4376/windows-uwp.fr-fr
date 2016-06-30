@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: Création de composants Windows Runtime en C# et Visual Basic
-description: Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime.
+author: msatranjr
+title: "Création de composants Windows Runtime en C# et Visual Basic"
+description: "Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime."
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
+
 ---
 
 # Création de composants Windows Runtime en C# et Visual Basic
@@ -10,10 +13,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
-
-Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime. Vous pouvez utiliser votre composant dans les applications de plateforme Windows universelle (UWP) avec C++, JavaScript, Visual Basic ou C#. Cet article présente les règles de création d’un composant et décrit quelques aspects de la prise en charge de .NET Framework pour Windows Runtime. En règle générale, cette prise en charge est conçue pour être transparente pour les programmeurs .NET Framework. Toutefois, lorsque vous créez un composant à utiliser avec JavaScript ou C++, vous devez tenir compte des différences de prise en charge de Windows Runtime par ces langages.
+Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime. Vous pouvez utiliser votre composant dans les applications de plateforme Windows universelle (UWP) avec C++, JavaScript, Visual Basic ou C#. Cet article présente les règles de création d’un composant et décrit quelques aspects de la prise en charge de .NET Framework pour Windows Runtime. En règle générale, cette prise en charge est conçue pour être transparente pour les programmeurs .NET Framework. Toutefois, lorsque vous créez un composant à utiliser avec JavaScript ou C++, vous devez tenir compte des différences de prise en charge de Windows Runtime par ces langages.
 
 Si vous créez un composant à utiliser uniquement dans les applications UWP avec Visual Basic ou C# et que le composant ne contient pas les contrôles UWP, utilisez le modèle **Bibliothèque de classes** à la place du modèle **Composant Windows Runtime**. Il existe moins de restrictions sur une bibliothèque de classes simple.
 
@@ -103,7 +103,7 @@ Lorsqu’un type implémente plusieurs interfaces, vous pouvez utiliser n’impo
 
 Dans le Windows Runtime, IMap&lt;K, V&gt; et IMapView&lt;K, V&gt; sont itérés à l’aide de IKeyValuePair. Lorsque vous les passez à un code managé, ils apparaissent sous la forme IDictionary&lt;TKey, TValue&gt; et IReadOnlyDictionary&lt;TKey, TValue&gt;, donc naturellement vous utilisez System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; pour les énumérer.
 
-La façon dont les interfaces s’affichent dans le code managé affecte l’affichage des types implémentant ces interfaces. Par exemple, la classe PropertySet implémente IMap&lt;K, V&gt;, qui apparaît dans le code managé comme IDictionary&lt;TKey, TValue&gt;. PropertySet s’affiche comme si elle avait implémenté IDictionary&lt;TKey, TValue&gt; au lieu de IMap&lt;K, V&gt; ; par conséquent, dans le code managé elle semble avoir une méthode Add, qui se comporte comme la méthode Add sur les dictionnaires .NET Framework. Elle ne semble pas avoir de méthode Insert. Vous pouvez consulter cet exemple dans l’article [Procédure pas à pas : création d’un composant simple en C# ou Visual Basic et appel de ce composant depuis JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+La façon dont les interfaces s’affichent dans le code managé affecte l’affichage des types implémentant ces interfaces. Par exemple, la classe PropertySet implémente IMap&lt;K, V&gt;, qui apparaît dans le code managé comme IDictionary&lt;TKey, TValue&gt;. PropertySet s’affiche comme si elle avait implémenté IDictionary&lt;TKey, TValue&gt; au lieu de IMap&lt;K, V&gt; ; par conséquent, dans le code managé elle semble avoir une méthode Add, qui se comporte comme la méthode Add sur les dictionnaires .NET Framework. Elle ne semble pas avoir de méthode Insert. Vous pouvez consulter cet exemple dans l’article [Procédure pas à pas : création d’un composant simple en C# ou Visual Basic et appel de ce composant depuis JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
 ## Passage de types managés au Windows Runtime
 
@@ -121,11 +121,11 @@ Dans le Windows Runtime, les méthodes peuvent être surchargées. Toutefois, si
 > {
 >     return s;
 > }
-> [Windows.Foundation.Metadata.DefaultOverload()] 
+> [Windows.Foundation.Metadata.DefaultOverload()]
 > public int OverloadExample(int x)
 > {
 >     return x;
-> } 
+> }
 > ```
 > ```vb
 > Public Function OverloadExample(ByVal s As String) As String
@@ -137,7 +137,7 @@ Dans le Windows Runtime, les méthodes peuvent être surchargées. Toutefois, si
 > End Function
 > ```
 
-> **Attention** JavaScript vous permet de passer n’importe quelle valeur à OverloadExample et force la valeur dans le type requis par le paramètre. Vous pouvez appeler OverloadExample avec « quarante-deux », « 42 » ou 42,3 mais toutes ces valeurs sont passées à la surcharge par défaut. La surcharge par défaut de l’exemple précédent retourne 0, 42 et 42, respectivement.
+ **Attention** JavaScript vous permet de passer n’importe quelle valeur à OverloadExample et force la valeur dans le type requis par le paramètre. Vous pouvez appeler OverloadExample avec « quarante-deux », « 42 » ou 42,3 mais toutes ces valeurs sont passées à la surcharge par défaut. La surcharge par défaut de l’exemple précédent retourne 0, 42 et 42, respectivement.
 
 Vous ne pouvez pas appliquer l’attribut DefaultOverloadAttribute aux constructeurs. Tous les constructeurs d’une classe doivent avoir des numéros de paramètres différents.
 
@@ -180,7 +180,7 @@ Notez que dans diverses conditions, les appels à partir de code natif à un typ
 ## Opérations asynchrones
 
 
-Pour implémenter une méthode asynchrone dans votre composant, ajoutez « Async » à la fin du nom de méthode et retournez l’une des interfaces Windows Runtime qui représentent des opérations ou actions asynchrones : IAsyncAction, IAsyncActionWithProgress&lt;TProgress&gt;, IAsyncOperation&lt;TResult&gt; ou IAsyncOperationWithProgress&lt;TResult, TProgress&gt;.
+Pour implémenter une méthode asynchrone dans votre composant, ajoutez « Async » à la fin du nom de méthode et retournez l’une des interfaces Windows Runtime qui représentent des opérations ou actions asynchrones : IAsyncAction, IAsyncActionWithProgress&lt;TProgress&gt;, IAsyncOperation&lt;TResult&gt; ou IAsyncOperationWithProgress&lt;TResult, TProgress&gt;.
 
 Vous pouvez utiliser des tâches .NET Framework (la classe [Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) générique et la classe [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) générique) pour implémenter votre méthode asynchrone. Vous devez retourner une tâche qui représente une opération en cours, par exemple une tâche qui est retournée à partir d’une méthode asynchrone écrite en C# ou Visual Basic, ou une tâche retournée à partir de la méthode [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx). Si vous utilisez un constructeur pour créer la tâche, vous devez appeler sa méthode [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) avant de la retourner.
 
@@ -202,7 +202,7 @@ Pour les actions et opérations asynchrones qui ne prennent pas en charge l’an
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >      As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return Task.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -225,7 +225,7 @@ function asyncExample(id) {
 
 Pour les actions et opérations asynchrones qui prennent en charge l’annulation ou le rapport de progression, utilisez la classe [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) pour générer une tâche démarrée et pour connecter l’annulation et la progression des fonctionnalités de création de rapports de la tâche avec l’annulation et la progression des fonctionnalités de création de rapports de l’interface appropriée de Windows Runtime. Pour obtenir un exemple qui prend en charge l’annulation et le rapport de progression, voir [Procédure pas à pas : création d’un composant simple en C# ou Visual Basic et appel de ce composant depuis JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-Notez que vous pouvez utiliser les méthodes de la classe AsyncInfo même si votre méthode asynchrone ne prend pas en charge l’annulation ou le rapport de progression. Si vous utilisez une fonction lambda Visual Basic ou une méthode anonyme C#, ne fournissez pas de paramètres pour le jeton et l’interface [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx). Si vous utilisez une fonction lambda en C#, fournissez un paramètre de jeton, mais ignorez-le. L’exemple précédent, qui a utilisé la méthode AsAsyncOperation&lt;TResult&gt;, se présente comme suit quand vous utilisez la surcharge de méthode [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) à la place :
+Notez que vous pouvez utiliser les méthodes de la classe AsyncInfo même si votre méthode asynchrone ne prend pas en charge l’annulation ou le rapport de progression. Si vous utilisez une fonction lambda Visual Basic ou une méthode anonyme C#, ne fournissez pas de paramètres pour le jeton et l’interface [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx). Si vous utilisez une fonction lambda en C#, fournissez un paramètre de jeton, mais ignorez-le. L’exemple précédent, qui a utilisé la méthode AsAsyncOperation&lt;TResult&gt;, se présente comme suit quand vous utilisez la surcharge de méthode [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) à la place :
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -241,7 +241,7 @@ Notez que vous pouvez utiliser les méthodes de la classe AsyncInfo même si vot
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >     As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return AsyncInfo.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -293,7 +293,6 @@ Pour plus d’informations sur les fonctionnalités de langage Visual Basic et C
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

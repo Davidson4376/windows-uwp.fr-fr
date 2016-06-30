@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: Diagnostic des conditions d’erreur d’un composant Windows Runtime
-description: Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé.
+author: msatranjr
+title: "Diagnostic des conditions d’erreur d’un composant Windows Runtime"
+description: "Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé."
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
+
 ---
 
 # Diagnostic des conditions d’erreur d’un composant Windows Runtime
@@ -10,7 +13,6 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code géré. Il se base sur les informations fournies dans les messages d’erreur à partir de [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx) et complète les informations sur les restrictions fournies dans [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
@@ -19,7 +21,7 @@ Cet article ne couvre pas toutes les erreurs. Les erreurs décrites ici sont reg
 ## Message d’erreur pour l’implémentation d’interface asynchrone qui fournit un type incorrect
 
 
-Les composants Windows Runtime managés ne peuvent pas implémenter les interfaces de plateforme Windows universelle (UWP) qui représentent des opérations ou actions asynchrones : ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) ou [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). À la place, le .NET Framework fournit la classe [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) pour générer des opérations asynchrones dans les composants Windows Runtime. Le message d’erreur affiché par Winmdexp.exe quand vous essayez d’implémenter une interface asynchrone de façon incorrecte fait référence à cette classe en utilisant son ancien nom, AsyncInfoFactory. Le .NET Framework n’inclut plus la classe AsyncInfoFactory.
+Les composants Windows Runtime managés ne peuvent pas implémenter les interfaces de plateforme Windows universelle (UWP) qui représentent des opérations ou actions asynchrones : ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) ou [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). À la place, le .NET Framework fournit la classe [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) pour générer des opérations asynchrones dans les composants Windows Runtime. Le message d’erreur affiché par Winmdexp.exe quand vous essayez d’implémenter une interface asynchrone de façon incorrecte fait référence à cette classe en utilisant son ancien nom, AsyncInfoFactory. Le .NET Framework n’inclut plus la classe AsyncInfoFactory.
 
 | Numéro d’erreur | Texte du message                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -153,7 +155,7 @@ En général, le meilleur choix est l’interface qui est la plus proche du type
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>La méthode « {0} » possède un paramètre de type « {1} » dans sa signature. Bien que ce type générique ne soit pas un type Windows Runtime valide, ce type ou ses paramètres génériques implémentent les interfaces qui sont des types Windows Runtime valides. {2}</p>
-> **Remarque** Pour {2}, Winmdexp.exe ajoute une liste d’alternatives, par exemple « Remplacer le type ’System.Collections.Generic.List&lt;T&gt;’ dans la signature de méthode par l’un des types suivants : ’System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;’. »
+> **Remarque** Pour {2}, Winmdexp.exe ajoute une liste d’alternatives, par exemple « Remplacer le type ’System.Collections.Generic.List&lt;T&gt;’ dans la signature de méthode par l’un des types suivants : ’System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;’. »
 </td>
 </tr>
 <tr class="even">
@@ -220,17 +222,17 @@ Dans l’UWP, les valeurs de retour sont considérées comme des paramètres de 
     > ```cs
     > using System.Runtime.InteropServices;
     > using System.Runtime.InteropServices.WindowsRuntime;
-    > 
+    >
     > [return: ReturnValueName("average")]
     > public int GetAverage(out int lowValue, out int highValue)
     > ```
     > ```vb
     > Imports System.Runtime.InteropServices
     > Imports System.Runtime.InteropServices.WindowsRuntime
-    > 
+    >
     > Public Function GetAverage(<Out> ByRef lowValue As Integer, _
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
-    > ``` 
+    > ```
 
 > **Remarque** Si vous modifiez le nom de la valeur de retour, et que ce nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtenez l’erreur WME1091.
 
@@ -248,6 +250,7 @@ Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par 
 * [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

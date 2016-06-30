@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo.
-title: Profils d’appareil photo
+description: "Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo."
+title: "Profils d’appareil photo"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
+
 ---
 
 # Profils d’appareil photo
@@ -105,6 +109,7 @@ Vous pouvez affiner la requête pour rechercher des profils qui prennent en char
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

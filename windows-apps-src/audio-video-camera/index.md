@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: Cette section fournit des informations sur la création d’une application Windows universelle permettant de capturer, de lire ou de modifier des photos, vidéos ou fichiers audio.
-title: Audio, vidéo et appareil photo
+description: "Cette section fournit des informations sur la création d’une application Windows universelle permettant de capturer, de lire ou de modifier des photos, vidéos ou fichiers audio."
+title: "Audio, vidéo et appareil photo"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8480eb181b6af26eae5950a1f1bf040d0cb5db99
+
 ---
 
 # Audio, vidéo et appareil photo
@@ -45,6 +49,7 @@ Cette section fournit des informations sur la création d’une application Wind
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

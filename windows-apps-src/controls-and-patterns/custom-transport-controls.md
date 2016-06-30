@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Le lecteur multimédia dispose de contrôles de transport XAML personnalisables permettant de gérer du contenu audio et vidéo.
-title: Créer des contrôles de transport de média personnalisés
+Description: "Le lecteur multimédia dispose de contrôles de transport XAML personnalisables permettant de gérer du contenu audio et vidéo."
+title: "Créer des contrôles de transport de média personnalisés"
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5500f41b254b32b8d293181fba3acebbfffa90e7
+
 ---
 # Créer des contrôles de transport personnalisés
 
@@ -32,7 +36,7 @@ Toutefois, il peut arriver que vous deviez personnaliser davantage l’apparence
 
 Vous pouvez personnaliser l’apparence du contrôle en modifiant le modèle par défaut. Pour modifier le comportement du contrôle ou ajouter de nouvelles commandes, vous pouvez créer un contrôle personnalisé qui est dérivé de MediaTransportControls.
 
->**Conseil** &nbsp;&nbsp;Les modèles de contrôle personnalisables sont une puissante fonction de la plate-forme XAML, mais leur utilisation entraîne des conséquences que vous devez prendre en compte. Lorsque vous personnalisez un modèle, il devient une portion statique de votre application. Par conséquent, il ne reçoit aucune des mises à jour de plateforme qui sont apportées au modèle par Microsoft. Si les mises à jour de modèle sont effectuées par Microsoft, vous devez recueillir le nouveau modèle et le modifier à nouveau afin de profiter des avantages du modèle actualisé.
+>**Conseil** &nbsp;&nbsp;Les modèles de contrôle personnalisables sont une puissante fonction de la plate-forme XAML, mais leur utilisation entraîne des conséquences que vous devez prendre en compte. Lorsque vous personnalisez un modèle, il devient une portion statique de votre application. Par conséquent, il ne reçoit aucune des mises à jour de plateforme qui sont apportées au modèle par Microsoft. Si les mises à jour de modèle sont effectuées par Microsoft, vous devez recueillir le nouveau modèle et le modifier à nouveau afin de profiter des avantages du modèle actualisé.
 
 ## Structure du modèle
 
@@ -264,6 +268,7 @@ private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 - [Lecture de contenu multimédia](media-playback.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: 'Explique comment définir un élément ResourceDictionary et des ressources à clé et décrit la relation entre les ressources XAML et les autres ressources que vous définissez dans le cadre de votre application ou de votre package d’application.'
-MS-HAID: 'dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Explique comment définir un élément ResourceDictionary et des ressources à clé et décrit la relation entre les ressources XAML et les autres ressources que vous définissez dans le cadre de votre application ou de votre package d’application."
+MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Références aux ressources ResourceDictionary et XAML
+title: "Références aux ressources ResourceDictionary et XAML"
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fddd345507aace54aca66fe1caa2d9f89a74a299
+
 ---
 
 # Références aux ressources ResourceDictionary et XAML
@@ -45,9 +49,9 @@ Dans cet exemple :
 
 -   `<Page.Resources>…</Page.Resources>` - Définit le dictionnaire de ressources.
 -   `<x:String>` - Définit la ressource avec la clé « greeting ».
--   `{StaticResource greeting}` - Recherche la ressource avec la clé « greeting », qui est attribuée à la propriété [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) du composant [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
+-   `{StaticResource greeting}` - Recherche la ressource avec la clé « greeting », qui est attribuée à la propriété [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) du composant [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
 
-> **Remarque** &nbsp;&nbsp;Ne confondez pas les concepts liés à [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) et l’action de génération **Ressource**, les fichiers de ressources (.resw) ou autres « ressources » décrits dans le contexte de la structuration du projet de code qui produit votre package d’application.
+> **Remarque** &nbsp;&nbsp;Ne confondez pas les concepts liés à [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) et l’action de génération **Ressource**, les fichiers de ressources (.resw) ou autres « ressources » décrits dans le contexte de la structuration du projet de code qui produit votre package d’application.
 
 Les ressources ne sont pas forcément des chaînes. Il peut s’agir de tout objet partageable, comme des styles, des modèles, des pinceaux et des couleurs. Toutefois, les contrôles, les formes et autres [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), qui ne peuvent pas être partagés, ne peuvent pas être marqués comme ressources réutilisables. Pour plus d’informations sur le partage, voir la section [Les ressources XAML doivent pouvoir être partagées.](#xaml_resources_must_be_sharable), plus bas dans cette rubrique.
 
@@ -78,7 +82,7 @@ Toutes les ressources doivent présenter une clé. Généralement, cette clé es
 
 L’ [extension de balisage StaticResource](../xaml-platform/staticresource-markup-extension.md) peut récupérer des ressources uniquement avec un nom de chaîne ([x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) ou [x:Name](https://msdn.microsoft.com/library/windows/apps/mt204788)). Toutefois, l’infrastructure XAML recherche également des ressources de style implicites (celles utilisant **TargetType** plutôt que x:Key ou x:Name) lorsqu’elle détermine le style et le modèle à utiliser pour un contrôle qui n’a pas défini les propriétés [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) et [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) ou [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830).
 
-Ici, le composant [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) présente une clé implicite de **typeof(Button)** et, dans la mesure où l’élément [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) situé dans la partie inférieure de la page ne spécifie pas de propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743), il recherche un style présentant une clé de **typeof(Button)** :
+Ici, le composant [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) présente une clé implicite de **typeof(Button)** et, dans la mesure où l’élément [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) situé dans la partie inférieure de la page ne spécifie pas de propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743), il recherche un style présentant une clé de **typeof(Button)** :
 
 ```XAML
 <Page
@@ -425,7 +429,7 @@ Pour qu’un objet existe dans une classe [**ResourceDictionary**](https://msdn.
 
 Ceci est obligatoire car, lorsque l’arborescence d’objets d’une application est construite et utilisée au moment de l’exécution, les objets ne peuvent pas exister à plusieurs emplacements dans l’arborescence. En interne, le système de ressources crée des copies des valeurs de ressources à utiliser dans le graphique d’objet de votre application quand chaque ressource XAML est demandée.
 
-Une classe [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) et Windows Runtime XAML en général prennent en charge ces objets pour une utilisation partageable :
+Une classe [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) et Windows Runtime XAML en général prennent en charge ces objets pour une utilisation partageable :
 
 -   Styles et modèles ([**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) et classes dérivées de [**FrameworkTemplate**](https://msdn.microsoft.com/library/windows/apps/br208753))
 -   Pinceaux et couleurs (classes dérivées de [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) et valeurs [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723))
@@ -452,7 +456,7 @@ Vous pouvez utiliser un [**ResourceDictionary**](https://msdn.microsoft.com/libr
 
 ## Utilisation d’un ResourceDictionary à partir de code
 
-La plupart des scénarios relatifs à un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) sont exclusivement gérés en XAML. Vous déclarez le conteneur **ResourceDictionary** et les ressources au sein d’un fichier XAML ou d’un ensemble de nœuds XAML dans un fichier de définition de l’interface utilisateur. Vous utilisez ensuite les références aux ressources XAML pour demander ces ressources à d’autres parties du code XAML. Toutefois, dans certains scénarios, votre application peut souhaiter ajuster le contenu d’un **ResourceDictionary** en utilisant du code qui est exécuté lorsque l’application est en fonctionnement, ou tout du moins pour demander le contenu d’un **ResourceDictionary** afin de voir si une ressource a déjà été définie. Ces appels de code étant effectués sur une instance **ResourceDictionary**, vous devez d’abord extraire soit un **ResourceDictionary** immédiat quelque part dans l’arborescence d’objets en obtenant [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740), soit
+La plupart des scénarios relatifs à un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) sont exclusivement gérés en XAML. Vous déclarez le conteneur **ResourceDictionary** et les ressources au sein d’un fichier XAML ou d’un ensemble de nœuds XAML dans un fichier de définition de l’interface utilisateur. Vous utilisez ensuite les références aux ressources XAML pour demander ces ressources à d’autres parties du code XAML. Toutefois, dans certains scénarios, votre application peut souhaiter ajuster le contenu d’un **ResourceDictionary** en utilisant du code qui est exécuté lorsque l’application est en fonctionnement, ou tout du moins pour demander le contenu d’un **ResourceDictionary** afin de voir si une ressource a déjà été définie. Ces appels de code étant effectués sur une instance **ResourceDictionary**, vous devez d’abord extraire soit un **ResourceDictionary** immédiat quelque part dans l’arborescence d’objets en obtenant [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740), soit `Application.Current.Resources`.
 
 Dans du code C\# ou Microsoft Visual Basic, vous pouvez faire référence à une ressource dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) donné au moyen de l’indexeur ([**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134)). Un **ResourceDictionary** étant un dictionnaire indexé par des chaînes, il utilise la clé de chaîne au lieu d’un index d’entiers. Dans les extensions de composant Visual C++ (C++/CX), utilisez [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800).
 
@@ -500,6 +504,7 @@ Pour les scénarios avancés, vous pouvez implémenter une classe ayant un autre
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

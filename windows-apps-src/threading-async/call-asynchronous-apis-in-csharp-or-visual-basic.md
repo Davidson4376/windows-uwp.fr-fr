@@ -3,8 +3,8 @@ author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: Appeler des API asynchrones en C# ou Visual Basic
 description: "La plateforme UWP comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b8ff3965503aa96d4ff595d140562c65e0a638c3
+ms.sourcegitcommit: c440d0dc2719a982a6b566c788d76111c40e263e
+ms.openlocfilehash: ba633e4d6f6f97f3ea1c78258f36b11b67b32964
 
 ---
 # Appeler des API asynchrones en C# ou Visual Basic
@@ -47,8 +47,8 @@ Lorsque vous utilisez une méthode asynchrone, vous pouvez examiner la signature
 
 -   [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)
 -   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)
--   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
--   [**IAsyncActionWithProgress&lt;TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)
+-   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)
+-   [**IAsyncActionWithProgress&lt;TProgress&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx)
 
 Une méthode asynchrone renvoie un résultat qui est du même type que le paramètre de type `      TResult`. Les types sans `TResult` ne renvoient aucun résultat. Vous pouvez considérer que le résultat est de type **void**. En Visual Basic, une procédure [Sub](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/831f9wka.aspx) est équivalente à une méthode ayant un résultat de type **void**.
 
@@ -58,14 +58,14 @@ Le tableau ci-dessous donne quelques exemples de méthodes asynchrones, en indiq
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)                                 | [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) |
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
-| [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)                                                                                                           | **void**                                          |
-| [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)                                                                   | **void**                                          |
+| [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
+| [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
 | [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [
-            **DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), classe de résultats personnalisée qui implémente **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](T:System.UInt32)                     |
+            **DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), classe de résultats personnalisée qui implémente **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
-Les méthodes asynchrones définies dans [**.NET for UWP apps**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) ont le type de retour [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) ou [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx). Les méthodes qui renvoient **Task** sont similaires aux méthodes asynchrones dans l’UWP qui renvoient [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580). Dans chaque cas, le résultat de la méthode asynchrone est de type **void**. Le type de retour **Task&lt;TResult&gt;** est similaire à [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) dans la mesure où le résultat de la méthode asynchrone lors de l’exécution de la tâche est du même type que le paramètre de type `TResult`. Pour plus d’informations sur l’utilisation de **.NET for UWP apps** et des tâches, voir [Présentation de .NET pour les applications Windows Runtime](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx).
+Les méthodes asynchrones définies dans [**.NET for UWP apps**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) ont le type de retour [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) ou [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx). Les méthodes qui renvoient **Task** sont similaires aux méthodes asynchrones dans l’UWP qui renvoient [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx). Dans chaque cas, le résultat de la méthode asynchrone est de type **void**. Le type de retour **Task&lt;TResult&gt;** est similaire à [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) dans la mesure où le résultat de la méthode asynchrone lors de l’exécution de la tâche est du même type que le paramètre de type `TResult`. Pour plus d’informations sur l’utilisation de **.NET for UWP apps** et des tâches, voir [Présentation de .NET pour les applications Windows Runtime](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx).
 
 ## Gestion des erreurs
 
@@ -111,7 +111,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

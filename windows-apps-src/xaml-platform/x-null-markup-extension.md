@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: En XAML, un balisage spécifie une valeur null pour une propriété.
+description: "En XAML, un balisage spécifie une valeur null pour une propriété."
 title: Extension de balisage xNull
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
+
 ---
 
 # Extension de balisage {x&#58;Null}
@@ -33,6 +37,7 @@ Certains types Windows Runtime ont la valeur Nullable. Quand un type Nullable n�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

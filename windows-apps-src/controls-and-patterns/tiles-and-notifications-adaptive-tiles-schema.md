@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Voici les éléments et attributs permettant de créer des vignettes adaptatives.
-title: Schéma et modèles de vignette adaptative
+Description: "Voici les éléments et attributs permettant de créer des vignettes adaptatives."
+title: "Schéma et modèles de vignette adaptative"
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
+
 ---
 
 # Modèles de vignette adaptative &#58; schéma et conseils
@@ -141,6 +145,7 @@ Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle su
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

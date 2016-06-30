@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Ajout de contenu visuel à l’exemple Marble Maze
-description: Ce document décrit comment le jeu Marble Maze utilise Direct3D et Direct2D dans l’environnement d’application de plateforme Windows universelle (UWP) afin de vous présenter ces modèles et de vous aider à les adapter à vos propres jeux.
+title: "Ajout de contenu visuel à l’exemple Marble Maze"
+description: "Ce document décrit comment le jeu Marble Maze utilise Direct3D et Direct2D dans l’environnement d’application de plateforme Windows universelle (UWP) afin de vous présenter ces modèles et de vous aider à les adapter à vos propres jeux."
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 16eb493595bbac4f15ed0e755258104693dfba05
+
 ---
 
 # Ajout de contenu visuel à l’exemple Marble Maze
@@ -127,7 +131,7 @@ void DeviceResources::CreateDeviceIndependentResources()
 
 ###  Création des appareils Direct3D et Direct2D
 
-La méthode **DeviceResources::CreateDeviceResources** appelle [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) pour créer l’objet périphérique qui représente la carte vidéo Direct3D. Dans la mesure où Marble Maze prend en charge le niveau de fonctionnalité 9.1 et supérieur, la méthode **DeviceResources::CreateDeviceResources** indique les niveaux 9.1 à 11.1 dans le tableau de valeurs **\\**. Direct3D parcourt la liste dans l’ordre et donne à l’application le premier niveau de fonctionnalité disponible. C’est pourquoi les entrées du tableau **D3D\_FEATURE\_LEVEL** sont répertoriées en ordre décroissant, afin que l’application puisse obtenir le niveau de fonctionnalité le plus élevé disponible. La méthode **DeviceResources::CreateDeviceResources** obtient le périphérique Direct3D 11.1 en interrogeant le périphérique Direct3D 11 qui est renvoyé par **D3D11CreateDevice**.
+La méthode **DeviceResources::CreateDeviceResources** appelle [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) pour créer l’objet périphérique qui représente la carte vidéo Direct3D. Dans la mesure où Marble Maze prend en charge le niveau de fonctionnalité 9.1 et supérieur, la méthode **DeviceResources::CreateDeviceResources** indique les niveaux 9.1 à 11.1 dans le tableau de valeurs **\\**. Direct3D parcourt la liste dans l’ordre et donne à l’application le premier niveau de fonctionnalité disponible. C’est pourquoi les entrées du tableau **D3D\_FEATURE\_LEVEL** sont répertoriées en ordre décroissant, afin que l’application puisse obtenir le niveau de fonctionnalité le plus élevé disponible. La méthode **DeviceResources::CreateDeviceResources** obtient le périphérique Direct3D 11.1 en interrogeant le périphérique Direct3D 11 qui est renvoyé par **D3D11CreateDevice**.
 
 ```cpp
 // This array defines the set of DirectX hardware feature levels this app will support. 
@@ -900,6 +904,7 @@ Pour plus d’informations sur les pratiques clés en matière de périphérique
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

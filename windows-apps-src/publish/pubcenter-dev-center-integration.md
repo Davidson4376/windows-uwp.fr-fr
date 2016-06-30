@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Microsoft Advertising pour pubCenter a été intégré au Centre de développement Windows.
-title: Intégration de pubCenter au Centre de développement
+Description: "Microsoft Advertising pour pubCenter a été intégré au Centre de développement Windows."
+title: "Intégration de pubCenter au Centre de développement"
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6bf60e1dae7ec62e3cdbba8098a24c093d5deb1
+
 ---
 
 # Intégration de pubCenter au Centre de développement
@@ -181,6 +185,7 @@ Oui, il peut y avoir une légère différence entre les données affichées dans
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

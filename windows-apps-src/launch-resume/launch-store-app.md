@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Lancer l’application du Windows Store
-description: Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store sur des pages spécifiques du Windows Store.
+author: TylerMSFT
+title: "Lancer l’application du Windows Store"
+description: "Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store sur des pages spécifiques du Windows Store."
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
+
 ---
 
 # Lancer l’application du Windows Store
@@ -81,7 +84,7 @@ ID Windows Store <p>(recommandé)</p>
 <td>ms-windows-store://assoc/?Protocol=ms-word </td>
 </tr>
 <tr>
-<td>Lance une recherche de produits associés à une ou plusieurs balises. Les balises doivent être séparées par des virgules. 
+<td>Lance une recherche de produits associés à une ou plusieurs balises. Les balises doivent être séparées par des virgules.
 </td>
 <td />
 <td>
@@ -91,7 +94,7 @@ ID Windows Store <p>(recommandé)</p>
 </tr>
 <tr>
 <td>
-Lance une recherche pour la requête spécifiée. Les espaces sont autorisées dans la requête. 
+Lance une recherche pour la requête spécifiée. Les espaces sont autorisées dans la requête.
 </td>
 <td />
 <td>ms-windows-store://search/?query=OneNote </td>
@@ -105,7 +108,7 @@ Lance une recherche pour la requête spécifiée. Les espaces sont autorisées d
 </td>
 </tr>
 <tr>
-<td>Lance une recherche de produits de l’éditeur spécifié. Les espaces sont autorisées dans le nom. 
+<td>Lance une recherche de produits de l’éditeur spécifié. Les espaces sont autorisées dans le nom.
 </td>
 <td />
 <td>ms-windows-store://publisher/?name=Microsoft Corporation
@@ -128,8 +131,6 @@ Lance une recherche pour la requête spécifiée. Les espaces sont autorisées d
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

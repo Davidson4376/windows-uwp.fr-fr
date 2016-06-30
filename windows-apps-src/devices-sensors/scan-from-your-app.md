@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
-title: Numériser à partir de votre application
-description: Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement.
+title: "Numériser à partir de votre application"
+description: "Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement."
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: fe01ccf5b0b91ffcca7937842cf0152622d59f9e
+
 ---
 # Numériser à partir de votre application
 
@@ -170,6 +174,7 @@ Grâce à la classe [**FolderPicker**](https://msdn.microsoft.com/library/window
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
-title: Obtenir les propriétés du fichier
-description: Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet StorageFile.
+title: "Obtenir les propriétés du fichier"
+description: "Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet StorageFile."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
+
 ---
 # Obtenir les propriétés du fichier
 
@@ -136,6 +140,7 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

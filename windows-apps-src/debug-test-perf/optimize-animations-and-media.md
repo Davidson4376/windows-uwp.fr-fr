@@ -1,155 +1,157 @@
 ---
 author: mcleblanc
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
-title: Optimize animations, media, and images
-description: Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback.
+title: "Optimiser les animations, les éléments multimédias et les images"
+description: "Créez des applications UWP avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante."
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: d3ddc07b214dcfe767d27bf24a36fe19d3534e6e
+
 ---
-# Optimize animations, media, and images
+# Optimiser les animations, les éléments multimédias et les images
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback.
+Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
 
-## Make animations smooth
+## Rendre les animations fluides
 
-A key aspect of UWP apps is smooth interactions. This includes touch manipulations that "stick to your finger," smooth transitions and animations, and small motions that provide input feedback. In the XAML framework there is a thread called the composition thread that is dedicated to the composition and animation of an app’s visual elements. Because the composition thread is separate from UI thread (the thread that runs framework and developer code), apps can achieve a consistent frame rate and smooth animations regardless of complicated layout passes or extended calculations. This section shows how to use the composition thread to keep an app’s animations buttery smooth. For more info about animations, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). To learn about increasing an app’s responsiveness while performing intensive computations, see [Keep the UI thread responsive](keep-the-ui-thread-responsive.md).
+Un aspect clé des applications UWP est la fluidité des interactions. Cela suppose des entrées tactiles « du bout des doigts », des transitions et des animations fluides, ainsi que des petits mouvements fournissant un retour d’entrée. L’infrastructure XAML comporte un thread nommé « thread de composition » qui est dédié à la composition et à l’animation des éléments visuels d’une application. Le thread de composition étant indépendant du thread de l’interface utilisateur (celui qui exécute le code de l’infrastructure et le code de l’application), une application peut conserver une fréquence d’images continue et des animations fluides même si elle doit effectuer des passes de disposition et des calculs complexes. Cette section décrit comment utiliser le thread de composition pour que les animations d’une application restent le plus fluides possible. Pour plus d’informations sur les animations, voir [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/Mt187350). Pour en savoir plus sur l’amélioration de la réactivité d’une application pendant les opérations de calcul complexes, voir [Garantir la réactivité du thread de l’interface utilisateur](keep-the-ui-thread-responsive.md).
 
-### Use independent instead of dependent animations
+### Utiliser des animations indépendantes au lieu d’animations dépendantes
 
-Independent animations can be calculated from beginning to end at the time of creation because changes to the property being animated don't affect rest of the objects in a scene. Independent animations can therefore run on the composition thread instead of the UI thread. This guarantees that they remain smooth because the composition thread is updated at a consistent cadence.
+Les animations indépendantes peuvent être calculées du début à la fin lors de la création, car les modifications apportées à la propriété animée n’affectent pas le reste des objets d’une scène. Des animations indépendantes peuvent donc s’exécuter sur le thread de composition au lieu du thread d’interface utilisateur. Étant donné que le thread de composition est mis à jour à une fréquence régulière, ces animations restent toujours fluides.
 
-All of these types of animations are guaranteed to be independent:
+Tous les types d’animations suivants sont indépendants :
 
--   Object animations using key frames
--   Zero-duration animations
--   Animations to the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) properties
--   Animations to the [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property
--   Animations to properties of type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) when targeting the [**SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) subproperty
--   Animations to the following [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) properties when targeting subproperties of these return value types:
+-   Animations d’objet utilisant des images clés
+-   Animations d’une durée nulle
+-   Animations sur les propriétés [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772)
+-   Animations sur la propriété [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962)
+-   Animations sur des propriétés de type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) lors du ciblage de la sous-propriété [**SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963)
+-   Animations sur les propriétés [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) suivantes lors du ciblage de sous-propriétés des types de valeur de retour suivants :
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
     -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
     -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
-Dependent animations affect layout, which therefore cannot be calculated without extra input from the UI thread. Dependent animations include modifications to properties like [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718). By default, dependent animations are not run and require an opt-in from the app developer. When enabled, they run smoothly if the UI thread remains unblocked, but they begin to stutter if the framework or app is doing a lot of other work on the UI thread.
+Les animations dépendantes ont un impact sur la disposition. Leur calcul nécessite des données supplémentaires du thread de l’interface utilisateur. Les animations dépendantes incluent les modifications apportées à des propriétés telles que [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) et [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718). Par défaut, les animations dépendantes ne sont pas exécutées et nécessitent d’être activées par le développeur de l’application. Lorsqu’elles sont activées, ces animations s’exécutent avec fluidité tant que le thread de l’interface utilisateur reste actif. En revanche, elles commencent à se cadencer si l’infrastructure ou l’application exécute en même temps beaucoup d’autres tâches sur le thread d’interface utilisateur.
 
-Almost all animations in the XAML framework are independent by default, but there are some actions that you can take to disable this optimization. Beware of these scenarios particularly:
+Dans l’infrastructure XAML, la quasi-totalité des animations sont indépendantes par défaut. Vous avez toutefois la possibilité de passer outre cette optimisation. Soyez particulièrement attentif aux situations suivantes :
 
--   Setting the [**EnableDependentAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210356) property to allow a dependent animation to run on the UI thread. Convert these animations into an independent version. For example animate [**ScaleTransform.ScaleX**](https://msdn.microsoft.com/library/windows/apps/BR242946) and [**ScaleTransform.ScaleY**](https://msdn.microsoft.com/library/windows/apps/BR242948) instead of the [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of an object. Don’t be afraid to scale objects like images and text. The framework applies bilinear scaling only while the [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) is being animated. The image/text will be rerasterized at the final size to ensure it’s always clear.
--   Making per frame updates, which are effectively dependent animations. An example of this is applying transformations in the handler of the [**CompositonTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) event.
--   Running any animation considered independent in an element with the [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.cachemode) property set to **BitmapCache**. This is considered dependent because the cache must be re-rasterized for each frame.
+-   Vous définissez la propriété [**EnableDependentAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210356) de manière à autoriser l’exécution d’une animation dépendante sur le thread de l’interface utilisateur. Convertissez ces animations en une version indépendante. Par exemple, animez les propriétés [**ScaleTransform.ScaleX**](https://msdn.microsoft.com/library/windows/apps/BR242946) et [**ScaleTransform.ScaleY**](https://msdn.microsoft.com/library/windows/apps/BR242948) d’un objet à la place de ses propriétés [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) et [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718). Mettez à l’échelle les objets tels que les images et le texte. L’infrastructure applique une mise à l’échelle bilinéaire uniquement si la propriété [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) est animée. L’image et le texte seront rerastérisés à leur taille finale pour qu’ils s’affichent correctement.
+-   Vous mettez à jour des images individuellement alors que celles-ci sont des animations dépendantes. C’est le cas, par exemple, des transformations qui sont appliquées dans le gestionnaire de l’événement [**CompositonTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127).
+-   Vous exécutez une animation considérée comme indépendante dans un élément dont la propriété [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.cachemode) a la valeur **BitmapCache**. Il s’agit en réalité d’une animation dépendante dans la mesure où le cache doit être rerastérisé pour chaque image.
 
-### Don't animate a WebView or MediaElement
+### Éviter d’animer un contrôle WebView ou un objet MediaElement
 
-Web content within a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control is not directly rendered by the XAML framework and it requires extra work to be composed with the rest of the scene. This extra work adds up when animating the control around the screen and can potentially introduce synchronization issues (for example, the HTML content might not move in sync with the rest of the XAML content on the page). When you need to animate a **WebView** control, swap it with a [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) for the duration of the animation.
+Le contenu Web d’un contrôle [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) n’est pas directement rendu par l’infrastructure XAML et sa composition avec le reste de la scène nécessite des manipulations supplémentaires. Ce supplément de travail s’ajoute lors de l’animation du contrôle sur l’écran et peut éventuellement provoquer des problèmes de synchronisation (par exemple, le contenu HTML risque de ne pas se déplacer de manière synchronisée avec le reste du contenu XAML de la page). Lorsque vous souhaitez animer un contrôle **WebView**, permutez-le avec un [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) pendant toute la durée de l’animation.
 
-Animating a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is a similarly bad idea. Beyond the performance detriment, it can cause tearing or other artifacts in the video content being played.
+L’animation d’un objet [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) est également une mauvaise idée. Au-delà de l’impact négatif sur les performances, elle peut provoquer des dégradations ou d’autres artefacts sur le contenu vidéo qui est lu.
 
-### Use infinite animations sparingly
+### Utiliser avec parcimonie les animations infinies
 
-Most animations execute for a specified amount of time, but setting the [**Timeline.Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) property to Forever allows an animation to run indefinitely. We recommend minimizing the use of infinite animations because they continually consume CPU resources and can prevent the CPU from going into a low power or idle state, causing it to run out of power more quickly.
+La plupart des animations s’exécutent pendant un laps de temps déterminé, mais si la propriété [**Timeline.Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) d’une animation est définie à la valeur Forever, cette animation est alors susceptible de s’exécuter indéfiniment. Nous vous recommandons d’utiliser le moins possible d’animations infinies, car elles consomment des ressources processeur en continu et peuvent empêcher le passage du processeur en mode de faible consommation d’énergie ou dans un état d’inactivité, ce qui épuise plus rapidement la batterie.
 
-Adding a handler for [**CompositionTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) is similar to running an infinite animation. Normally the UI thread is active only when there is work to do, but adding handler for this event forces it to run every frame. Remove the handler when there is no work to be done and reregister it when it’s needed again.
+L’ajout d’un gestionnaire pour l’événement [**CompositionTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) revient à exécuter une animation infinie. Normalement, le thread de l’interface utilisateur n’est actif que si des tâches lui sont affectées, mais si un gestionnaire est ajouté pour cet événement, il doit exécuter chaque image. Supprimez le gestionnaire quand il n’y a plus de tâche à effectuer et réinscrivez-le selon les besoins.
 
-### Use the animation library
+### Utiliser la bibliothèque d’animations
 
-The [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) namespace includes a library of high-performance, smooth animations that have a look and feel consistent with other Windows animations. The relevant classes have "Theme" in their name, and are described in [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). This library supports many common animation scenarios, such as animating the first view of the app and creating state and content transitions. We recommend using this animation library whenever possible to increase performance and consistency for UWP UI.
+L’espace de noms [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) comprend une bibliothèque d’animations fluides à hautes performances qui offrent une apparence cohérente avec les autres animations Windows. Les classes pertinentes ont un nom qui contient « Theme » et sont décrites dans [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/Mt187350). Cette bibliothèque prend en charge de nombreuses situations courantes d’animation, comme l’animation du premier affichage de l’application et la création de transitions d’état et de contenu. Nous vous recommandons d’utiliser cette bibliothèque d’animations le plus souvent possible pour améliorer les performances et garantir une cohérence maximale pour l’interface utilisateur UWP.
 
-> **Note**   The animation library can't animate all possible properties. For XAML scenarios where the animation library doesn't apply, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/Mt187354).
+> **Remarque** La bibliothèque d’animations ne peut pas animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/Mt187354).
 
 
-### Animate CompositeTransform3D properties independently
+### Animer indépendamment les propriétés CompositeTransform3D
 
-You can animate each property of a [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/Dn914714) independently, so apply only the animations you need. For examples and more info, see [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d). For more info about animating transforms, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/Mt187354) and [Key-frame and easing function animations](https://msdn.microsoft.com/library/windows/apps/Mt187352).
+Vous pouvez animer indépendamment chaque propriété d’une [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/Dn914714), ce qui vous permet d’appliquer uniquement les animations dont vous avez besoin. Pour en savoir plus et voir des exemples, voir [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d). Pour en savoir plus sur l’animation des transformations, voir [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/Mt187354) et [Animations par images clés et animations de fonctions d’accélération](https://msdn.microsoft.com/library/windows/apps/Mt187352).
 
-## Optimize media resources
+## Optimiser les ressources multimédias
 
-Audio, video, and images are compelling forms of content that the majority of apps use. As media capture rates increase and content moves from standard definition to high definition the amount of resources need to store, decode, and play back this content increases. The XAML framework builds on the latest features added to the UWP media engines so apps get these improvements for free. Here we explain some additional tricks that allow you to get the most out media in your UWP app.
+L’audio, la vidéo et les images sont des formes de contenu incontournables qui sont utilisées par la majorité des applications. Dans la mesure où les fréquences de captures multimédias s’intensifient et que le contenu en définition standard passe en haute définition, la quantité de ressources nécessaires pour stocker, décoder et lire le contenu s’accroît. L’infrastructure XAML repose sur les dernières fonctionnalités ajoutées aux moteurs multimédias UWP. Les applications reçoivent ainsi ces améliorations gratuitement. Voici quelques astuces supplémentaires à suivre pour tirer le meilleur parti du contenu multimédia dans votre application UWP.
 
-### Release media streams
+### Libérer les flux multimédias
 
-Media files are some of the most common and expensive resources apps typically use. Because media file resources can greatly increase the size of your app's memory footprint, you must remember to release the handle to media as soon as the app is finished using it.
+Les fichiers multimédias sont l’une des ressources les plus courantes, mais aussi les plus onéreuses, que les applications utilisent. Dans la mesure où les ressources des fichiers multimédias peuvent considérablement augmenter l’encombrement mémoire de votre application, vous devez vous souvenir de libérer le handle vers le média dès que l’application ne l’utilise plus.
 
-For example, if your app working with a [**RandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/BR241747) or an [**IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) object, be sure to call the close method on the object when your app has finished using it, to release the underlying object.
+Par exemple, si votre application utilise un objet [**RandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/BR241747) ou [**IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718), veillez à appeler la méthode close sur l’objet lorsque votre application ne l’utilise plus, de manière à libérer l’objet sous-jacent.
 
-### Display full screen video playback when possible
+### Afficher la lecture vidéo en plein écran dès que possible
 
-In UWP apps, always use the [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.isfullwindow) property on the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to enable and disable full window rendering. This insures system level optimizations are used during media playback.
+Dans les applications UWP, utilisez toujours la propriété [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.isfullwindow) sur l’élément [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) pour activer et désactiver le rendu de fenêtre entière. L’utilisation des optimisations au niveau système est ainsi garantie pendant la lecture de fichier multimédia.
 
-The XAML framework can optimize the display of video content when it is the only thing being rendered, resulting in an experience that uses less power and yields higher frame rates. For most efficient media playback set the size of a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to be the width and height of the screen and don’t display other XAML elements
+L’infrastructure XAML permet d’optimiser l’affichage du contenu vidéo lorsque la vidéo est le seul élément rendu : l’expérience utilisateur fait alors appel à moins de puissance et offre un meilleur rendement en termes de fréquence d’images. Pour une lecture multimédia plus efficace, définissez la taille d’un objet [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) conformément à la largeur et la hauteur de l’écran et n’affichez aucun autre élément XAML.
 
-There are legitimate reasons to overlay XAML elements on a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) that takes up the full width and height of the screen, for example closed captions or momentary transport controls. Making sure to hide these elements (eg. setting Visibility=”Collapsed”) when they are not needed pops media playback back into its most efficient state.
+Plusieurs raisons légitimes justifient la décision de superposer des éléments XAML sur un [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) qui occupe toute la largeur et la hauteur de l’écran, par exemple des sous-titres ou des contrôles de transport provisoires. Le masquage des éléments (par exemple, en définissant Visibilité=”Collapsed”) inutiles permet d’afficher la lecture du contenu multimédia dans son état le plus efficace.
 
-### Display deactivation and conserving power
+### Désactivation de l’affichage et économie d’énergie
 
-To prevent the display from be deactivating when user action is no longer detected, such as when an app is playing video, you can call [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/BR241818).
+Pour empêcher que l’affichage ne soit désactivé lorsque plus aucune action utilisateur n’est détectée (par exemple quand une application lit une vidéo), vous pouvez appeler [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/BR241818).
 
-To conserve power and battery life, you should call [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/BR241819) to release the display request as soon as it is no longer required.
+Pour économiser l’énergie et prolonger la durée de vie de la batterie, vous devez appeler [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/BR241819) pour libérer la demande d’affichage dès qu’elle n’est plus nécessaire.
 
-Here are some situations when you should release the display request:
+Voici quelques situations où vous devez libérer la demande d’affichage :
 
--   Video playback is paused, for example by user action, buffering, or adjustment due to limited bandwidth.
--   Playback stops. For example, the video is done playing or the presentation is over.
--   A playback error has occurred. For example, network connectivity issues or a corrupted file.
+-   La lecture vidéo est suspendue, par exemple suite à une action de l’utilisateur, une mise en mémoire tampon ou un réglage en raison de la bande passante limitée.
+-   La lecture s’arrête. Par exemple, la lecture de la vidéo ou la présentation est terminée.
+-   Une erreur de lecture s’est produite. Il peut s’agir de problèmes de connectivité réseau ou d’un fichier endommagé.
 
-### Put other elements to the side of embedded video
+### Placer d’autres éléments à côté de la vidéo incorporée
 
-Often apps offer an embedded view where video is played within a page. Now you obviously lost the full screen optimization because the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is not the size of the page and there are other XAML objects drawn. Beware of unintentionally entering this mode by drawing a border around a **MediaElement**.
+Les applications offrent souvent un affichage incorporé dans lequel la vidéo est lue au sein de la page. Vous avez vraisemblablement perdu l’optimisation en plein écran car le [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) n’est pas à la taille de la page et d’autres objets XAML ont été dessinés. Prenez garde à ne pas entrer dans ce mode de manière involontaire en dessinant une bordure autour d’un **MediaElement**.
 
-Don’t draw XAML elements on top of video when it’s in embedded mode. If you do, the framework is forced to do a little extra work to compose the scene. Placing transport controls below an embedded media element instead of on top of the video is a good example of optimizing for this situation. In this image, the red bar indicates a set of transport controls (play, pause, stop, etc.).
+Ne dessinez pas d’élément XAML sur la vidéo lorsqu’elle est en mode incorporé. Dans le cas contraire, l’infrastructure doit fournir davantage d’effort pour composer la scène. Le placement de contrôles de transport sous un élément multimédia incorporé plutôt que sur la vidéo est un bon exemple d’optimisation dans cette situation. Dans cette image, la barre rouge indique un ensemble de contrôles de transport (lire, suspendre, arrêter, etc.).
 
-![MediaElement with overlaying elements](images/videowithoverlay.png)
-Don’t place these controls on top of media that is not full screen. Instead place the transport controls somewhere outside of the area where the media is being rendered. In the next image, the controls are placed below the media.
+![MediaElement avec d’autres éléments superposés](images/videowithoverlay.png) Ne placez pas ces contrôles sur un média qui n’est pas affiché en plein écran. Positionnez plutôt les contrôles de transport quelque part à l’extérieur de la zone dans laquelle le média est rendu. Dans l’image suivante, les contrôles sont placés sous le média.
 
-![MediaElement with neighboring elements](images/videowithneighbors.png)
+![MediaElement avec des éléments voisins](images/videowithneighbors.png)
 
-### Delay setting the source for a MediaElement
+### Retarder la définition de la source d’un MediaElement
 
-Media engines are expensive objects and the XAML framework delays loading dlls and creating large objects as long as possible. The [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is forced to do this work after its source is set via the [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.source) property or the [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) method. Setting these when the user is really ready to play media delays the majority of the cost associated with the **MediaElement** as long as possible.
+Les moteurs multimédias sont des objets coûteux et l’infrastructure XAML retarde le chargement des dll et la création des objets volumineux le plus longtemps possible. Le [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) doit se charger de ce travail une fois que la source est définie via la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.source) ou la méthode [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338). Lorsque ces réglages ont lieu une fois que l’utilisateur est prêt à lire le média, la majorité du coût lié au **MediaElement** est retardée aussi longtemps que possible.
 
-### Set MediaElement.PosterSource
+### Définir MediaElement.PosterSource
 
-Setting [**MediaElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.postersource) enables XAML to release some GPU resources that would have otherwise been used. This API allows an app to use as little memory as possible.
+La définition de [**MediaElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.postersource) permet au code XAML de libérer certaines ressources du GPU qui auraient été utilisées d’une autre façon. Cette API permet à une application d’utiliser aussi peu de mémoire que possible.
 
-### Improve media scrubbing
+### Améliorer le nettoyage des plateformes multimédias
 
-Scrubbing is always a tough task for media platforms to make really responsive. Generally people accomplish this by changing the value of a Slider. Here are a couple tips on how to make this as efficient as possible:
+Le nettoyage est une tâche délicate pour que les plateformes multimédias soient vraiment réactives. En général, les utilisateurs préfèrent s’acquitter de cette tâche en modifiant la valeur d’un curseur. Voici quelques conseils qui vous permettront de rendre le nettoyage aussi efficace que possible.
 
--   Either bind the value of a [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) to [**MediaElement.Position**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.position) or update it based on a timer. Don't do both. If you choose the latter, make sure to use a reasonable update frequency for your timer. The XAML framework only updates **MediaElement.Position** only every 250 milliseconds during playback.
--   The size of the step frequency on the Slider must scale with the length of the video.
--   Subscribe to the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) events on the slider to set the [**MediaElement.PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.playbackrate) property to 0 when the user drags the thumb of the slider.
--   In the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) event handler, manually set the media position to the slider position value to achieve optimal thumb snapping while scrubbing.
+-   Liez la valeur d’un [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) à [**MediaElement.Position**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.position) ou mettez-la à jour en fonction d’un minuteur. N’effectuez pas les deux. Si vous optez pour la deuxième solution, veillez à utiliser une fréquence de mise à jour raisonnable pour votre minuteur. L’infrastructure XAML met uniquement à jour **MediaElement.Position** toutes les 250 millisecondes lors de la lecture.
+-   La taille de la fréquence de l’étape sur le curseur doit s’adapter à la longueur de la vidéo.
+-   Abonnez-vous aux événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx) et [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) sur le curseur pour affecter à la propriété [**MediaElement.PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.playbackrate) la valeur 0 lorsque l’utilisateur fait glisser le curseur.
+-   Dans le gestionnaire d’événements [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx), définissez manuellement la position du média sur la valeur de la position du curseur afin d’obtenir un alignement du curseur optimal lors du nettoyage.
 
-### Match video resolution to device resolution
+### Aligner la résolution vidéo sur celle de l’appareil
 
-Decoding video takes a lot of memory and GPU cycles, so choose a video format close to the resolution it will be displayed at. There is no point in using the resources to decode 1080 video if it’s going to get scaled down to a much smaller size. Many apps don’t have the same video encoded at different resolutions; but if it is available, use an encoding that is close to the resolution at which it will be displayed.
+Le décodage vidéo occupe beaucoup de mémoire et de cycles de GPU. Pensez alors à choisir un format vidéo proche de la résolution dans laquelle il sera affiché. Il n’est pas justifié d’utiliser les ressources pour décoder une vidéo de 1080p si elle est susceptible d’être réduite à une échelle nettement inférieure. De nombreuses applications ne disposent pas de la même vidéo codée avec différentes résolutions. Toutefois, si cette option est disponible, optez pour un codage plus proche de la résolution du périphérique d’affichage.
 
-### Choose recommended formats
+### Choisir des formats recommandés
 
-Media format selection can be a sensitive topic and is often driven by business decisions. From a UWP performance perspective, we recommend H.264 video as the primary video format and AAC and MP3 as the preferred audio formats. For local file playback, MP4 is the preferred file container for video content. H.264 decoding is accelerated through most recent graphics hardware. Also, although hardware acceleration for VC-1 decoding is broadly available, for a large set of graphics hardware on the market, the acceleration is limited in many cases to a partial acceleration level (or IDCT level), rather than a full-steam level hardware offload (i.e. VLD mode).
+La sélection du format de média peut s’avérer difficile et le format choisi dépend souvent des décisions prises au niveau de l’entreprise. Pour obtenir des performances optimales avec UPW, nous recommandons le format vidéo H.264 en tant que format principal, et AAC et MP3 en tant que formats audio préférés. Pour la lecture de fichiers en local, MP4 est le conteneur de fichiers préféré pour le contenu vidéo. Le décodage H.264 est accéléré sur le matériel vidéo le plus récent. À cet égard, bien que l’accélération matérielle pour le décodage VC-1 soit largement disponible sur de nombreux appareils vidéo commercialisés, l’accélération est, dans de nombreux cas, partielle (ou limitée au niveau IDCT), au lieu de permettre un déchargement total du matériel (comme avec le mode VLD).
 
-If you have full control of the video content generation process, you must figure out how to keep a good balance between compression efficiency and GOP structure. Relatively smaller GOP size with B pictures can increase the performance in seeking or trick modes.
+Si vous contrôlez totalement le processus de génération de contenu vidéo, vous devez rechercher un bon équilibre entre l’efficacité de la compression et la structure GOP. Une taille GOP relativement plus petite avec des images B peut améliorer les performances dans le mode de recherche ou le mode « truqué ».
 
-When including short, low-latency audio effects, for example in games, use WAV files with uncompressed PCM data to reduce processing overhead that is typical for compressed audio formats.
+Si vous souhaitez insérer des effets audio brefs à faible latence, par exemple dans des jeux, utilisez des fichiers WAV avec des données PCM non compressées pour réduire la surcharge du traitement qui est courante pour les formats audio compressés.
 
-### Hardware audio offloading
+### Déchargement audio du matériel
 
-For hardware audio offload to be automatically applied, [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory) must be set to **ForegroundOnlyMedia** or **BackgroundCapableMedia**. Hardware audio offload optimizes audio rendering which can improve functionality and battery life.
+Pour que le déchargement audio du matériel soit automatiquement appliqué, [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory) doit avoir la valeur **ForegroundOnlyMedia** ou **BackgroundCapableMedia**. Le déchargement audio du matériel optimise le rendu audio, ce qui peut améliorer les fonctionnalités et la durée de vie de la batterie.
 
-## Optimize image resources
+## Optimiser les ressources de type image
 
-### Scale images to the appropriate size
+### Définir les images à la bonne taille
 
-Images are captured at very high resolutions, which can lead to apps using more CPU when decoding the image data and more memory after it’s loaded from disk. But there’s no sense decoding and saving a high-resolution image in memory only to display it smaller than its native size. Instead, create a version of the image at the exact size it will be drawn on-screen using the [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) properties.
+Les images sont capturées dans des résolutions très élevées, ce qui peut générer une consommation plus élevée du processeur de la part des applications lors du décodage des données image et une plus grosse consommation de mémoire après le chargement des images à partir du disque. Mais cela ne fait aucun sens de décoder et d’enregistrer une image en haute résolution en mémoire si elle doit être affichée uniquement dans une taille plus petite que sa taille d’origine. Créez plutôt une version de l’image à la taille correspondant à celle qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
 
-Don't do this:
+À ne pas faire :
 
 ```xml
 <Image Source="ms-appx:///Assets/highresCar.jpg" 
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
-Instead, do this:
+À faire à la place :
 
 ```xml
 <Image>
@@ -160,49 +162,49 @@ Instead, do this:
 </Image>
 ```
 
-The units for [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) are by default physical pixels. The [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) property can be used to change this behavior: setting **DecodePixelType** to **Logical** results in the decode size automatically accounting for the system’s current scale factor, similar to other XAML content. It would therefore be generally appropriate to set **DecodePixelType** to **Logical** if, for instance, you want **DecodePixelWidth** and **DecodePixelHeight** to match the Height and Width properties of the Image control the image will be displayed in. With the default behavior of using physical pixels, you must account for the system’s current scale factor yourself; and you should listen for scale change notifications in case the user changes their display preferences.
+Les unités pour [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) peut être utilisée pour modifier ce comportement : en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous souhaitez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affichera l’image. Avec le comportement par défaut consistant à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et vous devez prendre en considération les notifications de modification de mise à l’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
 
-If DecodePixelWidth/Height are explicitly set larger than the image will be displayed on-screen then the app will unnecessarily use extra memory—up to 4 bytes per pixel—which quickly becomes expensive for large images. The image will also be scaled down using bilinear scaling which could cause it to appear blurry for large scale factors.
+Si les paramètres DecodePixelWidth/Height sont explicitement définis plus grands que la taille de l’image affichée à l’écran, alors l’application utilisera inutilement de la mémoire supplémentaire (jusqu’à 4 octets par pixel), ce qui devient rapidement coûteux pour les grandes images. L’image sera également réduite à l’aide d’une mise à l’échelle bilinéaire, ce qui risque de la faire apparaître floue pour les grands facteurs d’échelle.
 
-If DecodePixelWidth/DecodePixelHeight are explicitly set smaller than the image will be displayed on screen then it will be scaled up and could appear pixelated.
+Si les paramètres DecodePixelWidth/DecodePixelHeight sont explicitement définis plus petits que la taille de l’image affichée à l’écran, elle sera agrandie et risque d’apparaître pixelisée.
 
-In some cases where an appropriate decode size cannot be determined ahead of time, you should defer to XAML’s automatic right-size-decoding which will make a best effort attempt to decode the image at the appropriate size if an explicit DecodePixelWidth/DecodePixelHeight is not specified.
+Dans certains cas, lorsqu’une taille de décodage appropriée ne peut pas être déterminée à l’avance, vous devez vous en remettre au décodage automatique à la taille adéquate qui tentera de décoder au mieux l’image à la taille appropriée si aucun paramètre DecodePixelWidth/DecodePixelHeight explicite n’est spécifié.
 
-You should set an explicit decode size if you know the size of the image content ahead of time. You should also in conjunction set [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) to **Logical** if the supplied decode size is relative to other XAML element sizes. For example, if you explicitly set the content size with Image.Width and Image.Height, you could set DecodePixelType to DecodePixelType.Logical to use the same logical pixel dimensions as an Image control and then explicitly use BitmapImage.DecodePixelWidth and/or BitmapImage.DecodePixelHeight to control the size of the image to achieve potentially large memory savings.
+Il est conseillé de définir une taille de décodage explicite si vous connaissez la taille du contenu image à l’avance. Il est également recommandé de définir conjointement [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) sur **Logical** si la taille de décodage fournie dépend des tailles d’autres éléments XAML. Par exemple, si vous définissez explicitement la taille du contenu avec Image.Width et Image.Height, vous pourriez définir DecodePixelType sur DecodePixelType.Logical pour utiliser les mêmes dimensions de pixels logiques comme contrôle d’image, puis utiliser explicitement BitmapImage.DecodePixelWidth et/ou BitmapImage.DecodePixelHeight pour contrôler la taille de l’image afin de parvenir éventuellement à économiser une grande capacité de mémoire.
 
-Note that Image.Stretch should be considered when determining the size of the decoded content.
+Remarque : il convient de prendre en considération Image.Stretch lors de la détermination de la taille du contenu décodé.
 
-### Right-sized decoding
+### Décodage de taille adéquate
 
-In the event that you don't set an explicit decode size, XAML will make a best effort attempt to save memory by decoding an image to the exact size it will appear on-screen according to the containing page’s initial layout. You're advised to write your application in such a way as to make use of this feature when possible. This feature will be disabled if any of the following conditions are met.
+Dans le cas où vous ne définissez pas de taille de décodage explicite, XAML tentera d’économiser la mémoire au mieux par le décodage d’une image à la taille exacte de son affichage à l’écran en fonction de la disposition initiale de la page qui la contient. Il est conseillé de développer votre application de façon à utiliser cette fonctionnalité lorsque cela est possible. Cette fonctionnalité sera désactivée si l’une des conditions suivantes est remplie.
 
--   The [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) is connected to the live XAML tree after setting the content with [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) or [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx).
--   The image is decoded using synchronous decoding such as [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255).
--   The image is hidden via setting [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) to 0 or [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) to **Collapsed** on the host image element or brush or any parent element.
--   The image control or brush uses a [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968) of **None**.
--   The image is used as a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
--   `CacheMode="BitmapCache"` is set on the image element or on any parent element.
--   The image brush is non-rectangular (such as when applied to a shape or to text).
+-   La [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) est associée à l’arborescence XAML dynamique après la définition du contenu avec [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) ou [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx).
+-   L’image est décodée à l’aide d’un décodage synchrone comme [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255).
+-   L’image est masquée en définissant [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) sur 0 ou [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) sur **Collapsed** sur l’élément d’image hôte, le pinceau, ou tout autre élément parent.
+-   Le contrôle d’image ou le pinceau utilise un [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968) de **None**.
+-   L’image est utilisée en tant que [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
+-   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur tout élément parent.
+-   Le pinceau image est non rectangulaire (comme lorsqu’il est appliqué à une forme ou à du texte).
 
-In the above scenarios, setting an explicit decode size is the only way to achieve memory savings.
+Dans les scénarios ci-dessus, la définition d’une taille de décodage explicite est la seule façon de réaliser des économies de mémoire.
 
-You should always attach a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) to the live tree before setting the source. Any time an image element or brush is specified in markup, this will automatically be the case. Examples are provided below under the heading "Live tree examples". You should always avoid using [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) and instead use [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when setting a stream source. And it's a good idea to avoid hiding image content (either with zero opacity or with collapsed visibility) while waiting for the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) event to be raised. Doing this is a judgment call: you won't benefit from automatic right-sized decoding if it's done. If your app must hide image content initially then it should also set the decode size explicitly if possible.
+Vous devez toujours associer une [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) dans l’arborescence dynamique avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre « Exemples d’arborescences dynamiques ». Vous devez toujours éviter d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utiliser plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx). L’exécution de cette opération est laissée à l’appréciation de chacun : vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
 
-**Live tree examples**
+**Exemples d’arborescences dynamiques**
 
-Example 1 (good)—Uniform Resource Identifier (URI) specified in markup.
+Exemple 1 (correct) : Uniform Resource Identifier (URI) spécifié dans le balisage.
 
 ```xml
 <Image x:Name="myImage" UriSource="Assets/cool-image.png"/>
 ```
 
-Example 2 markup—URI specified in code-behind.
+Exemple 2 balisage : URI spécifié dans le code-behind.
 
 ```xml
 <Image x:Name="myImage"/>
 ```
 
-Example 2 code-behind (good)—connecting the BitmapImage to the tree before setting its UriSource.
+Exemple 2 code-behind (correct) : association de la BitmapImage à l’arborescence avant de définir son UriSource.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -210,7 +212,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Example 2 code-behind (bad)—setting the the BitmapImage's UriSource before connecting it to the tree.
+Exemple 2 code-behind (incorrect) :définition de l’UriSouce de la BitmapImage avant de l’associer à l’arborescence.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -218,43 +220,44 @@ bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.Rela
 myImage.Source = bitmapImage;
 ```
 
-### Caching optimizations
+### Optimisations de la mise en cache
 
-Caching optimizations are in effect for images that use [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) to load content from an app package or from the web. The URI is used to uniquely identify the underlying content, and internally the XAML framework will not download or decode the content multiple times. Instead, it will use the cached software or hardware resources to display the content multiple times.
+Les optimisations de la mise en cache sont appliquées pour les images qui utilisent [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) pour charger du contenu à partir d’un package d’application ou à partir du web. L’URI est utilisé pour identifier de manière unique le contenu sous-jacent, et en interne, l’infrastructure XAML n’aura pas à télécharger et décoder le contenu à plusieurs reprises. Il utilise à la place les ressources logicielles ou matérielles mises en cache pour afficher le contenu à plusieurs reprises.
 
-The exception to this optimization is if the image is displayed multiple times at different resolutions (which can be specified explicitly or through automatic right-sized decoding). Each cache entry also stores the resolution of the image, and if XAML cannot find an image with a source URI that matches the required resolution then it will decode a new version at that size. It will not, however, download the encoded image data again.
+Il existe une exception à cette optimisation dans le cas où l’image est affichée plusieurs fois dans différentes résolutions (qui peuvent être spécifiées explicitement ou via un décodage automatique à la taille adaptée). Chaque entrée du cache stocke également la résolution de l’image, et si XAML ne peut pas trouver d’URI source correspondant à la résolution requise, il décodera alors une nouvelle version à cette taille. Toutefois, il ne retéléchargera pas les données de l’image encodée.
 
-Consequently, you should embrace using [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) when loading images from an app package, and avoid using a file stream and [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when it's not required.
+Par conséquent, vous devez utiliser [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) pour l’intégration lors du chargement d’images à partir d’un package d’application et éviter d’utiliser un flux de fichier et [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) lorsque ce n’est pas obligatoire.
 
-### Images in virtualized panels (ListView, for instance)
+### Images dans les volets virtualisés (ListView, par exemple)
 
-If an image is removed from the tree—because the app explicitly removed it, or because it’s in a modern virtualized panel and was implicitly removed when scrolled out of view—then XAML will optimize memory usage by releasing the hardware resources for the image since they are no longer required. The memory is not released immediately, but rather is released during the frame update that occurs after one second of the image element no longer being in the tree.
+Si une image est supprimée de l’arborescence (soit explicitement par l’application, soit implicitement lorsqu’elle défile en dehors de l’affichage du fait de son intégration dans un volet virtualisé moderne), alors XAML optimisera l’utilisation de la mémoire en libérant les ressources matérielles de l’image dans la mesure où elles ne sont plus requises. La mémoire n’est pas libérée immédiatement, mais plutôt lors de la mise à jour de trame qui se produit une seconde après que l’élément image ne figure plus dans l’arborescence.
 
-Consequently, you should strive to use modern virtualized panels to host lists of image content.
+Par conséquent, vous devez veiller à utiliser des volets virtualisés modernes pour héberger des listes de contenus d’image.
 
-### Software-rasterized images
+### Images rastérisées par logiciel
 
-When an image is used for a non-rectangular brush or for a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), the image will use a software rasterization path, which will not scale images at all. Additionally, it must store a copy of the image in both software and hardware memory. For instance, if an image is used as a brush for an ellipse then the potentially large full image will be stored twice internally. When using **NineGrid** or a non-rectangular brush, then, your app should pre-scale its images to approximately the size they will be rendered at.
+Lorsqu’une image est utilisée pour un pinceau non rectangulaire ou pour une [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), elle utilise un chemin de rastérisation logicielle qui ne mettra pas du tout les images à l’échelle. En outre, elle doit stocker une copie de l’image dans la mémoire logicielle et dans la mémoire matérielle. Par exemple, si une image est utilisée comme un pinceau pour une ellipse, l’image complète, potentiellement de grandes dimensions, sera stockée deux fois en interne. Lorsque vous utilisez **NineGrid** ou un pinceau non rectangulaire, alors votre application doit effectuer la mise à l’échelle préalable de ses images à leur taille de rendu approximativement.
 
-### Background thread image-loading
+### Chargement d’images thread en arrière-plan
 
-XAML has an internal optimization that allows it to decode the contents of an image asynchronously to a surface in hardware memory without requiring an intermediate surface in software memory. This reduces peak memory usage and rendering latency. This feature will be disabled if any of the following conditions are met.
+XAML a une optimisation interne qui lui permet de décoder le contenu d’une image en mode asynchrone sur une surface dans la mémoire matérielle sans nécessiter de surface intermédiaire dans la mémoire logicielle. Cela réduit l’utilisation maximale de la mémoire et la latence de rendu. Cette fonctionnalité sera désactivée si l’une des conditions suivantes est remplie.
 
--   The image is used as a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
--   `CacheMode="BitmapCache"` is set on the image element or on any parent element.
--   The image brush is non-rectangular (such as when applied to a shape or to text).
+-   L’image est utilisée en tant que [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
+-   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur tout élément parent.
+-   Le pinceau image est non rectangulaire (comme lorsqu’il est appliqué à une forme ou à du texte).
 
 ### SoftwareBitmapSource
 
-The [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) class exchanges interoperable uncompressed images between different WinRT namespaces such as [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176), camera APIs, and XAML. This class obviates an extra copy that would typically be necessary with [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259), and that helps reduce peak memory and source-to-screen latency.
+La classe [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) échange des images non compressées interopérables entre les différents espaces de noms WinRT, tels que [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176), les API de caméra et XAML. Cette classe évite une copie supplémentaire qui d’ordinaire serait nécessaire avec [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259) et qui aide à réduire la mémoire maximale et la latence de la source à l’écran.
 
-The [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) that supplies source information can also be configured to use a custom [**IWICBitmap**](https://msdn.microsoft.com/library/windows/desktop/Ee719675) to provide a reloadable backing store that allows the app to re-map memory as it sees fit. This is an advanced C++ use case.
+Le [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) qui fournit les informations sources peut également être configuré pour utiliser un [**IWICBitmap**](https://msdn.microsoft.com/library/windows/desktop/Ee719675) personnalisé pour fournir un magasin de stockage rechargeable qui permet à l’application de remapper la mémoire comme il convient. Il s’agit d’un exemple d’utilisation avancée de C++.
 
-Your app should use [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) and [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) to interoperate with other WinRT APIs that produce and consume images. And your app should use **SoftwareBitmapSource** when loading uncompressed image data instead of using [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259).
+Votre application doit utiliser [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) et [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) pour interopérer avec d’autres API WinRT qui produisent et utilisent des images. Et votre application doit utiliser **SoftwareBitmapSource** lors du chargement de données d’image non compressées au lieu d’utiliser [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259).
 
-### Use GetThumbnailAsync for thumbnails
+### Utiliser GetThumbnailAsync pour les miniatures
 
-One use case for scaling images is creating thumbnails. Although you could use [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) to provide small versions of images, UWP provides even more efficient APIs for retrieving thumbnails. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) provides the thumbnails for images that have the file system already cached. This provides even better performance than the XAML APIs because the image doesn’t need to be opened or decoded.
+Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [
+            **GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) fournit les miniatures pour les images dont le système de fichiers est déjà mis en cache. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML car l’image n’a pas besoin d’être ouverte ni décodée.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -294,7 +297,13 @@ One use case for scaling images is creating thumbnails. Although you could use [
 > img.Source = bmp
 > ```
 
-### Decode images once
+### Décoder une fois les images
 
-To prevent images from being decoded more than once, assign the [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) property from an Uri rather than using memory streams. The XAML framework can associate the same Uri in multiple places with one decoded image, but it cannot do the same for multiple memory streams that contain the same data and creates a different decoded image for each memory stream.
+Pour éviter de décoder les images plus d’une fois, assignez la propriété [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) à partir d’un Uri plutôt qu’à l’aide de flux de mémoire. L’infrastructure XAML peut associer le même URI dans plusieurs endroits à une seule image décodée, mais ne peut pas effectuer la même chose pour plusieurs flux de mémoire qui contiennent les mêmes données, et crée une image décodée différente pour chaque flux de mémoire.
+
+
+
+
+<!--HONumber=Jun16_HO4-->
+
 

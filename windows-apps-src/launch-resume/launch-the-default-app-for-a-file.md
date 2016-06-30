@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Lancer l’application par défaut d’un fichier
-description: Découvrez comment lancer l’application par défaut pour un fichier.
+author: TylerMSFT
+title: "Lancer l’application par défaut d’un fichier"
+description: "Découvrez comment lancer l’application par défaut pour un fichier."
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: b9b2d8ba6aeedea7d9db12565de191b1b6307fa6
+
 ---
 
 # Lancer l’application par défaut pour un fichier
@@ -57,7 +60,7 @@ Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](
 >    If file IsNot Nothing Then
 >       ' Launch the retrieved file
 >       Dim success = await Windows.System.Launcher.LaunchFileAsync(file)
-> 
+>
 >       If success Then
 >          ' File launched
 >       Else
@@ -72,7 +75,7 @@ Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](
 > void MainPage::DefaultLaunch()
 > {
 >    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
-> 
+>
 >    concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.png"));
 >    getFileOperation.then([](Windows::Storage::StorageFile^ file)
 >    {
@@ -111,7 +114,7 @@ Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](
 >    {
 >       // Launch the retrieved file
 >       var success = await Windows.System.Launcher.LaunchFileAsync(file);
-> 
+>
 >       if (success)
 >       {
 >          // File launched
@@ -139,20 +142,20 @@ Nous vous recommandons d’utiliser la boîte de dialogue **Ouvrir avec** lorsqu
 > [!div class="tabbedCodeSnippets"]
 > ```vb
 > async Sub DefaultLaunch()
-> 
+>
 >    ' Path to the file in the app package to launch
 >    Dim imageFile = "images\test.png"
-> 
+>
 >    Dim file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile)
-> 
+>
 >    If file IsNot Nothing Then
 >       ' Set the option to show the picker
 >       Dim options = Windows.System.LauncherOptions()
 >       options.DisplayApplicationPicker = True
-> 
+>
 >       ' Launch the retrieved file
 >       Dim success = await Windows.System.Launcher.LaunchFileAsync(file)
-> 
+>
 >       If success Then
 >          ' File launched
 >       Else
@@ -167,7 +170,7 @@ Nous vous recommandons d’utiliser la boîte de dialogue **Ouvrir avec** lorsqu
 > void MainPage::DefaultLaunch()
 > {
 >    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
-> 
+>
 >    concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.png"));
 >    getFileOperation.then([](Windows::Storage::StorageFile^ file)
 >    {
@@ -176,7 +179,7 @@ Nous vous recommandons d’utiliser la boîte de dialogue **Ouvrir avec** lorsqu
 >          // Set the option to show the picker
 >          auto launchOptions = ref new Windows::System::LauncherOptions();
 >          launchOptions->DisplayApplicationPicker = true;
-> 
+>
 >          // Launch the retrieved file
 >          concurrency::task<bool> launchFileOperation(Windows::System::Launcher::LaunchFileAsync(file, launchOptions));
 >          launchFileOperation.then([](bool success)
@@ -205,13 +208,13 @@ Nous vous recommandons d’utiliser la boîte de dialogue **Ouvrir avec** lorsqu
 >       string imageFile = @"images\test.png";
 >       
 >    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
-> 
+>
 >    if (file != null)
 >    {
 >       // Set the option to show the picker
 >       var options = new Windows.System.LauncherOptions();
 >       options.DisplayApplicationPicker = true;
-> 
+>
 >       // Launch the retrieved file
 >       bool success = await Windows.System.Launcher.LaunchFileAsync(file, options);
 >       if (success)
@@ -242,23 +245,23 @@ Dans certains cas, l’utilisateur ne dispose pas forcément d’une application
 > [!div class="tabbedCodeSnippets"]
 > ```vb
 > async Sub DefaultLaunch()
-> 
+>
 >    ' Path to the file in the app package to launch
 >    Dim imageFile = "images\test.contoso"
-> 
+>
 >    ' Get the image file from the package's image directory
 >    Dim file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile)
-> 
+>
 >    If file IsNot Nothing Then
 >       ' Set the recommended app
 >       Dim options = Windows.System.LauncherOptions()
 >       options.PreferredApplicationPackageFamilyName = "Contoso.FileApp_8wknc82po1e";
 >       options.PreferredApplicationDisplayName = "Contoso File App";
-> 
->       ' Launch the retrieved file pass in the recommended app 
+>
+>       ' Launch the retrieved file pass in the recommended app
 >       ' in case the user has no apps installed to handle the file
 >       Dim success = await Windows.System.Launcher.LaunchFileAsync(file)
-> 
+>
 >       If success Then
 >          ' File launched
 >       Else
@@ -273,7 +276,7 @@ Dans certains cas, l’utilisateur ne dispose pas forcément d’une application
 > void MainPage::DefaultLaunch()
 > {
 >    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
-> 
+>
 >    concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.contoso"));
 >    getFileOperation.then([](Windows::Storage::StorageFile^ file)
 >    {
@@ -284,7 +287,7 @@ Dans certains cas, l’utilisateur ne dispose pas forcément d’une application
 >          launchOptions-> preferredApplicationPackageFamilyName = "Contoso.FileApp_8wknc82po1e";
 >          launchOptions-> preferredApplicationDisplayName = "Contoso File App";
 >          
->          // Launch the retrieved file pass in the recommended app 
+>          // Launch the retrieved file pass in the recommended app
 >          // in case the user has no apps installed to handle the file
 >          concurrency::task<bool> launchFileOperation(Windows::System::Launcher::LaunchFileAsync(file, launchOptions));
 >          launchFileOperation.then([](bool success)
@@ -311,19 +314,19 @@ Dans certains cas, l’utilisateur ne dispose pas forcément d’une application
 > {
 >    // Path to the file in the app package to launch
 >    string imageFile = @"images\test.contoso";
-> 
+>
 >    // Get the image file from the package's image directory
 >    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
-> 
+>
 >    if (file != null)
 >    {
 >       // Set the recommended app
 >       var options = new Windows.System.LauncherOptions();
 >       options.PreferredApplicationPackageFamilyName = "Contoso.FileApp_8wknc82po1e";
 >       options.PreferredApplicationDisplayName = "Contoso File App";
-> 
-> 
->       // Launch the retrieved file pass in the recommended app 
+>
+>
+>       // Launch the retrieved file pass in the recommended app
 >       // in case the user has no apps installed to handle the file
 >       bool success = await Windows.System.Launcher.LaunchFileAsync(file, options);
 >       if (success)
@@ -355,7 +358,7 @@ Les applications sources qui appellent la méthode [**LaunchFileAsync**](https:/
 > void MainPage::DefaultLaunch()
 > {
 >    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
-> 
+>
 >    concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.png"));
 >    getFileOperation.then([](Windows::Storage::StorageFile^ file)
 >    {
@@ -364,7 +367,7 @@ Les applications sources qui appellent la méthode [**LaunchFileAsync**](https:/
 >          // Set the desired remaining view
 >          auto launchOptions = ref new Windows::System::LauncherOptions();
 >          launchOptions->DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseLess;
-> 
+>
 >          // Launch the retrieved file
 >          concurrency::task<bool> launchFileOperation(Windows::System::Launcher::LaunchFileAsync(file, launchOptions));
 >          launchFileOperation.then([](bool success)
@@ -393,13 +396,13 @@ Les applications sources qui appellent la méthode [**LaunchFileAsync**](https:/
 >    string imageFile = @"images\test.png";
 >    
 >    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
-> 
+>
 >    if (file != null)
 >    {
 >       // Set the desired remaining view
 >       var options = new Windows.System.LauncherOptions();
 >       options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseLess;
-> 
+>
 >       // Launch the retrieved file
 >       bool success = await Windows.System.Launcher.LaunchFileAsync(file, options);
 >       if (success)
@@ -454,8 +457,6 @@ Si vous essayez de lancer un type de fichier restreint, le lancement se soldera 
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

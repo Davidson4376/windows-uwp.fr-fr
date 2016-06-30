@@ -2,7 +2,11 @@
 author: DBirtolo
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: Obtenir des informations sur la batterie
-description: Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API de l’espace de noms Windows.Devices.Power.
+description: "Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API de l’espace de noms Windows.Devices.Power."
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
+
 ---
 # Obtenir des informations sur la batterie
 
@@ -124,7 +128,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## Exemple : application de batterie de base
 
-Testez ces API en créant l’application suivante de batterie de base dans Microsoft Visual Studio. Dans la page d’accueil de Visual Studio, cliquez sur **Nouveau projet**, puis, sous les modèles **Visual C# &gt; Windows &gt; Universel**, créez une application à l’aide du modèle **Application vide**.
+Testez ces API en créant l’application suivante de batterie de base dans Microsoft Visual Studio. Dans la page d’accueil de Visual Studio, cliquez sur **Nouveau projet**, puis, sous les modèles **Visual C# &gt; Windows &gt; Universel**, créez une application à l’aide du modèle **Application vide**.
 
 Ensuite, ouvrez le fichier **MainPage.xaml** et copiez le code XML suivant dans ce fichier (en remplaçant son contenu d’origine).
 
@@ -334,6 +338,7 @@ Enfin, pour exécuter cette application de batterie de base, dans le menu **Déb
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

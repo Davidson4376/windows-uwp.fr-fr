@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Le Windows Store offre la facturation de l’opérateur mobile comme mode de paiement des opérateurs mobiles qui prennent en charge cette fonctionnalité.
-title: Facturation de l’opérateur mobile
+Description: "Le Windows Store offre la facturation de l’opérateur mobile comme mode de paiement des opérateurs mobiles qui prennent en charge cette fonctionnalité."
+title: "Facturation de l’opérateur mobile"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
+ms.sourcegitcommit: 76ea880f7dd1e737b3b0640d10a138e0eb790802
+ms.openlocfilehash: d22d89523ff3089b3b56d1a85fa2c4b137389887
+
 ---
 
 # Facturation de l’opérateur mobile
@@ -27,6 +30,7 @@ L'implémentation sur Windows 10 de la facturation de l'opérateur mobile est ac
 |----------------|------------------|
 | Finlande        | DNA, Elisa       |
 | Allemagne        | O2               |
+| Norvège         | Telenor          |
 | Suisse    | Swisscom         |
 | États-Unis  | Sprint           |
 
@@ -111,6 +115,7 @@ Cette liste sera régulièrement mise à jour au fur et à mesure que nous déve
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

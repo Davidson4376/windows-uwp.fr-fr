@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Pour exécuter une expérience sur votre application de plateforme Windows universelle (UWP) avec des tests A/B, vous devez définir votre expérience dans le tableau de bord du Centre de développement.
-title: Définissez votre expérience dans le tableau de bord du Centre de développement
+Description: "Pour exécuter une expérience sur votre application de plateforme Windows universelle (UWP) avec des tests A/B, vous devez définir votre expérience dans le tableau de bord du Centre de développement."
+title: "Définissez votre expérience dans le tableau de bord du Centre de développement"
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7462c23de58b44f897a1737d0d54913144b14f75
+
 ---
 
 # Définissez votre expérience dans le tableau de bord du Centre de développement
@@ -80,6 +84,7 @@ Après avoir défini votre expérience dans le tableau de bord du Centre de dév
   * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

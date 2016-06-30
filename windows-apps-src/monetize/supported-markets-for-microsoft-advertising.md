@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
-description: En savoir plus sur les pays et régions pris en charge pour les spots et bannières publicitaires.
-title: Marchés pris en charge par Microsoft Advertising
+description: "En savoir plus sur les pays et régions pris en charge pour les spots et bannières publicitaires."
+title: "Marchés pris en charge par Microsoft Advertising"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
+
 ---
 
 # Marchés pris en charge par Microsoft Advertising
@@ -113,7 +117,7 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
 
 -   République dominicaine
 
--   Équateur (République de l’)
+-   Équateur (République de)
 
 -   Égypte
 
@@ -310,6 +314,7 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
-title: Service Broker d’authentification web
-description: Cet article explique comment connecter votre application UWP à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.).
+title: "Service Broker d’authentification web"
+description: "Cet article explique comment connecter votre application UWP à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.)."
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
+
 ---
 
 # Service Broker d’authentification web
@@ -173,6 +177,7 @@ Le débogueur web Fiddler peut être utilisé avec des applications.
 
 3.  Ajoutez une règle de pare-feu pour le trafic entrant vers Fiddler.
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

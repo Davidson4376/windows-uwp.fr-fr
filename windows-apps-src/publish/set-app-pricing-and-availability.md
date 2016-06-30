@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: La page Tarification et disponibilité du processus de soumission d’application vous permet de déterminer le prix de votre application, la mise à disposition ou non d’une version d’évaluation gratuite, ainsi que le mode, la date et l’emplacement d’accessibilité de votre application auprès des clients.
-title: Définir la tarification et la disponibilité d’une application
+Description: "La page Tarification et disponibilité du processus de soumission d’application vous permet de déterminer le prix de votre application, la mise à disposition ou non d’une version d’évaluation gratuite, ainsi que le mode, la date et l’emplacement d’accessibilité de votre application auprès des clients."
+title: "Définir la tarification et la disponibilité d’une application"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
+
 ---
 
 # Définir la tarification et la disponibilité d’une application
@@ -98,6 +102,7 @@ Vous pouvez également modifier la date de sortie après avoir soumis votre appl
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

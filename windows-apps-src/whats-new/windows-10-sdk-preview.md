@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-title: Nouveautés de Windows 10
-description: La version d’évaluation SDK Windows 10 Anniversary et les outils de développement offrent outils, fonctions et expertise sur la plateforme Windows universelle.
+title: "Nouveautés de Windows 10"
+description: "La version d’évaluation SDK Windows 10 Anniversary et les outils de développement offrent outils, fonctions et expertise sur la plateforme Windows universelle."
+translationtype: Human Translation
+ms.sourcegitcommit: 46b5ad404811894899810f83efb9970e338e7051
+ms.openlocfilehash: 5cce4a0fbfe85126f15cb013a9b46f058006a5e1
+
 ---
 
 # Nouveautés de Windows
@@ -24,6 +28,7 @@ API de médias | Les nouvelles API MediaBreak dans l’espace de noms Windows.Me
 API de cartes | Le contrôle [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx#_blank) a été amélioré pour permettre aux développeurs d’obtenir une région visible proche de l’appareil photo, en excluant les régions très éloignées et proches de l’horizon dans une vue très nette. La classe [MapLocationFinder](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx#_blank) a été étendue, permettant aux développeurs d’optimiser le trafic réseau lors d’un géocodage inverse en spécifiant une précision souhaitée. Les développeurs peuvent maintenant tirer parti du téléchargement de cartes hors ligne à l’aide de la méthode [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx#_blank) et en spécifiant la latitude et la longitude. Pour plus d’informations, voir [Lancer l’application Cartes Windows](https://msdn.microsoft.com/windows/uwp/launch-resume/launch-maps-app#_blank).
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

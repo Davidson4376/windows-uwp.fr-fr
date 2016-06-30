@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: Vous pouvez personnaliser la structure et le comportement visuels d’un contrôle en créant un modèle de contrôle dans l’infrastructure XAML.
-MS-HAID: 'dev\_ctrl\_layout\_txt.control\_templates'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Vous pouvez personnaliser la structure et le comportement visuels d’un contrôle en créant un modèle de contrôle dans l’infrastructure XAML."
+MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Modèles de contrôles
+title: "Modèles de contrôles"
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
+
 ---
 
 # Modèles de contrôles
@@ -86,7 +90,7 @@ Le code XAML suivant permet de créer un modèle [**ControlTemplate**](https://m
 ## Spécifier le comportement visuel d’un contrôle
 
 
-Le comportement visuel indique l’apparence d’un contrôle lorsqu’il se trouve dans un état spécifique. 3 états de sélection sont associés au contrôle [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) : `Checked`, `Unchecked` et `Indeterminate`. La valeur de la propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) détermine l’état du contrôle **CheckBox**, lequel détermine ce qui s’affiche dans la case.
+Le comportement visuel indique l’apparence d’un contrôle lorsqu’il se trouve dans un état spécifique. 3 états de sélection sont associés au contrôle [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) : `Checked`, `Unchecked` et `Indeterminate`. La valeur de la propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) détermine l’état du contrôle **CheckBox**, lequel détermine ce qui s’affiche dans la case.
 
 Le tableau suivant comporte les valeurs [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) possibles, les états correspondants du contrôle [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) et l’apparence de **CheckBox**.
 
@@ -170,7 +174,7 @@ Pour mieux comprendre le fonctionnement des objets [**VisualState**](https://msd
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | Transition                     | Action                                                                                                                                                                                                                                                                                                                                   | Apparence du contrôle CheckBox en fin de transition |
 | De `Unchecked` à `Checked`       | La valeur [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) de l’état [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) `Checked` est appliquée. Par conséquent, la valeur [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) de l’élément `CheckGlyph` est 1.                                                                                                                                                         | Un X s’affiche.                                |
-| De `Checked` à `Indeterminate`   | La valeur [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) de l’état [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) `Indeterminate` est appliquée. Par conséquent, la valeur [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) de l’élément `IndeterminateGlyph` est 1. La valeur **Setter** de l’état `Checked`**VisualState** est supprimée. Par conséquent, la valeur [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) de l’élément `CheckGlyph` est 0. | Un cercle s’affiche.                            |
+| De `Checked` à `Indeterminate`   | La valeur [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) de l’état [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) `Indeterminate` est appliquée. Par conséquent, la valeur [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) de l’élément `IndeterminateGlyph` est 1. La valeur **Setter** de l’état `Checked`**VisualState** est supprimée. Par conséquent, la valeur [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) de l’élément `CheckGlyph` est 0. | Un cercle s’affiche.                            |
 | De `Indeterminate` à `Unchecked` | La valeur [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) de l’état [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) `Indeterminate` est supprimée. Par conséquent, la valeur [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) de l’élément `IndeterminateGlyph` est 0.                                                                                                                                           | Rien ne s’affiche.                             |
 
  
@@ -209,6 +213,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui écrivent des appli
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

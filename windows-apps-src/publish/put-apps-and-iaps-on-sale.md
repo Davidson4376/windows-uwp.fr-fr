@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Vous pouvez promouvoir votre application ou produit in-app dans le Windows Store en les mettant en vente à prix réduit pendant une période limitée.
-title: Commercialiser des applications et produits in-app à prix réduit
+Description: "Vous pouvez promouvoir votre application ou produit in-app dans le Windows Store en les mettant en vente à prix réduit pendant une période limitée."
+title: "Commercialiser des applications et produits in-app à prix réduit"
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b53d8d4ddcf3f75ffe039203377d12fd02e52f07
+
 ---
 
 # Commercialiser des applications et produits in-app à prix réduit
@@ -65,6 +69,7 @@ Si la vente à prix réduit n’a pas démarré au moment où le processus de ce
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

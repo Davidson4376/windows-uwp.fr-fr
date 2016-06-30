@@ -1,12 +1,16 @@
 ---
 author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-title: Virtualisation des données ListView et GridView
-description: Améliorez les performances et le délai de démarrage des éléments ListView et GridView via la virtualisation des données.
+title: "Virtualisation des données ListView et GridView"
+description: "Améliorez les performances et le délai de démarrage des éléments ListView et GridView via la virtualisation des données."
+translationtype: Human Translation
+ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
+ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
+
 ---
 # Virtualisation des données ListView et GridView
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Remarque** Pour plus d’informations, voir la session //build/ [Accroître considérablement les performances lors de l’interaction des utilisateurs avec de grandes quantités de données dans GridView et ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
@@ -81,6 +85,7 @@ En outre, la stratégie permettant de déterminer à quel moment charger les él
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

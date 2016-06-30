@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenus Microsoft Advertising.
-title: Rémunération
+Description: "Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenus Microsoft Advertising."
+title: "Rémunération"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
+
 ---
 
 # Rémunération
@@ -56,6 +60,7 @@ Une fois que vous avez configuré l’état de mise en attente des paiements sur
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

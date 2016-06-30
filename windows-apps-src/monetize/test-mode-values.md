@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 2ed21281-f996-402d-a968-d1320a4691df
-description: Utilisez les valeurs de test d’ID d’application et d’ID d’unité publicitaire pour voir comment votre application restitue les publicités au cours du test.
+description: "Utilisez les valeurs de test d’ID d’application et d’ID d’unité publicitaire pour voir comment votre application restitue les publicités au cours du test."
 title: Valeurs du mode test
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 93b20954ba82b613bde96db30a000902dec3b844
+
 ---
 
 # Valeurs du mode test
@@ -72,6 +76,7 @@ Voici les valeurs de test à utiliser pour les bannières et les spots vidéo pu
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

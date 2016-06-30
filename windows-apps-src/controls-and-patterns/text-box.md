@@ -3,6 +3,10 @@ author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 873ca8f869f4303f8fc4a9a7ff08f81df29d367d
+
 ---
 # Zone de texte
 Le contrôle TextBox permet à un utilisateur de taper du texte dans une application. Il est généralement utilisé pour capturer une seule ligne de texte, mais peut être configuré pour la saisie de plusieurs lignes. Le texte s’affiche sous la forme d’un texte brut uniforme simple.
@@ -79,8 +83,7 @@ Vous pouvez configurer une zone de texte comme étant en lecture seule en défin
 
 Pour configurer le contrôle TextBox en lecture seule, définissez la propriété IsReadOnly sur la valeur « true ». Par exemple, vous pouvez avoir besoin de définir un contrôle TextBox ne permettant à un utilisateur d’entrer des commentaires que sous certaines conditions. Vous pouvez alors configurer le contrôle TextBox comme étant en lecture seule jusqu’à ce que ces conditions soient remplies. Si vous souhaitez simplement afficher du texte, envisagez plutôt d’utiliser un contrôle TextBlock ou RichTextBlock.
 
-Une zone de texte en lecture seule présente le même aspect qu’une zone de texte en lecture/écriture, ce qui peut dérouter l’utilisateur. 
-Un utilisateur peut sélectionner et copier du texte.
+Une zone de texte en lecture seule présente le même aspect qu’une zone de texte en lecture/écriture, ce qui peut dérouter l’utilisateur. Un utilisateur peut sélectionner et copier du texte.
 IsEnabled
 
 
@@ -277,6 +280,7 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

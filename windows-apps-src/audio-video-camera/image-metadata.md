@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
-description: Vous saurez comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe GeotagHelper.
-title: Métadonnées d’image
+description: "Vous saurez comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe GeotagHelper."
+title: "Métadonnées d’image"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 571d71d52931392a36c3c11030749f6ecb3cc961
+
 ---
 
 # Métadonnées d’image
@@ -46,7 +50,7 @@ Pour définir les données d’indication de la position géographique à l’ai
 
 -   Pour plus d’informations sur les API de géolocalisation, voir [Cartes et emplacement](https://msdn.microsoft.com/library/windows/apps/mt219699).
 
-Pour obtenir un GeoPoint représentant la position géolocalisée d’un fichier image, appelez [**GetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903684).
+Pour obtenir un GeoPoint indiquant la position géographique d’un fichier image, appelez [**GetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903684).
 
 [!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
 
@@ -89,6 +93,7 @@ Créez un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windo
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion.
-title: Télécharger des rapports d’analyse
+Description: "Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion."
+title: "Télécharger des rapports d’analyse"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
+
 ---
 
 # Télécharger des rapports d’analyse
@@ -23,6 +27,7 @@ Vous pouvez télécharger des fichiers contenant vos données d&#39;analyse afin
 4.  Cliquez sur le bouton **Télécharger les rapports**, puis enregistrez ou ouvrez le fichier TSV.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

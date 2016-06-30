@@ -1,17 +1,21 @@
 ---
 author: mijacobs
-Description: En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style ne doit jamais venir entraver cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception.
+Description: "En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception."
 title: Typographie
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 label: Typography
 template: detail.hbs
 extraBodyClass: style-typography
-brief: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
+brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 02d5149f945bb631e385e45a295fdfe08bd98fb0
+
 ---
 
 # Typographie des applications UWP
 
-En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style ne doit jamais venir entraver cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception.
+En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception.
 
 ## Police
 
@@ -79,7 +83,7 @@ L’espacement entre les mots est toujours de 100 % par défaut, et l’espacem
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            Dans un contrôle de texte XAML, utilisez [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) pour contrôler le crénage et [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler le suivi. Par défaut, Typography.Kerning est défini sur « true », tandis que FontStretch est défini sur « Normal » ; il s’agit des valeurs recommandées.
+Dans un contrôle de texte XAML, utilisez [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) pour contrôler le crénage et [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler le suivi. Par défaut, Typography.Kerning est défini sur « true », tandis que FontStretch est défini sur « Normal » ; il s’agit des valeurs recommandées.
     </div>
 </aside>
 
@@ -125,7 +129,7 @@ Lorsque la hauteur du texte dépasse celle de l’icône, la première ligne de 
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du code XAML fournit un accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
+La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du code XAML fournit un accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
     </div>
 </aside>
 
@@ -150,7 +154,7 @@ Vous devez utiliser différentes tailles de caractères Segoe UI pour créer une
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            La plupart des niveaux de la gamme sont disponibles en tant que [ressources statiques](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (ex : 
+La plupart des niveaux de la gamme sont disponibles en tant que [ressources statiques](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (ex :`HeaderTextBlockStyle`). 
     </div>
 </aside>
 
@@ -180,6 +184,7 @@ Toutefois, dans certaines langues, les noms propres changent de signification lo
 * [Contrôles de texte](../controls-and-patterns/text-controls.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

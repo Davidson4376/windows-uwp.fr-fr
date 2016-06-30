@@ -1,23 +1,22 @@
 ---
 author: Mtoepke
-title: Problèmes connus avec UWP sur la version prélim. pour dév. Xbox One
+title: "Problèmes connus avec UWP sur la version prélim. pour dév. Xbox One"
 description: 
 area: Xbox
+ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
+ms.openlocfilehash: 9a9180f8d6fcd51808310a7f8fbac986ca9c3817
+
 ---
 
 # Problèmes connus avec UWP sur la version préliminaire pour développeurs de Xbox
 
-Cette rubrique décrit les problèmes connus liés à la plateforme UWP sur la version préliminaire pour développeurs de Xbox. 
-Pour plus d’informations sur cette version préliminaire pour développeurs, voir [UWP sur Xbox](index.md). 
+Cette rubrique décrit les problèmes connus liés à la plateforme UWP sur la version préliminaire pour développeurs de Xbox. Pour plus d’informations sur cette version préliminaire pour développeurs, voir [UWP sur Xbox](index.md). 
 
 \[Si vous avez accédé à cette page à partir d’un lien dans une rubrique de référence d’une API et que vous recherchez des informations sur les API pour la famille d’appareils universels, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/?LinkID=760755).\]
 
-La Mise à jour système de la version préliminaire pour développeurs du programme Xbox inclut des versions logicielles préliminaires anticipées et expérimentales. 
-Cela signifie que certains jeux et applications courants ne fonctionneront pas comme prévu, et que vous risquez d’être confronté à des blocages occasionnels et à une perte de données. 
-Si vous quittez la version d’évaluation pour développeurs, votre console procédera à une réinitialisation aux paramètres d’usine. Vous devrez, par conséquent, réinstaller l’ensemble de vos jeux, de vos applications et de votre contenu.
+La Mise à jour système de la version préliminaire pour développeurs du programme Xbox inclut des versions logicielles préliminaires anticipées et expérimentales. Cela signifie que certains jeux et applications courants ne fonctionneront pas comme prévu, et que vous risquez d’être confronté à des blocages occasionnels et à une perte de données. Si vous quittez la version d’évaluation pour développeurs, votre console procédera à une réinitialisation aux paramètres d’usine. Vous devrez, par conséquent, réinstaller l’ensemble de vos jeux, de vos applications et de votre contenu.
 
-Pour les développeurs, cela implique que certains outils et API de développement ne fonctionneront pas correctement. 
-Les fonctionnalités destinées à la version finale ne seront pas toutes incluses ou de qualité de mise en production. 
+Pour les développeurs, cela implique que certains outils et API de développement ne fonctionneront pas correctement. Les fonctionnalités destinées à la version finale ne seront pas toutes incluses ou de qualité de mise en production. 
 **En conséquence, les performances système de cette version préliminaire ne refléteront pas celles de la version finale.**
 
 La liste ci-après met en relief certains problèmes connus que vous pouvez rencontrer dans cette version, mais cette liste n’est pas exhaustive. 
@@ -27,157 +26,208 @@ La liste ci-après met en relief certains problèmes connus que vous pouvez renc
 Si vous êtes bloqué, lisez les informations présentées dans cette rubrique, consultez le [Forum aux questions](frequently-asked-questions.md) et utilisez les forums pour demander de l’aide.
 
 
-## Développement de jeux
+<!--## Developing games-->
 
-### Prise en charge x86/x64
+## Prise en charge du mode souris
 
-La version finale que nous commercialiserons plus tard dans l’année offrira une prise en charge complète de x86 et de x64, et nous gérons déjà x86 dans cette version préliminaire. 
-Toutefois, à ce jour, nous avons effectué un plus grand nombre de tests pour x64 (l’interpréteur de commandes Xbox et toutes les applications actuellement exécutées sur la console reposent sur un processeur x64), et nous vous recommandons donc d’utiliser x64 pour vos projets. 
-Cette recommandation s’applique tout spécialement aux jeux.
+À partir de cette version d’évaluation, le _mode souris_ est activé par défaut pour XAML et les applications web hébergées. Toutes les applications qui ne le refusent pas recevront un pointeur de souris semblable à celui du navigateur Microsoft Edge Xbox.
 
-Si vous décidez d’utiliser x86, signalez vos éventuels problèmes sur le forum.
+**Nous recommandons vivement aux développeurs de désactiver le mode souris et d’optimiser l’application pour la navigation de contrôleur (X-Y).**
 
-Reportez-vous également à la section [Alternance de configurations de build pouvant entraîner des problèmes de déploiement](known-issues.md#switching-build-flavors-can-cause-deployment-failures) plus loin sur cette page.
+Pour désactiver ce mode dans le code XAML, appuyez-vous sur l’exemple suivant :
 
-### Moteurs de jeu
+```code
+public App() {
+    this.InitializeComponent();
+    this.RequiresPointerMode = Windows.UI.Xaml.ApplicationRequiresPointerMode.WhenRequested;
+    this.Suspending += OnSuspending;
+}
+```
 
-Nous n’avons testé que quelques-uns des moteurs de jeu les plus courants, et notre couverture des tests de cette version préliminaire est incomplète. 
-Votre propre expérience peut donc différer. 
+Pour désactiver ce mode dans une application HTML/Javascript, appuyez-vous sur l’exemple suivant :
 
-Le bon fonctionnement des moteurs de jeu suivants a été vérifié :
+```code
+// Turn off mouse mode
+navigator.gamepadInputEmulation = "keyboard";
+```
+
+> **Remarque :** &nbsp;&nbsp;dans cette version préliminaire pour développeurs, lorsque le mode souris est activé, un mouvement panoramique effectué avec une manette de jeu sur le contrôleur peut entraîner le blocage de la console. Si vous rencontrez ce problème, vous devez redémarrer votre console.
+
+Pour en savoir plus sur la prise en charge du mode souris, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode). Cette rubrique inclut des informations sur l’activation et la désactivation du mode souris, afin de vous permettre de choisir le comportement approprié pour votre application.
+
+## Vous devez disposer d’un utilisateur connecté afin de déployer une application (erreur 0x87e10008)
+
+Les applications requièrent désormais l’ouverture d’une session par un utilisateur pour pouvoir être lancées (un utilisateur doit être connecté pour que vous puissiez démarrer le débogage à partir de Visual Studio 2015 (touche F5)). Le message d’erreur actuellement affiché par VS n’est pas limpide :
+ 
+![Impossible d’activer l’application Windows Store](images/windows-store-app-activation-error.jpg)
+ 
+Pour contourner ce problème, connectez-vous à l’aide d’un utilisateur à partir de l’interpréteur de commandes Xbox ou DevHome avant de déployer votre application.
+ 
+## Les limites de mémoire des applications en arrière-plan ne sont pas encore appliquées
+ 
+La limite de 128 Mo pour les applications qui s’exécutent en arrière-plan n’est pas appliquée dans cette version d’évaluation. Ainsi, si votre application dépasse la limite de 128 Mo lors de son exécution en arrière-plan, elle sera toujours en mesure d’allouer de la mémoire.
+ 
+Il n’existe actuellement aucun moyen de contourner ce problème. Vous devez contrôler l’utilisation de la mémoire de manière appropriée. Dans une version d’évaluation à venir, votre application rencontrera des échecs d’allocation de mémoire si elle dépasse la limite de 128 Mo.
+ 
+## Le déploiement à partir de Visual Studio échoue lorsque les paramètres de contrôle parental sont activés
+
+Le lancement de votre application à partir de Visual Studio n’aboutit pas si le contrôle parental est activé dans les paramètres.
+
+Pour contourner ce problème, désactivez ces paramètres temporairement ou procédez comme suit :
+1. Déployez votre application sur la console en désactivant les paramètres de contrôle parental.
+2. Activez ces paramètres.
+3. Lancez votre application à partir de la console.
+4. Saisissez un mot de passe ou un code confidentiel pour permettre à l’application de se lancer.
+5. L’application se lance.
+6. Fermez l’application.
+7. Effectuez le lancement à partir de Visual Studio à l’aide de la touche F5 ; l’application s’ouvre sans afficher d’invite.
+
+À ce stade, l’autorisation est _rémanente_ jusqu’à ce que vous fermiez la session de l’utilisateur, même si vous désinstallez l’application et la réinstallez.
+ 
+Il existe un autre type d’exemption, uniquement disponible pour les comptes enfant. Un compte enfant requiert un parent, qui doit se connecter pour accorder l’autorisation adéquate. Lorsqu’il se connecte, le parent peut choisir d’autoriser systématiquement l’enfant à lancer l’application (paramètre **Toujours**). Cette exemption est stockée dans le cloud et est persistante, même si l’enfant se déconnecte et se reconnecte.   
+
+<!--### x86 vs. x64
+
+By the time we release later this year, we will have great support for both x86 and x64, and we do support x86 in this preview. 
+However, x64 has had much more testing to date (the Xbox shell and all of the apps running on the console today are x64), and so we recommend using x64 for your projects. 
+This is particularly true for games.
+
+If you decide to use x86, please report any issues you see on the forum.
+
+Also see [Switching build flavors can cause deployment failures](known-issues.md#switching-build-flavors-can-cause-deployment-failures) later on this page.-->
+
+<!--### Game engines
+
+We have tested some popular game engines, but not all of them, and our test coverage for this preview has not been comprehensive. 
+Your mileage may vary. 
+
+The following game engines have been confirmed to work:
 * [Construct 2](https://www.scirra.com/)
 
-D’autres fonctionnent sans doute également. Nous souhaiterions obtenir vos commentaires sur les problèmes que vous rencontrez. 
-Utilisez le forum pour nous faire part de vos difficultés.
+There are likely others that are working too. We would love to get your feedback on what you find. 
+Please use the forum to report any issues you see.-->
 
-### Prise en charge de DirectX 12
+## Prise en charge de DirectX 12
 
-UWP sur Xbox One prend en charge la fonctionnalité DirectX 11 niveau 10. 
-DirectX 12 n’est pas pris en charge pour l’instant. 
-À l’instar de toutes les consoles de jeu traditionnelles, Xbox One est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. 
-Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
+UWP sur Xbox One prend en charge la fonctionnalité DirectX 11 niveau 10. DirectX 12 n’est pas pris en charge pour l’instant. À l’instar de toutes les consoles de jeu traditionnelles, Xbox One est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
 
-### La version préliminaire pour développeurs de Xbox One désactive la diffusion de jeux pour Windows 10
+<!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
-L’activation de la version préliminaire pour développeurs de Xbox One sur votre console vous empêche de diffuser des jeux depuis votre Xbox One vers l’application Xbox sur Windows 10, même si votre console est configurée en mode commercial. Pour restaurer la fonctionnalité de diffusion des jeux, vous devez quitter la version préliminaire pour développeurs.
+Activating the Xbox One Developer Preview on your console will prevent you from streaming games from your Xbox One to the Xbox app on Windows 10, even if your console is set to retail mode. 
+To restore the game streaming feature, you must leave the developer preview. -->
 
-### Problème connu avec la zone adaptée à l’écran de TV
+## Problème connu avec la zone adaptée à l’écran de TV
 
 Par défaut, la zone d’affichage des applications UWP sur Xbox doit être insérée dans la zone adaptée à l’écran de TV. Toutefois, il existe un bogue connu dans la version préliminaire pour développeurs de Xbox One : la zone adaptée à l’écran de TV commence à [0, 0] plutôt qu’à [_décalage_, _décalage_].
 
-Pour plus d’informations sur la zone adaptée à l’écran de TV, voir [https://msdn.microsoft.com/fr-fr/windows/uwp/input-and-devices/designing-for-tv](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv). 
+> **Remarque :** &nbsp;&nbsp;cela s’applique uniquement aux applications UWP qui utilisent Javascript.
 
-La meilleure façon de contourner ce problème consiste à désactiver la zone adaptée à l’écran de TV, comme illustré dans l’exemple JavaScript suivant.
+La meilleure façon de contourner ce problème consiste à désactiver la zone adaptée à l’écran de TV, comme illustré dans l’exemple JavaScript suivant.
 
     var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
 
     applicationView.setDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.useCoreWindow);
 
-### Le mode souris n’est pas encore pris en charge.
+Pour en savoir plus sur cette zone, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv).
 
-Le _mode souris_ décrit dans la rubrique [https://msdn.microsoft.com/fr-fr/windows/uwp/input-and-devices/designing-for-tv] (https://msdn.microsoft.com/fr-fr/windows/uwp/input-and-devices/designing-for-tv?f=255&amp;MSPPError=-2147217396#mouse-mode) n’est pas encore pris en charge par la version préliminaire pour développeurs de Xbox One.
+<!--## System resources for UWP apps and games on Xbox One
 
-## Ressources système pour les applications UWP et les jeux sur Xbox One
-
-Les applications et jeux UWP qui s’exécutent sur Xbox One partagent des ressources avec le système et d’autres applications. Par conséquent, les ressources disponibles pour un jeu ou une application quelconques sont régies par le système. 
-Vos éventuels problèmes de mémoire ou de performances peuvent donc découler de cette situation. 
-Pour plus d’informations, voir [Ressources système pour les applications et jeux UWP sur Xbox One](system-resource-allocation.md).
+UWP apps and games running on Xbox One share resources with the system and other apps, and so the system governs the resources that are available to any one game or app. 
+If you are running into memory or performance issues, this may be why. 
+For more details, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).-->
 
 
 ## Mise en réseau à l’aide de sockets traditionnels
 
-Dans cette version préliminaire pour développeurs, les accès réseau entrants et sortants de la console qui utilisent des sockets TCP/UDP traditionnels (WinSock, Windows.Networking.Sockets) ne sont pas disponibles. 
-Les développeurs peuvent toujours utiliser HTTP et WebSockets. 
+Dans cette version préliminaire pour développeurs, les accès réseau entrants et sortants de la console qui utilisent des sockets TCP/UDP traditionnels (WinSock, Windows.Networking.Sockets) ne sont pas disponibles. Les développeurs peuvent toujours utiliser HTTP et WebSockets. 
 
 
 ## Couverture des API UWP
 
-Les API UWP ne fonctionnent pas toutes comme prévu sur Xbox dans cette version préliminaire. 
-Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). 
-Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
+Les API UWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
 
-## Différences d’aspect et de comportement entre les contrôles XAML et les contrôles de l’interpréteur de commandes Xbox One
+<!--## XAML controls do not look like or behave like the controls in the Xbox One shell
 
-Les contrôles XAML qui figurent dans cette version préliminaire n’apparaissent pas sous leur forme finale. Plus particulièrement :
-* La navigation X-Y par boîtier de commande ne fonctionne pas correctement pour certains contrôles.
-* Les contrôles ne ressemblent pas à ceux de l’interpréteur de commandes Xbox. Cela s’applique notamment au contrôle de rectangle de focus.
-* La navigation entre les différents contrôles ne s’accompagne pas automatiquement d’effets sonores.
+In this developer preview, the XAML controls are not in their final form. In particular:
+* Gamepad X-Y navigation does not work reliably for all controls.
+* Controls do not look like controls in the Xbox shell. This includes the control focus rectangle.
+* Navigating between controls does not automatically make “navigation sounds.”
 
-Ces problèmes seront résolus dans une future version préliminaire pour développeurs.
+These issues will be addressed in a future developer preview.-->
 
-## Problèmes Visual Studio et de déploiement
+<!--## Visual Studio and deployment issues
 
-### L’alternance de configurations de build peut entraîner des problèmes de déploiement
+### Switching build flavors can cause deployment failures
 
-Le fait d’alterner entre des builds de débogage et de mise en production, entre x86 et x64, ou entre des builds managées et natives .Net peut entraîner l’échec des déploiements. 
+Switching between Debug and Release builds, or between x86 and x64, or between Managed and .Net Native builds, can cause deployment failures. 
 
-La solution la plus simple pour éviter ces problèmes dans cette version préliminaire consiste à s’en tenir à la build de débogage et à une seule architecture. 
+The simplest way to avoid these issues for this preview is to stick to Debug and one architecture. 
 
-Si vous rencontrez ce problème, vous pourrez généralement le résoudre en désinstallant votre application dans l’application Collections de votre console Xbox One.
+If you do hit this issue, uninstalling your app in the Collections app on your Xbox One will typically resolve it.
 
-> **Remarque** &nbsp;&nbsp;La désinstallation de votre application à partir de Windows Device Portal (WDP) ne résoudra pas le problème.
+> ****&nbsp;&nbsp;Uninstalling your app from Windows Device Portal (WDP) will not resolve the issue.
 
-Si vos problèmes persistent, désinstallez votre application ou jeu dans l’application Collections, quittez le mode développeur, redémarrez en mode commercial, puis rebasculez en mode développeur.
+If your issues persist, uninstall your app or game in the Collections app, leave Developer Mode, restart to Retail Mode and then switch back to Developer Mode.
+You may also need to restart Visual Studio and clean your solution.
 
-Pour plus d’informations, voir la section « Résolution des problèmes de déploiement » de la rubrique [Forum aux questions](frequently-asked-questions.md).
+For more information, see the “Fixing deployment failures” section in [Frequently asked questions](frequently-asked-questions.md).
 
-### Échec silencieux de la désinstallation d’une application en cours de débogage dans Visual Studio
+### Uninstalling an app while you are debugging it in Visual Studio will cause it to fail silently
 
-Une tentative de désinstallation d’une application en cours d’exécution sous le débogueur par le biais de l’outil WDP « Applications installées » se soldera par un échec silencieux. 
-Vous pouvez contourner le problème en arrêtant le débogage de l’application dans Visual Studio avant d’essayer de supprimer cette application par l’intermédiaire de WDP.
+Attempting to uninstall an app that is running under the debugger via the WDP “Installed Apps” tool will cause it to silently fail. 
+The workaround is to stop debugging the app in Visual Studio before attempting to remove it via WDP.
 
-### Échecs de couplage de code confidentiel Visual Studio/Xbox
+### Visual Studio/Xbox PIN pairing failures
 
-Le couplage de code confidentiel entre Visual Studio et votre console Xbox One peut passer à l’état désynchronisé. 
-Si le couplage de code confidentiel échoue, utilisez le bouton « Supprimer tous les couplages » de l’outil Accueil du développeur, redémarrez Xbox One, redémarrez votre PC de développement, puis réessayez. 
+It is possible to get into a state where the PIN pairing between Visual Studio and your Xbox One gets out of sync. 
+If PIN pairing fails, use the “Remove all pairings” button in Dev Home, restart Xbox One, restart your development PC, and then try again.--> 
 
 
-## Version préliminaire de Windows Device Portal (WDP)
+## Version préliminaire de Windows Device Portal (WDP)
 
-### Blocage de l’outil Accueil du développeur lors du démarrage de WDP à partir de ce dernier
+<!--### Starting WDP from Dev Home crashes Dev Home
 
-Lorsque vous démarrez WDP dans l’outil Accueil du développeur, ce dernier se bloque une fois que vous avez entré votre nom d’utilisateur et votre mot de passe et que vous avez cliqué sur **Enregistrer**. 
-Les informations d’identification sont enregistrées, mais WDP ne démarre pas. 
-Vous pouvez lancer WDP en redémarrant Xbox One. 
+When you start WDP in Dev Home, it will cause Dev Home to crash after you have entered your user name and password and selected **Save**. 
+The credentials are saved but WDP is not started. 
+You can start WDP by restarting Xbox One.--> 
 
-### Désactivation de WDP inopérante dans Accueil du développeur
+<!--### Disabling WDP in Dev Home does not work
 
-Si vous désactivez WDP dans l’outil Accueil du développeur, WDP se désactive. 
-Toutefois, le redémarrage de votre console Xbox One entraînera automatiquement celui de WDP. 
-Vous pouvez contourner ce problème en utilisant **Réinitialiser et conserver mes jeux et applications** pour supprimer tous les états stockés sur votre console Xbox One. 
-Accédez à Paramètres &gt; Système &gt; Informations et mise à jour de la console &gt; Réinitialiser la console, puis sélectionnez le bouton **Réinitialiser et conserver mes jeux et applications**.
+If you disable WDP in Dev Home, it will be turned off. 
+However, when you restart your Xbox One, WDP will be started again. 
+You can work around this issue by using **Reset and keep my games & apps** to delete any stored state on your Xbox One. 
+Go to Settings > System > Console info & updates > Reset console, and then select the **Reset and keep my games & apps** button.
 
-> **Attention** &nbsp;&nbsp;Cette opération supprimera tous les paramètres enregistrés sur votre console Xbox One, notamment les paramètres sans fil, les comptes d’utilisateurs et tous les états d’avancement de jeu non enregistrés dans le stockage cloud.
+> **Caution**&nbsp;&nbsp;Doing this will delete all saved settings on your Xbox One including wireless settings, user accounts and any game progress that has not been saved to cloud storage.
 
-> **Attention** &nbsp;&nbsp;Ne sélectionnez PAS le bouton **Réinitialiser et supprimer tous les éléments**.
-Cette opération supprimera tous vos jeux, applications, paramètres et contenus, désactivera le mode développeur et supprimera votre console du groupe Developer Preview.
+> **Caution**&nbsp;&nbsp;DO NOT select the **Reset and remove everything** button.
+This will delete all of your games, apps, settings and content, deactivate Developer Mode, and remove you console from the Developer Preview group.
 
-### Mise à jour incorrecte des colonnes du tableau « Applications en cours d’exécution » 
+### The columns in the “Running Apps” table do not update predictably. 
 
-Il est parfois possible de résoudre ce problème en effectuant un tri sur une colonne du tableau.
+Sometimes this is resolved by sorting a column on the table.-->
 
-### Affichage incorrect de l’interface utilisateur de WDP dans Internet Explorer 11 
+### Affichage incorrect de l’interface utilisateur de WDP dans Internet Explorer 7 
 
-Par défaut, l’interface utilisateur de WDP ne s’affiche pas correctement dans le navigateur lorsque vous utilisez Internet Explorer 11. 
-Vous pouvez résoudre ce problème en désactivant l’Affichage de compatibilité d’Internet Explorer 11 pour WDP.
+Par défaut, l’interface utilisateur de WDP ne s’affiche pas correctement dans le navigateur lorsque vous utilisez Internet Explorer 7. Vous pouvez résoudre ce problème en désactivant l’Affichage de compatibilité d’Internet Explorer 7 pour WDP.
 
 ### Avertissement de sécurité déclenché par l’accès à WDP
 
-Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. 
-Cliquez sur « Poursuivre sur ce site web » pour accéder à Windows Device Portal.
+Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. Cliquez sur « Poursuivre sur ce site web » pour accéder à Windows Device Portal.
 
 ![Avertissement concernant le certificat de sécurité d’un site web](images/security_cert_warning.jpg)
 
-## Accueil du développeur
+<!--## Dev Home
 
-La sélection de l’option « Gérer Windows Device Portal » dans l’outil Accueil du développeur entraîne parfois une fermeture silencieuse et le réaffichage de l’écran d’accueil de l’outil Accueil du développeur. 
-Ce problème est dû à une défaillance de l’infrastructure WDP sur la console et peut être résolu grâce au redémarrage de la console.
+Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
+This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
 ## Voir aussi
 - [Forum Aux Questions](frequently-asked-questions.md)
 - [UWP sur Xbox One](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

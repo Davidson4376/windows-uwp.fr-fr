@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Explique comment implémenter une propriété jointe XAML en tant que propriété de dépendance et comment définir la convention d’accesseur nécessaire pour que votre propriété jointe soit utilisable en XAML.
-title: Propriétés jointes personnalisées
+description: "Explique comment implémenter une propriété jointe XAML en tant que propriété de dépendance et comment définir la convention d’accesseur nécessaire pour que votre propriété jointe soit utilisable en XAML."
+title: "Propriétés jointes personnalisées"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
+
 ---
 
 # Propriétés jointes personnalisées
@@ -243,6 +247,7 @@ Le code ressemble au pseudo-code suivant :
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

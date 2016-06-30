@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Le Windows Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
-title: Numérotation des versions de packages
+Description: "Le Windows Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation."
+title: "Numérotation des versions de packages"
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
+
 ---
 
 # Numérotation des versions de packages
@@ -77,6 +81,7 @@ Voici quelques exemples de ce qui se passe dans les différents scénarios de mi
 > **Remarque** À la différence des packages .appx, les numéros de version dans les packages .xap ne sont pas pris en compte lors de la détermination du package à fournir à un client donné. Pour mettre à jour un client d’un package .xap vers une version plus récente, veillez à supprimer l’ancien .xap dans la nouvelle soumission.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Si vous rencontrez des erreurs de chargement des packages d’application au cours du processus de soumission d’application, vous devez les corriger avant de soumettre votre application au Windows Store.
-title: Résolution des erreurs de chargement de package
+Description: "Si vous rencontrez des erreurs de chargement des packages d’application au cours du processus de soumission d’application, vous devez les corriger avant de soumettre votre application au Windows Store."
+title: "Résolution des erreurs de chargement de package"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: afd2a08ed637502827e3207702d7659ed70148a0
+
 ---
 
 # Résolution des erreurs de chargement de package
@@ -37,6 +41,7 @@ Sachez en outre que, si votre soumission comprend plusieurs XAP Windows Phone 8
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

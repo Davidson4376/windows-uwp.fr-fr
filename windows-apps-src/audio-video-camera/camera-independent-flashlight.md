@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo.
-title: Lampe torche indépendante de l’appareil photo
+description: "Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo."
+title: "Lampe torche indépendante de l’appareil photo"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
+
 ---
 
 # Lampe torche indépendante de l’appareil photo
@@ -75,6 +79,7 @@ Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [*
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

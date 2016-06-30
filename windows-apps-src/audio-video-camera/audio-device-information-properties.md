@@ -1,14 +1,17 @@
 ---
 author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
-description: Cet article répertorie les propriétés DeviceInformation liées aux appareils audio
-title: Propriétés d’informations des appareils audio
+description: "Cet article répertorie les propriétés DeviceInformation liées aux appareils audio"
+title: "Propriétés d’informations des appareils audio"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b1bcb5b005e82303884c2e096356d5a0f542b1e1
+
 ---
 
 # Propriétés d’informations des appareils audio
 
-Cet article répertorie les propriétés d’informations liées aux appareils audio Sur Windows, chaque périphérique matériel dispose de propriétés [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) fournissant des informations détaillées sur l’appareil. Vous pouvez les consulter lorsque vous avez besoin d’informations spécifiques sur l’appareil ou lorsque vous créez un sélecteur d’appareil. 
-Pour obtenir des informations générales sur l’énumération des appareils sur Windows, voir [**Énumérer les appareils**](../devices-sensors/enumerate-devices.md) et [**Propriétés d’informations d’appareil**](../devices-sensors/device-information-properties.md).
+Cet article répertorie les propriétés d’informations liées aux appareils audio Sur Windows, chaque périphérique matériel dispose de propriétés [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) fournissant des informations détaillées sur l’appareil. Vous pouvez les consulter lorsque vous avez besoin d’informations spécifiques sur l’appareil ou lorsque vous créez un sélecteur d’appareil. Pour obtenir des informations générales sur l’énumération des appareils sur Windows, voir [**Énumérer les appareils**](../devices-sensors/enumerate-devices.md) et [**Propriétés d’informations d’appareil**](../devices-sensors/device-information-properties.md).
 
 
 |Nom|Type|Description|
@@ -27,6 +30,7 @@ Pour obtenir des informations générales sur l’énumération des appareils su
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: Répertorie les pratiques à éviter si vous voulez créer une application de plateforme Windows universelle (UWP) accessible.
+Description: "Répertorie les pratiques à éviter si vous voulez créer une application de plateforme Windows universelle (UWP) accessible."
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
-title: Pratiques d’accessibilité à éviter
+title: "Pratiques d’accessibilité à éviter"
 label: Accessibility practices to avoid
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: b5f5f220d5ff70d70dd797c0bf26a355bd447563
+
 ---
 # Pratiques d’accessibilité à éviter
 
@@ -32,6 +36,7 @@ Répertorie les pratiques à éviter si vous voulez créer une application de pl
 * [Liste de vérification de l’accessibilité](accessibility-checklist.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

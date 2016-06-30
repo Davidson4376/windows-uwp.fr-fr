@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Prise en charge de l’orientation de l’écran (DirectX et C++)
-description: Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10.
+title: "Prise en charge de l’orientation de l’écran (DirectX et C++)"
+description: "Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10."
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8da32494e0bb0bd48d485c946df1c9a5baec7fbe
+
 ---
 
 # Prise en charge de l’orientation de l’écran (DirectX et C++)
@@ -483,7 +487,7 @@ La prochaine fois que vous présenterez la chaîne d’échange, votre image 2D 
 
 Dans l’exemple fourni dans [Optimisation du processus de rotation](#rotation) (et dans l’[exemple de rotation de chaîne d’échange DXGI](http://go.microsoft.com/fwlink/p/?linkid=257600)), nous avons défini une matrice de transformation spécifique pour chaque orientation d’écran possible. Examinons maintenant les matrices pour la rotation de scènes en 3D. Comme précédemment, vous créez un ensemble de matrices pour chacune des quatre orientations possibles. Pour éviter toute erreur d’arrondi et par conséquent les artefacts visuels mineurs, déclarez les matrices de manière explicite dans votre code.
 
-La configuration de ces matrices de rotation 3D s’effectue comme suit. Les matrices illustrées dans l’exemple de code suivant sont des matrices de rotation standard pour des rotations de 0, 90, 180 et 270 degrés des vertex qui définissent des points dans l’espace de scène 3D de la caméra. La valeur de coordonnées [x, y, z] de chaque vertex dans la scène est multipliée par cette matrice de rotation lorsque la projection 2D de la scène est calculée.
+La configuration de ces matrices de rotation 3D s’effectue comme suit. Les matrices illustrées dans l’exemple de code suivant sont des matrices de rotation standard pour des rotations de 0, 90, 180 et 270 degrés des vertex qui définissent des points dans l’espace de scène 3D de la caméra. La valeur de coordonnées \[x, y, z\] de chaque vertex dans la scène est multipliée par cette matrice de rotation lorsque la projection 2D de la scène est calculée.
 
 ```cpp
    
@@ -553,6 +557,7 @@ Désormais, lorsque vous appelez votre méthode de rendu, elle multiplie la matr
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

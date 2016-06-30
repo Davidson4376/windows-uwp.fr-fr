@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Prendre en charge votre application avec des tâches en arrière-plan
-description: Cette section explique comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan.
+author: TylerMSFT
+title: "Prendre en charge votre application avec des tâches en arrière-plan"
+description: "Cette section explique comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan."
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
+
 ---
 
 # Prendre en charge votre application avec des tâches en arrière-plan
@@ -24,7 +27,7 @@ Pour débuter rapidement avec une tâche en arrière-plan, voir [Créer et inscr
 ## Tâches en arrière-plan pour événements système
 
 
-Votre application peut répondre à des événements générés par le système en inscrivant une tâche en arrière-plan à l’aide de la classe [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838). Une application peut utiliser au choix l’un des déclencheurs d’événements système suivants (définis dans [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)).
+Votre application peut répondre à des événements générés par le système en inscrivant une tâche en arrière-plan à l’aide de la classe [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838). Une application peut utiliser au choix l’un des déclencheurs d’événements système suivants (définis dans [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839))
 
 | Nom du déclencheur                     | Description                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -72,7 +75,7 @@ Les déclencheurs en temps réel suivants peuvent être utilisés pour exécuter
 
 **Notifications Push :**les tâches en arrière-plan répondent à l’objet [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) pour recevoir des notifications Push brutes.
 
-**Remarque**  
+**Note**  
 
 Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
 
@@ -151,7 +154,7 @@ Les tâches en arrière-plan peuvent signaler leur progression, leur annulation 
 [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -186,8 +189,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des app
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

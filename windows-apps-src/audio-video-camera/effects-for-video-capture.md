@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo.
-title: Effets de capture vidéo
+description: "Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo."
+title: "Effets de capture vidéo"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
+
 ---
 
 # Effets de capture vidéo
@@ -85,6 +89,7 @@ Pour nettoyer l’effet de stabilisation vidéo, appelez [**ClearEffectsAsync**]
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

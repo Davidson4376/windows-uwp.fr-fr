@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Créer une application « Hello World » (JS)
-description: Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &\#0034;Hello, world&\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10.
+title: "Créer une application « Hello World » (JS)"
+description: "Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &amp;\\#0034;Hello, world&amp;\\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10."
+translationtype: Human Translation
+ms.sourcegitcommit: f3cb50e5b0b0baa73431392a1f6854a62f3655de
+ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
+
 ---
 # Créer une application « Hello World » (JS)
 
@@ -35,13 +39,13 @@ Créons une application intitulée `HelloWorld`. Voici comment procéder :
 
     L’écran d’accueil de Visual Studio 2015 s’affiche.
 
-    (Désormais, nous désignerons Visual Studio 2015 simplement sous le nom Visual Studio.)
+    (Désormais, nous désignerons Visual Studio 2015 simplement sous le nom Visual Studio.)
 
 2.  Dans le menu **Fichier**, sélectionnez **Nouveau** > **Projet**.
 
     La boîte de dialogue **Nouveau projet** s’affiche. Le volet gauche de la boîte de dialogue permet de choisir le type de modèle à afficher.
 
-3.  Dans le volet gauche, développez **Installé > Modèles > JavaScript > Windows**, puis sélectionnez le groupe de modèles **Universel**. Le volet central de la boîte de dialogue affiche une liste de modèles de projets pour les applications de la plateforme Windows universelle (UWP).
+3.  Dans le volet gauche, développez **Installé &gt; Modèles &gt; JavaScript &gt; Windows**, puis sélectionnez le groupe de modèles **Universel**. Le volet central de la boîte de dialogue affiche une liste de modèles de projets pour les applications de la plateforme Windows universelle (UWP).
 
     ![Fenêtre Nouveau projet ](images/js-tut-newproject.png)
 
@@ -56,7 +60,7 @@ Créons une application intitulée `HelloWorld`. Voici comment procéder :
 
     Visual Studio crée votre projet et l’affiche dans l’**Explorateur de solutions**.
 
-    ![Explorateur de solutions Visual Studio pour le projet Hello World](images/js-tut-helloworld.png)
+    ![Explorateur de solutions Visual Studio pour le projet Hello World](images/js-tut-helloworld.png)
 
 Même si le modèle **Application vide** est dépouillé, il contient quelques fichiers :
 
@@ -134,7 +138,7 @@ Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre 
 Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
 **Pour démarrer le débogage sur un émulateur d’appareil mobile**
 
-1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) situé sur la barre d’outils **Standard**, choisissez **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
+1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) situé dans la barre d’outils **Standard**, choisissez **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
 2.  Cliquez sur le bouton **Démarrer le débogage** (![Bouton Démarrer le débogage](images/startdebug-sm.png)) dans la barre d’outils.
 
    –ou–
@@ -176,7 +180,7 @@ Ajoutons du contenu au fichier default.html. Vous devez ajouter votre contenu à
 
 **Pour modifier votre page de démarrage**
 
-1.  Remplacez le contenu existant de l’élément [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) par le titre de premier niveau « Hello, world! », du texte qui demande le nom de l’utilisateur, un élément [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) pour accepter le nom de l’utilisateur, un [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) et un élément [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133). Assignez des ID aux éléments **input**, **button** et **div**.
+1.  Remplacez le contenu existant de l’élément [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) par le titre de premier niveau « Hello, world! », du texte qui demande le nom de l’utilisateur, un élément [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) pour accepter le nom de l’utilisateur, un [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) et un élément [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133). Assignez des ID aux éléments **input**, **button** et **div**.
 
  ```html
     <body class="win-type-body">
@@ -248,7 +252,7 @@ Examinez le reste du code dans default.js. Il gère les événements [**activate
 })();
 ```
 
-Définissons un gestionnaire d’événements pour votre objet [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017). Notre nouveau gestionnaire d’événements obtient le nom de l’utilisateur auprès du contrôle `nameInput`  [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) et l’utilise pour sortir une salutation à destination de l’élément `greetingOutput`  [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) que vous avez créé dans la section précédente.
+Définissons un gestionnaire d’événements pour votre objet [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017). Notre nouveau gestionnaire d’événements obtient le nom de l’utilisateur auprès du contrôle `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) et l’utilise pour sortir une salutation à destination de l’élément `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) que vous avez créé dans la section précédente.
 
 ### Utilisation d’événements qui fonctionnent pour les entrées tactiles, de la souris et du stylet
 
@@ -260,14 +264,14 @@ Poursuivons en créant le gestionnaire d’événements.
 
 **Pour créer le gestionnaire d’événements**
 
-1.  Dans default.js, après le gestionnaire d’événements [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) et avant l’appel à [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705), créez une fonction de gestionnaire d’événements [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) nommée `buttonClickHandler` qui prend un paramètre unique nommé
+1.  Dans default.js, après le gestionnaire d’événements [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) et avant l’appel à [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705), créez une fonction de gestionnaire d’événements [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) nommée `buttonClickHandler` qui prend un paramètre unique nommé `eventInfo`.
 ```javascript
     function buttonClickHandler(eventInfo) {
      
         }
 ```
 
-2.  À l’intérieur du gestionnaire d’événements, récupérez le nom de l’utilisateur à partir du contrôle `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) et servez-vous en pour créer une salutation. Utilisez le contrôle `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) pour afficher le résultat.
+2.  À l’intérieur du gestionnaire d’événements, récupérez le nom de l’utilisateur à partir du contrôle `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) et servez-vous en pour créer une salutation. Utilisez le contrôle `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) pour afficher le résultat.
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -300,7 +304,7 @@ Il ne nous reste plus qu’à inscrire le gestionnaire d’événements avec le 
     };
 ```
 
-À l’intérieur du gestionnaire [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679), le code vérifie le type d’activation qui s’est produit. Il existe différents types d’activation. Par exemple, votre application est activée lorsque l’utilisateur lance votre application et lorsqu’il cherche à ouvrir un fichier associé à votre application. Pour plus d’informations, voir [Cycle de vie de l’application](https://msdn.microsoft.com/library/windows/apps/Mt243287).
+À l’intérieur du gestionnaire [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679), le code vérifie le type d’activation qui s’est produit. Il existe différents types d’activation. Par exemple, votre application est activée lorsque l’utilisateur lance votre application et lorsqu’il cherche à ouvrir un fichier associé à votre application. (Pour plus d’informations, voir [Cycle de vie de l’application](https://msdn.microsoft.com/library/windows/apps/Mt243287).)
 
 Celui qui nous intéresse est l’activation [**launch**](https://msdn.microsoft.com/library/windows/apps/BR224693). Le *lancement* d’une application intervient chaque fois qu’un utilisateur active l’application alors qu’elle n’est pas en cours d’exécution.
 
@@ -414,7 +418,7 @@ En plus des contrôles HTML standard, votre application peut utiliser tout contr
 
 Ajoutons un contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) à votre application.
 
-1.  Dans votre fichier default.html, ajoutez un élément [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) et un contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) après l’élément `greetingOutput`  [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133).
+1.  Dans votre fichier default.html, ajoutez un élément [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) et un contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) après l’élément `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133).
 
     ```html
     <body class="win-type-body">
@@ -548,6 +552,7 @@ Félicitations, vous avez créé votre première application pour Windows 10 et 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

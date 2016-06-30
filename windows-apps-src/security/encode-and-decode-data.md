@@ -1,8 +1,12 @@
 ---
-title: Encoder et décoder des données
-description: Cet exemple de code indique comment encoder et décoder des données base64 et hexadécimales dans une application de plateforme Windows universelle (UWP).
+title: "Encoder et décoder des données"
+description: "Cet exemple de code indique comment encoder et décoder des données base64 et hexadécimales dans une application de plateforme Windows universelle (UWP)."
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: cd70a84e498c390684a59b33ec8a34375e1eb863
+
 ---
 
 # Encoder et décoder des données
@@ -39,6 +43,7 @@ public void EncodeDecodeHex()
 ```
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

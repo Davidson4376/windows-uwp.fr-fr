@@ -2,6 +2,9 @@
 Description: Montre comment convertir manuellement une application de bureau Windows (Win32, WPF, Windows Forms) en une application de plateforme Windows universelle (UWP).
 Search.Product: eADQiWindows 10XVcnh
 title: Convertir manuellement une application de bureau Windows en appli UWP
+ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
+ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
+
 ---
 
 # Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)
@@ -96,6 +99,9 @@ Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot d
 
 - [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 
-<!--HONumber=May16_HO2-->
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

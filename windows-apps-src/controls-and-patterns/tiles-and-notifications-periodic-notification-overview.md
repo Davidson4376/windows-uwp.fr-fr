@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Les notifications périodiques (notifications interrogées) mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud.
-title: Vue d’ensemble des notifications périodiques
+Description: "Les notifications périodiques, également appelées notifications interrogées, mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud."
+title: "Vue d’ensemble des notifications périodiques"
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
+
 ---
 
 # Vue d’ensemble des notifications périodiques
@@ -13,7 +17,7 @@ template: detail.hbs
 
 
 
-Les notifications périodiques (notifications interrogées) mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud. Pour utiliser des notifications périodiques, le code de votre application cliente doit fournir deux éléments d’informations :
+Les notifications périodiques, également appelées notifications interrogées, mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud. Pour utiliser des notifications périodiques, le code de votre application cliente doit fournir deux éléments d’informations :
 
 -   l’URI (Uniform Resource Identifier) d’un emplacement Web que Windows interroge pour mettre à jour les vignettes ou les badges de votre application ;
 -   la fréquence d’interrogation de cet URI.
@@ -84,7 +88,7 @@ Si la file d’attente atteint le nombre maximal de cinq notifications, la nouve
 
 Vous pouvez utiliser la mise en file d’attente des notifications et les balises pour mettre en œuvre toutes sortes de scénarios de notification. Par exemple, une application de cotations boursières peut envoyer cinq notifications, chacune d’elles s’appliquant à une action spécifique et portant une balise du nom de l’action en question. De cette manière, la file d’attente ne peut pas comporter deux notifications pour la même action, avec la plus ancienne des deux qui serait obsolète.
 
-Pour plus d’informations, voir [Utilisation de la file d’attente de notifications (applications Windows Runtime)](https://msdn.microsoft.com/library/windows/apps/hh781199).
+Pour plus d’informations, voir [Utilisation de la file d’attente de notifications](https://msdn.microsoft.com/library/windows/apps/hh781199).
 
 ### <span id="Enabling_the_notification_queue"></span><span id="enabling_the_notification_queue"></span><span id="ENABLING_THE_NOTIFICATION_QUEUE"></span>Activation de la file d’attente de notifications
 
@@ -109,6 +113,7 @@ Vous devez fournir un URI unique pour chaque notification que Windows doit tél�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

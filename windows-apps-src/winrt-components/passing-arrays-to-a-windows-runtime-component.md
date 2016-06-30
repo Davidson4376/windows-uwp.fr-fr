@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: Transmission de tableaux à un composant Windows Runtime
-description: Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie.
+author: msatranjr
+title: "Transmission de tableaux à un composant Windows Runtime"
+description: "Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie."
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
+
 ---
 
 # Transmission de tableaux à un composant Windows Runtime
@@ -10,8 +13,6 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie. Si le contenu du tableau est destiné à l’entrée, la méthode lit dans le tableau mais n’écrit pas dans celui-ci. Si le contenu du tableau est destiné à la sortie, la méthode écrit dans le tableau mais ne lit pas dans celui-ci. Cela pose un problème pour les paramètres de tableau, car les tableaux de .NET Framework sont des types de référence et le contenu d’un tableau est mutable même si la référence du tableau est transmise par valeur (**ByVal** en Visual Basic). L’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requiert de spécifier l’utilisation prévue pour le tableau si elle n’est pas claire d’après le contexte en appliquant l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute au paramètre. L’utilisation du tableau est déterminée comme suit :
 
@@ -40,7 +41,7 @@ Si une méthode doit accepter un tableau pour l’entrée, modifier le contenu d
 >     ' Manipulate the copy.
 >     '   ...
 >     Return output
-> End Function 
+> End Function
 > ```
 
 Nous vous conseillons d’effectuer une copie du tableau d’entrée immédiatement et de manipuler celle-ci. Cela permet de garantir que la méthode se comporte de la même façon que votre composant soit appelé ou non par du code .NET Framework.
@@ -63,6 +64,6 @@ Si l’appelant est du code managé, le tableau d’origine est disponible pour 
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Programmation asynchrone (DirectX et C++)
-description: Cette rubrique traite des divers points à prendre en considération lorsque vous utilisez la programmation asynchrone et les threads avec DirectX.
+description: "Cette rubrique traite des divers points à prendre en considération lorsque vous utilisez la programmation asynchrone et les threads avec DirectX."
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 67a75e9d1324e7ac50e0575bfd7bda870a87efb2
+
 ---
 
 # Programmation asynchrone (DirectX et C++)
@@ -63,6 +67,7 @@ Créez un contexte différé à l’aide de [**ID3D11Device::CreateDeferredConte
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran.
-title: Animations latérales de l’interface utilisateur dans les applications UWP
+Description: "Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran."
+title: "Animations latérales de l’interface utilisateur dans les applications UWP"
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 1be51a8ff4a63f32834c7eb04b70d17dc41de13b
+
 ---
 
 # Animations latérales de l’interface utilisateur
@@ -55,6 +59,7 @@ Les animations latérales affichent ou masquent l’interface utilisateur qui pa
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

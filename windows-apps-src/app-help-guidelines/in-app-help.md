@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: Concevez une aide efficace destinée à s’afficher de manière réactive dans votre application.
-title: Recommandations en matière de conception d’aide dans l’application
+Description: "Concevez une aide efficace destinée à s’afficher de manière réactive dans votre application."
+title: "Recommandations en matière de conception d’aide dans l’application"
 label: In-app help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7edad75b1639768023eb8add1e23fe0aafb0b674
+
 ---
 
 # Pages d’aide dans l’application
@@ -52,6 +56,7 @@ Il peut parfois être utile de fournir un complément d’informations concernan
 * [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

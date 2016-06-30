@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
-description: Utilisez cette méthode dans l’API de collection du Windows Store pour obtenir tous les produits possédés par un client pour les applications associées à votre ID client Azure AD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres.
+description: "Utilisez cette méthode dans l’API de collection du Windows Store pour obtenir tous les produits possédés par un client pour les applications associées à votre ID client Azure AD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres."
 title: Demander des produits
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
+
 ---
 
 # Demander des produits
@@ -19,7 +22,7 @@ Cette méthode est conçue pour être appelée par votre service en réponse à 
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
--   un jeton d’accès Azure AD créé avec l’URI d’audience **https://onestore.microsoft.com** ;
+-   un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
 -   une clé d’ID du Windows Store générée en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) à partir du code côté client de votre application.
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
@@ -30,19 +33,20 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 | Méthode | URI de la requête                                                 |
 |--------|-------------------------------------------------------------|
-| PUBLIER   | https://collections.mp.microsoft.com/v6.0/collections/query |
+| POST   | `https://collections.mp.microsoft.com/v6.0/collections/query` |
 
+<br/>
  
 ### En-tête de requête
 
 | En-tête         | Type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;.                           |
+| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;.                           |
 | Host           | chaîne | Doit être défini sur la valeur **collections.mp.microsoft.com**.                                            |
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
 
- 
+ <br/>
 
 ### Corps de la requête
 
@@ -57,7 +61,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | productTypes      | chaîne       | Si ce paramètre est spécifié, le service retourne uniquement les produits qui correspondent aux types de produit spécifiés. Types de produit pris en charge : **Application**, **Durable** et **UnmanagedConsumable**.                                                                                       | Non       |
 | validityType      | chaîne       | Si ce paramètre est défini sur **All**, tous les produits d’un utilisateur sont retournés, y compris les articles arrivés à expiration. S’il est défini sur **Valid**, seuls les produits qui sont valides à ce stade sont retournés (autrement dit, ils ont un état actif, une date de début &lt; maintenant et une date de fin &gt; maintenant). | Non       |
 
- 
+<br/> 
 
 L’objet UserIdentity contient les paramètres ci-dessous.
 
@@ -67,16 +71,16 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 | identityValue        | chaîne | Valeur chaîne de la clé d’ID du Windows Store.                                                                                                                                                                                    | Oui      |
 | localTicketReference | chaîne | Identificateur demandé pour les produits retournés. Les articles retournés dans le corps de la réponse ont un paramètre *localTicketReference* correspondant. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du Windows Store. | Oui      |
 
- 
+<br/> 
 
 L’objet ProductSkuId contient les paramètres ci-dessous.
 
 | Paramètre | Type   | Description                                                                                                                                                                                                                                                                                                            | Obligatoire |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| productId | chaîne | ID produit du catalogue du Windows Store. Pour obtenir votre ID produit, accédez à votre application dans le tableau de bord du Centre de développement Windows, puis à la page **Gestion des applications**&gt;**Identité des applications**, et récupérez le suffixe de la chaîne indiquée dans le champ **URL de Windows 10**. Exemple d’ID produit : 9WZDNCRFJ3Q8. | Oui      |
+| productId | chaîne | L’ID Windows Store du catalogue du Windows Store. L’ID Windows Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8. | Oui      |
 | skuID     | chaîne | ID de référence du catalogue du Windows Store. Exemple d’ID de référence : 0010.                                                                                                                                                                                                                                                | Oui      |
 
- 
+<br/> 
 
 ### Exemple de requête
 
@@ -120,7 +124,7 @@ Content-Type: application/json
 | continuationToken | chaîne                   | S’il existe plusieurs ensembles de produits, ce jeton est retourné lorsque la limite de la page est atteinte. Vous pouvez spécifier ce jeton de continuation dans les appels ultérieurs pour récupérer les produits restants. | Non       |
 | Éléments             | CollectionItemContractV6 | Tableau de produits de l’utilisateur spécifié.                                                                                                                                               | Non       |
 
- 
+<br/> 
 
 L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 
@@ -138,7 +142,7 @@ L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 | orderId              | chaîne             | Le cas échéant, référence de la commande par le biais de laquelle cet article a été obtenu.                                                                                          | Non       |
 | orderLineItemId      | chaîne             | Le cas échéant, ligne d’article de la commande spécifique dans laquelle cet article a été obtenu.                                                                | Non       |
 | ownershipType        | chaîne             | Chaîne « OwnedByBeneficiary ».                                                                                                                   | Oui      |
-| productId            | chaîne             | ID produit du catalogue du Windows Store. Exemple d’ID produit : 9WZDNCRFJ3Q8.                                                            | Oui      |
+| productId            | chaîne             | L’ID Windows Store pour l’application provenant du catalogue du Windows Store. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8.                                                            | Oui      |
 | productType          | chaîne             | L’un des types de produit suivants : **Application**, **Durable** et **UnmanagedConsumable**.                                                     | Oui      |
 | purchasedCountry     | chaîne             | Non applicable.                                                                                                                                               | Non       |
 | purchaser            | IdentityContractV6 | Le cas échéant, représente l’identité de l’acheteur de l’article. Voir les détails de cet objet ci-dessous.                                      | Non       |
@@ -150,7 +154,7 @@ L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 | Tags                 | chaîne             | Non applicable                                                                                                                                                | Oui      |
 | transactionId        | GUID               | ID de la transaction résultant de l’achat de cet article. Peut être utilisé pour signaler le traitement de la commande d’un article.                                       | Oui      |
 
- 
+<br/> 
 
 L’objet IdentityContractV6 contient les paramètres ci-dessous.
 
@@ -159,7 +163,7 @@ L’objet IdentityContractV6 contient les paramètres ci-dessous.
 | identityType  | chaîne | Contient la valeur **"pub"**.                                                      | Oui      |
 | identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du Windows Store. | Oui      |
 
- 
+<br/> 
 
 ### Exemple de réponse
 
@@ -211,6 +215,7 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [Renouveler une clé d’ID du Windows Store](renew-a-windows-store-id-key.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

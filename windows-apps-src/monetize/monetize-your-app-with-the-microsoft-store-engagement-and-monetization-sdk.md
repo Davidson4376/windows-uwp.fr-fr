@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft fournit des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à générer plus de revenus et à conquérir des clients.
-title: SDK d’engagement et de monétisation de la Boutique Microsoft
+Description: "Le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft fournit des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à générer plus de revenus et à conquérir des clients."
+title: "SDK d’engagement et de monétisation de la Boutique Microsoft"
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
+
 ---
 
 # SDK d’engagement et de monétisation de la Boutique Microsoft
@@ -75,6 +79,7 @@ Les autres bibliothèques du SDK, notamment Microsoft.Advertising.dll pour d’a
 * [Lancer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

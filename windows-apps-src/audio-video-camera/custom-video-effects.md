@@ -1,10 +1,14 @@
 ---
 author: drewbatgit
-Description: 'Cet article explique comment créer un composant Windows Runtime implémentant l’interface IBasicVideoEffect pour créer des effets personnalisés de flux vidéo.'
-MS-HAID: 'dev\_audio\_vid\_camera.custom\_video\_effects'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Cet article explique comment créer un composant Windows Runtime implémentant l’interface IBasicVideoEffect pour créer des effets personnalisés de flux vidéo."
+MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Effets vidéo personnalisés
+title: "Effets vidéo personnalisés"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
+
 ---
 
 # Effets vidéo personnalisés
@@ -242,6 +246,7 @@ Pour obtenir des instructions générales sur la création des compositions mult
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

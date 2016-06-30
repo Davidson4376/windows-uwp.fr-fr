@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-title: Mode Fractionné
+title: "Mode Fractionné"
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-description: Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masqué, ainsi qu’une zone de contenu.
+description: "Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masqué, ainsi qu’une zone de contenu."
 label: Split view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
+
 ---
 
 # Recommandations en matière de contrôles SplitView
@@ -28,11 +32,11 @@ Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masq
 
 -   **Superposé compact (CompactOverlay)**
 
-    Une mince partie du volet est toujours visible à l’état compact dans ce mode, sa largeur étant juste suffisante pour afficher les icônes. Par défaut, la largeur du volet fermé est de 48 pixels et peut être modifiée avec `CompactPaneLength`. Si le volet est ouvert, il se superpose à la zone de contenu.
+    Une mince partie du volet est toujours visible à l’état compact dans ce mode, sa largeur étant juste suffisante pour afficher les icônes. Par défaut, la largeur du volet fermé est de 48 pixels et peut être modifiée avec `CompactPaneLength`. Si le volet est ouvert, il se superpose à la zone de contenu.
 
 -   **CompactInline (Inclus compact)**
 
-    Une mince partie du volet est toujours visible à l’état compact dans ce mode, sa largeur étant juste suffisante pour afficher les icônes. Par défaut, la largeur du volet fermé est de 48 pixels et peut être modifiée avec `CompactPaneLength`. Si le volet est ouvert, l’espace disponible pour le contenu est réduit, le poussant en dehors.
+    Une mince partie du volet est toujours visible à l’état compact dans ce mode, sa largeur étant juste suffisante pour afficher les icônes. Par défaut, la largeur du volet fermé est de 48 pixels et peut être modifiée avec `CompactPaneLength`. Si le volet est ouvert, l’espace disponible pour le contenu est réduit, le poussant en dehors.
 
 ## <span id="Is_this_the_right_control_"></span><span id="is_this_the_right_control_"></span><span id="IS_THIS_THE_RIGHT_CONTROL_"></span>Est-ce le contrôle approprié ?
 
@@ -58,6 +62,7 @@ Par défaut, le contrôle de mode Fractionné correspond à un conteneur de base
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

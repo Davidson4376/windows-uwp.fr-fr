@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Vous pouvez fournir des informations complémentaires sur votre application dans la section Déclarations d’application de la page Propriétés de l’application pendant le processus de soumission.
-title: Déclarations d’application
+Description: "Vous pouvez fournir des informations complémentaires sur votre application dans la section Déclarations d’application de la page Propriétés de l’application pendant le processus de soumission."
+title: "Déclarations d’application"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
+
 ---
 
 # Déclarations d’application
@@ -62,6 +66,7 @@ Si vous voulez empêcher l’insertion des données de votre application dans le
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

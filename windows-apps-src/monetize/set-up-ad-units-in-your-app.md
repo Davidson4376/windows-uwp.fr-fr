@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: Découvrez comment ajouter des valeurs d’ID d’application et d’ID d’unité publicitaire du tableau de bord du Centre de développement Windows à votre application avant de la soumettre au Windows Store.
-title: Configurer des unités publicitaires dans votre application
+description: "Découvrez comment ajouter des valeurs d’ID d’application et d’ID d’unité publicitaire du tableau de bord du Centre de développement Windows à votre application avant de la soumettre au Windows Store."
+title: "Configurer des unités publicitaires dans votre application"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
+
 
 ---
 
@@ -40,6 +44,7 @@ Pour configurer l’ID d’application et les unités publicitaires pour votre a
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Si vous devez fournir un numéro de TVA lors du processus d’inscription au Centre de développement, voici quelques informations pour vous aider à démarrer.
+Description: "Si vous devez fournir un numéro de TVA lors du processus d’inscription au Centre de développement, voici quelques informations pour vous aider à démarrer."
 title: Informations sur la TVA
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4dd91c901ade83e482061bed781e3fdcd9dde141
+
 ---
 
 # Informations sur la TVA
@@ -246,6 +250,7 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP).
-title: Ressources de vignette et d’icône
+Description: "Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP)."
+title: "Ressources de vignette et d’icône"
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
+
 ---
 
 # Recommandations en matière de ressources de vignette et d’icône
@@ -384,6 +388,7 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

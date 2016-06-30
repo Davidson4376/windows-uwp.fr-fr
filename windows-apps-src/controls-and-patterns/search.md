@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
+Description: "L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte."
 title: Recherche et recherche dans la page
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: cd746f81e8cca27c5111f3d15342d1def0f874dc
+
 ---
 
 # Recherche et recherche dans la page
@@ -96,7 +100,7 @@ Le point d’entrée de recherche peut être placé à différents endroits. Son
 
 Dans le cas des listes de défilement, il est utile d’afficher systématiquement les entrées de recherche. Nous vous recommandons de rendre l’entrée de recherche rémanente et de faire défiler le contenu en arrière-plan.
 
-Les fonctionnalités d’entrée nulle et de formulation de requêtes sont facultatives pour les recherches contextuelles/optimales, dans lesquelles la liste est filtrée en temps réel par l’entrée de l’utilisateur. Des exceptions existent, notamment lorsque les suggestions de mise en forme des requêtes sont disponibles, comme les options de filtrage de la boîte de réception (à :&lt;input string&gt;, de : &lt;input string&gt;, objet : &lt;input string&gt;, etc.).
+Les fonctionnalités d’entrée nulle et de formulation de requêtes sont facultatives pour les recherches contextuelles/optimales, dans lesquelles la liste est filtrée en temps réel par l’entrée de l’utilisateur. Des exceptions existent, notamment lorsque les suggestions de mise en forme des requêtes sont disponibles, comme les options de filtrage de la boîte de réception (à :&lt;input string&gt;, de : &lt;input string&gt;, objet : &lt;input string&gt;, etc.).
 
 ## <span id="examples"></span><span id="EXAMPLES"></span>Exemple
 
@@ -216,6 +220,7 @@ Pour plus d’informations sur l’ajout de commandes à votre barre de commande
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Portage DirectX 11 &#58; FAQ
-description: Réponses aux questions fréquemment posées sur le portage de jeux vers la plateforme Windows universelle (UWP).
+description: "Réponses aux questions fréquemment posées sur le portage de jeux vers la plateforme Windows universelle (UWP)."
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dc98f15d80fb70fb6e106555659d699c41fbfa0b
+
 ---
 
 # Portage DirectX 11 &#58; FAQ
@@ -136,6 +140,7 @@ Voir le [mappage des formats de surface](feature-mapping.md#surface-format-mappi
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Gérer l’activation des fichiers
-description: Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier.
+author: TylerMSFT
+title: "Gérer l’activation des fichiers"
+description: "Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier."
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
+
 ---
 
 # Gérer l’activation des fichiers
@@ -150,8 +153,6 @@ Les fichiers que vous recevez peuvent provenir d’une source non approuvée. No
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

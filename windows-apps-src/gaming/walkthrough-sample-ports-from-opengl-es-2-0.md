@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Procédure pas à pas des exemples de portage depuis OpenGL ES 2.0
-description: Cet ensemble de rubriques présente plusieurs scénarios de portage de pipeline graphique OpenGL ES 2.0 de différente complexité.
+title: "Procédure pas à pas des exemples de portage depuis OpenGL ES 2.0"
+description: "Cet ensemble de rubriques présente plusieurs scénarios de portage de pipeline graphique OpenGL ES 2.0 de différente complexité."
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c7fcbcdfc1b0776ac53728fc4f2dc58b6887ab56
+
 ---
 
 # Exemples de portage pas à pas depuis OpenGL ES 2.0
@@ -45,6 +49,7 @@ Cet ensemble de rubriques présente plusieurs scénarios de portage de pipeline 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

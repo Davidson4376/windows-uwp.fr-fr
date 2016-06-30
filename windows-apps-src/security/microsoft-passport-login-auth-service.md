@@ -1,8 +1,12 @@
 ---
-title: Créer un service de connexion Microsoft Passport
-description: Voici la 2e partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10.
+title: "Créer un service de connexion Microsoft Passport"
+description: "Voici la deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10."
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 6fe013a69bad964dafa788efb4e26ba521b3d621
+
 ---
 
 # Créer un service de connexion Microsoft Passport
@@ -23,7 +27,7 @@ Pour créer ce projet, il vous faut connaître C# et XAML. Vous devrez égalemen
 Dans cet exercice, vous commencerez par créer une base de données et un serveur locaux fictifs à l’aide de l’application Passport conçue précédemment. Ces travaux pratiques sont conçus pour apprendre comment Microsoft Passport peut être intégré à un système existant. L’utilisation d’une base de données et d’un serveur fictifs permet de réduire le nombre d’étapes de configuration inutiles. Dans vos propres applications, vous devez remplacer les objets fictifs avec des bases de données et des services réels.
 
 -   Pour commencer, ouvrez la solution PassportLogin à partir du premier atelier de travaux pratiques Passport.
--   Commencez par implémenter la base de données et le serveur fictifs. Créez un dossier appelé AuthService. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution PassportLogin (Windows universelle) et sélectionnez Ajouter > Nouveau dossier.
+-   Commencez par implémenter la base de données et le serveur fictifs. Créez un dossier appelé AuthService. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution PassportLogin (Windows universelle) et sélectionnez Ajouter &gt; Nouveau dossier.
 -   Créez des classes UserAccount et PassportDevices qui feront office de modèles pour les données à enregistrer dans la base de données fictive. UserAccount sera similaire au modèle utilisateur implémenté sur un serveur d’authentification traditionnel. Cliquez avec le bouton droit sur le dossier AuthService, puis ajoutez une nouvelle classe appelée UserAccount.cs.
 
     ![](images/passport-auth-1.png)
@@ -1176,6 +1180,7 @@ Nous avons laissé en guise d’exercice les détails sur la manière d’implé
 * [Microsoft Passport et Windows Hello](microsoft-passport.md)
 * [Application de connexion Microsoft Passport](microsoft-passport-login.md)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

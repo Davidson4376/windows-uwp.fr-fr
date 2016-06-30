@@ -6,8 +6,8 @@ ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: 0f2e95146281fb992af1201c408ed62705c77741
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
 
 ---
 
@@ -29,7 +29,7 @@ ISF constitue la représentation persistante la plus compacte de l’entrée man
 
  
 
-## <span id="Save_ink_strokes_to_a_file"></span><span id="save_ink_strokes_to_a_file"></span><span id="SAVE_INK_STROKES_TO_A_FILE"></span>Enregistrer des traits d’encre dans un fichier
+## Enregistrer des traits d’encre dans un fichier
 
 
 Nous montrons ici comment enregistrer des traits d’encre dessinés sur un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
@@ -161,7 +161,7 @@ Le format GIF est le seul pris en charge pour l’enregistrement des données d�
 
  
 
-## <span id="Load_ink_strokes_from_a_file"></span><span id="load_ink_strokes_from_a_file"></span><span id="LOAD_INK_STROKES_FROM_A_FILE"></span>Charger des traits d’encre à partir d’un fichier
+## Charger des traits d’encre à partir d’un fichier
 
 
 Ici, nous montrons comment charger des traits d’encre à partir d’un fichier et les restituer sur un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
@@ -268,7 +268,7 @@ Le format GIF est le seul pris en charge pour l’enregistrement des données d�
 | Gif                       | Indique les entrées manuscrites qui persistent avec l’utilisation d’un fichier GIF dans lequel la représentation ISF est considérée en tant que métadonnées incorporées au fichier. Ce format permet d’afficher les entrées manuscrites dans des applications qui ne sont pas compatibles avec l’entrée manuscrite, tout en conservant une fidélité totale pour celles qui sont compatibles. Il est idéal pour transporter du contenu d’entrée manuscrite au sein d’un fichier HTML et pour le rendre utilisable par des applications compatibles et non compatibles avec l’entrée manuscrite. |
 | Base64Gif                 | Indique les entrées manuscrites qui persistent en utilisant un format GIF renforcé codé en base 64. Ce format permet de coder directement les entrées manuscrites dans un fichier XML ou HTML afin de les convertir ultérieurement en images. Imaginons, par exemple, un format XML créé pour contenir toutes les informations sur les entrées manuscrites et utilisé comme moyen pour générer du HTML via le langage XSLT (Extensible Stylesheet Language Transformations). 
 
-## <span id="Copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD"></span>Copier et coller des traits d’encre avec le Presse-papiers
+## Copier et coller des traits d’encre avec le Presse-papiers
 
 
 Ici, nous montrons comment utiliser le Presse-papiers pour transférer des traits d’encre entre applications.
@@ -426,7 +426,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 * [Interactions avec le stylo et le stylet](pen-and-stylus-interactions.md)
 
@@ -444,6 +444,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

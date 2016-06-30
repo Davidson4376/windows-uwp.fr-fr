@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
-description: Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs.
-title: Obtenir les données de rapport d’erreurs
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs."
+title: "Obtenir les données de rapport d’erreurs"
+ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
+ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
+
 ---
 
 # Obtenir les données de rapport d’erreurs
@@ -38,7 +41,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
 
  
 
@@ -63,7 +66,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">chaîne</td>
-<td align="left">ID produit de l’application pour laquelle vous souhaitez récupérer des données de rapport d’erreurs. L’ID produit est intégré dans le lien de la description de l’application, disponible dans la [page Identité des applications](https://msdn.microsoft.com/library/windows/apps/mt148561) du tableau de bord du Centre de développement. Exemple d’ID produit : 9WZDNCRFJ3Q8.</td>
+<td align="left">L’ID Windows Store de l’application pour laquelle vous souhaitez récupérer les données de rapport d’erreur. L’ID Windows Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="even">
@@ -99,7 +102,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="odd">
 <td align="left">aggregationLevel</td>
 <td align="left">chaîne</td>
-<td align="left">Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. Si vous spécifiez <strong>week</strong> ou <strong>month</strong>, les valeurs <em>failureName</em> et <em>failureHash</em> sont limitées à 1 000 compartiments.</td>
+<td align="left">Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. Si vous spécifiez <strong>week</strong> ou <strong>month</strong>, les valeurs <em>failureName</em> et <em>failureHash</em> sont limitées à 1 000 compartiments.</td>
 <td align="left">Non</td>
 </tr>
 <tr class="even">
@@ -117,7 +120,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <li><strong>packageName</strong></li>
 <li><strong>packageVersion</strong></li>
 </ul>
-<p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p>
+<p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p>
 <ul>
 <li><strong>date</strong></li>
 <li><strong>applicationId</strong></li>
@@ -125,13 +128,13 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <li><strong>deviceCount</strong></li>
 <li><strong>eventCount</strong></li>
 </ul>
-<p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Exemple : <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></td>
+<p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Exemple : <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">orderby</td>
 <td align="left">chaîne</td>
-<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque acquisition. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
+<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque acquisition. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
 <ul>
 <li><strong>date</strong></li>
 <li><strong>failureName</strong></li>
@@ -145,7 +148,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <li><strong>packageVersion</strong></li>
 </ul>
 <p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p>
-<p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
+<p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
 <td align="left">Non</td>
 </tr>
 </tbody>
@@ -242,7 +245,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 
 ### Exemple de requête
 
-Les exemples suivants fournissent font figurer plusieurs requêtes de récupération des données de rapport d’erreurs. Remplacez la valeur *applicationId* par l’ID produit de votre application.
+Les exemples suivants fournissent font figurer plusieurs requêtes de récupération des données de rapport d’erreurs. Remplacez la valeur *applicationId* par l’ID Windows Store de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -271,7 +274,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 | Valeur           | Type    | Description                                                                                                                                                                                                                              |
 |-----------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date            | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
-| applicationId   | chaîne  | L’ID produit de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
+| applicationId   | chaîne  | L’ID Windows Store de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
 | applicationName | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
 | failureName     | chaîne  | Le nom de l’erreur.                                                                                                                                                                                                                 |
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.                                                                                                                                                                                                   |
@@ -326,6 +329,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir les avis sur les applications](get-app-reviews.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

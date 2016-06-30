@@ -5,8 +5,8 @@ title: Mouvement panoramique
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 7aafb0bbef2a33f926f76e41c26dd0f6920de274
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 45a2d3cb8cd1db1b138d62b7d6525ed7077207b0
 
 ---
 
@@ -21,7 +21,7 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
 
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
+## Pratiques conseillées et déconseillées
 
 
 **Indicateurs de mouvement panoramique et barres de défilement**
@@ -72,7 +72,7 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
     ![image d’une zone de mouvement panoramique qui défile dans la même direction que son conteneur.](images/scrolling-embedded3.png)
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
+## Indications d’utilisation supplémentaires
 
 
 Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. À moins qu’une distinction ne soit établie dans une API ou nécessaire pour une interface utilisateur propre à un appareil Windows, nous utilisons le mouvement panoramique pour faire référence aux deux interactions.
@@ -162,7 +162,7 @@ Si la surface est insuffisante, comme dans le schéma suivant, la région de mou
 
 Ces recommandations s’avèrent utiles pour des applications telles que les albums photo ou les applications de mappage qui prennent en charge en même temps le mouvement panoramique libre dans chaque image et le mouvement panoramique sur un seul axe dans l’album (vers les images précédentes ou suivantes) ou la zone de détails. Dans les applications qui fournissent une zone de détails ou d’options correspondant à une image de défilement libre ou carte, nous recommandons que la disposition de la page commence avec la même zone de détails et d’options. En effet, la zone de défilement libre de l’image ou carte peut interférer avec le mouvement panoramique vers la zone de détails.
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 
 * [Interactions utilisateur personnalisées](https://msdn.microsoft.com/library/windows/apps/mt185599)
@@ -194,6 +194,6 @@ Ces recommandations s’avèrent utiles pour des applications telles que les alb
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

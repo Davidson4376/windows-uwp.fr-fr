@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Les contrôles de date et heure vous permettent d’afficher et de définir la date et l’heure. Cet article fournit des recommandations en matière de conception et vous permet de sélectionner le contrôle approprié.
-title: Recommandations en matière de contrôles de date et d’heure
+Description: "Les contrôles de date et heure vous permettent d’afficher et de définir la date et l’heure. Cet article fournit des recommandations en matière de conception et vous permet de sélectionner le contrôle approprié."
+title: "Recommandations en matière de contrôles de date et d’heure"
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
+
 ---
 
 # Contrôles de calendrier, de date et d’heure
@@ -110,6 +114,7 @@ Un concept associé est la classe Calendar qui influence l’interprétation des
 - [**Classe TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

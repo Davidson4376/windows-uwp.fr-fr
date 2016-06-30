@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Exécuter une tâche en arrière-plan en fonction d’un minuteur
-description: Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique.
+author: TylerMSFT
+title: "Exécuter une tâche en arrière-plan en fonction d’un minuteur"
+description: "Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique."
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
+
 ---
 
 # Exécuter une tâche en arrière-plan en fonction d’un minuteur
@@ -25,9 +28,9 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 ## Créer un déclencheur de temps
 
 
--   Créez un [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Le second paramètre, *OneShot*, indique si la tâche en arrière-plan s’exécute une seule fois ou régulièrement. Si *OneShot* a la valeur True, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* a la valeur False, *FreshnessTime* indique la fréquence à laquelle la tâche en arrière-plan s’exécute.
+-   Créez un [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Le second paramètre, *OneShot*, indique si la tâche en arrière-plan s’exécute une seule fois ou régulièrement. Si *OneShot* a la valeur True, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* est défini sur false, *FreshnessTime* indique la fréquence d’exécution de la tâche en arrière-plan.
 
-    Le minuteur intégré pour les applications de plateforme Windows universelle (UWP) exécute des tâches en arrière-plan par intervalles de 15 minutes.
+    Le minuteur intégré pour les applications de plateforme Windows universelle (UWP) qui ciblent les appareils mobiles ou de bureau exécute des tâches en arrière-plan par intervalles de 15 minutes.
 
     -   Si *FreshnessTime* indique une fréquence de 15 minutes et si *OneShot* a la valeur True, la tâche sera exécutée une seule fois entre 0 et 15 minutes à partir du moment où elle sera inscrite.
 
@@ -86,19 +89,19 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Example hourly background task";
-    > 
+    >
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     > ```cpp
     > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > String ^ taskName   = "Example hourly background task";
-    > 
+    >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
-    
+
     > **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-   
+
 ## Remarques
 
 > **Remarque** Depuis Windows 10, il n’est plus nécessaire pour l’utilisateur d’ajouter votre application à l’écran de verrouillage pour utiliser des tâches en arrière-plan. Pour obtenir des indications sur les types de déclencheur de tâche en arrière-plan, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
@@ -129,8 +132,6 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

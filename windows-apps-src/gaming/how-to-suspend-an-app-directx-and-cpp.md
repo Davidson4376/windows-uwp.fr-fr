@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Comment suspendre une application (DirectX et C++)
-description: Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme UWP.
+description: "Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme UWP."
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 38e03a4a6312c5a0521c7263944897260624aa38
+
 ---
 
 # Comment suspendre une application (DirectX et C++)
@@ -150,6 +154,7 @@ Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

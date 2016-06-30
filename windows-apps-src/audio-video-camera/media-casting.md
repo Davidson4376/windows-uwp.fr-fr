@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
-title: Diffusion multimédia
+description: "Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle."
+title: "Diffusion multimédia"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
+
 ---
 
 # Diffusion multimédia
@@ -151,6 +155,7 @@ Enfin, implémentez le gestionnaire pour le bouton de déconnexion. Arrêtez la 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

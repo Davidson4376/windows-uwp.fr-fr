@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: Découvrez comment installer les bibliothèques de publicités Microsoft.
-title: Installer les bibliothèques de publicités Microsoft
+description: "Découvrez comment installer les bibliothèques de publicités Microsoft."
+title: "Installer les bibliothèques de publicités Microsoft"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
+
 
 ---
 
@@ -91,6 +95,7 @@ Pour pouvoir utiliser les contrôles de publicité dans le code de votre applica
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

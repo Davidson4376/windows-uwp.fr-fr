@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Pour comprendre vos considérations fiscales pour la sélection des prix, les implications de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous.
+Description: "Pour comprendre vos considérations fiscales pour la sélection des prix, les implications de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous."
 title: Informations fiscales pour les applications payantes
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
+ms.sourcegitcommit: a59d999ac36e04fbfa53d5b8992b235bff2d3818
+ms.openlocfilehash: 364608e1452ddff7aae261bb0f29ec14ee4fb0a3
+
 ---
 
 # Informations fiscales pour les applications payantes
@@ -83,7 +86,7 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 | Géorgie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Allemagne                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 19% de taxe) | Microsoft          |
 | Ghana                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
-| Grèce                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 23% de taxe) | Microsoft          |
+| Grèce                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 24% de taxe) | Microsoft          |
 | Groenland                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Grenade                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Guatemala                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countries-regions) | 70 % du prix sélectionné                 | Développeur          |
@@ -157,7 +160,7 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 | Philippines                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countries-regions)                                                                  | 70 % du prix sélectionné                 | Développeur          |
 | Pologne                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 23% de taxe) | Microsoft          |
 | Portugal                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 23% de taxe) | Microsoft          |
-| Puerto Rico                      | Les taxes sont ajoutées au prix sélectionné. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countries-regions)                                                                                                     | 70 % du prix sélectionné                 | Développeur          |
+| Puerto Rico                      | Les taxes sont ajoutées au prix sélectionné. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countries-regions)                                                                                                     | 70 % du prix sélectionné                 | Microsoft          |
 | Qatar                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Roumanie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 24% de taxe) | Microsoft          |
 | Russie                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
@@ -278,6 +281,7 @@ Chaque ligne du rapport contient la date et l’heure de la transaction et, le c
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

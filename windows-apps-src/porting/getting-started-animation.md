@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: Prise en main de l’application Animation
+title: "Prise en main de l’application Animation"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher.
+description: "Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher."
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
+
 ---
 
 # Prise en main &#58; Animation
@@ -126,6 +130,7 @@ Vous pouvez modifier ce code XAML manuellement, ou retourner à Blend pour conti
 [Prise en main : Et ensuite ?](getting-started-what-next.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

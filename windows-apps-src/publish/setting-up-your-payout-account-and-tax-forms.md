@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires.
-title: Configuration de votre compte de revenu et de vos déclarations fiscales
+Description: "Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires."
+title: "Configuration de votre compte de revenu et de vos déclarations fiscales"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
+ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
+ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
+
 ---
 
 # Configuration de votre compte de revenu et de vos déclarations fiscales
@@ -14,7 +17,7 @@ Afin de recevoir l’argent provenant des ventes d’applications dans le Window
 
 Si vous envisagez de référencer uniquement des applications gratuites (et que vous ne voulez pas proposer d’achats in-app ou utiliser Microsoft Advertising), vous n’avez pas besoin de configurer de compte de revenu ni de remplir de déclaration fiscale. Si vous changez d’avis par la suite et décidez de vendre des applications (ou de proposer des produits in-app), vous pourrez alors configurer votre compte de revenu et remplir vos déclarations fiscales à ce moment-là. Vous ne pourrez pas soumettre d’applications payées ou de produits in-app avant d’avoir créé votre compte de revenu et votre profil fiscal.
 
-> **Remarque** [Certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) vous autorisent uniquement à référencer des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de revenu.
+> **Remarque** Sur [certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), les développeurs peuvent uniquement soumettre des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de revenu.
 
 
 Après avoir [configuré votre compte de développeur](opening-a-developer-account.md), vous devez effectuer deux opérations avant de pouvoir vendre des applications (ou des produits in-app) dans le Windows Store :
@@ -155,6 +158,7 @@ Si vous résidez en dehors des États-Unis, vous pouvez tirer parti d’avantage
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

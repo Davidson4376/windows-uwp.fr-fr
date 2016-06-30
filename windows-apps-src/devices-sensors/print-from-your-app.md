@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
-title: Imprimer à partir de votre application
-description: Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques.
+title: "Imprimer à partir de votre application"
+description: "Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques."
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: 363c19cfc15a883c4b6d951c59c63187f4239dec
+
 ---
 # Imprimer à partir de votre application
 
@@ -114,7 +118,7 @@ Dans cet exemple, une fenêtre d’impression s’affiche dans le gestionnaire d
 
 ## Mettre en forme le contenu de votre application
 
-Lors de l’appel de **ShowPrintUIAsync**, l’événement [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) est déclenché. Le gestionnaire d’événements **PrintTaskRequested** présenté dans cette étape crée une classe [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436) en appelant la méthode [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436request_createprinttask) et transmet le titre de la page d’impression et le nom d’un délégué [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source). Notez que dans cet exemple, le délégué **PrintTaskSourceRequestedHandler** est défini inline. Le délégué **PrintTaskSourceRequestedHandler**, qui fournit le contenu mis en forme pour l’impression, est décrit plus tard.
+Lors de l’appel de **ShowPrintUIAsync**, l’événement [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) est déclenché. Le gestionnaire d’événements **PrintTaskRequested** présenté dans cette étape crée une classe [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436) en appelant la méthode [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx) et transmet le titre de la page d’impression et le nom d’un délégué [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source). Notez que dans cet exemple, le délégué **PrintTaskSourceRequestedHandler** est défini inline. Le délégué **PrintTaskSourceRequestedHandler**, qui fournit le contenu mis en forme pour l’impression, est décrit plus tard.
 
 Dans cet exemple, un gestionnaire d’achèvement est également défini pour déceler les erreurs. La gestion des événements d’achèvement est recommandée ; de cette façon, votre application peut informer l’utilisateur en cas d’erreur et fournir des solutions possibles. De même, votre application peut utiliser l’événement d’achèvement pour indiquer à l’utilisateur les prochaines étapes à suivre une fois le travail d’impression terminé.
 
@@ -378,6 +382,7 @@ Si vous imprimez un sous-ensemble de pages, plusieurs options s’offrent à vou
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

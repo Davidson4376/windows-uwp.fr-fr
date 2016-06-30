@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément LongListSelector.
-title: Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2
+description: "Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément LongListSelector."
+title: "Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
+
 ---
 
 # Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP &#58; Bookstore2
@@ -261,12 +265,12 @@ Application Windows 10 portée, exécutée sur un appareil mobile (vue avec zoo
 
 ## Optimisation de la flexibilité du modèle d’affichage
 
-Cette section contient un exemple illustrant les fonctions qui s’offrent à nous suite au déplacement de notre application dans le but d’utiliser UWP. Nous décrivons ici certaines étapes facultatives que vous pouvez effectuer pour optimiser la flexibilité de votre modèle d’affichage en cas d’accès par le biais d’un élément **CollectionViewSource**. Le modèle d’affichage (dont le fichier source se trouve à l’emplacement ViewModel\BookstoreViewModel.cs) porté à partir de l’application Silverlight pour Windows Phone appelée Bookstore2WPSL8 contient une classe nommée « Author », dérivée de **List&lt;T&gt;**, dans laquelle l’élément **T** a pour valeur BookSku. Cela signifie que la classe Author *est* un groupe associé à BookSku.
+Cette section contient un exemple illustrant les fonctions qui s’offrent à nous suite au déplacement de notre application dans le but d’utiliser UWP. Nous décrivons ici certaines étapes facultatives que vous pouvez effectuer pour optimiser la flexibilité de votre modèle d’affichage en cas d’accès par le biais d’un élément **CollectionViewSource**. Le modèle d’affichage (dont le fichier source se trouve à l’emplacement ViewModel\BookstoreViewModel.cs) porté à partir de l’application Silverlight pour Windows Phone appelée Bookstore2WPSL8 contient une classe nommée « Author », dérivée de **List&lt;T&gt;**, dans laquelle l’élément **T** a pour valeur BookSku. Cela signifie que la classe Author *est* un groupe associé à BookSku.
 
 Lorsque nous lions l’élément **CollectionViewSource.Source** à « Authors », nous signalons simplement que chaque auteur de la liste d’auteurs est un groupe d’*éléments quelconques*. Nous laissons à l’élément **CollectionViewSource** le soin de déterminer que la classe Author est, en l’occurrence, un groupe associé à BookSku. Cela fonctionne, mais peut s’avérer rigide. Que se passe-t-il si nous voulons que la classe Author corresponde *aussi bien* à un groupe de BookSku *qu’à* un groupe d’adresses géographiques correspondant aux lieux où l’auteur a vécu ? La classe Author ne peut pas *correspondre* à ces deux groupes. En revanche, elle peut *inclure* autant de groupes que vous le souhaitez. La solution est là : utilisons le modèle *has-a-group* à la place (ou en plus) du modèle *is-a-group* que nous avons appliqué jusqu’à présent. Voici comment procéder :
 
 -   Modifiez la classe Author afin qu’elle ne dérive plus de l’élément **List&lt;T&gt;**.
--   Ajoutez ce champ à la classe Author : `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
+-   Ajoutez ce champ à la classe Author : `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
 -   Ajoutez cette propriété à la classe Author : `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
 -   Bien entendu, nous pouvons répéter ces deux étapes de manière à ajouter autant de groupes que nous le voulons.
 -   Remplacez l’implémentation de la méthode AddBookSku par `this.BookSkus.Add(bookSku);`.
@@ -297,6 +301,7 @@ Nous pouvons désormais décider de supprimer l’élément `ItemsPath="BookSkus
 Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. L’ensemble des fonctions et concepts de l’élément  **LongListSelector** de l’application Silverlight pour Windows Phone et d’autres informations utiles se sont révélés disponibles pour une application UWP, sous la forme d’éléments **SemanticZoom**, **ListView**, **GridView** et **CollectionViewSource**. Nous vous avons montré comment réutiliser (ou copier et modifier) le code impératif et le balisage dans une application UWP, afin d’obtenir les fonctionnalités, l’interface utilisateur et les interactions adaptées à tous les facteurs de forme des appareils Windows, des plus étroits aux plus larges, en passant par toutes les tailles intermédiaires.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

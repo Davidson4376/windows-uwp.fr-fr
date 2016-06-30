@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: Placez les ressources de type chaîne de votre interface utilisateur dans des fichiers de ressources. Vous pouvez ensuite référencer ces chaînes dans votre code ou votre balisage.
-title: Placer des chaînes d’interface utilisateur dans des ressources
+Description: "Placez les ressources de type chaîne de votre interface utilisateur dans des fichiers de ressources. Vous pouvez ensuite référencer ces chaînes dans votre code ou votre balisage."
+title: "Placer des chaînes d’interface utilisateur dans des ressources"
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
+
 ---
 
 # Placer des chaînes d’interface utilisateur dans des ressources
@@ -32,7 +36,7 @@ Cette rubrique décrit la procédure requise pour ajouter plusieurs ressources d
 3.  Créez un dossier destiné à contenir les fichiers de ressources.
     1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet (projet partagé si votre solution contient plusieurs projets) et sélectionnez **Ajouter**&gt;**Nouveau dossier**.
     2.  Nommez le nouveau dossier « Strings ».
-    3.  Si le nouveau dossier n’apparaît pas dans l’Explorateur de solutions, sélectionnez **Projet**&gt;**Afficher tous les fichiers** dans le menu Microsoft Visual Studio en veillant à ce que le projet soit toujours sélectionné.
+    3.  Si le nouveau dossier n’apparaît pas dans l’Explorateur de solutions, sélectionnez **Projet**&gt;**Afficher tous les fichiers** dans le menu Microsoft Visual Studio en veillant à ce que le projet soit toujours sélectionné.
 
 4.  Créez un sous-dossier et un fichier de ressources pour l’anglais (États-Unis).
     1.  Cliquez avec le bouton droit sur le dossier Strings et ajoutez un dossier sous celui-ci. Nommez-le « en-US ». Le fichier de ressources doit être placé dans un dossier qui a été nommé pour la balise de langue [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Pour obtenir plus de détails sur le qualificateur de langue ainsi qu’une liste des balises de langue usuelles, voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
@@ -41,12 +45,12 @@ Cette rubrique décrit la procédure requise pour ajouter plusieurs ressources d
         <br>**HTML :** sélectionnez Resources File (.resjson).
 
     4.  Cliquez sur **Ajouter**. Un fichier de ressources est ajouté avec le nom par défaut Resources.resw (pour **XAML**) ou resources.rejson (pour **HTML**). Nous vous recommandons d’utiliser ce nom de fichier par défaut. Les applications peuvent partitionner leurs ressources dans d’autres fichiers. Toutefois, elles doivent y faire référence correctement (voir [Comment charger des ressources de type chaîne](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
-    5.  **XAML uniquement : **si vous disposez de fichiers .resx contenant uniquement des ressources de type chaîne provenant de précédents projets .NET, sélectionnez **Ajouter**&gt;**Élément existant...**, ajoutez le fichier .resx, puis renommez-le avec l’extension .resw.
+    5.  **XAML uniquement :**si vous disposez de fichiers .resx contenant uniquement des ressources de type chaîne provenant de précédents projets .NET, sélectionnez **Ajouter**&gt;**Élément existant...**, ajoutez le fichier .resx, puis renommez-le avec l’extension .resw.
     6.  Ouvrez le fichier et utilisez l’éditeur pour ajouter les ressources suivantes :
 
         **XAML :**
 
-        Strings/en-US/Resources.resw ![add resource, english](images/addresource-en-us.png) Dans cet exemple, « Greeting.Text » et « Farewell » identifient les chaînes qui doivent être affichées. « Greeting.Width » identifie la propriété Width de la chaîne « Greeting ». Les commentaires permettent de donner des instructions particulières aux traducteurs qui localisent les chaînes dans d’autres langues.
+        Strings/en-US/Resources.resw ![add resource, english](images/addresource-en-us.png) Dans cet exemple, « Greeting.Text » et « Farewell » identifient les chaînes qui doivent être affichées. « Greeting.Width » identifie la propriété Width de la chaîne « Greeting ». Les commentaires permettent de donner des instructions particulières aux traducteurs qui localisent les chaînes dans d’autres langues.
 
         **HTML :**
 
@@ -198,7 +202,7 @@ auto str = loader->GetString("Farewell");
     **XAML :**
 
     strings/fr-FR/Resources.resw ![ajouter une ressource, pour le français](images/addresource-fr-fr.png)
-    **HTML :**
+    **HTML :**
 
     strings/fr-FR/resources.resjson
 
@@ -244,6 +248,7 @@ Testez l’application avec les autres langues.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

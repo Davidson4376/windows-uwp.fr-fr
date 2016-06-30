@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Aidez les utilisateurs à accroître leur productivité en leur permettant d’afficher plusieurs parties indépendantes de votre application dans des fenêtres distinctes.
-title: Afficher plusieurs vues d’une application
+Description: "Aidez les utilisateurs à accroître leur productivité en leur permettant d’afficher plusieurs parties indépendantes de votre application dans des fenêtres distinctes."
+title: "Afficher plusieurs vues d’une application"
 ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 23e999f86fb0552b96cddbd3b9d11803106bf6c2
+
 ---
 
 # Afficher plusieurs vues d’une application
@@ -181,6 +185,7 @@ Lorsque vous utilisez [**SwitchAsync**](https://msdn.microsoft.com/library/windo
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

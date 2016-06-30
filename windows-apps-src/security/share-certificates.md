@@ -1,8 +1,12 @@
 ---
 title: Partager des certificats entre applications
-description: Les applications UWP qui nécessitent une authentification sécurisée au-delà d’une combinaison identifiant utilisateur et mot de passe peuvent utiliser des certificats à des fins d’authentification.
+description: "Les applications UWP qui nécessitent une authentification sécurisée au-delà d’une combinaison identifiant utilisateur et mot de passe peuvent utiliser des certificats à des fins d’authentification."
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
+
 ---
 
 # Partager des certificats entre applications
@@ -53,10 +57,10 @@ Cet article utilise Microsoft Internet Information Services (IIS) à titre d’e
 1.  Exécutez le **Gestionnaire des services Internet (IIS)**.
 2.  Développez les sites pour votre serveur IIS. Sous **Site Web par défaut**, sélectionnez le nouveau service web « FirstContosoBank ». Dans la section **Actions**, sélectionnez **Paramètres avancés**.
 3.  Choisissez **.NET v2.0** comme **Pool d’applications**, puis cliquez sur **OK**.
-4.  Dans le **Gestionnaire des services Internet (IIS)**, sélectionnez votre serveur IIS, puis double-cliquez sur **Certificats de serveur**. Dans la section **Actions**, sélectionnez **Créer un certificat auto-signé**. Entrez « ContosoBank » comme nom convivial pour le certificat, puis cliquez sur **OK**. Un certificat est alors créé au format « &lt;nom-serveur&gt;.&lt;nom-domaine&gt; » pour le serveur IIS.
-5.  Dans le **Gestionnaire des services Internet (IIS)**, sélectionnez le site web par défaut. Dans la section **Actions**, sélectionnez **Liaison**, puis cliquez sur **Ajouter**. Sélectionnez « https » comme type, affectez au port la valeur « 443 », puis entrez le nom d’hôte complet de votre serveur IIS (« &lt;nom-serveur&gt;.&lt;nom-domaine&gt; »). Définissez « ContosoBank » comme certificat SSL. Cliquez sur **OK**. Cliquez sur **Fermer** dans la fenêtre **Liaisons de sites**.
+4.  Dans le **Gestionnaire des services Internet (IIS)**, sélectionnez votre serveur IIS, puis double-cliquez sur **Certificats de serveur**. Dans la section **Actions**, sélectionnez **Créer un certificat auto-signé**. Entrez « ContosoBank » comme nom convivial pour le certificat, puis cliquez sur **OK**. Un certificat est alors créé au format « &lt;nom-serveur&gt;.&lt;nom-domaine&gt; » pour le serveur IIS.
+5.  Dans le **Gestionnaire des services Internet (IIS)**, sélectionnez le site web par défaut. Dans la section **Actions**, sélectionnez **Liaison**, puis cliquez sur **Ajouter**. Sélectionnez « https » comme type, affectez au port la valeur « 443 », puis entrez le nom d’hôte complet de votre serveur IIS (« &lt;nom-serveur&gt;.&lt;nom-domaine&gt; »). Définissez « ContosoBank » comme certificat SSL. Cliquez sur **OK**. Cliquez sur **Fermer** dans la fenêtre **Liaisons de sites**.
 6.  Dans le **Gestionnaire des services Internet (IIS)**, sélectionnez le service web « FirstContosoBank ». Double-cliquez sur **Paramètres SSL**. Cochez **Exiger SSL**. Sous **Certificats clients**, sélectionnez **Demander**. Dans la section **Actions**, sélectionnez **Appliquer**.
-7.  Pour vérifier que le service Web est configuré correctement, ouvrez votre navigateur et entrez l’adresse Web suivante : « https://&lt;nom-serveur&gt;.&lt;nom-domaine&gt;/FirstContosoBank/Service1.asmx ». Par exemple, « https://myserver.example.com/FirstContosoBank/Service1.asmx ». Si votre service web est correctement configuré, vous êtes invité à sélectionner un certificat client pour accéder au service web.
+7.  Pour vérifier que le service Web est configuré correctement, ouvrez votre navigateur et entrez l’adresse Web suivante : « https://&lt;nom-serveur&gt;.&lt;nom-domaine&gt;/FirstContosoBank/Service1.asmx ». Par exemple, « https://myserver.example.com/FirstContosoBank/Service1.asmx ». Si votre service web est correctement configuré, vous êtes invité à sélectionner un certificat client pour accéder au service web.
 
 Vous pouvez répéter les étapes précédentes pour créer plusieurs services Web accessibles à l’aide du même certificat client.
 
@@ -200,6 +204,7 @@ Si aucun certificat client n’est disponible, l’utilisateur doit ajouter un c
 
 Vous pouvez utiliser ces étapes pour créer plusieurs applications utilisant le même certificat utilisateur pour accéder à des services web sécurisés identiques ou différents.
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

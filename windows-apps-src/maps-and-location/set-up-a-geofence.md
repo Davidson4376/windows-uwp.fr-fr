@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: Configurer une clôture virtuelle
-description: Configurez une Geofence dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
+title: "Configurer une clôture virtuelle"
+description: "Configurez une Geofence dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan."
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: e161e478b1b306f5d8d77b7649aeecd80e21b5be
+
 ---
 
 # Configurer une clôture virtuelle
@@ -298,15 +302,15 @@ Pour écouter un événement de limite géographique en arrière-plan
 
 ### Étape 1 : s’inscrire aux événements de changement d’état de limite géographique
 
-Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour ce faire :
+Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour ce faire :
 
 -   Ajoutez une déclaration de type **Tâches en arrière-plan**.
 -   Définissez une tâche de propriété de type **Emplacement**.
--   Dans votre application, définissez un point d’entrée à appeler au moment où l’événement est déclenché.
+-   Dans votre application, définissez un point d’entrée à entrer au moment où l’événement est déclenché.
 
 ### Étape 2 : inscrire la tâche en arrière-plan
 
-Le code utilisé dans cette étape inscrit la tâche de limite géographique en arrière-plan. Rappelez-vous : au moment de créer la limite géographique, nous avons vérifié les autorisations d’emplacement. Pour plus d’informations, voir [Configurer une limite géographique](#setup).
+Le code utilisé dans cette étape inscrit la tâche de limite géographique en arrière-plan. Rappelez-vous : au moment de créer la limite géographique, nous avons vérifié les autorisations d’emplacement. Pour plus d’informations, voir [Configurer une limite géographique](#setup).
 
 ```csharp
 async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
@@ -356,7 +360,7 @@ async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
 
 ```
 
-### Étape 3 : gérer la notification en arrière-plan
+### Étape 3 : gérer la notification en arrière-plan
 
 Les actions que vous entreprenez pour notifier l’utilisateur dépendent de ce qu’accomplit votre application, mais vous pouvez afficher une notification toast, diffuser un son ou mettre à jour une vignette dynamique. Le code utilisé dans cette étape gère la notification.
 
@@ -453,7 +457,7 @@ Il est parfois difficile de procéder au test et au débogage d’applications d
 3.  Fermez votre application en cours d’exécution localement.
 4.  Lancez votre application dans l’émulateur Visual Studio. Notez que la simulation de géorepérage en arrière-plan n’est prise en charge que sur une seule application à la fois dans l’émulateur. Ne lancez pas plusieurs applications de géorepérage dans l’émulateur.
 5.  À l’aide de l’émulateur, simulez différents emplacements internes et externes à votre zone de clôture virtuelle. Attendez suffisamment longtemps après l’élément [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) pour déclencher l’événement. Notez que vous devez autoriser la demande de localisation géographique pour l’application.
-6.  Utilisez Visual Studio pour déclencher la tâche d’arrière-plan relative à l’emplacement. Pour plus d’informations sur le déclenchement de tâches en arrière-plan dans Visual Studio, voir [Déclencher les tâches en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkID=325378).
+6.  Utilisez Visual Studio pour déclencher la tâche d’arrière-plan relative à l’emplacement. Pour plus d’informations sur le déclenchement de tâches en arrière-plan dans Visual Studio, voir [Comment déclencher les tâches en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkID=325378).
 
 ## Résoudre les problèmes de votre application
 
@@ -473,6 +477,7 @@ Pour que votre application puisse accéder à l’emplacement, l’option **Loca
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

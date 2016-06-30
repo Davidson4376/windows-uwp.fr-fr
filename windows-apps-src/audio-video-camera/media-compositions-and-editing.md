@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-description: Les API de l’espace de noms Windows.Media.Editing permettent de développer rapidement des applications permettant aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo.
-title: Compositions multimédias et modification
+description: "Les API de l’espace de noms Windows.Media.Editing permettent de développer rapidement des applications permettant aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo."
+title: "Compositions multimédias et modification"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
+
 ---
 
 # Compositions multimédias et modification
@@ -150,6 +154,7 @@ Les compositions multimédia peuvent être désérialisées à partir d’un fic
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

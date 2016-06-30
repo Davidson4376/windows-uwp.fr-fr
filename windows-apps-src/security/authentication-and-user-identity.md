@@ -1,8 +1,12 @@
 ---
-title: Authentification et identité des utilisateurs
-description: Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs. Cela peut aller de l’authentification unique (SSO) à l’aide d’un service Broker d’authentification web à l’authentification à 2 facteurs hautement sécurisée.
+title: "Authentification et identité des utilisateurs"
+description: "Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs. Cela peut aller de l’authentification unique (SSO) à l’aide d’un service Broker d’authentification web à l’authentification à 2 facteurs hautement sécurisée."
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 3c890ac8d8363982d9f014c36b6cba59bee39f20
+ms.openlocfilehash: e748b319cdeda82aadaf8516e41883a3e32dc10c
+
 ---
 
 # Authentification et identité des utilisateurs
@@ -33,6 +37,7 @@ Les entreprises qui utilisent Windows 10 doivent sérieusement envisager de reco
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

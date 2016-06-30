@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Informations de référence sur le passage de GLSL vers HLSL
-description: Si vous avez pour projet de créer un jeu pour UWP, vous allez porter votre architecture graphique OpenGL ES 2.0 sur Direct3D 11, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language).
+title: "Informations de référence sur le passage de GLSL vers HLSL"
+description: "Si vous avez pour projet de créer un jeu pour UWP, vous allez porter votre architecture graphique OpenGL ES 2.0 sur Direct3D 11, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language)."
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 02a3ba1768b6fa7b09b6c9f637a72d88c0cef604
+
 ---
 
 # Informations de référence sur le passage de GLSL vers HLSL
@@ -225,7 +229,7 @@ Référez-vous au tableau ci-dessous lors du portage de vos types GLSL vers HLSL
 </ul></li>
 </ul>
 <p>Vous pouvez aussi définir une matrice avec le [type matrix](https://msdn.microsoft.com/library/windows/desktop/bb509623).</p>
-<p>Exemple : matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
+<p>Exemple : matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
 <p>matrix peut également être défini avec le type float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). Pour plus d’informations, voir [Type défini par l’utilisateur](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
 </tr>
 <tr class="even">
@@ -322,7 +326,7 @@ Référez-vous au tableau ci-dessous lors du portage de vos variables globales p
 <p>Couleur du fragment pour l’association de couleur n</p></td>
 <td align="left"><p>SV_Target[n]</p>
 <p>Sémantique du type <strong>float4</strong>.</p>
-<p>Valeur de la sortie du nuanceur de pixels qui est stockée dans la cible de rendu n, où 0 &lt;= n &lt;= 7.</p></td>
+<p>Valeur de la sortie du nuanceur de pixels qui est stockée dans la cible de rendu n, où 0 &lt;= n &lt;= 7.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>gl_FragCoord</strong></p>
@@ -566,6 +570,7 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

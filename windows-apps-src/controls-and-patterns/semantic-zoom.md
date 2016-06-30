@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Un contrôle de zoom sémantique permet à l’utilisateur d’effectuer un zoom entre deux affichages sémantiques différents du même jeu de données.
-title: Zoom sémantique
+Description: "Un contrôle de zoom sémantique permet à l’utilisateur d’effectuer un zoom entre deux affichages sémantiques différents du même jeu de données."
+title: "Zoom sémantique"
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 47e39290a63408fc66783617ad2f12345eab2fa3
+
 ---
 
 # Zoom sémantique
@@ -65,6 +69,7 @@ Un carnet d’adresses est un exemple de jeu de données dont la navigation peut
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; Bookstore1
+title: "Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10.
+description: "Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
+
 ---
 
 # Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; Bookstore1
@@ -124,6 +128,7 @@ Nous avons également pu constater que le processus de portage des modèles d’
 Dans l’étude de cas suivante, [Bookstore2](w8x-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et leur affichage.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

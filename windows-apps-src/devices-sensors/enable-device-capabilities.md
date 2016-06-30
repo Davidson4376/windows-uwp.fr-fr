@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
-title: Activer les fonctionnalités d’un appareil
-description: Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des caméras, des microphones, des capteurs de localisation et d’autres appareils.
+title: "Activer les fonctionnalités d’un appareil"
+description: "Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des caméras, des microphones, des capteurs de localisation et d’autres appareils."
+translationtype: Human Translation
+ms.sourcegitcommit: 512b89027f6b707de346fffe104f165074fabcea
+ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
+
 ---
 # Activer les fonctionnalités d’un appareil
 
@@ -72,6 +76,7 @@ Le tableau suivant connecte certaines fonctionnalités à des API de Windows Run
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

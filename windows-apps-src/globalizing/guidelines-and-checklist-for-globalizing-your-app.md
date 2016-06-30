@@ -1,11 +1,15 @@
 ---
 author: DelfCo
-Description: Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en localisant vos applications pour un marché spécifique.
+Description: "Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en localisant vos applications pour un marché spécifique."
 Search.Refinement.TopicID: 180
 title: Indications de globalisation et de localisation
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: bdbe6b3e319aa90a78660c664f1603bac93399ca
+
 ---
 
 # Pratiques conseillées et déconseillées en matière de globalisation et de localisation
@@ -188,6 +192,7 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

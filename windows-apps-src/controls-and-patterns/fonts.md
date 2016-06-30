@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Suivez ces recommandations pour sélectionner des polices et spécifier leur taille et leur couleur.
+Description: "Suivez ces recommandations pour sélectionner des polices et spécifier leur taille et leur couleur."
 title: Polices
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 268884c011caa18f3afb6d8b0d9cfda1ec27f51e
+
 ---
 
 # Recommandations en matière de polices
@@ -290,6 +294,7 @@ Voici la liste des polices systématiquement disponibles dans toutes les éditio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

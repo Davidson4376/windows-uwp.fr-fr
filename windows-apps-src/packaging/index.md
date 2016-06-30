@@ -1,8 +1,12 @@
 ---
 author: msatranjr
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
-title: Empaquetage d’applications
-description: Cette section contient ou associe des articles sur la création de packages d’application de plateforme Windows universelle (UWP).
+title: "Empaquetage d’applications"
+description: "Cette section contient ou associe des articles sur la création de packages d’application de plateforme Windows universelle (UWP)."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6f50874ceb5e133f2b1b764bfc6fcff6422172db
+
 ---
 # Création de packages d’application
 
@@ -21,6 +25,7 @@ Cette section contient ou associe des articles sur l’empaquetage d’applicati
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
-title: Utiliser l’inclinomètre
-description: Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
+title: "Utiliser l’inclinomètre"
+description: "Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet."
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: f8b56e0ef13e471d99519256b5a6d124b569102d
+
 ---
 # Utiliser l’inclinomètre
 
@@ -124,11 +128,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **InclinometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="InclinometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:InclinometerCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de l’inclinomètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ###  Explication
 
@@ -172,6 +176,7 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

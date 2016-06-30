@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
-title: Autorisations d’accès aux fichiers
-description: Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités.
+title: "Autorisations d’accès aux fichiers"
+description: "Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
+
 ---
 # Autorisations d’accès aux fichiers
 
@@ -19,7 +23,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
 
     Il existe deux manières principales d’accéder à des fichiers et des dossiers dans le répertoire d’installation de votre application :
 
-    1.  Vous pouvez récupérer une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente le répertoire d’installation de votre application, comme suit :
+    1.  Vous pouvez récupérer une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente le répertoire d’installation de votre application, comme suit :
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
@@ -58,7 +62,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
 
     1.  Utilisez les propriétés [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) pour récupérer un dossier de données de l’application.
 
-        Par exemple, vous pouvez utiliser [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) pour récupérer une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente le dossier local de votre application, comme suit :
+        Par exemple, vous pouvez utiliser [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) pour récupérer une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente le dossier local de votre application, comme suit :
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -163,6 +167,7 @@ Le tableau qui suit dresse une liste d’emplacements supplémentaires auxquels 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

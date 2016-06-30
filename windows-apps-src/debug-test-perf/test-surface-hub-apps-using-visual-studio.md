@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
-title: Tester les applications de Surface Hub à l’aide de Visual Studio
-description: Le simulateur de Visual Studio fournit un environnement permettant de concevoir, développer, déboguer et tester des applications UWP, y compris les applications générées pour Surface Hub.
+title: "Tester les applications de Surface Hub à l’aide de Visual Studio"
+description: "Le simulateur de Visual Studio fournit un environnement permettant de concevoir, développer, déboguer et tester des applications UWP, y compris les applications générées pour Surface Hub."
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: 655dffb5f1948724c894de291e119be1322f6e77
+
 ---
 
 # Tester les applications de Surface Hub à l’aide de Visual Studio
@@ -53,7 +57,7 @@ Pour ajouter des résolutions de Surface Hub au simulateur :
 
 3. Copiez ces deux fichiers XML dans **C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Simulator\\&lt;numéro de version&gt;\HardwareConfigurations**.
 
-   > **Remarque**  &nbsp;&nbsp;L’enregistrement de fichiers dans ce dossier requiert des privilèges administratifs.
+   > **Remarque** &nbsp;&nbsp;L’enregistrement de fichiers dans ce dossier requiert des privilèges administratifs.
 
 4. Exécutez votre application dans le simulateur de Visual Studio. Cliquez sur le bouton **Modifier la résolution** de la palette et sélectionnez une configuration de Surface Hub dans la liste.
 
@@ -80,7 +84,7 @@ Par défaut, Surface Hub installe uniquement des applications du Windows Store.
 ### Déployer votre application à partir de Visual Studio
 Pour plus d’informations, voir [Déploiement et débogage des applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
-   > **Remarque**&nbsp;&nbsp;Cette fonctionnalité nécessite au moins **Visual Studio 2015 Update 1**.
+   > **Remarque**&nbsp;&nbsp;Cette fonctionnalité nécessite au moins **Visual Studio 2015 Update 1**.
 
 1. Accédez à la liste déroulante des cibles de débogage en regard du bouton **Démarrer le débogage**, puis sélectionnez **Ordinateur distant**.
 
@@ -90,13 +94,14 @@ Pour plus d’informations, voir [Déploiement et débogage des applications de 
 
 2. Entrez l’adresse IP de l’appareil Surface Hub. Assurez-vous que le mode d’authentification **Universel** est sélectionné.
 
-   > **Conseil** &nbsp;&nbsp;Une fois que vous avez activé le mode développeur, vous pouvez trouver l’adresse IP de l’appareil Surface Hub sur l’écran d’accueil.
+   > **Conseil** &nbsp;&nbsp;Une fois que vous avez activé le mode développeur, vous pouvez trouver l’adresse IP de l’appareil Surface Hub sur l’écran d’accueil.
 
 3. Choisissez **Démarrer le débogage (F5)** pour déployer et déboguer votre application sur l’appareil Surface Hub, ou appuyez sur Ctrl+F5 pour déployer uniquement votre application.
 
    > **Conseil** &nbsp;&nbsp;Si l’appareil Surface Hub apparaît sur l’écran d’accueil, masquez-le en appuyant sur n’importe quel bouton.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

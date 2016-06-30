@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Générer le rendu de la scène avec un test de profondeur
-description: Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels.
+title: "Générer le rendu de la scène avec un test de profondeur"
+description: "Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels."
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2bac8e8337a10a8411b02eeed53d772dbb5abad6
+
 ---
 
 # Générer le rendu de la scène avec un test de profondeur
@@ -160,6 +164,7 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment [pren
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

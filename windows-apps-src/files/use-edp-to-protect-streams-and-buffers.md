@@ -1,10 +1,14 @@
 ---
 author: TylerMSFT
-Description: 'Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios EDP relatifs aux flux et mémoires tampons les plus courants.'
-MS-HAID: 'dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios EDP relatifs aux flux et mémoires tampons les plus courants."
+MS-HAID: dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'Utiliser l’EDP pour protéger les flux et les mémoires tampons'
+title: "Utiliser l’EDP pour protéger les flux et les mémoires tampons"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: fdde4f7d2ab46b6349273f7c1c9d91cf27aa341a
+
 ---
 
 # Utiliser l’EDP pour protéger les flux et les mémoires tampons
@@ -308,6 +312,7 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

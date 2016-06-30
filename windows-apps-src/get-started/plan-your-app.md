@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 title: Planifier votre application de plateforme Windows universelle (UWP)
-description: Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes &#58; concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
+description: "Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes &#58; concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter."
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
+
 ---
 
 #  Planifier votre application de plateforme Windows universelle (UWP)
@@ -212,7 +216,7 @@ Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Com
 
 ![Conception d’une application pour PC ou appareils mobiles](images/ux-budgettracker1-md-notablet.png)
 
-Pour plus d’informations sur la conception d’applications pour des tailles d’écran différentes, voir <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
+Pour plus d’informations sur la conception d’applications dédiées à des tailles d’écran différentes, voir <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
 
 ## Faire une bonne première impression
 
@@ -233,6 +237,7 @@ Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre
 Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh465424) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) pour analyser les performances de chacun des scénarios de votre application.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

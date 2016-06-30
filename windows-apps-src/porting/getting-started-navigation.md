@@ -3,6 +3,10 @@ author: mcleblanc
 title: Prise en main &#58; Navigation
 description: Prise en main &#58; Navigation
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
+
 ---
 
 # Prise en main &#58; Navigation
@@ -82,6 +86,7 @@ Pour plus d’informations sur la navigation, voir [Navigation](https://msdn.mic
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

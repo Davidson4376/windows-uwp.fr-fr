@@ -1,6 +1,12 @@
 ---
-description: author: Xansky L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
-title: Sélectionner des contacts ms.assetid &#58; 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keywords: contacts, sélection de mots clés &#58; sélectionner des mots-clés de contact uniques &#58; sélectionner plusieurs mots-clés de contact &#58; contacts, sélectionner plusieurs keywords: sélectionner des mots-clés de données de contact spécifiques &#58; contact, sélection de mots clés de données spécifiques &#58; contact, sélection de champs spécifiques
+author: Xansky
+description: "L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts."
+title: "Sélectionner des contacts"
+ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
+keywords: contact, selecting specific fields
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+
 ---
 
 # Sélectionner des contacts
@@ -20,15 +26,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 
 ## Définir le mode de sélection (facultatif)
 
-Par défaut, le sélecteur de contacts récupère toutes les données disponibles des contacts que l’utilisateur sélectionne. La propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) vous permet de configurer le sélecteur de contacts pour récupérer uniquement les champs de données dont votre application a besoin. Il s’agit d’un moyen plus efficace pour utiliser le sélecteur de contacts, si vous avez seulement besoin d’un sous-ensemble des données de contact disponibles.
+Par défaut, le sélecteur de contacts récupère toutes les données disponibles des contacts que l’utilisateur sélectionne. La propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) vous permet de configurer le sélecteur de contacts pour récupérer uniquement les champs de données dont votre application a besoin. Il s’agit d’un moyen plus efficace pour utiliser le sélecteur de contacts, si vous avez seulement besoin d’un sous-ensemble des données de contact disponibles.
 
-Affectez d’abord à la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) la valeur **Fields** :
+Affectez d’abord à la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) la valeur **Fields** :
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Utilisez ensuite la propriété [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) pour indiquer les champs que le sélecteur de contacts doit récupérer. Cet exemple configure le sélecteur de contacts pour récupérer les adresses de messagerie :
+Utilisez ensuite la propriété [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) pour indiquer les champs que le sélecteur de contacts doit récupérer. Cet exemple configure le sélecteur de contacts pour récupérer les adresses de messagerie :
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -40,7 +46,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Utilisez [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) si vous voulez que l’utilisateur sélectionne un ou plusieurs contacts.
+Utilisez [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) si vous voulez que l’utilisateur sélectionne un ou plusieurs contacts.
 
 ```cs
 public IList<Contact> contacts;
@@ -225,6 +231,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

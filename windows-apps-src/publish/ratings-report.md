@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Le rapport Évaluations disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store.
-title: Rapport Évaluations
+Description: "Le rapport Évaluations disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store."
+title: "Rapport Évaluations"
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e0258bc9402772d0a036b32563348d11acd0fdb7
+
 ---
 
 # Rapport Évaluations
@@ -68,6 +72,7 @@ Par défaut, les marchés ayant fait l’objet du plus grand nombre d’évaluat
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
-description: Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT 8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows 10.
-title: Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; exemple d’application d’homologue à homologue QuizGame
+description: "Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT 8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows 10."
+title: "Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; exemple d’application d’homologue à homologue QuizGame"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
+
 ---
 
 # Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; exemple d’application d’homologue à homologue QuizGame
@@ -83,11 +87,11 @@ En nous appuyant sur ces options, nous allons porter l’élément QuizGame.Wind
 
 **Solution QuizGame10**
 
--   Créez une solution (**Nouveau projet**&gt;**Autres types de projets**&gt;**Solutions Visual Studio**) et appelez-la « QuizGame10 ».
+-   Créez une solution (**Nouveau projet**&gt;**Autres types de projets**&gt;**Solutions Visual Studio**) et appelez-la « QuizGame10 ».
 
 **P2PHelper**
 
--   Dans la solution, créez un projet de bibliothèque de classes Windows 10 (**Nouveau projet**&gt;**Windows universel**&gt;**Bibliothèque de classes (Universelle Windows)**) et appelez-le « P2PHelper ».
+-   Dans la solution, créez un projet de bibliothèque de classes Windows 10 (**Nouveau projet**&gt;**Windows universel**&gt;**Bibliothèque de classes (Universelle Windows)**) et appelez-le « P2PHelper ».
 -   Dans le nouveau projet, supprimez le fichier Class1.cs.
 -   Copiez les fichiers P2PSession.cs, P2PSessionClient.cs et P2PSessionHost.cs dans le dossier du nouveau projet, puis insérez les fichiers copiés dans le nouveau projet.
 -   Le projet est généré, aucune autre modification n’était nécessaire.
@@ -99,7 +103,7 @@ En nous appuyant sur ces options, nous allons porter l’élément QuizGame.Wind
 
 **QuizGameHost**
 
--   Créez un projet d’application Windows 10 (**Ajouter**&gt;**Nouveau projet**&gt;**Universelle Windows**&gt;**Application vide (Universelle Windows)**) et appelez-le « QuizGameHost ».
+-   Créez un projet d’application Windows 10 (**Ajouter**&gt;**Nouveau projet**&gt;**Universelle Windows**&gt;**Application vide (Universelle Windows)**) et appelez-le « QuizGameHost ».
 -   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence**&gt;**Projets**&gt;**Solution**&gt;**ReferenceProjectsSolutionP2PHelper**).
 -   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter**&gt;**Élément existant**, puis accédez au dossier immédiatement supérieur. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
 -   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.Windows\\ vers \\QuizGameHost\\ et remplacez l’espace de noms par « QuizGameHost ».
@@ -126,7 +130,7 @@ par :
 
 **QuizGameClient**
 
--   Créez un projet d’application Windows 10 (**Ajouter**&gt;**Nouveau projet**&gt;**Universelle Windows**&gt;**Application vide (Universelle Windows)**) et appelez-le « QuizGameClient ».
+-   Créez un projet d’application Windows 10 (**Ajouter**&gt;**Nouveau projet**&gt;**Universelle Windows**&gt;**Application vide (Universelle Windows)**) et appelez-le « QuizGameClient ».
 -   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence**&gt;**Projets**&gt;**Solution**&gt;**ReferenceProjectsSolutionP2PHelper**).
 -   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter**&gt;**Élément existant**, puis accédez au dossier immédiatement supérieur. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
 -   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.WindowsPhone\\ vers \\QuizGameClient\\ et remplacez l’espace de noms par « QuizGameClient ».
@@ -191,6 +195,7 @@ Grâce à ce dernier ajustement, l’application se comportera comme auparavant 
 L’application que nous avons portée dans le cadre de cette étude de cas était relativement complexe, car elle impliquait plusieurs projets, une bibliothèque de classes, une interface utilisateur assez volumineuse et une grande quantité de code. Pourtant, son portage s’est révélé très simple. La simplicité de ce portage repose en partie sur la similarité entre la plate-forme de développement Windows 10 et les plates-formes Windows 8.1 et Windows Phone 8.1. Le mode de conception de l’application d’origine, qui séparait les modèles, les modèles d’affichage et les affichages, contribue également à simplifier cette opération.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

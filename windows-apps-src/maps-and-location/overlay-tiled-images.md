@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
+author: msatranjr
 title: Superposer des images sous forme de vignettes sur une carte
-description: Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut.
+description: "Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut."
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
+
 ---
 
 # Superposer des images sous forme de vignettes sur une carte
@@ -364,6 +367,7 @@ Pour remplacer entièrement la carte par défaut par des vignettes personnalisé
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Lancer l’application Paramètres Windows
-description: Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques.
+author: TylerMSFT
+title: "Lancer l’application Paramètres Windows"
+description: "Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques."
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
+ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+
 ---
 
 # Lancer l’application Paramètres Windows
@@ -32,7 +35,7 @@ Dans cet exemple, un contrôle Hyperlink XAML est utilisé pour ouvrir la page d
 
 ```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
-<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
+<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access the microphone. Go to " />
               <Hyperlink NavigateUri="ms-settings:privacy-microphone">
@@ -68,9 +71,9 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |                    | Notifications et actions                | Les deux           | ms-settings:notifications                 |
 |                    | Téléphone                                  | Mobile uniquement    | ms-settings:phone                         |
 |                    | Messagerie                              | Mobile uniquement    | ms-settings:messaging                     |
-|                    | Économiseur de batterie                          | Les deux           | ms-settings:batterysaver                  |
-|                    | Économiseur de batterie/paramètres d’économiseur de batterie | Les deux           | ms-settings:batterysaver-settings         |
-|                    | Économiseur de batterie/utilisation de batterie            | Les deux           | ms-settings:batterysaver-usagedetails     |
+|                    | Économiseur de batterie                          | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes    | ms-settings:batterysaver                  |
+|                    | Économiseur de batterie/paramètres d’économiseur de batterie | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes | ms-settings:batterysaver-settings         |
+|                    | Économiseur de batterie/utilisation de batterie            | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes    | ms-settings:batterysaver-usagedetails     |
 |                    | Alimentation et mise en veille                          | Bureau uniquement   | ms-settings:powersleep                    |
 |                    | Bureau : Informations système                         | Les deux           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -96,7 +99,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |                    | Accès professionnel                            | Les deux           | ms-settings:workplace                     |
 |                    | Synchroniser vos paramètres                     | Les deux           | ms-settings:sync                          |
 | Heure et langue  | Date et heure                            | Les deux           | ms-settings:dateandtime                   |
-|                    | Region & language                      | Poste de travail uniquement   | ms-settings:regionlanguage                |
+|                    | Region &amp; language                      | Poste de travail uniquement   | ms-settings:regionlanguage                |
 | Options d’ergonomie     | Narrateur                               | Les deux           | ms-settings:easeofaccess-narrator         |
 |                    | Loupe                              | Les deux           | ms-settings:easeofaccess-magnifier        |
 |                    | Contraste élevé                          | Les deux           | ms-settings:easeofaccess-highcontrast     |
@@ -124,8 +127,6 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

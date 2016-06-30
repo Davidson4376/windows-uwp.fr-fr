@@ -2,7 +2,11 @@
 author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal pour appareils mobiles
-description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil mobile.
+description: "Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil mobile."
+translationtype: Human Translation
+ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
+ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
+
 ---
 # Device Portal pour appareils mobiles
 
@@ -72,6 +76,7 @@ Device Portal sur les appareils mobiles propose les pages standard. Pour obtenir
 - Mise en réseau
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

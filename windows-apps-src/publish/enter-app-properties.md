@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: La page Propriétés de l’application du processus de soumission d’application vous permet de définir la catégorie de votre application, ainsi que les préférences matérielles ou d’autres déclarations.
-title: Entrer les propriétés d’une application
+Description: "La page Propriétés de l’application du processus de soumission d’application vous permet de définir la catégorie de votre application, ainsi que les préférences matérielles ou d’autres déclarations."
+title: "Entrer les propriétés d’une application"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8861c13478adbe2010a164126c56f555375e0472
+
 ---
 
 # Entrer les propriétés d’une application
@@ -40,6 +44,7 @@ Les cases à cocher de cette section vous permettent d'indiquer les déclaration
 Pour plus d'informations, voir l'article [Déclarations d'application](app-declarations.md).
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

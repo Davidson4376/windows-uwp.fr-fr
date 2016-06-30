@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Le rapport sur les acquisitions de produits in-app disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de produits in-app que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques.
+Description: "Le rapport sur les acquisitions de produits in-app disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de produits in-app que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques."
 title: Rapport sur les acquisitions de produits in-app
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3191df12ca5b59f545cf250c3e669b30192af6bc
+
 ---
 
 # Rapport sur les acquisitions de produits in-app
@@ -65,6 +69,7 @@ Le graphique **Version du système d'exploitation** présente le nombre total d'
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

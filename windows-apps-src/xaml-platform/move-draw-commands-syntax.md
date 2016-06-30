@@ -3,8 +3,8 @@ author: jwmsft
 description: "Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML."
 title: "Syntaxe des commandes de déplacement et de dessin"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
-ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 ---
 
@@ -108,7 +108,7 @@ Crée une ligne horizontale entre le point actuel et la coordonnée x spécifi�
 
 | Terme | Description |
 |------|-------------|
-| x | [**Double**](T:System.Double) <br/> Coordonnée x du point final de la ligne. |
+| x | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée x du point final de la ligne. |
 
 **Commande de ligne verticale**
 
@@ -120,7 +120,7 @@ Crée une ligne verticale entre le point actuel et la coordonnée y spécifiée
 
 | Terme | Description |
 |------|-------------|
-| *y* | [**Double**](T:System.Double) <br/> Coordonnée y du point final de la ligne. |
+| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée y du point final de la ligne. |
 
 **Commande de courbe de Bézier cubique**
 
@@ -186,7 +186,7 @@ Crée un arc elliptique entre le point actuel et le point de terminaison spécif
 | Terme | Description |
 |------|-------------|
 | *size* | [**Taille**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Rayon x et rayon y de l’arc. |
-| *rotationAngle* | [**Double**](T:System.Double) <br/> Rotation de l’ellipse, en degrés. |
+| *rotationAngle* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Rotation de l’ellipse, en degrés. |
 | *isLargeArcFlag* | Affectez la valeur 1 si l’angle de l’arc doit être de 180 degrés ou plus ; sinon, affectez la valeur 0. |
 | *sweepDirectionFlag* | Affectez la valeur 1 si l’arc est dessiné dans la direction de l’angle positif ; sinon, affectez la valeur 0. |
 | *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel l’arc est tracé.|
@@ -209,8 +209,8 @@ Décrit la coordonnée x et la coordonnée y d’un point. Voir aussi [**Point**
 
 | Terme | Description |
 |------|-------------|
-| *x* | [**Double**](T:System.Double) <br/> Coordonnée x du point. |
-| *y* | [**Double**](T:System.Double) <br/> Coordonnée y du point. |
+| *x* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée x du point. |
+| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée y du point. |
 
 **Remarques supplémentaires**
 
@@ -240,6 +240,6 @@ Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conc
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

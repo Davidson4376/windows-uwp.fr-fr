@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: Préparez votre application en vue de sa localisation pour d’autres marchés, langues ou régions.
-title: Préparer votre application en vue de sa localisation
+Description: "Préparez votre application en vue de sa localisation pour d’autres marchés, langues ou régions."
+title: "Préparer votre application en vue de sa localisation"
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: e52a5322767677859e32ccbecf4951745c49f36f
+
 ---
 
 # Préparer votre application en vue de sa localisation
@@ -187,6 +191,7 @@ Le classement suit le format de l’application **Région** du Panneau de config
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

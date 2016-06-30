@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
-title: Bases de données SQLite
-description: SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source.
+title: "Bases de données SQLite"
+description: "SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dd628d16b3ee230ddc0c56b47fd381a518b8af00
+
 ---
 # Bases de données SQLite
 
@@ -90,6 +94,7 @@ Six interfaces permettent d’effectuer des opérations de base de données sur 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

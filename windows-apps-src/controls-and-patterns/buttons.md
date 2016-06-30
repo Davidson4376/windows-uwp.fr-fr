@@ -2,6 +2,10 @@
 author: Jwmsft
 label: Buttons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 91399060e129df18acd38e18d98cad848667a5ad
+
 ---
 # Boutons
 Un bouton permet à l’utilisateur de déclencher une action immédiate.
@@ -224,6 +228,7 @@ Surface Hub ![système de retour sur un surface hub](images/nav-back-surfacehub.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

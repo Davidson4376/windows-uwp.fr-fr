@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Fournit une valeur pour un attribut XAML en évaluant une référence à une ressource, avec une logique système supplémentaire qui récupère différentes ressources en fonction du thème actuellement actif.
+description: "Fournit une valeur pour un attribut XAML en évaluant une référence à une ressource, avec une logique système supplémentaire qui récupère différentes ressources en fonction du thème actuellement actif."
 title: Extension de balisage ThemeResource
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
+translationtype: Human Translation
+ms.sourcegitcommit: 9c657f906e6dedb259b8a98373f56ac5a63bd845
+ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
+
 ---
 
 # Extension de balisage {ThemeResource}
@@ -151,6 +155,7 @@ Lorsqu’une clé de ressource fait partie intégrante d’une utilisation quelc
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

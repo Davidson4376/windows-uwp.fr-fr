@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: 'Afficher les points d’intérêt sur une carte'
-description: Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML.
+author: msatranjr
+title: "Afficher les points d’intérêt sur une carte"
+description: "Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML."
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 6f21f9bf9c909d0f89a663cdda05934ad9b4011b
+
 ---
 
 # Afficher des centres d’intérêt sur une carte
@@ -28,7 +31,7 @@ En résumé :
 -   [Ajoutez un élément MapPolyline à la carte](#mappolyline) pour afficher des lignes sur la carte.
 -   [Ajoutez du code XAML à la carte](#mapxaml) pour afficher des éléments d’interface utilisateur personnalisés.
 
-Si vous avez un grand nombre d’éléments à placer sur la carte, songez à [superposer des images sous forme de vignettes à la carte](overlay-tiled-images.md). Pour afficher des routes sur la carte, voir [Afficher des itinéraires et indications sur une carte](routes-and-directions.md).
+Si vous avez un grand nombre d’éléments à placer sur la carte, songez à [superposer des images sous forme de vignettes à la carte](overlay-tiled-images.md). Pour afficher des routes sur la carte, voir [Afficher des itinéraires et indications](routes-and-directions.md).
 
 ## Ajouter un élément MapIcon
 
@@ -226,6 +229,7 @@ Cet exemple affiche une collection d’éléments XAML liés à un [**MapItemsCo
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

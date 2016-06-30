@@ -1,8 +1,12 @@
 ---
 author: jwmsft
 title: Attribut xDeferLoadStrategy
-description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire.
+description: "xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire."
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
+
 ---
 
 # Attribut x&#58;DeferLoadStrategy
@@ -83,6 +87,7 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

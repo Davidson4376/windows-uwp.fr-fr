@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: "Vue d’ensemble des transformations"
 description: "Apprenez à utiliser les transformations dans l’API Windows Runtime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur."
-ms.sourcegitcommit: a429fa659caf6c8032ad615f1b850092545d4439
-ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
 
 ---
 
@@ -58,7 +58,7 @@ Pour les besoins des tests de positionnement, un objet auquel une transformation
 
 ## <span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>Animation d’une transformation
 
-Les objets [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) peuvent être animés. Pour animer un élément **Transform**, appliquez à la propriété que vous souhaitez animer une animation d’un type compatible. Cela signifie généralement que vous utilisez des objets [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) ou [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) pour définir l’animation, car toutes les propriétés de transformation sont de type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Les animations qui affectent une transformation utilisée pour une valeur [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) ne sont pas considérées comme étant des animations dépendantes, même si elles ont une durée non nulle. Pour plus d’informations sur les animations dépendantes, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md).
+Les objets [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) peuvent être animés. Pour animer un élément **Transform**, appliquez à la propriété que vous souhaitez animer une animation d’un type compatible. Cela signifie généralement que vous utilisez des objets [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) ou [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) pour définir l’animation, car toutes les propriétés de transformation sont de type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Les animations qui affectent une transformation utilisée pour une valeur [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) ne sont pas considérées comme étant des animations dépendantes, même si elles ont une durée non nulle. Pour plus d’informations sur les animations dépendantes, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md).
 
 Si vous animez des propriétés pour produire un effet comparable à une transformation en termes d’aspect visuel (par exemple l’animation de [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) et [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) pour un élément [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) au lieu de l’application d’un élément [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)), ces animations sont presque toujours traitées comme des animations dépendantes. Vous devez activer les animations. En outre, l’animation peut entraîner des problèmes de performances importants, surtout si vous essayez de prendre en charge l’interaction de l’utilisateur pendant l’animation de l’objet. C’est pourquoi il est préférable d’utiliser une transformation et de l’animer plutôt que d’animer toute autre propriété où l’animation serait traitée comme une animation dépendante.
 
@@ -144,6 +144,6 @@ Dans Windows 10, XAML a introduit une nouvelle propriété, [**UIElement.Transf
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

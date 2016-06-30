@@ -1,7 +1,10 @@
 ---
-author: DBirtolo
+author: msatranjr
 title: Annonces publicitaires Bluetooth
-description: Cette section contient des articles expliquant comment intégrer des annonces Bluetooth Low Energy (LE) dans les applications de plateforme Windows universelle (UWP) par le biais de l’utilisateur des API AdvertisementWatcher et AdvertisementPublisher.
+description: "Cette section contient des articles expliquant comment intégrer des annonces Bluetooth Low Energy (LE) dans les applications de plateforme Windows universelle (UWP) par le biais de l’utilisateur des API AdvertisementWatcher et AdvertisementPublisher."
+ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
+ms.openlocfilehash: a419ad04fe4f21867f2f1bd1664fbce39a7da792
+
 ---
 
 # Annonces publicitaires Bluetooth
@@ -24,6 +27,7 @@ Un développeur peut exécuter deux fonctions principales à l’aide des API d�
 L’exemple de code complet est disponible dans [l’exemple d’annonce Bluetooth](http://go.microsoft.com/fwlink/p/?LinkId=619990) sur Github
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

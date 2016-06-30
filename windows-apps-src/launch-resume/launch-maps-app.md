@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Lancer l’application Cartes Windows
-description: Découvrez comment lancer l’application Cartes Windows à partir de votre application.
+author: TylerMSFT
+title: "Lancer l’application Cartes Windows"
+description: "Découvrez comment lancer l’application Cartes Windows à partir de votre application."
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 0dcd15c7d04ed452f69208ad1e68a8949baf40dd
+
 ---
 
 # Lancer l’application Cartes Windows
@@ -16,7 +19,6 @@ Découvrez comment lancer l’application Cartes Windows à partir de votre appl
 **Conseil** Pour plus d’informations sur le lancement de l’application Cartes Windows à partir de votre application, téléchargez l’[Exemple de carte pour la plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977) à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
 ## Présentation des URI
-
 
 Les schémas d’URI vous permettent d’ouvrir des applications en cliquant sur des liens hypertexte (ou par programme dans votre application). Tout comme vous pouvez commencer un nouveau message électronique à l’aide de **mailto:**, ou ouvrir un navigateur web à l’aide de **http:**, vous pouvez accéder à l’application Cartes Windows à l’aide de **bingmaps:**, **ms-drive-to:** et **ms-walk-to:**.
 
@@ -68,7 +70,7 @@ Pour contrôler le type d’affichage, utilisez les paramètres (Streetside) *ss
 
 | Exemple d’URI                                                                 | Résultats                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:                                                                  | Ouvre l’application Cartes.                                                                                                                                                                                       |
+| bingmaps:?                                                                 | Ouvre l’application Cartes.                                                                                                                                                                                       |
 | bingmaps:?cp=40.726966~-74.006076                                          | Affiche une carte centrée sur la ville de New York.                                                                                                                                                               |
 | bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | Affiche une carte centrée sur la ville de New York avec le niveau de zoom 10.                                                                                                                                       |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Affiche une carte de la ville de New York avec la taille de l’écran comme cadre englobant.                                                                                                                          |
@@ -190,7 +192,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
 <p>Exemple :</p>
 <p>cp=40.726966~-74.006076</p></td>
-<td align="left"><p>Ces deux valeurs doivent être exprimées en degrés et séparées par un tilde (**~**).</p>
+<td align="left"><p>Ces deux valeurs doivent être exprimées en degrés et séparées par un tilde (**~**).</p>
 <p>Les valeurs de longitude valides sont comprises entre -180 et +180 (ces deux valeurs étant incluses).</p>
 <p>Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses).</p></td>
 </tr>
@@ -326,8 +328,8 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
 <td align="left"><p>Définit les valeurs de début et de fin d’un itinéraire à dessiner sur la carte, séparées par un tilde (**~**). Chacun des points de navigation est défini par une position, reposant sur une latitude et une longitude, ou par un identificateur d’adresse.</p>
 <p>Un itinéraire complet contient exactement deux points de navigation. Par exemple, un itinéraire avec deux points de navigation est défini par <code>rtp="A"~"B"</code>.</p>
-<p>Il est également acceptable de spécifier un itinéraire incomplet. Ainsi, vous pouvez définir uniquement le début d’un itinéraire avec <code>rtp="A"~</code>. Dans ce cas, le panneau de saisie d’itinéraire s’affiche avec le point de navigation fourni inséré dans le champ **De**, et le focus positionné sur le champ **À**.</p>
-<p>Si seul le point d’arrivée de l’itinéraire est spécifié, comme dans <code>rtp=~"B"</code>, le panneau de saisie de l’itinéraire est affiché avec le point de navigation fourni dans le champ **À**. Si la localisation actuelle est disponible, elle figure dans le champ **De** sur lequel le focus est positionné.</p>
+<p>Il est également acceptable de spécifier un itinéraire incomplet. Ainsi, vous pouvez définir uniquement le début d’un itinéraire avec <code>rtp="A"~</code>. Dans ce cas, le panneau de saisie d’itinéraire s’affiche avec le point de navigation fourni inséré dans le champ **De**, et le focus positionné sur le champ **À**.</p>
+<p>Si seule la fin d’un itinéraire est spécifiée, comme avec <code>rtp=~"B"</code>, le panneau d’itinéraire affiche le point de navigation fourni dans le champ **À**. Si la localisation actuelle est disponible, elle figure dans le champ **De** sur lequel le focus est positionné.</p>
 <p>Aucune ligne d’itinéraire n’est dessinée lorsque l’itinéraire fourni est incomplet.</p>
 <p>Utilisez ces paramètres conjointement avec le paramètre **mode** servant à spécifier le mode de transport (en voiture, en transport public ou à pied). Si le paramètre **mode** n’est pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur.</p>
 <div class="alert">
@@ -369,7 +371,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
 <td align="left"><p>Collection de points à ajouter à la carte et à la liste. Il est possible de nommer la collection de points en utilisant le paramètre name. Un point est spécifié à l’aide d’une latitude, d’une longitude et d’un titre facultatif.</p>
 <p>Le nom doit être séparé des différents points par un caractère tilde (**~**).</p>
-<p>Si l’élément spécifié contient un tilde, assurez-vous qu’il est encodé sous la forme <code>%7E</code>. En l’absence de paramètres de niveau de zoom et de point central, la collection propose la meilleure vue de carte possible.</p>
+<p>Si l’élément spécifié contient un tilde, assurez-vous qu’il est codé comme suit : <code>%7E</code>. En l’absence de paramètres de niveau de zoom et de point central, la collection propose la meilleure vue de carte possible.</p>
 
 <p>**Important** Si l’élément que vous spécifiez contient un trait de soulignement, assurez-vous qu’il est double et encodé comme suit : %255F.</p>
 
@@ -383,7 +385,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 ## Référence de paramètre ms-drive-to:
 
 
-L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n’a pas besoin d’être encodé et présente le format suivant.
+L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n’a pas besoin d’encodage et présente le format suivant.
 
 > **Remarque** Dans ce schéma d’URI, vous ne spécifiez pas le point de départ. Le point de départ est toujours supposé être la localisation actuelle. Si vous devez spécifier un point de départ différent de l’emplacement actuel, voir [Afficher un itinéraire et le trafic](#directions).
 
@@ -400,7 +402,7 @@ L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n
 ## Référence de paramètre ms-walk-to:
 
 
-L’URI permettant de lancer une demande d’itinéraire détaillé à pied n’a pas besoin d’être encodé et présente le format suivant.
+L’URI permettant de lancer une demande d’itinéraire détaillé à pied n’a pas besoin d’encodage et présente le format suivant.
 
 > **Remarque** Dans ce schéma d’URI, vous ne spécifiez pas le point de départ. Le point de départ est toujours supposé être la localisation actuelle. Si vous devez spécifier un point de départ différent de l’emplacement actuel, voir [Afficher un itinéraire et le trafic](#directions).
 
@@ -428,6 +430,7 @@ La syntaxe des paramètres propres à l’application Cartes pour le schéma d�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

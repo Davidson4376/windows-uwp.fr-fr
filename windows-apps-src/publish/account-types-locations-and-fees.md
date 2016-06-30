@@ -2,7 +2,11 @@
 author: jnHs
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Types de compte, emplacements et frais
-description: Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions.
+description: "Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions."
+translationtype: Human Translation
+ms.sourcegitcommit: 93b6d952e42949917a0fff5b39f3f194f49531d5
+ms.openlocfilehash: b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b10
+
 ---
 
 # Types de compte, emplacements et frais
@@ -255,6 +259,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

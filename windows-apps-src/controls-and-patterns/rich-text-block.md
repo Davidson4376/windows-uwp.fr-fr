@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Utilisez un contrôle RichTextBlock avec des éléments RichTextBlockOverflow pour créer des dispositions avancées de texte.
+Description: "Utilisez un contrôle RichTextBlock avec des éléments RichTextBlockOverflow pour créer des dispositions avancées de texte."
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 28c78b39bad4c66457ec5aba8cf0b4ce0de4f00a
+
 ---
 # Bloc de texte enrichi
 Les blocs de texte enrichi fournissent plusieurs fonctionnalités de disposition de texte avancée, que vous pouvez utiliser lorsque vous devez prendre en charge des paragraphes, des éléments d’interface utilisateur inline ou des dispositions de texte complexes.
@@ -147,6 +151,7 @@ Voir les articles Typographie et Recommandations concernant les polices.
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

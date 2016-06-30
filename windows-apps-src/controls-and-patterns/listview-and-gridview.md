@@ -1,9 +1,13 @@
 ---
 author: Jwmsft
-Description: Utilisez les contrôles des affichages Liste ou Grille pour afficher et manipuler des jeux de données, comme une galerie d’images ou un ensemble d’e-mails.
+Description: "Utilisez les contrôles des affichages Liste ou Grille pour afficher et manipuler des jeux de données, comme une galerie d’images ou un ensemble d’e-mails."
 title: Affichage Liste et affichage Grille
 label: List view and grid view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e878b11bbecd4a1007f8b5f56bde5741da18c1e1
+
 ---
 # ListView et GridView
 
@@ -384,8 +388,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 
 ### Mode clic
 
-Vous pouvez modifier un affichage Liste afin qu’un utilisateur clique sur des éléments tels que des boutons au lieu de les sélectionner. Cela est par exemple utile lorsque l’utilisateur de votre application accède à une nouvelle page en cliquant sur un élément dans une liste ou dans une grille. 
-Pour activer ce comportement :
+Vous pouvez modifier un affichage Liste afin qu’un utilisateur clique sur des éléments tels que des boutons au lieu de les sélectionner. Cela est par exemple utile lorsque l’utilisateur de votre application accède à une nouvelle page en cliquant sur un élément dans une liste ou dans une grille. Pour activer ce comportement :
 - Définissez **SelectionMode** sur **Aucun**.
 - Définissez **IsItemClickEnabled** sur **true**.
 - Gérez l’événement **ItemClick** pour effectuer une action lorsque l’utilisateur clique sur un élément.
@@ -494,6 +497,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

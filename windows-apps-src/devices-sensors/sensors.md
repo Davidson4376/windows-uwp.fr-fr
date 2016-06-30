@@ -2,7 +2,11 @@
 author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: Capteurs
-description: Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil.
+description: "Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil."
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
+
 ---
 # Capteurs
 
@@ -70,7 +74,7 @@ Le capteur [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872
 
 ## Boussole
 
-Le capteur [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) renvoie un cap 2D par rapport au Nord magnétique et au plan horizontal de la Terre. Le capteur de boussole ne doit pas être utilisé pour déterminer l’orientation spécifique de l’appareil ou pour représenter quoi que ce soit dans un espace en trois dimensions. Certaines caractéristiques géographiques pouvant provoquer une inclinaison naturelle du cap, certains systèmes prennent en charge à la fois [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingmagneticnorth) et [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingtruenorth). Réfléchissez à celle qui convient le mieux à votre application, mais souvenez-vous que les systèmes n’indiquent pas tous la valeur du Nord magnétique. Le gyromètre et le magnétomètre (un appareil mesurant la magnitude de la force magnétique) combinent leurs données pour générer le cap de la boussole, ce qui a comme effet net de stabiliser les données (la force du champ magnétique est très instable en raison des composants électriques du système).
+Le capteur [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) renvoie un cap 2D par rapport au Nord magnétique et au plan horizontal de la Terre. Le capteur de boussole ne doit pas être utilisé pour déterminer l’orientation spécifique de l’appareil ou pour représenter quoi que ce soit dans un espace en trois dimensions. Certaines caractéristiques géographiques pouvant provoquer une inclinaison naturelle du cap, certains systèmes prennent en charge à la fois [**HeadingMagneticNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) et [**HeadingTrueNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx). Réfléchissez à celle qui convient le mieux à votre application, mais souvenez-vous que les systèmes n’indiquent pas tous la valeur du Nord magnétique. Le gyromètre et le magnétomètre (un appareil mesurant la magnitude de la force magnétique) combinent leurs données pour générer le cap de la boussole, ce qui a comme effet net de stabiliser les données (la force du champ magnétique est très instable en raison des composants électriques du système).
 
 ![Lectures de la boussole par rapport au Pôle Nord magnétique](images/compass.png)
 
@@ -114,7 +118,7 @@ Le capteur [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872
 
 ## Orientation simple
 
-Le [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206399sensor) détecte l’orientation de quadrant actuelle de l’appareil spécifié, ou s’il est face vers le haut ou face vers le bas. Il possède six états [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) possibles (**NotRotated**, **Rotated90**, **Rotated180**, **Rotated270**, **FaceUp**, **FaceDown**).
+Le [**SimpleOrientationSensor**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) détecte l’orientation de quadrant actuelle de l’appareil spécifié, ou s’il est face vers le haut ou face vers le bas. Il possède six états [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) possibles (**NotRotated**, **Rotated90**, **Rotated180**, **Rotated270**, **FaceUp**, **FaceDown**).
 
 Une application de lecture qui change son affichage selon que l’appareil est tenu parallèlement ou perpendiculairement au sol utiliserait les valeurs de SimpleOrientationSensor pour déterminer comment l’appareil est tenu.
 
@@ -124,6 +128,7 @@ Pour découvrir certains exemples illustrant l’utilisation de deux capteurs di
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

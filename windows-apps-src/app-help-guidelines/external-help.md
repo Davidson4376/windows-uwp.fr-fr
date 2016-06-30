@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: Concevez des pages d’aide externe pour obtenir des instructions détaillées et des conseils sur votre application.
-title: Recommandations en matière de conception de pages d’aide externe
+Description: "Concevez des pages d’aide externe pour obtenir des instructions détaillées et des conseils sur votre application."
+title: "Recommandations en matière de conception de pages d’aide externe"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 03ef3fc34d2018c0ec712977065377a9c52cd8b2
+
 ---
 
 # Pages d’aide externe
@@ -38,6 +42,7 @@ Les pages d’aide externe sont l’endroit idéal pour proposer des didacticiel
 * [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

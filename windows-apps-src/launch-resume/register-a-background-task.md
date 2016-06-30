@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Inscrire une tâche en arrière-plan
-description: Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité.
+author: TylerMSFT
+title: "Inscrire une tâche en arrière-plan"
+description: "Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité."
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
+
 ---
 
 # Inscrire une tâche en arrière-plan
@@ -37,14 +40,14 @@ Cette méthode contient le point d’entrée de la tâche, son nom, un déclench
 > [!div class="tabbedCodeSnippets"]
 > ```cs
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
->                                                 string taskEntryPoint, 
+>                                                 string taskEntryPoint,
 >                                                 string name,
 >                                                 IBackgroundTrigger trigger,
 >                                                 IBackgroundCondition condition)
 > {
 >     
 >     // We'll add code to this function in subsequent steps.
-> 
+>
 > }
 > ```
 > ```cpp
@@ -56,7 +59,7 @@ Cette méthode contient le point d’entrée de la tâche, son nom, un déclench
 > {
 >     
 >     // We'll add code to this function in subsequent steps.
-> 
+>
 > }
 > ```
 
@@ -74,7 +77,7 @@ Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [*
 > [!div class="tabbedCodeSnippets"]
 > ```cs
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
->                                                 string taskEntryPoint, 
+>                                                 string taskEntryPoint,
 >                                                 string name,
 >                                                 IBackgroundTrigger trigger,
 >                                                 IBackgroundCondition condition)
@@ -82,16 +85,16 @@ Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [*
 >     //
 >     // Check for existing registrations of this background task.
 >     //
-> 
+>
 >     foreach (var cur in BackgroundTaskRegistration.AllTasks)
 >     {
-> 
+>
 >         if (cur.Value.Name == name)
 >         {
->             // 
+>             //
 >             // The task is already registered.
->             // 
-> 
+>             //
+>
 >             return (BackgroundTaskRegistration)(cur.Value);
 >         }
 >     }
@@ -119,9 +122,9 @@ Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [*
 >         
 >         if(cur->Name == name)
 >         {
->             // 
+>             //
 >             // The task is registered.
->             // 
+>             //
 >             
 >             return (BackgroundTaskRegistration ^)(cur);
 >         }
@@ -147,7 +150,7 @@ L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d
 > [!div class="tabbedCodeSnippets"]
 > ```cs
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
->                                                 string taskEntryPoint, 
+>                                                 string taskEntryPoint,
 >                                                 string name,
 >                                                 IBackgroundTrigger trigger,
 >                                                 IBackgroundCondition condition)
@@ -155,16 +158,16 @@ L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d
 >     //
 >     // Check for existing registrations of this background task.
 >     //
-> 
+>
 >     foreach (var cur in BackgroundTaskRegistration.AllTasks)
 >     {
-> 
+>
 >         if (cur.Value.Name == taskName)
 >         {
->             // 
+>             //
 >             // The task is already registered.
->             // 
-> 
+>             //
+>
 >             return (BackgroundTaskRegistration)(cur.Value);
 >         }
 >     }
@@ -172,21 +175,21 @@ L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d
 >     //
 >     // Register the background task.
 >     //
-> 
+>
 >     var builder = new BackgroundTaskBuilder();
-> 
+>
 >     builder.Name = name;
 >     builder.TaskEntryPoint = taskEntryPoint;
 >     builder.SetTrigger(trigger);
-> 
+>
 >     if (condition != null)
 >     {
-> 
+>
 >         builder.AddCondition(condition);
 >     }
-> 
+>
 >     BackgroundTaskRegistration task = builder.Register();
-> 
+>
 >     return task;
 > }
 > ```
@@ -197,7 +200,7 @@ L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d
 >                                              IBackgroundTrigger ^ trigger,
 >                                              IBackgroundCondition ^ condition)
 > {
-> 
+>
 >     //
 >     // Check for existing registrations of this background task.
 >     //
@@ -211,9 +214,9 @@ L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d
 >         
 >         if(cur->Name == name)
 >         {
->             // 
+>             //
 >             // The task is registered.
->             // 
+>             //
 >             
 >             return (BackgroundTaskRegistration ^)(cur);
 >         }
@@ -224,20 +227,20 @@ L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d
 >     //
 >     // Register the background task.
 >     //
-> 
+>
 >     auto builder = ref new BackgroundTaskBuilder();
-> 
+>
 >     builder->Name = name;
 >     builder->TaskEntryPoint = taskEntryPoint;
 >     builder->SetTrigger(trigger);
-> 
+>
 >     if (condition != nullptr) {
 >         
 >         builder->AddCondition(condition);
 >     }
-> 
+>
 >     BackgroundTaskRegistration ^ task = builder->Register();
-> 
+>
 >     return task;
 > }
 > ```
@@ -266,16 +269,16 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 >     //
 >     // Check for existing registrations of this background task.
 >     //
-> 
+>
 >     foreach (var cur in BackgroundTaskRegistration.AllTasks)
 >     {
-> 
+>
 >         if (cur.Value.Name == taskName)
 >         {
->             // 
+>             //
 >             // The task is already registered.
->             // 
-> 
+>             //
+>
 >             return (BackgroundTaskRegistration)(cur.Value);
 >         }
 >     }
@@ -283,21 +286,21 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 >     //
 >     // Register the background task.
 >     //
-> 
+>
 >     var builder = new BackgroundTaskBuilder();
-> 
+>
 >     builder.Name = taskName;
 >     builder.TaskEntryPoint = taskEntryPoint;
 >     builder.SetTrigger(trigger);
-> 
+>
 >     if (condition != null)
 >     {
-> 
+>
 >         builder.AddCondition(condition);
 >     }
-> 
+>
 >     BackgroundTaskRegistration task = builder.Register();
-> 
+>
 >     return task;
 > }
 > ```
@@ -316,7 +319,7 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 >                                                              IBackgroundTrigger ^ trigger,
 >                                                              IBackgroundCondition ^ condition)
 > {
-> 
+>
 >     //
 >     // Check for existing registrations of this background task.
 >     //
@@ -330,34 +333,34 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 >         
 >         if(cur->Name == name)
 >         {
->             // 
+>             //
 >             // The task is registered.
->             // 
+>             //
 >             
 >             return (BackgroundTaskRegistration ^)(cur);
 >         }
 >         
 >         hascur = iter->MoveNext();
 >     }
-> 
-> 
+>
+>
 >     //
 >     // Register the background task.
 >     //
-> 
+>
 >     auto builder = ref new BackgroundTaskBuilder();
-> 
+>
 >     builder->Name = name;
 >     builder->TaskEntryPoint = taskEntryPoint;
 >     builder->SetTrigger(trigger);
-> 
+>
 >     if (condition != nullptr) {
 >         
 >         builder->AddCondition(condition);
 >     }
-> 
+>
 >     BackgroundTaskRegistration ^ task = builder->Register();
-> 
+>
 >     return task;
 > }
 > ```
@@ -392,8 +395,6 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

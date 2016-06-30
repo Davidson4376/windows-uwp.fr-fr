@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Référence pour le portage d’OpenGL ES 2.0 sur Direct3D 11
-description: Vous trouverez dans ces rubriques de référence un index de mappage d’API ainsi que des exemples de code simples destinés à vous aider lors du portage d’OpenGL ES 2.0 vers Direct3D 11.
+title: "Référence pour le portage d’OpenGL ES 2.0 sur Direct3D 11"
+description: "Vous trouverez dans ces rubriques de référence un index de mappage d’API ainsi que des exemples de code simples destinés à vous aider lors du portage d’OpenGL ES 2.0 vers Direct3D 11."
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ad6da83773bf5b791f4b2921b8ea55345aae999b
+
 ---
 
 # Informations de référence pour le portage d’OpenGL ES 2.0 vers Direct3D 11
@@ -42,6 +46,7 @@ Vous trouverez dans ces rubriques de référence un index de mappage d’API ain
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

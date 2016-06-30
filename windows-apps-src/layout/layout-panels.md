@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Utilisez les panneaux de disposition pour organiser et regrouper des éléments d’interface utilisateur dans votre application.
+Description: "Utilisez les panneaux de disposition pour organiser et regrouper des éléments d’interface utilisateur dans votre application."
 title: Panneaux de disposition des applications de plateforme Windows universelle (UWP)
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
+
 ---
 # Panneaux de disposition
 
@@ -223,6 +227,7 @@ Utilisez le panneau Canvas en fonction de vos besoins. Bien qu’il soit pratiqu
 Il existe plusieurs panneaux à usage spécifique qui peuvent être utilisés uniquement comme un contrôle [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) pour afficher des éléments dans un contrôle [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Il s’agit de [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) et [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). Vous ne pouvez pas utiliser ces panneaux pour créer une disposition générale de l’interface utilisateur.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

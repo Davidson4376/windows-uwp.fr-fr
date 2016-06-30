@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM.
-title: Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM
+description: "Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM."
+title: "Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM"
 ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c2b9f164b6578a9e1d269295b3fa0d7a863a6a0
+
 ---
 
 # Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM
@@ -37,6 +41,7 @@ Si vous ne souhaitez pas mettre à jour manuellement votre projet, ou si vous so
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

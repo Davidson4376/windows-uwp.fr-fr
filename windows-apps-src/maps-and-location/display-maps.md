@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: 'Afficher des cartes avec des vues 2D, 3D et Streetside'
-description: Affichez des cartes personnalisables dans votre application en utilisant la classe MapControl. Cette rubrique présente également des vues 3D aériennes et Streetside.
+author: msatranjr
+title: Afficher des cartes avec des vues 2D, 3D et Streetside
+description: "Affichez des cartes personnalisables dans votre application en utilisant la classe MapControl. Cette rubrique présente également des vues 3D aériennes et Streetside."
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 249503f6a43ef8c38e76ed29aed4a1bfdb26e9fb
+
 ---
 
 # Afficher des cartes avec des vues 2D, 3D et Streetside
@@ -162,7 +165,7 @@ Affichez des informations sur la carte en définissant les valeurs des propriét
 -   Indiquez si le **filigrane** est affiché sur la carte en définissant la propriété [**WatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn637066) sur l’une des constantes [**MapWatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn610749).
 -   Pour afficher une **route ou une voie piétonne** sur la carte, ajoutez un élément [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) à la collection [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) du contrôle de carte. Pour plus d’informations et un exemple, voir [Afficher des itinéraires et indications sur une carte](routes-and-directions.md).
 
-Pour plus d’informations sur l’affichage de punaises, de formes et de contrôles XAML dans le [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), voir [Afficher les points d’intérêt sur une carte](display-poi.md).
+Pour plus d’informations sur l’affichage de punaises, de formes et de contrôles XAML dans le [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), voir [Afficher des centres d’intérêt sur une carte](display-poi.md).
 
 ## Afficher des vues Streetside
 
@@ -279,7 +282,7 @@ private async void display3DLocation()
 
 Obtenez des informations sur les emplacements sur la carte en appelant les méthodes suivantes du [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
--   Méthode [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) : permet d’obtenir l’emplacement géographique qui correspond au point spécifié dans la fenêtre d’affichage du contrôle de carte.
+-   Méthode [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) : permet d’obtenir l’emplacement géographique qui correspond au point spécifié dans la fenêtre d’affichage du contrôle de carte.
 -   Méthode [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) : permet d’obtenir le point dans la fenêtre d’affichage du contrôle de carte qui correspond à l’emplacement géographique indiqué.
 -   Méthode [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) : permet de déterminer si l’emplacement géographique indiqué est actuellement visible dans la fenêtre d’affichage du contrôle de carte.
 -   Méthode [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) : permet d’obtenir les éléments de la carte situés au niveau du point spécifié dans la fenêtre d’affichage du contrôle de carte.
@@ -295,27 +298,28 @@ Gérez les mouvements d’entrée utilisateur sur la carte en traitant les évé
 
 Déterminez si la carte est en cours de chargement ou entièrement chargée en gérant l’événement [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) du contrôle.
 
-Gérez les modifications qui se produisent lorsque l’utilisateur ou l’application modifie les paramètres de la carte en gérant les événements suivants de l’élément [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). [Recommandations sur les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102) [CenterChanged](https://msdn.microsoft.com/library/windows/apps/dn596102)
+Gérez les modifications qui se produisent lorsque l’utilisateur ou l’application modifie les paramètres de la carte en gérant les événements suivants de l’élément [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). [Recommandations sur les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
 
--   [**HeadingChanged**](https://msdn.microsoft.com/library/windows/apps/dn637006)
--   [**PitchChanged**](https://msdn.microsoft.com/library/windows/apps/dn637020)
--   [**ZoomLevelChanged**](https://msdn.microsoft.com/library/windows/apps/dn637045)
--   [**Rubriques connexes**](https://msdn.microsoft.com/library/windows/apps/dn637069)
+-   [**CenterChanged**](https://msdn.microsoft.com/library/windows/apps/dn637006)
+-   [**HeadingChanged**](https://msdn.microsoft.com/library/windows/apps/dn637020)
+-   [**PitchChanged**](https://msdn.microsoft.com/library/windows/apps/dn637045)
+-   [**ZoomLevelChanged**](https://msdn.microsoft.com/library/windows/apps/dn637069)
 
-## Centre de développement Bing Cartes
+## Rubriques connexes
 
-* [Exemple de carte UWP](https://www.bingmapsportal.com/)
-* [Obtenir l’emplacement actuel](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](get-location.md)
-* [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/hh465148)
-* [Vidéos de la build 2015 : utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Exemple d’application de trafic UWP](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [MapControl](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
+* [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Obtenir l’emplacement actuel](get-location.md)
+* [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Vidéos de la build 2015 : utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

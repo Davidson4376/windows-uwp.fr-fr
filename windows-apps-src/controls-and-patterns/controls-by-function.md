@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Fournit une liste par fonction de certains des contrôles que vous pouvez utiliser dans vos applications.
-title: Contrôles par fonction
+Description: "Fournit une liste par fonction de certains des contrôles que vous pouvez utiliser dans vos applications."
+title: "Contrôles par fonction"
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
+
 ---
 # Contrôles par fonction
 
@@ -844,6 +848,7 @@ Référence : [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xam
 Conception et procédure : [Guide de contrôle Bascule](toggles.md) 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

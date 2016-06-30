@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-description: La classe MediaSource offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent.
-title: Lecture de contenu multimédia avec MediaSource
+description: "La classe MediaSource offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent."
+title: "Lecture de contenu multimédia avec MediaSource"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
+
 ---
 
 # Lecture de contenu multimédia avec MediaSource
@@ -177,6 +181,7 @@ Définissez la propriété [**AutoRepeatEnabled**](https://msdn.microsoft.com/li
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: "Sélecteur de dates du calendrier"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 75f6bb925db63838e4985df15b50977b93805ffe
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 7ae444d9e096834daa2eef71c691b9bb8b86d7c4
 
 ---
 
@@ -14,10 +14,11 @@ ms.openlocfilehash: 75f6bb925db63838e4985df15b50977b93805ffe
 
 Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes. Vous pouvez modifier le calendrier pour fournir du contexte supplémentaire ou pour limiter les dates disponibles.
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
--   [**Classe TimePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
--   [**Propriété Time**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+
+-   [**Classe CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
+-   [**Propriété Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
+-   [**Événement DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx)
 
 ## Est-ce le contrôle approprié ?
 Utilisez un **sélecteur de dates du calendrier** pour permettre à un utilisateur de choisir une date unique à partir d’un affichage Calendrier contextuel. Utilisez-le pour des éléments tels que le choix d’une date de rendez-vous ou de départ.
@@ -76,7 +77,8 @@ Vous pouvez ajouter un contrôle [**Header**](https://msdn.microsoft.com/library
 Le texte d’espace réservé par défaut est « sélectionner une date ». Vous pouvez le supprimer en définissant la propriété PlaceholderText sur une chaîne vide, ou vous pouvez fournir un texte personnalisé comme illustré ici.
 
 ```xaml
-<CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" PlaceholderText="Choose your arrival date"/>
+<CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" 
+                    PlaceholderText="Choose your arrival date"/>
 ```
 
 
@@ -89,6 +91,6 @@ Le texte d’espace réservé par défaut est « sélectionner une date ». Vo
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

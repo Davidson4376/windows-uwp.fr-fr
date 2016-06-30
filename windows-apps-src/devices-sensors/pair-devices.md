@@ -2,7 +2,11 @@
 author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: Jumeler des appareils
-description: Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge trois méthodes différentes de jumelage des appareils.
+description: "Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge trois méthodes différentes de jumelage des appareils."
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: fa736c200185192cfd40a1c09f2da02cae67c05c
+
 ---
 # Jumeler des appareils
 
@@ -44,9 +48,9 @@ Si vous avez recours au jumelage de base, vous disposez également d’un accès
 
 Grâce au jumelage personnalisé, votre application peut prendre part au processus de jumelage. Dès lors, votre application peut spécifier les éléments [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) qui sont pris en charge pour le processus de jumelage. Vous êtes également chargé de créer votre propre interface utilisateur pour interagir avec l’utilisateur au besoin. Utilisez le jumelage personnalisé lorsque vous souhaitez que votre application possède un peu plus d’influence sur l’exécution du processus de jumelage ou pour afficher votre propre interface utilisateur de jumelage.
 
-Pour implémenter le jumelage personnalisé, vous devez obtenir l’objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) associé à l’appareil qui vous intéresse, tout comme avec le jumelage de base. Toutefois, la propriété spécifique qui vous intéresse est [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_custom). Cela vous octroie un objet [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing). L’ensemble des méthodes [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairasync) vous demandent d’inclure un paramètre [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808). Il indique les actions que l’utilisateur devra effectuer pour tenter de jumeler l’appareil. Consultez la page de référence **DevicePairingKinds** pour en savoir plus sur les différents types d’action que l’utilisateur devra effectuer. Tout comme avec le jumelage de base, il vous faudra **await** le résultat afin d’octroyer à votre application le temps nécessaire à la procédure de jumelage. Le résultat de l’action de jumelage est alors renvoyé. Si aucune erreur n’est identifiée, l’appareil est jumelé.
+Pour implémenter le jumelage personnalisé, vous devez obtenir l’objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) associé à l’appareil qui vous intéresse, tout comme avec le jumelage de base. Toutefois, la propriété spécifique qui vous intéresse est [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.custom.aspx). Cela vous octroie un objet [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.aspx). L’ensemble des méthodes [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairasync.aspx) vous demandent d’inclure un paramètre [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808). Il indique les actions que l’utilisateur devra effectuer pour tenter de jumeler l’appareil. Consultez la page de référence **DevicePairingKinds** pour en savoir plus sur les différents types d’action que l’utilisateur devra effectuer. Tout comme avec le jumelage de base, il vous faudra **await** le résultat afin d’octroyer à votre application le temps nécessaire à la procédure de jumelage. Le résultat de l’action de jumelage est alors renvoyé. Si aucune erreur n’est identifiée, l’appareil est jumelé.
 
-Pour prendre en charge le jumelage personnalisé, il vous faudra créer un gestionnaire pour l’événement [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairingrequested). Ce gestionnaire doit vérifier qu’il prend en compte l’ensemble des éléments [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) pouvant être utilisés dans un scénario de jumelage personnalisé. L’action appropriée à entreprendre dépend de l’élément **DevicePairingKinds** fourni avec les arguments de l’événement.
+Pour prendre en charge le jumelage personnalisé, il vous faudra créer un gestionnaire pour l’événement [**PairingRequested**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx). Ce gestionnaire doit vérifier qu’il prend en compte l’ensemble des éléments [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) pouvant être utilisés dans un scénario de jumelage personnalisé. L’action appropriée à entreprendre dépend de l’élément **DevicePairingKinds** fourni avec les arguments de l’événement.
 
 Il est important de garder à l’esprit que le jumelage personnalisé est toujours une opération de niveau système. Pour cette raison, lorsque vous utilisez un ordinateur de bureau ou un appareil Windows Phone, une boîte de dialogue système apparaît juste avant l’opération de jumelage. En effet, ces deux plateformes valorisent une expérience utilisateur qui nécessite le consentement de l’utilisateur. Dans la mesure où cette boîte de dialogue est automatiquement générée, vous n’aurez pas besoin de créer votre propre boîte de dialogue lorsque vous sélectionnez un élément [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) de **ConfirmOnly** avec ces plateformes. Pour les autres **DevicePairingKinds**, vous devrez exécuter certaines opérations spécifiques de gestion, en fonction de la valeur **DevicePairingKinds** spécifique. Pour savoir comment gérer le jumelage personnalisé associé à différentes valeurs **DevicePairingKinds**, voir les exemples.
 
@@ -71,6 +75,7 @@ Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Dev
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

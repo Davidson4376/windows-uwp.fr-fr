@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires.
-title: Répondre aux avis des clients
+Description: "Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires."
+title: "Répondre aux avis des clients"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
+
 ---
 
 # Répondre aux avis des clients
@@ -47,6 +51,7 @@ Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend
 Être à l'écoute de vos clients et leur fournir des réponses n'est qu'un début. Réagir à leurs commentaires est également un point essentiel. Si vous apportez des améliorations importantes, présentez-les dans le Windows Store en toute confiance en [créant une autre soumission](app-submissions.md) pour mettre à jour votre application.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

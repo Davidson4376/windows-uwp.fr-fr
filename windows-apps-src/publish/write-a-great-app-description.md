@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Une description attrayante peut contribuer à attirer l’attention sur votre application dans le Windows Store et à inciter les clients à la télécharger.
-title: Rédiger une description convaincante de l’application
+Description: "Une description attrayante peut contribuer à attirer l’attention sur votre application dans le Windows Store et à inciter les clients à la télécharger."
+title: "Rédiger une description convaincante de l’application"
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
+translationtype: Human Translation
+ms.sourcegitcommit: 17e7724eaa8a33f17360eb6e24fcc22068c5d477
+ms.openlocfilehash: 56b8492fea59c9a744c948d27e728e2305388cf8
+
 ---
 
 # Rédiger une description convaincante de l’application
@@ -35,6 +39,7 @@ Vous trouverez ci-après quelques conseils pour la rédaction d’une descriptio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

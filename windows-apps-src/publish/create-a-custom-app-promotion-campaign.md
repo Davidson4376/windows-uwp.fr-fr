@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: En plus de créer une campagne de publicité pour votre application qui s’exécute dans des applications Windows, vous pouvez également promouvoir votre application à l’aide d’autres canaux.
-title: Créer une campagne personnalisée de promotion d’applications
+Description: "En plus de créer une campagne de publicité pour votre application qui s’exécute dans des applications Windows, vous pouvez également promouvoir votre application à l’aide d’autres canaux."
+title: "Créer une campagne personnalisée de promotion d’applications"
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
+
 ---
 
 # Créer une campagne personnalisée de promotion d’applications
@@ -63,7 +67,7 @@ Pour créer une URL de page du Windows Store pour votre application avec un ID d
 2.  Obtenez l’URL de la page du Windows Store pour votre application au format HTML ou de protocole. L’URL au format HTML est disponible dans la page [**Identité de l’application** du tableau de bord du Centre de développement](link-to-your-app.md).
     -   Utilisez le format HTTP si vous souhaitez que les clients accèdent à la page de votre application dans le Windows Store à l’aide d’un navigateur (si l’application Windows Store est installée, cette URL ouvre également celle-ci en affichant la description de votre application). Cette URL est au format **`https://www.microsoft.com/store/apps/*your app name*/*your app ID*`**. Par exemple, l’URL HTTP pour Skype est `https://www.microsoft.com/store/apps/skype/9wzdncrfj364`.
         > **Remarque** Les URL au format HTTP permettent d’accéder au Windows Store à l’aide d’un navigateur sur les ordinateurs et tablettes exécutant Windows 7 et versions ultérieures, et les téléphones Windows Phone 8 et versions ultérieures.
-    - Utilisez le format de protocole si vous promouvez votre application à partir d’autres applications Windows s’exécutant sur un appareil ou un ordinateur sur lequel l’application Windows Store est installée, et souhaitez que les clients accèdent à la page de votre application dans l’application Windows Store. Cette URL est au format **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**. Par exemple, l’URL de protocole pour Skype est `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`.
+- Utilisez le format de protocole si vous promouvez votre application à partir d’autres applications Windows s’exécutant sur un appareil ou un ordinateur sur lequel l’application Windows Store est installée, et souhaitez que les clients accèdent à la page de votre application dans l’application Windows Store. Cette URL est au format **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**. Par exemple, l’URL de protocole pour Skype est `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`.
 3.  Ajouter la chaîne suivante à la fin de l’URL de votre application :
     -   Pour une URL au format HTTP, ajoutez **`?cid=*my custom campaign ID*`**. Par exemple, si Skype introduisait un ID de campagne avec la valeur **custom\_campaign**, la nouvelle URL HTTP incluant l’ID de campagne serait : `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`.
     -   Pour une URL au format de protocole, ajoutez **`&cid=*my custom campaign ID*`**. Par exemple, si Skype introduisait un ID de campagne avec la valeur **custom\_campaign**, la nouvelle URL de protocole incluant l’ID de campagne serait : `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`
@@ -130,6 +134,7 @@ Avant de promouvoir une URL de campagne personnalisée, nous vous recommandons d
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

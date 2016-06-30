@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
-title: Lier des données hiérarchiques et créer un affichage maître/détails
-description: Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances CollectionViewSource qui sont liées dans une chaîne.
+title: "Lier des données hiérarchiques et créer un affichage maître/détails"
+description: "Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances CollectionViewSource qui sont liées dans une chaîne."
+translationtype: Human Translation
+ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
+ms.openlocfilehash: 2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27
+
 ---
 # Lier des données hiérarchiques et créer un affichage maître/détails
 
@@ -21,7 +25,7 @@ Nous allons créer un affichage d’une hiérarchie d’équipes sportives organ
 
 ## Connaissances requises
 
-Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions pour la création de votre première application UWP, voir [Créer votre première application UWP en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
+Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions pour la création de votre première application UWP, consultez [Créer votre première application UWP en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
 
 ## Créer le projet
 
@@ -220,6 +224,7 @@ Notez qu’en effectuant une liaison directe à la classe [**CollectionViewSourc
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

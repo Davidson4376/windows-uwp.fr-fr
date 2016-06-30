@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: Création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
-description: Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript.
+author: msatranjr
+title: "Création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript"
+description: "Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript."
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: c521061d9fdd3eb2c25e3072182fb1d7823f13ba
+
 ---
 
 # Procédure pas à pas &#58; création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
@@ -10,8 +13,6 @@ ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 
 \[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript.
 
@@ -669,7 +670,7 @@ De par sa conception, GetPrimesInRangeAsync est un outil de recherche de nombres
 
         > **Remarque** Si l’objet Promise ne fournit pas de fonction pour réagir à l’annulation, AsyncInfo.Run transmet toujours un jeton annulable et l’annulation peut encore se produire. Si l’objet Promise ne fournit pas de fonction pour gérer les mises à jour de progression, AsyncInfo.Run fournit toujours un objet qui implémente IProgress&lt;T&gt;, mais ses rapports sont ignorés.
 
-    -   Le délégué utilise la méthode [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) pour créer une tâche démarrée qui utilise le jeton et l’interface de progression. Le délégué pour la tâche démarrée est fourni par une fonction lambda qui calcule le résultat souhaité. Nous y reviendrons plus en détail dans un instant.
+    -   Le délégué utilise la méthode [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) pour créer une tâche démarrée qui utilise le jeton et l’interface de progression. Le délégué pour la tâche démarrée est fourni par une fonction lambda qui calcule le résultat souhaité. Nous y reviendrons plus en détail dans un instant.
     -   La méthode AsyncInfo.Run crée un objet qui implémente l’interface [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx), connecte le mécanisme d’annulation de Windows Runtime à la source du jeton et connecte la fonction de rapport de progression de l’objet Promise à l’interface IProgress&lt;T&gt;.
     -   L’interface IAsyncOperationWithProgress&lt;TResult, TProgress&gt; est retournée à JavaScript.
 
@@ -735,6 +736,7 @@ Pour exécuter l’application, appuyez sur la touche F5. Pour démarrer l’op�
 * [Procédure pas à pas : création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

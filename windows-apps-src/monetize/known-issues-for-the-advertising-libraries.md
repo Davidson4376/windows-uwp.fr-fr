@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: Découvrez les problèmes connus de la version actuelle des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft.
-title: Problèmes connus des bibliothèques de publicités Microsoft
+description: "Découvrez les problèmes connus de la version actuelle des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft."
+title: "Problèmes connus des bibliothèques de publicités Microsoft"
+translationtype: Human Translation
+ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
+ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+
 ---
 
 # Problèmes connus des bibliothèques de publicités Microsoft
@@ -18,7 +22,7 @@ Pour installer le [Kit de développement logiciel (SDK) d’engagement et de mon
 
 ## Projets Silverlight Windows Phone 8.x
 
-Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone 8.x, installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **Ad Mediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire dans votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight Windows Phone](adcontrol-in-windows-phone-silverlight.md).
+Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone 8.x, installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **Ad Mediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire dans votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight Windows Phone](adcontrol-in-windows-phone-silverlight.md).
 
 ## Interface AdControl inconnue en XAML
 
@@ -112,6 +116,7 @@ Pour contacter le support produit à propos des problèmes liés aux bibliothèq
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

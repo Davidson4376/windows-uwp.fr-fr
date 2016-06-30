@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Affichez les noms réservés pour l’app, réservez d’autres noms (pour d’autres langues ou pour changer le nom de l’app) et supprimez les noms réservés inutiles.
-title: Gestion des noms d’application
+Description: "Affichez les noms réservés pour l’app, réservez d’autres noms (pour d’autres langues ou pour changer le nom de l’app) et supprimez les noms réservés inutiles."
+title: "Gestion des noms d’application"
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
+translationtype: Human Translation
+ms.sourcegitcommit: 48952b5d4f2565d06ec79475f88fbabf93fd0f70
+ms.openlocfilehash: e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e5
+
 ---
 
 # Gestion des noms d’application
@@ -43,6 +47,7 @@ Une fois votre application publiée sous le nouveau nom, vous pourrez supprimer 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Ajout d’entrées et d’interactivité à l’exemple Marble Maze
-description: Les jeux d’application de plateforme UWP s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes.
+title: "Ajout d’entrées et d’interactivité à l’exemple Marble Maze"
+description: "Les jeux d’application de plateforme UWP s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes."
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
+
 ---
 
 # Ajout d’entrées et d’interactivité à l’exemple Marble Maze
@@ -448,7 +452,7 @@ XInput définit la constante **XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE** pour le stic
 
 ###  Application des entrées à l’état du jeu
 
-Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en les mettant à l’échelle dans la plage [-1,0, 1,0]. Pour normaliser les entrées de la manette Xbox 360, Marble Maze divise les valeurs d’entrée par 32 768, car les valeurs d’entrée du stick sont toujours comprises entre -32 768 et 32 767. La fonction **PointToTouch**, décrite précédemment dans cette section, donne des résultats similaires, en convertissant les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
+Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en les mettant à l’échelle dans la plage \[-1,0, 1,0\]. Pour normaliser les entrées de la manette Xbox 360, Marble Maze divise les valeurs d’entrée par 32 768, car les valeurs d’entrée du stick sont toujours comprises entre -32 768 et 32 767. La fonction **PointToTouch**, décrite précédemment dans cette section, donne des résultats similaires, en convertissant les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
 
 > **Conseil** Même si votre application utilise une méthode d’entrée, nous recommandons toujours de normaliser les valeurs d’entrée. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
 
@@ -522,6 +526,7 @@ Consultez [Ajout d’audio à l’exemple Marble Maze](adding-audio-to-the-marbl
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

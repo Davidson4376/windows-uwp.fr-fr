@@ -2,7 +2,11 @@
 author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Tests du Kit de certification des applications Windows
-description: Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store.
+description: "Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store."
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
+
 ---
 ## Tests du Kit de certification des applications Windows
 
@@ -84,7 +88,7 @@ Ce test a été implémenté conformément à la politique du Windows Store.
 
 ### Détails du test
 
-Pour les applications Windows Phone 8.1, le test vérifie que le nombre total de packages appx de l’ensemble est inférieur à (&lt; ) 512, qu’il n’y a qu’un seul package principal dans l’ensemble et que l’architecture du package principal de l’ensemble est marquée comme ARM ou neutre.
+Pour les applications Windows Phone 8.1, le test vérifie que le nombre total de packages appx de l’ensemble est inférieur à (&lt; ) 512, qu’il n’y a qu’un seul package principal dans l’ensemble et que l’architecture du package principal de l’ensemble est marquée comme ARM ou neutre.
 
 Pour les applications Windows 10, le test vérifie que le numéro de révision de la version de l’ensemble est défini sur 0.
 
@@ -666,6 +670,7 @@ Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correcte
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

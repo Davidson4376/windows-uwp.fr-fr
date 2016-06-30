@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Comment relancer une application (DirectX et C++)
-description: Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme UWP.
+description: "Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme UWP."
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d5383da7332c80d4337f0e0b3eef0a6851fcd527
+
 ---
 
 # Comment relancer une application (DirectX et C++)
@@ -95,6 +99,7 @@ Le système suspend votre application chaque fois que l’utilisateur bascule ve
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

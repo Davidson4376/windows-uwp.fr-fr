@@ -1,10 +1,14 @@
 ---
 author: mcleblanc
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
-title: Exemples sur l’aire de conception et pour la création d’un prototype
-description: Il est déconseillé (confidentialité ou performances) d’afficher des données actives sur la surface de conception dans Visual Studio ou Blend pour Visual Studio.
+title: "Exemples de données sur l’aire de conception et pour la création d’un prototype"
+description: "Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio."
+translationtype: Human Translation
+ms.sourcegitcommit: 53e807c0d9de8faf2d0b5dc0e1c8e9c380e42d86
+ms.openlocfilehash: 2f7ac4b269a167c3b521fa94d77e27091fa490a8
+
 ---
-Exemples sur l’aire de conception et pour la création d’un prototype
+Exemples de données sur l’aire de conception et pour la création d’un prototype
 =============================================================================================
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -31,7 +35,7 @@ En procédant ainsi, votre page n’est plus aussi « configurable » qu’ell
 
 ![Interface utilisateur de conception partiellement allouée.](images/displaying-data-in-the-designer-01.png)
 
-La première solution à essayer consiste à commenter l’affectation de cette propriété **DataContext** et définir **DataContext** plutôt dans le balisage de la page. Ainsi, vos données actives s’affichent au moment de la conception et de l’exécution. Pour ce faire, ouvrez d’abord votre page XAML. Ensuite, dans la fenêtre **Structure du document**, cliquez sur l’élément configurable racine (généralement intitulé **[Page]**) pour le sélectionner. Dans la fenêtre **Propriétés**, recherchez la propriété **DataContext** (à l’intérieur de la catégorie Common), puis cliquez sur **Nouveau**. Cliquez sur le type de modèle de vue à partir de la boîte de dialogue **Sélectionner un objet**, puis cliquez sur **OK**.
+La première solution à essayer consiste à commenter l’affectation de cette propriété **DataContext** et définir **DataContext** plutôt dans le balisage de la page. Ainsi, vos données actives s’affichent au moment de la conception et de l’exécution. Pour ce faire, ouvrez d’abord votre page XAML. Ensuite, dans la fenêtre Structure du document, cliquez sur l’élément configurable racine (généralement intitulé \[Page\]) pour le sélectionner. Dans la fenêtre **Propriétés**, recherchez la propriété **DataContext** (à l’intérieur de la catégorie Common), puis cliquez sur **Nouveau**. Cliquez sur le type de modèle de vue à partir de la boîte de dialogue **Sélectionner un objet**, puis cliquez sur **OK**.
 
 ![Interface utilisateur pour la configuration de DataContext.](images/displaying-data-in-the-designer-02.png)
 
@@ -87,7 +91,8 @@ Les diverses déclarations xmlns signifient que les attributs portant le préfix
 L’attribut **d:DataContext** et tous les autres attributs au moment de la conception, sont traités dans la rubrique [Attributs au moment de la conception](http://go.microsoft.com/fwlink/p/?LinkId=272504), qui est toujours valide pour les applications de plateforme Windows universelle (UWP).
 
 [
-            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) ne dispose pas de propriété **DataContext**, mais d’une propriété **Source**. Par conséquent, il existe une propriété **d:Source** que vous pouvez utiliser pour définir des exemples de données sur une classe **CollectionViewSource** uniquement au moment de la conception.
+              **CollectionViewSource**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209833) ne dispose pas de propriété **DataContext**, mais d’une propriété **Source**. Par conséquent, il existe une propriété **d:Source** que vous pouvez utiliser pour définir des exemples de données sur une classe **CollectionViewSource** uniquement au moment de la conception.
 
 ``` xaml
     <Page.Resources>
@@ -141,6 +146,7 @@ La fonctionnalité **Nouvel exemple de données** utilise [**DataContext**](http
 ![Exemple de données pour créer un prototype.](images/displaying-data-in-the-designer-04.png)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

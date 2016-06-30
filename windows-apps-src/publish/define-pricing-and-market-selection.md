@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Le Windows Store touche des clients dans plus de 200 pays et régions du monde.
-title: Définition des prix et sélection du marché
+Description: "Le Windows Store touche des clients dans plus de 200 pays et régions du monde."
+title: "Définition des prix et sélection du marché"
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9a1d8b8fb57989091fe7b82ad34066240f62cb8b
+
 ---
 
 # Définition des prix et sélection du marché
@@ -115,7 +119,7 @@ Vous pouvez choisir de répertorier votre application (ou produit intégré à l
 -   Djibouti
 -   Dominique
 -   République dominicaine
--   Équateur (République de l’)
+-   Équateur (République de)
 -   Égypte
 -   Salvador
 -   Guinée équatoriale
@@ -186,7 +190,7 @@ Vous pouvez choisir de répertorier votre application (ou produit intégré à l
 -   Malaisie
 -   Maldives
 -   Mali
--   Malte
+-   Malte (République de)
 -   Marshall (îles)
 -   Martinique
 -   Mauritanie
@@ -550,6 +554,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 > **Remarque** Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, voir [Types de compte, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/jj863494).
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

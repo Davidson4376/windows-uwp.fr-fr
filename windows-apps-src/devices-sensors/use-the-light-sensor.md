@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
-title: Utiliser le capteur de luminosité
-description: Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
+title: "Utiliser le capteur de luminosité"
+description: "Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
+
 ---
 # Utiliser le capteur de luminosité
 
@@ -123,11 +127,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **LightingCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="LightingCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:LightingCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs du capteur de luminosité en modifiant la lumière disponible pour le capteur ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ###  Explication
 
@@ -167,6 +171,7 @@ Ces nouvelles valeurs sont écrites dans un TextBlock identifié dans le code XA
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

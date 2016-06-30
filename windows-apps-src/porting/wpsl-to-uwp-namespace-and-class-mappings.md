@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Cette rubrique présente le mappage complet des API de Silverlight pour Windows Phone sur leurs équivalents de la plateforme Windows universelle (UWP).
+description: "Cette rubrique présente le mappage complet des API de Silverlight pour Windows Phone sur leurs équivalents de la plateforme Windows universelle (UWP)."
 title: Mappages des espaces de noms et des classes de Silverlight pour Windows Phone sur UWP
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
+
 ---
 
 # Mappages des espaces de noms et des classes de Silverlight pour Windows Phone sur UWP
@@ -58,7 +62,7 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 | (MPU = **Microsoft.Phone.UserData**) <br/> Classe **MPU.Appointments** | Classe [**AppointmentCalendar**](https://msdn.microsoft.com/library/windows/apps/dn596134) |
 | (MPU = **Microsoft.Phone.UserData**) <br/> Classe **MPU.Contacts** | Classe [**ContactStore**](https://msdn.microsoft.com/library/windows/apps/dn624859) |
 | Contrôles et infrastructure d’interface utilisateur | |
-| Classe **ControlTiltEffect.TiltEffect** | Des animations de la bibliothèque d’animations Windows Runtime sont intégrées aux styles par défaut des contrôles courants. Voir [Animation](wpsl-to-uwp-porting-xaml-and-ui.md#animation) |
+| Classe **ControlTiltEffect.TiltEffect** | Des animations de la bibliothèque d’animations Windows Runtime sont intégrées aux styles par défaut des contrôles courants. Voir [Animation](wpsl-to-uwp-porting-xaml-and-ui.md#animation). |
 | Espace de noms **Microsoft.Phone.Controls** | Espace de noms [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) |
 | (MPC = **Microsoft.Phone.Controls**) <br/> Classe **MPC.ContextMenu** | Classe [**PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693) |
 | (MPC = **Microsoft.Phone.Controls**) <br/>Classe **MPC.DatePickerPage** | Classe [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) |
@@ -76,7 +80,7 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 | (MPD = **Microsoft.Phone.Data**) <br/>Espace de noms **MPD.Linq** | Aucun équivalent direct | 
 | (MPD = **Microsoft.Phone.Data**) <br/>Espace de noms **MPD. Linq.Mapping** | Aucun équivalent direct |
 | Espace de noms **Microsoft.Phone.Globalization** | Aucun équivalent direct | 
-| (MPI = **Microsoft.Phone.Info**) <br/>Classes **MPI.DeviceExtendedProperties** et **DeviceStatus** | Classes [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390) et [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) Pour plus d’informations, voir [État de l’appareil](wpsl-to-uwp-input-and-sensors.md#device-status). | 
+| (MPI = **Microsoft.Phone.Info**) <br/>Classes **MPI.DeviceExtendedProperties** et **DeviceStatus** | Classes [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390) et [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831). Pour plus d’informations, voir [État de l’appareil](wpsl-to-uwp-input-and-sensors.md#device-status). | 
 | (MPI = **Microsoft.Phone.Info**) <br/>Classe **MPI.MediaCapabilities** | Aucun équivalent direct | 
 | (MPI = **Microsoft.Phone.Info**) <br/>Classe **MPI.UserExtendedProperties** | Classe [**AdvertisingManager**](https://msdn.microsoft.com/library/windows/apps/dn363391) | 
 | Espace de noms **System.Windows** | Espace de noms [**Windows.UI.Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) | 
@@ -114,7 +118,7 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 | (ST = **System.Threading**) <br/> Propriété **ST.Thread.CurrentCulture** | (SG = **System.Globalization**) <br/> Propriété **S.CultureInfo.CurrentCulture** |
 | (ST = **System.Threading**) <br/> Propriété **ST.Thread.CurrentUICulture** | (SG = **System.Globalization**) <br/> Propriété **S.CultureInfo.CurrentUICulture** |
 | Graphismes et animation | |
-| Espaces de noms**Microsoft.Xna.Framework.\***, [Bibliothèque de classes de XNA Framework](http://go.microsoft.com/fwlink/p/?LinkId=263769), [Bibliothèque de classes du contenu à venir](http://go.microsoft.com/fwlink/p/?LinkId=263770) | Aucun équivalent direct. En règle générale, utilisez [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) avec C++. Voir [Développement de jeux](https://msdn.microsoft.com/library/windows/apps/hh452744) et [Technologie interop DirectX et XAML](https://msdn.microsoft.com/library/windows/apps/hh825871). |
+| Espaces de noms**Microsoft.Xna.Framework.\***, [Bibliothèque de classes de XNA Framework](http://go.microsoft.com/fwlink/p/?LinkId=263769), [Bibliothèque de classes du contenu à venir](http://go.microsoft.com/fwlink/p/?LinkId=263770) | Aucun équivalent direct. En règle générale, utilisez [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) avec C++. Voir [Développement de jeux](https://msdn.microsoft.com/library/windows/apps/hh452744) et [Interopérabilité de DirectX et XAML](https://msdn.microsoft.com/library/windows/apps/hh825871). |
 | Classe **Microsoft.Xna.Framework.Audio.Microphone** | Classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) |
 | Classe **Microsoft.Xna.Framework.Audio.SoundEffect** | Classe [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) |
 | Espace de noms **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System**) <br/> Espace de noms [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) |
@@ -125,7 +129,7 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 | Classe **Microsoft.Xna.Framework.Media.MediaQueue** | Classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) |
 | Classe **Microsoft.Xna.Framework.Media.Playlist** | Classe [**BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) |
 | Espace de noms **System.Windows.Media** | Espace de noms [**Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) |
-| Classe **System.Windows.Media.RadialGradientBrush** | Aucun équivalent direct. Voir [Média et graphismes](wpsl-to-uwp-porting-xaml-and-ui.md#media) |
+| Classe **System.Windows.Media.RadialGradientBrush** | Aucun équivalent direct. Voir [Média et graphismes](wpsl-to-uwp-porting-xaml-and-ui.md#media). |
 | Espace de noms **System.Windows.Media.Animation** | Espace de noms [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) |
 | Espace de noms **System.Windows.Media.Effects** | Aucun équivalent direct | 
 | Espace de noms **System.Windows.Media.Imaging** | Espace de noms [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) |
@@ -147,7 +151,7 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 | Classes **Microsoft.Phone.Tasks.SaveContactTask**, **SaveEmailAddressTask** et **SavePhoneNumberTask** | Classe [**StoredContact**](https://msdn.microsoft.com/library/windows/apps/jj207727) (Windows Phone uniquement) | 
 | Classe **Microsoft.Phone.Tasks.SaveRingtoneTask** | Aucun équivalent direct | 
 | Classes **Microsoft.Phone.Tasks.ShareLinkTask**, **ShareMediaTask** et **ShareStatusTask** | Classe [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) |
-| Emplacement | |
+| Localisation | |
 | Espace de noms **System.Device.Location** | Espace de noms [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) |
 | Classe **System.Device.GeoCoordinateWatcher** | Classe [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) |
 | Cartes | |
@@ -161,9 +165,9 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 | Classe **Microsoft.Phone.Maps.Services.RouteQuery** | Classe [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) |
 | Monétisation | |
 | Espace de noms **Microsoft.Phone.Marketplace** | Espace de noms [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) |
-| Support | |
+| Multimédia | |
 | Espace de noms **Microsoft.Phone.Media** | Classe [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) |
-| Réseaux | |
+| Réseau | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Classe **MPNN.DeviceNetworkInformation** | Classes [**Hostname**](https://msdn.microsoft.com/library/windows/apps/br207113) et [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293)
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Classe **MPNN.NetworkInterface** | Classe [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Classe **MPNN.NetworkInterfaceInfo** | Classe [**ConnectionProfile**](https://msdn.microsoft.com/library/windows/apps/br207249) |
@@ -202,7 +206,7 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 | Extensions réactives | |
 | Espace de noms **Microsoft.Phone.Reactive** | Aucun équivalent direct | 
 | Réflexion | |
-| Classe **System.Type** | Classe **System.Reflection.TypeInfo** Voir [Réflexion dans .NET Framework pour les applications du Windows Store](https://msdn.microsoft.com/library/hh535795.aspx) |
+| Classe **System.Type** | Classe **System.Reflection.TypeInfo**. Voir [Réflexion dans .NET Framework pour les applications du Windows Store](https://msdn.microsoft.com/library/hh535795.aspx). |
 | Ressources | |
 | Classe **System.Resources.ResourceManager** | (WA = **Windows.ApplicationModel**)<br/>Espaces de noms [**WA.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) et [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022), classe [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078). Voir [Création et récupération de ressources dans les applications Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx). |
 | Élément sécurisé | |
@@ -240,10 +244,11 @@ En outre, dans une application Windows 10, vous bénéficierez du code natif .N
 | (SX = **System.Xml**) | Méthode **SX.XmlConvert.ToDateTimeOffset** |
  
 
-Rubrique suivante : [Portage du projet](wpsl-to-uwp-porting-to-a-uwp-project.md)
+Rubrique suivante : [Portage du projet](wpsl-to-uwp-porting-to-a-uwp-project.md).
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

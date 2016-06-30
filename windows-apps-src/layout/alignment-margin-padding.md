@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Utilisez l’alignement, la marge et l’espacement pour influer sur la disposition des éléments d’une page.
-title: Alignement, marge et espacement pour les applications UWP
+Description: "Utilisez l’alignement, la marge et l’espacement pour influer sur la disposition des éléments d’une page."
+title: Alignement, marge et espacement pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
+
 ---
 # Alignement, marge et espacement
 
@@ -52,7 +56,7 @@ Une propriété **Padding** décrit la distance entre un élément et tout conte
 -   [
             **Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459) : hérite de toutes les classes dérivées [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390). Comme les contrôles ne possèdent pas tous du contenu, pour certains contrôles (par exemple [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/dn279268)), cette propriété n’a aucun effet. Si le contrôle a une bordure (voir [**Control.BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399)), l’espacement s’applique à l’intérieur de celle-ci.
 -   [
-            **Border.Padding**](https://msdn.microsoft.com/library/windows/apps/br209263) : définit l’espace entre la ligne de rectangle créée par [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209256)/[**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209254) et l’élément [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258).
+            **Border.Padding**](https://msdn.microsoft.com/library/windows/apps/br209263) : définit l’espace entre la ligne de rectangle créée par [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209256)/[**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209254) et l’élément [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258).
 -   [
             **ItemsPresenter.Padding**](https://msdn.microsoft.com/library/windows/apps/hh968021) : contribue à l’apparence des éléments visuels générés dans les contrôles d’éléments, en plaçant l’espacement spécifié autour de chaque élément.
 -   [
@@ -81,6 +85,7 @@ Les propriétés [**Height**](https://msdn.microsoft.com/library/windows/apps/br
 [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

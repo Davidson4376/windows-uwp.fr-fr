@@ -2,7 +2,11 @@
 author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: Performances
-description: Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie.
+description: "Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 68f9080cedcc2840fb1e92b81e2fb6bc0b53bee8
+
 ---
 # Performances
 
@@ -31,6 +35,7 @@ Si vous ne l’avez pas encore fait, nous vous conseillons de porter votre appli
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

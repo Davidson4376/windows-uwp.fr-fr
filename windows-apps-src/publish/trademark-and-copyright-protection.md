@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Découvrez ce que vous pouvez faire lorsque vous pensez qu’une autre application viole vos droits de propriété intellectuelle.
+Description: "Découvrez ce que vous pouvez faire lorsque vous pensez qu’une autre application viole vos droits de propriété intellectuelle."
 title: Protection de la marque et du copyright
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2c3f35ee5fb3f04e9f2fc389162793caa9ce5f1a
+
 ---
 
 # Protection de la marque et du copyright
@@ -64,6 +68,7 @@ Lisez attentivement l’avis de Microsoft, et suivez les instructions. L’avis 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

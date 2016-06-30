@@ -2,7 +2,11 @@
 author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
 description: La classe AdvancedPhotoCapture vous permet de capturer des photos HDR.
-title: Capture photo avec plage dynamique élevée (HDR)
+title: "Capture photo avec plage dynamique élevée (HDR)"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3015aa4338ddb0c0a006eb631026261a4453f376
+
 ---
 
 # Capture photo avec plage dynamique élevée (HDR)
@@ -18,7 +22,7 @@ Les articles suivants concernent également la capture HDR :
 
 -   Utilisez la classe [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) pour capturer une vidéo à l’aide de l’algorithme de traitement HDR intégré de Windows. Pour plus d’informations, voir [Contrôles de l’appareil de capture pour la vidéo](capture-device-controls-for-video-capture.md).
 
--   Vous pouvez utiliser la [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) pour capturer une séquence de photos, chacune avec des paramètres différents, et implémenter votre propre HDR ou tout autre algorithme de traitement. Pour plus d’informations, voir [Séquence de photos variables](variable-photo-sequence.md).
+-   Vous pouvez utiliser la [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) pour capturer une séquence de photos, chacune avec des paramètres différents, et implémenter votre propre HDR ou tout autre algorithme de traitement. Pour plus d’informations, voir [Séquence de photos variable](variable-photo-sequence.md).
 
 **Remarque**
 -   L’enregistrement simultané de capture photo et vidéo **AdvancedPhotoCapture** n’est pas pris en charge.
@@ -66,8 +70,7 @@ Capturer une photo HDR en appelant l’objet [**AdvancedPhotoCapture**](https://
 
 Le processus HDR capture plusieurs images, puis les transforme en une seule image une fois toutes les images capturées. Vous pouvez accéder à une image après l’avoir capturée, mais sans devoir attendre la fin du processus HDR, en gérant l’événement [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392). Cette étape n’est pas nécessaire si vous êtes uniquement intéressé par le résultat de la photo HDR finale.
 
-**Important** 
-           [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) n’est pas déclenché sur les appareils qui prennent en charge la plage HDR matérielle et qui, par conséquent, ne génèrent pas d’images de référence. Votre application doit gérer le cas où cet événement n’est pas déclenché.
+**Important** [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) n’est pas déclenché sur les appareils qui prennent en charge la plage HDR matérielle et qui, par conséquent, ne génèrent pas d’images de référence. Votre application doit gérer le cas où cet événement n’est pas déclenché.
 
 Étant donné que l’image de référence arrive hors du contexte de l’appel à **CaptureAsync**, un mécanisme permet de passer des informations de contexte au gestionnaire **OptionalReferencePhotoCaptured**. Vous devez tout d’abord définir un objet qui contiendra vos informations de contexte. À vous de décider du nom et du contenu de cet objet. Cet exemple définit un objet qui possède des membres pour effectuer le suivi du nom de fichier et de l’orientation de l’appareil photo de la capture.
 
@@ -98,6 +101,7 @@ Lorsque votre application a terminé la capture, avant d’éliminer l’objet *
 * [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

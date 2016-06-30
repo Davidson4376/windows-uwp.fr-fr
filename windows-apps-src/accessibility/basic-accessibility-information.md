@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: Les informations d’accessibilité élémentaires sont souvent classées en trois catégories &#58; nom, rôle et valeur. Cette rubrique décrit le code qui aide votre application à exposer les informations de base nécessaires aux technologies d’assistance.
+Description: "Les informations d’accessibilité élémentaires sont souvent classées en trois catégories &#58; nom, rôle et valeur. Cette rubrique décrit le code qui aide votre application à exposer les informations de base nécessaires aux technologies d’assistance."
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
-title: Présenter des informations d’accessibilité élémentaires
+title: "Présenter des informations d’accessibilité élémentaires"
 label: Expose basic accessibility information
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1c6bc8567b39357d414a46ef2b92197c78bca971
+
 ---
 
 # Présenter des informations d’accessibilité élémentaires  
@@ -32,7 +35,7 @@ La plupart des éléments de conteneur tels que les panneaux n’effectuent pas 
 <span id="role_value"/>
 <span id="ROLE_VALUE"/>
 ## Rôle et valeur  
-Les contrôles et autres éléments d’interface utilisateur qui font partie du vocabulaire XAML mettent en œuvre la prise en charge d’UI Automation pour signaler les rôles et les valeurs dans le cadre de leurs définitions. Vous pouvez utiliser des outils UI Automation pour examiner les informations sur les rôles et les valeurs pour les contrôles, ou vous pouvez lire la documentation relative aux implémentations [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) de chaque contrôle. Les rôles disponibles dans une infrastructure UI Automation sont définis dans l’énumération [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182). Les clients UI Automation tels que les technologies d’assistance peuvent obtenir des informations sur les rôles en appelant les méthodes que l’infrastructure UI Automation expose à partir de l’élément **AutomationPeer** du contrôle.
+Les contrôles et autres éléments d’interface utilisateur qui font partie du vocabulaire XAML mettent en œuvre la prise en charge d’UI Automation pour signaler les rôles et les valeurs dans le cadre de leurs définitions. Vous pouvez utiliser des outils UI Automation pour examiner les informations sur les rôles et les valeurs pour les contrôles, ou vous pouvez lire la documentation relative aux implémentations [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) de chaque contrôle. Les rôles disponibles dans une infrastructure UI Automation sont définis dans l’énumération [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182). Les clients UI Automation tels que les technologies d’assistance peuvent obtenir des informations sur les rôles en appelant les méthodes que l’infrastructure UI Automation expose à partir de l’élément **AutomationPeer**du contrôle.
 
 Les contrôles n’ont pas tous une valeur. Ceux qui en ont une signalent ces informations à UI Automation par le biais des homologues et modèles qui sont pris en charge par ce contrôle. Par exemple, un élément de formulaire [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) a bien une valeur. Une technologie d’assistance peut être un client UI Automation et découvrir par conséquent qu’il existe une valeur et quelle est cette valeur. Dans ce cas particulier, **TextBox** prend en charge le modèle [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) via les définitions [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550).
 
@@ -54,7 +57,7 @@ Pour simplifier l’utilisation de chaînes qui existent déjà dans l’interfa
 
 * [
             **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565), [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) et **RichTextBlock** effectuent chacun la promotion de la valeur de la propriété **Text** comme nom accessible par défaut.
-* Toute sous-classe [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) utilise une technique « ToString » itérative pour rechercher les chaînes dans sa valeur [**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365_content) et effectue la promotion de ces chaînes comme nom accessible par défaut.
+* Toute sous-classe [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) utilise une technique « ToString » itérative pour rechercher les chaînes dans sa valeur [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) et effectue la promotion de ces chaînes comme nom accessible par défaut.
 
 > [!NOTE]
 > Comme l’impose UI Automation, la longueur du nom accessible ne doit pas dépasser 2 048 caractères. Si une chaîne utilisée pour la détermination automatique du nom accessible dépasse cette limite, le nom accessible est tronqué à ce niveau.
@@ -124,7 +127,7 @@ L’un des outils que vous pouvez utiliser pour tester l’accessibilité s’ap
 <span id="accessible_names_from_dynamic_data"/>
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 ## Noms accessibles tirés de données dynamiques  
-Windows prend en charge de nombreux contrôles qui peuvent servir à afficher des valeurs provenant d’une source de données associée, grâce à une fonctionnalité appelée *liaison de données*. Lors du remplissage de listes avec des éléments de données, vous devrez peut-être appliquer une technique qui définit les noms accessibles des éléments de listes liés aux données une fois la liste initiale remplie. Pour plus d’informations, voir « Scénario 4 » dans l’[Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570).
+Windows prend en charge de nombreux contrôles qui peuvent servir à afficher des valeurs provenant d’une source de données associée, grâce à une fonctionnalité appelée *liaison de données*. Lors du remplissage de listes avec des éléments de données, vous devrez peut-être appliquer une technique qui définit les noms accessibles des éléments de listes liés aux données une fois la liste initiale remplie. Pour plus d’informations, voir « Scénario 4 » dans l’[Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570).
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -132,7 +135,7 @@ Windows prend en charge de nombreux contrôles qui peuvent servir à afficher de
 ## Noms accessibles et localisation  
 Pour vous assurer que le nom accessible est également un élément localisé, vous devez appliquer des techniques correctes pour le stockage de chaînes localisables telles que les ressources, puis faire référence aux connexions de ressources avec des valeurs [directive x:Uid](https://msdn.microsoft.com/library/windows/apps/Mt204791). Si le nom accessible provient d’une utilisation d’[**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) définie de manière explicite, assurez-vous que la chaîne est aussi localisable.
 
-Notez que les propriétés jointes telles les propriétés [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) utilisent une syntaxe de qualification spéciale pour le nom de la ressource, afin que la ressource fasse référence à la propriété jointe telle qu’elle a été appliquée à un élément spécifique. Par exemple, le nom de la ressource pour [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) telle qu’elle a été appliquée à un élément d’interface utilisateur nommé `MediumButton` est :
+Notez que les propriétés jointes telles les propriétés [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) utilisent une syntaxe de qualification spéciale pour le nom de la ressource, afin que la ressource fasse référence à la propriété jointe telle qu’elle a été appliquée à un élément spécifique. Par exemple, le nom de la ressource pour [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) telle qu’elle a été appliquée à un élément d’interface utilisateur nommé `MediumButton` est : `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`.
 
 <span id="related_topics"/>
 ## Rubriques connexes  
@@ -142,6 +145,7 @@ Notez que les propriétés jointes telles les propriétés [**AutomationProperti
 * [Test de l’accessibilité](accessibility-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

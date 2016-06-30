@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
-description: En savoir plus sur le processus de bout en bout de développement et de publication d’une application avec des publicités.
-title: Flux de travail de création d’applications contenant des publicités
+description: "En savoir plus sur le processus de bout en bout de développement et de publication d’une application avec des publicités."
+title: "Flux de travail de création d’applications contenant des publicités"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
+
 
 ---
 
@@ -61,6 +65,7 @@ Une fois votre application publiée et disponible dans le Windows Store, vous po
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

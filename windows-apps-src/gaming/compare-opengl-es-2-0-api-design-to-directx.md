@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
-description: Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0.
+title: "Planifier votre portage d’OpenGL ES 2.0 vers Direct3D"
+description: "Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0."
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
+
 ---
 
 # Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
@@ -115,6 +119,7 @@ Toutefois, Direct3D peut prendre en charge un système de coordonnées droitier.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,11 +1,15 @@
 ---
 author: mijacobs
-Description: La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, et de fonctionnalités au niveau du système.
-title: Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)
+Description: "La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, et de fonctionnalités au niveau du système."
+title: "Informations de base en matière de conception de la navigation pour les applications de plateforme Windows universelle (UWP)"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
+
 ---
 
 #  Navigation dans l’historique et navigation vers l’arrière
@@ -307,6 +311,7 @@ Lorsque l’utilisateur bascule vers une autre application et retourne vers votr
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

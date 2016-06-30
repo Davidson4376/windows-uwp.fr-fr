@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales.
-title: Portage d’applications vers Windows 10
+description: "Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales."
+title: "Portage d’applications vers Windows 10"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 88ebc2984ce856dd3fb10b8a61de4a32dc711500
+
 ---
 
 # Portage d’applications vers Windows 10
@@ -31,6 +35,7 @@ Ce guide relatif au portage explique les différences entre la technologie de vo
 * [Passer du web à WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

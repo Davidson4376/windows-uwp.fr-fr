@@ -5,8 +5,8 @@ title: "Interactions du pavé tactile"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 ---
 
@@ -41,7 +41,7 @@ Outre la prise en charge intégrée de l’entrée tactile, nous vous recommando
 
 Les mouvements et les instructions abordés ici permettent de vérifier que votre application prend en charge les entrées du pavé tactile de façon transparente, et avec un minimum de code.
 
-## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>Langue du pavé tactile
+## Langue du pavé tactile
 
 
 Un ensemble concis d’interactions avec le pavé tactile est utilisé de façon uniforme dans l’ensemble du système. Optimisez votre application pour les entrées tactiles et de la souris. Ce langage confère un aspect familier à votre application, qui sera plus facile à appréhender. Les utilisateurs n’en seront que plus confiants.
@@ -71,39 +71,39 @@ Voici quelques exemples de mouvements optimisés pour le pavé tactile qui perme
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>Appui avec trois doigts</p></td>
+<td align="left"><p>Appui avec trois doigts</p></td>
 <td align="left"><p>Préférence de l’utilisateur pour effectuer une recherche avec <strong>Cortana</strong> ou pour afficher le <strong>centre de notifications</strong>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>Glissement avec trois doigts</p></td>
+<td align="left"><p>Glissement avec trois doigts</p></td>
 <td align="left"><p>Préférence de l’utilisateur pour ouvrir les applications actives sur le bureau virtuel, afficher le bureau, ou basculer entre des applications ouvertes.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>Appui avec un seul doigt pour l’action principale</p></td>
+<td align="left"><p>Appui avec un seul doigt pour l’action principale</p></td>
 <td align="left"><p>Appuyez avec un seul doigt sur un élément pour appeler son action principale (par exemple, le lancement d’une application ou l’exécution d’une commande).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>Appui avec deux doigts pour effectuer un clic droit</p></td>
+<td align="left"><p>Appui avec deux doigts pour effectuer un clic droit</p></td>
 <td align="left"><p>Appuyez avec deux doigts simultanément sur un élément pour le sélectionner et afficher les commandes contextuelles.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>Glissement avec deux doigts pour effectuer un mouvement panoramique</p></td>
+<td align="left"><p>Glissement avec deux doigts pour effectuer un mouvement panoramique</p></td>
 <td align="left"><p>Le glissement est principalement utilisé pour les interactions de type panoramique mais peut également l’être pour le déplacement, le dessin ou l’écriture.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>Pincer et étirer pour agrandir</p></td>
+<td align="left"><p>Pincer et étirer pour agrandir</p></td>
 <td align="left"><p>Les mouvements de pincement et d’étirement sont souvent utilisés pour le redimensionnement et le zoom sémantique.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>Appuyer avec un seul doigt et faire glisser pour réorganiser</p></td>
+<td align="left"><p>Appuyer avec un seul doigt et faire glisser pour réorganiser</p></td>
 <td align="left"><p>Faites glisser un élément.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>Appuyer avec un seul doigt et faites-le glisser pour sélectionner du texte</p></td>
+<td align="left"><p>Appuyer avec un seul doigt et faites-le glisser pour sélectionner du texte</p></td>
 <td align="left"><p>Appuyez sur le texte à sélectionner et faites glisser le doigt pour le sélectionner. Appuyez deux fois pour sélectionner un mot.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>Zone de clic avec les boutons gauche et droit</p></td>
+<td align="left"><p>Zone de clic avec les boutons gauche et droit</p></td>
 <td align="left"><p>Émulez la fonctionnalité de boutons gauche et droit d’un dispositif de pointage.</p></td>
 </tr>
 </tbody>
@@ -111,14 +111,14 @@ Voici quelques exemples de mouvements optimisés pour le pavé tactile qui perme
 
  
 
-## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>Matériel
+## Matériel
 
 
 Interrogez les fonctionnalités de la souris ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) pour identifier les aspects de l’interface utilisateur de votre application auxquels le pavé tactile peut accéder directement. Nous vous conseillons de fournir une interface utilisateur pour les entrées tactiles et de la souris.
 
 Pour plus d’informations concernant l’interrogation des fonctionnalités du périphérique, voir [Identifier des périphériques d’entrée](identify-input-devices.md).
 
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>Retour visuel
+## Retour visuel
 
 
 -   Quand des événements de déplacement ou de pointage permettent de détecter un curseur de pavé tactile, affichez une interface utilisateur spécifique à la souris pour indiquer la fonctionnalité exposée par l’élément. Si le curseur de pavé tactile ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur du pavé tactile. Cela maintient l’interface utilisateur propre et aérée.
@@ -129,7 +129,7 @@ Pour plus d’informations concernant l’interrogation des fonctionnalités du 
 
 Pour obtenir des conseils plus généraux concernant le retour visuel, voir [Recommandations en matière de retour visuel](https://msdn.microsoft.com/library/windows/apps/hh465342).
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Curseurs
+## Curseurs
 
 
 Un ensemble de curseurs standard est disponible pour servir de pointeurs de pavé tactile. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
@@ -144,7 +144,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 -   Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
 -   Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
@@ -166,6 +166,6 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

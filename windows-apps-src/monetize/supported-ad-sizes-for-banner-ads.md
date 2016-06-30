@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
-description: En savoir plus sur les tailles des bannières publicitaires prises en charge.
-title: Tailles de bannières publicitaires prises en charge
+description: "En savoir plus sur les tailles des bannières publicitaires prises en charge."
+title: "Tailles de bannières publicitaires prises en charge"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: f83febcb6c96ad85329633e652978f5c7724e743
+
 
 ---
 
@@ -87,6 +91,7 @@ Microsoft Advertising prend en charge les tailles de bannières publicitaires s
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

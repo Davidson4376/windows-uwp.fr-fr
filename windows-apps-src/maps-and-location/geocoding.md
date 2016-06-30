@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: Effectuer un géocodage et un géocodage inverse
-description: Convertissez des adresses en emplacements géographiques et vice versa (géocod. ou géocod. inverse) à l’aide de MapLocationFinder dans Windows.Services.Maps.
+title: "Effectuer un géocodage et un géocodage inverse"
+description: "Convertissez des adresses en emplacements géographiques et vice versa (géocod. ou géocod. inverse) à l’aide de MapLocationFinder dans Windows.Services.Maps."
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
+
 ---
 
 # Effectuer un géocodage et un géocodage inverse
@@ -17,7 +21,7 @@ Convertissez des adresses en emplacements géographiques (géocodage) et des emp
 
 -   [Exemple de carte pour la plateforme Windows universelle (UWP, Universal Windows Platform)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-Les classes pour le géocodage et le géocodage inverse sont associées comme suit :
+Les classes pour le géocodage et le géocodage inverse sont associées comme suit :
 
 -   La classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) dispose de méthodes qui effectuent le géocodage ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) et le géocodage inverse ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)).
 -   Ces méthodes renvoient un [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
@@ -84,7 +88,7 @@ Convertissez un emplacement géographique en adresse (géocodage inverse) en pro
 
 1.  Appelez la méthode [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) de la classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550).
 2.  La méthode [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) renvoie un objet [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) contenant une collection d’objets [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) correspondants.
-3.  Accédez à cette collection via la propriété [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) de la classe [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
+3.  Accédez à cette collection via la propriété [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) du [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
 4.  Accédez à l’objet [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) via la propriété [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) de chaque [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549).
 
 ```csharp
@@ -133,6 +137,7 @@ town = Redmond
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

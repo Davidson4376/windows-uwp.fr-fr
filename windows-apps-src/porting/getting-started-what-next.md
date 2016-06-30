@@ -2,7 +2,11 @@
 author: mcleblanc
 title: Prise en main &#58; Et ensuite ?
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: Avec ces informations de base, vous pouvez commencer à écrire des applications UWP plus intéressantes.
+description: "Avec ces informations de base, vous pouvez commencer à écrire des applications UWP plus intéressantes."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
+
 ---
 
 # Prise en main &#58; Et ensuite ?
@@ -33,6 +37,7 @@ Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunit�
 * [Blog de création d’applications pour Windows](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
-title: Ouverture d’un compte de développeur
-description: Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte.
+title: "Ouverture d’un compte de développeur"
+description: "Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte."
+ms.sourcegitcommit: c4a753b7642354c4fe42cff721fb21337b14528f
+ms.openlocfilehash: 979df6390fef01a32fb1728956622fbfe38bafa9
+
 ---
 # Ouverture d’un compte de développeur
 
@@ -37,10 +40,12 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
 
 ## Recommandations supplémentaires pour les comptes d’entreprise
 
-Lorsque vous créez un compte d’entreprise, suivez ces recommandations, plus particulièrement si plusieurs utilisateurs doivent accéder au compte.
+Lorsque vous créez un compte d’entreprise, suivez ces recommandations si plusieurs utilisateurs doivent accéder au compte à l’aide du compte Microsoft ayant ouvert ce dernier. 
+
+> **Important** Pour autoriser à plusieurs utilisateurs l’accès à votre compte de Centre de développement, nous vous recommandons d’utiliser Azure Active Directory afin d’attribuer des rôles aux utilisateurs individuels ; ces derniers peuvent accéder au compte en se connectant à l’aide de leurs informations d’identification Azure AD. Pour plus d’informations, voir [Gérer les utilisateurs de compte](manage-account-users.md).
 
 -   Créez votre compte Microsoft en utilisant une adresse de messagerie appartenant au domaine de votre entreprise, et non à un individu unique (par exemple, windowsapps@fabrikam.com).
--   Limitez l’accès au compte de votre entreprise au plus petit nombre possible de développeurs.
+-   Limitez l’accès à ce compte Microsoft au plus petit nombre possible de développeurs.
 -   Configurez une liste de distribution de courrier électronique d’entreprise qui comprend toutes les personnes qui doivent accéder au compte de développeur, puis ajoutez cette adresse de messagerie aux informations de sécurité. Cela permet à tous les employés de la liste de recevoir des codes de sécurité quand cela est nécessaire, et de gérer les informations de sécurité de votre compte Microsoft. Si la configuration d’une liste de distribution n’est pas envisageable, le propriétaire du compte de messagerie individuel doit être disponible pour accéder au code de sécurité et le partager quand le système le demande (par exemple, quand de nouvelles informations de sécurité sont ajoutées au compte, ou quand un nouvel appareil accède au compte).
 -   Ajoutez un numéro de téléphone d’entreprise direct (sans numéro de poste), accessible aux membres clés de l’équipe.
 -   En général, nous conseillons aux développeurs d’utiliser des appareils approuvés pour se connecter au compte de développeur de votre entreprise. Tous les membres clés de l’équipe doivent avoir accès à ces appareils approuvés. Cela limite le nombre de codes de sécurité devant être envoyés lors de l’accès au compte.
@@ -75,6 +80,7 @@ Lorsque vous fermez votre compte, il est important que vous en compreniez les r�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

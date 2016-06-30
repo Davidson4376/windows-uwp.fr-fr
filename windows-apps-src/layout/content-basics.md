@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc.
-title: Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)
+Description: "Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc."
+title: "Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)"
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
+
 ---
 
 #  Informations de base relatives à la conception de contenu pour les applications UWP
@@ -118,6 +122,7 @@ Voici quelques éléments d’interface utilisateur couramment utilisés pour af
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

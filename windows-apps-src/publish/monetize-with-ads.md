@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Si votre application utilise la médiation publicitaire, ou affiche des bannières ou des spots publicitaires de Microsoft Advertising, utilisez la page Monétisation &gt; Monétiser avec des publicités afin de gérer votre utilisation des publicités.
-title: Monétisation à l’aide des annonces
+Description: "Si votre application utilise la médiation publicitaire, ou affiche des bannières ou des spots publicitaires de Microsoft Advertising, utilisez la page Monétisation &gt; Monétiser avec des publicités afin de gérer votre utilisation des publicités."
+title: "Monétisation à l’aide des annonces"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
+
 ---
 
 # Monétisation à l’aide des annonces
@@ -65,6 +69,7 @@ Vos unités publicitaires apparaissent dans un tableau situé en bas de cette se
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

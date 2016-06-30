@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Vous pouvez répondre aux actions d’un clavier matériel ou logiciel dans vos applications à l’aide de gestionnaires d’événements de classe et de clavier.
+Description: "Vous pouvez répondre aux actions d’un clavier matériel ou logiciel dans vos applications à l’aide de gestionnaires d’événements de classe et de clavier."
 title: Interactions avec le clavier
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
+ms.sourcegitcommit: d65e1315e83fef5e53771adad0943c9cb59d9139
+ms.openlocfilehash: 9de90236d94522f1b80309c3fec51ce59aee0319
+
 ---
 
 # Interactions avec le clavier
@@ -26,7 +29,7 @@ Une interface utilisateur de clavier bien conçue représente un aspect importan
 
 Les utilisateurs peuvent interagir avec les applications universelles via un clavier matériel et deux claviers logiciels : le clavier visuel et le clavier tactile.
 
-<span></span>Clavier visuel  
+Clavier visuel  
 Le clavier visuel est un clavier logiciel visuel que vous pouvez utiliser à la place du clavier physique pour entrer des données à l’aide de la fonction tactile, de la souris, du stylo/stylet ou d’un autre périphérique de pointage (un écran tactile n’est pas nécessaire). Le Clavier visuel est fourni pour les systèmes qui ne possèdent pas de clavier physique ou pour les utilisateurs qui connaissent des problèmes de mobilité les empêchant d’utiliser les périphériques d’entrée physiques classiques. Le clavier visuel émule la plupart, sinon la totalité, des fonctionnalités d’un clavier matériel.
 
 Il peut être activé depuis la page Clavier dans Paramètres &gt; Options d’ergonomie.
@@ -39,14 +42,14 @@ Il peut être activé depuis la page Clavier dans Paramètres &gt; Options d’e
 
 <sup>Clavier visuel</sup>
 
-<span id="Touch_keyboard"></span><span id="touch_keyboard"></span><span id="TOUCH_KEYBOARD"></span>Clavier tactile  
+Clavier tactile  
 Le clavier tactile est un clavier logiciel visuel permettant d’entrer du texte à l’aide de la fonction tactile. Il ne se substitue pas au Clavier visuel, puisqu’il est utilisé uniquement pour la saisie de texte (il n’émule pas le clavier matériel).
 
 Selon l’appareil, le clavier tactile s’affiche quand un champ de texte ou un autre contrôle de texte modifiable reçoit le focus ou lorsque l’utilisateur l’active manuellement via le **Centre de notification** :
 
 ![icône du clavier tactile dans le Centre de notification](images/input-patterns/touch-keyboard-notificationcenter.png)
 
-**Remarque** Il se peut que l’utilisateur doive accéder à l’écran **Mode tablette** dans Paramètres &gt; Système et activer l’option « Optimiser les fonctions tactiles de Windows lors de l’utilisation de votre appareil en mode tablette » pour permettre l’affichage automatique du clavier tactile.
+**Remarque** Il se peut que l’utilisateur doive accéder à l’écran **Mode tablette** dans Paramètres &gt; Système et activer l’option « Optimiser les fonctions tactiles de Windows lors de l’utilisation de votre appareil en mode tablette » pour permettre l’affichage automatique du clavier tactile.
 
  
 
@@ -96,7 +99,7 @@ Des interactions réussies avec le clavier permettent aux utilisateurs d’accom
 
 **Remarque** Le clavier tactile ne prend pas en charge le basculement et la plupart des commandes système (voir [Modèles](#keyboard_command_patterns)).
 
-## <span id="Navigation"></span><span id="navigation"></span><span id="NAVIGATION"></span>Navigation
+## Navigation
 
 
 Pour utiliser un contrôle (y compris des éléments de navigation) avec le clavier, il faut que le focus de celui-ci soit positionné sur le contrôle. Une façon pour un contrôle de recevoir le focus du clavier est de rendre celui-ci accessible via la navigation par onglets à l’aide de la touche de tabulation. Un modèle bien conçu de navigation à l’aide du clavier fournit un ordre de tabulation logique et prévisible, qui permet à l’utilisateur d’explorer et d’utiliser votre application rapidement et efficacement.
@@ -126,29 +129,29 @@ Utilisez les touches de direction comme raccourcis clavier pour la navigation in
 Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple :
 
 ![formulaire contenant des zones devant toujours rester affichées](images/input-patterns/touch-keyboard-pan2.png)
-## <span id="Activation"></span><span id="activation"></span><span id="ACTIVATION"></span>Activation
+## Activation
 
 
 Un contrôle peut être activé de plusieurs façons, quelle que soit la position du focus.
 
-<span id="Spacebar__Enter__and_Esc"></span><span id="spacebar__enter__and_esc"></span><span id="SPACEBAR__ENTER__AND_ESC"></span>Barre d’espace, Entrée et Échap  
+Barre d’espace, Entrée et Échap  
 La barre d’espace doit activer le contrôle sur lequel le focus d’entrée est positionné. La touche Entrée doit activer un contrôle par défaut ou le contrôle sur lequel le focus d’entrée est positionné. Un contrôle par défaut est le contrôle sur lequel est positionné le focus initial, ou répondant exclusivement à l’action de la touche Entrée (en règle générale, il change avec le focus d’entrée). En outre, la touche Échap doit fermer ou quitter une interface utilisateur temporaire, telle qu’un menu ou une boîte de dialogue.
 
 L’application Calculatrice illustrée ici utilise la barre d’espace pour activer le bouton avec le focus, verrouille les touches Entrée sur le bouton « = », et verrouille la touche Échap sur le bouton « C ».
 
 ![application Calculatrice](images/input-patterns/calculator.png)
 
-<span id="Keyboard_modifiers"></span><span id="keyboard_modifiers"></span><span id="KEYBOARD_MODIFIERS"></span>Modificateurs de clavier  
-Les modificateurs de clavier s’inscrivent dans les catégories suivantes. 
+Modificateurs de clavier  
+Les modificateurs de clavier s’inscrivent dans les catégories suivantes.
 
- 
-| Catégorie | Description | 
-|----------|-------------| 
+
+| Catégorie | Description |
+|----------|-------------|
 | Touche de raccourci | Permet d’effectuer une action courante sans l’interface utilisateur tel que « Ctrl-S » pour **Enregistrer**. Permet d’implémenter des raccourcis clavier pour les fonctionnalités clés de l’application. Toutes les commandes n’ont pas, ou ne nécessitent pas, de raccourcis. |   
 | Touche d’accès rapide | Attribuée à chaque contrôle visible, de niveau supérieur tel que « Alt + F » pour le menu **Fichier**. Une touche d’accès rapide ne permet pas d’appeler ou d’activer une commande. |
 | Touche accélérateur | Permet d’exécuter des commandes définies par l’application ou des commandes système par défaut, telles que « Alt-Imp écr. » pour effectuer une capture d’écran, « Alt-Tab » pour basculer entre les applications ou « F1 » pour accéder à l’aide. Une commande associée à une touche accélérateur ne doit pas nécessairement être un élément de menu. |
 | Touche d’application/touche de menu | Permet d’afficher le menu contextuel. |
-| Touche Windows/touche de commande | Permet d’activer les commandes système telles que **System Menu**, **Lock Screen** ou **Show Desktop** |
+| Touche Windows/touche de commande | Permet d’activer les commandes système telles que **System Menu**, **Lock Screen** ou **Show Desktop**. |
 
 Les touches d’accès rapide et les touches accélérateur prennent directement en charge l’interaction avec les contrôles. Vous n’avez donc pas besoin d’utiliser la navigation par tabulation pour accéder à ces derniers.
 > Si certains contrôles, tels que les boutons de commande, les cases à cocher et les cases d’option, ont des étiquettes intrinsèques, d’autres, tels les affichages de liste ont des étiquettes externes. Pour les contrôles ayant des étiquettes externes, la touche d’accès rapide est attribuée à l’étiquette qui, quand elle est appelée, positionne le focus sur un élément ou une valeur à l’intérieur du contrôle associé.
@@ -162,7 +165,7 @@ Ici, la valeur du champ de texte Retrait à gauche est mise en surbrillance apr�
 
 ![la valeur du champ de texte Retrait à gauche est mise en surbrillance après l’action de la touche d’accès rapide identifiée dans l’étiquette associée.](images/input-patterns/accesskeys-entered.png)
 
-## <span id="Usability_and_accessibility"></span><span id="usability_and_accessibility"></span><span id="USABILITY_AND_ACCESSIBILITY"></span>Facilité d’utilisation et accessibilité
+## Facilité d’utilisation et accessibilité
 
 
 Une expérience bien conçue d’interaction avec le clavier constitue un aspect important de la facilité d’utilisation des logiciels. Elle permet aux utilisateurs malvoyants ou souffrant d’un handicap moteur de naviguer dans une application et d’interagir avec ses fonctionnalités. De tels utilisateurs peuvent ne pas être en mesure d’utiliser une souris et devoir recourir à diverses technologies d’assistance, telles que des outils de clavier amélioré, des claviers visuels, des écrans élargis, des lecteurs d’écran et autres utilitaires d’entrée vocale. Pour ces utilisateurs, l’exhaustivité est plus importante que la cohérence.
@@ -211,7 +214,7 @@ Ne désactivez pas un contrôle quand le focus est positionné dessus. Cela peut
 
 Pour garantir une expérience réussie d’interaction avec le clavier, il est essentiel de tester votre application minutieusement et exclusivement avec le clavier.
 
-## <span id="Text_input"></span><span id="text_input"></span><span id="TEXT_INPUT"></span>Saisie de texte
+## Saisie de texte
 
 
 Si vous dépendez de la saisie au clavier, enquérez-vous toujours des fonctionnalités de l’appareil. Sur certains appareils (par exemple, des téléphones), le clavier tactile est réservé exclusivement à la saisie de texte, car il n’offre pas bon nombre des touches accélérateur ou de commande présentes sur un clavier matériel (par exemple, la touche Alt, les touches de fonction ou la touche de logo Windows).
@@ -243,7 +246,7 @@ L’application Bloc-notes est présentée ici avec le menu Fichier développé,
 
 ![application Bloc-notes avec menu Fichier développé, comprenant des touches d’accès rapide et les touches accélérateur.](images/input-patterns/notepad.png)
 
-## <span id="Keyboard_commands"></span><span id="keyboard_commands"></span><span id="KEYBOARD_COMMANDS"></span>Commandes du clavier
+## Commandes du clavier
 
 
 Voici la liste complète des interactions avec le clavier sur les divers appareils qui prennent en charge la saisie au clavier. Certains appareils et plateformes nécessitent des interactions et combinaisons de touches natives qui sont indiquées.
@@ -305,7 +308,7 @@ Les trois tableaux suivants répertorient les commandes au clavier le plus souve
  
 
 Remarque : les commandes de navigation multimédia pour Lire/Pause et Élément suivant sont identiques respectivement aux commandes pour Imprimer et Rechercher. Les commandes courantes sont prioritaires sur les commandes de navigation multimédia. Par exemple, si une application lit du contenu multimédia et imprime, la commande clé Ctrl+P doit lancer une impression.
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>Retour visuel
+## Retour visuel
 
 
 Utilisez les rectangles de sélection uniquement pour les interactions avec le clavier. Si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur du clavier. Cela maintient l’interface utilisateur propre et aérée.
@@ -319,7 +322,7 @@ Essayez de fournir des boutons à l’écran (par exemple + et -) en guise d’i
 Pour obtenir des recommandations plus générales sur le retour visuel, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
 
-## <span id="keyboard_events"></span><span id="KEYBOARD_EVENTS"></span>Événements de clavier et focus
+## Événements de clavier et focus
 
 
 Les événements de clavier suivants peuvent se produire pour les claviers physiques et tactiles.
@@ -344,7 +347,7 @@ Pour qu’un contrôle puisse recevoir le focus d’entrée, il doit être activ
 
 Par défaut, l’ordre de tabulation des contrôles est celui dans lequel les contrôles apparaissent dans le code XAML (Extensible Application Markup Language). Vous pouvez cependant changer cet ordre à l’aide de la propriété [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461). Pour plus d’informations, voir [Implémentation de l’accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/hh868161).
 
-## <span id="keyboard_event_handlers"></span><span id="KEYBOARD_EVENT_HANDLERS"></span>Gestionnaires d’événements de clavier
+## Gestionnaires d’événements de clavier
 
 
 Un gestionnaire d’événements d’entrée implémente un délégué qui fournit les informations suivantes :
@@ -352,9 +355,9 @@ Un gestionnaire d’événements d’entrée implémente un délégué qui fourn
 -   L’expéditeur de l’événement. L’expéditeur signale l’objet auquel le gestionnaire d’événements est attaché.
 -   Les données d’événement. Dans le cas des événements de clavier, ces données seront une instance de [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072). Le délégué des gestionnaires est [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904). Les propriétés les plus significatives de **KeyRoutedEventArgs** pour la plupart des scénarios de gestionnaires sont [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) et éventuellement [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075).
 -   [
-            **OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810). Les événements de clavier étant des événements routés, les données d’événements fournissent **OriginalSource**. Si vous autorisez délibérément des événements à être proposés par le biais d’un arbre d’objets, **OriginalSource** est parfois l’objet de la question plutôt que l’expéditeur, bien que cela dépende de la conception de votre application. Pour plus d’informations concernant l’utilisation de **OriginalSource** à la place de l’expéditeur, voir la section « Événements routés de clavier » de cette rubrique ou [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
+            **OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810). Les événements de clavier étant des événements routés, les données d’événements fournissent **OriginalSource**. Si vous autorisez délibérément des événements à être proposés par le biais d’un arbre d’objets, **OriginalSource** est parfois l’objet de la question plutôt que l’expéditeur, bien que cela dépende de la conception de votre application. Pour plus d’informations concernant l’utilisation de **OriginalSource** à la place de l’expéditeur, voir la section Événements routés de clavier de cette rubrique ou [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-### <span id="attaching_a_keyboard_event_handler"></span><span id="ATTACHING_A_KEYBOARD_EVENT_HANDLER"></span>Attachement d’un gestionnaire d’événements de clavier
+### Attachement d’un gestionnaire d’événements de clavier
 
 Vous pouvez attacher les fonctions des gestionnaires d’événements de clavier pour n’importe quel objet qui inclut l’événement en tant que membre. Cela inclut toute classe dérivée [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). L’exemple de code XAML suivant montre comment attacher des gestionnaires pour l’événement [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) d’un [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704).
 
@@ -366,7 +369,7 @@ Vous pouvez attacher les fonctions des gestionnaires d’événements de clavier
 
 Vous pouvez également associer un gestionnaire d’événements à du code. Pour plus d’informations, voir [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-### <span id="defining_a_keyboard_event_handler"></span><span id="DEFINING_A_KEYBOARD_EVENT_HANDLER"></span>Définition d’un gestionnaire d’événements de clavier
+### Définition d’un gestionnaire d’événements de clavier
 
 L’exemple suivant montre la définition incomplète du gestionnaire d’événements [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) attaché dans l’exemple précédent.
 
@@ -390,7 +393,7 @@ void MyProject::MainPage::Grid_KeyUp(
 {//handling code here}
 ```
 
-### <span id="using_keyroutedeventargs"></span><span id="USING_KEYROUTEDEVENTARGS"></span>Utilisation de KeyRoutedEventArgs
+### Utilisation de KeyRoutedEventArgs
 
 Tous les événements de clavier utilisent [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) pour les données d’événements, et **KeyRoutedEventArgs** contient les propriétés suivantes :
 
@@ -400,11 +403,11 @@ Tous les événements de clavier utilisent [**KeyRoutedEventArgs**](https://msdn
 -   [
             **OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) (hérité de [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))
 
-### <span id="key"></span><span id="KEY"></span>Clé
+### Clé
 
 L’événement [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) est déclenché si une touche est enfoncée. De même, l’événement [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) est déclenché si une touche est relâchée. Vous êtes généralement à l’écoute des événements en vue de traiter une valeur de touche spécifique. Afin de déterminer quelle touche est enfoncée ou relâchée, vérifiez la valeur [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) dans les données d’événements. **Key** renvoie une valeur [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812). L’énumération **VirtualKey** inclut toutes les touches prises en charge.
 
-### <span id="modifier_keys"></span><span id="MODIFIER_KEYS"></span>Touches de modification
+### Touches de modification
 
 Les touches de modification sont des touches, telles que Ctrl ou Maj, sur lesquelles les utilisateurs appuient généralement en même temps que d’autres touches. Votre application peut utiliser ces combinaisons de touches en tant que raccourcis clavier pour appeler des commandes d’application.
 
@@ -414,7 +417,7 @@ Vous pouvez détecter des combinaisons de touches de raccourci à l’aide de co
 
  
 
-## <span id="shortcut_keys_example"></span><span id="SHORTCUT_KEYS_EXAMPLE"></span>Exemple de touches de raccourci
+## Exemple de touches de raccourci
 
 
 L’exemple suivant explique comment implémenter des touches de raccourci. Dans cet exemple, les utilisateurs peuvent contrôler la lecture du contenu multimédia à l’aide des boutons Lecture, Pause et Arrêt ou des raccourcis clavier Ctrl+P, Ctrl+A et Ctrl+S. Le bouton XAML affiche les touches de raccourci à l’aide des info-bulles et des propriétés [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) des étiquettes de boutons. Cette documentation d’auto-apprentissage est importante afin d’augmenter la facilité d’utilisation et l’accessibilité de votre application. Pour plus d’informations, voir [Accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/mt244347).
@@ -429,7 +432,7 @@ Notez également que la page définit le focus d’entrée sur elle-même lors d
     <RowDefinition Height="Auto" />
   </Grid.RowDefinitions>
 
-  <MediaElement x:Name="DemoMovie" Source="xbox.wmv" 
+  <MediaElement x:Name="DemoMovie" Source="xbox.wmv"
     Width="500" Height="500" Margin="20" HorizontalAlignment="Center" />
 
   <StackPanel Grid.Row="1" Margin="10"
@@ -442,13 +445,13 @@ Notez également que la page définit le focus d’entrée sur elle-même lors d
     </Button>
 
     <Button x:Name="PauseButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+A" 
+      ToolTipService.ToolTip="Shortcut key: Ctrl+A"
       AutomationProperties.AcceleratorKey="Control A">
       <TextBlock>Pause</TextBlock>
     </Button>
 
     <Button x:Name="StopButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+S" 
+      ToolTipService.ToolTip="Shortcut key: Ctrl+S"
       AutomationProperties.AcceleratorKey="Control S">
       <TextBlock>Stop</TextBlock>
     </Button>
@@ -577,7 +580,7 @@ End Sub
 
  
 
-## <span id="keyboard_routed_events"></span><span id="KEYBOARD_ROUTED_EVENTS"></span>Événements routés de clavier
+## Événements routés de clavier
 
 
 Certains événements sont des événements routés, comme [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) et [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942). Les événements routés utilisent la stratégie de routage de propagation. La stratégie de routage de propagation signifie qu’un événement provenant d’un objet enfant est ensuite routé jusqu’aux objets parents successifs dans l’arbre d’objets, ce qui offre ainsi une autre opportunité de gérer le même événement et d’interagir avec les mêmes données d’événements.
@@ -605,17 +608,17 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 Notez l’utilisation de la propriété [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) dans le gestionnaire précédent. Dans ce cas, **OriginalSource** signale l’objet qui a déclenché l’événement. L’objet ne pouvait pas être l’objet [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635), car **StackPanel** n’est pas un contrôle et il ne peut pas avoir le focus. Seul un des deux boutons au sein de l’objet **StackPanel** a pu déclencher l’événement, mais lequel ? Vous utilisez **OriginalSource** pour identifier l’objet source de l’événement réel si vous gérez l’événement sur un objet parent.
 
-### <span id="handled_property"></span><span id="HANDLED_PROPERTY"></span>Propriété Handled dans des données d’événements
+### Propriété Handled dans des données d’événements
 
 En fonction de votre stratégie de gestion des événements, il se peut que vous vouliez qu’un seul gestionnaire d’événements réagisse à un événement de propagation. Ainsi, tout gestionnaire [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) spécifique attaché à l’un des contrôles [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) a en premier lieu la possibilité de gérer cet événement. Dans ce cas, il se peut que vous ne vouliez pas que le panneau parent gère également l’événement. Pour ce scénario, utilisez la propriété [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) dans les données d’événements.
 
 Le rôle de la propriété [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) dans une classe de données d’événements routés est de signaler qu’un autre gestionnaire que vous aviez enregistré précédemment sur l’itinéraire des événements a déjà agi. Cela influence le comportement du système d’événements routés. Lorsque vous définissez la valeur de la propriété **Handled** sur **true** dans un gestionnaire d’événements, cet événement arrête le routage et n’est pas envoyé aux éléments parents successifs.
 
-### <span id="addhandler_and_already_handled_keyboard_events"></span><span id="ADDHANDLER_AND_ALREADY_HANDLED_KEYBOARD_EVENTS"></span>AddHandler et événements de clavier déjà gérés
+### AddHandler et événements de clavier déjà gérés
 
 Vous pouvez utiliser une technique spéciale pour associer des gestionnaires pouvant agir sur des événements déjà marqués comme étant gérés. Cette technique utilise la méthode [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) pour inscrire un gestionnaire, plutôt que d’utiliser des attributs XAML ou une syntaxe spécifique au langage pour l’ajout de gestionnaires, telle que += en C\#. L’une des limitations générales de cette technique est le fait que l’API **AddHandler** utilise un paramètre de type [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) qui identifie l’événement routé en question. Tous les événements routés ne fournissent pas un identificateur **RoutedEvent** et cette considération affecte par conséquent les événements routés qui peuvent encore être gérés dans le cas [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073). Les événements [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) et [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) possèdent des identificateurs d’événements routés ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) et [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418)) sur [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Toutefois, les autres événements tels que [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) ne possèdent pas d’identificateurs d’événements routés. Par conséquent, ils ne peuvent pas être utilisés pour la technique **AddHandler**.
 
-## <span id="commanding"></span><span id="COMMANDING"></span>Commandes
+## Commandes
 
 
 Un petit nombre d’éléments d’interface utilisateur fournit la prise en charge intégrée pour les commandes. Les commandes utilisent les événements routés associés à une entrée dans leur implémentation sous-jacente et permettent de traiter l’entrée d’interface utilisateur associée (une certaine action du pointeur, une touche d’accès rapide spécifique), en invoquant un seul gestionnaire de commandes.
@@ -624,7 +627,7 @@ Si les commandes sont disponibles pour un élément d’interface utilisateur, e
 
 Vous pouvez également implémenter [**ICommand**](https://msdn.microsoft.com/library/windows/apps/br227885) afin d’encapsuler les fonctionnalités de commande que vous appelez à partir de gestionnaires d’événements ordinaires, ce qui vous permet d’utiliser les commandes même lorsqu’aucune propriété **Command** n’est disponible.
 
-## <span id="text_input_and_controls"></span><span id="TEXT_INPUT_AND_CONTROLS"></span>Entrée de texte et contrôles
+## Entrée de texte et contrôles
 
 
 Certains contrôles réagissent aux événements de clavier avec leur propre gestion. Par exemple, [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) est un contrôle conçu pour capturer puis représenter visuellement du texte entré à l’aide du clavier. Il utilise [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) et [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) dans sa propre logique en vue de capturer les frappes de touches, puis il déclenche également son propre événement [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) si le texte a changé.
@@ -637,7 +640,7 @@ Un autre exemple est [**TextBox**](https://msdn.microsoft.com/library/windows/ap
 
 Les contrôles personnalisés peuvent implémenter leur propre comportement similaire de remplacement pour les événements de touches en remplaçant [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) / [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983). Si votre contrôle personnalisé traite des touches accélérateur spécifiques ou présente un comportement de contrôle ou de focus qui est similaire au scénario décrit pour [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683), vous devez placer cette logique dans vos propres remplacements **OnKeyDown** / **OnKeyUp**.
 
-## <span id="the_touch_keyboard"></span><span id="THE_TOUCH_KEYBOARD"></span>Le clavier tactile
+## Le clavier tactile
 
 
 Les contrôles de saisie de texte fournissent le support automatique du clavier tactile. Lorsque l’utilisateur définit le focus d’entrée sur un contrôle de texte à l’aide de l’entrée tactile, le clavier tactile apparaît automatiquement. Lorsque le focus d’entrée n’est pas placé sur un contrôle de texte, le clavier tactile est masqué.
@@ -648,7 +651,7 @@ Si vous créez un contrôle personnalisé qui nécessite une saisie de texte mai
 
 Les touches enfoncées sur le clavier tactile déclenchent les événements [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) et [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942), exactement comme si vous aviez appuyé sur les touches d’un clavier physique. Cependant, le clavier tactile ne déclenche pas d’événements de saisie pour les touches Ctrl+A, Ctrl+Z, Ctrl+X, Ctrl+C et Ctrl+V, qui sont réservées à la manipulation de texte dans le contrôle de saisie.
 
-Vous pouvez nettement faciliter et accélérer la saisie de données par les utilisateurs dans votre application, en définissant l’étendue des entrées du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée. Par exemple, si une zone de texte est utilisée uniquement pour saisir un code confidentiel à 4 chiffres, définissez la propriété [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) sur [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028). Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui facilite l’entrée d’un PIN par l’utilisateur. Pour plus d’informations, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://msdn.microsoft.com/library/windows/apps/mt280229).
+Vous pouvez nettement faciliter et accélérer la saisie de données par les utilisateurs dans votre application, en définissant l’étendue des entrées du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée. Par exemple, si une zone de texte est utilisée uniquement pour saisir un code confidentiel à 4 chiffres, définissez la propriété [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) sur [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028). Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui facilite l’entrée d’un PIN par l’utilisateur. Pour plus d’informations, voir [Comment utiliser l’étendue des entrées pour modifier le clavier tactile](https://msdn.microsoft.com/library/windows/apps/mt280229).
 
 
 ## Articles supplémentaires dans cette section
@@ -674,7 +677,7 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
  
 
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 
 **Développeurs**
@@ -701,9 +704,6 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 
 
 
-
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

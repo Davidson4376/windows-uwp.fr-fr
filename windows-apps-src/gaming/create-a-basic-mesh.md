@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Créer et afficher un maillage de base
-description: Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des polygones pour représenter des objets et des surfaces dans le jeu.
+title: "Créer et afficher un maillage de base"
+description: "Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des polygones pour représenter des objets et des surfaces dans le jeu."
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c082456d5eb0cf1c5c697a6af5bc1d4de1f5ada2
+
 ---
 
 # Créer et afficher un maillage de base
@@ -445,6 +449,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

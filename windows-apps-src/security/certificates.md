@@ -1,8 +1,12 @@
 ---
-title: Présentation de certificats
-description: Cet article traite de l’utilisation de certificats dans les applications de plateforme Windows universelle (UWP).
+title: "Présentation de certificats"
+description: "Cet article traite de l’utilisation de certificats dans les applications de plateforme Windows universelle (UWP)."
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 84596f70a5deee6cebb5f4bac442a6aaca8210cd
+
 ---
 
 # Présentation des certificats
@@ -95,6 +99,7 @@ Un certificat X.509 version 3 contient les champs définis dans les versions 1 e
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

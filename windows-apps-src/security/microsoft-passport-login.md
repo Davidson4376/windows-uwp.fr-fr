@@ -1,8 +1,12 @@
 ---
-title: Créer une application de connexion Microsoft Passport
-description: Voici la première partie de la procédure complète sur la création d’une application UWP Windows 10 qui utilise Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels.
+title: "Créer une application de connexion Microsoft Passport"
+description: "Voici la première partie de la procédure complète sur la création d’une application UWP Windows 10 qui utilise Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels."
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: af8ae79f67d77195d5ed4801d040b2f1aafe8a97
+ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
+
 ---
 
 # Créer une application de connexion Microsoft Passport
@@ -968,6 +972,7 @@ En tant que développeur, vous n’avez pas d’efforts supplémentaires à four
 * [Microsoft Passport et Windows Hello](microsoft-passport.md)
 * [Service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

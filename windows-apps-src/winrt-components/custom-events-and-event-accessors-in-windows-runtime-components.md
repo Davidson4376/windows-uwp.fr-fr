@@ -1,17 +1,17 @@
 ---
-author: martinekuan
-title: Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime
-description: La prise en charge de .NET Framework pour les composants Windows Runtime facilite la déclaration de composants d’événements, car les différences entre le modèle d’événement de la plateforme UWP et le modèle d’événement .NET Framework sont masquées.
+author: msatranjr
+title: "Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime"
+description: "La prise en charge de .NET Framework pour les composants Windows Runtime facilite la déclaration de composants d’événements, car les différences entre le modèle d’événement de la plateforme UWP et le modèle d’événement .NET Framework sont masquées."
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 1308989c8d1c6959560458dd4d87119b4bfa74b0
+
 ---
 
 # Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime
 
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 La prise en charge de .NET Framework pour les composants Windows Runtime facilite la déclaration de composants d’événements, car les différences entre le modèle d’événement de la plateforme Windows universelle (UWP) et le modèle d’événement .NET Framework sont masquées. Toutefois, lorsque vous déclarez des accesseurs d’événement personnalisés dans un composant Windows Runtime, vous devez suivre le modèle utilisé dans UWP.
 
@@ -32,9 +32,9 @@ Le code suivant pour l’événement NumberChanged illustre le modèle de base p
  
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
-> private EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>> 
+> private EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>>
 >     m_NumberChangedTokenTable = null;
-> 
+>
 > public event EventHandler<NumberChangedEventArgs> NumberChanged
 > {
 >     add
@@ -50,10 +50,10 @@ Le code suivant pour l’événement NumberChanged illustre le modèle de base p
 >             .RemoveEventHandler(value);
 >     }
 > }
-> 
+>
 > internal void OnNumberChanged(int newValue)
 > {
->     EventHandler<NumberChangedEventArgs> temp = 
+>     EventHandler<NumberChangedEventArgs> temp =
 >         EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>>
 >         .GetOrCreateEventRegistrationTokenTable(ref m_NumberChangedTokenTable)
 >         .InvocationList;
@@ -66,21 +66,21 @@ Le code suivant pour l’événement NumberChanged illustre le modèle de base p
 > ```vb
 > Private m_NumberChangedTokenTable As  _
 >     EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs))
-> 
+>
 > Public Custom Event NumberChanged As EventHandler(Of NumberChangedEventArgs)
-> 
+>
 >     AddHandler(ByVal handler As EventHandler(Of NumberChangedEventArgs))
 >         Return EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
 >             GetOrCreateEventRegistrationTokenTable(m_NumberChangedTokenTable).
 >             AddEventHandler(handler)
 >     End AddHandler
-> 
+>
 >     RemoveHandler(ByVal token As EventRegistrationToken)
 >         EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
 >             GetOrCreateEventRegistrationTokenTable(m_NumberChangedTokenTable).
 >             RemoveEventHandler(token)
 >     End RemoveHandler
-> 
+>
 >     RaiseEvent(ByVal sender As Class1, ByVal args As NumberChangedEventArgs)
 >         Dim temp As EventHandler(Of NumberChangedEventArgs) = _
 >             EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
@@ -99,7 +99,7 @@ La méthode statique (partagée en Visual Basic) GetOrCreateEventRegistrationTok
 
 Le fait d’appeler la méthode GetOrCreateEventRegistrationTokenTable dans l’accesseur remove et dans la méthode [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) (méthode OnRaiseEvent en C#) garantit qu’aucune exception ne se produit si ces méthodes sont appelées avant que les délégués de gestionnaire d’événements n’aient été ajoutés.
 
-Les autres membres de la classe EventRegistrationTokenTable&lt;T&gt; utilisés dans le modèle d’événement UWP incluent les éléments suivants :
+Les autres membres de la classe EventRegistrationTokenTable&lt;T&gt; utilisés dans le modèle d’événement UWP incluent les éléments suivants :
 
 -   La méthode [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) génère un jeton pour le délégué de gestionnaire d’événements, stocke le délégué dans la table, l’ajoute à la liste d’appel, puis retourne le jeton.
 -   La surcharge de méthode [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) supprime le délégué de la table et de la liste d’appel.
@@ -126,6 +126,6 @@ Utilisateurs de Visual Basic : dans .NET Framework, un événement est simplemen
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

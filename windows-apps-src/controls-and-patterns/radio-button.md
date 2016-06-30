@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités.
-title: Recommandations en matière de cases d’option
+Description: "Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités."
+title: "Recommandations en matière de cases d’option"
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
+
 ---
 # Cases d’option
 Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités. Chaque option est représentée par une seule case d’option ; un utilisateur peut activer une seule case d’option dans un groupe de cases d’option.
@@ -180,6 +184,7 @@ Cette illustration montre la manière convenable de positionner et espacer les c
 - [**Classe Windows.UI.Xaml.Controls RadioButton**](https://msdn.microsoft.com/library/windows/apps/br227544)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

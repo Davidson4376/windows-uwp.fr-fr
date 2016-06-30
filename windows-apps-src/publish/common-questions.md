@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Questions courantes sur les campagnes de publicité
-title: Questions courantes sur les campagnes de publicité
+Description: "Questions courantes sur les campagnes de publicité"
+title: "Questions courantes sur les campagnes de publicité"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
+ms.sourcegitcommit: 3f0664e0387e206c432ce92aa221bb5c604bb675
+ms.openlocfilehash: c61866aa6fb71d41d4c6150cfe6af449da21a1da
+
 ---
 
 # Questions courantes sur les campagnes de publicité
@@ -39,7 +42,9 @@ Allemand, anglais, arabe, chinois (simplifié), chinois (traditionnel), danois, 
 
 ## Quand suis-je facturé ?
 
-Vous êtes facturé pour un mois donné, dans les premiers jours du mois suivant.
+Vous êtes facturé chaque fois que votre compte atteint 50 $ de frais (ou le montant équivalent dans la devise locale de votre marché ou région) pour l’ensemble des campagnes payantes de votre compte.
+
+Si votre compte n’atteint pas 50 $ de frais dans les 30 jours suivant votre dernière facturation, ces frais vous seront facturés tôt dans le mois suivant. Cela permet de garantir que le solde courant de votre compte relatif aux frais de campagne de publicité ne dépasse pas les 30 jours.
 
 ## Comment supprimer une carte de crédit ou modifier les détails d’une carte de crédit ?
 
@@ -54,6 +59,7 @@ Accédez à <http://commerce.microsoft.com>, ouvrez une session avec vos informa
 * [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

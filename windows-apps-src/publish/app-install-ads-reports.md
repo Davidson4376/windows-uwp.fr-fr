@@ -1,8 +1,12 @@
 ---
 author: jnHs
-title: Rapport de publicité sur l’installation d’applications
+title: "Rapport de publicité sur l’installation d’applications"
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
+
 ---
 
 # Rapport de publicité sur l’installation d’applications
@@ -65,6 +69,7 @@ Ici, vous pouvez voir toutes les transactions associées à votre compte. Pour c
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

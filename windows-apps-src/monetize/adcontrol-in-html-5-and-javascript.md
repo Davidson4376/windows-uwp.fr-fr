@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
-description: Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application HTML/JavaScript pour Windows 10 (UWP), Windows 8.1 ou Windows Phone 8.1.
-title: AdControl en HTML 5 et JavaScript
+description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application HTML/JavaScript pour Windows 10 (UWP), Windows 8.1 ou Windows Phone 8.1."
+title: "AdControl en HTML 5 et JavaScript"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+
 ---
 
 # AdControl en HTML 5 et JavaScript
@@ -128,6 +132,7 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

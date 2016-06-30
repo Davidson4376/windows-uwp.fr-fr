@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Gérer le prélancement d’une application
-description: Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched.
+author: TylerMSFT
+title: "Gérer le prélancement d’une application"
+description: "Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched."
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: d9d3bdf86d858367008a32d9d6a06ec9fc13787d
+
 ---
 
 # Gérer le prélancement d’une application
@@ -58,7 +61,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             // TODO: This is not a prelaunch activation. Perform operations which
             // assume that the user explicitly launched the app such as updating
-            // the online presence of the user on a social network, updating a 
+            // the online presence of the user on a social network, updating a
             // what's new feed, etc.
         }
 
@@ -98,8 +101,8 @@ public sealed partial class MainPage : Page
 
     void WindowVisibilityChangedEventHandler(System.Object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
     {
-        // Perform operations that should take place when the application becomes visible rather than 
-        // when it is prelaunched, such as building a what's new feed 
+        // Perform operations that should take place when the application becomes visible rather than
+        // when it is prelaunched, such as building a what's new feed
     }
 }
 ```
@@ -115,7 +118,7 @@ public sealed partial class MainPage : Page
     -   En ce qui concerne l’incidence sur les performances, il pourrait s’agir d’attendre que l’utilisateur bascule vers l’application pour récupérer les informations météorologiques actuelles au lieu de les charger lors du prélancement de l’application, puis de les charger une nouvelle fois lorsque l’application devient visible pour vous assurer que les informations sont à jour.
 -   Si votre application efface sa vignette dynamique lors de son lancement, reportez cette opération pour qu’elle ait lieu après l’événement VisibilityChanged.
 -   La télémétrie de votre application doit faire la distinction entre les activations de vignette standard et les activations de prélancement, afin que vous puissiez identifier le scénario dans lequel les problèmes se produisent.
--   Si vous possédez Microsoft Visual Studio 2015 Update 1 et Windows 10 version 1511, vous pouvez simuler le prélancement de votre application dans Visual Studio 2015 en choisissant **Déboguer**&gt;**Autres cibles de débogage**&gt;**Déboguer le prélancement de l’application Windows universelle**.
+-   Si vous possédez Microsoft Visual Studio 2015 Update 1 et Windows 10 version 1511, vous pouvez simuler le prélancement de votre application dans Visual Studio 2015 en choisissant **Déboguer**&gt;**Autres cibles de débogage**&gt;**Déboguer le prélancement de l’application Windows universelle**.
 
 ## Rubriques connexes
 
@@ -127,8 +130,6 @@ public sealed partial class MainPage : Page
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

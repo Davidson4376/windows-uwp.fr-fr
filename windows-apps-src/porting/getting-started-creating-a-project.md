@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
-description: Microsoft Visual Studio représente pour Windows ce que Xcode représente pour iOS et Mac OS. Cette procédure pas à pas vous permet de vous familiariser avec Visual Studio.
-title: Création d’un projet dans Visual Studio
+description: "Microsoft Visual Studio représente pour Windows ce que Xcode représente pour iOS et Mac OS. Cette procédure pas à pas vous permet de vous familiariser avec Visual Studio."
+title: "Création d’un projet dans Visual Studio"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 23d9ed066e2909a15b3106fd19bf6ce5ab09e7a9
+
 ---
 
 # Prise en main &#58; Création d’un projet
@@ -51,6 +55,7 @@ Dans Visual Studio, plusieurs modèles de projet peuvent être choisis comme le 
 [Prise en main : Choix d’un langage de programmation](getting-started-choosing-a-programming-language.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

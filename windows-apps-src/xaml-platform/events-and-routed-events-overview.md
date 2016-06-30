@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez C#, Visual Basic ou les extensions de composants Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur.
-title: Vue d’ensemble des événements et des événements routés
+description: "Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez C#, Visual Basic ou les extensions de composants Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur."
+title: "Vue d’ensemble des événements et des événements routés"
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 4e4e21789dd76ad691f3828d23c73adcfc31efdf
+
 ---
 
 # Vue d’ensemble des événements et des événements routés
@@ -132,7 +136,7 @@ End Sub
 
 **Remarque** Visual Studio et son aire de conception XAML promeuvent généralement la technique de gestion d’instance plutôt que le mot-clé **Handles**. Cela est dû au fait que l’établissement de la connexion des gestionnaires d’événements en XAML fait partie du flux de travail concepteur-développeur habituel et que la technique du mot-clé **Handles** est incompatible avec cette connexion des gestionnaires d’événements en XAML.
 
-En C++, vous utilisez également la syntaxe **+=**, mais il existe quelques différences par rapport au formulaire C# de base :
+En C++, vous utilisez également la syntaxe **+=**, mais il existe quelques différences par rapport au formulaire C# de base :
 
 -   Il n’existe aucune inférence de délégué, donc vous devez utiliser **ref new** pour l’instance de délégué.
 -   Le constructeur du délégué possède deux paramètres et requiert que l’objet cible soit le premier d’entre eux. En général, vous spécifiez **this**.
@@ -288,6 +292,7 @@ La définition d’un événement personnalisé s’effectue généralement dans
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

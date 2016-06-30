@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Vous pouvez encourager vos clients à laisser des commentaires en lançant le Hub de commentaires à partir de votre application.
-title: Lancer le Hub de commentaires à partir de votre application
+Description: "Vous pouvez encourager vos clients à laisser des commentaires en lançant le Hub de commentaires à partir de votre application."
+title: "Lancer le Hub de commentaires à partir de votre application"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: ccda01d9bfa4ffdff2bbce5d6c60c78e026270e5
+
 ---
 
 # Lancer le Hub de commentaires à partir de votre application
@@ -73,6 +77,7 @@ Nous vous recommandons également d’utiliser une ou plusieurs des options de p
 * [Rapport sur les commentaires](../publish/feedback-report.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

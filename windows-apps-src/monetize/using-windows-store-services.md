@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-description: Le Windows Store expose plusieurs services que vous pouvez appeler par le biais d’API REST afin d’accéder par programme à certains types de données pour les applications qui sont enregistrées pour votre compte personnel ou compte d’organisation du Centre de développement Windows.
+description: "Le Windows Store expose plusieurs services que vous pouvez appeler par le biais d’API REST afin d’accéder par programme à certains types de données pour les applications qui sont enregistrées pour votre compte personnel ou compte d’organisation du Centre de développement Windows."
 title: Utiliser les services du Windows Store
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 43e3155315a9132daa36f592b54af3e943ea3e21
+
 ---
 
 # Utiliser les services du Windows Store
@@ -29,6 +33,7 @@ Le Windows Store expose plusieurs services que vous pouvez appeler par le biais
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

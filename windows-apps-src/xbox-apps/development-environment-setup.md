@@ -1,8 +1,11 @@
 ---
 author: Mtoepke
-title: Configurer votre plateforme UWP sur l’environnement de développement Xbox
-description: Étapes relatives à la configuration et au test de votre plateforme Windows universelle sur l’environnement de développement Xbox.
+title: "Configurer votre plateforme UWP sur l’environnement de développement Xbox"
+description: "Étapes relatives à la configuration et au test de votre plateforme Windows universelle sur l’environnement de développement Xbox."
 area: Xbox
+ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
+ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
+
 ---
 
 # Configurer votre plateforme UWP sur l’environnement de développement Xbox
@@ -23,9 +26,13 @@ Cet article couvre les étapes relatives à la configuration et au test de votre
 
 ## Installation du Kit de développement logiciel (SDK) Windows 10
 
-Installez la version d’évaluation 14295 du Kit de développement logiciel (SDK) Windows 10. Pour obtenir des informations sur l’installation, voir [Télécharger les mises à jour Insider Preview pour les développeurs](http://go.microsoft.com/fwlink/p/?LinkId=780552).
+Installez la dernière version d’évaluation du Kit de développement logiciel (SDK) Windows 10. Pour obtenir des informations sur l’installation, voir [Télécharger les mises à jour Insider Preview pour les développeurs](http://go.microsoft.com/fwlink/p/?LinkId=780552).
 
   > **Important** &nbsp;&nbsp;Vous devez installer la dernière version du Kit de développement logiciel (SDK), toutefois, vous n’avez _pas_ à installer la dernière version de Windows Insider Preview du système d’exploitation.
+
+## Configuration de votre Xbox One
+
+Avant de pouvoir déployer une application vers votre Xbox One, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte Xbox Live existant ou créer un compte pour votre console en Mode développeur. 
 
 ## Créer votre première application
 
@@ -100,6 +107,7 @@ Félicitations, vous avez correctement créé et déployé votre première appli
 ----
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

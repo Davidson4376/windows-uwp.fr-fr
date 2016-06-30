@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
+Description: "Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web."
 title: Affichage Web
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
+
 ---
 
 # Affichage web
@@ -226,7 +230,7 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-Si votre application nécessite une entrée utilisateur ou d’autres opérations asynchrones pour répondre à une demande d’autorisation, utilisez la méthode [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) de [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) afin de créer un élément [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) qui pourra être traité à un moment ultérieur. Voir [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) 
+Si votre application nécessite une entrée utilisateur ou d’autres opérations asynchrones pour répondre à une demande d’autorisation, utilisez la méthode [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) de [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) afin de créer un élément [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) qui pourra être traité à un moment ultérieur. Voir [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx). 
 
 Si les utilisateurs doivent se déconnecter de façon sécurisée d’un site web hébergé dans un affichage web, ou dans tout autre cas où la sécurité est importante, appelez la méthode statique [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) pour effacer tout le contenu mis en cache localement de la session d’affichage web. Cela permet d’empêcher les utilisateurs malveillants d’accéder à des données sensibles. 
 
@@ -246,7 +250,7 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 
 Vous pouvez utiliser **InvokeScriptAsync** avec la fonction JavaScript **eval** pour injecter du contenu dans la page web.
 
-Ici, le texte d’une zone de texte XAML (`nameTextBox.Text`) est écrit dans un élément div d’une page HTML hébergée dans 
+Ici, le texte d’une zone de texte XAML (`nameTextBox.Text`) est écrit dans un élément div d’une page HTML hébergée dans `webView1`. 
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -333,6 +337,7 @@ Un affichage web qui héberge le contenu en dehors du thread d’interface utili
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

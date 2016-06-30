@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-description: Cet article décrit comment utiliser les classes SceneAnalysisEffect et FaceDetectionEffect pour analyser le contenu du flux d’aperçu de capture multimédia.
-title: Analyse de scène de capture multimédia
+description: "Cet article décrit comment utiliser les classes SceneAnalysisEffect et FaceDetectionEffect pour analyser le contenu du flux d’aperçu de capture multimédia."
+title: "Analyse de scène de capture multimédia"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
+
 ---
 
 # Analyse de scène de capture multimédia
@@ -52,7 +56,7 @@ Les résultats de l’analyse de scène sont renvoyés dans le gestionnaire d’
 
 [!code-cs[SceneAnalyzed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalyzed)]
 
-L’objet [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) transmis au gestionnaire dispose également d’une propriété [**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) qui contient des contrôleurs de trame suggérés pour la capture d’une séquence de photos variables pour le traitement HDR. Pour plus d’informations, voir [Séquence de photos variable](variable-photo-sequence.md).
+L’objet [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) transmis au gestionnaire dispose également d’une propriété [**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) qui contient des contrôleurs de trame suggérés pour la capture d’une séquence de photos variables pour le traitement HDR. Pour plus d’informations, voir [Séquence de photos variables](variable-photo-sequence.md).
 
 ### Nettoyer l’effet d’analyse de scène
 
@@ -118,6 +122,7 @@ Tous les appareils ne disposent pas d’un appareil de capture permettant d’aj
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

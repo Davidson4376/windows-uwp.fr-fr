@@ -2,7 +2,11 @@
 author: mcleblanc
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: Planification des performances
-description: Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie.
+description: "Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie."
+translationtype: Human Translation
+ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
+ms.openlocfilehash: 39d57811a07b4c404da4b7e369e3bf5441fa99c0
+
 ---
 # Planification des performances
 
@@ -157,7 +161,7 @@ Utilisez les techniques et les outils suivants pour tester les performances de l
 -   Effectuez des tests sur différentes configurations matérielles, notamment des PC de bureau et tout-en-un, des ordinateurs portables et ultraportables, des tablettes et d’autres appareils mobiles.
 -   Effectuez des tests sur différentes tailles d’écran. Si des tailles d’écran plus larges permettent d’afficher beaucoup plus de contenu, tout ce contenu supplémentaire peut avoir un impact négatif sur les performances.
 -   Supprimez le plus de variables de test possible.
-    -   Désactivez les applications d’arrière-plan sur l’appareil de test. Pour cela, sous Windows, sélectionnez  **Paramètres** dans le menu Démarrer &gt;**Personnalisation**&gt;**Écran de verrouillage**. Sélectionnez chaque application active et sélectionnez **Aucun**.
+    -   Désactivez les applications d’arrière-plan sur l’appareil de test. Pour cela, sous Windows, sélectionnez **Paramètres** dans le menu Démarrer &gt;**Personnalisation**&gt;**Écran de verrouillage**. Sélectionnez chaque application active et sélectionnez **Aucun**.
     -   Compilez votre application en code natif en l’intégrant dans la configuration de mise sur le marché avant de la déployer sur l’appareil de test.
     -   Pour vous assurer que la maintenance automatique n’affecte pas les performances de l’appareil de test, déclenchez-la manuellement et attendez qu’elle se termine. Sous Windows, dans le menu Démarrer, recherchez **Sécurité et maintenance**. Dans la zone **Maintenance**, sous **Maintenance automatique**, sélectionnez **Commencer la maintenance** et attendez que l’état passe à **Maintenance en cours**.
     -   Exécutez l’application plusieurs fois pour mieux éliminer les variables de test aléatoires et garantir des mesures cohérentes.
@@ -189,6 +193,7 @@ Optimisez uniquement les chemins de code critiques en termes de performances, c�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

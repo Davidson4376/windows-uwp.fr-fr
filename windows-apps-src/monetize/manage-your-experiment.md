@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Après avoir défini votre expérience dans le tableau de bord du Centre de développement et codé cette expérience dans votre application, vous voici prêt à activer l’expérience et à en visualiser les résultats dans le tableau de bord du Centre de développement.
-title: Gérer votre expérience dans le tableau de bord du Centre de développement
+Description: "Après avoir défini votre expérience dans le tableau de bord du Centre de développement et codé cette expérience dans votre application, vous voici prêt à activer l’expérience et à en visualiser les résultats dans le tableau de bord du Centre de développement."
+title: "Gérer votre expérience dans le tableau de bord du Centre de développement"
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 24ca106cc83c4495657972f463c556585cdfcb45
+
 ---
 
 # Gérer votre expérience dans le tableau de bord du Centre de développement
@@ -53,6 +57,7 @@ Une fois que vous êtes satisfait des paramètres de votre expérience dans le t
   * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

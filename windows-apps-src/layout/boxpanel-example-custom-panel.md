@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: 'Apprenez à écrire du code pour une classe Panel personnalisée, en implémentant les méthodes ArrangeOverride et MeasureOverride, et en utilisant la propriété Children.'
-MS-HAID: 'dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Apprenez à écrire du code pour une classe Panel personnalisée, en implémentant les méthodes ArrangeOverride et MeasureOverride, et en utilisant la propriété Children."
+MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'BoxPanel, exemple de panneau personnalisé'
+title: "BoxPanel, exemple de panneau personnalisé"
 ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: e03a4c9d2116d779545cb1fb8e87fa86a632bca8
+
 ---
 
 # BoxPanel, exemple de panneau personnalisé
@@ -32,7 +36,7 @@ Un scénario de disposition indique :
 -   quand il a des contraintes sur son propre espace,
 -   comment la logique du panneau détermine toutes les mesures, placement, positions et dimensionnements qui ont pour résultat la disposition des enfants dans l’interface utilisateur.
 
-L’exemple `BoxPanel` fourni ici concerne un scénario spécifique. Pour des raisons de simplification du code, nous n’expliquerons pas le scénario en détail dans cet exemple. Nous nous concentrons plutôt sur les étapes nécessaires et sur les modèles de codage. Si vous souhaitez d’abord en savoir plus sur le scénario, passez directement à [« Le scénario de `BoxPanel` »](#scenario) et revenez ensuite au code.
+L’exemple `BoxPanel` fourni ici concerne un scénario spécifique. Pour des raisons de simplification du code, nous n’expliquerons pas le scénario en détail dans cet exemple. Nous nous concentrons plutôt sur les étapes nécessaires et sur les modèles de codage. Si vous souhaitez d’abord en savoir plus sur le scénario, passez directement à [« Le scénario de `BoxPanel` »](#scenario) et revenez ensuite au code.
 
 ## Commencer par dériver une classe à partir de **Panel**
 
@@ -49,7 +53,7 @@ using Windows.UI.Xaml.Controls; // Panel
 using Windows.UI.Xaml.Media; // if you need Brushes or other utilities
 ```
 
-Maintenant que vous pouvez résoudre [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), faites-en la classe de base de `BoxPanel`. Rendez également `BoxPanel` public :
+Maintenant que vous pouvez résoudre [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), faites-en la classe de base de `BoxPanel`. Rendez également `BoxPanel` public :
 
 ```CSharp
 public class BoxPanel : Panel
@@ -118,15 +122,15 @@ protected override Size MeasureOverride(Size availableSize)
 
 Le modèle nécessaire d’une implémentation [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) est la boucle qui parcourt chaque élément dans [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Vous devez toujours appeler la méthode [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) sur chacun de ces éléments. **Measure** possède un paramètre de type [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995). Vous passez ici la taille que votre panneau s’engage à mettre à disposition de cet élément enfant. Avant de pouvoir parcourir la boucle et de commencer à appeler **Measure**, vous devez donc connaître la quantité d’espace que chaque cellule peut allouer. À partir de la méthode **MeasureOverride**, vous avez la valeur *availableSize*. Il s’agit de la taille qui a été utilisée par le parent du panneau quand il a appelé **Measure**, ce qui a déclenché initialement l’appel de cette méthode **MeasureOverride**. La logique la plus classique consiste à établir un schéma selon lequel chaque élément enfant divise l’espace de la taille disponible (*availableSize*) globale du panneau. Vous transmettez ensuite chaque division de taille à la méthode **Measure** de chaque élément enfant.
 
-La manière dont `BoxPanel` divise la taille est assez simple : il divise son espace en un nombre de cases déterminé en grande partie par le nombre d’éléments. Les tailles des cases sont établies en fonction du nombre de lignes et de colonnes et de la taille globale disponible. Parfois, une ligne ou une colonne d’un carré n’est pas nécessaire. Dans ce cas, elle est supprimée, et le panneau devient un rectangle plutôt qu’un carré en termes de rapport ligne/colonne. Pour plus d’informations sur cette logique, passez directement à [« Le scénario de BoxPanel »](#scenario).
+La manière dont `BoxPanel` divise la taille est assez simple : il divise son espace en un nombre de cases déterminé en grande partie par le nombre d’éléments. Les tailles des cases sont établies en fonction du nombre de lignes et de colonnes et de la taille globale disponible. Parfois, une ligne ou une colonne d’un carré n’est pas nécessaire. Dans ce cas, elle est supprimée, et le panneau devient un rectangle plutôt qu’un carré en termes de rapport ligne/colonne. Pour plus d’informations sur cette logique, passez directement à [« Le scénario de BoxPanel »](#scenario).
 
 Que fait donc la passe de mesure ? Elle définit une valeur pour la propriété [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) en lecture seule sur chaque élément où la méthode [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) a été appelée. Le fait d’avoir une valeur **DesiredSize** peut être important une fois la passe d’organisation atteinte, car la propriété **DesiredSize** indique ce que peut ou doit être la taille lors de l’organisation et du rendu final. Même si vous n’utilisez pas **DesiredSize** dans votre propre logique, le système en a besoin.
 
 Ce panneau peut être utilisé quand le composant hauteur de *availableSize* est sans limite. Dans ce cas, le panneau n’a aucune hauteur connue à diviser. La logique de la passe de mesure signale alors à chaque enfant qu’il n’a pas encore de hauteur limitée. Pour cela, elle transmet un objet [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) à l’appel de [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) pour les enfants pour lesquels la propriété [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) est infinie. Cette opération est autorisée. Quand la méthode **Measure** est appelée, la valeur affectée à la propriété [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) est la plus petite parmi les suivantes : la valeur transmise à **Measure** ou la taille naturelle de l’élément provenant de facteurs tels que les valeurs [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) définies de manière explicite.
 
-**Remarque** &nbsp;&nbsp;La logique interne de [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) présente aussi le comportement suivant : **StackPanel** transmet une valeur de dimension infinie à [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) sur les enfants pour indiquer l’absence de contraintes sur les enfants dans la dimension d’orientation. **StackPanel** se dimensionne en général de manière dynamique afin de contenir tous les enfants d’une pile qui croît dans cette dimension.
+**Remarque** &nbsp;&nbsp;La logique interne de [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) présente aussi le comportement suivant : **StackPanel** transmet une valeur de dimension infinie à [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) sur les enfants pour indiquer l’absence de contraintes sur les enfants dans la dimension d’orientation. **StackPanel** se dimensionne en général de manière dynamique afin de contenir tous les enfants d’une pile qui croît dans cette dimension.
 
-Toutefois, le panneau proprement dit ne peut pas retourner d’objet [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) avec une valeur infinie à partir de [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) ; cela lève une exception durant la disposition. Une partie de la logique consiste donc à trouver la hauteur maximale demandée par chaque enfant et à utiliser cette hauteur comme hauteur de cellule dans le cas où elle ne provient pas déjà des propres contraintes de taille du panneau. Voici la fonction d’assistance `LimitUnboundedSize` référencée dans le code précédent, qui prend ensuite cette hauteur maximale de cellule et l’utilise pour donner au panneau une hauteur finie à retourner et garantit que `cellheight` est un nombre fini avant d’initier la passe d’organisation :
+Toutefois, le panneau proprement dit ne peut pas retourner d’objet [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) avec une valeur infinie à partir de [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) ; cela lève une exception durant la disposition. Une partie de la logique consiste donc à trouver la hauteur maximale demandée par chaque enfant et à utiliser cette hauteur comme hauteur de cellule dans le cas où elle ne provient pas déjà des propres contraintes de taille du panneau. Voici la fonction d’assistance `LimitUnboundedSize` référencée dans le code précédent, qui prend ensuite cette hauteur maximale de cellule et l’utilise pour donner au panneau une hauteur finie à retourner et garantit que `cellheight` est un nombre fini avant d’initier la passe d’organisation :
 
 ```CSharp
 // This method is called only if one of the availableSize dimensions of measure is infinite.
@@ -209,7 +213,7 @@ Un scénario avancé pour étendre `BoxPanel` (non illustré ici) consisterait �
 
 Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un rectangle de 5x2 pour 10 éléments. En pratique, les panneaux sont dimensionnés sous la forme de rectangles qui ont rarement des proportions fortement orientées. La technique du nombre de carré le plus petit permet à la logique de dimensionnement de bien fonctionner avec les formes de disposition classiques tout en évitant les dimensionnements où des proportions irrégulières sont appliquées aux cellules.
 
-**Remarque** &nbsp;&nbsp;Cet article s’adresse aux développeurs de Windows 10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque** &nbsp;&nbsp;Cet article s’adresse aux développeurs de Windows 10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
@@ -226,6 +230,7 @@ Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un r
 [Alignement, marge et espacement](alignment-margin-padding.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

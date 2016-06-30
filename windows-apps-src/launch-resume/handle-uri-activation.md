@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Gérer l’activation des URI
-description: Découvrez comment inscrire une application afin qu’elle devienne le gestionnaire par défaut d’un nom de schéma d’URI (Uniform Resource Identifier).
+author: TylerMSFT
+title: "Gérer l’activation des URI"
+description: "Découvrez comment inscrire une application afin qu’elle devienne le gestionnaire par défaut d’un nom de schéma d’URI (Uniform Resource Identifier)."
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
+
 ---
 
 # Gérer l’activation des URI
@@ -32,7 +35,7 @@ L’application reçoit des événements d’activation uniquement pour les noms
 1.  Dans l’**Explorateur de solutions**, double-cliquez sur package.appxmanifest pour ouvrir le concepteur de manifeste. Sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Protocole**, puis cliquez sur **Ajouter**.
 
     Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste pour le protocole (voir [**Manifeste du package AppX**](https://msdn.microsoft.com/library/windows/apps/dn934791) pour plus de détails) :
-    
+
 | Champ | Description |
 |-------|-------------|
 | **Logo** | Spécifiez le logo qui est utilisé pour identifier le nom de schéma d’URI dans [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. Si aucune valeur n’est spécifiée pour Logo, le petit logo de l’application est utilisé. |
@@ -40,10 +43,7 @@ L’application reçoit des événements d’activation uniquement pour les noms
 | **Nom** | Choisissez le nom du schéma d’URI. |
 |  | **Remarque** Le nom doit être entièrement en minuscules. |
 |  | **Types de fichier réservé et interdit** Pour obtenir la liste alphabétique des schémas d’URI que vous ne pouvez pas inscrire pour vos applications UWP parce qu’ils sont réservés ou interdits, voir [Noms de schéma d’URI réservé et types de fichier](reserved-uri-scheme-names.md). |
-| **Exécutable** | Spécifie l’exécutable de lancement par défaut pour le protocole. En l’absence de spécification, le fichier exécutable de l’application est utilisé. En cas de spécification, la chaîne doit contenir 1 à 256 caractères et se terminer par « .exe ». Elle ne peut pas contenir les caractères suivants : &gt;, &lt;, :, ", &#124;, ? ou \*. En cas de spécification, le **Point d’entrée** est également utilisé. Si le **Point d’entrée** n’est pas spécifié, le point d’entrée défini pour l’application est utilisé. |
-       
-| Terme | Description |
-|------|-------------|
+| **Exécutable** | Spécifie l’exécutable de lancement par défaut pour le protocole. En l’absence de spécification, le fichier exécutable de l’application est utilisé. En cas de spécification, la chaîne doit contenir 1 à 256 caractères et se terminer par « .exe ». Elle ne peut pas contenir les caractères suivants : &gt;, &lt;, :, ", &#124;, ? ou \*. En cas de spécification, le **Point d’entrée** est également utilisé. Si le **Point d’entrée** n’est pas spécifié, le point d’entrée défini pour l’application est utilisé. |
 | **Point d’entrée** | Spécifie la tâche qui gère l’extension de protocole. Il s’agit généralement du nom complet de l’espace de noms d’un type Windows Runtime. En l’absence de spécification, le point d’entrée de l’application est utilisé. |
 | **Page de démarrage** | La page web qui gère le point d’extensibilité. |
 | **Groupe de ressources** | Une balise que vous pouvez utiliser pour regrouper les activations d’extensions à des fins de gestion des ressources. |
@@ -81,43 +81,43 @@ Nous vous recommandons d’inclure les icônes appropriées dans votre projet, a
 Le gestionnaire d’événements [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) reçoit tous les événements d’activation. La propriété **Kind** indique le type d’événement d’activation. Cet exemple est défini pour gérer les événements d’activation [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol).
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-public partial class App
-{
-   protected override void OnActivated(IActivatedEventArgs args)
-   {
-      if (args.Kind == ActivationKind.Protocol)
-      {
-         ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
-         // TODO: Handle URI activation
-         // The received URI is eventArgs.Uri.AbsoluteUri
-      }
-   }
-}
-```
-```vb
-Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
-   If args.Kind = ActivationKind.Protocol Then
-      ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
-      
-      ' TODO: Handle URI activation
-      ' The received URI is eventArgs.Uri.AbsoluteUri
-   End If
-End Sub
-```
-```cpp
-void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
-{
-   if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
-   {
-      Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs = 
-          dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
-      
-      // TODO: Handle URI activation  
-      // The received URI is eventArgs->Uri->RawUri
-   } 
-}
-```
+> ```cs
+> public partial class App
+> {
+>    protected override void OnActivated(IActivatedEventArgs args)
+>   {
+>       if (args.Kind == ActivationKind.Protocol)
+>       {
+>          ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
+>          // TODO: Handle URI activation
+>          // The received URI is eventArgs.Uri.AbsoluteUri
+>       }
+>    }
+> }
+> ```
+> ```vb
+> Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
+>    If args.Kind = ActivationKind.Protocol Then
+>       ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
+>       
+>       ' TODO: Handle URI activation
+>       ' The received URI is eventArgs.Uri.AbsoluteUri
+>  End If
+> End Sub
+> ```
+> ```cpp
+> void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
+> {
+>    if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
+>    {
+>       Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs =
+>           dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
+>       
+>       // TODO: Handle URI activation  
+>       // The received URI is eventArgs->Uri->RawUri
+>    }
+> }
+> ```
 
 > **Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application.
 
@@ -175,8 +175,6 @@ Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

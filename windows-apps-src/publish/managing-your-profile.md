@@ -1,8 +1,12 @@
 ---
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
-title: Gestion de vos paramètres de compte et des informations sur le profil
-description: Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows.
+title: "Gestion de vos paramètres de compte et des informations sur le profil"
+description: "Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3d82caac353eb7cb63692469c5951be1f392ff52
+
 ---
 # Gestion de vos paramètres de compte et des informations sur le profil
 
@@ -32,6 +36,7 @@ Certains programmes peuvent fournir un code vous permettant d’étendre les fon
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

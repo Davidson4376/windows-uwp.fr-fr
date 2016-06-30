@@ -1,8 +1,12 @@
 ---
 author: mijacobs
-Description: Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
-title: Recommandations en matière d’animations de transition de contenu
+Description: "Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît."
+title: "Recommandations en matière d’animations de transition de contenu"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
+
 ---
 
 # Animations de transition de contenu
@@ -48,6 +52,7 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

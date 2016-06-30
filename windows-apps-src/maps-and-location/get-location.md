@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: Obtenir l’emplacement de l’utilisateur
-description: Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
+title: "Obtenir l’emplacement de l’utilisateur"
+description: "Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur."
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: d35bf3ef13e2b36dfed6613a00f65d19b9013464
+
 ---
 
 # Obtenir l’emplacement de l’utilisateur
@@ -263,6 +267,7 @@ Pour que votre application puisse accéder à l’emplacement de l’utilisateur
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

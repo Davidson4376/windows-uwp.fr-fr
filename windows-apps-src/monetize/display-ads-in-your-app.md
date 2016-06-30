@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
-description: Le SDK d’engagement et de monétisation de la Boutique Microsoft vous permet de monétiser votre application de plusieurs manières en insérant des annonces publicitaires.
-title: Afficher des publicités dans votre application
+description: "Le SDK d’engagement et de monétisation de la Boutique Microsoft vous permet de monétiser votre application de plusieurs manières en insérant des annonces publicitaires."
+title: "Afficher des publicités dans votre application"
+translationtype: Human Translation
+ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
+ms.openlocfilehash: c79ba96908cc7b52afefbe44c3f56ce009c87f16
+
 ---
 
 # Afficher des publicités dans votre application
@@ -39,6 +43,7 @@ Pour plus d’informations, voir [Quelle est la différence entre AdMediatorCont
 * [Monétiser votre application en insérant des annonces publicitaires]( http://go.microsoft.com/fwlink/p/?LinkId=699559)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

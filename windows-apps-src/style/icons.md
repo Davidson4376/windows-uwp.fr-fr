@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Des icônes efficaces s’harmonisent avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent uniquement les informations nécessaires, le plus rapidement et simplement possible. 
-title: Icônes
+Description: "Des icônes efficaces s’harmonisent avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent uniquement les informations nécessaires, le plus rapidement et simplement possible."
+title: "Icônes"
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
+
 ---
 
 # Icônes pour les applications UWP
@@ -172,6 +176,7 @@ Les badges doivent présenter une taille de 10 à 18 px sur une grille de 32 p
 * [Recommandations en matière de ressources de vignette et d’icône](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

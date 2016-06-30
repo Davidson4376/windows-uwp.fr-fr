@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Si votre application utilise AdMediatorControl ou AdControl pour afficher des bannières publicitaires, vous pourriez augmenter votre taux de remplissage et vos revenus publicitaires en présentant des annonces des affiliés Microsoft dans votre application.
-title: Versions d’évaluation de package
+Description: "Si votre application utilise AdMediatorControl ou AdControl pour afficher des bannières publicitaires, vous pourriez augmenter votre taux de remplissage et vos revenus publicitaires en présentant des annonces des affiliés Microsoft dans votre application."
+title: "Versions d’évaluation de package"
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
+ms.sourcegitcommit: 9e62a7aa18950f7e1cc26b42762e3bb937c389ac
+ms.openlocfilehash: c538da2a58f38925938b9e28ec7ca65cdb9858a3
+
 ---
 
 # Versions d’évaluation de package
@@ -28,7 +31,7 @@ Cliquez sur **Créer un groupe** pour enregistrer le groupe et continuer la conf
 > **Important** Veillez à obtenir le consentement des utilisateurs ajoutés à votre groupe de versions d’évaluation, et vérifiez qu’ils comprennent que les packages qui leur seront proposés seront différents de ceux de votre soumission standard. 
 > Vous pouvez également réfléchir à la manière dont vous souhaitez que les utilisateurs de votre version d’évaluation de package donnent leur avis sur l’application. Nous vous suggérons d’[inclure dans votre application un contrôle lançant le Hub de commentaires](../monetize/launch-feedback-hub-from-your-app.md) pour permettre à vos clients de communiquer directement leur avis ; vous pourrez ensuite consulter leurs commentaires dans le [Rapport sur les commentaires](feedback-report.md) de votre application).
 
-Pour modifier ultérieurement votre groupe de versions d’évaluation, cliquez sur **Exporter au format CSV** afin d’enregistrer les données de votre groupe dans un fichier .csv. Effectuez vos modifications dans ce fichier, puis cliquez sur **Importer au format CSV** pour utiliser la nouvelle version afin de mettre à jour l’appartenance au groupe. Notez que l’implémentation des modifications d’appartenance au groupe de versions d’évaluation peut prendre jusqu’à 30 minutes.
+Pour modifier ultérieurement votre groupe de versions d’évaluation, cliquez sur **Exporter au format CSV** afin d’enregistrer les données de votre groupe dans un fichier .csv. Effectuez vos modifications dans ce fichier, puis cliquez sur **Importer au format CSV** pour utiliser la nouvelle version afin de mettre à jour l’appartenance au groupe. Notez que l’implémentation des modifications d’appartenance au groupe de versions d’évaluation peut prendre jusqu’à 30 minutes. Si vous ajoutez des contacts à un groupe de versions d’évaluation après avoir publié une version d’évaluation de package associée, les packages seront automatiquement transférés aux nouveaux contacts ; vous n’êtes pas obligé de créer et publier une nouvelle soumission pour cette version d’évaluation de package. 
 
 ## Créer une version d’évaluation de package
 
@@ -103,6 +106,7 @@ Pour supprimer une version d’évaluation de package que vous ne souhaitez plus
 Lorsque vous supprimez une version d’évaluation d’un package, les clients qui utilisent les packages distribués dans celle-ci bénéficient d’une mise à jour applicative si un package présentant un numéro de version supérieur existe (ou dès la mise à disposition d’un tel package). Si les clients désinstallent l’application avant de la réinstaller par la suite, cette opération sera considérée comme une nouvelle acquisition, et les clients bénéficieront alors de la version la plus élevée disponible. 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

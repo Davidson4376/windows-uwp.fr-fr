@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application.
-title: Ajouter des contrôles et gérer les événements
+Description: "Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application."
+title: "Ajouter des contrôles et gérer les événements"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and events
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
+
 ---
 # Présentation des contrôles et des événements
 
@@ -133,6 +137,7 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -   [Menus volants](dialogs-popups-menus.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

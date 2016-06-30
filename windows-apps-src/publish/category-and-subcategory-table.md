@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d’en savoir plus sur elle.
-title: Tableau des catégories et sous-catégories
+Description: "Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d’en savoir plus sur elle."
+title: "Tableau des catégories et sous-catégories"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
+
 ---
 
 # Tableau des catégories et sous-catégories
@@ -59,6 +63,7 @@ Seules certaines catégories ont des sous-catégories. N’oubliez pas que vous 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

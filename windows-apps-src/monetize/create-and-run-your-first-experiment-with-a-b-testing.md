@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Dans cette procédure pas à pas, vous découvrirez comment créer et exécuter votre première expérience avec des tests A/B
-title: Créer et exécuter votre première expérience avec des tests A/B
+Description: "Dans cette procédure pas à pas, vous découvrirez comment créer et exécuter votre première expérience avec des tests A/B"
+title: "Créer et exécuter votre première expérience avec des tests A/B"
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0f889c22b8999408341f4c12387602b344f49439
+
 ---
 
 # Créer et exécuter votre première expérience avec des tests A/B
@@ -175,6 +179,7 @@ Laissez s’écouler plusieurs heures après avoir terminé la section précéde
   * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

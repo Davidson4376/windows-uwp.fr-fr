@@ -1,8 +1,11 @@
 ---
 author: drewbatgit
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-description: Cet article décrit comment créer des applications UWP permettant de lire du contenu audio en arrière-plan.
-title: Contenu audio en arrière-plan
+description: "Cet article décrit comment créer des applications UWP permettant de lire du contenu audio en arrière-plan."
+title: "Contenu audio en arrière-plan"
+ms.sourcegitcommit: 99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9
+ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
+
 ---
 
 # Contenu audio en arrière-plan
@@ -63,6 +66,9 @@ Vous voudrez parfois que les deux processus d’une application de lecture audio
 Un mécanisme de communication simple déclenche des événements à la fois dans le processus au premier plan et dans le processus en arrière-plan. Les méthodes [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) et [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) invoquent chacune des événements dans le processus correspondant. Les messages peuvent être reçus en vous abonnant aux événements [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) et [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531).
 
 Les données peuvent être transmises en tant qu’argument aux méthodes d’envoi des messages, qui sont ensuite transmises aux gestionnaires d’événements de message reçu. Passer des données à l’aide de la classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Cette classe est un dictionnaire qui contient une chaîne comme clé et d’autres types de valeur comme valeurs. Vous pouvez passer des types de valeur simples tels que des entiers, des chaînes et des valeurs booléennes.
+
+**Remarque**  
+Les applications doivent uniquement appeler la méthode [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) pendant l’exécution de l’application au premier plan. Toute tentative d’appel de cette méthode quand l’application au premier plan n’est pas en cours d’exécution lève une exception. Une application est responsable de la communication de l’état de l’application au premier plan au processus en arrière-plan. Cela est rendu possible par les événements du cycle de vie de l’application, les valeurs d’état conservées dans le stockage local, et les messages entre les processus. 
 
 ## Durée de vie d’une tâche en arrière-plan
 
@@ -135,6 +141,7 @@ Le tableau suivant répertorie les stratégies sont appliqués selon les types d
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

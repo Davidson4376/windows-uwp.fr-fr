@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Vous pouvez utiliser la classe PropertyPath et la syntaxe de chaîne pour instancier une valeur PropertyPath en XAML ou dans le code.
+description: "Vous pouvez utiliser la classe PropertyPath et la syntaxe de chaîne pour instancier une valeur PropertyPath en XAML ou dans le code."
 title: Syntaxe de Property-path
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
+
 ---
 
 # Syntaxe de Property-path
@@ -115,6 +119,7 @@ La plupart du temps, vous pouvez appliquer [**PropertyPath**](https://msdn.micro
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

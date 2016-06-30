@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: Créer une application Hello World en C++ (Windows 10)
-description: Microsoft Visual Studio 2015 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
+title: "Créer une application Hello World en C++ (Windows 10)"
+description: "Microsoft Visual Studio 2015 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language)."
+translationtype: Human Translation
+ms.sourcegitcommit: c26054867741934f87f189cc2c115dea9cf8daba
+ms.openlocfilehash: e39752f9f13eaf93d23412252483093e704b1668
+
 ---
 
 # Créer une application « Hello World » en C++ (Windows 10)
@@ -24,7 +28,7 @@ Pour suivre des didacticiels dans d’autres langages de programmation, voir :
 -   Vous avez également besoin d’une licence de développeur. Pour obtenir des instructions, voir [Obtenir une licence de développeur](https://msdn.microsoft.com/library/windows/apps/Hh974578).
 -   Nous supposons que vous avez une connaissance de base du langage C++ standard, du code XAML et des concepts présentés dans [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   Nous partons du principe que vous utilisez la disposition de fenêtre par défaut dans Visual Studio. Pour rétablir la disposition par défaut, dans la barre de menus, choisissez **Fenêtre** > **Rétablir la disposition de la fenêtre**.
--   Notez qu’il existe un problème connu avec Visual Studio 2015 qui peut provoquer une exception NullReferenceException lors du chargement du concepteur XAML. Ce problème bloque certaines étapes de ce didacticiel, sauf si vous appliquez la solution de contournement. Pour plus d’informations sur ce problème et la solution de contournement, consultez [ce billet sur le forum MSDN](http://go.microsoft.com/fwlink/p/?LinkId=624036).
+-   Notez qu’il existe un problème connu avec Visual Studio 2015 qui peut provoquer une exception NullReferenceException lors du chargement du concepteur XAML. Ce problème bloque certaines étapes de ce didacticiel, sauf si vous appliquez la solution de contournement. Pour plus d’informations sur ce problème et la solution de contournement, consultez [ce billet sur le forum MSDN](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
 
 ## Comparatif entre les applications de bureau C++ et les applications Windows
 
@@ -50,7 +54,7 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 -   Bien que, sur les appareils Windows, Win32 soit toujours disponible pour certaines fonctionnalités, vous programmez avant tout dans une nouvelle API conviviale orientée objet : Windows Runtime.
 
--   Vous utilisez C++/CX pour consommer et créer des objets Windows Runtime. C++/CX autorise la gestion des exceptions, les délégués et les événements C++, ainsi que le décompte de références automatique des objets créés dynamiquement. Quand vous utilisez C++/CX, les détails des architectures COM et Windows sous-jacentes sont soustraits du code de votre application. Pour plus d’informations, voir [Référence du langage Visual C++ (C++/CX)](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx).
+-   Vous utilisez C++/CX pour consommer et créer des objets Windows Runtime. C++/CX autorise la gestion des exceptions, les délégués et les événements C++, ainsi que le décompte de références automatique des objets créés dynamiquement. Quand vous utilisez C++/CX, les détails des architectures COM et Windows sous-jacentes sont soustraits du code de votre application. Pour plus d’informations, voir les [Informations de référence en matière de langage C++/CX](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx).
 
 -   Votre application est compilée dans un package qui contient aussi des métadonnées sur les types présents dans votre application, les ressources qu’elle utilise, ainsi que les capacités dont elle a besoin (accès aux fichiers, à Internet, à un appareil photo et ainsi de suite).
 
@@ -129,9 +133,9 @@ Tous les types Windows Runtime doivent être déclarés au sein d’un espace de
 
 -   **ref new** et **^ (hats)**
 
- Pour déclarer une variable d’une classe ref, vous utilisez l’opérateur ^ (accent circonflexe) et vous instanciez l’objet avec le nouveau mot-clé ref. Ensuite, vous accédez aux méthodes d’instance de l’objet avec l’opérateur ->, à l’instar d’un pointeur C++. Pour accéder aux méthodes statiques, vous utilisez l’opérateur :: comme en C++ ISO.
+ Pour déclarer une variable d’une classe ref, vous utilisez l’opérateur ^ (accent circonflexe) et vous instanciez l’objet avec le nouveau mot-clé ref. Ensuite, vous accédez aux méthodes d’instance de l’objet avec l’opérateur -&gt;, à l’instar d’un pointeur C++. Pour accéder aux méthodes statiques, vous utilisez l’opérateur :: comme en C++ ISO.
 
- Dans le code suivant, nous utilisons le nom complet pour instancier un objet et l’opérateur -> pour appeler une méthode d’instance.
+ Dans le code suivant, nous utilisons le nom complet pour instancier un objet et l’opérateur -&gt; pour appeler une méthode d’instance.
 
  ```cpp
     Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
@@ -235,7 +239,7 @@ Appuyez sur la touche Windows ou cliquez sur le bouton Démarrer pour accéder a
 
    Pour arrêter le débogage et fermer l’application, retournez dans Visual Studio et appuyez sur Maj+F5.
 
-   Pour plus d’informations, voir [Exécuter des applications du Windows Store à partir de Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
+   Pour plus d’informations, voir [Exécuter une application du Store à partir de Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
 
    Dans l’application, vous pouvez taper dans le [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), mais quand vous cliquez sur le [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), il ne se passe rien. Dans les étapes suivantes, vous créez un gestionnaire d’événements pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) du bouton qui affiche une formule de salutation personnalisée.
 
@@ -251,7 +255,7 @@ Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre 
 -   Divers émulateurs associés à d’autres configurations
 
 Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.0.0 WVGA 4 pouces 512 Mo**.
-**Conseil** Pour plus d’informations sur l’utilisation de l’émulateur de téléphone, voir [Exécuter des applications Windows Phone dans l'émulateur](http://go.microsoft.com/fwlink/p/?LinkId=394233).
+**Conseil** Pour plus d’informations sur l’utilisation de l’émulateur de téléphone, voir [Exécuter des applications Windows Phone dans l’émulateur](http://go.microsoft.com/fwlink/p/?LinkId=394233).
 
  
 
@@ -264,7 +268,7 @@ Pour déboguer votre application sur un appareil physique, vous devez disposer d
 
    –ou–
 
-   Dans le menu **Déboguer**, cliquez sur **Démarrer le débogage**
+   Dans le menu **Déboguer**, cliquez sur **Démarrer le débogage**.
 
    –ou–
 
@@ -279,7 +283,7 @@ Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre v
 ## Étape 2 : créer un gestionnaire d’événements
 
 1.  Dans MainPage.xaml, en mode XAML ou Création, sélectionnez le [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) « Say Hello » dans le [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) que vous avez ajouté précédemment.
-2.  Ouvrez la **Fenêtre Propriétés** en appuyant sur Alt+Entrée, puis choisissez le bouton Événements (![bouton Événements.
+2.  Ouvrez la **Fenêtre Propriétés** en appuyant sur Alt+Entrée, puis choisissez le bouton Événements (![bouton Événements](images/eventsbutton.png)).
 3.  Recherchez l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). Dans sa zone de texte, tapez le nom de la fonction qui gère l’événement **Click**. Pour cet exemple, tapez « Button\_Click ».
 
 ![Fenêtre Propriétés, vue Événements](images/xaml-hw-event.png)
@@ -294,9 +298,9 @@ Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre v
 
 Vous pourriez également avoir simplement ajouté cela au code xaml manuellement, ce qui peut être utile si le concepteur ne se charge pas. Si vous ajoutez cela manuellement, tapez « Click », puis laissez IntelliSense afficher l’option pour ajouter un nouveau gestionnaire d’événements. De cette façon, Visual Studio crée la déclaration de méthode nécessaire et un stub.
 
-Le concepteur ne se charge pas si une exception non gérée se produit pendant l’opération de rendu. L’opération de rendu dans le concepteur implique l’exécution d’une version de conception de la page. Il peut être utile de désactiver l’exécution du code utilisateur. Vous pouvez le faire en modifiant le paramètre dans la boîte de dialogue **Outils, Options**. Sous **Concepteur XAML**, désactivez l’option **Exécuter le code de projet dans le concepteur XAML (si cela est pris en charge)**.
+Le concepteur ne se charge pas si une exception non gérée se produit pendant l’opération de rendu. L’opération de rendu dans le concepteur implique l’exécution d’une version de conception de la page. Il peut être utile de désactiver l’exécution du code utilisateur. Vous pouvez le faire en modifiant le paramètre dans la boîte de dialogue **Outils, Options**. Sous **Concepteur XAML**, désactivez l’option **Exécuter le code du projet dans le concepteur XAML (si pris en charge)**.
 
-5.  Dans MainPage.xaml.cpp, ajoutez le code suivant au gestionnaire d’événements **Button\_Click** que vous venez de créer. Ce code récupère le nom de l’utilisateur à partir du contrôle `nameInput`  [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) et s’en sert pour créer une salutation. Le contrôle `greetingOutput`  [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) affiche le résultat.
+5.  Dans MainPage.xaml.cpp, ajoutez le code suivant au gestionnaire d’événements **Button\_Click** que vous venez de créer. Ce code récupère le nom de l’utilisateur à partir du contrôle `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) et s’en sert pour créer une salutation. Le contrôle `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) affiche le résultat.
 
 ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -444,6 +448,7 @@ Si vous disposez de code C++ existant que vous souhaitez intégrer avec une appl
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

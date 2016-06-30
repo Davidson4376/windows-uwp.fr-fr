@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Suivez ces instructions pour préparer les packages de votre application et les envoyer au Windows Store.
-title: Exigences relatives au package de l’application
+Description: "Suivez ces instructions pour préparer les packages de votre application et les envoyer au Windows Store."
+title: "Exigences relatives au package de l’application"
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
+
 ---
 
 # Exigences relatives au package de l’application
@@ -80,6 +84,7 @@ Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

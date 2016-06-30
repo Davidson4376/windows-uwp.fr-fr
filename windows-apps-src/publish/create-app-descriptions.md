@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: La section Description du processus de soumission d’application vous permet de définir le texte et les images qui seront visibles par les clients dans la description de votre application dans le Windows Store.
-title: Création des descriptions d’application
+Description: "La section Description du processus de soumission d’application vous permet de définir le texte et les images qui seront visibles par les clients dans la description de votre application dans le Windows Store."
+title: "Création des descriptions d’application"
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
+ms.sourcegitcommit: 447beeae917b03dea2538e74fd9cd8ef48b0f41f
+ms.openlocfilehash: ca85f55e12713903dbbee0a4e247cfb1a51c17d3
+
 ---
 
 # Création des descriptions d’application
@@ -28,7 +31,7 @@ Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour rev
 
 > **Remarque** Lors de la création d’une description dans une langue qui n’est pas prise en charge par vos packages, vous devez indiquer lequel de vos noms d’application réservés doit être affiché dans cette description, dans la mesure où il n’y a pas de package associé dans cette langue à partir duquel extraire le nom. Le nom que vous choisissez ici s’applique seulement à la description du Windows Store pour cette langue et n’a aucune répercussion sur le nom affiché lorsqu’un client installe l’application.
 
-Pour modifier une description, cliquez sur son nom dans la page de présentation de la soumission. Les sections de la page **Description** sont décrites ci-dessous.
+Pour modifier une description, cliquez sur le nom de la langue dans la page de présentation de la soumission. Les sections de la page **Description** sont décrites ci-dessous.
 
 ## Champs de description par défaut
 
@@ -117,6 +120,7 @@ Si vous disposez d’une politique de confidentialité pour votre application, e
 **Important** Microsoft ne fournit aucune politique de confidentialité par défaut pour votre application. De même, votre application n’est couverte par aucune politique de confidentialité Microsoft. Pour déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [politiques du Windows Store](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_5_1).
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: Interactions avec Cortana
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: d55ece0112e5360c1de4e194c6dd326c15404f9e
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: d23416ad3344a39c09078b6ba3acc38fa3ba65a0
 
 ---
 
@@ -82,7 +82,7 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 
  
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 
 * [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
@@ -103,6 +103,6 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

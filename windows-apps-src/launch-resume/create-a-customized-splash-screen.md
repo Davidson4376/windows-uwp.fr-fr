@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Afficher un écran de démarrage plus longtemps
-description: Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable.
+author: TylerMSFT
+title: "Afficher un écran de démarrage plus longtemps"
+description: "Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable."
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
+
 ---
 
 # Afficher un écran de démarrage plus longtemps
@@ -97,7 +100,7 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
         private SplashScreen splash; // Variable to hold the splash screen object.
         internal bool dismissed = false; // Variable to track splash screen dismissal status.
         internal Frame rootFrame;
-     
+
        // Define methods and constructor
     }
     ```
@@ -131,7 +134,7 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
             PositionRing();
         }
 
-        // Create a Frame to act as the navigation context 
+        // Create a Frame to act as the navigation context
         rootFrame = new Frame();            
     }
     ```
@@ -223,11 +226,11 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
     {
         if (loadState)
         {
-             // code to load your app's state here 
+             // code to load your app's state here
         }
     }
     ```
-    
+
     Quand vous modifiez le gestionnaire d’activation de lancement dans App.xaml.cs, vous affectez également la valeur true à `loadstate`, si le [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) précédent de votre application est **Terminated**. Dans ce cas, la méthode `RestoreStateAsync` restaure l’application dans son état antérieur. Pour une vue d’ensemble du lancement, de la suspension et de l’arrêt de l’application, voir [Cycle de vie de l’application](app-lifecycle.md).
 
 ## Modifier le gestionnaire d’activation de lancement
@@ -547,8 +550,6 @@ namespace SplashScreenExample
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

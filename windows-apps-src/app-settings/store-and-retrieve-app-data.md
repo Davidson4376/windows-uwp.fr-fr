@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Découvrez comment stocker et récupérer des données d’application locale, itinérantes et temporaires.
-title: Stocker et récupérer des paramètres et autres données d’application
+Description: "Découvrez comment stocker et récupérer des données d’application locale, itinérantes et temporaires."
+title: "Stocker et récupérer des paramètres et autres données d’application"
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 433cda6432d1e695bacb338e68012bcc9c837eb6
+
 ---
 
 # Stocker et récupérer des paramètres et autres données d’application
@@ -65,7 +69,7 @@ Windows.Storage.StorageFolder localFolder =
 
 ### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>Créer et récupérer un paramètre local unique
 
-Pour créer ou écrire un paramètre, utilisez la propriété [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) pour accéder aux paramètres inclus dans le conteneur `localSettings` abordé à l’étape précédente. Cet exemple crée un paramètre intitulé
+Pour créer ou écrire un paramètre, utilisez la propriété [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) pour accéder aux paramètres inclus dans le conteneur `localSettings` abordé à l’étape précédente. Cet exemple crée un paramètre intitulé `exampleSetting`.
 
 ```CSharp
 // Simple setting
@@ -235,7 +239,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 ### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>Créer et récupérer des paramètres d’itinérance
 
-Utilisez la propriété [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) pour accéder aux paramètres inclus dans le conteneur `roamingSettings` abordé dans la section précédente. Cet exemple crée un paramètre nommé `exampleSetting` et une valeur composite nommée
+Utilisez la propriété [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) pour accéder aux paramètres inclus dans le conteneur `roamingSettings` abordé dans la section précédente. Cet exemple crée un paramètre nommé `exampleSetting` et une valeur composite nommée `composite`.
 
 ```CSharp
 // Simple setting
@@ -454,6 +458,7 @@ Vous pouvez éventuellement créer différentes versions des données d’applic
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

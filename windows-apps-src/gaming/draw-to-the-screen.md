@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Dessiner à l’écran
-description: Pour finir, nous portons le code qui trace le cube tournant à l’écran.
+title: "Dessiner à l’écran"
+description: "Pour finir, nous portons le code qui trace le cube tournant à l’écran."
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
+
 ---
 
 # Dessiner à l’écran
@@ -130,7 +134,7 @@ Dans Direct3D 11, le processus est très similaire. (Nous supposons que vous uti
 -   Envoyez les vertex indexés dans les nuanceurs et publiez les résultats de couleur dans le tampon de cible de rendu avec [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409).
 -   Affichez le tampon de cible de rendu avec [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
-Direct3D 11 : rendu d’une trame pour l’affichage
+Direct3D 11 : rendu d’une trame pour l’affichage
 
 ``` syntax
 void RenderObject::Render()
@@ -221,6 +225,7 @@ Cet exemple ne s’attarde pas sur la grande complexité de la configuration des
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

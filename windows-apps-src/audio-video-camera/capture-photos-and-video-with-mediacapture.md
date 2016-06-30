@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 1361E82A-202F-40F7-9239-56F00DFCA54B
-description: Est décrite ici la capture à l’aide de MediaCapture, notamment l’initialisation et l’arrêt de MediaCapture, et la gestion des modifications d’orientation.
-title: Capturer des photos et des vidéos à l’aide de MediaCapture
+description: "Est décrite ici la capture à l’aide de MediaCapture, notamment l’initialisation et l’arrêt de MediaCapture, et la gestion des modifications d’orientation."
+title: "Capturer des photos et des vidéos à l’aide de MediaCapture"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
+
 ---
 
 # Capturer des photos et des vidéos à l’aide de MediaCapture
@@ -25,7 +29,7 @@ Afin que votre application puisse accéder à l’appareil photo d’un appareil
 **Ajouter des fonctionnalités au manifeste de l’application**
 
 1.  Dans Microsoft Visual Studio, dans l’**Explorateur de solutions**, ouvrez le concepteur pour le manifeste de l’application en double-cliquant sur l’élément **package.appxmanifest**.
-2.  Sélectionnez l’onglet **Fonctionnalités**
+2.  Sélectionnez l’onglet **Fonctionnalités**.
 3.  Activez les cases à cocher **Webcam** et **Microphone**.
 4.  Pour accéder à la bibliothèque d’images et à la vidéothèque, cochez les cases correspondant à **Bibliothèque d’images** et **Vidéothèque**.
 
@@ -219,105 +223,106 @@ Vous pouvez enregistrer des gestionnaires pour les événements de durée de vie
 
 Dans le gestionnaire de l’événement **Application.Suspending**, vous devez annuler l’enregistrement des gestionnaires pour les événements d’orientation de l’affichage et de l’appareil et arrêter l’objet **MediaCapture**. L’événement [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) dont l’enregistrement a été supprimé ici est nécessaire pour une autre tâche relative au cycle de vie décrite plus loin dans cet article.
 
-Attention Vous devez demander un report de suspension en appelant [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) au début de votre gestionnaire d’événements de suspension. En procédant ainsi, vous demandez au système d’attendre que vous ayez signalé la fin de l’opération avant l’arrêt de votre application. Cela est nécessaire car les opérations d’arrêt de **MediaCapture** sont asynchrones, c’est pourquoi le gestionnaire d’événements **Application.Suspending** peut s’arrêter avant que l’appareil photo soit correctement éteint.
+**Attention** Vous devez demander un report de suspension en appelant [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) au début de votre gestionnaire d’événements de suspension. En procédant ainsi, vous demandez au système d’attendre que vous ayez signalé la fin de l’opération avant l’arrêt de votre application. Cela est nécessaire car les opérations d’arrêt de **MediaCapture** sont asynchrones, c’est pourquoi le gestionnaire d’événements **Application.Suspending** peut s’arrêter avant que l’appareil photo soit correctement éteint. Une fois vos appels asynchrones attendus terminés, vous devez libérer le report en appelant [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685).
 
-[!code-cs[Une fois vos appels asynchrones attendus terminés, vous devez libérer le report en appelant [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685).](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
+[!code-cs[Suspending](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
 
-Suspending
+Dans le gestionnaire de l’événement **Application.Resuming**, vous devez enregistrer des gestionnaires pour les événements d’orientation d’affichage et de l’appareil, enregistrer l’événement **SystemMediaTransportControls.PropertyChanged** et initialiser l’objet **MediaCapture**.
 
-[!code-cs[Dans le gestionnaire de l’événement **Application.Resuming**, vous devez enregistrer des gestionnaires pour les événements d’orientation d’affichage et de l’appareil, enregistrer l’événement **SystemMediaTransportControls.PropertyChanged** et initialiser l’objet **MediaCapture**.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
+[!code-cs[Resuming](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-Resuming
+L’événement [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) donne la possibilité d’enregistrer initialement des gestionnaires pour les événements d’orientation d’affichage et de l’appareil et initialiser l’objet **MediaCapture**.
 
-[!code-cs[L’événement [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) donne la possibilité d’enregistrer initialement des gestionnaires pour les événements d’orientation d’affichage et de l’appareil et initialiser l’objet **MediaCapture**.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
+[!code-cs[OnNavigatedTo](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
 
-OnNavigatedTo
+Si votre application comporte plusieurs pages, vous devez nettoyer vos objets de capture multimédia dans le gestionnaire d’événements [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
 
-[!code-cs[Si votre application comporte plusieurs pages, vous devez nettoyer vos objets de capture multimédia dans le gestionnaire d’événements [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
+[!code-cs[OnNavigatingFrom](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
 
-OnNavigatingFrom Pour que votre application fonctionne correctement sur les appareils qui prennent en charge l’affichage simultané de plusieurs fenêtres, vous devez répondre lorsque votre application est réduite ou restaurée. Pour ce faire, vous devez gérer l’événement [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720).
+Pour que votre application fonctionne correctement sur les appareils qui prennent en charge l’affichage simultané de plusieurs fenêtres, vous devez répondre lorsque votre application est réduite ou restaurée. Pour ce faire, vous devez gérer l’événement [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720). Initialisez une variable de membre pour stocker une référence à l’objet [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) de votre application.
 
-[!code-cs[Initialisez une variable de membre pour stocker une référence à l’objet [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) de votre application.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
+[!code-cs[DeclareSystemMediaTransportControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
 
-DeclareSystemMediaTransportControls Le code pour enregistrer et annuler l’enregistrement de l’événement **PropertyChanged** doit être ajouté aux événements de cycle de vie de l’application, comme indiqué dans les exemples ci-dessus. Dans le gestionnaire de l’événement, vérifiez si la modification de propriété qui a déclenché l’événement était la propriété [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721). S’il s’agit bien de cette propriété, vérifiez sa valeur. Si la valeur est [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852), cela signifie que votre application a été réduite et que vous devez nettoyer vos ressources de capture multimédia. Sinon, l’événement signale que votre fenêtre d’application a été restaurée et que vous devez réinitialiser les ressources de capture multimédia.
+Le code pour enregistrer et annuler l’enregistrement de l’événement **PropertyChanged** doit être ajouté aux événements de cycle de vie de l’application, comme indiqué dans les exemples ci-dessus. Dans le gestionnaire de l’événement, vérifiez si la modification de propriété qui a déclenché l’événement était la propriété [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721). S’il s’agit bien de cette propriété, vérifiez sa valeur. Si la valeur est [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852), cela signifie que votre application a été réduite et que vous devez nettoyer vos ressources de capture multimédia. Sinon, l’événement signale que votre fenêtre d’application a été restaurée et que vous devez réinitialiser les ressources de capture multimédia. La propriété **SoundLevel** doit être accessible sur le thread d’interface utilisateur, afin que le code de cette méthode soit encapsulé dans un appel à [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
-[!code-cs[La propriété **SoundLevel** doit être accessible sur le thread d’interface utilisateur, afin que le code de cette méthode soit encapsulé dans un appel à [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
+[!code-cs[SystemMediaControlsPropertyChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
 
-## SystemMediaControlsPropertyChanged
+## Considérations supplémentaires relatives à l’interface utilisateur concernant la capture multimédia
 
-### Considérations supplémentaires relatives à l’interface utilisateur concernant la capture multimédia
+### Définir des préférences de rotation automatique
 
-Définir des préférences de rotation automatique Comme indiqué dans la section précédente sur la rotation du flux d’aperçu, certains appareils prennent en charge la définition de [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) afin d’éviter que la page, y compris l’élément [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) qui affiche l’aperçu, pivote selon la rotation de l’appareil. Cela permet d’améliorer l’expérience utilisateur sur les appareils qui prennent en charge cette fonctionnalité. Définissez cette valeur lors du lancement de votre application ou lorsque vous commencez à afficher l’aperçu.
+Comme indiqué dans la section précédente sur la rotation du flux d’aperçu, certains appareils prennent en charge la définition de [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) afin d’éviter que la page, y compris l’élément [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) qui affiche l’aperçu, pivote selon la rotation de l’appareil. Cela permet d’améliorer l’expérience utilisateur sur les appareils qui prennent en charge cette fonctionnalité. Définissez cette valeur lors du lancement de votre application ou lorsque vous commencez à afficher l’aperçu. Notez que vous devez toujours implémenter la gestion de rotation de l’aperçu pour les appareils qui ne prennent pas en charge les préférences de rotation automatique.
 
-[!code-cs[Notez que vous devez toujours implémenter la gestion de rotation de l’aperçu pour les appareils qui ne prennent pas en charge les préférences de rotation automatique.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
+[!code-cs[SetAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
 
-### SetAutoRotationPreferences
+### Gérer l’orientation des éléments d’interface utilisateur
 
-Gérer l’orientation des éléments d’interface utilisateur Les utilisateurs s’attendent généralement à ce que les éléments d’interface utilisateur d’une application d’appareil photo, tels que les boutons de lancement d’une capture photo ou vidéo, pivotent selon l’aperçu vidéo. La méthode suivante illustre l’utilisation des méthodes d’assistance d’orientation précédemment définies pour orienter correctement les boutons dans l’interface utilisateur de l’appareil photo. Vous devez appeler cette méthode à partir des gestionnaires d’événements [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) et [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407), et au premier lancement de votre application.
+Les utilisateurs s’attendent généralement à ce que les éléments d’interface utilisateur d’une application d’appareil photo, tels que les boutons de lancement d’une capture photo ou vidéo, pivotent selon l’aperçu vidéo. La méthode suivante illustre l’utilisation des méthodes d’assistance d’orientation précédemment définies pour orienter correctement les boutons dans l’interface utilisateur de l’appareil photo. Vous devez appeler cette méthode à partir des gestionnaires d’événements [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) et [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407), et au premier lancement de votre application. Votre implémentation peut varier en fonction de l’interface utilisateur de votre application.
 
-[!code-cs[Votre implémentation peut varier en fonction de l’interface utilisateur de votre application.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
+[!code-cs[UpdateButtonOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
 
-UpdateButtonOrientation
+Lorsque votre application s’arrête ou si vous naviguez vers une page qui n’est pas associée à une capture multimédia, définissez la préférence de rotation automatique sur [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) pour permettre à l’interface utilisateur de pivoter normalement.
 
-[!code-cs[Lorsque votre application s’arrête ou si vous naviguez vers une page qui n’est pas associée à une capture multimédia, définissez la préférence de rotation automatique sur [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) pour permettre à l’interface utilisateur de pivoter normalement.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
+[!code-cs[RevertAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
 
-### RevertAutoRotationPreferences
+### Prise en charge de la capture photo et vidéo
 
-Prise en charge de la capture photo et vidéo L’API [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) vous permet de capturer des photos et des vidéos simultanément sur les appareils qui prennent en charge cette fonctionnalité. Pour des raisons de concision, cet exemple utilise la propriété [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) pour déterminer si la capture simultanée de photos et de vidéos est prise en charge, mais l’utilisation des profils d’appareil photo constitue un moyen plus fiable et recommandé pour cela.
+L’API [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) vous permet de capturer des photos et des vidéos simultanément sur les appareils qui prennent en charge cette fonctionnalité. Pour des raisons de concision, cet exemple utilise la propriété [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) pour déterminer si la capture simultanée de photos et de vidéos est prise en charge, mais l’utilisation des profils d’appareil photo constitue un moyen plus fiable et recommandé pour cela. Pour plus d’informations voir [Profils d’appareil photo](camera-profiles.md).
 
-Pour plus d’informations voir [Profils d’appareil photo](camera-profiles.md). La méthode d’assistance suivante met à jour les contrôles de l’application pour les faire correspondre à l’état actuel de capture de l’application.
+La méthode d’assistance suivante met à jour les contrôles de l’application pour les faire correspondre à l’état actuel de capture de l’application. Appelez cette méthode chaque fois que l’état de capture de votre application change, par exemple lors du démarrage ou de l’arrêt d’une capture vidéo.
 
-[!code-cs[Appelez cette méthode chaque fois que l’état de capture de votre application change, par exemple lors du démarrage ou de l’arrêt d’une capture vidéo.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
+[!code-cs[UpdateCaptureControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
 
-### UpdateCaptureControls
+### Prise en charge des fonctionnalités d’interface utilisateur mobiles spécifiques
 
-Prise en charge des fonctionnalités d’interface utilisateur mobiles spécifiques Tout le code indiqué dans cet article fonctionne dans une application Windows universelle. L’ajout de quelques lignes de code vous permet de tirer parti de fonctionnalités d’interface utilisateur spécifiques présentes uniquement sur les appareils mobiles.
+Tout le code indiqué dans cet article fonctionne dans une application Windows universelle. L’ajout de quelques lignes de code vous permet de tirer parti de fonctionnalités d’interface utilisateur spécifiques présentes uniquement sur les appareils mobiles. Pour utiliser ces fonctionnalités, vous devez ajouter à votre projet une référence au kit de développement logiciel (SDK) Microsoft Mobile Extension pour la plateforme d’application universelle.
 
-**Pour utiliser ces fonctionnalités, vous devez ajouter à votre projet une référence au kit de développement logiciel (SDK) Microsoft Mobile Extension pour la plateforme d’application universelle.**
+**Pour ajouter une référence au kit de développement logiciel (SDK) de l’extension mobile pour la prise en charge du bouton de l’appareil photo, procédez comme suit :**
 
-1.  Pour ajouter une référence au kit de développement logiciel (SDK) de l’extension mobile pour la prise en charge du bouton de l’appareil photo, procédez comme suit :
+1.  Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence**.
 
-2.  Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence**.
+2.  Développez le nœud **Universelle Windows** et sélectionnez**Extensions**.
 
-3.  Développez le nœud **Universelle Windows** et sélectionnez**Extensions**.
+3.  Cochez la case située en regard de **kit de développement logiciel (SDK) Microsoft Mobile Extension pour la plateforme d’application universelle**.
 
-Cochez la case située en regard de **kit de développement logiciel (SDK) Microsoft Mobile Extension pour la plateforme d’application universelle**. Les appareils mobiles disposent d’un contrôle [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) qui fournit à l’utilisateur des informations relatives à l’appareil. Ce contrôle occupe de l’espace sur l’écran , ce qui peut interférer avec l’interface utilisateur de capture multimédia. Vous pouvez masquer la barre d’état en appelant [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339). Toutefois cet appel doit être effectué depuis un bloc conditionnel où vous utilisez la méthode [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) pour déterminer si l’API est disponible. Cette méthode renvoie uniquement la valeur true sur les appareils mobiles qui prennent en charge la barre d’état.
+Les appareils mobiles disposent d’un contrôle [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) qui fournit à l’utilisateur des informations relatives à l’appareil. Ce contrôle occupe de l’espace sur l’écran , ce qui peut interférer avec l’interface utilisateur de capture multimédia. Vous pouvez masquer la barre d’état en appelant [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339). Toutefois cet appel doit être effectué depuis un bloc conditionnel où vous utilisez la méthode [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) pour déterminer si l’API est disponible. Cette méthode renvoie uniquement la valeur true sur les appareils mobiles qui prennent en charge la barre d’état. Vous devez masquer la barre d’état au lancement de votre application ou lorsque vous commencez à afficher un aperçu à partir de l’appareil photo.
 
-[!code-cs[Vous devez masquer la barre d’état au lancement de votre application ou lorsque vous commencez à afficher un aperçu à partir de l’appareil photo.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
+[!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-HideStatusBar
+Lorsque votre application s’arrête ou lorsque l’utilisateur quitte la page de capture multimédia de votre application, vous rendez le contrôle de nouveau visible.
 
-[!code-cs[Lorsque votre application s’arrête ou lorsque l’utilisateur quitte la page de capture multimédia de votre application, vous rendez le contrôle de nouveau visible.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
+[!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-ShowStatusBar Certains appareils mobiles disposent d’un bouton matériel dédié à l’appareil photo que certains utilisateurs préfèrent à une commande tactile. Pour être averti de l’utilisation du bouton matériel de l’appareil photo, enregistrez un gestionnaire pour l’événement [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805).
+Certains appareils mobiles disposent d’un bouton matériel dédié à l’appareil photo que certains utilisateurs préfèrent à une commande tactile. Pour être averti de l’utilisation du bouton matériel de l’appareil photo, enregistrez un gestionnaire pour l’événement [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805). Cette API est disponible sur les appareils mobiles, par conséquent, vous devez utiliser de nouveau l’élément **IsTypePresent** pour vous assurer que l’API est prise en charge sur l’appareil actuel avant d’essayer d’y accéder.
 
-[!code-cs[Cette API est disponible sur les appareils mobiles, par conséquent, vous devez utiliser de nouveau l’élément **IsTypePresent** pour vous assurer que l’API est prise en charge sur l’appareil actuel avant d’essayer d’y accéder.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
+[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
-[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
+[!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-RegisterCameraButtonHandler
+Dans le gestionnaire de l’événement **CameraPressed**, vous pouvez lancer une capture de photos.
 
-[!code-cs[Dans le gestionnaire de l’événement **CameraPressed**, vous pouvez lancer une capture de photos.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
+[!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-CameraPressed
+Lorsque votre application s’arrête ou que l’utilisateur quitte la page de capture multimédia de votre application, annulez l’enregistrement du gestionnaire de boutons matériels.
 
-[!code-cs[Lorsque votre application s’arrête ou que l’utilisateur quitte la page de capture multimédia de votre application, annulez l’enregistrement du gestionnaire de boutons matériels.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
+[!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-UnregisterCameraButtonHandler **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP).
+**Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+## Rubriques connexes
 
-* [Rubriques connexes](camera-profiles.md)
-* [Profils d’appareil photo](high-dynamic-range-hdr-photo-capture.md)
-* [Capture photo avec plage dynamique élevée (HDR)](capture-device-controls-for-photo-and-video-capture.md)
-* [Contrôles de l’appareil de capture pour la photo et la vidéo](capture-device-controls-for-video-capture.md)
-* [Contrôles de l’appareil de capture pour la vidéo](effects-for-video-capture.md)
-* [Effets de capture vidéo](scene-analysis-for-media-capture.md)
-* [Analyse de scène de capture multimédia](variable-photo-sequence.md)
-* [Séquence de photos variables](get-a-preview-frame.md)
-* [Obtenir une image d’aperçu](http://go.microsoft.com/fwlink/?LinkId=619479)
+* [Profils d’appareil photo](camera-profiles.md)
+* [Capture photo avec plage dynamique élevée (HDR)](high-dynamic-range-hdr-photo-capture.md)
+* [Contrôles de l’appareil de capture pour la photo et la vidéo](capture-device-controls-for-photo-and-video-capture.md)
+* [Contrôles de l’appareil de capture pour la vidéo](capture-device-controls-for-video-capture.md)
+* [Effets de capture vidéo](effects-for-video-capture.md)
+* [Analyse de scène de capture multimédia](scene-analysis-for-media-capture.md)
+* [Séquence de photos variables](variable-photo-sequence.md)
+* [Obtenir une image d’aperçu](get-a-preview-frame.md)
+* [Exemple CameraStarterKit](http://go.microsoft.com/fwlink/?LinkId=619479)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

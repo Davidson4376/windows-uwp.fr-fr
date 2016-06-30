@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Ajouter un écran de démarrage
-description: Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application à l’aide de Microsoft Visual Studio 2015.
+author: TylerMSFT
+title: "Ajouter un écran de démarrage"
+description: "Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application à l’aide de Microsoft Visual Studio 2015."
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
+
 ---
 
 # Ajouter un écran de démarrage
@@ -73,8 +76,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

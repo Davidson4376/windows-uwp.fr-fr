@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Au lieu de recourir à la méthode Binding, vous pouvez utiliser l’extension de balisage xBind. Celle-ci n’offre pas certaines des fonctionnalités de Binding, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que Binding, et prend mieux en charge le débogage.
+description: "Au lieu de recourir à la méthode Binding, vous pouvez utiliser l’extension de balisage xBind. Celle-ci n’offre pas certaines des fonctionnalités de Binding, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que Binding, et prend mieux en charge le débogage."
 title: Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
+
 ---
 
 # Extension de balisage {x&#58;Bind}
@@ -37,9 +41,11 @@ Au chargement du XAML, **{x:Bind}** est converti en ce que vous voulez comme obj
 |------|-------------|
 | _propertyPath_ | Chaîne qui spécifie le chemin de propriété pour la liaison. Pour plus d’informations, voir la section [Chemin de propriété](#property-path) ci-dessous. |
 | _bindingProperties_ |
-| _propName_ = _value_\[, _propName_=_value_\]* | Une ou plusieurs propriétés de liaison spécifiées à l’aide d’une syntaxe constituée d’une ou plusieurs paires nom/valeur. |
+| _propName_
+            =
+            _value_\[, _propName_=_value_\]* | Une ou plusieurs propriétés de liaison spécifiées à l’aide d’une syntaxe constituée d’une ou plusieurs paires nom/valeur. |
 | _propName_ | Nom de chaîne de la propriété à définir sur l’objet de liaison. Par exemple, « Converter ». | 
-| _value_ | Valeur à attribuer à la propriété. La syntaxe de l’argument dépend de la propriété définie. Voici un exemple d’utilisation de _propName_=_value_ dans lequel la valeur est elle-même une extension de balisage : `Converter={StaticResource myConverterClass}`. Pour plus d’informations, voir la section [Propriétés que vous pouvez définir avec {x:Bind}](#properties-you-can-set) ci-dessous. | 
+| _value_ | Valeur à attribuer à la propriété. La syntaxe de l’argument dépend de la propriété définie. Voici un exemple d’utilisation de _propName_=_value_ dans lequel la valeur est elle-même une extension de balisage : `Converter={StaticResource myConverterClass}`. Pour plus d’informations, voir la section [Propriétés que vous pouvez définir avec {x:Bind}](#properties-you-can-set) ci-dessous. | 
 
 ## Chemin de propriété
 
@@ -51,7 +57,7 @@ Par exemple : dans une page, **Text="{x:Bind Employee.FirstName}"** recherche un
 
 Pour C++ / CX, **{x:Bind}** ne peut pas effectuer de liaison à des champs et propriétés privés dans la page ou le modèle de données. Vous devez avoir une propriété publique pour que la liaison soit possible. La surface d’exposition pour la liaison doit être exposée en tant que classes/interfaces CX pour que nous puissions obtenir les métadonnées pertinentes. L’attribut **\[Bindable\]** ne doit pas être nécessaire.
 
-Si la source de données est une collection, un chemin de propriété peut spécifier les éléments de la collection selon leur position ou index. Par exemple, « Teams[0].Players », où le littéral « \[\] » encadre le « 0 » qui demande le premier élément d’une collection ayant un index de base zéro.
+Si la source de données est une collection, un chemin de propriété peut spécifier les éléments de la collection selon leur position ou index. Par exemple, « Teams\[0\].Players », où le littéral « \[\] » encadre le « 0 » qui demande le premier élément d’une collection ayant un index de base zéro.
 
 Pour utiliser un indexeur, le modèle doit implémenter **IList&lt;T&gt;** or **IVector&lt;T&gt;** sur le type de la propriété à indexer. Si le type de la propriété indexée prend en charge **INotifyCollectionChanged** ou **IObservableVector**, et si la liaison est OneWay ou TwoWay, il s’inscrit pour écouter les notifications de modification sur ces interfaces. La logique de détection des modifications met à jour en fonction de tous les changements de collection, même si cela n’affecte pas la valeur indexée spécifique. En effet, la logique d’écoute est commune à toutes les instances de la collection.
 
@@ -107,7 +113,8 @@ Les liaisons compilées dépendent de la génération du code. Par conséquent, 
 **Conseil** Si vous avez besoin de spécifier une accolade simple pour une valeur, comme dans [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) ou [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), faites-la précéder d’une barre oblique inverse : `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
 
 [
-            **Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de la rubrique [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+              **Converter**
+            ](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de la rubrique [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 **{x:Bind}** est uniquement une extension de balisage. Il n’existe aucun moyen de créer ou manipuler de telles liaisons par programme. Pour plus d’informations sur les extensions de balisage, voir [Vue d’ensemble du langage XAML](xaml-overview.md).
 
@@ -132,6 +139,7 @@ Cet exemple de XAML utilise **{x:Bind}** avec une propriété **ListView.ItemTem
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

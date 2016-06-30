@@ -1,9 +1,13 @@
 ---
 author: jnHs
-Description: La première étape de création d’une application dans votre tableau de bord du Centre de développement Windows consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour choisir un nom exceptionnel pour votre application.
-title: Créer votre application en réservant un nom
-keywords:
+Description: "La première étape de création d’une application dans votre tableau de bord du Centre de développement Windows consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour choisir un nom exceptionnel pour votre application."
+title: "Créer votre application en réservant un nom"
+keywords: 
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
+translationtype: Human Translation
+ms.sourcegitcommit: 3b65bbaf2498dde7484c055ff86ed09e89bf3405
+ms.openlocfilehash: 5e4933be456bc76eb5923f5c081e8376c43c118b
+
 ---
 
 # Créer votre application en réservant un nom
@@ -60,6 +64,7 @@ Pour plus d’informations, voir [Gestion des noms d’application](manage-app-n
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

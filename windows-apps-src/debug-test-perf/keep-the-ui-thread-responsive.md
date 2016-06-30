@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
-title: Assurer la réactivité du thread de l’interface utilisateur
-description: Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur.
+title: "Assurer la réactivité du thread de l’interface utilisateur"
+description: "Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur."
+translationtype: Human Translation
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
+
 ---
 # Assurer la réactivité du thread de l’interface utilisateur
 
@@ -101,6 +105,7 @@ Dans cet exemple, le gestionnaire `NextMove-Click` effectue son retour lorsqu’
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Sur la page Packages, vous pouvez charger tous les fichiers de package (.xap, .appx, .appxupload et/ou .appxbundle) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application.
-title: Chargement des packages d’application
+Description: "Sur la page Packages, vous pouvez charger tous les fichiers de package (.xap, .appx, .appxupload et/ou .appxbundle) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application."
+title: "Chargement des packages d’application"
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
+
 ---
 
 # Chargement des packages d’application
@@ -55,6 +59,7 @@ Nous vous recommandons d’utiliser [Visual Studio Application Insights](http://
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

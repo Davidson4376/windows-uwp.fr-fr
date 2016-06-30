@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Surveiller la progression et l’achèvement des tâches en arrière-plan
-description: Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan.
+author: TylerMSFT
+title: "Surveiller la progression et l’achèvement des tâches en arrière-plan"
+description: "Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan."
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
+
 ---
 
 # Surveiller la progression et l’achèvement des tâches en arrière-plan
@@ -41,7 +44,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 >      // TODO: Add code that deals with background task completion.
 >  };
 >  ```
-    
+
 2.  Ajoutez du code au gestionnaire d’événements qui traite l’achèvement des tâches en arrière-plan.
 
     Par exemple, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur.
@@ -84,7 +87,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args* :
 
     > [!div class="tabbedCodeSnippets"] ```cs private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args) { var progress = "Progress: " + args.Progress + "%"; BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
-    > 
+    >
     >         UpdateUI();
     >     }
     >     ```
@@ -93,7 +96,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     >     {
     >         auto progress = "Progress: " + args->Progress + "%";
     >         BackgroundTaskSample::SampleBackgroundTaskProgress = progress;
-    > 
+    >
     >         UpdateUI();
     >     };
     >     ```
@@ -114,15 +117,15 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     >     ```
     >  ```cpp void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task) { auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
     >            { auto progress = "Progress: " + args-&gt;Progress + "%"; BackgroundTaskSample::SampleBackgroundTaskProgress = progress; UpdateUI(); };
-    > 
+    >
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
     >         
-    > 
+    >
     >         auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
     >         {
     >             UpdateUI();
     >         };
-    > 
+    >
     >         task->Completed += ref new BackgroundTaskCompletedEventHandler(completed);
     >     }
     >     ```
@@ -132,7 +135,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask :
 
     > [!div class="tabbedCodeSnippets"] ```cs protected override void OnNavigatedTo(NavigationEventArgs e) { foreach (var task in BackgroundTaskRegistration.AllTasks) { if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName) { AttachProgressAndCompletedHandlers(task.Value); BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true); } }
-    > 
+    >
     >         UpdateUI();
     >     }
     >     ```
@@ -142,7 +145,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     >         // A pointer back to the main page.  This is needed if you want to call methods in MainPage such
     >         // as NotifyUser()
     >         rootPage = MainPage::Current;
-    > 
+    >
     >         //
     >         // Attach progress and completed handlers to any existing tasks.
     >         //
@@ -151,16 +154,16 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     >         while (hascur)
     >         {
     >             auto cur = iter->Current->Value;
-    > 
+    >
     >             if (cur->Name == SampleBackgroundTaskName)
     >             {
     >                 AttachProgressAndCompletedHandlers(cur);
     >                 break;
     >             }
-    > 
+    >
     >             hascur = iter->MoveNext();
     >         }
-    > 
+    >
     >         UpdateUI();
     >     }
     >     ```
@@ -192,8 +195,6 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

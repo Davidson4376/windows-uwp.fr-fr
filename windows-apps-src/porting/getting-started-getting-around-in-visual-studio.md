@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Savoir maîtriser Visual Studio
-title: Savoir maîtriser Visual Studio
+description: "Savoir maîtriser Visual Studio"
+title: "Savoir maîtriser Visual Studio"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
+
 ---
 
 # Prise en main &#58; Savoir maîtriser Visual Studio
@@ -41,7 +45,7 @@ Contrairement à Xcode, qui masque les informations de disposition et de liaison
 
 Modifions les détails du bouton. Comme vous le savez, pour modifier le nom du bouton dans Xcode, vous devez modifier la valeur du champ **Titre** dans son panneau de propriétés.
 
-Lorsque vous utilisez Visual Studio vous procédez de manière très similaire. Dans le volet **Conception**, appuyez sur le bouton afin de positionner le focus sur celui-ci. Ensuite, dans le volet **Propriétés**, modifiez la valeur de **Contenu** de « Bouton » en « Appuyez ici ». Enfin, mettez à jour le nom du contrôle de bouton, en remplaçant la valeur de **Name** « &lt;Sans nom&gt; » par « myButton », comme illustré ici :
+Lorsque vous utilisez Visual Studio vous procédez de manière très similaire. Dans le volet **Conception**, appuyez sur le bouton afin de positionner le focus sur celui-ci. Ensuite, dans le volet **Propriétés**, modifiez la valeur de **Contenu** de « Bouton » en « Appuyez ici ». Enfin, mettez à jour le nom du contrôle de bouton, en remplaçant la valeur de **Name** « &lt;Sans nom&gt; » par « myButton », comme illustré ici :
 
 ![fenêtre des propriétés du bouton dans visual studio](images/ios-to-uwp/vs-button-properties.png)
 
@@ -87,7 +91,7 @@ Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela
 1.  Appuyez sur l’onglet du fichier MainPage.xaml.
 2.  Dans le volet **Conception**, appuyez sur le contrôle **TextBlock**.
 3.  Dans le volet **Propriétés**, appuyez sur le bouton doté d’une clé à molette pour afficher ses propriétés.
-4.  Dans la zone **Nom**, changez et remplacez « &lt;Sans nom&gt; » par « myLabel ».
+4.  Dans la zone **Nom**, changez et remplacez « &lt;Sans nom&gt; » par « myLabel ».
 
 ![fenêtre des propriétés du libellé dans visual studio](images/ios-to-uwp/vs-label-properties.png)
 
@@ -121,6 +125,7 @@ Pour quitter l’application, revenez à Visual Studio, appuyez sur le menu **D�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: msatranjr
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-title: Création de packages d’application UWP
-description: Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload.
+title: "Création de packages d’application UWP"
+description: "Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
+
 ---
 # Création de packages d’application UWP
 
@@ -82,7 +86,7 @@ Pour distribuer une application via le Windows Store, vous devez créer un packa
 
     Si vous avez un appareil Windows 10 distant que vous voulez utiliser pour le test, vous devrez installer manuellement le kit de certification des applications Windows sur cet appareil. La section suivante vous guidera lors de ces étapes. Une fois cette opération terminée, vous pouvez sélectionner **Remote machine**, puis cliquer sur **Launch Windows App Certification Kit** pour vous connecter à l’appareil distant et exécuter les tests de validation.
 
-12. Une fois que le Kit de certification des applications Windows a terminé et que votre application a réussi, vous êtes prêt à charger le fichier dans le Windows Store. Assurez-vous de charger le fichier approprié. Vous le trouverez dans le dossier racine de votre solution \\[AppName]\\AppPackages. Il se termine par l’extension de fichier .appxupload. Le nom sera sous la forme \[AppName\]\_\[AppVersion\]\_x86\_x64\_arm\_bundle.appxupload.
+12. Une fois que le Kit de certification des applications Windows a terminé et que votre application a réussi, vous êtes prêt à charger le fichier dans le Windows Store. Assurez-vous de charger le fichier approprié. Vous le trouverez dans le dossier racine de votre solution \\[AppName\]\\AppPackages. Il se termine par l’extension de fichier .appxupload. Le nom sera sous la forme \[AppName\]\_\[AppVersion\]\_x86\_x64\_arm\_bundle.appxupload.
 
 **Valider votre package d’application sur un appareil Windows 10 distant**
 
@@ -136,6 +140,7 @@ La liste suivante fournit les conditions requises pour le chargement indépendan
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

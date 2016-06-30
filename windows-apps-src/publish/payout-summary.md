@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: La page Résumé du paiement affiche le détail des sommes rapportées par vos applications et produits in-app. Elle vous permet également de connaître les délais et les montants de vos paiements.
-title: Résumé du paiement
+Description: "La page Résumé du paiement affiche le détail des sommes rapportées par vos applications et produits in-app. Elle vous permet également de connaître les délais et les montants de vos paiements."
+title: "Résumé du paiement"
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
+ms.sourcegitcommit: c626a828f9cee6b23ec26fc2eaa60a6477870baf
+ms.openlocfilehash: 773a072f5656068eb6e0b2d792cf73a7ff1d16f0
+
 ---
 
 # Résumé du paiement
@@ -70,7 +73,8 @@ Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez
 | Nom du champ              | Description                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | Source de revenu          | Votre source de revenu, en fonction de la transaction (par exemple, Windows Store, Windows Phone Store, Windows Store 8, Microsoft Advertising, etc.) |
-| ID de la transaction          | Identifiant unique de la transaction                                                                                                            |
+| ID de commande          |  Identificateur de commande unique. Cet ID permet d’identifier les transactions d’achat ainsi que les opérations sans achat (par exemple : remboursements, rétrofacturations, etc.). Les deux auront le même ID de commande. En outre, en cas de paiement fractionné, où plusieurs modes de paiement sont utilisés pour un achat unique, l’ID de commande vous permettra de lier les transactions d’achat.                                                                                                          |
+| ID de la transaction          |       Identifiant unique de la transaction  |
 | Date et heure de la transaction   | Date et heure d'exécution de la transaction (UTC)                                                                                         |
 | ID de produit parent       | Identificateur unique du produit parent. Notez également que si la transaction ne présente aucun produit parent, l'ID du produit parent est l'ID du produit. |
 | ID de produit              | Identifiant unique du produit                                                                                                                |
@@ -107,6 +111,7 @@ Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

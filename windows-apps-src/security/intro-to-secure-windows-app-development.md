@@ -1,8 +1,12 @@
 ---
-title: Présentation du développement d’applications Windows sécurisées
-description: Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP).
+title: "Présentation du développement d’applications Windows sécurisées"
+description: "Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP)."
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: c09170042841dcff6625d1d236cf708c717301c5
+
 ---
 
 # Présentation du développement d’applications Windows sécurisées
@@ -496,6 +500,7 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

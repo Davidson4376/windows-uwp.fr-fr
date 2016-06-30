@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 772DEBF2-1578-4330-9C14-70BCC6F55005
-description: Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos revenus publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires.
-title: Utiliser la médiation publicitaire pour optimiser les revenus
+description: "Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos revenus publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires."
+title: "Utiliser la médiation publicitaire pour optimiser les revenus"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c0669e35b285ee7dfeda0c039d8455a4237960f5
+
 ---
 
 #  Utiliser la médiation publicitaire pour optimiser les revenus
@@ -50,6 +54,7 @@ Si vous ne voulez pas utiliser de médiation publicitaire ou si votre type de pr
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

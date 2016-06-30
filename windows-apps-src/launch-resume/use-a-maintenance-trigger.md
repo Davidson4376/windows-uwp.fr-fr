@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Utiliser un déclencheur de maintenance
-description: Découvrez comment utiliser la classe MaintenanceTrigger pour exécuter du code léger en arrière-plan tandis que l’appareil est branché.
+author: TylerMSFT
+title: "Utiliser un déclencheur de maintenance"
+description: "Découvrez comment utiliser la classe MaintenanceTrigger pour exécuter du code léger en arrière-plan tandis que l’appareil est branché."
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
+
 ---
 
 # Utiliser un déclencheur de maintenance
@@ -35,12 +38,12 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure :
 > [!div class="tabbedCodeSnippets"]
 > ```cs
 > uint waitIntervalMinutes = 60;
-> 
+>
 > MaintenanceTrigger taskTrigger = new MaintenanceTrigger(waitIntervalMinutes, false);
 > ```
 > ```cpp
 > unsigned int waitIntervalMinutes = 60;
-> 
+>
 > MaintenanceTrigger ^ taskTrigger = ref new MaintenanceTrigger(waitIntervalMinutes, false);
 > ```
 
@@ -71,16 +74,16 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure :
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Maintenance background task example";
-    > 
+    >
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, taskTrigger, exampleCondition);
     > ```
     > ```cpp
     > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > String ^ taskName   = "Maintenance background task example";
-    > 
+    >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, taskTrigger, exampleCondition);
     > ```
-    
+
     > **Remarque** Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si aucune exception de mémoire insuffisante n’est exposée ou que l’application ne la gère pas, la tâche en arrière-plan est arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
 
     > **Remarque** Les applications Windows universelles doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de déclencheur en arrière-plan.
@@ -119,8 +122,6 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure :
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

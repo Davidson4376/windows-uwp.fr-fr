@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Exemples d’applications UWP sur Xbox One
-description: Exemples et bibliothèques pour vous aider à créer des applications réussies pour Xbox One et la télévision.
+title: "Exemples d’applications UWP sur Xbox One"
+description: "Exemples et bibliothèques pour vous aider à créer des applications réussies pour Xbox One et la télévision."
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6f38f5aabb6a409fab894bf7127ad4011162f7c6
+
 ---
 
 # Exemples d’applications UWP sur Xbox One
@@ -16,6 +20,7 @@ Pour plus d’informations, voir le projet [TVHelpers](https://github.com/Micros
 - [UWP sur Xbox One](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

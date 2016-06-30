@@ -1,14 +1,18 @@
 ---
 author: mtoepke
-title: Implémenter à l’aide de tampons de profondeur dans Direct3D 11
-description: Vous saurez comment effectuer le rendu de volumes « shadow volumes » avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils Direct3D.
+title: "Procédure pas à pas &#58; implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11"
+description: "Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre (« shadow volumes ») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D."
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004
+
 ---
 
-# Procédure pas à pas &#58; implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11
+# Procédure pas à pas &#58; implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre (« shadow volumes ») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D.
 ## 
@@ -85,6 +89,7 @@ Vous devez [préparer votre environnement au développement de jeux de plateform
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

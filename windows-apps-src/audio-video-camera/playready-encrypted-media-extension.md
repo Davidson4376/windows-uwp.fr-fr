@@ -1,8 +1,11 @@
 ---
 author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10.
+description: "Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows 8.1 précédente et la version Windows 10."
 title: Extension EME (Encrypted Media Extension) PlayReady
+ms.sourcegitcommit: 965443672e52938d39069f14fe23b0c5dbd0ffa8
+ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
+
 ---
 
 # Extension EME (Encrypted Media Extension) PlayReady
@@ -29,7 +32,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 
     Vous pouvez utiliser un objet PlayReady avec plusieurs identificateurs de clé (KeyID) dans Windows 8.1 ou utiliser des [données de modèle de déchiffrement de contenu (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) avec plusieurs KeyID.
 
-    **Remarque** Dans Windows 10, plusieurs identificateurs de clé sont pris en charge sous &lt;KeyID&gt; dans CDMData.
+    **Remarque** Dans Windows 10, plusieurs identificateurs de clé sont pris en charge sous &lt;KeyID&gt; dans CDMData.
 
      
 
@@ -130,6 +133,7 @@ function main()
         // to set the stop state.
         //
         videoElement.removeAttribute("src");
+        videoElement.load();
 
         onEndOfStream();
     };
@@ -300,6 +304,7 @@ Pour plus d’informations, reportez-vous aux [exemples d’applications](https:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

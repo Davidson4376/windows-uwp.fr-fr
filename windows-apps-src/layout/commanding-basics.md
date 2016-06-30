@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Dans une application de plateforme Windows universelle (UWP), les éléments de commande sont les éléments d’interface utilisateur interactifs qui permettent à l’utilisateur d’effectuer des actions telles que l’envoi d’un message électronique, la suppression d’un élément ou l’envoi d’un formulaire.
-title: Informations de base relatives à la conception des commandes pour les applications de plateforme Windows universelle (UWP)
+Description: "Dans une application de plateforme Windows universelle (UWP), les éléments de commande sont les éléments d’interface utilisateur interactifs qui permettent à l’utilisateur d’effectuer des actions telles que l’envoi d’un message électronique, la suppression d’un élément ou l’envoi d’un formulaire."
+title: "Informations de base relatives à la conception des commandes pour les applications de plateforme Windows universelle (UWP)"
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
+
 ---
 
 #  Informations de base relatives à la conception des commandes pour les applications UWP
@@ -152,6 +156,7 @@ Voir les [Notions fondamentales sur les interactions](../input-and-devices/input
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

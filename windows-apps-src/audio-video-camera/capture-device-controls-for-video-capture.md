@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-description: Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition.
-title: Contrôles de l’appareil de capture pour la vidéo
+description: "Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition."
+title: "Contrôles de l’appareil de capture pour la vidéo"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 65883f1be1a014b6c7e211e2e060ae97fbd9eb0d
+
 ---
 
 # Contrôles de l’appareil de capture pour la vidéo
@@ -53,6 +57,7 @@ Activez ou désactivez le contrôle de priorité d’exposition en définissant 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

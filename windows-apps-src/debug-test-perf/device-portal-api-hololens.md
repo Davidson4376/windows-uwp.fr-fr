@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
-title: Informations de référence sur les API Device Portal pour HoloLens
-description: Découvrez les API REST Windows Device Portal pour HoloLens que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
+title: "Informations de référence sur les API Device Portal pour HoloLens"
+description: "Découvrez les API REST Windows Device Portal pour HoloLens que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5ed8ffe0a409569777fbf4e56a90ab3b80cd395c
+
 ---
 # Informations de référence sur les API Device Portal pour HoloLens
 
@@ -1410,6 +1414,7 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 - Codes d’état standard.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

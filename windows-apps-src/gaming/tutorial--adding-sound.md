@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Ajouter du son
-description: Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée un objet pour la lecture audio avec les API XAudio2.
+description: "Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée un objet pour la lecture audio avec les API XAudio2."
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f9e536e71dd7b5c94d587a8bb66df3b41cc9a4ae
+
 ---
 
 # Ajouter du son
@@ -213,7 +217,7 @@ Cette méthode utilise les API [Media Foundation](https://msdn.microsoft.com/lib
 
 Le point essentiel de **SoundEffect::Initialize** est la création de l’objet voix source, **m\_sourceVoice**, à partir de la voix de contrôle. Nous utilisons la voix source pour la lecture réelle du tampon de données audio obtenu à partir de **MediaReader::LoadMedia**.
 
-L’exemple de jeu appelle cette méthode lors de l’initialisation de l’objet **SoundEffect**, comme suit :
+L’exemple de jeu appelle cette méthode lors de l’initialisation de l’objet **SoundEffect**, comme suit :
 
 ```cpp
 void SoundEffect::Initialize(
@@ -305,7 +309,7 @@ Maintenant, chaque fois qu’une collision se produit entre les munitions et une
 ## Étapes suivantes
 
 
-Nous avons fait un tour rapide du développement de jeux de Universal Windows Platform (UWP) DirectX ! À ce stade, vous avez une idée de ce que vous devez faire pour profiter au maximum de votre jeu sur Windows 8. Comme vous pouvez jouer sur une multitude de plateformes et d’appareils Windows 8, pensez à concevoir vos composants (graphiques, contrôles, interface utilisateur et système audio) pour autant de configurations que possible !
+Nous avons fait un tour rapide du développement de jeux de Universal Windows Platform (UWP) DirectX ! À ce stade, vous avez une idée de ce que vous devez faire pour profiter au maximum de votre jeu sur Windows 8. Comme vous pouvez jouer sur une multitude de plateformes et d’appareils Windows 8, pensez à concevoir vos composants (graphiques, contrôles, interface utilisateur et système audio) pour autant de configurations que possible !
 
 Pour plus d’informations sur les façons de modifier l’exemple de jeu fourni dans ces documents, voir [Extension de l’exemple de jeu](tutorial-resources.md).
 
@@ -559,6 +563,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

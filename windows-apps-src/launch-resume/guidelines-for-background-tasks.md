@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Recommandations pour les tâches en arrière-plan
-description: Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.
+author: TylerMSFT
+title: "Recommandations pour les tâches en arrière-plan"
+description: "Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan."
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 3fb6884a968afb87e8de303bbd17feba4993c597
+
 ---
 
 # Recommandations pour les tâches en arrière-plan
@@ -40,6 +43,7 @@ Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous 
 
 La liste de vérification suivante s’applique à toutes les tâches en arrière-plan.
 
+-   Créez votre tâche en arrière-plan dans un composant Windows Runtime.
 -   Associez votre tâche en arrière-plan au déclencheur approprié.
 -   Ajoutez des conditions pour assurer une exécution aboutie de votre tâche en arrière-plan.
 -   Gérez la progression, l’achèvement et l’annulation de la tâche en arrière-plan.
@@ -66,7 +70,7 @@ Suivez ces recommandations lorsque vous développez des tâches en arrière-plan
 -   Incluez une tâche en arrière-plan inscrite avec [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) ou [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) et déclarez-la dans le manifeste de l’application. Assurez-vous que le point d’entrée et les types de déclencheur sont corrects. Il s’agit d’une condition de certification, et cela permet à l’utilisateur de placer l’application dans l’écran de verrouillage.
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -91,8 +95,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des app
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

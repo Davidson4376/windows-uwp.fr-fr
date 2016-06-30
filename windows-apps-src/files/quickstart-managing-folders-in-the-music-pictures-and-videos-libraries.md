@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
-title: Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
-description: Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos.
+title: "Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos"
+description: "Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
+
 ---
 
 # Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
@@ -322,6 +326,7 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

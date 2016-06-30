@@ -1,12 +1,15 @@
 ---
 author: mijacobs
-Description: La couleur permet une orientation intuitive des différents niveaux d’information d’une application et joue un rôle crucial pour renforcer le modèle d’interaction.
+Description: "La couleur permet une orientation intuitive des différents niveaux d’information d’une application et joue un rôle crucial pour renforcer le modèle d’interaction."
 title: Color
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
-
 label: Color
 template: detail.hbs
 extraBodyClass: style-color
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
+
 ---
 
 # Color
@@ -50,7 +53,7 @@ Par défaut, les liens hypertexte utilisent la couleur d’accentuation de l’u
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            En XAML, la couleur d’accentuation principale est exposée en tant que [ressource de thème](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx) nommée `SystemAccentColor`. Les nuances sont disponibles en tant que `SystemAccentColorLight3`, `SystemAccentColorLight2`, `SystemAccentColorLight1`, `SystemAccentColorDark1`, `SystemAccentColorDark2` et `SystemAccentColorDark3`. Également disponible par programme via les énumérations [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) et [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx).
+En XAML, la couleur d’accentuation principale est exposée en tant que [ressource de thème](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx) nommée `SystemAccentColor`. Les nuances sont disponibles en tant que `SystemAccentColorLight3`, `SystemAccentColorLight2`, `SystemAccentColorLight1`, `SystemAccentColorDark1`, `SystemAccentColorDark2` et `SystemAccentColorDark3`. Également disponible par programme via les énumérations [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) et [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx).
     </div>
 </aside>
 
@@ -90,7 +93,7 @@ Pour faciliter la conception des thèmes, Windows propose une palette de couleur
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            Chaque couleur est disponible en tant que [ressource de thème](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes) XAML respectant la convention de dénomination `System*Color` (par ex. : `SystemChromeHighColor`). Vous pouvez gérer le thème de votre application, soit par le biais de [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx), soit via [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx).
+Chaque couleur est disponible en tant que [ressource de thème](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes) XAML respectant la convention de dénomination `System*Color` (par ex. : `SystemChromeHighColor`). Vous pouvez gérer le thème de votre application, soit par le biais de [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx), soit via [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx).
     </div>
 </aside>
 
@@ -99,6 +102,7 @@ Pour faciliter la conception des thèmes, Windows propose une palette de couleur
 Notre palette est optimisée pour une utilisation sur écran. Pour le texte, nous vous recommandons de conserver un coefficient de contraste de 4,5 pour 1 par rapport à l’arrière-plan par souci de lisibilité optimale. Il existe de nombreux outils gratuits disponibles pour tester si vos choix de couleurs sont adaptés, par exemple [Coefficient de contraste](http://leaverou.github.io/contrast-ratio/).
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

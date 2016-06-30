@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: Demander une clé d’authentification de cartes
-description: Votre application Windows universelle doit être authentifiée pour pouvoir utiliser le MapControl et les services cartographiques dans l’espace de noms Windows.Services.Maps.
+author: msatranjr
+title: "Demander une clé d’authentification de cartes"
+description: "Votre application Windows universelle doit être authentifiée pour pouvoir utiliser le MapControl et les services cartographiques dans l’espace de noms Windows.Services.Maps."
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
+
 ---
 
 # Demander une clé d’authentification de cartes
@@ -91,6 +94,7 @@ Pour utiliser les services dans l’espace de noms [**Windows.Services.Maps**](h
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
-description: Utilisez cette méthode dans l’API de collection du Windows Store pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur.
-title: Signaler le traitement de la commande d’un produit consommable
+description: "Utilisez cette méthode dans l’API de collection du Windows Store pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur."
+title: "Signaler le traitement de la commande d’un produit consommable"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
+
 ---
 
 # Signaler le traitement de la commande d’un produit consommable
@@ -22,7 +25,7 @@ Vous pouvez utiliser cette méthode pour indiquer que la commande d’un produit
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
--   un jeton d’accès Azure AD créé avec l’URI d’audience **https://onestore.microsoft.com** ;
+-   un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
 -   une clé d’ID du Windows Store générée en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) à partir du code côté client de votre application.
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
@@ -34,20 +37,20 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 | Méthode | URI de la requête                                                   |
 |--------|---------------------------------------------------------------|
-| POST   | https://collections.mp.microsoft.com/v6.0/collections/consume |
+| POST   | `https://collections.mp.microsoft.com/v6.0/collections/consume` |
 
- 
+<br/> 
 
 ### En-tête de requête
 
 | En-tête         | Type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;.                           |
+| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;.                           |
 | Host           | chaîne | Doit être défini sur la valeur **collections.mp.microsoft.com**.                                            |
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
 
- 
+<br/> 
 
 ### Corps de la requête
 
@@ -57,12 +60,13 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | itemId        | Chaîne       | Valeur itemId retournée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec trackingId.                                                                                                                                                                                                  | Non       |
 | trackingId    | GUID         | ID de suivi unique fourni par le développeur. Utilisez ce paramètre avec itemId.                                                                                                                                                                                                                                     | Non       |
 | productId     | Chaîne       | Valeur productId retournée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec transactionId.                                                                                                                                                                                            | Non       |
-| transactionId | GUID         | Valeur d’ID de transaction qui est obtenue à partir de l’une des sources suivantes :                                                                                                                                                                                                                                      | Non       | 
-|               |              | * Propriété [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) de la classe [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).   |        | 
+| transactionId | GUID         | Valeur d’ID de transaction qui est obtenue à partir de l’une des sources suivantes :                                                                                                                                                                                                                                      | Non       |
+|               |              | * Propriété [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) de la classe [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).   |        |
 |               |              | * Accusé de réception de l’application ou du produit retourné par [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) ou [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).   |        |
 |               |              | * Paramètre transactionId retourné par une [demande de produits](query-for-products.md).   |        |        
 |               |              | Utilisez ce paramètre avec productId.   |        |
  
+<br/>
 
 L’objet UserIdentity contient les paramètres ci-dessous.
 
@@ -72,7 +76,7 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 | identityValue        | chaîne | Valeur chaîne de la clé d’ID du Windows Store.                                                                                                   | Oui      |
 | localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du Windows Store. | Oui      |
 
- 
+<br/> 
 
 ### Exemples de demande
 
@@ -142,7 +146,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 | 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.                                                                                                   |
 | 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store du corps de la requête et la revendication *appid* du jeton d’accès Azure AD de l’en-tête d’autorisation ne correspondent pas.                     |
 
- 
+<br/> 
 
 ## Rubriques connexes
 
@@ -156,8 +160,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

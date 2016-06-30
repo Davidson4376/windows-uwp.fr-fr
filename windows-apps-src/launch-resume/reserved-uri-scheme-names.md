@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Noms de schéma d’URI et de fichier réservés
-description: Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique.
+author: TylerMSFT
+title: "Noms de schéma d’URI et de fichier réservés"
+description: "Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique."
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
+
 ---
 # Noms de schéma d’URI et de fichier réservés
 
@@ -124,8 +127,6 @@ Les types de fichiers suivants sont réservés au système d’exploitation
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Porter de DirectX 9 vers la plateforme Windows universelle (UWP)
-description: Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX 9 vers la plateforme UWP.
+description: "Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX 9 vers la plateforme UWP."
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1cb77db78fe368c567990c9521122b42ef10ec65
+
 ---
 
 # Porter de DirectX 9 vers la plateforme Windows universelle (UWP)
@@ -35,6 +39,7 @@ Cette section inclut des articles, des vues d’ensemble et des procédures pas 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

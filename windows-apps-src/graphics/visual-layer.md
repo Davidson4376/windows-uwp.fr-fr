@@ -2,7 +2,11 @@
 author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: Couche visuelle
-description: L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX).
+description: "L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX)."
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
+
 ---
 # Couche visuelle
 
@@ -52,16 +56,17 @@ En plus de créer depuis le début une arborescence d’éléments visuels, l’
 
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## <span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>Ressources supplémentaires :
+## <span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>Ressources supplémentaires :
 
--   Article MSDN de Kenny Kerr portant sur cette API : [Graphisme et animation : l’API de composition Windows passe à Windows 10](https://msdn.microsoft.com/magazine/mt590968)
--   Exemples de composition dans [GitHub Composition](https://github.com/Microsoft/composition)
--   Documentation de référence complète pour l’API
--   Problèmes connus : [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)
+-   Article MSDN de Kenny Kerr portant sur cette API : [Graphics and Animation - Windows Composition Turns 10](https://msdn.microsoft.com/magazine/mt590968) (en anglais)
+-   Exemples de composition dans [GitHub Composition](https://github.com/Microsoft/composition).
+-   [
+            **Documentation de référence complète pour l’API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
+-   Problèmes connus : [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues).
 
  
 
@@ -72,6 +77,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des app
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

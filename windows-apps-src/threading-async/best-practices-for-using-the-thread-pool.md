@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
-title: Meilleures pratiques pour l’utilisation du pool de threads
-description: Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
+title: "Meilleures pratiques pour l’utilisation du pool de threads"
+description: "Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
+
 ---
 # Meilleures pratiques pour l’utilisation du pool de threads
 
@@ -33,7 +37,7 @@ Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du 
 ## Pratiques déconseillées
 
 
--   Ne créez pas de minuteurs périodiques avec une valeur *period* inférieure à &lt;1 milliseconde (y compris 0). Cela amène l’élément de travail à se comporter comme un minuteur à déclenchement unique.
+-   Ne créez pas de minuteurs périodiques avec une valeur *period* inférieure à &lt;1 milliseconde (y compris 0). Cela amène l’élément de travail à se comporter comme un minuteur à déclenchement unique.
 
 -   N’envoyez pas d’éléments de travail périodiques dont l’exécution est plus longue que la durée spécifiée dans le paramètre *period*.
 
@@ -52,6 +56,7 @@ Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

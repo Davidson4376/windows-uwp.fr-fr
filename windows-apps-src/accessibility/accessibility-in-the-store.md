@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: Décrit la configuration requise pour la déclaration de votre application UWP comme étant accessible dans le Windows Store.
+Description: "Décrit la configuration requise pour la déclaration de votre application UWP comme étant accessible dans le Windows Store."
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
-title: Accessibilité dans le Windows Store
+title: "Accessibilité dans le Windows Store"
 label: Accessibility in the Store
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
+
 ---
 
 # Accessibilité dans le Windows Store  
@@ -42,6 +46,7 @@ Pour obtenir un examen de cette procédure et des liens vers des ressources qui 
 * [Accessibilité](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

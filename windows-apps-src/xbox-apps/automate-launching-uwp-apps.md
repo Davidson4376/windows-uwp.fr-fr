@@ -1,7 +1,11 @@
 ---
-title: Automatisation du lancement des applications UWP Windows 10
-description: Les développeurs peuvent utiliser l’activation de protocole et de lancement pour automatiser le lancement de leurs jeux ou apps UWP pour les tests automatisés.
+title: "Automatisation du lancement des applications UWP Windows 10"
+description: "Les développeurs peuvent utiliser l’activation de protocole et de lancement pour automatiser le lancement de leurs jeux ou apps UWP pour les tests automatisés."
 author: listurm
+translationtype: Human Translation
+ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
+ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
+
 ---
 
 # Automatisation du lancement des applications UWP Windows 10
@@ -55,7 +59,7 @@ L’activation de protocole par ligne de commande prend en charge les caractère
 
 ### Application de lancement
 
-Pour le lancement, créez une application distincte qui prend en charge l’API WinRT. Le code C++ de lancement via l’activation de protocole dans un programme de lancement est présenté dans l’exemple suivant, où **PackageURI** est l’URI pour l’application avec n’importe quels arguments ; par exemple `myapplication:` ou `myapplication:protocol activation arguments`.
+Pour le lancement, créez une application distincte qui prend en charge l’API WinRT. Le code C++ de lancement via l’activation de protocole dans un programme de lancement est présenté dans l’exemple suivant, où **PackageURI** est l’URI pour l’application avec n’importe quels arguments ; par exemple `myapplication:` ou `myapplication:protocol activation arguments`.
 
 ```
 bool ProtocolLaunchURI(Platform::String^ URI)
@@ -204,6 +208,7 @@ Platform::String^ argval = launchArgs->Arguments;
 En résumé, vous pouvez utiliser différentes méthodes pour lancer l’application UWP. Selon la configuration requise et les cas d’usage, certaines méthodes peuvent être mieux adaptées que d’autres. 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

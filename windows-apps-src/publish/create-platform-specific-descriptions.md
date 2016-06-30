@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description pour ces différents systèmes.
-title: Création de descriptions spécifiques à la plateforme
+Description: "Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description pour ces différents systèmes."
+title: "Création de descriptions spécifiques à la plateforme"
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 00be0238af7969a84abe79f9aee3bec485fbb3e3
+
 ---
 
 # Création de descriptions spécifiques à la plateforme
@@ -45,6 +49,7 @@ Si vous créez une description spécifique de la plateforme, puis décidez d’a
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

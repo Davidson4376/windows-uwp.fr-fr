@@ -1,6 +1,13 @@
 ---
-Description: author: mcleanbyron Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez les inciter à procéder à une mise à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
-title: Exclure ou limiter des fonctionnalités de la version d’évaluation ms.assetid &#58; 1B62318F-9EF5-432A-8593-F3E095CA7056 keywords: essai gratuit keywords: période d’évaluation gratuite keywords: exemple de code d’évaluation gratuite keywords: exemple de code d’évaluation gratuite
+author: mcleanbyron
+Description: "Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation."
+title: "Exclure ou limiter des fonctionnalités de la version d’évaluation"
+ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
+keywords: free trial code sample
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c38784325f4dc51052f70a819012508f2a0bdbb
+
 ---
 
 # Exclure ou limiter des fonctionnalités de la version d’évaluation
@@ -162,8 +169,7 @@ void DisplayTrialVersionExpirationTime()
 Vous pouvez maintenant tester votre application à l’aide d’appels simulés au serveur de licences. En JavaScript, C#, Visual Basic ou Visual C++, remplacez les références à [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) par [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) dans le code d’initialisation de l’application.
 
 [
-              **CurrentAppSimulator**
-            ](https://msdn.microsoft.com/library/windows/apps/hh779766) obtient les informations de licence propres au test à partir d’un fichier XML appelé WindowsStoreProxy.xml, situé dans %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Si ce chemin d’accès et ce fichier n’existent pas, vous devez les créer lors de l’installation ou de l’exécution. Si vous essayez d’accéder à la propriété [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) sans que le fichier WindowsStoreProxy.xml ne soit présent à cet emplacement spécifique, vous obtenez une erreur.
+            **CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) obtient les informations de licence propres au test à partir d’un fichier XML appelé WindowsStoreProxy.xml, situé dans %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Si ce chemin d’accès et ce fichier n’existent pas, vous devez les créer lors de l’installation ou de l’exécution. Si vous essayez d’accéder à la propriété [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) sans que le fichier WindowsStoreProxy.xml ne soit présent à cet emplacement spécifique, vous obtenez une erreur.
 
 Cet exemple illustre l’ajout à votre application de code permettant de tester les divers états possibles de sa licence.
 
@@ -230,6 +236,7 @@ Pour plus d’informations sur la description de votre application, voir [Créer
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

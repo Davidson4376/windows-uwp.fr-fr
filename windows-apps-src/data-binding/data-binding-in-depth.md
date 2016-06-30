@@ -3,8 +3,8 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "Présentation détaillée de la liaison de données"
 description: "La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données."
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
+ms.sourcegitcommit: ca92d44cc8e3fb7eaed5a522435efe9cb4796560
+ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 
 ---
 # Présentation détaillée de la liaison de données
@@ -12,15 +12,14 @@ ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-** API importantes **
+**API importantes**
 
 -   [**Classe Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-**Remarque** Cette rubrique décrit en détail les fonctionnalités de liaison de données. Pour une brève présentation pratique, voir [Vue d’ensemble de la liaison de données](data-binding-quickstart.md).
+> **Remarque** Cette rubrique décrit en détail les fonctionnalités de liaison de données. Pour une brève présentation pratique, voir [Vue d’ensemble de la liaison de données](data-binding-quickstart.md).
 
- 
 
 La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
 
@@ -77,7 +76,7 @@ Une méthode moins lourde pour rendre une classe observable (méthode obligatoir
 
 **Remarque** Pour C++/CX, vous devez implémenter [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899) et la classe source de liaison doit avoir l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) ou implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
-``` csharp
+```csharp
 public class HostViewModel : INotifyPropertyChanged
 {
     private string nextButtonText;
@@ -111,7 +110,7 @@ La propriété **NextButtonText** est maintenant observable. Lorsque vous créez
 
 Pour ne pas avoir à implémenter plusieurs fois le modèle présenté ci-dessus, vous pouvez simplement dériver de la classe de base **BindableBase**, disponible dans l’exemple [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (dans le dossier « Common »). En voici un exemple :
 
-``` csharp
+```csharp
 public class HostViewModel : BindableBase
 {
     private string nextButtonText;
@@ -151,11 +150,11 @@ Vous pouvez lier des contrôles de listes à des sources de données très impor
 Dans les deux exemples ci-dessous, la propriété **Button.Content** est la cible de liaison et sa valeur est définie sur une extension de balisage qui déclare l’objet de liaison. L’extension [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) est illustrée en premier, puis [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Déclarer les liaisons dans le balisage de liaisons dans le balisage est le scénario le plus courant (cela s’avère pratique, lisible et offre une compatibilité avec les outils). Cependant, vous pouvez éviter le balisage et créer de façon impérative (par programme) une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) à la place si nécessaire.
 
 <!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-``` xml
+```xml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-``` xml
+```xml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -163,7 +162,7 @@ Dans les deux exemples ci-dessous, la propriété **Button.Content** est la cibl
 
 Nous avons une étape à accomplir avant de créer notre balisage [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Nous devons exposer notre classe de source de liaison à partir de la classe qui représente notre page de balisage. Pour ce faire, nous ajoutons une propriété (de type **HostViewModel** dans le cas présent) à notre classe de page **HostView**.
 
-``` csharp
+```csharp
 namespace QuizGame.View
 {
     public sealed partial class HostView : Page
@@ -181,7 +180,7 @@ namespace QuizGame.View
 
 Nous pouvons alors examiner de plus près le balisage qui déclare l’objet de liaison. L’exemple ci-dessous utilise la même cible de liaison **Button.Content** que dans la section « Cible de liaison » précédemment et montre qu’elle est liée à la propriété **HostViewModel.NextButtonText**.
 
-``` xml
+```xml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -197,7 +196,7 @@ La propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/window
 
 À l’intérieur d’un modèle [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) (qu’il s’agisse d’un modèle d’élément, d’un modèle de contenu ou d’un modèle d’en-tête), la valeur de **Path** n’est pas interprétée dans le contexte de la page, mais dans le contexte de l’objet de données qui est basé sur le modèle. Afin que ses liaisons puissent être validées (et qu’un code efficace puisse être généré pour elles) au moment de la compilation, un modèle **DataTemplate** doit déclarer le type de son objet de données à l’aide de **x:DataType**. L’exemple ci-dessous peut être utilisé en tant que modèle **ItemTemplate** d’un contrôle d’éléments lié à une collection d’objets **SampleDataGroup**.
 
-``` xml
+```xml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -222,7 +221,7 @@ Le code pour prendre en charge **{x:Bind}** est généré au moment de la compil
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) suppose, par défaut, que vous créiez une liaison à la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) de votre page de balisage. Nous allons donc définir la propriété **DataContext** de notre page en tant qu’instance de notre classe de source de liaison (de type **HostViewModel** dans le cas présent). L’exemple ci-dessous illustre le balisage qui déclare l’objet de liaison. Nous utilisons la même cible de liaison **Button.Content** que dans la section « Cible de liaison » précédemment et nous la lions à la propriété **HostViewModel.NextButtonText**.
 
-``` xml
+```xml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -240,7 +239,7 @@ Un objet de liaison présente une propriété **Source**, dont la valeur par dé
 
 À l’intérieur d’un modèle [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) est définie sur l’objet de données qui est basé sur le modèle. L’exemple ci-dessous peut être utilisé en tant que modèle **ItemTemplate** d’un contrôle d’éléments lié à une collection de tout type présentant des propriétés de chaîne nommées **Title** et **Description**.
 
-``` xml
+```xml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -259,7 +258,7 @@ Si vous voulez contrôler la visibilité d’un élément d’interface utilisat
 
 Voici un convertisseur de valeurs, adapté à une liaison ponctuelle ou à sens unique, qui convertit une valeur [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) en une valeur de chaîne contenant le mois. La classe implémente [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-``` csharp
+```csharp
 public class DateToStringConverter : IValueConverter
 {
     // Define the Convert method to convert a DateTime value to 
@@ -296,7 +295,7 @@ public class DateToStringConverter : IValueConverter
 }
 ```
 
-``` vbnet
+```vbnet
 Public Class DateToStringConverter
     Implements IValueConverter
 
@@ -338,7 +337,7 @@ End Class
 
 Et voici comment ce convertisseur est utilisé dans votre balisage d’objet de liaison.
 
-``` xml
+```xml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -368,7 +367,7 @@ L’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/
 
 TemplatesResourceDictionary.xaml
 
-``` xml
+```xml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -384,7 +383,7 @@ TemplatesResourceDictionary.xaml
 
 TemplatesResourceDictionary.xaml.cs
 
-``` csharp
+```csharp
 using Windows.UI.Xaml.Data;
  
 namespace ExampleNamespace
@@ -401,7 +400,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-``` xml
+```xml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -421,7 +420,7 @@ MainPage.xaml
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) prend en charge une fonctionnalité appelée liaison d’événement. Avec cette fonctionnalité, vous pouvez spécifier le gestionnaire d’un événement à l’aide d’une liaison, ce qui offre une option en plus de la gestion des événements à l’aide d’une méthode sur le fichier code-behind. Supposons que vous ayez une propriété **RootFrame** sur votre classe **MainPage**.
 
-``` csharp
+```csharp
     public sealed partial class MainPage : Page
     {
         ....    
@@ -431,7 +430,7 @@ MainPage.xaml
 
 Vous pouvez alors lier l’événement **Click** d’un bouton à une méthode sur l’objet **Frame** renvoyé par la propriété **RootFrame** comme suit. Notez que nous avons également lié la propriété **IsEnabled** du bouton à un autre membre du même élément **Frame**.
 
-``` xml
+```xml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -439,13 +438,14 @@ Vous pouvez alors lier l’événement **Click** d’un bouton à une méthode s
 
 Les méthodes surchargées ne peuvent pas être utilisées pour gérer un événement avec cette technique. En outre, si la méthode qui gère l’événement comporte des paramètres, ceux-ci doivent tous être attribuables à partir des types de l’ensemble des paramètres de l’événement, respectivement. Dans notre exemple, la méthode [**Frame.GoForward**](https://msdn.microsoft.com/library/windows/apps/BR242693) n’est pas surchargée et elle ne comporte aucun paramètre (mais elle serait toujours valide même avec deux paramètres **object**). En revanche, la méthode [**Frame.GoBack**](https://msdn.microsoft.com/library/windows/apps/Dn996568) est surchargée et ne peut donc pas être utilisée avec cette technique.
 
-La technique de liaison d’événement est similaire à l’implémentation et l’utilisation de commandes (une commande est une propriété qui renvoie un objet implémentant l’interface [**ICommand**](T:System.Windows.Input.ICommand)). Les extensions de balisage [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) et [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) fonctionnent toutes deux avec les commandes. Pour ne pas avoir à implémenter plusieurs fois le modèle de commande, vous pouvez utiliser la classe d’assistance **DelegateCommand**, disponible dans l’exemple [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (dans le dossier « Common »).
+La technique de liaison d’événement est similaire à l’implémentation et l’utilisation de commandes (une commande est une propriété qui renvoie un objet implémentant l’interface [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx)). Les extensions de balisage [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) et [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) fonctionnent toutes deux avec les commandes. Pour ne pas avoir à implémenter plusieurs fois le modèle de commande, vous pouvez utiliser la classe d’assistance **DelegateCommand**, disponible dans l’exemple [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (dans le dossier « Common »).
+
 
 ## Liaison à une collection de dossiers ou de fichiers
 
 Vous pouvez utiliser les API dans l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) pour récupérer des données liées aux dossiers et aux fichiers. Toutefois, les différentes méthodes **GetFilesAsync**, **GetFoldersAsync** et **GetItemsAsync** ne retournent pas de valeurs qui conviennent pour la liaison aux contrôles de listes. Vous devez plutôt lier les valeurs retournées des méthodes [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422), [**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) et [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) de la classe [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501). L’exemple de code suivant provenant de l’[exemple StorageDataSource et GetVirtualizedFilesVector](http://go.microsoft.com/fwlink/p/?linkid=228621) illustre le modèle d’utilisation classique. Pensez à déclarer la fonctionnalité **picturesLibrary** dans le manifeste de votre package d’application et à vérifier que le dossier de votre bibliothèque d’images contient des images.
 
-``` csharp
+```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var library = Windows.Storage.KnownFolders.PicturesLibrary;
@@ -484,7 +484,7 @@ Pour activer la fonctionnalité de regroupement d’un objet [**CollectionViewSo
 
 L’exemple suivant illustre le modèle « has-a-group ». La classe de page comporte une propriété nommée [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713), qui renvoie une instance de notre modèle d’affichage. L’objet [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) se lie à la propriété **Authors** du modèle d’affichage (**Authors** est la collection d’objets de groupe) et indique que c’est la propriété **Author.BookSkus** qui contient les éléments groupés. Enfin, la classe [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) est liée à l’objet **CollectionViewSource** et son style de groupe est défini de manière à pouvoir afficher les éléments en groupes.
 
-``` csharp
+```csharp
     <Page.Resources>
         <CollectionViewSource
         x:Name="AuthorHasACollectionOfBookSku"
@@ -509,7 +509,7 @@ Vous pouvez implémenter le modèle « is-a-group » de deux manières. La pre
 
 L’exemple suivant illustre le modèle « is-a-group » avec [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). Cette fois-ci, nous regroupons les ouvrages par genre, avec le nom du genre affiché dans les en-têtes des groupes. Cela est indiqué par le chemin de la propriété « Key » en référence à la valeur du groupe [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx).
 
-``` csharp
+```csharp
     using System.Linq;
 
     ...
@@ -533,7 +533,7 @@ L’exemple suivant illustre le modèle « is-a-group » avec [LINQ](http://ms
 
 Gardez à l’esprit que pour utiliser [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) avec des modèles de données, nous devons indiquer le type en cours de liaison en définissant une valeur **x:DataType**. Si le type est générique, nous ne pouvons pas l’exprimer dans le balisage et nous devons par conséquent utiliser[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) à la place dans le modèle d’en-tête du style de groupe.
 
-``` xml
+```xml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
         Source="{Binding Genres}"
@@ -579,7 +579,7 @@ Vous pouvez également connecter des éléments d’interface utilisateur aux do
 
 L’exemple suivant explique comment implémenter une liaison dans le code.
 
-``` xml
+```xml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -599,7 +599,7 @@ Binding binding = new Binding() { Path = new PropertyPath("Brush1") };
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding);
 ```
 
-``` vbnet
+```vbnet
 ' Create an instance of the MyColors class 
 ' that implements INotifyPropertyChanged. 
 Dim textcolor As New MyColors()
@@ -639,6 +639,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

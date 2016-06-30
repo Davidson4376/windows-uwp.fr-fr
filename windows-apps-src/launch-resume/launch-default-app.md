@@ -3,8 +3,8 @@ author: TylerMSFT
 title: "Lancer l’application par défaut pour un URI"
 description: "Découvrez comment lancer l’application par défaut d’un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique donne également une vue d’ensemble des nombreux schémas d’URI intégrés à Windows."
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: b593a43bc5b95dd0880af972ca1514e657bbd9e3
+ms.sourcegitcommit: 9011d2e2e1e51edc89851e815d31e13390c24f96
+ms.openlocfilehash: d454317d135e2b2b952c16fb00685e34b489865c
 
 ---
 
@@ -45,7 +45,7 @@ En général, votre application ne peut pas sélectionner l’application à lan
 
 Utilisez la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) pour lancer un URI. Lors de l’appel de cette méthode, votre application doit être au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette conditions contribue à garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, assurez-vous que vous avez relié directement tous les lancements d’URI à l’interface utilisateur de votre application. L’utilisateur doit toujours exercer une action pour initier un lancement d’URI. Si vous tentez de lancer un URI alors que votre application n’est pas au premier plan, le lancement échoue et votre rappel d’erreur est appelé.
 
-Commencez par créer un objet [**System.Uri**](T:System.Uri) pour représenter l’URI, puis passez-le à la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Utilisez le résultat renvoyé pour voir si l’appel a réussi, comme illustré dans l’exemple suivant.
+Commencez par créer un objet [**System.Uri**](https://msdn.microsoft.com/en-us/library/windows/apps/system.uri.aspx) pour représenter l’URI, puis passez-le à la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Utilisez le résultat renvoyé pour voir si l’appel a réussi, comme illustré dans l’exemple suivant.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -225,6 +225,6 @@ Pour plus d’informations, voir [Lancer l’application Contacts](launch-people
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

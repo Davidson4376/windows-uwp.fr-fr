@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Activation du Mode développeur Xbox One
-description: Comment activer le Mode développeur afin de pouvoir basculer du Mode commercial au Mode développeur et inversement.
+title: "Activation du Mode développeur Xbox One"
+description: "Comment activer le Mode développeur afin de pouvoir basculer du Mode commercial au Mode développeur et inversement."
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 7d832fee5bcd3a15cee1e7d8f4c66da9b0afa5e1
+ms.openlocfilehash: 9ad9904150acb00982c96eebeaf010f7023d3320
+
 ---
 
 # Activation du Mode développeur Xbox One
@@ -78,6 +82,7 @@ Une fois le Mode développeur activé sur votre console, utilisez **Dev Home** p
 - [UWP sur Xbox One](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

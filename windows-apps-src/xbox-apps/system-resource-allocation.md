@@ -1,18 +1,21 @@
 ---
 author: Mtoepke
-title: Ressources système pour les applications UWP et les jeux sur Xbox One
-description: UWP sur les ressources système Xbox
+title: "Ressources système pour les applications UWP et les jeux sur Xbox One"
+description: "UWP sur les ressources système Xbox"
 area: Xbox
+ms.sourcegitcommit: 6a34b0f657fc787eaa3be691b69a591cfdb2a669
+ms.openlocfilehash: 79c47bbcf33b1493a8a961b800932ce6be021453
+
 ---
 
 # Ressources système pour les applications UWP et les jeux sur Xbox One
 
-Les applications et les jeux UWP s’exécutant sur Xbox One partagent les ressources avec le système et d’autres applications. 
-Par conséquent, les applications et les jeux UWP ont accès aux ressources suivantes :
+Les applications et les jeux UWP s’exécutant sur Xbox One partagent les ressources avec le système et d’autres applications. Par conséquent, les applications et les jeux UWP ont accès aux ressources suivantes :
 
-* Dans cette version d’évaluation, la mémoire maximale disponible est de 448 Mo.
-    * Dans les versions ultérieures, la mémoire maximale disponible est de 1 Go.
-    * Lorsque vous exécutez votre application ou votre jeu à partir du débogueur Visual Studio, ces limites de mémoire ne s’appliquent pas. Cette limite s’applique uniquement quand l’exécution n’a pas lieu en mode débogage.
+* Dans cette version d’évaluation, la mémoire maximale disponible pour une application en cours d’exécution au premier plan est d’1 Go.
+    * La mémoire maximale disponible pour une application en cours d’exécution en arrière-plan est de 128 Mo.
+    * Les applications qui utilisent une quantité de mémoire supérieure à la quantité requise rencontreront des échecs d’allocation de mémoire. Pour en savoir plus sur la surveillance de la mémoire, consultez la documentation de référence sur la [classe MemoryManager](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.aspx).
+    * **Remarque :** &nbsp;&nbsp;lorsque vous exécutez votre application ou votre jeu à partir du débogueur Visual Studio, ces limites de mémoire ne s’appliquent pas. Cette limite s’applique uniquement quand l’exécution n’a pas lieu en mode débogage.
 
 * Partage de 2 à 4 cœurs de processeur en fonction du nombre d’applications et de jeux en cours d’exécution sur le système.
 
@@ -22,10 +25,10 @@ Par conséquent, les applications et les jeux UWP ont accès aux ressources suiv
 
 Pour le **développement d’applications**, il est important de garder à l’esprit que les ressources disponibles peuvent être limitées par rapport à un ordinateur standard.
 
-Pour le **développement de jeux**, il est important de garder à l’esprit que Xbox One, comme les autres consoles de jeu, est un élément matériel spécialisé qui nécessite un kit de développement matériel spécifique pour offrir tout son potentiel. 
-Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder aux kits de développement Xbox One, qui incluent la prise en charge de DirectX 12.
+Pour le **développement de jeux**, il est important de garder à l’esprit que Xbox One, comme les autres consoles de jeu, est un élément matériel spécialisé qui nécessite un kit de développement matériel spécifique pour offrir tout son potentiel. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder aux kits de développement Xbox One, qui incluent la prise en charge de DirectX 12.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -2,7 +2,11 @@
 author: TylerMSFT
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: Programmation asynchrone
-description: Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C\+\+ (C\+\+/CX) et JavaScript.
+description: "Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C\\+\\+ (C\\+\\+/CX) et JavaScript."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
+
 ---
 # Programmation asynchrone
 
@@ -76,6 +80,7 @@ Dans de nombreux cas, il est presque aussi simple d’appeler une fonction async
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

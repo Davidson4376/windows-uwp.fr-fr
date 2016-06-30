@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: Vue d’ensemble des cartes et de l’emplacement
-description: Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
+author: msatranjr
+title: "Vue d’ensemble des cartes et de l’emplacement"
+description: "Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique."
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
+ms.sourcegitcommit: a3240047ec77ada0c5f6b5586eee2404353889f6
+ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
+
 ---
 
 # Vue d’ensemble des cartes et de l’emplacement
@@ -27,7 +30,7 @@ Affichez des cartes avec des vues 2D, 3D ou Streetview dans votre application �
 | Rubrique | Description |
 |-------|-------------|
 | [Demander une clé d’authentification de cartes](authentication-key.md) | Pour pouvoir utiliser le [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) et les services de carte dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979), votre application doit être authentifiée. Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cet article décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application. |
-| [Recommandations en matière de conception pour les cartes](controls-map.md) | Le contrôle de carte peut afficher des cartes routières et des vues aériennes, des itinéraires, des résultats de recherche et des informations sur la circulation. |
+| [Contrôle de carte](controls-map.md) | Le contrôle de carte peut afficher des cartes routières et des vues aériennes, des itinéraires, des résultats de recherche et des informations sur la circulation. |
 | [Afficher des cartes avec des vues 2D, 3D et Streetside](display-maps.md) | Affichez des cartes personnalisables dans votre application en utilisant la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Cette rubrique présente également des vues 3D aériennes et Streetside. |
 | [Afficher les points d’intérêt sur une carte](display-poi.md) | Ajoutez des points d’intérêt à une carte à l’aide de punaises, d’images, de formes et d’éléments d’interface utilisateur XAML. |
 | [Superposer des images sous forme de vignettes sur une carte](overlay-tiled-images.md) | Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut. |
@@ -80,6 +83,7 @@ Votre application peut lancer l’application Cartes Windows, comme illustré ic
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

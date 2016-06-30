@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative.
+Description: "Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative."
 title: Envoyer une notification par vignette locale
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: cc2f86f2a56aae5ee9e3019dafa3417a25e7d610
+
 ---
 
 # Envoyer une notification par vignette locale
@@ -315,6 +319,7 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

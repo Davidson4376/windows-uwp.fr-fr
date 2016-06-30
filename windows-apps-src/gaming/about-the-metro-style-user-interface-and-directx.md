@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Objet application et DirectX
-description: Les applications UWP intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store.
+description: "Les applications UWP intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store."
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
+
 ---
 
 # Objet application et DirectX
@@ -153,6 +157,7 @@ Globalement, lors de la conception de votre application UWP basée sur DirectX, 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

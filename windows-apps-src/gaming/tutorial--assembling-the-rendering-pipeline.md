@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Assembler l’infrastructure de rendu
-description: Il est maintenant temps d’examiner la façon dont l’exemple de jeu utilise cette structure et ces états pour afficher ses graphismes.
+title: "Assembler l’infrastructure de rendu"
+description: "Il est maintenant temps d’examiner la façon dont l’exemple de jeu utilise cette structure et ces états pour afficher ses graphismes."
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5eb6ea7ad1a30f020c155007396383b88d10c0a8
+
 ---
 
 # Assembler l’infrastructure de rendu
@@ -677,7 +681,7 @@ Ensuite, l’objet convertisseur de jeu crée un chargeur pour les nuanceurs qui
 
 Enfin, un groupe de tâches, contenant toutes les tâches asynchrones créées par la méthode, est renvoyé. La fonction d’appel attend la fin de toutes les tâches asynchrones, puis appelle **FinalizeCreateGameDeviceResources**.
 
-**FinalizeCreateGameDeviceResources** charge les données initiales dans les mémoires tampons constantes avec un appel de méthode de contexte de périphérique à [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) : `m_deviceContext->UpdateSubresource`. Cette méthode crée les objets de maillage pour les sphères, les cylindres, les visages, les jeux du monde et les matières associées. Elle parcourt ensuite la liste d’objets du jeu qui associe les ressources périphériques appropriées à chaque objet.
+**FinalizeCreateGameDeviceResources** charge les données initiales dans les mémoires tampons constantes avec un appel de méthode de contexte de périphérique à [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) : `m_deviceContext->UpdateSubresource`. Cette méthode crée les objets de maillage pour les sphères, les cylindres, les visages, les jeux du monde et les matières associées. Elle parcourt ensuite la liste d’objets du jeu qui associe les ressources périphériques appropriées à chaque objet.
 
 Les textures des objets cibles avec cercles et numéros sont générées par procédure à l’aide du code dans **TargetTexture.cpp**. Le convertisseur crée une instance du type **TargetTexture**, qui crée la texture de bitmap pour les objets cibles dans le jeu lorsque nous appelons la méthode **TargetTexture::CreateTextureResourceView**. La texture produite est composée de cercles colorés concentriques, avec une valeur numérique sur le dessus. Ces ressources générées sont associées aux objets cibles du jeu appropriés.
 
@@ -6321,6 +6325,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -2,11 +2,14 @@
 author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal pour Bureau
-description: Découvrez comment Windows Device Portal ouvre les diagnostics et l’automatisation sur votre bureau Windows.
+description: "Découvrez comment Windows Device Portal ouvre les diagnostics et l’automatisation sur votre bureau Windows."
+ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
+ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
+
 ---
 # Device Portal pour Bureau
 
-À partir de Windows 10 version 1604, des fonctionnalités de développement supplémentaires sont disponibles pour le bureau. Ces fonctionnalités sont disponibles uniquement lorsque le mode développeur est activé.
+À partir de Windows 10 version 1607, des fonctionnalités de développement supplémentaires sont disponibles pour le bureau. Ces fonctionnalités sont disponibles uniquement lorsque le mode développeur est activé.
 
 Pour en savoir plus sur la façon d’activer le mode développeur, consultez [Activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
 
@@ -35,7 +38,7 @@ Vous pouvez choisir entre deux moyens de connexion à Device Portal : hôte lo
 
 1. Dans votre navigateur, entrez l’adresse indiquée ici selon le type de connexion que vous utilisez.
 
-    - Hôte local : `http://127.0.0.1:PORT` ou `http://localhost:PORT`
+    - Hôte local : `http://127.0.0.1:PORT` ou `http://localhost:PORT`
 
     Utilisez cette adresse pour afficher Device Portal localement.
     
@@ -101,6 +104,7 @@ Pour résoudre ce problème :
 2. Redémarrez votre ordinateur pour vérifier que toutes les mises à jour sont appliquées.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

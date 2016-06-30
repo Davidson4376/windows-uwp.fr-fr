@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
-title: Enregistrer un fichier avec un sélecteur
-description: Utilisez FileSavePicker pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier.
+title: "Enregistrer un fichier avec un sélecteur"
+description: "Utilisez FileSavePicker pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 68c7fcedbea40541632aa0a7ae65aa77db206280
+
 ---
 
 # Enregistrer un fichier avec un sélecteur
@@ -113,6 +117,7 @@ L’exemple vérifie que le fichier est valide et y écrit son propre nom de fic
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

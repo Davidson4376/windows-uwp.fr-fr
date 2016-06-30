@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Vous pouvez gérer chacune de vos applications dans le tableau de bord du Centre de développement Windows, en afficher les détails et configurer des services comme les notifications Push et les cartes.
+Description: "Vous pouvez gérer chacune de vos applications dans le tableau de bord du Centre de développement Windows, en afficher les détails et configurer des services comme les notifications Push et les cartes."
 title: Gestion des applications et services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
+
 ---
 
 # Gestion des applications et services
@@ -78,6 +82,7 @@ Les développeurs ayant des autorisations OEM peuvent également [générer des 
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

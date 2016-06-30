@@ -6,8 +6,8 @@ ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
-ms.sourcegitcommit: 1722fc00de000d07ed30cfb0ae12080708c30b76
-ms.openlocfilehash: c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: ac07ca76df874c670e7e38698e89de6620f73cc4
 
 ---
 
@@ -25,7 +25,7 @@ La reconnaissance de l’écriture manuscrite est intégrée à la plateforme d�
 
 Pour tous les exemples ici, ajoutez les références d’espaces de noms nécessaires au fonctionnement de l’écriture manuscrite Cela comprend « Windows.UI.Input.Inking ».
 
-## <span id="Basic_handwriting_recognition"></span><span id="basic_handwriting_recognition"></span><span id="BASIC_HANDWRITING_RECOGNITION"></span>Reconnaissance de l’écriture manuscrite de base
+## Reconnaissance de l’écriture manuscrite de base
 
 
 Nous montrons ici comment utiliser le moteur de reconnaissance de l’écriture manuscrite associé au module linguistique installé par défaut pour interpréter un ensemble de traits sur un [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
@@ -202,7 +202,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="International_recognition"></span><span id="international_recognition"></span><span id="INTERNATIONAL_RECOGNITION"></span>Reconnaissance internationale
+## Reconnaissance internationale
 
 
 Il est possible d’utiliser un sous-ensemble complet des langues prises en charge par Windows pour la reconnaissance de l’écriture manuscrite.
@@ -447,7 +447,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="Dynamic_handwriting_recognition"></span><span id="dynamic_handwriting_recognition"></span><span id="DYNAMIC_HANDWRITING_RECOGNITION"></span>Reconnaissance de l’écriture manuscrite dynamique
+## Reconnaissance de l’écriture manuscrite dynamique
 
 
 Les deux exemples précédents exigent que l’utilisateur appuie sur un bouton pour lancer la reconnaissance. Votre application peut également procéder à la reconnaissance dynamique à l’aide de la saisie de traits associée à une fonction de chronométrage de base.
@@ -524,13 +524,13 @@ public MainPage()
 
 2.  Voici les gestionnaires pour les trois événements que nous avons ajoutés à la première étape.
 
-    <span id="StrokesCollected"></span><span id="strokescollected"></span><span id="STROKESCOLLECTED"></span>[**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
+    [**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
     Démarre le minuteur de reconnaissance lorsque l’utilisateur arrête l’entrée manuscrite en levant son stylet ou son doigt ou en relâchant le bouton de la souris. La reconnaissance est lancée dès que l’utilisateur arrête d’écrire pendant plus d’une seconde.
 
-    <span id="StrokeStarted"></span><span id="strokestarted"></span><span id="STROKESTARTED"></span>[**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
+    [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
     Arrête la minuterie sachant que le nouveau trait est probablement la suite d’une entrée manuscrite unique, si un nouveau trait commence avant le prochain battement d’horloge.
 
-    <span id="Tick"></span><span id="tick"></span><span id="TICK"></span>[**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
+    [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
     Appelle la fonction de reconnaissance dès que l’utilisateur arrête d’écrire pendant plus d’une seconde.
 ```    CSharp
 // Handler for the timer tick event calls the recognition function.
@@ -659,7 +659,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 * [Interactions avec le stylo et le stylet](pen-and-stylus-interactions.md)
 
@@ -673,6 +673,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

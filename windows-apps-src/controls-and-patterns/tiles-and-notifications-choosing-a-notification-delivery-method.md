@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Cet article présente les quatre options de notification&amp;\#8212;locale, planifiée, périodique et Push&amp;\#8212;disponibles pour remettre des mises à jour de vignette et de badge, ainsi que du contenu de notification toast.
-title: Choisir une méthode de remise de notification
+Description: "Cet article présente les quatre options de notification&amp;\\#8212;locale, planifiée, périodique et Push&amp;\\#8212;disponibles pour remettre des mises à jour de vignette et de badge, ainsi que du contenu de notification toast."
+title: "Choisir une méthode de remise de notification"
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: b79a6f771afe63c9a42567875db5ef8107611afc
+
 ---
 
 # Choisir une méthode de remise de notification
@@ -167,6 +171,7 @@ Pour plus d’informations, voir :
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

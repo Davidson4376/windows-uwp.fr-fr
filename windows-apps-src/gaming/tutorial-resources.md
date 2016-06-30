@@ -1,9 +1,14 @@
 ---
 author: mtoepke
-title: Développer l’exemple de jeu
-description: Félicitations ! À ce stade, vous maîtrisez les principaux composants d’un jeu WUP DirectX 3D de base.
+title: "Développer l’exemple de jeu"
+description: "Félicitations ! À ce stade, vous maîtrisez les principaux composants d’un jeu WUP DirectX 3D de base."
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
-keywords: ["DirectX, XAML"]
+keywords:
+- DirectX, XAML
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 02b8681c45c84e1cdd5b97dfc717a68015df1252
+
 ---
 
 # Développer l’exemple de jeu
@@ -1515,6 +1520,7 @@ Pour télécharger une version de l’exemple de jeu qui utilise XAML pour la su
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

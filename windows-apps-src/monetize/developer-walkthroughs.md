@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
-description: Utilisez les procédures pas à pas de cette section pour découvrir comment ajouter des bannières et des spots publicitaires aux applications à l’aide des bibliothèques de publicités Microsoft.
-title: Procédures pas à pas de développement pour les bibliothèques de publicités Microsoft
+description: "Utilisez les procédures pas à pas de cette section pour découvrir comment ajouter des bannières et des spots publicitaires aux applications à l’aide des bibliothèques de publicités Microsoft."
+title: "Procédures pas à pas de développement pour les bibliothèques de publicités Microsoft"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
+
 ---
 
 # Procédures pas à pas de développement pour les bibliothèques de publicités Microsoft
@@ -30,6 +34,7 @@ Pour obtenir des exemples complets de projet qui montrent comment ajouter des ba
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

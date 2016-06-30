@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Fournit une valeur pour tout attribut XAML en évaluant une référence à une ressource qui provient de l’implémentation d’une recherche de ressource personnalisée. La recherche de ressource est effectuée via l’implémentation d’une classe CustomXamlResourceLoader.
+description: "Fournit une valeur pour tout attribut XAML en évaluant une référence à une ressource qui provient de l’implémentation d’une recherche de ressource personnalisée. La recherche de ressource est effectuée via l’implémentation d’une classe CustomXamlResourceLoader."
 title: Extension de balisage CustomResource
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
+
 ---
 
 # Extension de balisage {CustomResource}
@@ -47,6 +51,7 @@ L’utilisation de `{CustomResource}` ne fonctionne pas par défaut (l’implém
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

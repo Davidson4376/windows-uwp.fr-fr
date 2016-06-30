@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Pour afficher les données de performances pour les unités publicitaires dans vos applications, utilisez les rapports sur les performances publicitaires au niveau du compte et de l’application dans le tableau de bord du Centre de développement Windows.
+Description: "Pour afficher les données de performances pour les unités publicitaires dans vos applications, utilisez les rapports sur les performances publicitaires au niveau du compte et de l’application dans le tableau de bord du Centre de développement Windows."
 title: Rapport sur les performances publicitaires
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
+translationtype: Human Translation
+ms.sourcegitcommit: 93e12837aec151b0cd1fa711c9e04081d74a3962
+ms.openlocfilehash: 1617005cff264a89eb66e326e2bedf9f6641a3da
+
 ---
 
 # Rapport sur les performances publicitaires
@@ -90,6 +94,7 @@ La section **Performances des publicités** de votre page **Présentation du tab
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

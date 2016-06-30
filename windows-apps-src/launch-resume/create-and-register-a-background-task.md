@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Créer et inscrire une tâche en arrière-plan
-description: Créez une classe de tâche en arrière-plan et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan.
+author: TylerMSFT
+title: "Créer et inscrire une tâche en arrière-plan"
+description: "Créez une classe de tâche en arrière-plan et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan."
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
+
 ---
 
 # Créer et inscrire une tâche en arrière-plan
@@ -44,9 +47,9 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
 >     //
 >     // ExampleBackgroundTask.cs
 >     //
-> 
+>
 >     using Windows.ApplicationModel.Background;
-> 
+>
 >     namespace Tasks
 >     {
 >         public sealed class ExampleBackgroundTask : IBackgroundTask
@@ -62,35 +65,35 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
 >     //
 >     // ExampleBackgroundTask.cpp
 >     //
-> 
+>
 >     #include "ExampleBackgroundTask.h"
-> 
+>
 >     using namespace Tasks;
-> 
+>
 >     void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 >     {
-> 
+>
 >     }
 >  ```
 
-    
+
 > ```cpp
 >     //
 >     // ExampleBackgroundTask.h
 >     //
-> 
+>
 >     #pragma once
-> 
+>
 >     using namespace Windows::ApplicationModel::Background;
-> 
+>
 >     namespace RuntimeComponent1
 >     {
 >         public ref class ExampleBackgroundTask sealed : public IBackgroundTask
 >         {
-> 
+>
 >         public:
 >             ExampleBackgroundTask();
-> 
+>
 >             virtual void Run(IBackgroundTaskInstance^ taskInstance);
 >             void OnCompleted(
 >                     BackgroundTaskRegistration^ task,
@@ -158,7 +161,7 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
 > ```cs
 >     var taskRegistered = false;
 >     var exampleTaskName = "ExampleBackgroundTask";
-> 
+>
 >     foreach (var task in BackgroundTaskRegistration.AllTasks)
 >     {
 >         if (task.Value.Name == exampleTaskName)
@@ -171,20 +174,20 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
 > ```cpp
 >     boolean taskRegistered = false;
 >     Platform::String^ exampleTaskName = "ExampleBackgroundTask";
-> 
+>
 >     auto iter = BackgroundTaskRegistration::AllTasks->First();
 >     auto hascur = iter->HasCurrent;
-> 
+>
 >     while (hascur)
 >     {
 >         auto cur = iter->Current->Value;
-> 
+>
 >         if(cur->Name == exampleTaskName)
 >         {
 >             taskRegistered = true;
 >             break;
 >         }
-> 
+>
 >         hascur = iter->MoveNext();
 >     }
 > ```
@@ -198,14 +201,14 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
 > [!div class="tabbedCodeSnippets"]
 > ```cs
 >     var builder = new BackgroundTaskBuilder();
-> 
+>
 >     builder.Name = exampleTaskName;
 >     builder.TaskEntryPoint = "RuntimeComponent1.ExampleBackgroundTask";
 >     builder.SetTrigger(new SystemTrigger(SystemTriggerType.TimeZoneChange, false));
 > ```
 > ```cpp
 >     auto builder = ref new BackgroundTaskBuilder();
-> 
+>
 >     builder->Name = exampleTaskName;
 >     builder->TaskEntryPoint = "RuntimeComponent1.ExampleBackgroundTask";
 >     builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
@@ -349,8 +352,6 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

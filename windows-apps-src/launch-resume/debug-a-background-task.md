@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Déboguer une tâche en arrière-plan
-description: Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.
+author: TylerMSFT
+title: "Déboguer une tâche en arrière-plan"
+description: "Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows."
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 1b49c3f06456eef2f3e56227ecb5af5fc991fb13
+
 ---
 
 # Déboguer une tâche en arrière-plan
@@ -111,8 +114,6 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

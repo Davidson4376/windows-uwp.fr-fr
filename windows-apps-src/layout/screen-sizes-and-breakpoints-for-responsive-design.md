@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-title: 'Tailles d’écran et points d’arrêt pour la conception réactive'
+title: "Tailles d’écran et points d’arrêt pour la conception réactive"
 description: .
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 153652c9fcc9745bdee087033d65eec2bc860e53
+
 ---
 
 #  Tailles d’écran et points d’arrêt pour la conception réactive
@@ -94,6 +98,7 @@ Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

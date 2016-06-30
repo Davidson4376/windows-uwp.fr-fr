@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
-title: Optimiser l’interruption/la reprise
-description: Créez des applications UWP qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
+title: "Optimiser l’interruption/la reprise"
+description: "Créez des applications UWP qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt."
+translationtype: Human Translation
+ms.sourcegitcommit: e0f04c4242891b25db460d4852ab8cc070d82260
+ms.openlocfilehash: 9fee4ab9c55c1243c04c2ed5f007412751528037
+
 ---
 # Optimiser l’interruption/la reprise
 
@@ -88,6 +92,7 @@ La plupart des applications n’ont pas besoin de gérer l’événement [**Resu
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

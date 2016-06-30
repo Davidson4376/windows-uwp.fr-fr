@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: Obtenez des informations de développement générales sur les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft.
-title: Informations destinées aux développeurs sur les bibliothèques de publicités Microsoft
+description: "Obtenez des informations de développement générales sur les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft."
+title: "Informations destinées aux développeurs sur les bibliothèques de publicités Microsoft"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+
 
 ---
 
@@ -34,6 +38,7 @@ Les rubriques de cette section contiennent des informations utiles destinées au
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

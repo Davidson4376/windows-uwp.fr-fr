@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
-title: Ajout et suppression d’animations dans les applications UWP
+Description: "Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche."
+title: "Ajout et suppression d’animations dans les applications UWP"
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a795cf52c3d062d2131832ac3bc765f45097e849
+
 ---
 
 # Ajout et suppression d’animations
@@ -49,6 +53,7 @@ Les animations de liste vous permettent d’insérer ou de supprimer un ou plusi
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

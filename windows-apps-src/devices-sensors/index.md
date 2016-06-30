@@ -2,7 +2,11 @@
 author: DBirtolo
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
 title: Appareils, capteurs et alimentation
-description: Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être amené à intégrer des appareils ou capteurs externes dans votre application.
+description: "Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être amené à intégrer des appareils ou capteurs externes dans votre application."
+translationtype: Human Translation
+ms.sourcegitcommit: d6757aba4be1a9e326e9e0dade16663286d24f72
+ms.openlocfilehash: ae6ab11963ed06083e581ce42f39ce483d53e0d6
+
 ---
 # Appareils, capteurs et alimentation
 
@@ -19,7 +23,7 @@ Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être ame
 | [Activer les fonctionnalités d’un appareil](enable-device-capabilities.md) | Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des appareils photo, des microphones, des capteurs d’emplacement et d’autres appareils. | 
 | [Activer l’accès en mode utilisateur sur Windows IoT](enable-usermode-access.md) | Ce didacticiel décrit comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows 10 IoT Standard. |
 | [Énumérer les appareils](enumerate-devices.md) | L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. |
-| [Jumeler des appareils](pair-devices.md) | Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge trois méthodes différentes de jumelage des appareils. |
+| [Jumeler des appareils](pair-devices.md) | Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge trois méthodes différentes de jumelage des appareils. |
 | [Couplage hors-bande](out-of-band-pairing.md) | Cette section explique comment utiliser le couplage hors-bande pour permettre aux applications de se connecter à certains appareils sans qu’une découverte soit requise. | 
 | [Capteurs](sensors.md) | Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil. |
 | [Bluetooth](bluetooth.md) | Cette section contient des articles sur l’intégration du Bluetooth aux applications de la plateforme Windows universelle (UWP), notamment sur l’utilisation des API RFCOMM, GATT et des publications Bluetooth Low Energy (LE). | 
@@ -30,6 +34,7 @@ Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être ame
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

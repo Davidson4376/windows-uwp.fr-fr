@@ -1,8 +1,12 @@
 ---
 author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
-description: Technologies d’accès aux services réseau et web.
-title: Réseau et services web
+description: "Technologies d’accès aux services réseau et web."
+title: "Réseau et services web"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: df62edbf63777a8fcec4ab08c1fb56ab76ea6624
+
 ---
 
 # Réseau et services web
@@ -24,6 +28,7 @@ Les technologies de réseau et services web suivantes sont disponibles pour les 
 | [Marquage de connexions réseau avec l’identité EDP](tagging_network_connections_with_edp_identity.md) | Cette rubrique vous explique comment générer un contexte de thread protégé avant de créer les connexions réseau dans un scénario de protection des données d’entreprise (EDP, Enterprise Data Protection). |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

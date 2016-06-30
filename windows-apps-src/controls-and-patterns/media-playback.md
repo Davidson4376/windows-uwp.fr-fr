@@ -1,11 +1,15 @@
 ---
 author: Jwmsft
-Description: Le lecteur multimédia permet d’afficher et d’écouter des fichiers vidéo, audio et image.
-title: Lecteur multimédia
+Description: "Le lecteur multimédia permet d’afficher et d’écouter des fichiers vidéo, audio et image."
+title: "Lecteur multimédia"
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 2dbc4e7fa227de3f37b8a337eded0004496dbe36
+
 ---
 # Lecteur multimédia
 
@@ -410,6 +414,7 @@ Ajoutez toutes les options personnalisées dont vous avez besoin pour le lecteur
 - [Informations de base relatives à la conception de contenu pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958434)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

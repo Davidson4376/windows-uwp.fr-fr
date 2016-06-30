@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Mapper OpenGL ES 2.0 à Direct3D 11
-description: Si vous vous apprêtez à porter votre architecture graphique OpenGL ES 2.0 sur Direct3D pour la première fois, commencez par vous familiariser avec les principales différences entre les API.
+title: "Mapper OpenGL ES 2.0 à Direct3D 11"
+description: "Si vous vous apprêtez à porter votre architecture graphique OpenGL ES 2.0 sur Direct3D pour la première fois, commencez par vous familiariser avec les principales différences entre les API."
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a058c5f669704695cc3a2ae5385feccbf6cb4bc3
+
 ---
 
 # Mapper OpenGL ES 2.0 à Direct3D 11
@@ -38,7 +42,7 @@ Si vous vous apprêtez à porter votre architecture graphique OpenGL ES 2.0 sur
 </tr>
 <tr class="even">
 <td align="left"><p>[Comparer le pipeline nuanceur d’OpenGL ES 2.0 à Direct3D](change-your-shader-loading-code.md)</p></td>
-<td align="left"><p>D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0. Cependant, en termes de conception d’API, les composants majeurs de création et de gestion des étapes de nuanceur appartiennent aux deux interfaces principales : [<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) et [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598). Cette rubrique tente d’établir une correspondance dans ces interfaces entre les modèles courants d’API du pipeline nuanceur d’OpenGL ES 2.0 et ceux de Direct3D 11.</p></td>
+<td align="left"><p>D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0. Cependant, en termes de conception d’API, les composants majeurs de création et de gestion des étapes de nuanceur appartiennent aux deux interfaces principales : [<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) et [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598). Cette rubrique tente d’établir une correspondance dans ces interfaces entre les modèles courants d’API du pipeline nuanceur d’OpenGL ES 2.0 et ceux de Direct3D 11.</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,6 +63,7 @@ Ces rubriques font référence à la spécification OpenGL ES 2.0 de Khronos pou
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

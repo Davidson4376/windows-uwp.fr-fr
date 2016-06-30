@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
-title: Utiliser le gyromètre
-description: Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur.
+title: "Utiliser le gyromètre"
+description: "Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur."
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: ad76837574b8887bceb135db156e2744542259b0
+
 ---
 # Utiliser le gyromètre
 
@@ -126,11 +130,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **GyrometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="GyrometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:GyrometerCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs du gyromètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ###  Explication
 
@@ -174,6 +178,7 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -2,7 +2,11 @@
 author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
 title: Graphismes et animation
-description: Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store.
+description: "Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du Windows Store."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d46498e6e584d85cfce0be237878aff68dee9c50
+
 ---
 # Graphismes et animation
 
@@ -34,6 +38,7 @@ Les graphismes et animations sont destinés aux développeurs d’applications e
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

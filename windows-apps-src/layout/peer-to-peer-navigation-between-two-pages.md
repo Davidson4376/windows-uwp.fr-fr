@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
-title: Navigation pair à pair entre deux pages
+Description: "Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP)."
+title: "Navigation pair à pair entre deux pages"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ec1c0339017fb60ed37f45dfa6f809a5eba6fbb1
+
 ---
 
 # <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"></span>Navigation pair à pair entre deux pages
@@ -24,8 +28,8 @@ Découvrez comment naviguer dans une application de base à deux pages pair à 
 ## <span id="Create_the_blank_app"></span><span id="create_the_blank_app"></span><span id="CREATE_THE_BLANK_APP"></span>Créer l’application vide
 
 
-1.  Dans le menu Microsoft Visual Studio, choisissez **Fichier &gt; Nouveau projet**.
-2.  Dans le volet gauche de la boîte de dialogue **Nouveau projet**, choisissez le nœud **Visual C# -&gt; Windows -&gt; Universel** ou **Visual C++ -&gt; Windows -&gt; Universel**.
+1.  Dans le menu Microsoft Visual Studio, choisissez **Fichier &gt; Nouveau projet**.
+2.  Dans le volet gauche de la boîte de dialogue **Nouveau projet**, choisissez le nœud **Visual C# -&gt; Windows -&gt; Universel** ou **Visual C++ -&gt; Windows -&gt; Universel**.
 3.  Dans le volet central, choisissez **Application vide**.
 4.  Dans le champ **Nom**, entrez **NavApp1**, puis choisissez le bouton **OK**.
 
@@ -35,7 +39,7 @@ Découvrez comment naviguer dans une application de base à deux pages pair à 
 
      
 
-5.  Pour exécuter le programme, choisissez **Déboguer**&gt;**Démarrer le débogage** dans le menu, ou appuyez sur F5.
+5.  Pour exécuter le programme, choisissez **Déboguer**&gt;**Démarrer le débogage** dans le menu, ou appuyez sur F5.
 
     Une page vide s’affiche.
 
@@ -187,7 +191,7 @@ Apportez les modifications suivantes à l’interface utilisateur de Page2.xaml.
 Ajoutez le code suivant à la classe `Page2` dans le fichier code-behind Page2.xaml pour gérer l’événement `Click` du [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) que vous avez ajouté précédemment. Ici, nous naviguons vers Page1.xaml.
 
 **Remarque**  
-Pour les projets C++, vous devez ajouter une directive `#include` dans le fichier d’en-tête de chaque page faisant référence à une autre page. Pour l’exemple de navigation entre les pages présenté ici, le fichier page1.xaml.h contient `#include "Page2.xaml.h"`, et à son tour, page2.xaml.h contient `#include "Page1.xaml.h"`.
+Pour les projets C++, vous devez ajouter une directive `#include` dans le fichier d’en-tête de chaque page faisant référence à une autre page. Pour l’exemple de navigation entre les pages présenté ici, le fichier page1.xaml.h contient `#include "Page2.xaml.h"`, et à son tour, page2.xaml.h contient `#include "Page1.xaml.h"`.
 
  
 
@@ -367,7 +371,7 @@ private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Dans le fichier code-behind Page2.xaml, remplacez la méthode `OnNavigatedTo` par les éléments suivants :
+Dans le fichier code-behind Page2.xaml, remplacez la méthode `OnNavigatedTo` par les éléments suivants :
 
 ```ManagedCPlusPlus
 void Page2::OnNavigatedTo(NavigationEventArgs^ e)
@@ -446,6 +450,7 @@ public Page1()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

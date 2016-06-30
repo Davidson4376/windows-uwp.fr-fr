@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
-description: Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.
+description: "Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP."
 title: Codecs pris en charge
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
+
 ---
 
 # Codecs pris en charge
@@ -2692,6 +2696,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

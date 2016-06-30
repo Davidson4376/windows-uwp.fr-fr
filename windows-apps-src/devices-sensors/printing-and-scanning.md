@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-title: Impression et de numérisation
-description: Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
+title: "Impression et de numérisation"
+description: "Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
+
 ---
 # Impression et numérisation
 
@@ -26,6 +30,7 @@ Cette section décrit comment imprimer et numériser à partir de votre applicat
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

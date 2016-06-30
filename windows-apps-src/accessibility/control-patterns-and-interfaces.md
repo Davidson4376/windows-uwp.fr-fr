@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter.
+Description: "Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter."
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
-title: Modèles de contrôle et interfaces
+title: "Modèles de contrôle et interfaces"
 label: Control patterns and interfaces
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
+
 ---
 
 # Modèles de contrôle et interfaces  
@@ -43,10 +46,10 @@ Quand vous implémentez un modèle de contrôle, vous devez aussi consulter la d
 | **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | Permet à des applications clientes UI Automation de diriger l’entrée de souris ou de clavier vers un élément spécifique de l’interface utilisateur. |
 | **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | Utilisé pour les contrôles qui disposent d’une grille et d’informations d’en-tête. Par exemple, un contrôle de calendrier tabulaire. |
 | **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | Utilisé pour les éléments d’un tableau. |
-| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | Utilisé pour les contrôles d’édition et les documents qui exposent des informations textuelles. Voir aussi [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) et [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426272). |
-| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/Hh701839) | Utilisé pour accéder à l’ancêtre le plus proche d’un élément qui prend en charge le modèle de contrôle **Text**. |
+| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | Utilisé pour les contrôles d’édition et les documents qui exposent des informations textuelles. Voir aussi [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) et [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2). |
+| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | Utilisé pour accéder à l’ancêtre le plus proche d’un élément qui prend en charge le modèle de contrôle **Text**. |
 | **TextEdit** | Aucune classe managée disponible | Fournit l’accès à un contrôle qui modifie du texte, par exemple un contrôle qui effectue une correction automatique ou permet une composition d’entrée via un éditeur de méthode d’entrée (IME). |
-| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) | Fournit l’accès à une étendue de texte continu au sein d’un conteneur de texte qui implémente [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627). Voir aussi [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426342). |
+| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | Fournit l’accès à une étendue de texte continu au sein d’un conteneur de texte qui implémente [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider). Voir aussi [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2). |
 | **Toggle** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | Utilisé pour les contrôles dans lesquels il est possible de faire basculer l’état. Par exemple, [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316) et les éléments de menu qui peuvent être activés. |
 | **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | Utilisé pour les contrôles qui peuvent être redimensionnés, déplacés et pivotés. Les principales utilisations du modèle de contrôle Transform se font dans les applications de conception et de dessin, les formulaires et les éditeurs graphiques. |
 | **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | Permet aux clients d’obtenir ou de définir une valeur sur des contrôles qui ne prennent pas en charge une plage de valeurs. |
@@ -65,6 +68,7 @@ Quand vous implémentez un modèle de contrôle, vous devez aussi consulter la d
 * [Accessibilité](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

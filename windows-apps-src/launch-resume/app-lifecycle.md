@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Cycle de vie de l’application
-description: Cette rubrique décrit le cycle de vie d’une application de plateforme Windows universelle (UWP), de son activation jusqu’à sa fermeture.
+author: TylerMSFT
+title: "Cycle de vie de l’application"
+description: "Cette rubrique décrit le cycle de vie d’une application de plateforme Windows universelle (UWP), de son activation jusqu’à sa fermeture."
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
+
 ---
 
 # Cycle de vie de l’application
@@ -66,15 +69,14 @@ Les données de l’événement [**OnActivated**](https://msdn.microsoft.com/lib
 
  
 
-**Remarque** La 
-           *session utilisateur active* est basée sur l’ouverture de session Windows. Tant que l’utilisateur actuel ne s’est pas déconnecté ou n’a pas arrêté la session de manière explicite, ou que Windows n’a pas redémarré pour une autre raison, la session utilisateur active persiste à travers les événements, tels que l’authentification de l’écran de verrouillage, le changement d’utilisateur, etc.
+**Remarque** La *session utilisateur active* est basé sur l’ouverture de session Windows. Tant que l’utilisateur actuel ne s’est pas déconnecté ou n’a pas arrêté la session de manière explicite, ou que Windows n’a pas redémarré pour une autre raison, la session utilisateur active persiste à travers les événements, tels que l’authentification de l’écran de verrouillage, le changement d’utilisateur, etc.
 
  
 
 [
             **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) pourrait également avoir la valeur **Running** ou **Suspended** mais, dans ce cas, votre application n’a pas été arrêtée précédemment et vous n’avez donc pas à restaurer de données, car tout est déjà en mémoire.
 
-**Remarque**  
+**Note**  
 
 Si vous ouvrez une session en utilisant le compte Administrateur de l’ordinateur, vous ne pouvez activer aucune application UWP.
 
@@ -82,7 +84,7 @@ Pour plus d’informations, voir [Extensions d’application](https://msdn.micro
 
 ### **OnActivated** et activations spécifiques
 
-La méthode [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) permet de gérer tous les types d’activations possibles. Toutefois, il est plus courant d’utiliser différentes méthodes pour gérer les types d’activation les plus courants et d’utiliser **OnActivated** uniquement comme méthode de secours pour les types d’activation moins courants. Par exemple, [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) a une méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) qui est appelée sous forme de rappel chaque fois que [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) est **Launch**. Il s’agit de l’activation standard pour la plupart des applications. Il existe 6 autres méthodes **On\*** pour des activations spécifiques : [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) et [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806). Les modèles de départ pour une application XAML ont une implémentation pour **OnLaunched** et un gestionnaire pour [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341).
+La méthode [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) permet de gérer tous les types d’activations possibles. Toutefois, il est plus courant d’utiliser différentes méthodes pour gérer les types d’activation les plus courants et d’utiliser **OnActivated** uniquement comme méthode de secours pour les types d’activation moins courants. Par exemple, [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) a une méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) qui est appelée sous forme de rappel chaque fois que [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) est **Launch**. Il s’agit de l’activation standard pour la plupart des applications. Il existe 6 autres méthodes **On\*** pour des activations spécifiques : [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) et[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806). Les modèles de départ pour une application XAML ont une implémentation pour **OnLaunched** et un gestionnaire pour [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341).
 
 ## Suspension d’une application
 
@@ -105,7 +107,7 @@ Certaines applications doivent continuer de s’exécuter pour effectuer des tâ
 
 Pour obtenir des recommandations, voir [Recommandations en matière d’interruption et de reprise d’une application](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
-**Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur. Ainsi, l’utilisateur peut voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
+**Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
 
 ## Visibilité de l’application
 
@@ -167,7 +169,7 @@ Lorsqu’un utilisateur supprime votre application, elle est supprimée avec tou
 ## Cycle de vie de l’application et modèles de projet Visual Studio
 
 
-Le code de base pertinent pour le cycle de vie de l’application est fourni dans les modèles de projet de démarrage Visual Studio. L’application de base gère l’activation au lancement, fournit un emplacement pour restaurer vos données d’application, et affiche l’interface utilisateur principale avant même que vous ayez ajouté votre propre code. Pour plus d’informations, voir [Modèles de projet en C#, VB et C++ pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/hh768232).
+Le code de base pertinent pour le cycle de vie de l’application est fourni dans les modèles de projet de démarrage Visual Studio. L’application de base gère l’activation au lancement, fournit un emplacement pour restaurer vos données d’application, et affiche l’interface utilisateur principale avant même que vous ayez ajouté votre propre code. Pour plus d’informations, voir [Modèles de projet en C#, VB et C++ pour les applications](https://msdn.microsoft.com/library/windows/apps/hh768232).
 
 ## API de clé du cycle de vie de l’application
 
@@ -178,8 +180,8 @@ Le code de base pertinent pour le cycle de vie de l’application est fourni dan
 -   Classe [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) (XAML)
 -   Classe [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) (XAML)
 
-**Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Note**  
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -198,8 +200,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des app
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

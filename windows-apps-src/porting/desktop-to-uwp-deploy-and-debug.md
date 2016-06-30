@@ -1,8 +1,11 @@
 ---
 author: awkoren
-Description: Déployez et déboguez une app UWP convertie à partir d’une application de bureau Windows (Win32, WPF, Windows Forms) avec les extensions de conversion de bureau.
+Description: "Déployez et déboguez une app UWP convertie à partir d’une application de bureau Windows (Win32, WPF, Windows Forms) avec les extensions de conversion de bureau."
 Search.Product: eADQiWindows 10XVcnh
-title: Déployer et déboguer une app UWP convertie depuis une app de bureau Windows
+title: "Déployer et déboguer une app UWP convertie depuis une app de bureau Windows"
+ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
+ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+
 ---
 
 # Déployer et déboguer votre application UWP convertie (Projet Centennial)
@@ -176,6 +179,8 @@ Une application convertie s’exécute toujours en tant qu’utilisateur interac
 
 Si vous essayez d’exécuter l’applet de commande Add-AppxPackage sur un ordinateur où vous n’avez pas importé le certificat que vous avez créé, vous obtiendrez une erreur.
 
+Avant de déployer votre application, vous devez la signer avec un certificat. Pour plus d’informations sur la création d’un certificat, voir [Signature de votre package .Appx](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx). 
+
 Voici comment vous importez un certificat que vous avez créé précédemment. Vous pouvez l’installer directement, ou à partir d’un appx que vous avez signé, comme le client le fera.
 1.  Dans l’Explorateur de fichiers, cliquez avec le bouton droit sur un appx que vous avez signé avec un certificat de test, et choisissez **Propriétés** dans le menu contextuel.
 2.  Cliquez ou appuyez sur l’onglet **Signatures numériques**.
@@ -188,8 +193,6 @@ Voici comment vous importez un certificat que vous avez créé précédemment. V
 9.  Cliquez ou appuyez sur **Parcourir**. Dans la fenêtre Sélectionner un magasin de certificats, faites défiler et sélectionnez **Personnes autorisées**, puis cliquez ou appuyez sur **OK**.
 10. Cliquez ou appuyez sur **Suivant**. Un nouvel écran s’affiche. Cliquez ou appuyez sur **Terminer**.
 11. Une boîte de dialogue de confirmation doit s’afficher. Si tel est le cas, cliquez sur **OK**. Si une boîte de dialogue indique que le certificat pose problème, vous devrez peut-être résoudre des problèmes de certificat.
-
-### Informations supplémentaires
 
 Pour que Windows approuve le certificat, ce dernier doit se trouver dans le nœud **Certificats (Ordinateur local) &gt; Autorités de certification racines de confiance &gt; Certificats** ou dans le nœud **Certificats (Ordinateur local) &gt; Personnes autorisées &gt; Certificats**. Seuls les certificats figurant à ces deux emplacements peuvent valider les certificats de confiance dans le contexte de l’ordinateur local. Autrement, un message d’erreur ressemblant à la chaîne suivante apparaît :
 ```CMD
@@ -207,7 +210,16 @@ Toutefois, l’application s’exécute dans un environnement spécial dans lequ
 
 À l’intérieur d’un dossier nommé VFS, vous verrez des dossiers qui contiennent les fichiers DLL sur lesquels votre application a des dépendances. Ces DLL sont installés dans les dossiers système pour la version de bureau classique de votre application. Toutefois, pour l’application UWP, les fichiers DLL sont installés en local sur votre application. Ainsi, il n’existe aucun problème de contrôle lors de l’installation et de la désinstallation des applications UWP.
 
+## Voir également
+[Convertir votre application de bureau en une application UWP (plateforme Windows universelle)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
 
-<!--HONumber=May16_HO2-->
+[Aperçu du Convertisseur d’applications de bureau (projet Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+
+[Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+
+[Pont d’application de bureau pour les exemples de code UWP dans GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+
+
+<!--HONumber=Jun16_HO4-->
 
 

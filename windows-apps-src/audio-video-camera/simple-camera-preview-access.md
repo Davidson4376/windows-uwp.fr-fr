@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
-description: Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application UWP.
-title: Accès à l’aperçu simple de l’appareil photo
+description: "Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application UWP."
+title: "Accès à l’aperçu simple de l’appareil photo"
+translationtype: Human Translation
+ms.sourcegitcommit: 72abc006de1925c3c06ecd1b78665e72e2ffb816
+ms.openlocfilehash: 05e752925c07b0e3720fbdd42d785381aa08b99c
+
 ---
 
 # Accès à l’aperçu simple de l’appareil photo
@@ -84,6 +88,7 @@ Il est très facile d’obtenir une image fixe à partir du flux d’aperçu de 
 * [Obtenir une image d’aperçu](get-a-preview-frame.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

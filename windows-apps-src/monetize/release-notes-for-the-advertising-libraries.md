@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: Passez en revue les notes de publication des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft.
-title: Notes de publication des bibliothèques de publicités Microsoft
+description: "Passez en revue les notes de publication des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft."
+title: "Notes de publication des bibliothèques de publicités Microsoft"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
+
 ---
 
 # Notes de publication des bibliothèques de publicités Microsoft
@@ -17,7 +21,7 @@ Cette section fournit les notes de publication de la version actuelle des biblio
 
 Les bibliothèques de publicités Microsoft sont incluses dans le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk). Pour tous les types de projet autres que Silverlight Windows Phone 8.x, les assemblys de Microsoft Advertising qui étaient distribués dans les versions autonomes précédentes du Kit de développement logiciel (SDK) Microsoft Universal Ad Client et du Kit de développement logiciel (SDK) Microsoft Advertising sont désormais installés avec le SDK d’engagement et de monétisation de la Boutique Microsoft. Pour plus d’informations sur l’installation du SDK et des bibliothèques qu’il contient, voir [Installer les bibliothèques de publicités Microsoft](install-the-microsoft-advertising-libraries.md).
 
-Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone 8.x, installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **Ad Mediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire dans votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight Windows Phone](adcontrol-in-windows-phone-silverlight.md).
+Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone 8.x, installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **Ad Mediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire dans votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight Windows Phone](adcontrol-in-windows-phone-silverlight.md).
 
 ## Présentation des différences entre les bibliothèques de publicités Microsoft et la médiation publicitaire
 
@@ -52,6 +56,7 @@ Veillez à lire le Contrat de Licence Utilisateur Final (CLUF) dans son intégra
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

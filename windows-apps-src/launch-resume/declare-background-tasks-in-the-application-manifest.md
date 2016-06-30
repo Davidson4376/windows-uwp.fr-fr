@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Déclarer des tâches en arrière-plan dans le manifeste de l’application
-description: Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
+author: TylerMSFT
+title: "Déclarer des tâches en arrière-plan dans le manifeste de l’application"
+description: "Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application."
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
+
 ---
 
 # Déclarer des tâches en arrière-plan dans le manifeste de l’application
@@ -149,6 +152,7 @@ L’exemple suivant représente l’élément Application complet de l’[exempl
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

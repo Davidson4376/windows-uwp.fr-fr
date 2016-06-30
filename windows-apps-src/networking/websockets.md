@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web à l’aide du protocole HTTP(S).
+description: "Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web à l’aide du protocole HTTP(S)."
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
+
 ---
 
 # WebSockets
@@ -108,13 +112,13 @@ Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplemen
 > }
 > ```
 
-Une fois la connexion WebSocket initialisée, votre code doit effectuer les activités suivantes pour envoyer et recevoir des données correctement.
+Une fois que vous avez initialisé la connexion WebSocket, votre code doit effectuer les activités suivantes pour envoyer et recevoir des données correctement.
 
 ### Implémenter un rappel pour l’événement MessageWebSocket.MessageReceived
 
 Avant d’établir une connexion et d’envoyer des données avec WebSocket, votre application doit inscrire un rappel d’événement pour recevoir une notification lors de la réception de données. Quand l’événement [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) se produit, le rappel inscrit est appelé et reçoit des données de [**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852). Cet exemple est écrit en supposant que les messages envoyés sont au format UTF-8.
 
-L’exemple de fonction suivant reçoit d’un serveur WebSocket connecté une chaîne qu’il affiche dans la fenêtre Sortie du débogueur.
+L’exemple de fonction suivant reçoit d’un serveur WebSocket connecté une chaîne qu’il imprime dans la fenêtre Sortie du débogueur.
 
 > [!div class="tabbedCodeSnippets"]
 >```cpp
@@ -174,7 +178,7 @@ Une fois qu’une connexion est établie, le client WebSocket peut envoyer des d
 
 **Remarque** Lorsque vous créez un objet DataWriter à l’aide de l’OutputStream du MessageWebSocket, le DataWriter prend possession de l’OutputStream et libère celui-ci quand le DataWriter est hors de portée. Ainsi, toute tentative ultérieure d’utilisation de l’OutputStream échoue avec une valeur HRESULT de 0x80000013. Pour éviter la libération de l’OutputStream, ce code appelle la méthode DetachStream du DataWriter, qui retourne la propriété du flux à l’objet WebSocket.
 
-La fonction suivante envoie la chaîne donnée à un WebSocket connecté et affiche un message de vérification dans la fenêtre Sortie du débogueur.
+La fonction suivante envoie la chaîne donnée à un WebSocket connecté, et imprime un message de vérification dans la fenêtre Sortie du débogueur.
 
 > [!div class="tabbedCodeSnippets"]
 >```cpp
@@ -346,6 +350,7 @@ L’exemple suivant crée une tâche qui se termine après un délai spécifié,
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

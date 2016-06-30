@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Lancer une application pour obtenir des résultats
-description: Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de « démarrage d’une application pour afficher les résultats ».
+author: TylerMSFT
+title: "Lancer une application pour obtenir des résultats"
+description: "Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de « démarrage d’une application pour afficher les résultats »."
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
+
 ---
 
 # Lancer une application pour obtenir des résultats
@@ -112,8 +115,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     var protocolForResultsArgs = e.Parameter as ProtocolForResultsActivatedEventArgs;
     // Set the ProtocolForResultsOperation field.
-    _operation = protocolForResultsArgs.ProtocolForResultsOperation; 
-    
+    _operation = protocolForResultsArgs.ProtocolForResultsOperation;
+
     if (protocolForResultsArgs.Data.ContainsKey("TestData"))
     {
         string dataFromCaller = protocolForResultsArgs.Data["TestData"] as string;
@@ -179,7 +182,7 @@ string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ## Remarques
 
 
-L’exemple de cette procédure inclut une introduction de type « hello world » pour le démarrage d’une application afin d’afficher les résultats. Les points à noter sont les suivants : la nouvelle API [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) vous permet de démarrer une application de manière asynchrone et de communiquer via la classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Les données à transmettre via un élément **ValueSet** doivent présenter une taille de 100 Ko au maximum. Si vous devez transmettre des quantités de données supérieures, vous pouvez partager des fichiers à l’aide de la classe [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) afin de créer des jetons de fichier que vous pouvez transmettre entre les applications. Par exemple, pour un élément **ValueSet** appelé `inputData`, vous pouvez stocker le jeton dans un fichier que vous souhaitez partager avec l’application lancée :
+L’exemple de cette procédure inclut une introduction de type « hello world » pour le démarrage d’une application afin d’afficher les résultats. Les points à noter sont les suivants : la nouvelle API [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) vous permet de démarrer une application de manière asynchrone et de communiquer via la classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Les données à transmettre via un élément **ValueSet** doivent présenter une taille de 100 Ko au maximum. Si vous devez transmettre des quantités de données supérieures, vous pouvez partager des fichiers à l’aide de la classe [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) afin de créer des jetons de fichier que vous pouvez transmettre entre les applications. Par exemple, pour un élément **ValueSet** appelé `inputData`, vous pouvez stocker le jeton dans un fichier que vous souhaitez partager avec l’application lancée :
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
@@ -200,8 +203,6 @@ transférez-le ensuite à l’application lancée via **LaunchUriForResultsAsync
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

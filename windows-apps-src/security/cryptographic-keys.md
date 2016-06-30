@@ -1,8 +1,11 @@
 ---
-title: Clés de chiffrement
-description: Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques.
+title: "Clés de chiffrement"
+description: "Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques."
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
+ms.sourcegitcommit: 4c8f586f711b1a9e2d2f252cf28a5239d9d68122
+ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
+
 ---
 
 # Clés de chiffrement
@@ -41,7 +44,7 @@ L’exemple suivant montre comment utiliser la classe [**SymmetricKeyAlgorithmPr
 ## Clés asymétriques
 
 
-Le chiffrement à clé asymétrique, ou chiffrement à clé publique, utilise une clé publique et une clé privée pour chiffrer et déchiffrer les données. Bien qu’elles soient différentes, ces clés sont liées mathématiquement. Généralement, la clé privée est gardée secrète et sert à chiffrer les données, alors que la clé publique est transmise aux parties concernées pour les besoins de déchiffrement des données. Le chiffrement à clé asymétrique est également utile pour signer les données.
+Le chiffrement à clé asymétrique, ou chiffrement à clé publique, utilise une clé publique et une clé privée pour chiffrer et déchiffrer les données. Bien qu’elles soient différentes, ces clés sont liées mathématiquement. Généralement, la clé privée est gardée secrète et sert à déchiffrer les données, alors que la clé publique est transmise aux parties concernées pour les besoins de chiffrement des données. Le chiffrement à clé asymétrique est également utile pour signer les données.
 
 Le chiffrement asymétrique étant beaucoup plus lent que le chiffrement symétrique, il est rarement utilisé pour chiffrer de grandes quantités de données directement. Il est généralement plutôt utilisé selon les manières suivantes pour chiffrer des clés.
 
@@ -71,6 +74,7 @@ Il est souvent nécessaire de dériver des clés supplémentaires à partir d’
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

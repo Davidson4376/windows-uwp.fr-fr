@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Vous pouvez utiliser le tableau de bord du Centre de développement Windows pour exécuter des expériences pour vos applications de plateforme Windows universelle (UWP) avec des tests A/B.
-title: Exécuter des expériences d’application avec des tests A/B
+Description: "Vous pouvez utiliser le tableau de bord du Centre de développement Windows pour exécuter des expériences pour vos applications de plateforme Windows universelle (UWP) avec des tests A/B."
+title: "Exécuter des expériences d’application avec des tests A/B"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 88fd0516e3c10b657884b93377480b62c1758992
+
 ---
 
 # Exécuter des expériences d’application avec des tests A/B
@@ -50,6 +54,7 @@ Pour obtenir des résultats optimaux, suivez les recommandations ci-après lorsq
 * [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

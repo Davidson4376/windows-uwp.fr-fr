@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Graphiques 2D pour jeux DirectX
-description: Nous allons découvrir comment utiliser les graphismes et les effets 2D, puis comment vous en servir dans votre jeu.
+description: "Nous allons découvrir comment utiliser les graphismes et les effets 2D, puis comment vous en servir dans votre jeu."
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 50782c5923f9c811f5d8e91aa9aee897876e6c24
+
 ---
 
 # Graphismes 2D pour jeux DirectX
@@ -25,7 +29,7 @@ Dans DirectX, les graphiques 2D font partie du pipeline 3D. La variété de rés
 
 Voici quelques-uns des concepts de base avec lesquels vous devez vous familiariser lorsque vous commencez à développer des graphiques 2D.
 
--   Pixels et coordonnées de raster. Un pixel est un point unique sur un écran à balayage, qui possède sa propre paire de coordonnées (x, y) pour indiquer sa position sur l’écran. (Le terme « pixel » est souvent utilisé de manière interchangeable entre les pixels physiques qui composent l’écran et les éléments de mémoire adressables utilisés pour contenir les couleurs et les valeurs alpha des pixels avant qu’ils ne soient envoyés à l’écran.) Le raster est traité par les API comme une grille rectangulaire d’éléments de pixel, qui a souvent une correspondance 1:1 avec la grille de pixels physique d’un écran. Les systèmes de coordonnées de raster commencent dans le coin supérieur gauche de la grille, au pixel de coordonnées (0, 0).
+-   Pixels et coordonnées de raster. Un pixel est un point unique sur un écran à balayage, qui possède sa propre paire de coordonnées (x, y) pour indiquer sa position sur l’écran. (Le terme « pixel » est souvent utilisé de manière interchangeable entre les pixels physiques qui composent l’écran et les éléments de mémoire adressables utilisés pour contenir les couleurs et les valeurs alpha des pixels avant qu’ils ne soient envoyés à l’écran.) Le raster est traité par les API comme une grille rectangulaire d’éléments de pixel, qui a souvent une correspondance 1:1 avec la grille de pixels physique d’un écran. Les systèmes de coordonnées de raster commencent dans le coin supérieur gauche de la grille, au pixel de coordonnées (0, 0).
 -   Les graphiques bitmaps (parfois appelés graphiques raster) sont des éléments graphiques représentés sous la forme d’une grille rectangulaire de valeurs de pixels. Les sprites, tableaux de pixels calculés gérés indépendamment du raster, sont un type de graphique bitmap, souvent utilisés pour les personnages ou les objets animés et indépendants de l’arrière-plan dans un jeu. Les différentes trames d’animation d’un sprite sont représentées sous forme de collections de bitmaps appelés « feuilles » ou « lots ». Les arrière-plans sont des objets bitmap plus grands de résolution identique ou supérieure à celle du raster d’écran, et servent souvent de toile(s) de fond pour l’action du jeu.
 -   Les graphiques vectoriels sont des graphiques qui utilisent des primitives géométriques, comme des points, des lignes, des cercles des polygones pour définir les objets 2D. Ils sont représentés non sous forme de tableaux de pixels, mais comme les équations mathématiques qui les définissent dans un espace 2D. Ils n’ont pas nécessairement de correspondance 1:1 avec la grille de pixels de l’écran, et doivent être convertis du système de coordonnées dans lequel vous les avez rendus, dans le système de coordonnées raster de l’écran.
 -   La traduction est la procédure de calcul du nouvel emplacement d’un point ou d’un vertex dans le même système de coordonnées.
@@ -67,6 +71,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: Jwmsft
-title: Animations par images clés et animations de fonctions d’accélération
+title: "Animations par images clés et animations de fonctions d’accélération"
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
-description: Les animations par clés linéaires, les animations par clés avec KeySpline ou les animations de fonctions d’accélération sont utilisées avec le même scénario.
+description: "Les animations par clés linéaires, les animations par clés avec KeySpline ou les animations de fonctions d’accélération sont utilisées avec le même scénario."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f2c6d6c0e1d11fee40440cae06d68907313f62dc
+
 ---
 # Animations par images clés et animations de fonctions d’accélération
 
@@ -21,7 +25,7 @@ Les animations par images clés autorisent plusieurs valeurs cibles pouvant êtr
 
 Concernant le comportement de l’interpolation, chaque image clé contrôle l’interpolation jusqu’à ce que son temps **KeyTime** soit atteint. Sa **Value** est atteinte en même temps que ce temps. S’il y a d’autres images clés après cette valeur, la valeur devient la valeur de départ de l’image clé suivante dans la séquence.
 
-Au début de l’animation, si aucune image clé avec un **KeyTime** dont la valeur est 0:0:0 existe, la valeur de départ est la valeur non animée de la propriété. Cela est similaire au comportement d’une animation **From**/**To**/**By** s’il n’y a pas de **From**.
+Au début de l’animation, si aucune image clé avec un **KeyTime** dont la valeur est 0:0:0 existe, la valeur de départ est la valeur non animée de la propriété. Cela est similaire au comportement d’une animation **From**/**To**/**By** en l’absence de **From**.
 
 La durée d’une animation par images clés est implicitement la durée égale à la valeur **KeyTime** la plus élevée définie dans une de ses images clés. Vous pouvez définir un élément [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) explicite si vous voulez, mais veillez à ce que sa valeur ne soit pas inférieure à celle d’un élément **KeyTime** dans vos images clés ou vous risquez de couper une partie de l’animation.
 
@@ -34,7 +38,7 @@ En plus de l’élément [**Duration**](https://msdn.microsoft.com/library/windo
 -   [
             **FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior) : détermine ce qui se produit lorsque la dernière image clé est atteinte. **FillBehavior** n’a aucun effet sur les images clés intermédiaires.
 -   [
-            **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty) :
+            **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)
     -   Si définie sur **Forever**, les images clés et leur chronologie se répètent indéfiniment.
     -   Si définie sur un nombre d’itérations, la chronologie se répète autant de fois que ce nombre d’itérations.
     -   Si définie sur un [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377), la chronologie se répète jusqu’à ce que cette durée soit atteinte. Cela risque de tronquer l’animation au cours de la séquence d’images clés, s’il ne s’agit pas d’un facteur entier de la durée implicite de la chronologie.
@@ -208,7 +212,7 @@ Lorsqu’une fonction d’accélération est appliquée à une animation **From*
 
 ## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>Animations avec valeurs d’objets discrètes
 
-Un type d’animation mérite une attention particulière, car elle constitue le seul moyen d’appliquer une valeur animée à des propriétés qui ne sont pas de type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) ou [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Il s’agit de l’animation par images clés [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320). Créer une animation à l’aide de valeurs [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) est différent, car il n’y a aucune possibilité d’interpoler les valeurs entre les images. Lorsque le [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) de l’image est atteint, la valeur animée est immédiatement définie avec la valeur spécifiée dans la propriété **Value** de l’image clé. Étant donné qu’aucune interpolation n’est possible, vous ne pouvez utiliser qu’une seule image clé dans la collection d’images clés **ObjectAnimationUsingKeyFrames** : [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132).
+Un type d’animation mérite une attention particulière, car elle constitue le seul moyen d’appliquer une valeur animée à des propriétés qui ne sont pas de type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) ou [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Il s’agit de l’animation par images clés [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320). Créer une animation à l’aide de valeurs [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) est différent, car il n’y a aucune possibilité d’interpoler les valeurs entre les images. Lorsque le [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) de l’image est atteint, la valeur animée est immédiatement définie avec la valeur spécifiée dans la propriété **Value** de l’image clé. Étant donné qu’aucune interpolation n’est possible, vous ne pouvez utiliser qu’une seule image clé dans la collection d’images clés **ObjectAnimationUsingKeyFrames** : [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132).
 
 La [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) d’un élément [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) est souvent définie à l’aide de la syntaxe de l’élément de propriété, car la valeur de l’objet que vous essayez de définir n’est souvent pas exprimable en tant que chaîne pour remplir **Value** dans la syntaxe d’attribut. Vous pouvez cependant utiliser la syntaxe d’attribut si vous utilisez une référence telle que [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588).
 
@@ -294,6 +298,7 @@ Vous pouvez utiliser plusieurs éléments [**DiscreteObjectKeyFrame**](https://m
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

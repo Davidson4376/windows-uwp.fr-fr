@@ -1,8 +1,12 @@
 ---
-title: Créer des nombres aléatoires
-description: Cet exemple de code indique comment créer un nombre aléatoire ou une mémoire tampon à utiliser pour le chiffrement dans une application UWP.
+title: "Créer des nombres aléatoires"
+description: "Cet exemple de code indique comment créer un nombre aléatoire ou une mémoire tampon à utiliser pour le chiffrement dans une application UWP."
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 1faa3477acd0cf1a5a2acc7c6c0a62910299254b
+
 ---
 
 # Créer des nombres aléatoires
@@ -35,6 +39,7 @@ public uint GenerateRandomNumber()
 }
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

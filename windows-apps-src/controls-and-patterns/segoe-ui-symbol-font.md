@@ -1,11 +1,15 @@
 ---
 author: Jwmsft
-Description: Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets.
+Description: "Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets."
 Search.Refinement.TopicID: 184
-title: Recommandations en matière d’icônes Segoe MDL2
+title: "Recommandations en matière d’icônes Segoe MDL2"
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 9071c7dfddba15738d7bad482fd14f7cbffaa1f7
+
 ---
 
 # Recommandations en matière d’icônes Segoe MDL2
@@ -1597,7 +1601,7 @@ Utilisez les glyphes de la liste suivante pour une [**AppBar**](https://msdn.mic
 
 **Pour les concepteurs**
 * [Recommandations en matière de polices](fonts.md)
-* [W3C sur les langues écrites de droite à gauche (DàG) ?](http://www.i18nguy.com/temp/rtl.mdl) 
+* [W3C sur les langues écrites de droite à gauche (DàG) ?](http://www.i18nguy.com/temp/rtl.mdl) 
            **Pour les développeurs (XAML)**
 * [**Énumération Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
@@ -1609,6 +1613,7 @@ Utilisez les glyphes de la liste suivante pour une [**AppBar**](https://msdn.mic
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

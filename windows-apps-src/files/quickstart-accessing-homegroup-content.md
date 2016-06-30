@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
-title: Accès au contenu du Groupement résidentiel
-description: Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos.
+title: "Accès au contenu du Groupement résidentiel"
+description: "Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
+
 ---
 # Accès au contenu du Groupement résidentiel
 
@@ -78,7 +82,7 @@ Cette sélection illustre comment trouver des éléments du Groupement résident
 
 1.  **Obtenez le terme de requête de l’utilisateur.**
 
-    Nous obtenons ici un terme de requête que l’utilisateur a entré dans un contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) appelé `searchQueryTextBox` :
+    Nous obtenons ici un terme de requête que l’utilisateur a entré dans un contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) appelé `searchQueryTextBox` :
     ```csharp
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
@@ -210,6 +214,7 @@ Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupemen
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

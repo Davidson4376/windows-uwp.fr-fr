@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Nous expliquons les règles syntaxiques XAML et la terminologie qui décrit les restrictions ou les choix disponibles pour la syntaxe XAML.
+description: "Nous expliquons les règles syntaxiques XAML et la terminologie qui décrit les restrictions ou les choix disponibles pour la syntaxe XAML."
 title: Guide de la syntaxe XAML
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: 8e7819b02d7a22a16cf16091d08bef0aabc8d36e
+
 ---
 
 # Guide de la syntaxe XAML
@@ -313,6 +317,7 @@ Les sections d’utilisation XAML emploient également différents espaces rése
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

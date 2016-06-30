@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Pour gérer les campagnes de publicité de votre application, cliquez sur Monétisation &gt; Promouvoir votre application sur la page de votre application dans le tableau de bord du Centre de développement Windows.
-title: Gestion de votre campagne de publicité
+Description: "Pour gérer les campagnes de publicité de votre application, cliquez sur Monétisation &gt; Promouvoir votre application sur la page de votre application dans le tableau de bord du Centre de développement Windows."
+title: "Gestion de votre campagne de publicité"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
+
 ---
 
 # Gestion de votre campagne de publicité
@@ -46,6 +50,7 @@ Pour apporter des modifications à une campagne de publicité, cliquez sur son n
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

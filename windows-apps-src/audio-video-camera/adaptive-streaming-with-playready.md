@@ -1,8 +1,12 @@
 ---
 author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP.
+description: "Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP."
 title: Diffusion en continu adaptative avec PlayReady
+translationtype: Human Translation
+ms.sourcegitcommit: 176f8989aea5402106e3c14144948cec87a5dc27
+ms.openlocfilehash: d76f50e97f16699f34f138fcd25af8a90696085a
+
 ---
 
 # Diffusion en continu adaptative avec PlayReady
@@ -173,7 +177,7 @@ async Task<bool> ReactiveIndivRequest(
 }
 ```
 
-Par ailleurs, nous pouvons effectuer de manière proactive une demande de service d’individualisation, auquel cas nous appelons la fonction ci-dessous à la place du code appelant `ReactiveIndivRequest` dans `ProtectionManager_ServiceRequested` :
+Par ailleurs, nous pouvons effectuer de manière proactive une demande de service d’individualisation, auquel cas nous appelons la fonction ci-dessous à la place du code appelant `ReactiveIndivRequest` dans `ProtectionManager_ServiceRequested` :
 
 ```csharp
 async void ProActiveIndivRequest()
@@ -297,6 +301,7 @@ Vous pouvez appeler cette fonction dans n’importe quel événement gérant le 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

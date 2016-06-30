@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: Vue d’ensemble de Windows Device Portal
-description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB.
+title: "Vue d’ensemble de Windows Device Portal"
+description: "Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB."
+ms.sourcegitcommit: c6f00006e656970e4a5bb11e3368faa92cbb8eca
+ms.openlocfilehash: fe4945bf3048a0c38e844a74fa6fc46706085d6d
+
 ---
 # Vue d’ensemble de Windows Device Portal
 
@@ -124,6 +127,8 @@ Cliquez ou appuyez sur **Activer** pour démarrer le suivi. Le fournisseur est a
 - **Historique des fournisseurs** : affiche les fournisseurs ETW activés pendant la session active. Cliquez ou appuyez sur **Activer** pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur **Effacer** pour supprimer l’historique.
 - **Événements** : répertorie les événements ETW des fournisseurs sélectionnés sous forme de tableau. Le tableau suivant est mis à jour en temps réel. En dessous du tableau, cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW du tableau. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **Enregistrer dans le fichier** pour exporter vers un fichier CSV en local les événements ETW actuellement collectés.
 
+Pour plus d’informations sur l’utilisation du suivi ETW, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) dédié à l’utilisation de cette fonctionnalité pour collecter des journaux en temps réel à partir de votre application. 
+
 ### Suivi des performances
 
 Capturez les suivis de l’[Enregistreur de performance Windows](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (WPR) à partir de votre appareil.
@@ -151,7 +156,37 @@ Gère les connexions réseau sur l’appareil.  Sauf si vous êtes connecté à 
 
 ![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-network.png)
 
+## Remarques et fonctionnalités de service
 
-<!--HONumber=May16_HO2-->
+### DNS-SD
+
+Device Portal signale sa présence sur le réseau local à l’aide de DNS-SD.  Toutes les instances Device Portal, quel que soit le type d’appareil, sont signalées sous « WDP._wdp._tcp.local ». Les enregistrements TXT relatifs à l’instance de service fournissent les éléments suivants :
+
+Clé | Type | Description 
+----|------|-------------
+S | entier | Port sécurisé pour Device Portal.  Si la valeur est égale à 0 (zéro), Device Portal ne détecte pas les connexions HTTPS. 
+D | chaîne | Type d’appareil.  Cette information sera au format « Windows.* », par exemple Windows.Xbox ou Windows.Desktop
+A | chaîne | Architecture d’appareil.  Par exemple ARM, x 86 ou AMD64.  
+T | liste de chaînes délimitées par des caractères Null | Balises appliquées par l’utilisateur pour l’appareil. Reportez-vous à l’API REST Tags pour apprendre à l’utiliser. La liste se termine par deux caractères Null.  
+
+La connexion au port HTTPS est suggérée, car les appareils ne sont pas tous détectés sur le port HTTP signalé par l’enregistrement DNS-SD. 
+
+### Protection CSRF et écriture de scripts
+
+Afin d’offrir une protection contre les [attaques CSRF](https://wikipedia.org/wiki/Cross-site_request_forgery), un jeton unique est requis pour toutes les demandes non GET. Ce jeton, qui est l’en-tête de demande  X-CSRF-Token, dérive d’un cookie de session, CSRF-Token. Dans l’interface utilisateur Device Portal, le cookie CSRF-Token est copié dans l’en-tête X-CSRF-Token à chaque demande.
+
+**Important** Cette protection empêche toute utilisation des API REST à partir d’un client autonome (par exemple, utilitaires de ligne de commande). Cette situation peut être résolue de 3 manières différentes : 
+
+1. Utilisez le nom d’utilisateur « auto- ». Les clients qui font précéder leur nom d’utilisateur du préfixe « auto-» contournent la protection CSRF. Ce nom d’utilisateur ne doit pas servir à se connecter à Device Portal par le biais du navigateur, car il rend le service vulnérable aux attaques CSRF. Exemple : Si le nom d’utilisateur Device Portal est « admin », ```curl -u auto-admin:password <args>``` doit être utilisé pour contourner la protection CSRF. 
+
+2. Implémentez le schéma de type cookie vers en-tête dans le client. Cette opération nécessite une requête GET afin d’établir le cookie de session, puis l’inclusion de l’en-tête et du cookie sur toutes les requêtes ultérieures. 
+ 
+3. Désactivez l’authentification et utilisez le protocole HTTP. La protection CSRF s’applique uniquement aux points de terminaison HTTPS : les connexions au niveau des points de terminaison HTTP n’ont donc pas besoin de satisfaire les conditions ci-dessus. 
+
+**Remarque** : Un nom d’utilisateur qui commence par « auto-» ne permet pas de se connecter à Device Portal par le biais du navigateur.  
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: Vignettes
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
+ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
+ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
 
 ---
 
@@ -48,14 +48,11 @@ Vous devez mettre à jour quelques éléments :
 
     Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vous assurer que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100 %, 200 % et 400 %.
 
-    Les images mises à l’échelle suivent la convention d’affectation de noms suivante :
+    Les images mises à l’échelle suivent la convention d’affectation de noms suivante : 
     
     *
-            &lt;nom de l’image&gt;*.scale-*&lt;facteur d’échelle&gt;*.*&lt;extension de fichier image&gt;* 
-
-
-     
-
+            &lt;nom de l’image&gt;*.scale-*&lt;facteur d’échelle&gt;*.*&lt;extension de fichier image&gt;*  
+    
     Par exemple : SmallLogo.scale-100.png
 
     Lorsque vous faites référence à l’image, vous spécifiez *&lt;nom de l’image&gt;*.*&lt;extension de fichier image&gt;* (« SmallLogo.png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
@@ -110,6 +107,6 @@ Une fois votre application installée, vous pouvez utiliser les notifications po
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

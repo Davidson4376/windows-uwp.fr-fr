@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Explique le concept de propriété jointe en XAML et fournit quelques exemples.
-title: Vue d’ensemble des propriétés jointes
+description: "Explique le concept de propriété jointe en XAML et fournit quelques exemples."
+title: "Vue d’ensemble des propriétés jointes"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
+
 ---
 
 # Vue d’ensemble des propriétés jointes
@@ -105,7 +109,7 @@ Le point figurant dans un nom de propriété jointe est un élément clé du mod
 
 **Attention** Une limitation existante d’une implémentation XAML Windows Runtime ne vous permet pas d’animer une propriété jointe personnalisée.
  
-- Pour spécifier une propriété jointe en tant que propriété cible d’une référence de ressource à partir d’un fichier de ressources vers **x:Uid**, utilisez une syntaxe spéciale qui injecte une déclaration **using:** complète qui s’apparente à du code entre crochets ("\[\]"), de façon à créer une rupture d’étendue délibérée. Par exemple, en supposant qu’il existe un élément ’<TextBlock x:Uid="Title" />’, la clé de ressource dans le fichier de ressources qui cible la valeur de **Canvas.Top** sur cette instance est « Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top ». Pour plus d’informations sur les fichiers de ressources et le code XAML, voir [Démarrage rapide : traduction des ressources d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+- Pour spécifier une propriété jointe en tant que propriété cible d’une référence de ressource à partir d’un fichier de ressources vers **x:Uid**, utilisez une syntaxe spéciale qui injecte une déclaration **using:** complète qui s’apparente à du code entre crochets ("\[\]"), de façon à créer une rupture d’étendue délibérée. Par exemple, en supposant qu’il existe un élément «  », la clé de ressource dans le fichier de ressources qui cible la valeur de Canvas.Top sur cette instance est « Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top ». Pour plus d’informations sur les fichiers de ressources et le code XAML, voir [Démarrage rapide : traduction des ressources d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
 
 ## Rubriques connexes
 
@@ -118,6 +122,7 @@ Le point figurant dans un nom de propriété jointe est un élément clé du mod
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

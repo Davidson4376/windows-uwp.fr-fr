@@ -1,8 +1,12 @@
 ---
 title: Chiffrement
-description: L’article fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications de plateforme Windows universelle (UWP). Pour plus d’informations sur des tâches particulières, voir le tableau à la fin de cet article.
+description: "L’article fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications de plateforme Windows universelle (UWP). Pour plus d’informations sur des tâches particulières, voir le tableau à la fin de cet article."
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: b8cccf54e414de084c5b3fd080007b225b9a9b12
+
 ---
 
 # Chiffrement
@@ -143,6 +147,7 @@ Les articles suivants fournissent plus de détails sur la sécurité :
 
  
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

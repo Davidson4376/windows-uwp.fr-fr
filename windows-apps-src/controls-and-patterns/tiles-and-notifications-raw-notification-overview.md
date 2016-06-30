@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Les notifications brutes sont des notifications Push courtes à usage général.
-title: Vue d’ensemble des notifications brutes
+Description: "Les notifications brutes sont des notifications Push courtes à usage général."
+title: "Vue d’ensemble des notifications brutes"
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
+
 ---
 
 # Vue d’ensemble des notifications brutes
@@ -126,6 +130,7 @@ Pour plus d’informations, téléchargez l’[exemple de notifications brutes](
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Une fois que votre application se trouve dans le Windows Store, le moment est venu de la promouvoir auprès du plus grand nombre de clients possible.
+Description: "Une fois que votre application se trouve dans le Windows Store, le moment est venu de la promouvoir auprès du plus grand nombre de clients possible."
 title: Promotion des applications et implication des clients
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3511533f76294767ca409b09a718555a6194e451
+
 ---
 
 # Promotion des applications et implication des clients
@@ -28,6 +32,7 @@ Une fois que votre application se trouve dans le Windows Store, le moment est ve
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

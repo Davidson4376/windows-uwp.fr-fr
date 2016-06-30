@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-Description: Suivez ces meilleures pratiques pour définir la clôture virtuelle dans votre application.
-title: Recommandations concernant la clôture virtuelle des applications
+Description: "Suivez ces meilleures pratiques pour définir la clôture virtuelle dans votre application."
+title: "Recommandations concernant la clôture virtuelle des applications"
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d631885eced58d360d3e0442cbb49ede7b9b86c3
+
 ---
 
 # Recommandations concernant la clôture virtuelle des applications
@@ -132,6 +136,7 @@ Si votre application doit utiliser une clôture virtuelle avec un petit rayon, c
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

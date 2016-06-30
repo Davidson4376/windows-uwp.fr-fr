@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
-description: Obtenez des exemples supplémentaires qui montrent comment utiliser les propriétés, méthodes et événements des classes AdControl et InterstitialAd dans les bibliothèques de publicités Microsoft.
+description: "Obtenez des exemples supplémentaires qui montrent comment utiliser les propriétés, méthodes et événements des classes AdControl et InterstitialAd dans les bibliothèques de publicités Microsoft."
 title: Exemples de code
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+
 ---
 
 # Exemples de code
@@ -36,6 +40,7 @@ Pour obtenir des exemples complets de projet qui montrent comment ajouter des ba
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

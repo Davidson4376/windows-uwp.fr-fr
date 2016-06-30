@@ -5,8 +5,8 @@ title: Reconnaissance vocale
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6d1449ede6912add8b8f7e60760d4547c035ed60
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 66bab97e7108a1728e9659a04ea2f1ecf15f68b7
 
 ---
 
@@ -24,7 +24,7 @@ La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une 
 La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API de reconnaissance vocale pour programmer le runtime, de grammaires prêtes à l’emploi pour la dictée et la recherche web, ainsi que d’une interface utilisateur système par défaut permettant aux utilisateurs de découvrir et d’utiliser les fonctionnalités de reconnaissance vocale.
 
 
-## <span id="Set_up_the_audio_feed"></span><span id="set_up_the_audio_feed"></span><span id="SET_UP_THE_AUDIO_FEED"></span>Configurer le flux audio
+## Configurer le flux audio
 
 
 Assurez-vous que votre appareil est équipé d’un microphone ou d’un dispositif équivalent.
@@ -33,7 +33,7 @@ Définissez la fonctionnalité de l’appareil **Microphone** ([**DeviceCapabili
 
 Voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
-## <span id="Recognize_speech_input"></span><span id="recognize_speech_input"></span><span id="RECOGNIZE_SPEECH_INPUT"></span>Reconnaître la saisie vocale
+## Reconnaître la saisie vocale
 
 
 Une *contrainte* définit les mots et expressions (vocabulaire) qu’une application reconnaît dans la saisie vocale. Les contraintes sont au centre de la reconnaissance vocale. Elles permettent à votre application de contrôler sa précision.
@@ -69,7 +69,7 @@ private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></
 
     We then catch any standard exceptions during recogntion and test if the [**HResult**](https://msdn.microsoft.com/library/windows/apps/br206579) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
 
-    <span codelanguage="CSharp"></span>
+    
 ```    CSharp
     <colgroup>
     <col width="100%" />
@@ -146,7 +146,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Customize_the_recognition_UI"></span><span id="customize_the_recognition_ui"></span><span id="CUSTOMIZE_THE_RECOGNITION_UI"></span>Personnaliser l’interface utilisateur de reconnaissance vocale
+## Personnaliser l’interface utilisateur de reconnaissance vocale
 
 
 Quand votre application tente une reconnaissance vocale en appelant la méthode [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), plusieurs écrans s’affichent dans l’ordre suivant.
@@ -203,7 +203,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 
 **Développeurs**
@@ -222,6 +222,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

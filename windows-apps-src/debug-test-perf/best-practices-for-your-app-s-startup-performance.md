@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: Meilleures pratiques en matière de performances lors du démarrage de votre application
-description: Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
+title: "Meilleures pratiques en matière de performances lors du démarrage de votre application"
+description: "Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation."
+ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
+ms.openlocfilehash: 46e78612c0f4391b9448ea9bd7a001722fb08a28
+
 ---
 # Meilleures pratiques en matière de performances lors du démarrage de votre application
 
@@ -261,7 +264,7 @@ Une application peut être activée pour plusieurs raisons, chacune pouvant êtr
 
 Les applications affichant une page de chargement dans le gestionnaire d’activation commencent à créer l’interface utilisateur en arrière-plan. Une fois que cet élément a été créé, l’événement [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) associé est déclenché. Dans le gestionnaire d’événements, vous remplacez le contenu de la fenêtre, à savoir la page de chargement, par la nouvelle page d’accueil.
 
-Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. Outre que cette page informe l’utilisateur sur la progression du processus d’activation, elle empêche que ce processus d’activation ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15 secondes suivant son lancement.
+Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. Outre le fait que cette page informe l’utilisateur sur la progression du processus d’activation, elle empêche que ce processus d’activation ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15 secondes suivant son lancement.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -359,6 +362,7 @@ C’est la raison pour laquelle nous vous conseillons d’utiliser la mise en ca
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général.
+description: "Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général."
 title: Attribut xName
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 442c2fa103e1e968ef47ea990bfe8e166daec88b
+
 ---
 
 # Attribut x&#58;Name
@@ -66,6 +70,7 @@ Si **Name** est disponible en tant que propriété définissable sur un élémen
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

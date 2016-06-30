@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Lancer l’application Contacts
-description: Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
+author: TylerMSFT
+title: "Lancer l’application Contacts"
+description: "Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques."
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
+
 ---
 
 # Lancer l’application Contacts
@@ -205,8 +208,6 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

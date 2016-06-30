@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Store de façon étendue.
-title: Distribuer des applications métier aux entreprises
+Description: "Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Store de façon étendue."
+title: "Distribuer des applications métier aux entreprises"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
+ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
+ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
+
 ---
 
 # Distribuer des applications métier aux entreprises
@@ -50,6 +53,8 @@ Pour plus d'informations, voir [Options de gestion des licences organisationnell
 
 Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de l'application s'exécute. À l'issue de ce processus, un administrateur de l'entreprise doit l'ajouter à son magasin privé dans le portail Windows Store pour Entreprises. L'entreprise peut alors déployer l'application à l'attention de ses utilisateurs.
 
+> **Remarque** Pour obtenir votre application métier, l’organisation doit se trouver dans un [marché pris en charge](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), et vous ne devez pas avoir exclu ce marché lors de la soumission de votre application. 
+
 Pour plus d'informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l'aide de votre magasin privé](http://go.microsoft.com/fwlink/p/?LinkId=698847).
 
 ### Mise à jour des applications métier
@@ -75,6 +80,7 @@ Pour plus d'informations, voir [Charger la version test d'applications métier d
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

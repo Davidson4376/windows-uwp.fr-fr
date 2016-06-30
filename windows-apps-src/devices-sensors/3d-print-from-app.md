@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: Impression 3D à partir de votre application
-description: Découvrez comment ajouter des fonctionnalités d’impression 3D à votre application Windows universelle. Cette rubrique explique comment lancer la boîte de dialogue d’impression 3D après s’être assuré que votre modèle 3D est imprimable et au format qui convient.
+title: "Impression 3D à partir de votre application"
+description: "Découvrez comment ajouter des fonctionnalités d’impression 3D à votre application Windows universelle. Cette rubrique explique comment lancer la boîte de dialogue d’impression 3D après s’être assuré que votre modèle 3D est imprimable et au format qui convient."
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
+translationtype: Human Translation
+ms.sourcegitcommit: 61d9f5c1fca1ad2e26f052b901361813975ae357
+ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
+
 ---
 
 # Impression 3D à partir de votre application
@@ -130,6 +134,7 @@ Enfin, il est conseillé de désinscrire vos gestionnaires d’événements une 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

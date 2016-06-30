@@ -1,9 +1,12 @@
 ---
-author: mcleblanc
-title: Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
-description: Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.
+author: TylerMSFT
+title: "Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan"
+description: "Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé."
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
+
 ---
 
 
@@ -30,7 +33,7 @@ La vidéo suivante montre comment ajouter des vignettes dynamiques à vos applic
 Pour activer une vignette dynamique pour votre application, ajoutez un nouveau projet de composant Windows Runtime à votre solution. Il s’agit d’un assembly distinct que le système d’exploitation charge et exécute en arrière-plan lorsqu’un utilisateur installe votre application.
 
 1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution, pointez sur **Ajouter**, puis cliquez ou appuyez sur **Nouveau projet**.
-2.  Dans la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez le modèle **Composant Windows Runtime** dans la section **Visual C# &gt; Windows Store**.
+2.  Dans la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez le modèle **Composant Windows Runtime** dans la section **Visual C# &gt; Windows Store**.
 3.  Nommez le projet BackgroundTasks, puis cliquez ou appuyez sur **OK**. Microsoft Visual Studio ajoute le nouveau projet à la solution.
 4.  Dans le projet principal, ajoutez une référence au projet BackgroundTasks.
 
@@ -63,7 +66,7 @@ namespace BackgroundTasks
     {
         public async void Run( IBackgroundTaskInstance taskInstance )
         {
-            // Get a deferral, to prevent the task from closing prematurely 
+            // Get a deferral, to prevent the task from closing prematurely
             // while asynchronous code is still running.
             BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
 
@@ -88,7 +91,7 @@ namespace BackgroundTasks
                 client.BypassCacheOnRetrieve = true;
                 client.SetRequestHeader( customHeaderName, customHeaderValue );
 
-                // Download the feed. 
+                // Download the feed.
                 feed = await client.RetrieveFeedAsync( new Uri( feedUrl ) );
             }
             catch( Exception ex )
@@ -106,7 +109,7 @@ namespace BackgroundTasks
             updater.EnableNotificationQueue( true );
             updater.Clear();
 
-            // Keep track of the number feed items that get tile notifications. 
+            // Keep track of the number feed items that get tile notifications.
             int itemCount = 0;
 
             // Create a tile notification for each feed item.
@@ -118,7 +121,7 @@ namespace BackgroundTasks
                 string titleText = title.Text == null ? String.Empty : title.Text;
                 tileXml.GetElementsByTagName( textElementName )[0].InnerText = titleText;
 
-                // Create a new tile notification. 
+                // Create a new tile notification.
                 updater.Update( new TileNotification( tileXml ) );
 
                 // Don't create more than 5 notifications.
@@ -126,8 +129,8 @@ namespace BackgroundTasks
             }
         }
 
-        // Although most HTTP servers do not require User-Agent header, others will reject the request or return 
-        // a different response if this header is missing. Use SetRequestHeader() to add custom headers. 
+        // Although most HTTP servers do not require User-Agent header, others will reject the request or return
+        // a different response if this header is missing. Use SetRequestHeader() to add custom headers.
         static string customHeaderName = "User-Agent";
         static string customHeaderValue = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
 
@@ -242,12 +245,12 @@ namespace ContosoApp
 Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans la méthode Run de la tâche. Dans la barre d’outils **Emplacement de débogage**, sélectionnez votre tâche en arrière-plan. Le système appelle immédiatement la méthode Run.
 
 1.  Définissez un point d’arrêt dans la méthode Run de la tâche.
-2.  Appuyez sur F5 ou sur **Déboguer &gt; Démarrer le débogage** pour déployer et exécuter l’application.
+2.  Appuyez sur F5 ou sur **Déboguer &gt; Démarrer le débogage** pour déployer et exécuter l’application.
 3.  Une fois l’application lancée, revenez à Visual Studio.
 4.  Vérifiez que la barre d’outils **Emplacement de débogage** est visible. Elle se trouve dans le menu **Affichage &gt; Barres d’outils**.
 5.  Dans la barre d’outils **Emplacement de débogage**, cliquez sur la liste déroulante **Interrompre** et sélectionnez **BlogFeedBackgroundTask**.
 6.  Visual Studio interrompt l’exécution au niveau du point d’arrêt.
-7.  Appuyez sur F5 ou sur **Déboguer &gt; Continuer** pour continuer à exécuter l’application.
+7.  Appuyez sur F5 ou sur **Déboguer &gt; Continuer** pour continuer à exécuter l’application.
 8.  Appuyez sur Maj+F5 ou sur **Déboguer &gt; Arrêter le débogage** pour arrêter le débogage.
 9.  Revenez à la vignette de l’application sur l’écran d’accueil. Après quelques secondes, les notifications par vignette apparaissent sur la vignette de votre application.
 
@@ -266,8 +269,6 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

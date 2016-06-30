@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Utilisez une info-bulle pour fournir plus d’informations sur un contrôle avant d’inviter l’utilisateur à effectuer une action.
+Description: "Utilisez une info-bulle pour fournir plus d’informations sur un contrôle avant d’inviter l’utilisateur à effectuer une action."
 title: Info-bulles
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 0529f212e9fac290bb58925e992518ab0e803bfa
+
 
 ---
 
@@ -70,6 +74,7 @@ Une info-bulle dans l’application Bing Cartes.
 * [**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

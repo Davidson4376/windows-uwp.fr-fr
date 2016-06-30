@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: Utilisez l’API d’analyse du Windows Store pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows.
-title: Accéder aux données d’analyse à l’aide des services du Windows Store
+description: "Utilisez l’API d’analyse du Windows Store pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows."
+title: "Accéder aux données d’analyse à l’aide des services du Windows Store"
+ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
+ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
+
 ---
 
 # Accéder aux données d’analyse à l’aide des services du Windows Store
@@ -35,18 +38,18 @@ Les étapes suivantes décrivent l’ensemble du processus :
 
 1.  Dans le Centre de développement, accédez aux **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**, et associez votre compte du Centre de développement à l’annuaire Azure AD de votre organisation. Pour obtenir des instructions détaillées, voir [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/library/windows/apps/mt489008). Vous pouvez éventuellement ajouter d’autres utilisateurs à partir de l’annuaire Azure AD de votre organisation afin qu’ils puissent également accéder au compte du Centre de développement.
 
-    **Remarque** Vous ne pouvez associer qu’un seul compte du Centre de développement à un service Azure Active Directory. De même, il n’est possible d’associer qu’un seul service Azure Active Directory à un compte du Centre de développement. Une fois cette association établie, vous ne pouvez plus la supprimer sans prendre contact avec le support.
+    > **Remarque** Vous ne pouvez associer qu’un seul compte du Centre de développement à un service Azure Active Directory. De même, il n’est possible d’associer qu’un seul service Azure Active Directory à un compte du Centre de développement. Une fois cette association établie, vous ne pouvez plus la supprimer sans prendre contact avec le support.
 
      
 
-2.  Sur la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications Azure AD**, ajoutez l’application Azure AD dont vous avez besoin pour accéder aux données d’analyse de votre compte du Centre de développement, puis affectez-lui le rôle **Gestionnaire**. Si cette application existe déjà dans votre annuaire Azure AD, vous pouvez la sélectionner dans **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD sur la page **Ajouter des applications Azure AD**. Pour en savoir plus, voir la section sur la gestion des applications Azure AD dans [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/library/windows/apps/mt489008).
+2.  Sur la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications Azure AD**, ajoutez l’application Azure AD qui représente l’application ou le service que vous utiliserez pour accéder aux données d’analyse de votre compte du Centre de développement, puis affectez-lui le rôle **Gestionnaire**. Si cette application existe déjà dans votre annuaire Azure AD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD sur la page **Ajouter des applications Azure AD**. Pour en savoir plus, voir la section sur la gestion des applications Azure AD dans [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/library/windows/apps/mt489008).
 
 3.  Revenez à la page **Gérer les utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres, puis cliquez sur **Ajouter une nouvelle clé**. Sur l’écran suivant, copiez les valeurs de l’**ID client** et de la **clé**. Pour en savoir plus, voir la section sur la gestion des applications Azure AD dans [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/library/windows/apps/mt489008). L’ID client et la clé permettent d’obtenir un jeton d’accès Azure AD à utiliser lors de l’appel de l’API d’analyse du Windows Store. Vous ne serez plus en mesure d’accéder à ces informations une fois que vous aurez quitté cette page.
 
 
 ### Obtenir un jeton d’accès Azure AD
 
-Après avoir associé l’application Azure AD à votre compte du Centre de développement et récupéré l’ID client et la clé de l’application, vous pouvez utiliser ces informations pour obtenir un jeton d’accès Azure AD. Vous avez besoin d’un jeton d’accès pour pouvoir appeler les méthodes dans l’API d’analyse du Windows Store.
+Après avoir associé l’application Azure AD à votre compte du Centre de développement et récupéré l’ID client et la clé de l’application, vous pouvez utiliser ces informations pour obtenir un jeton d’accès Azure AD. Vous avez besoin d’un jeton d’accès pour pouvoir appeler les méthodes dans l’API d’analyse du Windows Store. Après avoir créé un jeton d’accès, vous disposez de 60 minutes pour l’utiliser avant son expiration.
 
 Pour obtenir le jeton d’accès, suivez les instructions de [Appels de service à service à l’aide des informations d’identification du client](https://msdn.microsoft.com/library/azure/dn645543.aspx) pour envoyer une requête HTTP POST au point de terminaison Azure AD suivant.
 
@@ -108,9 +111,9 @@ namespace TestAnalyticsAPI
                     clientSecret,
                     scope).Result;
 
-            // This is your app's product ID. This ID is embedded in the app's listing link
-            // on the App identity page of the Dev Center dashboard.
-            string appID = "<your app's product ID>";
+            // This is your app's Store ID. This ID is available on
+            // the App identity page of the Dev Center dashboard.
+            string appID = "<your app's Store ID>";
 
             DateTime startDate = DateTime.Parse("08-01-2015");
             DateTime endDate = DateTime.Parse("11-01-2015");
@@ -237,6 +240,7 @@ L’API d’analyse du Windows Store renvoie les réponses d’erreur dans un ob
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

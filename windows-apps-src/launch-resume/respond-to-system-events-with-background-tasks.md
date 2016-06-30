@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Répondre aux événements système avec des tâches en arrière-plan
-description: Découvrez comment créer une tâche en arrière-plan qui répond aux événements SystemTrigger.
+author: TylerMSFT
+title: "Répondre aux événements système avec des tâches en arrière-plan"
+description: "Découvrez comment créer une tâche en arrière-plan qui répond aux événements SystemTrigger."
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
+
 ---
 
 # Répondre aux événements système avec des tâches en arrière-plan
@@ -49,13 +52,13 @@ Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite po
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Internet-based background task";
-    > 
+    >
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
     > ```cpp
     > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > String ^ taskName   = "Internet-based background task";
-    > 
+    >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
 
@@ -106,8 +109,6 @@ Les applications peuvent inscrire des tâches en arrière-plan qui répondent au
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

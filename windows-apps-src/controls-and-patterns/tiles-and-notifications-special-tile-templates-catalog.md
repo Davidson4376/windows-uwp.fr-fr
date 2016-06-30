@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives.
-title: Modèles de vignette spéciaux
+Description: "Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives."
+title: "Modèles de vignette spéciaux"
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
+
 ---
 
 # Modèles de vignette spéciaux
@@ -83,7 +87,7 @@ Le badge de la vignette se met à jour en conséquence.
 
 **Étape 5 : synthèse de tous les éléments**
 
-L’image suivante illustre la façon dont les différentes API et charges utiles sont associées à chacun des aspects du modèle de vignette Icônes. Une [notification par vignette](https://msdn.microsoft.com/library/windows/apps/hh779724) (qui contient les éléments &lt;binding&gt;) est utilisée pour spécifier le modèle Icônes et les ressources d’image ; une [notification de badge](https://msdn.microsoft.com/library/windows/apps/hh779719) spécifie la valeur numérique, et les propriétés de vignette contrôlent le nom d’affichage de la vignette, la couleur et plus encore.
+L’image suivante illustre la façon dont les différentes API et charges utiles sont associées à chacun des aspects du modèle de vignette Icônes. Une [notification par vignette](https://msdn.microsoft.com/library/windows/apps/hh779724) (qui contient les éléments &lt;binding&gt;) est utilisée pour spécifier le modèle Icônes et les ressources d’image ; une [notification de badge](https://msdn.microsoft.com/library/windows/apps/hh779719) spécifie la valeur numérique, et les propriétés de vignette contrôlent le nom d’affichage de la vignette, la couleur et plus encore.
 
 ![API et charges utiles associées au modèle de vignette Icônes](images/iconic-template-properties-info.png)
 
@@ -283,6 +287,7 @@ Pour envoyer la notification, voir [Choisir une méthode de remise de notificati
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

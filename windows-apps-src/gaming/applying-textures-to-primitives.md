@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Appliquer des textures aux primitives
-description: Nous chargeons des données brutes, appliquées à une primitive 3D avec le cube créé à la rubrique Utilisation de la profondeur et d’effets sur des primitives.
+description: "Nous chargeons des données brutes, appliquées à une primitive 3D avec le cube créé à la rubrique Utilisation de la profondeur et d’effets sur des primitives."
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 56e8bf524537526d639f4d732ab228f3c0ea75da
+
 ---
 
 # Appliquer des textures aux primitives
@@ -19,9 +23,9 @@ Dans cette rubrique, nous chargeons des données de texture brutes et les appliq
 
 Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
 
-Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : configuration de ressources DirectX et affichage d’une image](setting-up-directx-resources.md), [Création de nuanceurs et traçage de primitives](creating-shaders-and-drawing-primitives.md) et [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md).
+Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : configuration de ressources DirectX et affichage d’une image](setting-up-directx-resources.md), [Création de nuanceurs et traçage de primitives](creating-shaders-and-drawing-primitives.md) et [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md).
 
-**Durée de réalisation :** 20 minutes.
+**Durée de réalisation :** 20 minutes.
 
 Instructions
 ------------
@@ -522,6 +526,7 @@ Nous avons chargé les données de texture brutes et les avons appliquées à un
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

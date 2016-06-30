@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Le rapport sur les commentaires du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows 10 par le biais du Hub de commentaires.
+Description: "Le rapport sur les commentaires du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows 10 par le biais du Hub de commentaires."
 title: Rapport sur les commentaires
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
+translationtype: Human Translation
+ms.sourcegitcommit: 4e857ec7ee98459afdd0d8ec85b5ec3a761049f3
+ms.openlocfilehash: 9ad3025f7890de3677801b309b6714b1b46a0607
+
 ---
 
 # Rapport sur les commentaires
@@ -52,6 +56,7 @@ Notez que les commentaires sont traduits par un système de traduction automatiq
 Comme indiqué plus haut, nous vous recommandons d’intégrer un lien direct vers le Hub de commentaires directement dans votre application afin d’inciter les clients à envoyer leurs commentaires. Pour plus d’informations, voir [Lancer le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

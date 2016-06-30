@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 5cde1c22-91fd-4f5c-ac82-32efaa0d9fee
-description: Utilisez les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft pour afficher des bannières et spots vidéo publicitaires dans vos applications XAML ou HTML/JavaScript.
-title: Afficher des publicités à l’aide des bibliothèques de publicités Microsoft
+description: "Utilisez les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft pour afficher des bannières et spots vidéo publicitaires dans vos applications XAML ou HTML/JavaScript."
+title: "Afficher des publicités à l’aide des bibliothèques de publicités Microsoft"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ab96dac3af382d334c767ad42a563c0dbc67a8f5
+
 ---
 
 # Afficher des publicités à l’aide des bibliothèques de publicités Microsoft
@@ -47,6 +51,7 @@ Les rubriques suivantes fournissent des informations sur les tâches courantes i
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,7 +1,11 @@
 ---
-title: Déverrouillage Windows avec appareils (IoT) complémentaires
-description: Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure Companion Device Framework, un dispositif complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
+title: "Déverrouillage Windows avec appareils (IoT) complémentaires"
+description: "Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure Companion Device Framework, un dispositif complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales)."
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: a6265ca66a1a9d729465845da1014d1aff0e7d4d
+ms.openlocfilehash: 18102d6277ff1c66ebd147b5c1fd2f2d6c91edd1
+
 ---
 # Déverrouillage Windows avec appareils (IoT) complémentaires
 
@@ -676,6 +680,7 @@ Ces protections de sécurité sont possibles grâce à la protection des clés 
 - La garantie de l’existence du signal de présence de l’utilisateur.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

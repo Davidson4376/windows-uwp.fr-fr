@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
-title: Suivre les fichiers et dossiers récemment utilisés
-description: Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application.
+title: "Suivre les fichiers et dossiers récemment utilisés"
+description: "Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
+
 ---
 # Suivre les fichiers et dossiers récemment utilisés
 
@@ -106,6 +110,7 @@ Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à vo
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

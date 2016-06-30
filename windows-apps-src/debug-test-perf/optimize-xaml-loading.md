@@ -2,7 +2,11 @@
 author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: Optimiser votre balisage XAML
-description: L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML, ainsi que l’efficacité du temps de chargement et de la mémoire de votre application.
+description: "L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML, ainsi que l’efficacité du temps de chargement et de la mémoire de votre application."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c2131b084d8bb989f1f7767f54db697e1cdd8dcf
+
 ---
 # Optimiser votre balisage XAML
 
@@ -286,6 +290,7 @@ Pour vérifier si vous possédez XBF2, ouvrez votre application dans un éditeur
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

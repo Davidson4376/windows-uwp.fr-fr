@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Voici quelques solutions à plusieurs problèmes de développement courants liés à la médiation publicitaire.
-title: Résoudre les problèmes liés à la médiation publicitaire
+Description: "Voici quelques solutions à plusieurs problèmes de développement courants liés à la médiation publicitaire."
+title: "Résoudre les problèmes liés à la médiation publicitaire"
 ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
+translationtype: Human Translation
+ms.sourcegitcommit: 10dcf3c2b8ea530b94e9c17ada80aaa98e9418fe
+ms.openlocfilehash: f32dc28c9b199c11a1932639f49ab4c29d3e1e8f
+
 ---
 
 # Résoudre les problèmes liés à la médiation publicitaire
@@ -15,10 +19,10 @@ Voici quelques solutions à plusieurs problèmes de développement courants lié
 **Vous ne pouvez pas ajouter de contrôle AdMediatorControl à l’aire de conception.**  
 Lorsque vous faites glisser le contrôle **AdMediatorControl** vers le concepteur pour la première fois dans un projet UWP, Windows 8.1 ou Windows Phone 8.1 en C# ou Visual Basic avec XAML, Visual Studio ajoute la référence appropriée d’assembly Ad Mediator à votre projet, mais le contrôle n’est, à ce stade, pas encore ajouté au concepteur. Pour ajouter le contrôle, cliquez sur OK dans le message apparaissant dans Visual Studio, attendez quelques secondes que le concepteur s’actualise, puis faites glisser de nouveau le contrôle vers le concepteur.
 
-Si vous ne réussissez toujours pas à ajouter le contrôle dans le concepteur, vérifiez que votre projet cible l’architecture de processeur requise par votre application (par exemple, **x86**), et non pas **Toute CPU**. Le contrôle ne peut pas être ajouté au concepteur si le projet cible **Toute CPU** pour la plateforme de génération.
+Si vous ne réussissez toujours pas à ajouter le contrôle dans le concepteur, vérifiez que votre projet cible l’architecture de processeur requise par votre application (par exemple, **x86**), et non pas **Toute CPU**. Le contrôle ne peut pas être ajouté au concepteur si le projet cible **Toute UC** pour la plateforme de génération.
 
 *
-            *L’élément AdMediatorControl indique l’erreur « &lt;*largeur* &gt; x &lt;*hauteur*&gt; non pris en charge » au moment de l’exécution lorsque la fourniture de publicités à partir de Microsoft**Microsoft Advertising ne prend en charge que [certaines tailles de publicités recommandées par l’IAB (Interactive Advertising Bureau)](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising). Dans certains cas, même si vous définissez la hauteur et la largeur du contrôle ad mediator dans le concepteur ou dans votre code XAML sur l’une de ces tailles de publicités prises en charge, des problèmes d’arrondi et de mise à l’échelle peuvent empêcher l’infrastructure de médiation publicitaire de fournir une publicité. Pour éviter ce problème, définissez les paramètres facultatifs **Largeur**et**Hauteur** de Microsoft Advertising dans votre code sur l’une des tailles de publicités prises en charge.
+            *L’élément AdMediatorControl indique l’erreur « &lt;*largeur* &gt; x &lt;*hauteur*&gt; non pris en charge » au moment de l’exécution lorsque la fourniture de publicités à partir de Microsoft**Microsoft Advertising ne prend en charge que [certaines tailles de publicités recommandées par l’IAB (Interactive Advertising Bureau)](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising). Dans certains cas, même si vous définissez la hauteur et la largeur du contrôle ad mediator dans le concepteur ou dans votre code XAML sur l’une de ces tailles de publicités prises en charge, des problèmes d’arrondi et de mise à l’échelle peuvent empêcher l’infrastructure de médiation publicitaire de fournir une publicité. Pour éviter ce problème, définissez les paramètres facultatifs**Largeur**et**Hauteur** de Microsoft Advertising dans votre code sur l’une des tailles de publicités prises en charge.
 
 L’exemple de code suivant explique comment affecter les paramètres facultatifs **Largeur** et **Hauteur** associés à Microsoft Advertising sur 728 x 90.
 
@@ -69,6 +73,7 @@ Si vous modifiez la valeur **RefreshRate** dans le fichier AdMediator.config, ga
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

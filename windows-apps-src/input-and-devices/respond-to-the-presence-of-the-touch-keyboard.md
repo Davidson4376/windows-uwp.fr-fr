@@ -5,8 +5,8 @@ title: "Répondre à la présence du clavier tactile"
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
 
 ---
 
@@ -47,7 +47,7 @@ Si vous débutez dans le développement d’applications de plateforme Windows u
 
 Pour obtenir de précieux conseils concernant la conception d’une application optimisée pour la saisie au clavier à la fois utile et conviviale, voir [Recommandations en matière de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345).
 
-## <span id="Touch_keyboard_and_a_custom_UI"></span><span id="touch_keyboard_and_a_custom_ui"></span><span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"></span>Clavier tactile et interface utilisateur personnalisée
+## Clavier tactile et interface utilisateur personnalisée
 
 
 Voici quelques recommandations de base concernant les contrôles de saisie de texte personnalisés.
@@ -70,7 +70,7 @@ Voici quelques recommandations de base concernant les contrôles de saisie de te
 
     ![formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
 
-## <span id="handling_events"></span><span id="HANDLING_EVENTS"></span>Gestion des événements d’affichage et de masquage
+## Gestion des événements d’affichage et de masquage
 
 
 Voici un exemple d’association de gestionnaires d’événements pour les événements [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) et [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) du clavier tactile.
@@ -123,7 +123,7 @@ public class MyApplication
 }
 ```
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 * [Interactions avec le clavier](keyboard-interactions.md)
 * [Accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -145,6 +145,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

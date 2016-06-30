@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
-title: Recommandations en matière de marketing adapté aux applications du Windows Store
+Description: "Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique."
+title: "Recommandations en matière de marketing adapté aux applications du Windows Store"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 64c6dd45053070096ff7d7e932bac1c560194518
+
 ---
 
 # Recommandations en matière de marketing adapté aux applications du Windows Store
@@ -53,6 +57,7 @@ Microsoft est l’unique propriétaire des Marques Microsoft et de son actif inc
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau.
-title: Transferts en arrière-plan
+description: "Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau."
+title: "Transferts en arrière-plan"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
+
 ---
 
 # Transferts en arrière-plan
@@ -37,7 +41,7 @@ Le transfert en arrière-plan fournit des méthodes qui prennent en charge les i
 
 La fonctionnalité de transfert en arrière-plan garantit une démarche cohérente pour chaque opération de transfert en cas de modification de l’état du réseau. Pour cela, elle exploite intelligemment les informations sur l’état de la connectivité et du forfait données de l’opérateur fournies par la fonctionnalité [Connectivité](https://msdn.microsoft.com/library/windows/apps/hh452990). Afin de définir un comportement pour des scénarios réseau différents, une application définit une stratégie de coût pour chaque opération de transfert à l’aide de valeurs définies par [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138).
 
-Par exemple, la stratégie de coût définie pour une opération peut indiquer que l’opération doit être automatiquement suspendue lorsque l’appareil exploite une connexion réseau limitée. Le transfert reprend (ou redémarre) automatiquement ensuite dès qu’une connexion à un réseau « non restreint » est établie. Pour plus d’informations sur le mode de définition par coût des réseaux, voir [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292).
+Par exemple, la stratégie de coût définie pour une opération peut indiquer que l’opération doit être automatiquement suspendue lorsque l’appareil exploite une connexion réseau limitée. Le transfert reprend (ou redémarre) automatiquement ensuite dès qu’une connexion à un réseau « non restreint » est établie. Pour plus d’informations sur le mode de définition par coût des réseaux, voir [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292).
 
 Bien que la fonctionnalité de transfert en arrière-plan possède ses propres mécanismes pour gérer les modifications de l’état du réseau, d’autres considérations générales ayant trait à la connectivité des applications connectées au réseau sont à prendre en compte. Pour plus d’informations, voir [Exploitation des informations de connexion réseau disponibles](https://msdn.microsoft.com/library/windows/apps/hh452983).
 
@@ -76,9 +80,9 @@ Avant de commencer avec la création d’un objet [**UploadOperation**](https://
 
 Dans l’étape qui précède, les valeurs *uriString* et *file* sont transmises à une instance de notre exemple suivant, UploadOp, où elles sont utilisées pour configurer et lancer la nouvelle opération de chargement. Pour commencer, la valeur *uriString* est analysée afin de créer l’objet [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) requis.
 
-Ensuite, les propriétés de l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) fourni  (*file*) sont utilisées par la classe [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) pour remplir l’en-tête de la demande et définir la propriété *SourceFile* à l’aide de l’objet **StorageFile**. La méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) est ensuite appelée pour insérer le nom de fichier, fourni comme chaîne, et la propriété [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220).
+Ensuite, les propriétés de l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) fourni (*file*) sont utilisées par la classe [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) pour remplir l’en-tête de la demande et définir la propriété *SourceFile* à l’aide de l’objet **StorageFile**. La méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) est ensuite appelée pour insérer le nom de fichier, fourni comme chaîne, et la propriété [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220).
 
-Pour finir, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) crée l’objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*.
+Pour finir, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) crée l’objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*).
 
 [!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Créer et initialiser l’opération de chargement")]
 
@@ -312,6 +316,7 @@ Pour les erreurs de validation de paramètre, une application peut également ut
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

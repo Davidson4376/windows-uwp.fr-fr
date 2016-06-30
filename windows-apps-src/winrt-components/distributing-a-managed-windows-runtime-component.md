@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: Distribution d’un composant Windows Runtime managé
+author: msatranjr
+title: "Distribution d’un composant Windows Runtime managé"
 description: Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers.
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 3d7a51ed13f63ca9d6070fbbe860c653c4deaf07
+
 ---
 
 
@@ -10,9 +13,6 @@ ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 
 
 \[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers. Toutefois, si votre composant comporte de nombreux fichiers, l’installation peut être fastidieuse pour vos utilisateurs. En outre, des erreurs de placement des fichiers ou l’impossibilité de définir les références peuvent leur occasionner des problèmes. Vous pouvez empaqueter un composant complexe sous la forme d’un kit de développement logiciel (SDK) d’extension Visual Studio pour en faciliter l’installation et l’utilisation. Les utilisateurs doivent uniquement définir une référence pour le package entier. Ils peuvent facilement localiser et installer votre composant à l’aide de la boîte de dialogue **Extensions et mises à jour**, comme indiqué dans l’article [Recherche et utilisation des extensions Visual Studio](https://msdn.microsoft.com/library/vstudio/dd293638.aspx) de MSDN Library.
 
@@ -75,6 +75,6 @@ Un composant complexe inclut généralement des ressources Windows, mais reporte
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

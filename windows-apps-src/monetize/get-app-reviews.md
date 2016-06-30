@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
-description: Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs.
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs."
 title: Obtenir les avis sur les applications
+ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
+ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
+
 ---
 
 # Obtenir les avis sur les applications
@@ -38,7 +41,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
 
  
 
@@ -63,7 +66,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">chaîne</td>
-<td align="left">ID produit de l’application pour laquelle vous souhaitez récupérer les avis. L’ID produit est intégré dans le lien de la description de l’application, disponible dans la [page Identité des applications](https://msdn.microsoft.com/library/windows/apps/mt148561) du tableau de bord du Centre de développement. Exemple d’ID produit : 9WZDNCRFJ3Q8.</td>
+<td align="left">L’ID Windows Store pour l’application pour laquelle vous souhaitez récupérer les avis. L’ID Windows Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="even">
@@ -99,7 +102,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="odd">
 <td align="left">orderby</td>
 <td align="left">chaîne</td>
-<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque avis. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
+<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque avis. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
 <ul>
 <li><strong>date</strong></li>
 <li><strong>osVersion</strong></li>
@@ -123,7 +126,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <li><strong>rating</strong></li>
 </ul>
 <p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p>
-<p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
+<p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
 <td align="left">Non</td>
 </tr>
 </tbody>
@@ -190,7 +193,7 @@ Pour obtenir une liste des champs pris en charge et des opérateurs associés à
 <tr class="even">
 <td align="left">isRevised</td>
 <td align="left">eq, ne</td>
-<td align="left">Spécifiez la valeur <strong>true</strong> pour filtrer les avis révisés ; sinon, définissez la valeur <strong>false</strong>.</td>
+<td align="left">Spécifiez la valeur <strong>true</strong> pour filtrer les avis révisés ; sinon, définissez la valeur <strong>false</strong>.</td>
 </tr>
 <tr class="odd">
 <td align="left">packageVersion</td>
@@ -219,12 +222,12 @@ Pour obtenir une liste des champs pris en charge et des opérateurs associés à
 <tr class="even">
 <td align="left">deviceScreenResolution</td>
 <td align="left">eq, ne</td>
-<td align="left">Résolution de l’écran de l’appareil, au format &quot;<em>largeur</em> x <em>hauteur</em>&quot;.</td>
+<td align="left">Résolution de l’écran de l’appareil, au format &quot;<em>largeur</em> x <em>hauteur</em>&quot;.</td>
 </tr>
 <tr class="odd">
 <td align="left">isTouchEnabled</td>
 <td align="left">eq, ne</td>
-<td align="left">Spécifiez la valeur <strong>true</strong> pour filtrer les appareils tactiles ; sinon, définissez la valeur <strong>false</strong>.</td>
+<td align="left">Spécifiez la valeur <strong>true</strong> pour filtrer les appareils tactiles ; sinon, définissez la valeur <strong>false</strong>.</td>
 </tr>
 <tr class="even">
 <td align="left">reviewerName</td>
@@ -283,7 +286,7 @@ Pour obtenir une liste des champs pris en charge et des opérateurs associés à
 
 ### Exemple de requête
 
-Les exemples suivants illustrent plusieurs requêtes de récupération des avis. Remplacez la valeur *applicationId* par l’ID produit de votre application.
+Les exemples suivants illustrent plusieurs requêtes de récupération des avis. Remplacez la valeur *applicationId* par l’ID Windows Store de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -312,7 +315,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 | Valeur                  | Type    | Description                                                                                                                                                                                                                          |
 |------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                   | chaîne  | Première date dans la plage de dates de classification. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
-| applicationId          | chaîne  | L’ID produit de l’application pour laquelle vous récupérez les données de classification.                                                                                                                                                                 |
+| applicationId          | chaîne  | L’ID Windows Store de l’application pour laquelle vous récupérez les données de classification.                                                                                                                                                                 |
 | applicationName        | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                         |
 | market                 | chaîne  | Le code pays ISO 3166 du marché dans lequel la classification a été soumise.                                                                                                                                                              |
 | osVersion              | chaîne  | La version du système d’exploitation sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                               |
@@ -383,6 +386,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

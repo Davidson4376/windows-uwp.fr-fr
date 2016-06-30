@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Ajoutez des utilisateurs à votre compte du Centre de développement, affectez-leur des rôles avec des autorisations spécifiques.
-title: Gérer des utilisateurs de compte
+Description: "Ajoutez des utilisateurs à votre compte du Centre de développement, affectez-leur des rôles avec des autorisations spécifiques."
+title: "Gérer des utilisateurs de compte"
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
+translationtype: Human Translation
+ms.sourcegitcommit: 3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1
+ms.openlocfilehash: 18e25d0064652089d450eec811a7a5d24b8dc3e8
+
 ---
 
 # Gérer des utilisateurs de compte
@@ -225,6 +229,7 @@ Pour supprimer un utilisateur, un groupe ou une application Azure AD de votre co
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

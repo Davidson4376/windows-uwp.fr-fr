@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
-description: Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide.
-title: Contrôles de l’appareil de capture pour la photo et la vidéo
+description: "Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide."
+title: "Contrôles de l’appareil de capture pour la photo et la vidéo"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
+
 ---
 
 # Contrôles de l’appareil de capture pour la photo et la vidéo
@@ -332,6 +336,7 @@ Définissez le niveau de zoom sur l’appareil de capture en créant un objet [*
 * [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

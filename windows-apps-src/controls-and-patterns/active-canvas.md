@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Modèle comportant une zone de contenu et une zone de commande destiné aux applications à affichage unique ou aux expériences modales, telles que les éditeurs/visionneuses de photos, les visionneuses de documents, les applications cartographiques, les applications de dessin ou les autres applications qui utilisent un affichage à défilement libre.
-title: Recommandations concernant le modèle de Canvas actif
+Description: "Modèle comportant une zone de contenu et une zone de commande destiné aux applications à affichage unique ou aux expériences modales, telles que les éditeurs/visionneuses de photos, les visionneuses de documents, les applications cartographiques, les applications de dessin ou les autres applications qui utilisent un affichage à défilement libre."
+title: "Recommandations concernant le modèle de Canvas actif"
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 490c45fb8dc565e4ae0b890d26f28d698b58f255
+
 ---
 #Modèle de Canvas actif
 
@@ -36,6 +40,7 @@ Un modèle de Canvas actif comporte une zone de contenu et une zone de commande.
 -   [**Barre de l’application et barre de commandes**](app-bars.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

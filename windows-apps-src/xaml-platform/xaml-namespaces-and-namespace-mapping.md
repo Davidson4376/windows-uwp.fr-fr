@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Cette rubrique fournit des explications sur les mappages d’espaces de noms XML/XAML (xmlns) tels qu’ils existent dans l’élément racine de la plupart des fichiers XAML. Elle explique également comment produire des mappages similaires pour les assemblys et les types personnalisés.
-title: Espaces de noms XAML et mappage d’espaces de noms
+description: "Cette rubrique fournit des explications sur les mappages d’espaces de noms XML/XAML (xmlns) tels qu’ils existent dans l’élément racine de la plupart des fichiers XAML. Elle explique également comment produire des mappages similaires pour les assemblys et les types personnalisés."
+title: "Espaces de noms XAML et mappage d’espaces de noms"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
+translationtype: Human Translation
+ms.sourcegitcommit: 3ca9492b334bf4b3d4f0fcab8fca5625f4e23fa5
+ms.openlocfilehash: fe24a66836d85e8d102ebc6b23b42c32a687c593
+
 ---
 
 # Espaces de noms XAML et mappage d’espaces de noms
@@ -109,6 +113,7 @@ Si vous référencez des propriétés jointes, la partie du type de propriétair
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

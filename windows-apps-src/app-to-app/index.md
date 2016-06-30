@@ -1,8 +1,12 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: Cette section explique comment partager des données entre des applications UWP, notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer.
+description: "Cette section explique comment partager des données entre des applications UWP, notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer."
 title: Communication entre les applications
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: dcd542257761083f3ec04eb0da2b13d5d68a19e2
+ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
+
 ---
 
 # Communication entre les applications
@@ -28,6 +32,7 @@ Outre le contrat de partage, les applications peuvent également intégrer des t
 | [Utiliser EDP pour protéger les données d’entreprise transférées entre les applications](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs au transfert de fichiers les plus courants. |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

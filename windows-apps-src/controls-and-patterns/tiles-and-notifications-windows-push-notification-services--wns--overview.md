@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Les services de notifications Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs.
-title: Vue d’ensemble des services de notifications Push Windows (WNS)
+Description: "Les services de notifications Push Windows (WNS) permettent aux développeurs tiers d’envoyer des mises à jour de toast, de vignette et de badge, ainsi que des mises à jour brutes à partir de leur propre service cloud. Il en résulte un mécanisme fiable et optimal de remise des nouvelles mises à jour aux utilisateurs."
+title: "Vue d’ensemble des services de notifications Push Windows (WNS)"
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 32471f23bf10a8430db6c6bd1376f1f7aa6c784c
+
 ---
 
 # Vue d’ensemble des services de notifications Push Windows (WNS)
@@ -163,7 +167,7 @@ L’économiseur de batterie prolonge l’autonomie en limitant l’activité en
 
 Il n’existe aucun moyen de vérifier l’état de ces deux paramètres, mais vous pouvez vérifier l’état de l’économiseur de batterie. Dans Windows 10, utilisez la propriété [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) pour vérifier l’état de l’économiseur de batterie. Votre application peut également utiliser l’événement [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) pour détecter les changements d’état de l’économiseur de batterie.
 
-Si votre application s’appuie en grande partie sur les notifications Push, nous vous recommandons d’avertir les utilisateurs qu’ils risquent de ne pas recevoir de notifications lorsque l’économiseur de batterie est activé, et de leur faciliter l’accès aux **paramètres de l’économiseur de batterie**. À l’aide du schéma d’URI des paramètres de l’économiseur de batterie dans Windows 10, `ms-settings:batterysaver-settings`, vous pouvez fournir un lien d’accès pratique vers l’application Paramètres.
+Si votre application s’appuie en grande partie sur les notifications Push, nous vous recommandons d’avertir les utilisateurs qu’ils risquent de ne pas recevoir de notifications lorsque l’économiseur de batterie est activé, et de leur faciliter l’accès aux **paramètres de l’économiseur de batterie**. À l’aide du schéma d’URI des paramètres de l’économiseur de batterie dans Windows 10, `ms-settings:batterysaver-settings`, vous pouvez fournir un lien d’accès pratique vers l’application Paramètres.
 
 **Conseil** Lorsque vous avertissez l’utilisateur à propos des paramètres de l’économiseur de batterie, nous vous recommandons d’offrir une option permettant de ne plus afficher le message à l’avenir. Par exemple, la case à cocher `dontAskMeAgainBox` dans l’exemple suivant conserve la préférence de l’utilisateur dans [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622).
 
@@ -262,6 +266,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

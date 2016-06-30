@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Un namescope XAML stocke les relations entre les noms définis en XAML des objets et leurs instances équivalentes. Ce concept est similaire à celui dont la signification plus large correspond au terme namescope dans d’autres langages et technologies de programmation.
+description: "Un namescope XAML stocke les relations entre les noms définis en XAML des objets et leurs instances équivalentes. Ce concept est similaire à celui dont la signification plus large correspond au terme namescope dans d’autres langages et technologies de programmation."
 title: Namescopes XAML
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b8b833f40bc38799acc8813d38ddea63426f05b3
+
 ---
 
 # Namescopes XAML
@@ -39,7 +43,7 @@ Si vous appelez [**FindName**](https://msdn.microsoft.com/library/windows/apps/b
 
 Ce problème de namescope XAML discret affecte uniquement la recherche d’objets par nom dans des namescopes XAML dans le cadre de l’utilisation de l’appel [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715).
 
-Pour obtenir les références à des objets définis dans un autre namescope XAML, vous pouvez utiliser plusieurs techniques :
+Pour obtenir les références à des objets définis dans un autre namescope XAML, vous pouvez utiliser plusieurs techniques :
 
 -   Parcourez toute l’arborescence par étapes discrètes avec la propriété [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) et/ou les propriétés de collection connues pour exister dans la structure de votre arborescence d’objets (telle que la collection renvoyée par [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514)).
 -   Si vous appelez depuis un namescope XAML discret alors que vous souhaitez le namescope XAML racine, il est toujours facile d’obtenir une référence à la fenêtre principale actuellement affichée. Vous pouvez obtenir la racine visuelle (l’élément XAML racine, également connu sous le nom de source de contenu) depuis la fenêtre d’application actuelle dans une seule ligne de code à l’aide de l’appel `Window.Current.Content`. Vous pouvez alors effectuer un transtypage vers [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) et appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) depuis cette étendue.
@@ -82,6 +86,7 @@ En raison des namescopes XAML distincts, la recherche d’éléments nommés au 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

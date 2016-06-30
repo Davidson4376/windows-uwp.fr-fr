@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Assure la navigation de niveau supérieur tout en économisant l’espace de l’écran.
-title: Recommandations en matière de volets de navigation
+Description: "Assure la navigation de niveau supérieur tout en économisant l’espace de l’écran."
+title: "Recommandations en matière de volets de navigation"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
+
 ---
 
 Volets de navigation
@@ -111,6 +115,7 @@ Pour optimiser [l’expérience d’interface utilisateur à 3 m](http://go.mic
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

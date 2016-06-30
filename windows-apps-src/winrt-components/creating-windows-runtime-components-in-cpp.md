@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: Création de composants Windows Runtime en C++
-description: Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application UWP générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++.
+author: msatranjr
+title: "Création de composants Windows Runtime en C++"
+description: "Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application UWP générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++."
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
+
 ---
 
 
@@ -10,9 +13,6 @@ ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application Windows universelle générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++.
 
@@ -57,7 +57,7 @@ public:
     double LogCalc(double input)
     {
         // Use C++ standard library as usual.
-        return std::log(input); 
+        return std::log(input);
     }
 
 };
@@ -97,7 +97,7 @@ public:
     double LogCalc(double input)
     {
         // Use C++ standard library as usual.
-        return std::log(input); 
+        return std::log(input);
     }
 ```
 
@@ -126,7 +126,7 @@ namespace CppComponent
     private:
         PlayerData m_player;
     public:
-        property PlayerData PlayerStats 
+        property PlayerData PlayerStats
         {
             PlayerData get(){ return m_player; }
             void set(PlayerData data) {m_player = data;}
@@ -185,7 +185,7 @@ private void GetAndSetPlayerData()
 La classe ref publique C++ peut contenir des méthodes surchargées, mais la capacité de JavaScript de différencier les méthodes surchargées est limitée. Par exemple, il peut faire la différence entre les signatures suivantes :
 
 ```cpp
-public ref class NumberClass sealed 
+public ref class NumberClass sealed
 {
 public:
     int GetNumber(int i);
@@ -333,7 +333,7 @@ private void SortListItems()
 //#include <collection.h>
 Windows::Foundation::Collections::IMap<int, Platform::String^> ^GetMap(void)
 {    
-    Windows::Foundation::Collections::IMap<int, Platform::String^> ^ret = 
+    Windows::Foundation::Collections::IMap<int, Platform::String^> ^ret =
         ref new Platform::Collections::Map<int, Platform::String^>;
     ret->Insert(1, "One ");
     ret->Insert(2, "Two ");
@@ -383,7 +383,7 @@ public:
     property int PropertyA
     {
         int get() { return m_propertyAValue; }
-        void set(int propertyAValue) 
+        void set(int propertyAValue)
         {
             if (propertyAValue != m_propertyAValue)
             {
@@ -597,6 +597,6 @@ Si vous supprimez un projet de composant Windows Runtime C++ dans une solution, 
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

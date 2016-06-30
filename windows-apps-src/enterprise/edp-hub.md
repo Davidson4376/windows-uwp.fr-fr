@@ -1,10 +1,14 @@
 ---
 author: mcleblanc
-Description: 'Cette rubrique fournit un aperçu complet du point de vue développeurs de la manière dont la fonctionnalité de protection des données d’entreprise (EDP) est liée aux fichiers, aux mémoires tampons, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées.'
-MS-HAID: 'dev\_enterprise.edp\_hub'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Cette rubrique fournit un aperçu complet du point de vue développeurs de la manière dont la fonctionnalité de protection des données d’entreprise (EDP) est liée aux fichiers, aux mémoires tampons, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées."
+MS-HAID: dev\_enterprise.edp\_hub
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'Protection des données d’entreprise (EDP, Enterprise Data Protection)'
+title: "Protection des données d’entreprise (EDP, Enterprise Data Protection)"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 97bdbce8360fabad63f9fe7e85e5172ccd83f403
+
 ---
 
 # Protection des données d’entreprise (EDP, Enterprise Data Protection)
@@ -375,6 +379,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.c
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

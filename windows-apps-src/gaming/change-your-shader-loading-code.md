@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Comparer le pipeline nuanceur d’OpenGL ES 2.0 à celui de Direct3D
-description: D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0.
+title: "Comparer le pipeline nuanceur d’OpenGL ES 2.0 à celui de Direct3D"
+description: "D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0."
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: bc13df5e7f2648897be31b5cda634d23ffae8b6b
+
 ---
 
 # Comparer le pipeline nuanceur d’OpenGL ES 2.0 à celui de Direct3D
@@ -249,6 +253,7 @@ Pour plus d’informations sur l’utilisation de la sémantique avec Direct3D, 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

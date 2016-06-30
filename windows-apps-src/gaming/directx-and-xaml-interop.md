@@ -3,6 +3,10 @@ author: mtoepke
 title: Technologie interop DirectX et XAML
 description: Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu de plateforme Windows universelle (UWP).
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 97e694ae2fb8af30a35aa9ebdb714db50a506e6c
+
 ---
 
 # Technologie interop DirectX et XAML
@@ -290,7 +294,7 @@ Il existe par ailleurs des recommandations générales à suivre au moment de co
 
  
 
-Voici le processus de base de création et de mise à jour d’un objet [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) dans le code-behind :
+Voici le processus de base de création et de mise à jour d’un objet [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) dans le code-behind :
 
 1.  Obtenez une instance d’un panneau de chaîne de permutation pour votre application. Les instances sont indiquées dans votre code XAML par la balise `<SwapChainPanel>`.
 
@@ -382,6 +386,7 @@ Voici le processus de base de création et de mise à jour d’un objet [**SwapC
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

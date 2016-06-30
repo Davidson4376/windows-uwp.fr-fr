@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Notions de base de l’exemple Marble Maze
-description: Ce document présente les principales caractéristiques du projet Marble Maze, notamment la façon dont il utilise Visual C++ dans l’environnement Windows Runtime, mais également la façon dont il est créé, structuré et généré.
+title: "Notions de base de l’exemple Marble Maze"
+description: "Ce document présente les principales caractéristiques du projet Marble Maze, notamment la façon dont il utilise Visual C++ dans l’environnement Windows Runtime, mais également la façon dont il est créé, structuré et généré."
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
+
 ---
 
 # Notions de base de l’exemple Marble Maze
@@ -69,7 +73,7 @@ Windows Runtime est une interface de programmation permettant de créer des appl
 Afin d’appeler les API Windows Runtime à partir des langages JavaScript et .NET, ces langages nécessitent des projections spécifiques à chaque environnement de langage. Quand vous appelez une API Windows Runtime à partir du langage JavaScript ou .NET, vous invoquez la projection, laquelle appelle à son tour la fonction ABI sous-jacente. Bien que vous puissiez également appeler les fonctions ABI directement à partir du langage C++, Microsoft fournit également des projections pour C++, car elles permettent de consommer nettement plus facilement les API Windows Runtime, tout en maintenant de hautes performances. Microsoft fournit également des extensions de langage pour Visual C++ qui prennent en charge spécifiquement les projections Windows Runtime. Plusieurs de ces extensions de langage présentent une syntaxe similaire à celle du langage C++/CLI. Toutefois, au lieu de cibler l’environnement CLR (Common Langage Runtime), les applications natives utilisent cette syntaxe pour cibler Windows Runtime. Le modificateur de référence d’objet, ou accent circonflexe (^), est un élément important de cette nouvelle syntaxe, car il permet l’effacement automatique des objets d’exécution au moyen du décompte de références. Au lieu d’appeler des méthodes telles que **AddRef** et **Release** pour gérer la durée de vie d’un objet Windows Runtime, le runtime supprime l’objet quand aucun autre composant ne le référence, par exemple lorsqu’il quitte l’étendue ou que vous attribuez la valeur **nullptr** à toutes les références. Une autre part importante de l’utilisation de Visual C++ pour créer des applications UWP relève du mot-clé **ref new**. Utilisez **ref new** à la place de **new** pour créer des objets Windows Runtime avec décompte des références. Pour plus d’informations, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822).
 
 > **Important**  
-Vous devez uniquement utiliser **^** et **ref new** quand vous créez des objets ou des composants Windows Runtime. La syntaxe C++ standard peut vous servir à écrire du code de l’application principale qui n’utilise pas Windows Runtime.
+Vous devez uniquement utiliser **^** et **ref new** quand vous créez des objets ou des composants Windows Runtime. La syntaxe C++ standard peut vous servir à écrire du code de l’application principale qui n’utilise pas Windows Runtime.
 
 Marble Maze utilise **^** et [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) pour gérer les objets alloués par segment de mémoire et limiter les fuites de mémoire. Nous vous conseillons d’utiliser ^ pour gérer la durée de vie des variables Windows Runtime, **ComPtr** pour gérer la durée de vie des variables COM (comme quand vous utilisez DirectX) et std::[**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026) ou [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601) pour gérer la durée de vie de tous les autres objets C++ alloués par segment de mémoire.
 
@@ -142,6 +146,7 @@ Pour plus d’informations sur la structure du code de l’application Marble M
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 15d8cc6c-80f9-49b7-8036-0abf80ffebba
-description: Découvrez les autres ressources pour le développement d’applications avec des publicités.
-title: Aide supplémentaire
+description: "Découvrez les autres ressources pour le développement d’applications avec des publicités."
+title: "Aide supplémentaire"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 5229cf7ebb4133052c3e960fe1c81d6edeef8e57
+
 ---
 
 # Aide supplémentaire
@@ -29,6 +33,7 @@ Les ressources suivantes fournissent des informations supplémentaires sur le d�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

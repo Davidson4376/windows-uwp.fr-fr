@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la page Remarques pour la certification pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement.
+Description: "Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la page Remarques pour la certification pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement."
 title: Remarques pour la certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 02a0f17fef730da305f5dfb24c834b53045e3eb8
+
 ---
 
 # Remarques pour la certification
@@ -43,6 +47,7 @@ Prenez en considération les points suivants lors de la rédaction des remarques
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

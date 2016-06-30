@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
-title: Tests bêta
-description: Le test de la version bêta vous permet d’améliorer votre application en fonction des commentaires des personnes ne faisant pas partie de votre équipe de développement d’applications, qui essaient votre application non publiée sur leur propre appareil.
+title: "Tests bêta"
+description: "Le test de la version bêta vous permet d’améliorer votre application en fonction des commentaires des personnes ne faisant pas partie de votre équipe de développement d’applications, qui essaient votre application non publiée sur leur propre appareil."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7404a90fc9efc05d4e2bb83321bb2ba80b8378ce
+
 ---
 # Bêta-test
 
@@ -45,6 +49,7 @@ Pour savoir comment soumettre votre application au Windows Store pour le bêta-t
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

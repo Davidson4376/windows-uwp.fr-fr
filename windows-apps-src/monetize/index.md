@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-description: Le SDK Windows, le SDK d’engagement et de monétisation de la Boutique Microsoft et le Windows Store fournissent de nombreuses fonctionnalités qui vous permettent de générer plus de revenus avec vos applications et de conquérir des clients en engageant les utilisateurs.
-title: Monétiser votre application
+description: "Le SDK Windows, le SDK d’engagement et de monétisation de la Boutique Microsoft et le Windows Store fournissent de nombreuses fonctionnalités qui vous permettent de générer plus de revenus avec vos applications et de conquérir des clients en engageant les utilisateurs."
+title: "Monétiser votre application"
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: 6d5f483b44ae4516f4969431e31f70388a66c5d9
+
 ---
 
 # Monétiser votre application et engager les clients
@@ -28,6 +32,7 @@ Pour plus d’informations sur les frais facturés par le Windows Store et la f
 | [Utiliser les services du Windows Store](using-windows-store-services.md)                                    | Le Windows Store expose plusieurs services que vous pouvez appeler par le biais d’API REST afin d’accéder par programme à certains types de données pour les applications qui sont enregistrées pour votre compte personnel ou compte d’organisation du Centre de développement Windows.    |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

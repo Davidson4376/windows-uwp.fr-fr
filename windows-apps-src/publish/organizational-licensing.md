@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section Clés de produit réservées aux entreprises de la page Tarification et disponibilité relative à la soumission d’une application.
+Description: "Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section Clés de produit réservées aux entreprises de la page Tarification et disponibilité relative à la soumission d’une application."
 title: Options de gestion des licences organisationnelles
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
+ms.sourcegitcommit: 13603b66bd6168073b855bbe37ea92763e14a5a0
+ms.openlocfilehash: e4adbc66b4b4a88ca3787737e9bbddf0d937b604
+
 ---
 
 # Options de gestion des licences organisationnelles
@@ -29,12 +32,12 @@ Si vous ne souhaitez pas nous autoriser à proposer votre application à l’acq
 
 De nombreuses organisations ont besoin d’applications dont la licence peut être achetée hors connexion. Par exemple, certaines organisations doivent déployer des applications sur des appareils qui se connectent rarement ou jamais à Internet. Si vous souhaitez autoriser que votre application soit disponible pour ces clients, activez la case à cocher **Permettre aux entreprises d’acheter des licences en mode hors connexion**.
 
-> **Remarque** Cette case à cocher est désactivée par défaut. Vous devez l’activer pour nous permettre de rendre votre application disponible à des organisations vérifiées qui l’installent via une acquisition de licence hors connexion.
+> **Remarque** Cette case à cocher est désactivée par défaut. Vous devez l’activer pour nous permettre de rendre votre application disponible à des organisations vérifiées qui l’installent via une acquisition de licence hors connexion. Pour pouvoir installer des applications payantes pour leurs utilisateurs finaux de cette manière, les organisations doivent se soumettre à un processus de validation supplémentaire.
 
-L’achat de licences en mode hors connexion permet aux organisations d’acquérir votre application en volume, puis de l’installer sans que chaque appareil doive contacter le système de gestion de licences du Windows Store.
-L'organisation peut télécharger le package de votre application en même temps qu'une licence lui permettant de l'installer sur des appareils (via ses propres outils de gestion ou en préchargeant l'application sur des images du système d'exploitation) sans informer le Store quand une licence particulière a été utilisée. L’activation de ce scénario accroît sensiblement la flexibilité de déploiement et peut augmenter considérablement l’attrait de votre application auprès de ces clients.
+L’achat de licences en mode hors connexion permet aux organisations d’acquérir votre application en volume, puis de l’installer sans que chaque appareil doive contacter le système de gestion de licences du Windows Store. L'organisation peut télécharger le package de votre application en même temps qu'une licence lui permettant de l'installer sur des appareils (via ses propres outils de gestion ou en préchargeant l'application sur des images du système d'exploitation) sans informer le Store quand une licence particulière a été utilisée. L’activation de ce scénario accroît sensiblement la flexibilité de déploiement et peut augmenter considérablement l’attrait de votre application auprès de ces clients.
 
->**Remarque** Pour pouvoir installer des applications payantes pour leurs utilisateurs finaux de cette manière, les organisations doivent se soumettre à un processus de validation supplémentaire.
+> **Important** La gestion de licences en mode hors connexion n’est pas prise en charge pour les packages .xap.  
+
  
 ## Support de l’application payante
 
@@ -83,6 +86,7 @@ Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applicat
 - France
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: Ce que vous devez faire pour toute application réseau.
-title: Notions de base en matière de réseau
+description: "Ce que vous devez faire pour toute application réseau."
+title: "Notions de base en matière de réseau"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 96c6617595b49c48ee77bec87b6aa87ae1634ed9
+
 ---
 
 # Notions de base en matière de réseau
@@ -75,7 +79,7 @@ La valeur SocketProtectionLevel que vous fournissez définit le niveau de protec
 ### Utiliser ConnectAsync
 
 [
-            **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) peut être utilisé pour établir la connexion de départ avec un service réseau, puis négocier immédiatement l’utilisation de SSL/TLS pour toutes les communications. Deux méthodes **ConnectAsync** prennent en charge un paramètre *protectionLevel* :
+            **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) peut être utilisé pour établir la connexion de départ avec un service réseau, puis négocier immédiatement l’utilisation de SSL/TLS pour toutes les communications. Deux méthodes **ConnectAsync** prennent en charge un paramètre *protectionLevel* :
 
 -   [
             **ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - Démarre une opération asynchrone sur un objet [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) pour se connecter à une destination réseau distante spécifiée en tant qu’objet [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) et un [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
@@ -171,7 +175,7 @@ Lorsque vote code utilise [**UpgradeToSslAsync**](https://msdn.microsoft.com/lib
 
 La méthode [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) prend deux paramètres. Le paramètre *protectionLevel* indique le niveau de protection souhaité. Le paramètre *validationHostName* est le nom d’hôte de la destination réseau distante qui est utilisée pour la validation lors de la mise à niveau vers SSL. *validationHostName* est en principe le même nom d’hôte que celui utilisé initialement par l’application pour établir la connexion. Si le paramètre *protectionLevel* est défini sur **Windows.System.Socket.SocketProtectionLevel.Ssl** lors de l’appel de **UpgradeToSslAsync**, le [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) doit utiliser SSL/TLS pour le chiffrement des prochaines communications sur le socket. Cette valeur doit être chiffrée et ne prend pas en charge les éléments de chiffrement NULL.
 
-La séquence normale à utiliser avec la méthode [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) est la suivante :
+La séquence normale à utiliser avec la méthode [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) est la suivante :
 
 -   Créez une méthode [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
 -   Si vous devez ajouter une option avancée pour le socket, utilisez la propriété [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) pour obtenir l’instance [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) qui est associée à un objet [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). Définissez une propriété pour **StreamSocketControl**.
@@ -358,7 +362,7 @@ using Windows::Storage::Streams;
 
 Tout comme les connexions de sockets classiques, les connexions WebSocket peuvent également être chiffrées à l’aide des protocoles TLS (Transport Layer Security)/SSL (Secure Sockets Layer) lors de l’utilisation des fonctionnalités [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) et [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) de Windows 8 pour une application du Windows Store. En règle générale, vous utilisez une connexion WebSocket sécurisée. Cela augmente les chances que votre connexion s’établisse, car de nombreux serveurs proxy rejettent les connexions WebSocket non chiffrées.
 
-Pour obtenir des exemples de création ou de mise à niveau d’une connexion de sockets sécurisée vers un service réseau, voir [Comment sécuriser des connexions WebSocket avec TLS/SSL (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
+Pour obtenir des exemples de création ou de mise à niveau d’une connexion de sockets sécurisée vers un service réseau, voir [Comment sécuriser les connexions WebSocket avec TLS/SSL](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
 
 Outre le chiffrement TLS/SSL, un serveur peut avoir besoin d’une valeur d’en-tête **Sec-WebSocket-Protocol** pour pouvoir effectuer l’établissement d’une liaison initiale. Cette valeur, représentée par les propriétés [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) et [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358), indique la version de protocole de la connexion. Par ailleurs, elle permet au serveur d’interpréter correctement l’établissement d’une liaison de départ, ainsi que les données échangées par la suite. Grâce à ces informations relatives au protocole, si le serveur ne parvient pas à interpréter les données entrantes en toute sécurité, la connexion peut être fermée.
 
@@ -424,6 +428,7 @@ Les API de réseau prennent en charge différentes méthodes permettant de récu
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

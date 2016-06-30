@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 48a1ef86-8514-4af8-9c93-81e869d36de7
-description: Découvrez comment créer par programme un contrôle **AdControl** en JavaScript.
-title: Créer un AdControl en JavaScript
+description: "Découvrez comment créer par programme un contrôle **AdControl** en JavaScript."
+title: "Créer un AdControl en JavaScript"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 481f9d785181ca197debdb807bb0b0c7b4168632
+
 
 ---
 
@@ -57,6 +61,7 @@ Si vous utilisez ce code et que vous ne voyez pas de publicités, vous pouvez es
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

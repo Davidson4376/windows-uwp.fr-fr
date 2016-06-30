@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
+description: "Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML."
 title: XAML et espace blanc
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 408c9c7f79f5db81bdf7810a6c71cf25c1c8ec51
+
 ---
 
 # XAML et espace blanc
@@ -49,6 +53,7 @@ Entités et espaces insécables : le code XAML prend en charge le placement d’
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

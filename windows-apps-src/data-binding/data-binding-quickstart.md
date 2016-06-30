@@ -3,8 +3,8 @@ author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: "Vue d’ensemble de la liaison de données"
 description: "Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à ou un contrôle de liste à une collection d’éléments dans une application UWP."
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: c30e048f450c062c6e0148e5040a58bfa47193bb
+ms.sourcegitcommit: c5325f0d0a067847bea81a115db4770a39ddd12a
+ms.openlocfilehash: 4753c2fc52fa0227b3867685b793a3d6cfc05630
 
 ---
 Vue d’ensemble de la liaison de données
@@ -32,7 +32,7 @@ Chaque liaison se compose d’une cible et d’une source de liaison. En règle 
 
 Ajoutez une nouvelle classe à votre projet, nommez-la Recording.cs (si vous utilisez C#) et ajoutez-lui ce code.
 
-``` csharp
+```csharp
 namespace Quickstart
 {
     public class Recording
@@ -66,7 +66,7 @@ namespace Quickstart
 }
 ```
 
-``` cpp
+```cpp
 #include <sstream>
 
 namespace Quickstart
@@ -140,7 +140,7 @@ namespace Quickstart
 
 Ensuite, exposez la classe de source de liaison à partir de la classe qui représente votre page de balisage. Pour ce faire, nous ajoutons une propriété de type **RecordingViewModel** à **MainPage**.
 
-``` csharp
+```csharp
 namespace Quickstart
 {
     public sealed partial class MainPage : Page
@@ -156,7 +156,7 @@ namespace Quickstart
 }
 ```
 
-``` cpp
+```cpp
 namespace Quickstart
 {
     public ref class MainPage sealed
@@ -181,7 +181,7 @@ namespace Quickstart
 
 La dernière étape consiste à lier un contrôle **TextBlock** à la propriété **ViewModel.DefaultRecording.OneLiner**.
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
@@ -202,7 +202,7 @@ Un scénario courant consiste à créer une liaison à une collection d’objets
 
 L’exemple suivant lie une classe [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) à une collection d’objets `Recording`. Commençons par ajouter la collection à notre modèle d’affichage. Il suffit d’ajouter ces nouveaux membres à la classe **RecordingViewModel**.
 
-``` csharp
+```csharp
     public class RecordingViewModel
     {
         ...
@@ -222,7 +222,7 @@ L’exemple suivant lie une classe [**ListView**](https://msdn.microsoft.com/lib
     }
 ```
 
-``` cpp
+```cpp
     public ref class RecordingViewModel sealed
     {
     private:
@@ -270,11 +270,11 @@ L’exemple suivant lie une classe [**ListView**](https://msdn.microsoft.com/lib
             };
         }
     };
-    ```
+```
 
-And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to the **ViewModel.Recordings** property.
+Ensuite, liez un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) à la propriété **ViewModel.Recordings**.
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -289,7 +289,7 @@ Nous n’avons pas encore fourni de modèle de données pour la classe **Recordi
 
 Pour résoudre ce problème, nous pouvons soit remplacer [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) pour renvoyer la valeur de **OneLineSummary**, soit fournir un modèle de données. L’option du modèle de données est plus courante et sans doute plus souple. Pour spécifier un modèle de données, vous devez utiliser la propriété [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) d’un contrôle de contenu ou la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) d’un contrôle d’éléments. Voici deux manières de créer un modèle de données pour **Recording** avec une illustration du résultat :
 
-``` xml
+```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
         HorizontalAlignment="Center" VerticalAlignment="Center">
         <ListView.ItemTemplate>
@@ -298,11 +298,11 @@ Pour résoudre ce problème, nous pouvons soit remplacer [**ToString**](https://
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    ```
+```
 
-![Binding a list view](images/xaml-databinding2.png)
+![Liaison d’un affichage liste](images/xaml-databinding2.png)
 
-``` xml
+```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
     HorizontalAlignment="Center" VerticalAlignment="Center">
         <ListView.ItemTemplate>
@@ -334,7 +334,7 @@ Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails
 
 Tout d’abord, voici la technique [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770). Si vous utilisez des extensions de composant Visual C++ (C++/CX), dans la mesure où [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) sera utilisé, vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à la classe **Recording**.
 
-``` cpp
+```cpp
     [Windows::UI::Xaml::Data::Bindable]
     public ref class Recording sealed
     {
@@ -344,7 +344,7 @@ Tout d’abord, voici la technique [**SelectedItem**](https://msdn.microsoft.com
 
 La seule autre modification nécessaire concerne le balisage.
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -373,7 +373,7 @@ La seule autre modification nécessaire concerne le balisage.
 
 Pour la technique [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), commencez par ajouter une classe **CollectionViewSource** comme ressource de page.
 
-``` xml
+```xml
     <Page.Resources>
         <CollectionViewSource x:Name="RecordingsCollection" Source="{x:Bind ViewModel.Recordings}"/>
     </Page.Resources>
@@ -381,7 +381,7 @@ Pour la technique [**CollectionViewSource**](https://msdn.microsoft.com/library/
 
 Ensuite, réglez les liaisons sur le contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (qui n’a plus besoin d’être nommé) et sur l’affichage de détails de manière à utiliser la classe [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833). Notez qu’en liant l’affichage de détails directement à la classe **CollectionViewSource**, vous impliquez que vous souhaitez créer une liaison à l’élément actuel dans les liaisons où le chemin est introuvable au sein même de la collection. Il est inutile de spécifier la propriété **CurrentItem** en tant que chemin de la liaison, bien que vous puissiez le faire s’il existe la moindre ambiguïté.
 
-``` xml
+```xml
     ...
 
     <ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
@@ -403,7 +403,7 @@ Le rendu ci-dessus présente un léger problème. La propriété **ReleaseDateTi
 
 Une solution plus souple consiste à utiliser un élément connu sous le nom de convertisseur de valeurs. Voici un exemple montrant comment créer votre propre convertisseur de valeurs. Ajoutez ce code à votre fichier de code source Recording.cs.
 
-``` csharp
+```csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 {
     // This converts the value object to the string to display.
@@ -434,7 +434,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 Nous pouvons maintenant ajouter une instance de **StringFormatter** comme ressource de page et l’utiliser dans notre liaison. Nous passons la chaîne de format dans le convertisseur à partir du balisage pour une souplesse de mise en forme optimale.
 
-``` xml
+```xml
     <Page.Resources>
         <local:StringFormatter x:Key="StringFormatterValueConverter"/>
     </Page.Resources>
@@ -455,6 +455,6 @@ Résultat :
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 
