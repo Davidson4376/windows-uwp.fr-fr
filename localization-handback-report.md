@@ -21,7 +21,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [plan-your-directx-port.a4eca0df1e81d68bf007196d3ad2507770109c09.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3cd0211fda67d616b1db017fe2ea03a8b1a819f8/ol-handback/Microsoft/windows-apps.fr-fr/master/plan-your-directx-port.a4eca0df1e81d68bf007196d3ad2507770109c09.fr-fr.xlf)
-* Handback Datetime: 2016-07-01 16:18:55
+* Handback Datetime: 2016-07-01 16:49:11
 * Handback Error: [handback_transform_failed](#929ad82ce057754ee04f1f27537e03520e95157a2238handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -47,7 +47,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [walkthrough--simple-port-from-direct3d-9-to-11-1.2f646e01d0929d0a6e0a1f20964c3225228f6610.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3cd0211fda67d616b1db017fe2ea03a8b1a819f8/ol-handback/Microsoft/windows-apps.fr-fr/master/walkthrough--simple-port-from-direct3d-9-to-11-1.2f646e01d0929d0a6e0a1f20964c3225228f6610.fr-fr.xlf)
-* Handback Datetime: 2016-07-01 16:18:55
+* Handback Datetime: 2016-07-01 16:49:11
 * Handback Error: [handback_transform_failed](#27c6f82e97e9eb24dedcc5d83a18e6aba69611942274handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -60,7 +60,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3cd0211fda67d616b1db017fe2ea03a8b1a819f8/ol-handback/Microsoft/windows-apps.fr-fr/master/whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.fr-fr.xlf)
-* Handback Datetime: 2016-07-01 16:18:55
+* Handback Datetime: 2016-07-01 16:49:11
 * Handback Error: [handback_transform_failed](#f02851d848a82af7104a6038c5d8850d5362c8322643handback_transform_failed)
 * [Back to Top](#report-top)
 
