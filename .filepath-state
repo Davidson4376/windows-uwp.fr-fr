@@ -3101,9 +3101,6 @@
   "40380582a9210cb705a5e7e591d4a8f37c42f8dd": [
     "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
   ],
-  "bac545f3490b3af876d3e8b5fd459bd626505916": [
-    "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
-  ],
   "0f27f9e9219fca10798a09e6f934b72ad7b1b5a8": [
     "windows-apps-src\\gaming\\porting-considerations.md"
   ],
@@ -3569,9 +3566,6 @@
   "4846630eb72c5fc81e01cc46f5ad362b0851292e": [
     "windows-apps-src\\graphics\\using-brushes.md"
   ],
-  "a4063ee2372d69289fca74c81a4c7645909c7f37": [
-    "windows-apps-src\\graphics\\using-brushes.md"
-  ],
   "164c01737d27451adcb685f9cda544cc00634af4": [
     "windows-apps-src\\graphics\\visual-layer.md"
   ],
@@ -3587,13 +3581,7 @@
   "ff3d49e098b0b9b0e7a58a7985c77ab8022eb661": [
     "windows-apps-src\\in-app-help\\in-app-help-and-instructions.md"
   ],
-  "afedc21a9a7da9db0cdd5be0037a4a434dfe5ee5": [
-    "windows-apps-src\\in-app-help\\in-app-help-and-instructions.md"
-  ],
   "f9f1f34bb02cda89d31caa9453b6e3eb056e7bc9": [
-    "windows-apps-src\\in-app-help\\instructional-ui.md"
-  ],
-  "a21ee772032cfc1c762066c8864d32022946df87": [
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "97e016047c864026fe0c72e4b7cb819f0fc80748": [
@@ -3647,9 +3635,6 @@
   "1bcf6ce700b50ff633a29863fee41c2bfa3d9f98": [
     "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
   ],
-  "a142592f878fa539d6c40ea2abfcbf834b2de34d": [
-    "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
-  ],
   "463da46dc1f4e2ed5125a26b058075e7fe1faafd": [
     "windows-apps-src\\input-and-devices\\gamepad-and-remote-interactions.md"
   ],
@@ -3659,28 +3644,16 @@
   "38feedfe857f8ce2fc638cf55465f1e719108583": [
     "windows-apps-src\\input-and-devices\\guidelines-for-optical-zoom.md"
   ],
-  "07f9f2979a7a2c712b39bd4dc962e5991e1824ac": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-optical-zoom.md"
-  ],
   "45a2d3cb8cd1db1b138d62b7d6525ed7077207b0": [
     "windows-apps-src\\input-and-devices\\guidelines-for-panning.md"
   ],
   "a43bdd27ff7b79f561789a14d1a8e6caed08dc89": [
     "windows-apps-src\\input-and-devices\\guidelines-for-rotation.md"
   ],
-  "d91a3cf5dc5ae2e1a68e32fc64848b869f229391": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-rotation.md"
-  ],
   "50a285b484f7e9ed7b349921c3460bd7c9c81603": [
     "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md"
   ],
-  "c8244e1a103a1c57df92e54ceeaa02e9c363faa9": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md"
-  ],
   "6533e76981d815c2d62008c17e2320fc770dfcc9": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
-  ],
-  "a47b48f9315c51505b2c487c140011e053105556": [
     "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
   ],
   "67b851ce854c803934c2b97dbe7519e2916383a3": [
@@ -3693,9 +3666,6 @@
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
   "2204e8f3ddce067cf2cbc24ce89cbdcea5b361bf": [
-    "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
-  ],
-  "8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
   ],
   "2ebef9767520d9f54f35ba22e2681cb41766e181": [
@@ -4144,9 +4114,6 @@
   "068bb7d0c7af4b55ab10a955c563988f5123e5eb": [
     "windows-apps-src\\input-and-devices\\input-primer.md"
   ],
-  "7c2d3bd1ab2d2f4923cf84834a73fd1c58113212": [
-    "windows-apps-src\\input-and-devices\\input-primer.md"
-  ],
   "5f8490c06e1803bed8efadb936d64b41e7f1e328": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
@@ -4180,13 +4147,7 @@
   "71c5994e1a308993aef6603ba77ab5e695bde293": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
-  "20af1cbfd4d390a1128b96b24c687fd481db1f5c": [
-    "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
-  ],
   "e642e6ba5319dce2d78c243ab3c57a9ffcc6902f": [
-    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
-  ],
-  "218fae32f8b63c8fe5499af7d3fe6c1f0404334c": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
   "417668a24c4a2ba28671b6fb0a4da74c0cfab341": [
@@ -4196,9 +4157,6 @@
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
   "99ead02e8886ae79b8e8423ac0f78609b4fa1f6f": [
-    "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
-  ],
-  "e0dbc43cba4556674a4d96013b65837d95044622": [
     "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
   ],
   "8af4fe64e586037d68ab5cd422d7195bd3a64b94": [
@@ -4220,9 +4178,6 @@
     "windows-apps-src\\input-and-devices\\surface-hub.md"
   ],
   "a78dd1030e653d1cf0a1d7f191b4768e5a99860a": [
-    "windows-apps-src\\input-and-devices\\touch-interactions.md"
-  ],
-  "23eac55de26563c68b401d8912264aebb86d0380": [
     "windows-apps-src\\input-and-devices\\touch-interactions.md"
   ],
   "361df3a06faa771a81a6d63c2fe873a1aace1125": [
