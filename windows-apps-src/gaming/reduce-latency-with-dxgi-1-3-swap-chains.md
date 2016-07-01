@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Réduire la latence avec des chaînes d’échange DXGI 1.3
-description: Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image.
+title: "Réduire la latence avec des chaînes d’échange DXGI 1.3"
+description: "Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image."
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 174e2918d54a2b03124752d009f43f0cb0c800ca
+
 ---
 
 # Réduire la latence avec des chaînes d’échange DXGI 1.3
@@ -158,6 +162,7 @@ Pour plus d’informations sur la programmation multithread dans Windows, voir l
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Porter la boucle de jeu
-description: Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface IFrameworkView pour contrôler une classe CoreWindow en plein écran.
+description: "Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface IFrameworkView pour contrôler une classe CoreWindow en plein écran."
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
+
 ---
 
 # Porter la boucle de jeu
@@ -139,6 +143,7 @@ Consultez les articles détaillés suivants sur le développement des jeux du Wi
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

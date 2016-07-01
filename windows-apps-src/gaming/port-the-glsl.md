@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Porter le langage GLSL
-description: Après avoir adapté le code utilisé pour créer et configurer vos mémoires tampons et vos objets nuanceurs, vous pouvez procéder au portage du code de ces nuanceurs du langage GLSL (GL Shader Language) d’OpenGL ES 2.0 vers le langage HLSL (High-level Shader Language) de Direct3D 11.
+description: "Après avoir adapté le code utilisé pour créer et configurer vos mémoires tampons et vos objets nuanceurs, vous pouvez procéder au portage du code de ces nuanceurs du langage GLSL (GL Shader Language) d’OpenGL ES 2.0 vers le langage HLSL (High-level Shader Language) de Direct3D 11."
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d1d203fa74bd80fe26401e64d4e15bb11e5c1050
+
 ---
 
 # Porter le langage GLSL
@@ -184,6 +188,7 @@ Pour faciliter le débogage de votre code et avoir plus de latitude pour l’opt
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

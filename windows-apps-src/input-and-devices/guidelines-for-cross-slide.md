@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
-title: Recommandations en matière de glisser transversal
+Description: "Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement."
+title: "Recommandations en matière de glisser transversal"
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
+
 ---
 
 # Recommandations en matière de glisser transversal
@@ -150,6 +154,7 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

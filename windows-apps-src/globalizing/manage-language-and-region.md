@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: Contrôlez la façon dont Windows sélectionne les ressources de l’interface utilisateur et formate les éléments de l’interface utilisateur de l’application, en utilisant les différents paramètres de langue et de région fournis par Windows.
-title: Gérer la langue et la région
+Description: "Contrôlez la façon dont Windows sélectionne les ressources de l’interface utilisateur et formate les éléments de l’interface utilisateur de l’application, en utilisant les différents paramètres de langue et de région fournis par Windows."
+title: "Gérer la langue et la région"
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 294f087fffeefda67ddacd09636915144bf18ff4
+
 ---
 
 # Gérer la langue et la région
@@ -81,7 +85,7 @@ Il peut arriver parfois que certaines ressources ne doivent pas être localisée
 -   Les ressources telles que les chaînes d’interface utilisateur existantes dans toutes les langues doivent être marquées avec la langue dans laquelle elles sont. Veillez cependant à ce que toutes ces ressources soient disponibles dans la langue par défaut. Il n’est pas nécessaire de spécifier une ressource neutre (c’est-à-dire une ressource qui n’est pas marquée avec une langue).
 -   Concernant les ressources qui sont fournies dans un sous-ensemble des langues pour l’application entière (localisation partielle), spécifiez les langues dans lesquelles ces ressources sont disponibles et veillez à ce que toutes ces ressources soient disponibles dans la langue par défaut. Windows sélectionne la meilleure langue possible pour l’utilisateur en fonction de toutes les langues parlées par celui-ci dans leur ordre de préférence. Par exemple, l’intégralité de l’interface utilisateur d’une application peut ne pas être localisée en catalan, si l’application dispose d’un ensemble complet de ressources en espagnol. Pour les utilisateurs qui parlent le catalan en premier puis l’espagnol, les ressources non disponibles en catalan apparaissent en espagnol.
 -   Si parmi les ressources, certaines sont spécifiques à certaines langues, alors qu’une ressource est commune à toutes les langues, la ressource qui doit être utilisée pour toutes les langues doit être marquée avec la balise de langue indéterminée 'und'. Windows interprète la balise de langue 'und' de la même manière que '\*', c’est-à-dire qu’il choisit la langue principale de l’application après toute langue spécifique. Par exemple, si quelques ressources (telles que la largeur d’un élément) sont différentes pour le finnois, alors que les autres ressources sont les mêmes pour toutes les langues, la ressource en finnois doit être marquée avec la balise de langue pour le finnois et les autres ressources doivent être marquées avec « und ».
--   Pour les ressources qui sont basées sur le script d’une langue au lieu de la langue proprement dite, comme une police ou une hauteur de texte, utilisez la balise de langue indéterminée avec un script spécifique : « und-&lt;script&gt; ». Par exemple, pour les polices latines, utilisez und-Latn\\fonts.css et pour les polices cyrilliques utilisez und-Cryl\\fonts.css.
+-   Pour les ressources qui sont basées sur le script d’une langue au lieu de la langue proprement dite, comme une police ou une hauteur de texte, utilisez la balise de langue indéterminée avec un script spécifique : « und-&lt;script&gt; ». Par exemple, pour les polices latines, utilisez und-Latn\\fonts.css et pour les polices cyrilliques utilisez und-Cryl\\fonts.css.
 
 ### <span id="Create_the_application_language_list."></span><span id="create_the_application_language_list."></span><span id="CREATE_THE_APPLICATION_LANGUAGE_LIST."></span>Créez la liste des langues de l’application.
 
@@ -121,11 +125,11 @@ Voir la section Remarques ci-dessous pour consulter des exemples.
 
 ### <span id="Set_the_HTTP_Accept_Language_header."></span><span id="set_the_http_accept_language_header."></span><span id="SET_THE_HTTP_ACCEPT_LANGUAGE_HEADER."></span>Définissez l’en-tête HTTP Accept-Language.
 
-Les requêtes HTTP envoyées à partir d’applications du Windows Store et d’applications de bureau dans des requêtes web standard et XMLHttpRequest (XHR) utilisent l’en-tête HTTP Accept-Language standard. Par défaut, l’en-tête HTTP est défini conformément aux langues de l’utilisateur, dans l’ordre de préférence de ce dernier, comme spécifié dans **Paramètres**&gt;**Heure et langue**&gt;**Région et langue**. Chaque langue de la liste est développée pour inclure les éléments neutres de la langue et un poids (q). Par exemple, la liste des langues d’un utilisateur comprenant fr-FR et en-US produit un en-tête Accept-Language HTTP comprenant fr-FR, fr, en-US, en (« fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3 »).
+Les requêtes HTTP envoyées à partir d’applications du Windows Store et d’applications de bureau dans des requêtes web standard et XMLHttpRequest (XHR) utilisent l’en-tête HTTP Accept-Language standard. Par défaut, l’en-tête HTTP est défini conformément aux langues de l’utilisateur, dans l’ordre de préférence de ce dernier, comme spécifié dans **Paramètres**&gt;**Heure et langue**&gt;**Région et langue**. Chaque langue de la liste est développée pour inclure les éléments neutres de la langue et un poids (q). Par exemple, la liste des langues d’un utilisateur comprenant fr-FR et en-US produit un en-tête Accept-Language HTTP comprenant fr-FR, fr, en-US, en (« fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3 »).
 
 ### <span id="Use_the_APIs_in_the_Windows.Globalization_namespace."></span><span id="use_the_apis_in_the_windows.globalization_namespace."></span><span id="USE_THE_APIS_IN_THE_WINDOWS.GLOBALIZATION_NAMESPACE."></span>Utilisez les API de l’espace de noms Windows.Globalization.
 
-En règle générale, les éléments d’API de l’espace de noms [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) utilisent la liste des langues de l’application pour déterminer la langue. Si aucune de ces langues ne possède de format correspondant, les paramètres régionaux de l’utilisateur sont utilisés. Il s’agit des paramètres régionaux utilisés pour l’horloge système. Les paramètres régionaux utilisateur sont disponibles dans **Paramètres**&gt;**Heure et langue**&gt;**Région et langue**&gt;**Paramètres de date, d’heure et régionaux supplémentaires**&gt;**Région : Modifier les formats de date, d’heure ou de nombre**. Les API **Windows.Globalization** acceptent également une substitution pour spécifier une liste de langues, à utiliser à la place de la liste des langues de l’application.
+En règle générale, les éléments d’API de l’espace de noms [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) utilisent la liste des langues de l’application pour déterminer la langue. Si aucune de ces langues ne possède de format correspondant, les paramètres régionaux de l’utilisateur sont utilisés. Il s’agit des paramètres régionaux utilisés pour l’horloge système. Les paramètres régionaux utilisateur sont disponibles dans **Paramètres**&gt;**Heure et langue**&gt;**Région et langue**&gt;**Paramètres de date, d’heure et régionaux supplémentaires**&gt;**Région : Modifier les formats de date, d’heure ou de nombre**. Les API **Windows.Globalization** acceptent également une substitution pour spécifier une liste de langues, à utiliser à la place de la liste des langues de l’application.
 
 [
             **Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) possède également un objet [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) qui est fourni en tant qu’objet Application d’assistance. Il permet aux applications d’inspecter des détails relatifs à la langue, tels que le script de la langue, le nom complet et le nom natif.
@@ -222,6 +226,7 @@ Le tableau ci-dessous contient des exemples de ce que l’utilisateur verrait da
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

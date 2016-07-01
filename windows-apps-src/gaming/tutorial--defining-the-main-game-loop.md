@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Définir l’objet jeu principal
-description: Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
+title: "Définir l’objet jeu principal"
+description: "Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu."
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 66e40c150b5eb4f57c9cddfaf472c56601b3fa0b
+
 ---
 
 # Définir l’objet jeu principal
@@ -643,7 +647,7 @@ GameState Simple3DGame::RunGame()
 }}
 ```
 
-Voici l’appel clé : `UpdateDynamics()`. Le monde du jeu prend ainsi vie. Voyons cela !
+Voici l’appel clé : `UpdateDynamics()`. Le monde du jeu prend ainsi vie. Voyons cela !
 
 ## Mise à jour du monde du jeu
 
@@ -3620,6 +3624,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

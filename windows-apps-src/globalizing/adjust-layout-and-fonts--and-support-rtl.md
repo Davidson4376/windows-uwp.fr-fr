@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: Développez votre application pour prendre en charge les dispositions et les polices de plusieurs langues, notamment le sens du flux de droite à gauche (DàG).
-title: Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG
+Description: "Développez votre application pour prendre en charge les dispositions et les polices de plusieurs langues, notamment le sens du flux de droite à gauche (DàG)."
+title: "Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG"
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 989d810724c925a5bcbebf5f7fb301636905fff9
+
 ---
 
 # Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG
@@ -114,6 +118,7 @@ Les applications qui affichent plusieurs langues sur une même page doivent déf
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

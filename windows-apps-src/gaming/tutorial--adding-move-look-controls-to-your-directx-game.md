@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Contrôles de déplacement/vue pour les jeux
-description: Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (également connus sous le nom de contrôles de vue à la souris) à votre jeu DirectX.
+title: "Contrôles de déplacement/vue pour les jeux"
+description: "Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (également connus sous le nom de contrôles de vue à la souris) à votre jeu DirectX."
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7adbfdb77af6992be9448969f635bdebac58344b
+
 ---
 
 # <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Contrôles de déplacement/vue pour les jeux
@@ -584,6 +588,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

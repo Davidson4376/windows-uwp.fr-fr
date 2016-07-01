@@ -1,11 +1,15 @@
 ---
 author: DelfCo
-Description: La globalisation consiste à concevoir et développer votre application de sorte qu’elle adapte son comportement aux différents marchés du monde entier sans aucune modification ou personnalisation.
+Description: "La globalisation consiste à concevoir et développer votre application de sorte qu’elle adapte son comportement aux différents marchés du monde entier sans aucune modification ou personnalisation."
 Search.SourceType: Video
 title: Globalisation et localisation
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 1fc82ff462a5c0af6b10e7dc8455adc215558b4e
+
 ---
 
 # Globalisation et localisation
@@ -30,7 +34,7 @@ Par exemple :
 -   Traduire le texte et les libellés de l'application pour le nouveau marché et créer des ressources distinctes pour la langue utilisée sur ce marché.
 -   Modifier si besoin les images liées à la culture, puis les placer dans des ressources distincts.
 
-Regardez cette vidéo pour savoir brièvement comment préparer votre application à une utilisation dans le monde entier : [Introduction à la globalisation et à la localisation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
+Regardez cette vidéo pour savoir brièvement comment préparer votre application à une utilisation dans le monde entier : [Introduction à la globalisation et à la localisation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
 ## Articles
 <table>
@@ -94,6 +98,7 @@ Consultez également la documentation initialement créée pour Windows 8.x, qui
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

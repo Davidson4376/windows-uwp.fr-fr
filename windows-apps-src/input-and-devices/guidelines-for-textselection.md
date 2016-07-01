@@ -5,8 +5,8 @@ title: "Sélection de texte et d’images"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: a47b48f9315c51505b2c487c140011e053105556
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 6533e76981d815c2d62008c17e2320fc770dfcc9
 
 ---
 
@@ -23,7 +23,7 @@ Cet article décrit la sélection et la manipulation de texte, d’images et de 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
+## Pratiques conseillées et déconseillées
 
 
 -   Utilisez des glyphes de police lors de l’implémentation de votre propre interface utilisateur de barre de redimensionnement. Le symbole de sélection est une combinaison de deux polices Segoe UI disponibles à l’échelle du système. L’utilisation de ressources de police simplifie les problèmes de rendu pour différentes valeurs de ppp et fonctionne bien avec les divers plateaux d’échelle d’interface utilisateur. Lorsque vous implémentez vos propres barres de redimensionnement, elles doivent partager les caractéristiques d’interface utilisateur suivantes :
@@ -39,7 +39,7 @@ Cet article décrit la sélection et la manipulation de texte, d’images et de 
 
 -   N’autorisez pas la sélection d’éléments d’interface utilisateur tels que des contrôles, des étiquettes, des images, des contenus propriétaires, etc. En règle générale, les applications Windows permettent cette sélection uniquement au sein de contrôles spécifiques. Les contrôles comme les boutons, les étiquettes et les logos ne peuvent pas être sélectionnés. Déterminez si la sélection représente un problème pour votre application et, le cas échéant, identifiez les zones de l’interface utilisateur dans lesquelles la sélection doit être interdite. 
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
+## Indications d’utilisation supplémentaires
 
 
 La sélection et la manipulation de texte représentent des difficultés particulières pour l’utilisateur en termes d’interactions tactiles. Les entrées effectuées par le biais de la souris, du stylo/stylet et du clavier sont des opérations extrêmement granulaires : un clic de souris ou un contact du stylo/stylet est généralement associé à un pixel unique, et une touche est appuyée ou non. Une entrée tactile n’est pas granulaire ; il est difficile d’associer la totalité de la surface de la pointe du doigt à un emplacement x-y spécifique sur l’écran pour placer avec précision un curseur de texte.
@@ -103,7 +103,7 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 
 *Éditeur d’images avec poignées de rognage*
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 
 
@@ -135,6 +135,6 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Utiliser des pinceaux
 description: "Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ---
 # Utiliser des pinceaux
@@ -40,7 +40,7 @@ L’image ci-après illustre l’application de l’objet [**SolidColorBrush**](
 
 ![Rendu de SolidColorBrush](images/brushes-solidcolorbrush.jpg)
 
-Si vous définissez un objet [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) à l’aide d’un code plutôt que de XAML, chaque couleur nommée est disponible en tant que valeur de propriété statique de la classe [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s). Par exemple, pour déclarer une valeur [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) d’un objet **SolidColorBrush** afin de représenter la couleur nommée « Orchid », définissez la valeur **Color** sur la valeur statique [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx).
+Si vous définissez un objet [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) à l’aide d’un code plutôt que de XAML, chaque couleur nommée est disponible en tant que valeur de propriété statique de la classe [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors). Par exemple, pour déclarer une valeur [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) d’un objet **SolidColorBrush** afin de représenter la couleur nommée « Orchid », définissez la valeur **Color** sur la valeur statique [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx).
 
 ### Valeurs de couleur hexadécimales
 
@@ -149,7 +149,7 @@ Vous pouvez déclarer n’importe quel pinceau en tant que ressource XAML à cl�
 
 Il est beaucoup plus courant de spécifier des pinceaux en XAML que d’utiliser du code pour en définir. Cela est dû au fait que les pinceaux sont généralement définis en tant que ressources XAML, et que les valeurs de pinceau sont souvent la sortie des outils de conception ou sinon, qu’elles font partie d’une définition d’interface utilisateur XAML. Quand même, pour les quelques cas où vous voulez définir un pinceau à l’aide de code, tous les types [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) sont disponibles pour l’instanciation du code.
 
-Pour créer une classe [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) dans le code, utilisez le constructeur qui prend un paramètre [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Passez une valeur qui est une propriété statique de la classe [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) comme celle-ci :
+Pour créer une classe [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) dans le code, utilisez le constructeur qui prend un paramètre [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Passez une valeur qui est une propriété statique de la classe [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) comme celle-ci :
 
 ```cs
 SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
@@ -179,6 +179,6 @@ Pour obtenir des exemples de code, voir les pages de référence pour les classe
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

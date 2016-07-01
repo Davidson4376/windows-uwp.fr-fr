@@ -5,8 +5,8 @@ title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: d91a3cf5dc5ae2e1a68e32fc64848b869f229391
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: a43bdd27ff7b79f561789a14d1a8e6caed08dc89
 
 ---
 
@@ -20,12 +20,12 @@ Cet article décrit la nouvelle interface utilisateur Windows pour la rotation e
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
+## Pratiques conseillées et déconseillées
 
 
 -   Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directement des éléments d’interface utilisateur.
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
+## Indications d’utilisation supplémentaires
 
 
 **Vue d’ensemble de la rotation**
@@ -99,7 +99,7 @@ Windows 8 prend en charge trois types de rotations : libre, contrainte et combi
 
  
 
-## <span id="related_topics"></span>Rubriques connexes
+## Rubriques connexes
 
 
 **Exemples**
@@ -127,6 +127,6 @@ Windows 8 prend en charge trois types de rotations : libre, contrainte et combi
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

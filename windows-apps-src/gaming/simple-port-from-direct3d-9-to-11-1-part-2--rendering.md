@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Convertir l’infrastructure de rendu
-description: Montre comment convertir une infrastructure de rendu simple de Direct3D 9 à Direct3D 11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D 11.
+title: "Convertir l’infrastructure de rendu"
+description: "Montre comment convertir une infrastructure de rendu simple de Direct3D 9 à Direct3D 11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D 11."
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5cfdce2a62f6b5761ebf820418762a307dd051bb
+
 ---
 
 # Convertir l’infrastructure de rendu
@@ -230,7 +234,7 @@ m_d3dDevice->CreateVertexShader(
 
 Pour inclure le bytecode de nuanceur dans votre package d’application compilé, il suffit d’ajouter le fichier HLSL au projet Visual Studio. Visual Studio va utiliser l’[Outil compilateur d’effet](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) pour compiler les fichiers HLSL dans des objets de nuanceur compilés (fichiers .CSO) et les inclure dans le package d’application.
 
-> **Remarque** Veillez à définir le niveau de fonctionnalité cible correct pour le compilateur HLSL : cliquez avec le bouton droit sur le fichier source HLSL dans Visual Studio, sélectionnez Propriétés, puis modifiez le paramètre **Modèle de nuanceur** sous **Compilateur HLSL -&gt; Général**. Direct3D vérifie cette propriété par rapport aux fonctionnalités matérielles quand votre application crée la ressource de nuanceur Direct3D.
+> **Remarque** Veillez à définir le niveau de fonctionnalité cible correct pour le compilateur HLSL : cliquez avec le bouton droit sur le fichier source HLSL dans Visual Studio, sélectionnez Propriétés, puis modifiez le paramètre **Modèle de nuanceur** sous **Compilateur HLSL -&gt; Général**. Direct3D vérifie cette propriété par rapport aux fonctionnalités matérielles quand votre application crée la ressource de nuanceur Direct3D.
 
  
 
@@ -489,6 +493,7 @@ La chaîne de rendu que nous venons de créer sera appelée à partir d’une bo
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

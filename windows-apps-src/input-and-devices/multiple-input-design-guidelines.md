@@ -5,8 +5,8 @@ title: "Recommandations en matière de conception d’entrées multiples"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 71c5994e1a308993aef6603ba77ab5e695bde293
 
 ---
 
@@ -23,20 +23,20 @@ Pour commencer, envisagez les différentes situations dans lesquelles votre appl
 -   Toutes les méthodes d’entrée sont-elles prises en charge à tout moment ? Avec certains contrôles ? À des moments ou dans des circonstances spécifiques ?
 -   Une méthode d’entrée a-t-elle la priorité ?
 
-## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>Interactions en mode unique (ou exclusif)
+## Interactions en mode unique (ou exclusif)
 
 
 Avec les interactions en mode unique, plusieurs types d’entrée sont pris en charge, mais un seul peut être utilisé par action. Par exemple, la reconnaissance vocale pour les commandes, et les mouvements pour la navigation ; ou bien la saisie de texte par interface tactile ou à l’aide de mouvements, en fonction de la proximité.
 
-## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>Interactions multimodales
+## Interactions multimodales
 
 
 Avec les interactions multimodales, plusieurs méthodes d’entrée séquentielles sont utilisées pour effectuer une action unique.
 
-<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>Reconnaissance vocale + mouvement  
+Reconnaissance vocale + mouvement  
 L’utilisateur désigne un produit, puis dit « Ajouter au panier ».
 
-<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>Reconnaissance vocale + interface tactile  
+Reconnaissance vocale + interface tactile  
 L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, puis dit « Envoyer photo ».
 
 
@@ -44,6 +44,6 @@ L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, 
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Porter les objets nuanceur
-description: Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
+description: "Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés."
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 17d66e217e40eca0653078820746746eb23185e1
+
 ---
 
 # Porter les objets nuanceurs
@@ -318,6 +322,7 @@ La mémoire tampon de vertex est créée et mise à jour de manière similaire. 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

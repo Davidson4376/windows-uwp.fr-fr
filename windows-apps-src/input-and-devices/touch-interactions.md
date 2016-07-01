@@ -5,8 +5,8 @@ title: Interactions tactiles
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: a78dd1030e653d1cf0a1d7f191b4768e5a99860a
 
 ---
 
@@ -159,7 +159,7 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 -   Les descriptions appropriées et les signaux visuels influent très favorablement sur l’utilisation des interactions avancées.
 
 
-## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>Vues d’applications
+## Vues d’applications
 
 
 Ajustez l’expérience d’interaction utilisateur par le biais des paramètres de panoramique/défilement et zoom de vos vues d’applications. La vue d’une application régit la manière dont un utilisateur accède à cette dernière et manipule votre application et son contenu. Les vues fournissent également des comportements tels que l’inertie, le rebond de limite de zone de contenu et les points d’ancrage.
@@ -172,7 +172,7 @@ Utilisez les événements et les vues de l’application pour modifier les compo
 
 Pour plus d’informations concernant les vues d’applications, voir [Contrôles, dispositions et texte](https://msdn.microsoft.com/library/windows/apps/mt228348).
 
-## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>Personnaliser des interactions tactiles
+## Personnaliser des interactions tactiles
 
 
 Si vous implémentez votre propre prise en charge d’interaction, gardez à l’esprit que les utilisateurs s’attendent à disposer d’une expérience intuitive impliquant une interaction directe avec les éléments d’interface utilisateur de votre application. Nous vous recommandons de modeler vos interactions personnalisées sur les bibliothèques de contrôles de plateforme pour des raisons de cohérence et de simplicité de détection. Les contrôles de ces bibliothèques fournissent une expérience d’interaction utilisateur complète, notamment pour les interactions standard, les effets physiques animés, le retour visuel et l’accessibilité. Ne créez des interactions personnalisées que pour répondre à des exigences claires et bien définies, notamment en l’absence d’interactions de base prenant en charge votre scénario.
@@ -209,12 +209,12 @@ Voici l’ensemble de mouvements tactiles de base pris en charge par la platefor
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## <span id="gestures"></span><span id="GESTURES"></span>Événements de mouvement
+## Événements de mouvement
 
 
 Pour plus d’informations concernant les contrôles individuels, voir [Liste de contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>Événements de pointeur
+## Événements de pointeur
 
 
 Les événements de pointeur sont déclenchés par diverses sources d’entrée actives, y compris les entrées tactiles, le pavé tactile, le stylet et la souris (ils remplacent les événements de souris classiques.)
@@ -423,7 +423,7 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>Événements de manipulation
+## Événements de manipulation
 
 
 Si vous souhaitez que votre application prenne en charge les interactions impliquant plusieurs doigts ou les interactions qui utilisent des données de rapidité, alors dans ce cas utilisez les événements de manipulation.
@@ -599,12 +599,12 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>Événements routés
+## Événements routés
 
 
 Tous les événements de pointeur, événements de mouvement et événements de manipulation mentionnés ici sont implémentés en tant qu’*événements routés*. Cela signifie que l’événement peut éventuellement être géré par des objets autres que celui qui a initialement déclenché l’événement. Des parents successifs dans une arborescence d’objets, tels que les conteneurs parents d’un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) ou l’élément [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) racine, peuvent choisir de gérer ces événements même si l’élément d’origine ne le fait pas. À l’inverse, tout objet qui gère l’événement peut marquer l’événement géré afin qu’il n’accède plus à aucun élément parent. Pour plus d’informations concernant le concept des événements routés et la façon dont il affecte votre manière d’écrire des gestionnaires pour les événements routés, voir [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/hh758286).
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
+## Pratiques conseillées et déconseillées
 
 
 -   Concevez des applications en utilisant l’interaction tactile comme méthode d’entrée principale.
@@ -616,7 +616,7 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 -   Évitez d’utiliser le nombre de doigts servant à distinguer la manipulation.
 
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
 * [Identifier des périphériques d’entrée](identify-input-devices.md) 
@@ -640,6 +640,6 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

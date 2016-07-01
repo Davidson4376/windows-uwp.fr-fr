@@ -1,10 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
-title: Recommandations en matière de conception pour l’interface tactile
+Description: "Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée."
+title: "Recommandations en matière de conception pour l’interface tactile"
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
+
 ---
 
 # Recommandations en matière de conception pour l’interface tactile
@@ -172,6 +176,7 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

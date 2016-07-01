@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
-title: Interopération DirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw
-description: L’API Windows.UI.Composition fournit des interfaces pour interopération en mode natif, permettant ainsi de déplacer directement le contenu dans le compositeur.
+title: "Interopération DirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw"
+description: "L’API Windows.UI.Composition fournit des interfaces pour interopération en mode natif, permettant ainsi de déplacer directement le contenu dans le compositeur."
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: b5308c8023990996a93277dd1bcfb8298c0bbf4f
+
 ---
 # Interopération DirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw
 
@@ -265,6 +269,7 @@ private:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

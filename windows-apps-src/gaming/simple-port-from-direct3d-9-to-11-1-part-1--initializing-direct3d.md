@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Initialiser Direct3D 11
-description: Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange.
+title: "Initialiser Direct3D 11"
+description: "Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange."
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f0e25e43633d895673d640f139af338f6f0713f2
+
 ---
 
 # Initialiser Direct3D 11
@@ -226,6 +230,7 @@ Maintenant que nous avons un handle de périphérique et une cible de rendu en p
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

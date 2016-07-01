@@ -1,8 +1,12 @@
 ---
 author: mtoepke
 title: Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
-description: Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux.
+description: "Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux."
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 14043fffc22849ca8d31f85e1035c38c07f1cdd4
+
 ---
 
 #  Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
@@ -46,7 +50,7 @@ Les ressources utilisées pour la création de packs de ressources sont spécifi
 
 -   Les fichiers de ressources portent le même nom de fichier et les versions spécifiques du pack de ressources sont placées dans des répertoires nommés particuliers. Ces noms de répertoires sont réservés par le système. Par exemple, \\en-us, \\scale-140, \\dxfl-dx11.
 -   Les fichiers de ressources sont stockés dans des dossiers avec des noms arbitraires. Toutefois, les fichiers sont nommés avec une étiquette commune qui est ajoutée à l’aide des chaînes réservées par le système pour indiquer la langue ou d’autres qualificateurs. Plus précisément, les chaînes des qualificateurs sont ajoutées au nom de fichier généralisé après un trait de soulignement (« \_ »). Par exemple, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. Vous pouvez également combiner ces chaînes. Par exemple, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
-    > **Remarque** Quand il est utilisé dans un nom de fichier au lieu d’être utilisé seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme « lang-<tag>» (exemple : « lang-fr-fr »), comme décrit dans [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+    > **Remarque** Quand il est utilisé dans un nom de fichier au lieu d’être utilisé seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme « lang-<tag> » (exemple : « lang-fr-fr »), comme indiqué dans [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
 
      
 
@@ -224,6 +228,7 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

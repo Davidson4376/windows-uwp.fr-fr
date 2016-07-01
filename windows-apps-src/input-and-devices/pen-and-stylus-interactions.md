@@ -6,8 +6,8 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 ---
 
@@ -44,7 +44,7 @@ La plateforme d’entrée manuscrite comprend trois composants :
 -   [
             **IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) : permet le rendu des traits d’encre sur le contexte de périphérique Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par défaut. Cela permet une totale personnalisation de l’expérience relative à l’entrée manuscrite.
 
-## <span id="inkcanvas"></span><span id="INKCANVAS"></span>Entrée manuscrite de base avec InkCanvas
+## Entrée manuscrite de base avec InkCanvas
 
 
 Pour les fonctionnalités de base liées à l’écriture manuscrite, il suffit de placer un élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) n’importe où sur une page.
@@ -86,7 +86,7 @@ La fonctionnalité d’entrée manuscrite prise en charge par le contrôle [**In
 
 Pour l’entrée manuscrite de base, vous n’avez pas à vous préoccuper de l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011). Toutefois, pour personnaliser et configurer le comportement de l’entrée manuscrite sur l’élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), vous devez accéder à son objet **InkPresenter** correspondant.
 
-## <span id="inkpresenter"></span><span id="INKPRESENTER"></span>Personnalisation de base avec InkPresenter
+## Personnalisation de base avec InkPresenter
 
 
 Un objet [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) est instancié avec chaque contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
@@ -197,7 +197,7 @@ Ces images montrent comment l’élément [**InkPresenter**](https://msdn.micros
 
 Pour exploiter des fonctionnalités dépassant l’entrée manuscrite et l’effacement, telles que la sélection de trait, votre application doit identifier une entrée spécifique afin que l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) la transmette directement non traitée afin d’être gérée par votre application.
 
-## <span id="passthrough"></span><span id="PASSTHROUGH"></span>Entrée directe pour traitement avancé
+## Entrée directe pour traitement avancé
 
 
 Par défaut, [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) traite toutes les entrées sous forme de trait d’encre ou d’effacement. Cela inclut les entrées modifiées par une affordance de matériel secondaire, telle qu’un bouton de stylet, un bouton droit de souris ou un élément similaire.
@@ -423,7 +423,7 @@ public MainPage()
     }
 ```
 
-## <span id="iinkd2drenderer"></span><span id="IINKD2DRENDERER"></span>Restitution d’une entrée manuscrite personnalisée
+## Restitution d’une entrée manuscrite personnalisée
 
 
 Par défaut, l’entrée manuscrite est traitée sur un thread d’arrière-plan de faible latence et restituée « humide » comme elle est dessinée. Lorsque le trait est terminé (stylet ou doigt relevé, ou bouton de la souris relâché), le trait est traité sur le thread de l’interface utilisateur et restitué « sec » à la couche [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (au-dessus du contenu de l’application et en remplaçant l’encre humide).
@@ -464,7 +464,7 @@ Pour voir un exemple complet de cette fonctionnalité, reportez-vous à l’[exe
  
 
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
@@ -494,6 +494,6 @@ Pour voir un exemple complet de cette fonctionnalité, reportez-vous à l’[exe
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

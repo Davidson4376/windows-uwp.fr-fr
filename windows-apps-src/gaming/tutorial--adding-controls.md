@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Ajouter des contrôles
-description: Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
+title: "Ajouter des contrôles"
+description: "Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base."
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
+
 ---
 
 # Ajouter des contrôles
@@ -809,7 +813,7 @@ Et voici comment cet exemple implémente tout un ensemble d’options de contrô
 ## Étapes suivantes
 
 
-Nous avons passé en revue chaque composant majeur d’un jeu WUP DirectX, sauf un : le composant audio ! La musique et les effets sonores étant un élément essentiel dans tout jeu, abordons l’[ajout de son](tutorial--adding-sound.md).
+Nous avons passé en revue chaque composant majeur d’un jeu WUP DirectX, sauf un : le composant audio ! La musique et les effets sonores étant un élément essentiel dans tout jeu, abordons l’[ajout de son](tutorial--adding-sound.md) !
 
 ## Exemple de code complet pour cette section
 
@@ -1902,7 +1906,7 @@ void MoveLookController::UpdateGameController()
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -1920,6 +1924,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des app
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
