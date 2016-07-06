@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/5d4410cf2c00d729502cffb00ba5828e0b091a12/windows-apps-src/debug-test-perf/device-portal-api-core.md) | HandedBackFailed | [Details](#c808b7561da2c47a305a5319ddb347f095b1aa371972)
+ [windows-apps-src\enterprise\edp-hub.md](https://github.com/Microsoft/windows-apps/blob/b63c6d6fa44cf69fad238ffec732b4f3471cb50d/windows-apps-src/enterprise/edp-hub.md) | OutofSyncHandedBackSuccess | [Details](#b9a8e8e59174ca58e229a12cac47c90f6a16d4462144)
 
 ## Item Details
-##### <a name='c808b7561da2c47a305a5319ddb347f095b1aa371972'></a> Source: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/5d4410cf2c00d729502cffb00ba5828e0b091a12/windows-apps-src/debug-test-perf/device-portal-api-core.md)
-* Status: HandedBackFailed
+##### <a name='b9a8e8e59174ca58e229a12cac47c90f6a16d4462144'></a> Source: [windows-apps-src\enterprise\edp-hub.md](https://github.com/Microsoft/windows-apps/blob/b63c6d6fa44cf69fad238ffec732b4f3471cb50d/windows-apps-src/enterprise/edp-hub.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/c4f7b0b75a532a0210fb873231db0e8d8e14c7eb/ol-handoff/Microsoft/windows-apps.fr-fr/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.fr-fr.xlf)
-* Handoff Datetime: 2016-07-06 15:39:54
+* Handoff File: [edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/b6acdaff132bb513204aaf7cd67195f6bee83f83/ol-handoff/Microsoft/windows-apps.fr-fr/master/edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.fr-fr.xlf)
+* Handoff Datetime: 2016-07-06 16:59:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\enterprise\edp-hub.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/3bcbe0fc0f8f2a8924c5fd1c9f3505a977e39ac6/windows-apps-src/enterprise/edp-hub.md)
+* Current Handback File: [edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/7f5cc33e62c0a3e0fdb88eecaac3c841425c88fe/ol-handback/Microsoft/windows-apps.fr-fr/master/edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.fr-fr.xlf)
+* Current Handback Datetime: 2016-06-30 20:04:53
 * [Back to Top](#report-top)
 
 
