@@ -12,7 +12,7 @@ ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
 # Ressources de programmation de jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.

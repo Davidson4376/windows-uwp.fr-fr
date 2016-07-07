@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Le rapport sur les commentaires du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows 10 par le biais du Hub de commentaires."
+Description: "Le rapport sur les commentaires du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows10 par le biais du Hub de commentaires."
 title: Rapport sur les commentaires
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 translationtype: Human Translation
@@ -15,15 +15,15 @@ Inciter vos clients à faire des commentaires sur votre application est un excel
 
 > **Remarque** Le rapport Commentaires qui est décrit dans cet article n’est pas encore disponible pour tous les comptes de développeur.
 
-Vous pouvez utiliser l’API de commentaires dans le [SDK d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows 10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. C’est la raison pour laquelle vous pouvez voir des commentaires de clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires depuis votre application.
+Vous pouvez utiliser l’API de commentaires dans le [SDK d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. C’est la raison pour laquelle vous pouvez voir des commentaires de clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires depuis votre application.
 
 > **Conseil** Les commentaires deviennent particulièrement utiles si vous utilisez la [version d’évaluation de package](package-flights.md) dans la mesure où le rapport sur les commentaires indique le package spécifique installé par chaque client sur son appareil au moment où il a laissé son commentaire.
 
-Le rapport sur les **commentaires** du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows 10 par le biais du Hub de commentaires. Vous pouvez afficher ces données dans votre tableau de bord ou exporter les données à consulter hors connexion. 
+Le rapport sur les **commentaires** du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows10 par le biais du Hub de commentaires. Vous pouvez afficher ces données dans votre tableau de bord ou exporter les données à consulter hors connexion. 
 
 ## Affichage des détails de vos commentaires
 
-Dans la section **Détails** de ce rapport, vous trouverez les commentaires individuels laissés par vos clients. À gauche du texte du commentaire s’affiche le nombre de fois que les autres clients ont voté pour ce commentaire dans le Hub de commentaires. Vous pouvez trier le commentaire de trois façons :
+Dans la section **Détails** de ce rapport, vous trouverez les commentaires individuels laissés par vos clients. À gauche du texte du commentaire s’affiche le nombre de fois que les autres clients ont voté pour ce commentaire dans le Hub de commentaires. Vous pouvez trier le commentaire de trois façons:
 
 - **Votes pour** (par défaut) : affiche les commentaires pour lesquels les autres clients ont voté, en commençant par le commentaire ayant reçu le plus de votes.
 - **Fréquents** : affiche les commentaires pour lesquels les autres clients ont voté au cours des sept derniers jours en commençant par le commentaire ayant fait l’objet de l’activité la plus récente.

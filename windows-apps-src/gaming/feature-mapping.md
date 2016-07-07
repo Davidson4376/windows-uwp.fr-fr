@@ -1,7 +1,7 @@
 ---
 author: mtoepke
-title: "Mapper les fonctionnalités DirectX 9 aux API DirectX 11"
-description: "Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et la plateforme Windows universelle (UWP)."
+title: "Mapper les fonctionnalités DirectX9 aux API DirectX11"
+description: "Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D9 sont traduites dans Direct3D11 et la plateforme Windows universelle (UWP)."
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
@@ -9,10 +9,10 @@ ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
 
 ---
 
-# Mapper les fonctionnalités DirectX 9 aux API DirectX 11
+# Mapper les fonctionnalités DirectX9 aux API DirectX11
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -26,13 +26,13 @@ Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont
 ## Mappage des API Direct3D 9 aux API DirectX 11
 
 
-[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) reste la base des graphismes DirectX, mais l’API a changé depuis DirectX 9 :
+[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) reste la base des graphismes DirectX, mais l’API a changé depuis DirectX9:
 
 -   L’infrastructure DXGI (Microsoft DirectX Graphics Infrastructure) sert à configurer les cartes graphiques. Utilisez [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) pour sélectionner le format des tampons, créer des chaînes d’échange, présenter des trames et créer des ressources partagées. Voir [Vue d’ensemble de DXGI](https://msdn.microsoft.com/library/windows/desktop/bb205075).
--   Un contexte de périphérique Direct3D permet de définir l’état du pipeline et de générer des commandes de rendu. La plupart de nos exemples utilisent un contexte immédiat pour effectuer un rendu directement sur le périphérique. Direct3D 11 prend aussi en charge le rendu multithread associé aux contextes différés. Voir [Présentation d’un périphérique dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476880).
+-   Un contexte de périphérique Direct3D permet de définir l’état du pipeline et de générer des commandes de rendu. La plupart de nos exemples utilisent un contexte immédiat pour effectuer un rendu directement sur le périphérique. Direct3D 11 prend aussi en charge le rendu multithread associé aux contextes différés. Voir [Présentation d’un périphérique dans Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476880).
 -   Certaines fonctionnalités ont été abandonnées, notamment le pipeline à fonctions fixes. Voir [Fonctionnalités obsolètes](https://msdn.microsoft.com/library/windows/desktop/cc308047).
 
-Pour obtenir la liste complète des fonctionnalités de Direct3D 11, voir [Fonctionnalités de Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476342) et [Fonctionnalités de Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404562).
+Pour obtenir la liste complète des fonctionnalités de Direct3D11, voir [Fonctionnalités de Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476342) et [Fonctionnalités de Direct3D11](https://msdn.microsoft.com/library/windows/desktop/hh404562).
 
 ## Passage de Direct2D 9 à Direct2D 11
 
@@ -50,9 +50,9 @@ L’API [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd36803
 
 D3DX et DXUT sont déconseillés et ne peuvent pas être utilisés par des jeux UWP. Ces bibliothèques d’assistance fournissaient des ressources pour les tâches comme le chargement des textures et des maillages.
 
--   La procédure pas à pas [Portage simple de Direct3D 9 vers UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) décrit les méthodes permettant de configurer une fenêtre, d’initialiser Direct3D et d’effectuer un rendu de base en 3D.
+-   La procédure pas à pas [Portage simple de Direct3D9 vers UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) décrit les méthodes permettant de configurer une fenêtre, d’initialiser Direct3D et d’effectuer un rendu de base en3D.
 -   La procédure pas à pas [Jeu UWP simple avec DirectX](tutorial--create-your-first-metro-style-directx-game.md) décrit les tâches communes de programmation de jeux, notamment les graphismes, le chargement de fichiers, l’interface utilisateur, les commandes et le son.
--   Le projet de la communauté [Kit de ressources DirectX](http://go.microsoft.com/fwlink/p/?LinkID=248929) propose des classes d’assistance pour Direct3D 11 et les applications UWP.
+-   Le projet de la communauté [Kit de ressources DirectX](http://go.microsoft.com/fwlink/p/?LinkID=248929) propose des classes d’assistance pour Direct3D11 et les applications UWP.
 
 ## Déplacer les programmes de nuanceurs de FX à HLSL
 
@@ -61,9 +61,9 @@ La bibliothèque des utilitaires D3DX (D3DX 9, D3DX 10 et D3DX 11), y compris Ef
 
 Visual Studio utilise toujours FXC pour compiler les objets nuanceurs. Les nuanceurs UWP sont compilés à l’avance. Le bytecode est chargé à l’exécution, puis chaque ressource de nuanceur est liée au pipeline graphique pendant l’étape de rendu appropriée. Les nuanceurs doivent être déplacés vers leurs propres fichiers .HLSL et des techniques de rendu doivent être implémentées dans votre code C++.
 
-Pour un aperçu du chargement des ressources de nuanceur, voir [Portage simple de Direct3D 9 vers UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
+Pour un aperçu du chargement des ressources de nuanceur, voir [Portage simple de Direct3D9 vers UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-Direct3D 11 a introduit le modèle de nuanceur 5, qui nécessite le niveau de fonctionnalité 11\_0 (ou supérieur) de Direct3D. Voir [Fonctionnalités du modèle de nuanceur 5 HLSL pour Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff471419).
+Direct3D 11 a introduit le modèle de nuanceur 5, qui nécessite le niveau de fonctionnalité 11\_0 (ou supérieur) de Direct3D. Voir [Fonctionnalités du modèle de nuanceur5 HLSL pour Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff471419).
 
 ## Remplacer XNAMath et D3DXMath
 
@@ -85,13 +85,13 @@ DirectSound n’est pas pris en charge pour UWP :
 DirectInput n’est pas pris en charge pour UWP :
 
 -   Utilisez les rappels d’événement d’entrée [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) pour la souris, le clavier et les entrées tactiles.
--   Utilisez [XInput](https://msdn.microsoft.com/library/windows/desktop/ee417001) 1.4 pour la prise en charge des contrôleurs de jeu (et la prise en charge du casque des contrôleurs de jeu). Si vous utilisez une base de code partagé pour les applications de bureau et UWP, voir [Versions XInput](https://msdn.microsoft.com/library/windows/desktop/hh405051) pour plus d’informations sur la compatibilité descendante.
+-   Utilisez [XInput](https://msdn.microsoft.com/library/windows/desktop/ee417001)1.4 pour la prise en charge des contrôleurs de jeu (et la prise en charge du casque des contrôleurs de jeu). Si vous utilisez une base de code partagé pour les applications de bureau et UWP, voir [Versions XInput](https://msdn.microsoft.com/library/windows/desktop/hh405051) pour plus d’informations sur la compatibilité descendante.
 -   Inscrivez-vous aux événements [**EdgeGesture**](https://msdn.microsoft.com/library/windows/apps/hh701600) si votre jeu doit utiliser la barre de l’application.
 
 ## Utiliser Microsoft Media Foundation au lieu de DirectShow
 
 
-DirectShow ne fait plus partie de l’API DirectX (ou de l’API Windows). [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) fournit le contenu vidéo à Direct3D via les surfaces partagées. Voir [API vidéo de Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh447677).
+DirectShow ne fait plus partie de l’API DirectX (ou de l’API Windows). [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) fournit le contenu vidéo à Direct3D via les surfaces partagées. Voir [API vidéo de Direct3D11](https://msdn.microsoft.com/library/windows/desktop/hh447677).
 
 ## Remplacer DirectPlay par du code réseau
 

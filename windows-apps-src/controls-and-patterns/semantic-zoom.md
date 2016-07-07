@@ -21,7 +21,7 @@ Le contrôle zoom sémantique permet à l’utilisateur de zoomer entre deux vue
 
 -   [**Classe SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)
 
-**Fonctionnalités** :
+**Fonctionnalités**:
 
 -   La taille de la vue avec zoom arrière est restreinte par les limites du contrôle de zoom sémantique.
 -   Appuyer sur un en-tête de groupe permet de basculer entre les vues. Il est possible d’activer le pincement pour basculer entre les vues.

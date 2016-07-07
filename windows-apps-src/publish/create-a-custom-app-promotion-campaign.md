@@ -19,7 +19,7 @@ Si vous lancez des campagnes personnalisées pour votre application, vous pouvez
 
 Il existe deux types principaux de données associées à des campagnes personnalisées : les vues de page de votre application et les *conversions*. Une conversion est une installation d’application qui se produit suite à un clic dans la page du Windows Store sur une URL de votre application promue via une campagne personnalisée. Pour plus d’informations sur les conversions, voir la section [Comprendre comment les installations d’application sont éligibles en tant que conversions](#understanding-how-app-installs-qualify-as-conversions) dans cette rubrique.
 
-Pour récupérer les données de performances de campagne personnalisée de votre application, procédez comme suit :
+Pour récupérer les données de performances de campagne personnalisée de votre application, procédez comme suit:
 
 -   Si votre application est une application de plateforme Windows universelle (UWP), elle peut utiliser la méthode [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) pour récupérer par programme l’ID de campagne personnalisée qui a abouti à une conversion.
 -   Vous pouvez afficher les données sur les vues de page et les conversions de votre application ou de votre produit in-app dans le [rapport Canaux et conversions](channels-and-conversions-report.md) accessible via le tableau de bord du Centre de développement.
@@ -33,7 +33,7 @@ Pour récupérer les données de performances de campagne personnalisée de votr
 
 Imaginez un développeur de jeu venant d’achever la création d’un jeu et désireux de promouvoir celui-ci auprès des joueurs de ses jeux existants. Il publie une annonce relative au lancement du nouveau de jeu sur sa page Facebook, incluant un lien vers la page du Windows Store où le jeu est disponible. Bon nombre de ses joueurs le suivant sur Twitter, il publie également un tweet d’annonce contenant le lien vers la page du Windows Store où le jeu est disponible.
 
-Pour suivre le succès de chacun de ces canaux de promotion, le développeur crée deux variantes de l’URL de la page du Windows Store correspondant au jeu :
+Pour suivre le succès de chacun de ces canaux de promotion, le développeur crée deux variantes de l’URL de la page du Windows Store correspondant au jeu:
 
 -   L’URL publiée sur sa page Facebook inclut l’ID de campagne personnalisée `my-facebook-campaign`.
 -   L’URL publiée sur Twitter inclut l’ID de campagne personnalisée `my-twitter-campaign`.
@@ -53,7 +53,7 @@ Pour figurer comme une conversion dans le [rapport Canaux et conversions](channe
 
      
 
-Pour être éligible en tant que conversion lors de la récupération par programme de l’ID de campagne associé à l’application, les conditions suivantes doivent être réunies :
+Pour être éligible en tant que conversion lors de la récupération par programme de l’ID de campagne associé à l’application, les conditions suivantes doivent être réunies:
 
 -   Un client disposant d’un compte Microsoft reconnu clique sur une URL d’application contenant un ID de campagne personnalisée, et est redirigé vers la page de l’application dans le Windows Store.
 -   Le client installe l’application pendant la vue de page du Windows Store, après avoir cliqué sur l’URL. Si l’utilisateur quitte la page, puis y revient (que ce soit ou non sur le même ordinateur ou appareil) dans les 24 heures et installe l’application, cette action figure comme une conversion dans le [rapport Canaux et conversions](channels-and-conversions-report.md), mais pas si vous récupérez par programme l’ID de campagne.
@@ -68,7 +68,7 @@ Pour créer une URL de page du Windows Store pour votre application avec un ID d
     -   Utilisez le format HTTP si vous souhaitez que les clients accèdent à la page de votre application dans le Windows Store à l’aide d’un navigateur (si l’application Windows Store est installée, cette URL ouvre également celle-ci en affichant la description de votre application). Cette URL est au format **`https://www.microsoft.com/store/apps/*your app name*/*your app ID*`**. Par exemple, l’URL HTTP pour Skype est `https://www.microsoft.com/store/apps/skype/9wzdncrfj364`.
         > **Remarque** Les URL au format HTTP permettent d’accéder au Windows Store à l’aide d’un navigateur sur les ordinateurs et tablettes exécutant Windows 7 et versions ultérieures, et les téléphones Windows Phone 8 et versions ultérieures.
 - Utilisez le format de protocole si vous promouvez votre application à partir d’autres applications Windows s’exécutant sur un appareil ou un ordinateur sur lequel l’application Windows Store est installée, et souhaitez que les clients accèdent à la page de votre application dans l’application Windows Store. Cette URL est au format **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**. Par exemple, l’URL de protocole pour Skype est `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`.
-3.  Ajouter la chaîne suivante à la fin de l’URL de votre application :
+3.  Ajouter la chaîne suivante à la fin de l’URL de votre application:
     -   Pour une URL au format HTTP, ajoutez **`?cid=*my custom campaign ID*`**. Par exemple, si Skype introduisait un ID de campagne avec la valeur **custom\_campaign**, la nouvelle URL HTTP incluant l’ID de campagne serait : `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`.
     -   Pour une URL au format de protocole, ajoutez **`&cid=*my custom campaign ID*`**. Par exemple, si Skype introduisait un ID de campagne avec la valeur **custom\_campaign**, la nouvelle URL de protocole incluant l’ID de campagne serait : `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`
 
@@ -95,7 +95,7 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 La méthode [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) accède à des données du Windows Store. Lorsque vous utilisez cette méthode, suivez les recommandations suivantes :
 
 -   Pour permettre l’exécution de cet appel de méthode, encapsulez celui-ci dans une opération asynchrone.
--   Si votre application n’est pas encore publiée dans le Windows Store lorsque vous testez votre campagne personnalisée, utilisez la méthode [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt187034) de la classe [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) au lieu de la classe [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765). Procédez comme suit :
+-   Si votre application n’est pas encore publiée dans le Windows Store lorsque vous testez votre campagne personnalisée, utilisez la méthode [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt187034) de la classe [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) au lieu de la classe [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765). Procédez comme suit:
     -   Ajoutez un élément **AppPurchaseCampaignId** dans le fichier WindowsStoreProxy.xml, comme illustré dans l’exemple suivant. Affectez la valeur de l’élément à l’ID de la campagne personnalisée. Lorsque vous exécutez l’application, la méthode [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt187034) retourne toujours cette valeur. Pour plus d’informations sur le fichier WindowsStoreProxy.xml, voir la documentation de [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766).
 
     ```        XML

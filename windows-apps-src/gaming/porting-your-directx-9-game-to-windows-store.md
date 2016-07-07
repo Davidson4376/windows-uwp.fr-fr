@@ -12,11 +12,11 @@ ms.openlocfilehash: 1cb77db78fe368c567990c9521122b42ef10ec65
 # Porter de DirectX 9 vers la plateforme Windows universelle (UWP)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX 9 vers la plateforme Windows universelle (UWP).
+Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX9 vers la plateforme Windows universelle (UWP).
 
-##  Porter votre jeu DirectX 9 vers UWP
+##  Porter votre jeu DirectX9 vers UWP
 
 
 -   Atteindre le public UWP et monétiser votre jeu.

@@ -9,7 +9,7 @@ ms.openlocfilehash: ffa2f0f368a61ef4f3003c1fa03e143b26c6859b
 ---
 # Glisser-déplacer
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article vous explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application.
@@ -59,6 +59,6 @@ Le système fournit une interface utilisateur par défaut pour le glisser-dépos
 * [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

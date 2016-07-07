@@ -31,19 +31,16 @@ Utilisez la propriété [**SpeechRecognizer.Constraints**](https://msdn.microsof
 
 Nous abordons ici les trois types de contraintes de reconnaissance vocale utilisés à partir d’une application. (Pour plus d’informations sur les contraintes de commandes vocales, voir [Lancer une application au premier plan avec les commandes vocales de Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
 
--   [
-            **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) : contrainte basée sur une grammaire prédéfinie (dictée ou recherche web).
--   [
-            **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) : contrainte basée sur une liste de mots ou d’expressions.
--   [
-            **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) : contrainte définie dans un fichier SRGS (Speech Recognition Grammar Specification).
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) : contrainte basée sur une grammaire prédéfinie (dictée ou recherche web).
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) : contrainte basée sur une liste de mots ou d’expressions.
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) : contrainte définie dans un fichier SRGS (Speech Recognition Grammar Specification).
 
 Chaque moteur de reconnaissance vocale possède sa propre collection de contraintes. Seules les combinaisons de contraintes suivantes sont valides :
 
 -   Une contrainte de sujet unique, ou une grammaire prédéfinie (dictée ou recherche web). Aucune autre contrainte n’est autorisée.
 -   Une combinaison de contraintes de liste et/ou de contraintes de fichier de grammaire.
 
-**Notez bien :**Appelez la méthode [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) pour compiler les contraintes avant de commencer le processus de reconnaissance vocale.
+**Notez bien:**Appelez la méthode [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) pour compiler les contraintes avant de commencer le processus de reconnaissance vocale.
 
 ## Spécifier une grammaire de recherche web (SpeechRecognitionTopicConstraint)
 
@@ -142,7 +139,7 @@ Les grammaires SRGS offrent un ensemble complet de fonctionnalités pour vous ai
 
 Pour plus d’informations sur les éléments et les attributs SRGS, voir [Informations de référence XML sur la grammaire SRGS](http://go.microsoft.com/fwlink/p/?LinkID=269886). Pour commencer à créer une grammaire SRGS, voir [Comment créer une grammaire XML de base](http://go.microsoft.com/fwlink/p/?LinkID=269887).
 
-Gardez à l’esprit les points suivants :
+Gardez à l’esprit les points suivants:
 
 -   Vous pouvez ajouter plusieurs contraintes de fichier de grammaire à une collection de contraintes.
 -   Utilisez l’extension de fichier .grxml pour les documents de grammaire XML qui sont conformes aux règles SRGS.
@@ -176,7 +173,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. Les grammaires doivent être conformes à la spécification W3C (World Wide Web Consortium) [SISR (Semantic Interpretation for Speech Recognition) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765).
 
-Ici, nous écoutons des variantes de « yes » et « no ».
+Ici, nous écoutons des variantes de «yes» et «no».
 
 ```CSharp
 <grammar xml:lang="en-US" 
@@ -243,6 +240,6 @@ Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez le
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

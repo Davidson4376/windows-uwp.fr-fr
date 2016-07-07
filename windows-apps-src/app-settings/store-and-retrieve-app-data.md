@@ -19,27 +19,25 @@ ms.openlocfilehash: 433cda6432d1e695bacb338e68012bcc9c837eb6
 
 Les *données d’application* sont des données mutables spécifiques à une application particulière. Elles comprennent l’état d’exécution, les préférences utilisateur et d’autres paramètres. Les données d’application diffèrent des *données utilisateur* que l’utilisateur crée et gère en utilisant l’application. Elles incluent les fichiers de documents ou multimédias, les transcriptions de courrier électronique ou de communication ou les enregistrements de base de données dont le contenu a été créé par l’utilisateur. Les données utilisateur peuvent s’avérer utiles ou judicieuses pour plusieurs applications. Il s’agit souvent de données que l’utilisateur veut manipuler ou transmettre sous forme d’entité indépendante de l’application elle-même, par exemple un document.
 
-**Remarque importante sur les données d’application :**La durée de vie des données d’application est liée à celle de l’application. Si l’application est supprimée, toutes les données d’application sont par conséquent perdues. N’utilisez pas les données d’application pour stocker des données utilisateur ni d’autres éléments que les utilisateurs peuvent considérer comme précieux et irremplaçables. Nous vous conseillons d’utiliser les bibliothèques de l’utilisateur et Microsoft OneDrive pour stocker ce type d’informations. Les données d’application sont idéales pour le stockage des préférences utilisateur, paramètres et favoris spécifiques à l’application.
+**Remarque importante sur les données d’application:**La durée de vie des données d’application est liée à celle de l’application. Si l’application est supprimée, toutes les données d’application sont par conséquent perdues. N’utilisez pas les données d’application pour stocker des données utilisateur ni d’autres éléments que les utilisateurs peuvent considérer comme précieux et irremplaçables. Nous vous conseillons d’utiliser les bibliothèques de l’utilisateur et Microsoft OneDrive pour stocker ce type d’informations. Les données d’application sont idéales pour le stockage des préférences utilisateur, paramètres et favoris spécifiques à l’application.
 
 ## <span id="Types_of_app_data"></span><span id="types_of_app_data"></span><span id="TYPES_OF_APP_DATA"></span>Types de données d’application
 
 
-Il existe deux types de données d’application : les fichiers et les paramètres.
+Il existe deux types de données d’application: les fichiers et les paramètres.
 
 -   **Paramètres**
 
     Utilisez les paramètres pour stocker les préférences de l’utilisateur et les informations relatives à l’état de l’application. L’API de données d’application permet de créer et récupérer facilement des paramètres (exemples fournis plus loin dans cet article).
 
-    Voici les types de données que vous pouvez utiliser pour les paramètres d’application :
+    Voici les types de données que vous pouvez utiliser pour les paramètres d’application:
 
     -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
     -   **Booléen**
     -   **Char16**, **String**
-    -   [
-            **DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [
-            **ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) : ensemble de paramètres d’application associés qui doivent être sérialisés et désérialisés de façon atomique. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
+    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) : ensemble de paramètres d’application associés qui doivent être sérialisés et désérialisés de façon atomique. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
 -   **Fichiers**
 
     Utilisez des fichiers pour stocker des données binaires ou pour activer vos propres types sérialisés personnalisés.
@@ -180,11 +178,11 @@ Les données stockées dans [**PasswordVault**](https://msdn.microsoft.com/libra
 
 ### <span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>Résolution des conflits
 
-L’itinérance des données d’application n’est pas prévue pour être utilisée sur plusieurs appareils à la fois. Si un conflit se produit durant la synchronisation en raison du changement d’une unité de données sur deux appareils, le système favorise toujours la valeur écrite en dernier. Cette précaution garantit que l’application exploite les informations les plus récentes. Si l’unité de données est un composite de paramètre, la résolution des conflits se produit au niveau de l’unité du paramètre ; en d’autres termes, le composite possédant le changement le plus récent est synchronisé.
+L’itinérance des données d’application n’est pas prévue pour être utilisée sur plusieurs appareils à la fois. Si un conflit se produit durant la synchronisation en raison du changement d’une unité de données sur deux appareils, le système favorise toujours la valeur écrite en dernier. Cette précaution garantit que l’application exploite les informations les plus récentes. Si l’unité de données est un composite de paramètre, la résolution des conflits se produit au niveau de l’unité du paramètre; en d’autres termes, le composite possédant le changement le plus récent est synchronisé.
 
 ### <span id="When_to_write_data"></span><span id="when_to_write_data"></span><span id="WHEN_TO_WRITE_DATA"></span>Quand écrire les données
 
-Selon la durée de vie prévue du paramètre, les données doivent être écrites à différents moments. Les données d’application qui changent rarement ou lentement doivent être écrites immédiatement. Toutefois, les données d’application qui évoluent fréquemment doivent être écrites seulement à intervalles réguliers (par exemple toutes les 5 minutes) et durant la suspension de l’application. Par exemple, une application de musique peut écrire le paramètre « chanson actuelle » au début de chaque nouvelle chanson, mais la position réelle dans la chanson doit être écrite uniquement au moment de l’interruption.
+Selon la durée de vie prévue du paramètre, les données doivent être écrites à différents moments. Les données d’application qui changent rarement ou lentement doivent être écrites immédiatement. Toutefois, les données d’application qui évoluent fréquemment doivent être écrites seulement à intervalles réguliers (par exemple toutes les 5 minutes) et durant la suspension de l’application. Par exemple, une application de musique peut écrire le paramètre «chanson actuelle» au début de chaque nouvelle chanson, mais la position réelle dans la chanson doit être écrite uniquement au moment de l’interruption.
 
 ### <span id="Excessive_usage_protection"></span><span id="excessive_usage_protection"></span><span id="EXCESSIVE_USAGE_PROTECTION"></span>Protection contre une utilisation excessive
 

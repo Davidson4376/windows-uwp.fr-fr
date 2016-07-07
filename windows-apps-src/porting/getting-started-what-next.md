@@ -11,7 +11,7 @@ ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
 
 # Prise en main &#58; Et ensuite ?
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## Étapes suivantes
 
@@ -26,7 +26,7 @@ Avec ces informations de base, vous pouvez commencer à écrire des applications
 
 Pensez aussi surtout à consulter nos [ressources de communauté](http://go.microsoft.com/fwlink/p/?LinkId=263513) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.
 
-Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunités pour la création de vos applications. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez !
+Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunités pour la création de vos applications. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez!
 
 ## Rubriques connexes
 

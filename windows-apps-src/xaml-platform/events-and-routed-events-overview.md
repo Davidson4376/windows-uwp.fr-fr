@@ -11,7 +11,7 @@ ms.openlocfilehash: 4e4e21789dd76ad691f3828d23c73adcfc31efdf
 
 # Vue d’ensemble des événements et des événements routés
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -154,13 +154,12 @@ Il n’est généralement pas nécessaire de supprimer les gestionnaires d’év
 Il existe de rares cas où vous voulez supprimer explicitement des gestionnaires d’événements. Ces situations sont les suivantes :
 
 -   les gestionnaires que vous avez ajoutés pour des événements statiques, lesquels ne peuvent pas être nettoyés de la mémoire de manière conventionnelle. Les événements des classes [**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) et [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) sont des exemples d’événements statiques dans l’API Windows Runtime ;
--   le code de test pour lequel vous voulez une suppression immédiate des gestionnaires, ou le code pour lequel vous voulez permuter les anciens et les nouveaux gestionnaires d’événements pour un événement au moment de l’exécution ;
+-   le code de test pour lequel vous voulez une suppression immédiate des gestionnaires, ou le code pour lequel vous voulez permuter les anciens et les nouveaux gestionnaires d’événements pour un événement au moment de l’exécution;
 -   l’implémentation d’un accesseur **remove** personnalisé ;
 -   les événements statiques personnalisés.
 -   Gestionnaires des navigations au sein des pages.
 
-[
-            **FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) ou [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) sont des déclencheurs d’événements ayant des positions appropriées dans la gestion d’état et la durée de vie des objets, de sorte que vous pouvez les utiliser pour la suppression des gestionnaires pour les autres événements.
+[**FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) ou [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) sont des déclencheurs d’événements ayant des positions appropriées dans la gestion d’état et la durée de vie des objets, de sorte que vous pouvez les utiliser pour la suppression des gestionnaires pour les autres événements.
 
 Par exemple, vous pouvez supprimer un gestionnaire d’événements nommé **textBlock1_PointerEntered** de l’objet cible **textBlock1** en utilisant le code suivant.
 
@@ -174,11 +173,11 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 Vous pouvez également supprimer des gestionnaires dans les cas où l’événement a été ajouté via un attribut XAML, ce qui signifie que le gestionnaire a été ajouté dans du code généré. Cette opération est plus simple si vous avez fourni une valeur**Name** pour l’élément auquel le gestionnaire était attaché, car cela fournit une référence d’objet pour le code ultérieurement ; toutefois, vous pouvez également parcourir l’arborescence d’objets afin de trouver la référence d’objet nécessaire dans les cas où l’objet n’a pas de valeur **Name**.
 
-Si vous devez supprimer un gestionnaire d’événements en C++/CX, vous avez besoin d’un jeton d’inscription, que vous devez avoir reçu de la valeur de retour de l’inscription du gestionnaire d’événements `+=`. En effet, la valeur que vous utilisez pour le côté droit de l’annulation de l’inscription `-=` dans la syntaxe C++/CX est le jeton, et non le nom de la méthode. Pour C++/CX, vous ne pouvez pas supprimer des gestionnaires qui ont été ajoutés en tant qu’attribut XAML, car le code généré C++/CX n’enregistre pas de jeton.
+Si vous devez supprimer un gestionnaire d’événements en C++/CX, vous avez besoin d’un jeton d’inscription, que vous devez avoir reçu de la valeur de retour de l’inscription du gestionnaire d’événements `+=`. Eneffet, la valeur que vous utilisez pour le côté droit de l’annulation de l’inscription`-=` dans la syntaxeC++/CX est le jeton, et non le nom de la méthode. PourC++/CX, vous ne pouvez pas supprimer des gestionnaires qui ont été ajoutés en tant qu’attributXAML, car le code généréC++/CX n’enregistre pas de jeton.
 
 ## Événements routés
 
-Windows Runtime avec C#, Microsoft Visual Basic ou C++/CX prend en charge le concept d’événement routé pour un ensemble d’événements présents sur la plupart des éléments d’interface utilisateur. Ces événements sont destinés à des scénarios d’entrée et d’interaction de l’utilisateur, et sont implémentés sur la classe de base [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Voici une liste des événements d’entrée qui sont des événements routés :
+Windows Runtime avec C#, Microsoft Visual Basic ou C++/CX prend en charge le concept d’événement routé pour un ensemble d’événements présents sur la plupart des éléments d’interface utilisateur. Ces événements sont destinés à des scénarios d’entrée et d’interaction de l’utilisateur, et sont implémentés sur la classe de base [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Voici une liste des événements d’entrée qui sont des événements routés:
 
 -   [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)
 -   [**DragEnter**](https://msdn.microsoft.com/library/windows/apps/br208923)
@@ -224,7 +223,7 @@ Dans certains cas, *sender* n’est pas intéressant et ce que vous voulez savoi
 
 Plusieurs classes de données d’événement pour des événements routés spécifiques contiennent une propriété nommée **Handled**. Pour obtenir des exemples, voir [**PointerRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943079), [**KeyRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073), [**DragEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/br242375). Dans tous les cas, **Handled** est une propriété booléenne définissable.
 
-L’affectation à la propriété **Handled** de la valeur **true** influence le comportement du système d’événements. Quand **Handled** a la valeur **true**, le routage s’arrête pour la plupart des gestionnaires d’événements ; l’événement ne poursuit pas l’itinéraire pour informer les autres gestionnaires attachés de ce cas d’événement particulier. Il vous appartient de déterminer ce que signifie la propriété « handled » dans le contexte de l’événement et comment votre application y répond. En fait, **Handled** est un protocole simple qui permet au code d’application d’indiquer qu’une occurrence d’un événement ne doit pas être propagée vers des conteneurs. La logique de votre application a effectué les opérations requises. En revanche, vous devez veiller à ne pas gérer des événements qui doivent probablement être propagés afin que les comportements de contrôle ou système intégrés puissent agir. Par exemple, la gestion des événements de bas niveau dans les parties ou éléments d’un contrôle de sélection peut être néfaste. Le contrôle de sélection peut être à la recherche d’événements d’entrée pour savoir que la sélection doit changer.
+L’affectation à la propriété **Handled** de la valeur **true** influence le comportement du système d’événements. Quand **Handled** a la valeur **true**, le routage s’arrête pour la plupart des gestionnaires d’événements ; l’événement ne poursuit pas l’itinéraire pour informer les autres gestionnaires attachés de ce cas d’événement particulier. Il vous appartient de déterminer ce que signifie la propriété «handled» dans le contexte de l’événement et comment votre application y répond. En fait, **Handled** est un protocole simple qui permet au code d’application d’indiquer qu’une occurrence d’un événement ne doit pas être propagée vers des conteneurs. La logique de votre application a effectué les opérations requises. En revanche, vous devez veiller à ne pas gérer des événements qui doivent probablement être propagés afin que les comportements de contrôle ou système intégrés puissent agir. Par exemple, la gestion des événements de bas niveau dans les parties ou éléments d’un contrôle de sélection peut être néfaste. Le contrôle de sélection peut être à la recherche d’événements d’entrée pour savoir que la sélection doit changer.
 
 Les événements routés ne peuvent pas tous annuler un itinéraire de cette façon et vous pouvez le savoir car ils n’ont pas de propriété **Handled**. Par exemple, [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) et [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) se propagent, mais toujours jusqu’à la racine et leurs classes de données d’événements n’ont pas de propriété **Handled** capable d’influencer ce comportement.
 
@@ -268,7 +267,7 @@ Un petit nombre d’éléments d’interface utilisateur prend en charge les *co
 
 Dans le cadre de la définition d’événements personnalisés, la façon dont vous ajoutez l’événement et ce qu’il signifie pour votre conception de classe dépendent beaucoup du langage de programmation utilisé.
 
--   Pour C# et Visual Basic, vous définissez un événement CLR. Vous pouvez utiliser le modèle d’événement .NET standard, pourvu que vous n’utilisiez pas d’accesseurs personnalisés (**add**/**remove**). Conseils supplémentaires :
+-   Pour C# et Visual Basic, vous définissez un événement CLR. Vous pouvez utiliser le modèle d’événement .NET standard, pourvu que vous n’utilisiez pas d’accesseurs personnalisés (**add**/**remove**). Conseils supplémentaires:
     -   Pour le gestionnaire d’événements, il est conseillé d’utiliser [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx), car il possède une traduction intégrée vers le délégué d’événement générique Windows Runtime [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577).
     -   Ne basez pas votre classe de données d’événements sur la classe [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx), car elle n’effectue pas de traduction vers Windows Runtime. Utilisez une classe de données d’événements existante ou aucune classe de base.
     -   Si vous utilisez des accesseurs personnalisés, voir [Événements personnalisés et accesseurs d’événement dans les composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).

@@ -23,13 +23,13 @@ Le couplage hors-bande permet aux applications de se connecter à un périphéri
     "providerName":"PrinterProtocolProvider.dll"
 ```
 
-**connectionKind** : type de connexion. Les valeurs valides sont « Network » et « Bluetooth ».
+**connectionKind**: type de connexion. Les valeurs valides sont «Network» et «Bluetooth».
 
-**physicalAddress** : adresse MAC du périphérique. Par exemple, dans le cas d’une imprimante réseau, il s’agirait de l’adresse MAC fournie par la feuille de test de l’imprimante au format AA:BB:CC:DD:EE:FF.
+**physicalAddress**: adresse MAC du périphérique. Par exemple, dans le cas d’une imprimante réseau, il s’agirait de l’adresse MAC fournie par la feuille de test de l’imprimante au format AA:BB:CC:DD:EE:FF.
 
-**connectionString** : chaîne de connexion du périphérique. Par exemple, dans le cas d’une imprimante réseau, il s’agirait de l’adresse IP fournie par la feuille de test de l’imprimante au format 192.168.1.1:9001. Ce champ est omis pour tous les périphériques Bluetooth.
+**connectionString**: chaîne de connexion du périphérique. Par exemple, dans le cas d’une imprimante réseau, il s’agirait de l’adresse IP fournie par la feuille de test de l’imprimante au format 192.168.1.1:9001. Ce champ est omis pour tous les périphériques Bluetooth.
 
-**peripheralKinds** : GUID pour le type de périphérique. Valeurs valides :
+**peripheralKinds**: GUID pour le type de périphérique. Valeurs valides:
 
 | Type de périphérique | GUID |
 | ---- | ---- |
@@ -38,7 +38,7 @@ Le couplage hors-bande permet aux applications de se connecter à un périphéri
 | *Caisse enregistreuse* | 772E18F2-8925-4229-A5AC-6453CB482FDA |
 
 
-**providerId** : GUID de la classe de fournisseur de protocole. Valeurs valides :
+**providerId**: GUID de la classe de fournisseur de protocole. Valeurs valides:
 
 | Classe de fournisseur de protocole | GUID |
 | ---- | ---- |
@@ -52,7 +52,7 @@ Le couplage hors-bande permet aux applications de se connecter à un périphéri
 | *Caisse BT APG* | 332E6550-2E01-42EB-9401-C6A112D80185 |
 
 
-**providerName** : nom de la DLL de fournisseur. Fournisseurs par défaut :
+**providerName**: nom de la DLL de fournisseur. Fournisseurs par défaut:
 
 | Fournisseur | Nom de la DLL |
 | ---- | ---- |
@@ -60,7 +60,7 @@ Le couplage hors-bande permet aux applications de se connecter à un périphéri
 | Caisse enregistreuse | CashDrawerProtocolProvider.dll |
 | Scanneur | BarcodeScannerProtocolProvider.dll |
 
-## Exemple d’utilisation : imprimante réseau
+## Exemple d’utilisation: imprimante réseau
 
 ```csharp
 String oobBlobNetworkPrinter =
@@ -74,7 +74,7 @@ String oobBlobNetworkPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobNetworkPrinter);
 ```
 
-## Exemple d’utilisation : imprimante Bluetooth
+## Exemple d’utilisation: imprimante Bluetooth
 
 ```csharp
 string oobBlobBTPrinter =

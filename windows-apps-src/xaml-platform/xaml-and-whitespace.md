@@ -11,7 +11,7 @@ ms.openlocfilehash: 408c9c7f79f5db81bdf7810a6c71cf25c1c8ec51
 
 # XAML et espace blanc
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
 
@@ -30,7 +30,7 @@ En accord avec le langage XML, les caractères d’espace blanc en langage XAML 
 
 ### Espace blanc dans le texte interne et primitives de chaîne
 
-Les règles de normalisation ci-dessus s’appliquent au texte interne au sein d’éléments XAML. À l’issue de la normalisation, un processeur XAML convertit le texte interne dans un type approprié comme ceci :
+Les règles de normalisation ci-dessus s’appliquent au texte interne au sein d’éléments XAML. À l’issue de la normalisation, un processeur XAML convertit le texte interne dans un type approprié comme ceci:
 
 -   Si le type de la propriété n’est pas une collection, mais n’est pas directement un type **Object**, le processeur XAML essaie de le convertir vers ce type à l’aide de son convertisseur de type. Un échec de conversion ici engendre une erreur d’analyse XAML.
 -   Si le type de la propriété est une collection et que le texte interne est contigu (sans balises d’éléments intermédiaires), le texte interne est analysé comme un élément **String** unique. Si le type de collection ne peut pas accepter d’élément **String**, cela engendre également une erreur de l’analyseur XAML.

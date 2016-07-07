@@ -91,7 +91,7 @@ Voici d’autres types d’entrée qui ne font pas appel à une interface utilis
 <table>
 <tr><td colspan="3">Appareils d’entrée</td></tr>
 <tr><td>Clavier</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Touche Windows + Retour arrière</td></tr>
-<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>Dites « Hey Cortana, reviens en arrière »</td></tr>
+<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>Dites «Hey Cortana, reviens en arrière»</td></tr>
 </table>
  
 
@@ -258,7 +258,7 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 <tr class="odd">
 <td align="left"><p><strong>Page à page, différents groupes d’homologues</strong></p></td>
 <td align="left"><strong>Oui</strong>
-<p>Dans cette illustration, l’utilisateur navigue du niveau 1 de l’application vers le niveau 2, en traversant des groupes d’homologues. La navigation est donc ajoutée à l’historique de navigation.</p>
+<p>Dans cette illustration, l’utilisateur navigue du niveau1 de l’application vers le niveau2, en traversant des groupes d’homologues. La navigation est donc ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>Dans l’illustration suivante, l’utilisateur navigue entre deux groupes d’homologues du même niveau. La navigation est donc ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
@@ -267,12 +267,12 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 <td align="left"><p><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong></p>
 <p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Aucun élément de navigation (par exemple les onglets/tableaux croisés dynamiques ou un volet de navigation ancré) fournissant une navigation directe vers les deux pages n’est toujours présent.</p></td>
 <td align="left"><strong>Oui</strong>
-<p>Dans l’illustration suivante, l’utilisateur navigue entre deux pages dans le même groupe d’homologues. Comme les pages n’utilisent pas d’onglets ni de volet de navigation ancré, la navigation est ajoutée à l’historique de navigation.</p>
+<p>Dans l’illustration suivante, l’utilisateur navigue entre deuxpages dans le même groupe d’homologues. Comme les pages n’utilisent pas d’onglets ni de volet de navigation ancré, la navigation est ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Page à page, même groupe d’homologues, avec un élément de navigation à l’écran</strong></p>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deux pages utilisent le même élément onglets/tableaux croisés dynamiques, ou elles s’affichent dans un volet de navigation ancré.</p></td>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deuxpages utilisent le même élément onglets/tableaux croisés dynamiques, ou elles s’affichent dans un volet de navigation ancré.</p></td>
 <td align="left"><strong>Non</strong>
 <p>Lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>

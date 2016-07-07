@@ -20,10 +20,10 @@ Vous devez commencer par indiquer le type de produit in-app que vous proposez. C
 
 > **Remarque** Vous ne pourrez pas modifier le type de produit après avoir enregistré cette page pour créer le produit in-app. Si vous avez choisi un type de produit incorrect, vous pouvez toujours supprimer votre soumission de produit in-app en cours et recommencer en créant un autre produit in-app.
 
-Sélectionnez le type de produit approprié pour votre produit in-app :
+Sélectionnez le type de produit approprié pour votre produit in-app:
 
-- Consommable : produit pouvant être acheté, utilisé (consommé), puis acheté de nouveau. Les produits in-app consommables sont souvent utilisés pour des éléments tels que la monnaie d’un jeu (or, pièces, etc.), qui peuvent être achetés en montants prédéfinis puis dépensés par le client.
-- Durable : produit acheté et détenu par l’acheteur pendant une durée définie. Les produits in-app durables servent généralement à déverrouiller des fonctionnalités supplémentaires d’une application. Ils ne sont pas consommés, mais vous pouvez définir le champ **Durée de vie du produit** pour qu’ils arrivent à expiration au bout d’un laps de temps défini (compris entre 1 et 365 jours). Par défaut, le champ **Durée de vie du produit** d’un produit in-app durable affiche **Toujours**, ce qui signifie que ce produit n’expire jamais. Vous pouvez changer la durée à l’étape [Propriétés du produit in-app](enter-iap-properties.md) du processus de soumission du produit in-app.
+- Consommable: produit pouvant être acheté, utilisé (consommé), puis acheté de nouveau. Les produits in-app consommables sont souvent utilisés pour des éléments tels que la monnaie d’un jeu (or, pièces, etc.), qui peuvent être achetés en montants prédéfinis puis dépensés par le client.
+- Durable: produit acheté et détenu par l’acheteur pendant une durée définie. Les produits in-app durables servent généralement à déverrouiller des fonctionnalités supplémentaires d’une application. Ils ne sont pas consommés, mais vous pouvez définir le champ **Durée de vie du produit** pour qu’ils arrivent à expiration au bout d’un laps de temps défini (compris entre 1 et 365 jours). Par défaut, le champ **Durée de vie du produit** d’un produit in-app durable affiche **Toujours**, ce qui signifie que ce produit n’expire jamais. Vous pouvez changer la durée à l’étape [Propriétés du produit in-app](enter-iap-properties.md) du processus de soumission du produit in-app.
 
 ## ID de produit
 
@@ -33,7 +33,7 @@ Voici quelques éléments à prendre en considération lors du choix d'un ID pro
 
 -   Les clients ne verront pas cet ID produit. (Par la suite, vous pourrez entrer un [titre et une description](create-iap-descriptions.md) qui seront visibles par les clients.)
 -   Vous ne pouvez plus modifier ni supprimer l'ID produit d'un produit intégré à l'application après la publication de ce dernier.
--   Un ID produit ne peut pas comporter plus de 100 caractères.
+-   Un ID produit ne peut pas comporter plus de 100caractères.
 -   Un ID produit ne peut pas inclure les caractères suivants : **&lt;&gt;\* % &amp; : \\ ? + ,**
 -   Pour offrir votre produit in-app sur tous les appareils, utilisez uniquement des caractères alphanumériques, des points et/ou des traits de soulignement. Si vous utilisez d'autres types de caractère, le produit intégré à l'application ne sera pas disponible à l'achat pour les clients utilisant Windows Phone 8.1 ou une version antérieure.
 -   Un ID produit ne doit pas nécessairement être unique dans le Windows Store, mais doit l'être dans votre compte de développeur.
@@ -45,6 +45,6 @@ Voici quelques éléments à prendre en considération lors du choix d'un ID pro
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

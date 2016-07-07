@@ -11,10 +11,10 @@ ms.openlocfilehash: 0f889c22b8999408341f4c12387602b344f49439
 
 # Créer et exécuter votre première expérience avec des tests A/B
 
-Dans cette procédure pas à pas, vous allez &#58;
-* créer une expérience sur le tableau de bord du Centre de développement Windows qui observe si le changement de la couleur d’arrière-plan d’un bouton d’application augmente le nombre de clics sur le bouton en question ;
-* créer une application qui récupère les paramètres de variante à partir du Centre de développement, puis utilise ces données pour modifier la couleur d’arrière-plan d’un bouton et consigne les données des événements d’affichage et de conversion dans le Centre de développement ;
-* exécuter l’application pour collecter des données d’expérience ;
+Dans cette procédure pas à pas, vous allez&#58;
+* créer une expérience sur le tableau de bord du Centre de développementWindows qui observe si le changement de la couleur d’arrière-plan d’un bouton d’application augmente le nombre de clics sur le bouton en question;
+* créer une application qui récupère les paramètres de variante à partir du Centre de développement, puis utilise ces données pour modifier la couleur d’arrière-plan d’un bouton et consigne les données des événements d’affichage et de conversion dans le Centre de développement;
+* exécuter l’application pour collecter des données d’expérience;
 * passer en revue les résultats de l’expérience sur le tableau de bord du Centre de développement, choisir une variante à activer pour tous les utilisateurs de l’application, puis terminer l’expérience.
 
 Pour une vue d’ensemble des tests A/B avec le Centre de développement, voir [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md).
@@ -23,17 +23,17 @@ Pour une vue d’ensemble des tests A/B avec le Centre de développement, voir [
 
 Pour suivre cette procédure pas à pas, vous devez posséder un compte du Centre de développement Windows et devez configurer votre ordinateur de développement comme décrit dans [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md).
 
-## Créer l’expérience dans le Centre de développement Windows
+## Créer l’expérience dans le Centre de développementWindows
 
 1. Connectez-vous au [tableau de bord du Centre de développement](https://dev.windows.com/overview).
 2. Si vous disposez déjà d’une application dans le Centre de développement que vous souhaitez utiliser pour créer une expérience, sélectionnez l’application en question sous **Vos applications**. Si vous ne disposez pas encore d’une application dans votre tableau de bord, [créez une application en réservant un nom](../publish/create-your-app-by-reserving-a-name.md), puis sélectionnez cette application dans votre tableau de bord.
 3. Dans le volet de navigation, cliquez sur **Services**, puis sur **Expérimentation**.
-4. Dans la section **Clés API**, sélectionnez **Nouvelle clé API** pour générer une nouvelle clé API, puis entrez le nom **My First Experiment** pour la clé en question. Vous utiliserez cette clé API dans la section suivante de cette procédure pas à pas.
+4. Dans la section **Clés API**, sélectionnez **Nouvelle clé API** pour générer une nouvelle clé API, puis entrez le nom **My First Experiment** pour la clé en question. Vous utiliserez cette cléAPI dans la section suivante de cette procédure pas à pas.
 5. Dans la section **Expériences**, cliquez sur **Nouvelle expérience**. Dans le champ **Nom d’expérience**, tapez le nom **Optimize Button Clicks**.
 6. Dans le champ **Nom d’événement d’affichage**, tapez le nom **userViewedButton**. Plus loin dans cette procédure pas à pas, vous ajouterez du code qui consigne cet événement d’affichage lorsque la page principale de votre application est initialisée et que le bouton est visible à l’utilisateur.
 7. Dans la section **Objectifs et événements de conversion**, entrez les valeurs suivantes :
   * Dans le champ **Nom d’objectif**, tapez **Increase Button Clicks**.
-  * Dans le champ **Nom de l’événement de conversion**, tapez le nom **userClickedButton**. Plus loin dans cette procédure pas à pas, vous ajouterez du code qui consigne cet événement de conversion dans le gestionnaire d’événements Click pour le bouton en question.
+  * Dans le champ **Nom de l’événement de conversion**, tapez le nom **userClickedButton**. Plus loin dans cette procédure pas à pas, vous ajouterez du code qui consigne cet événement de conversion dans le gestionnaire d’événementsClick pour le bouton en question.
   * Dans le champ **Objectif**, choisissez **Agrandir**.
 8. Dans la section **Variantes et paramètres**, cliquez trois fois sur **Ajouter un paramètre**. Vous devez à présent avoir quatre lignes de paramètres vides.
   * Dans la première ligne, tapez **buttonText** pour le nom du paramètre, **Grey Button** dans la colonne **Variante A** et **Blue Button** dans la colonne **Variante B**.
@@ -47,14 +47,14 @@ Pour suivre cette procédure pas à pas, vous devez posséder un compte du Centr
 
 ## Coder l’expérience dans votre application
 
-1. Dans Visual Studio 2015, créez un projet de plateforme Windows universelle à l’aide de Visual C#. Nommez le projet **SampleExperiment**.
+1. Dans VisualStudio2015, créez un projet de plateformeWindows universelle à l’aide de VisualC#. Nommez le projet **SampleExperiment**.
 2. Dans l’Explorateur de solutions, développez votre nœud de projet, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 3. Dans le **Gestionnaire de références**, développez **Windows universel** et cliquez sur **Extensions**.
 4. Dans la liste des Kits de développement logiciel (SDK), cochez la case en regard de **Kit de développement logiciel (SDK) d’engagement de la Boutique Microsoft** et cliquez sur **OK**.
 5. Dans l’**Explorateur de solutions**, double-cliquez sur MainPage.xaml pour ouvrir le concepteur pour la page principale de l’application.
 6. Faites glisser un **Bouton** de la **Boîte à outils** vers la page.
 7. Double-cliquez sur le bouton dans le concepteur pour ouvrir le fichier de code et ajoutez un gestionnaire d’événements pour l’événement **Click**.  
-8. Remplacez l’ensemble du contenu du fichier de code par le code suivant :
+8. Remplacez l’ensemble du contenu du fichier de code par le code suivant:
 
   ```CSharp
   using System;
@@ -142,7 +142,7 @@ Pour suivre cette procédure pas à pas, vous devez posséder un compte du Centr
      }
   }
   ```
-9. Dans la ligne de code suivante, affectez les variables *apiKey* à la clé API que vous avez obtenue à partir du tableau de bord du Centre de développement dans la section précédente. La clé API illustrée ci-dessous est uniquement fournie à titre d’exemple.
+9. Dans la ligne de code suivante, affectez les variables *apiKey* à la clé API que vous avez obtenue à partir du tableau de bord du Centre de développement dans la section précédente. La cléAPI illustrée ci-dessous est uniquement fournie à titre d’exemple.
 ```CSharp
 private string apiKey = "F48AC670-4472-4387-AB7D-D65B095153FB";
 ```
@@ -164,12 +164,12 @@ Laissez s’écouler plusieurs heures après avoir terminé la section précéde
 2. Dans la section **Expériences**, cliquez sur le filtre **Actives**, puis cliquez sur **Optimize Button Clicks** pour accéder à la page de cette expérience.
 3. Vérifiez que les résultats affichés dans les sections **Résumé des résultats** et **Détails des résultats** correspondent à ce que vous attendez. Pour en savoir plus sur ces sections, voir [Gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md#review-the-results-of-your-experiment).
 
-  >**Remarque** Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique avec plusieurs événements de conversion fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
+  >**Remarque** Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique avec plusieurs événements de conversion fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
 
 4. Vous êtes désormais prêt à terminer l’expérience. Dans la section **Résumé des résultats**, cliquez sur **Basculer** dans la colonne **Variante B**. Cela permet de basculer tous les utilisateurs de votre application sur le bouton bleu.
 5. Cliquez sur **OK** pour confirmer que vous souhaitez mettre fin à l’expérience.
 6. Exécutez l’application **SampleExperiment** que vous avez créée dans la section précédente.
-7. Vérifiez que vous voyez un bouton bleu. Notez que jusqu’à 2 minutes peuvent être nécessaires pour que votre application reçoive une affectation de variante mise à jour.
+7. Vérifiez que vous voyez un bouton bleu. Notez que jusqu’à 2minutes peuvent être nécessaires pour que votre application reçoive une affectation de variante mise à jour.
 
 ## Rubriques connexes
 

@@ -11,16 +11,16 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 # Renouveler une clé d’ID du Windows Store
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous générez une clé d’ID du Windows Store en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675), la clé est valide pendant 90 jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
 
 ## Conditions préalables
 
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants :
+Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
--   un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
+-   un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
 -   une clé d’ID du Windows Store arrivée à expiration, qui a été générée en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) à partir du code côté client de votre application.
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
@@ -118,6 +118,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

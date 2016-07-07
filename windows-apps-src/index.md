@@ -1,6 +1,6 @@
 ---
 Description: "Voici les informations dont vous avez besoin pour créer une application UWP pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC."
-title: "Guides de procédure pour les applications Windows 10 - Développement d’applications Windows"
+title: "Guides de procédure pour les applications Windows10 - Développement d’applicationsWindows"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
@@ -11,17 +11,17 @@ ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
 ---
 
 
-# Guides de procédure pour les applications UWP sur Windows 10
+# Guides de procédure pour les applications UWP sur Windows10
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Voici les informations dont vous avez besoin pour créer une application Windows universelle pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC. Cette section fournit des instructions et des exemples de code organisés par le type de tâche à accomplir.
 
-Si vous souhaitez une présentation de la plateforme Windows universelle (UWP) et de la façon dont elle vous permet d’utiliser le même code pour offrir des expériences personnalisées de manière appropriée à plusieurs types d’appareils Windows, voir les articles suivants :
+Si vous souhaitez une présentation de la plateforme Windows universelle (UWP) et de la façon dont elle vous permet d’utiliser le même code pour offrir des expériences personnalisées de manière appropriée à plusieurs types d’appareils Windows, voir les articles suivants:
 
 -   [Créer votre première application de plateforme Windows universelle](get-started/create-a-hello-world-app-xaml-universal.md)
 -   [Guide des applications de plateforme Windows universelle (UWP)](get-started/universal-application-platform-guide.md)
--   [Qu’est-ce qu’une application de plateforme universelle Windows ?](get-started/whats-a-uwp.md)
+-   [Qu’est-ce qu’une application de plateforme universelle Windows?](get-started/whats-a-uwp.md)
 
 
 

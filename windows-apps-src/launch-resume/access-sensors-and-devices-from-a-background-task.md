@@ -11,11 +11,10 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 # Accéder aux capteurs et aux périphériques à partir d’une tâche en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-[
-            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue. Par exemple, en fonction du lieu où votre application s’exécute, elle peut utiliser une tâche en arrière-plan pour synchroniser les données et les périphériques ou surveiller les capteurs. Pour préserver l’autonomie de la batterie et garantir le consentement de l’utilisateur approprié, l’utilisation de [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) est soumise aux stratégies décrites dans cette rubrique.
+[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue. Par exemple, en fonction du lieu où votre application s’exécute, elle peut utiliser une tâche en arrière-plan pour synchroniser les données et les périphériques ou surveiller les capteurs. Pour préserver l’autonomie de la batterie et garantir le consentement de l’utilisateur approprié, l’utilisation de [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) est soumise aux stratégies décrites dans cette rubrique.
 
 Pour accéder aux capteurs ou aux périphériques en arrière-plan, créez une tâche en arrière-plan qui utilise [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Pour voir comment procéder sur un PC, consultez l’article [Exemple de périphérique USB personnalisé](http://go.microsoft.com/fwlink/p/?LinkId=301975 ). Pour voir comment procéder sur un téléphone, consultez l’article [Exemple de capteurs en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=393307).
 
@@ -24,7 +23,7 @@ Pour accéder aux capteurs ou aux périphériques en arrière-plan, créez une t
 
 Lorsque l’utilisateur ne voit plus votre application, Windows la suspend ou l’arrête pour demander de la mémoire et des ressources processeur. Les autres applications peuvent ainsi s’exécuter au premier plan, et la consommation de la batterie s’en trouve réduite. Lorsque cela se produit, sans l’aide d’une tâche en arrière-plan, tous les événements de données en cours seront perdus. Windows fournit le déclencheur de tâche en arrière-plan, [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337), qui permet à votre application d’exécuter une longue synchronisation et de surveiller les opérations sur les périphériques et les capteurs de manière sécurisée en arrière-plan, même si votre application est suspendue. Pour plus d’informations sur le cycle de vie des applications, voir [Lancement, reprise et tâches en arrière-plan](index.md). Pour plus d’informations sur les tâches en arrière-plan, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
-**Remarque** Dans une application Windows universelle, la synchronisation d’un périphérique en arrière-plan nécessite que votre utilisateur ait approuvé la synchronisation en arrière-plan par votre application. L’appareil doit aussi être connecté au PC ou y être couplé, avec les E/S actives, et a droit à un maximum de 10 minutes d’activité en arrière-plan. Vous trouverez plus de détails sur l’application de la stratégie plus loin dans cette rubrique.
+**Remarque** Dans une application Windows universelle, la synchronisation d’un périphérique en arrière-plan nécessite que votre utilisateur ait approuvé la synchronisation en arrière-plan par votre application. L’appareil doit aussi être connecté au PC ou y être couplé, avec les E/S actives, et a droit à un maximum de 10minutes d’activité en arrière-plan. Vous trouverez plus de détails sur l’application de la stratégie plus loin dans cette rubrique.
 
 ### Limitation : opérations de périphérique critiques
 
@@ -52,7 +51,7 @@ Les tâches en arrière-plan qui utilisent [**DeviceUseTrigger**](https://msdn.m
 ## Inscription des tâches en arrière-plan dans le manifeste du package d’application
 
 
-Votre application effectue les opérations de synchronisation et de mise à jour dans le code qui s’exécute dans le cadre d’une tâche en arrière-plan. Ce code est incorporé dans une classe Windows Runtime qui implémente [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) (ou dans une page JavaScript dédiée pour les applications JavaScript). Pour utiliser une tâche en arrière-plan [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337), vous devez la déclarer dans le fichier manifeste d’une application au premier plan, comme dans le cas des tâches en arrière-plan déclenchées par le système.
+Votre application effectue les opérations de synchronisation et de mise à jour dans le code qui s’exécute dans le cadre d’une tâche en arrière-plan. Ce code est incorporé dans une classe WindowsRuntime qui implémente [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) (ou dans une page JavaScript dédiée pour les applications JavaScript). Pour utiliser une tâche en arrière-plan [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337), vous devez la déclarer dans le fichier manifeste d’une application au premier plan, comme dans le cas des tâches en arrière-plan déclenchées par le système.
 
 Dans cet exemple de fichier manifeste du package d’application, **DeviceLibrary.SyncContent** est le point d’entrée d’une tâche en arrière-plan qui utilise [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337).
 
@@ -82,9 +81,9 @@ Pour utiliser [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/
 9.  Quand les tâches en arrière-plan signalent une progression ou un achèvement, votre application reçoit ces événements via des événements en cours et terminés sur la tâche inscrite.
 
 **Important**  
-Tenez compte des points importants suivants lors de l’utilisation de [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) :
+Tenez compte des points importants suivants lors de l’utilisation de [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337):
 
--   La possibilité de déclencher par programme des tâches en arrière-plan utilisant [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) a d’abord été introduite dans Windows 8.1 et Windows Phone 8.1.
+-   La possibilité de déclencher par programme des tâches en arrière-plan utilisant [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) a d’abord été introduite dans Windows8.1 et Windows Phone8.1.
 
 -   Certaines stratégies sont appliquées par Windows pour s’assurer de l’accord de l’utilisateur lors de la mise à jour des appareils périphériques sur le PC.
 
@@ -126,9 +125,9 @@ Ce tableau indique les stratégies d’initiation de tâche applicables à une a
 | Le périphérique est accessible à l’application utilisant les API de périphérique prises en charge (API Windows Runtime pour USB, HID, Bluetooth, Capteurs, etc). Si votre application ne peut pas accéder au périphérique ou au capteur, l’accès à la tâche en arrière-plan est refusé. | ![la stratégie s’applique](images/ap-tools.png) |
 | Le point d’entrée de la tâche en arrière-plan fourni par l’application est inscrit dans le manifeste du package d’application. | ![la stratégie s’applique](images/ap-tools.png) |
 | Une seule tâche en arrière-plan [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) est exécutée par application. | ![la stratégie s’applique](images/ap-tools.png) |
-| Le nombre maximal de tâches en arrière-plan [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) n’a pas encore été atteint sur le périphérique (sur lequel votre application s’exécute). | famille d’appareils de bureau : un nombre illimité de tâches peut être inscrit et exécuté en parallèle. |
+| Le nombre maximal de tâches en arrière-plan [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) n’a pas encore été atteint sur le périphérique (sur lequel votre application s’exécute). | famille d’appareils de bureau: un nombre illimité de tâches peut être inscrit et exécuté en parallèle. |
 |  |  |
-|  | famille d’appareils mobiles : 1 tâche sur un appareil de 512 Mo ; sinon, 2 tâches peuvent être inscrites et exécutées en parallèle. |
+|  | famille d’appareils mobiles: 1tâche sur un appareil de 512Mo; sinon, 2tâches peuvent être inscrites et exécutées en parallèle. |
 | Nombre maximal de périphériques ou de capteurs auxquels votre application peut accéder à partir d’une seule et même tâche en arrière-plan [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337), lors de l’utilisation des API/protocoles pris en charge. | illimité |
 | Votre tâche en arrière-plan consomme 400 ms de temps processeur (dans l’hypothèse d’un processeur 1 GHz) toutes les minutes quand l’écran est verrouillé ou toutes les cinq minutes dans le cas contraire. L’impossibilité de satisfaire cette stratégie peut entraîner une annulation de votre tâche. | ![la stratégie s’applique](images/ap-tools.png) |
  
@@ -144,9 +143,9 @@ Ce tableau indique les stratégies runtime applicables à une application Window
 | Le périphérique est attaché au système (ou dans la plage d’un périphérique sans fil). | ![le contrôle de stratégie s’applique](images/ap-tools.png) |
 | La tâche exécute des E/S régulières sur le périphérique (1 E/S toutes les 5 secondes). | ![le contrôle de stratégie s’applique](images/ap-tools.png) |
 | L’application n’a pas annulé la tâche. | ![le contrôle de stratégie s’applique](images/ap-tools.png) |
-| Limite de temps horloge : durée totale pendant laquelle la tâche de votre application peut s’exécuter en arrière-plan. | famille d’appareils de bureau : 10 minutes. |
+| Limite de temps horloge: durée totale pendant laquelle la tâche de votre application peut s’exécuter en arrière-plan. | famille d’appareils de bureau: 10minutes. |
 |  |  |
-|  | famille d’appareils mobiles : aucune limite de temps. Pour économiser les ressources, le nombre de tâches exécutées simultanément doit être limité à 1 ou 2. |
+|  | famille d’appareils mobiles: aucune limite de temps. Pour économiser les ressources, le nombre de tâches exécutées simultanément doit être limité à 1 ou 2. |
 | L’application ne s’est pas terminée. | ![le contrôle de stratégie s’applique](images/ap-tools.png) |
 
  
@@ -199,6 +198,6 @@ Outre [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

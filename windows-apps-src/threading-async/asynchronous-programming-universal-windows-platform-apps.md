@@ -10,7 +10,7 @@ ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
 ---
 # Programmation asynchrone
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C++ (C++/CX) et JavaScript.
@@ -21,7 +21,7 @@ Pour les méthodes dont l’exécution peut prendre un certain temps, la program
 
 ## Programmation asynchrone dans UWP
 
-De nombreuses fonctionnalités UWP, telles que les API [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) et les API [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171), sont exposées en tant qu’API asynchrones. Par convention, les noms d’API asynchrones se terminent par « Async » pour indiquer qu’une partie de leur exécution peut se produire une fois l’API appelée.
+De nombreuses fonctionnalités UWP, telles que les API [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) et les API [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171), sont exposées en tant qu’API asynchrones. Par convention, les noms d’API asynchrones se terminent par «Async» pour indiquer qu’une partie de leur exécution peut se produire une fois l’API appelée.
 
 Quand vous utilisez les API asynchrones dans votre application de plateforme Windows universelle (UWP), votre code effectue des appels non bloquants de manière cohérente. Quand vous implémentez ces modèles asynchrones dans vos propres définitions d’API, les appelants peuvent comprendre et utiliser votre code de façon prévisible.
 
@@ -45,9 +45,12 @@ Avec le modèle asynchrone UWP, vous pouvez éviter complètement de gérer expl
 
 | Langage de programmation | Représentation asynchrone           |
 |----------------------|---------------------------------------|
-| C#                  | Mot clé **async**, opérateur **await** |
-| Visual Basic         | Mot clé **Async**, opérateur **Await** |
-| C++/CX               | classe **task**, méthode **.then**      |
+| C#                  | 
+            Mot clé **async**, opérateur **await** |
+| Visual Basic         | 
+            Mot clé **Async**, opérateur **Await** |
+| C++/CX               | 
+            classe **task**, méthode **.then**      |
 | JavaScript           | objet promise, fonction **then**     |
 
  
@@ -68,7 +71,7 @@ La fonction [**create\_async function**](https://msdn.microsoft.com/en-us/librar
 
 En JavaScript, la programmation asynchrone suit la norme [Common JS Promises/A](http://wiki.commonjs.org/wiki/Promises/A) proposée en ayant des méthodes asynchrones qui retournent des objets promise. Les promesses sont utilisées à la fois dans l’UWP et dans la Bibliothèque Microsoft Windows pour JavaScript.
 
-Un objet promise représente une valeur qui sera traitée dans le futur. Dans l’UWP, vous obtenez un objet promise à partir d’une fonction factory, qui, par convention, a un nom se terminant par « Async ».
+Un objet promise représente une valeur qui sera traitée dans le futur. Dans l’UWP, vous obtenez un objet promise à partir d’une fonction factory, qui, par convention, a un nom se terminant par «Async».
 
 Dans de nombreux cas, il est presque aussi simple d’appeler une fonction asynchrone que d’appeler une fonction conventionnelle. La seule différence tient au fait que vous utilisez la méthode [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) ou [**done**](https://msdn.microsoft.com/library/windows/apps/Hh701079) pour assigner les gestionnaires des résultats ou des erreurs et pour démarrer l’opération.
 

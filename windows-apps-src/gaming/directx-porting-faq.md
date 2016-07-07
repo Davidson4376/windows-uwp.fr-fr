@@ -12,7 +12,7 @@ ms.openlocfilehash: dc98f15d80fb70fb6e106555659d699c41fbfa0b
 # Portage DirectX 11 &#58; FAQ
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Réponses aux questions fréquemment posées sur le portage de jeux vers la plateforme Windows universelle (UWP).
@@ -30,8 +30,7 @@ Le périphérique Direct3D est désormais utilisé pour créer des ressources da
 ##  Dois-je mettre à jour le minuteur de mon jeu pour UWP ?
 
 
-[
-            **QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904), de même que [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905), reste le meilleur moyen d’implémenter un minuteur de jeu pour les applications UWP.
+[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904), de même que [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905), reste le meilleur moyen d’implémenter un minuteur de jeu pour les applications UWP.
 
 Toutefois, on observe une nuance avec les minuteurs et le cycle de vie des applications UWP. Les commandes suspendre/reprendre sont différentes pour un joueur qui relance un jeu de bureau, car votre jeu reprendra sur une capture instantanée de la dernière fois que le jeu a été exécuté. Si le laps de temps avant la reprise est important, quelques semaines, par exemple, certaines implémentations du minuteur de jeu peuvent ne pas se comporter de façon fluide. Vous pouvez utiliser les événements de cycle de vie de l’application pour réinitialiser votre minuteur au moment de la reprise du jeu.
 
@@ -62,7 +61,7 @@ Vous pouvez aussi utiliser DDSTextureLoader et WICTextureLoader, à partir du [D
 
 Le Kit de développement logiciel (SDK) DirectX est inclus dans le Kit de développement logiciel (SDK) Windows. Le dernier kit de développement logiciel DirectX indépendant de celui de Windows date de juin 2010. Des exemples Direct3D figurent dans la bibliothèque de code avec les autres exemples d’applications Windows.
 
-## Qu’en est-il des redistribuables DirectX ?
+## Qu’en est-il des redistribuables DirectX?
 
 
 La grande majorité des composants du Kit de développement logiciel (SDK) Windows sont déjà inclus dans les versions prises en charge du système d’exploitation, ou ne comprennent pas de composant DLL (comme DirectXMath). Tous les composants API Direct3D utilisables par les applications UWP seront déjà disponibles pour votre jeu. Vous n’avez pas besoin de les redistribuer.
@@ -93,7 +92,7 @@ Les jeux de bureau DirectX 10.x et 11 sont faciles à porter vers UWP. Voir [Mig
 
 L’utilisateur sélectionne le moniteur sur lequel afficher votre application. Laissez Windows fournir l’adaptateur approprié en appelant [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) avec le premier paramètre défini sur **nullptr**. Ensuite, obtenez l’interface [**IDXGIDevice interface**](https://msdn.microsoft.com/library/windows/desktop/bb174527) du périphérique, appelez [**GetAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174531) et utilisez la carte DXGI pour créer la chaîne d’échange.
 
-## Comment activer l’anticrénelage ?
+## Comment activer l’anticrénelage?
 
 
 L’anticrénelage (échantillonnage multiple) est activé quand vous créez le périphérique Direct3D. Énumérez la prise en charge de l’échantillonnage multiple en appelant [**CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499), puis définissez les options d’échantillonnage multiple dans la structure [**DXGI\_SAMPLE\_DESC structure**](https://msdn.microsoft.com/library/windows/desktop/bb173072) quand vous appelez [**CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530).
@@ -103,7 +102,7 @@ L’anticrénelage (échantillonnage multiple) est activé quand vous créez le 
 
 Consultez [Introduction au multithreading dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476891) pour la prise en main. Pour obtenir une liste des différences notables, voir [Différences de thread entre les versions Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476890). Notez que le rendu différé utilise un *contexte différé* d’appareil au lieu d’un *contexte immédiat*.
 
-## Où trouver de la documentation sur le pipeline programmable à partir de Direct3D 9 ?
+## Où trouver de la documentation sur le pipeline programmable à partir de Direct3D 9?
 
 
 Consultez les rubriques suivantes :

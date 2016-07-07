@@ -12,7 +12,7 @@ ms.openlocfilehash: 6f0e479081c361d69ab0c9e8cf4c531627304d32
 
 Le stockage partagé se compose de deux emplacements où les applications dotées de la fonctionnalité restreinte **enterpriseDeviceLockdown** et d’un certificat d’entreprise disposent d’un accès complet en lecture et écriture. Notez que la fonctionnalité **enterpriseDeviceLockdown** permet aux applications d’utiliser l’API de verrouillage de l’appareil et d’accéder aux dossiers de stockage partagés de l’entreprise. Pour plus d’informations sur l’API, voir l’espace de noms [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331).  
 
-Ces emplacements sont définis sur le disque local :
+Ces emplacements sont définis sur le disque local:
 - \Data\SharedData\Enterprise\Persistent
 - \Data\SharedData\Enterprise\Non-Persistent
 
@@ -28,7 +28,7 @@ Stockage partagé d’entreprise prend en charge les scénarios suivants.
 
 L’exemple suivant montre comment déclarer la fonctionnalité pour accéder au stockage d’entreprise partagé dans le manifeste du package et comment accéder aux dossiers de stockage partagé à l’aide de la classe Windows.Storage.StorageFolder.
 
-Incluez la fonctionnalité suivante dans le manifeste de package de votre application :
+Incluez la fonctionnalité suivante dans le manifeste de package de votre application:
 
 ```xml
 <Package

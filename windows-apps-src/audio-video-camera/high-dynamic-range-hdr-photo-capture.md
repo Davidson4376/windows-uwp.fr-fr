@@ -11,7 +11,7 @@ ms.openlocfilehash: 3015aa4338ddb0c0a006eb631026261a4453f376
 
 # Capture photo avec plage dynamique élevée (HDR)
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 La classe [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) vous permet de capturer des photos HDR. Cette API permet aussi d’obtenir une image de référence à partir de la capture HDR avant la fin du traitement de l’image finale.

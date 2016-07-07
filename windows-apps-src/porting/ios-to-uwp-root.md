@@ -12,12 +12,12 @@ ms.openlocfilehash: 7f6160d651a4264d81ac1a1c9a011e32f53778b0
 
 # Passer d’iOS à UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Si vous êtes un développeur iOS et que vous vous demandez comment développer votre base d’utilisateurs pour inclure Windows 10 et la plateforme Windows universelle (UWP), il existe un nombre croissant d’outils pour vous aider. Les approches que vous pouvez adopter dépendent du type d’application sur lesquelles vous travaillez (jeux, style de vie, entreprise, etc.) et de l’étape où vous vous trouvez dans le processus de développement. Par exemple, un jeu terminé ou presque terminé dépendant fortement d’OpenGL ou de Cocos2D est un candidat idéal pour le [pont Windows pour iOS](https://dev.windows.com/bridges/ios), tandis que si vous envisagez une application interplateforme pour une petite entreprise, vous devriez privilégier [Xamarin.Forms](https://www.xamarin.com/forms). Et si vous avez écrit votre application dans un outil interplateforme comme Unity, [la publication sur Windows](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) est assez simple.
 
-## Pourquoi Windows ?
+## Pourquoi Windows?
 
 Aujourd’hui, Windows est exécuté sur un nombre considérable d’appareils. La plateforme UWP offre aux développeurs un ensemble d’API modernes, conçues pour créer des interfaces utilisateur très réactives sur des appareils aussi variés que les ordinateurs de bureau, les consoles de jeu et les affichages holographiques. Avec une solution Visual Studio et des contrôles d’interface utilisateur suffisamment intelligents pour s’optimiser automatiquement pour plusieurs plateformes, vous constaterez souvent que vous écrivez moins de code et que vous l’exécutez sur davantage de matériel.
 
@@ -27,7 +27,7 @@ Aujourd’hui, Windows est exécuté sur un nombre considérable d’appareils. 
 
 | Rubrique | Description |
 |-------|-------------|
-| [Sélection d’une approche d’iOS et développement d’applications pour UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Quels sont les choix possibles lors du développement d’applications multiplateformes ? |
+| [Sélection d’une approche d’iOS et développement d’applications pour UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Quels sont les choix possibles lors du développement d’applications multiplateformes? |
 | [Prise en main UWP pour les développeurs iOS](getting-started-with-uwp-for-ios-developers.md) | Si vous êtes un développeur iOS et envisagez de développer des applications pour Windows 10, ces documents constituent un bon point de départ. |
 | [Configuration de votre Mac avec Windows 10](setting-up-your-mac-with-windows-10.md) | Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows. |
 
@@ -35,7 +35,7 @@ Aujourd’hui, Windows est exécuté sur un nombre considérable d’appareils. 
 
 **Pour les concepteurs et les développeurs**
 * [Développement d’applications Windows universelles pour tous les appareils Windows](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Télécharger des ressources de conception pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+* [Télécharger des ressources de conception pour les applications du WindowsStore](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
  
 
 

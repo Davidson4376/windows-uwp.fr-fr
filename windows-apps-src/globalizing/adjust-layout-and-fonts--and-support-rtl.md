@@ -28,7 +28,7 @@ Utilisez des mécanismes de disposition flexibles à la place d’un positionnem
 
 ### <span id="XAML"></span><span id="xaml"></span>XAML
 
-Spécifiez l’**Uid** d’un élément :
+Spécifiez l’**Uid** d’un élément:
 
 ```XML
 <TextBlock x:Uid="Block1">
@@ -40,7 +40,7 @@ Pour les applications du Windows Store en C++, C# ou Visual Basic, utilisez la p
 
 Les contrôles de disposition XAML tels que [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) sont mis à l’échelle et pivotent automatiquement avec la propriété [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716). Exposez votre propre propriété **FlowDirection** dans votre application en tant que ressource pour les outils de localisation.
 
-Spécifiez un **Uid** pour la page principale de votre application :
+Spécifiez un **Uid** pour la page principale de votre application:
 
 ```XML
 <Page x:Uid="MainPage">
@@ -79,7 +79,7 @@ Utilisez la propriété [**writing-mode**](https://msdn.microsoft.com/library/ms
 
 ### <span id="XAML"></span><span id="xaml"></span>XAML
 
-Si votre application possède des images qui doivent être mises en miroir (c’est-à-dire qu’une même image peut être renversée) pour une disposition de droite à gauche, vous pouvez appliquer la propriété [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) :
+Si votre application possède des images qui doivent être mises en miroir (c’est-à-dire qu’une même image peut être renversée) pour une disposition de droite à gauche, vous pouvez appliquer la propriété [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716):
 
 ```XML
 <!-- en-US\localized.xaml -->
@@ -91,18 +91,18 @@ Si votre application possède des images qui doivent être mises en miroir (c’
 
 ### <span id="HTML"></span><span id="html"></span>HTML
 
-Si votre application comporte des images qui doivent être mises en miroir (c’est-à-dire qu’une même image peut être renversée) pour la disposition de droite à gauche, vous pouvez utiliser des transformations CSS pour mettre en miroir vos images au moment du rendu en ajoutant une classe .mirrorable à vos éléments et en ajoutant la classe CSS suivante :
+Si votre application comporte des images qui doivent être mises en miroir (c’est-à-dire qu’une même image peut être renversée) pour la disposition de droite à gauche, vous pouvez utiliser des transformations CSS pour mettre en miroir vos images au moment du rendu en ajoutant une classe .mirrorable à vos éléments et en ajoutant la classe CSS suivante:
 
 ```CSS
 .mirrorable { transform: scaleX(-1); }
 ```
 
-**Pour XAML et HTML :** si votre application requiert une autre image à faire pivoter correctement, vous pouvez utiliser le système de gestion des ressources avec le [qualificateur layoutdir](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). Le système choisit une image nommée file.layoutdir-rtl.png lorsque la [langue de l’application](manage-language-and-region.md) est définie sur une langue qui s’écrit et se lit de droite à gauche. Cette approche peut s’avérer nécessaire lorsqu’une certaine partie de l’image est pivotée, alors qu’une autre partie ne l’est pas.
+**Pour XAML et HTML:** si votre application requiert une autre image à faire pivoter correctement, vous pouvez utiliser le système de gestion des ressources avec le [qualificateur layoutdir](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). Le système choisit une image nommée file.layoutdir-rtl.png lorsque la [langue de l’application](manage-language-and-region.md) est définie sur une langue qui s’écrit et se lit de droite à gauche. Cette approche peut s’avérer nécessaire lorsqu’une certaine partie de l’image est pivotée, alors qu’une autre partie ne l’est pas.
 
 ## <span id="Fonts"></span><span id="fonts"></span><span id="FONTS"></span>Polices
 
 
-**Pour XAML et HTML :** utilisez les API de mappage de polices [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) pour l’accès par programme à la famille de polices, à la taille, au poids et au style recommandés pour une langue particulière. L’objet **LanguageFont** assure l’accès aux informations de police appropriées pour diverses catégories de contenu, notamment les en-têtes d’interface utilisateur, les notifications, le texte de corps et les polices de corps de document modifiables par l’utilisateur.
+**Pour XAML et HTML:** utilisez les API de mappage de polices [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) pour l’accès par programme à la famille de polices, à la taille, au poids et au style recommandés pour une langue particulière. L’objet **LanguageFont** assure l’accès aux informations de police appropriées pour diverses catégories de contenu, notamment les en-têtes d’interface utilisateur, les notifications, le texte de corps et les polices de corps de document modifiables par l’utilisateur.
 
 ### <span id="HTML"></span><span id="html"></span>HTML
 

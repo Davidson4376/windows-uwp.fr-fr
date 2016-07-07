@@ -1,5 +1,5 @@
 ---
-title: "Automatisation du lancement des applications UWP Windows 10"
+title: Automatisation du lancement des applications UWP Windows10
 description: "Les développeurs peuvent utiliser l’activation de protocole et de lancement pour automatiser le lancement de leurs jeux ou apps UWP pour les tests automatisés."
 author: listurm
 translationtype: Human Translation
@@ -8,21 +8,23 @@ ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
 
 ---
 
-# Automatisation du lancement des applications UWP Windows 10
+# Automatisation du lancement des applications UWP Windows10
 
 ## Introduction
 
 Plusieurs options s’offrent aux développeurs qui souhaitent automatiser le lancement des applications de plateforme Windows universelle (UWP). Dans ce livre blanc, nous allons étudier les méthodes de lancement d’une application à l’aide de l’activation de protocole et de l’activation de lancement.
 
-*L’activation de protocole* permet à une application de s’enregistrer en tant que gestionnaire pour un protocole donné. 
 
-*L’activation de lancement* correspond au lancement normal de l’application, par exemple le lancement à partir de la vignette de l’application.
+            *L’activation de protocole* permet à une application de s’enregistrer en tant que gestionnaire pour un protocole donné. 
+
+
+            *L’activation de lancement* correspond au lancement normal de l’application, par exemple le lancement à partir de la vignette de l’application.
 
 Pour chaque méthode d’activation, vous avez la possibilité d’utiliser la ligne de commande ou une application de lancement. Quelle que soit la méthode d’activation, si l’application est en cours d’exécution, l’activation amènera l’application au premier plan (ce qui la réactive) et fournira les nouveaux arguments d’activation. Cela offre la possibilité d’utiliser les commandes de l’activation pour fournir de nouveaux messages à l’application. Il est important de noter que le projet doit être compilé et déployé pour que la méthode d’activation exécute l’application récemment mise à jour. 
 
 ## Activation de protocole
 
-Suivez ces étapes pour configurer l’activation de protocole pour les applications : 
+Suivez ces étapes pour configurer l’activation de protocole pour les applications: 
 
 1. Ouvrez le fichier **Package.appxmanifest** dans Visual Studio.
 2. Sélectionnez l’onglet **Déclarations**.
@@ -39,7 +41,7 @@ Maintenant que l’activation de protocole est configurée, vous avez deux optio
 
 ### Ligne de commande
 
-L’application peut être activée par protocole à l’aide de la ligne de commande incluant la commande start, suivie du nom de protocole défini précédemment, du signe deux-points (« : ») et des paramètres. Les paramètres peuvent être n’importe quelle chaîne arbitraire ; toutefois, pour tirer parti des fonctionnalités d’URI (Uniform Resource Identifier), il est conseillé de respecter le format URI standard : 
+L’application peut être activée par protocole à l’aide de la ligne de commande incluant la commande start, suivie du nom de protocole défini précédemment, du signe deux-points («:») et des paramètres. Les paramètres peuvent être n’importe quelle chaîne arbitraire; toutefois, pour tirer parti des fonctionnalités d’URI (Uniform Resource Identifier), il est conseillé de respecter le format URI standard: 
 
   ```
   scheme://username:password@host:port/path.extension?query#fragment
@@ -47,7 +49,7 @@ L’application peut être activée par protocole à l’aide de la ligne de com
 
 L’objet URI est capable d’analyser une chaîne URI dans ce format. Pour plus d’informations, voir [Classe URI (MSDN)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.uri.aspx). 
 
-Exemples :
+Exemples:
 
   ```
   >start bingnews:
@@ -55,7 +57,7 @@ Exemples :
   >start myapplication://single-player/level3?godmode=1&ammo=200
   ```
 
-L’activation de protocole par ligne de commande prend en charge les caractères Unicode jusqu'à un maximum de 2 038 caractères sur l’URI brut. 
+L’activation de protocole par ligne de commande prend en charge les caractères Unicode jusqu'à un maximum de 2038caractères sur l’URI brut. 
 
 ### Application de lancement
 
@@ -98,15 +100,15 @@ Uri(URI));
        }
 }
 ```
-L’activation de protocole avec l’application de lancement présente les mêmes limites d’arguments que l’activation de protocole à l’aide de la ligne de commande. Les deux prennent en charge les caractères Unicode jusqu'à un maximum de 2 038 caractères sur l’URI brut. 
+L’activation de protocole avec l’application de lancement présente les mêmes limites d’arguments que l’activation de protocole à l’aide de la ligne de commande. Les deux prennent en charge les caractères Unicode jusqu'à un maximum de 2038caractères sur l’URI brut. 
 
 ## Activation de lancement
 
 Vous pouvez également lancer l’application à l’aide de l’activation de lancement. Aucune configuration n’est requise, mais l’ID de modèle utilisateur de l’application UWP est nécessaire. L’ID de modèle utilisateur de l’application correspond au nom de la famille de packages suivi d’un point d’exclamation et de l’ID d’application. 
 
-Pour obtenir le nom de la famille de packages, la meilleure solution consiste à suivre les étapes suivantes :
+Pour obtenir le nom de la famille de packages, la meilleure solution consiste à suivre les étapes suivantes:
 
-1. Ouvrez le fichier **Package.appxmanifest**.
+1. Ouvrez le fichier**Package.appxmanifest**.
 2. Dans l’onglet **Packages**, entrez le **nom du package**.
 
     ![Activation de lancement](images/automate-uwp-apps-2.png)
@@ -117,13 +119,13 @@ L’ID d’application se trouve dans le fichier **Package.appxmanifest** (ouver
 
 ### Ligne de commande
 
-Un outil permettant d’effectuer l’activation de lancement d’une application UWP est installé avec le Kit de développement logiciel Windows 10. Il peut être exécuté à partir de la ligne de commande et utilise l’ID de modèle utilisateur de l’application comme argument pour le lancement.
+Un outil permettant d’effectuer l’activation de lancement d’une application UWP est installé avec le Kit de développement logiciel Windows10. Il peut être exécuté à partir de la ligne de commande et utilise l’ID de modèle utilisateur de l’application comme argument pour le lancement.
 
 ```
 C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe <AUMID>
 ```
 
-Voici à quoi cela devrait ressembler :
+Voici à quoi cela devrait ressembler:
 
 ```
 "C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe" MyPackageName_ph1m9x8skttmg!AppId

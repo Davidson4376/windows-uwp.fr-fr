@@ -47,7 +47,7 @@ Sur certains marchés, les comptes de développeur sont actuellement en mesure d
 
 Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applications payantes ne seront pour le moment pas proposées dans le Windows Store pour Entreprises. Si tel est le cas, les choix de licences organisationnelles que vous faites pour vos applications payantes pourront être appliquées ultérieurement, au fur et à mesure que le Windows Store pour Entreprises prendra en charge les soumissions d’applications payantes pour de nouveaux marchés de compte de développeur.
 
-À ce stade, les développeurs des pays et régions suivants peuvent distribuer des applications payantes aux clients professionnels via le Windows Store pour Entreprises :
+À ce stade, les développeurs des pays et régions suivants peuvent distribuer des applications payantes aux clients professionnels via le Windows Store pour Entreprises:
 
 - Autriche
 - Belgique
@@ -87,6 +87,6 @@ Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applicat
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

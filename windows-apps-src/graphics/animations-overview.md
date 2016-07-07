@@ -9,7 +9,7 @@ ms.openlocfilehash: 15fa3b33bf302633ef8cd51928e1af5ea726cc01
 ---
 # Vue d’ensemble des animations
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Dans Windows Runtime, les animations peuvent améliorer votre application en la rendant plus vivante et interactive. À l’aide des animations de la bibliothèque d’animations du Windows Runtime, vous pouvez intégrer l’apparence de Windows dans votre application. Cette rubrique présente les animations et des exemples de situations classiques où chacune d’elles est utilisée.
@@ -35,13 +35,13 @@ La bibliothèque d’animations et le système d’animations Windows Runtime on
 -   Les *transitions thématiques* sont appliquées automatiquement quand certaines conditions sont modifiées dans l’interface utilisateur, impliquant des éléments ou contrôles provenant des types d’interface utilisateur XAML Windows Runtime prédéfinis. Elles sont appelées *transitions thématiques*, car elles prennent en charge l’apparence Windows et définissent les actions de toutes les applications pour des scénarios d’interface utilisateur particuliers quand elles passent d’un mode d’interaction à un autre. Les transitions thématiques font partie de la bibliothèque d’animations.
 -   Les *animations thématiques* sont des animations appliquées à une ou plusieurs propriétés de types d’interface utilisateur XAML Windows Runtime prédéfinis. Elles diffèrent des transitions thématiques car elles ciblent un élément spécifique et existent dans des états visuels spécifiques dans un contrôle, alors que les transitions thématiques sont affectées à des propriétés du contrôle qui existent en dehors des états visuels et influencent les transitions entre ces états. Une grande partie des contrôles XAML Windows Runtime comprennent des animations thématiques dans des storyboards qui font partie de leur modèle de contrôle, les animations étant déclenchées par les états visuels. Du moment que vous ne changez pas les modèles, vous disposez de ces animations thématiques intégrées pour les contrôles dans votre interface utilisateur. En revanche, si vous remplacez des modèles, vous supprimez également les animations thématiques de contrôle intégrées. Pour les récupérer, vous devez définir une table de montage séquentiel qui comprend des animations thématiques dans le jeu d’états visuels du contrôle. Vous pouvez aussi exécuter des animations thématiques à partir de storyboards qui ne sont pas dans des états visuels et les démarrer avec la méthode [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), mais ce scénario est moins courant. Les animations thématiques font partie de la bibliothèque d’animations.
 -   Les *transitions visuelles* sont appliquées quand un contrôle passe de l’un de ses états visuels définis à un autre état. Il s’agit d’animations personnalisées que vous créez et elles sont généralement associées au modèle personnalisé que vous créez pour un contrôle et aux définitions d’état visuel de ce modèle. L’animation est exécutée uniquement pendant le délai entre les états et celui-ci est généralement court, quelques secondes au plus. Pour plus d’informations, voir la [section « VisualTransition » dans Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition).
--   Les *animations dans une table de montage séquentiel* animent la valeur d’une propriété de dépendance Windows Runtime au fil du temps. Les tables de montage séquentiel peuvent être définies dans le cadre d’une transition visuelle ou déclenchées par l’application lors de l’exécution. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md). Pour plus d’informations sur les propriétés de dépendance et sur l’emplacement où elles existent, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583).
+-   Les *animations dans une table de montage séquentiel* animent la valeur d’une propriété de dépendance WindowsRuntime au fil du temps. Les tables de montage séquentiel peuvent être définies dans le cadre d’une transition visuelle ou déclenchées par l’application lors de l’exécution. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md). Pour plus d’informations sur les propriétés de dépendance et sur l’emplacement où elles existent, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583).
 
 ## Animations disponibles dans la bibliothèque
 
 Les animations suivantes sont fournies dans la bibliothèque d’animations. Cliquez sur le nom d’une animation pour en savoir plus sur ses principaux scénarios d’utilisation, comment la définir, ainsi que pour afficher un exemple de l’animation.
 
--   [Transition de page](./animations-overview.md#page-transition) : anime les transitions entre les pages dans un [**cadre**](https://msdn.microsoft.com/library/windows/apps/br242682).
+-   [Transition de page](./animations-overview.md#page-transition): anime les transitions entre les pages dans un [**cadre**](https://msdn.microsoft.com/library/windows/apps/br242682).
 -   [Transition de contenu et d’entrée](./animations-overview.md#content-transition-and-entrance-transition) : anime des éléments de contenu à l’intérieur ou en dehors de la vue.
 -   [Apparition/disparition en fondu et fondu enchaîné](./animations-overview.md#fade-in-out-and-crossfade) : affiche les éléments ou contrôles provisoires, ou actualise une zone de contenu.
 -   [Pointeur vers le haut/bas](./animations-overview.md#pointer-up-down) : affiche un retour visuel d’un appui ou d’un clic sur une vignette.
@@ -53,7 +53,7 @@ Les animations suivantes sont fournies dans la bibliothèque d’animations. Cli
 
 ### Transition de page
 
-Utilisez les transitions de page pour animer la navigation au sein d’une application. Étant donné que la plupart des applications utilisent un type de navigation quelconque, les animations de transition de page constituent le type le plus courant d’animation de thème utilisé par les applications. Pour plus d’informations sur les API de transition de page, voir [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)
+Utilisez les transitions de page pour animer la navigation au sein d’une application. Étant donné que la plupart des applications utilisent un type de navigation quelconque, les animations de transition de page constituent le type le plus courant d’animation de thème utilisé par les applications. Pour plus d’informations sur les API de transition de page, voir [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) 
 
 
 
@@ -81,8 +81,7 @@ Utilisez les animations de repositionnement ([**RepositionThemeAnimation**](http
 
 ### Afficher/Masquer le menu contextuel
 
-Utilisez [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) et [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) quand vous affichez et masquez un objet [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) ou une interface utilisateur contextuelle similaire par-dessus la vue actuelle. [
-            **PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) est une transition thématique qui fournit un retour utile si vous souhaitez effectuer un abandon interactif d’une fenêtre contextuelle.
+Utilisez [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) et [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) quand vous affichez et masquez un objet [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) ou une interface utilisateur contextuelle similaire par-dessus la vue actuelle. [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) est une transition thématique qui fournit un retour utile si vous souhaitez effectuer un abandon interactif d’une fenêtre contextuelle.
 
 ### Afficher/Masquer l’interface utilisateur latérale
 
@@ -110,19 +109,14 @@ Le tableau suivant résume nos recommandations en matière de choix d’animatio
 
 | Type d’élément d’interface utilisateur | Animation recommandée |
 |---------|-----------------------|
-| Boîte de dialogue | [
-            **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) et [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| Menu volant | [
-            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) et [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| Info-bulle | [
-            **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) et [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| Menu contextuel | [
-            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) et [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Boîte de dialogue | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) et [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Menu volant | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) et [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Info-bulle | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) et [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Menu contextuel | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) et [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | Barre de commandes | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | Volet de tâches ou panneau latéral | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | Contenu d’un conteneur d’éléments d’interface utilisateur quelconque | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| Pour les contrôles ou si aucune autre animation ne s’applique | [
-            **FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) et [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Pour les contrôles ou si aucune autre animation ne s’applique | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) et [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
@@ -200,7 +194,7 @@ Les exemples précédents appliquent une transition de thème à un seul contrô
 
 Les rectangles enfants de l’objet [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) apparaissent par le biais d’une transition, l’un après l’autre et de façon harmonieuse, plutôt que tous ensemble comme ce serait le cas si vous appliquiez cette animation aux rectangles un à un.
 
-Voici une vidéo qui illustre cette animation :
+Voici une vidéo qui illustre cette animation:
 
 ![animation montant un rectangle enfant apparaissant par le biais d’une transition](./images/animation-child-rectangles.gif)
 
@@ -268,7 +262,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 }
 ```
 
-Cette vidéo illustre l’animation qui s’exécute pour les rectangles supprimés :
+Cette vidéo illustre l’animation qui s’exécute pour les rectangles supprimés:
 
 Vous pouvez appliquer plusieurs animations de transition à un même objet ou à un conteneur d’objets. Par exemple, si vous souhaitez que les rectangles de la liste s’affichent progressivement, mais aussi qu’ils s’animent quand ils changent de position, vous pouvez appliquer les objets [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) et [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) comme suit :
 
@@ -283,7 +277,7 @@ Vous pouvez appliquer plusieurs animations de transition à un même objet ou à
 ...      
 ```
 
-Plusieurs effets de transition permettent de créer des animations applicables à vos éléments d’interface utilisateur au fur et à mesure de leur ajout, de leur retrait, de leur réorganisation, etc. Les noms de ces API contiennent tous « ThemeTransition » :
+Plusieurs effets de transition permettent de créer des animations applicables à vos éléments d’interface utilisateur au fur et à mesure de leur ajout, de leur retrait, de leur réorganisation, etc. Les noms de ces API contiennent tous «ThemeTransition»:
 
 | API | Description |
 |-----|-------------|
@@ -347,7 +341,7 @@ Contrairement aux animations de transition, une animation de thème n’a pas de
 
  
 
-Vous pouvez appliquer plusieurs autres animations de thème à vos éléments d’interface utilisateur pour créer des effets d’animation. Les noms de ces API contiennent tous « ThemeAnimation » :
+Vous pouvez appliquer plusieurs autres animations de thème à vos éléments d’interface utilisateur pour créer des effets d’animation. Les noms de ces API contiennent tous «ThemeAnimation»:
 
 | API | Description |
 |-----|-------------|

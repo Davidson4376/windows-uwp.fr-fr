@@ -13,7 +13,7 @@ ms.openlocfilehash: e83730c60eada273aee4f3bca4ff28cf6feccbf8
 # Exemple de code pour spot publicitaire en C\# #  
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique montre comment lancer un spot publicitaire en C#. Pour connaître les instructions pas à pas pour configurer votre projet pour qu’il utilise ce code, voir [Spots publicitaires](interstitial-ads.md). Pour un exemple de projet complet illustrant l’ajout de spots vidéo publicitaires à une application XAML en C#, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
@@ -22,7 +22,7 @@ Cette rubrique montre comment lancer un spot publicitaire en C#. Pour connaître
 
 Cet exemple de code montre un fichier de code MainPage.xaml.cs qui implémente un spot publicitaire. Ce code part du principe que le fichier MainPage.xaml comporte un bouton fonctionnant avec un événement **Click** qui se déclenche et qui est géré par la méthode **button_Click**. Ce code lance le spot publicitaire lorsque l’événement **Click** du bouton est déclenché.
 
-Remplacez le texte des variables **AppID** et **AdUnitId** par des valeurs dynamiques avant de soumettre votre application au Windows Store. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
+Remplacez le texte des variables **AppID** et **AdUnitId** par des valeurs dynamiques avant de soumettre votre application au WindowsStore. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
 
 ``` syntax
 using System;

@@ -44,7 +44,7 @@ Les animations latérales affichent ou masquent l’interface utilisateur qui pa
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation latérale de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Démarrage rapide : animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 * [**Classe PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969160)
 * [Animation de fondus](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)

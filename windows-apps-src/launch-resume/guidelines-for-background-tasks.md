@@ -11,7 +11,7 @@ ms.openlocfilehash: 3fb6884a968afb87e8de303bbd17feba4993c597
 # Recommandations pour les tâches en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.
@@ -21,19 +21,19 @@ Assurez-vous que votre application répond aux exigences relatives à l’exécu
 
 Tenez compte des recommandations suivantes au moment de développer une tâche en arrière-plan et avant de publier votre application.
 
-**Quotas de processeur :**Les tâches en arrière-plan sont limitées par la quantité de temps d’utilisation de l’horloge en fonction de leur type de déclencheur. La plupart des déclencheurs sont limités à 30 secondes d’utilisation de l’horloge, mais certains ont une capacité d’exécution pouvant atteindre 10 minutes afin d’effectuer des tâches intensives. Les tâches en arrière-plan doivent être légères pour préserver l’autonomie de la batterie et assurer une meilleure expérience utilisateur pour les applications de premier plan. Pour plus d’informations sur les contraintes de ressource appliquées à la plupart des tâches en arrière-plan, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
+**Quotas de processeur:**Les tâches en arrière-plan sont limitées par la quantité de temps d’utilisation de l’horloge en fonction de leur type de déclencheur. La plupart des déclencheurs sont limités à 30secondes d’utilisation de l’horloge, mais certains ont une capacité d’exécution pouvant atteindre 10minutes afin d’effectuer des tâches intensives. Les tâches en arrière-plan doivent être légères pour préserver l’autonomie de la batterie et assurer une meilleure expérience utilisateur pour les applications de premier plan. Pour plus d’informations sur les contraintes de ressource appliquées à la plupart des tâches en arrière-plan, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
-**Gérer les tâches en arrière-plan :**Votre application doit obtenir la liste des tâches en arrière-plan inscrites, s’inscrire aux gestionnaires de progression et d’achèvement et gérer ces événements de manière appropriée. Vos classes de tâche en arrière-plan doivent signaler la progression, l’annulation et l’exécution à terme des tâches. Pour plus d’informations, voir [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md) et [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md).
+**Gérer les tâches en arrière-plan:**Votre application doit obtenir la liste des tâches en arrière-plan inscrites, s’inscrire aux gestionnaires de progression et d’achèvement et gérer ces événements de manière appropriée. Vos classes de tâche en arrière-plan doivent signaler la progression, l’annulation et l’exécution à terme des tâches. Pour plus d’informations, voir [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md) et [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md).
 
-**Utilisez [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) :**si votre classe de tâche en arrière-plan exécute du code asynchrone, veillez à utiliser des reports. À défaut, votre tâche en arrière-plan risque de se terminer prématurément lorsque la méthode [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) aboutira. Pour plus d’informations, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md).
+**Utilisez [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499):**si votre classe de tâche en arrière-plan exécute du code asynchrone, veillez à utiliser des reports. À défaut, votre tâche en arrière-plan risque de se terminer prématurément lorsque la méthode [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) aboutira. Pour plus d’informations, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md).
 
 L’autre solution consiste à demander un report et à utiliser **async/await** pour exécuter des appels de méthode asynchrone. Fermez le report après les appels de méthode **await**.
 
-**Mettre à jour le manifeste de l’application :**déclarez chaque tâche en arrière-plan dans le manifeste de l’application, de même que le type de déclencheur avec lequel elle est utilisée. À défaut, votre application ne pourra pas inscrire la tâche en arrière-plan au moment de l’exécution. Pour plus d’informations, voir [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
+**Mettre à jour le manifeste de l’application:**déclarez chaque tâche en arrière-plan dans le manifeste de l’application, de même que le type de déclencheur avec lequel elle est utilisée. À défaut, votre application ne pourra pas inscrire la tâche en arrière-plan au moment de l’exécution. Pour plus d’informations, voir [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 
-**Préparez les mises à jour de l’application :**Si votre application doit être mise à jour, créez et inscrivez une tâche en arrière-plan **ServicingComplete** (voir [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)) pour faciliter l’exécution des mises à jour de l’application pouvant être nécessaires en dehors du contexte d’exécution au premier plan.
+**Préparez les mises à jour de l’application:**Si votre application doit être mise à jour, créez et inscrivez une tâche en arrière-plan **ServicingComplete** (voir [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)) pour faciliter l’exécution des mises à jour de l’application pouvant être nécessaires en dehors du contexte d’exécution au premier plan.
 
-**Demander l’exécution des tâches en arrière-plan :  **
+**Demander l’exécution des tâches en arrière-plan:  **
 
 > **Important** Depuis Windows 10, les applications n’ont plus besoin de figurer dans l’écran de verrouillage pour exécuter des tâches en arrière-plan.
 
@@ -43,7 +43,7 @@ Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous 
 
 La liste de vérification suivante s’applique à toutes les tâches en arrière-plan.
 
--   Créez votre tâche en arrière-plan dans un composant Windows Runtime.
+-   Créez votre tâche en arrière-plan dans un composant WindowsRuntime.
 -   Associez votre tâche en arrière-plan au déclencheur approprié.
 -   Ajoutez des conditions pour assurer une exécution aboutie de votre tâche en arrière-plan.
 -   Gérez la progression, l’achèvement et l’annulation de la tâche en arrière-plan.
@@ -70,7 +70,7 @@ Suivez ces recommandations lorsque vous développez des tâches en arrière-plan
 -   Incluez une tâche en arrière-plan inscrite avec [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) ou [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) et déclarez-la dans le manifeste de l’application. Assurez-vous que le point d’entrée et les types de déclencheur sont corrects. Il s’agit d’une condition de certification, et cela permet à l’utilisateur de placer l’application dans l’écran de verrouillage.
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -95,6 +95,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

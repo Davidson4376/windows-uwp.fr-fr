@@ -11,7 +11,7 @@ ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
 # Processus de certification des applications
 
 
-Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur **Soumettre au Windows Store**, l’application passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois une journée ouvrable entière. Une fois votre soumission certifiée, un maximum de 16 heures peut s’écouler avant l’apparition de sa description (ou de vos mises à jour d’une application publiée précédemment) dans le Windows Store. Une notification s’affiche lorsque votre soumission est publiée et disponible pour les clients ; l’état de l’application dans le tableau de bord sera **dans le Windows Store**.
+Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur **Soumettre au Windows Store**, l’application passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois une journée ouvrable entière. Une fois votre soumission certifiée, un maximum de 16heures peut s’écouler avant l’apparition de sa description (ou de vos mises à jour d’une application publiée précédemment) dans le WindowsStore. Une notification s’affiche lorsque votre soumission est publiée et disponible pour les clients; l’état de l’application dans le tableau de bord sera **dans le Windows Store**.
 
 ## Prétraitement
 
@@ -19,7 +19,7 @@ Une fois que vous avez chargé avec succès les packages de l’application et s
 
 ## Certification
 
-Plusieurs tests sont exécutés pendant cette phase :
+Plusieurs tests sont exécutés pendant cette phase:
 
 -   **Tests de sécurité :** Ce premier test vérifie que les packages de votre application sont exempts de virus et de programmes malveillants. Si votre application échoue à ce test, vous devez vérifier votre système de développement en exécutant l’antivirus le plus récent, puis régénérer le package de votre application sur un système propre.
 -   **Tests de conformité technique :** la conformité technique est testée à l’aide du Kit de certification des applications Windows. (Vous devez toujours prendre soin de [tester votre application à l’aide du Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de la soumettre au Windows Store.)
@@ -35,26 +35,26 @@ Lorsque votre application obtient la certification, elle est prête pour l’ét
 
 Les packages de votre application sont signés numériquement pour être protégés contre toute falsification après leur publication. Une fois que cette phase a commencé, vous ne pouvez plus annuler votre soumission ni en modifier la date de sortie.
 
-Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de soumission de votre application vous indique quand vos nouveaux packages et vos descriptions dans le Store sont disponibles pour les clients sur chacune de vos versions de système d’exploitation prises en charge. Votre application reste en phase de publication jusqu’à ce que les nouveaux packages et les descriptions soient disponibles pour tous les clients potentiels de votre application. Ce processus peut prendre jusqu’à 16 heures. 
+Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de soumission de votre application vous indique quand vos nouveaux packages et vos descriptions dans le Store sont disponibles pour les clients sur chacune de vos versions de système d’exploitation prises en charge. Votre application reste en phase de publication jusqu’à ce que les nouveaux packages et les descriptions soient disponibles pour tous les clients potentiels de votre application. Ce processus peut prendre jusqu’à 16heures. 
 
-## Dans le Windows Store 
+## Dans le WindowsStore 
 
-Après avoir correctement effectué les étapes ci-dessus, l’état de la soumission passe de **Publication** à **Dans le Windows Store**. Les clients peuvent ainsi télécharger votre soumission à partir du Windows Store (sauf si vous avez choisi une autre option [Distribution et visibilité](set-app-pricing-and-availability.md#distribution-and-visibility)). 
+Après avoir correctement effectué les étapes ci-dessus, l’état de la soumission passe de **Publication** à **Dans le Windows Store**. Les clients peuvent ainsi télécharger votre soumission à partir du WindowsStore (sauf si vous avez choisi une autre option [Distribution et visibilité](set-app-pricing-and-availability.md#distribution-and-visibility)). 
 
-**Remarque** Nous effectuons également des vérifications ponctuelles sur les applications publiées pour identifier les problèmes potentiels et vérifier que votre application est conforme à toutes les [politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du Windows Store.
-
- 
+**Remarque** Nous effectuons également des vérifications ponctuelles sur les applications publiées pour identifier les problèmes potentiels et vérifier que votre application est conforme à toutes les [politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du WindowsStore.
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

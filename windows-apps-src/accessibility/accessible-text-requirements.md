@@ -15,7 +15,7 @@ ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
 
 
 
-Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste. Elle traite également des rôles Microsoft UI Automation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
+Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste. Elle traite également des rôles MicrosoftUIAutomation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
@@ -31,7 +31,7 @@ Le texte décoratif et qui ne véhicule aucune information est exclu. Par exempl
 Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
-> Certains outils répertoriés par la spécification Techniques for WCAG 2.0 G18 ne peuvent pas être utilisés de manière interactive avec une application UWP. Vous pouvez être amené à saisir manuellement des valeurs de couleur de premier plan et d’arrière-plan dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application, puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran.
+> Certains outils répertoriés par la spécification Techniques for WCAG 2.0 G18 ne peuvent pas être utilisés de manière interactive avec une application UWP. Vous pouvez être amené à saisir manuellement des valeurs de couleur de premierplan et d’arrière-plan dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application, puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran.
 
 <span id="Text_element_roles"/>
 <span id="text_element_roles"/>
@@ -39,16 +39,20 @@ Utilisez des outils de contraste des couleurs pour vérifier que le coefficient 
 ## Rôles d’éléments de texte  
 Une application UWP peut utiliser les éléments par défaut suivants (couramment appelés *éléments de texte* ou *contrôles d’édition de texte*) :
 
-* [
+* 
+            [
               **TextBlock**
             ](https://msdn.microsoft.com/library/windows/apps/BR209652) : le rôle est [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
+* 
+            [
               **TextBox**
             ](https://msdn.microsoft.com/library/windows/apps/BR209683) : le rôle est [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
+* 
+            [
               **RichTextBlock**
             ](https://msdn.microsoft.com/library/windows/apps/BR227565) (et classe de débordement [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)) : le rôle est [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
+* 
+            [
               **RichEditBox**
             ](https://msdn.microsoft.com/library/windows/apps/BR227548) : le rôle est [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
@@ -75,7 +79,7 @@ Beaucoup de lecteurs ont du mal à lire le texte d’une application quand celui
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
 ## Facteur d’échelle de police  
-Les différents contrôles et éléments de texte ont une propriété [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). La valeur par défaut de cette propriété est **true**. Lorsque sa valeur est **true**, le paramètre appelé **Mise à l’échelle du texte** sur le téléphone (**Paramètres &gt; Options d’ergonomie**) entraîne l’agrandissement de la taille du texte dans l’élément concerné. La mise à l’échelle affecte davantage le texte pour lequel la valeur **FontSize** est faible que le texte pour lequel la valeur **FontSize** est élevée. Vous pouvez toutefois désactiver cet agrandissement automatique en définissant la propriété **IsTextScaleFactorEnabled** d’un élément sur **false**. Essayez ce balisage, ajustez le paramètre **Taille du texte** sur le téléphone, puis observez les éléments **TextBlock** :
+Les différents contrôles et éléments de texte ont une propriété [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). La valeur par défaut de cette propriété est **true**. Lorsque sa valeur est **true**, le paramètre appelé **Mise à l’échelle du texte** sur le téléphone (**Paramètres &gt; Options d’ergonomie**) entraîne l’agrandissement de la taille du texte dans l’élément concerné. La mise à l’échelle affecte davantage le texte pour lequel la valeur **FontSize** est faible que le texte pour lequel la valeur **FontSize** est élevée. Vous pouvez toutefois désactiver cet agrandissement automatique en définissant la propriété **IsTextScaleFactorEnabled** d’un élément sur **false**. Essayez ce balisage, ajustez le paramètre **Taille du texte** sur le téléphone, puis observez les éléments **TextBlock**:
 
 XAML
 ```xml
@@ -88,7 +92,7 @@ XAML
 
 Cependant, ne désactivez pas l’agrandissement automatique systématiquement, car la mise à l’échelle du texte de l’interface utilisateur à travers toutes les applications constitue une expérience d’accessibilité importante pour les utilisateurs qui s’attendent à ce qu’elle fonctionne aussi dans votre application.
 
-Vous pouvez également utiliser l’événement [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) et la propriété [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) pour évaluer les incidences sur le paramètre **Taille du texte** sur le téléphone. Voici comment :
+Vous pouvez également utiliser l’événement [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) et la propriété [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) pour évaluer les incidences sur le paramètre **Taille du texte** sur le téléphone. Voici comment:
 
 C#
 ```csharp
@@ -110,13 +114,15 @@ La valeur de TextScaleFactor est un double appartenant à la plage \[1,2\]. Le t
 
 Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* [
+* 
+            [
               **Control**
             ](https://msdn.microsoft.com/library/windows/apps/BR209390) et classes dérivées
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 * [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* [
+* 
+            [
               **TextElement**
             ](https://msdn.microsoft.com/library/windows/apps/BR209967) et classes dérivées
 
@@ -130,6 +136,6 @@ Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

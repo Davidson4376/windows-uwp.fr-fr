@@ -9,7 +9,7 @@ ms.openlocfilehash: d3ddc07b214dcfe767d27bf24a36fe19d3534e6e
 ---
 # Optimiser les animations, les éléments multimédias et les images
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
 
@@ -164,7 +164,7 @@ Les images sont capturées dans des résolutions très élevées, ce qui peut g�
 
 Les unités pour [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) peut être utilisée pour modifier ce comportement : en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous souhaitez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affichera l’image. Avec le comportement par défaut consistant à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et vous devez prendre en considération les notifications de modification de mise à l’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
 
-Si les paramètres DecodePixelWidth/Height sont explicitement définis plus grands que la taille de l’image affichée à l’écran, alors l’application utilisera inutilement de la mémoire supplémentaire (jusqu’à 4 octets par pixel), ce qui devient rapidement coûteux pour les grandes images. L’image sera également réduite à l’aide d’une mise à l’échelle bilinéaire, ce qui risque de la faire apparaître floue pour les grands facteurs d’échelle.
+Si les paramètres DecodePixelWidth/Height sont explicitement définis plus grands que la taille de l’image affichée à l’écran, alors l’application utilisera inutilement de la mémoire supplémentaire (jusqu’à 4octets par pixel), ce qui devient rapidement coûteux pour les grandes images. L’image sera également réduite à l’aide d’une mise à l’échelle bilinéaire, ce qui risque de la faire apparaître floue pour les grands facteurs d’échelle.
 
 Si les paramètres DecodePixelWidth/DecodePixelHeight sont explicitement définis plus petits que la taille de l’image affichée à l’écran, elle sera agrandie et risque d’apparaître pixelisée.
 
@@ -188,23 +188,23 @@ Dans le cas où vous ne définissez pas de taille de décodage explicite, XAML t
 
 Dans les scénarios ci-dessus, la définition d’une taille de décodage explicite est la seule façon de réaliser des économies de mémoire.
 
-Vous devez toujours associer une [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) dans l’arborescence dynamique avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre « Exemples d’arborescences dynamiques ». Vous devez toujours éviter d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utiliser plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx). L’exécution de cette opération est laissée à l’appréciation de chacun : vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
+Vous devez toujours associer une [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) dans l’arborescence dynamique avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre «Exemples d’arborescences dynamiques». Vous devez toujours éviter d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utiliser plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx). L’exécution de cette opération est laissée à l’appréciation de chacun: vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
 
 **Exemples d’arborescences dynamiques**
 
-Exemple 1 (correct) : Uniform Resource Identifier (URI) spécifié dans le balisage.
+Exemple1 (correct): Uniform Resource Identifier (URI) spécifié dans le balisage.
 
 ```xml
 <Image x:Name="myImage" UriSource="Assets/cool-image.png"/>
 ```
 
-Exemple 2 balisage : URI spécifié dans le code-behind.
+Exemple2 balisage: URI spécifié dans le code-behind.
 
 ```xml
 <Image x:Name="myImage"/>
 ```
 
-Exemple 2 code-behind (correct) : association de la BitmapImage à l’arborescence avant de définir son UriSource.
+Exemple2 code-behind (correct): association de la BitmapImage à l’arborescence avant de définir son UriSource.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -212,7 +212,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Exemple 2 code-behind (incorrect) :définition de l’UriSouce de la BitmapImage avant de l’associer à l’arborescence.
+Exemple2 code-behind (incorrect):définition de l’UriSouce de la BitmapImage avant de l’associer à l’arborescence.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -256,8 +256,7 @@ Votre application doit utiliser [**SoftwareBitmap**](https://msdn.microsoft.com/
 
 ### Utiliser GetThumbnailAsync pour les miniatures
 
-Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [
-            **GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) fournit les miniatures pour les images dont le système de fichiers est déjà mis en cache. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML car l’image n’a pas besoin d’être ouverte ni décodée.
+Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) fournit les miniatures pour les images dont le système de fichiers est déjà mis en cache. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML car l’image n’a pas besoin d’être ouverte ni décodée.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

@@ -1,6 +1,6 @@
 ---
 author: Mtoepke
-title: "Problèmes connus avec UWP sur la version prélim. pour dév. Xbox One"
+title: "Problèmes connus avec UWP sur la version prélim. pour dév. XboxOne"
 description: 
 area: Xbox
 ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
@@ -30,11 +30,11 @@ Si vous êtes bloqué, lisez les informations présentées dans cette rubrique, 
 
 ## Prise en charge du mode souris
 
-À partir de cette version d’évaluation, le _mode souris_ est activé par défaut pour XAML et les applications web hébergées. Toutes les applications qui ne le refusent pas recevront un pointeur de souris semblable à celui du navigateur Microsoft Edge Xbox.
+À partir de cette version d’évaluation, le _mode souris_ est activé par défaut pourXAML et les applicationsweb hébergées. Toutes les applications qui ne le refusent pas recevront un pointeur de souris semblable à celui du navigateurMicrosoftEdge Xbox.
 
-**Nous recommandons vivement aux développeurs de désactiver le mode souris et d’optimiser l’application pour la navigation de contrôleur (X-Y).**
+**Nous recommandons vivement aux développeurs de désactiver le modesouris et d’optimiser l’application pour la navigation de contrôleur (X-Y).**
 
-Pour désactiver ce mode dans le code XAML, appuyez-vous sur l’exemple suivant :
+Pour désactiver ce mode dans le code XAML, appuyez-vous sur l’exemple suivant:
 
 ```code
 public App() {
@@ -44,47 +44,47 @@ public App() {
 }
 ```
 
-Pour désactiver ce mode dans une application HTML/Javascript, appuyez-vous sur l’exemple suivant :
+Pour désactiver ce mode dans une applicationHTML/Javascript, appuyez-vous sur l’exemple suivant:
 
 ```code
 // Turn off mouse mode
 navigator.gamepadInputEmulation = "keyboard";
 ```
 
-> **Remarque :** &nbsp;&nbsp;dans cette version préliminaire pour développeurs, lorsque le mode souris est activé, un mouvement panoramique effectué avec une manette de jeu sur le contrôleur peut entraîner le blocage de la console. Si vous rencontrez ce problème, vous devez redémarrer votre console.
+> **Remarque:** &nbsp;&nbsp;dans cette version préliminaire pour développeurs, lorsque le mode souris est activé, un mouvement panoramique effectué avec une manette de jeu sur le contrôleur peut entraîner le blocage de la console. Si vous rencontrez ce problème, vous devez redémarrer votre console.
 
-Pour en savoir plus sur la prise en charge du mode souris, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode). Cette rubrique inclut des informations sur l’activation et la désactivation du mode souris, afin de vous permettre de choisir le comportement approprié pour votre application.
+Pour en savoir plus sur la prise en charge du modesouris, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode). Cette rubrique inclut des informations sur l’activation et la désactivation du modesouris, afin de vous permettre de choisir le comportement approprié pour votre application.
 
-## Vous devez disposer d’un utilisateur connecté afin de déployer une application (erreur 0x87e10008)
+## Vous devez disposer d’un utilisateur connecté afin de déployer une application (erreur0x87e10008)
 
-Les applications requièrent désormais l’ouverture d’une session par un utilisateur pour pouvoir être lancées (un utilisateur doit être connecté pour que vous puissiez démarrer le débogage à partir de Visual Studio 2015 (touche F5)). Le message d’erreur actuellement affiché par VS n’est pas limpide :
+Les applications requièrent désormais l’ouverture d’une session par un utilisateur pour pouvoir être lancées (un utilisateur doit être connecté pour que vous puissiez démarrer le débogage à partir de Visual Studio2015 (toucheF5)). Le message d’erreur actuellement affiché par VS n’est pas limpide:
  
-![Impossible d’activer l’application Windows Store](images/windows-store-app-activation-error.jpg)
+![Impossible d’activer l’application WindowsStore](images/windows-store-app-activation-error.jpg)
  
-Pour contourner ce problème, connectez-vous à l’aide d’un utilisateur à partir de l’interpréteur de commandes Xbox ou DevHome avant de déployer votre application.
+Pour contourner ce problème, connectez-vous à l’aide d’un utilisateur à partir de l’interpréteur de commandesXbox ou DevHome avant de déployer votre application.
  
 ## Les limites de mémoire des applications en arrière-plan ne sont pas encore appliquées
  
-La limite de 128 Mo pour les applications qui s’exécutent en arrière-plan n’est pas appliquée dans cette version d’évaluation. Ainsi, si votre application dépasse la limite de 128 Mo lors de son exécution en arrière-plan, elle sera toujours en mesure d’allouer de la mémoire.
+La limite de 128Mo pour les applications qui s’exécutent en arrière-plan n’est pas appliquée dans cette version d’évaluation. Ainsi, si votre application dépasse la limite de 128Mo lors de son exécution en arrière-plan, elle sera toujours en mesure d’allouer de la mémoire.
  
-Il n’existe actuellement aucun moyen de contourner ce problème. Vous devez contrôler l’utilisation de la mémoire de manière appropriée. Dans une version d’évaluation à venir, votre application rencontrera des échecs d’allocation de mémoire si elle dépasse la limite de 128 Mo.
+Il n’existe actuellement aucun moyen de contourner ce problème. Vous devez contrôler l’utilisation de la mémoire de manière appropriée. Dans une version d’évaluation à venir, votre application rencontrera des échecs d’allocation de mémoire si elle dépasse la limite de 128Mo.
  
-## Le déploiement à partir de Visual Studio échoue lorsque les paramètres de contrôle parental sont activés
+## Le déploiement à partir de VisualStudio échoue lorsque les paramètres de contrôle parental sont activés
 
 Le lancement de votre application à partir de Visual Studio n’aboutit pas si le contrôle parental est activé dans les paramètres.
 
-Pour contourner ce problème, désactivez ces paramètres temporairement ou procédez comme suit :
+Pour contourner ce problème, désactivez ces paramètres temporairement ou procédez comme suit:
 1. Déployez votre application sur la console en désactivant les paramètres de contrôle parental.
 2. Activez ces paramètres.
 3. Lancez votre application à partir de la console.
-4. Saisissez un mot de passe ou un code confidentiel pour permettre à l’application de se lancer.
+4. Saisissez un mot de passe ou un codeconfidentiel pour permettre à l’application de se lancer.
 5. L’application se lance.
 6. Fermez l’application.
-7. Effectuez le lancement à partir de Visual Studio à l’aide de la touche F5 ; l’application s’ouvre sans afficher d’invite.
+7. Effectuez le lancement à partir de Visual Studio à l’aide de la toucheF5; l’application s’ouvre sans afficher d’invite.
 
 À ce stade, l’autorisation est _rémanente_ jusqu’à ce que vous fermiez la session de l’utilisateur, même si vous désinstallez l’application et la réinstallez.
  
-Il existe un autre type d’exemption, uniquement disponible pour les comptes enfant. Un compte enfant requiert un parent, qui doit se connecter pour accorder l’autorisation adéquate. Lorsqu’il se connecte, le parent peut choisir d’autoriser systématiquement l’enfant à lancer l’application (paramètre **Toujours**). Cette exemption est stockée dans le cloud et est persistante, même si l’enfant se déconnecte et se reconnecte.   
+Il existe un autre type d’exemption, uniquement disponible pour les comptesenfant. Un compteenfant requiert un parent, qui doit se connecter pour accorder l’autorisation adéquate. Lorsqu’il se connecte, le parent peut choisir d’autoriser systématiquement l’enfant à lancer l’application (paramètre **Toujours**). Cette exemption est stockée dans le cloud et est persistante, même si l’enfant se déconnecte et se reconnecte.   
 
 <!--### x86 vs. x64
 
@@ -107,9 +107,9 @@ The following game engines have been confirmed to work:
 There are likely others that are working too. We would love to get your feedback on what you find. 
 Please use the forum to report any issues you see.-->
 
-## Prise en charge de DirectX 12
+## Prise en charge de DirectX12
 
-UWP sur Xbox One prend en charge la fonctionnalité DirectX 11 niveau 10. DirectX 12 n’est pas pris en charge pour l’instant. À l’instar de toutes les consoles de jeu traditionnelles, Xbox One est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
+UWP sur XboxOne prend en charge la fonctionnalité DirectX11 niveau10. DirectX12 n’est pas pris en charge pour l’instant. À l’instar de toutes les consoles de jeu traditionnelles, XboxOne est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -118,11 +118,11 @@ To restore the game streaming feature, you must leave the developer preview. -->
 
 ## Problème connu avec la zone adaptée à l’écran de TV
 
-Par défaut, la zone d’affichage des applications UWP sur Xbox doit être insérée dans la zone adaptée à l’écran de TV. Toutefois, il existe un bogue connu dans la version préliminaire pour développeurs de Xbox One : la zone adaptée à l’écran de TV commence à [0, 0] plutôt qu’à [_décalage_, _décalage_].
+Par défaut, la zone d’affichage des applications UWP sur Xbox doit être insérée dans la zone adaptée à l’écran de TV. Toutefois, il existe un bogue connu dans la version préliminaire pour développeurs de XboxOne: la zone adaptée à l’écran de TV commence à [0, 0] plutôt qu’à [_décalage_, _décalage_].
 
-> **Remarque :** &nbsp;&nbsp;cela s’applique uniquement aux applications UWP qui utilisent Javascript.
+> **Remarque:** &nbsp;&nbsp;cela s’applique uniquement aux applicationsUWP qui utilisentJavascript.
 
-La meilleure façon de contourner ce problème consiste à désactiver la zone adaptée à l’écran de TV, comme illustré dans l’exemple JavaScript suivant.
+La meilleure façon de contourner ce problème consiste à désactiver la zone adaptée à l’écran de TV, comme illustré dans l’exempleJavaScript suivant.
 
     var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
 
@@ -144,7 +144,7 @@ Dans cette version préliminaire pour développeurs, les accès réseau entrants
 
 ## Couverture des API UWP
 
-Les API UWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
+Les APIUWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
 
 <!--## XAML controls do not look like or behave like the controls in the Xbox One shell
 
@@ -183,7 +183,7 @@ It is possible to get into a state where the PIN pairing between Visual Studio a
 If PIN pairing fails, use the “Remove all pairings” button in Dev Home, restart Xbox One, restart your development PC, and then try again.--> 
 
 
-## Version préliminaire de Windows Device Portal (WDP)
+## Version préliminaire de WindowsDevicePortal (WDP)
 
 <!--### Starting WDP from Dev Home crashes Dev Home
 
@@ -207,13 +207,13 @@ This will delete all of your games, apps, settings and content, deactivate Devel
 
 Sometimes this is resolved by sorting a column on the table.-->
 
-### Affichage incorrect de l’interface utilisateur de WDP dans Internet Explorer 7 
+### Affichage incorrect de l’interface utilisateur de WDP dans InternetExplorer7 
 
-Par défaut, l’interface utilisateur de WDP ne s’affiche pas correctement dans le navigateur lorsque vous utilisez Internet Explorer 7. Vous pouvez résoudre ce problème en désactivant l’Affichage de compatibilité d’Internet Explorer 7 pour WDP.
+Par défaut, l’interface utilisateur de WDP ne s’affiche pas correctement dans le navigateur lorsque vous utilisez InternetExplorer7. Vous pouvez résoudre ce problème en désactivant l’Affichage de compatibilité d’Internet Explorer7 pour WDP.
 
 ### Avertissement de sécurité déclenché par l’accès à WDP
 
-Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. Cliquez sur « Poursuivre sur ce site web » pour accéder à Windows Device Portal.
+Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console XboxOne n’est pas considéré comme un éditeur approuvé bien connu. Cliquez sur «Poursuivre sur ce site web» pour accéder à Windows Device Portal.
 
 ![Avertissement concernant le certificat de sécurité d’un site web](images/security_cert_warning.jpg)
 
@@ -224,7 +224,7 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 ## Voir aussi
 - [Forum Aux Questions](frequently-asked-questions.md)
-- [UWP sur Xbox One](index.md)
+- [UWP sur XboxOne](index.md)
 
 
 

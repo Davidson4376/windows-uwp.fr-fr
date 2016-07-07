@@ -1,23 +1,23 @@
 ---
 author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
-description: "Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT 8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows 10."
-title: "Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; exemple d’application d’homologue à homologue QuizGame"
+description: "Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows10."
+title: "Étude de cas de portage d’application Windows Runtime8.x vers UWP&#58; exemple d’application d’homologue à homologue QuizGame"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
 ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
 
 ---
 
-# Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; exemple d’application d’homologue à homologue QuizGame
+# Étude de cas de portage d’application Windows Runtime8.x vers UWP&#58; exemple d’application d’homologue à homologue QuizGame
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT 8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows 10.
+Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows10.
 
-Une application 8.1 universelle génère deux versions de la même application : un package d’application pour Windows 8.1 et un autre pour Windows Phone 8.1. La version WinRT 8.1 de l’application QuizGame utilise une disposition de projet d’application Windows universelle, mais adopte une approche différente et génère une application fonctionnellement distincte pour les deux plates-formes. Le package d’application Windows 8.1 joue le rôle d’hôte pour une session de jeu-questionnaire, alors que le package d’application Windows Phone 8.1 joue le rôle de client de l’hôte. Les deux composantes de la session de jeu-questionnaire communiquent via un réseau homologue à homologue.
+Une application8.1 universelle génère deux versions de la même application: un package d’application pour Windows8.1 et un autre pour WindowsPhone8.1. La version WinRT 8.1 de l’application QuizGame utilise une disposition de projet d’application Windows universelle, mais adopte une approche différente et génère une application fonctionnellement distincte pour les deux plates-formes. Le package d’application Windows 8.1 joue le rôle d’hôte pour une session de jeu-questionnaire, alors que le package d’application Windows Phone 8.1 joue le rôle de client de l’hôte. Les deux composantes de la session de jeu-questionnaire communiquent via un réseau homologue à homologue.
 
 Une adaptation personnalisée de ces deux composantes pour un PC et un téléphone (respectivement) semble appropriée. Toutefois, ne serait-il pas préférable de pouvoir exécuter le client et l’hôte sur n’importe quel appareil ? Dans cette étude de cas, nous allons porter les deux applications vers la solution Windows 10, dans laquelle elles seront générées sous la forme d’un seul package d’application, que les utilisateurs pourront installer sur un vaste éventail d’appareils.
 
@@ -39,7 +39,7 @@ L’application utilise des modèles qui exploitent des affichages et des modèl
 
 [Voir la dernière version de cet exemple sur GitHub](https://github.com/Microsoft/Windows-appsample-quizgame).
 
-## Solution WinRT 8.1
+## Solution WinRT8.1
 
 
 Voici à quoi ressemble QuizGame, l’application que nous allons porter.
@@ -50,9 +50,9 @@ Application QuizGame hôte s’exécutant sur Windows
 
  
 
-![Application QuizGame cliente s’exécutant sur Windows Phone](images/w8x-to-uwp-case-studies/c04-02-wp81-how-the-client-app-looks.png)
+![Application QuizGame cliente s’exécutant sur WindowsPhone](images/w8x-to-uwp-case-studies/c04-02-wp81-how-the-client-app-looks.png)
 
-Application QuizGame cliente s’exécutant sur Windows Phone
+Application QuizGame cliente s’exécutant sur WindowsPhone
 
 ## Procédure pas à pas de l’application QuizGame en cours d’utilisation
 
@@ -64,7 +64,7 @@ L’application hôte est en mode d’introduction ; l’écran de télévision 
 
 L’animateur clique sur **Démarrer le jeu** et l’application hôte affiche une question, ainsi que les différentes réponses possibles (elle affiche également une liste des joueurs ayant rejoint la partie, en utilisant une police normale grise). Simultanément, les réponses s’affichent sur les boutons des appareils clients connectés. Joanna appuie sur le bouton indiquant la réponse « 1975 ». À ce moment, tous les boutons sont désactivés. Sur l’application hôte, le nom de Joanna s’affiche en vert (et en gras), ce qui indique que sa réponse a bien été reçue. Les réponses de Maxwell s’affichent de la même manière. L’animateur remarque que tous les noms de joueurs sont affichés en vert. Il clique alors sur **Question suivante**.
 
-Le jeu se poursuit. Une question est posée et reçoit une réponse ; l’animateur pose la suivante, et ainsi de suite. Une fois la dernière question affichée sur l’application hôte, le bouton indique **Afficher les résultats**, et non plus **Question suivante**. Lorsque l’animateur clique sur **Afficher les résultats**, les résultats apparaissent. Un clic sur **Revenir à la page d’introduction** vous ramène au début du cycle du jeu, sauf que les joueurs restent connectés. Toutefois, le retour à la page d’introduction permet à de nouveaux joueurs de participer et aux joueurs déjà connectés, de quitter la partie (même s’ils peuvent la quitter à tout moment en appuyant sur **Quitter la partie**).
+Le jeu se poursuit. Une question est posée et reçoit une réponse; l’animateur pose la suivante, et ainsi de suite. Une fois la dernière question affichée sur l’application hôte, le bouton indique **Afficher les résultats**, et non plus **Question suivante**. Lorsque l’animateur clique sur **Afficher les résultats**, les résultats apparaissent. Un clic sur **Revenir à la page d’introduction** vous ramène au début du cycle du jeu, sauf que les joueurs restent connectés. Toutefois, le retour à la page d’introduction permet à de nouveaux joueurs de participer et aux joueurs déjà connectés, de quitter la partie (même s’ils peuvent la quitter à tout moment en appuyant sur **Quitter la partie**).
 
 ## Mode test local
 
@@ -72,7 +72,7 @@ Pour tester l’application et ses interactions sur un seul PC, et non sur des a
 
 Pour activer le mode test local, définissez l’élément **LOCALTESTMODEON** (dans les propriétés du projet) en tant que symbole de compilation conditionnelle, puis relancez la génération.
 
-## Portage d’une application vers un projet Windows 10
+## Portage d’une application vers un projet Windows10
 
 L’application QuizGame comporte les éléments suivants :
 
@@ -106,15 +106,15 @@ En nous appuyant sur ces options, nous allons porter l’élément QuizGame.Wind
 -   Créez un projet d’application Windows 10 (**Ajouter**&gt;**Nouveau projet**&gt;**Universelle Windows**&gt;**Application vide (Universelle Windows)**) et appelez-le « QuizGameHost ».
 -   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence**&gt;**Projets**&gt;**Solution**&gt;**ReferenceProjectsSolutionP2PHelper**).
 -   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter**&gt;**Élément existant**, puis accédez au dossier immédiatement supérieur. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
--   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.Windows\\ vers \\QuizGameHost\\ et remplacez l’espace de noms par « QuizGameHost ».
--   Copiez le fichier App.xaml de l’emplacement \\QuizGame.Shared\\ vers \\QuizGameHost\\ et remplacez l’espace de noms par « QuizGameHost ».
+-   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.Windows\\ vers \\QuizGameHost\\ et remplacez l’espace de noms par «QuizGameHost».
+-   Copiez le fichier App.xaml de l’emplacement \\QuizGame.Shared\\ vers \\QuizGameHost\\ et remplacez l’espace de noms par «QuizGameHost».
 -   Au lieu de remplacer le fichier app.xaml.cs, nous allons conserver sa version dans le nouveau projet en lui apportant une seule modification ciblée afin d’assurer la prise en charge du mode test local. Dans le fichier app.xaml.cs, remplacez cette ligne de code :
 
 ```CSharp
 rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-par :
+par:
 
 ```CSharp
 #if LOCALTESTMODEON
@@ -133,9 +133,9 @@ par :
 -   Créez un projet d’application Windows 10 (**Ajouter**&gt;**Nouveau projet**&gt;**Universelle Windows**&gt;**Application vide (Universelle Windows)**) et appelez-le « QuizGameClient ».
 -   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence**&gt;**Projets**&gt;**Solution**&gt;**ReferenceProjectsSolutionP2PHelper**).
 -   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter**&gt;**Élément existant**, puis accédez au dossier immédiatement supérieur. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
--   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.WindowsPhone\\ vers \\QuizGameClient\\ et remplacez l’espace de noms par « QuizGameClient ».
--   Copiez le fichier App.xaml de l’emplacement \\QuizGame.Shared\\ vers \\QuizGameClient\\ et remplacez l’espace de noms par « QuizGameClient ».
--   Dans le fichier package.appxmanifest, remplacez le nom de la fonctionnalité « internetClient » par « internetClientServer ».
+-   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.WindowsPhone\\ vers \\QuizGameClient\\ et remplacez l’espace de noms par «QuizGameClient».
+-   Copiez le fichier App.xaml de l’emplacement \\QuizGame.Shared\\ vers \\QuizGameClient\\ et remplacez l’espace de noms par «QuizGameClient».
+-   Dans le fichier package.appxmanifest, remplacez le nom de la fonctionnalité «internetClient» par «internetClientServer».
 
 Vous pourrez maintenant générer l’application et l’exécuter.
 
@@ -151,7 +151,7 @@ Nous pouvons utiliser la fonction adaptative de gestionnaire d’état visuel po
 -   Sur l’élément **Grid** signalé par le commentaire `<!-- Content -->`, définissez `x:Name="contentGrid"` et `Margin="-18,12,0,0"`.
 -   Sur l’élément **TextBlock** situé juste au-dessus du commentaire `<!-- Options -->`, définissez `Margin="0,0,0,24"`.
 -   Dans le style **TextBlock** par défaut (première ressource du fichier), remplacez la valeur de la méthode setter **FontSize** par « 15 ».
--   Dans `OptionContentControlStyle`, remplacez la valeur de la méthode setter **FontSize** par « 20 ». Cette étape et l’étape précédente nous permettent d’obtenir une rampe d’un type correct, qui fonctionnera efficacement sur tous les appareils. Ces tailles sont nettement plus flexibles que la taille de « 30 » que nous utilisions pour l’application Windows 8.1.
+-   Dans `OptionContentControlStyle`, remplacez la valeur de la méthode setter **FontSize** par « 20 ». Cette étape et l’étape précédente nous permettent d’obtenir une rampe d’un type correct, qui fonctionnera efficacement sur tous les appareils. Ces tailles sont nettement plus flexibles que la taille de «30» que nous utilisions pour l’application Windows8.1.
 -   Enfin, ajoutez le balisage du Gestionnaire d’état visuel approprié à l’élément **Grid** racine.
 
 ```xml
@@ -188,7 +188,7 @@ Ensuite, ajoutez cette méthode setter à l’élément `OptionButtonStyle` dans
 <Setter Property="Margin" Value="6"/>
 ```
 
-Grâce à ce dernier ajustement, l’application se comportera comme auparavant et aura le même aspect qu’avant le portage, à une exception près : elle pourra s’exécuter sur tous les types d’appareils.
+Grâce à ce dernier ajustement, l’application se comportera comme auparavant et aura le même aspect qu’avant le portage, à une exception près: elle pourra s’exécuter sur tous les types d’appareils.
 
 ## Conclusion
 

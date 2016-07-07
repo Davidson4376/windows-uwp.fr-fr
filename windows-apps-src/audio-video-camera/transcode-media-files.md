@@ -11,7 +11,7 @@ ms.openlocfilehash: 06c452291f10acd35dde9659c08a386ea38fa90a
 
 # Transcoder des fichiers multimédias
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Vous pouvez utiliser les API [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) pour transcoder des fichiers vidéo d’un format vers un autre.
@@ -34,7 +34,7 @@ La façon dont votre application détermine les fichiers source et de destinatio
 
 Le profil d’encodage contient les paramètres qui déterminent le mode d’encodage du fichier de destination. C’est à ce stade du processus de transcodage d’un fichier que les options proposées sont les plus nombreuses.
 
-La classe [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) fournit des méthodes statiques pour la création de profils d’encodage prédéfinis :
+La classe [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) fournit des méthodes statiques pour la création de profils d’encodage prédéfinis:
 
 -   Wav
 -   Audio AAC (M4A)
@@ -50,7 +50,7 @@ Le code suivant crée un profil pour la vidéo MP4.
 
 [!code-cs[TranscodeMediaProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeMediaProfile)]
 
-La méthode statique [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078) permet de créer un profil d’encodage MP4. Le paramètre de cette méthode détermine la résolution cible de la vidéo. Dans ce cas, [**VideoEncodingQuality.hd720p**](https://msdn.microsoft.com/library/windows/apps/hh701290) signifie 1 280 x 720 pixels à 30 images par seconde. (« 720p » correspond à un balayage progressif de 720 lignes par image.) Les autres méthodes de création de profils prédéfinis suivent toutes ce modèle.
+La méthode statique [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078) permet de créer un profil d’encodage MP4. Le paramètre de cette méthode détermine la résolution cible de la vidéo. Dans ce cas, [**VideoEncodingQuality.hd720p**](https://msdn.microsoft.com/library/windows/apps/hh701290) signifie 1280x720pixels à 30images par seconde. («720p» correspond à un balayage progressif de 720lignes par image.) Les autres méthodes de création de profils prédéfinis suivent toutes ce modèle.
 
 Une autre possibilité consiste à créer un profil qui correspond à un fichier multimédia existant à l’aide de la méthode [**MediaEncodingProfile.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701047). Ou bien, si vous avez une idée précise des paramètres d’encodage que vous voulez utiliser, vous pouvez créer un objet [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) et compléter les détails du profil.
 

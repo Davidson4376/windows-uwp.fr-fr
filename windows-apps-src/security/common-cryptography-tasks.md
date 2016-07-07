@@ -12,9 +12,9 @@ ms.openlocfilehash: 38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c
 # Tâches courantes de chiffrement
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Ces articles fournissent des exemples de code pour les tâches de chiffrement de plateforme Windows universelle (UWP) courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, ainsi que le codage/décodage de données.
+Ces articles fournissent des exemples de code pour les tâches de chiffrement de plateformeWindows universelle (UWP) courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, ainsi que le codage/décodage de données.
 
  
 | Rubrique                                                                                 | Description                                                                                            |

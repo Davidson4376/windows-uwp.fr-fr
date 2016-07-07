@@ -12,7 +12,7 @@ ms.openlocfilehash: 667338ed3808f79b75230bc0c3ea00cc7e274d5a
 # Convertir entre chaînes et données binaires
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet exemple de code indique comment convertir les chaînes et les données binaires dans une application de plateforme Windows universelle (UWP).
 

@@ -32,7 +32,7 @@ Prenez soin d’inclure les éléments suivants (s’ils sont applicables à vot
 
     Pour les mises à jour d'applications déjà publiées, il est bon de signaler aux testeurs ce qui a changé, notamment si vos packages sont les mêmes et que vous modifiez simplement la description de votre application (ajout de captures d'écran, changement de catégorie de l'application ou modification de la description, par exemple).
 
-Prenez en considération les points suivants lors de la rédaction des remarques :
+Prenez en considération les points suivants lors de la rédaction des remarques:
 
 -   **Une personne réelle lira ces remarques.** Les testeurs apprécieront des remarques polies et claires ainsi que des instructions utiles.
 -   **Soyez succinct et donnez des instructions simples.** Si vous devez vraiment fournir des instructions supplémentaires, vous pouvez indiquer un lien vers une page contenant d’autres informations. Gardez à l’esprit que les clients de votre application ne verront pas ces remarques. Si vous avez besoin de fournir des instructions complexes pour le test de votre application, peut-être devez-vous envisager de simplifier l’utilisation de votre application pour les clients.

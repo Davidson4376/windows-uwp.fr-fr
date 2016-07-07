@@ -11,7 +11,7 @@ ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
 
 # Analyse de scène de capture multimédia
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article décrit comment utiliser les classes [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) et [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) pour analyser le contenu du flux d’aperçu de capture multimédia.
@@ -42,7 +42,8 @@ Les effets vidéo sont implémentés à l’aide de deux API, une dédiée à la
 
 Dans votre application, une fois l’objet **MediaCapture** initialisé, créez une instance de [**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903).
 
-Enregistrez l’effet avec l’appareil de capture en appelant [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) sur votre objet **MediaCapture**, en fournissant l’élément **SceneAnalysisEffectDefinition** et en spécifiant [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) pour indiquer que l’effet doit être appliqué au flux d’aperçu vidéo et non au flux de capture. **AddVideoEffectAsync** renvoie une instance de l’effet ajouté. Étant donné que cette méthode peut être utilisée avec plusieurs types d’effets, vous devez diffuser l’instance renvoyée sur un objet [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902).
+Enregistrez l’effet avec l’appareil de capture en appelant [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) sur votre objet **MediaCapture**, en fournissant l’élément **SceneAnalysisEffectDefinition** et en spécifiant [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) pour indiquer que l’effet doit être appliqué au flux d’aperçu vidéo et non au flux de capture. 
+            **AddVideoEffectAsync** renvoie une instance de l’effet ajouté. Étant donné que cette méthode peut être utilisée avec plusieurs types d’effets, vous devez diffuser l’instance renvoyée sur un objet [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902).
 
 Pour recevoir les résultats de l’analyse de scène, vous devez enregistrer un gestionnaire pour l’événement [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920).
 
@@ -82,7 +83,8 @@ Les effets vidéo sont implémentés à l’aide de deux API, une dédiée à la
 
 Dans votre application, une fois l’objet **MediaCapture** initialisé, créez une instance de [**FaceDetectionEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948778). Définissez la propriété [**DetectionMode**](https://msdn.microsoft.com/library/windows/apps/dn948781) de manière à privilégier une détection des visages plus rapide ou plus précise. Définissez [**SynchronousDetectionEnabled**](https://msdn.microsoft.com/library/windows/apps/dn948786) pour indiquer que les trames entrantes n’attendent pas que la détection des visages soit terminée afin de ne pas obtenir un aperçu « haché ».
 
-Enregistrez l’effet avec l’appareil de capture en appelant [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) sur votre objet **MediaCapture**, en fournissant l’élément **FaceDetectionEffectDefinition** et en spécifiant [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) pour indiquer que l’effet doit être appliqué au flux d’aperçu vidéo et non au flux de capture. **AddVideoEffectAsync** renvoie une instance de l’effet ajouté. Étant donné que cette méthode peut être utilisée avec plusieurs types d’effets, vous devez diffuser l’instance renvoyée sur un objet [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776).
+Enregistrez l’effet avec l’appareil de capture en appelant [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) sur votre objet **MediaCapture**, en fournissant l’élément **FaceDetectionEffectDefinition** et en spécifiant [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) pour indiquer que l’effet doit être appliqué au flux d’aperçu vidéo et non au flux de capture. 
+            **AddVideoEffectAsync** renvoie une instance de l’effet ajouté. Étant donné que cette méthode peut être utilisée avec plusieurs types d’effets, vous devez diffuser l’instance renvoyée sur un objet [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776).
 
 Activez ou désactivez l’effet en définissant la propriété [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818). Ajustez la fréquence à laquelle l’effet analyse les trames en définissant la propriété [**FaceDetectionEffect.DesiredDetectionInterval**](https://msdn.microsoft.com/library/windows/apps/dn948814). Ces deux propriétés peuvent être ajustées lors de la capture multimédia.
 

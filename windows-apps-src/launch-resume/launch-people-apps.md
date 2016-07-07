@@ -11,7 +11,7 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 # Lancer l’application Contacts
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
@@ -208,6 +208,6 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

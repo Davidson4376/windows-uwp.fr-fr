@@ -10,16 +10,13 @@ ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
 ---
 # Pinceaux de composition
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Un pinceau peint la zone d’un [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) avec sa sortie. Des pinceaux différents ont différents types de sortie. L’API Composition fournit trois types de pinceau :
 
--   [
-            **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) peint un élément visuel avec une couleur unie.
--   [
-            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) peint un élément visuel avec le contenu d’une surface de composition.
--   [
-            **CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) peint un élément visuel avec le contenu d’un effet de composition.
+-   [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) peint un élément visuel avec une couleur unie.
+-   [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) peint un élément visuel avec le contenu d’une surface de composition.
+-   [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) peint un élément visuel avec le contenu d’un effet de composition.
 
 Tous les pinceaux héritent de [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) ; ils sont créés directement ou indirectement par le [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) et constituent des ressources indépendantes du périphérique. Même si les pinceaux sont indépendants du périphérique, [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) et [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) peignent un [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) en utilisant le contenu d’une surface de composition dépendant du périphérique.
 
@@ -99,8 +96,7 @@ visual.Brush = _surfaceBrush;
 
 Il arrive que le contenu de la [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) d’un [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) ne remplisse pas complètement les zones de l’élément visuel qui est peint. Le cas échéant, l’API Composition utilise les paramètres de mode [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) et [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) du pinceau pour déterminer comment remplir l’espace restant.
 
--   [
-            **HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) et [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) sont de type flottant, et peuvent être utilisés pour contrôler le positionnement du pinceau dans les limites de l’élément visuel.
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) et [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) sont de type flottant, et peuvent être utilisés pour contrôler le positionnement du pinceau dans les limites de l’élément visuel.
     -   La valeur 0,0 aligne le coin gauche/supérieur du pinceau sur le coin gauche/supérieur de l’élément visuel.
     -   La valeur 0,5 aligne le centre du pinceau sur le centre de l’élément visuel.
     -   La valeur 1 aligne le coin droit/inférieur du pinceau sur le coin droit/inférieur de l’élément visuel.

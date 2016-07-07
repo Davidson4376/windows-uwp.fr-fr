@@ -11,7 +11,7 @@ ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
 
 # Analyses
 
-Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows. Les statistiques et les graphiques vous permettent de savoir où en sont vos applications : combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous obtenez également des informations sur l’intégrité de l’application, l’utilisation des publicités, etc. Affichez des rapports dans le tableau de bord ou [téléchargez les rapports dont vous avez besoin](download-analytic-reports.md) pour analyser les données hors connexion. Nous vous proposerons également plusieurs méthodes vous permettant d’[accéder à vos données d’analyse sans utiliser le tableau de bord](#no-dashboard).
+Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows. Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous obtenez également des informations sur l’intégrité de l’application, l’utilisation des publicités, etc. Affichez des rapports dans le tableau de bord ou [téléchargez les rapports dont vous avez besoin](download-analytic-reports.md) pour analyser les données hors connexion. Nous vous proposerons également plusieurs méthodes vous permettant d’[accéder à vos données d’analyse sans utiliser le tableau de bord](#no-dashboard).
 
 > **Remarque** &nbsp;&nbsp;Outre les rapports du tableau de bord, vous pouvez accéder par programme à certaines données d’analyse à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -54,25 +54,25 @@ Ces filtres varient selon les rapports. Les rubriques de cette section expliquen
 
 Outre les rapports d’analyse du tableau de bord, il existe plusieurs façons d’accéder à vos données d’analyse.
 
-### API d’analyse du Windows Store
+### API d’analyse du WindowsStore
 
 Utilisez l’[API d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md) pour récupérer par programme les données d’analyse de vos applications. Cette API REST permet de récupérer les données pour les acquisitions de produits in-app et d’applications, les erreurs, ainsi que les évaluations et avis relatifs aux applications. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels à partir de votre application ou service.
 
-### Pack de contenu du Centre de développement Windows pour Power BI
+### Pack de contenu du Centre de développement Windows pour PowerBI
 
-Utilisez le [pack de contenu du Centre de développement Windows pour Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/) pour découvrir et surveiller vos données d’analyse du Centre de développement dans Power BI. Power BI est un service d’analyse métier basé sur le cloud qui vous offre une vue unique de vos données d’entreprise.
+Utilisez le [pack de contenu du Centre de développement Windows pour Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/) pour découvrir et surveiller vos données d’analyse du Centre de développement dans PowerBI. PowerBI est un service d’analyse métier basé sur le cloud qui vous offre une vue unique de vos données d’entreprise.
 
-Utilisez les ressources suivantes pour commencer à utiliser Power BI pour accéder à vos données d’analyse.
+Utilisez les ressources suivantes pour commencer à utiliser PowerBI pour accéder à vos données d’analyse.
 
-* [S’inscrire à Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-self-service-signup-for-power-bi/)
-* [Découvrez comment utiliser Power BI](https://powerbi.microsoft.com/guided-learning/)
-* [Découvrez comment utiliser le pack de contenu du Centre de développement Windows pour Power BI pour se connecter à vos données d’analyse](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
+* [S’inscrire à PowerBI](https://powerbi.microsoft.com/documentation/powerbi-service-self-service-signup-for-power-bi/)
+* [Découvrez comment utiliser PowerBI](https://powerbi.microsoft.com/guided-learning/)
+* [Découvrez comment utiliser le pack de contenu du Centre de développement Windows pour PowerBI pour se connecter à vos données d’analyse](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
-> **Remarque** &nbsp;&nbsp;Pour connecter le pack de contenu du Centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification à partir d’un répertoire Azure AD associé à votre compte du Centre de développement. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans Power BI ne sont pas actualisées automatiquement et vous devez ouvrir une session Power BI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur l’association de votre compte du Centre de développement avec Azure AD, consultez [Gérer les utilisateurs de compte](manage-account-users.md).
+> **Remarque** &nbsp;&nbsp;Pour connecter le pack de contenu du Centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification à partir d’un répertoire Azure AD associé à votre compte du Centre de développement. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans PowerBI ne sont pas actualisées automatiquement et vous devez ouvrir une session PowerBI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur l’association de votre compte du Centre de développement avec Azure AD, consultez [Gérer les utilisateurs de compte](manage-account-users.md).
 
 ### Application Centre de développement
 
-Installez l’application [Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour afficher rapidement des informations sur l’intégrité et les performances de vos applications sur tout appareil Windows 10. 
+Installez l’application [Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour afficher rapidement des informations sur l’intégrité et les performances de vos applications sur tout appareil Windows10. 
 
 
 

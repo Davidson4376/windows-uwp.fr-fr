@@ -11,7 +11,7 @@ ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
 
 # Communication entre les applications
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section explique comment partager des données entre des applications de plateforme Windows universelle (UWP), notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer.
 

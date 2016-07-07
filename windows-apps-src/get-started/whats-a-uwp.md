@@ -1,13 +1,17 @@
 ---
 author: martinekuan
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
-title: Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
-description: Découvrez les différents types d’application que recouvre l’appellation « applications Windows universelles » &#58; applications du Windows Store, applications du Windows Phone Store et applications Windows Runtime.
+title: "Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?"
+description: "Découvrez les différents types d’application que recouvre l’appellation « applications Windows universelles » &#58; applications du Windows Store, applications du Windows Phone Store et applications Windows Runtime."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f02851d848a82af7104a6038c5d8850d5362c832
+
 ---
 
 # Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
 
-Une application de plateforme Windows universelle est une expérience Windows qui repose sur la plateforme Windows universelle (UWP), introduite pour la première fois dans Windows 8 en tant que Windows Runtime. Au cœur des applications de plateforme Windows universelle est l’idée que les utilisateurs souhaitent que leurs *expériences* soient mobiles sur TOUS leurs appareils, et pouvoir utiliser l’appareil le plus pratique ou le plus productif à leur disposition pour la tâche à effectuer.
+Une application de plateforme Windows universelle est une expérience Windows qui repose sur la plateforme Windows universelle (UWP), introduite pour la première fois dans Windows8 en tant que Windows Runtime. Au cœur des applications de plateforme Windows universelle est l’idée que les utilisateurs souhaitent que leurs *expériences* soient mobiles sur TOUS leurs appareils, et pouvoir utiliser l’appareil le plus pratique ou le plus productif à leur disposition pour la tâche à effectuer.
 
 Windows 10 facilite le développement d’applications pour UWP avec un seul ensemble d’API, un seul package d’application et un seul Store pour atteindre tous les appareils Windows 10 : PC, tablettes, téléphones et plus encore. Il est plus facile de prendre en charge plusieurs tailles d’écran, ainsi que divers modèles d’interaction, que ce soit à l’aide d’impulsions tactiles, de la souris et du clavier, d’une manette de jeu ou d’un stylet.
 
@@ -72,10 +76,10 @@ Enfin, vous pouvez utiliser les données itinérantes et le Stockage sécurisé 
 ##  Choisissez comment vous faire rémunérer pour votre application
 
 
-Sur Windows, vous pouvez choisir comment monétiser votre application — sur des téléphones, des tablettes, des PC et d’autres appareils. Nous vous proposons plusieurs manières de gagner de l’argent avec votre application et les services qu’elle fournit. Vous devez simplement choisir le procédé qui vous convient le mieux :
+Sur Windows, vous pouvez choisir comment monétiser votre application— sur des téléphones, des tablettes, des PC et d’autres appareils. Nous vous proposons plusieurs manières de gagner de l’argent avec votre application et les services qu’elle fournit. Vous devez simplement choisir le procédé qui vous convient le mieux :
 
 -   L’option la plus simple est de faire payer le téléchargement. Il vous suffit de fixer votre prix.
--   Les périodes d’essai permettent à l’utilisateur d’essayer votre application avant de l’acheter. Il peut ainsi la découvrir et l’adopter plus facilement que si vous aviez choisi l’option plus classique du « freemium ».
+-   Les périodes d’essai permettent à l’utilisateur d’essayer votre application avant de l’acheter. Il peut ainsi la découvrir et l’adopter plus facilement que si vous aviez choisi l’option plus classique du «freemium».
 -   L’achat dans l’application est la solution offrant la plus grande souplesse pour faire fructifier votre application.
 
 ## Commençons
@@ -90,6 +94,7 @@ Pour une présentation plus détaillée d’UWP, lisez le [Guide des application
 * [Se préparer](get-set-up.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

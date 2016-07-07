@@ -21,7 +21,7 @@ Une utilisation appropriée des polices, aussi bien en termes de taille, d’ép
 
 Si vous recherchez une liste d’icônes Segoe UI Symbol, voir [**Guidelines for Segoe UI Symbol icons**](segoe-ui-symbol-font.md).
 
-## <span id="The_Windows_10_type_ramp"></span><span id="the_windows_10_type_ramp"></span><span id="THE_WINDOWS_10_TYPE_RAMP"></span>Gamme de types Windows 10
+## <span id="The_Windows_10_type_ramp"></span><span id="the_windows_10_type_ramp"></span><span id="THE_WINDOWS_10_TYPE_RAMP"></span>Gamme de types Windows10
 
 
 La gamme de types établit une relation fondamentale entre les titres et le corps du texte et garantit une hiérarchie claire et compréhensible entre les différents niveaux. Les utilisateurs comprennent immédiatement où se trouvent les informations et comment analyser la page.
@@ -43,7 +43,7 @@ Voici la gamme que nous recommandons pour les applications UWP :
 ## <span id="Recommended_fonts"></span><span id="recommended_fonts"></span><span id="RECOMMENDED_FONTS"></span>Polices recommandées
 
 
-Vous n’êtes pas obligé d’utiliser la police Segoe UI pour tous les éléments. Vous pouvez utiliser d’autres polices dans certains cas de figure, notamment pour la lecture, ou pour l’affichage de textes rédigés dans une autre langue que l’anglais.
+Vous n’êtes pas obligé d’utiliser la police SegoeUI pour tous les éléments. Vous pouvez utiliser d’autres polices dans certains cas de figure, notamment pour la lecture, ou pour l’affichage de textes rédigés dans une autre langue que l’anglais.
 
 Voici la liste des polices systématiquement disponibles dans toutes les éditions de Windows 10 prenant en charge les applications UWP.
 

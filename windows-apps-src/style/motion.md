@@ -1,13 +1,6 @@
 ---
-author: mijacobs
-Description: "Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles."
-title: Animations dans les applications UWP
-ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
-label: Motion
-template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
-
+Description&#58; author&#58; mijacobs Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assurent l’homogénéité des expériences par des transitions visuelles.
+title&#58; Mouvement et animation dans les applications UWP ms.assetid&#58; 21AA1335-765E-433A-85D8-560B340AE966 tag&#58; mouvement template&#58; detail.hbs testmetadata&#58; test tocnode&#58; conception et interface utilisateur
 ---
 
 # Animations pour les applications UWP
@@ -19,17 +12,17 @@ Avec des animations utiles et bien faites, vos applications prennent vie et donn
 
 Une animation ne consiste pas simplement à faire bouger des objets. L’animation est un outil qui permet de créer un écosystème physique dans lequel l’utilisateur peut évoluer et qu’il peut manipuler de façon tactile. La qualité de l’expérience dépend de la façon dont l’application répond à l’utilisateur et du type de personnalité communiqué par l’interface utilisateur.
 
-Assurez-vous que l’animation a une fonction spécifique dans votre application. Les meilleures applications de plateforme Windows universelle (UWP) utilisent l’animation pour donner vie à l’interface utilisateur. Une animation doit :
+Assurez-vous que l’animation a une fonction spécifique dans votre application. Les meilleures applications de plateforme Windows universelle (UWP) utilisent l’animation pour donner vie à l’interface utilisateur. Une animation doit:
 
--   fournir un retour d’informations basé sur le comportement de l’utilisateur ;
--   enseigner à l’utilisateur comment interagir avec l’interface utilisateur ;
+-   fournir un retour d’informations basé sur le comportement de l’utilisateur;
+-   enseigner à l’utilisateur comment interagir avec l’interface utilisateur;
 -   indiquer comment accéder aux vues précédentes ou suivantes.
 
-Plus un utilisateur passe de temps dans votre application (ou plus les tâches deviennent sophistiquées), plus la qualité de l’animation devient importante : elle permet de modifier la façon dont l’utilisateur perçoit la charge cognitive et la simplicité d’utilisation de votre application. Une animation présente de nombreux autres avantages directs :
+Plus un utilisateur passe de temps dans votre application (ou plus les tâches deviennent sophistiquées), plus la qualité de l’animation devient importante: elle permet de modifier la façon dont l’utilisateur perçoit la charge cognitive et la simplicité d’utilisation de votre application. Une animation présente de nombreux autres avantages directs:
 
 -   **l’animation ajoute des conseils concernant l’interaction.**
 
-    L’animation est directionnelle : elle permet de se déplacer vers l’avant ou en arrière, dans ou hors du contenu, laissant un minimum de traces quant à la façon dont l’utilisateur est parvenu jusqu’à la vue active.
+    L’animation est directionnelle: elle permet de se déplacer vers l’avant ou en arrière, dans ou hors du contenu, laissant un minimum de traces quant à la façon dont l’utilisateur est parvenu jusqu’à la vue active.
 
 -   **L’animation peut donner l’impression de performances accrues.**
 
@@ -114,6 +107,6 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

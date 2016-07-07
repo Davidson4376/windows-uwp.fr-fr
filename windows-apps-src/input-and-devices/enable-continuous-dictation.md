@@ -114,11 +114,11 @@ Deux événements sont particulièrement essentiels :
 
 L’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché lorsque l’utilisateur parle. Le module de reconnaissance écoute l’utilisateur en continu et déclenche périodiquement un événement qui transmet un segment d’entrée vocale. Examinez l’entrée vocale à l’aide de la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) de l’argument d’événement et prenez les mesures appropriées dans le gestionnaire d’événements, par exemple en ajoutant du texte à un objet StringBuilder.
 
-En tant qu’instance de [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) permet d’indiquer si vous acceptez l’entrée vocale ou non : Une instance [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) fournit deux propriétés spécifiques :
+En tant qu’instance de [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) permet d’indiquer si vous acceptez l’entrée vocale ou non: Une instance [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) fournit deuxpropriétés spécifiques:
 -   [ **Status** ](https://msdn.microsoft.com/library/windows/apps/dn631440) indique si la reconnaissance a réussi. La reconnaissance peut échouer pour diverses raisons.
 -   [ **Confidence** ](https://msdn.microsoft.com/library/windows/apps/dn631434) indique que le module de reconnaissance a relativement bien compris les mots énoncés.
 
-Voici les étapes de base associées à la prise en charge de la reconnaissance continue :  
+Voici les étapes de base associées à la prise en charge de la reconnaissance continue:  
 
 1.  Ici, nous inscrivons le gestionnaire pour l’événement de reconnaissance en continu [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) de l’événement de page [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508).
 ```    CSharp
@@ -206,7 +206,7 @@ private async void ContinuousRecognitionSession_Completed(
 ## Fournir des commentaires en cours de reconnaissance
 
 
-Lorsque des individus discutent, ces derniers s’appuient généralement sur le contexte pour déterminer le sens de la conversation. De la même manière, le module de reconnaissance vocale a souvent besoin de contexte pour fournir des résultats de reconnaissance très fiables. Par exemple, la différence entre les mots « poids » et « pois » est imperceptible tant qu’un contexte plus précis ne révèle leur sens. Tant que le module de reconnaissance n’est pas certain qu’un ou plusieurs mots ont été reconnus correctement, celui-ci ne déclenche pas l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
+Lorsque des individus discutent, ces derniers s’appuient généralement sur le contexte pour déterminer le sens de la conversation. De la même manière, le module de reconnaissance vocale a souvent besoin de contexte pour fournir des résultats de reconnaissance très fiables. Par exemple, la différence entre les mots «poids» et «pois» est imperceptible tant qu’un contexte plus précis ne révèle leur sens. Tant que le module de reconnaissance n’est pas certain qu’un ou plusieurs mots ont été reconnus correctement, celui-ci ne déclenche pas l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
 Cela peut entraîner une expérience peu agréable, dans la mesure où l’utilisateur continue de parler sans qu’aucun résultat n’apparaisse, jusqu’à ce que le moteur de reconnaissance soit suffisamment certain pour déclencher l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
@@ -283,6 +283,6 @@ Si vous définissez tous les champs privés lors de l’annulation de la session
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

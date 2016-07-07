@@ -11,7 +11,7 @@ ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
 
 # Classes de paramètres du modèle
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## Prérequis
 
@@ -23,22 +23,14 @@ Les classes **TemplateSettings** fournissent un ensemble de propriétés qui son
 
 Voici plusieurs classes **TemplateSettings**. Elles figurent toutes dans l’espace de noms [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Voici une liste des classes et un lien vers la propriété **TemplateSettings** du contrôle approprié. Cette propriété **TemplateSettings** indique comment accéder aux valeurs **TemplateSettings** du contrôle et établir des liaisons de modèle à ses propriétés :
 
--   [
-            **ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) : valeur [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
--   [
-            **GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499) : valeur [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
--   [
-            **ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948) : valeur [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
--   [
-            **ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856) : valeur [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
--   [
-            **ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248) : valeur [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
--   [
-            **SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721) : valeur [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
--   [
-            **ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804) : valeur [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
--   [
-            **ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813) : valeur [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
+-   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) : valeur [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499) : valeur [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948) : valeur [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856) : valeur [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248) : valeur [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721) : valeur [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804) : valeur [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813) : valeur [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
 Les propriétés **TemplateSettings** sont toujours destinées à être utilisées en XAML. Ce sont des sous-propriétés en lecture seule d’une propriété **TemplateSettings** en lecture seule d’un contrôle parent. Pour un scénario de contrôle personnalisé avancé, lorsque vous créez une classe basée sur [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) et pouvez donc influer sur la logique de contrôle, pensez à définir une propriété **TemplateSettings** personnalisée sur le contrôle pour communiquer des informations pouvant être utiles à toute personne qui recrée le modèle du contrôle. Pour la valeur de cette propriété en lecture seule, définissez une nouvelle classe **TemplateSettings** liée à votre contrôle qui possède des propriétés en lecture seule pour chacune des informations qui sont pertinentes pour les mesures de modèle, le positionnement d’animation, etc. et qui donnent aux appelants l’instance d’exécution de cette classe, qui est initialisée à l’aide de votre logique de contrôle. Les classes **TemplateSettings** sont dérivées de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) afin que les propriétés puissent utiliser le système de propriétés de dépendance pour les rappels de modification de propriété. Mais les identificateurs de propriété de dépendance pour les propriétés ne sont pas exposés comme API publique, car les propriétés **TemplateSettings** sont censées être en lecture seule pour les appelants.
 
@@ -105,7 +97,7 @@ Si vous utilisez les valeurs **TemplateSettings** dans le cadre de votre modèle
 
 ## Rubriques connexes
 
-* [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Démarrage rapide: modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 
 
 

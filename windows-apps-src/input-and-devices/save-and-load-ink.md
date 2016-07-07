@@ -1,7 +1,7 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Les applications UWP qui prennent en charge Windows Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha."
-title: "Stocker et récupérer les données de traits Windows Ink"
+Description: "Les applications UWP qui prennent en charge WindowsInk peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichierISF est une imageGIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha."
+title: "Stocker et récupérer les données de traits WindowsInk"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
@@ -11,10 +11,10 @@ ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
 
 ---
 
-# Stocker et récupérer les données de traits Windows Ink
+# Stocker et récupérer les données de traits WindowsInk
 
 
-Les applications UWP qui prennent en charge Windows Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
+Les applications UWP qui prennent en charge WindowsInk peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichierISF est une imageGIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
 
 
 **API importantes**
@@ -444,6 +444,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

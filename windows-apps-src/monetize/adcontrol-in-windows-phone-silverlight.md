@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
-description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone 8.1 ou Windows Phone 8.0."
+description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone8.1 ou Windows Phone8.0."
 title: AdControl dans Silverlight Windows Phone
 translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
@@ -13,18 +13,18 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 # AdControl dans Silverlight Windows Phone
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone 8.1 ou Windows Phone 8.0.
+Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone8.1 ou Windows Phone8.0.
 
 ## Conditions préalables
 
-*  Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) avec Visual Studio 2015 ou Visual Studio 2013.
+*  Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) avec Visual Studio2015 ou Visual Studio2013.
 
 
 ## Ajouter les références d’assemblys publicitaires
 
-Les assemblys Microsoft Advertising pour les projets Silverlight Windows Phone ne sont pas installés localement avec le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft. Avant de pouvoir mettre à jour votre code, vous devez d’abord utiliser **Services connectés** avec la prise en charge de la médiation publicitaire dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft pour télécharger ces assemblys et les référencer dans votre projet.
+Les assemblys Microsoft Advertising pour les projets Silverlight Windows Phone ne sont pas installés localement avec le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft. Avant de pouvoir mettre à jour votre code, vous devez d’abord utiliser **Services connectés** avec la prise en charge de la médiation publicitaire dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft pour télécharger ces assemblys et les référencer dans votre projet.
 
 1.  Dans Visual Studio, cliquez sur **Projet**, puis sur **Ajouter un service connecté**.
 
@@ -49,7 +49,7 @@ Les assemblys Microsoft Advertising pour les projets Silverlight Windows Phone n
     <Capability Name="ID_CAP_PHONEDIALER"/>
     ```
 
-    Pour cet exemple, le nœud **Fonctionnalités** ressemble à ceci :
+    Pour cet exemple, le nœud **Fonctionnalités** ressemble à ceci:
 
     ``` syntax
         <Capabilities>
@@ -80,7 +80,7 @@ Les assemblys Microsoft Advertising pour les projets Silverlight Windows Phone n
     xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
     ```
 
-    L’en-tête de votre page contient alors le code suivant :
+    L’en-tête de votre page contient alors le code suivant:
 
     ``` syntax
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -107,7 +107,7 @@ Les assemblys Microsoft Advertising pour les projets Silverlight Windows Phone n
     </Grid>
     ```
 
-7.  Générez et exécutez votre projet. Vérifiez que votre application affiche une publicité, qui ressemble à ce qui suit :
+7.  Générez et exécutez votre projet. Vérifiez que votre application affiche une publicité, qui ressemble à ce qui suit:
 
     ![wp81silverlight\-emulatorwithad](images/13-8db1492f-ae1d-439b-9b78-bed8e22fe996.jpg)
 
@@ -118,7 +118,8 @@ Les assemblys Microsoft Advertising pour les projets Silverlight Windows Phone n
 
 2.  Dans votre code, remplacez les valeurs de test de l’unité publicitaire (**applicationId** et **adUnitId**) par les valeurs dynamiques que vous avez générées dans le Centre de développement.
 
-3.  [Soumettez votre application](../publish/app-submissions.md) au Windows Store à l’aide du tableau de bord du Centre de développement.
+3.  
+            [Soumettez votre application](../publish/app-submissions.md) au Windows Store à l’aide du tableau de bord du Centre de développement.
 
 4.  Passez en revue vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans le tableau de bord du Centre de développement.
 

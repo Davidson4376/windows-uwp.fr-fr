@@ -20,17 +20,17 @@ Deux options principales s’offrent à vous pour le débogage de votre applicat
 
 ### Attacher au processus
 
-Lorsque Microsoft Visual Studio est exécuté « en tant qu’administrateur », les commandes __Démarrer le débogage__ et __Exécuter sans débogage__ fonctionnent pour un projet d’application convertie, mais l’application lancée s’exécute avec [un niveau d’intégrité moyen](https://msdn.microsoft.com/library/bb625963). Autrement dit, elle ne disposera _pas_ de privilèges élevés. Pour conférer des privilèges d’administrateur sur l’application lancée, vous devez d’abord la lancer « en tant qu’administrateur » via un raccourci ou une vignette. Une fois que l’application est exécutée, à partir d’une instance de Microsoft Visual Studio exécutée « en tant qu’administrateur », appelez __Attacher au processus__, puis sélectionnez le processus de votre application dans la boîte de dialogue.
+Lorsque Microsoft Visual Studio est exécuté «en tant qu’administrateur», les commandes __Démarrer le débogage__ et __Exécuter sans débogage__ fonctionnent pour un projet d’application convertie, mais l’application lancée s’exécute avec [un niveau d’intégrité moyen](https://msdn.microsoft.com/library/bb625963). Autrement dit, elle ne disposera _pas_ de privilèges élevés. Pour conférer des privilèges d’administrateur sur l’application lancée, vous devez d’abord la lancer «en tant qu’administrateur» via un raccourci ou une vignette. Une fois que l’application est exécutée, à partir d’une instance de Microsoft Visual Studio exécutée «en tant qu’administrateur», appelez __Attacher au processus__, puis sélectionnez le processus de votre application dans la boîte de dialogue.
 
 ### Débogage F5
 
 Désormais, Visual Studio prend en charge un nouveau projet de création de packages qui vous permet de copier automatiquement toutes les mises à jour que vous effectuez lorsque vous concevez votre application dans le package AppX créé lorsque vous avez exécuté le convertisseur sur le programme d’installation de votre application. Une fois que vous configurez le projet de création de packages, vous pouvez également utiliser F5 pour déboguer directement dans le package AppX. 
 
-Voici comment débuter : 
+Voici comment débuter: 
 
 1. Tout d’abord, vérifiez que vous êtes prêt pour utiliser Centennial. Pour obtenir des instructions, consultez [Aperçu du Convertisseur d’applications de bureau (projet Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter). 
 
-2. Exécutez le convertisseur, puis le programme d’installation pour votre application Win32. Le convertisseur capture la disposition et toute modification apportée au Registre et génère un Appx avec manifeste et registery.dat pour virtualiser le Registre :
+2. Exécutez le convertisseur, puis le programme d’installation pour votre application Win32. Le convertisseur capture la disposition et toute modification apportée au Registre et génère un Appx avec manifeste et registery.dat pour virtualiser le Registre:
 
 ![alt](images/desktop-to-uwp/debug-1.png)
 
@@ -40,23 +40,23 @@ Voici comment débuter :
 
 5. Ouvrez la solution Win32 correspondante qui a été convertie dans Visual Studio.
  
-6. Ajoutez le nouveau projet de création de packages à votre solution en cliquant avec le bouton droit sur la solution et en choisissant « Ajouter un nouveau projet ». Ensuite, sous Configuration et déploiement, choisissez le projet de création de packages du bureau vers UWP :
+6. Ajoutez le nouveau projet de création de packages à votre solution en cliquant avec le bouton droit sur la solution et en choisissant «Ajouter un nouveau projet». Ensuite, sous Configuration et déploiement, choisissez le projet de création de packages du bureau vers UWP:
 
     ![alt](images/desktop-to-uwp/debug-2.png)
 
-    Le projet qui en résulte sera ajouté à votre solution :
+    Le projet qui en résulte sera ajouté à votre solution:
 
     ![alt](images/desktop-to-uwp/debug-3.png)
 
     Dans le projet de création de packages, AppXFileList fournit un mappage des fichiers dans la disposition AppX. Les références démarrent vides, mais doivent être définies manuellement sur le projet .exe pour le classement des build. 
 
-7. Le projet DesktopToUWPPackaging possède une page de propriété qui vous permet de configurer la racine du package AppX et la vignette à exécuter :
+7. Le projet DesktopToUWPPackaging possède une page de propriété qui vous permet de configurer la racine du package AppX et la vignette à exécuter:
 
     ![alt](images/desktop-to-uwp/debug-4.png)
 
     Définissez PackageLayout sur l’emplacement racine de l’AppX qui a été créé par le convertisseur (ci-dessus). Ensuite, choisissez la vignette à exécuter.
 
-8.  Ouvrez et modifiez AppXFileList.xml. Ce fichier définit la façon de copier la sortie de la build de débogage Win32 dans la disposition AppX conçue par le convertisseur. Par défaut, un espace réservé figure dans le fichier avec un exemple de balise et de commentaire :
+8.  Ouvrez et modifiez AppXFileList.xml. Ce fichier définit la façon de copier la sortie de la build de débogage Win32 dans la disposition AppX conçue par le convertisseur. Par défaut, un espace réservé figure dans le fichier avec un exemple de balise et de commentaire:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -91,9 +91,9 @@ Voici comment débuter :
     </Project>
     ```
 
-    Le fichier est défini comme suit : 
+    Le fichier est défini comme suit: 
 
-    Tout d’abord, nous définissons *MyProjectOutputPath* de manière à désigner l’emplacement de création du projet Win32 :
+    Tout d’abord, nous définissons *MyProjectOutputPath* de manière à désigner l’emplacement de création du projet Win32:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -125,7 +125,7 @@ Voici comment débuter :
 
 11. Si vous mettez à jour votre application, vous devrez utiliser MakeAppX pour remettre en package votre application. Pour plus d’informations, consultez [Outil de création de packages (MakeAppx.exe)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh446767(v=vs.85).aspx). 
 
-Si vous disposez de plusieurs configurations de build (par exemple, pour la sortie et le débogage), vous pouvez ajouter ce qui suit au fichier AppXFileList.xml pour copier la version Win32 depuis différents emplacements :
+Si vous disposez de plusieurs configurations de build (par exemple, pour la sortie et le débogage), vous pouvez ajouter ce qui suit au fichier AppXFileList.xml pour copier la version Win32 depuis différents emplacements:
 
 ```XML
 <PropertyGroup>
@@ -151,13 +151,13 @@ Vous pouvez également utiliser la compilation conditionnelle pour activer des c
     }
     ```
 
-2.  Vous pouvez utiliser Configuration Manager pour ajouter la nouvelle configuration de build :
+2.  Vous pouvez utiliser Configuration Manager pour ajouter la nouvelle configuration de build:
 
     ![alt](images/desktop-to-uwp/debug-6.png)
 
     ![alt](images/desktop-to-uwp/debug-7.png)
 
-3.  Ensuite, sous les propriétés du projet, ajoutez la prise en charge des symboles de compilation conditionnelle :
+3.  Ensuite, sous les propriétés du projet, ajoutez la prise en charge des symboles de compilation conditionnelle:
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
@@ -165,13 +165,13 @@ Vous pouvez également utiliser la compilation conditionnelle pour activer des c
 
 ## Déployer votre application UWP convertie
 
-Pour déployer votre application au cours du développement, exécutez l’applet de commande PowerShell suivante : 
+Pour déployer votre application au cours du développement, exécutez l’applet de commande PowerShell suivante: 
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 Pour mettre à jour les fichiers .exe ou .dll de votre application, remplacez simplement les fichiers existants dans votre package par les nouveaux, augmentez le nombre de versions dans AppxManifest.xml, puis exécutez à nouveau la commande ci-dessus.
 
-Points à prendre en considération : 
+Points à prendre en considération: 
 
 Tout lecteur sur lequel vous installez votre application convertie doit être formaté au format NTFS.
 
@@ -194,7 +194,7 @@ Voici comment vous importez un certificat que vous avez créé précédemment. V
 10. Cliquez ou appuyez sur **Suivant**. Un nouvel écran s’affiche. Cliquez ou appuyez sur **Terminer**.
 11. Une boîte de dialogue de confirmation doit s’afficher. Si tel est le cas, cliquez sur **OK**. Si une boîte de dialogue indique que le certificat pose problème, vous devrez peut-être résoudre des problèmes de certificat.
 
-Pour que Windows approuve le certificat, ce dernier doit se trouver dans le nœud **Certificats (Ordinateur local) &gt; Autorités de certification racines de confiance &gt; Certificats** ou dans le nœud **Certificats (Ordinateur local) &gt; Personnes autorisées &gt; Certificats**. Seuls les certificats figurant à ces deux emplacements peuvent valider les certificats de confiance dans le contexte de l’ordinateur local. Autrement, un message d’erreur ressemblant à la chaîne suivante apparaît :
+Pour que Windows approuve le certificat, ce dernier doit se trouver dans le nœud **Certificats (Ordinateur local) &gt; Autorités de certification racines de confiance &gt; Certificats** ou dans le nœud **Certificats (Ordinateur local) &gt; Personnes autorisées &gt; Certificats**. Seuls les certificats figurant à ces deux emplacements peuvent valider les certificats de confiance dans le contexte de l’ordinateur local. Autrement, un message d’erreur ressemblant à la chaîne suivante apparaît:
 ```CMD
 "Add-AppxPackage : Deployment failed with HRESULT: 0x800B0109, A certificate chain processed,
 but terminated in a rootcertificate which is not trusted by the trust provider.
@@ -206,7 +206,7 @@ in the app package must be trusted."
 
 Lorsque vous exécutez votre application convertie, votre package d’application UWP est lancé à partir de \Program Files\WindowsApps\\&lt;_nom du package_&gt;\\&lt;_nom de l’application_&gt;.exe. Si vous cherchez à cet emplacement, vous verrez que votre application possède un manifeste du package de l’application (nommé AppxManifest.xml), qui fait référence à un espace de noms xml spécial, utilisé pour les applications converties. À l’intérieur de ce fichier manifeste, vous trouverez un élément __&lt;EntryPoint&gt;__, qui fait référence à une application de confiance totale. Lorsque cette application est lancée, elle ne s’exécute pas à l’intérieur d’un conteneur d’applications, mais comme un utilisateur le ferait normalement.
 
-Toutefois, l’application s’exécute dans un environnement spécial dans lequel tous les accès de l’application au système de fichiers et au Registre sont redirigés. Le fichier nommé Registry.dat est utilisé pour la redirection du Registre. Il s’agit en fait d’une ruche du Registre, vous pouvez donc l’afficher dans l’Éditeur du Registre Windows (Regedit). Notez que ce mécanisme signifie que vous ne pouvez pas utiliser le Registre pour la communication entre processus. Le Registre n’a pas été conçu et n’est pas adapté pour cette pratique dans tous les cas. En ce qui concerne le système de fichiers, le seul élément redirigé est le dossier AppData ; il est redirigé vers le même emplacement que les données d’application stockées pour toutes les applications UWP. Cet emplacement est connu comme le magasin de données de l’application locale, et vous y accédez à l’aide de la propriété [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). De cette façon, votre code est déjà porté pour lire et écrire des données d’application à l’emplacement approprié sans action de votre part. Vous pouvez également écrire directement à cet emplacement. L’un des avantages de la redirection du système de fichiers est une expérience de désinstallation plus fluide.
+Toutefois, l’application s’exécute dans un environnement spécial dans lequel tous les accès de l’application au système de fichiers et au Registre sont redirigés. Le fichier nommé Registry.dat est utilisé pour la redirection du Registre. Il s’agit en fait d’une ruche du Registre, vous pouvez donc l’afficher dans l’Éditeur du Registre Windows (Regedit). Notez que ce mécanisme signifie que vous ne pouvez pas utiliser le Registre pour la communication entre processus. Le Registre n’a pas été conçu et n’est pas adapté pour cette pratique dans tous les cas. En ce qui concerne le système de fichiers, le seul élément redirigé est le dossier AppData; il est redirigé vers le même emplacement que les données d’application stockées pour toutes les applications UWP. Cet emplacement est connu comme le magasin de données de l’application locale, et vous y accédez à l’aide de la propriété [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). De cette façon, votre code est déjà porté pour lire et écrire des données d’application à l’emplacement approprié sans action de votre part. Vous pouvez également écrire directement à cet emplacement. L’un des avantages de la redirection du système de fichiers est une expérience de désinstallation plus fluide.
 
 À l’intérieur d’un dossier nommé VFS, vous verrez des dossiers qui contiennent les fichiers DLL sur lesquels votre application a des dépendances. Ces DLL sont installés dans les dossiers système pour la version de bureau classique de votre application. Toutefois, pour l’application UWP, les fichiers DLL sont installés en local sur votre application. Ainsi, il n’existe aucun problème de contrôle lors de l’installation et de la désinstallation des applications UWP.
 
@@ -220,6 +220,6 @@ Toutefois, l’application s’exécute dans un environnement spécial dans lequ
 [Pont d’application de bureau pour les exemples de code UWP dans GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

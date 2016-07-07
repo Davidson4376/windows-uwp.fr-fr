@@ -10,7 +10,7 @@ ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
 ---
 # Créer un sélecteur d’appareil
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -24,7 +24,7 @@ La création d’un sélecteur d’appareil permet de limiter les appareils que 
 Il existe quelques cas où vous devez énumérer des appareils alors qu’aucun sélecteur d’appareils fourni n’est pas disponible pour votre scénario. Un sélecteur d’appareils est une chaîne de filtre AQS qui contient les informations suivantes. Avant de créer une chaîne de filtre, vous devez connaître certains éléments clés d’information sur les appareils que vous souhaitez énumérer.
 
 -   Les éléments [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) des appareils qui vous intéressent. Pour plus d’informations sur l’incidence de **DeviceInformationKind** sur la façon d’énumérer les appareils, voir [Énumérer les appareils](enumerate-devices.md) ;
--   la procédure de génération d’une chaîne de filtre AQS, expliquée dans cette rubrique ;
+-   la procédure de génération d’une chaîne de filtre AQS, expliquée dans cette rubrique;
 -   les propriétés qui vous intéressent ; Les propriétés disponibles dépendent des éléments [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991). Pour plus d’informations, voir [Propriétés d’informations d’appareil](device-information-properties.md).
 -   Les protocoles que vous interrogez. Cela est nécessaire uniquement si vous recherchez des appareils sur un réseau sans fil ou filaire. Pour plus d’informations sur cette procédure, voir [Énumérer des appareils sur un réseau](enumerate-devices-over-a-network.md).
 
@@ -66,41 +66,32 @@ Si vous ne pouvez pas créer de chaîne de filtre AQS unique qui parcourt vos r�
 
 Les exemples suivants montrent comment la syntaxe AQS permet de limiter les appareils que vous souhaitez énumérer. Toutes ces chaînes de filtre sont associées à un [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) pour créer un filtre complet. Si aucun type d’appareil n’est spécifié, n’oubliez pas que le type par défaut est **DeviceInterface**.
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceInterface**, il énumère tous les objets qui contiennent la classe d’interface de capture audio et qui sont activés. **
-            =
-            ** se traduit par **COP\_EQUALS**.
+Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceInterface**, il énumère tous les objets qui contiennent la classe d’interface de capture audio et qui sont activés. **=** se traduit par **COP\_EQUALS**.
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **Device**, il énumère tous les objets qui ont au moins un id de matériel GenCdRom. **
-            ~~
-            ** se traduit par **COP\_VALUE\_CONTAINS**.
+Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **Device**, il énumère tous les objets qui ont au moins un id de matériel GenCdRom. **~~** se traduit par **COP\_VALUE\_CONTAINS**.
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceContainer**, il énumère tous les objets qui ont un nom de modèle contenant la sous-chaîne Microsoft. **
-            ~~
-            ** se traduit par **COP\_VALUE\_CONTAINS**.
+Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceContainer**, il énumère tous les objets qui ont un nom de modèle contenant la sous-chaîne Microsoft. **~~** se traduit par **COP\_VALUE\_CONTAINS**.
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceInterface**, il énumère tous les objets qui ont un nom commençant par la sous-chaîne Microsoft. **
-            ~&lt;
-            ** se traduit par **COP\_STARTSWITH**.
+Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceInterface**, il énumère tous les objets qui ont un nom commençant par la sous-chaîne Microsoft. **~&lt;** se traduit par **COP\_STARTSWITH**.
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **Device**, il énumère tous les objets qui ont une propriété **System.Devices.IpAddress** définie. **
-            &lt;&gt;\[\]** se traduit par **COP\_NOTEQUALS** combiné avec une valeur **NULL**.
+Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **Device**, il énumère tous les objets qui ont une propriété **System.Devices.IpAddress** définie. **&lt;&gt;\[\]** se traduit par **COP\_NOTEQUALS** combiné avec une valeur **NULL**.
 
 ``` syntax
 System.Devices.IpAddress:<>[]

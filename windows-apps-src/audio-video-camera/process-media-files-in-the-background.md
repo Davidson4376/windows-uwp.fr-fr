@@ -11,7 +11,7 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 # Traiter des fichiers multimédias en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan.
@@ -33,7 +33,7 @@ Pour ajouter une tâche en arrière-plan à votre solution existante dans Micros
 3.  Entrez un nom pour votre nouveau projet de composant. Cet exemple utilise le nom de projet **MediaProcessingBackgroundTask**.
 4.  Cliquez sur OK.
 
-Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône du fichier « Class1.cs » qui est créé par défaut et sélectionnez **Renommer**. Renommez le fichier « MediaProcessingTask.cs ». Lorsque Visual Studio vous demande si vous souhaitez renommer toutes les références à cette classe, cliquez sur **Oui**.
+Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône du fichier « Class1.cs » qui est créé par défaut et sélectionnez **Renommer**. Renommez le fichier «MediaProcessingTask.cs». Lorsque Visual Studio vous demande si vous souhaitez renommer toutes les références à cette classe, cliquez sur **Oui**.
 
 Dans le fichier de classe renommé, ajoutez les directives **using** suivantes pour inclure ces espaces de noms dans votre projet.
                                   
@@ -43,7 +43,7 @@ Mettez à jour votre déclaration de classe pour faire en sorte que votre classe
 
 [!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
-Ajoutez les variables membres suivantes à votre classe :
+Ajoutez les variables membres suivantes à votre classe:
 
 -   Un objet [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797) qui sera utilisé pour mettre à jour l’application au premier plan avec la progression de la tâche en arrière-plan.
 -   Un objet [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) qui empêche le système d’arrêter votre tâche en arrière-plan pendant que le transcodage multimédia est exécuté en mode asynchrone.
@@ -86,7 +86,7 @@ Avant de pouvoir lancer la tâche en arrière-plan à partir de votre applicatio
 2.  Sélectionnez l’onglet **Déclarations**.
 3.  Dans **Déclarations disponibles**, sélectionnez **Tâches en arrière-plan**, puis cliquez sur **Ajouter**.
 4.  Sous **Déclarations prises en charge**, vérifiez que l’élément **Tâches en arrière-plan** est sélectionné. Sous **Propriétés**, cochez la case **Traitement multimédia**.
-5.  Dans la zone de texte **Point d’entrée**, spécifiez l’espace de noms et le nom de classe de votre test en arrière-plan, séparés par un point. Pour cet exemple, l’entrée est :
+5.  Dans la zone de texte **Point d’entrée**, spécifiez l’espace de noms et le nom de classe de votre test en arrière-plan, séparés par un point. Pour cet exemple, l’entrée est:
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```

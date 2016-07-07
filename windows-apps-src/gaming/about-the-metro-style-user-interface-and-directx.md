@@ -12,9 +12,9 @@ ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
 # Objet application et DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique : en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous, en tant que développeur DirectX, vous pouvez exploiter efficacement ce modèle dans le cadre du développement de vos applications de la plateforme Windows universelle.
+Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique: en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous, en tant que développeur DirectX, vous pouvez exploiter efficacement ce modèle dans le cadre du développement de vos applications de la plateforme Windows universelle.
 
 ## Principaux espaces de noms d’interface utilisateur
 
@@ -61,7 +61,7 @@ Maintenant que nous avons vu les principes de base, examinons les autres options
 ## Principaux types d’interface utilisateur
 
 
-Voici d’autres types principaux d’interface utilisateur figurant dans Windows Runtime et qui peuvent s’avérer utiles :
+Voici d’autres types principaux d’interface utilisateur figurant dans Windows Runtime et qui peuvent s’avérer utiles:
 
 -   [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 -   [**Windows.UI.Core.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
@@ -82,16 +82,14 @@ Pour résumer, l’objet application fournit une fabrique de fournisseurs de vue
 ## Comportements et propriétés de CoreApplicationView
 
 
-[
-            **CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) représente la vue d’application active. Le singleton de l’application crée la vue de l’application pendant l’initialisation, mais la vue reste dormante jusqu’à ce qu’elle soit activée. Vous pouvez obtenir le [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui affiche la vue en accédant à sa propriété [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), et vous pouvez gérer les événements d’activation et de désactivation de la vue en inscrivant des délégués avec l’événement [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
+[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) représente la vue d’application active. Le singleton de l’application crée la vue de l’application pendant l’initialisation, mais la vue reste dormante jusqu’à ce qu’elle soit activée. Vous pouvez obtenir le [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui affiche la vue en accédant à sa propriété [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), et vous pouvez gérer les événements d’activation et de désactivation de la vue en inscrivant des délégués avec l’événement [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
 
 ## Comportements et propriétés de CoreWindow
 
 
 La fenêtre parente, qui est une instance de [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), est créée et passée au fournisseur de vues lors de l’initialisation de l’objet application. Si l’application a une fenêtre à afficher, elle l’affiche ; sinon, elle ne fait qu’initialiser la vue.
 
-[
-            **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) fournit plusieurs événements spécifiques à l’entrée et aux comportements de fenêtre de base. Vous pouvez gérer ces événements en inscrivant vos propres délégués avec ces derniers.
+[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) fournit plusieurs événements spécifiques à l’entrée et aux comportements de fenêtre de base. Vous pouvez gérer ces événements en inscrivant vos propres délégués avec ces derniers.
 
 Vous pouvez également obtenir le répartiteur d’événements de fenêtre pour la fenêtre en accédant à la propriété [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264), qui fournit une instance de [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211).
 
@@ -140,7 +138,7 @@ Si vous portez du code existant afin qu’il s’exécute sur le thread ASTA, n�
     2.  Le thread ASTA appelle plus tard le même objet MTA. L’objet MTA appelle P1 avant son retour au thread ASTA.
     3.  P1 ne peut pas entrer dans le thread ASTA, car il est bloqué en tentant d’effectuer un appel sans rapport. Toutefois, le thread MTA est bloqué, car il tente d’effectuer l’appel vers P1.
 
-    Vous pouvez résoudre ce problème en :
+    Vous pouvez résoudre ce problème en:
     -   utilisant le modèle **async** défini dans la Bibliothèque de modèles parallèles (PPLTasks.h) ;
     -   appelant [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) à partir du thread ASTA de votre application (thread principal de votre application) dès que possible pour autoriser les appels arbitraires.
 

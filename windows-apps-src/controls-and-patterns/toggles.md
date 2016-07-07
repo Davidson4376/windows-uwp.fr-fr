@@ -44,7 +44,7 @@ Le bouton bascule et la case à cocher peuvent tous deux convenir à certaines a
 
     ![Case à cocher et bouton Envoyer](images/submitcheckbox.png)
 
--   Utilisez des cases à cocher ou une [zone de liste](lists.md) lorsque l’utilisateur peut sélectionner plusieurs éléments :
+-   Utilisez des cases à cocher ou une [zone de liste](lists.md) lorsque l’utilisateur peut sélectionner plusieurs éléments:
 
     ![Case à cocher avec plusieurs éléments sélectionnés](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
 
@@ -146,9 +146,9 @@ Vous pouvez également utiliser un contenu plus complexe en définissant les pro
 
 ## Recommandations
 
--   Remplacez les étiquettes « Activé » et « Désactivé » quand il en existe de plus spécifiques pour le paramètre. S’il existe des étiquettes courtes (de 3 ou 4 caractères) qui représentent des choix binaires plus pertinents pour un paramètre donné, utilisez-les. Par exemple, vous pouvez utiliser « Show/Hide » si le paramètre offre la possibilité d’afficher des images. L’utilisation d’étiquettes plus précises peut contribuer à faciliter la localisation de l’interface utilisateur.
--   Évitez de remplacer les étiquettes On et Off, sauf si vous y êtes tenu ; utilisez les étiquettes par défaut, à moins que la situation n’appelle des étiquettes personnalisées.
--   Les étiquettes ne doivent pas contenir plus de 4 caractères.
+-   Remplacez les étiquettes « Activé » et « Désactivé » quand il en existe de plus spécifiques pour le paramètre. S’il existe des étiquettes courtes (de 3 ou 4caractères) qui représentent des choix binaires plus pertinents pour un paramètre donné, utilisez-les. Par exemple, vous pouvez utiliser «Show/Hide» si le paramètre offre la possibilité d’afficher des images. L’utilisation d’étiquettes plus précises peut contribuer à faciliter la localisation de l’interface utilisateur.
+-   Évitez de remplacer les étiquettes On et Off, sauf si vous y êtes tenu; utilisez les étiquettes par défaut, à moins que la situation n’appelle des étiquettes personnalisées.
+-   Les étiquettes ne doivent pas contenir plus de 4caractères.
 
 ## Articles connexes
 

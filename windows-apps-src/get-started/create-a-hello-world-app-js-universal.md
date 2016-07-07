@@ -30,16 +30,16 @@ Vous allez apprendre à effectuer les opérations suivantes :
 -   Pour suivre ce didacticiel, vous avez besoin de Windows 10 et de Visual Studio 2015. Pour plus d’informations, voir [Se préparer](get-set-up.md).
 -   Nous partons également du principe que vous utilisez la disposition de fenêtre par défaut de Visual Studio. Si vous modifiez la disposition par défaut, vous pouvez la réinitialiser dans le menu **Fenêtre** en choisissant la commande **Rétablir la disposition de fenêtre**.
 
-##Étape 1 : créer un projet dans Visual Studio
+##Étape1: créer un projet dans Visual Studio
 
 
-Créons une application intitulée `HelloWorld`. Voici comment procéder :
+Créons une application intitulée `HelloWorld`. Voici comment procéder:
 
 1.  Lancez Visual Studio 2015.
 
     L’écran d’accueil de Visual Studio 2015 s’affiche.
 
-    (Désormais, nous désignerons Visual Studio 2015 simplement sous le nom Visual Studio.)
+    (Désormais, nous désignerons Visual Studio2015 simplement sous le nom Visual Studio.)
 
 2.  Dans le menu **Fichier**, sélectionnez **Nouveau** > **Projet**.
 
@@ -60,14 +60,14 @@ Créons une application intitulée `HelloWorld`. Voici comment procéder :
 
     Visual Studio crée votre projet et l’affiche dans l’**Explorateur de solutions**.
 
-    ![Explorateur de solutions Visual Studio pour le projet Hello World](images/js-tut-helloworld.png)
+    ![Explorateur de solutions Visual Studio pour le projet HelloWorld](images/js-tut-helloworld.png)
 
 Même si le modèle **Application vide** est dépouillé, il contient quelques fichiers :
 
--   un fichier manifeste (package.appxmanifest) qui décrit votre application (nom, description, vignette, page d’accueil, écran de démarrage, etc.) et répertorie les fichiers contenus dans votre application ;
--   un ensemble d’images de logo (images/Square150x150Logo.scale-200.png, images/Square44x44Logo.scale-200.png, et images/Wide310x150Logo.scale-200.png) à afficher dans le menu Démarrer ;
--   une image (images/StoreLogo.png) pour représenter votre application dans le Windows Store ;
--   un écran de démarrage (images/SplashScreen.scale-200.png) pour indiquer quand votre application démarre ;
+-   un fichier manifeste (package.appxmanifest) qui décrit votre application (nom, description, vignette, page d’accueil, écran de démarrage, etc.) et répertorie les fichiers contenus dans votre application;
+-   un ensemble d’images de logo (images/Square150x150Logo.scale-200.png, images/Square44x44Logo.scale-200.png, et images/Wide310x150Logo.scale-200.png) à afficher dans le menu Démarrer;
+-   une image (images/StoreLogo.png) pour représenter votre application dans le Windows Store;
+-   un écran de démarrage (images/SplashScreen.scale-200.png) pour indiquer quand votre application démarre;
 -   une page de démarrage (default.html) et un fichier JavaScript associé (default.js) qui s’exécute au démarrage de l’application.
 
 Pour afficher et modifier les fichiers, double-cliquez dessus dans l’**Explorateur de solutions**.
@@ -104,13 +104,13 @@ Par défaut, l’application s’exécute sur l’ordinateur local. Le menu des 
 
 L’application s’ouvre dans une fenêtre, et un écran de démarrage par défaut s’affiche en premier. Cet écran est défini par une image (SplashScreen.png) et par une couleur d’arrière-plan (spécifiées dans le fichier manifeste de votre application).
 
-L’écran de démarrage disparaît pour céder la place à votre application. Elle contient un écran noir avec la mention « Le contenu s’affiche ici ».
+L’écran de démarrage disparaît pour céder la place à votre application. Elle contient un écran noir avec la mention «Le contenu s’affiche ici».
 
-![Application Hello World sur un PC](images/helloworld-1-js.png)
+![Application HelloWorld sur un PC](images/helloworld-1-js.png)
 
 Appuyez sur la touche Windows pour ouvrir le menu **Démarrer**, puis affichez toutes les applications. Notez que le déploiement de l’application entraîne l’ajout local de sa vignette au menu **Démarrer**. Pour exécuter de nouveau l’application (non en mode débogage), appuyez ou cliquez sur sa vignette dans le menu **Démarrer**.
 
-Félicitations ! Vous venez de générer votre première application UWP, même si celle-ci ne propose pas (encore) beaucoup de fonctions.
+Félicitations! Vous venez de générer votre première application UWP, même si celle-ci ne propose pas (encore) beaucoup de fonctions.
 
 **Pour arrêter le débogage**
 
@@ -131,8 +131,8 @@ Votre application s’exécute sur n’importe quel appareil Windows 10. Examino
 Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre des options de déploiement et de débogage de votre application sur un appareil mobile physique connecté à l’ordinateur ou sur un émulateur d’appareil mobile. Vous pouvez choisir parmi plusieurs émulateurs d’appareil correspondant à différentes configurations de mémoire et d’affichage.
 
 -   **Appareil**
--   **Émulateur <SDK version> WVGA 4 pouces 512 Mo**
--   **Émulateur <SDK version> WVGA 4 pouces 1 Go**
+-   **Émulateur <SDK version> WVGA 4pouces 512Mo**
+-   **Émulateur <SDK version> WVGA 4pouces 1Go**
 -   etc. (Divers émulateurs associés à d’autres configurations)
 
 Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
@@ -150,9 +150,9 @@ Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre v
 
 ![Écran initial de l’application sur un appareil mobile](images/helloworld-1-js-phone.png)
 
-## Étape 3 : modifier votre page de démarrage
+## Étape3: modifier votre page de démarrage
 
-default.html est l’un des fichiers créés automatiquement par Visual Studio. Il s’agit de la page de démarrage de votre application. Quand l’application s’exécute, elle affiche le contenu de sa page de démarrage. La page de démarrage contient également des références aux fichiers de code et aux feuilles de style de l’application. Voici la page d’accueil automatiquement créée par Visual Studio pour vous :
+default.html est l’un des fichiers créés automatiquement par Visual Studio. Il s’agit de la page de démarrage de votre application. Quand l’application s’exécute, elle affiche le contenu de sa page de démarrage. La page de démarrage contient également des références aux fichiers de code et aux feuilles de style de l’application. Voici la page d’accueil automatiquement créée par Visual Studio pour vous:
 
 ```html
 <!DOCTYPE html>
@@ -200,13 +200,13 @@ Ajoutons du contenu au fichier default.html. Vous devez ajouter votre contenu à
 
    Dans les étapes suivantes, nous allons créer un gestionnaire d’événements pour [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) qui affiche une formule de salutations personnalisée. Nous ajouterons le code du gestionnaire d’événements au fichier default.js.
 
-##Étape 4 : créer un gestionnaire d’événements
+##Étape4: créer un gestionnaire d’événements
 
 Lorsque nous avons créé le projet, Visual Studio a créé automatiquement un fichier /js/default.js. Ce fichier contient du code permettant de gérer le cycle de vie de l’application. C’est également ici que vous écrivez le code supplémentaire assurant l’interactivité du fichier default.html.
 
 Ouvrez le fichier default.js.
 
-Avant d’ajouter notre propre code, examinons les premières et dernières lignes de code du fichier :
+Avant d’ajouter notre propre code, examinons les premières et dernières lignes de code du fichier:
 
 ```javascript
 (function () {
@@ -360,7 +360,7 @@ L’inscription de gestionnaires d’événements pour des contrôles autres que
         };
 ```    
 
-Le code complet du fichier default.js mis à jour est présenté ci-dessous :
+Le code complet du fichier default.js mis à jour est présenté ci-dessous:
 
 ```javascript
    (function () {
@@ -405,11 +405,11 @@ Exécutez l’application. Lorsque vous entrez votre nom dans la zone de texte e
 
 ![Salutation personnalisée de l’application HelloWorld](images/helloworld-3-js.png)
 
-![Salutations personnalisées de l’application Hello World](images/helloworld-3-js-phone.png)
+![Salutations personnalisées de l’application HelloWorld](images/helloworld-3-js-phone.png)
 
 **Remarque** Si vous êtes curieux de savoir pourquoi nous utilisons [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) pour inscrire l’événement dans le code au lieu de définir l’événement [**onclick**](https://msdn.microsoft.com/library/windows/apps/Hh441312) dans le code HTML, voir [Codage d’applications de base](https://msdn.microsoft.com/library/windows/apps/Hh780660) pour une explication détaillée.
 
-## Étape 6 : ajouter un contrôle de bibliothèque Windows pour JavaScript
+## Étape6: ajouter un contrôle de bibliothèque Windows pour JavaScript
 
 
 En plus des contrôles HTML standard, votre application peut utiliser tout contrôle de la bibliothèque Windows pour JavaScript, tels que [**WinJS.UI.DatePicker**](https://msdn.microsoft.com/library/windows/apps/BR211681), [**WinJS.UI.FlipView**](https://msdn.microsoft.com/library/windows/apps/BR211711), [**WinjS.UI.ListView**](https://msdn.microsoft.com/library/windows/apps/BR211837) et [**WinJS.UI.Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895).
@@ -454,7 +454,7 @@ L’inscription d’un gestionnaire d’événements pour un contrôle WinJS dif
 
 Si [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) était un contrôle HTML standard, vous pourriez ajouter votre gestionnaire d’événements après cet appel à [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975). Mais cela est un peu plus compliqué pour un contrôle WinJS comme **Rating**. Comme **WinJS.UI.processAll** crée automatiquement le contrôle **Rating**, nous ne pouvons pas ajouter le gestionnaire d’événements à **Rating** tant que **WinJS.UI.processAll** n’a pas fini son traitement.
 
-Si [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) était une méthode classique, nous pourrions inscrire le gestionnaire d’événements [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) juste après l’avoir appelée. La méthode **WinJS.UI.processAll** étant asynchrone, tout code qui la suit peut s’exécuter avant la fin de l’exécution de **WinJS.UI.processAll**. Alors, que faire ? Nous utilisons un objet [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) pour recevoir une notification à la fin de l’exécution de **WinJS.UI.processAll**.
+Si [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) était une méthode classique, nous pourrions inscrire le gestionnaire d’événements [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) juste après l’avoir appelée. La méthode **WinJS.UI.processAll** étant asynchrone, tout code qui la suit peut s’exécuter avant la fin de l’exécution de **WinJS.UI.processAll**. Alors, que faire? Nous utilisons un objet [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) pour recevoir une notification à la fin de l’exécution de **WinJS.UI.processAll**.
 
 Comme toutes les méthodes WinJS asynchrones, [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) retourne un objet [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867). Un objet **Promise** est une « promesse » qu’un événement va se produire à l’avenir ; lorsqu’il se produit, l’objet **Promise** est considéré comme ayant terminé.
 

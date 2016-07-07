@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Votre application doit inclure différents logos, différentes captures d’écran et différentes images.
-title: Images et captures d’écran de l’application
+Description: "Votre application doit inclure différents logos, différentes captures d’écran et différentes images."
+title: "Images et captures d’écran de l’application"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
+ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
+ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
+
 ---
 
 # Images et captures d’écran de l’application
@@ -12,7 +15,7 @@ Votre application doit inclure différents logos, différentes captures d&#39;é
 
 Pendant le [processus de soumission de l'application](app-submissions.md), vous fournissez des [captures d'écran](#screenshots) et des [illustrations publicitaires](#promotional-artwork) à l'étape [Descriptions](create-app-descriptions.md). Ces images aident à afficher votre application dans le Windows Store.
 
-Le Store utilise également la vignette et d’autres images de votre application que vous incluez dans le package de votre application. Exécutez le [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186449) pour déterminer si une image requise est manquante.
+Le Store utilise également la vignette et d’autres images de votre application que vous incluez dans le package de votre application. Exécutez le [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186449) pour déterminer si une image requise est manquante. Pour obtenir des conseils et des recommandations sur ces images, voir [Ressources de vignette et d’icône](../controls-and-patterns/tiles-and-notifications-app-assets.md).
 
 > **Remarque** La façon dont les images sont utilisées dans le Windows Store, sur l’écran d’accueil du client, ainsi que dans l’application elle-même, peut varier en fonction du système d’exploitation du client et d’autres facteurs.
 
@@ -25,9 +28,9 @@ Le tableau suivant répertorie les différentes images que vous pouvez charger e
 
 | Image                                                       | Taille de pixel                           | Utilisation                                                                                                                                                                           | Quand l’inclure                                                                                                                                            |
 |-------------------------------------------------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Captures d’écran de bureau](#screenshots)                         | 1366 x 768 ou plus                 | Affichées dans votre description de l’application dans le Windows Store lorsqu’elles sont consultées sur un appareil de bureau.                                                                                                          | Recommandées pour toutes les applications, en particulier si votre application est conçue pour une utilisation sur des appareils de bureau. Au moins une capture d’écran (pour toute famille d’appareils) est requise. |
+| [Captures d’écran de bureau](#screenshots)                         | 1366x768 ou plus                 | Affichées dans votre description de l’application dans le Windows Store lorsqu’elles sont consultées sur un appareil de bureau.                                                                                                          | Recommandées pour toutes les applications, en particulier si votre application est conçue pour une utilisation sur des appareils de bureau. Au moins une capture d’écran (pour toute famille d’appareils) est requise. |
 | [Captures d’écran pour appareils mobiles](#screenshots)                          | 768 x 1 280, 720 x 1 280, ou 480 x 800 | Affichées dans votre description de l’application dans le Windows Store lorsqu’elles sont consultées sur un appareil mobile.                                                                                                           | Recommandées pour toutes les applications, en particulier si votre application est conçue pour une utilisation sur des appareils mobiles. Au moins une capture d’écran (pour toute famille d’appareils) est requise. |
-| [Captures d’écrans holographiques](#screenshots)                          | 1268 x 720 ou plus                 | Affichées dans votre description de l’application dans le Windows Store lorsqu’elles sont consultées sur un appareil holographique.                                                                                                           | Recommandées si votre application est conçue pour une utilisation sur Microsoft HoloLens. Au moins une capture d’écran (pour toute famille d’appareils) est requise. |
+| [Captures d’écrans holographiques](#screenshots)                          | 1268x720 ou plus                 | Affichées dans votre description de l’application dans le Windows Store lorsqu’elles sont consultées sur un appareil holographique.                                                                                                           | Recommandées si votre application est conçue pour une utilisation sur Microsoft HoloLens. Au moins une capture d’écran (pour toute famille d’appareils) est requise. |
 | [Icône de vignette d’application](#app-tile-icon)                             | 300 x 300                            | Affichée comme icône de votre application dans le Windows Store pour Windows Phone 8.1 et versions antérieures (et, si vous disposez uniquement de packages ciblant Windows Phone 8.1 ou versions antérieures, dans le Windows Store sur Windows 10) | Requise pour un affichage correct dans le Windows Store si votre application cible Windows Phone 8.1 ou versions antérieures.                                                                 |
 | [Image promotionnelle : Windows 10 Spotlight](#promotional-artwork) | 2 400 x 1 200                          | Utilisée pour des mises en forme promotionnelles dans le Windows Store sur Windows 10.                                                                                                                        | Recommandée pour toutes les applications, notamment celles dotées de packages UWP ciblant les clients Windows 10                                                               |
 | [Images promotionnelles : Windows Phone 8.1 et versions antérieures](#promotional-artwork) | 1 000 x 800, 358 x 358                | Utilisées pour des mises en forme promotionnelles dans le Windows Store sur Windows 8.1.et versions antérieures.                                                                                                     | Recommandées pour toutes les applications ciblant Windows Phone 8.1 ou versions antérieures.                                                                                           |
@@ -44,14 +47,14 @@ La soumission de votre application ne nécessite qu’une seule capture d’écr
 
 > **Remarque** Microsoft Visual Studio contient un [outil vous permettant d’effectuer des captures d’écran](http://go.microsoft.com/fwlink/p/?LinkId=221135).
 
-Chaque capture d’écran doit être au format .png en mode paysage ou portrait, et la taille du fichier ne doit pas dépasser 2 Mo.
+Chaque capture d’écran doit être au format .png en mode paysage ou portrait, et la taille du fichier ne doit pas dépasser 2Mo.
 
-Les exigences de taille varient en fonction de la famille d’appareils :
-- Mobile : 768 x 1280, 720 x 1280 ou 480 x 800 pixels
-- Bureau : 1366 x 768 pixels ou plus
-- Holographique : 1268 x 720 pixels ou plus
+Les exigences de taille varient en fonction de la famille d’appareils:
+- Mobile: 768x1280, 720x1280 ou 480x800pixels
+- Bureau: 1366x768 pixels ou plus
+- Holographique: 1268x720 pixels ou plus
 
-Vous pouvez fournir un bref sous-titre pour chaque capture d’écran (au maximum 200 caractères).
+Vous pouvez fournir un bref sous-titre pour chaque capture d’écran (au maximum 200caractères).
 
 > **Remarque** Si vous créez des descriptions pour [plusieurs langues](supported-languages.md), vous disposez d’une page **Description** pour chacune d’elles. Vous devez charger des images pour chaque langue séparément (même si vous utilisez les mêmes images), et fournir des sous-titres à utiliser pour chaque langue.
 
@@ -86,22 +89,23 @@ Dans le Windows Store sur Windows 10, une image de une rotative visant à promou
 
 Lors de la conception de votre image, gardez à l’esprit que si nous l’utilisons pour la une, nous appliquerons un dégradé sur le tiers inférieur de manière à pouvoir afficher lisiblement du texte marketing sur l’image. Par conséquent, évitez de placer du texte et des éléments visuels dans le tiers inférieur. Nous pouvons en outre rogner votre image. Veillez donc à placer la marque de votre application et les informations les plus importantes au centre.
 
-L’image ci-dessous illustre les proportions essentielles à respecter. La « zone sécurisée » au centre demeure intacte même si l’image est rognée. La « zone de texte dynamique » se situe là où un texte et un dégradé peuvent apparaître.
+L’image ci-dessous illustre les proportions essentielles à respecter. La « zone sécurisée » au centre demeure intacte même si l’image est rognée. La «zone de texte dynamique» se situe là où un texte et un dégradé peuvent apparaître.
 
 ![instructions relatives à l’image de une](images/spotlight1.jpg) L’exemple ci-dessous montre une image de une respectant ces proportions. (Les lignes figurant sur l’image montrant comment la conception s’intègre parfaitement dans les zones désignées ne figureront pas dans l’image finale.)
 
 ![image de une bien conçue](images/spotlight2.jpg)
-### Pour Windows Phone 8.1 et versions antérieures : 1 000 x 800, 358 x 358
+### Pour Windows Phone8.1 et versions antérieures: 1000x800, 358x358
 
-Dans le Windows Store sur Windows Phone 8.1 et versions antérieures, deux tailles d’image peuvent être utilisées dans les images promotionnelles : 1 000 x 800 pixels et 358 x 358 pixels. Si votre application s’exécute sur Windows Phone 8.1 ou versions antérieures, nous recommandons de fournir des images dans ces deux tailles pour des questions de promotion.
+Dans le Windows Store sur Windows Phone 8.1 et versions antérieures, deux tailles d’image peuvent être utilisées dans les images promotionnelles : 1 000 x 800 pixels et 358 x 358 pixels. Si votre application s’exécute sur Windows Phone8.1 ou versions antérieures, nous recommandons de fournir des images dans ces deux tailles pour des questions de promotion.
 
 > **Conseil** Veillez donc à fournir une image d’[icône de vignette d’application](#app-tile-icon) 300 x 300 pour vous assurer qu’une icône vide ne sera pas associée à votre application dans le Windows Store.
 
-### Pour Windows 8.1 et versions antérieures : 414 x 180
+### Pour Windows8.1 et versions antérieures: 414x180
 
-Dans le Windows Store sur Windows 8.1 et versions antérieures, les mises en forme promotionnelles peuvent utiliser une image au format 414 x 180 pixels. Si votre application s’exécute sur Windows Phone 8.1 ou versions antérieures, nous recommandons de fournir une image de cette taille pour des questions de promotion.
+Dans le Windows Store sur Windows8.1 et versions antérieures, les mises en forme promotionnelles peuvent utiliser une image au format 414x180pixels. Si votre application s’exécute sur Windows Phone8.1 ou versions antérieures, nous recommandons de fournir une image de cette taille pour des questions de promotion.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

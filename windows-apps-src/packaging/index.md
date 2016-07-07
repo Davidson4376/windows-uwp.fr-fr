@@ -10,7 +10,7 @@ ms.openlocfilehash: 6f50874ceb5e133f2b1b764bfc6fcff6422172db
 ---
 # Création de packages d’application
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## Objectif
 

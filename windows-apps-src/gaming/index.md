@@ -3,15 +3,15 @@ author: mtoepke
 title: Jeux et DirectX
 description: "La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation des jeux. Découvrez comment créer un jeu ou porter un jeu existant."
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
+ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
+ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 ---
 
 # Jeux et DirectX
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation de jeux. Découvrez comment créer un nouveau jeu ou porter un jeu existant.
 
@@ -38,6 +38,8 @@ La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le 
 | [Gérer des scénarios de suppression d’appareils dans Direct3D 11](handling-device-lost-scenarios.md) | Cette rubrique explique comment recréer la chaîne d’interface d’appareils Direct3D et DXGI quand la carte graphique est supprimée ou réinitialisée. |
 | [Programmation asynchrone pour les jeux](asynchronous-programming-directx-and-cpp.md) | Cette rubrique traite des divers points à prendre en considération lorsque vous utilisez la programmation asynchrone et les threads avec DirectX. |
 | [Mise en réseau pour les jeux](work-with-networking-in-your-directx-game.md) | Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX. |
+| [Accessibilité des jeux](accessibility-for-games.md) | Découvrez comment rendre les jeux plus accessibles. |
+| [Cloud pour les jeux](cloud-for-games.md) | Découvrez comment mettre à profit les technologies cloud pour le développement de jeux. |
 | [Technologie interop DirectX et XAML](directx-and-xaml-interop.md) | Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu UWP. |
 | [Créer un package de votre jeu](package-your-windows-store-directx-game.md) | Certains jeux UWP qui prennent notamment en charge plusieurs langues et comprennent des éléments multimédias spécifiques à la région ou des éléments multimédias haute définition facultatifs peuvent facilement devenir très volumineux. Dans cette rubrique, découvrez comment utiliser les packages et ensembles d’applications pour personnaliser vos applications afin que vos clients ne reçoivent que les ressources dont ils ont réellement besoin. |
 | [Guides en matière de portage de jeu](porting-guides.md) | Fournit des guides relatifs au portage de vos jeux existants vers Direct3D 11, UWP et Windows 10. |
@@ -46,7 +48,7 @@ La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le 
  
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -67,6 +69,6 @@ Pour utiliser au mieux les vues d’ensemble du développement de jeux et des di
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

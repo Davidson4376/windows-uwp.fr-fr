@@ -4,14 +4,14 @@ Description: "Cette rubrique fournit un aperçu complet du point de vue dévelop
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "Protection des données d’entreprise (EDP, Enterprise Data Protection)"
+title: "Protection des données d’entreprise (EDP, EnterpriseDataProtection)"
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
 ms.openlocfilehash: 97bdbce8360fabad63f9fe7e85e5172ccd83f403
 
 ---
 
-# Protection des données d’entreprise (EDP, Enterprise Data Protection)
+# Protection des données d’entreprise (EDP, EnterpriseDataProtection)
 
 __Remarque__ La stratégie de protection des données d’entreprise (EDP) ne peut pas être appliquée sur Windows 10, version 1511 (build 10586) ou antérieure.
 
@@ -19,11 +19,11 @@ Cette rubrique fournit un aperçu complet du point de vue développeurs de la ma
 
 Pour en savoir plus sur la protection EDP du point de vue des utilisateurs finaux et des administrateurs, voir [Vue d’ensemble de la protection des données d’entreprise](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx).
 
-## Qu’est-ce que la protection des données d’entreprise ?
+## Qu’est-ce que la protection des données d’entreprise?
 
 La protection des données d’entreprise est un ensemble de fonctionnalités des ordinateurs de bureau, ordinateurs portables, tablettes et téléphones pour la gestion des périphériques mobiles (GPM). La fonctionnalité EDP offre à une entreprise une plus grande maîtrise sur la manière dont ses données (fichiers de l’entreprise et objets BLOB de données) sont gérées sur les appareils gérés par l’entreprise.
 
--   Les données d’entreprise sont marquées avec le chiffrement. Il s’agit de « données protégées par l’entreprise » ou simplement de « données protégées » pour faire plus court.
+-   Les données d’entreprise sont marquées avec le chiffrement. Il s’agit de «données protégées par l’entreprise» ou simplement de «données protégées» pour faire plus court.
 -   Seules les applications explicitement autorisées par le biais de la stratégie EDP par l’entreprise de gestion peuvent accéder aux données protégées par l’entreprise, par exemple dans les fichiers.
 -   Seules les applications explicitement autorisées via la stratégie EDP disposent d’un accès au réseau privé virtuel (VPN).
 -   La stratégie de restriction des applications détermine également la manière dont les applications autorisées doivent gérer les données d’entreprise.
@@ -35,7 +35,7 @@ EDP améliore le [système de fichiers EFS](http://technet.microsoft.com/library
 
 Afin que l’entreprise de gestion puisse contrôler l’accès à ses données protégées, la stratégie de restriction des applications définit une liste des applications et des restrictions associées à celles-ci. Par défaut, une application ne peut pas accéder aux données protégées de manière autonome. Pour y avoir accès, l’application doit être ajoutée à une liste nommée liste d’autorisation répertoriant les applications autorisées. Sur un appareil géré, Windows peut limiter et/ou auditer l’accès aux données protégées sur le Presse-papiers ou par le biais du contrat de partage, afin que l’accès par une application ne figurant pas sur la liste d’autorisation soit audité et/ou requiert le consentement de l’utilisateur, sous peine de blocage.
 
-La stratégie de la fonctionnalité EDP est fournie à un appareil par l’entreprise de gestion (ce qui fait de l’appareil, un « appareil géré »). La mise en service de la stratégie peut s’effectuer via l’inscription au service de gestion des périphériques mobiles (GPM), une configuration manuelle informatique, ou via un autre mécanisme de gestion et de distribution des stratégies, tel que System Center Configuration Manager (SCCM).
+La stratégie de la fonctionnalité EDP est fournie à un appareil par l’entreprise de gestion (ce qui fait de l’appareil, un «appareil géré»). La mise en service de la stratégie peut s’effectuer via l’inscription au service de gestion des périphériques mobiles (GPM), une configuration manuelle informatique, ou via un autre mécanisme de gestion et de distribution des stratégies, tel que System Center Configuration Manager (SCCM).
 
 La protection des fichiers EDP exploite les clés Rights Management Services (RMS), si elles sont configurées, dans la mesure où ces clés sont conservées d’un appareil à l’autre et, par conséquent, permettent l’itinérance des données protégées. En l’absence de clés RMS, ces API reviennent aux clés de réinitialisation sélective locales et limitent les fonctionnalités d’itinérance. Les données itinérantes chiffrées seront accessibles sur Windows de niveau inférieur et sur les appareils tiers via des applications RMS spécifiques à la plateforme fournies par Microsoft, ainsi qu’avec des applications tierces compatibles RMS.
 
@@ -49,7 +49,7 @@ Afin de développer correctement votre application et de tester la manière dont
 -   Faites en sorte que votre ordinateur de développement soit inscrit au service de gestion des périphériques mobiles (GPM).
 -   Ajoutez votre application à la liste d’autorisation via le [fournisseur de services de configuration AppLocker](https://msdn.microsoft.com/library/windows/hardware/dn920019).
 
-La tâche suivante consiste à créer une application prenant en charge l’identité gérée de l’entreprise exécutée en interne et pouvant y répondre de manière dynamique et la stratégie de protection en vigueur. Cela veut dire « rendre votre application compatible ». Les applications compatibles avec la stratégie sont davantage susceptibles de se trouver sur la liste des applications autorisées à accéder aux données d’entreprise.
+La tâche suivante consiste à créer une application prenant en charge l’identité gérée de l’entreprise exécutée en interne et pouvant y répondre de manière dynamique et la stratégie de protection en vigueur. Cela veut dire «rendre votre application compatible». Les applications compatibles avec la stratégie sont davantage susceptibles de se trouver sur la liste des applications autorisées à accéder aux données d’entreprise.
 
 ## Applications spécifiques aux entreprises
 
@@ -95,7 +95,7 @@ else
 }
 ```
 
-Comme indiqué, vous déterminez d’abord si la stratégie EDP est définie pour l’identité de l’entreprise. Le terme « géré » est l’abréviation de « géré par une stratégie EDP ». Lorsque la stratégie EDP est définie pour une identité spécifique, [**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/dn705171) renvoie la valeur true pour cette identité. Il s’agit du signal indiquant qu’il convient d’utiliser des API EDP avec cette identité. Bien que le fichier et les API de mémoire tampon soient quelque peu exceptionnels dans la mesure où ils fonctionnent même pour une identité non gérée, ce scénario n’a pas d’intérêt. Si un appareil est géré, celui-ci est géré pour une identité d’entreprise. Si une identité n’est pas gérée, la protection des données de cette identité est inutile.
+Comme indiqué, vous déterminez d’abord si la stratégie EDP est définie pour l’identité de l’entreprise. Le terme «géré» est l’abréviation de «géré par une stratégie EDP». Lorsque la stratégie EDP est définie pour une identité spécifique, [**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/dn705171) renvoie la valeur true pour cette identité. Il s’agit du signal indiquant qu’il convient d’utiliser des API EDP avec cette identité. Bien que le fichier et les API de mémoire tampon soient quelque peu exceptionnels dans la mesure où ils fonctionnent même pour une identité non gérée, ce scénario n’a pas d’intérêt. Si un appareil est géré, celui-ci est géré pour une identité d’entreprise. Si une identité n’est pas gérée, la protection des données de cette identité est inutile.
 
 L’étape suivante consiste à déterminer et mettre en œuvre le niveau de mise en œuvre de la stratégie. Pour déterminer le niveau de mise en œuvre de la stratégie, appelez la méthode [**GetEnforcementLevel**](https://msdn.microsoft.com/library/windows/apps/mt608406). Lorsqu’une stratégie d’entreprise est appliquée sur l’identité, votre application compatible doit aider le système à mettre en œuvre la stratégie en appelant les API [**ProtectionPolicyManager**](https://msdn.microsoft.com/library/windows/apps/dn705170) au cours des activités de l’interface utilisateur ou des accès au réseau pour s’assurer que le système marque les transferts de données avec cette identité si nécessaire. Vous en saurez plus sur la façon d’interpréter le niveau de mise en œuvre et de mettre en pratique en consultant ce guide. L’exemple de code montre également comment passer en mode entreprise et revenir au mode personnel, en définissant la valeur [**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) sur l’identité d’entreprise, ou sur la chaîne vide, respectivement. De nouveau, notez que l’entrée et la sortie du mode entreprise n’a de sens qu’avec une identité gérée.
 
@@ -178,9 +178,7 @@ private void SwitchMailbox(Mailbox targetMailbox)
 
 Dans ce scénario, nous allons prendre l’exemple d’une application de messagerie compatible conçue pour gérer la messagerie d’entreprise et la messagerie personnelle. Lorsque l’application s’exécute dans une organisation qui a choisi d’administrer une stratégie de protection des données verrouillées sécurisée, cette application doit veiller à supprimer toutes les données sensibles de la mémoire lorsque l’appareil est verrouillé. Pour ce faire, elle s’inscrit aux événements [**ProtectionPolicyManager.ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) et [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) afin d’être notifiée du verrouillage ou du déverrouillage de l’appareil (si DPL est en vigueur).
 
-[
-            **ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) est déclenché avant la suppression temporaire des clés de protection des données configurées sur l’appareil. Ces clés sont supprimées lorsque l’appareil est verrouillé pour éviter tout accès non autorisé aux données chiffrées lorsque l’appareil est verrouillé et aussi éventuellement lorsque son propriétaire n’est pas en sa possession. [
-            **ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) est déclenché une fois que les clés sont de nouveau disponibles lors du déverrouillage de l’appareil.
+[**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) est déclenché avant la suppression temporaire des clés de protection des données configurées sur l’appareil. Ces clés sont supprimées lorsque l’appareil est verrouillé pour éviter tout accès non autorisé aux données chiffrées lorsque l’appareil est verrouillé et aussi éventuellement lorsque son propriétaire n’est pas en sa possession. [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) est déclenché une fois que les clés sont de nouveau disponibles lors du déverrouillage de l’appareil.
 
 En gérant ces deux événements, l’application peut s’assurer de la protection de tout contenu sensible se trouvant en mémoire avec [**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/dn706017). Elle doit également fermer les flux de fichier ouverts sur ses fichiers protégés pour s’assurer que le système ne met pas en cache les données sensibles en mémoire. Vous pouvez le faire de plusieurs manières. Pour fermer un flux de fichiers renvoyé à partir d’une méthode Open d’un **StorageFile**, vous pouvez appeler la méthode **Dispose** sur le flux. Vous pouvez limiter l’utilisation du flux à l’aide d’une instruction d’utilisation (C\# ou VB). Ou, vous pouvez encapsuler un objet **DataReader** ou **DataWriter** autour du flux et utiliser la méthode **Dispose** ou l’instruction d’utilisation avec cet objet.
 

@@ -24,7 +24,7 @@ Si votre contenu d’aide est bref ou suffisamment spécifique pour être affich
 
 ## <span id="navigating_external_help_pages"></span><span id="NAVIGATING_EXTERNAL_HELP_PAGES"></span>Navigation dans les pages d’aide externe
 
-Lorsqu’un utilisateur est dirigé vers une page d’aide externe, deux scénarios s’offrent à lui :
+Lorsqu’un utilisateur est dirigé vers une page d’aide externe, deuxscénarios s’offrent à lui:
 -   Les utilisateurs sont dirigés directement vers la page correspondant au problème connu. Il s’agit d’une aide contextuelle, qui doit être utilisée dans la mesure du possible.
 -   Ils sont dirigés vers une page d’aide générale affichant clairement les catégories et sous-catégories à choisir.
 

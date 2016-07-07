@@ -11,7 +11,7 @@ ms.openlocfilehash: 8ebf90b02fcfbb4349ba2b303d9c91727b731ad7
 
 # Diffusion en continu adaptative
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cet article décrit comment doter une application de plateforme Windows universelle (UWP) d’une fonctionnalité de lecture de contenu multimédia à diffusion en continu adaptative. Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en flux continu HTTP (HLS) et de contenu à diffusion en continu dynamique sur HTTP (DASH).
 

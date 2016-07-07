@@ -11,7 +11,7 @@ ms.openlocfilehash: d7b44ce9db2e3d540036525c4b43e155a9500010
 
 # Définir les propriétés d’encodage du média
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) pour définir la résolution et la fréquence d’images du flux d’aperçu de caméra et des photos et vidéos capturées. Il montre également comment s’assurer que les proportions du flux d’aperçu correspondent à celle du média capturé.
@@ -25,7 +25,7 @@ Cet article repose sur les concepts et sur le code décrits dans [Capturer des p
 
 ## Classe d’assistance des propriétés d’encodage du média
 
-La création d’une classe d’assistance simple englobant la fonctionnalité de l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) simplifie la sélection d’un ensemble de propriétés d’encodage qui répondent à des critères particuliers. Cette classe d’assistance est particulièrement utile en raison du comportement de la fonctionnalité des propriétés d’encodage suivant :
+La création d’une classe d’assistance simple englobant la fonctionnalité de l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) simplifie la sélection d’un ensemble de propriétés d’encodage qui répondent à des critères particuliers. Cette classe d’assistance est particulièrement utile en raison du comportement de la fonctionnalité des propriétés d’encodage suivant:
 
 **Avertissement**  
 La méthode [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) utilise un membre de l’énumération [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640), tel que **VideoRecord** ou **Photo**, et renvoie une liste d’objets [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) ou [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) transmettant les paramètres d’encodage du flux, tels que la résolution de la photo ou de la vidéo capturée. Les résultats de l’appel de **GetAvailableMediaStreamProperties** peuvent inclure **ImageEncodingProperties** ou **VideoEncodingProperties** quelle que soit la valeur de **MediaStreamType** spécifiée. Pour cette raison, vous devez toujours vérifier le type de chaque valeur renvoyée et le convertir dans le type approprié avant d’essayer d’accéder à une des valeurs de propriété.

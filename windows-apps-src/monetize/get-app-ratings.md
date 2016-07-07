@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données de classification agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs."
+description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données de classification agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs."
 title: Obtenir les classifications des applications
 ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
 ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
@@ -11,20 +11,20 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 # Obtenir les classifications des applications
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données de classification agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données de classification agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
 
 ## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit :
+Pour utiliser cette méthode, procédez comme suit:
 
 -   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
 -   Obtenez un jeton d’accès Azure AD pour votre application.
 
-Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md).
+Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du WindowsStore](access-analytics-data-using-windows-store-services.md).
 
 ## Requête
 
@@ -66,7 +66,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">chaîne</td>
-<td align="left">L’ID Windows Store de l’application pour laquelle vous souhaitez récupérer les données d’évaluation. L’ID Windows Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8.</td>
+<td align="left">L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données d’évaluation. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="even">
@@ -128,9 +128,9 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**.
 
-Voici un exemple de chaîne *filter* : *filter=market eq ’US’ and deviceType eq ’phone’ and isRevised eq true*
+Voici un exemple de chaîne *filter*: *filter=market eq ’US’ and deviceType eq ’phone’ and isRevised eq true*
 
-Pour obtenir la liste des champs pris en charge, consultez le tableau suivant : Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
+Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
 
 <table>
 <colgroup>
@@ -146,11 +146,11 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 <tbody>
 <tr class="odd">
 <td align="left">market</td>
-<td align="left">Chaîne contenant le code pays ISO 3166 du marché des appareils.</td>
+<td align="left">Chaîne contenant le code pays ISO3166 du marché des appareils.</td>
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -164,7 +164,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="odd">
 <td align="left">deviceType</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -187,7 +187,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 
 ### Exemple de requête
 
-Les exemples suivants illustrent plusieurs requêtes permettant de récupérer les données de classification. Remplacez la valeur *applicationId* par l’ID Windows Store de votre application.
+Les exemples suivants illustrent plusieurs requêtes permettant de récupérer les données de classification. Remplacez la valeur *applicationId* par l’ID WindowsStore de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -205,28 +205,28 @@ Authorization: Bearer <your access token>
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Valeur      | tableau  | Tableau d’objets contenant les données de classification agrégées. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs de classification](#rating-values) ci-dessous.                                                                                                                           |
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10 000 lignes de données d’acquisition sont associées à la requête. |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000 lignes de données d’acquisition sont associées à la requête. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                             |
 
  
 ### Valeurs de classification
 
-Les éléments du tableau *Value* comportent les valeurs suivantes :
+Les éléments du tableau *Value* comportent les valeurs suivantes:
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date            | chaîne  | Première date dans la plage de dates de classification. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
-| applicationId   | chaîne  | L’ID Windows Store de l’application pour laquelle vous récupérez les données de classification.                                                                                                                                                                 |
+| applicationId   | chaîne  | L’ID WindowsStore de l’application pour laquelle vous récupérez les données de classification.                                                                                                                                                                 |
 | applicationName | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                         |
-| market          | chaîne  | Le code pays ISO 3166 du marché dans lequel la classification a été soumise.                                                                                                                                                              |
+| market          | chaîne  | Le code pays ISO3166 du marché dans lequel la classification a été soumise.                                                                                                                                                              |
 | osVersion       | chaîne  | La version du système d’exploitation sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                               |
 | deviceType      | chaîne  | Le type d’appareil sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                           |
-| isRevised       | Booléen | La valeur **true** indique que l’évaluation a été révisée ; sinon, la valeur **false** est affichée.                                                                                                                                                       |
+| isRevised       | Booléen | La valeur **true** indique que l’évaluation a été révisée; sinon, la valeur **false** est affichée.                                                                                                                                                       |
 | oneStar         | nombre  | Le nombre de classifications à une étoile.                                                                                                                                                                                                      |
-| twoStars        | nombre  | Le nombre de classifications à deux étoiles.                                                                                                                                                                                                      |
-| threeStars      | nombre  | Le nombre de classifications à trois étoiles.                                                                                                                                                                                                    |
-| fourStars       | nombre  | Le nombre de classifications à quatre étoiles.                                                                                                                                                                                                     |
-| fiveStars       | nombre  | Le nombre de classifications à cinq étoiles.                                                                                                                                                                                                     |
+| twoStars        | nombre  | Le nombre de classifications à deuxétoiles.                                                                                                                                                                                                      |
+| threeStars      | nombre  | Le nombre de classifications à troisétoiles.                                                                                                                                                                                                    |
+| fourStars       | nombre  | Le nombre de classifications à quatreétoiles.                                                                                                                                                                                                     |
+| fiveStars       | nombre  | Le nombre de classifications à cinqétoiles.                                                                                                                                                                                                     |
 
  
 
@@ -268,6 +268,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

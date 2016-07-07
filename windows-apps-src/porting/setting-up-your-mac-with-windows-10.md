@@ -11,19 +11,19 @@ ms.openlocfilehash: 10ebdb0a534d8f2931d15481c1bee4705268b0bb
 
 # Configuration de votre Mac avec Windows 10
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows.
 
 ## Exécuter Windows sur votre Mac et utiliser Visual Studio
 
-Vous êtes prêt à développer des applications Windows universelles, mais vous n'avez pas de PC à portée de main ? Ce n’est pas un problème, vous pouvez utiliser votre Mac ! Avec des solutions tierces populaires telles que Boot Camp d’Apple, VirtualBox d’Oracle, VMware Fusion et Parallels Desktop, vous pouvez installer Windows 10 et Microsoft Visual Studio sur votre Mac.
+Vous êtes prêt à développer des applications Windows universelles, mais vous n'avez pas de PC à portée de main ? Ce n’est pas un problème, vous pouvez utiliser votre Mac ! Avec des solutions tierces populaires telles que Boot Camp d’Apple, VirtualBox d’Oracle, VMware Fusion et Parallels Desktop, vous pouvez installer Windows10 et Microsoft Visual Studio sur votre Mac.
 
 **Remarque** Vous aurez besoin d’une image de démarrage Windows 10 sur disque ou sur un disque mémoire USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas un abonné, le programme d’installation peut être acheté dans le [Windows Store](http://apps.microsoft.com/windows/app). Vous pouvez également le télécharger à partir de [cet emplacement](http://go.microsoft.com/fwlink/?LinkId=623906) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
 
 Une fois que Windows est en cours d’exécution, vous pouvez ensuite installer Visual Studio 2015 à partir de [Téléchargements destinés aux développeurs Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=302144) et commencer à écrire des applications !
 
-**Remarque** Si vous envisagez d’utiliser les émulateurs Visual Studio, vous **devez** installer une version 64 bits (x64) de Windows 10 Professionnel ou une version supérieure. Malheureusement, certains anciens modèles de Mac ne peuvent pas exécuter Windows en version 64 bits. Vérifiez auprès d’Apple si votre matériel est compatible sur cette[page de support Apple](http://go.microsoft.com/fwlink/p/?LinkID=397959).
+**Remarque** Si vous envisagez d’utiliser les émulateurs Visual Studio, vous **devez** installer une version 64 bits (x64) de Windows 10 Professionnel ou une version supérieure. Malheureusement, certains anciens modèles de Mac ne peuvent pas exécuter Windows en version 64bits. Vérifiez auprès d’Apple si votre matériel est compatible sur cette[page de support Apple](http://go.microsoft.com/fwlink/p/?LinkID=397959).
 
 ## Apple Boot Camp
 

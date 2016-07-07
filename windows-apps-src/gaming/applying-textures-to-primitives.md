@@ -12,7 +12,7 @@ ms.openlocfilehash: 56e8bf524537526d639f4d732ab228f3c0ea75da
 # Appliquer des textures aux primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Dans cette rubrique, nous chargeons des données de texture brutes et les appliquons à une primitive 3D à l’aide du cube que nous avons créé à la rubrique [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md). Nous introduisons aussi un modèle simple de produits/points d’éclairage, où la tonalité (plus clair ou plus sombre) des surfaces du cube se détermine en fonction de leur distance et de l’angle relatifs à une source de lumière.
 
@@ -515,7 +515,7 @@ Comme nous l’avons vu dans les didacticiels précédents, nous appelons [**IDX
 ## Récapitulatif
 
 
-Nous avons chargé les données de texture brutes et les avons appliquées à une primitive 3D.
+Nous avons chargé les données de texture brutes et les avons appliquées à une primitive3D.
 
  
 

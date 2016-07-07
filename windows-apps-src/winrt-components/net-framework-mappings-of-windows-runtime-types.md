@@ -11,7 +11,7 @@ ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
 # Mappages .NET Framework des types Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Le tableau suivant répertorie les mappages que .NET Framework effectue entre les types de plateforme Windows universelle (UWP) et les types .NET Framework. Dans une application Windows universelle écrite en code managé, IntelliSense affiche le type .NET Framework plutôt que le type UWP. Par exemple, si une méthode Windows Runtime prend un paramètre de type IVector&lt;string&gt;, IntelliSense affiche un paramètre de type IList&lt;string&gt;. De même, dans un composant Windows Runtime écrit en code managé, vous devez utiliser le type .NET Framework dans les signatures de membre. Lorsque l’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) génère votre composant Windows Runtime, le type .NET Framework devient le type UWP correspondant.
 
@@ -85,6 +85,6 @@ Tableau 2 : types UWP correspondants aux types .NET Framework avec un nom et un 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

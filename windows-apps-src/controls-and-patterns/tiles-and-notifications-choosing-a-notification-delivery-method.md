@@ -22,7 +22,7 @@ Ce article présente les quatre options de notification (locale, planifiée, pé
 ## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>Vue d’ensemble des méthodes de remise des notifications
 
 
-Une application peut utiliser quatre méthodes pour remettre une notification :
+Une application peut utiliser quatre méthodes pour remettre une notification:
 
 -   **Locales**
 -   **Planifiées**
@@ -70,7 +70,7 @@ Ce tableau récapitule les types de remise des notifications.
 <td align="left">Vignette, Badge</td>
 <td align="left">Notifications qui mettent à jour les vignettes et les badges régulièrement à intervalles fixes en interrogeant un service cloud afin d’obtenir le nouveau contenu.</td>
 <td align="left"><ul>
-<li>Une application météo met à jour sa vignette, laquelle indique les prévisions toutes les 30 minutes.</li>
+<li>Une application météo met à jour sa vignette, laquelle indique les prévisions toutes les 30minutes.</li>
 <li>Un site &quot;Affaire du jour&quot; met à jour son offre quotidienne tous les matins.</li>
 <li>Une vignette qui indique le nombre de jours restant avant un événement met quotidiennement à jour le compte à rebours à minuit.</li>
 </ul></td>
@@ -94,7 +94,7 @@ Ce tableau récapitule les types de remise des notifications.
 ## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>Notifications locales
 
 
-La mise à jour de la vignette ou du badge de l’application, ou le déclenchement d’une notification toast pendant que l’application s’exécute constitue le mécanisme de remise des notifications le plus simple ; il requiert uniquement des appels d’API locaux. Chaque application peut donner des informations utiles ou intéressantes sur la vignette, même si ce contenu ne change qu’une fois que l’utilisateur a lancé l’application ou interagi avec elle. Les notifications locales sont également un bon moyen d’assurer l’actualisation de la vignette de l’application, même si vous utilisez également l’un des autres mécanismes de notification. Par exemple, la vignette d’une application de photo peut montrer des photos d’un album récemment ajouté.
+La mise à jour de la vignette ou du badge de l’application, ou le déclenchement d’une notification toast pendant que l’application s’exécute constitue le mécanisme de remise des notifications le plus simple; il requiert uniquement des appels d’API locaux. Chaque application peut donner des informations utiles ou intéressantes sur la vignette, même si ce contenu ne change qu’une fois que l’utilisateur a lancé l’application ou interagi avec elle. Les notifications locales sont également un bon moyen d’assurer l’actualisation de la vignette de l’application, même si vous utilisez également l’un des autres mécanismes de notification. Par exemple, la vignette d’une application de photo peut montrer des photos d’un album récemment ajouté.
 
 Nous recommandons que votre application mette à jour sa vignette en local au premier démarrage, ou au moins immédiatement après toute modification apportée par l’utilisateur qui se refléterait normalement sur la vignette. Cette mise à jour ne se voit pas tant que l’utilisateur n’a pas quitté l’application, mais l’effectuer alors que l’application est en cours d’utilisation permet de veiller à ce que la vignette soit déjà mise à jour au moment où l’utilisateur s’en va.
 

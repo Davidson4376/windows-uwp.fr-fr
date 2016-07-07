@@ -10,7 +10,7 @@ ms.openlocfilehash: d3135724e092495e8f937e6d53bdfbaa9e7cf450
 ---
 # Installer des applications avec l’outil WinAppDeployCmd.exe
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un ordinateur Windows 10 et vers tout appareil Windows 10 Mobile. Vous pouvez utiliser cet outil pour déployer un package .appx lorsque l’appareil Windows 10 Mobile est connecté via un port USB ou disponible sur le même sous-réseau, sans avoir besoin de Microsoft Visual Studio ni de la solution pour cette application. Cet article décrit comment installer des applications UWP à l’aide de cet outil.
 

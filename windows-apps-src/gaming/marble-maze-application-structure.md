@@ -12,7 +12,7 @@ ms.openlocfilehash: e9cc290fa77471f315daf7f29f605412d2ec45cc
 # Structure de l’application Marble Maze
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique. Au lieu de fonctionner avec des types de handle tels que **HWND** et des fonctions telles que **CreateWindow**, Windows Runtime fournit des interfaces comme [**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296). Vous pouvez ainsi développer des applications pour UWP grâce à une approche orientée objet plus moderne. Cette section montre comment le code de l’application Marble Maze est structuré.
@@ -21,7 +21,7 @@ La structure d’une application de plateforme Windows universelle (UWP) en Dire
 
  
 ## 
-Ce document aborde certains points importants relatifs à la structure de votre code de jeu :
+Ce document aborde certains points importants relatifs à la structure de votre code de jeu:
 
 -   Dans la phase d’initialisation, configurez les composants d’exécution et de bibliothèque utilisés par votre jeu. Chargez également les ressources spécifiques au jeu.
 -   Les applications pour UWP doivent commencer à traiter les événements dans un délai de 5 secondes après le lancement. Ne chargez donc que les ressources nécessaires quand vous chargez votre application. Les jeux doivent charger une grande quantité de ressources en arrière-plan et afficher un écran de progression.

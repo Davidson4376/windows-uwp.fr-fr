@@ -12,7 +12,7 @@ ms.openlocfilehash: 3d7a51ed13f63ca9d6070fbbe860c653c4deaf07
 # Distribution d’un composant Windows Runtime managé
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers. Toutefois, si votre composant comporte de nombreux fichiers, l’installation peut être fastidieuse pour vos utilisateurs. En outre, des erreurs de placement des fichiers ou l’impossibilité de définir les références peuvent leur occasionner des problèmes. Vous pouvez empaqueter un composant complexe sous la forme d’un kit de développement logiciel (SDK) d’extension Visual Studio pour en faciliter l’installation et l’utilisation. Les utilisateurs doivent uniquement définir une référence pour le package entier. Ils peuvent facilement localiser et installer votre composant à l’aide de la boîte de dialogue **Extensions et mises à jour**, comme indiqué dans l’article [Recherche et utilisation des extensions Visual Studio](https://msdn.microsoft.com/library/vstudio/dd293638.aspx) de MSDN Library.
 
@@ -75,6 +75,6 @@ Un composant complexe inclut généralement des ressources Windows, mais reporte
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

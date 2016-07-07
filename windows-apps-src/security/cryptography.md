@@ -12,7 +12,7 @@ ms.openlocfilehash: b8cccf54e414de084c5b3fd080007b225b9a9b12
 # Chiffrement
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 L’article fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications de plateforme Windows universelle (UWP). Pour plus d’informations sur des tâches particulières, voir le tableau à la fin de cet article.
@@ -134,7 +134,7 @@ Additionally, you can use the manifest to perform the following actions:
 ## Articles détaillés
 
 
-Les articles suivants fournissent plus de détails sur la sécurité :
+Les articles suivants fournissent plus de détails sur la sécurité:
 
 | Rubrique                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

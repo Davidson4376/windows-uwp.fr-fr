@@ -12,7 +12,7 @@ ms.openlocfilehash: fcbc3c8a3f70613635201732f3ca5053d58325c7
 # Comparer des mémoires tampons
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet exemple de code indique comment comparer des mémoires tampon dans une application de plateforme Windows universelle (UWP).
 

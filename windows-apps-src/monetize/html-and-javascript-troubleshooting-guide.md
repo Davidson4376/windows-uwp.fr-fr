@@ -13,7 +13,7 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 # Guide de résolution des problèmes pour HTML et JavaScript
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 
@@ -42,7 +42,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
 
 2.  Vérifiez la présence des informations de référence JavaScript. Sans la référence ad.js dans la section &lt;head&gt; (après la référence default.js), le contrôle **AdControl** n’est pas en mesure de s’afficher, et une erreur se produit lors de la génération.
 
-    Windows 10 :
+    Windows10:
 
     ``` syntax
     <head>
@@ -52,7 +52,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </head>
     ```
 
-    Windows 8.x :
+    Windows8.x:
 
     ``` syntax
     <head>
@@ -97,7 +97,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </div>
     ```
 
-7.  Vérifiez la propriété **position**. La propriété position doit être définie sur une valeur appropriée en fonction des autres propriétés de l’élément (par exemple, les marges dans l’élément parent et l’index z). Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
+7.  Vérifiez la propriété **position**. La propriété position doit être définie sur une valeur appropriée en fonction des autres propriétés de l’élément (par exemple, les marges dans l’élément parent et l’indexz). Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
 
     ``` syntax
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
@@ -169,7 +169,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </div>
     ```
 
-    L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
+    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
 3.  Le contrôle **AdControl** se comporte normalement. Par défaut, le **AdControl** est réduit s’il ne peut pas afficher de publicité. Si d’autres éléments sont des enfants du même parent, ils peuvent être déplacés pour combler le vide du contrôle **AdControl** réduit, et développés à la prochaine demande.
 
@@ -189,7 +189,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </div>
     ```
 
-2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
 
     Cet exemple montre comment utiliser la méthode **refresh**. Le code HTML suivant montre un exemple d’instanciation du contrôle **AdControl** avec la propriété **isAutoRefreshEnabled** définie sur false.
 
@@ -324,7 +324,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     );
     ```
 
-    L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
+    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
 3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
@@ -344,7 +344,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     });  
     ```
 
-2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
 
     Cet exemple montre comment créer l’élément **div** pour le contrôle **AdControl**.
 

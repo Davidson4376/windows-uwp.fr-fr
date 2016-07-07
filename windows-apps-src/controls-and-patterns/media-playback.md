@@ -22,7 +22,7 @@ Le lecteur multimédia permet d’afficher et d’écouter des fichiers vidéo, 
 -   [**Classe MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)
 -   [**Classe MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
 Utilisez un lecteur multimédia lorsque vous voulez lire des fichiers audio ou vidéo dans votre application. Pour afficher des collections d’images, utilisez une [vue symétrique](flipview.md).
 
@@ -197,7 +197,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ```
 
 ### Définir la source de l’affiche
-La propriété [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) vous permet de fournir à votre [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) une représentation visuelle avant le chargement du média. Un **PosterSource** est une image (par exemple, une capture d’écran ou une affiche de film) qui est affichée à la place du média. Le **PosterSource** est affiché dans les situations suivantes :
+La propriété [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) vous permet de fournir à votre [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) une représentation visuelle avant le chargement du média. Un **PosterSource** est une image (par exemple, une capture d’écran ou une affiche de film) qui est affichée à la place du média. Le **PosterSource** est affiché dans les situations suivantes:
 
 -   Quand aucune source valide n’est définie. Par exemple, si la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) n’est pas définie, si **Source** est définie sur **Null** ou si la source n’est pas valide (comme lorsqu’un événement [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/br227393) se produit).
 -   Lors du chargement du média. Par exemple, une source valide est définie mais l’événement [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) ne s’est toujours pas produit.
@@ -268,8 +268,7 @@ private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
     ```
 
 ### Contrôler le lecteur multimédia par programme
-[
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) propose divers événements, propriétés et méthodes pour contrôler la lecture audio et vidéo. Pour obtenir la liste complète des propriétés, méthodes et événements, voir la page de référence de [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926).
+[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) propose divers événements, propriétés et méthodes pour contrôler la lecture audio et vidéo. Pour obtenir la liste complète des propriétés, méthodes et événements, voir la page de référence de [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926).
     
 
 ### Sélectionner des pistes audio de langues différentes
@@ -338,14 +337,10 @@ private void FullWindow_Click(object sender, object e)
 
 Utilisez la propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) pour modifier la façon dont le contenu vidéo remplit son conteneur. Le redimensionnement et l’étirement de la vidéo qui s’ensuit dépendent de la valeur de [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968). Les états de **Stretch** sont comparables aux réglages du format de l’image de nombreux téléviseurs. Vous pouvez l’accrocher à un bouton et permettre ainsi à l’utilisateur d’effectuer les réglages de son choix.
 
--   [
-            **None**](https://msdn.microsoft.com/library/windows/apps/br242968) affiche la résolution native du contenu dans sa taille d’origine.
--   [
-            **Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) remplit autant d’espace que possible tout en préservant les proportions et le contenu de l’image. Des bandes noires horizontales ou verticales peuvent dès lors apparaître sur les bordures de la vidéo. L’effet obtenu est comparable aux modes grand écran.
--   [
-            **UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) remplit l’espace entier tout en préservant les proportions. Dans ce cas, une partie de l’image peut être rognée. L’effet obtenu est comparable aux modes plein écran.
--   [
-            **Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) remplit l’espace entier, mais ne conserve pas les proportions. Si l’image n’est pas rognée, un étirement peut en revanche être observé. L’effet obtenu est comparable aux modes Étirer.
+-   [**None**](https://msdn.microsoft.com/library/windows/apps/br242968) affiche la résolution native du contenu dans sa taille d’origine.
+-   [**Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) remplit autant d’espace que possible tout en préservant les proportions et le contenu de l’image. Des bandes noires horizontales ou verticales peuvent dès lors apparaître sur les bordures de la vidéo. L’effet obtenu est comparable aux modes grand écran.
+-   [**UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) remplit l’espace entier tout en préservant les proportions. Dans ce cas, une partie de l’image peut être rognée. L’effet obtenu est comparable aux modes plein écran.
+-   [**Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) remplit l’espace entier, mais ne conserve pas les proportions. Si l’image n’est pas rognée, un étirement peut en revanche être observé. L’effet obtenu est comparable aux modes Étirer.
 
 ![Valeurs de l’énumération Stretch](images/Image_Stretch.jpg) Ici, une classe [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) est utilisée pour faire défiler les options [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968). Une instruction **switch** vérifie l’état actif de la propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) et lui attribue la valeur suivante dans l’énumération **Stretch**. Cela permet à l’utilisateur de parcourir les différents états d’étirement.
 

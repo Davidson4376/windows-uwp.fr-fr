@@ -10,7 +10,7 @@ ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
 ---
 # Meilleures pratiques pour l’utilisation du pool de threads
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.

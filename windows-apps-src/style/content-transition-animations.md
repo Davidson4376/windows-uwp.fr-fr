@@ -40,7 +40,7 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de transitions de contenu](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [Démarrage rapide : animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  

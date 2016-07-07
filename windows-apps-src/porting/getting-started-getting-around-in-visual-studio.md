@@ -11,7 +11,7 @@ ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
 
 # Prise en main &#58; Savoir maîtriser Visual Studio
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## Savoir maîtriser Microsoft Visual Studio
 
@@ -51,7 +51,7 @@ Lorsque vous utilisez Visual Studio vous procédez de manière très similaire. 
 
 Écrivons maintenant un code pour changer le contenu du contrôle **TextBlock** en « Hello, World! » après que l’utilisateur a appuyé sur le bouton.
 
-Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un code, puis en associant celui-ci au contrôle, souvent en faisant glisser le bouton dans le code source en maintenant la touche Contrôle appuyée, comme suit :
+Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un code, puis en associant celui-ci au contrôle, souvent en faisant glisser le bouton dans le code source en maintenant la touche Contrôle appuyée, comme suit:
 
 ![connexion d’un bouton avec un événement dans xcode](images/ios-to-uwp/xcode-add-button-event.png)
 
@@ -63,7 +63,7 @@ Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un 
 }
 ```
 
-Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se trouve un bouton reconnaissable par un éclair. C’est ici que sont répertoriés les événements possibles associés au contrôle sélectionné, comme suit :
+Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se trouve un bouton reconnaissable par un éclair. C’est ici que sont répertoriés les événements possibles associés au contrôle sélectionné, comme suit:
 
 ![liste des événements du bouton dans visual studio](images/ios-to-uwp/vs-button-event.png)
 
@@ -86,7 +86,7 @@ Accrochons à présent le contrôle **TextBlock**. Dans Xcode, vous feriez gliss
 @IBOutlet weak var myLabel : UILabel
 ```
 
-Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela est toujours fait pour vous. Modifions certaines des propriétés :
+Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela est toujours fait pour vous. Modifions certaines des propriétés:
 
 1.  Appuyez sur l’onglet du fichier MainPage.xaml.
 2.  Dans le volet **Conception**, appuyez sur le contrôle **TextBlock**.
@@ -105,7 +105,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Cela est similaire à ce que vous écririez dans Swift :
+Cela est similaire à ce que vous écririez dans Swift:
 
 ```swift
 @IBAction func buttonPressed(sender: UIButton) {
@@ -113,9 +113,9 @@ Cela est similaire à ce que vous écririez dans Swift :
 }
 ```
 
-Enfin, pour exécuter l’application, sélectionnez le menu **Déboguer**, puis sélectionnez **Démarrer le débogage** (ou appuyez sur F5). Une fois l’application démarrée, cliquez sur le bouton « Appuyez ici ». Le contenu de l’étiquette « TextBlock » est remplacé par « Hello, World! » comme le montre la figure suivante.
+Enfin, pour exécuter l’application, sélectionnez le menu **Déboguer**, puis sélectionnez **Démarrer le débogage** (ou appuyez sur F5). Une fois l’application démarrée, cliquez sur le bouton «Appuyez ici». Le contenu de l’étiquette «TextBlock» est remplacé par «Hello, World!» comme le montre la figure suivante.
 
-![résultats de l’exécution de la première procédure : Hello, World!](images/ios-to-uwp/vs-hello-world.png)
+![résultats de l’exécution de la première procédure: Hello, World!](images/ios-to-uwp/vs-hello-world.png)
 
 Pour quitter l’application, revenez à Visual Studio, appuyez sur le menu **Déboguer**, puis sur **Arrêter le débogage** (ou appuyez simplement sur Maj+F5). Notez que Visual Studio vous permet d’essayer l’application sur différents appareils pour vérifier la manière dont elle s’exécute.
 

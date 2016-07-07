@@ -11,14 +11,14 @@ ms.openlocfilehash: 4ab9ca2a1cd337bd0af8fbbfcf44d8fc6e6dda3e
 
 # Communications réseau en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
 -   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
 -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-Les applications utilisent les tâches en arrière-plan et deux mécanismes principaux pour maintenir les communications lorsqu’elles ne sont pas au premier plan : le broker de socket et les déclencheurs de canal de contrôle. Les applications qui utilisent des sockets peuvent déléguer la propriété d’un socket à un broker de socket système lorsqu’elles quittent le premier plan. Le broker active ensuite l’application lorsque le trafic atteint le socket, puis retransfère la propriété à l’application, et l’application traite alors le trafic entrant.
+Les applications utilisent les tâches en arrière-plan et deux mécanismes principaux pour maintenir les communications lorsqu’elles ne sont pas au premier plan: le broker de socket et les déclencheurs de canal de contrôle. Les applications qui utilisent des sockets peuvent déléguer la propriété d’un socket à un broker de socket système lorsqu’elles quittent le premier plan. Le broker active ensuite l’application lorsque le trafic atteint le socket, puis retransfère la propriété à l’application, et l’application traite alors le trafic entrant.
 
 ## Broker de socket et SocketActivityTrigger
 
@@ -26,7 +26,7 @@ Si votre application utilise des connexions [**DatagramSocket**](https://msdn.mi
 
 Pour que votre application reçoive et traite les données reçues sur un socket lorsqu’elle est inactive, elle doit effectuer une configuration unique au démarrage, puis transférer la propriété du socket au broker de socket lorsqu’elle bascule vers un état d’inactivité.
 
--   Les étapes de configuration uniques sont les suivantes :
+-   Les étapes de configuration uniques sont les suivantes:
 
     -   Créez un SocketActivityTrigger et inscrivez une tâche en arrière-plan pour le déclencheur en définissant le paramètre TaskEntryPoint sur votre code de traitement d’un paquet reçu.
 
@@ -54,11 +54,11 @@ Pour que votre application reçoive et traite les données reçues sur un socket
            await _tcpListener.BindServiceNameAsync("my-service-name"); 
 ```
 
--   L’action à entreprendre au moment de la suspension est la suivante :
+-   L’action à entreprendre au moment de la suspension est la suivante:
 
     Lorsque votre application est sur le point d’être suspendue, appelez la méthode **TransferOwnership** sur le socket pour le transférer au broker de socket. Le broker surveille le socket et active votre tâche en arrière-plan lors de la réception de données. L’exemple suivant inclut une fonction **TransferOwnership** utilitaire pour effectuer le transfert des sockets **StreamSocketListener**. (Notez que les différents types de sockets ont tous leur propre méthode **TransferOwnership**. Vous devez donc appeler la méthode appropriée pour le socket dont vous transférez la propriété. Votre code contient probablement une fonction d’assistance **TransferOwnership** surchargée avec une implémentation pour chaque type de socket utilisé, afin que le code **OnSuspending** reste facile à lire.)
 
-    Une application transfère la propriété d’un socket à un broker de socket et transmet l’ID de la tâche en arrière-plan à l’aide de l’une des méthodes suivantes, selon celle qui est la plus appropriée :
+    Une application transfère la propriété d’un socket à un broker de socket et transmet l’ID de la tâche en arrière-plan à l’aide de l’une des méthodes suivantes, selon celle qui est la plus appropriée:
 
     -   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) sur un [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319).
     -   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) sur un [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
@@ -93,7 +93,7 @@ Pour que votre application reçoive et traite les données reçues sur un socket
 var deferral = taskInstance.GetDeferral();
 ```
 
-   -  Ensuite, extrayez l’élément SocketActivityTriggerDetails des arguments de l’événement et trouvez le motif de déclenchement de l’événement :
+   -  Ensuite, extrayez l’élément SocketActivityTriggerDetails des arguments de l’événement et trouvez le motif de déclenchement de l’événement:
 
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
@@ -148,7 +148,7 @@ case SocketActivityTriggerReason.SocketClosed:
             break; 
 ```
 
--   N’oubliez pas de terminer votre report, une fois que vous aurez fini de traiter la notification d’événement :
+-   N’oubliez pas de terminer votre report, une fois que vous aurez fini de traiter la notification d’événement:
 
 ```csharp
   deferral.Complete();

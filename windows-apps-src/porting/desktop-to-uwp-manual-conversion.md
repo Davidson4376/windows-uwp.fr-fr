@@ -11,9 +11,9 @@ ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-L’utilisation du convertisseur est pratique et automatique ; celui-ci est très utile en cas d’incertitude sur ce que fait votre programme d’installation. Toutefois, si votre application est installée à l’aide de xcopy, ou si vous connaissez les modifications que le programme d’installation de votre application apporte au système, vous pouvez choisir de créer manuellement un package d’application et un manifeste.
+L’utilisation du convertisseur est pratique et automatique; celui-ci est très utile en cas d’incertitude sur ce que fait votre programme d’installation. Toutefois, si votre application est installée à l’aide de xcopy, ou si vous connaissez les modifications que le programme d’installation de votre application apporte au système, vous pouvez choisir de créer manuellement un package d’application et un manifeste.
 
-Voici la procédure pour créer un package Centennial manuellement :
+Voici la procédure pour créer un package Centennial manuellement:
 
 ## Créez un manifeste manuellement.
 
@@ -63,7 +63,7 @@ Utilisez l’[outil de création de package de l’application (MakeAppx.exe)](h
 
 Pour exécuter MakeAppx, assurez-vous d’abord que vous avez créé un fichier manifeste, tel que décrit ci-dessus. 
 
-Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**, puis répertorier chacun de vos fichiers sources sur le disque, suivis de leur chemin de destination dans le package. Voici un exemple : 
+Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**, puis répertorier chacun de vos fichiers sources sur le disque, suivis de leur chemin de destination dans le package. Voici un exemple: 
 
 ```
 [Files]
@@ -73,7 +73,7 @@ Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**
 "MyCustomManifest.xml"       "AppxManifest.xml"
 ```
 
-Enfin, exécutez la commande suivante : 
+Enfin, exécutez la commande suivante: 
 
 ```cmd
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
@@ -83,7 +83,7 @@ MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 
 L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), fourni dans le SDK Microsoft Windows 10 pour signer le package .appx.
 
-Exemple d’utilisation : 
+Exemple d’utilisation: 
 
 ```cmd
 C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
@@ -91,9 +91,9 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
 
-Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot de passe, sélectionnez **Aucun**. Pour plus d’informations sur les certificats et la signature, consultez les rubriques suivantes : 
+Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot de passe, sélectionnez **Aucun**. Pour plus d’informations sur les certificats et la signature, consultez les rubriques suivantes: 
 
-- [Procédure : Créer des certificats temporaires à utiliser pendant le développement](https://msdn.microsoft.com/library/ms733813.aspx)
+- [Procédure: Créer des certificats temporaires à utiliser pendant le développement](https://msdn.microsoft.com/library/ms733813.aspx)
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 
@@ -102,6 +102,6 @@ Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

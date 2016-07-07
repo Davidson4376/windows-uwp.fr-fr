@@ -11,7 +11,7 @@ ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 ---
 # Cases à cocher
 
-Une case à cocher permet de sélectionner ou de désélectionner des éléments d’action. Elle peut être utilisée pour un élément unique ou pour une liste de plusieurs éléments parmi lesquels l’utilisateur peut en choisir quelques-uns. Le contrôle possède trois états de sélection : l’état désélectionné, l’état sélectionné et l’état indéterminé. Sélectionnez l’état indéterminé lorsqu’une collection de sous-choix possède des états désélectionné et sélectionné.
+Une case à cocher permet de sélectionner ou de désélectionner des éléments d’action. Elle peut être utilisée pour un élément unique ou pour une liste de plusieurs éléments parmi lesquels l’utilisateur peut en choisir quelques-uns. Le contrôle possède trois états de sélection: l’état désélectionné, l’état sélectionné et l’état indéterminé. Sélectionnez l’état indéterminé lorsqu’une collection de sous-choix possède des états désélectionné et sélectionné.
 
 ![Exemple d’états de case à cocher](images/templates-checkbox-states-default.png)
 
@@ -20,9 +20,9 @@ Une case à cocher permet de sélectionner ou de désélectionner des éléments
 -   [**Événement Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
 -   [**Propriété IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
-Utilisez une **case à cocher unique** pour un choix binaire Oui/Non, comme avec la question « Mémoriser mes informations ? » scénario de connexion avec conditions d’utilisation du service.
+Utilisez une **case à cocher unique** pour un choix binaire Oui/Non, comme avec la question «Mémoriser mes informations?» scénario de connexion avec conditions d’utilisation du service.
 
 ![Case à cocher unique pour un choix individuel](images/checkbox1.png)
 
@@ -42,9 +42,9 @@ Les deux contrôles **case à cocher** et **case d’option** permettent à l’
 
 ## Exemples
 
-Une case à cocher dans une boîte de dialogue du navigateur Microsoft Edge.
+Une case à cocher dans une boîte de dialogue du navigateur MicrosoftEdge.
 
-![Une case à cocher dans une boîte de dialogue du navigateur Microsoft Edge](images/control-examples/check-box-edge.png)
+![Une case à cocher dans une boîte de dialogue du navigateur MicrosoftEdge](images/control-examples/check-box-edge.png)
 
 Des cases à cocher dans l’application Alarmes et horloge dans Windows.
 
@@ -168,7 +168,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 ### Utiliser l’état indéterminé
 
-Le contrôle CheckBox hérite de [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) et peut avoir trois états : 
+Le contrôle CheckBox hérite de [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) et peut avoir trois états: 
 
 État | Propriété | Valeur
 ------|----------|------
@@ -180,7 +180,7 @@ Pour que la case à cocher indique l’état indéterminé, vous devez définir 
 
 Lorsque les options peuvent être regroupées, vous pouvez utiliser une case à cocher indéterminée pour représenter le groupe entier. Utilisez l’état indéterminé de la case à cocher quand un utilisateur sélectionne une partie, et non l’ensemble, des éléments dans le groupe.
 
-Dans l’exemple suivant, la propriété IsThreeState de la case à cocher « Select all » est définie sur **true**. La case à cocher « Select all » est sélectionnée si tous les éléments enfants sont sélectionnés ; si tous les éléments enfants sont désélectionnés, la case à cocher l’est également. Sinon, la case à cocher reste indéterminée.
+Dans l’exemple suivant, la propriété IsThreeState de la case à cocher «Select all» est définie sur **true**. La case à cocher «Select all» est sélectionnée si tous les éléments enfants sont sélectionnés; si tous les éléments enfants sont désélectionnés, la case à cocher l’est également. Sinon, la case à cocher reste indéterminée.
 
 ```xaml
 <StackPanel>
@@ -281,7 +281,7 @@ private void SetCheckedState()
 
     Utilisez plutôt un groupe de cases d’options proposant trois options : Non épicé, Épicé et Très épicé.
 
-    ![Groupe de cases d’options proposant trois options : Non épicé, Épicé et Très épicé.](images/spicyoptions.png)
+    ![Groupe de cases d’options proposant trois options: Non épicé, Épicé et Très épicé.](images/spicyoptions.png)
 
 
 ## Articles connexes
@@ -294,6 +294,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

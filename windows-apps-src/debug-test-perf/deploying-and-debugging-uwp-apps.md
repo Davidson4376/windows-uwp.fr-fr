@@ -3,14 +3,15 @@ author: mcleblanc
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: "Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage."
 title: "Déploiement et débogage des applications UWP"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: eb639e78bf144572dfbfd2d65514bb4eff7c7be1
+translationtype: Human Translation
+ms.sourcegitcommit: 14f6684541716034735fbff7896348073fa55f85
+ms.openlocfilehash: e2209e90080c7346bb363304b1a28f6446300332
 
 ---
 
 # Déploiement et débogage des applications UWP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
 
@@ -28,6 +29,18 @@ Pour sélectionner une cible, accédez à la liste déroulante des cibles de dé
 -   Une cible **Émulateur** permet de démarrer et de déployer l’application sur un émulateur avec la configuration spécifiée dans le nom. Les émulateurs sont disponibles uniquement sur les ordinateurs Hyper-V exécutant Windows 8.1 ou supérieur.
 -   L’option **Ordinateur distant** vous permet de spécifier une cible distante pour déployer l’application. Pour plus d’informations sur le déploiement vers un ordinateur distant, voir la section [Spécification d’un appareil distant](#specifying-a-remote-device).
 
+## Débogage des applications déployées
+Visual Studio assure également l’attachement à n’importe quel processus d’application UWP en cours d’exécution. Pour cela, sélectionnez **Déboguer**, puis **Attacher au processus**. L’attachement à un processus en cours d’exécution ne nécessite pas le projet Visual Studio d’origine. Cependant, le chargement des [symboles](#symbols) du processus sera d’une grande aide pour déboguer un processus dont vous ne disposez pas du code d’origine.  
+  
+En outre, vous pouvez attacher et déboguer n’importe quel package d’application installé en sélectionnant **Déboguer**, **Autres**, puis **Déboguer le package d’application installé**.   
+ 
+![Boîte de dialogue Déboguer le package d’application installé](images/gs-debug-uwp-apps-002.png)  
+
+Si vous sélectionnez **Ne pas lancer, mais déboguer mon code au démarrage**, le débogueur Visual Studio sera attaché à votre application UWP au moment où vous la lancerez. Il s’agit d’un moyen efficace pour déboguer les chemins d’accès de contrôle à partir de [différentes méthodes de lancement](../xbox-apps/automate-launching-uwp-apps.md), notamment en cas d’activation du protocole avec des paramètres personnalisés.  
+
+Les applications UWP peuvent être développées et compilées sur Windows8.1 ou une version ultérieure, mais leur exécution nécessite Windows10. Si vous développez une application UWP sur un PC Windows8.1, vous pouvez déboguer à distance une application UWP s’exécutant sur un autre appareil Windows10, sous réserve que les ordinateurs hôte et cible soient sur le même LAN. Pour ce faire, téléchargez et installez les [Outils de contrôle à distance de Visual Studio](http://aka.ms/remotedebugger) sur les deux machines. La version installée doit correspondre à la version existante de Visual Studio que vous avez installée, et l’architecture que vous sélectionnez (x86, x64) doit également correspondre à celle de votre application cible.   
+  
+
 ## Spécification d’un appareil distant
 
 ### C# et Microsoft Visual Basic
@@ -36,7 +49,7 @@ Pour spécifier un ordinateur distant pour des applications en C# ou Microsoft V
 
 ![](images/debug-remote-connections.png)
 
-Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accéder à l’onglet **Déboguer**. À partir de là, sélectionnez **Rechercher…**. en regard de **Ordinateur distant :**.
+Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accéder à l’onglet **Déboguer**. À partir de là, sélectionnez **Rechercher…**. en regard de **Ordinateur distant:**.
 
 ![](images/debug-remote-machine-config.png)
 
@@ -73,22 +86,62 @@ Vous pouvez définir les options de déploiement suivantes dans la page de propr
 
 Pour des raisons de sécurité, une application UWP qui est installée de manière standard n’est pas autorisée à effectuer des appels réseau vers l’appareil sur lequel elle est installée. Par défaut, le déploiement de Visual Studio crée une exemption à cette règle pour l’application déployée. Cette exemption vous permet de tester les procédures de communication sur un seul et même ordinateur. Avant de soumettre votre application au Windows Store, vous devez la tester sans l’exemption.
 
-Pour supprimer l’exemption de bouclage réseau de l’application :
+Pour supprimer l’exemption de bouclage réseau de l’application:
 
 -   Dans la page de propriétés de **débogage** en C# et Visual Basic, décochez la case **Autoriser le bouclage réseau**.
 -   Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Autoriser le bouclage réseau** sur **Non**.
 
 **Ne pas lancer, mais déboguer mon code au démarrage (C# et Visual Basic)/Lancer l’application (JavaScript et C++)**
 
-Pour configurer le déploiement afin de démarrer automatiquement une session de débogage au lancement de l’application :
+Pour configurer le déploiement afin de démarrer automatiquement une session de débogage au lancement de l’application:
 
 -   Dans la page de propriétés de **débogage** en C# et Visual Basic, cochez la case **Ne pas lancer, mais déboguer mon code au démarrage**.
 -   Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Lancer l’application** sur **Oui**.
 
+## Symboles
+
+Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](http://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](http://aka.ms/winsymbols).
+
+Pour définir les options de symbole de Visual Studio, sélectionnez **Outils&gt; Options**, puis **Débogage&gt; Symboles** dans la boîte de dialogue.
+
+**Figure4. Boîte de dialogue Options.** 
+![Boîte de dialogue Options](images/gs-debug-uwp-apps-004.png)
+
+Pour charger les symboles dans une session de débogage avec [WinDbg](#windbg), définissez la variable **sympath** selon l’emplacement du package de symboles. Par exemple, l’exécution de la commande suivante permet de charger des symboles à partir du serveur de symboles Microsoft et de les mettre en cache dans le répertoire C:\Symbols:
+
+```
+.sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols
+.reload
+```
+
+Vous pouvez ajouter des chemins d’accès en utilisant le délimiteur «;». Vous pouvez également utiliser la commande `.sympath+`. Pour les opérations de symbole plus avancées qui utilisent WinDbg, consultez [Symboles publics et privés](https://msdn.microsoft.com/library/windows/hardware/ff553493).
+
+## WinDbg
+
+WinDbg est un débogueur puissant fourni avec la suite d’outils de débogage pour Windows, qui est incluse dans le [SDK Windows](http://go.microsoft.com/fwlink/p?LinkID=271979). Lors de l’installation du SDK Windows, vous pouvez installer les outils de débogage pour Windows en tant que produit autonome. Si WinDbg s’avère très utile pour le débogage de code natif, nous ne le recommandons pas pour les applications écrites en code managé ou HTML5. 
+
+Pour utiliser WinDbg avec des applications UWP, vous devez commencer par désactiver PLM pour votre package d’application à l’aide de PLMDebug, comme décrit dans la section précédente. 
+
+```
+plmdebug /enableDebug [PackageFullName] "\"C:\Program Files\Debugging Tools for Windows (x64)\WinDbg.exe\" -server npipe:pipe=test"
+```
+
+Contrairement à Visual Studio, WinDbg a pour principale fonctionnalité de fournir des commandes à la fenêtre de commandes. Les commandes fournies vous permettent d’afficher l’état d’exécution, d’examiner les vidages sur incident en mode utilisateur et d’effectuer le débogage dans une variété de modes. 
+
+`!analyze -v` est l’une des commandes les plus utilisées de WinDbg. Elle permet de récupérer des informations détaillées sur l’exception actuelle, notamment:
+
+- FAULTING_IP: pointeur d’instruction au moment de l’erreur
+- EXCEPTION_RECORD: adresse, code et indicateurs de l’exception actuelle
+- STACK_TEXT: arborescence des appels de procédure avant l’exception
+
+Pour obtenir la liste complète de toutes les commandes de WinDbg, consultez [Commandes du débogueur](https://msdn.microsoft.com/library/ff540507).
+
+## Rubriques connexes
+- [Outils de test et de débogage pour la PLM](testing-debugging-plm.md)
+- [Débogage, tests et analyse des performances](index.md)
 
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

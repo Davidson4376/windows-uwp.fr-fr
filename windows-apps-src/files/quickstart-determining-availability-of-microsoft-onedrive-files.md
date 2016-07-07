@@ -1,16 +1,16 @@
 ---
 author: TylerMSFT
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-title: "Détermination de la disponibilité des fichiers Microsoft OneDrive"
-description: "Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable."
+title: "Détermination de la disponibilité des fichiers MicrosoftOneDrive"
+description: "Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
 
 ---
-# Détermination de la disponibilité des fichiers Microsoft OneDrive
+# Détermination de la disponibilité des fichiers MicrosoftOneDrive
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -19,13 +19,13 @@ ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
 -   [**Classe StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)
 -   [**Propriété StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
-Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
+Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
 
 ## Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Pour apprendre à écrire des applications asynchrones enC++, voir [Programmation asynchrone enC++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
 
 -   **Déclarations des fonctionnalités d’application**
 
@@ -35,8 +35,7 @@ Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la p
 
 Les utilisateurs peuvent marquer les fichiers OneDrive comme étant disponibles hors connexion (par défaut) ou en ligne uniquement. Cette fonctionnalité permet aux utilisateurs de déplacer des fichiers volumineux (tels que des images et des vidéos) vers leur emplacement OneDrive, de les marquer comme étant en ligne uniquement et d’économiser de l’espace disque (le seul élément conservé localement est un fichier de métadonnées).
 
-[
-            **StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) permet de déterminer si un fichier est actuellement disponible. Le tableau suivant indique la valeur de la propriété **StorageFile.IsAvailable** dans différents scénarios.
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) permet de déterminer si un fichier est actuellement disponible. Le tableau suivant indique la valeur de la propriété **StorageFile.IsAvailable** dans différents scénarios.
 
 | Type de fichier                              | En ligne | Connexion réseau limitée        | Hors connexion |
 |-------------------------------------------|--------|------------------------|---------|

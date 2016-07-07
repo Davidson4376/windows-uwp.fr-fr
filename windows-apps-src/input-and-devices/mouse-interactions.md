@@ -5,8 +5,8 @@ title: Interactions avec la souris
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 10deda7b44d4cfb5c65b425bf82ceaf6654aab95
 
 ---
 
@@ -27,7 +27,7 @@ Les entrées tactiles et de la souris divergent en raison de la capacité de l�
 
 Cette rubrique décrit les considérations relatives à la conception pour les interactions avec la souris.
 
-## <span id="The_UWP_app_mouse_language"></span><span id="the_uwp_app_mouse_language"></span><span id="THE_UWP_APP_MOUSE_LANGUAGE"></span>Langage de souris d’application UWP
+## Langage de souris d’application UWP
 
 
 Un ensemble concis d’interactions avec la souris est utilisé de façon uniforme dans l’ensemble du système.
@@ -45,19 +45,19 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Hover_to_learn"></span><span id="hover_to_learn"></span><span id="HOVER_TO_LEARN"></span>Pointer pour apprendre</p></td>
+<td align="left"><p>Pointer pour apprendre</p></td>
 <td align="left"><p>Pointez sur un élément pour afficher des informations détaillées ou des éléments visuels didactiques (tels qu’une info-bulle) ne requérant aucune action.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_for_primary_action"></span><span id="left-click_for_primary_action"></span><span id="LEFT-CLICK_FOR_PRIMARY_ACTION"></span>Cliquer avec le bouton gauche pour effectuer l’action principale</p></td>
+<td align="left"><p>Cliquer avec le bouton gauche pour effectuer l’action principale</p></td>
 <td align="left"><p>Cliquez avec le bouton gauche sur un élément pour appeler son action principale (par exemple, le lancement d’une application ou l’exécution d’une commande).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Scroll_to_change_view"></span><span id="scroll_to_change_view"></span><span id="SCROLL_TO_CHANGE_VIEW"></span>Faire défiler l’affichage pour changer de vue</p></td>
+<td align="left"><p>Faire défiler l’affichage pour changer de vue</p></td>
 <td align="left"><p>Affichez des barres de défilement pour monter, descendre, aller à gauche et à droite dans une zone de contenu. Les utilisateurs peuvent faire défiler l’affichage en cliquant sur les barres de défilement ou en actionnant la roulette de la souris. Les barres de défilement peuvent indiquer l’emplacement de la vue actuelle dans la zone de contenu (un mouvement panoramique avec interaction tactile affiche une interface utilisateur similaire).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
+<td align="left"><p>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
 <td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application contenant des commandes contextuelles pour l’élément sélectionné.</p>
 <div class="alert">
 <strong>Remarque</strong> Effectuez un clic droit pour afficher un menu contextuel si les commandes de la sélection ou de la barre de l’application ne correspondent pas à des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
@@ -67,19 +67,19 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="UI_commands_to_zoom"></span><span id="ui_commands_to_zoom"></span><span id="UI_COMMANDS_TO_ZOOM"></span>Commandes d’interface utilisateur pour le zoom</p></td>
+<td align="left"><p>Commandes d’interface utilisateur pour le zoom</p></td>
 <td align="left"><p>Affichez des commandes d’interface utilisateur dans la barre de l’application (telles que + et -) ou appuyez sur Ctrl et actionnez la roulette de la souris pour émuler des mouvements de pincement et d’étirement pour le zoom.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="UI_commands_to_rotate"></span><span id="ui_commands_to_rotate"></span><span id="UI_COMMANDS_TO_ROTATE"></span>Commandes d’interface utilisateur pour la rotation</p></td>
+<td align="left"><p>Commandes d’interface utilisateur pour la rotation</p></td>
 <td align="left"><p>Affichez des commandes d’interface utilisateur dans la barre de l’application ou appuyez sur Ctrl+Maj et actionnez la roulette de la souris pour émuler un mouvement de rotation. Faites pivoter l’appareil lui-même pour faire pivoter l’écran tout entier.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left-click_and_drag_to_rearrange"></span><span id="left-click_and_drag_to_rearrange"></span><span id="LEFT-CLICK_AND_DRAG_TO_REARRANGE"></span>Cliquer avec le bouton gauche et faire glisser pour réorganiser</p></td>
+<td align="left"><p>Cliquer avec le bouton gauche et faire glisser pour réorganiser</p></td>
 <td align="left"><p>Cliquez avec le bouton gauche sur un élément et faites-le glisser pour le déplacer.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_and_drag_to_select_text"></span><span id="left-click_and_drag_to_select_text"></span><span id="LEFT-CLICK_AND_DRAG_TO_SELECT_TEXT"></span>Cliquer avec le bouton gauche et faire glisser pour sélectionner du texte</p></td>
+<td align="left"><p>Cliquer avec le bouton gauche et faire glisser pour sélectionner du texte</p></td>
 <td align="left"><p>Cliquez avec le bouton gauche dans du texte sélectionnable et faites glisser le curseur pour sélectionner du texte. Double-cliquez pour sélectionner un mot.</p></td>
 </tr>
 </tbody>
@@ -91,16 +91,16 @@ Répondez à l’entrée de souris dans vos applications en gérant les mêmes �
 
 Utilisez les événements [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) pour implémenter des fonctionnalités de base d’entrée sans avoir à rédiger de code pour chaque appareil d’entrée de pointeur. Toutefois, vous pouvez toujours tirer parti des fonctionnalités spéciales de chaque appareil (telles que les événements de roulette de souris) à l’aide des événements de pointeur, de mouvement et de manipulation de cet objet.
 
-**Exemples : **découvrez ces fonctionnalités en action dans nos [exemples d’applications](http://go.microsoft.com/fwlink/p/?LinkID=264996).
+**Exemples: **découvrez ces fonctionnalités en action dans nos [exemples d’applications](http://go.microsoft.com/fwlink/p/?LinkID=264996).
 
 
-- [Entrée : Exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [Entrée: exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 
 - [Exemple d’entrée](http://go.microsoft.com/fwlink/p/?linkid=226855)
 
-- [Entrée : Mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+- [Entrée: Mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## <span id="Guidelines_for_visual_feedback"></span><span id="guidelines_for_visual_feedback"></span><span id="GUIDELINES_FOR_VISUAL_FEEDBACK"></span>Recommandations en matière de retour visuel
+## Recommandations en matière de retour visuel
 
 
 -   Quand des événements de déplacement ou de pointage permettent de détecter une souris, affichez une interface utilisateur propre à la souris pour indiquer les fonctionnalités exposées par l’élément. Si la souris ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur de la souris. Cela maintient l’interface utilisateur propre et aérée.
@@ -113,14 +113,14 @@ Utilisez les événements [**UIElement**](https://msdn.microsoft.com/library/win
 Pour obtenir des recommandations plus générales sur le retour visuel, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Curseurs
+## Curseurs
 
 
 Un ensemble de curseurs standard est disponible pour servir de pointeurs de souris. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
 
 Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Spécifiez une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
 
-Si vous avez besoin de personnaliser le curseur de la souris :
+Si vous avez besoin de personnaliser le curseur de la souris:
 
 -   Utilisez toujours le curseur en forme de flèche (![Curseur en forme de flèche](images/cursor-arrow.png)) pour les éléments interactifs. N’utilisez pas le curseur en forme de main (![Curseur en forme de main](images/cursor-pointinghand.png)) pour les liens ou pour d’autres éléments interactifs. À la place, utilisez les effets de pointage (décrits précédemment).
 -   Utilisez le curseur texte (![Curseur texte](images/cursor-text.png)) pour le texte sélectionnable.
@@ -128,7 +128,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 -   Utilisez les curseurs de redimensionnement horizontal, vertical et diagonal (![Curseur de redimensionnement vertical](images/cursor-vertical.png), ![Curseur de redimensionnement horizontal](images/cursor-horizontal.png), ![Curseur de redimensionnement diagonal (du coin inférieur gauche au coin supérieur droit)](images/cursor-diagonal2.png), ![Curseur de redimensionnement diagonal (du coin supérieur gauche au coin inférieur droit)](images/cursor-diagonal1.png)) lorsqu’un objet est redimensionnable.
 -   Utilisez les curseurs en forme de main de saisie (![Curseur en forme de main de saisie (ouverte)](images/cursor-pan1.png), ![Curseur en forme de main de saisie (fermée)](images/cursor-pan2.png)) lors d’un mouvement panoramique de contenu au sein d’une zone de dessin fixe (telle qu’une carte).
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
 * [Identifier des périphériques d’entrée](identify-input-devices.md)
@@ -155,6 +155,6 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

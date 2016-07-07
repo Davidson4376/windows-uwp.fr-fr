@@ -12,9 +12,9 @@ ms.openlocfilehash: 0f27f9e9219fca10798a09e6f934b72ad7b1b5a8
 # Portage de DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette section fournit des recommandations sur le portage de jeux de bureau DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP).
+Cette section fournit des recommandations sur le portage de jeux de bureau DirectX9 vers DirectX11 et la plateforme Windows universelle (UWP).
 
 <table>
 <colgroup>
@@ -30,15 +30,15 @@ Cette section fournit des recommandations sur le portage de jeux de bureau Direc
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Planifier votre portage DirectX](plan-your-directx-port.md)</p></td>
-<td align="left"><p>Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et UWP : mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.</p></td>
+<td align="left"><p>Planifiez le portage de votre jeu DirectX9 sur DirectX11 et UWP: mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Modifications importantes de Direct3D 9 à Direct3D 11.1](understand-direct3d-11-1-concepts.md)</p></td>
-<td align="left"><p>Cette rubrique décrit les principales différences entre DirectX 9 et DirectX 11.</p></td>
+<td align="left"><p>[Modifications importantes de Direct3D9 à Direct3D11.1](understand-direct3d-11-1-concepts.md)</p></td>
+<td align="left"><p>Cette rubrique décrit les principales différences entre DirectX9 et DirectX11.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Mapper les fonctionnalités DirectX 9 aux API DirectX 11.1](feature-mapping.md)</p></td>
-<td align="left"><p>Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D 9 sont traduites dans Direct3D 11 et UWP.</p></td>
+<td align="left"><p>[Mapper les fonctionnalités DirectX9 aux API DirectX11.1](feature-mapping.md)</p></td>
+<td align="left"><p>Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D9 sont traduites dans Direct3D11 et UWP.</p></td>
 </tr>
 </tbody>
 </table>

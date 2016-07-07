@@ -12,7 +12,7 @@ ms.openlocfilehash: 2bac8e8337a10a8411b02eeed53d772dbb5abad6
 # Générer le rendu de la scène avec un test de profondeur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels. Partie 3 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
@@ -86,7 +86,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 ## Test de profondeur par rapport au mappage d’ombre
 
 
-Utilisez une fonction de comparaison d’exemples (soit [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696), soit [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) pour tester la profondeur du pixel dans l’espace lumineux par rapport au mappage de profondeur. Calculez la valeur de la profondeur de l’espace lumineux normalisé, à savoir `z / w`, puis passez la valeur à la fonction de comparaison. Puisque nous utilisons un test de comparaison LessOrEqual pour l’échantillon, la fonction intrinsèque renvoie zéro quand le test de comparaison est satisfaisant ; cela indique que le pixel est dans l’ombre.
+Utilisez une fonction de comparaison d’exemples (soit [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696), soit [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) pour tester la profondeur du pixel dans l’espace lumineux par rapport au mappage de profondeur. Calculez la valeur de la profondeur de l’espace lumineux normalisé, à savoir `z / w`, puis passez la valeur à la fonction de comparaison. Puisque nous utilisons un test de comparaison LessOrEqual pour l’échantillon, la fonction intrinsèque renvoie zéro quand le test de comparaison est satisfaisant; cela indique que le pixel est dans l’ombre.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 

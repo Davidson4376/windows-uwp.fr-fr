@@ -5,13 +5,13 @@ title: Listes
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ---
 # Listes
 
-Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants :
+Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants:
 
 -   Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
 -   Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
@@ -22,9 +22,9 @@ Des recommandations en matière de conception, des fonctionnalités et des exemp
 
 ## API importantes
 
--   [**Classe ListView **](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**Classe GridView **](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**Classe ComboBox **](https://msdn.microsoft.com/library/windows/apps/br209348)
+-   [**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 ## Affichages de liste
@@ -85,33 +85,37 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 
 ## Listes déroulantes
 
-Les listes déroulantes, également appelées zones de liste déroulante, démarrent dans un état compact et se développent pour afficher une liste d’éléments sélectionnables. Une liste déroulante prend en charge les sélections uniques ou multiples. L’élément sélectionné est toujours visible, et les éléments non visibles peuvent s’afficher lorsque l’utilisateur appuie sur l’élément sélectionné.
+Les listes déroulantes, également appelées zones de liste déroulante, démarrent dans un état compact et se développent pour afficher une liste d’éléments sélectionnables. L’élément sélectionné est toujours visible, et les éléments non visibles peuvent s’afficher lorsque l’utilisateur appuie sur la zone de liste déroulante pour la développer.
 
-### Est-ce le contrôle approprié ?
+### Est-ce le contrôle approprié?
 
 -   Utilisez une liste déroulante pour permettre aux utilisateurs de sélectionner une valeur unique parmi un ensemble d’éléments qui peuvent être représentés correctement à l’aide de simples lignes de texte.
--   Utilisez un affichage Liste ou Grille au lieu d’une liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
--   Quand il y a moins de cinq éléments, utilisez des [cases d’option](radio-button.md) (si un seul élément peut être sélectionné) ou des [cases à cocher](checkbox.md) (si plusieurs éléments peuvent être sélectionnés).
--   Utilisez une liste déroulante pour les éléments de sélection d’importance secondaire au sein de votre application. Si l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations, l’affichage de tous les éléments à l’aide d’une zone de liste risque d’attirer l’attention sur les options plus qu’il n’est nécessaire. Pour économiser de l’espace et éviter de distraire l’utilisateur, utilisez une liste déroulante.
+-   Utilisez un affichage Liste ou Grille au lieu d’une zone de liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
+-   En présence de moins de cinq éléments, utilisez des [cases d’option](radio-button.md) (si un seul élément peut être sélectionné) ou des [cases à cocher](checkbox.md) (si plusieurs éléments peuvent être sélectionnés).
+-   Utilisez cette zone de liste déroulante pour les éléments de sélection d’importance secondaire au sein de votre application. Si l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations, l’affichage de tous les éléments à l’aide d’un affichage Liste risque d’attirer l’attention sur les options plus qu’il n’est nécessaire. Pour économiser de l’espace et éviter de distraire l’utilisateur, utilisez une zone de liste déroulante.
 
 ### Exemples
 
-Une liste déroulante en état compact peut afficher un en-tête.
+Une zone de liste déroulante en état compact peut afficher un en-tête.
 
 ![Exemple de liste déroulante à l’état compact](images/combo_box_collapsed.png)
 
-Bien que les listes déroulantes se développent pour prendre en charge des chaînes plus longues, évitez les chaînes excessivement longues qui rendent la lecture difficile.
+Bien que les zones de listes déroulantes se développent pour prendre en charge des chaînes plus longues, évitez les chaînes excessivement longues qui rendent la lecture difficile.
 
 ![Exemple de liste déroulante avec une longue chaîne de texte](images/combo_box_listitemstate.png)
 
-Si la collection figurant dans une liste déroulante est suffisamment longue, une barre de défilement s’affiche. Regroupez les éléments logiquement dans la liste.
+Si la collection figurant dans une zone de liste déroulante est suffisamment longue, une barre de défilement s’affiche. Regroupez les éléments logiquement dans la liste.
 
 ![Exemple de barre de défilement dans une liste déroulante](images/combo_box_scroll.png)
 
 ### Recommandations
 
--   Limitez le contenu textuel de l’élément de liste déroulante à une seule ligne.
--   Triez les éléments d’une liste déroulante dans l’ordre le plus logique. Regroupez les options associées, placez les options les plus courantes en haut et classez les éléments par ordre alphabétique. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
+-   Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
+-   Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
+
+### Recherche en texte
+
+Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche «W» affiche «Washington» pour une sélection rapide. 
 
 ## Zones de liste
 
@@ -188,11 +192,9 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 - [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
 - [**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
 - [**Classe ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)
-- [Ajout de zones de liste déroulante et de zones de liste](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)
 
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

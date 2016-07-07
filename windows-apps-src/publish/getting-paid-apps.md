@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenus Microsoft Advertising."
+Description: "Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenusMicrosoftAdvertising."
 title: "Rémunération"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 translationtype: Human Translation
@@ -10,7 +10,7 @@ ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
 ---
 
 # Rémunération
-Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenus Microsoft Advertising.
+Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenusMicrosoftAdvertising.
 
 > **Important** Pour recevoir l’argent des ventes d’application dans le Windows Store, vous devez [configurer votre compte de paiement et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
 
@@ -38,7 +38,7 @@ Vous pouvez accéder à vos informations de paiement et télécharger des rappor
 
 ## Période de paiement
 
-Les paiements sont effectués sur une base mensuelle (à condition que le seuil de paiement applicable ait été atteint et que vous n’ayez pas mis le paiement en attente comme décrit ci-dessous). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10 jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement.
+Les paiements sont effectués sur une base mensuelle (à condition que le seuil de paiement applicable ait été atteint et que vous n’ayez pas mis le paiement en attente comme décrit ci-dessous). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement.
 
 ##  État de mise en attente des paiements
 

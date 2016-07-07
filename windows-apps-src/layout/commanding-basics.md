@@ -47,9 +47,9 @@ Vous pouvez placer les éléments de commande sur un certain nombre de surfaces 
 -   Laissez les utilisateurs manipuler directement, autant que possible, le contenu sur le Canvas de l’application, au lieu d’ajouter des commandes qui agissent sur le contenu. Par exemple, dans l’application de voyage, permettez aux utilisateurs de réorganiser leur itinéraire en faisant glisser et en déplaçant des activités d’une liste de la zone de dessin, plutôt qu’en sélectionnant l’activité et en utilisant les boutons haut et bas de la barre de commandes.
 -   Si les utilisateurs ne peuvent pas manipuler le contenu directement, vous pouvez placer les commandes sur l’une de ces surfaces d’interface utilisateur :
 
-    -   Dans la [barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302) : nous vous recommandons de placer la plupart des commandes dans la barre de commandes pour faciliter leur organisation et leur accès.
+    -   Dans la [barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302): nous vous recommandons de placer la plupart des commandes dans la barre de commandes pour faciliter leur organisation et leur accès.
     -   Sur la zone de dessin de l’application : si l’utilisateur consulte une page ou une vue avec un objet unique, vous pouvez placer les commandes adéquates directement sur cette zone. Il doit y avoir très peu de commandes de ce type.
-    -   Dans un [menu contextuel](https://msdn.microsoft.com/library/windows/apps/hh465308) : vous pouvez utiliser des menus contextuels pour les actions du Presse-papiers (comme couper, copier et coller), ou pour les commandes qui concernent le contenu qui ne peut pas être sélectionné (ajouter une punaise pour localiser un lieu sur une carte, par exemple).
+    -   Dans un [menu contextuel](https://msdn.microsoft.com/library/windows/apps/hh465308): vous pouvez utiliser des menus contextuels pour les actions du Presse-papiers (comme couper, copier et coller), ou pour les commandes qui concernent le contenu qui ne peut pas être sélectionné (ajouter une punaise pour localiser un lieu sur une carte, par exemple).
 
 Voici une liste des surfaces de commande offertes par Windows, ainsi que des recommandations pour en tirer le meilleur parti.
 
@@ -75,7 +75,7 @@ Voici une liste des surfaces de commande offertes par Windows, ainsi que des rec
 <td align="left">[Barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302)
 <p><img src="images/controls-appbar-icons-200.png" alt="Example of a command bar with icons" /></p></td>
 <td align="left"><p>Les barres de commandes permettent aux utilisateurs d’accéder facilement aux actions. Utilisez une barre de commandes pour afficher les commandes et les options propres au contexte de l’utilisateur, par exemple celles relatives à une sélection de photos ou au mode dessin.</p>
-<p>Les barres de commandes peuvent être placées en haut de l’écran et/ou au bas de l’écran. Cette conception d’une application de retouche photo montre la zone de contenu et la barre de commandes :</p>
+<p>Les barres de commandes peuvent être placées en haut de l’écran et/ou au bas de l’écran. Cette conception d’une application de retouche photo montre la zone de contenu et la barre de commandes:</p>
 <p><img src="images/commands-appcanvas-example.png" alt="A photo app" /></p>
 <p>Pour plus d’informations sur les barres de commandes, voir l’article [Recommandations en matière de barres de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302).</p></td>
 </tr>
@@ -84,7 +84,7 @@ Voici une liste des surfaces de commande offertes par Windows, ainsi que des rec
 <p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
 <td align="left"><p>Parfois, il est plus efficace de regrouper plusieurs commandes dans un menu de commandes. Les menus permettent de proposer davantage d’options dans moins d’espace. Les menus peuvent comprendre des contrôles interactifs.</p>
 <p>Les menus contextuels peuvent fournir des raccourcis pour les actions courantes et un accès aux commandes secondaires qui ne sont pertinentes que dans certains contextes.</p>
-<p>Les menus contextuels sont destinés aux types de commande et aux scénarios de commandes suivants :</p>
+<p>Les menus contextuels sont destinés aux types de commande et aux scénarios de commandes suivants:</p>
 <ul>
 <li>Les actions contextuelles sur des parties de texte, comme Copier, Couper, Coller, Vérifier l’orthographe, etc.</li>
 <li>Les commandes associées à un objet qui doivent être exécutées, qui ne peuvent pas être sélectionnées ou indiquées d’une autre manière.</li>
@@ -135,7 +135,7 @@ Même si l’interface utilisateur est parfaitement pensée et que l’utilisate
     -   Modification du contenu ou d’un texte
     -   Changement de nom d’un fichier
 
-**Conseil** Prenez garde à ne pas utiliser un trop grand nombre de boîtes de dialogue de confirmation dans votre application : elles peuvent être très utiles en cas d’erreur de l’utilisateur, mais elles représentent un obstacle chaque fois que l’utilisateur tente d’effectuer une action intentionnellement.
+**Conseil** Prenez garde à ne pas utiliser un trop grand nombre de boîtes de dialogue de confirmation dans votre application: elles peuvent être très utiles en cas d’erreur de l’utilisateur, mais elles représentent un obstacle chaque fois que l’utilisateur tente d’effectuer une action intentionnellement.
 
  
 

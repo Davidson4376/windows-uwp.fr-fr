@@ -1,6 +1,6 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Cette rubrique décrit la nouvelle interface utilisateur Windows pour la sélection et la manipulation de texte, d’images et de contrôles, et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ces nouveaux mécanismes de sélection et de manipulation dans votre application du Windows Store."
+Description: "Cette rubrique décrit la nouvelle interface utilisateur Windows pour la sélection et la manipulation de texte, d’images et de contrôles, et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ces nouveaux mécanismes de sélection et de manipulation dans votre application du WindowsStore."
 title: "Sélection de texte et d’images"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -46,7 +46,7 @@ La sélection et la manipulation de texte représentent des difficultés particu
 
 **Remarques et recommandations**
 
-Utilisez les contrôles intégrés exposés par le biais des infrastructures de langage dans Windows pour générer des applications offrant une expérience d’interaction utilisateur de plateforme intégrale, y compris les comportements de sélection et de manipulation. La fonctionnalité d’interaction des contrôles intégrés se révèle suffisante pour la plupart des applications UWP.
+Utilisez les contrôles intégrés exposés par le biais des infrastructures de langage dans Windows pour générer des applications offrant une expérience d’interaction utilisateur de plateforme intégrale, y compris les comportements de sélection et de manipulation. La fonctionnalité d’interaction des contrôles intégrés se révèle suffisante pour la plupart des applicationsUWP.
 
 Lorsque vous utilisez des contrôles de texte UWP standard, vous ne pouvez pas personnaliser les comportements et les éléments visuels de sélection décrits dans cette rubrique.
 
@@ -117,7 +117,7 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -135,6 +135,6 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

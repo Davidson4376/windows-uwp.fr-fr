@@ -10,7 +10,7 @@ ms.openlocfilehash: 4753c2fc52fa0227b3867685b793a3d6cfc05630
 Vue d’ensemble de la liaison de données
 =====================
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à ou un contrôle de liste à une collection d’éléments dans une application de plateforme Windows universelle (UWP). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage détails en fonction d’une sélection et convertir des données pour l’affichage. Pour obtenir des informations plus détaillées, consultez [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
@@ -23,7 +23,7 @@ Dans cette rubrique, nous partons du principe que vous savez créer une applicat
 Créer le projet
 ---------------------------------------------------------------------------------------------------------------------------------
 
-Commencez par créer un projet **Application vide (universelle Windows)**. Nommez-le « Quickstart ».
+Commencez par créer un projet **Application vide (universelle Windows)**. Nommez-le «Quickstart».
 
 Liaison à un élément unique
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -191,7 +191,7 @@ La dernière étape consiste à lier un contrôle **TextBlock** à la propriét�
 </Page>
 ```
 
-Résultat :
+Résultat:
 
 ![Liaison d’une zone de texte](images/xaml-databinding0.png)
 
@@ -287,7 +287,7 @@ Nous n’avons pas encore fourni de modèle de données pour la classe **Recordi
 
 ![Liaison d’un affichage liste](images/xaml-databinding1.png)
 
-Pour résoudre ce problème, nous pouvons soit remplacer [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) pour renvoyer la valeur de **OneLineSummary**, soit fournir un modèle de données. L’option du modèle de données est plus courante et sans doute plus souple. Pour spécifier un modèle de données, vous devez utiliser la propriété [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) d’un contrôle de contenu ou la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) d’un contrôle d’éléments. Voici deux manières de créer un modèle de données pour **Recording** avec une illustration du résultat :
+Pour résoudre ce problème, nous pouvons soit remplacer [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) pour renvoyer la valeur de **OneLineSummary**, soit fournir un modèle de données. L’option du modèle de données est plus courante et sans doute plus souple. Pour spécifier un modèle de données, vous devez utiliser la propriété [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) d’un contrôle de contenu ou la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) d’un contrôle d’éléments. Voici deux manières de créer un modèle de données pour **Recording** avec une illustration du résultat:
 
 ```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -328,7 +328,7 @@ Ajout d’un affichage de détails
 
 Vous pouvez choisir d’afficher tous les détails des objets **Recording** dans les éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Cependant, l’espace occupé à l’écran sera considérable. Au lieu de cela, vous pouvez afficher juste assez de données dans l’élément à identifier puis, lorsque l’utilisateur effectue une sélection, afficher tous les détails de l’élément sélectionné dans un élément d’interface utilisateur distinct appelé affichage détails. Cette disposition est également connue sous le nom d’affichage maître/détails ou d’affichage liste/détails.
 
-Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails à la propriété [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) de [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Ou vous pouvez utiliser une [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) : liez à la fois le contrôle **ListView** et l’affichage détails à la classe **CollectionViewSource** (qui s’occupera de l’élément actuellement sélectionné pour vous). Ces deux techniques sont présentées ci-dessous et donnent les mêmes résultats que dans l’illustration.
+Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails à la propriété [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) de [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Ou vous pouvez utiliser une [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833): liez à la fois le contrôle **ListView** et l’affichage détails à la classe **CollectionViewSource** (qui s’occupera de l’élément actuellement sélectionné pour vous). Ces deux techniques sont présentées ci-dessous et donnent les mêmes résultats que dans l’illustration.
 
 **Remarque** Jusqu’à présent, nous avons uniquement utilisé l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), mais les deux techniques que nous allons présenter ci-dessous requièrent l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), plus souple (mais moins performante).
 
@@ -455,6 +455,6 @@ Résultat :
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

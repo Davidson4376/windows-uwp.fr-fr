@@ -12,7 +12,7 @@ ms.openlocfilehash: d35bf3ef13e2b36dfed6613a00f65d19b9013464
 # Obtenir l’emplacement de l’utilisateur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
@@ -87,7 +87,7 @@ switch (accessStatus)
 }
 ```
 
-### Étape 3 : Gérer les modifications apportées aux autorisations d’emplacement
+### Étape 3: Gérer les modifications apportées aux autorisations d’emplacement
 
 L’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) déclenche l’événement [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) afin d’indiquer que les paramètres d’emplacement de l’utilisateur ont changé. Cet événement transmet l’état correspondant par le biais de la propriété **Status** de l’argument (de type [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)). Notez que cette méthode n’est pas appelée à partir du thread d’interface utilisateur et que l’objet [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) invoque les modifications de l’interface utilisateur.
 
@@ -162,7 +162,7 @@ Cette section décrit comment utiliser l’événement [**PositionChanged**](htt
 
 Cette section suppose que vous avez déjà activé la fonctionnalité de localisation et appelé [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) à partir du thread d’interface utilisateur de votre application au premier plan.
 
-### Étape 1 :Définir l’intervalle de rapport et inscrire les mises à jour d’emplacement
+### Étape 1:Définir l’intervalle de rapport et inscrire les mises à jour d’emplacement
 
 Dans cet exemple, une instruction **switch** est utilisée avec l’élément **accessStatus** (de l’exemple précédent) afin d’agir uniquement lorsque l’accès à l’emplacement de l’utilisateur est autorisé. Si cette opération est autorisée, le code crée un objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534), spécifie le type de suivi et inscrit les mises à jour d’emplacement.
 
@@ -207,7 +207,7 @@ switch (accessStatus)
 }
 ```
 
-### Étape 2 : Gérer les mises à jour d’emplacement
+### Étape 2: Gérer les mises à jour d’emplacement
 
 L’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) déclenche l’événement [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) pour indiquer que l’emplacement de l’utilisateur a changé ou qu’une certaine période s’est écoulée, selon la configuration que vous avez choisie. Cet événement transmet l’emplacement correspondant via la propriété de l’argument **Position** (de type [**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)). Dans cet exemple, la méthode n’est pas appelée à partir du thread d’interface utilisateur, et l’objet [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) invoque les modifications de l’interface utilisateur.
 

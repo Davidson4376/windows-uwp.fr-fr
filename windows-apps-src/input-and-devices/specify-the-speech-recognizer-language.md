@@ -27,7 +27,7 @@ Découvrez comment sélectionner une langue installée à utiliser pour la recon
 
 Nous avons répertorié les langues installées sur un système. Identifiez la langue par défaut et sélectionnez une autre langue pour la reconnaissance.
 
-**Éléments requis :  **
+**Éléments requis:  **
 
 Cette rubrique s’appuie sur l’article [Reconnaissance vocale](speech-recognition.md).
 
@@ -38,7 +38,7 @@ Si vous débutez dans le développement d’applications pour plateforme Windows
 -   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Recommandations en matière d’expérience utilisateur :  **
+**Recommandations en matière d’expérience utilisateur:  **
 
 Pour obtenir de précieux conseils concernant la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
@@ -67,18 +67,16 @@ Les langues installées peuvent varier entre les appareils. Vérifiez l’existe
 
 Déterminez les langues prises en charge sur un appareil en vérifiant l’une des deux propriétés statiques de la classe [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) :
 
--   [
-            **SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251) : collection des objets [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) utilisés avec les grammaires de dictée et de recherche web prédéfinies.
+-   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251) : collection des objets [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) utilisés avec les grammaires de dictée et de recherche web prédéfinies.
 
--   [
-            **supportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250) : collection des objets [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) utilisés avec une contrainte de liste ou un fichier SRGS (Speech Recognition Grammar Specification).
+-   [**supportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250): collection des objets [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) utilisés avec une contrainte de liste ou un fichier SRGS (Speech Recognition Grammar Specification).
 
 ## Spécifier une langue
 
 
 Pour spécifier une langue, passez un objet [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) dans le constructeur [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
 
-Ici, nous spécifions « en-US » comme langue de reconnaissance.
+Ici, nous spécifions «en-US» comme langue de reconnaissance.
 
 
 ```CSharp
@@ -103,8 +101,7 @@ Une contrainte de rubrique peut être configurée en ajoutant une [**SpeechRecog
 
 Une contrainte de liste peut être configurée en ajoutant une [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) à la collection [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) de la [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), puis en appelant [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). Vous ne pouvez pas spécifier directement la langue d’une liste personnalisée. La liste est traitée à l’aide de la langue du module de reconnaissance.
 
-Une grammaire SRGS est un format XML standard ouvert représenté par la classe [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412). Contrairement aux listes personnalisées, vous pouvez spécifier la langue de la grammaire dans le balisage SRGS. [
-            **CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) échoue avec un [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) de **TopicLanguageNotSupported** si le module de reconnaissance n’est pas initialisé pour la même langue que le balisage SRGS.
+Une grammaire SRGS est un format XML standard ouvert représenté par la classe [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412). Contrairement aux listes personnalisées, vous pouvez spécifier la langue de la grammaire dans le balisage SRGS. [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) échoue avec un [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) de **TopicLanguageNotSupported** si le module de reconnaissance n’est pas initialisé pour la même langue que le balisage SRGS.
 
 ## Articles connexes
 
@@ -125,6 +122,6 @@ Une grammaire SRGS est un format XML standard ouvert représenté par la classe 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

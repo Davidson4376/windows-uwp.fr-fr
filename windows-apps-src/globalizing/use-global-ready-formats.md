@@ -41,11 +41,11 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 
 1.  **Mettez en forme les dates et l’heure de façon appropriée.**
 
-    Il existe de nombreux formats d’affichage possibles pour les dates et l’heure. Selon les régions et les cultures, les conventions diffèrent en ce qui concerne l’ordre d’affichage du jour et du mois dans la date, la séparation des heures et des minutes dans l’heure, et même le signe de ponctuation utilisé en tant que séparateur. En outre, les dates peuvent être affichées dans différents formats longs (« mercredi 28 mars 2012 ») ou formats courts (« 28/03/12 »), ce qui est déterminé par la culture. Pour finir, les noms et les abréviations des jours de la semaine et des mois de l’année sont propres à chaque langue.
+    Il existe de nombreux formats d’affichage possibles pour les dates et l’heure. Selon les régions et les cultures, les conventions diffèrent en ce qui concerne l’ordre d’affichage du jour et du mois dans la date, la séparation des heures et des minutes dans l’heure, et même le signe de ponctuation utilisé en tant que séparateur. En outre, les dates peuvent être affichées dans différents formats longs («mercredi28mars2012») ou formats courts («28/03/12»), ce qui est déterminé par la culture. Pour finir, les noms et les abréviations des jours de la semaine et des mois de l’année sont propres à chaque langue.
 
     Pour permettre aux utilisateurs de sélectionner une date ou une heure, utilisez les contrôles standard de type [sélecteur de date et heure](https://msdn.microsoft.com/library/windows/apps/hh465466). Ces contrôles appliquent automatiquement les formats de date et d’heure qui sont associés à la langue et à la région par défaut de l’utilisateur.
 
-    Si vous souhaitez afficher vous-même les dates et l’heure, utilisez les formateurs [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) et [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) qui permettent d’afficher automatiquement les dates, l’heure et les nombres dans le format par défaut de l’utilisateur. Le code ci-dessous met en forme une valeur DateTime dans le format associé à la langue et région par défaut. Par exemple, si la date du jour est le 3 juin 2012, le formateur affiche « 6/3/2012 » si l’utilisateur a choisi le format par défaut « Anglais (États-Unis) », mais « 03.06.2012 » s’il a choisi le format « Allemand (Allemagne) » :
+    Si vous souhaitez afficher vous-même les dates et l’heure, utilisez les formateurs [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) et [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) qui permettent d’afficher automatiquement les dates, l’heure et les nombres dans le format par défaut de l’utilisateur. Le code ci-dessous met en forme une valeur DateTime dans le format associé à la langue et région par défaut. Par exemple, si la date du jour est le 3juin2012, le formateur affiche «6/3/2012» si l’utilisateur a choisi le format par défaut «Anglais (États-Unis)», mais «03.06.2012» s’il a choisi le format « Allemand (Allemagne)»:
 
     **C#**
     ```    CSharp
@@ -92,7 +92,7 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 
     Selon les cultures, la mise en forme des nombres est différente. Les différences de mise en forme peuvent concerner le nombre de décimales affichées, le caractère servant de séparateur décimal et le symbole monétaire. Utilisez le formateur [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) pour afficher les décimales, les pourcentages ou les nombres par mille, et les devises. Dans la plupart des cas, vous devrez simplement afficher les nombres et les devises en fonction des préférences utilisateur actuelles. Cependant, vous pouvez également choisir d’utiliser des formateurs pour afficher une devise d’une région ou d’un format spécifique.
 
-    Le code suivant illustre la façon d’afficher des devises correspondant à la langue et la région par défaut de l’utilisateur, ou à un système monétaire particulier :
+    Le code suivant illustre la façon d’afficher des devises correspondant à la langue et la région par défaut de l’utilisateur, ou à un système monétaire particulier:
 
     **C#**
     ```    CSharp

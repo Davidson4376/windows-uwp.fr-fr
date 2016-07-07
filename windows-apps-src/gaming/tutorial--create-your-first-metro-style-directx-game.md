@@ -16,7 +16,7 @@ ms.openlocfilehash: 9f62e2a42dc0a1b70e37194cd5755e51699ddc38
 # Créer un jeu de plateforme Windows universelle (UWP) simple avec DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Dans cet ensemble de didacticiels, vous allez apprendre à créer un jeu de plateforme Windows universelle (UWP) de base avec DirectX et C++. Nous abordons toutes les principales parties d’un jeu, y compris les processus de chargement de composants tels que les illustrations et maillages, de création d’une boucle de jeu principale, d’implémentation d’un pipeline de rendu simple et d’ajout de son et de contrôles.
 
@@ -36,7 +36,7 @@ Avant de commencer ce didacticiel, vous devez être familiarisé avec les sujets
 -   Algèbre linéaire de base et concepts physiques newtoniens.
 -   Terminologie de programmation de graphiques de base.
 -   Concepts de programmation Windows de base.
--   Connaissances de base des API [Direct2D](https://msdn.microsoft.com/en-us/library/windows/apps/dd370990.aspx) et [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569).
+-   Connaissances de base des API [Direct2D](https://msdn.microsoft.com/en-us/library/windows/apps/dd370990.aspx) et [Direct3D11](https://msdn.microsoft.com/library/windows/desktop/hh404569).
 
 ##  Exemple de jeu de tir Direct3D Windows Store
 
@@ -65,7 +65,7 @@ L’exemple illustre les concepts de jeu suivants :
 | [Ajouter une interface utilisateur](tutorial--adding-a-user-interface.md) | Vous venez de voir comment l’exemple de jeu implémente l’objet jeu principal ainsi que l’infrastructure de rendu de base. Examinons maintenant la façon dont l’exemple de jeu fournit des informations sur l’état du jeu au joueur. Ici, vous allez apprendre à ajouter de simples options de menu et composants d’affichage à tête haute sur la sortie du pipeline graphique 3D. |
 | [Ajouter des contrôles](tutorial--adding-controls.md) | Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base. |
 | [Ajouter du son](tutorial--adding-sound.md) | Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée un objet pour la lecture audio avec les API [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813). |
-| [Développer l’exemple de jeu](tutorial-resources.md) | Félicitations ! À ce stade, vous maîtrisez les principaux composants d’un jeu 3D DirectX UWP de base. Vous pouvez configurer l’infrastructure d’un jeu, y compris le fournisseur de vues et le pipeline de rendu, et implémenter une boucle de jeu de base. Vous pouvez également créer une superposition de l’interface utilisateur de base, et incorporer des sons et des contrôles. Vous allez créer votre propre jeu, et voici donc quelques ressources pour approfondir vos connaissances en matière de développement de jeux DirectX. |
+| [Développer l’exemple de jeu](tutorial-resources.md) | Félicitations! À ce stade, vous maîtrisez les principaux composants d’un jeu 3D DirectX UWP de base. Vous pouvez configurer l’infrastructure d’un jeu, y compris le fournisseur de vues et le pipeline de rendu, et implémenter une boucle de jeu de base. Vous pouvez également créer une superposition de l’interface utilisateur de base, et incorporer des sons et des contrôles. Vous allez créer votre propre jeu, et voici donc quelques ressources pour approfondir vos connaissances en matière de développement de jeux DirectX. |
  
 
  

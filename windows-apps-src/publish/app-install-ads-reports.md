@@ -11,7 +11,7 @@ ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
 
 # Rapport de publicité sur l’installation d’applications
 
-Il existe deux façons d’accéder à la page des **Rapports de publicité sur l’installation d’applications** dans le Centre de développement :
+Il existe deux façons d’accéder à la page des **Rapports de publicité sur l’installation d’applications** dans le Centre de développement:
 
 -   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Analyse**&gt;**Publicités d’installation d’application**.
 -   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Monétisation**&gt;**Promouvoir votre application**, puis sur le lien **Rapport** d’une campagne.

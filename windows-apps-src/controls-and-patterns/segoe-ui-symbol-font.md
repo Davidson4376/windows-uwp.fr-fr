@@ -14,7 +14,7 @@ ms.openlocfilehash: 9071c7dfddba15738d7bad482fd14f7cbffaa1f7
 
 # Recommandations en matière d’icônes Segoe MDL2
 
-Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets. Pour obtenir la police, vous devez installer Windows 10.
+Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets. Pour obtenir la police, vous devez installer Windows10.
 
 **API importantes**
 
@@ -31,21 +31,21 @@ Cet article répertorie des conseils d’utilisation des glyphes fournis avec la
 ## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
 
 
-La police d’icône **Segoe UI Symbol** Windows 8/8.1 a été remplacée par la police **Segoe MDL2 Assets** dans la version Windows 10. Elle peut être utilisée de la même manière que l’ancienne police, mais de nombreux glyphes ont été redessinés dans le style d’icône Windows 10, les mesures de la police étant définies de façon à ce que les icônes s’inscrivent à l’intérieur du pica carré plutôt que sur une ligne de base typographique.
+La police d’icône **Segoe UI Symbol** Windows8/8.1 a été remplacée par la police **Segoe MDL2 Assets** dans la version Windows10. Elle peut être utilisée de la même manière que l’ancienne police, mais de nombreux glyphes ont été redessinés dans le style d’icône Windows10, les mesures de la police étant définies de façon à ce que les icônes s’inscrivent à l’intérieur du pica carré plutôt que sur une ligne de base typographique.
 
-**Remarque** Un **Em** est une unité de mesure typographique. 1 pica de la police équivaut à 100 % de la valeur de point spécifiée à 72 ppp. Par exemple, 16 pt est égal à 16 px à 72 ppp (également appelé Plateau 100 %). Les nouvelles polices MDL2 sont conçues afin que l’encombrement de la zone de l’icône soit d’un pica carré. Par conséquent, si vous définissez 16 px pour la largeur et la hauteur dans le code, vous obtenez un encombrement d’icône de 16 x 16 px. Cela ne signifie pas toujours que l’icône occupe entièrement la dimension de l’encombrement.
+**Remarque** Un **Em** est une unité de mesure typographique. 1pica de la police équivaut à 100% de la valeur de point spécifiée à 72ppp. Par exemple, 16 pt est égal à 16 px à 72 ppp (également appelé Plateau 100 %). Les nouvelles polices MDL2 sont conçues afin que l’encombrement de la zone de l’icône soit d’un pica carré. Par conséquent, si vous définissez 16 px pour la largeur et la hauteur dans le code, vous obtenez un encombrement d’icône de 16 x 16 px. Cela ne signifie pas toujours que l’icône occupe entièrement la dimension de l’encombrement.
 
  
 
-La police **Segoe UI Symbol** est toujours disponible comme ressource « héritée ». Il est toutefois recommandé que toutes les applications soient mises à jour pour utiliser la nouvelle police **Segoe MDL2 Assets**.
+La police **Segoe UI Symbol** est toujours disponible comme ressource «héritée». Il est toutefois recommandé que toutes les applications soient mises à jour pour utiliser la nouvelle police **Segoe MDL2 Assets**.
 
 La plupart des icônes et des contrôles d’interface utilisateur inclus dans la police **Segoe MDL2 Assets** sont mappés à la zone d’utilisation privée d’Unicode. La zone d’utilisation privée permet aux développeurs de polices d’affecter des valeurs Unicode privées à des glyphes qui ne correspondent pas à des points de code existants. Cette opération peut s’avérer utile lors de la création d’une police de symboles, mais elle génère un problème d’interopérabilité. Si la police n’est pas disponible, les glyphes n’apparaissent pas. Utilisez ces glyphes uniquement lorsque vous pouvez spécifier la police **Segoe MDL2 Assets**.
 
 Si vous utilisez des vignettes, vous ne pouvez pas utiliser ces glyphes car vous ne pouvez pas spécifier la police des vignettes et les glyphes de la zone d’utilisation privée ne sont pas disponibles via font-fallback.
 
-À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes « astuces » comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
+À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes «astuces» comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
 
-La police Segoe UI Symbol utilisait également des glyphes de « chasse nulle » pour la superposition et la colorisation. Comme dans cet exemple, un contour noir (U+E006) pouvait être dessiné par-dessus le cœur rouge de chasse nulle (U+E00B).
+La police Segoe UI Symbol utilisait également des glyphes de «chasse nulle» pour la superposition et la colorisation. Comme dans cet exemple, un contour noir (U+E006) pouvait être dessiné par-dessus le cœur rouge de chasse nulle (U+E00B).
 
 ![Utilisation d’un glyphe en largeur nulle](images/segoe-ui-symbol-layering.png)
 
@@ -363,7 +363,7 @@ En outre, gardez à l’esprit que la police **Segoe MDL2 Assets** comprend beau
 ## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>Boutons Précédent
 
 
-Les glyphes hérités des boutons Précédent sont disponibles dans 2 tailles différentes afin que l’épaisseur de l’anneau extérieur soit homogène à 20 pt et à 42 pt. Deux nouveaux boutons Précédent de chrome proportionnels sont également disponibles. Ces glyphes sont conçus de sorte à prendre en charge la superposition.
+Les glyphes hérités des boutons Précédent sont disponibles dans 2tailles différentes afin que l’épaisseur de l’anneau extérieur soit homogène à 20pt et à 42pt. Deux nouveaux boutons Précédent de chrome proportionnels sont également disponibles. Ces glyphes sont conçus de sorte à prendre en charge la superposition.
 
 | Code   | Symbole                                                                     | Énumération                          | Description                               |
 |--------|----------------------------------------------------------------------------|-------------------------------|-------------------------------------------|

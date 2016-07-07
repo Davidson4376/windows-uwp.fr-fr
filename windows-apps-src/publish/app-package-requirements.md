@@ -55,7 +55,7 @@ Les ensembles d’applications utilisent un manifeste différent. Pour obtenir l
 > **Conseil** Veillez à exécuter le [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186449) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
 
 
-Si votre application possède plusieurs packages, les éléments suivants du manifeste de l’application doivent être identiques dans chaque package (par système d’exploitation ciblé) :
+Si votre application possède plusieurs packages, les éléments suivants du manifeste de l’application doivent être identiques dans chaque package (par système d’exploitation ciblé):
 
 -   [**Package/Capacités**](https://msdn.microsoft.com/library/windows/apps/br211422)
 -   [**Package/Dépendances**](https://msdn.microsoft.com/library/windows/apps/br211428)

@@ -1,4 +1,4 @@
-Auteur &#58; Mtoepke
+Auteur&#58; Mtoepke
 #Exemples de code XAML pour les développeurs
 Cette rubrique répertorie les exemples de code XAML pour les développeurs d’applications Xbox One.
 

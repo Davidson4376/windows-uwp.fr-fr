@@ -10,7 +10,7 @@ ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
 ---
 # Threads et programmation asynchrone
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles.
 

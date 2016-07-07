@@ -14,15 +14,15 @@ ms.openlocfilehash: c61866aa6fb71d41d4c6150cfe6af449da21a1da
 
 Cela dépend de vous, mais n’oubliez pas : plus vous dépensez, plus le nombre de personnes qui voient votre publicité est important. Plus le nombre de personnes qui voient votre publicité est important, plus vous obtenez de clics et d’installations. Pour plus d’informations sur la création d’une campagne de publicité pour votre application, lisez [cet article](create-an-ad-campaign-for-your-app.md).
 
-## Puis-je exécuter des publicités pour l’une de mes applications dans mes autres applications ?
+## Puis-je exécuter des publicités pour l’une de mes applications dans mes autres applications?
 
 Oui. C’est ce que nous appelons des *publicités maison*, et leur exécution est gratuite. Pour plus d’informations sur les publicités communautaires, lisez [cet article](about-house-ads.md).
 
-## Puis-je promouvoir mon application auprès d’applications émanant d’autres développeurs dans le Windows Store ?
+## Puis-je promouvoir mon application auprès d’applications émanant d’autres développeurs dans le Windows Store?
 
-Oui. C’est ce que nous appelons des *annonces de la communauté*, et leur exécution est gratuite. Après avoir [accepté de participer aux annonces de la communauté](about-community-ads.md#how-to-opt-in-to-community-ads), vous pouvez [créer une campagne d’annonces de la communauté gratuite](create-an-ad-campaign-for-your-app.md) ; votre application partagera un espace publicitaire promotionnel avec d’autres développeurs ayant également accepté de participer aux annonces de la communauté. Pour plus d’informations, lisez [cet article](about-community-ads.md).
+Oui. C’est ce que nous appelons des *annonces de la communauté*, et leur exécution est gratuite. Après avoir [accepté de participer aux annonces de la communauté](about-community-ads.md#how-to-opt-in-to-community-ads), vous pouvez [créer une campagne d’annonces de la communauté gratuite](create-an-ad-campaign-for-your-app.md); votre application partagera un espace publicitaire promotionnel avec d’autres développeurs ayant également accepté de participer aux annonces de la communauté. Pour plus d’informations, lisez [cet article](about-community-ads.md).
 
-## Comment personnaliser ma publicité ?
+## Comment personnaliser ma publicité?
 
 Si vous utilisez un des modèles de publicité par défaut, vous pouvez choisir la taille, les images et couleur d’arrière-plan de votre publicité. Si vous le souhaitez, vous pouvez également ajouter un slogan personnalisé à votre publicité. Par ailleurs, vous pouvez charger vos propres conceptions d'annonces qui répondent à nos exigences. Pour plus d'informations, voir [Création d'une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md).
 
@@ -42,9 +42,9 @@ Allemand, anglais, arabe, chinois (simplifié), chinois (traditionnel), danois, 
 
 ## Quand suis-je facturé ?
 
-Vous êtes facturé chaque fois que votre compte atteint 50 $ de frais (ou le montant équivalent dans la devise locale de votre marché ou région) pour l’ensemble des campagnes payantes de votre compte.
+Vous êtes facturé chaque fois que votre compte atteint 50$ de frais (ou le montant équivalent dans la devise locale de votre marché ou région) pour l’ensemble des campagnes payantes de votre compte.
 
-Si votre compte n’atteint pas 50 $ de frais dans les 30 jours suivant votre dernière facturation, ces frais vous seront facturés tôt dans le mois suivant. Cela permet de garantir que le solde courant de votre compte relatif aux frais de campagne de publicité ne dépasse pas les 30 jours.
+Si votre compte n’atteint pas 50$ de frais dans les 30jours suivant votre dernière facturation, ces frais vous seront facturés tôt dans le mois suivant. Cela permet de garantir que le solde courant de votre compte relatif aux frais de campagne de publicité ne dépasse pas les 30jours.
 
 ## Comment supprimer une carte de crédit ou modifier les détails d’une carte de crédit ?
 
@@ -60,6 +60,6 @@ Accédez à <http://commerce.microsoft.com>, ouvrez une session avec vos informa
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

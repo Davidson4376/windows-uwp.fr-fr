@@ -10,7 +10,7 @@ ms.openlocfilehash: d23416ad3344a39c09078b6ba3acc38fa3ba65a0
 
 ---
 
-# Interactions avec Cortana dans les applications UWP
+# Interactions avec Cortana dans les applicationsUWP
 
 
 
@@ -85,7 +85,7 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 ## Articles connexes
 
 
-* [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+* [**Éléments et attributs d’un fichier VCDv1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
 **Concepteurs**
 * [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
@@ -103,6 +103,6 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

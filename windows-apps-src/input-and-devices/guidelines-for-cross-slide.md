@@ -14,7 +14,7 @@ ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
 # Recommandations en matière de glisser transversal
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -45,7 +45,7 @@ Le schéma suivant indique les distances seuils utilisées par l’interaction d
 
 ![capture d’écran illustrant les processus de sélection et de glisser-déplacer.](images/crossslide-threshold.png)
 
-Pour conserver la fonctionnalité de mouvement panoramique, un petit seuil de 2,7 mm (environ 10 pixels en résolution cible) doit être dépassé avant qu’une interaction de sélection ou de glissement soit activée. Ce petit seuil permet au système non seulement de différencier le glisser transversal du mouvement panoramique, mais également de distinguer un appui du glisser transversal et du mouvement panoramique.
+Pour conserver la fonctionnalité de mouvement panoramique, un petit seuil de 2,7mm (environ 10 pixels en résolution cible) doit être dépassé avant qu’une interaction de sélection ou de glissement soit activée. Ce petit seuil permet au système non seulement de différencier le glisser transversal du mouvement panoramique, mais également de distinguer un appui du glisser transversal et du mouvement panoramique.
 
 Cette image montre comment un utilisateur appuie sur un élément dans l’interface utilisateur, mais déplace son doigt légèrement vers le bas au contact. Sans seuil, cette interaction serait interprétée comme un glisser transversal en raison du mouvement vertical effectué par l’utilisateur. Grâce au seuil, le mouvement est correctement interprété en tant que mouvement panoramique horizontal.
 
@@ -55,7 +55,7 @@ Voici quelques recommandations à prendre en compte quand vous ajoutez la foncti
 
 Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
 
-**Remarque** Dans les cas où la zone de contenu prend en charge le mouvement panoramique dans deux directions (par exemple, des navigateurs web ou des lecteurs électroniques), l’interaction chronométrée de la séquence Appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour des objets du type image ou lien hypertexte.
+**Remarque** Dans les cas où la zone de contenu prend en charge le mouvement panoramique dans deuxdirections (par exemple, des navigateurs web ou des lecteurs électroniques), l’interaction chronométrée de la séquence Appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour des objets du type image ou lien hypertexte.
 
  
 
@@ -78,11 +78,11 @@ Outre le seuil de distance, la sélection par glisser transversal est limitée �
 
 ![schéma indiquant la zone de seuil de la sélection.](images/crossslide-selection.png)
 
-L’interaction de glisser transversal est complétée par une interaction chronométrée de type appui prolongé, également appelée interaction « auto-révélatrice ». Cette interaction supplémentaire active en effet une animation qui révèle l’action qui peut être effectuée sur l’objet. Pour plus d’informations sur l’interface utilisateur de résolution des ambiguïtés, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
+L’interaction de glisser transversal est complétée par une interaction chronométrée de type appui prolongé, également appelée interaction «auto-révélatrice». Cette interaction supplémentaire active en effet une animation qui révèle l’action qui peut être effectuée sur l’objet. Pour plus d’informations sur l’interface utilisateur de résolution des ambiguïtés, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
 Les captures d’écran suivantes expliquent le fonctionnement de l’animation auto-révélatrice.
 
-1.  Appuyez de manière prolongée pour démarrer l’animation pour l’interaction auto-révélatrice. L’état sélectionné de l’élément affecte ce que l’animation révèle : une coche en cas de non-sélection et aucune coche en cas de sélection.
+1.  Appuyez de manière prolongée pour démarrer l’animation pour l’interaction auto-révélatrice. L’état sélectionné de l’élément affecte ce que l’animation révèle: une coche en cas de non-sélection et aucune coche en cas de sélection.
 
     ![capture d’écran montrant un état de non-sélection.](images/crossslide-selfreveal1.png)
 
@@ -137,7 +137,7 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
            **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée: exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)

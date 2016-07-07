@@ -1,6 +1,6 @@
 ---
 author: drewbatgit
-Description: "Cet article explique comment créer un composant Windows Runtime implémentant l’interface IBasicVideoEffect pour créer des effets personnalisés de flux vidéo."
+Description: "Cet article explique comment créer un composant WindowsRuntime implémentant l’interface IBasicVideoEffect pour créer des effets personnalisés de flux vidéo."
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -14,12 +14,12 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 # Effets vidéo personnalisés
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Cet article explique comment créer un composant Windows Runtime qui implémente l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) pour vous permettre de créer des effets personnalisés pour les flux vidéo. Vous pouvez utiliser les effets personnalisés avec plusieurs API Windows Runtime différentes, notamment [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), qui fournit un accès à la caméra d’un appareil, et [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), qui vous permet de créer des compositions complexes à partir de clips multimédias.
+Cet article explique comment créer un composant WindowsRuntime qui implémente l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) pour vous permettre de créer des effets personnalisés pour les flux vidéo. Vous pouvez utiliser les effets personnalisés avec plusieurs API Windows Runtime différentes, notamment [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), qui fournit un accès à la caméra d’un appareil, et [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), qui vous permet de créer des compositions complexes à partir de clips multimédias.
 
 ## Ajouter un effet personnalisé à votre application
 
@@ -30,11 +30,11 @@ Un effet vidéo personnalisé est défini dans une classe qui implémente l’in
 
 1.  Dans Microsoft Visual Studio, lorsque votre solution est ouverte, accédez au menu **Fichier**, sélectionnez **Ajouter-&gt;Nouveau projet...**
 2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)**.
-3.  Pour cet exemple, nommez le projet « VideoEffectComponent ». Ce nom sera référencé dans le code ultérieurement.
+3.  Pour cet exemple, nommez le projet «VideoEffectComponent». Ce nom sera référencé dans le code ultérieurement.
 4.  Cliquez sur **OK**.
 5.  Le modèle de projet crée une classe appelée Class1.cs. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
-6.  Renommez le fichier « ExampleVideoEffect.cs ». Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
-7.  Ouvrez « ExampleVideoEffect.cs » et mettez à jour la définition de classe pour implémenter l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788).
+6.  Renommez le fichier «ExampleVideoEffect.cs». Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
+7.  Ouvrez «ExampleVideoEffect.cs» et mettez à jour la définition de classe pour implémenter l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788).
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
 
@@ -142,7 +142,7 @@ Ajoutez le code suivant à l’intérieur de l’espace de noms de l’effet pou
 **Remarque** Dans la mesure où cette technique accède à une mémoire tampon d’image native non gérée, vous devez configurer votre projet pour autoriser le code non sécurisé.
 1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet VideoEffectComponent et sélectionnez Propriétés....
 2.  Sélectionnez l’onglet Générer.
-3.  Cochez la case « Autoriser le code non sécurisé ».
+3.  Cochez la case «Autoriser le code non sécurisé».
 
  
 
@@ -164,7 +164,7 @@ Utilisez les étapes suivantes pour ajouter le package NuGet Win2D au projet que
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit  sur le projet **VideoEffectComponent** et sélectionnez **Gérer les packages NuGet...**
 2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer**.
-3.  Dans la zone de recherche, tapez « Win2D ».
+3.  Dans la zone de recherche, tapez «Win2D».
 4.  Cliquez sur **Win2D.uwp**, puis cliquez sur Installer dans le volet droit.
 5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
 6.  Acceptez la licence de package.

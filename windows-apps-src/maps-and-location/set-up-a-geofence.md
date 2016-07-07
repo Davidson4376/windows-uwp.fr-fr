@@ -12,7 +12,7 @@ ms.openlocfilehash: e161e478b1b306f5d8d77b7649aeecd80e21b5be
 # Configurer une clôture virtuelle
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Configurez une [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
@@ -49,7 +49,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 La méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
 
-### Étape 2 : Inscrire les modifications d’autorisations d’emplacement et d’état de limite géographique
+### Étape2: Inscrire les modifications d’autorisations d’emplacement et d’état de limite géographique
 
 Dans cet exemple, une instruction **switch** est utilisée avec l’élément **accessStatus** (de l’exemple précédent) afin d’agir uniquement lorsque l’accès à l’emplacement de l’utilisateur est autorisé. Si l’accès à l’emplacement de l’utilisateur est autorisé, le code accède aux limites géographiques actuelles et s’inscrit aux modifications de l’état des limites géographiques, ainsi qu’aux modifications des autorisations d’emplacement.
 
@@ -115,16 +115,11 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 
 Vous pouvez ajuster davantage votre clôture virtuelle en utilisant l’un des autres constructeurs. Dans l’exemple suivant, le constructeur de limite géographique indique les paramètres supplémentaires ci-après :
 
--   [
-            **MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) : indique les événements de limite géographique pour lesquels vous souhaitez recevoir des notifications lors d’une entrée ou d’une sortie de la région définie ou bien lors de la suppression de la limite géographique.
--   [
-            **SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) : supprime la limite géographique après que les états qu’elle surveille ont été respectés.
--   [
-            **DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) : indique le temps pendant lequel l’utilisateur doit rester à l’intérieur ou en dehors de la zone définie avant le déclenchement des événements d’entrée/de sortie.
--   [
-            **StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) : indique à quel moment débuter la surveillance de la limite géographique.
--   [
-            **Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) : indique la période pendant laquelle surveiller la limite géographique.
+-   [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) : indique les événements de limite géographique pour lesquels vous souhaitez recevoir des notifications lors d’une entrée ou d’une sortie de la région définie ou bien lors de la suppression de la limite géographique.
+-   [**SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) : supprime la limite géographique après que les états qu’elle surveille ont été respectés.
+-   [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) : indique le temps pendant lequel l’utilisateur doit rester à l’intérieur ou en dehors de la zone définie avant le déclenchement des événements d’entrée/de sortie.
+-   [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) : indique à quel moment débuter la surveillance de la limite géographique.
+-   [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) : indique la période pendant laquelle surveiller la limite géographique.
 
 ```csharp
 // Set the fence ID.

@@ -12,7 +12,7 @@ ms.openlocfilehash: 17a5a106e24305afd3041f434d2e0890d21fd7ec
 # Langues prises en charge
 
 
-Vous pouvez soumettre des applications dans le Windows Store dans plus de 100 langues.
+Vous pouvez soumettre des applications dans le Windows Store dans plus de 100langues.
 
 Pour en savoir plus sur la configuration de langues dans vos applications, consultez [Globalisation et localisation](../globalizing/globalizing-portal.md) et [Gérer la langue et la région](../globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
 

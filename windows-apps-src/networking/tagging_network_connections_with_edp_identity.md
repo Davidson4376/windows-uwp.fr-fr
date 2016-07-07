@@ -4,14 +4,14 @@ Description: "Cette rubrique vous explique comment générer un contexte de thre
 MS-HAID: dev\_networking.tagging\_network\_connections\_with\_edp\_identity
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "Marquage de connexions réseau avec l’identité EDP"
+title: "Marquage de connexions réseau avec l’identitéEDP"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 2b960bbb5cf58991778e5c20bb915a202ecf6e04
 
 ---
 
-# Marquage de connexions réseau avec l’identité EDP
+# Marquage de connexions réseau avec l’identitéEDP
 
 __Remarque__ La stratégie de protection des données d’entreprise (EDP) ne peut pas être appliquée sur Windows 10, version 1511 (build 10586) ou antérieure.
 
@@ -41,8 +41,7 @@ Cette rubrique vous explique comment générer un contexte de thread protégé a
 
 Dans ce scénario, une application de messagerie compatible synchronise un ensemble de boîtes aux lettres d’entreprise et personnelles. L’application transmet l’identité de l’utilisateur à un appel [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) afin de créer un contexte de thread protégé. Cette opération marque l’ensemble des connexions réseau effectuées par la suite sur le même thread avec cette identité, et autorise l’accès aux ressources de réseau d’entreprise dont l’accès est contrôlé par la stratégie d’entreprise.
 
-Ici, « enterprise » fait référence à l’entreprise d’appartenance de l’identité de l’utilisateur. [
-            **CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) renvoie un objet [**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706029), indépendamment de l’application de stratégie. Généralement, si l’application doit gérer des ressources mixtes, elle peut appeler **CreateCurrentThreadNetworkContext** pour l’ensemble des identités. Après avoir récupéré les ressources réseau, l’application appelle **Dispose** sur l’élément **ThreadNetworkContext** afin d’effacer tout marquage d’identité sur le thread actuel. Le modèle utilisé pour disposer l’objet contextuel dépend de votre langage de programmation.
+Ici, « enterprise » fait référence à l’entreprise d’appartenance de l’identité de l’utilisateur. [**CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) renvoie un objet [**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706029), indépendamment de l’application de stratégie. Généralement, si l’application doit gérer des ressources mixtes, elle peut appeler **CreateCurrentThreadNetworkContext** pour l’ensemble des identités. Après avoir récupéré les ressources réseau, l’application appelle **Dispose** sur l’élément **ThreadNetworkContext** afin d’effacer tout marquage d’identité sur le thread actuel. Le modèle utilisé pour disposer l’objet contextuel dépend de votre langage de programmation.
 
 Si l’identité est inconnue, l’application peut interroger l’identité gérée par la stratégie d’entreprise à partir de l’adresse réseau de la ressource, à l’aide de l’API [**ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027).
 

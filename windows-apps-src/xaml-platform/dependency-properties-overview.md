@@ -1,13 +1,17 @@
 ---
 author: jwmsft
-description: Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
-title: Vue d’ensemble des propriétés de dépendance
+description: "Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur."
+title: "Vue d’ensemble des propriétés de dépendance"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
+translationtype: Human Translation
+ms.sourcegitcommit: 2791b5b80bf1405d3efdce5d81824dbe6d347b4f
+ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
+
 ---
 
 # Vue d’ensemble des propriétés de dépendance
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
 
@@ -15,7 +19,7 @@ Cette rubrique décrit le système de propriétés de dépendance disponible qua
 
 Une propriété de dépendance est un type spécialisé de propriété Plus précisément, il s’agit d’une propriété dont la valeur est suivie et influencée par un système de propriétés dédié qui fait partie de Windows Runtime.
 
-Afin de prendre en charge une propriété de dépendance, l’objet qui définit la propriété doit être un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (en d’autres termes, une classe ayant une classe de base **DependencyObject** quelque part dans son héritage). Un grand nombre des types que vous utilisez pour définir l’interface utilisateur d’une application du Windows Store avec XAML constituent une sous-classe **DependencyObject** et prennent en charge les propriétés de dépendance. Toutefois, un type provenant d’un espace de noms Windows Runtime dont le nom ne comporte pas « XAML » ne prendra pas en charge les propriétés de dépendance. Ce sont des propriétés de type ordinaire qui ne présentent pas le comportement de dépendance du système de propriétés.
+Afin de prendre en charge une propriété de dépendance, l’objet qui définit la propriété doit être un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (en d’autres termes, une classe ayant une classe de base **DependencyObject** quelque part dans son héritage). Un grand nombre des types que vous utilisez pour définir l’interface utilisateur d’une application du Windows Store avec XAML constituent une sous-classe **DependencyObject** et prennent en charge les propriétés de dépendance. Toutefois, un type provenant d’un espace de noms Windows Runtime dont le nom ne comporte pas «XAML» ne prendra pas en charge les propriétés de dépendance. Ce sont des propriétés de type ordinaire qui ne présentent pas le comportement de dépendance du système de propriétés.
 
 Le but des propriétés de dépendance est de fournir un moyen systémique pour calculer la valeur d’une propriété en fonction d’autres entrées (d’autres propriétés, événements et états qui interviennent dans une application en cours d’exécution). Il peut s’agir des entrées suivantes :
 
@@ -29,17 +33,17 @@ Une propriété de dépendance représente ou prend en charge une fonctionnalit�
 -   Liaison de données
 -   Styles
 -   Animations dans une table de montage séquentiel
--   Comportement de « PropertyChanged » (il est possible d’implémenter une propriété de dépendance afin de fournir des rappels capables de propager des modifications à d’autres propriétés de dépendance)
+-   Comportement de «PropertyChanged» (il est possible d’implémenter une propriété de dépendance afin de fournir des rappels capables de propager des modifications à d’autres propriétés de dépendance)
 -   Utilisation d’une valeur par défaut provenant de métadonnées de propriété
 -   Utilitaire système de propriétés générales tel que [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) et recherche de métadonnées
 
 ## Propriétés de dépendance et propriétés Windows Runtime
 
-Les propriétés de dépendance étendent les fonctionnalités des propriétés Windows Runtime de base en fournissant une banque de propriétés interne globale contenant toutes les propriétés de dépendance d’une application au moment de l’exécution. Il s’agit d’une solution différente du modèle standard de stockage d’une propriété avec un champ privé, qui est privé dans la classe de définition de la propriété. Vous pouvez considérer cette banque de propriétés interne comme un ensemble d’identificateurs de propriétés et de valeurs qui existent pour tout objet particulier (à condition qu’il s’agisse d’une classe [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)). Au lieu d’être identifiée par son nom, chaque propriété de la banque est identifiée par une instance de [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Cependant, le système de propriétés masque en grande partie ce détail d’implémentation : vous pouvez généralement accéder aux propriétés de dépendance en utilisant un nom simple (nom de propriété par programme dans le langage du code que vous utilisez, ou un nom d’attribut quand vous écrivez du code XAML).
+Les propriétés de dépendance étendent les fonctionnalités des propriétés Windows Runtime de base en fournissant une banque de propriétés interne globale contenant toutes les propriétés de dépendance d’une application au moment de l’exécution. Il s’agit d’une solution différente du modèle standard de stockage d’une propriété avec un champ privé, qui est privé dans la classe de définition de la propriété. Vous pouvez considérer cette banque de propriétés interne comme un ensemble d’identificateurs de propriétés et de valeurs qui existent pour tout objet particulier (à condition qu’il s’agisse d’une classe [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)). Au lieu d’être identifiée par son nom, chaque propriété de la banque est identifiée par une instance de [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Cependant, le système de propriétés masque en grande partie ce détail d’implémentation: vous pouvez généralement accéder aux propriétés de dépendance en utilisant un nom simple (nom de propriété par programme dans le langage du code que vous utilisez, ou un nom d’attribut quand vous écrivez du code XAML).
 
 Le type de base qui fournit les fondations du système de propriétés de dépendance est [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). **DependencyObject** définit des méthodes qui peuvent accéder à la propriété de dépendance, et les instances d’une classe dérivée de **DependencyObject** prennent en charge en interne le concept de banque de propriétés mentionné plus haut.
 
-Voici un résumé de la terminologie que nous employons dans la présente documentation concernant les propriétés de dépendance :
+Voici un résumé de la terminologie que nous employons dans la présente documentation concernant les propriétés de dépendance:
 
 | Terme | Description |
 |------|-------------|
@@ -49,7 +53,7 @@ Voici un résumé de la terminologie que nous employons dans la présente docume
 
 Le wrapper de propriété n’est pas seulement pratique pour les appelants, il expose également la propriété de dépendance à tout processus, tout outil ou toute projection qui utilise des définitions Windows Runtime pour les propriétés.
 
-L’exemple suivant définit une propriété de dépendance « IsSpinning » personnalisée telle qu’elle est définie pour C#, puis montre la relation entre l’identificateur de propriété de dépendance et le wrapper de propriété.
+L’exemple suivant définit une propriété de dépendance «IsSpinning» personnalisée telle qu’elle est définie pour C#, puis montre la relation entre l’identificateur de propriété de dépendance et le wrapper de propriété.
 
 ```csharp
 // IsSpinningProperty is the dependency property identifier
@@ -116,7 +120,7 @@ Pour plus d’informations, voir [Animations dans une table de montage séquenti
 
 L’établissement de la valeur par défaut pour une propriété de dépendance dont la valeur est [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) est expliqué plus en détail dans la rubrique [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
 
-Les propriétés de dépendance ont encore des valeurs par défaut même si celles-ci n’ont pas été explicitement définies dans les métadonnées d’une propriété donnée. Tant qu’elles ne sont pas modifiées par les métadonnées, les valeurs par défaut des propriétés de dépendance Windows Runtime comportent généralement l’un des éléments suivants :
+Les propriétés de dépendance ont encore des valeurs par défaut même si celles-ci n’ont pas été explicitement définies dans les métadonnées d’une propriété donnée. Tant qu’elles ne sont pas modifiées par les métadonnées, les valeurs par défaut des propriétés de dépendance Windows Runtime comportent généralement l’un des éléments suivants:
 
 -   Une propriété qui utilise un objet au moment de l’exécution ou le type **Object** (un *type de référence*) a une valeur par défaut égale à **null**. Par exemple, la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) a la valeur **null** jusqu’à ce qu’elle soit volontairement définie ou héritée.
 -   Une propriété qui utilise une valeur de base telle que des chiffres ou une valeur booléenne (un *type de valeur*) utilise une valeur par défaut attendue. À titre d’exemple, 0 pour les nombres entiers et à virgule flottante, **false** pour une valeur booléenne.
@@ -165,11 +169,11 @@ Les valeurs qui proviennent des styles ou des modèles sont des valeurs différ�
 
 Vous pouvez animer la valeur d’une propriété de dépendance à l’aide d’une animation dans une table de montage séquentiel. Dans Windows Runtime, les animations dans une table de montage séquentiel ne sont pas simplement des décorations visuelles. Il est plus utile de penser aux animations en termes de technique de machine à états qui peut définir les valeurs des propriétés individuelles ou de toutes les propriétés et de tous les visuels d’un contrôle, et modifier ces valeurs dans le temps.
 
-Pour être animée, la propriété cible de l’animation doit être une propriété de dépendance. En outre, pour être animée, le type de valeur de la propriété cible doit être pris en charge par l’un des types d’animation dérivés de [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) existants. Vous pouvez animer les valeurs de [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723), [**Double**](T:System.Double) et [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) soit à l’aide de l’interpolation, soit de techniques d’image clé. Vous pouvez animer la plupart des autres valeurs à l’aide d’images clés **Object** discrètes.
+Pour être animée, la propriété cible de l’animation doit être une propriété de dépendance. En outre, pour être animée, le type de valeur de la propriété cible doit être pris en charge par l’un des types d’animation dérivés de [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) existants. Vous pouvez animer les valeurs de [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723), [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) et [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) soit à l’aide de l’interpolation, soit de techniques d’image clé. Vous pouvez animer la plupart des autres valeurs à l’aide d’images clés **Object** discrètes.
 
 Lorsqu’une animation est appliquée et exécutée, la valeur animée fonctionne à un niveau de priorité supérieur à toute valeur (telle qu’une valeur locale) autrement affectée à la propriété. Les animations ont également un comportement [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) optionnel pouvant entraîner leur application aux valeurs de propriété même si elles semblent visuellement arrêtées.
 
-Le principe de machine à états est incarné par l’utilisation d’animations dans une table de montage séquentiel dans le cadre du modèle d’état [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) pour les contrôles. Pour plus d’informations sur les animations dans une table de montage séquentiel, voir [Animations dans une table de montage](https://msdn.microsoft.com/library/windows/apps/mt187354). Pour plus d’informations sur **VisualStateManager** et sur la définition des états visuels des contrôles, voir [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) ou [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+Le principe de machine à états est incarné par l’utilisation d’animations dans une table de montage séquentiel dans le cadre du modèle d’état [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) pour les contrôles. Pour plus d’informations sur les animations dans une table de montage séquentiel, voir [Animations dans une table de montage](https://msdn.microsoft.com/library/windows/apps/mt187354). Pour plus d’informations sur **VisualStateManager** et sur la définition des états visuels des contrôles, voir [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) ou [Modèles de contrôles](../controls-and-patterns/control-templates.md).
 
 ### Comportement modifié par une propriété
 
@@ -202,6 +206,7 @@ Les aspects relatifs aux threads de [**DependencyObject**](https://msdn.microsof
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -41,7 +41,7 @@ Les recommandations suivantes vous permettront de découvrir que l’entrée tac
 
 **Comparer les critères de l’interaction tactile**
 
-Le tableau suivant présente certaines différences qui existent entre les périphériques d’entrée dont vous devez tenir compte quand vous concevez des applications du Windows Store optimisées pour l’interaction tactile.
+Le tableau suivant présente certaines différences qui existent entre les périphériques d’entrée dont vous devez tenir compte quand vous concevez des applications du WindowsStore optimisées pour l’interaction tactile.
 
 Interactions facteur tactile Interactions souris, clavier, stylo/stylet Pavé tactile de précision La zone de contact au bout du doigt est plus importante qu’une simple coordonnées x-y, ce qui augmente le risque d’activations involontaires de commandes.
 La souris et le stylo/stylet répondent à une coordonnée x-y précise.
@@ -61,13 +61,13 @@ La posture des doigts et la prise en main peuvent poser problème.
 Le bout des doigts ou la main de l’utilisateur peuvent masquer des objets. C’est ce que l’on appelle l’« occlusion ».
 Les périphériques d’entrée indirects ne provoquent pas d’occlusion.
 Comme la souris.
-État de l’objet L’interaction tactile utilise un modèle à deux états : la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.
+État de l’objet L’interaction tactile utilise un modèle à deuxétats : la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.
 Une souris, un stylo/stylet et un clavier exposent tous un modèle à trois états : soulevé (activé), appuyé (activé) et pointé (focus).
 
 Le pointage permet à l’utilisateur d’explorer et de découvrir les éléments à l’aide d’info-bulles associées aux éléments de l’interface utilisateur. Les effets de pointage et de focus peuvent transmettre les objets qui sont interactifs et aident également au ciblage.
 
 Comme la souris.
-Interaction évoluée Prend en charge l’interaction tactile multipoint : plusieurs points d’entrée (bout des doigts) sur une surface tactile.
+Interaction évoluée Prend en charge l’interaction tactile multipoint: plusieurs points d’entrée (bout des doigts) sur une surface tactile.
 Prend en charge un point d’entrée unique.
 Comme l’entrée tactile.
 Prend en charge la manipulation directe des objets par le biais de gestes tels que l’appui, le glissement, le pincement et la rotation.
@@ -135,7 +135,7 @@ Pour éviter l’occlusion du doigt et de la main, respectez les recommandations
 
 -   Poignées de précision
 
-    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications Windows Runtime)](guidelines-for-textselection.md).
+    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications WindowsRuntime)](guidelines-for-textselection.md).
 
 **Chronométrage**
 

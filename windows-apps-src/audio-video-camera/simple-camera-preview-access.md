@@ -11,7 +11,7 @@ ms.openlocfilehash: 05e752925c07b0e3720fbdd42d785381aa08b99c
 
 # Accès à l’aperçu simple de l’appareil photo
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application de plateforme Windows universelle (UWP). La création d’une application qui capture des photos et des vidéos à l’aide de l’appareil photo nécessite que vous effectuiez des tâches telles que la gestion de l’orientation de l’appareil et de la caméra ou la définition des options de codage pour le fichier capturé. Pour certains scénarios d’application, vous pouvez simplement afficher le flux d’aperçu à partir de l’appareil photo sans tenir compte de ces autres considérations. Cet article vous montre comment effectuer cette opération avec un minimum de code. Vous devez toujours arrêter le flux d’aperçu correctement lorsque vous avez fini de l’utiliser en suivant les étapes ci-dessous.
 
@@ -48,7 +48,8 @@ Déclarez une variable de classe pour l’objet **MediaCapture**.
 
 Créez une instance de la classe **MediaCapture** et appelez [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) pour initialiser l’appareil de capture. Cette méthode pouvant par exemple échouer sur des appareils n’ayant pas d’appareil photo, vous devez donc l’appeler à partir d’un bloc **try**. Une **UnauthorizedAccessException** est levée lorsque vous tentez d’initialiser l’appareil photo si l’utilisateur a désactivé l’accès à ce dernier dans les paramètres de confidentialité de l’appareil. Vous verrez également cette exception au cours du développement si vous n’avez pas ajouté les fonctionnalités appropriées au manifeste de votre application.
 
-**Important** Sur certaines familles d’appareils, l’utilisateur doit approuver une invite de consentement avant que votre application puisse avoir accès à l’appareil photo de l’appareil. Pour cette raison, vous devez uniquement appeler [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) à partir du thread d’interface utilisateur principal. Toute tentative d’initialiser l’appareil photo à partir d’un autre thread peut entraîner un échec de l’initialisation.
+
+            **Important** Sur certaines familles d’appareils, l’utilisateur doit approuver une invite de consentement avant que votre application puisse avoir accès à l’appareil photo de l’appareil. Pour cette raison, vous devez uniquement appeler [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) à partir du thread d’interface utilisateur principal. Toute tentative d’initialiser l’appareil photo à partir d’un autre thread peut entraîner un échec de l’initialisation.
 
 Connectez **MediaCapture** à **CaptureElement** en définissant la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280). Enfin, démarrez l’aperçu en appelant [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
 

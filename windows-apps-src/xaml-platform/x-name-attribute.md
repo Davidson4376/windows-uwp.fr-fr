@@ -11,7 +11,7 @@ ms.openlocfilehash: 442c2fa103e1e968ef47ea990bfe8e166daec88b
 
 # Attribut x&#58;Name
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général. Une fois appliqué à un modèle de programmation de stockage, **x:Name** peut être considéré comme équivalent à la variable qui contient une référence d’objet, telle que renvoyée par un constructeur.
 
@@ -29,7 +29,7 @@ Identifie de manière unique les éléments objet pour l’accès à l’objet i
 
 ##  Grammaire XamlName
 
-Les points suivants représentent la grammaire normative qui régit une chaîne servant de clé dans cette implémentation XAML :
+Les points suivants représentent la grammaire normative qui régit une chaîne servant de clé dans cette implémentation XAML:
 
 ``` syntax
 XamlName ::= NameStartChar (NameChar)*

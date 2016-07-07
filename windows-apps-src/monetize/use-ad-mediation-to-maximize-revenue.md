@@ -12,7 +12,7 @@ ms.openlocfilehash: c0669e35b285ee7dfeda0c039d8455a4237960f5
 #  Utiliser la médiation publicitaire pour optimiser les revenus
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Microsoft prend en charge la médiation publicitaire pour vous permettre d’optimiser vos revenus publicitaires des produits in-app par la médiation des demandes de bannières publicitaires provenant de plusieurs réseaux publicitaires. Différents réseaux publicitaires peuvent avoir leurs propres points forts, certains ayant un coût supérieur par milliers de vues (eCPM) ou un taux de remplissage supérieur (pourcentage de publicités fournies lorsque votre application effectue une demande) dans certains marchés que d’autres. Avec un réseau publicitaire unique, vous risquez de vous retrouver avec des demandes de publicité non satisfaites, entraînant ainsi une perte de recettes potentielles. La médiation publicitaire vous permet d’optimiser la monétisation de vos publicités en vérifiant que vous avez toujours une publicité active.
 
@@ -21,13 +21,13 @@ La prise en charge de la médiation publicitaire est disponible via le [SDK d’
 ## Prise en main de la médiation publicitaire
 
 
-Procédez comme suit pour installer et configurer la médiation publicitaire dans votre application :
+Procédez comme suit pour installer et configurer la médiation publicitaire dans votre application:
 
 1.  Passez en revue la liste des réseaux publicitaires et des types de projets pris en charge par la médiation publicitaire, configurez les comptes avec les réseaux publicitaires utilisés, et suivez les instructions de chaque réseau pour intégrer une application. Pour en savoir plus, voir [Sélectionner et gérer vos réseaux publicitaires](select-and-manage-your-ad-networks.md).
 
 2.  Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) avec Visual Studio 2015 ou Visual Studio 2013.
 
-3.  Dans Visual Studio, ouvrez votre projet ou créez-en un. Ouvrez la page dans laquelle vous voulez héberger les publicités, et faites glisser un élément **AdMediatorControl** dans la page. Si vous utilisez Microsoft Advertising, ajustez la hauteur et la largeur du contrôle pour l’adapter aux tailles de publicité prises en charge. Pour plus d’informations, voir [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md).
+3.  Dans Visual Studio, ouvrez votre projet ou créez-en un. Ouvrez la page dans laquelle vous voulez héberger les publicités, et faites glisser un élément **AdMediatorControl** dans la page. Si vous utilisez MicrosoftAdvertising, ajustez la hauteur et la largeur du contrôle pour l’adapter aux tailles de publicité prises en charge. Pour plus d’informations, voir [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md).
 
 4.  Exécutez **Services connectés** pour choisir les réseaux publicitaires que vous voulez cibler et configurer les paramètres obligatoires pour chaque réseau. Pour plus d’informations, voir [Ajouter et utiliser le contrôle de médiation publicitaire](add-and-use-the-ad-mediator-control.md).
 

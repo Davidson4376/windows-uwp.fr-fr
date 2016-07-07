@@ -12,7 +12,7 @@ ms.openlocfilehash: cc9468e278d651729740147cb21c70d53b43800f
 # Lancement et reprise des applications (DirectX et C++)
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Découvrez comment lancer, suspendre et reprendre votre application DirectX de plateforme Windows universelle (UWP).
 

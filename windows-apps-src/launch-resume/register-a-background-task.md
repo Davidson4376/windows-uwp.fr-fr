@@ -11,7 +11,7 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 # Inscrire une tâche en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -63,16 +63,16 @@ Cette méthode contient le point d’entrée de la tâche, son nom, un déclench
 > }
 > ```
 
-## Rechercher des inscriptions existantes
+## [!div class="tabbedCodeSnippets"]
 
 
-Vérifiez si la tâche est déjà inscrite. Cette vérification est primordiale car, si la tâche est inscrite plusieurs fois, elle sera exécutée plusieurs fois à chaque fois qu’elle est déclenchée, ce qui peut aboutir à une utilisation excessive du processeur et entraîner un comportement inattendu.
+Rechercher des inscriptions existantes Vérifiez si la tâche est déjà inscrite.
 
-Pour rechercher des inscriptions existantes, vous pouvez interroger la propriété [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) et examiner le résultat. Vérifiez le nom de chaque instance. S’il correspond au nom de la tâche que vous inscrivez, sortez de la boucle et définissez une variable d’indicateur afin que votre code puisse choisir un chemin différent lors de la prochaine étape.
+Cette vérification est primordiale car, si la tâche est inscrite plusieurs fois, elle sera exécutée plusieurs fois à chaque fois qu’elle est déclenchée, ce qui peut aboutir à une utilisation excessive du processeur et entraîner un comportement inattendu. Pour rechercher des inscriptions existantes, vous pouvez interroger la propriété [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) et examiner le résultat.
 
-> **Remarque** Utilisez des noms de tâches en arrière-plan uniques à votre application. Assurez-vous que chaque tâche en arrière-plan possède un nom unique.
+> Vérifiez le nom de chaque instance. S’il correspond au nom de la tâche que vous inscrivez, sortez de la boucle et définissez une variable d’indicateur afin que votre code puisse choisir un chemin différent lors de la prochaine étape. **Remarque** Utilisez des noms de tâches en arrière-plan uniques à votre application.
 
-Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) créé au cours de la dernière étape :
+Assurez-vous que chaque tâche en arrière-plan possède un nom unique.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -136,16 +136,16 @@ Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [*
 > }
 > ```
 
-## Inscrire la tâche en arrière-plan (ou renvoyer l’inscription existante)
+## Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) créé au cours de la dernière étape :
 
 
-Vérifiez si la tâche a été trouvée dans la liste des inscriptions de tâches en arrière-plan existantes. Dans l’affirmative, renvoyez cette instance de la tâche.
+[!div class="tabbedCodeSnippets"] Inscrire la tâche en arrière-plan (ou renvoyer l’inscription existante)
 
-Inscrivez ensuite la tâche à l’aide d’un nouvel objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Le code doit vérifier si le paramètre de condition est Null. Si cela n’est pas le cas, ajoutez la condition à l’objet d’inscription. Renvoyez l’objet [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) renvoyé par la méthode [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772).
+Vérifiez si la tâche a été trouvée dans la liste des inscriptions de tâches en arrière-plan existantes. Dans l’affirmative, renvoyez cette instance de la tâche. Inscrivez ensuite la tâche à l’aide d’un nouvel objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768).
 
-> **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
+> Le code doit vérifier si le paramètre de condition est Null. Si cela n’est pas le cas, ajoutez la condition à l’objet d’inscription. Renvoyez l’objet [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) renvoyé par la méthode [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772). **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription.
 
-L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d’inscrire la tâche en arrière-plan (y compris la condition système facultative si elle est fournie) :
+Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -245,10 +245,10 @@ L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d
 > }
 > ```
 
-## Fonction utilitaire d’inscription des tâches en arrière-plan terminée
+## Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
 
-Cet exemple montre la fonction d’inscription des tâches en arrière-plan parvenue à son terme. Vous pouvez vous servir de cette fonction pour inscrire la plupart des tâches en arrière-plan, à l’exception des tâches en arrière-plan réseau.
+L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d’inscrire la tâche en arrière-plan (y compris la condition système facultative si elle est fournie): [!div class="tabbedCodeSnippets"]
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -365,29 +365,29 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 > }
 > ```
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> Fonction utilitaire d’inscription des tâches en arrière-plan terminée Cet exemple montre la fonction d’inscription des tâches en arrière-plan parvenue à son terme.
 
  
-## Rubriques connexes
+## Vous pouvez vous servir de cette fonction pour inscrire la plupart des tâches en arrière-plan, à l’exception des tâches en arrière-plan réseau.
 
 
 ****
 
-* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
-* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
-* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
-* [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
-* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
-* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
-* [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
-* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
-* [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [[!div class="tabbedCodeSnippets"]](create-and-register-a-background-task.md)
+* [**Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP).](declare-background-tasks-in-the-application-manifest.md)
+* [Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).](handle-a-cancelled-background-task.md)
+* [Rubriques connexes](monitor-background-task-progress-and-completion.md)
+* [Créer et inscrire une tâche en arrière-plan](respond-to-system-events-with-background-tasks.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](set-conditions-for-running-a-background-task.md)
+* [Gérer une tâche en arrière-plan annulée](update-a-live-tile-from-a-background-task.md)
+* [Surveiller la progression et l’achèvement des tâches en arrière-plan](use-a-maintenance-trigger.md)
+* [Répondre aux événements système avec des tâches en arrière-plan](run-a-background-task-on-a-timer-.md)
+* [Définir des conditions pour exécuter une tâche en arrière-plan](guidelines-for-background-tasks.md)
 
 ****
 
-* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](debug-a-background-task.md)
+* [Utiliser un déclencheur de maintenance](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -395,6 +395,6 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -19,7 +19,7 @@ Quand vous travaillez avec une application dans votre tableau de bord, vous visu
 
 La section **Services** vous permet de gérer les différents services pour vos applications.
 
-### Notifications Push
+### NotificationsPush
 
 En fonction du type de package de votre application et de sa configuration spécifique, vous pouvez utiliser l’une des options suivantes pour les notifications Push :
 

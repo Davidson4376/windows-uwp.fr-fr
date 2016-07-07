@@ -17,10 +17,10 @@ Les sections suivantes décrivent le processus général d’obtention de varian
 
 ## Configurer votre projet
 
-Pour commencer, installez le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft sur votre ordinateur de développement et ajoutez les références nécessaires à votre projet.
+Pour commencer, installez le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft sur votre ordinateur de développement et ajoutez les références nécessaires à votre projet.
 
 1. Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk).
-2. Ouvrez votre projet dans Visual Studio.
+2. Ouvrez votre projet dans VisualStudio.
 3. Dans l’Explorateur de solutions, développez votre nœud de projet, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 3. Dans le **Gestionnaire de références**, développez **Windows universel** et cliquez sur **Extensions**.
 4. Dans la liste des Kits de développement logiciel (SDK), cochez la case en regard de **Kit de développement logiciel (SDK) d’engagement de la Boutique Microsoft** et cliquez sur **OK**.
@@ -35,7 +35,7 @@ private readonly ExperimentClient experiment;
 private ExperimentVariation variation;
 ```
 
-2. Initialisez l’objet [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx), puis transmettez au constructeur la clé API que vous avez récupérée à partir de la page **Expériences** du tableau de bord. Pour en savoir plus sur la clé API, voir [Définir votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md#generate-an-api-key). La clé API illustrée ci-dessous est uniquement fournie à titre d’exemple.
+2. Initialisez l’objet [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx), puis transmettez au constructeur la clé API que vous avez récupérée à partir de la page **Expériences** du tableau de bord. Pour en savoir plus sur la clé API, voir [Définir votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md#generate-an-api-key). La cléAPI illustrée ci-dessous est uniquement fournie à titre d’exemple.
 ```CSharp
 experiment = new ExperimentClient("F48AC670-4472-4387-AB7D-D65B095153FB");
 ```
@@ -76,7 +76,7 @@ button.Content = buttonText;
 
 ## Ajouter du code pour consigner des événements d’affichage et de conversion dans le Centre de développement
 
-Ensuite, ajoutez du code qui consigne les événements d’affichage et de conversion dans le service des tests A/B du Centre de développement. Votre code doit consigner l’événement d’affichage lorsque l’utilisateur affiche une variante faisant partie de votre expérience. Il doit également consigner l’événement de conversion lorsque l’utilisateur atteint un objectif de votre expérience.
+Ensuite, ajoutez du code qui consigne les événements d’affichage et de conversion dans le service des testsA/B du Centre de développement. Votre code doit consigner l’événement d’affichage lorsque l’utilisateur affiche une variante faisant partie de votre expérience. Il doit également consigner l’événement de conversion lorsque l’utilisateur atteint un objectif de votre expérience.
 
 Le code spécifique dont vous avez besoin dépend de votre application, mais voici les étapes générales. Pour un exemple de code complet, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 

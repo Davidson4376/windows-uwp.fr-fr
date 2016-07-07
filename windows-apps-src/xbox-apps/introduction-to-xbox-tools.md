@@ -1,14 +1,14 @@
 ---
 author: Mtoepke
-title: "Présentation des outils Xbox One"
-description: "Outil Accueil du développeur propre à Xbox One, utilisant Windows Device Portal."
+title: "Présentation des outils XboxOne"
+description: "Outil Accueil du développeur propre à XboxOne, utilisant Windows Device Portal."
 area: Xbox
-ms.sourcegitcommit: 4872ac9587b3e2e14860cb152bf33536faccc48d
-ms.openlocfilehash: c975cb07aa9b7f0d30a9905cbceba11e89c8f7df
+ms.sourcegitcommit: 914a1b76c6b502415bee36865af009a8dfe9bb53
+ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
 
 ---
 
-# Présentation des outils Xbox One
+# Présentation des outils XboxOne
 
 Cette section décrit l’outil _Accueil du développeur_ spécifiquement conçu pour Xbox One et utilisant Windows Device Portal.
 
@@ -18,7 +18,7 @@ _Accueil du développeur_ permet d’expérimenter des outils dans le Kit de dé
 
 Pour ouvrir Accueil du développeur, sélectionnez la vignette **Accueil du développeur** sur l’écran d’accueil. Si cette vignette est absente, la console n’est pas en mode développeur.
 
-  ![Windows Device Portal](images/windowsdeviceportal_1.png)
+  ![WindowsDevicePortal](images/windowsdeviceportal_1.png)
 
 ### Interface utilisateur
 L’interface utilisateur de l’outil Accueil du développeur est divisée en plusieurs zones, décrites dans les sections ci-après. Notez que l’adresse IP de la console et son nom convivial sont affichés ici.
@@ -26,7 +26,7 @@ L’interface utilisateur de l’outil Accueil du développeur est divisée en p
   ![Interface utilisateur d’Accueil du développeur](images/devhome_ui.png)
 
 #### En-tête
-L’en-tête contient des informations importantes visibles d’un seul coup d’œil sur le kit de développement. Ces informations comprennent le nom de la console, son adresse IP, le bac à sable (sandbox) Xbox Live dans lequel elle se trouve, ainsi que la version du système d’exploitation qu’elle exécute. La date et l’heure système actuelles apparaissent à l’extrémité droite de l’en-tête pour des raisons pratiques.
+L’en-tête contient des informations importantes visibles d’un seul coup d’œil sur le kit de développement. Ces informations comprennent le nom de la console, son adresseIP, le bac à sable (sandbox) XboxLive dans lequel elle se trouve, ainsi que la version du système d’exploitation qu’elle exécute. La date et l’heure système actuelles apparaissent à l’extrémité droite de l’en-tête pour des raisons pratiques.
 
 #### Fenêtres d’outil
 L’en-tête est suivi de la zone principale de l’application, qui contient un ensemble de fenêtres d’outil configurables. Ces fenêtres sont conçues pour permettre aux développeurs de personnaliser l’application afin d’offrir un accès à différents outils et ensembles d’informations. Pour plus d’informations sur les différents outils, voir les descriptions de chacun d’eux fournies dans la suite de cet article. Pour plus d’informations sur la procédure de configuration de la disposition et de l’apparence des fenêtres d’outil, voir la section [Personnalisation de l’outil Accueil du développeur](#customizing-dev-home) plus loin sur cette page.
@@ -53,9 +53,14 @@ L’outil Accueil du développeur s’ancrera à droite de l’écran. Vous pouv
 | Jeux et applications  | Répertorie les titres et applications installés dans le kit de développement et permet de les ouvrir rapidement. Vous pouvez également visualiser l’état PLM (Gestion de la durée de vie des processus) des jeux et des applications, et modifier les états PLM à partir d’un menu contextuel. |
 | Utilisateurs | Répertorie les utilisateurs actuellement inscrits sur la console. Permet la connexion/déconnexion d’utilisateurs en un clic, l’ajout d’utilisateurs et d’invités, ainsi que la visualisation des détails des utilisateurs et invités. |
 | [Paramètres de la console](#console-settings) | Fournit une vue d’ensemble et des options de modification des paramètres et informations de la console. |
-| Visual Studio | Permet de coupler la console avec une instance de Visual Studio pour permettre le déploiement. Si nécessaire, vous pouvez supprimer toutes les instances Visual Studio couplées existantes pour empêcher le déploiement d’applications de plateforme Windows universelle (UWP) dans un kit. |
-| [Windows Device Portal](#windows-device-portal) | Active Windows Device Portal, ou WDP (un outil de gestion d’appareils basé sur le navigateur) dans le kit. |
-| État Xbox Live | Fournit l’état actuel du service Xbox Live. |
+| VisualStudio | Permet de coupler la console avec une instance de VisualStudio pour permettre le déploiement. Si nécessaire, vous pouvez supprimer toutes les instances VisualStudio couplées existantes pour empêcher le déploiement d’applications de plateforme Windows universelle (UWP) dans un kit. |
+| [WindowsDevicePortal](#windows-device-portal) | Active WindowsDevicePortal, ou WDP (un outil de gestion d’appareils basé sur le navigateur) dans le kit. |
+| État XboxLive | Fournit l’état actuel du service XboxLive. |
+
+### Gestion de la taille de l’allocation de stockage de développement
+
+Pour augmenter ou diminuer la quantité d’espace disque utilisée pour le stockage de développement, sélectionnez **Gérer le stockage de développement** dans le menu principal. Modifiez la valeur de la barre **Stockage de développement**, puis sélectionnez **Enregistrer et redémarrer** pour redémarrer votre console.
+  ![Gérer l’allocation de stockage de développement](images/devhome_storage.png)
 
 ### Personnalisation de l’outil Accueil du développeur
 
@@ -86,10 +91,10 @@ Pour définir un nom d’hôte pour un kit de développement, accédez à l’ou
 
   > **Remarque** &nbsp;&nbsp;L’unicité de nom n’est pas appliquée lorsque le nom d’hôte est créé. Veillez à éviter les doublons de nom. Une façon de procéder consiste à dériver le nom d’hôte du nom de votre ordinateur de développement, qui est généralement unique au sein d’une organisation.
 
-## Windows Device Portal
+## WindowsDevicePortal
 Windows Device Portal (WDP) est un outil de gestion d’appareils OneCore basé sur le navigateur.
 
-Pour activer WDP sur votre console Xbox One :
+Pour activer WDP sur votre console XboxOne:
 
 1. Sélectionnez la vignette Accueil du développeur sur l’écran d’accueil.
 
@@ -104,13 +109,13 @@ Pour activer WDP sur votre console Xbox One :
 5. Renseignez les zones __Nom d’utilisateur__ et __Mot de passe__, puis enregistrez-les. Ces informations sont utilisées pour authentifier l’accès à votre kit de développement à partir d’un navigateur.
 6. Fermez la page __Paramètres__, puis notez l’URL indiquée sur l’outil _Gestion à distance_ pour se connecter.
 7. Entrez l’URL dans votre navigateur, puis connectez-vous avec les informations d’identification que vous avez configurées.
-8. Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. Cliquez sur **Poursuivre sur ce site web** pour accéder à Windows Device Portal.
+8. Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console XboxOne n’est pas considéré comme un éditeur approuvé bien connu. Cliquez sur **Poursuivre sur ce site web** pour accéder à Windows Device Portal.
 
   ![Avertissement concernant le certificat de sécurité](images/security_cert_warning.jpg)
 
 ## Voir aussi
-- [Technologies du développeur Microsoft : Windows Device Portal (en anglais)](https://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
-- [UWP sur Xbox One](index.md)
+- [Technologies du développeur Microsoft: Windows Device Portal (en anglais)](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)
+- [UWP sur XboxOne](index.md)
 
 
 
@@ -118,6 +123,6 @@ Pour activer WDP sur votre console Xbox One :
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les données d’acquisition agrégées d’un produit in-app pour une plage de dates données, et en fonction de filtres facultatifs."
+description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’un produit in-app pour une plage de dates données, et en fonction de filtres facultatifs."
 title: Obtenir les acquisitions de produits in-app
 ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
 ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
@@ -11,20 +11,20 @@ ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
 # Obtenir les acquisitions de produits in-app
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les données d’acquisition agrégées d’un produit in-app pour une plage de dates données, et en fonction de filtres facultatifs. Cette méthode renvoie les données au format JSON.
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’un produit in-app pour une plage de dates données, et en fonction de filtres facultatifs. Cette méthode renvoie les données au format JSON.
 
 ## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit :
+Pour utiliser cette méthode, procédez comme suit:
 
 -   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
 -   Obtenez un jeton d’accès Azure AD pour votre application.
 
-Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md).
+Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du WindowsStore](access-analytics-data-using-windows-store-services.md).
 
 ## Requête
 
@@ -47,7 +47,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 ### Corps de la demande
 
-Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer les données d’acquisition de l’ensemble des PIA inscrits dans l’application, spécifiez le paramètre *applicationId*. Pour récupérer les données d’acquisition d’un PIA donné, spécifiez le paramètre *inAppProductId*. Si vous spécifiez les deux valeurs, le paramètre *inAppProductId* est ignoré.
+Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer les données d’acquisition de l’ensemble desPIA inscrits dans l’application, spécifiez le paramètre *applicationId*. Pour récupérer les données d’acquisition d’unPIA donné, spécifiez le paramètre *inAppProductId*. Si vous spécifiez les deuxvaleurs, le paramètre *inAppProductId* est ignoré.
 
 <table>
 <colgroup>
@@ -68,7 +68,7 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">chaîne</td>
-<td align="left">L’ID Windows Store de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app. L’ID Windows Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8.</td>
+<td align="left">L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="even">
@@ -139,12 +139,12 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 
 ### Champs de filtrage
 
-Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter* :
+Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter*:
 
 -   *filter=market eq ’US’ and gender eq ’m’*
 -   *filter=(market ne ’US’) and (gender ne ’Unknown’) and (gender ne ’m’) and (market ne ’NO’) and (ageGroup ne ’greater than 55’ or ageGroup ne ‘less than 13’)*
 
-Pour obtenir la liste des champs pris en charge, consultez le tableau suivant : Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
+Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
 
 <table>
 <colgroup>
@@ -160,7 +160,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 <tbody>
 <tr class="odd">
 <td align="left">acquisitionType</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>free</strong></li>
 <li><strong>trial</strong></li>
@@ -171,7 +171,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="even">
 <td align="left">ageGroup</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>less than 13</strong></li>
 <li><strong>13-17</strong></li>
@@ -185,7 +185,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="odd">
 <td align="left">storeClient</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>Windows Phone Store (client)</strong></li>
 <li><strong>Windows Store (client)</strong></li>
@@ -196,7 +196,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="even">
 <td align="left">gender</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>m</strong></li>
 <li><strong>f</strong></li>
@@ -205,11 +205,11 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="odd">
 <td align="left">market</td>
-<td align="left">Chaîne contenant le code pays ISO 3166 du marché de l’acquisition.</td>
+<td align="left">Chaîne contenant le code pays ISO3166 du marché de l’acquisition.</td>
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -223,7 +223,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="odd">
 <td align="left">deviceType</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -246,7 +246,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 
 ### Exemple de requête
 
-L’exemple suivant illustre quelques requêtes de récupération de données d’acquisition de produits in-app. Remplacez les valeurs *inAppProductId* et *applicationId* par l’ID produit approprié associé à votre PIA et ID Windows Store pour votre application.
+L’exemple suivant illustre quelques requêtes de récupération de données d’acquisition de produits in-app. Remplacez les valeurs *inAppProductId* et *applicationId* par l’ID produit approprié associé à votre PIA et ID WindowsStore pour votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -267,26 +267,26 @@ Authorization: Bearer <your access token>
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                                |
 |------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Valeur      | tableau  | Tableau d’objets contenant les données agrégées d’acquisition de produits in-app. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs d’acquisition des produits in-app](#iap-acquisition-values) ci-dessous.                                                                                                              |
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10 000 lignes de données d’acquisition de PIA sont associées à la requête. |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000lignes de données d’acquisition dePIA sont associées à la requête. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                                 |
 
 
 ### Valeurs d’acquisition des produits in-app
 
-Les éléments du tableau *Value* comportent les valeurs suivantes :
+Les éléments du tableau *Value* comportent les valeurs suivantes:
 
 | Valeur               | Type    | Description                                                                                                                                                                                                                              |
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | inAppProductId      | chaîne  | L’ID produit du produit in-app pour lequel vous récupérez les données d’acquisition.                                                                                                                                                                 |
 | inAppProductName    | chaîne  | Nom d’affichage du produit in-app.                                                                                                                                                                                                             |
-| applicationId       | chaîne  | L’ID Windows Store de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
+| applicationId       | chaîne  | L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
 | applicationName     | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
 | deviceType          | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
 | orderName           | chaîne  | Le nom de la commande.                                                                                                                                                                                                                   |
 | storeClient         | chaîne  | La version du Store dans laquelle l’acquisition s’est produite. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                            |
 | osVersion           | chaîne  | La version de système d’exploitation sur laquelle l’acquisition s’est produite. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                   |
-| market              | chaîne  | Le code pays ISO 3166 du marché dans lequel l’acquisition s’est produite.                                                                                                                                                                  |
+| market              | chaîne  | Le code pays ISO3166 du marché dans lequel l’acquisition s’est produite.                                                                                                                                                                  |
 | gender              | chaîne  | Le sexe de l’utilisateur qui a effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
 | ageGroup            | chaîne  | Le groupe d’âge de l’utilisateur qui a effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                 |
 | acquisitionType     | chaîne  | Le type d’acquisition (gratuite, payante, etc.). Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
@@ -337,6 +337,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

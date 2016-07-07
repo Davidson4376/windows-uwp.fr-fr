@@ -19,17 +19,17 @@ Un bouton permet à l’utilisateur de déclencher une action immédiate.
 -   [**Classe RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
 -   [**Événement Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
 Un bouton permet à l’utilisateur d’initier une action immédiate, telle que l’envoi d’un formulaire.
 
-N’utilisez pas de bouton lorsque l’action consiste à naviguer vers une autre page ; dans ce cas, utilisez plutôt un lien. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
+N’utilisez pas de bouton lorsque l’action consiste à naviguer vers une autre page; dans ce cas, utilisez plutôt un lien. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
     
-> Exception : pour la navigation dans un assistant, utilisez les boutons Précédent et Suivant. Pour les autres types de navigation vers l’arrière ou vers un niveau supérieur, utilisez un bouton Précédent.
+> Exception: pour la navigation dans un assistant, utilisez les boutons Précédent et Suivant. Pour les autres types de navigation vers l’arrière ou vers un niveau supérieur, utilisez un bouton Précédent.
 
 ## Exemple
 
-Cet exemple utilise deux boutons, Tout fermer et Annuler, dans une boîte de dialogue du navigateur Microsoft Edge. 
+Cet exemple utilise deux boutons, Tout fermer et Annuler, dans une boîte de dialogue du navigateur MicrosoftEdge. 
 
 ![Exemple de boutons utilisés dans une boîte de dialogue](images/control-examples/buttons-edge.png)
 
@@ -157,7 +157,7 @@ L’étendue de l’historique de navigation (intégré à l’application ou gl
 ## <span id="examples"></span><span id="EXAMPLES"></span>Exemple
 
 
-L’interface utilisateur pour le bouton Précédent du système est optimisée pour chaque type d’appareil et d’entrée, mais l’expérience de navigation est globale et cohérente sur les différents appareils et applications pour plateforme Windows universelle (UWP). Voici quelques exemples d’expérience :
+L’interface utilisateur pour le bouton Précédent du système est optimisée pour chaque type d’appareil et d’entrée, mais l’expérience de navigation est globale et cohérente sur les différents appareils et applications pour plateforme Windows universelle (UWP). Voici quelques exemples d’expérience:
 
 Téléphone ![système de retour sur un téléphone](images/nav-back-phone.png)
 -   Toujours présent.

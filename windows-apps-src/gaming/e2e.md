@@ -1,16 +1,19 @@
 ---
 author: mtoepke
-title: Guide de développement de jeux Windows 10
-description: Guide complet sur les ressources et les informations nécessaires au développement de jeux de plateforme Windows universelle (UWP).
+title: "Guide de développement de jeux Windows10"
+description: "Guide complet sur les ressources et les informations nécessaires au développement de jeux de plateforme Windows universelle (UWP)."
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
+ms.sourcegitcommit: 35017dd14f873350d7e9d75ff6c5c519067547b5
+ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
+
 ---
 
-# Guide de développement de jeux Windows 10
+# Guide de développement de jeux Windows10
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Bienvenue dans le guide de développement de jeux Windows 10 !
+Bienvenue dans le guide de développement de jeux Windows 10!
 
 Ce guide regroupe les ressources et les informations dont vous avez besoin pour développer un jeu UWP.
 
@@ -152,7 +155,7 @@ Les outils Xbox et le programme intergiciel cèdent sous licence des kits de dé
 
 ### Exemples de jeux
 
-De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour vous aider à comprendre les fonctionnalités de jeux de Windows 10 et à démarrer rapidement le développement de jeux. D’autres exemples sont développés et publiés régulièrement. En conséquence, n’oubliez pas de consulter de temps en temps les portails des exemples pour en voir les nouveautés. Vous pouvez également [consulter](https://help.github.com/articles/watching-repositories/) les référentiels GitHub pour être averti des modifications et des ajouts.
+De nombreux exemples de jeu et d’application Windows10 sont disponibles pour vous aider à comprendre les fonctionnalités de jeux de Windows10 et à démarrer rapidement le développement de jeux. D’autres exemples sont développés et publiés régulièrement. En conséquence, n’oubliez pas de consulter de temps en temps les portails des exemples pour en voir les nouveautés. Vous pouvez également [consulter](https://help.github.com/articles/watching-repositories/) les référentiels GitHub pour être averti des modifications et des ajouts.
 
 <table>
     <colgroup>
@@ -185,7 +188,7 @@ De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour
     </tr>
     <tr>
         <td>Exemples de jeu Xbox One (GDN)</td>
-        <td>[Exemples](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[Exemples](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Exemples de jeu Windows 8 (MSDN Code Gallery)</td>
@@ -208,29 +211,29 @@ Les forums de développement sont un lieu d’échange intéressant pour poser d
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Forums des développeurs d’applications Windows</td>
-        <td>[Forums sur les applications et le Windows Store](https://social.msdn.microsoft.com/Forums/home?category=windowsapps)</td>
+        <td>Forums des développeurs d’applicationsWindows</td>
+        <td>[Forums sur les applications et le WindowsStore](https://social.msdn.microsoft.com/Forums/home?category=windowsapps)</td>
     </tr>
     <tr>
-        <td>Forum des développeurs d’applications UWP</td>
+        <td>Forum des développeurs d’applicationsUWP</td>
         <td>[Développement d’applications de la plateforme Windows universelles](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)</td>
     </tr>
 
     <tr>
-        <td>Desktop applications developer forums</td>
-        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
+        <td>Forums de développeurs d’applications de bureau</td>
+        <td>[Forum dédié aux applications de bureau Windows](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
     </tr>
     <tr>
-        <td>DirectX Windows Store games (archived forum posts)</td>
-        <td>[Building Windows Store games with DirectX (archived)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
+        <td>Jeux du WindowsStoreDirectX (billets archivés)</td>
+        <td>[Création de jeux du Windows Store en DirectX (archivés)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
     </tr>
     <tr>
-        <td>Windows 10 managed partner developer forums</td>
-        <td>[XBOX Developer Forums: Windows 10](http://aka.ms/win10devforums)</td>
+        <td>Forums de développeurs partenaires gérés Windows 10</td>
+        <td>[Forum des développeurs Xbox : Windows 10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
-        <td>DirectX early access program forums</td>
-        <td>[DirectX 12 forum](http://directx12forum.azurewebsites.net/index.php)</td>
+        <td>Forums du programme d’accès en avant-première à DirectX</td>
+        <td>[Forum de DirectX 12](http://directx12forum.azurewebsites.net/index.php)</td>
     </tr>
 </table>
 
@@ -330,11 +333,13 @@ Ces trois vidéos du GDC 2015 constituent une bonne vue d’ensemble du dévelop
 
 ### Choix de la technologie graphique et du langage de programmation
 
-Plusieurs langages de programmation et technologies graphiques peuvent être utilisés dans les jeux Windows 10. Votre choix dépend du type de jeu développé, de l’expérience et des préférences de votre studio de développement, et des conditions requises spécifiques pour les fonctionnalités de votre jeu. Allez-vous utiliser C#, C++ ou JavaScript ? DirectX, XAML ou HTML5 ?
+Plusieurs langages de programmation et technologies graphiques peuvent être utilisés dans les jeux Windows 10. Votre choix dépend du type de jeu développé, de l’expérience et des préférences de votre studio de développement, et des conditions requises spécifiques pour les fonctionnalités de votre jeu. Allez-vous utiliserC#, C++ ou JavaScript? DirectX, XAML ou HTML5 ?
 
-### DirectX
+#### DirectX
 
-Microsoft DirectX représente le choix à faire pour obtenir des graphismes et des éléments multimédias 2D et 3D haute performances. Direct3D 12, nouvelle fonctionnalité de Windows 10, apporte la puissance d’une API du type console, et sa rapidité et son efficacité sont sans commune mesure. Votre jeu peut pleinement utiliser le matériel vidéo moderne et présenter plus d’objets, des scènes enrichies et des effets améliorés. Direct3D 12 fournit des graphismes optimisés sur les PC Windows 10 et sur Xbox One. Si vous souhaitez utiliser le pipeline graphique familier de Direct3D 11, vous bénéficierez cependant des nouvelles fonctionnalités de rendu et d’optimisation ajoutées à Direct3D 11.3. Et si vous êtes un développeur éprouvé d’API de bureau pour Windows utilisant Win32, vous avez toujours cette option dans Windows 10.
+Microsoft DirectX représente le choix à faire pour obtenir des graphismes et des éléments multimédias2D et 3D haute performances. 
+
+Direct3D12, nouvelle fonctionnalité de Windows10, apporte la puissance d’uneAPI du type console, et sa rapidité et son efficacité sont sans commune mesure. Votre jeu peut pleinement utiliser le matériel vidéo moderne et présenter plus d’objets, des scènes enrichies et des effets améliorés. Direct3D 12 fournit des graphismes optimisés sur les PC Windows 10 et sur Xbox One. Si vous souhaitez utiliser le pipeline graphique familier de Direct3D 11, vous bénéficierez cependant des nouvelles fonctionnalités de rendu et d’optimisation ajoutées à Direct3D 11.3. Et si vous êtes un développeur éprouvé d’API de bureau pour Windows utilisant Win32, vous avez toujours cette option dans Windows10.
 
 Les fonctionnalités complètes et la solide intégration à la plateforme de DirectX fournissent la puissance et les performances nécessaires aux jeux les plus exigeants.
 
@@ -353,14 +358,18 @@ Les fonctionnalités complètes et la solide intégration à la plateforme de Di
     </tr>
     <tr>
         <td>Direct3D 12 : Guide de programmation et informations de référence</td>
-        <td>[Graphismes Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn903821)</td>
+        <td>[Graphismes Direct3D12](https://msdn.microsoft.com/library/windows/desktop/dn903821)</td>
+    </tr>
+    <tr>
+        <td>Vidéos de développement Graphics et DirectX12 (YouTube)</td>
+        <td>[MicrosoftDirectX12 et GraphicsEducation](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
     </tr>
 </table>
  
 
-### XAML
+#### XAML
 
-XAML est un langage d’interface utilisateur déclaratif convivial doté de fonctionnalités pratiques comme les animations, les tables de montage séquentiel, la liaison de données, le format SVG (Scalable Vector Graphics), le redimensionnement dynamique et les graphes de scène. XAML fonctionne parfaitement pour l’interface utilisateur, les menus, les sprites et les graphismes 2D des jeux. Pour simplifier la disposition de l’interface utilisateur, le langage XAML est compatible avec les outils de conception et de développement que sont Expression Blend et Microsoft Visual Studio. XAML est couramment utilisé avec C#, mais C++ convient également si c’est votre langage préféré ou si les exigences d’unité centrale de votre jeu sont élevées.
+XAML est un langage d’interface utilisateur déclaratif convivial doté de fonctionnalités pratiques comme les animations, les tables de montage séquentiel, la liaison de données, le formatSVG (Scalable Vector Graphics), le redimensionnement dynamique et les graphes de scène. XAML fonctionne parfaitement pour l’interface utilisateur, les menus, les sprites et les graphiques2D des jeux. Pour simplifier la disposition de l’interface utilisateur, le langageXAML est compatible avec les outils de conception et de développement que sont Expression Blend et Microsoft Visual Studio. XAML est couramment utilisé avec C#, mais C++ convient également si c’est votre langage préféré ou si les exigences d’unité centrale de votre jeu sont élevées.
 
 <table>
     <colgroup>
@@ -378,9 +387,9 @@ XAML est un langage d’interface utilisateur déclaratif convivial doté de fon
 </table>
  
 
-### HTML 5
+#### HTML 5
 
-Le langage HTML (HyperText Markup Language) est un langage de balisage d’interface utilisateur couramment utilisé pour les pages web, les applications et les clients enrichis. Les jeux Windows peuvent utiliser le langage HTML5 comme couche présentation complète avec les fonctionnalités habituelles du HTML, l’accès à la plateforme Windows universelle (UWP) et la prise en charge de fonctionnalités web modernes comme AppCache, les traitements web, le canevas, le glisser-déplacer, la programmation asynchrone et le format SVG. En arrière-plan, le rendu HTML tire parti de la puissance de l’accélération matérielle de DirectX. Vous bénéficiez donc toujours de l’avantage des performances de DirectX sans écrire de code supplémentaire. HTML5 convient bien si vous maîtrisez le développement web, le portage d’un jeu web ou si vous souhaitez utiliser des couches de langage et de graphiques dont l’approche est plus simple que les autres choix. Le langage HTML5 est utilisé avec JavaScript, mais il peut être également appelé dans les composants créés en C# ou C++/CX.
+Le langageHTML (HyperText Markup Language) est un langage de balisage d’interface utilisateur couramment utilisé pour les pages web, les applications et les clients enrichis. Les jeux Windows peuvent utiliser le langageHTML5 comme couche présentation complète avec les fonctionnalités habituelles du HTML, l’accès à la plateforme Universal Windows Platform (UWP) et la prise en charge de fonctionnalités web modernes comme AppCache, les traitements web, le canevas, le glisser-déplacer, la programmation asynchrone et le formatSVG. En arrière-plan, le renduHTML tire parti de la puissance de l’accélération matérielle de DirectX. Vous bénéficiez donc toujours de l’avantage des performances de DirectX sans écrire de code supplémentaire. HTML5 convient bien si vous maîtrisez le développement web, le portage d’un jeu web ou si vous souhaitez utiliser des couches de langage et de graphiques dont l’approche est plus simple que les autres choix. Le langage HTML5 est utilisé avec JavaScript, mais il peut être également appelé dans les composants créés en C# ou C++/CX.
 
 <table>
     <colgroup>
@@ -398,7 +407,7 @@ Le langage HTML (HyperText Markup Language) est un langage de balisage d’inter
 </table>
  
 
-### Combinaison des technologies de présentation
+#### Combinaison des technologies de présentation
 
 L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit interopérabilité et compatibilité entre plusieurs technologies graphiques. Pour des graphismes haute performance, vous pouvez allier XAML et DirectX, en utilisant XAML pour les menus et les autres éléments simples de l’interface utilisateur, et DirectX pour le rendu des scènes 2D et 3D complexes DXGI assure également la compatibilité entre Direct2D, Direct3D, DirectWrite, DirectCompute et Microsoft Media Foundation.
 
@@ -418,9 +427,9 @@ L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit i
 </table>
  
 
-### C++
+#### C++
 
-C++/CX est un langage haute performance à faible traitement, qui fournit une puissante combinaison de vitesse, compatibilité et accès aux plateformes. C++/CX facilite l’utilisation de l’ensemble des fonctionnalités de jeux remarquables de Windows 10, notamment DirectX et Xbox Live. Vous pouvez également réutiliser le code et les bibliothèques C++ existants. C++/CX crée un code rapide et natif qui n’implique pas la surcharge de nettoyage de la mémoire. Votre jeu peut donc bénéficier de performances exceptionnelles et d’une faible consommation d’énergie, ce qui conduit à une autonomie de la batterie plus longue. Utilisez C++/CX avec DirectX ou XAML, ou bien créez un jeu utilisant une combinaison des deux.
+C++/CX est un langage haute performance à faible traitement, qui fournit une puissante combinaison de vitesse, compatibilité et accès aux plateformes. C++/CX facilite l’utilisation de l’ensemble des fonctionnalités de jeux remarquables de Windows10, notamment DirectX et Xbox Live. Vous pouvez également réutiliser le code et les bibliothèquesC++ existants. C++/CX crée un code rapide et natif qui n’implique pas la surcharge de nettoyage de la mémoire. Votre jeu peut donc bénéficier de performances exceptionnelles et d’une faible consommation d’énergie, ce qui conduit à une autonomie de la batterie plus longue. Utilisez C++/CX avec DirectX ou XAML, ou bien créez un jeu utilisant une combinaison des deux.
 
 <table>
     <colgroup>
@@ -438,9 +447,9 @@ C++/CX est un langage haute performance à faible traitement, qui fournit une pu
 </table>
  
 
-### C#
+#### C#
 
-C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simple, puissant, de type sécurisé et orienté objet. C# permet un développement rapide tout en conservant la familiarité et l’expressivité des langages du style C. Même s’il est facile à utiliser, C# possède de nombreuses fonctionnalités de langage avancées comme le polymorphisme, les délégués, les expressions lambda, les fermetures, la méthode Iterator, la covariance et les expressions LINQ (Language-Integrated Query). C# convient parfaitement si vous ciblez XAML, souhaitez commencer à développer rapidement votre jeu ou bénéficiez déjà d’une expérience en C#. C# est utilisé essentiellement avec XAML. Si vous voulez utiliser DirectX, choisissez plutôt C++ ou écrivez une partie de votre jeu en tant que composant C++ qui interagit avec DirectX. Pensez également à [Win2D](https://github.com/Microsoft/Win2D), une bibliothèque de graphismes Direct2D en mode immédiat pour C# et C++.
+C# (prononcez «C sharp») est un langage moderne et innovant, qui est simple, puissant, de type sécurisé et orienté objet. C# permet un développement rapide tout en conservant la familiarité et l’expressivité des langages du styleC. Même s’il est facile à utiliser, C# possède de nombreuses fonctionnalités de langage avancées comme le polymorphisme, les délégués, les expressions lambda, les fermetures, la méthode Iterator, la covariance et les expressionsLINQ (Language-Integrated Query). C# convient parfaitement si vous ciblezXAML, souhaitez commencer à développer rapidement votre jeu ou bénéficiez déjà d’une expérience enC#. C# est utilisé essentiellement avec XAML. Si vous voulez utiliser DirectX, choisissez plutôt C++ ou écrivez une partie de votre jeu en tant que composant C++ qui interagit avec DirectX. Pensez également à [Win2D](https://github.com/Microsoft/Win2D), une bibliothèque de graphismes Direct2D en mode immédiat pour C# et C++.
 
 <table>
     <colgroup>
@@ -454,11 +463,11 @@ C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simpl
 </table>
  
 
-### JavaScript
+#### JavaScript
 
 JavaScript est un langage de script dynamique largement utilisé pour les applications web modernes et les applications clientes enrichies.
 
-Les applications Windows en JavaScript peuvent accéder aux puissantes fonctionnalités de la plateforme UWP d’une façon simple et intuitive, comme les méthodes et les propriétés des classes JavaScript orientées objet. JavaScript convient bien à votre jeu si vous venez d’un environnement de développement web, si vous maîtrisez déjà ce langage ou si vous souhaitez utiliser les bibliothèques HTML5, CSS, WinJS ou JavaScript. Si vous ciblez DirectX ou XAML, préférez C# ou C++/CX.
+Les applications Windows app en JavaScript peuvent accéder aux puissantes fonctionnalités de la plateforme Universal Windows Platform (UWP) d’une façon simple et intuitive, comme les méthodes et les propriétés des classes JavaScript orientées objet. JavaScript convient bien à votre jeu si vous venez d’un environnement de développement web, si vous maîtrisez déjà ce langage ou si vous souhaitez utiliser les bibliothèquesHTML5, CSS, WinJS ou JavaScript. Si vous ciblez DirectX ou XAML, préférez C# ou C++/CX.
 
 <table>
     <colgroup>
@@ -472,7 +481,7 @@ Les applications Windows en JavaScript peuvent accéder aux puissantes fonctionn
 </table>
 
 
-### Combinaison des langages à l’aide des composants Windows Runtime
+#### Combinaison des langages à l’aide des composants Windows Runtime
 
 Grâce à la plateforme UWP, vous combinez facilement des composants écrits dans différents langages. Créez des composants Windows Runtime en C++, C# ou Visual Basic, puis appelez-les à partir de JavaScript, C#, C++ ou Visual Basic. C’est là une méthode remarquable pour programmer des parties de votre jeu dans le langage de votre choix. Les composants vous permettent également d’utiliser les bibliothèques externes qui ne sont disponibles que dans un langage particulier ainsi que le code hérité que vous avez déjà écrit.
 
@@ -490,13 +499,11 @@ Grâce à la plateforme UWP, vous combinez facilement des composants écrits dan
 
 ### Quelle version de DirectX utiliser dans votre jeu ?
 
-Si vous choisissez DirectX pour votre jeu, vous devez déterminer la version à utiliser : Microsoft Direct3D 12 ou Microsoft Direct3D 11.
+Si vous choisissez DirectX pour votre jeu, vous devez déterminer la version à utiliser: MicrosoftDirect3D12 ou Microsoft Direct3D11.
 
-Direct3D 11.3 est une API graphique de faible niveau qui utilise le modèle de programmation de Direct3D que vous connaissez bien. Direct3D 11 est toujours une option pour une application Windows universelle, et vous avez accès aux nouvelles fonctionnalités de rendu et d’optimisation qui ont été ajoutées dans Direct3D 11.3.
+Direct3D12, nouvelle fonctionnalité de Windows10, apporte la puissance d’uneAPI du type console, et sa rapidité et son efficacité sont sans commune mesure. Votre jeu peut pleinement utiliser le matériel vidéo moderne et présenter plus d’objets, des scènes enrichies et des effets améliorés. Direct3D12 fournit des graphismes optimisés sur les PC Windows10 et sur XboxOne. Étant donné que Direct3D12 fonctionne à un niveau très faible, il donne aux équipes de développement de graphiques expertes, ou aux équipes de développement de DirectX11 expérimentées, les moyens de maximiser l’optimisation des graphiques.
 
-Direct3D 12 est une nouveauté de Windows 10 et introduit un nouveau modèle de programmation de pipeline. Direct3D 12 est plus proche du matériel, utilise moins d’abstraction, et permet à votre jeu de mieux contrôler l’utilisation des ressources. Direct3D 12 présente de meilleures performances en termes de processeur, de GPU et d’alimentation.
-
-Si vous disposez d’un moteur existant écrit en Direct3D 11 et que vous n’êtes pas encore prêt à effectuer la transition vers Direct3D 12, vous pouvez utiliser Direct3D 11 sur 12 pour obtenir certaines améliorations des performances et commencer à effectuer la transition vers Direct3D 12.
+Direct3D11.3 est une API graphique de niveau faible, qui utilise le modèle de programmation Direct3D familier, et prend plus facilement en charge le processus complexe de rendu GPU. Elle est également prise en charge dans Windows10 et XboxOne. Si vous disposez d’un moteur existant écrit en Direct3D11 et que vous n’êtes pas encore prêt à effectuer la transition vers Direct3D12, vous pouvez utiliser Direct3D11 sur 12 pour obtenir certaines améliorations des performances. Les versions 11.3 et ultérieures contiennent également les nouvelles fonctionnalités de rendu et d’optimisation présentes dans Direct3D12.
 
 <table>
     <colgroup>
@@ -504,7 +511,7 @@ Si vous disposez d’un moteur existant écrit en Direct3D 11 et que vous n’ê
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Choisir Direct3D 12 ou Direct3D 11</td>
+        <td>Choisir Direct3D12 ou Direct3D11</td>
         <td>[Qu’est-ce que Direct3D 12?](https://msdn.microsoft.com/library/windows/desktop/dn899228)</td>
     </tr>
     <tr>
@@ -546,7 +553,7 @@ En fonction des besoins de votre jeu, l’utilisation de ponts, de moteurs de je
 </table>
  
 
-### Ponts de plateforme Windows universelle
+#### Ponts de plateforme Windows universelle
 
 Les ponts de plateforme Windows universelle sont des technologies qui amènent votre application ou votre jeu existant à la plateforme UWP. Ils sont un excellent moyen de démarrer rapidement le développement des jeux UWP.
 
@@ -564,13 +571,13 @@ Les ponts de plateforme Windows universelle sont des technologies qui amènent v
         <td>[Importer vos applications iOS dans Windows](https://dev.windows.com/bridges/ios)</td>
     </tr>
     <tr>
-        <td>Version d’évaluation du pont Windows pour .NET et Win32 (« Projet Centennial »)</td>
+        <td>Version d’évaluation du pont Windows pour .NET et Win32 («Projet Centennial»)</td>
         <td>[Programmes Windows Developer Preview](http://go.microsoft.com/fwlink/p/?LinkID=624543)</td>
     </tr>
 </table>
  
 
-### Unity
+#### Unity
 
 Unity 5 est la nouvelle génération de la plateforme de développement maintes fois primée pour la création de jeux 2D et 3D et des expériences interactives. Unity 5 apporte une nouvelle puissance artistique, des fonctionnalités graphiques améliorées et une efficacité renforcée.
 
@@ -590,8 +597,8 @@ D’après le site [Unity roadmap](https://unity3d.com/unity/roadmap), la prise 
         <td>[Obtenir Unity](http://unity3d.com/get-unity)</td>
     </tr>
     <tr>
-        <td>Prise en charge des applications Windows universelles dans Unity 5.2 (billet de blog)</td>
-        <td>[Applications de la plateforme Windows 10 universelle dans Unity 5.2](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
+        <td>Prise en charge des applications Windows universelles dans Unity5.2 (billet de blog)</td>
+        <td>[Applications de la plateformeWindows 10 universelle dans Unity 5.2](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
     </tr>
     <tr>
         <td>Documentation Unity pour Windows</td>
@@ -612,7 +619,7 @@ D’après le site [Unity roadmap](https://unity3d.com/unity/roadmap), la prise 
 </table>
  
 
-### Havok
+#### Havok
 
 Avec la suite modulaire d’outils et de technologies de Havok, les créateurs de jeux peuvent atteindre de nouveaux niveaux d’interactivité et d’immersion. Havok permet de fournir des données physiques réalistes, et de réaliser des simulations interactives ainsi que des animations remarquables.
 
@@ -636,7 +643,7 @@ Avec la suite modulaire d’outils et de technologies de Havok, les créateurs d
 </table>
  
 
-### Cocos2d
+#### Cocos2d
 
 Cocos2d-X est une suite d’outils et de moteurs de jeu open source multiplateforme qui prend en charge la création de jeux UWP. Depuis la version 3, des fonctionnalités 3D sont également ajoutées.
 
@@ -664,7 +671,7 @@ Cocos2d-X est une suite d’outils et de moteurs de jeu open source multiplatefo
 </table>
 
 
-### Unreal Engine
+#### Unreal Engine
 
 Unreal Engine 4 est une suite complète d’outils de développement de jeux destinée à tous les types de jeu et de développement. Destiné aux jeux pour consoles et PC très exigeants, Unreal Engine est utilisé par les développeurs de jeux dans le monde entier. Les membres du [programme d’accès en avant-première à DirectX 12](#dxeap) qui s’abonnent à Unreal Engine 4 peuvent bénéficier de l’accès à un projet de développement Unreal Engine 4.4 prenant en charge DirectX 12.
 
@@ -710,11 +717,11 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Portage d’une application Windows 8 vers une application de plateforme Windows universelle</td>
+        <td>Portage d’une application Windows8 vers une application de plateforme Windows universelle</td>
         <td>[Passer de Windows Runtime 8.x à UWP](https://msdn.microsoft.com/library/windows/apps/mt238322)</td>
     </tr>
     <tr>
-        <td>Portage d’une application Windows 8 vers une application de plateforme Windows universelle (vidéo)</td>
+        <td>Portage d’une application Windows8 vers une application de plateforme Windows universelle (vidéo)</td>
         <td>[Portage d’applications Windows 8.1 vers Windows 10](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21)</td>
     </tr>
     <tr>
@@ -782,7 +789,7 @@ Les guides indiqués ci-dessous sont excellents. Ils décrivent en détail les a
     </colgroup>
     <tr>
         <td>Présentation des applications de plateforme Windows universelle</td>
-        <td>[Qu’est-ce qu’une application de plateforme universelle Windows ?](https://msdn.microsoft.com/library/windows/apps/dn726767)</td>
+        <td>[Qu’est-ce qu’une application de plateforme universelle Windows?](https://msdn.microsoft.com/library/windows/apps/dn726767)</td>
     </tr>
     <tr>
         <td>Vue d’ensemble de la plateforme UWP</td>
@@ -877,7 +884,7 @@ La gestion de la durée de vie des processus, ou cycle de vie des applications, 
 
 Une conception inspirée est à la source d’un jeu réussi.
 
-Les jeux partagent certains éléments d’interface utilisateur et des principes de conception communs avec les applications, mais ils ont souvent une apparence et un objectif de conception uniques pour leur expérience utilisateur. Les jeux rencontreront le succès si les aspects suivants sont bien pensés : quand votre jeu doit-il utiliser une expérience utilisateur testée et quand doit-il varier et innover ? La technologie de présentation que vous choisissez pour votre jeu (DirectX, XAML, HTML5 ou une combinaison de celles-ci) peut influencer les détails d’implémentation, mais les principes de conception que vous appliquez ne reposent pas sur ce choix.
+Les jeux partagent certains éléments d’interface utilisateur et des principes de conception communs avec les applications, mais ils ont souvent une apparence et un objectif de conception uniques pour leur expérience utilisateur. Les jeux rencontreront le succès si les aspects suivants sont bien pensés: quand votre jeu doit-il utiliser une expérience utilisateur testée et quand doit-il varier et innover? La technologie de présentation que vous choisissez pour votre jeu (DirectX, XAML, HTML5 ou une combinaison de celles-ci) peut influencer les détails d’implémentation, mais les principes de conception que vous appliquez ne reposent pas sur ce choix.
 
 Distincte de la conception de l’expérience utilisateur, la conception d’un jeu, par exemple la conception du niveau, le rythme et bien d’autres aspects sont une forme d’art en soi. Elle est de votre ressort, votre équipe et vous, et elle n’est pas traitée dans ce guide de développement.
 
@@ -901,7 +908,7 @@ Distincte de la conception de l’expérience utilisateur, la conception d’un 
 </table>
  
 
-### Recommandations de couleur et palette
+#### Recommandations de couleur et palette
 
 Le respect de recommandations de couleur cohérentes dans votre jeu lui apporte esthétisme, simplifie la navigation et permet d’informer le joueur sur la fonctionnalité du menu et de l’affichage à tête haute. L’application de couleurs cohérentes aux éléments du jeu comme les avertissements, dommages, XP et scores peut permettre d’obtenir une interface utilisateur plus claire et de réduire l’emploi de libellés explicites.
 
@@ -917,7 +924,7 @@ Le respect de recommandations de couleur cohérentes dans votre jeu lui apporte 
 </table>
  
 
-### Typographie
+#### Typographie
 
 L’utilisation appropriée de la typographie améliore de nombreux aspects de votre jeu, notamment la disposition de l’interface utilisateur, la navigation, la lisibilité, l’ambiance, la marque et l’immersion du joueur.
 
@@ -933,7 +940,7 @@ L’utilisation appropriée de la typographie améliore de nombreux aspects de v
 </table>
  
 
-### Carte d’interface utilisateur
+#### Carte d’interface utilisateur
 
 Une carte d’interface utilisateur est une disposition de la navigation et des menus du jeu présentée sous la forme d’un organigramme. La carte d’interface utilisateur permet à toutes les parties concernées de comprendre l’interface et les chemins de navigation du jeu, et permet d’exposer les blocages et arrêts dès la phase de développement.
 
@@ -951,6 +958,8 @@ Une carte d’interface utilisateur est une disposition de la navigation et des 
 
 ### Développement DirectX
 
+Guides et références pour le développement de jeux DirectX.
+
 <table>
     <colgroup>
     <col width="50%" />
@@ -965,6 +974,10 @@ Une carte d’interface utilisateur est une disposition de la navigation et des 
         <td>[Objet application et DirectX](about-the-metro-style-user-interface-and-directx.md)</td>
     </tr>
     <tr>
+        <td>Vidéos de développement Graphics et DirectX12 (YouTube)</td>
+        <td>[MicrosoftDirectX12 et GraphicsEducation](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
+    </tr>
+    <tr>
         <td>Présentations et informations de référence sur DirectX</td>
         <td>[Jeux et graphismes DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
     </tr>
@@ -974,10 +987,46 @@ Une carte d’interface utilisateur est une disposition de la navigation et des 
     </tr>
     <tr>
         <td>Notions fondamentales sur DirectX 12 (vidéo)</td>
-        <td>[Une meilleure alimentation, de meilleures performances : Votre jeu sur DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12)</td>
+        <td>[Une meilleure alimentation, de meilleures performances: Votre jeu sur DirectX12](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12)</td>
+    </tr>
+</table>
+
+#### Prise en main de Direct3D12
+
+Découvrez ce qui a changé dans Direct3D12 et comment commencer à programmer à l’aide de Direct3D12. 
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Configurer l’environnement de programmation</td>
+        <td>[Configuration de l’environnement de programmation Direct3D12](https://msdn.microsoft.com/library/windows/desktop/dn899120.aspx)</td>
+    </tr>
+    <tr>
+        <td>Comment créer un composant de base</td>
+        <td>[Création d’un composant Direct3D12 de base](https://msdn.microsoft.com/library/windows/desktop/dn859356.aspx)</td>
+    </tr>
+    <tr>
+        <td>Modifications apportées dans Direct3D12</td>
+        <td>[Modifications importantes lors de la migration de Direct3D11 à Direct3D12](https://msdn.microsoft.com/library/windows/desktop/dn899194.aspx)</td>
+    </tr>
+    <tr>
+        <td>Comment effectuer le portage de Direct3D11 vers Direct3D12</td>
+        <td>[Portage de Direct3D11 vers Direct3D12](https://msdn.microsoft.com/library/windows/desktop/mt431709.aspx)</td>
+    </tr>
+    <tr>
+        <td>Concepts de liaison de ressource (descripteur de recouvrement, tableau de descripteur, tas de descripteur et signature racine) </td>
+        <td>[Liaison de ressource dans Direct3D12](https://msdn.microsoft.com/library/windows/desktop/dn899206.aspx)</td>
+    </tr>
+    <tr>
+        <td>Gestion de la mémoire</td>
+        <td>[Gestion de la mémoire dans Direct3D12](https://msdn.microsoft.com/library/windows/desktop/dn899198.aspx)</td>
     </tr>
 </table>
  
+#### Kit de ressources et bibliothèques DirectX
 
 Le kit de ressources DirectX, la bibliothèque de traitement des textures DirectX et la bibliothèque de traitement des géométries DirectXMesh fournissent des fonctionnalités de texture, maillage, sprite etc., ainsi que des classes d’assistance pour le développement de DirectX. Ces bibliothèques vous permettent de gagner du temps et d’économiser vos efforts, comparé au travail que vous devriez fournir pour implémenter vous-même ces fonctionnalités. Même si elles sont implémentées essentiellement pour Direct3D 11, certaines parties de ces bibliothèques fonctionnent également dans Direct3D 12.
 
@@ -1000,7 +1049,34 @@ Le kit de ressources DirectX, la bibliothèque de traitement des textures Direct
     </tr>
     <tr>
         <td>Prise en charge de Direct3D 12 dans DirectXTK (billet de blog)</td>
-        <td>[Prise en charge de DirectX 12](https://github.com/Microsoft/DirectXTK/issues/2)</td>
+        <td>[Prise en charge de DirectX12](https://github.com/Microsoft/DirectXTK/issues/2)</td>
+    </tr>
+</table>
+
+#### Ressources DirectX provenant de partenaires
+
+Voici des documentations supplémentaires sur DirectX, créées par des partenaires externes.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Nvidia: DX12 Do’s and Don’ts (billet de blog en anglais) </td>
+        <td>[DirectX12 sur des GPU Nvidia](https://developer.nvidia.com/dx12-dos-and-donts-updated)</td>
+    </tr>
+    <tr>
+        <td>Intel: Efficient rendering with DirectX12 (en anglais)</td>
+        <td>[Rendu de DirectX12 sur graphiques Intel](https://software.intel.com/sites/default/files/managed/4a/38/Efficient-Rendering-with-DirectX-12-on-Intel-Graphics.pdf)</td>
+    </tr>
+    <tr>
+        <td>Intel: Multi adapter support in DirectX12 (en anglais)</td>
+        <td>[Implémentation d’une application explicite comportant plusieurs adaptateurs à l’aide de DirectX12](https://software.intel.com/en-us/articles/multi-adapter-support-in-directx-12)</td>
+    </tr>
+    <tr>
+        <td>Intel: DirectX12 tutorial (en anglais)</td>
+        <td>[Livre blanc collaboratif, élaboré par Intel, SuzhouSnail et Microsoft](https://software.intel.com/en-us/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
     </tr>
 </table>
 
@@ -1071,7 +1147,7 @@ Un PIA (produit intégré à l’application) est un article supplémentaire que
  
 ### Outils de débogage et de surveillance des performances
 
-Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit d’outils comprend deux outils indépendants : l’enregistreur de performance Windows et Windows Performance Analyzer. Pour générer les fichiers de visage nécessaire à l’analyse des plantages de jeux, vous bénéficiez également de l’outil ProcDump, qui fait partie de [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default).
+Le KitWindowsPerformanceToolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitationWindows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le KitWindowsPerformanceToolkit est inclus dans le Kit de développement logicielWindows10 et dans WindowsADK. Ce kit d’outils comprend deuxoutils indépendants: l’enregistreur de performance Windows et Windows Performance Analyzer. Pour générer les fichiers de vidage nécessaires à l’analyse des plantages de jeux, vous bénéficiez également de l’outilProcDump, qui fait partie de [WindowsSysinternals](https://technet.microsoft.com/sysinternals/default).
 
 <table>
     <colgroup>
@@ -1079,12 +1155,12 @@ Le Kit Windows Performance Toolkit est composé d’outils d’analyse des pe
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Obtenir le Kit Windows Performance Toolkit à partir de Windows 10 SDK</td>
-        <td>[Kit de développement logiciel (SDK) Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk)</td>
+        <td>Obtenir le KitWindowsPerformanceToolkit à partir de Windows 10 SDK</td>
+        <td>[Kit de développement logiciel (SDK) Windows10](https://developer.microsoft.com/windows/downloads/windows-10-sdk)</td>
     </tr>
     <tr>
-        <td>Obtenir le Kit Windows Performance Toolkit à partir de Windows ADK.</td>
-        <td>[Windows ADK](https://msdn.microsoft.com/windows/hardware/dn913721.aspx)</td>
+        <td>Obtenir le KitWindowsPerformanceToolkit à partir de WindowsADK.</td>
+        <td>[WindowsADK](https://msdn.microsoft.com/windows/hardware/dn913721.aspx)</td>
     </tr>
     <tr>
         <td>Résoudre les problèmes de réactivité de l’interface utilisateur à l’aide de Windows Performance Analyzer (vidéo).</td>
@@ -1122,7 +1198,11 @@ Certaines parties du développement DirectX peuvent être complexes et nuancées
         <td>[Résolution des problèmes graphiques épineux liés à votre jeu à l’aide des outils DirectX](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools)</td>
     </tr>
     <tr>
-        <td>Guide de programmation pour Direct3D 12</td>
+        <td>Outils VisualStudio2015 pour le débogage de DirectX12 (vidéo)</td>
+        <td>[Outils DirectX pour Windows10 dans VisualStudio2015](https://channel9.msdn.com/Series/ConnectOn-Demand/212)</td>
+    </tr>
+    <tr>
+        <td>Guide de programmation pour Direct3D12</td>
         <td>[Guide de programmation de Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn903821)</td>
     </tr>
     <tr>
@@ -1130,27 +1210,8 @@ Certaines parties du développement DirectX peuvent être complexes et nuancées
         <td>[Technologie interop DirectX et XAML](directx-and-xaml-interop.md)</td>
     </tr>
 </table>
- 
 
-L’équipe produit de Microsoft DirectX a créé une série de vidéos détaillées sur le développement de DirectX 12. Elles couvrent en détail la liaison de ressources, les modes de présentation, le débogage, les obstacles aux ressources et de nombreux autres concepts DirectX 12. Parfois, cette série met également en scène des présentateurs invités.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Vidéos de développement Graphics et DirectX 12 (YouTube)</td>
-        <td>[Microsoft DirectX 12 et Graphics Education](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
-    </tr>
-    <tr>
-        <td>Ressources Direct3D 12 et gestion des tas (vidéo)</td>
-        <td>[Tas et ressources dans DirectX 12](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
-    </tr>
-</table>
- 
-
-### Globalisation et localisation
+### Internationalisation et localisation
 
 Développez des jeux prêts à l’emploi pour la plateforme Windows et découvrez les fonctionnalités internationales intégrées aux meilleurs produits Microsoft.
 
@@ -1385,6 +1446,7 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

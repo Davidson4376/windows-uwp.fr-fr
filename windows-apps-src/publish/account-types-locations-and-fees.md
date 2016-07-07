@@ -23,17 +23,17 @@ Voici les principales différences entre les deux types de compte.
 
 | Compte individuel | Compte d’entreprise |
 |--------------------|-----------------|
-| <ul><li>Ne permet pas d’utiliser certaines fonctionnalités d’application</li><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> | <ul><li>Vérification requise via Symantec ou Dun &amp; Bradstreet</li><li>Accès plus étendu aux fonctionnalités des applications</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> |
+| <ul><li>Ne permet pas d’utiliser certaines fonctionnalités d’application</li><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> | <ul><li>Vérification requise via Symantec ou Dun &amp; Bradstreet</li><li>Accès plus étendu aux fonctionnalités des applications</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>Coûte environ 99USD (frais d’inscription ponctuels; le montant exact varie en fonction de votre pays ou région)</li></ul> |
 
 > **Important** Si vous décidez de créer un compte d’entreprise, veillez à étudier nos [recommandations pour les comptes d’entreprise](opening-a-developer-account.md#additional-guidelines-for-company-accounts).
 
 Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Un des principaux avantages d’un compte d’entreprise est la possibilité de soumettre des applications qui déclarent des [déclarations de fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/Mt270968) supplémentaires.
 
-Vous devez notamment disposer d’un compte d’entreprise pour publier des applications qui utilisent les trois fonctionnalités suivantes :
+Vous devez notamment disposer d’un compte d’entreprise pour publier des applications qui utilisent les trois fonctionnalités suivantes:
 
 -   **enterpriseAuthentication** - Utilise les informations d’identification Windows pour accéder à un intranet d’entreprise. Cette capacité est généralement utilisée dans des applications métier qui se connectent à des serveurs au sein d’une entreprise. (Vous n’en avez pas besoin pour communiquer sur Internet.)
 -   **sharedUserCertificates** - Permet à une application d’accéder à des certificats de logiciel et de matériel, tels que les certificats stockés sur une carte à puce. Cette fonctionnalité est généralement utilisée pour des applications financières ou d’entreprise qui requièrent une carte à puce pour l’authentification.
--   **documentsLibrary** - Permet d’accéder par programme au dossier Documents de l’utilisateur, filtré en fonction des associations de types de fichiers déclarées dans le manifeste du package. (Vous n’avez pas besoin de déclarer cette fonctionnalité pour accéder au dossier Documents d’un utilisateur à l’aide du [sélecteur de fichiers](https://msdn.microsoft.com/library/windows/apps/Hh465174).) Notez que les applications ciblant Windows Phone 8.1 ou version antérieure utilisent la fonctionnalité documentsLibrary.
+-   **documentsLibrary** - Permet d’accéder par programme au dossier Documents de l’utilisateur, filtré en fonction des associations de types de fichiers déclarées dans le manifeste du package. (Vous n’avez pas besoin de déclarer cette fonctionnalité pour accéder au dossier Documents d’un utilisateur à l’aide du [sélecteur de fichiers](https://msdn.microsoft.com/library/windows/apps/Hh465174).) Notez que les applications ciblant Windows Phone8.1 ou version antérieure utilisent la fonctionnalité documentsLibrary.
 
 > **Remarque** En outre, vous devez contacter le support technique et obtenir son approbation pour pouvoir soumettre les applications qui déclarent la fonctionnalité **documentsLibrary**.
 

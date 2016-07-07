@@ -10,7 +10,7 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 ---
 # Énumérer les appareils
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -60,8 +60,7 @@ Lorsque vous utilisez les API d’énumération, vous devez fréquemment utilise
 ## Interface utilisateur DevicePicker
 
 
-[
-            **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) est un contrôle fourni par Windows, qui crée une petite interface permettant à l’utilisateur de sélectionner un appareil dans une liste. Vous pouvez personnaliser la fenêtre **DevicePicker** de plusieurs façons.
+[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) est un contrôle fourni par Windows, qui crée une petite interface permettant à l’utilisateur de sélectionner un appareil dans une liste. Vous pouvez personnaliser la fenêtre **DevicePicker** de plusieurs façons.
 
 -   Vous pouvez contrôler les appareils répertoriés dans l’interface utilisateur en ajoutant une valeur [**SupportedDeviceSelectors**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors.aspx) ou [**SupportedDeviceClasses**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses.aspx), ou les deux à [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter). Dans la plupart des cas, vous devez ajouter uniquement un sélecteur ou une classe, mais s’il vous en faut davantage, vous pouvez en ajouter plusieurs. Si vous ajoutez plusieurs classes ou sélecteurs, ils sont unis à l’aide d’une fonction logique OR.
 -   Vous pouvez spécifier les propriétés que vous souhaitez récupérer pour les appareils. Pour ce faire, ajoutez des propriétés à [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties).

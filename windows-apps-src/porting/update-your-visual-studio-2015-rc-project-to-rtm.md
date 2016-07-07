@@ -11,9 +11,9 @@ ms.openlocfilehash: 9c2b9f164b6578a9e1d269295b3fa0d7a863a6a0
 
 # Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Si vous avez un projet Windows 10 que vous avez créé avec Microsoft Visual Studio 2015 RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour Visual Studio 2015 RTM. La méthode recommandée consiste à créer un projet Windows 10 dans Visual Studio 2015 RTM et à y copier vos fichiers. Vous pouvez également vous reporter à la documentation avancée pour savoir comment modifier vos fichiers de projet existants et les convertir au nouveau format.
+Si vous avez un projet Windows10 que vous avez créé avec Microsoft VisualStudio 2015RC, vous disposez de deux options en matière de mise à jour des fichiers du projet vers le format approprié pour VisualStudio 2015RTM. La méthode recommandée consiste à créer un projet Windows 10 dans Visual Studio 2015 RTM et à y copier vos fichiers. Vous pouvez également vous reporter à la documentation avancée pour savoir comment modifier vos fichiers de projet existants et les convertir au nouveau format.
 
 ## Apparence d’un projet Visual Studio 2015 RC Windows 10 dans Visual Studio 2015 RTM
 
@@ -23,7 +23,7 @@ Lorsque vous ouvrez un projet Visual Studio 2015 RC Windows 10 dans Visual Studi
 
 Si vous accédez au menu contextuel du projet dans l’**Explorateur de solutions** et choisissez **Recharger le projet**, cette boîte de dialogue s’affiche.
 
-![Mise à jour de Visual Studio requise](images/vsrc-to-rtm/reload-project.png)
+![Mise à jour de VisualStudio requise](images/vsrc-to-rtm/reload-project.png)
 
 ## Créer un projet et y copier des fichiers
 

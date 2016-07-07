@@ -25,18 +25,18 @@ Lors de la saisie et de la modification de texte, le vérificateur orthographiqu
 
 -   Utilisez la vérification orthographique pour aider l’utilisateur lors de la saisie de mots ou de phrases dans les contrôles de saisie de texte. La vérification orthographique fonctionne avec le pavé tactile et l’entrée à l’aide de la souris et du clavier.
 -   N’utilisez pas la vérification orthographique pour les mots peu susceptibles de figurer dans le dictionnaire ou quand cela n’apporte rien à l’utilisateur. Par exemple, ne l’activez pas pour les zones de saisie de mots de passe, de numéros de téléphone ni de noms. La vérification orthographique est désactivée par défaut pour ces contrôles.
--   Ne désactivez pas la vérification orthographique au seul motif que le vérificateur d’orthographe actuel ne prend pas en charge la langue de votre application. Si le vérificateur d’orthographe ne prend pas en charge une langue, rien ne se produit, il n’y a donc aucun risque à laisser l’option activée. En outre, certains utilisateurs peuvent utiliser un éditeur de méthode d’entrée (IME) pour saisir dans votre application une autre langue qui elle peut être prise en charge. Par exemple, lorsque vous créez une application en japonais, même si le vérificateur d’orthographe ne reconnaît pas actuellement cette langue, ne le désactivez pas. L’utilisateur pourrait utiliser un IME pour saisir de l’anglais dans l’application ; si la vérification d’orthographe est activée, le texte anglais est vérifié.
+-   Ne désactivez pas la vérification orthographique au seul motif que le vérificateur d’orthographe actuel ne prend pas en charge la langue de votre application. Si le vérificateur d’orthographe ne prend pas en charge une langue, rien ne se produit, il n’y a donc aucun risque à laisser l’option activée. En outre, certains utilisateurs peuvent utiliser un éditeur de méthode d’entrée (IME) pour saisir dans votre application une autre langue qui elle peut être prise en charge. Par exemple, lorsque vous créez une application en japonais, même si le vérificateur d’orthographe ne reconnaît pas actuellement cette langue, ne le désactivez pas. L’utilisateur pourrait utiliser un IME pour saisir de l’anglais dans l’application; si la vérification d’orthographe est activée, le texte anglais est vérifié.
 
 ## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
 
 
-Les applications du Windows Store comportent un vérificateur d’orthographe intégré pour les zones de saisie de texte d’une ou de plusieurs lignes et les éléments dont la propriété **contentEditable** a la valeur **true**. Voici un exemple de vérificateur d’orthographe intégré :
+Les applications du Windows Store comportent un vérificateur d’orthographe intégré pour les zones de saisie de texte d’une ou de plusieurs lignes et les éléments dont la propriété **contentEditable** a la valeur **true**. Voici un exemple de vérificateur d’orthographe intégré:
 
 ![Vérificateur d’orthographe intégré](images/spellchecking.png)
 
 Pour plus d’informations, voir [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683).
 
-Le vérificateur d’orthographe peut être utilisé avec des contrôles de saisie de texte dans deux objectifs :
+Le vérificateur d’orthographe peut être utilisé avec des contrôles de saisie de texte dans deux objectifs:
 
 -   **La correction automatique des fautes**
 
@@ -69,6 +69,6 @@ Pour les contrôles de zone de texte XAML, la vérification orthographique est d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

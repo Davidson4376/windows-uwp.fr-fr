@@ -11,7 +11,7 @@ ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
 # Obtenir une image d’aperçu
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique vous montre comment obtenir une image d’aperçu à partir du flux d’aperçu de capture multimédia.
 

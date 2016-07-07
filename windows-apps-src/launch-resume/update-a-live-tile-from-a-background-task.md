@@ -13,7 +13,7 @@ ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
 # Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -147,22 +147,22 @@ Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle décl
 
 1.  Dans l’Explorateur de solutions, ouvrez Package.appxmanifest.
 2.  Cliquez ou appuyez sur l’onglet **Déclarations**.
-3.  Sous **Déclarations disponibles**, sélectionnez **BackgroundTasks**, puis cliquez sur **Ajouter**. Visual Studio ajoute **BackgroundTasks** sous **Déclarations prises en charge**.
+3.  Sous **Déclarations disponibles**, sélectionnez **BackgroundTasks**, puis cliquez sur **Ajouter**. VisualStudio ajoute **BackgroundTasks** sous **Déclarations prises en charge**.
 4.  Sous **Types de tâches pris en charge**, vérifiez que la case **Minuterie** est cochée.
 5.  Sous **Paramètres de l’application**, affectez **BackgroundTasks.BlogFeedBackgroundTask** au point d’entrée.
 6.  Cliquez ou appuyez sur l’onglet **Interface utilisateur de l’application**.
 7.  Affectez à **Notifications de verrouillage de l’écran** la valeur **Badge et texte de mosaïque**.
-8.  Définissez un chemin d’accès à une icône de 24x24 pixels dans le champ **Logo du badge**.
+8.  Définissez un chemin d’accès à une icône de 24x24pixels dans le champ **Logo du badge**.
     **Important** Cette icône doit uniquement utiliser des pixels monochromes et transparents.
-9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30x30 pixels.
-10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150 pixels.
+9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30x30pixels.
+10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150pixels.
 
 ## Inscrire la tâche en arrière-plan
 
 
 Créez un élément [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) pour inscrire votre tâche.
 
-> **Remarque** Depuis Windows 8.1, les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
+> **Remarque** Depuis Windows8.1, les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
  
 
 Dans la page principale de votre application, ajoutez la méthode **RegisterBackgroundTask** et appelez-la dans le gestionnaire d’événements **OnNavigatedTo**.
@@ -246,10 +246,10 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
 
 1.  Définissez un point d’arrêt dans la méthode Run de la tâche.
 2.  Appuyez sur F5 ou sur **Déboguer &gt; Démarrer le débogage** pour déployer et exécuter l’application.
-3.  Une fois l’application lancée, revenez à Visual Studio.
+3.  Une fois l’application lancée, revenez à VisualStudio.
 4.  Vérifiez que la barre d’outils **Emplacement de débogage** est visible. Elle se trouve dans le menu **Affichage &gt; Barres d’outils**.
 5.  Dans la barre d’outils **Emplacement de débogage**, cliquez sur la liste déroulante **Interrompre** et sélectionnez **BlogFeedBackgroundTask**.
-6.  Visual Studio interrompt l’exécution au niveau du point d’arrêt.
+6.  VisualStudio interrompt l’exécution au niveau du point d’arrêt.
 7.  Appuyez sur F5 ou sur **Déboguer &gt; Continuer** pour continuer à exécuter l’application.
 8.  Appuyez sur Maj+F5 ou sur **Déboguer &gt; Arrêter le débogage** pour arrêter le débogage.
 9.  Revenez à la vignette de l’application sur l’écran d’accueil. Après quelques secondes, les notifications par vignette apparaissent sur la vignette de votre application.
@@ -269,6 +269,6 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

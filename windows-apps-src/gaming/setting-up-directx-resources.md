@@ -12,7 +12,7 @@ ms.openlocfilehash: f60d7c5b526fcdea8552256a6ebe4b92d5736264
 # Configurer des ressources DirectX et afficher une image
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Nous vous montrons ici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis comment présenter l’image rendue à l’écran.
 
@@ -29,7 +29,7 @@ Nous partons du principe que vous êtes familiarisé avec C++. Vous avez égalem
 
 ### 1. Déclaration de variables d’interface Direct3D à l’aide de ComPtr
 
-Nous déclarons les variables d’interface Direct3D à l’aide du modèle de [pointeur intelligent](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) ComPtr issu de la bibliothèque de modèles C++ Windows Runtime (WRL) afin de pouvoir gérer la durée de vie de ces variables en parant à toute exception. Nous pouvons ensuite utiliser ces variables pour accéder à la classe [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) et à ses membres. Par exemple :
+Nous déclarons les variables d’interface Direct3D à l’aide du modèle de [pointeur intelligent](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) ComPtr issu de la bibliothèque de modèles C++ Windows Runtime (WRL) afin de pouvoir gérer la durée de vie de ces variables en parant à toute exception. Nous pouvons ensuite utiliser ces variables pour accéder à la classe [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) et à ses membres. Par exemple:
 
 ```cpp
     ComPtr<ID3D11RenderTargetView> m_renderTargetView;
@@ -220,12 +220,9 @@ L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de
 
 Dans cette boucle, nous appelons :
 
-1.  [
-            **ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser que la cible de sortie correspond à la cible de rendu ;
-2.  [
-            **ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) pour effacer la cible de rendu et lui attribuer une couleur unie bleue ;
-3.  [
-            **IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) pour présenter l’image rendue dans la fenêtre.
+1.  [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser que la cible de sortie correspond à la cible de rendu ;
+2.  [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) pour effacer la cible de rendu et lui attribuer une couleur unie bleue ;
+3.  [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) pour présenter l’image rendue dans la fenêtre.
 
 Étant donné que nous avons préalablement défini une latence d’image maximale de 1, Windows ralentit habituellement la boucle de rendu pour la caler à la fréquence de rafraîchissement de l’écran, généralement autour de 60 Hz. Windows ralentit la boucle de rendu en mettant l’application en veille lorsqu’elle appelle [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). Windows met l’application en veille jusqu’à ce que l’écran soit rafraîchi.
 

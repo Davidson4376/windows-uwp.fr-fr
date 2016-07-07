@@ -20,13 +20,14 @@ Avant d'entrer la description, vous devez spécifier une ou plusieurs [langues](
 
 Sous la section **Descriptions** de la soumission de votre produit in-app, cliquez sur **Gérer les langages de description**, puis sur **Préférences linguistiques** de la page suivante. Cochez les cases pour les langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour**. Les langues que vous avez sélectionnées s’afficheront dans la section **Langues de description** de la page. Pour supprimer une ou plusieurs de ces langues, cliquez sur **Supprimer** (ou cliquez sur **Préférences linguistiques** et décochez la case pour les langues que vous souhaitez supprimer). Cliquez sur **Enregistrer** lorsque la liste des langues vous convient.
 
-> **Conseil** Pour ajouter ou supprimer des langues supplémentaires, cliquez sur **Gérer les langues de description** à partir de la vue d’ensemble de la soumission du produit in-app.
+> 
+            **Conseil** Pour ajouter ou supprimer des langues supplémentaires, cliquez sur **Gérer les langues de description** à partir de la vue d’ensemble de la soumission du produit in-app.
 
 Pour modifier une description, cliquez sur le nom de la langue dans la vue d’ensemble de la soumission du produit in-app. Les informations que vous pouvez entrer pour chaque langue sont décrites ci-dessous.
 
 ## Titre
 
-Vous devez fournir un titre ici, qui sera le nom du produit in-app que verront vos clients. La longueur du titre ne doit pas dépasser 100 caractères.
+Vous devez fournir un titre ici, qui sera le nom du produit in-app que verront vos clients. La longueur du titre ne doit pas dépasser 100caractères.
 
 ## Description
 
@@ -46,6 +47,6 @@ Vous pouvez également fournir une image qui s'affichera lors de l'achat du prod
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

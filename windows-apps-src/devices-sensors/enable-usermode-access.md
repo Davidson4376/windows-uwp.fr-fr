@@ -1,29 +1,29 @@
 ---
 author: JordanRh1
-title: "Activer l’accès en mode utilisateur sur Windows 10 IoT Standard"
-description: "Ce didacticiel explique comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows 10 IoT Standard."
+title: "Activer l’accès en mode utilisateur sur Windows10IoTStandard"
+description: "Ce didacticiel explique comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows10IoTStandard."
 ms.sourcegitcommit: f7d7dac79154b1a19eb646e7d29d70b2f6a15e35
 ms.openlocfilehash: eedabee593400ff0260b6d3468ac922285a034f8
 
 ---
-# Activer l’accès en mode utilisateur sur Windows 10 IoT Standard
+# Activer l’accès en mode utilisateur sur Windows10IoTStandard
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Windows 10 IoT Standard contient de nouvelles API d’accès à GPIO, I2C, SPI et UART directement à partir du mode utilisateur. Les cartes de développement comme Raspberry Pi 2 exposent un sous-ensemble de ces connexions, qui permettent aux utilisateurs d’étendre un module de calcul de base avec des circuits personnalisés pour l’adressage d’une application donnée. Ces bus de bas niveau sont généralement partagés avec d’autres fonctions critiques intégrées, et seul un sous-ensemble des broches et des bus GPIO sont exposés sur les en-têtes. Pour préserver la stabilité du système, il est nécessaire de spécifier les broches et les bus qui peuvent être modifiés en toute sécurité par les applications en mode utilisateur. 
+Windows10IoTStandard contient de nouvelles API d’accès à GPIO, I2C, SPI et UART directement à partir du mode utilisateur. Les cartes de développement comme RaspberryPi2 exposent un sous-ensemble de ces connexions, qui permettent aux utilisateurs d’étendre un module de calcul de base avec des circuits personnalisés pour l’adressage d’une application donnée. Ces bus de bas niveau sont généralement partagés avec d’autres fonctions critiques intégrées, et seul un sous-ensemble des broches et des bus GPIO sont exposés sur les en-têtes. Pour préserver la stabilité du système, il est nécessaire de spécifier les broches et les bus qui peuvent être modifiés en toute sécurité par les applications en mode utilisateur. 
 
 Ce document explique comment spécifier cette configuration dans l’interface ACPI et fournit des outils pour confirmer que la configuration a été correctement spécifiée. 
 
 > [!IMPORTANT]
-> Ce document est destiné aux développeurs UEFI et ACPI. Il suppose que vous êtes déjà familiarisé avec l’interface ACPI, la création d’ASL et les extensions SpbCx/GpioClx.
+> Ce document est destiné aux développeurs UEFI et ACPI. Il suppose que vous êtes déjà familiarisé avec l’interfaceACPI, la création d’ASL et les extensions SpbCx/GpioClx.
 
 L’accès en mode utilisateur aux bus de bas niveau sur Windows est ajouté via les infrastructures `GpioClx` et `SpbCx` existantes. Un nouveau pilote appelé *RhProxy*, uniquement disponible sur Windows 10 IoT Standard, expose les ressources `GpioClx` et `SpbCx` au mode utilisateur. Pour activer les API, vous devez avoir déclaré un nœud d’appareil pour rhproxy dans vos tables ACPI avec chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. Ce document présente la procédure de création et de vérification de l’ASL. 
 
 
 ## ASL par exemple
 
-Examinons la déclaration d’un nœud d’appareil rhproxy sur Raspberry Pi 2. Tout d’abord, créez la déclaration d’appareil ACPI dans l’étendue \\_SB.  
+Examinons la déclaration d’un nœud d’appareil rhproxy sur RaspberryPi2. Tout d’abord, créez la déclaration d’appareil ACPI dans l’étendue \\_SB.  
 
 ```cpp
 Device(RHPX) 
@@ -34,15 +34,15 @@ Device(RHPX)
     
 ```
 
-* _HID : ID du matériel. Définissez ce paramètre sur un ID matériel spécifique au fournisseur. 
-* _CID : ID compatible. Il doit s’agir de « MSFT8000 ».  
-* _UID : ID unique. Définissez ce paramètre sur 1.  
+* _HID: ID du matériel. Définissez ce paramètre sur un ID matériel spécifique au fournisseur. 
+* _CID: ID compatible. Il doit s’agir de «MSFT8000».  
+* _UID: ID unique. Définissez ce paramètre sur1.  
 
 Nous allons ensuite déclarer chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) et [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.spi.spicontroller.aspx). 
 
 ### SPI 
 
-Raspberry Pi comporte deux bus SPI exposés. SPI0 comporte deux lignes de sélection de microprocesseur et SPI1 comporte une seule ligne de sélection de microprocesseur. Une déclaration de ressource SPISerialBus() est requise pour chaque ligne de sélection de processeur pour chaque bus. Les deux déclarations de ressource SPISerialBus suivantes sont pour les deux lignes de sélection de processeur sur SPI0. Le champ DeviceSelection contient une valeur unique que le pilote interprète comme un identificateur de ligne de sélection de microprocesseur. La valeur exacte que vous indiquez dans le champ DeviceSelection dépend de la manière dont votre pilote interprète ce champ du descripteur de connexion ACPI.  
+RaspberryPi comporte deux bus SPI exposés. SPI0 comporte deux lignes de sélection de microprocesseur et SPI1 comporte une seule ligne de sélection de microprocesseur. Une déclaration de ressource SPISerialBus() est requise pour chaque ligne de sélection de processeur pour chaque bus. Les deux déclarations de ressource SPISerialBus suivantes sont pour les deux lignes de sélection de processeur sur SPI0. Le champ DeviceSelection contient une valeur unique que le pilote interprète comme un identificateur de ligne de sélection de microprocesseur. La valeur exacte que vous indiquez dans le champ DeviceSelection dépend de la manière dont votre pilote interprète ce champ du descripteur de connexion ACPI.  
 
 ```cpp
 // Index 0 
@@ -83,28 +83,28 @@ SPISerialBus(              // SCKL - GPIO 11 - Pin 23
 
 ```
 
-Comment le logiciel sait-il que ces deux ressources doivent être associées au même bus ? Le mappage entre le nom convivial de bus et l’index de ressource est spécifié dans le DSD :  
+Comment le logiciel sait-il que ces deux ressources doivent être associées au même bus? Le mappage entre le nom convivial de bus et l’index de ressource est spécifié dans le DSD:  
 
 ```cpp
 Package(2) { "bus-SPI-SPI0", Package() { 0, 1 }}, 
 ```
 
-Cela crée un bus nommé « SPI0 » avec deux lignes de sélection de processeur : les index de ressource 0 et 1. Plusieurs autres propriétés sont requises pour déclarer les fonctionnalités du bus SPI.  
+Cela crée un bus nommé «SPI0» avec deux lignes de sélection de processeur: les index de ressource0 et1. Plusieurs autres propriétés sont requises pour déclarer les fonctionnalités du bus SPI.  
 
 ```cpp
 Package(2) { "SPI0-MinClockInHz", 7629 }, 
 Package(2) { "SPI0-MaxClockInHz", 125000000 },
 ```
 
-Les propriétés **MinClockInHz** et **MaxClockInHz** spécifient les vitesses d’horloge minimale et maximale prises en charge par le contrôleur. L’API empêche les utilisateurs de spécifier des valeurs en dehors de cette plage. La vitesse d’horloge est transmise à votre pilote SPB dans le champ _SPE du descripteur de connexion (ACPI section 6.4.3.8.2.2).  
+Les propriétés **MinClockInHz** et **MaxClockInHz** spécifient les vitesses d’horloge minimale et maximale prises en charge par le contrôleur. L’API empêche les utilisateurs de spécifier des valeurs en dehors de cette plage. La vitesse d’horloge est transmise à votre piloteSPB dans le champ _SPE du descripteur de connexion (ACPI section6.4.3.8.2.2).  
 
 ```cpp
 Package(2) { "SPI0-SupportedDataBitLengths", Package() { 8 }}, 
 ```
 
-La propriété **SupportedDataBitLengths** répertorie les longueurs de bits de données prises en charge par le contrôleur. Il est possible de spécifier plusieurs valeurs dans une liste séparée par des virgules. L’API empêche les utilisateurs de spécifier des valeurs en dehors de cette liste. La longueur de bits de données est transmise au pilote SPB dans le champ _LEN du descripteur de connexion (ACPI section 6.4.3.8.2.2).  
+La propriété **SupportedDataBitLengths** répertorie les longueurs de bits de données prises en charge par le contrôleur. Il est possible de spécifier plusieurs valeurs dans une liste séparée par des virgules. L’API empêche les utilisateurs de spécifier des valeurs en dehors de cette liste. La longueur de bits de données est transmise au piloteSPB dans le champ _LEN du descripteur de connexion (ACPI section6.4.3.8.2.2).  
 
-Vous pouvez considérer ces déclarations de ressources comme des « modèles ». Certains champs sont résolus au démarrage du système tandis que d’autres sont spécifiés dynamiquement lors de l’exécution. Les champs suivants du descripteur SPISerialBus sont résolus : 
+Vous pouvez considérer ces déclarations de ressources comme des «modèles». Certains champs sont résolus au démarrage du système tandis que d’autres sont spécifiés dynamiquement lors de l’exécution. Les champs suivants du descripteur SPISerialBus sont résolus: 
 
 * DeviceSelection 
 * DeviceSelectionPolarity 
@@ -112,7 +112,7 @@ Vous pouvez considérer ces déclarations de ressources comme des « modèles 
 * SlaveMode 
 * ResourceSource 
 
-Les champs suivants sont des espaces réservés pour les valeurs spécifiées par l’utilisateur lors de l’exécution : 
+Les champs suivants sont des espaces réservés pour les valeurs spécifiées par l’utilisateur lors de l’exécution: 
 
 * DataBitLength 
 * ConnectionSpeed 
@@ -149,19 +149,19 @@ La déclaration de nom convivial qui l’accompagne (obligatoire) est spécifié
 Package(2) { "bus-SPI-SPI1", Package() { 2 }}, 
 ```
 
-Cela crée un bus nommé « SPI1 » et l’associe à l’index de ressource 2.  
+Cela crée un bus nommé «SPI1» et l’associe à l’index de ressource2.  
 
-#### Exigences liées au pilote SPI 
+#### Exigences liées au piloteSPI 
 
 * Doit utiliser `SpbCx` ou être compatible SpbCx 
 * Doit avoir réussi les [tests SPI dans MITT](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
-* Doit prendre en charge une vitesse d’horloge de 4 MHz 
-* Doit prendre en charge la longueur des données de 8 bits 
-* Doit prendre en charge tous les Modes SPI : 0, 1, 2, 3 
+* Doit prendre en charge une vitesse d’horloge de 4MHz 
+* Doit prendre en charge la longueur des données de 8bits 
+* Doit prendre en charge tous les Modes SPI: 0, 1, 2, 3 
 
 ### I2C 
 
-Ensuite, nous déclarons les ressources I2C. Raspberry Pi expose un seul bus I2C sur les broches 3 et 5. 
+Ensuite, nous déclarons les ressourcesI2C. RaspberryPi expose un seul busI2C sur les broches3 et5. 
 
 ```cpp
 // Index 3 
@@ -177,42 +177,42 @@ I2CSerialBus(              // Pin 3 (GPIO2, SDA1), 5 (GPIO3, SCL1)
 
 ```
 
-La déclaration de nom convivial qui l’accompagne (obligatoire) est spécifiée dans le DSD : 
+La déclaration de nom convivial qui l’accompagne (obligatoire) est spécifiée dans le DSD: 
 
 ```cpp
 Package(2) { "bus-I2C-I2C1", Package() { 3 }}, 
 ```
 
-Ce code déclare un bus I2C avec un nom convivial « I2C1 » qui fait référence à l’index de ressource 3, qui est l’index de la ressource I2CSerialBus() que nous avons déclarée ci-dessus. 
+Ce code déclare un busI2C avec un nom convivial «I2C1» qui fait référence à l’index de ressource3, qui est l’index de la ressource I2CSerialBus() que nous avons déclarée ci-dessus. 
 
-Les champs suivants du descripteur I2CSerialBus() sont résolus : 
+Les champs suivants du descripteur I2CSerialBus() sont résolus: 
 
 * SlaveMode 
 * ResourceSource 
 
-Les champs suivants sont des espaces réservés pour les valeurs spécifiées par l’utilisateur lors de l’exécution : 
+Les champs suivants sont des espaces réservés pour les valeurs spécifiées par l’utilisateur lors de l’exécution: 
 
 * SlaveAddress 
 * ConnectionSpeed 
 * AddressingMode 
 
-#### Exigences liées au pilote I2C 
+#### Exigences liées au piloteI2C 
 
 * Doit utiliser SpbCx ou être compatible SpbCx 
 * Doit avoir réussi les [tests I2C dans MITT](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx) 
-* Doit prendre en charge l’adressage 7 bits 
-* Doit prendre en charge une vitesse d’horloge de 100 KHz 
-* Doit prendre en charge une vitesse d’horloge de 400 KHz 
+* Doit prendre en charge l’adressage 7bits 
+* Doit prendre en charge une vitesse d’horloge de 100KHz 
+* Doit prendre en charge une vitesse d’horloge de 400KHz 
 
 ### GPIO 
 
-Ensuite, nous déclarons tous les broches GPIO qui sont exposées au mode utilisateur. Nous vous recommandons de procéder comme suit pour décider quelles broches exposer : 
+Ensuite, nous déclarons tous les broches GPIO qui sont exposées au mode utilisateur. Nous vous recommandons de procéder comme suit pour décider quelles broches exposer: 
 
 * Déclarez toutes les broches sur les en-têtes exposées. 
 * Déclarez les broches connectées à des fonctions intégrées utiles comme les boutons et les voyants. 
 * Ne déclarez pas les broches qui sont réservées aux fonctions système ou qui ne sont connectées à rien. 
 
-Le bloc suivant d’ASL déclare deux broches : GPIO4 et GPIO5. Les autres broches n’apparaissent pas ici par souci de brièveté. L’annexe C contient un exemple de script powershell qui peut être utilisé pour générer les ressources GPIO. 
+Le bloc suivant d’ASL déclare deux broches: GPIO4 et GPIO5. Les autres broches n’apparaissent pas ici par souci de brièveté. L’annexeC contient un exemple de script powershell qui peut être utilisé pour générer les ressourcesGPIO. 
 
 ```cpp
 // Index 4 – GPIO 4 
@@ -224,7 +224,7 @@ GpioIO(Shared, PullUp, , , , “\\_SB.GPI0”, , , , ) { 5 }
 GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 } 
 ```
 
-Les conditions suivantes doivent être respectées lors de la déclaration des broches GPIO : 
+Les conditions suivantes doivent être respectées lors de la déclaration des brochesGPIO: 
 
 * Seuls les contrôleurs GPIO mappés en mémoire sont pris en charge. Les contrôleurs GPIO interfacés sur I2C/SPI ne sont pas pris en charge. Le pilote du contrôleur est un contrôleur mappé en mémoire s’il définit l’indicateur [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) dans la structure [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) en réponse au rappel [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx). 
 * Chaque broche nécessite une ressource GpioIO et une ressource GpioInt. La ressource GpioInt doit immédiatement suivre la ressource GpioIO et doit faire référence au même numéro de broche. 
@@ -240,7 +240,7 @@ Les conditions suivantes doivent être respectées lors de la déclaration des b
 
 Le code d’initialisation du microprogramme, d’UEFI et du pilote ne doit pas modifier l’état d’une broche à partir de son état de mise sous tension au cours du démarrage. L’utilisateur est le seul à savoir quels éléments sont attachés à une broche et par conséquent, quelles transitions d’état sont sécurisées. L’état de mise sous tension de chaque broche doit être documenté pour que les utilisateurs puissent concevoir un matériel qui crée une interface correcte avec une broche. Une broche ne doit pas changer d’état de façon inattendue au cours du démarrage. 
 
-Si une broche exposée comporte plusieurs fonctions secondaires, il incombe au microprogramme d’initialiser la broche dans la configuration mux (multiplexe) correcte pour une utilisation ultérieure par le système d’exploitation. La modification dynamique de la fonction d’une broche (« multiplexage ») n’est pas actuellement prise en charge sur Windows. 
+Si une broche exposée comporte plusieurs fonctions secondaires, il incombe au microprogramme d’initialiser la broche dans la configuration mux (multiplexe) correcte pour une utilisation ultérieure par le système d’exploitation. La modification dynamique de la fonction d’une broche («multiplexage») n’est pas actuellement prise en charge sur Windows. 
 
 #### Modes de lecteur pris en charge 
 
@@ -250,13 +250,13 @@ Si votre contrôleur GPIO prend en charge les résistances pull-up et pull-down 
 Package (2) { “GPIO-SupportedDriveModes”, 0xf }, 
 ```
 
-La propriété SupportedDriveModes indique quels modes de lecteur sont pris en charge par le contrôleur GPIO. Dans l’exemple ci-dessus, tous les modes de lecteur suivants sont pris en charge. La propriété est un masque de bits des valeurs suivantes : 
+La propriété SupportedDriveModes indique quels modes de lecteur sont pris en charge par le contrôleur GPIO. Dans l’exemple ci-dessus, tous les modes de lecteur suivants sont pris en charge. La propriété est un masque de bits des valeurs suivantes: 
 
 | Valeur de l’indicateur | Mode du lecteur | Description |
 |------------|------------|-------------|
-| 0x1        | InputHighImpedance | La broche prend en charge une impédance d’entrée élevée, qui correspond à la valeur « PullNone » dans l’interface ACPI. |
-| 0x2        | InputPullUp | La broche prend en charge une résistance pull-up intégrée, qui correspond à la valeur « PullUp » dans l’interface ACPI. |
-| 0x4        | InputPullDown | La broche prend en charge une résistance pull-down intégrée, qui correspond à la valeur « PullDown » dans l’interface ACPI. |
+| 0x1        | InputHighImpedance | La broche prend en charge une impédance d’entrée élevée, qui correspond à la valeur «PullNone» dans l’interface ACPI. |
+| 0x2        | InputPullUp | La broche prend en charge une résistance pull-up intégrée, qui correspond à la valeur «PullUp» dans l’interface ACPI. |
+| 0x4        | InputPullDown | La broche prend en charge une résistance pull-down intégrée, qui correspond à la valeur «PullDown» dans l’interface ACPI. |
 | 0x8        | OutputCmos | La broche prend en charge la génération de fortes hausses et de fortes baisses (contrairement aux purges directes). |
 
 InputHighImpedance et OutputCmos sont pris en charge par la plupart des contrôleurs GPIO. Si la propriété SupportedDriveModes n’est pas spécifiée, il s’agit de la valeur par défaut. 
@@ -265,10 +265,10 @@ Si un signal GPIO passe à travers un convertisseur de niveau avant d’atteindr
 
 #### Numérotation de broche 
 
-Windows prend en charge deux modèles de numérotation de broche : 
+Windows prend en charge deux modèles de numérotation de broche: 
 
-* Numérotation séquentielle de broche : les utilisateurs voient des nombres comme 0, 1, 2... jusqu’au nombre de broches exposées. 0 est la première ressource GpioIo déclarée dans ASL, 1 est la deuxième ressource GpioIo déclarée dans ASL et ainsi de suite. 
-* Numérotation native de broche : les utilisateurs, voit les numéros de broche spécifiés dans les descripteurs GpioIo, par exemple, 4, 5, 12, 13,... .  
+* Numérotation séquentielle de broche: les utilisateurs voient des nombres comme 0, 1, 2... jusqu’au nombre de broches exposées. 0 est la première ressource GpioIo déclarée dans ASL, 1 est la deuxième ressource GpioIo déclarée dans ASL et ainsi de suite. 
+* Numérotation native de broche: les utilisateurs, voit les numéros de broche spécifiés dans les descripteurs GpioIo, par exemple, 4, 5, 12, 13,... .  
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 }, 
@@ -284,9 +284,9 @@ Package (2) { “GPIO-PinCount”, 54 },
 
 La propriété **PinCount** doit correspondre à la valeur renvoyée par le biais de la propriété **TotalPins** dans le rappel [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) du pilote `GpioClx`. 
 
-Choisissez le modèle de numérotation le plus compatible avec la documentation publiée existante pour votre carte. Par exemple, Raspberry Pi utilise la numérotation native de broche car de nombreux diagrammes de brochage existants utilisent les numéros de broche BCM2835. MinnowBoardMax utilise la numérotation séquentielle de broche car il y a peu de diagrammes de brochage existants, et la numérotation séquentielle de broche simplifie l’expérience du développeur car seules 10 broches sur plus de 200 sont exposées. La décision d’utiliser la numérotation séquentielle ou native de broche doit avoir pour objet de réduire la confusion du développeur. 
+Choisissez le modèle de numérotation le plus compatible avec la documentation publiée existante pour votre carte. Par exemple, RaspberryPi utilise la numérotation native de broche car de nombreux diagrammes de brochage existants utilisent les numéros de brocheBCM2835. MinnowBoardMax utilise la numérotation séquentielle de broche car il y a peu de diagrammes de brochage existants, et la numérotation séquentielle de broche simplifie l’expérience du développeur car seules 10broches sur plus de200 sont exposées. La décision d’utiliser la numérotation séquentielle ou native de broche doit avoir pour objet de réduire la confusion du développeur. 
 
-#### Exigences liées au pilote GPIO 
+#### Exigences liées au piloteGPIO 
 
 * Doit utiliser `GpioClx`
 * Doit être mappé en mémoire sur SOC 
@@ -294,7 +294,7 @@ Choisissez le modèle de numérotation le plus compatible avec la documentation 
 
 ### UART 
 
-UART n’est pas pris en charge sur Raspberry Pi au moment où nous écrivons ceci, donc la déclaration UART suivante est de MinnowBoardMax. 
+UART n’est pas pris en charge sur RaspberryPi au moment où nous écrivons ceci, donc la déclaration UART suivante est de MinnowBoardMax. 
 
 ```cpp
 // Index 2 
@@ -317,17 +317,17 @@ UARTSerialBus(           // Pin 17, 19 of JP1, for SIO_UART2
 
 Seul le champ ResourceSource est résolu. Tous les autres champs sont des espaces réservés pour les valeurs spécifiées par l’utilisateur lors de l’exécution. 
 
-La déclaration de nom convivial associée est la suivante : 
+La déclaration de nom convivial associée est la suivante: 
 
 ```cpp
 Package(2) { "bus-UART-UART2", Package() { 2 }}, 
 ```
 
-Ce code affecte le nom convivial « UART2 » au contrôleur, qui est l’identificateur dont les utilisateurs se serviront pour accéder au bus à partir du mode utilisateur.  
+Ce code affecte le nom convivial «UART2» au contrôleur, qui est l’identificateur dont les utilisateurs se serviront pour accéder au bus à partir du mode utilisateur.  
 
 ## Multiplexage de broche au moment de l’exécution 
 
-Le multiplexage de broche est la capacité d’utiliser la même broche physique pour différentes fonctions. Il est possible d’acheminer plusieurs appareils sur puce, par exemple un contrôleur I2C, un contrôleur SPI et un contrôleur GPIO, vers la même broche physique sur un SOC. Le bloc mux contrôle quelle fonction est active sur la broche à tout moment. Généralement, le microprogramme est chargé de déterminer les affectations de fonction au démarrage, et ces affectations restent statiques tout au long de la session de démarrage. Le multiplexage de broche au moment de l’exécution ajoute la capacité de reconfigurer les affectations de fonction de la broche à l’exécution. Le fait de laisser les utilisateurs choisir la fonction d’une broche à l’exécution accélère le développement en leur permettant de reconfigurer rapidement les broches d’une carte. En outre, cela permet au matériel de prendre en charge un plus large éventail d’applications qu’une configuration statique. 
+Le multiplexage de broche est la capacité d’utiliser la même broche physique pour différentes fonctions. Il est possible d’acheminer plusieurs appareils sur puce, par exemple un contrôleurI2C, un contrôleurSPI et un contrôleurGPIO, vers la même broche physique sur unSOC. Le bloc mux contrôle quelle fonction est active sur la broche à tout moment. Généralement, le microprogramme est chargé de déterminer les affectations de fonction au démarrage, et ces affectations restent statiques tout au long de la session de démarrage. Le multiplexage de broche au moment de l’exécution ajoute la capacité de reconfigurer les affectations de fonction de la broche à l’exécution. Le fait de laisser les utilisateurs choisir la fonction d’une broche à l’exécution accélère le développement en leur permettant de reconfigurer rapidement les broches d’une carte. En outre, cela permet au matériel de prendre en charge un plus large éventail d’applications qu’une configuration statique. 
 
 Les utilisateurs profitent de la prise en charge du multiplexage pour GPIO, I2C, SPI et UART sans écrire de code supplémentaire. Quand un utilisateur ouvre un GPIO ou un bus en utilisant [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) ou [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync), les broches physiques sous-jacentes sont automatiquement multiplexées sur la fonction demandée. Si les broches sont déjà utilisées par une autre fonction, l’appel à OpenPin() ou FromIdAsync() échoue. Lorsque l’utilisateur ferme l’appareil en supprimant l’objet [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx), [I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx), [SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) ou [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx), les broches sont libérées, ce qui permet de les ouvrir ultérieurement pour une autre fonction. 
 
@@ -341,11 +341,11 @@ Cette section décrit les interfaces et les protocoles sous-jacents impliqués d
 
 Le multiplexage de broche est accompli via l’utilisation conjointe de plusieurs composants. 
 
-* Les serveurs de multiplexage de broche : il s’agit des pilotes qui contrôlent le bloc de contrôle du multiplexage de broche. Les serveurs de multiplexage de broche reçoivent les requêtes de multiplexage de broche des clients via les requêtes de réservation des ressources de multiplexage (via les requêtes *IRP_MJ_CREATE*) et les requêtes de basculement de la fonction d’une broche (via les requêtes *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*). Le serveur de multiplexage de broche est généralement le pilote GPIO, dans la mesure où le bloc de multiplexage fait parfois partie du bloc GPIO. Même si le bloc de multiplexage est un périphérique distinct, le pilote GPIO est un emplacement logique pour placer des fonctionnalités de multiplexage. 
-* Clients du multiplexage de broche : il s’agit des pilotes qui utilisent le multiplexage de broche. Les clients du multiplexage de broche reçoivent des ressources de multiplexage de broche à partir du microprogramme ACPI. Les ressources de multiplexage de broche sont un type de ressource de connexion et sont gérées par le concentrateur de ressources. Les clients du multiplexage de broche réservent des ressources de multiplexage de broche en ouvrant un handle vers la ressource. Pour appliquer un changement de matériel, les clients doivent valider la configuration en envoyant une requête *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*. Les clients libèrent les ressources de multiplexage de broche en fermant le handle, auquel cas la configuration du multiplexage est rétablie à son état par défaut. 
+* Les serveurs de multiplexage de broche: il s’agit des pilotes qui contrôlent le bloc de contrôle du multiplexage de broche. Les serveurs de multiplexage de broche reçoivent les requêtes de multiplexage de broche des clients via les requêtes de réservation des ressources de multiplexage (via les requêtes *IRP_MJ_CREATE*) et les requêtes de basculement de la fonction d’une broche (via les requêtes *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*). Le serveur de multiplexage de broche est généralement le pilote GPIO, dans la mesure où le bloc de multiplexage fait parfois partie du bloc GPIO. Même si le bloc de multiplexage est un périphérique distinct, le pilote GPIO est un emplacement logique pour placer des fonctionnalités de multiplexage. 
+* Clients du multiplexage de broche: il s’agit des pilotes qui utilisent le multiplexage de broche. Les clients du multiplexage de broche reçoivent des ressources de multiplexage de broche à partir du microprogramme ACPI. Les ressources de multiplexage de broche sont un type de ressource de connexion et sont gérées par le concentrateur de ressources. Les clients du multiplexage de broche réservent des ressources de multiplexage de broche en ouvrant un handle vers la ressource. Pour appliquer un changement de matériel, les clients doivent valider la configuration en envoyant une requête *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*. Les clients libèrent les ressources de multiplexage de broche en fermant le handle, auquel cas la configuration du multiplexage est rétablie à son état par défaut. 
 * Microprogramme ACPI : spécifie la configuration du multiplexage avec des ressources `MsftFunctionConfig()`. Les ressources MsftFunctionConfig expriment quelles broches sont requises par un client, et dans quelle configuration de multiplexage. Les ressources MsftFunctionConfig contiennent le numéro de fonction, la configuration de la résistance pull et la liste des numéros de broche. Les ressources MsftFunctionConfig sont fournies aux clients du multiplexage de broche en tant que ressources matérielles, qui sont reçues par les pilotes dans leur rappel PrepareHardware de la même manière que les ressources de connexion GPIO et SPB. Les clients reçoivent un ID de concentrateur de ressource qui peut être utilisé pour ouvrir un handle vers la ressource. 
 
-> Vous devez faire passer le commutateur de ligne de commande `/MsftInternal` à `asl.exe` pour compiler les fichiers ASL contenant les descripteurs `MsftFunctionConfig()`, car ces descripteurs sont actuellement examinés par le comité de travail ACPI. Par exemple : `asl.exe /MsftInternal dsdt.asl`
+> Vous devez faire passer le commutateur de ligne de commande `/MsftInternal` à `asl.exe` pour compiler les fichiers ASL contenant les descripteurs `MsftFunctionConfig()`, car ces descripteurs sont actuellement examinés par le comité de travail ACPI. Par exemple: `asl.exe /MsftInternal dsdt.asl`
 
 La séquence des opérations impliquées dans le multiplexage de broche est présentée ci-dessous. 
 
@@ -367,7 +367,7 @@ Cette section explique comment un client utilise la fonctionnalité de multiplex
 
 ####    Analyse des ressources
 
-Un pilote WDF reçoit des ressources `MsftFunctionConfig()` dans sa routine [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx). Les ressources MsftFunctionConfig peuvent être identifiées par les champs suivants :
+Un pilote WDF reçoit des ressources `MsftFunctionConfig()` dans sa routine [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx). Les ressources MsftFunctionConfig peuvent être identifiées par les champs suivants:
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -375,7 +375,7 @@ CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Class = CM_RESOURCE_CONNECTION_CLAS
 CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Type = CM_RESOURCE_CONNECTION_TYPE_FUNCTION_CONFIG
 ```
 
-Une routine `EvtDevicePrepareHardware()` peut extraire des ressources MsftFunctionConfig comme suit :
+Une routine `EvtDevicePrepareHardware()` peut extraire des ressources MsftFunctionConfig comme suit:
 
 ```cpp
 EVT_WDF_DEVICE_PREPARE_HARDWARE evtDevicePrepareHardware;
@@ -516,11 +516,11 @@ Cette section explique comment un serveur de multiplexage de broche expose sa fo
 
 ####    Gestion des requêtes IRP_MJ_CREATE
 
-Les clients ouvrent un handle vers une ressource lorsqu’ils veulent réserver une ressource de multiplexage de broche. Un serveur de multiplexage de broche reçoit des requêtes *IRP_MJ_CREATE* par le biais d’une opération d’analyse à partir du concentrateur de ressources. Le composant de chemin d’accès final de la requête *IRP_MJ_CREATE* contient l’ID du concentrateur de ressources, qui est un entier 64 bits au format hexadécimal. Le serveur doit extraire l’ID du concentrateur de ressources à partir du nom de fichier en utilisant `RESOURCE_HUB_ID_FROM_FILE_NAME()` de reshub.h et envoyer *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* vers le concentrateur de ressources pour obtenir le descripteur `MsftFunctionConfig()`.
+Les clients ouvrent un handle vers une ressource lorsqu’ils veulent réserver une ressource de multiplexage de broche. Un serveur de multiplexage de broche reçoit des requêtes *IRP_MJ_CREATE* par le biais d’une opération d’analyse à partir du concentrateur de ressources. Le composant de chemin d’accès final de la requête *IRP_MJ_CREATE* contient l’ID du concentrateur de ressources, qui est un entier 64bits au format hexadécimal. Le serveur doit extraire l’ID du concentrateur de ressources à partir du nom de fichier en utilisant `RESOURCE_HUB_ID_FROM_FILE_NAME()` de reshub.h et envoyer *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* vers le concentrateur de ressources pour obtenir le descripteur `MsftFunctionConfig()`.
 
 Le serveur doit valider le descripteur et extraire le mode de partage et la liste des broches à partir du descripteur. Il doit ensuite effectuer l’arbitrage du partage des broches et, en cas de succès, marquer les broches comme réservées avant de terminer la requête.
 
-L’arbitrage global du partage réussit si l’arbitrage du partage réussit pour chaque broche dans la liste des broches. Chaque broche doit être arbitrée comme suit :
+L’arbitrage global du partage réussit si l’arbitrage du partage réussit pour chaque broche dans la liste des broches. Chaque broche doit être arbitrée comme suit:
 
 *   Si la broche n’est pas déjà réservée, l’arbitrage du partage réussit.
 *   Si la broche est déjà réservée comme broche exclusive, l’arbitrage du partage échoue.
@@ -565,20 +565,20 @@ La macro ACPI `MsftFunctionConfig()` est définie comme suit :
 
 ```
 
-* Shared/Exclusive : si Exclusive est défini, cette broche peut être obtenue par un seul client à la fois. Si Shared est défini, plusieurs clients partagés peuvent acquérir la ressource. Définissez toujours ce paramètre sur Exclusive, dans la mesure où le fait d’autoriser plusieurs clients non coordonnés à accéder à une ressource mutable peut générer des courses de données et donc des résultats imprévisibles. 
-* PinPullConfig : l’une des valeurs 
-  * PullDefault : utiliser la configuration pull par défaut de mise sous tension définie par le SOC 
-  * PullUp : activer la résistance pull-up 
-  * Pulldown : activer la résistance pull-down 
-  * PullNone : désactiver tous les résistances pull 
-* FunctionNumber : le numéro de fonction à programmer dans le multiplexage. 
-* ResourceSource : le chemin d’espace de noms ACPI du serveur de multiplexage de broche 
-* ResourceSourceIndex : définissez ce paramètre sur 0 
-* ResourceConsumer/ResourceProducer : définissez ce paramètre sur ResourceConsumer 
-* VendorData : données binaires facultatives dont la signification est définie par le serveur de multiplexage de broche. Ce champ doit généralement rester vide.
-* Pin List : liste séparée par des virgules des numéros de broches auxquels ma configuration s’applique. Lorsque le serveur de multiplexage de broche est un pilote GpioClx, il s’agit de numéros de broches GPIO qui ont la même signification que les numéros de broche dans un descripteur GpioIo. 
+* Shared/Exclusive: si Exclusive est défini, cette broche peut être obtenue par un seul client à la fois. Si Shared est défini, plusieurs clients partagés peuvent acquérir la ressource. Définissez toujours ce paramètre sur Exclusive, dans la mesure où le fait d’autoriser plusieurs clients non coordonnés à accéder à une ressource mutable peut générer des courses de données et donc des résultats imprévisibles. 
+* PinPullConfig: l’une des valeurs 
+  * PullDefault: utiliser la configuration pull par défaut de mise sous tension définie par le SOC 
+  * PullUp: activer la résistance pull-up 
+  * Pulldown: activer la résistance pull-down 
+  * PullNone: désactiver tous les résistances pull 
+* FunctionNumber: le numéro de fonction à programmer dans le multiplexage. 
+* ResourceSource: le chemin d’espace de noms ACPI du serveur de multiplexage de broche 
+* ResourceSourceIndex: définissez ce paramètre sur0 
+* ResourceConsumer/ResourceProducer: définissez ce paramètre sur ResourceConsumer 
+* VendorData: données binaires facultatives dont la signification est définie par le serveur de multiplexage de broche. Ce champ doit généralement rester vide.
+* Pin List: liste séparée par des virgules des numéros de broches auxquels ma configuration s’applique. Lorsque le serveur de multiplexage de broche est un pilote GpioClx, il s’agit de numéros de broches GPIO qui ont la même signification que les numéros de broche dans un descripteur GpioIo. 
 
-L’exemple suivant montre comment fournir une ressource MsftFunctionConfig() à un pilote de contrôleur I2C. 
+L’exemple suivant montre comment fournir une ressource MsftFunctionConfig() à un pilote de contrôleurI2C. 
 
 ```cpp
 Device(I2C1) 
@@ -603,21 +603,21 @@ Device(I2C1)
 } 
 ```
 
-En plus des ressources de mémoire et d’interruption généralement requises par un pilote de contrôleur, une ressource `MsftFunctionConfig()` est également spécifiée. Cette ressource permet au pilote de contrôleur I2C de placer les broches 2 et 3 (gérées par le nœud d’appareil au niveau de \\_SB. GPIO0) dans la fonction 4 avec la résistance pull-up activée. 
+En plus des ressources de mémoire et d’interruption généralement requises par un pilote de contrôleur, une ressource `MsftFunctionConfig()` est également spécifiée. Cette ressource permet au pilote de contrôleur I2C de placer les broches2 et3 (gérées par le nœud d’appareil au niveau de \\_SB. GPIO0) dans la fonction4 avec la résistance pull-up activée. 
 
 ### Prise en charge du multiplexage dans les pilotes clients GpioClx 
 
-`GpioClx` intègre la prise en charge du multiplexage de broche. Les pilotes miniport GpioClx (également appelés « pilotes clients GpioClx ») contrôlent le matériel du contrôleur GPIO. À partir de Windows 10 build 14327, les pilotes miniport GpioClx peuvent ajouter la prise en charge du multiplexage de broche en implémentant deux nouveaux DDI : 
+`GpioClx` intègre la prise en charge du multiplexage de broche. Les pilotes miniport GpioClx (également appelés «pilotes clients GpioClx») contrôlent le matériel du contrôleur GPIO. À partir de Windows10 build14327, les pilotes miniport GpioClx peuvent ajouter la prise en charge du multiplexage de broche en implémentant deux nouveaux DDI: 
 
 * CLIENT_ConnectFunctionConfigPins : appelée par `GpioClx` pour commander le pilote miniport et appliquer la configuration du multiplexage spécifiée. 
 * CLIENT_DisconnectFunctionConfigPins : appelée par `GpioClx` pour commander le pilote miniport et rétablir la configuration du multiplexage. 
 
 Consultez la page [Fonctions de rappel d’événement GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx) pour une description de ces routines.
 
-Outre ces deux nouvelles DDI, les DDI existantes doivent être auditées pour la compatibilité du multiplexage de broche : 
+Outre ces deux nouvellesDDI, les DDI existantes doivent être auditées pour la compatibilité du multiplexage de broche: 
 
 * CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins est appelée par GpioClx pour commander le pilote miniport et configurer une broche définie pour l’entrée ou la sortie GPIO. GPIO est mutuellement exclusif avec MsftFunctionConfig, ce qui signifie qu’une broche ne sera jamais connectée pour GPIO et MsftFunctionConfig en même temps. Dans la mesure où la fonction par défaut d’une broche ne doit pas obligatoirement être GPIO, une broche ne doit pas nécessairement être multiplexée sur GPIO lorsque ConnectIoPins est appelée. ConnectIoPins est requis pour effectuer toutes les opérations nécessaires pour préparer la broche aux entrées/sorties GPIO, notamment les opérations de multiplexage. *CLIENT_ConnectInterrupt* doit se comporter de la même façon, dans la mesure où les interruptions peuvent être considérées comme un cas spécial d’entrée GPIO. 
-* CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt : ces routines doivent rétablir l’état des broches au moment où CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt a été appelée, sauf si l’indicateur PreserveConfiguration a été spécifié. En plus de rétablir le sens des broches à leur état par défaut, le miniport doit également rétablir l’état de multiplexage de chaque broche au moment où la routine _Connect a été appelée. 
+* CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt: ces routines doivent rétablir l’état des broches au moment où CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt a été appelée, sauf si l’indicateur PreserveConfiguration a été spécifié. En plus de rétablir le sens des broches à leur état par défaut, le miniport doit également rétablir l’état de multiplexage de chaque broche au moment où la routine _Connect a été appelée. 
 
 Par exemple, supposons que la configuration du multiplexage par défaut d’une broche est UART, et que la broche peut également être utilisée comme GPIO. Lorsque CLIENT_ConnectIoPins est appelée pour connecter la broche pour GPIO, elle doit multiplexer la broche sur GPIO et, dans CLIENT_DisconnectIoPins, elle doit à nouveau multiplexer la broche sur UART. En général, les routines _Disconnect doivent annuler les opérations effectuées par les routines _Connect. 
 
@@ -633,7 +633,7 @@ Au moment de l’initialisation de l’appareil, les infrastructures `SpbCx` et 
 
 `SpbCx` applique la configuration de multiplexage de broche dans son gestionnaire *IRP_MJ_CREATE*, juste avant d’appeler le rappel [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) du pilote client. Si la configuration du multiplexage n’a pas pu être appliquée, le rappel `EvtSpbTargetConnect()` du pilote de contrôleur ne sera pas appelé. Par conséquent, un pilote de contrôleur SPB peut supposer que les broches sont multiplexées sur la fonction SPB avant que `EvtSpbTargetConnect()` soit appelée.
 
-`SpbCx` rétablit la configuration de multiplexage de broche dans son gestionnaire *IRP_MJ_CLOSE*, juste après l’appel du rappel [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) du pilote de contrôleur. Résultat : les broches sont multiplexées sur la fonction SPB chaque fois qu’un pilote de périphérique ouvre un handle sur le pilote de contrôleur SPB, et sont à nouveau multiplexées lorsque le pilote de périphérique ferme son handle.
+`SpbCx` rétablit la configuration de multiplexage de broche dans son gestionnaire *IRP_MJ_CLOSE*, juste après l’appel du rappel [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) du pilote de contrôleur. Résultat: les broches sont multiplexées sur la fonction SPB chaque fois qu’un pilote de périphérique ouvre un handle sur le pilote de contrôleur SPB, et sont à nouveau multiplexées lorsque le pilote de périphérique ferme son handle.
 
 `SerCx` se comporte de la même façon. `SerCx` acquiert toutes les ressources `MsftFunctionConfig()` dans son gestionnaire *IRP_MJ_CREATE* juste avant d’appeler le rappel [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) du pilote de contrôleur, et libère toutes les ressources dans son gestionnaire IRP_MJ_CLOSE, juste après l’appel du rappel [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) du pilote de contrôleur.
 
@@ -652,7 +652,7 @@ Lorsque vous avez fini de créer votre ASL, vous devez exécuter les tests du [K
 
 La première étape consiste à compiler et charger le fichier ASL sur votre système en cours de test. Nous recommandons d’utiliser ACPITABL.dat lors du développement et de la validation car il ne nécessite pas une reconstruction UEFI complète pour tester les modifications d’ASL. 
 
-1. Créez un fichier nommé yourboard.asl et placez le nœud d’appareil RHPX à l’intérieur d’un DefinitionBlock : 
+1. Créez un fichier nommé yourboard.asl et placez le nœud d’appareil RHPX à l’intérieur d’un DefinitionBlock: 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 {
@@ -666,17 +666,17 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 2.  Téléchargez le WDK et obtenez asl.exe.
-3.  Exécutez la commande suivante pour générer ACPITABL.dat :
+3.  Exécutez la commande suivante pour générer ACPITABL.dat:
 ```
 asl.exe yourboard.asl
 ```
 4.  Copiez le fichier ACPITABL.dat produit dans c:\windows\system32 sur votre système en cours de test.
-5.  Activez testsigning sur votre système en cours de test :
+5.  Activez testsigning sur votre système en cours de test:
 ```
 bcdedit /set testsigning on
 ```
 6.  Redémarrez le système en cours de test. Le système ajoutera les tables ACPI définies dans ACPITABL.dat aux tables du microprogramme du système. 
-7.  Vérifiez que le nœud d’appareil RHPX a été ajouté au système :
+7.  Vérifiez que le nœud d’appareil RHPX a été ajouté au système:
 ```
 devcon status *msft8000
 ```
@@ -686,15 +686,15 @@ La sortie de devcon doit indiquer que l’appareil est présent, même si le pil
 
 Lorsque vous sélectionnez le nœud d’appareil rhproxy dans le gestionnaire HLK, les tests applicables sont automatiquement sélectionnés.
 
-Dans le gestionnaire HLK, sélectionnez « Appareil proxy du concentrateur de ressources » :
+Dans le gestionnaire HLK, sélectionnez «Appareil proxy du concentrateur de ressources»:
 
 ![Capture d’écran du Gestionnaire HLK](images/usermode-hlk-1.png)
 
-Cliquez sur l’onglet Tests, puis sélectionnez les tests I2C WinRT, Gpio WinRT et Spi WinRT.
+Cliquez sur l’onglet Tests, puis sélectionnez les tests I2CWinRT, GpioWinRT et SpiWinRT.
 
 ![Capture d’écran du Gestionnaire HLK](images/usermode-hlk-2.png)
 
-Cliquez sur Exécuter la sélection. Vous pouvez accéder à une documentation supplémentaire sur chaque test en cliquant avec le bouton droit sur le test et en cliquant sur « Description du test ».
+Cliquez sur Exécuter la sélection. Vous pouvez accéder à une documentation supplémentaire sur chaque test en cliquant avec le bouton droit sur le test et en cliquant sur «Description du test».
 
 ### Ressources de test supplémentaires
 
@@ -711,7 +711,7 @@ Des outils en ligne de commande simples pour Gpio, I2c, Spi et Série sont dispo
 
 | Destination | Lien |
 |-------------|------|
-| Spécification ACPI 5.0 | http://acpi.info/spec.htm |
+| Spécification ACPI5.0 | http://acpi.info/spec.htm |
 | Asl.exe (compilateur Microsoft ASL) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
 | Windows.Devices.Gpio  | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
 | Windows.Devices.I2c | https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.aspx |
@@ -730,9 +730,9 @@ Des outils en ligne de commande simples pour Gpio, I2c, Spi et Série sont dispo
 
 ## Annexe
 
-### Annexe A - Liste d’ASL Raspberry Pi
+### AnnexeA - Liste d’ASL RaspberryPi
 
-Brochage d’en-tête : https://developer.microsoft.com/en-us/windows/iot/win10/samples/PinMappingsRPi2
+Brochage d’en-tête: https://developer.microsoft.com/en-us/windows/iot/win10/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -892,9 +892,9 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ```
 
-### Annexe B - Liste d’ASL MinnowBoardMax
+### AnnexeB - Liste d’ASL MinnowBoardMax
 
-Brochage d’en-tête : https://developer.microsoft.com/en-us/windows/iot/win10/samples/PinMappingsMBM
+Brochage d’en-tête: https://developer.microsoft.com/en-us/windows/iot/win10/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1047,9 +1047,9 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### Annexe C - Exemple de script Powershell pour générer des ressources GPIO
+### AnnexeC - Exemple de script Powershell pour générer des ressources GPIO
 
-Vous pouvez utiliser le script suivant pour générer les déclarations de ressource GPIO pour Raspberry Pi :
+Vous pouvez utiliser le script suivant pour générer les déclarations de ressource GPIO pour RaspberryPi:
 
 ```
 $pins = @(
@@ -1085,6 +1085,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

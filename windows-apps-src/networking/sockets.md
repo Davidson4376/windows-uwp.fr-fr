@@ -11,7 +11,7 @@ ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
 
 # Sockets
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -20,7 +20,8 @@ ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
 
 En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) que [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) pour communiquer avec d’autres appareils. Cette rubrique fournit des instructions détaillées sur l’utilisation de l’espace de noms **Windows.Networking.Sockets** pour les opérations réseau.
 
->**Remarque** Dans le cadre de [l’isolement réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), le système refuse l’établissement de connexions de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur via soit l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Cela signifie que vous ne pouvez pas utiliser des sockets pour faire communiquer deux applications UWP. UWP fournit d’autres mécanismes permettant de faire communiquer les applications. Voir [Communication entre les applications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) pour plus d’informations.
+>
+>            **Remarque** Dans le cadre de [l’isolement réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), le système refuse l’établissement de connexions de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur via soit l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Cela signifie que vous ne pouvez pas utiliser des sockets pour faire communiquer deux applications UWP. UWP fournit d’autres mécanismes permettant de faire communiquer les applications. Voir [Communication entre les applications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) pour plus d’informations.
 
 ## Opérations de base d’un socket TCP
 
@@ -255,7 +256,8 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows 10, le comportement a changé. Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
+Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows10, le comportement a changé. 
+            Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
 
 Certaines limitations importantes découlent de l’utilisation d’écritures par lot dans votre code.
 
@@ -272,7 +274,7 @@ Windows 10 introduit une nouvelle propriété [**DatagramSocketControl**](https:
 
 La classe [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) prend en charge l’utilisation des protocoles SSL/TLS pour authentifier le serveur avec lequel l’application communique. Dans certains cas, l’application doit également s’authentifier auprès du serveur à l’aide d’un certificat client TLS. Dans Windows 10, vous pouvez prévoir un certificat client sur l’objet [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (cela doit être défini avant le début de la négociation TLS). Si le serveur demande le certificat client, Windows répond avec le certificat fourni.
 
-Voici un extrait de code montrant comment implémenter cela :
+Voici un extrait de code montrant comment implémenter cela:
 
 ```csharp
 var socket = new StreamSocket();
@@ -295,7 +297,7 @@ Pour les erreurs de validation de paramètre, une application peut également ut
 
 ## API Winsock
 
-Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) dans votre application UWP. L’API Winsock prise en charge est basée sur celle de Microsoft Silverlight pour Windows Phone 8.1 et continue de prendre en charge la plupart des types, propriétés et méthodes (certaines API jugées obsolètes ont été supprimées). Pour plus d’informations sur la programmation de Winsock, voir [ici](https://msdn.microsoft.com/library/windows/desktop/ms740673).
+Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) dans votre application UWP. L’API Winsock prise en charge est basée sur celle de Microsoft Silverlight pour Windows Phone8.1 et continue de prendre en charge la plupart des types, propriétés et méthodes (certaines API jugées obsolètes ont été supprimées). Pour plus d’informations sur la programmation de Winsock, voir [ici](https://msdn.microsoft.com/library/windows/desktop/ms740673).
 
 
 

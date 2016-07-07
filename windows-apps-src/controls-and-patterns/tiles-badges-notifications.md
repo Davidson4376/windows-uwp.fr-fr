@@ -53,7 +53,7 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 </tr>
 <tr class="even">
 <td align="left"><p>[Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)</p></td>
-<td align="left"><p>Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP).</p></td>
+<td align="left"><p>Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP).</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md)</p></td>
@@ -65,7 +65,7 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 </tr>
 <tr class="odd">
 <td align="left"><p>[Ressources d’icônes de l’application](tiles-and-notifications-app-assets.md)</p></td>
-<td align="left"><p>Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP). Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes.</p></td>
+<td align="left"><p>Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP). Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes.</p></td>
 </tr>
 </tbody>
 </table>
@@ -91,7 +91,7 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 </tr>
 <tr class="even">
 <td align="left"><p>[Notifications Visualizer](tiles-and-notifications-notifications-visualizer.md)</p></td>
-<td align="left"><p>Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans [le Windows Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10.</p></td>
+<td align="left"><p>Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans [le Windows Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows10.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Choisir une méthode de remise de notification](tiles-and-notifications-choosing-a-notification-delivery-method.md)</p></td>
@@ -115,7 +115,7 @@ Découvrez comment utiliser les vignettes, badges, toasts et notifications pour 
 </tr>
 <tr class="even">
 <td align="left"><p>[Vue d’ensemble des notifications brutes](tiles-and-notifications-raw-notification-overview.md)</p></td>
-<td align="left"><p>Les notifications brutes sont des notifications Push courtes à usage général. Elles ont une finalité exclusivement didactique et n’incluent aucun composant d’interface utilisateur. Comme dans le cas d’autres notifications Push, la fonctionnalité WNS transmet les notifications brutes de votre service cloud à votre application.</p></td>
+<td align="left"><p>Les notifications brutes sont des notificationsPush courtes à usage général. Elles ont une finalité exclusivement didactique et n’incluent aucun composant d’interface utilisateur. Comme dans le cas d’autres notifications Push, la fonctionnalité WNS transmet les notifications brutes de votre service cloud à votre application.</p></td>
 </tr>
 </tbody>
 </table>

@@ -11,7 +11,7 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 # Capturer des photos et des vidéos à l’aide de MediaCapture
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article décrit les étapes permettant de capturer des photos et des vidéos à l’aide de l’API [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124), y compris d’initialiser et d’arrêter **MediaCapture** et de gérer les modifications relatives à l’orientation de l’appareil.
@@ -129,9 +129,7 @@ Cette méthode d’assistance convertit une valeur d’énumération [**SimpleOr
 
 [!code-cs[RotationKey](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRotationKey)]
 
-La méthode suivante définit la rotation du flux d’aperçu. La méthode [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) de la classe [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) de capture multimédia renvoie un jeu de propriétés constitué de paires clé/valeur. [
-            **MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) est spécifié pour indiquer que nous voulons les propriétés relatives au flux d’aperçu vidéo, et non pas au flux d’enregistrement vidéo ou au flux audio. La propriété définie est une interface générale permettant de définir les propriétés de flux. Toutefois, pour cette tâche le GUID de rotation vidéo défini ci-dessus est ajouté comme clé de propriété et l’orientation de flux vidéo voulue exprimée en degrés est spécifiée comme étant la valeur. [
-            **SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) met à jour les propriétés de codage en utilisant les nouvelles valeurs. Une fois encore, l’élément **MediaStreamType.VideoPreview** est spécifié pour indiquer que les propriétés définies sont relatives au flux d’aperçu vidéo.
+La méthode suivante définit la rotation du flux d’aperçu. La méthode [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) de la classe [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) de capture multimédia renvoie un jeu de propriétés constitué de paires clé/valeur. [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) est spécifié pour indiquer que nous voulons les propriétés relatives au flux d’aperçu vidéo, et non pas au flux d’enregistrement vidéo ou au flux audio. La propriété définie est une interface générale permettant de définir les propriétés de flux. Toutefois, pour cette tâche le GUID de rotation vidéo défini ci-dessus est ajouté comme clé de propriété et l’orientation de flux vidéo voulue exprimée en degrés est spécifiée comme étant la valeur. [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) met à jour les propriétés de codage en utilisant les nouvelles valeurs. Une fois encore, l’élément **MediaStreamType.VideoPreview** est spécifié pour indiquer que les propriétés définies sont relatives au flux d’aperçu vidéo.
 
 [!code-cs[Méthode SetPreviewRotation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetPreviewRotation)]
 
@@ -159,11 +157,11 @@ La méthode d’assistance suivante se contente de convertir les valeurs issues 
 
 [!code-cs[ConvertOrientationToPhotoOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertOrientationToPhotoOrientation)]
 
-Enfin, la photo capturée peut être codée et enregistrée. Créez un objet [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) à partir du flux d’entrée qui contient les données de photo capturées. Créez un nouveau [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) et ouvrez-le pour la lecture et l’écriture. Créez un objet [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) en transmettant le fichier de sortie et le décodeur contenant les données d’image. Créez une nouvelle classe [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) et ajoutez une nouvelle propriété. La clé pour la propriété, « System.Photo.Orientation » indique que la propriété représente l’orientation de la photo. La valeur correspond à la valeur [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) calculée précédemment. Appelez [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) pour mettre à jour les propriétés sur l’encodeur, puis appelez [**FlushAsync**](https://msdn.microsoft.com/library/dn237883) pour enregistrer la photo dans le fichier de stockage.
+Enfin, la photo capturée peut être codée et enregistrée. Créez un objet [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) à partir du flux d’entrée qui contient les données de photo capturées. Créez un nouveau [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) et ouvrez-le pour la lecture et l’écriture. Créez un objet [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) en transmettant le fichier de sortie et le décodeur contenant les données d’image. Créez une nouvelle classe [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) et ajoutez une nouvelle propriété. La clé pour la propriété, «System.Photo.Orientation» indique que la propriété représente l’orientation de la photo. La valeur correspond à la valeur [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) calculée précédemment. Appelez [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) pour mettre à jour les propriétés sur l’encodeur, puis appelez [**FlushAsync**](https://msdn.microsoft.com/library/dn237883) pour enregistrer la photo dans le fichier de stockage.
 
 [!code-cs[ReencodeAndSavePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetReencodeAndSavePhotoAsync)]
 
--   Définissez la propriété de bitmap « System.Photo.Orientation » pour coder l’orientation de la photo dans les métadonnées du fichier. Cela n’entraîne pas un codage différent des données d’image réelles. Pour plus d’informations sur l’incorporation des métadonnées dans les fichiers image, voir [Métadonnées d’image](image-metadata.md).
+-   Définissez la propriété de bitmap «System.Photo.Orientation» pour coder l’orientation de la photo dans les métadonnées du fichier. Cela n’entraîne pas un codage différent des données d’image réelles. Pour plus d’informations sur l’incorporation des métadonnées dans les fichiers image, voir [Métadonnées d’image](image-metadata.md).
 
 -   Pour plus d’informations sur l’utilisation des images, y compris sur le codage et le décodage d’images, voir [Acquisition d’images](imaging.md).
 
@@ -307,7 +305,7 @@ Lorsque votre application s’arrête ou que l’utilisateur quitte la page de c
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-**Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 

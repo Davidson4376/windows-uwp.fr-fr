@@ -12,7 +12,7 @@ ms.openlocfilehash: 3380c5156072a9853261ec6b706a612b42e7ba10
 # Mise à l’échelle et superpositions de chaînes d’échange
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle.
 
@@ -194,7 +194,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
     }
     ```
 
-4.  Les chaînes de permutation de premier plan utilisent toujours un alpha prémultiplié. Les valeurs de couleur de chaque pixel sont censées être déjà multipliées par la valeur alpha avant la présentation de l’image. Par exemple, un pixel BVRA (bleu/vert/rouge/alpha) 100 % blanc, ayant 50 % d’alpha, a la valeur (0.5, 0.5, 0.5, 0.5).
+4.  Les chaînes de permutation de premier plan utilisent toujours un alpha prémultiplié. Les valeurs de couleur de chaque pixel sont censées être déjà multipliées par la valeur alpha avant la présentation de l’image. Par exemple, un pixel BVRA (bleu/vert/rouge/alpha) 100% blanc, ayant 50% d’alpha, a la valeur (0.5, 0.5, 0.5, 0.5).
 
     L’étape de prémultiplication alpha peut être effectuée à l’étape de fusion/sortie en appliquant un état de fusion d’application (voir [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) avec le champ **SrcBlend** de la structure [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) défini à **D3D11\_SRC\_ALPHA**. Il est également possible d’utiliser des valeurs alpha prémultipliées.
 

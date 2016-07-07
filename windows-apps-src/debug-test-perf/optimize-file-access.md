@@ -1,12 +1,16 @@
 ---
 author: mcleblanc
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
-title: Optimiser l’accès aux fichiers
-description: Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
+title: "Optimiser l’accès aux fichiers"
+description: "Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur."
+translationtype: Human Translation
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
+
 ---
 # Optimiser l’accès aux fichiers
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Créez des applications de plateforme Windows universelle (UWP) qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
 
@@ -188,7 +192,7 @@ Ce comportement de mise en mémoire tampon par défaut est souhaitable dans la p
 
 Lors de la lecture ou de l’écriture de grands jeux de données, vous pourrez peut-être augmenter le débit en lecture ou en écriture en fournissant une taille de mémoire tampon élevée aux méthodes d’extension [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx)et [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx). Cela procure à l’adaptateur de flux une taille de mémoire tampon interne plus élevée. Par exemple, lors du passage d’un flux qui provient d’un gros fichier à un analyseur XML, celui-ci peut effectuer de nombreuses petites lectures séquentielles à partir du flux. Une mémoire tampon de grande taille peut réduire le nombre d’appels au flux UWP sous-jacent et accroître les performances.
 
-> [Remarque](improve-garbage-collection-performance.md) Il peut être risqué de définir une taille de mémoire tampon supérieure à environ 80 Ko, car cela peut provoquer une fragmentation de la pile du récupérateur de mémoire (voir **Améliorer les performances du nettoyage de la mémoire**). L’exemple de code suivant crée un adaptateur de flux managé avec une mémoire tampon de 81 920 octets.
+> [Remarque](improve-garbage-collection-performance.md) Il peut être risqué de définir une taille de mémoire tampon supérieure à environ 80 Ko, car cela peut provoquer une fragmentation de la pile du récupérateur de mémoire (voir **Améliorer les performances du nettoyage de la mémoire**). L’exemple de code suivant crée un adaptateur de flux managé avec une mémoire tampon de 81920octets.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -220,7 +224,7 @@ Les méthodes [**Stream.CopyTo**](https://msdn.microsoft.com/library/windows/app
 > Await managedStream.CopyToAsync(destination, bufferSize:=1024 * 1024)
 > ```
 
-Cet exemple utilise une taille de mémoire tampon de 1 Mo, ce qui est supérieur aux 80 Ko recommandés plus haut. L’utilisation d’une mémoire tampon aussi grande peut améliorer le débit de l’opération de copie pour les très grands jeux de données (plusieurs centaines de mégaoctets). Toutefois, cette mémoire tampon est allouée sur la grande pile d’objets et pourrait potentiellement entraîner une dégradation du nettoyage de la mémoire. Il convient de configurer des tailles de mémoire tampon élevées uniquement si cela améliorera sensiblement les performances de votre application.
+Cet exemple utilise une taille de mémoire tampon de 1Mo, ce qui est supérieur aux 80Ko recommandés plus haut. L’utilisation d’une mémoire tampon aussi grande peut améliorer le débit de l’opération de copie pour les très grands jeux de données (plusieurs centaines de mégaoctets). Toutefois, cette mémoire tampon est allouée sur la grande pile d’objets et pourrait potentiellement entraîner une dégradation du nettoyage de la mémoire. Il convient de configurer des tailles de mémoire tampon élevées uniquement si cela améliorera sensiblement les performances de votre application.
 
 Lorsque vous travaillez avec un grand nombre de flux simultanément, vous souhaiterez peut-être réduire ou éliminer la surcharge sur la mémoire tampon. Vous pouvez spécifier une plus petite mémoire tampon, ou affecter la valeur 0 au paramètre *bufferSize* pour désactiver entièrement la mise en mémoire tampon pour cet adaptateur de flux. Vous pouvez tout de même obtenir un débit satisfaisant sans mise en mémoire tampon si vous effectuez de grandes opérations de lecture et d’écriture vers le flux managé.
 
@@ -233,6 +237,7 @@ Dans une application de conversation, vous pourriez utiliser un flux sur une int
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

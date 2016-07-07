@@ -12,9 +12,9 @@ ms.openlocfilehash: 1faa3477acd0cf1a5a2acc7c6c0a62910299254b
 # Créer des nombres aléatoires
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cet exemple de code indique comment créer un nombre aléatoire ou une mémoire tampon à utiliser pour le chiffrement dans une application de plateforme Windows universelle (UWP).
+Cet exemple de code indique comment créer un nombre aléatoire ou une mémoire tampon à utiliser pour le chiffrement dans une application de plateformeWindows universelle (UWP).
 
 ```cs
 public string GenerateRandomData()

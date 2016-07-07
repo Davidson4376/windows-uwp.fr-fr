@@ -23,7 +23,8 @@ Pour être réussie et sensée pour l’utilisateur, une expérience de navigati
 
     La création d’une structure de navigation logique pour l’utilisateur est essentielle pour assurer une expérience de navigation intuitive.
 
--   **Éléments de navigation compatibles** qui prennent en charge la structure choisie.
+-   
+            **Éléments de navigation compatibles** qui prennent en charge la structure choisie.
 
     Les éléments de navigation aident l’utilisateur à accéder au contenu souhaité et à savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 
@@ -65,7 +66,7 @@ Une application standard utilise les deux dispositions, certaines parties étant
 
 ![Application à structure hybride](images/nav/nav-hybridstructure.png.png)
 
-Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les organiser en tant qu’homologues ? Pour répondre à cette question, nous devons prendre en compte le nombre de pages contenues dans le groupe, si les pages doivent être parcourues dans un ordre particulier et la relation entre les pages. En règle générale, les structures plus plates sont plus faciles à comprendre et la navigation y est plus aisée, mais il convient parfois de disposer d’une hiérarchie à plusieurs niveaux.
+Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les organiser en tant qu’homologues? Pour répondre à cette question, nous devons prendre en compte le nombre de pages contenues dans le groupe, si les pages doivent être parcourues dans un ordre particulier et la relation entre les pages. En règle générale, les structures plus plates sont plus faciles à comprendre et la navigation y est plus aisée, mais il convient parfois de disposer d’une hiérarchie à plusieurs niveaux.
 
 <table>
 <colgroup>
@@ -97,7 +98,7 @@ Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les org
 ## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>Utiliser les éléments de navigation appropriés
 
 
-Les éléments de navigation peuvent fournir deux services : ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
+Les éléments de navigation peuvent fournir deuxservices: ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 
 ### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>Éléments de navigation pair à pair
 
@@ -129,7 +130,7 @@ Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou u
 <p>(Utilisez les onglets/pivots lorsqu’il y a plus de 5 pages, mais qu’il peut être difficile d’ajuster l’ensemble des onglets/pivots à l’écran.)</p></li>
 <li>Vous pensez que les utilisateurs passeront fréquemment d’une page à l’autre.</li>
 </ul>
-<p>Cette conception pour une application de recherche de restaurants utilise des onglets/pivots :</p>
+<p>Cette conception pour une application de recherche de restaurants utilise des onglets/pivots:</p>
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
@@ -142,7 +143,7 @@ Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou u
 <li>Vous souhaitez économiser de l’espace, même si cela ralentit les opérations de navigation.</li>
 <li>Les pages se trouvent au niveau supérieur.</li>
 </ul>
-<p>Cette conception pour une application de maison intelligente utilise un volet de navigation :</p>
+<p>Cette conception pour une application de maison intelligente utilise un volet de navigation:</p>
 <p><img src="images/smart-home/uap-smarthome-tabletphone-sbs-sm-400.png" alt="Example of an app that uses a nav pane pattern" /></p>
 <p></p></td>
 </tr>
@@ -151,13 +152,13 @@ Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou u
 
  
 
-Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation pair à pair uniquement aux homologues au sein de leur sous-arborescence actuelle. Considérez l’illustration suivante, qui montre une structure de navigation à trois niveaux :
+Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation pair à pair uniquement aux homologues au sein de leur sous-arborescence actuelle. Considérez l’illustration suivante, qui montre une structure de navigation à trois niveaux:
 
 ![Application avec deux sous-arborescences](images/nav/nav-subtrees.png)
--   Pour le niveau 1, l’élément de navigation pair à pair doit permettre d’accéder aux pages A, B, C et D.
--   Au niveau 2, les éléments de navigation pair à pair des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau 2 de la sous-arborescence C.
+-   Pour le niveau1, l’élément de navigation pair à pair doit permettre d’accéder aux pages A, B, C et D.
+-   Au niveau 2, les éléments de navigation pair à pair des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau2 de la sous-arborescenceC.
 
-![Application avec deux sous-arborescences](images/nav/nav-subtrees2.png)
+![Application avec deuxsous-arborescences](images/nav/nav-subtrees2.png)
 
 ### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>Éléments de navigation hiérarchique
 
@@ -198,7 +199,7 @@ Les éléments de navigation hiérarchique permettent de naviguer entre une page
 <li>Vous voulez permettre à l’utilisateur d’effectuer des opérations générales, comme la suppression ou le tri, sur des éléments individuels ou des groupes d’éléments. Vous voulez également lui permettre d’afficher ou de mettre à jour les détails de chaque élément.</li>
 </ul>
 <p>Les éléments maîtres/détails sont particulièrement bien adaptés aux boîtes de réception, aux listes de contacts et à l’entrée de données.</p>
-<p>Cette conception pour une application de suivi d’inventaire utilise un modèle Maître/Détails :</p>
+<p>Cette conception pour une application de suivi d’inventaire utilise un modèle Maître/Détails:</p>
 <p><img src="images/stock-tracker/uap-finance-tabletphone-sbs-sm.png" alt="Example of a stock trading app that has a master/details pattern" /></p></td>
 </tr>
 </tbody>

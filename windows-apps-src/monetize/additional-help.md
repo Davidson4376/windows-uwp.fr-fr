@@ -12,7 +12,7 @@ ms.openlocfilehash: 5229cf7ebb4133052c3e960fe1c81d6edeef8e57
 # Aide supplémentaire
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Les ressources suivantes fournissent des informations supplémentaires sur le développement d’applications avec des publicités.
 

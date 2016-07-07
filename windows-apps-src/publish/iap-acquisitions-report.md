@@ -14,7 +14,7 @@ ms.openlocfilehash: 3191df12ca5b59f545cf250c3e669b30192af6bc
 
 Le rapport sur les **acquisitions de produits in-app** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de produits in-app que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Dans ce rapport, une « acquisition de produits in-app » signifie qu’un client vous a acheté l’un de ces produits. Plusieurs achats d’un même produit in-app de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions de produits in-app.
+Dans ce rapport, une «acquisition de produits in-app» signifie qu’un client vous a acheté l’un de ces produits. Plusieurs achats d’un même produit in-app de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions de produits in-app.
 
 > **Important** Le rapport sur les **acquisitions de produits in-app** n’inclut aucune donnée sur les remboursements, reprises, rétrofacturations, etc. Pour évaluer les revenus générés par l’application, visitez [Synthèse des paiements](payout-summary.md). Dans la section **Réservé**, cliquez sur le lien **Télécharger les transactions réservées**.
 

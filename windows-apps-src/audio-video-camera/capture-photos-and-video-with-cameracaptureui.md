@@ -11,7 +11,7 @@ ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 
 # Capturer des photos et des vidéos à l’aide de CameraCaptureUI
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows. Cette fonctionnalité est facile à utiliser et permet à votre application d’obtenir une photo ou une vidéo capturée par l’utilisateur avec seulement quelques lignes de code.
@@ -94,7 +94,7 @@ Enfin, définissez la source de flux de manière à utiliser la méthode [**SetM
 Vous pouvez continuer à capturer des clips vidéo et les ajouter à la composition. Pour plus d’informations sur les compositions multimédias, voir [Compositions multimédias et modification](media-compositions-and-editing.md).
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

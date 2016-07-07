@@ -11,7 +11,7 @@ ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
 
 # Diffusion multimédia
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
@@ -82,7 +82,7 @@ Pour énumérer les appareils de diffusion disponibles, incluez l’espace de no
 
 [!code-cs[EnumerationNamespace](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
-Ajoutez les contrôles suivants à votre page XAML pour implémenter l’interface utilisateur rudimentaire pour cet exemple :
+Ajoutez les contrôles suivants à votre page XAML pour implémenter l’interface utilisateur rudimentaire pour cet exemple:
 
 -   Un bouton pour démarrer l’observateur d’appareils qui recherche les appareils de diffusion disponibles.
 -   Un contrôle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) pour signaler à l’utilisateur que l’énumération de la diffusion est en cours.
@@ -129,7 +129,7 @@ Lancez la diffusion multimédia en appelant [**RequestStartCastingAsync**](https
 
 [!code-cs[SelectionChanged](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetSelectionChanged)]
 
-Dans le gestionnaire de changement d’état, l’action effectuée dépend du nouvel état de la connexion de diffusion :
+Dans le gestionnaire de changement d’état, l’action effectuée dépend du nouvel état de la connexion de diffusion:
 
 -   Si l’état est **Connected** ou **Rendering**, assurez-vous que le contrôle **ProgressRing** est inactif et que le bouton de déconnexion est visible.
 -   Si l’état est **Disconnected**, désélectionnez l’appareil de diffusion actuel dans la zone de liste, assurez-vous que le contrôle **ProgressRing** est inactif et masquez le bouton de déconnexion.

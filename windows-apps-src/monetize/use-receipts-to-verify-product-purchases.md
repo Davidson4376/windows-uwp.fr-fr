@@ -12,7 +12,7 @@ ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
 # Utiliser des reçus pour vérifier les achats de produits
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -20,7 +20,7 @@ ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
 -   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 -   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
-Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction. Ce reçu fournit des informations sur le produit listé et le coût monétaire pour le client.
+Chaque transaction du WindowsStore qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction. Ce reçu fournit des informations sur le produit listé et le coût monétaire pour le client.
 
 L’accès à ces informations permet les scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou qu’il a effectué des achats de produits dans l’application dans le Windows Store. Par exemple, imaginez un jeu qui offre du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment procéder :
 

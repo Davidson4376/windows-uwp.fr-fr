@@ -12,18 +12,18 @@ ms.openlocfilehash: 93b20954ba82b613bde96db30a000902dec3b844
 # Valeurs du mode test
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Lorsque vous utilisez une classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) ou [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) pour afficher des publicités dans votre application, vous devez spécifier un ID d’application et un ID d’unité publicitaire. Lors du développement de votre application, utilisez les valeurs de test d’ID d’application et d’ID d’unité publicitaire de cet article pour voir comment votre application restitue les publicités au cours du test.
 
-> **Important** Si votre application utilise la médiation publicitaire (elle utilise un objet **AdMediatorControl**), il n’est pas nécessaire de demander des unités publicitaires. Dans ce scénario, les unités publicitaires sont automatiquement générées pour vous. Pour plus d’informations, voir [Quelle est la différence entre AdMediatorControl et AdControl ?](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
+> **Important** Si votre application utilise la médiation publicitaire (elle utilise un objet **AdMediatorControl**), il n’est pas nécessaire de demander des unités publicitaires. Dans ce scénario, les unités publicitaires sont automatiquement générées pour vous. Pour plus d’informations, voir [Quelle est la différence entre AdMediatorControl et AdControl?](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
 
 Si vous essayez d’utiliser des valeurs de test dans votre application après l’avoir publiée, votre application dynamique ne recevra pas de publicités. Pour recevoir des publicités dans votre application publiée, vous devez mettre à jour votre code pour utiliser un ID de l’application et un ID d’unité publicitaire fournis par le tableau de bord du Centre de développement Windows. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
  
 
 Voici les valeurs de test à utiliser pour les bannières et les spots vidéo publicitaires.
 
-* Spots vidéo publicitaires :
+* Spots vidéo publicitaires:
 
     <table>
     <colgroup>
@@ -45,7 +45,7 @@ Voici les valeurs de test à utiliser pour les bannières et les spots vidéo pu
     </table>
 
      
-* Bannières publicitaires :
+* Bannières publicitaires:
 
     <table>
     <colgroup>

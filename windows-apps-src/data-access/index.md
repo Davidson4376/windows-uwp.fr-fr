@@ -10,11 +10,11 @@ ms.openlocfilehash: 007e07d05f4f89771f6a0b93fb4279783ca170f6
 ---
 # Accès aux données
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications de plateforme Windows universelle (UWP).
 
-SQLite est inclus dans le SDK UWP. Entity Framework 7 fonctionne avec SQLite dans les applications UWP. Utilisez ces technologies pour développer des scénarios de connectivité intermittente/hors connexion, et pour conserver des données entre des sessions d’application.
+SQLite est inclus dans le SDKUWP. Entity Framework7 fonctionne avec SQLite dans les applications UWP. Utilisez ces technologies pour développer des scénarios de connectivité intermittente/hors connexion, et pour conserver des données entre des sessions d’application.
 
 | Rubrique | Description|
 |-------|------------|

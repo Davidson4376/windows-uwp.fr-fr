@@ -11,7 +11,7 @@ ms.openlocfilehash: 74cbd9789636383e6d04798435780dcda6b897d0
 
 # Portage d’un projet Silverlight pour Windows Phone vers un projet UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Rubrique précédente : [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md).
 
@@ -33,7 +33,7 @@ Si vous obtenez des erreurs de compilation à propos d’espaces de noms, de typ
 
 Cliquez sur **Projet**&gt;**Ajouter une référence**&gt;**Applications universelles Windows**&gt;**Extensions** et cochez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version 10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
 
-La référence suivante sera ajoutée à votre fichier de projet :
+La référence suivante sera ajoutée à votre fichier de projet:
 
 ```XML
 <ItemGroup>
@@ -60,11 +60,11 @@ Vous constaterez qu’une légère refactorisation et/ou l’ajout de code adapt
 -   Une technique similaire qui peut s’avérer utile s’il n’existe aucune autre solution consiste à donner à un fichier de balisage ou à un fichier **ResourceDictionary** (ou au dossier contenant le fichier) un nom spécifique de manière qu’il soit chargé automatiquement à l’exécution uniquement lorsque votre application s’exécute sur une famille d’appareils spécifique. Cette technique est illustrée dans l’étude de cas [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md#an-optional-adjustment).
 -   Pour utiliser des fonctionnalités qui ne sont pas disponibles sur toutes les familles d’appareils (imprimantes, scanneurs, bouton de l’appareil photo, etc.), vous pouvez écrire du code adaptatif. Voir le troisième exemple de la section [Compilation conditionnelle et code adaptatif](#conditional-compilation) dans cette rubrique.
 -   Si vous voulez prendre en charge Windows 10 et Silverlight pour Windows Phone, vous pouvez partager les fichiers de code source entre les projets. Pour ce faire, procédez comme suit : dans Visual Studio, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions**, sélectionnez **Ajouter un élément existant**, sélectionnez les fichiers à partager, puis cliquez sur **Ajouter en tant que lien**. Stockez vos fichiers de code source dans un dossier commun du système de fichiers dans lequel les projets associés peuvent les voir, et n’oubliez pas de les ajouter au contrôle de code source. Si vous pouvez factoriser le code source impératif afin que la majorité du contenu (si ce n’est l’ensemble) d’un fichier puisse fonctionner sur les deux plateformes, vous n’avez pas besoin de disposer de deux versions de ce contenu. Vous pouvez encapsuler une logique spécifique à la plateforme dans le fichier, dans les directives de compilation conditionnelle, lorsque c’est possible, ou dans les conditions d’exécution, si nécessaire. Pour plus d’informations, voir la section ci-dessous et [Directives de préprocesseur C#](http://msdn.microsoft.com/library/ed8yd1ha.aspx).
--   Pour effectuer une réutilisation au niveau binaire plutôt qu’au niveau du code source, vous disposez des bibliothèques de classes portables, qui prennent en charge le sous-ensemble d’API .NET disponibles dans Silverlight pour Windows Phone, ainsi que le sous-ensemble pour les applications Windows 10 (.NET Core). Les assemblies des bibliothèques de classes portables sont des fichiers binaires compatibles avec ces plateformes .NET. Utilisez Visual Studio pour créer un projet qui cible une bibliothèque de classes portable. Voir [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx).
+-   Pour effectuer une réutilisation au niveau binaire plutôt qu’au niveau du code source, vous disposez des bibliothèques de classes portables, qui prennent en charge le sous-ensemble d’API .NET disponibles dans Silverlight pour Windows Phone, ainsi que le sous-ensemble pour les applications Windows10 (.NET Core). Les assemblies des bibliothèques de classes portables sont des fichiers binaires compatibles avec ces plateformes .NET. Utilisez Visual Studio pour créer un projet qui cible une bibliothèque de classes portable. Voir [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx).
 
 ## Compilation conditionnelle et code adaptatif
 
-Si vous le souhaitez, vous pouvez prendre en charge Silverlight pour Windows Phone et Windows 10 dans un seul fichier de code. Si vous examinez les pages de propriétés de votre projet Windows 10, vous verrez que le projet définit WINDOWS\_UAP en tant que symbole de compilation conditionnelle. En règle générale, vous pouvez utiliser la logique suivante pour effectuer une compilation conditionnelle.
+Si vous le souhaitez, vous pouvez prendre en charge Silverlight pour Windows Phone et Windows10 dans un seul fichier de code. Si vous examinez les pages de propriétés de votre projet Windows10, vous verrez que le projet définit WINDOWS\_UAP en tant que symbole de compilation conditionnelle. En règle générale, vous pouvez utiliser la logique suivante pour effectuer une compilation conditionnelle.
 
 ```csharp
 #if WINDOWS_UAP
@@ -113,7 +113,8 @@ Il est possible que vous ayez utilisé la compilation conditionnelle pour limite
 
 ```
 
-Vous pouvez avoir utilisé la compilation conditionnelle pour limiter la gestion du bouton matériel d’appareil photo au Windows Phone. Dans Windows 10, le bouton matériel d’appareil photo est un concept propre à la famille d’appareils mobiles. Comme un même package d’application s’exécutera sur tous les appareils, nous transformons notre condition de compilation en condition d’exécution en utilisant ce que l’on appelle du code adaptatif. Pour ce faire, nous utilisons la classe [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) afin d’envoyer une requête au moment de l’exécution pour vérifier si la classe [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) est présente. **HardwareButtons** étant défini dans le SDK d’extension mobile, nous devons ajouter une référence à ce SDK dans notre projet pour permettre la compilation de ce code. Notez cependant que le gestionnaire sera uniquement exécuté sur les appareils qui implémentent les types définis dans le SDK d’extension mobile, c’est-à-dire appartenant à la famille d’appareils mobiles. Par conséquent, le code ci-après prend soin de n’utiliser que des fonctionnalités présentes, bien que la méthode utilisée pour y parvenir soit différente de la compilation conditionnelle.
+Vous pouvez avoir utilisé la compilation conditionnelle pour limiter la gestion du bouton matériel d’appareil photo au Windows Phone. Dans Windows 10, le bouton matériel d’appareil photo est un concept propre à la famille d’appareils mobiles. Comme un même package d’application s’exécutera sur tous les appareils, nous transformons notre condition de compilation en condition d’exécution en utilisant ce que l’on appelle du code adaptatif. Pour ce faire, nous utilisons la classe [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) afin d’envoyer une requête au moment de l’exécution pour vérifier si la classe [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) est présente. 
+            **HardwareButtons** étant défini dans le SDK d’extension mobile, nous devons ajouter une référence à ce SDK dans notre projet pour permettre la compilation de ce code. Notez cependant que le gestionnaire sera uniquement exécuté sur les appareils qui implémentent les types définis dans le SDK d’extension mobile, c’est-à-dire appartenant à la famille d’appareils mobiles. Par conséquent, le code ci-après prend soin de n’utiliser que des fonctionnalités présentes, bien que la méthode utilisée pour y parvenir soit différente de la compilation conditionnelle.
 
 ```csharp
        // Note: Cache the value instead of querying it more than once.

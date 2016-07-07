@@ -36,7 +36,7 @@ Utilisez l’animation de repositionnement pour déplacer un ou des éléments �
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de repositionnements](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
-* [Démarrage rapide : animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210421)
 * [**Classe RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210429)
 

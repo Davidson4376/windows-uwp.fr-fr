@@ -11,7 +11,7 @@ ms.openlocfilehash: 65883f1be1a014b6c7e211e2e060ae97fbd9eb0d
 
 # Contrôles de l’appareil de capture pour la vidéo
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition.

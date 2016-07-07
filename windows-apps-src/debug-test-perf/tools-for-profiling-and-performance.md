@@ -10,13 +10,13 @@ ms.openlocfilehash: f7f9821be7d1423b2f89367bd20c09981eca24eb
 ---
 # Outils de profilage et de performances
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de vos applications de plateforme Windows universelle (UWP). Suivez ces liens pour découvrir comment utiliser ces outils.
 
 **Outil Réactivité de l’interface utilisateur XAML dans Visual Studio 2015** : l’un des meilleurs outils à utiliser pour mesurer l’impact sur les performances au sein de votre application. Cet outil a été [mis à jour pour Visual Studio 2015](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) pour prendre en charge d’autres scénarios.
 
-Voir aussi :
+Voir aussi:
 
 |           |             |
 |-----------|-------------|

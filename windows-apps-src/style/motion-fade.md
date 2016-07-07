@@ -34,7 +34,7 @@ Utilisez les animations en fondu pour faire apparaître ou disparaître des él�
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de fondus](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Démarrage rapide : animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
 * [**Classe FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
 

@@ -12,11 +12,11 @@ ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
 # Création de composants Windows Runtime en C++
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application Windows universelle générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++.
+Cet article explique comment utiliser C++ pour créer un composant WindowsRuntime, qui est une DLL qui peut être appelée depuis une application Windows universelle générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++.
 
-Voici plusieurs raisons pour la création d’un tel composant :
+Voici plusieurs raisons pour la création d’un tel composant:
 
 -   obtenir les avantages en termes de performances qu’offre C++ dans les opérations complexes ou nécessitant de nombreuses ressources de calcul ;
 
@@ -85,7 +85,7 @@ Toutes les classes publiques doivent résider dans le même espace de noms racin
 
 Le code client crée une instance du composant à l’aide du mot clé **new** (**New** en Visual Basic) comme pour n’importe quelle classe.
 
-Une classe activable doit être déclarée comme **public ref class sealed**. Le mot clé **ref class** indique au compilateur de créer la classe comme un type compatible Windows Runtime, et le mot clé sealed spécifie que la classe ne peut pas être héritée. Windows Runtime ne prend pas en charge de modèle d’héritage généralisé actuellement ; un modèle d’héritage limité prend en charge la création de contrôles XAML personnalisés. Pour plus d’informations, voir [Classes et structures de référence (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
+Une classe activable doit être déclarée comme **public ref class sealed**. Le mot clé **ref class** indique au compilateur de créer la classe comme un type compatible Windows Runtime, et le mot clé sealed spécifie que la classe ne peut pas être héritée. Windows Runtime ne prend pas en charge de modèle d’héritage généralisé actuellement; un modèle d’héritage limité prend en charge la création de contrôles XAML personnalisés. Pour plus d’informations, voir [Classes et structures de référence (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
 
 Pour C++, toutes les primitives numériques sont définies dans l’espace de noms par défaut. L’espace de noms [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) contient des classes C++ spécifiques au système de type Windows Runtime. Il s’agit des classes [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) et [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx). Les types de collection concrets tels que les classes [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) et [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) sont définis dans l’espace de noms [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx). Les interfaces publiques implémentées par ces types sont définies dans [Windows::Foundation::Collections (espace de noms) (C++ /CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx). Il s’agit des types d’interfaces qui sont utilisés par JavaScript, C# et Visual Basic. Pour plus d’informations, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
@@ -366,7 +366,7 @@ private void GetDictionary()
 ## Propriétés
 
 
-Une classe ref publique dans les extensions de composant Visual C++ expose les données membres publiques sous forme de propriétés en utilisant le mot clé property. Le concept est identique aux propriétés .NET Framework. Une propriété triviale ressemble à des données membres, car ses fonctionnalités sont implicites. Une propriété non triviale a des accesseurs get et set explicites et une variable privée nommée qui est le « magasin de stockage » de la valeur. Dans cet exemple, le membre privé variable \_propertyAValue est le magasin de stockage de PropertyA. Une propriété peut déclencher un événement lorsque sa valeur change. Une application cliente peut s’inscrire pour recevoir cet événement.
+Une classe ref publique dans les extensions de composant Visual C++ expose les données membres publiques sous forme de propriétés en utilisant le mot clé property. Le concept est identique aux propriétés .NET Framework. Une propriété triviale ressemble à des données membres, car ses fonctionnalités sont implicites. Une propriété non triviale a des accesseurs get et set explicites et une variable privée nommée qui est le «magasin de stockage» de la valeur. Dans cet exemple, le membre privé variable \_propertyAValue est le magasin de stockage de PropertyA. Une propriété peut déclencher un événement lorsque sa valeur change. Une application cliente peut s’inscrire pour recevoir cet événement.
 
 ```cpp
 //Properties
@@ -593,10 +593,10 @@ Si vous supprimez un projet de composant Windows Runtime C++ dans une solution, 
 
 ## Rubriques connexes
 
-* [Procédure pas à pas : création d’un composant Windows Runtime de base en C++ et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+* [Procédure pas à pas: création d’un composant WindowsRuntime de base en C++ et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

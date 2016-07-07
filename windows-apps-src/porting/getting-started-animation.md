@@ -11,13 +11,13 @@ ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
 
 # Prise en main &#58; Animation
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## Ajout d’animations
 
 Dans iOS, vous créez le plus souvent des effets d’animation par programme. Par exemple, vous pouvez utiliser des animations fournies par les méthodes **animateWithDuration** de classe **UIView**, basées sur des blocs, ou les méthodes plus anciennes non basées sur des blocs. Vous pouvez également utiliser explicitement la classe **CALayer** pour animer des couches. Les animations dans les applications Windows peuvent être créées par programme, mais aussi être définies de manière déclarative avec XAML (Extensible Application Markup Language). Vous pouvez utiliser Microsoft Visual Studio pour modifier directement du code XAML, mais Visual Studio inclut également un outil appelé **Blend**, qui génère du code XAML à votre place lorsque vous travaillez sur des animations dans un concepteur. En fait, Blend vous permet d’ouvrir, de concevoir, de générer et d’exécuter des projets Visual Studio complets sous forme graphique. La procédure qui suit vous offre l’occasion de tester et mettre en pratique cette opération.
 
-Créez une application de plateforme Windows universelle (UWP) et appelez-la, par exemple, « SimpleAnimation ». Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher. Les animations en XAML sont basées sur le concept des *tables de montage* (à ne pas confondre avec les tables de montage iOS). Les tables de montage séquentiel utilisent des *images clés* pour animer les changements de propriétés.
+Créez une application de plateforme Windows universelle (UWP) et appelez-la, par exemple, «SimpleAnimation». Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher. Les animations en XAML sont basées sur le concept des *tables de montage* (à ne pas confondre avec les tables de montage iOS). Les tables de montage séquentiel utilisent des *images clés* pour animer les changements de propriétés.
 
 Après avoir ouvert votre projet, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Ouvrir dans Blend** ou **Configurer dans Blend**, comme illustré dans la figure ci-dessous. Visual Studio poursuit son exécution en arrière-plan.
 
@@ -63,7 +63,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Exécutez de nouveau le projet et regardez le rectangle s’animer. Hourra !
+Exécutez de nouveau le projet et regardez le rectangle s’animer. Hourra!
 
 Si vous ouvrez le fichier MainPage.xaml, dans la vue **XAML**, vous verrez le code XAML ajouté par Blend tandis que vous travaillez dans le concepteur. Examinez surtout le code dans les éléments `<Storyboard>` et `<Rectangle>`. Le code qui suit montre un exemple. Les points de suspension représentent du code sans rapport omis par souci de concision et des sauts de line ont été ajoutés pour rendre le code plus lisible.
 

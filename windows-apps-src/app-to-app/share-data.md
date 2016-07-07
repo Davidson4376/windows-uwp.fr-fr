@@ -3,14 +3,14 @@ description: Cet article explique comment prendre en charge le contrat de partag
 title: "Partager des données"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
-ms.sourcegitcommit: 03b9943d9bf76343bfbbe714f681a2b398d1a9ad
-ms.openlocfilehash: de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85
+ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
+ms.openlocfilehash: a91f0eb8b62a860809f8ffb63278be1eff31a2f3
 
 ---
 
 # Partager des données
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article explique comment prendre en charge le contrat de partage dans une application de plateforme Windows universelle (UWP). Le contrat de partage constitue un moyen simple pour partager rapidement des données, telles que du texte, des liens, des photos et vidéos, entre les applications. Par exemple, un utilisateur peut partager une page web avec ses amis à l’aide d’une application de réseau social ou enregistrer un lien dans une application de prise de notes pour s’y référer plus tard.
 
@@ -51,13 +51,13 @@ Toutes les propriétés sont facultatives, à l’exception du titre. La propri�
 
 ## Lancer l’interface utilisateur de partage
 
-Une interface utilisateur pour le partage est fournie par le système. Pour la lancer, appelez la méthode [**ShowShareUI**][ShowShareUi].
+Une interface utilisateur pour le partage est fournie par le système. Pour la lancer, appelez la méthode [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI).
 
 [!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## Gérer les erreurs
 
-Dans la plupart des cas, le partage de contenu est un processus simple. Toutefois, un élément inattendu peut toujours se produire. Par exemple, l’application peut avoir besoin que l’utilisateur sélectionne du contenu à partager alors que l’utilisateur ne l’a pas fait. Pour gérer ces situations, utilisez la méthode [**FailWithDisplayText**] (https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String), qui affiche un message à l’attention de l’utilisateur en cas de problème.
+Dans la plupart des cas, le partage de contenu est un processus simple. Toutefois, un élément inattendu peut toujours se produire. Par exemple, l’application peut avoir besoin que l’utilisateur sélectionne du contenu à partager alors que l’utilisateur ne l’a pas fait. Pour gérer ces situations, utilisez la méthode [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)), qui affiche un message destiné à l’utilisateur en cas de problème.
 
 ## Retarder le partage avec les délégués
 
@@ -104,6 +104,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

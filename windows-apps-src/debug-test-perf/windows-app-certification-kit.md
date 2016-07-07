@@ -10,7 +10,7 @@ ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
 ---
 # Kit de certification des applications Windows
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Pour maximiser les chances de [publication sur le Windows Store](https://msdn.microsoft.com/library/windows/apps/Hh694062) ou de [certification Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique décrit comment installer et exécuter le [Kit de certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666).
@@ -20,7 +20,7 @@ Pour maximiser les chances de [publication sur le Windows Store](https://msdn.mi
 Conditions préalables pour tester une application Windows universelle :
 
 -   Vous devez installer et exécuter Windows 10.
--   Vous devez installer le [Kit de certification des applications Windows version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows 10.
+-   Vous devez installer le [Kit de certification des applications Windows version10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows10.
 -   Vous devez posséder une licence de développeur valide pour votre ordinateur. Pour plus d’informations, voir [Obtenir une licence de développeur](https://msdn.microsoft.com/library/windows/apps/Hh974578).
 -   Vous devez déployer l’application Windows que vous voulez tester sur votre ordinateur.
 
@@ -60,13 +60,13 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
     **Remarque** Le chemin d’accès par défaut est C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
 
-2.  Entrez les commandes suivantes dans cet ordre pour tester une application qui est déjà installée sur votre ordinateur de test :
+2.  Entrez les commandes suivantes dans cet ordre pour tester une application qui est déjà installée sur votre ordinateur de test:
 
     `appcert.exe reset`
 
     `appcert.exe test -packagefullname [package full name] -reportoutputpath [report file name]`
 
-    Vous pouvez également utiliser les commandes suivantes si l’application n’est pas installée. Le Kit de certification des applications Windows ouvre le package et applique le flux de travail de test approprié :
+    Vous pouvez également utiliser les commandes suivantes si l’application n’est pas installée. Le Kit de certification des applications Windows ouvre le package et applique le flux de travail de test approprié:
 
     `appcert.exe reset`
 
@@ -82,7 +82,7 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
 Les seuils du test de performances du Kit de certification des applications Windows sont basés sur les performances d’un ordinateur à faible consommation d’énergie.
 
-Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répondent aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur équipé d’un processeur Intel Atom, d’une résolution d’écran de 1366 x 768 (ou supérieure) et d’un disque dur rotatif (par opposition à un disque SSD).
+Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répondent aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur équipé d’un processeur Intel Atom, d’une résolution d’écran de 1366x768 (ou supérieure) et d’un disque dur rotatif (par opposition à un disque SSD).
 
 À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) les plus récentes et testez votre application avec la dernière version du Kit de certification des applications Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
 

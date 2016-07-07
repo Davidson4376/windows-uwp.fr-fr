@@ -12,7 +12,7 @@ ms.openlocfilehash: 67a75e9d1324e7ac50e0575bfd7bda870a87efb2
 # Programmation asynchrone (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique traite des divers points à prendre en considération lorsque vous utilisez la programmation asynchrone et les threads avec DirectX.
 
@@ -56,7 +56,7 @@ Créez un contexte différé à l’aide de [**ID3D11Device::CreateDeferredConte
 ## Rubriques connexes
 
 
-* [Introduction au multithreading dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476891)
+* [Introduction au multithreading dans Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476891)
 
  
 

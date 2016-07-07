@@ -14,7 +14,7 @@ ms.openlocfilehash: e0258bc9402772d0a036b32563348d11acd0fdb7
 
 Le rapport **Évaluations** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Dans ce rapport, une évaluation correspond au nombre d’étoiles (compris entre 1 et 5) qu’un client a attribué à votre application dans le Windows Store. Le rapport **Évaluations** ne fournit aucune information sur les commentaires formulés sous forme d’avis ; ces derniers sont consultables dans le [rapport sur les avis](reviews-report.md).
+Dans ce rapport, une évaluation correspond au nombre d’étoiles (compris entre 1 et 5) qu’un client a attribué à votre application dans le WindowsStore. Le rapport **Évaluations** ne fournit aucune information sur les commentaires formulés sous forme d’avis ; ces derniers sont consultables dans le [rapport sur les avis](reviews-report.md).
 
 ## Appliquer les filtres
 
@@ -65,7 +65,7 @@ Le graphique **Marchés** présente l’évaluation moyenne et le nombre d’év
 
 Par défaut, les marchés ayant fait l’objet du plus grand nombre d’évaluations apparaissent en premier dans le graphique, mais vous pouvez inverser cet ordre en cliquant sur la flèche dans la colonne **Nombre d’évaluations** de ce graphique. Vous pouvez également trier les données par **Évaluation moyenne** ou par **Marché** en cliquant sur ces colonnes.
 
-> **Remarque** Vous constaterez probablement une différence dans le nombre d’évaluations si vous comparez le rapport **Évaluations** dans le Centre de développement Windows avec le rapport Avis dans l’application mobile de l’ancien Centre de développement. Cela s’explique par le fait que l’application affiche uniquement les avis laissés par les clients utilisant Windows Phone 8.1 et antérieur. Ce peut être également la conséquence du travail effectué par Microsoft pour supprimer les avis du Windows Store, qui ont été identifiés comme indésirables, inappropriés, offensants ou comme violant la politique. Nous pensons que cette action va améliorer l’expérience utilisateur.
+> **Remarque** Vous constaterez probablement une différence dans le nombre d’évaluations si vous comparez le rapport **Évaluations** dans le Centre de développement Windows avec le rapport Avis dans l’application mobile de l’ancien Centre de développement. Cela s’explique par le fait que l’application affiche uniquement les avis laissés par les clients utilisant Windows Phone8.1 et antérieur. Ce peut être également la conséquence du travail effectué par Microsoft pour supprimer les avis du Windows Store, qui ont été identifiés comme indésirables, inappropriés, offensants ou comme violant la politique. Nous pensons que cette action va améliorer l’expérience utilisateur.
 
  
 

@@ -10,7 +10,7 @@ ms.openlocfilehash: 479b900ca14497712f25a7825fde6775a3c1ab60
 
 # Types de données intrinsèques XAML
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 XAML pour Windows Runtime offre une prise en charge, au niveau du langage, de plusieurs types de données qui sont des primitives souvent utilisées dans le Common Language Runtime (CLR) et dans d’autres langages de programmation tels que C++.
 
@@ -20,7 +20,7 @@ XAML pour le Windows Runtime offre une prise en charge au niveau du langage pour
 
 | Primitive XAML | Description |
 |-------|-------------|
-| **x:Boolean**  | Pour la prise en charge du CLR, correspond à [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx). Le code XAML analyse les valeurs de **x:Boolean** sans tenir compte de la casse. Notez que « x:Bool » n’est pas une alternative acceptée. |
+| **x:Boolean**  | Pour la prise en charge du CLR, correspond à [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx). Le code XAML analyse les valeurs de **x:Boolean** sans tenir compte de la casse. Notez que «x:Bool» n’est pas une alternative acceptée. |
 | **x:String**   | Pour la prise en charge du CLR, correspond à [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx). Le codage de la chaîne a pour valeur par défaut le codage XML environnant. |
 | **x:Double**   | Pour la prise en charge du CLR, correspond à [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Outre les valeurs numériques, la syntaxe texte pour **x:Double** autorise le jeton « NaN », ce qui correspond à la manière dont vous pouvez stocker « Auto » pour le comportement de la disposition en tant que valeur de ressource. Les jetons sont traités en tenant compte de la casse. Vous pouvez utiliser une notation scientifique, par exemple « 1+E06 » pour `1,000,000`. |
 | **x:Int32**    | Pour la prise en charge du CLR, correspond à [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx). **x:Int32** est traité comme signé et vous pouvez inclure le symbole moins (« - ») pour un entier négatif. En XAML, l’absence de signe dans la syntaxe texte implique une valeur signée positive. |
@@ -45,6 +45,6 @@ La spécification XAML 2009 indique d’autres primitives au niveau du langage X
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

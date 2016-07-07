@@ -5,28 +5,25 @@ title: Images et pinceaux image
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
+ms.sourcegitcommit: 485f3069ff92995082550366839f14be50f674a5
+ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 
 ---
 # Images et pinceaux image
 
 Pour afficher une image, vous pouvez utiliser l’objet **Image** ou l’objet **ImageBrush**. Un objet Image affiche une image, tandis qu’un objet ImageBrush peint un autre objet avec une image. 
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+
 
 -   [**Classe Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [**Propriété Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
 -   [**Classe ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 -   [**Propriété ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
 
-## S’agit-il des éléments appropriés ?
+## S’agit-il des éléments appropriés?
 Utilisez un élément **Image** pour afficher une image autonome dans votre application.
 
 Utilisez un élément **ImageBrush** pour appliquer une image à un autre objet. L’utilisation d’un objet ImageBrush comprend des effets d’ornement pour le texte ou des arrière-plans sous forme de vignettes pour les contrôles ou les conteneurs de disposition. Vous pouvez contrôler comment l’image est étirée, alignée et disposée sous forme de vignette, ce qui vous permet de créer des modèles et d’autres effets. 
-
-## Exemples
-
 
 
 ## Créer une image
@@ -43,7 +40,7 @@ Voici l’objet Image affiché.
 
 ![Exemple d’un élément d’image](images/Image_Licorice.jpg)
 
-Dans cet exemple, la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) indique l’emplacement de l’image à afficher. Vous pouvez définir la propriété Source en spécifiant une URL absolue (par exemple, http://contoso.com/myPicture.jpg) ou en spécifiant une URL relative à la structure de votre package d’application. Dans le cadre de notre exemple, nous plaçons le fichier image « licorice.jpg » dans le fichier racine de notre projet, puis nous déclarons les paramètres du projet qui incluent le fichier image en tant que contenu.
+Dans cet exemple, la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) indique l’emplacement de l’image à afficher. Vous pouvez définir la propriété Source en spécifiant une URL absolue (par exemple, http://contoso.com/myPicture.jpg) ou en spécifiant une URL relative à la structure de votre package d’application. Dans le cadre de notre exemple, nous plaçons le fichier image «licorice.jpg» dans le fichier racine de notre projet, puis nous déclarons les paramètres du projet qui incluent le fichier image en tant que contenu.
 
 ### ImageBrush
 
@@ -67,10 +64,10 @@ Voici l’objet Ellipse peint par l’objet ImageBrush.
 
 Si vous ne définissez pas les valeurs [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) ou [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) d’un objet **Image**, ce dernier est affiché avec les dimensions de l’image spécifiée par la propriété **Source**. Le fait de définir les valeurs **Width** et **Height** crée une zone rectangulaire dans laquelle l’image est affichée. Vous pouvez spécifier la façon dont l’image remplit cette zone à l’aide de la propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx). La propriété Stretch accepte ces valeurs qui sont définies par l’énumération [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) :
 
--   **None** : l’image n’est pas étirée pour remplir les dimensions de sortie. Faites preuve de prudence avec le paramètre Stretch : si l’image source est plus grande que la zone qui doit la contenir, votre image sera découpée. Cela n’est pas généralement souhaitable car, contrairement à une propriété [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) délibérée, vous n’avez aucun contrôle sur la fenêtre d’affichage.
--   **Uniform** : l’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Mais les proportions du contenu sont conservées. Il s’agit de la valeur par défaut.
--   **UniformToFill** : l’image est mise à l’échelle de sorte qu’elle remplisse complètement la zone de sortie tout en conservant ses proportions d’origine.
--   **Fill** : l’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Étant donné que la hauteur et la largeur du contenu sont mises à l’échelle indépendamment, les dimensions d’origine de l’image risquent de ne pas être conservées. C’est-à-dire que l’image risque d’être déformée afin de remplir complètement la zone de sortie.
+-   **None**: l’image n’est pas étirée pour remplir les dimensions de sortie. Faites preuve de prudence avec le paramètre Stretch: si l’image source est plus grande que la zone qui doit la contenir, votre image sera découpée. Cela n’est pas généralement souhaitable car, contrairement à une propriété [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) délibérée, vous n’avez aucun contrôle sur la fenêtre d’affichage.
+-   **Uniform**: l’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Mais les proportions du contenu sont conservées. Il s’agit de la valeur par défaut.
+-   **UniformToFill**: l’image est mise à l’échelle de sorte qu’elle remplisse complètement la zone de sortie tout en conservant ses proportions d’origine.
+-   **Fill**: l’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Étant donné que la hauteur et la largeur du contenu sont mises à l’échelle indépendamment, les dimensions d’origine de l’image risquent de ne pas être conservées. C’est-à-dire que l’image risque d’être déformée afin de remplir complètement la zone de sortie.
 
 ![Exemple de paramètres d’étirement.](images/Image_Stretch.jpg)
 
@@ -78,7 +75,7 @@ Si vous ne définissez pas les valeurs [**Width**](https://msdn.microsoft.com/li
 
 Vous pouvez utiliser la propriété [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) pour découper une zone de la sortie image. Vous affectez à la propriété Clip la valeur [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx). Le découpage non rectangulaire n’est actuellement pas pris en charge.
 
-L’exemple suivant montre comment utiliser un objet [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) en tant que région de découpage pour une image. Dans cet exemple, nous définissons un objet **Image** et affectons à la propriété Height la valeur 200. Un objet **RectangleGeometry** définit un rectangle pour la zone de l’image à afficher. La propriété [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) a la valeur 25,25,100,150, ce qui définit un rectangle avec pour position de départ 25,25, une largeur de 100 et une hauteur de 150. Seule la partie de l’image qui se trouve dans la zone du rectangle est affichée.
+L’exemple suivant montre comment utiliser un objet [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) en tant que région de découpage pour une image. Dans cet exemple, nous définissons un objet **Image** et affectons à la propriété Height la valeur200. Un objet **RectangleGeometry** définit un rectangle pour la zone de l’image à afficher. La propriété [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) a la valeur 25,25,100,150, ce qui définit un rectangle avec pour position de départ 25,25, une largeur de 100 et une hauteur de 150. Seule la partie de l’image qui se trouve dans la zone du rectangle est affichée.
 
 ```xaml
 <Image Source="licorice.jpg" Height="200">
@@ -106,7 +103,7 @@ Voici l’objet Image affiché avec une opacité de 0,5 et un arrière-plan noir
 
 ### Formats de fichier d’image
 
-Les objets **Image** et **ImageBrush** permettent d’afficher les formats de fichier d’image suivants :
+Les objets **Image** et **ImageBrush** permettent d’afficher les formats de fichier d’image suivants:
 
 -   Joint Photographic Experts Group (JPEG)
 -   format PNG (Portable Network Graphics)
@@ -130,7 +127,7 @@ La classe [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/ap
 
 ### Sources d’images et mise à l’échelle
 
-Vous devez créer vos sources d’images selon plusieurs tailles recommandées afin de vous assurer que votre application garde son aspect esthétique lorsque Windows la redimensionne. Lorsque vous spécifiez une propriété **Source** pour un objet **Image**, vous pouvez utiliser une convention d’affectation de noms qui référencera automatiquement la ressource appropriée pour la mise à l’échelle actuelle. Pour connaître les spécificités de la convention d’affectation de noms et obtenir plus d’informations, voir [Démarrage rapide : utilisation de ressources de fichiers ou d’images](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325).
+Vous devez créer vos sources d’images selon plusieurs tailles recommandées afin de vous assurer que votre application garde son aspect esthétique lorsque Windows la redimensionne. Lorsque vous spécifiez une propriété **Source** pour un objet **Image**, vous pouvez utiliser une convention d’affectation de noms qui référencera automatiquement la ressource appropriée pour la mise à l’échelle actuelle. Pour connaître les spécificités de la convention d’affectation de noms et obtenir plus d’informations, voir [Démarrage rapide: utilisation de ressources de fichiers ou d’images](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325).
 
 Pour plus d’informations sur la conception prenant en charge la mise à l’échelle, voir [Recommandations en matière d’expérience utilisateur pour la disposition et la mise à l’échelle](https://msdn.microsoft.com/library/windows/apps/dn611863).
 
@@ -142,9 +139,13 @@ Si vous définissez un élément Image ou ImageBrush à l’aide de code, utilis
 
 > **Note** &nbsp;&nbsp;Si vous établissez des images à l’aide de code, vous pouvez utiliser la gestion automatique pour l’accès aux ressources non qualifiées avec les qualificateurs d’échelle et de culture actuels, ou vous pouvez utiliser les classes [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) et [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) avec des qualificateurs pour la culture et l’échelle afin d’obtenir les ressources directement. Pour plus d’informations, voir [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
 
+## Articles connexes
+
+-   [Audio, vidéo et appareil photo](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
+-   [**Classe Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [**Classe ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

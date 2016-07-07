@@ -13,7 +13,7 @@ ms.openlocfilehash: 2d9b1ec4e39e5c8a100030184ee9287a0d97ea24
 
 # Utiliser la protection des données d’entreprise (EDP) pour protéger des fichiers
 
-__Remarque__ La stratégie de protection des données d’entreprise (EDP) ne peut pas être appliquée sur Windows 10, version 1511 (build 10586) ou antérieure.
+__Remarque__ La stratégie de protection des données d’entreprise (EDP) ne peut pas être appliquée sur Windows10, version1511 (build10586) ou antérieure.
 
 Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs aux fichiers les plus courants. Pour un aperçu complet du point de vue des développeurs de la manière dont la fonctionnalité EDP est liée aux fichiers, aux flux, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées, voir [protection des données d’entreprise (EDP)](../enterprise/edp-hub.md).
 
@@ -31,7 +31,7 @@ Cette rubrique présente des exemples de tâches de codage nécessaires pour ré
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour savoir comment écrire des applications asynchrones en C\# ou Visual Basic, voir [Appeler des API asynchrones en C\# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour savoir comment écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour savoir comment écrire des applications asynchrones en C\# ou Visual Basic, voir [Appeler des API asynchrones en C\# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour savoir comment écrire des applications asynchrones enC++, voir [Programmation asynchrone enC++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
 ## Chemin d’accès à vos dossiers locaux et affichage des fichiers protégés dans l’Explorateur de fichiers
 
@@ -90,7 +90,7 @@ L’API [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/libr
 2.  Chiffrez-le à l’aide de **FileProtectionManager.ProtectAsync**.
 3.  Écrivez dans le fichier après l’avoir ouvert.
 
-Comme l’étape 1 implique de fermer le descripteur de fichier (même si l’étape 1 ne fermait pas le descripteur l’étape 2 le ferait), l’étape 3 n’est pas possible, car les clés de chiffrement permettant d’accéder à ce fichier ne sont plus disponibles.
+Comme l’étape1 implique de fermer le descripteur de fichier (même si l’étape1 ne fermait pas le descripteur l’étape2 le ferait), l’étape3 n’est pas possible, car les clés de chiffrement permettant d’accéder à ce fichier ne sont plus disponibles.
 
 Pour traiter ce scénario, vous pouvez utiliser [**FileProtectionManager.CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn705153) pour créer un fichier protégé et lui retourner un **IRandomAccessStream**. Ce faisant, les applications peuvent effectuer plusieurs écritures dans un fichier tout en conservant le descripteur de fichier ouvert.
 
@@ -199,7 +199,7 @@ private async void CopyProtectionFromOneFileToAnother
 ## Gérer le refus d’accès à un fichier que vous avez protégé
 
 
-Dans ce scénario, votre application essaie d’accéder à un fichier (précédemment protégé par votre application) et se voit refuser l’accès. Vous devez vérifier l’état du fichier pour déterminer où se trouve l’erreur. Dans cet exemple de code, l’application appelle l’API [**FileProtectionManager.GetProtectionInfoAsync**](https://msdn.microsoft.com/library/windows/apps/dn705154) pour interroger l’état et déterminer si la raison est la suivante : l’accès au fichier a maintenant été révoqué à la suite de la gestion à distance.
+Dans ce scénario, votre application essaie d’accéder à un fichier (précédemment protégé par votre application) et se voit refuser l’accès. Vous devez vérifier l’état du fichier pour déterminer où se trouve l’erreur. Dans cet exemple de code, l’application appelle l’API [**FileProtectionManager.GetProtectionInfoAsync**](https://msdn.microsoft.com/library/windows/apps/dn705154) pour interroger l’état et déterminer si la raison est la suivante: l’accès au fichier a maintenant été révoqué à la suite de la gestion à distance.
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -224,7 +224,7 @@ private async System.Threading.Tasks.Task<bool> IsFileProtectionStatusRevoked
 ## Activer l’application de la stratégie d’interface utilisateur en fonction de l’identité de protection d’un fichier
 
 
-Lorsque votre application est sur le point d’afficher le contenu d’un fichier protégé (par exemple, un fichier PDF) dans son interface utilisateur, elle doit activer l’application de la stratégie d’interface utilisateur en fonction de l’identité de protection du fichier. Vous devez interroger les informations de protection du fichier et activer l’application de stratégie d’interface utilisateur du système à partir de l’identité récupérée.
+Lorsque votre application est sur le point d’afficher le contenu d’un fichier protégé (par exemple, un fichierPDF) dans son interface utilisateur, elle doit activer l’application de la stratégie d’interface utilisateur en fonction de l’identité de protection du fichier. Vous devez interroger les informations de protection du fichier et activer l’application de stratégie d’interface utilisateur du système à partir de l’identité récupérée.
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -249,7 +249,7 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-**Remarque** Cet article s’adresse aux développeurs Windows 10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

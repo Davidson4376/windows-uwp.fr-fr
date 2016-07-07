@@ -11,7 +11,7 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 # MIDI
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment énumérer des périphériques MIDI (Musical Instrument Digital Interface) et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle.
@@ -61,16 +61,12 @@ Enregistrez des gestionnaires pour les gestionnaires d’événements de l’obs
 
 [!code-cs[WatcherConstructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherConstructor)]
 
-L’élément **DeviceWatcher** présente les événements suivants :
+L’élément **DeviceWatcher** présente les événements suivants:
 
--   [
-            **Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - Déclenché lorsqu’un nouveau périphérique est ajouté au système.
--   [
-            **Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - Déclenché lorsqu’un périphérique est supprimé du système.
--   [
-            **Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - Déclenché lorsque les informations associées à un périphérique existant sont mises à jour.
--   [
-            **EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - Déclenché lorsque l’observateur a terminé son énumération du type de périphérique demandé.
+-   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - Déclenché lorsqu’un nouveau périphérique est ajouté au système.
+-   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - Déclenché lorsqu’un périphérique est supprimé du système.
+-   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - Déclenché lorsque les informations associées à un périphérique existant sont mises à jour.
+-   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - Déclenché lorsque l’observateur a terminé son énumération du type de périphérique demandé.
 
 Dans le gestionnaire d’événements, pour chacun de ces événements, une méthode d’assistance **UpdateDevices** est appelée pour mettre à jour l’élément **ListBox** en tenant compte de la liste actuelle des périphériques. Dans la mesure où **UpdateDevices** met à jour les éléments d’interface utilisateur et que ces gestionnaires d’événements ne sont pas appelés sur le thread d’interface utilisateur, chaque appel doit être encapsulé dans un appel à [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), ce qui entraîne l’exécution du code sur le thread d’interface utilisateur.
 
@@ -128,7 +124,7 @@ Lorsque votre application est désactivée, veillez à nettoyer les ressources d
 
 ## Utilisation du synthétiseur General MIDI Windows intégré
 
-Lors de l’énumération des périphériques de sortie MIDI à l’aide de la technique décrite ci-dessus, votre application détecte un périphérique MIDI appelé « Synthé. de table de sons Microsoft GS ». Il s’agit d’un synthétiseur General MIDI intégré que vous pouvez utiliser à partir de votre application. Toutefois, toute tentative de création d’un port de sortie MIDI pour ce périphérique échouera, sauf si vous avez inclus l’extension du Kit de développement logiciel (SDK) pour le synthétiseur intégré dans votre projet.
+Lors de l’énumération des périphériques de sortie MIDI à l’aide de la technique décrite ci-dessus, votre application détecte un périphérique MIDI appelé «Synthé. de table de sons Microsoft GS». Il s’agit d’un synthétiseur General MIDI intégré que vous pouvez utiliser à partir de votre application. Toutefois, toute tentative de création d’un port de sortie MIDI pour ce périphérique échouera, sauf si vous avez inclus l’extension du Kit de développement logiciel (SDK) pour le synthétiseur intégré dans votre projet.
 
 **Pour inclure l’extension du Kit de développement logiciel (SDK) pour le synthétiseur General MIDI dans votre projet d’application**
 

@@ -11,7 +11,7 @@ ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 # Prendre en charge votre application avec des tâches en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Les rubriques de cette section expliquent comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan. Les tâches en arrière-plan sont des classes légères que le système d’exploitation exécute en arrière-plan. Vous pouvez également recourir à des tâches en arrière-plan pour fournir des fonctionnalités lorsque votre application est en suspens ou n’est pas en cours d’exécution. Les tâches en arrière-plan sont aussi utiles pour des applications de communication en temps réel (VoIP, messagerie électronique et messagerie instantanée, par exemple).
@@ -67,13 +67,13 @@ Pour que votre application puisse inscrire une tâche en arrière-plan avec succ
 ## Tâches en arrière-plan
 
 
-Les déclencheurs en temps réel suivants peuvent être utilisés pour exécuter du code léger personnalisé en arrière-plan :
+Les déclencheurs en temps réel suivants peuvent être utilisés pour exécuter du code léger personnalisé en arrière-plan:
 
-**Canal de contrôle :**les tâches en arrière-plan peuvent conserver une connexion active et recevoir des messages sur le canal de contrôle, en utilisant l’objet [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Si votre application est à l’écoute d’un socket, vous pouvez utiliser le Broker de socket à la place du **ControlChannelTrigger**. Pour plus d’informations sur l’utilisation du Broker de socket, voir [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). La classe **ControlChannelTrigger** n’est pas prise en charge sur Windows Phone.
+**Canal de contrôle:**les tâches en arrière-plan peuvent conserver une connexion active et recevoir des messages sur le canal de contrôle, en utilisant l’objet [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Si votre application est à l’écoute d’un socket, vous pouvez utiliser le Broker de socket à la place du **ControlChannelTrigger**. Pour plus d’informations sur l’utilisation du Broker de socket, voir [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). La classe **ControlChannelTrigger** n’est pas prise en charge sur Windows Phone.
 
-**Minuteur :**vous pouvez exécuter des tâches en arrière-plan toutes les 15 minutes et fixer leur exécution à un moment précis à l’aide du [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Pour plus d’informations, voir [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md).
+**Minuteur:**vous pouvez exécuter des tâches en arrière-plan toutes les 15minutes et fixer leur exécution à un moment précis à l’aide du [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Pour plus d’informations, voir [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md).
 
-**Notifications Push :**les tâches en arrière-plan répondent à l’objet [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) pour recevoir des notifications Push brutes.
+**Notifications Push:**les tâches en arrière-plan répondent à l’objet [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) pour recevoir des notifications Push brutes.
 
 **Note**  
 
@@ -154,14 +154,14 @@ Les tâches en arrière-plan peuvent signaler leur progression, leur annulation 
 [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
 ## Rubriques connexes
 
 
-**Recommandations conceptuelles pour le multitâche sous Windows 10**
+**Recommandations conceptuelles pour le multitâche sous Windows10**
 
 * [Lancement, reprise et multitâche](index.md)
 
@@ -189,6 +189,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

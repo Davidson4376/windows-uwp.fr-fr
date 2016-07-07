@@ -11,7 +11,7 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 
 ---
 
-# Modèles de vignette adaptative &#58; schéma et conseils
+# Modèles de vignette adaptative&#58; schéma et conseils
 
 Voici les éléments et attributs permettant de créer des vignettes adaptatives. Consultez les instructions et les exemples indiqués dans [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md).
 
@@ -102,7 +102,7 @@ Voici les éléments et attributs permettant de créer des vignettes adaptatives
 </text>
 ```
 
-Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
+Valeurs de textStyle: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
 ## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>élément de groupe
 

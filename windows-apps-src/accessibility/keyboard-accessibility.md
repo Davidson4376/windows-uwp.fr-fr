@@ -241,6 +241,6 @@ En règle générale, les raccourcis clavier ne concernent pas les applications 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
 # Répondre aux avis des clients
 
 
-Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vous pouvez également choisir d’afficher votre réponse dans le Windows Store pour qu’elle soit visible à tous les clients Windows 10.
+Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vous pouvez également choisir d’afficher votre réponse dans le Windows Store pour qu’elle soit visible à tous les clients Windows10.
 
 > **Remarque** Vous ne pourrez pas répondre directement aux avis rédigés par des clients ayant choisi de ne pas recevoir de réponses. Il est également impossible de laisser des réponses aux commentaires créés par des clients en dehors des États-Unis avec des appareils Windows Phone 8.
 

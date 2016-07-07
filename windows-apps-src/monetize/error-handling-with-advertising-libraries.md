@@ -12,14 +12,14 @@ ms.openlocfilehash: 5e0c7e6328247e5f686b14b10c80d8aafc13e0e4
 # Gestion des erreurs liées aux bibliothèques de publicités Microsoft
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique fournit des informations de base sur la gestion des erreurs générées par la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans les bibliothèques de publicités Microsoft.
 
 <span id="bkmk-javascript"/>
 ## Applications JavaScript/HTML
 
-Pour gérer les erreurs **AdControl** dans une application JavaScript :
+Pour gérer les erreurs **AdControl** dans une application JavaScript:
 
 1.  Affectez l’événement **onErrorOccurred** à un gestionnaire d’événements.
 
@@ -36,7 +36,7 @@ Le gestionnaire d’événements **onErrorOccurred** est défini dans l’attrib
 
 La fonction de gestion des erreurs est déclarative et doit être incorporée à la fonction [markSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx).
 
-Le gestionnaire d’erreurs intercepte l’objet erreur JavaScript quand une erreur **AdControl** se produit. Cet objet fournit deux arguments au gestionnaire d’erreurs. Pour plus d’informations, voir [Propriétés d’erreur particulières des méthodes Windows Runtime asynchrones](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx).
+Le gestionnaire d’erreurs intercepte l’objet erreur JavaScript quand une erreur **AdControl** se produit. Cet objet fournit deuxarguments au gestionnaire d’erreurs. Pour plus d’informations, voir [Propriétés d’erreur particulières des méthodes Windows Runtime asynchrones](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx).
 
 Voici un exemple de fonction de gestion des erreurs nommé **errorLogger** qui gère l’événement **onErrorOccurred**.
 
@@ -52,11 +52,11 @@ Voir [Gestion des erreurs dans la procédure pas à pas pour JavaScript](error-h
 <span id="bkmk-dotnet"/>
 ## Applications XAML
 
-Pour gérer les erreurs **AdControl** dans une application XAML :
+Pour gérer les erreurs **AdControl** dans une application XAML:
 
 * Affectez l’événement **ErrorOccurred** au nom d’un délégué de gestionnaire d’événements.
 
-* Codez le délégué de gestion des événements d’erreur afin qu’il prenne deux paramètres : un **Object** pour l’expéditeur et un objet **AdErrorEventArgs**.
+* Codez le délégué de gestion des événements d’erreur afin qu’il prenne deuxparamètres: un **Object** pour l’expéditeur et un objet **AdErrorEventArgs**.
 
 Voici un exemple qui affecte un délégué nommé **OnAdError** à l’événement **ErrorOccurred**.
 
@@ -64,7 +64,7 @@ Voici un exemple qui affecte un délégué nommé **OnAdError** à l’événeme
 this.ErrorOccurred = OnAdError;
 ```
 
-Voici un exemple de définition du délégué **OnAdError** qui écrit des informations d’erreur dans la fenêtre Sortie de Visual Studio.
+Voici un exemple de définition du délégué **OnAdError** qui écrit des informations d’erreur dans la fenêtre Sortie de VisualStudio.
 
 ``` syntax
 private void OnAdError(object sender, AdErrorEventArgs e)

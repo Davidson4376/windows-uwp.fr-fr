@@ -11,9 +11,9 @@ ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
 
 # Sélection d’une approche d’iOS et développement d’applications UWP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Quels sont les choix possibles lors du développement d’applications multiplateformes ?
+Quels sont les choix possibles lors du développement d’applications multiplateformes?
 
 ## Quel est le meilleur moyen de prise en charge des applications iOS et Windows ?
 

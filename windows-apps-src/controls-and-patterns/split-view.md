@@ -20,7 +20,7 @@ ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
 -   [**Classe SplitView (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn864360)
 -   [**Objet SplitView (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn919970)
 
-Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masqué, ainsi qu’une zone de contenu. La zone de contenu est toujours visible. Le volet peut être visible ou masqué ; il est susceptible de s’afficher depuis le côté gauche ou droit de la fenêtre. Le volet comporte quatre modes :
+Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masqué, ainsi qu’une zone de contenu. La zone de contenu est toujours visible. Le volet peut être visible ou masqué ; il est susceptible de s’afficher depuis le côté gauche ou droit de la fenêtre. Le volet comporte quatre modes:
 
 -   **Superposition**
 
@@ -40,9 +40,9 @@ Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masq
 
 ## <span id="Is_this_the_right_control_"></span><span id="is_this_the_right_control_"></span><span id="IS_THIS_THE_RIGHT_CONTROL_"></span>Est-ce le contrôle approprié ?
 
-Le contrôle de mode Fractionné peut être utilisé pour créer un [volet de navigation](nav-pane.md). Pour créer ce modèle, ajoutez un bouton Développer/réduire (le bouton « hamburger ») et un affichage Liste représentant les éléments de navigation.
+Le contrôle de mode Fractionné peut être utilisé pour créer un [volet de navigation](nav-pane.md). Pour créer ce modèle, ajoutez un bouton Développer/réduire (le bouton «hamburger») et un affichage Liste représentant les éléments de navigation.
 
-Le contrôle de mode Fractionné peut également servir à créer toute expérience « à tiroirs » (c’est-à-dire que les utilisateurs peuvent ouvrir et fermer le volet supplémentaire).
+Le contrôle de mode Fractionné peut également servir à créer toute expérience «à tiroirs» (c’est-à-dire que les utilisateurs peuvent ouvrir et fermer le volet supplémentaire).
 
 ## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>Exemples
 

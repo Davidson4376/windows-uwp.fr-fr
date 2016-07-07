@@ -22,7 +22,7 @@ Microsoft Advertising pour pubCenter a été intégré au Centre de développeme
 
 Vous possédez peut-être plusieurs comptes dans pubCenter et le Centre de développement, et votre expérience de migration dépendra de la manière dont vos comptes pubCenter et du Centre de développement ont été configurés. Vous pouvez être concerné par un ou plusieurs des scénarios suivants. Lisez attentivement les détails des scénarios qui s’appliquent à votre cas.
 
-## Scénario nº 1 : vous possédez un compte du Centre de développement et un compte pubCenter avec le même compte Microsoft et enregistrés dans le même pays ou la même région
+## Scénario nº1: vous possédez un compte du Centre de développement et un compte pubCenter avec le même compte Microsoft et enregistrés dans le même pays ou la même région
 
 
 **Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis.
@@ -41,7 +41,7 @@ Vous possédez peut-être plusieurs comptes dans pubCenter et le Centre de déve
 
 > **Remarque** Vous ne pourrez plus créer d’unités publicitaires ou de campagnes de promotion d’application dans pubCenter. Pour savoir comment créer des unités publicitaires dans le Centre de développement, voir [Monétisation à l’aide des publicités](monetize-with-ads.md). Pour savoir comment créer des campagnes de promotion d’application dans le Centre de développement, voir [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md).
 
-## Scénario nº 2 : vous possédez un compte du Centre de développement et un compte pubCenter avec le même compte Microsoft, mais enregistrés dans des régions ou des pays différents
+## Scénario nº2: vous possédez un compte du Centre de développement et un compte pubCenter avec le même compte Microsoft, mais enregistrés dans des régions ou des pays différents
 
 
 **Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com aux États-Unis. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[nom\]@outlook.com en Inde.
@@ -59,7 +59,7 @@ Vous possédez peut-être plusieurs comptes dans pubCenter et le Centre de déve
 
 > **Remarque** Vous ne pourrez plus créer d’unités publicitaires ou de campagnes de promotion d’application dans pubCenter. Pour savoir comment créer des unités publicitaires dans le Centre de développement, voir [Monétisation à l’aide des publicités](monetize-with-ads.md). Pour savoir comment créer des campagnes de promotion d’application dans le Centre de développement, voir [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md).
 
-## Scénario nº 3 : vous possédez un compte du Centre de développement et un compte pubCenter enregistrés avec des comptes Microsoft différents
+## Scénario nº3: vous possédez un compte du Centre de développement et un compte pubCenter enregistrés avec des comptes Microsoft différents
 
 
 **Exemple** : vous possédez un compte du Centre de développement enregistré avec l’adresse de messagerie \[nom\]@outlook.com. Vous possédez également un compte pubCenter enregistré avec l’adresse de messagerie \[autre\_nom\]@outlook.com.
@@ -116,7 +116,7 @@ Pour en savoir plus, consultez l’article [Consolidation du profil fiscal et du
 
 La création de nouvelles unités publicitaires n'est plus prise en charge dans pubCenter. Si vous avez intégré le contrôle Microsoft Ad Mediator dans votre application, une unité publicitaire est automatiquement créée sur le serveur principal lorsque vous chargez votre application dans le Windows Store. Sinon, vous pouvez créer manuellement une unité publicitaire autonome dans le Centre de développement à partir de la page **Monétisation à l’aide des publicités** de votre application.
 
-### Comment créer des unités publicitaires dans le Centre de développement ?
+### Comment créer des unités publicitaires dans le Centre de développement?
 
 Sur la page de votre application dans le Centre de développement, cliquez sur **Monétisation**&gt;**Monétisation à l’aide des publicités**. Pour plus d’informations sur la création d’unités publicitaires dans le Centre de développement, voir [Monétisation à l’aide des publicités](monetize-with-ads.md).
 
@@ -136,15 +136,15 @@ Ouvrez une session pubCenter avec le même compte Microsoft que vous utilisez po
 
 À présent, vous ne pouvez créer des campagnes de promotion d’application que dans le Centre de développement. Certaines de vos campagnes de promotion d'application dans pubCenter peuvent avoir été suspendues dans le cadre de cette intégration. Veuillez désormais créer vos nouvelles campagnes de promotion d’application dans le Centre de développement.
 
-### Comment créer des campagnes de promotion d’application dans le Centre de développement ?
+### Comment créer des campagnes de promotion d’application dans le Centre de développement?
 
 Sur la page de votre application dans le Centre de développement, cliquez sur **Monétisation**&gt;**Promouvoir votre application**. Pour plus d’informations sur la création de campagnes de publicité pour vos applications dans le Centre de développement, voir [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md).
 
-### Où puis-je voir des données de performances dans le Centre de développement ?
+### Où puis-je voir des données de performances dans le Centre de développement?
 
 Sur la page de votre application dans le Centre de développement, cliquez sur **Analyse**&gt;**Performances de Microsoft Advertising**. Pour plus d’informations, voir [Rapport sur les performances publicitaires](advertising-performance-report.md).
 
-### Comment gérer mon mode de paiement et mes informations fiscales dans le Centre de développement ?
+### Comment gérer mon mode de paiement et mes informations fiscales dans le Centre de développement?
 
 Voir [Configuration de vos comptes de revenu et déclarations fiscales](setting-up-your-payout-account-and-tax-forms.md).
 

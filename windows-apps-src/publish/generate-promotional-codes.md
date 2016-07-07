@@ -3,8 +3,8 @@ author: jnHs
 Description: "Vous pouvez générer des codes promotionnels pour une application ou un produit in-app que vous avez publiés dans le Windows Store."
 title: "Générer des codes promotionnels"
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4001f374a80cd7c62df6230a9429dd5b5a19d2b2
+ms.sourcegitcommit: df994a3bbda9f6d4df0ee2dd6c2cb646d91a0bfc
+ms.openlocfilehash: bfea802fb4a6efcfe34121802ce49f20a9b0305e
 
 ---
 
@@ -31,8 +31,8 @@ Dans le tableau de bord du Centre de développement Windows, vous pouvez :
 Tenez compte des stratégies suivantes relatives aux codes promotionnels :
 
 -   Vous pouvez générer des codes promotionnels pour toute application ou tout produit in-app que vous avez publiés dans le Windows Store. Les utilisateurs peuvent utiliser les codes sur toutes les versions de Windows prises en charge par votre application ou produit in-app.
--   Les codes promotionnels expirent 6 mois après la date que leur commande.
--   Pour chaque application ou produit in-app, vous pouvez générer jusqu’à 250 codes promotionnels tous les 6 mois. La période de six mois commence à la soumission de la première commande de code promotionnel.
+-   Les codes promotionnels expirent 6mois après la date de leur commande.
+-   Pour chaque application ou produit in-app, vous pouvez générer jusqu’à 500codes promotionnels tous les 6mois. La période de six mois commence à la soumission de la première commande de code promotionnel.
 -   Vous devez respecter les exigences définies dans le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058), notamment la section **3k. Codes promotionnels**.
 
 ## Commander des codes promotionnels
@@ -48,6 +48,8 @@ Pour commander des codes promotionnels pour une application ou un produit in-app
     -   Sélectionnez l’application ou le produit in-app pour lequel vous voulez générer des codes.
     -   Spécifiez un nom pour la commande. Ce nom permet de différencier les différentes commandes de codes lors de l’examen des données d’utilisation de votre code promotionnel.
     -   Indiquez le nombre de codes à commander.
+    -   Indiquez à quel moment les codes promotionnels doivent devenir actifs. Pour choisir une date et une heure de début précises, décochez la case **Les codes sont immédiatement actifs**.
+    -   Indiquez à quel moment les codes promotionnels doivent expirer. Pour choisir une date et une heure d’expiration précises, décochez la case **Les codes expirent au bout de 6mois**.
 
 3.  Cliquez sur **Commander des codes**. La commande est soumise et le tableau de bord vous amène à la page **Codes promotionnels** dans laquelle la nouvelle commande est mentionnée comme **En attente** dans le tableau récapitulatif des commandes de codes promotionnels.
 
@@ -70,15 +72,17 @@ Pour télécharger une commande exécutée de codes promotionnels et distribuer 
 
         DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
 
-    -   **URL donnant droit** : URL permettant à un utilisateur d’utiliser le code et d’installer votre application ou produit in-app. L’URL est au format suivant :
+    -   **URL donnant droit** : URL permettant à un utilisateur d’utiliser le code et d’installer votre application ou produit in-app. L’URL est au format suivant:
 
         https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code&gt;
 
-    -   **Date de commande** : date à laquelle vous avez commandé ce code.
+    -   **Date de début** : date de début de ce code.
     -   **Date d’expiration** : date d’expiration de ce code.
     -   **ID de code** : ID unique de ce code.
     -   **ID de commande** : ID unique de la commande exécutée relative à ce code.
     -   **Accordé à** : champ vide dans lequel vous pouvez entrer une valeur identifiant l’utilisateur auquel vous avez donné le code.
+    -   **Disponible**: nombre de codes toujours disponibles.
+    -   **Utilisé**: nombre de codes qui ont été utilisés.
 
 4.  Distribuez les URL donnant droit à vos utilisateurs via le mode de communication de votre choix (par exemple, message électronique, SMS ou carte imprimée). Nous vous recommandons d’inclure dans votre communication les éléments suivants :
     -   Explication relative à l’application ou au produit in-app auquel le code promotionnel a trait et, éventuellement, description de la raison pour laquelle l’utilisateur reçoit le code.
@@ -134,6 +138,6 @@ Vous pouvez également télécharger une commande active à partir de ce tableau
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

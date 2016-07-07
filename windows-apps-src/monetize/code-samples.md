@@ -12,7 +12,7 @@ ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
 # Exemples de code
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section contient des exemples qui montrent comment utiliser les propriétés, méthodes et événements des classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) dans les bibliothèques de publicités Microsoft afin de cibler des utilisateurs, actualiser manuellement les publicités et gérer les événements. Pour passer en revue les procédures pas à pas d’introduction qui montrent comment ajouter ces contrôles à votre application, voir [Procédures pas à pas pour développeurs](developer-walkthroughs.md).
 

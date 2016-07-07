@@ -10,7 +10,7 @@ ms.openlocfilehash: 020b020d90a52d45fa989e0f630320b4630b955e
 
 # Gérer des rendez-vous
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 L’espace de noms [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur. Ici, nous allons vous montrer comment créer un rendez-vous, l’ajouter à l’application Calendrier, le remplacer dans l’application Calendrier et le supprimer de l’application Calendrier. Nous allons également vous montrer comment afficher une période de temps pour une application Calendrier et créer un objet appointment-recurrence.
@@ -503,8 +503,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## Ajouter un rendez-vous modifiable
 
-[
-            **ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) fonctionne comme [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync), sauf que la boîte de dialogue qui permet d’ajouter le rendez-vous est modifiable. Ainsi, l’utilisateur peut changer les données du rendez-vous avant de les enregistrer.
+[**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) fonctionne comme [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync), sauf que la boîte de dialogue qui permet d’ajouter le rendez-vous est modifiable. Ainsi, l’utilisateur peut changer les données du rendez-vous avant de les enregistrer.
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -539,8 +538,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## Afficher les détails des rendez-vous
 
-[
-            **ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) indique au système d’afficher les détails relatifs au rendez-vous spécifié. Une application qui implémente des calendriers d’application peut s’activer pour afficher les détails des rendez-vous dans ses propres calendriers. Sinon, le système affiche les détails des rendez-vous. Une surcharge de la méthode qui accepte un argument de date de début est fournie pour afficher les détails d’une instance de rendez-vous périodique.
+[**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) indique au système d’afficher les détails relatifs au rendez-vous spécifié. Une application qui implémente des calendriers d’application peut s’activer pour afficher les détails des rendez-vous dans ses propres calendriers. Sinon, le système affiche les détails des rendez-vous. Une surcharge de la méthode qui accepte un argument de date de début est fournie pour afficher les détails d’une instance de rendez-vous périodique.
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)
@@ -574,6 +572,6 @@ Vous disposez désormais des notions de base pour gérer les rendez-vous. Télé
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

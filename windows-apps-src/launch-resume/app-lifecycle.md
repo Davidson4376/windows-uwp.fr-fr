@@ -11,7 +11,7 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 # Cycle de vie de l’application
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -73,8 +73,7 @@ Les données de l’événement [**OnActivated**](https://msdn.microsoft.com/lib
 
  
 
-[
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) pourrait également avoir la valeur **Running** ou **Suspended** mais, dans ce cas, votre application n’a pas été arrêtée précédemment et vous n’avez donc pas à restaurer de données, car tout est déjà en mémoire.
+[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) pourrait également avoir la valeur **Running** ou **Suspended** mais, dans ce cas, votre application n’a pas été arrêtée précédemment et vous n’avez donc pas à restaurer de données, car tout est déjà en mémoire.
 
 **Note**  
 
@@ -144,11 +143,11 @@ Il n’existe aucun événement spécial pour indiquer que l’utilisateur a fer
 
 Une fois qu’une application a été fermée par l’utilisateur, elle est d’abord suspendue et arrêtée, puis entre en l’état **NotRunning**.
 
-Sous Windows 8.1 et versions ultérieures, une fois qu’une application a été fermée par l’utilisateur, elle est supprimée de l’écran et de la liste de répartition sans être arrêtée de manière explicite.
+Sous Windows8.1 et versions ultérieures, une fois qu’une application a été fermée par l’utilisateur, elle est supprimée de l’écran et de la liste de répartition sans être arrêtée de manière explicite.
 
 Si un gestionnaire d’événements pour l’événement **Suspending** a été inscrit par une application, il est appelé lors de la suspension de l’application. Vous pouvez utiliser ce gestionnaire d’événements pour enregistrer des données utilisateur et d’application pertinentes sur un périphérique de stockage persistant.
 
-**Fermée par l’utilisateur :** si votre application doit se comporter différemment selon qu’elle est fermée par l’utilisateur ou par Windows, vous pouvez utiliser le gestionnaire d’événements d’activation pour déterminer si l’application a été arrêtée par l’utilisateur ou par Windows. Voir les descriptions des états **ClosedByUser** et **Terminated** dans la documentation relative à l’énumération [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694).
+**Fermée par l’utilisateur:** si votre application doit se comporter différemment selon qu’elle est fermée par l’utilisateur ou par Windows, vous pouvez utiliser le gestionnaire d’événements d’activation pour déterminer si l’application a été arrêtée par l’utilisateur ou par Windows. Voir les descriptions des états **ClosedByUser** et **Terminated** dans la documentation relative à l’énumération [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694).
 
 Nous recommandons que les applications ne puissent se fermer par programme qu’en cas d’absolue nécessité. Par exemple, si une application détecte une fuite de mémoire, elle peut se fermer pour assurer la sécurité des données personnelles de l’utilisateur. Lorsque vous fermez une application par programme, le système considère qu’il s’agit d’un blocage d’application.
 
@@ -181,7 +180,7 @@ Le code de base pertinent pour le cycle de vie de l’application est fourni dan
 -   Classe [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) (XAML)
 
 **Note**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -200,6 +199,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -21,13 +21,13 @@ Vous pouvez utiliser Azure Active Directory pour ajouter des utilisateurs à vot
 ## Associer votre compte du Centre de développement au service Azure Active Directory de votre organisation
 
 
-Le Centre de développement Windows tire parti d’Azure Active Directory pour la gestion multi-utilisateurs et l’attribution des rôles. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Dans le cas contraire, vous pouvez créer un Azure AD depuis le Centre de développement sans frais supplémentaires. 
+Le Centre de développement Windows tire parti d’Azure Active Directory pour la gestion multi-utilisateurs et l’attribution des rôles. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Dans le cas contraire, vous pouvez créer un AzureAD depuis le Centre de développement sans frais supplémentaires. 
 
 Notez que vous ne pouvez associer qu’un seul compte du Centre de développement à un service Azure AD. De même, il n’est possible d’associer qu’un seul service Azure AD à un compte du Centre de développement.
 
 > **Remarque** Vous ne pouvez ajouter des utilisateurs à votre compte du Centre de développement que s’ils font partie du service Azure AD de votre organisation (ou si vous créez des comptes Azure AD pour eux). Vous ne pourrez pas ajouter d’utilisateurs à votre compte du Centre de développement en utilisant leur compte Microsoft personnel.
 
-Pour associer votre compte du Centre de développement au service Azure AD existant de votre organisation :
+Pour associer votre compte du Centre de développement au service Azure AD existant de votre organisation:
 
 1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
 2.  Cliquez sur le bouton **Associer Azure AD avec votre compte du Centre de développement**.
@@ -35,13 +35,13 @@ Pour associer votre compte du Centre de développement au service Azure AD exist
 4.  Vérifiez le nom d’organisation et le nom de domaine pour votre compte Azure AD. Pour valider l’association, cliquez sur **Confirmer**.
 5.  Si l’association réussit, vous êtes prêt à ajouter et gérer des utilisateurs de comptes sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
   
-Pour créer un tout nouvel Azure AD à associer à votre compte du Centre de développement :
+Pour créer un tout nouvel Azure AD à associer à votre compte du Centre de développement: 
 1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
 2.  Cliquez sur le bouton **Créer Azure AD**.
-3.  Entrez les informations de répertoire de votre nouvel Azure AD :
-- **Nom de domaine** : nom unique que nous utiliserons pour votre domaine Azure AD, avec « .onmicrosoft.com ». Par exemple, si vous avez entré « exemple », votre domaine Azure AD sera « exemple.onmicrosoft.com ». 
-- **E-mail de contact ** : adresse de messagerie à laquelle nous pouvons vous contacter à propos de votre compte si nécessaire.
-- **Informations de compte d’utilisateur administrateur général** : prénom, nom, nom d’utilisateur et mot de passe que vous souhaitez utiliser pour le nouveau compte d’administrateur. 
+3.  Entrez les informations de répertoire de votre nouvel Azure AD:
+- **Nom de domaine**: nom unique que nous utiliserons pour votre domaine Azure AD, avec «.onmicrosoft.com». Par exemple, si vous avez entré «exemple», votre domaine Azure AD sera «exemple.onmicrosoft.com». 
+- **E-mail de contact**: adresse de messagerie à laquelle nous pouvons vous contacter à propos de votre compte si nécessaire.
+- **Informations de compte d’utilisateur administrateur général**: prénom, nom, nom d’utilisateur et mot de passe que vous souhaitez utiliser pour le nouveau compte d’administrateur. 
 4.  Cliquez sur **Créer** pour confirmer les nouvelles informations de domaine et de compte.
 5.  Connectez-vous avec vos nouveaux nom d’utilisateur et mot de passe d’administrateur général Azure AD pour commencer à ajouter et à gérer des utilisateurs de compte supplémentaires sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
 

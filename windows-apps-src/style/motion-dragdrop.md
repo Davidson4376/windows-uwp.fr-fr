@@ -57,7 +57,7 @@ Utilisez les animations de glisser-déplacer lors du déplacement d’objets par
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de séquences de glisser-déplacer](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Démarrage rapide : animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 * [**Classe DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243186)
 * [**Classe DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243180)

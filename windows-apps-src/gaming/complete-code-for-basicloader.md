@@ -12,11 +12,11 @@ ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
 # Code complet de BasicLoader
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs.
 
-Cette rubrique contient les sections suivantes :
+Cette rubrique contient les sections suivantes:
 
 -   [Technologies](#technologies)
 -   [Configuration requise](#requirements)
@@ -30,13 +30,17 @@ Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
-**Langages de programmation** : C++  
-**Modèles de programmation** : Windows Runtime
+
+            **Langages de programmation**: C++  
+
+            **Modèles de programmation**: Windows Runtime
 
 ## Conditions requises
 
-**Client minimal pris en charge** : Windows 10                              
-**Serveur minimal pris en charge** : Windows Server 2016 Technical Preview 
+
+            **Client minimal pris en charge**: Windows10                              
+
+            **Serveur minimal pris en charge**: Windows Server2016 Technical Preview 
 
 
 ## Afficher le code (C++)

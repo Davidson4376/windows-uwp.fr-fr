@@ -40,9 +40,9 @@ Les valeurs supplémentaires ci-après font référence à la famille de package
 
 ## Lien d’accès à la description de votre application
 
-Vous pouvez partager le lien d’accès à la page de votre application afin d’aider vos clients à trouver cette dernière dans le Windows Store. Ce lien est au format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
+Vous pouvez partager le lien d’accès à la page de votre application afin d’aider vos clients à trouver cette dernière dans le WindowsStore. Ce lien est au format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
 
-> **Remarque** Cette URL fonctionne pour n’importe quelle version du système d’exploitation, à condition que votre application soit disponible dessus. Vous pouvez également voir des liens supplémentaires pour Windows 8.1 et versions antérieures et/ou Windows Phone 8.1 et versions antérieures, qui ne fonctionnent que sur les versions de système d’exploitation spécifiées.
+> **Remarque** Cette URL fonctionne pour n’importe quelle version du système d’exploitation, à condition que votre application soit disponible dessus. Vous pouvez également voir des liens supplémentaires pour Windows8.1 et versions antérieures et/ou Windows Phone8.1 et versions antérieures, qui ne fonctionnent que sur les versions de système d’exploitation spécifiées.
 
 Lorsqu’un client clique sur ce lien, il accède automatiquement à la page de description Web de votre application. Si l’appareil Windows du client prend en charge votre application, l’application du Windows Store lancera et affichera également la description de votre application.
 

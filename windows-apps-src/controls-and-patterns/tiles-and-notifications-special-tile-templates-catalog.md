@@ -17,32 +17,32 @@ ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
 
 
 
-Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. Chaque modèle de vignette spécial a été spécifiquement conçu pour Windows 10, sauf pour le modèle de vignette Icônes, modèle spécial classique qui a été mis à jour pour Windows 10. Cet article traite des trois modèles de vignette spéciaux : Icônes, Photos et Contacts.
+Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. Chaque modèle de vignette spécial a été spécifiquement conçu pour Windows 10, sauf pour le modèle de vignette Icônes, modèle spécial classique qui a été mis à jour pour Windows 10. Cet article traite des trois modèles de vignette spéciaux: Icônes, Photos et Contacts.
 
 ## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>Modèle de vignette Icônes
 
 
-Le modèle Icônes (également connu sous le nom de modèle « IconWithBadge ») vous permet d’afficher une petite image dans le centre de la vignette. Windows 10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau.
+Le modèle Icônes (également connu sous le nom de modèle «IconWithBadge») vous permet d’afficher une petite image dans le centre de la vignette. Windows10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau.
 
 ![Vignettes de courrier petites et moyennes](images/iconic-template-mail-2sizes.png)
 
 ### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>Comment créer une vignette Icônes
 
-Les étapes suivantes couvrent tout ce que vous devez savoir pour créer une vignette Icônes pour Windows 10. D’un point de vue général, vous avez besoin de la ressource de votre image d’icône, puis vous envoyez une notification à la vignette à l’aide du modèle Icônes, et enfin vous envoyez une notification de badge qui fournit le numéro devant être affiché sur la vignette.
+Les étapes suivantes couvrent tout ce que vous devez savoir pour créer une vignette Icônes pour Windows10. D’un point de vue général, vous avez besoin de la ressource de votre image d’icône, puis vous envoyez une notification à la vignette à l’aide du modèle Icônes, et enfin vous envoyez une notification de badge qui fournit le numéro devant être affiché sur la vignette.
 
 ![Flux de développeur de la vignette Icônes](images/iconic-template-dev-flow.png)
 
-**Étape 1 : créez vos ressources d’image au format PNG**
+**Étape 1: créez vos ressources d’image au format PNG**
 
 Créez les ressources d’icônes pour la vignette et placez-les dans votre projet avec vos autres ressources. Créez une icône d’au moins 200 x 200 pixels, qui peut être utilisée pour les petites et moyennes vignettes sur le téléphone et le bureau. Pour une meilleure expérience utilisateur, créez une icône pour chaque taille. Voir les détails de dimensionnement dans l’image présentée plus bas.
 
 Enregistrez les ressources d’icônes au format PNG avec une transparence. Sur Windows Phone, chaque pixel non transparent s’affiche en blanc (RVB 255, 255, 255). Pour plus de cohérence et de simplicité, utilisez également le blanc pour les icônes du bureau.
 
-Windows 10 sur tablette, ordinateur portable et ordinateur de bureau prend uniquement en charge les ressources d’icônes carrées. Windows Phone prend en charge à la fois les ressources carrées et les ressources qui sont plus hautes que larges, jusqu’à un rapport de largeur:hauteur de 2:3. Ceci est donc très utile pour les images comme les icônes de téléphone.
+Windows 10 sur tablette, ordinateur portable et ordinateur de bureau prend uniquement en charge les ressources d’icônes carrées. WindowsPhone prend en charge à la fois les ressources carrées et les ressources qui sont plus hautes que larges, jusqu’à un rapport de largeur:hauteur de 2:3. Ceci est donc très utile pour les images comme les icônes de téléphone.
 
 ![Dimensionnement des icônes sur les petites et moyennes vignettes, sur le téléphone et le bureau](images/iconic-template-sizing-info.png)
 
-**Étape 2 : créez votre vignette de base**
+**Étape2: créez votre vignette de base**
 
 Vous pouvez utiliser le modèle Icônes sur les vignettes principales et secondaires. Si vous l’utilisez sur une vignette secondaire, vous devez tout d’abord créer la vignette secondaire ou utiliser une vignette secondaire déjà épinglée. Les vignettes principales sont implicitement épinglées et peuvent toujours recevoir des notifications.
 
@@ -50,7 +50,7 @@ Vous pouvez utiliser le modèle Icônes sur les vignettes principales et seconda
 
 Bien que cette étape puisse varier si la notification est envoyée localement ou par transmission des messages par le serveur, la charge utile XML que vous envoyez reste identique. Pour envoyer une notification à une vignette locale, créez un [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) pour votre vignette (vignette principale ou secondaire), puis envoyez une notification à la vignette qui utilise le modèle de vignette Icônes comme illustré ci-dessous. Dans l’idéal, vous devez également inclure des liaisons pour des tailles de vignettes grandes et larges à l’aide de [modèles de vignette adaptative](tiles-and-notifications-adaptive-tiles-schema.md).
 
-Voici un exemple de code pour la charge utile XML :
+Voici un exemple de code pour la charge utile XML:
 
 ```XML
 <tile>
@@ -100,7 +100,7 @@ Le modèle de vignette Photos vous permet d’afficher un diaporama de photos su
 
 ### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>Comment utiliser le modèle Photos
 
-L’utilisation du modèle Photos est simple si vous avez installé la [version Windows 10 de NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx). Même si vous pouvez utiliser le code XML brut, nous vous recommandons vivement de choisir NotificationExtensions pour ne pas avoir à vous soucier de la génération d’un contenu XML ou d’échappement XML valide.
+L’utilisation du modèle Photos est simple si vous avez installé la [version Windows10 de NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx). Même si vous pouvez utiliser le code XML brut, nous vous recommandons vivement de choisir NotificationExtensions pour ne pas avoir à vous soucier de la génération d’un contenu XML ou d’échappement XML valide.
 
 Windows Phone affiche jusqu’à 9 photos dans un diaporama, et les tablettes, ordinateurs portables et PC de bureau jusqu’à 12.
 
@@ -185,7 +185,7 @@ TileContent content = new TileContent()
 ## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>Modèle de vignette Contacts
 
 
-L’application Contacts dans Windows 10 utilise un modèle de vignette spécial qui affiche une collection d’images dans des cercles qui peuvent glisser verticalement ou horizontalement sur la vignette. Ce modèle de vignette est disponible depuis Windows 10 Build 10572 et tout le monde est invité à l’utiliser dans son application.
+L’application Contacts dans Windows10 utilise un modèle de vignette spécial qui affiche une collection d’images dans des cercles qui peuvent glisser verticalement ou horizontalement sur la vignette. Ce modèle de vignette est disponible depuis Windows 10 Build 10572 et tout le monde est invité à l’utiliser dans son application.
 
 Le modèle de vignette Contacts fonctionne sur les vignettes des tailles suivantes :
 

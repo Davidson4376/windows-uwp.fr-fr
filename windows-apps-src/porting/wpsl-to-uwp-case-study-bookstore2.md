@@ -11,9 +11,9 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 
 # Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP &#58; Bookstore2
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément **LongListSelector**. Dans le modèle d’affichage, chaque instance de la classe **Author** représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément **LongListSelector**, nous pouvons visualiser la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Nous suivons la procédure de portage de l’application vers une application de plateforme Windows universelle (UWP) Windows 10.
+Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément **LongListSelector**. Dans le modèle d’affichage, chaque instance de la classe **Author** représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément **LongListSelector**, nous pouvons visualiser la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Nous suivons la procédure de portage de l’application vers une application de plateforme Windows universelle (UWP) Windows10.
 
 **Remarque** Lorsque vous ouvrez Bookstore2Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
@@ -29,15 +29,15 @@ Voici à quoi ressemble Bookstore2WPSL8, l’application que nous allons porter.
 
 ![Apparence de l’application Bookstore2WPSL8](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
 
-##  Portage d’une application vers un projet Windows 10
+##  Portage d’une application vers un projet Windows10
 
-La procédure consistant à créer un projet dans Visual Studio, puis à copier des fichiers depuis Bookstore2WPSL8 et à insérer les fichiers copiés dans le nouveau projet, est très rapide. Commencez par créer un projet Application vide (universelle Windows). Appelez-le « Bookstore2Universal\_10 ». Voici les fichiers à copier de Bookstore2WPSL8 dans Bookstore2Universal\_10.
+La procédure consistant à créer un projet dans Visual Studio, puis à copier des fichiers depuis Bookstore2WPSL8 et à insérer les fichiers copiés dans le nouveau projet, est très rapide. Commencez par créer un projet Application vide (universelle Windows). Appelez-le «Bookstore2Universal\_10». Voici les fichiers à copier de Bookstore2WPSL8 dans Bookstore2Universal\_10.
 
--   Copiez le dossier contenant les fichiers PNG d’image de couverture de livre (dossier \\Assets\\CoverImages). Une fois le dossier copié, dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit de la souris sur le dossier que vous avez copié et sélectionnez **Inclure dans le projet**. Cette commande correspond à ce que nous avons voulu dire par « insertion » de fichiers ou de dossiers dans un projet. Chaque fois que vous copiez un fichier ou un dossier, sélectionnez **Actualiser** dans l’**Explorateur de solutions**, puis incluez le fichier ou dossier dans le projet. Cette opération n’est pas nécessaire pour les fichiers dont vous modifiez la destination.
+-   Copiez le dossier contenant les fichiers PNG d’image de couverture de livre (dossier \\Assets\\CoverImages). Une fois le dossier copié, dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit de la souris sur le dossier que vous avez copié et sélectionnez **Inclure dans le projet**. Cette commande correspond à ce que nous avons voulu dire par «insertion» de fichiers ou de dossiers dans un projet. Chaque fois que vous copiez un fichier ou un dossier, sélectionnez **Actualiser** dans l’**Explorateur de solutions**, puis incluez le fichier ou dossier dans le projet. Cette opération n’est pas nécessaire pour les fichiers dont vous modifiez la destination.
 -   Copiez le dossier contenant le fichier source de modèle d’affichage (dossier \\ViewModel).
 -   Copiez le fichier MainPage.xaml et remplacez le fichier dans la destination.
 
-Nous pouvons conserver les fichiers App.xaml et App.xaml.cs générés par Visual Studio dans le projet Windows 10.
+Nous pouvons conserver les fichiers App.xaml et App.xaml.cs générés par Visual Studio dans le projet Windows10.
 
 Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore2WPSL8 par Bookstore2Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Dans le code impératif du fichier source du modèle d’affichage, apportez les modifications de portage ci-après.
 
@@ -52,7 +52,7 @@ Dans le fichier MainPage.xaml, apportez les modifications de portage initiales c
 
 -   Remplacez l’élément `phone:PhoneApplicationPage` par `Page` (y compris les occurrences figurant dans la syntaxe des éléments de propriété).
 -   Supprimez les déclarations de préfixe d’espace de noms `phone` et `shell`.
--   Remplacez l’élément « clr-namespace » par « using » dans la déclaration de préfixe d’espace de noms restante.
+-   Remplacez l’élément «clr-namespace» par «using» dans la déclaration de préfixe d’espace de noms restante.
 -   Supprimez les éléments `SupportedOrientations="Portrait"` et `Orientation="Portrait"`, puis configurez l’option **Portrait** dans le manifeste du package d’application du nouveau projet.
 -   Supprimez l’élément `shell:SystemTray.IsVisible="True"`.
 -   Les types des convertisseurs d’éléments de la liste de raccourcis (qui sont présents dans le balisage en tant que ressources) ont été déplacés vers l’espace de noms [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Par conséquent, ajoutez la déclaration de préfixe d’espace de noms Windows\_UI\_Xaml\_Controls\_Primitives et mappez-la sur **Windows.UI.Xaml.Controls.Primitives**. Dans les ressources des convertisseurs d’éléments de la liste de raccourcis, remplacez le préfixe `phone:` par `Windows_UI_Xaml_Controls_Primitives:`.
@@ -143,7 +143,7 @@ Avant d’aborder la partie consacrée au Gestionnaire d’état visuel adaptati
 -   Dans `wideSeZo`, remplacez les éléments **ListView** par des éléments **GridView** dans la vue avec zoom avant et dans la vue avec zoom arrière.
 -   Effectuez une copie des trois ressources `AuthorGroupHeaderTemplate`, `ZoomedOutAuthorTemplate` et `BookTemplate`, puis ajoutez le mot `Wide` aux clés de ces copies. Mettez également à jour l’élément `wideSeZo` pour qu’il référence les clés de ces nouvelles ressources.
 -   Remplacez le contenu de l’élément `AuthorGroupHeaderTemplateWide` par `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
--   Remplacez le contenu de l’élément `ZoomedOutAuthorTemplateWide` par :
+-   Remplacez le contenu de l’élément `ZoomedOutAuthorTemplateWide` par:
 
 ```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250" >
@@ -156,7 +156,7 @@ Avant d’aborder la partie consacrée au Gestionnaire d’état visuel adaptati
     </Grid>
 ```
 
--   Remplacez le contenu de l’élément `BookTemplateWide` par :
+-   Remplacez le contenu de l’élément `BookTemplateWide` par:
 
 ```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250">
@@ -248,33 +248,33 @@ Il ne reste plus qu’à procéder à quelques adaptations de stylisation finale
 
 Une fois cette séquence d’opérations de stylisation effectuée, l’application ressemble à ceci.
 
-![Application Windows 10 portée, exécutée sur un appareil de bureau (vue avec zoom avant et deux tailles de fenêtres)](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
+![Application Windows10 portée, exécutée sur un appareil de bureau (vue avec zoom avant et deux tailles de fenêtres)](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
 L’application Windows 10 portée, exécutée sur un appareil de bureau, vue zoom avant, deux tailles de fenêtres  
 ![l’application windows 10 portée, exécutée sur un appareil de bureau, vue zoom arrière, deux tailles de fenêtres](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil de bureau (vue avec zoom arrière et deux tailles de fenêtres)
+Application Windows10 portée, exécutée sur un appareil de bureau (vue avec zoom arrière et deux tailles de fenêtres)
 
-![Application Windows 10 portée, exécutée sur un appareil mobile (vue avec zoom avant)](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
+![Application Windows10 portée, exécutée sur un appareil mobile (vue avec zoom avant)](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil mobile (vue avec zoom avant)
+Application Windows10 portée, exécutée sur un appareil mobile (vue avec zoom avant)
 
-![Application Windows 10 portée, exécutée sur un appareil mobile (vue avec zoom arrière)](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
+![Application Windows10 portée, exécutée sur un appareil mobile (vue avec zoom arrière)](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil mobile (vue avec zoom arrière)
+Application Windows10 portée, exécutée sur un appareil mobile (vue avec zoom arrière)
 
 ## Optimisation de la flexibilité du modèle d’affichage
 
 Cette section contient un exemple illustrant les fonctions qui s’offrent à nous suite au déplacement de notre application dans le but d’utiliser UWP. Nous décrivons ici certaines étapes facultatives que vous pouvez effectuer pour optimiser la flexibilité de votre modèle d’affichage en cas d’accès par le biais d’un élément **CollectionViewSource**. Le modèle d’affichage (dont le fichier source se trouve à l’emplacement ViewModel\BookstoreViewModel.cs) porté à partir de l’application Silverlight pour Windows Phone appelée Bookstore2WPSL8 contient une classe nommée « Author », dérivée de **List&lt;T&gt;**, dans laquelle l’élément **T** a pour valeur BookSku. Cela signifie que la classe Author *est* un groupe associé à BookSku.
 
-Lorsque nous lions l’élément **CollectionViewSource.Source** à « Authors », nous signalons simplement que chaque auteur de la liste d’auteurs est un groupe d’*éléments quelconques*. Nous laissons à l’élément **CollectionViewSource** le soin de déterminer que la classe Author est, en l’occurrence, un groupe associé à BookSku. Cela fonctionne, mais peut s’avérer rigide. Que se passe-t-il si nous voulons que la classe Author corresponde *aussi bien* à un groupe de BookSku *qu’à* un groupe d’adresses géographiques correspondant aux lieux où l’auteur a vécu ? La classe Author ne peut pas *correspondre* à ces deux groupes. En revanche, elle peut *inclure* autant de groupes que vous le souhaitez. La solution est là : utilisons le modèle *has-a-group* à la place (ou en plus) du modèle *is-a-group* que nous avons appliqué jusqu’à présent. Voici comment procéder :
+Lorsque nous lions l’élément **CollectionViewSource.Source** à « Authors », nous signalons simplement que chaque auteur de la liste d’auteurs est un groupe d’*éléments quelconques*. Nous laissons à l’élément **CollectionViewSource** le soin de déterminer que la classe Author est, en l’occurrence, un groupe associé à BookSku. Cela fonctionne, mais peut s’avérer rigide. Que se passe-t-il si nous voulons que la classe Author corresponde *aussi bien* à un groupe de BookSku *qu’à* un groupe d’adresses géographiques correspondant aux lieux où l’auteur a vécu ? La classe Author ne peut pas *correspondre* à ces deux groupes. En revanche, elle peut *inclure* autant de groupes que vous le souhaitez. La solution est là : utilisons le modèle *has-a-group* à la place (ou en plus) du modèle *is-a-group* que nous avons appliqué jusqu’à présent. Voici comment procéder:
 
 -   Modifiez la classe Author afin qu’elle ne dérive plus de l’élément **List&lt;T&gt;**.
 -   Ajoutez ce champ à la classe Author : `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
 -   Ajoutez cette propriété à la classe Author : `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
 -   Bien entendu, nous pouvons répéter ces deux étapes de manière à ajouter autant de groupes que nous le voulons.
 -   Remplacez l’implémentation de la méthode AddBookSku par `this.BookSkus.Add(bookSku);`.
--   Maintenant que la classe Author *inclut* au moins un groupe, nous devons indiquer à l’élément **CollectionViewSource** quel groupe utiliser. Pour ce faire, ajoutez à l’élément **CollectionViewSource** la propriété : `ItemsPath="BookSkus"`
+-   Maintenant que la classe Author *inclut* au moins un groupe, nous devons indiquer à l’élément **CollectionViewSource** quel groupe utiliser. Pour ce faire, ajoutez à l’élément **CollectionViewSource** la propriété: `ItemsPath="BookSkus"`
 
 Ces modifications ne touchent pas les fonctionnalités de l’application, mais vous savez désormais comment étendre la classe Author et l’élément **CollectionViewSource**, si nécessaire. Il nous faut apporter une dernière modification à la classe Author, afin qu’un groupe par défaut (défini par nos soins) soit utilisé lorsque nous tirons parti de cette classe *sans* indiquer l’élément **CollectionViewSource.ItemsPath** :
 

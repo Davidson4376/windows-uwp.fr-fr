@@ -24,7 +24,7 @@ Familiarisez-vous avec chaque type de périphérique d’entrée, ses comporteme
 ## Cortana
 
 
-Dans Windows 10, l’extensibilité de **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une opération unique.
+Dans Windows10, l’extensibilité de **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une opération unique.
 
 Prise en charge des appareils
 -   Téléphones et phablettes
@@ -66,12 +66,12 @@ Prise en charge des appareils
 
 Utilisation type
 
-Il existe trois modes d’interaction vocale :
+Il existe trois modes d’interaction vocale:
 
 Langage naturel  
 Le langage naturel est la façon dont nous interagissons verbalement avec d’autres personnes de façon régulière. Notre discours varie d’une personne à l’autre et d’une situation à l’autre, et il est généralement compris. Lorsque ce n’est pas le cas, nous utilisons souvent d’autres mots et séquences de mots pour formuler la même idée.
 
-Les interactions en langage naturel avec une application sont similaires : nous parlons à l’application par le biais de notre appareil comme s’il s’agissait d’une personne et attendons de l’application qu’elle comprenne et réagisse en conséquence.
+Les interactions en langage naturel avec une application sont similaires: nous parlons à l’application par le biais de notre appareil comme s’il s’agissait d’une personne et attendons de l’application qu’elle comprenne et réagisse en conséquence.
 
 Le langage naturel est le mode d’interaction vocale le plus avancé. Il peut être implémenté et exposé par le biais de **Cortana**.
 
@@ -93,7 +93,7 @@ Plus d’informations [Recommandations en matière de conception de fonctions vo
 
 Un stylet peut servir de dispositif de pointage précis au niveau des pixels, tel que la souris. Il constitue également l’appareil d’entrée manuscrite numérique optimal.
 
-**Remarque** Il existe deux types de stylet : actif et passif.
+**Remarque** Il existe deuxtypes de stylet: actif et passif.
 -   Les stylets passifs ne contiennent pas d’éléments électroniques et peuvent émuler efficacement des entrées tactiles au doigt. Ils requièrent un écran de base reconnaissant les entrées en fonction de la pression de contact. Dans la mesure où les utilisateurs posent souvent leur main lorsqu’ils écrivent sur la surface d’entrée, les données d’entrée peuvent être altérées en raison d’une mauvaise élimination des interférences de la paume.
 -   Les stylets actifs contiennent des éléments électroniques et peuvent fonctionner avec des écrans d’appareil complexes. Ils peuvent ainsi fournir des données d’entrée beaucoup plus étendues (pointage ou données de proximité, par exemple) au système et à votre application. L’élimination des interférences de la paume est beaucoup plus robuste.
 
@@ -116,7 +116,7 @@ Les entrées tactiles et du stylet divergent en raison de la capacité de l’en
 
 Il est recommandé de fournir des commandes d’interface utilisateur spécifiques au stylet (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, redimensionner et agrandir les objets.
 
-Plus d’informations : [Recommandations en matière de conception pour le stylet](https://msdn.microsoft.com/library/windows/apps/dn456352)
+Plus d’informations: [Recommandations en matière de conception pour le stylet](https://msdn.microsoft.com/library/windows/apps/dn456352)
  
 
 ## Interaction tactile
@@ -135,7 +135,7 @@ Prise en charge des appareils
 
 Utilisation standard La prise en charge des entrées tactiles peut varier de manière significative selon l’appareil.
 
-Certains appareils ne prennent en charge aucune interaction tactile. Certains prennent en charge un contact tactile unique et d’autres l’entrée tactile multipoint (au moins deux contacts).
+Certains appareils ne prennent en charge aucune interaction tactile. Certains prennent en charge un contact tactile unique et d’autres l’entrée tactile multipoint (au moins deuxcontacts).
 
 La plupart des appareils qui prennent en charge l’entrée tactile multipoint reconnaissent généralement dix contacts uniques simultanés.
 
@@ -147,7 +147,7 @@ En règle générale, une interface tactile répond aux critères suivants :
 -   Pas de contrainte quant à l’orientation de l’appareil
 -   Utilisée pour toutes les interactions, y compris les entrées de texte (clavier tactile) et les entrées manuscrites (application configurée).
 
-Plus d’informations : [Recommandations en matière de conception pour l’interface tactile](https://msdn.microsoft.com/library/windows/apps/hh465370)
+Plus d’informations: [Recommandations en matière de conception pour l’interface tactile](https://msdn.microsoft.com/library/windows/apps/hh465370)
  
 
 ## Pavé tactile
@@ -167,7 +167,7 @@ Outre la prise en charge de l’entrée tactile, nous vous recommandons égaleme
 
 Il est recommandé de fournir des commandes d’interface utilisateur spécifiques à la souris (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, redimensionner et agrandir les objets.
 
-Plus d’informations : [Recommandations en matière de conception pour le pavé tactile](https://msdn.microsoft.com/library/windows/apps/dn456353)
+Plus d’informations: [Recommandations en matière de conception pour le pavé tactile](https://msdn.microsoft.com/library/windows/apps/dn456353)
  
 
 ## Clavier
@@ -175,7 +175,7 @@ Plus d’informations : [Recommandations en matière de conception pour le pav�
 
 Le clavier, principal périphérique d’entrée de texte, est indispensable pour les personnes souffrant de certains handicaps et les utilisateurs qui le considèrent simplement comme un mode d’interaction plus rapide et plus efficace avec une application.
 
-Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour les utiliser comme un ordinateur portable.
+Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour les utiliser comme un ordinateur portable.
 
 Prise en charge des appareils
 -   Téléphones et phablettes
@@ -188,7 +188,7 @@ Prise en charge des appareils
 
 ![clavier](images/input-interactions/icons-keyboard01.png)
 
-Utilisation standard Les utilisateurs peuvent interagir avec les applications Windows universelles via un clavier matériel et deux claviers logiciels : le clavier visuel et le clavier tactile.
+Utilisation standard Les utilisateurs peuvent interagir avec les applications Windows universelles via un clavier matériel et deuxclaviers logiciels: le clavier visuel et le clavier tactile.
 
 Le clavier visuel est un clavier logiciel visuel que vous pouvez utiliser à la place du clavier physique pour entrer des données à l’aide de l’interaction tactile, de la souris, du stylo/stylet ou d’un autre dispositif de pointage (un écran tactile n’est pas nécessaire). Le clavier visuel est fourni pour les systèmes qui ne possèdent pas de clavier physique ou pour les utilisateurs qui connaissent des problèmes de mobilité les empêchant d’utiliser les périphériques d’entrée physiques classiques. Le clavier visuel émule la plupart, sinon la totalité, des fonctionnalités d’un clavier matériel.
 
@@ -198,14 +198,14 @@ Le clavier tactile est un clavier logiciel visuel permettant d’entrer du texte
 
  
 
-En règle générale, un clavier répond aux critères suivants :
+En règle générale, un clavier répond aux critères suivants:
 
 -   Utilisateur unique
 -   Pas de contrainte quant à l’orientation de l’appareil
 -   Utilisé pour l’entrée de texte, la navigation, le jeu et l’accessibilité
 -   Toujours disponible, de façon proactive ou réactive
 
-Plus d’informations : [Recommandations en matière de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345)
+Plus d’informations: [Recommandations en matière de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345)
  
 
 ## Souris
@@ -222,13 +222,13 @@ Prise en charge des appareils
 
 ![souris](images/input-interactions/icons-mouse01.png)
 
-Utilisation standard Les entrées de souris peuvent être modifiées avec l’ajout de plusieurs touches du clavier (Ctrl, Maj, Alt, etc.). Ces touches peuvent être combinées avec le bouton gauche de la souris, le bouton droit de la souris, la roulette et les boutons X pour un ensemble de commandes étendues optimisées pour la souris. (Certaines souris Microsoft possèdent deux boutons supplémentaires, nommés boutons X, qui permettent en général de naviguer vers l’arrière et vers l’avant dans les navigateurs Web.)
+Utilisation standard Les entrées de souris peuvent être modifiées avec l’ajout de plusieurs touches du clavier (Ctrl, Maj, Alt, etc.). Ces touches peuvent être combinées avec le bouton gauche de la souris, le bouton droit de la souris, la roulette et les boutonsX pour un ensemble de commandes étendues optimisées pour la souris. (Certaines souris Microsoft possèdent deux boutons supplémentaires, nommés boutons X, qui permettent en général de naviguer vers l’arrière et vers l’avant dans les navigateurs Web.)
 
 Comme pour le stylet, les entrées tactiles et de la souris divergent en raison de la capacité de l’entrée tactile à émuler la manipulation directe des éléments de l’interface utilisateur sur l’écran par le biais de mouvements physiques effectués sur ces objets (comme le balayage, le glissement, la rotation, etc.).
 
 Il est recommandé de fournir des commandes d’interface utilisateur spécifiques à la souris (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, redimensionner et agrandir les objets.
 
-Plus d’informations : [Recommandations en matière de conception pour la souris](https://msdn.microsoft.com/library/windows/apps/dn456351)
+Plus d’informations: [Recommandations en matière de conception pour la souris](https://msdn.microsoft.com/library/windows/apps/dn456351)
  
 
 ## Mouvement
@@ -304,6 +304,6 @@ Utilisation standard Tout comme les personnes ont recours à une combinaison de 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

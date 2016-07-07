@@ -11,7 +11,7 @@ ms.openlocfilehash: b9b2d8ba6aeedea7d9db12565de191b1b6307fa6
 # Lancer l’application par défaut pour un fichier
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -39,10 +39,9 @@ Windows fournit plusieurs options différentes pour le lancement du gestionnaire
 | Lancement par défaut | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Lancer le fichier spécifié avec le gestionnaire par défaut. |
 | Ouvrir avec lancement | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié en laissant l’utilisateur choisir le gestionnaire dans la boîte de dialogue Ouvrir avec. |
 | Lancer avec une application de secours recommandée | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié avec le gestionnaire par défaut. Si aucun gestionnaire n’est installé sur le système, recommandez une application du Windows Store à l’utilisateur. |
-| Lancer avec un affichage restant souhaité | [
-            **LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows uniquement) | Lancer le fichier spécifié avec le gestionnaire par défaut. Spécifiez une préférence à conserver à l’écran après le lancement et demandez une taille de fenêtre spécifique. |
+| Lancer avec un affichage restant souhaité | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows uniquement) | Lancer le fichier spécifié avec le gestionnaire par défaut. Spécifiez une préférence à conserver à l’écran après le lancement et demandez une taille de fenêtre spécifique. |
 |  |  |  |
-|  |  | **Famille d’appareils mobiles :** [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille d’appareils mobiles. |
+|  |  | **Famille d’appareils mobiles:** [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille d’appareils mobiles. |
 
  
 ### Lancement par défaut
@@ -131,13 +130,13 @@ Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](
 > }
 > ```
 
-### Ouvrir avec lancement
+### [!div class="tabbedCodeSnippets"]
 
-Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) avec [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) défini sur **true** pour lancer l’application que l’utilisateur sélectionne dans la boîte de dialogue **Ouvrir avec**.
+Ouvrir avec lancement
 
-Nous vous recommandons d’utiliser la boîte de dialogue **Ouvrir avec** lorsque l’utilisateur souhaite sélectionner une application qui n’est pas l’application par défaut pour un fichier particulier. Par exemple, si votre application permet à l’utilisateur de lancer un fichier image, le gestionnaire par défaut sera probablement une visionneuse. Dans certains cas, l’utilisateur peut vouloir modifier l’image au lieu de la visualiser. Utilisez l’option **Ouvrir avec** au moyen d’une autre commande dans **AppBar** ou dans un menu contextuel afin de permettre à l’utilisateur d’afficher la boîte de dialogue **Ouvrir avec** et de sélectionner l’éditeur dans ces types de scénarios.
+Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) avec [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) défini sur **true** pour lancer l’application que l’utilisateur sélectionne dans la boîte de dialogue **Ouvrir avec**. Nous vous recommandons d’utiliser la boîte de dialogue **Ouvrir avec** lorsque l’utilisateur souhaite sélectionner une application qui n’est pas l’application par défaut pour un fichier particulier. Par exemple, si votre application permet à l’utilisateur de lancer un fichier image, le gestionnaire par défaut sera probablement une visionneuse. Dans certains cas, l’utilisateur peut vouloir modifier l’image au lieu de la visualiser.
 
-![boîte de dialogue Ouvrir avec pour le lancement d’un fichier .png. la boîte de dialogue contient une case à cocher qui indique si le choix de l’utilisateur doit être utilisé pour tous les fichiers .png ou simplement ce fichier .png. la boîte de dialogue contient quatre options d’application pour le lancement du fichier et un lien vers d’autres options.](images/checkboxopenwithdialog.png)
+![Utilisez l’option **Ouvrir avec** au moyen d’une autre commande dans **AppBar** ou dans un menu contextuel afin de permettre à l’utilisateur d’afficher la boîte de dialogue **Ouvrir avec** et de sélectionner l’éditeur dans ces types de scénarios. boîte de dialogue Ouvrir avec pour le lancement d’un fichier .png. la boîte de dialogue contient une case à cocher qui indique si le choix de l’utilisateur doit être utilisé pour tous les fichiers .png ou simplement ce fichier .png.](images/checkboxopenwithdialog.png)
 
 > [!div class="tabbedCodeSnippets"]
 > ```vb
@@ -233,13 +232,13 @@ Nous vous recommandons d’utiliser la boîte de dialogue **Ouvrir avec** lorsqu
 > }
 > ```
 
-**Lancer avec une application de secours recommandée**
+**la boîte de dialogue contient quatre options d’application pour le lancement du fichier et un lien vers d’autres options.**
 
-Dans certains cas, l’utilisateur ne dispose pas forcément d’une application installée pour gérer le fichier que vous lancez. Par défaut, Windows gèrera ces cas en fournissant à l’utilisateur un lien pour rechercher une application appropriée dans le Windows Store. Si vous voulez recommander à l’utilisateur l’acquisition d’une application spécifique dans ce scénario, vous pouvez passer cette recommandation avec le fichier que vous lancez. Pour ce faire, appelez la méthode [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) avec [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) ayant pour valeur le nom de famille du package de l’application que vous voulez recommander dans le Windows Store. Affectez ensuite à [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) le nom de cette application. Windows utilisera cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
+[!div class="tabbedCodeSnippets"] Lancer avec une application de secours recommandée Dans certains cas, l’utilisateur ne dispose pas forcément d’une application installée pour gérer le fichier que vous lancez. Par défaut, Windows gèrera ces cas en fournissant à l’utilisateur un lien pour rechercher une application appropriée dans le Windows Store. Si vous voulez recommander à l’utilisateur l’acquisition d’une application spécifique dans ce scénario, vous pouvez passer cette recommandation avec le fichier que vous lancez. Pour ce faire, appelez la méthode [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) avec [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) ayant pour valeur le nom de famille du package de l’application que vous voulez recommander dans le Windows Store.
 
-> **Remarque** Vous devez définir ces deux options pour recommander une application. La définition de l’une sans l’autre conduit à un échec.
+> Affectez ensuite à [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) le nom de cette application. Windows utilisera cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
 
-![boîte de dialogue Ouvrir avec pour le lancement d’un fichier .contoso. étant donné qu’aucun gestionnaire n’est installé sur l’ordinateur pour les fichiers .contoso, la boîte de dialogue contient une option avec l’icône du Windows Store et du texte qui indique à l’utilisateur le gestionnaire approprié sur le Windows Store. la boîte de dialogue contient également un lien vers d’autres options.](images/howdoyouwanttoopen.png)
+![**Remarque** Vous devez définir ces deux options pour recommander une application. La définition de l’une sans l’autre conduit à un échec. boîte de dialogue Ouvrir avec pour le lancement d’un fichier .contoso.](images/howdoyouwanttoopen.png)
 
 
 > [!div class="tabbedCodeSnippets"]
@@ -345,13 +344,13 @@ Dans certains cas, l’utilisateur ne dispose pas forcément d’une application
 > }
 > ```
 
-### Lancer avec un affichage restant souhaité (Windows uniquement)
+### étant donné qu’aucun gestionnaire n’est installé sur l’ordinateur pour les fichiers .contoso, la boîte de dialogue contient une option avec l’icône du Windows Store et du texte qui indique à l’utilisateur le gestionnaire approprié sur le Windows Store.
 
-Les applications sources qui appellent la méthode [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) peuvent demander à rester à l’écran après le lancement d’un fichier. Par défaut, Windows essaie de partager tout l’espace disponible de manière équitable entre l’application source et l’application cible qui gère le fichier. Les applications sources peuvent utiliser la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) pour indiquer au système d’exploitation qu’elles préfèrent que leur fenêtre d’application occupe une plus grande ou plus petite partie de l’espace disponible. La propriété **DesiredRemainingView** peut également servir à indiquer que l’application source n’a pas besoin de rester à l’écran après le lancement du fichier et qu’elle peut être complètement remplacée par l’application cible. Cette propriété spécifie uniquement la taille de fenêtre par défaut de l’application appelante. Elle ne spécifie pas le comportement d’autres applications qui peuvent se trouver en même temps sur l’écran.
+la boîte de dialogue contient également un lien vers d’autres options. [!div class="tabbedCodeSnippets"] Lancer avec un affichage restant souhaité (Windows uniquement) Les applications sources qui appellent la méthode [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) peuvent demander à rester à l’écran après le lancement d’un fichier. Par défaut, Windows essaie de partager tout l’espace disponible de manière équitable entre l’application source et l’application cible qui gère le fichier. Les applications sources peuvent utiliser la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) pour indiquer au système d’exploitation qu’elles préfèrent que leur fenêtre d’application occupe une plus grande ou plus petite partie de l’espace disponible.
 
-> **Remarque** Windows tient compte de plusieurs facteurs différents pour déterminer la taille finale de la fenêtre de l’application source, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, etc. La définition de la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) ne garantit pas un comportement de fenêtrage spécifique pour l’application source.
+> La propriété **DesiredRemainingView** peut également servir à indiquer que l’application source n’a pas besoin de rester à l’écran après le lancement du fichier et qu’elle peut être complètement remplacée par l’application cible. Cette propriété spécifie uniquement la taille de fenêtre par défaut de l’application appelante.
 
-**Famille d’appareils mobiles :** [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille d’appareils mobiles.
+Elle ne spécifie pas le comportement d’autres applications qui peuvent se trouver en même temps sur l’écran.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -421,35 +420,35 @@ Les applications sources qui appellent la méthode [**LaunchFileAsync**](https:/
 > }
 > ```
 
-## Remarques
+## **Remarque** Windows tient compte de plusieurs facteurs différents pour déterminer la taille finale de la fenêtre de l’application source, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, etc.
 
-Votre application ne peut pas sélectionner l’application qui est lancée. L’utilisateur détermine l’application à lancer. L’utilisateur peut sélectionner une application de plateforme Windows universelle (UWP) ou une application de plateforme Windows classique (CWP).
+La définition de la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) ne garantit pas un comportement de fenêtrage spécifique pour l’application source. **Famille d’appareils mobiles:** [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille d’appareils mobiles. [!div class="tabbedCodeSnippets"]
+
+Remarques Votre application ne peut pas sélectionner l’application qui est lancée. L’utilisateur détermine l’application à lancer. L’utilisateur peut sélectionner une application de plateforme Windows universelle (UWP) ou une application de plateforme Windows classique (CWP).
 
 Lors du lancement d’un fichier, votre application doit être l’application au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette condition permet de garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, veillez à relier directement tous les lancements de fichiers à l’interface utilisateur de votre application. Dans la majorité des cas, l’utilisateur doit toujours exercer une action pour initier un lancement de fichier.
 
-Vous ne pouvez pas lancer des types de fichiers qui contiennent du code ou un script s’ils sont exécutés automatiquement par le système d’exploitation, tels que les fichiers .exe, .msi et .js. Cette restriction protège les utilisateurs de fichiers potentiellement malveillants susceptibles de modifier le système d’exploitation. Vous pouvez utiliser cette méthode pour lancer des types de fichiers qui contiennent un script s’ils sont exécutés automatiquement par une application qui isole le script, tels que les fichiers .docx. Les applications comme Microsoft Word empêchent le script de modifier le système d’exploitation dans des fichiers .docx.
+Vous ne pouvez pas lancer des types de fichiers qui contiennent du code ou un script s’ils sont exécutés automatiquement par le système d’exploitation, tels que les fichiers .exe, .msi et .js. Cette restriction protège les utilisateurs de fichiers potentiellement malveillants susceptibles de modifier le système d’exploitation. Vous pouvez utiliser cette méthode pour lancer des types de fichiers qui contiennent un script s’ils sont exécutés automatiquement par une application qui isole le script, tels que les fichiers .docx.
 
-Si vous essayez de lancer un type de fichier restreint, le lancement se soldera par un échec et votre rappel d’erreur sera appelé. Si votre application gère de nombreux types de fichiers divers et que vous vous attendez à rencontrer cette erreur, nous vous recommandons de proposer un mécanisme de secours à vos utilisateurs. Par exemple, vous pouvez leur offrir comme option d’enregistrer le fichier sur le Bureau pour l’ouvrir depuis cet emplacement.
-
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> Les applications comme Microsoft Word empêchent le script de modifier le système d’exploitation dans des fichiers .docx. Si vous essayez de lancer un type de fichier restreint, le lancement se soldera par un échec et votre rappel d’erreur sera appelé.
 
  
-## Rubriques connexes
+## Si votre application gère de nombreux types de fichiers divers et que vous vous attendez à rencontrer cette erreur, nous vous recommandons de proposer un mécanisme de secours à vos utilisateurs.
 
 
-**Tâches**
+**Par exemple, vous pouvez leur offrir comme option d’enregistrer le fichier sur le Bureau pour l’ouvrir depuis cet emplacement.**
 
-* [Lancer l’application par défaut pour un URI](launch-default-app.md)
-* [Gérer l’activation des fichiers](handle-file-activation.md)
+* [**Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP).](launch-default-app.md)
+* [Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).](handle-file-activation.md)
 
-**Recommandations**
+**Rubriques connexes**
 
-* [Recommandations en matière de types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Tâches](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**Référence**
+**Lancer l’application par défaut pour un URI**
 
-* [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
-* [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+* [**Gérer l’activation des fichiers**](https://msdn.microsoft.com/library/windows/apps/br227171)
+* [**Recommandations**](https://msdn.microsoft.com/library/windows/apps/hh701461)
 
  
 
@@ -457,6 +456,6 @@ Si vous essayez de lancer un type de fichier restreint, le lancement se soldera 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

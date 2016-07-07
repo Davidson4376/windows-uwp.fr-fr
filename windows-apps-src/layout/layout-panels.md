@@ -55,8 +55,7 @@ L’utilisation des propriétés de bordure intégrées réduit le nombre d’é
 
 ## RelativePanel
 
-[
-            **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) vous permet de disposer des éléments d’interface utilisateur en spécifiant leur emplacement en fonction d’autres éléments et par rapport au panneau. Par défaut, un élément est positionné dans le coin supérieur gauche du panneau. Vous pouvez utiliser RelativePanel avec un [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) et des [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) pour réorganiser votre interface utilisateur pour différentes tailles de fenêtre.
+[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) vous permet de disposer des éléments d’interface utilisateur en spécifiant leur emplacement en fonction d’autres éléments et par rapport au panneau. Par défaut, un élément est positionné dans le coin supérieur gauche du panneau. Vous pouvez utiliser RelativePanel avec un [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) et des [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) pour réorganiser votre interface utilisateur pour différentes tailles de fenêtre.
 
 Ce tableau indique les propriétés jointes que vous pouvez utiliser pour aligner un élément avec le bord ou le centre du panneau, et par rapport aux autres éléments.
 
@@ -92,7 +91,7 @@ Ce code XAML montre comment organiser des éléments dans un élément RelativeP
 </RelativePanel>
 ```
 
-Le résultat se présente ainsi : 
+Le résultat se présente ainsi: 
 
 ![Panneau relatif](images/layout-panel-relative-panel.png)
 
@@ -103,8 +102,7 @@ Voici quelques informations à noter concernant le dimensionnement des rectangle
 
 ## StackPanel
 
-[
-            **StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) est un panneau de disposition simple qui organise ses éléments enfants sur une seule ligne orientable horizontalement ou verticalement. Les contrôles StackPanel sont généralement utilisés quand vous souhaitez organiser une petite sous-section de l’interface utilisateur sur votre page.
+[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) est un panneau de disposition simple qui organise ses éléments enfants sur une seule ligne orientable horizontalement ou verticalement. Les contrôles StackPanel sont généralement utilisés quand vous souhaitez organiser une petite sous-section de l’interface utilisateur sur votre page.
 
 Vous pouvez utiliser la propriété [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) pour préciser l’orientation des éléments enfants. L’orientation par défaut est [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx).
 
@@ -120,7 +118,7 @@ Le code XAML suivant indique comment créer un empilement StackPanel vertical de
 ```
 
 
-Le résultat se présente ainsi :
+Le résultat se présente ainsi:
 
 ![Panneau d’empilement](images/layout-panel-stack-panel.png)
 
@@ -165,8 +163,7 @@ Dans cet exemple, le dimensionnement fonctionne comme suit.
 
 ## VariableSizedWrapGrid
 
-[
-            **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) fournit un panneau de disposition dans lequel les éléments sont organisés en lignes et en colonnes, et sont automatiquement renvoyés à la ligne ou dans une nouvelle colonne lorsque la valeur [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) est atteinte. 
+[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) fournit un panneau de disposition dans lequel les éléments sont organisés en lignes et en colonnes, et sont automatiquement renvoyés à la ligne ou dans une nouvelle colonne lorsque la valeur [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) est atteinte. 
 
 La propriété [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) spécifie si la grille ajoute ses éléments en lignes ou en colonnes avant leur renvoi. L’orientation par défaut est **Vertical**, ce qui signifie que la grille ajoute des éléments de haut en bas jusqu’à ce qu’une colonne soit remplie, puis passe à une nouvelle colonne. Lorsque la valeur est **Horizontal**, la grille ajoute des éléments de gauche à droite, puis passe à la ligne suivante.
 
@@ -190,7 +187,7 @@ Voici comment utiliser un élément VariableSizedWrapGrid en XAML.
 ```
 
 
-Le résultat se présente ainsi :
+Le résultat se présente ainsi:
 
 ![Grille avec renvoi à la ligne à taille variable](images/layout-panel-variable-size-wrap-grid.png)
 
@@ -216,7 +213,7 @@ Voici un exemple d’élément Canvas en XAML.
 ```
 
 
-Le résultat se présente ainsi :
+Le résultat se présente ainsi:
 
 ![Canevas](images/layout-panel-canvas.png)
 

@@ -1,6 +1,6 @@
 ---
 title: "Créer un service de connexion Microsoft Passport"
-description: "Voici la deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10."
+description: "Voici la deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows10."
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
 translationtype: Human Translation
@@ -12,12 +12,12 @@ ms.openlocfilehash: 6fe013a69bad964dafa788efb4e26ba521b3d621
 # Créer un service de connexion Microsoft Passport
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Voici la deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10. Cet article prend la suite de la première partie, [Application de connexion Microsoft Passport](microsoft-passport-login.md), et étend la fonctionnalité pour illustrer comment intégrer Microsoft Passport à votre application existante.
+Voici la deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows10. Cet article prend la suite de la première partie, [Application de connexion Microsoft Passport](microsoft-passport-login.md), et étend la fonctionnalité pour illustrer comment intégrer Microsoft Passport à votre application existante.
 
 Pour créer ce projet, il vous faut connaître C# et XAML. Vous devrez également utiliser Visual Studio 2015 (Community Edition ou version ultérieure) sur un ordinateur Windows 10.
 
@@ -94,7 +94,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     ```
 
 -   Une fois le modèle pour UserAccount et PassportDevice créé, vous devez créer une autre classe dans AuthService qui jouera le rôle de base de données fictive. Il s’agit d’une base de données fictive à partir de laquelle vous enregistrez et chargez une liste de comptes utilisateur localement. Dans le monde réel, il s’agit de votre implémentation de base de données. Créez dans AuthService une classe appelée MockStore.cs. Modifiez la définition de classe sur publique.
--   Dans la mesure où le Windows Store fictif enregistre et charge localement la liste des comptes utilisateur, vous pouvez implémenter la logique pour enregistrer et charger cette liste à l’aide de XmlSerializer. Vous devrez aussi mémoriser le nom de fichier et l’emplacement d’enregistrement. Dans MockStore.cs, implémentez les éléments suivants :
+-   Dans la mesure où le Windows Store fictif enregistre et charge localement la liste des comptes utilisateur, vous pouvez implémenter la logique pour enregistrer et charger cette liste à l’aide de XmlSerializer. Vous devrez aussi mémoriser le nom de fichier et l’emplacement d’enregistrement. Dans MockStore.cs, implémentez les éléments suivants:
 -   
 
     ```cs
@@ -456,7 +456,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
--   Vous avez besoin des méthodes dans la classe AuthService pour accéder, ajouter, supprimer et mettre à jour les méthodes de détails Passport dans l’objet MockStore. À la fin du fichier de classe AuthService, ajoutez les méthodes suivantes :
+-   Vous avez besoin des méthodes dans la classe AuthService pour accéder, ajouter, supprimer et mettre à jour les méthodes de détails Passport dans l’objet MockStore. À la fin du fichier de classe AuthService, ajoutez les méthodes suivantes:
 
     ```cs
     using Windows.Security.Credentials;
@@ -538,7 +538,7 @@ Dans cet exercice, vous commencerez par créer une base de données et un serveu
     }
     ```
 
-## Exercice 2 : Logique côté client
+## Exercice2: Logique côté client
 
 
 Dans cet exercice, vous allez modifier les vues et les classes d’assistance côté client pour utiliser la classe AuthService. Dans le monde réel, AuthService est le serveur d’authentification et vous devez utiliser l’API Web pour envoyer et recevoir des données à partir du serveur. Pour ces travaux pratiques et pour simplifier les choses, le client et le serveur sont locaux. L’objectif est d’apprendre à utiliser les API Microsoft Passport.
@@ -1171,7 +1171,7 @@ Dans cet exercice, vous allez modifier les vues et les classes d’assistance c�
 -   Tout au long de cet exercice, vous avez mis à jour l’application côté client pour utiliser AuthService. En procédant ainsi, vous avez pu éliminer la nécessité pour les classes Account et AccountHelper. Supprimez la classe Account, le dossier Modèles et la classe AccountHelper dans le dossier Utilitaires. Vous devez supprimer toute référence à l’espace de noms Modèles tout au long de l’application pour que la solution soit générée correctement.
 -   Générez et exécutez l’application, et profitez de Microsoft Passport avec la base de données et le service fictifs.
 
-Dans ces travaux pratiques, vous avez appris à utiliser les API Passport afin de remplacer les mots de passe pour l’authentification à partir d’un ordinateur Windows 10. Si vous tenez compte de l’énergie dépensée pour l’entretien des mots de passe et la prise en charge des mots de passe perdus sur les systèmes existants, vous comprendrez tout de suite l’utilité du nouveau système d’authentification Microsoft Passport.
+Dans ces travaux pratiques, vous avez appris à utiliser les API Passport afin de remplacer les mots de passe pour l’authentification à partir d’un ordinateur Windows10. Si vous tenez compte de l’énergie dépensée pour l’entretien des mots de passe et la prise en charge des mots de passe perdus sur les systèmes existants, vous comprendrez tout de suite l’utilité du nouveau système d’authentification Microsoft Passport.
 
 Nous avons laissé en guise d’exercice les détails sur la manière d’implémenter l’authentification côté service et côté serveur. La majorité d’entre vous dispose de systèmes existants qui devront être migrés pour pouvoir utiliser Microsoft Passport et les détails de chaque système diffèrent.
 

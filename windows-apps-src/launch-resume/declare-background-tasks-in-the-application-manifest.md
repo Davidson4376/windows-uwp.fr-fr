@@ -11,7 +11,7 @@ ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
 # Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -30,7 +30,7 @@ Cette rubrique suppose que vous avez créé une ou plusieurs classes de tâche e
 
 Ouvrez le manifeste de l’application (Package.appxmanifest) et accédez à l’élément Application. Créez un élément Extensions (s’il n’en existe pas).
 
-L’extrait de code suivant provient de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) :
+L’extrait de code suivant provient de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666):
 
 ```xml
 <Application Id="App"
@@ -70,7 +70,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
 1.  Modifiez l’attribut EntryPoint afin que votre code utilise la même chaîne comme point d’entrée lors de l’inscription de votre tâche en arrière-plan (**namespace.classname**).
 
-    Dans cet exemple, le point d’entrée est ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName :
+    Dans cet exemple, le point d’entrée est ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:
 
     ```xml
           <Extensions>
@@ -86,7 +86,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
     **Remarque** Pensez impérativement à répertorier chaque type de déclencheur que vous utilisez, sans quoi la tâche en arrière-plan ne sera pas inscrite avec les types de déclencheur non déclarés (la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) échouera et lèvera une exception).
 
-    Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés :
+    Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés:
 
     ```xml
                 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -102,9 +102,9 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 ## Ajouter des extensions de tâche en arrière-plan supplémentaires
 
 
-Répétez l’étape 2 pour chaque classe de tâche en arrière-plan supplémentaire inscrite par votre application.
+Répétez l’étape2 pour chaque classe de tâche en arrière-plan supplémentaire inscrite par votre application.
 
-L’exemple suivant représente l’élément Application complet de l’[exemple de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509). Il illustre l’utilisation de deux classes de tâche en arrière-plan avec au total trois types de déclencheur. Copiez la section Extensions de cet exemple et modifiez-la si nécessaire pour déclarer des tâches en arrière-plan dans le manifeste de l’application.
+L’exemple suivant représente l’élément Application complet de l’[exemple de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509). Il illustre l’utilisation de deuxclasses de tâche en arrière-plan avec au total troistypes de déclencheur. Copiez la section Extensions de cet exemple et modifiez-la si nécessaire pour déclarer des tâches en arrière-plan dans le manifeste de l’application.
 
 ```xml
 <Applications>
@@ -153,6 +153,6 @@ L’exemple suivant représente l’élément Application complet de l’[exempl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

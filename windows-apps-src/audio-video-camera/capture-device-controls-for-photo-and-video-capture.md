@@ -11,7 +11,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 # Contrôles de l’appareil de capture pour la photo et la vidéo
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article vous montre comment utiliser les contrôles des appareils vidéo pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide.
@@ -28,8 +28,7 @@ Toutes les API de contrôle des appareils mentionnées dans cet article sont mem
 
 ## Exposition
 
-[
-            **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) vous permet de définir la vitesse d’obturation utilisée pendant la capture photo ou vidéo.
+[**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) vous permet de définir la vitesse d’obturation utilisée pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour ajuster la valeur d’exposition actuelle et une case à cocher pour activer/désactiver le réglage d’exposition automatique.
 
@@ -55,8 +54,7 @@ Dans le gestionnaire d’événements **CheckedChanged** de la case à cocher d�
 
 ## Compensation de l’exposition
 
-[
-            **ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) vous permet de définir la compensation d’exposition utilisée pendant la capture photo ou vidéo.
+[**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) vous permet de définir la compensation d’exposition utilisée pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour ajuster la valeur de compensation d’exposition actuelle.
 
@@ -76,9 +74,7 @@ Dans le gestionnaire d’événements **ValueChanged**, obtenez la valeur actuel
 
 ## Flash
 
-[
-            **FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) vous permet d’activer ou de désactiver le flash ou d’activer le flash automatique, auquel cas le système détermine de manière dynamique l’utilisation ou non du flash. Ce contrôle vous permet également d’activer la réduction automatique des yeux rouges sur les appareils la prenant en charge. Ces paramètres s’appliquent tous à la capture de photos. [
-            **TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) est un autre contrôle d’activation ou de désactivation de la torche pour la capture vidéo.
+[**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) vous permet d’activer ou de désactiver le flash ou d’activer le flash automatique, auquel cas le système détermine de manière dynamique l’utilisation ou non du flash. Ce contrôle vous permet également d’activer la réduction automatique des yeux rouges sur les appareils la prenant en charge. Ces paramètres s’appliquent tous à la capture de photos. [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) est un autre contrôle d’activation ou de désactivation de la torche pour la capture vidéo.
 
 Cet exemple utilise un ensemble de cases d’option permettant à l’utilisateur de basculer entre les paramètres d’activation, de désactivation et de flash automatique. Une case à cocher permet en outre d’activer/de désactiver la réduction des yeux rouges et la torche vidéo.
 
@@ -166,7 +162,7 @@ Obtenez ensuite le [**RegionsOfInterestControl**](https://msdn.microsoft.com/lib
 
 Enfin, appelez [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) sur le **FocusControl** pour initier la mise au point.
 
-**Important** Lorsque vous implémentez le scénario « Appuyer pour mettre au point », l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant :
+**Important** Lorsque vous implémentez le scénario «Appuyer pour mettre au point», l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant:
 
 **1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 
            **2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) 
@@ -224,8 +220,7 @@ Dans le gestionnaire d’événements **CheckedChanged**, obtenez l’objet [**F
 
 ## Sensibilité ISO
 
-[
-            **IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) vous permet de définir la sensibilité ISO utilisée pendant la capture photo ou vidéo.
+[**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) vous permet de définir la sensibilité ISO utilisée pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour ajuster la valeur de compensation d’exposition actuelle et une case à cocher pour activer/désactiver le réglage de sensibilité ISO.
 
@@ -261,8 +256,7 @@ Activez ou désactivez la fonctionnalité OIS en définissant le [**OpticalImage
 
 ## Balance des blancs
 
-[
-            **WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) vous permet de définir la balance des blancs utilisée pendant la capture photo ou vidéo.
+[**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) vous permet de définir la balance des blancs utilisée pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) pour sélectionner parmi les températures de couleurs prédéfinies intégrées et un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour le réglage manuel de la balance des blancs.
 
@@ -290,8 +284,7 @@ Dans le gestionnaire d’événements **ValueChanged**, obtenez la valeur actuel
 
 ## Zoom
 
-[
-            **ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) vous permet de définir le niveau de zoom utilisé pendant la capture photo ou vidéo.
+[**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) vous permet de définir le niveau de zoom utilisé pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour ajuster le niveau de zoom actuel. La section suivante montre comment régler le zoom par un geste de pincement à l’écran.
 

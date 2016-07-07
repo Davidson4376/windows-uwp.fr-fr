@@ -11,7 +11,7 @@ ms.openlocfilehash: 23d9ed066e2909a15b3106fd19bf6ce5ab09e7a9
 
 # Prise en main &#58; Création d’un projet
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## Création d’un projet
 
@@ -23,7 +23,7 @@ La vidéo suivante compare Xcode à Visual Studio.
 
 Ce billet de blog [Building apps for Windows](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/) (en anglais) vous sera également très utile.
 
-La création d’une application pour Windows 10, ou application de plateforme Windows universelle (UWP), est similaire à la création d’une application iOS à l’aide de tables de montage séquentiel. L’application Windows 10 est souvent construite sur plusieurs pages, dont chacune contient une partie de l’interface utilisateur, comme un site web. Généralement, chaque page possède deux fichiers sources associés : l’un pour stocker l’interface utilisateur au format [XAML](https://msdn.microsoft.com/library/windows/apps/mt185595), et l’autre contenant le code source, souvent C#. En interagissant avec votre application, l’utilisateur navigue entre ces pages. Dans ce guide pas à pas, vous allez créer une application sur deux pages.
+La création d’une application pour Windows 10, ou application de plateforme Windows universelle (UWP), est similaire à la création d’une application iOS à l’aide de tables de montage séquentiel. L’application Windows 10 est souvent construite sur plusieurs pages, dont chacune contient une partie de l’interface utilisateur, comme un site web. Généralement, chaque page possède deux fichiers sources associés: l’un pour stocker l’interface utilisateur au format [XAML](https://msdn.microsoft.com/library/windows/apps/mt185595), et l’autre contenant le code source, souvent C#. En interagissant avec votre application, l’utilisateur navigue entre ces pages. Dans ce guide pas à pas, vous allez créer une application sur deux pages.
 
 **Remarque** Une caractéristique importante des applications Windows 10 est que le même code source et le même ensemble d’API sont disponibles, quelle que soit la plateforme. Comme vous le savez, lorsque vous écrivez une application iOS universelle pour iPhone et iPad, vous pouvez déterminer au moment de l’exécution la plateforme sur laquelle votre application s’exécute, et prendre les mesures nécessaires. De même, les applications Windows 10 peuvent déterminer au moment de l’exécution l’appareil sur lequel elles s’exécutent. Avec une application UWP, il est inutile d’utiliser des #ifdef dans le code source pour créer des builds spécifiquement adaptées aux ordinateurs de bureau ou aux téléphones. Heureusement, les applications Windows 10 utilisent intelligemment leurs contrôles d’interface utilisateur en fonction de l’appareil. Par exemple, votre application peut faire référence à un contrôle de sélecteur de dates. L’apparence et le fonctionnement du contrôle diffèrent selon que celui-ci s’exécute sur un ordinateur de bureau ou un écran de téléphone. Toutefois, le code source reste la même.
 
@@ -37,7 +37,7 @@ Visual Studio est très semblable. Vous allez voir la **page de démarrage**, pr
 
 ![écran d’accueil Visual Studio](images/ios-to-uwp/ios-to-uwp-vs-welcome.png)
 
-Pour créer une application, commencez par créer un projet en effectuant l’une des opérations suivantes :
+Pour créer une application, commencez par créer un projet en effectuant l’une des opérations suivantes:
 
 -   Dans la zone **Démarrer**, appuyez sur **Nouveau projet**.
 -   Appuyez sur le menu **Fichier**, puis sur **Nouveau projet**.

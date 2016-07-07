@@ -25,20 +25,20 @@ Le modèle de notifications toast adaptatives et interactives comporte les mises
 -   trois différents types d’activations pour la notification toast principale et pour chaque action ;
 -   possibilité de créer une notification pour certains scénarios, comprenant les alarmes, les rappels et les appels entrants.
 
-**Remarque** Pour découvrir les modèles hérités de Windows 8.1 et de Windows Phone 8.1, voir le [catalogue de modèles de notifications toast hérité](https://msdn.microsoft.com/library/windows/apps/hh761494).
+**Remarque** Pour découvrir les modèles hérités de Windows8.1 et de Windows Phone8.1, voir le [catalogue de modèles de notifications toast hérité](https://msdn.microsoft.com/library/windows/apps/hh761494).
 
  
 
 ## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>Structure de notification toast
 
 
-Les notifications toast sont construites en XML et comprennent généralement les éléments clés suivants :
+Les notifications toast sont construites en XML et comprennent généralement les éléments clés suivants:
 
 -   &lt;visual&gt; indique le contenu visible par les utilisateurs, incluant le texte et les images
 -   &lt;actions&gt; contient les boutons/entrées que le développeur souhaite ajouter au sein de la notification
 -   &lt;audio&gt; spécifie le son émis lorsque la notification apparaît
 
-Voici un exemple de code :
+Voici un exemple de code:
 
 ```XML
 <toast launch="app-defined-string">
@@ -57,42 +57,42 @@ Voici un exemple de code :
 </toast>
 ```
 
-Et voici une représentation visuelle de la structure :
+Et voici une représentation visuelle de la structure:
 
 ![structure de notification toast](images/adaptivetoasts-structure.jpg)
 
 ### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>Éléments visuels
 
-L’élément « visual » doit contenir très exactement un seul élément de liaison (« binding ») intégrant le contenu visuel de la notification toast.
+L’élément «visual» doit contenir très exactement un seul élément de liaison («binding») intégrant le contenu visuel de la notification toast.
 
-Les notifications par vignette dans les applications de plateforme Windows universelle (UWP) prennent en charge plusieurs modèles reposant sur différentes tailles de vignette. Toutefois, les notifications toast n’emploient qu’un seul nom de modèle : **ToastGeneric**. L’utilisation d’un seul nom de modèle signifie plusieurs choses :
+Les notifications par vignette dans les applications de plateforme Windows universelle (UWP) prennent en charge plusieurs modèles reposant sur différentes tailles de vignette. Toutefois, les notifications toast n’emploient qu’un seul nom de modèle: **ToastGeneric**. L’utilisation d’un seul nom de modèle signifie plusieurs choses:
 
 -   Vous pouvez modifier le contenu des notifications toast, par exemple en ajoutant une autre ligne de texte ou une image incluse ou en modifiant le comportement de l’image miniature pour qu’elle affiche autre chose que l’icône de l’application, sans avoir besoin de modifier la totalité du modèle ni risquer de créer une charge utile incorrecte découlant d’une incohérence entre le nom du modèle et le contenu.
 -   Vous pouvez utiliser le même code pour construire la charge utile d’une **notification toast** ciblant différents types d’appareils Microsoft Windows, tels que les téléphones, les tablettes, les PC et les systèmes Xbox One. Chacun de ces appareils acceptera la notification et la présentera à l’utilisateur conformément à ses stratégies d’interface utilisateur avec les affordances visuelles et le modèle d’interaction appropriés.
 
-Pour découvrir tous les attributs pris en charge dans la section « visual » et tous les éléments enfants de cette dernière, voir la section « Schéma » ci-dessous. Pour consulter d’autres exemples, voir la section « Exemples XML » ci-après.
+Pour découvrir tous les attributs pris en charge dans la section « visual » et tous les éléments enfants de cette dernière, voir la section « Schéma » ci-dessous. Pour consulter d’autres exemples, voir la section «Exemples XML» ci-après.
 
 ### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>Élément &lt;actions&gt;
 
-Dans les applications UWP, vous pouvez ajouter des boutons et d’autres entrées à vos notifications toast, ce qui permet aux utilisateurs d’effectuer d’autres opérations à l’extérieur de l’application. Vous spécifiez ces actions sous l’élément &lt;actions&gt; en utilisant l’un des deux types d’actions possibles :
+Dans les applications UWP, vous pouvez ajouter des boutons et d’autres entrées à vos notifications toast, ce qui permet aux utilisateurs d’effectuer d’autres opérations à l’extérieur de l’application. Vous spécifiez ces actions sous l’élément &lt;actions&gt; en utilisant l’un des deux types d’actions possibles:
 
 -   &lt;action&gt; Cet élément apparaît sous la forme d’un bouton sur les appareils de bureau et sur les appareils mobiles. Vous pouvez spécifier jusqu’à cinq actions personnalisées ou système dans une notification toast.
 -   &lt;input&gt; Cet élément permet aux utilisateurs d’entrer des données, telles qu’une réponse rapide à un message, ou de sélectionner une option dans un menu déroulant.
 
 Les éléments &lt;action&gt; et &lt;input&gt; sont tous deux adaptatifs dans la famille d’appareils Windows. Par exemple, sur les appareils mobiles ou de bureau, un élément &lt;action&gt; correspond à un bouton sur lequel l’utilisateur doit appuyer ou cliquer. Un élément &lt;input&gt; de type texte définit une zone permettant aux utilisateurs d’entrer du texte à l’aide d’un clavier physique ou visuel. Ces éléments s’adapteront également aux futurs scénarios d’interaction, tels qu’une action annoncée par la voix ou une entrée de texte dictée.
 
-Quand une action est exécutée par l’utilisateur, vous pouvez effectuer l’une des opérations suivantes en spécifiant l’attribut [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) à l’intérieur de l’élément &lt;action&gt; :
+Quand une action est exécutée par l’utilisateur, vous pouvez effectuer l’une des opérations suivantes en spécifiant l’attribut [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) à l’intérieur de l’élément &lt;action&gt;:
 
 -   activation de l’application au premier plan à l’aide d’un argument propre à l’action qui permet d’accéder à une page ou à un contexte spécifiques ;
 -   activation de la tâche en arrière-plan de l’application sans affecter l’utilisateur ;
 -   activation d’une autre application par le biais d’un lancement par protocole ;
 -   spécification d’une action système à exécuter. Les actions système actuellement disponibles sont la répétition et le masquage d’une alarme ou d’un rappel planifiés et sont décrites en détail dans l’une des sections ci-après.
 
-Pour découvrir tous les attributs pris en charge dans la section « visual » et tous les éléments enfants de cette dernière, voir la section « Schéma » ci-dessous. Pour consulter d’autres exemples, voir la section « Exemples XML » ci-après.
+Pour découvrir tous les attributs pris en charge dans la section « visual » et tous les éléments enfants de cette dernière, voir la section « Schéma » ci-dessous. Pour consulter d’autres exemples, voir la section «Exemples XML» ci-après.
 
 ### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>Élément &lt;audio&gt;
 
-Pour l’instant, les sons personnalisés ne sont pas pris en charge dans les applications UWP qui ciblent la Plate-forme Desktop ; à la place, vous pouvez choisir un son dans la liste ms-winsoundevents pour votre application destinée aux appareils de bureau. Les applications UWP ciblant les plateformes mobiles prennent en charge aussi bien les sons ms-winsoundevents que les sons personnalisés aux formats suivants :
+Pour l’instant, les sons personnalisés ne sont pas pris en charge dans les applications UWP qui ciblent la Plate-forme Desktop; à la place, vous pouvez choisir un son dans la liste ms-winsoundevents pour votre application destinée aux appareils de bureau. Les applications UWP ciblant les plateformes mobiles prennent en charge aussi bien les sons ms-winsoundevents que les sons personnalisés aux formats suivants :
 
 -   ms-appx:///
 -   ms-appdata:///
@@ -137,7 +137,7 @@ Cet exemple illustre comment inclure plusieurs lignes de texte, une petite image
 
  
 
-**Notification avec des actions, exemple 1**
+**Notification avec des actions, exemple1**
 
 Cet exemple illustre...
 
@@ -157,11 +157,11 @@ Cet exemple illustre...
 </toast>
 ```
 
-![Notification avec des actions, exemple 1](images/adaptivetoasts-xmlsample02.png)
+![Notification avec des actions, exemple1](images/adaptivetoasts-xmlsample02.png)
 
  
 
-**Notification avec des actions, exemple 2**
+**Notification avec des actions, exemple2**
 
 Cet exemple illustre...
 
@@ -182,11 +182,11 @@ Cet exemple illustre...
 </toast>
 ```
 
-![Notification avec des actions, exemple 2](images/adaptivetoasts-xmlsample03.png)
+![Notification avec des actions, exemple2](images/adaptivetoasts-xmlsample03.png)
 
  
 
-**Notification avec une entrée de texte et des actions, exemple 1**
+**Notification avec une entrée de texte et des actions, exemple1**
 
 Cet exemple illustre...
 
@@ -211,7 +211,7 @@ Cet exemple illustre...
 
  
 
-**Notification avec une entrée de texte et des actions, exemple 2**
+**Notification avec une entrée de texte et des actions, exemple2**
 
 Cet exemple illustre...
 
@@ -355,7 +355,7 @@ namespace ToastNotificationTask
 ## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>Schémas : &lt;visual&gt; et &lt;audio&gt;
 
 
-Dans les schémas ci-après, un suffixe « ? » signifie qu’un attribut est facultatif.
+Dans les schémas ci-après, un suffixe «?» signifie qu’un attribut est facultatif.
 
 ```
 <toast launch? duration? activationType? scenario? >
@@ -492,10 +492,10 @@ silent?
 
 -   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
 
-## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>Schémas : &lt;action&gt;
+## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>Schémas: &lt;action&gt;
 
 
-Dans les schémas ci-après, un suffixe « ? » signifie qu’un attribut est facultatif.
+Dans les schémas ci-après, un suffixe «?» signifie qu’un attribut est facultatif.
 
 ```
 <toast>
@@ -542,7 +542,7 @@ defaultInput?
 -   defaultInput? = chaîne
 -   L’attribut « defaultInput » est facultatif et permet de fournir une valeur d’entrée par défaut.
 -   Si l’entrée présente le type « text », cette valeur sera traitée comme une entrée de chaîne.
--   Si l’entrée présente le type « selection », cette valeur doit correspondre à l’identificateur de l’une des sélections disponibles dans les éléments de cette entrée.
+-   Si l’entrée présente le type «selection», cette valeur doit correspondre à l’identificateur de l’une des sélections disponibles dans les éléments de cette entrée.
 
 **Attributs dans &lt;selection&gt;**
 
@@ -625,15 +625,15 @@ Pour construire des actions de répétition et de masquage individuelles, procé
 
 -   Spécifiez : activationType = "system".
 -   Spécifiez : arguments = "snooze" | "dismiss".
--   Spécifiez le contenu :
+-   Spécifiez le contenu:
     -   Si vous souhaitez afficher les chaînes localisées de « snooze » et de « dismiss » sur les actions, spécifiez le contenu comme étant une chaîne vide : &lt;action content = ""/&gt;
     -   Si vous voulez définir une chaîne personnalisée, fournissez simplement sa valeur : &lt;action content="Me le rappeler ultérieurement" /&gt;
--   Spécifiez l’entrée :
+-   Spécifiez l’entrée:
     -   Si vous ne voulez pas que l’utilisateur sélectionne un intervalle de répétition, mais souhaitez simplement que votre notification se répète une seule fois pendant un intervalle de temps défini par le système (et cohérent dans l’ensemble du système d’exploitation), ne construisez aucun élément &lt;input&gt;.
-    -   Si vous voulez fournir des sélections d’intervalle de répétition :
-        -   Spécifiez l’attribut « hint-inputId » dans l’action de répétition.
-        -   Faites correspondre l’identificateur de l’entrée avec la valeur de l’attribut « hint-inputId » de l’action de répétition : &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
-        -   Spécifiez l’identificateur de sélection comme étant un entier non négatif (nonNegativeInteger) qui représente l’intervalle de répétition en minutes : &lt;selection id="240" /&gt; signifie une répétition pendant 4 heures.
+    -   Si vous voulez fournir des sélections d’intervalle de répétition:
+        -   Spécifiez l’attribut «hint-inputId» dans l’action de répétition.
+        -   Faites correspondre l’identificateur de l’entrée avec la valeur de l’attribut «hint-inputId» de l’action de répétition: &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
+        -   Spécifiez l’identificateur de sélection comme étant un entier non négatif (nonNegativeInteger) qui représente l’intervalle de répétition en minutes: &lt;selection id="240" /&gt; signifie une répétition pendant 4heures.
         -   Assurez-vous que la valeur de l’attribut « defaultInput » dans &lt;input&gt; correspond à l’un des identificateurs des éléments enfants &lt;selection&gt;.
         -   Fournissez jusqu’à 5 valeurs &lt;selection&gt; (au maximum).
 

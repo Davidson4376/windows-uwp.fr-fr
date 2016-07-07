@@ -12,7 +12,7 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 # Apparence de votre application dans le Store pour les clients dotés de Windows 10
 
 
-Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10. Comme le mode de présentation et de classement des applications a été modifié dans le Store pour les clients exécutant Windows 10, cette rubrique décrit ces changements.
+Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10. Comme le mode de présentation et de classement des applications a été modifié dans le Store pour les clients exécutant Windows10, cette rubrique décrit ces changements.
 
 **Remarque** Si vous voulez modifier certains détails, [Créez une nouvelle soumission](app-submissions.md), apportez vos modifications, puis soumettez la mise à jour au Store.
 
@@ -40,7 +40,7 @@ les options d’évaluation déféraient dans les deux anciens Stores. Ainsi, si
 | La version d’évaluation n’expire jamais | La version d’évaluation n’expire jamais | La version d’évaluation n’expire jamais                                                           |
 | La version d’évaluation n’expire jamais | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite                                                                 |
 | Version d’évaluation à durée limitée  | La version d’évaluation n’expire jamais | Aucune version d’évaluation gratuite disponible pour Windows Phone 8.1 et versions antérieures ; dans les autres cas, version d’évaluation à durée limitée |
-| Version d’évaluation à durée limitée  | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite disponible pour Windows Phone 8.1 et versions antérieures ; dans les autres cas, version d’évaluation à durée limitée |
+| Version d’évaluation à durée limitée  | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite disponible pour Windows Phone 8.1 et versions antérieures; dans les autres cas, version d’évaluation à durée limitée |
 
 ### Marchés
 Votre application sera disponible pour les clients Windows 10, sur tous les marchés où vous avez déjà publié l’application. Cela s’applique même si vous avez sélectionné des marchés différents pour chaque Store.
@@ -102,7 +102,7 @@ Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-a
 
  
 
-**Changements de catégorie pour les applications Windows 8 :**
+**Changements de catégorie pour les applications Windows 8:**
 
 | Catégorie précédente           | Nouvelle catégorie                         |
 |-----------------------------|--------------------------------------|

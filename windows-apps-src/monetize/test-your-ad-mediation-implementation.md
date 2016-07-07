@@ -12,7 +12,7 @@ ms.openlocfilehash: 0805ed5462a4b100b837ed9c11ec2d9e7caabc34
 # Tester l’implémentation de votre médiation publicitaire
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Avant de soumettre votre application, nous vous recommandons de tester l’implémentation de votre médiation publicitaire.
 
@@ -25,7 +25,8 @@ Les réseaux publicitaires tournent de manière séquentielle, un réseau étant
 
 Les publicités test seront affichées pour les réseaux publicitaires qui les prennent en charge. Notez que les publicités test peuvent parfois ressembler à des erreurs. Veillez à vérifier vos événements pour déterminer si des erreurs se sont produites.
 
-> **Remarque** Lorsque vous testez une application Silverlight pour Windows Phone, Google AdMob renvoie toujours une erreur **Demande non valide**, car il n’utilise pas de métadonnées de test. Pour vérifier votre implémentation Google AdMob, vous devez entrer les paramètres requis conformément à la description de la section suivante.
+> 
+            **Remarque** Lorsque vous testez une application Silverlight pour Windows Phone, Google AdMob renvoie toujours une erreur **Demande non valide**, car il n’utilise pas de métadonnées de test. Pour vérifier votre implémentation Google AdMob, vous devez entrer les paramètres requis conformément à la description de la section suivante.
 
  
 

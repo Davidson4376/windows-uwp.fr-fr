@@ -11,7 +11,7 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 # Diagnostic des conditions d’erreur d’un composant Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code géré. Il se base sur les informations fournies dans les messages d’erreur à partir de [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx) et complète les informations sur les restrictions fournies dans [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
@@ -29,14 +29,14 @@ Les composants Windows Runtime managés ne peuvent pas implémenter les interfac
 
  
 
-> **Remarque** Les messages d’erreur qui font référence au Windows Runtime utilisent une ancienne terminologie. On utilise maintenant l’appellation « plateforme Windows universelle (UWP) ». Par exemple, les types Windows Runtime sont désormais appelés types UWP.
+> **Remarque** Les messages d’erreur qui font référence au Windows Runtime utilisent une ancienne terminologie. On utilise maintenant l’appellation «plateforme Windows universelle (UWP)». Par exemple, les types Windows Runtime sont désormais appelés types UWP.
 
  
 
 ## Références manquantes à mscorlib.dll ou System.Runtime.dll
 
 
-Ce problème se produit uniquement lorsque vous utilisez Winmdexp.exe à partir de la ligne de commande. Nous vous recommandons d’utiliser l’option /reference pour inclure des références à mscorlib.dll et System.Runtime.dll à partir des assemblys de référence principale du.NET Framework, qui se trouvent dans « %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" ("%ProgramFiles%\\... » sur un ordinateur 32 bits).
+Ce problème se produit uniquement lorsque vous utilisez Winmdexp.exe à partir de la ligne de commande. Nous vous recommandons d’utiliser l’option /reference pour inclure des références à mscorlib.dll et System.Runtime.dll à partir des assemblys de référence principale du.NET Framework, qui se trouvent dans «%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" ("%ProgramFiles%\\...» sur un ordinateur 32bits).
 
 | Numéro d’erreur | Texte du message                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -96,7 +96,7 @@ Dans le cas de A.Class3, vous pouvez déplacer Class3 dans un autre espace de no
 
 Dans le cas de D.Class4, aucun nom de fichier ne peut contenir à la fois D.Class4 et des classes dans l’espace de noms A.B ; la modification du nom du composant Windows Runtime n’est donc pas possible. Vous pouvez déplacer D.Class4 vers un autre espace de noms ou le placer dans un autre composant Windows Runtime.
 
-Le système de fichiers ne peut pas effectuer la distinction entre majuscules et minuscules ; par conséquent, les espaces de noms dont la casse diffère ne sont pas autorisés (WME1067).
+Le système de fichiers ne peut pas effectuer la distinction entre majuscules et minuscules; par conséquent, les espaces de noms dont la casse diffère ne sont pas autorisés (WME1067).
 
 Votre composant doit contenir au moins un type **public sealed** (**Public NotInheritable** en Visual Basic). Si ce n’est pas le cas, vous obtiendrez WME1042 ou WME1043, selon si votre composant contient ou non des types privés.
 
@@ -181,7 +181,7 @@ Dans l’UWP, une structure peut contenir uniquement des champs, et seules les s
 ## Restrictions sur les tableaux dans les signatures de membre
 
 
-Dans l’UWP, les tableaux dans les signatures de membre doivent être unidimensionnels avec une limite inférieure de 0 (zéro). Les types de tableaux imbriqués tels que `myArray[][]` (`myArray()()` en Visual Basic) ne sont pas autorisés.
+Dans l’UWP, les tableaux dans les signatures de membre doivent être unidimensionnels avec une limite inférieure de0 (zéro). Les types de tableaux imbriqués tels que `myArray[][]` (`myArray()()` en Visual Basic) ne sont pas autorisés.
 
 > **Remarque** Cette restriction ne s’applique pas aux tableaux que vous utilisez en interne dans votre implémentation.
 
@@ -198,7 +198,7 @@ Dans l’UWP, les tableaux dans les signatures de membre doivent être unidimens
 ## Les paramètres de tableau doivent spécifier si le contenu du tableau est accessible en lecture ou en écriture
 
 
-Dans l’UWP, les paramètres doivent être en lecture seule ou en écriture seule. Les paramètres ne peuvent pas être marqués **ref** (**ByRef** sans l’attribut [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) en Visual Basic). Cela s’applique au contenu des tableaux ; par conséquent, les paramètres de tableau doivent indiquer si le contenu du tableau est en lecture seule ou en écriture seule. La direction est claire pour les paramètres **out** (paramètre **ByRef** avec l’attribut OutAttribute en Visual Basic), mais les paramètres de tableau passés par valeur (ByVal en Visual Basic) doivent être marqués. Voir [Transmission de tableaux à un composant Windows Runtime](passing-arrays-to-a-windows-runtime-component.md).
+Dans l’UWP, les paramètres doivent être en lecture seule ou en écriture seule. Les paramètres ne peuvent pas être marqués **ref** (**ByRef** sans l’attribut [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) en Visual Basic). Cela s’applique au contenu des tableaux; par conséquent, les paramètres de tableau doivent indiquer si le contenu du tableau est en lecture seule ou en écriture seule. La direction est claire pour les paramètres **out** (paramètre **ByRef** avec l’attribut OutAttribute en Visual Basic), mais les paramètres de tableau passés par valeur (ByVal en Visual Basic) doivent être marqués. Voir [Transmission de tableaux à un composant Windows Runtime](passing-arrays-to-a-windows-runtime-component.md).
 
 | Numéro d’erreur | Texte du message         |
 |--------------|----------------------|
@@ -216,7 +216,7 @@ Dans l’UWP, les paramètres doivent être en lecture seule ou en écriture seu
 Dans l’UWP, les valeurs de retour sont considérées comme des paramètres de sortie, et les noms de ces paramètres doivent être uniques. Par défaut, Winmdexp.exe donne à la valeur de retour le nom « value ». Si votre méthode possède un paramètre nommé « value », vous obtiendrez l’erreur WME1092. Il existe deux façons de corriger cette situation :
 
 -   Donnez à votre paramètre un nom différent de « value » (dans les accesseurs de propriété, un nom différent de « returnValue »).
--   Utilisez l’attribut ReturnValueNameAttribute pour modifier le nom de la valeur de retour, comme indiqué ci-après :
+-   Utilisez l’attribut ReturnValueNameAttribute pour modifier le nom de la valeur de retour, comme indiqué ci-après:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -234,23 +234,23 @@ Dans l’UWP, les valeurs de retour sont considérées comme des paramètres de 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Remarque** Si vous modifiez le nom de la valeur de retour, et que ce nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtenez l’erreur WME1091.
+> [!div class="tabbedCodeSnippets"]
 
-Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par nom, notamment la valeur de retour. Pour obtenir un exemple, voir l’attribut [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx).
+**Remarque** Si vous modifiez le nom de la valeur de retour, et que ce nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtenez l’erreur WME1091. Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par nom, notamment la valeur de retour.
 
-| Numéro d’erreur | Texte du message |
+| Pour obtenir un exemple, voir l’attribut [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx). | Numéro d’erreur |
 |---------------|------------|
-| WME1091 | La méthode « {0} » a la valeur de retour nommée « {1} » qui est identique à un nom de paramètre. Les paramètres de méthode Windows Runtime et la valeur de retour doivent avoir des noms uniques. |
-| WME1092 | La méthode « {0} » a un paramètre nommé « {1} » qui est identique au nom par défaut de la valeur de retour. Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour.<br/>**Remarque** Le nom par défaut est « returnValue » pour les accesseurs de propriété et « value » pour toutes les autres méthodes. |
+| Texte du message | WME1091 La méthode «{0}» a la valeur de retour nommée «{1}» qui est identique à un nom de paramètre. |
+| Les paramètres de méthode Windows Runtime et la valeur de retour doivent avoir des noms uniques. | WME1092 La méthode «{0}» a un paramètre nommé «{1}» qui est identique au nom par défaut de la valeur de retour.<br/>Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour. |
  
 
-## Rubriques connexes
+## **Remarque** Le nom par défaut est « returnValue » pour les accesseurs de propriété et « value » pour toutes les autres méthodes.
 
-* [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx)
+* [Rubriques connexes](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Création de composants Windows Runtime en C# et Visual Basic](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

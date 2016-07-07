@@ -2,7 +2,7 @@
 author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: Jumeler des appareils
-description: "Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge trois méthodes différentes de jumelage des appareils."
+description: "Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge troisméthodes différentes de jumelage des appareils."
 translationtype: Human Translation
 ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
 ms.openlocfilehash: fa736c200185192cfd40a1c09f2da02cae67c05c
@@ -10,14 +10,14 @@ ms.openlocfilehash: fa736c200185192cfd40a1c09f2da02cae67c05c
 ---
 # Jumeler des appareils
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
 
 -   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge trois méthodes différentes de jumelage des appareils.
+Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge troisméthodes différentes de jumelage des appareils.
 
 -   Jumelage automatique
 -   Jumelage de base

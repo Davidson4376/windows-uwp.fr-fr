@@ -11,21 +11,18 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 # Acquisition d’images
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article explique comment charger et enregistrer des fichiers image à l’aide de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) et de [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206), et comment utiliser l’objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) pour représenter des images bitmap.
 
-La classe **SoftwareBitmap** est une API polyvalente qui peut être créée à partir de plusieurs sources, y compris les fichiers image, les objets [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), les surfaces Direct3D et le code. **SoftwareBitmap** permet de convertir facilement entre les différents formats de pixels et les modes alpha, et offre l’accès de bas niveau aux données de pixel. En outre, **SoftwareBitmap** est une interface commune utilisée par plusieurs fonctionnalités de Windows, notamment :
+La classe **SoftwareBitmap** est une API polyvalente qui peut être créée à partir de plusieurs sources, y compris les fichiers image, les objets [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), les surfaces Direct3D et le code. **SoftwareBitmap** permet de convertir facilement entre les différents formats de pixels et les modes alpha, et offre l’accès de bas niveau aux données de pixel. En outre, **SoftwareBitmap** est une interface commune utilisée par plusieurs fonctionnalités de Windows, notamment:
 
--   [
-            **CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) qui vous permet d’obtenir des images capturées par l’appareil photo en tant que **SoftwareBitmap**.
+-   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) qui vous permet d’obtenir des images capturées par l’appareil photo en tant que **SoftwareBitmap**.
 
--   [
-            **VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) qui vous permet d’obtenir une représentation **SoftwareBitmap** d’un élément **VideoFrame**.
+-   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) qui vous permet d’obtenir une représentation **SoftwareBitmap** d’un élément **VideoFrame**.
 
--   [
-            **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) qui vous permet de détecter les visages d’un élément **SoftwareBitmap**.
+-   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) qui vous permet de détecter les visages d’un élément **SoftwareBitmap**.
 
 L’exemple de code dans cet article utilise les API des espaces de noms suivants.
 

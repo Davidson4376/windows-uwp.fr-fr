@@ -11,7 +11,7 @@ ms.openlocfilehash: 571d71d52931392a36c3c11030749f6ecb3cc961
 
 # Métadonnées d’image
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article montre comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe utilitaire [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683).
@@ -66,8 +66,7 @@ Une fois que vous disposez du décodeur, créez une liste de chaînes et ajoutez
 
 -   Pour plus d’informations sur le langage de requête de métadonnées WIC et les propriétés prises en charge, voir [Requêtes de métadonnées natives au format d’image WIC](https://msdn.microsoft.com/library/windows/desktop/ee719904).
 
--   De nombreuses propriétés de métadonnées sont uniquement prises en charge par un sous-ensemble de types d’images. [
-            **GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) échoue avec le code d’erreur 0x88982F41 si l’une des propriétés demandées n’est pas prise en charge par l’image associée au décodeur, et échoue avec le code d’erreur 0x88982F81 si l’image ne prend pas du tout en charge les métadonnées. Les constantes associées à ces codes d’erreur sont WINCODEC\_ERR\_PROPERTYNOTSUPPORTED et WINCODEC\_ERR\_UNSUPPORTEDOPERATION et sont définies dans le fichier d’en-tête winerror.h.
+-   De nombreuses propriétés de métadonnées sont uniquement prises en charge par un sous-ensemble de types d’images. [**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) échoue avec le code d’erreur 0x88982F41 si l’une des propriétés demandées n’est pas prise en charge par l’image associée au décodeur, et échoue avec le code d’erreur 0x88982F81 si l’image ne prend pas du tout en charge les métadonnées. Les constantes associées à ces codes d’erreur sont WINCODEC\_ERR\_PROPERTYNOTSUPPORTED et WINCODEC\_ERR\_UNSUPPORTEDOPERATION et sont définies dans le fichier d’en-tête winerror.h.
 -   Dans la mesure où une image peut contenir ou non une valeur pour une propriété particulière, utilisez **IDictionary.ContainsKey** pour vérifier la présence d’une propriété dans les résultats avant d’essayer d’y accéder.
 
 L’écriture de métadonnées d’image dans le flux nécessite un élément **BitmapEncoder** associé au fichier de sortie image.
@@ -78,8 +77,7 @@ Créez un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windo
 
 -   Pour obtenir plus d’informations sur les propriétés prises en charge par type de fichier image, voir [Propriétés Windows](https://msdn.microsoft.com/library/windows/desktop/dd561977), [Stratégies de métadonnées de photos](https://msdn.microsoft.com/library/windows/desktop/ee872003) et [Requêtes de métadonnées natives au format d’image WIC](https://msdn.microsoft.com/library/windows/desktop/ee719904).
 
--   [
-            **SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) échoue avec le code d’erreur 0x88982F41 si l’une des propriétés demandées n’est pas prise en charge par l’image associée à l’encodeur.
+-   [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) échoue avec le code d’erreur 0x88982F41 si l’une des propriétés demandées n’est pas prise en charge par l’image associée à l’encodeur.
 
 ## Rubriques connexes
 

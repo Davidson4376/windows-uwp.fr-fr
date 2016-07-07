@@ -10,7 +10,7 @@ ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
 ---
 # Virtualisation des données ListView et GridView
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Remarque** Pour plus d’informations, voir la session //build/ [Accroître considérablement les performances lors de l’interaction des utilisateurs avec de grandes quantités de données dans GridView et ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
@@ -32,8 +32,7 @@ Voici plus d’informations sur les techniques de virtualisation des données in
 La virtualisation incrémentielle des données assure le chargement séquentiel des données. Un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) faisant appel à la virtualisation incrémentielle des données peut être utilisé pour afficher une collection d’un million d’éléments, mais seulement 50 éléments sont chargés initialement. À mesure que l’utilisateur parcourt la collection, les 50 éléments suivants sont chargés. Au fil du chargement des éléments, la taille curseur de la barre de défilement diminue. Pour appliquer ce type de virtualisation des données, vous devez écrire une classe de source de données qui implémente ces interfaces.
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
--   [
-            **INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) ou [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) ou [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
 -   [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)
 
 Une source de données de ce type constitue une liste en mémoire qui peut être étendue en permanence. Le contrôle d’éléments demande les éléments à l’aide des propriétés de nombre et d’indexeur [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) standard. Le nombre doit représenter le nombre d’éléments localement et non la taille réelle du jeu de données.
@@ -42,16 +41,14 @@ Lorsque le contrôle d’éléments approche de la fin des données existantes, 
 
 ## Virtualisation des données par accès aléatoire
 
-La virtualisation des données par accès aléatoire permet le chargement à partir d’un point arbitraire du jeu de données. Un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) faisant appel à la virtualisation des données par accès aléatoire et utilisé pour afficher une collection d’un million d’éléments peut charger les éléments 100 000 à 100 050. Si l’utilisateur affiche ensuite le début de la liste, le contrôle charge les 50 premiers éléments. À tout moment, le curseur de la barre de défilement indique que le contrôle **ListView** contient un million d’éléments. La position du curseur de la barre de défilement est déterminée par rapport à l’emplacement des éléments visibles dans le jeu de données de la collection. Ce type de virtualisation des données peut considérablement réduire les besoins en mémoire et les temps de chargement pour la collection. Pour l’appliquer, vous devez écrire une classe de source de données qui récupère les données à la demande, gère un cache local et implémente les interfaces suivantes :
+La virtualisation des données par accès aléatoire permet le chargement à partir d’un point arbitraire du jeu de données. Un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) faisant appel à la virtualisation des données par accès aléatoire et utilisé pour afficher une collection d’un million d’éléments peut charger les éléments 100 000 à 100 050. Si l’utilisateur affiche ensuite le début de la liste, le contrôle charge les 50 premiers éléments. À tout moment, le curseur de la barre de défilement indique que le contrôle **ListView** contient un million d’éléments. La position du curseur de la barre de défilement est déterminée par rapport à l’emplacement des éléments visibles dans le jeu de données de la collection. Ce type de virtualisation des données peut considérablement réduire les besoins en mémoire et les temps de chargement pour la collection. Pour l’appliquer, vous devez écrire une classe de source de données qui récupère les données à la demande, gère un cache local et implémente les interfaces suivantes:
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
--   [
-            **INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) ou [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) ou [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
 -   (Facultatif) [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
 -   (Facultatif) [**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
 
-[
-            **IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) fournit des informations sur les éléments utilisés activement par le contrôle. Le contrôle d’éléments appelle cette méthode chaque fois que son affichage est modifié et inclut les deux ensembles de plages suivants :
+[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) fournit des informations sur les éléments utilisés activement par le contrôle. Le contrôle d’éléments appelle cette méthode chaque fois que son affichage est modifié et inclut les deux ensembles de plages suivants :
 
 -   l’ensemble des éléments qui se trouvent dans la fenêtre d’affichage ;
 -   un ensemble d’éléments non virtualisés utilisés par le contrôle qui ne se trouvent pas forcément dans la fenêtre d’affichage :

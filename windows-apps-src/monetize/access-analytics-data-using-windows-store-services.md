@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: "Utilisez l’API d’analyse du Windows Store pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows."
+description: "Utilisez l’API d’analyse du WindowsStore pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows."
 title: "Accéder aux données d’analyse à l’aide des services du Windows Store"
 ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
 ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
@@ -11,7 +11,7 @@ ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
 # Accéder aux données d’analyse à l’aide des services du Windows Store
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Utilisez l*’API d’analyse du Windows Store* pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte, ou celui de votre organisation, du Centre de développement Windows. Cette API permet de récupérer les données pour les acquisitions de produits in-app et d’applications, les erreurs, ainsi que les évaluations et avis relatifs aux applications. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels à partir de votre application ou service.
@@ -27,7 +27,7 @@ Utilisez l*’API d’analyse du Windows Store* pour récupérer par programme l
 
 Avant de pouvoir utiliser l’API d’analyse du Windows Store, vous devez associer une application Azure AD à votre compte du Centre de développement et obtenir un jeton d’accès Azure AD. L’application Azure AD est l’application ou le service à partir duquel vous voulez appeler l’API d’analyse du Windows Store. Une fois que vous disposez d’un jeton d’accès, vous pouvez appeler l’API d’analyse du Windows Store à partir de votre service ou application.
 
-Les étapes suivantes décrivent l’ensemble du processus :
+Les étapes suivantes décrivent l’ensemble du processus:
 
 1.  [Associez une application Azure AD à votre compte du Centre de développement Windows](#associate-an-azure-ad-application-with-your-windows-dev-center-account).
 2.  [Obtenez un jeton d’accès Azure AD](#obtain-an-azure-ad-access-token).
@@ -42,14 +42,14 @@ Les étapes suivantes décrivent l’ensemble du processus :
 
      
 
-2.  Sur la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications Azure AD**, ajoutez l’application Azure AD qui représente l’application ou le service que vous utiliserez pour accéder aux données d’analyse de votre compte du Centre de développement, puis affectez-lui le rôle **Gestionnaire**. Si cette application existe déjà dans votre annuaire Azure AD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD sur la page **Ajouter des applications Azure AD**. Pour en savoir plus, voir la section sur la gestion des applications Azure AD dans [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/library/windows/apps/mt489008).
+2.  Sur la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications AzureAD**, ajoutez l’application AzureAD qui représente l’application ou le service que vous utiliserez pour accéder aux données d’analyse de votre compte du Centre de développement, puis affectez-lui le rôle **Gestionnaire**. Si cette application existe déjà dans votre annuaire AzureAD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD sur la page **Ajouter des applications Azure AD**. Pour en savoir plus, voir la section sur la gestion des applications Azure AD dans [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/library/windows/apps/mt489008).
 
 3.  Revenez à la page **Gérer les utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres, puis cliquez sur **Ajouter une nouvelle clé**. Sur l’écran suivant, copiez les valeurs de l’**ID client** et de la **clé**. Pour en savoir plus, voir la section sur la gestion des applications Azure AD dans [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/library/windows/apps/mt489008). L’ID client et la clé permettent d’obtenir un jeton d’accès Azure AD à utiliser lors de l’appel de l’API d’analyse du Windows Store. Vous ne serez plus en mesure d’accéder à ces informations une fois que vous aurez quitté cette page.
 
 
 ### Obtenir un jeton d’accès Azure AD
 
-Après avoir associé l’application Azure AD à votre compte du Centre de développement et récupéré l’ID client et la clé de l’application, vous pouvez utiliser ces informations pour obtenir un jeton d’accès Azure AD. Vous avez besoin d’un jeton d’accès pour pouvoir appeler les méthodes dans l’API d’analyse du Windows Store. Après avoir créé un jeton d’accès, vous disposez de 60 minutes pour l’utiliser avant son expiration.
+Après avoir associé l’application Azure AD à votre compte du Centre de développement et récupéré l’ID client et la clé de l’application, vous pouvez utiliser ces informations pour obtenir un jeton d’accès Azure AD. Vous avez besoin d’un jeton d’accès pour pouvoir appeler les méthodes dans l’API d’analyse du Windows Store. Après avoir créé un jeton d’accès, vous disposez de 60minutes pour l’utiliser avant son expiration.
 
 Pour obtenir le jeton d’accès, suivez les instructions de [Appels de service à service à l’aide des informations d’identification du client](https://msdn.microsoft.com/library/azure/dn645543.aspx) pour envoyer une requête HTTP POST au point de terminaison Azure AD suivant.
 
@@ -67,7 +67,7 @@ https://login.microsoftonline.com/<tenant id>/oauth2/token
 -   Pour le paramètre *resource*, spécifiez l’URI suivant : ```https://manage.devcenter.microsoft.com```.
 
 
-### Appeler l’API d’analyse du Windows Store
+### Appeler l’API d’analyse du WindowsStore
 
 Une fois que vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler l’API d’analyse du Windows Store. Pour plus d’informations sur la syntaxe de chacune de ces méthodes, voir les articles suivants. Vous devez transmettre le jeton d’accès à l’en-tête **Authorization** de chaque méthode.
 
@@ -80,7 +80,7 @@ Une fois que vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler
 ## Exemple de code
 
 
-L’exemple de code suivant montre comment obtenir un jeton d’accès Azure AD et appeler l’API d’analyse du Windows Store à partir d’une application de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](http://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API d’analyse du Windows Store.
+L’exemple de code suivant montre comment obtenir un jeton d’accès AzureAD et appeler l’API d’analyse du WindowsStore à partir d’une application de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](http://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API d’analyse du Windows Store.
 
 ```CSharp
 using Newtonsoft.Json;
@@ -241,6 +241,6 @@ L’API d’analyse du Windows Store renvoie les réponses d’erreur dans un ob
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

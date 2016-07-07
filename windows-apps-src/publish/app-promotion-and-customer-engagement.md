@@ -19,7 +19,7 @@ Une fois que votre application se trouve dans le Windows Store, le moment est ve
 -   [Générer des codes promotionnels](generate-promotional-codes.md)
 -   [Commercialiser des applications et produits in-app](put-apps-and-iaps-on-sale.md)
 -   [Répondre aux avis des clients](respond-to-customer-reviews.md)
--   [Recommandations en matière de marketing adapté aux applications du Windows Store](app-marketing-guidelines.md)
+-   [Recommandations en matière de marketing adapté aux applications du WindowsStore](app-marketing-guidelines.md)
 -   [Créer un lien vers votre application](link-to-your-app.md)
 -   [Faciliter la promotion de votre application](make-your-app-easier-to-promote.md)
 

@@ -32,8 +32,8 @@ Voici la liste des informations que vous fournissez quand vous créez la soumiss
 |-------------------------------|------------------------------------|
 | [**Durée de vie du produit**](enter-iap-properties.md#product-lifetime)  | Obligatoire si le type de produit est **Durable**. Non applicable si le type de produit est **Consommable**. | 
 | [**Type de contenu**](enter-iap-properties.md#content-type)          | Obligatoire       |               
-| [**Mots clés**](enter-iap-properties.md#keywords)                  | Facultatif (jusqu'à 10 mots clés d'un maximum de 30 caractères chacun) | 
-| [**Étiquette**](enter-iap-properties.md#tag)                               | Facultatif (3 000 caractères maximum)             | 
+| [**Mots clés**](enter-iap-properties.md#keywords)                  | Facultatif (jusqu'à 10mots clés d'un maximum de 30caractères chacun) | 
+| [**Étiquette**](enter-iap-properties.md#tag)                               | Facultatif (3000 caractères maximum)             | 
 
 ### Page Tarification et disponibilité 
 | Nom du champ                    | Remarques                                       | 
@@ -41,8 +41,8 @@ Voici la liste des informations que vous fournissez quand vous créez la soumiss
 | [**Prix de base**](set-iap-pricing-and-availability.md#base-price)                | Obligatoire                                    | 
 | [**Marchés et prix personnalisés**](set-iap-pricing-and-availability.md#markets-and-custom-prices)  | Valeur par défaut : produit disponible dans tous les marchés possibles | 
 | [**Prix de vente**](put-apps-and-iaps-on-sale.md)               | Facultatif                             |
-| [**Distribution et visibilité**](set-iap-pricing-and-availability.md#distribution-and-visibility)   | Valeur par défaut : les clients peuvent trouver le produit intégré à l'application en parcourant le Windows Store ou en effectuant une recherche dans ce dernier | 
-| [**Date de publication**](set-iap-pricing-and-availability.md#publish-date)                | Valeur par défaut : publication dès que le produit in-app a obtenu la certification |
+| [**Distribution et visibilité**](set-iap-pricing-and-availability.md#distribution-and-visibility)   | Valeur par défaut: les clients peuvent trouver le produit intégré à l'application en parcourant le WindowsStore ou en effectuant une recherche dans ce dernier | 
+| [**Date de publication**](set-iap-pricing-and-availability.md#publish-date)                | Valeur par défaut: publication dès que le produit in-app a obtenu la certification |
 
 ### Page Descriptions
 Une description requise. Nous vous recommandons de fournir une description pour chaque [langue](create-iap-descriptions.md#languages) prise en charge par votre application.
@@ -50,10 +50,10 @@ Une description requise. Nous vous recommandons de fournir une description pour 
 | Nom du champ                    | Remarques                                       | 
 |-------------------------------|---------------------------------------------|
 | [**Titre**](create-iap-descriptions.md#title)                    | Obligatoire (100 caractères maximum)              |
-| [**Description**](create-iap-descriptions.md#description)       | Facultatif (200 caractères maximum)              |
+| [**Description**](create-iap-descriptions.md#description)       | Facultatif (200caractères maximum)              |
 | [**Icône**](create-iap-descriptions.md#icon)                    | Facultatif (fichier .png, 300 x 300 pixels)             | 
 
-Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au Windows Store**. Dans la plupart des cas, le processus de certification prend environ une heure. Au terme de ce processus, votre produit in-app est publié sur le Windows Store et devient aussitôt disponible à l’achat par les clients.
+Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au Windows Store**. Dans la plupart des cas, le processus de certification prend environ une heure. Au terme de ce processus, votre produit in-app est publié sur le WindowsStore et devient aussitôt disponible à l’achat par les clients.
 
 **Remarque** Les produits in-app doivent également être implémentés dans le code de votre application. Pour plus d’informations, voir [Activer les achats de produits in-app](../monetize/enable-in-app-product-purchases.md).
 
@@ -71,6 +71,6 @@ Si vous voulez supprimer un produit in-app précédemment proposé, vous pouvez 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

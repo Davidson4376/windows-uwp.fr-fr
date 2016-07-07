@@ -10,7 +10,7 @@ ms.openlocfilehash: 2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27
 ---
 # Lier des données hiérarchiques et créer un affichage maître/détails
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 > **Remarque** Voir également l’[exemple Maître/Détails](http://go.microsoft.com/fwlink/p/?linkid=619991).
@@ -29,7 +29,7 @@ Dans cette rubrique, nous partons du principe que vous savez créer une applicat
 
 ## Créer le projet
 
-Commencez par créer un projet **Application vide (Windows universel)**. Nommez-le « MasterDetailsBinding ».
+Commencez par créer un projet **Application vide (Windows universel)**. Nommez-le «MasterDetailsBinding».
 
 ## Créer le modèle de données
 

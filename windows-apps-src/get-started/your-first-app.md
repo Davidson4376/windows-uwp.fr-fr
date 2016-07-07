@@ -40,7 +40,7 @@ Nous supposons que vous connaissez déjà XAML et C# ou Visual Basic. Si vous so
 
 Exploitez votre savoir-faire en matière de programmation C++ pour créer des applications à l’aide d’extensions de composants Visual C++ (C++/CX) avec XAML.
 
-[Créer une application « Hello World » en utilisant XAML avec C++/CX](create-a-basic-windows-10-app-in-cpp.md)
+[Créer une application «Hello World» en utilisant XAML avec C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 
 Nous supposons que vous connaissez déjà XAML et C++. Si vous souhaitez découvrir les notions de base, ou simplement vous rafraîchir la mémoire, essayez ces cours de la [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
 
@@ -66,7 +66,7 @@ Vous avez déjà une expérience d’iOS ou d’Android ? La section [Portage d�
 
 # Rubriques connexes
 
-* [Qu’est-ce qu’une application Windows universelle ?](whats-a-uwp.md)
+* [Qu’est-ce qu’une application Windows universelle?](whats-a-uwp.md)
 * [Se préparer](get-set-up.md)
 * [S’inscrire](sign-up.md)
  

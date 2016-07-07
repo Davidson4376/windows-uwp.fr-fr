@@ -1,6 +1,6 @@
 ---
 Description: "Voici les informations dont vous avez besoin pour créer une application UWP pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC."
-title: "Guides de procédure pour les applications Windows 10 - Développement d’applications Windows"
+title: "Guides de procédure pour les applications Windows10 - Développement d’applicationsWindows"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
 translationtype: Human Translation
@@ -12,7 +12,7 @@ ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
 
 # Guides de procédure pour les applications Windows 10
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Voici les informations dont vous avez besoin pour créer une application Windows universelle pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC. Cette section fournit des instructions et des exemples de code organisés par le type de tâche à accomplir.
 
@@ -20,7 +20,7 @@ Si vous souhaitez une présentation de la plateforme Windows universelle (UWP) e
 
 -   Créer votre première application Windows universelle
 -   Guide des applications pour la plateforme Windows universelle (UWP)
--   Qu’est-ce qu’une application Windows universelle ?
+-   Qu’est-ce qu’une application Windows universelle?
 
 | Rubrique | Description |
 |-------|-------------|
@@ -31,8 +31,8 @@ Si vous souhaitez une présentation de la plateforme Windows universelle (UWP) e
 | [Liaison de données](data-binding/index.md) | Synchronisez les éléments d’interface utilisateur de votre application Windows universelle avec différentes sources de données, notamment des bases de données, des fichiers et des objets internes, pour offrir une expérience utilisateur pilotée par les données. |
 | [Débogage, tests et analyse des performances](debug-test-perf/index.md) | Découvrez le cycle de test et de débogage, et comment utiliser les outils associés fournis avec Microsoft Visual Studio ou disponibles en téléchargement séparé. Assurez-vous que votre application Windows universelle offre l’expérience que vous souhaitez, et est prête à être publiée dans le Windows Store. |
 | [Appareils, capteurs et alimentation](devices-sensors\index.md) | Intégrez différents appareils tels que des imprimantes, appareils photo et capteurs dans votre application Windows universelle pour offrir à vos utilisateurs une expérience d’appareil connecté robuste et flexible. | 
-| [Entreprise](enterprise/index.md) | Découvrez les fonctionnalités principales d’entreprise des applications de plateforme Windows universelle (UWP) Windows 10. |
-| [Fichiers, dossiers et bibliothèques](files/index.md) | Découvrez comment lire et écrire du texte et d’autres formats de données dans des fichiers, et gérer des fichiers et dossiers. Découvrez également des informations sur la lecture et l’écriture de paramètres d’application, sur les sélecteurs de fichiers et de dossiers, et sur les emplacements de bac à sable « sandbox » tels que la bibliothèque de musique/vidéos. |
+| [Entreprise](enterprise/index.md) | Découvrez les fonctionnalités principales d’entreprise des applications de plateforme Windowsuniverselle(UWP) Windows10. |
+| [Fichiers, dossiers et bibliothèques](files/index.md) | Découvrez comment lire et écrire du texte et d’autres formats de données dans des fichiers, et gérer des fichiers et dossiers. Découvrez également des informations sur la lecture et l’écriture de paramètres d’application, sur les sélecteurs de fichiers et de dossiers, et sur les emplacements de bac à sable «sandbox» tels que la bibliothèque de musique/vidéos. |
 | [Jeux et DirectX](https://msdn.microsoft.com/en-us/library/windows/apps/mt228375.aspx) | Découvrez les notions de base de la création de jeux sur la nouvelle plateforme Windows universelle (UWP). |
 | [Graphismes et animation](graphics/index.md) | Améliorez votre application Windows universelle à l’aide de graphiques et d’animations d’interface utilisateur qui soutiennent visuellement l’intérêt et l’attention des utilisateurs. |
 | [Lancement, reprise et tâches en arrière-plan](launch-resume/index.md) | Créez des tâches en arrière-plan et inscrivez-les à des événements générés par le système afin d’offrir des fonctionnalités même quand votre application Windows universelle est suspendue ou ne s’exécute pas. |

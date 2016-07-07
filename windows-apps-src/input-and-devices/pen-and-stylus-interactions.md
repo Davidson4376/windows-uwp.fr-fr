@@ -1,7 +1,7 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "Créer des applications de plateforme Windows universelle (UWP) qui prennent en charge les interactions personnalisées à partir de stylos et de stylets, y compris l’encre numérique pour des expériences de dessin et d’écriture naturelles."
-title: "Interactions avec le stylo et le stylet dans les applications UWP"
+title: Interactions avec le stylo et le stylet dans les applicationsUWP
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
@@ -11,11 +11,11 @@ ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 ---
 
-# Interactions avec le stylo et le stylet dans les applications UWP
+# Interactions avec le stylo et le stylet dans les applicationsUWP
 
-Optimisez votre application de la plateforme Windows universelle pour la saisie au stylet afin de fournir une fonctionnalité standard du [**dispositif de pointage**](https://msdn.microsoft.com/library/windows/apps/br225633) et d’octroyer une expérience Windows Ink optimale à vos utilisateurs.
+Optimisez votre application de la plateforme Windows universelle pour la saisie au stylet afin de fournir une fonctionnalité standard du [**dispositif de pointage**](https://msdn.microsoft.com/library/windows/apps/br225633) et d’octroyer une expérience WindowsInk optimale à vos utilisateurs.
 
-> Remarque : cette rubrique est dédiée à la plateforme Windows Ink. Pour en savoir plus sur la manipulation du dispositif de pointage (similaire aux fonctionnalités tactiles, de la souris et du pavé tactile), consultez la rubrique [Gérer les entrées du pointeur](handle-pointer-input.md).
+> Remarque: cette rubrique est dédiée à la plateforme WindowsInk. Pour en savoir plus sur la manipulation du dispositif de pointage (similaire aux fonctionnalités tactiles, de la souris et du pavé tactile), consultez la rubrique [Gérer les entrées du pointeur](handle-pointer-input.md).
 
 ![pavé tactile](images/input-patterns/input-pen.jpg)
 
@@ -25,7 +25,7 @@ Optimisez votre application de la plateforme Windows universelle pour la saisie 
 -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 -   [**Windows.UI.Input.Inking.Core**](https://msdn.microsoft.com/library/windows/apps/dn958452)
 
-La plateforme Windows Ink, associée à un stylet, fournit un moyen naturel de créer des notes manuscrites, des dessins et des annotations. La plateforme prend en charge la capture d’entrée du numériseur sous forme de données d’entrée manuscrite, la génération et la gestion de données d’entrée manuscrite, la restitution de ces données sous forme de traits et la conversion de l’encre en texte via la reconnaissance d’écriture manuscrite.
+La plateforme WindowsInk, associée à un stylet, fournit un moyen naturel de créer des notes manuscrites, des dessins et des annotations. La plateforme prend en charge la capture d’entrée du numériseur sous forme de données d’entrée manuscrite, la génération et la gestion de données d’entrée manuscrite, la restitution de ces données sous forme de traits et la conversion de l’encre en texte via la reconnaissance d’écriture manuscrite.
 
 En plus de capturer la position et les mouvements de base du stylet lorsque l’utilisateur écrit ou dessine, votre application peut également effectuer le suivi des niveaux de pression variables utilisés pour un trait et en effectuer le suivi. Ces informations, ainsi que les paramètres relatifs à la forme de la pointe, à sa taille et à sa rotation, à la couleur de l’encre et à l’utilisation (entrée manuscrite normale, effacement, surlignage et sélection), vous permettent de proposer des expériences utilisateur ressemblant étroitement à l’écriture ou au dessin sur papier à l’aide d’un stylo, d’un crayon ou d’un pinceau.
 
@@ -33,24 +33,20 @@ En plus de capturer la position et les mouvements de base du stylet lorsque l’
 
 La plateforme d’entrée manuscrite est très flexible. Elle est conçue pour prendre en charge différents niveaux de fonctionnalité, en fonction de vos besoins.
 
-La plateforme d’entrée manuscrite comprend trois composants :
+La plateforme d’entrée manuscrite comprend trois composants:
 
--   [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) : un contrôle de plateforme d’interface utilisateur XAML qui, par défaut, reçoit et affiche toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement.
+-   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) : un contrôle de plateforme d’interface utilisateur XAML qui, par défaut, reçoit et affiche toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement.
 
--   [
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) : un objet code-behind, instancié avec un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (exposé par le biais de la propriété [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Cet objet fournit toutes les fonctionnalités d’entrée manuscrite par défaut exposées par l’élément **InkCanvas**, ainsi qu’un ensemble complet d’API pour plus de personnalisation.
+-   [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) : un objet code-behind, instancié avec un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (exposé par le biais de la propriété [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Cet objet fournit toutes les fonctionnalités d’entrée manuscrite par défaut exposées par l’élément **InkCanvas**, ainsi qu’un ensemble complet d’API pour plus de personnalisation.
 
--   [
-            **IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) : permet le rendu des traits d’encre sur le contexte de périphérique Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par défaut. Cela permet une totale personnalisation de l’expérience relative à l’entrée manuscrite.
+-   [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) : permet le rendu des traits d’encre sur le contexte de périphérique Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par défaut. Cela permet une totale personnalisation de l’expérience relative à l’entrée manuscrite.
 
 ## Entrée manuscrite de base avec InkCanvas
 
 
 Pour les fonctionnalités de base liées à l’écriture manuscrite, il suffit de placer un élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) n’importe où sur une page.
 
-[
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) prend en charge l’entrée manuscrite uniquement à partir d’un stylet. L’entrée est restituée sous la forme d’un trait d’encre à l’aide des paramètres par défaut pour la couleur et l’épaisseur, ou traitée sous forme d’un effaceur de trait (lorsque l’entrée manuscrite est effectuée à partir d’une pointe d’effaceur ou que la pointe du crayon est modifiée à l’aide d’un bouton d’effacement).
+[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) prend en charge l’entrée manuscrite uniquement à partir d’un stylet. L’entrée est restituée sous la forme d’un trait d’encre à l’aide des paramètres par défaut pour la couleur et l’épaisseur, ou traitée sous forme d’un effaceur de trait (lorsque l’entrée manuscrite est effectuée à partir d’une pointe d’effaceur ou que la pointe du crayon est modifiée à l’aide d’un bouton d’effacement).
 
 Dans cet exemple, un élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) recouvre une image d’arrière-plan.
 
@@ -77,10 +73,7 @@ Cette série d’images montre comment une entrée manuscrite de stylet est rest
 
 | ![InkCanvas vide avec une image d’arrière-plan](images/ink_basic_1_small.png) | ![InkCanvas avec des traits d’encre](images/ink_basic_2_small.png) | ![InkCanvas avec un trait effacé](images/ink_basic_3_small.png) |
 | --- | --- | ---|
-| [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) vide avec une image d’arrière-plan. | [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre. | [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec un trait effacé (notez comment fonctionne l’effacement sur un trait complet et non seulement sur une partie). |
+| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) vide avec une image d’arrière-plan. | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre. | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec un trait effacé (notez comment fonctionne l’effacement sur un trait complet et non seulement sur une partie). |
 
 La fonctionnalité d’entrée manuscrite prise en charge par le contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) est proposée par un objet code-behind appelé [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
 
@@ -189,9 +182,7 @@ Ces images montrent comment l’élément [**InkPresenter**](https://msdn.micros
 
 | ![InkCanvas avec des traits d’encre noire par défaut](images/ink-basic-custom-1-small.png) | ![InkCanvas avec des traits d’encre rouge sélectionnés par l’utilisateur.](images/ink-basic-custom-2-small.png) |
 | --- | -- |
-| [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre noire par défaut. | [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre rouge sélectionnés par l’utilisateur. |
+| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre noire par défaut. | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre rouge sélectionnés par l’utilisateur. |
 
  
 
@@ -426,7 +417,7 @@ public MainPage()
 ## Restitution d’une entrée manuscrite personnalisée
 
 
-Par défaut, l’entrée manuscrite est traitée sur un thread d’arrière-plan de faible latence et restituée « humide » comme elle est dessinée. Lorsque le trait est terminé (stylet ou doigt relevé, ou bouton de la souris relâché), le trait est traité sur le thread de l’interface utilisateur et restitué « sec » à la couche [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (au-dessus du contenu de l’application et en remplaçant l’encre humide).
+Par défaut, l’entrée manuscrite est traitée sur un thread d’arrière-plan de faible latence et restituée «humide» comme elle est dessinée. Lorsque le trait est terminé (stylet ou doigt relevé, ou bouton de la souris relâché), le trait est traité sur le thread de l’interface utilisateur et restitué « sec » à la couche [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (au-dessus du contenu de l’application et en remplaçant l’encre humide).
 
 La plateforme d’entrée manuscrite vous permet de remplacer ce comportement et de personnaliser entièrement l’expérience d’entrée manuscrite par un séchage personnalisé de cette dernière.
 
@@ -494,6 +485,6 @@ Pour voir un exemple complet de cette fonctionnalité, reportez-vous à l’[exe
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

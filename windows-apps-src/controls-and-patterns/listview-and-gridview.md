@@ -13,7 +13,7 @@ ms.openlocfilehash: e878b11bbecd4a1007f8b5f56bde5741da18c1e1
 
 La plupart des applications manipulent et affichent des jeux de données, par exemple, une galerie d’image ou un ensemble d’e-mails. L’infrastructure IU XAML fournit les contrôles ListView et GridView qui facilitent l’affichage et la manipulation des données dans votre application.  
 
-Les contrôles ListView et GridView proviennent de la classe ListViewBase ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous évoquons ListView, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons faire référence aux classes telles que ListView ou ListViewItem, mais le préfixe « List » peut être remplacé par « Grid » pour l’équivalent Grid correspondant (GridView ou GridViewItem). 
+Les contrôles ListView et GridView proviennent de la classe ListViewBase; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous évoquons ListView, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons faire référence aux classes telles que ListView ou ListViewItem, mais le préfixe «List» peut être remplacé par «Grid» pour l’équivalent Grid correspondant (GridView ou GridViewItem). 
 
 <span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
@@ -267,7 +267,7 @@ Vous pouvez choisir différentes façons de permettre à un utilisateur d’inte
 
 Le tableau suivant montre les moyens dont un utilisateur dispose pour interagir avec un affichage Liste, et comment vous pouvez répondre à l’interaction.
 
-Pour activer cette interaction : | Utilisez ces paramètres : | Gérez cet événement : | Utilisez cette propriété pour obtenir l’élément sélectionné :
+Pour activer cette interaction: | Utilisez ces paramètres: | Gérez cet événement: | Utilisez cette propriété pour obtenir l’élément sélectionné:
 ----------------------------|---------------------|--------------------|--------------------------------------------
 Aucune interaction | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx)  =  **Aucun**, [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | Non applicable | Non applicable 
 Sélection unique | SelectionMode = **Simple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx), [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
@@ -296,7 +296,7 @@ myGridView.IsItemClickEnabled = true;
 
 ### Lecture seule
 
-Vous pouvez définir la propriété SelectionMode sur **ListViewSelectionMode.None** pour désactiver la sélection d’éléments. Cela place le contrôle en mode lecture seule : vous pouvez l’utiliser pour afficher des données, mais pas pour interagir avec celles-ci. Le contrôle lui-même n’est pas désactivé, seule la sélection d’éléments est désactivée.
+Vous pouvez définir la propriété SelectionMode sur **ListViewSelectionMode.None** pour désactiver la sélection d’éléments. Cela place le contrôle en mode lecture seule: vous pouvez l’utiliser pour afficher des données, mais pas pour interagir avec celles-ci. Le contrôle lui-même n’est pas désactivé, seule la sélection d’éléments est désactivée.
 
 ### Sélection unique
 
@@ -332,13 +332,13 @@ Maj | <li>Un utilisateur peut sélectionner plusieurs éléments contigus en cli
 
 Lorsque SelectionMode est défini sur **Multiple** ou **Étendu**, vous pouvez obtenir les éléments de données sélectionnés à partir de la propriété [**SelectedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx). 
 
-Les propriétés **SelectedIndex**, **SelectedItem** et **SelectedItems** sont synchronisées. Par exemple, si vous définissez SelectedIndex sur -1, SelectedItem est défini sur **null** et SelectedItems est vide ; si vous définissez SelectedItem sur **null**, SelectedIndex est défini sur -1 et SelectedItems est vide.
+Les propriétés **SelectedIndex**, **SelectedItem** et **SelectedItems** sont synchronisées. Par exemple, si vous définissez SelectedIndex sur -1, SelectedItem est défini sur **null** et SelectedItems est vide; si vous définissez SelectedItem sur **null**, SelectedIndex est défini sur -1 et SelectedItems est vide.
 
 En mode de sélection multiple, **SelectedItem** contient l’élément qui a été sélectionné en premier, et **Selectedindex** contient l’index de l’élément qui a été sélectionné en premier. 
 
 ### Répondre aux modifications de sélection
 
-En réaction aux modifications de sélection dans un affichage Liste, gérez l’événement [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx). Dans le code du gestionnaire d’événements, vous pouvez obtenir la liste des éléments sélectionnés auprès de la propriété [**SelectionChangedEventArgs.AddedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.addeditems.aspx). Vous pouvez obtenir tous les éléments qui ont été désélectionnés à partir de la propriété [**SelectionChangedEventArgs.RemovedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.removeditems.aspx). Les collections AddedItems et RemovedItems contiennent au maximum 1 élément, sauf si l’utilisateur sélectionne une plage d’éléments en maintenant la touche MAJ enfoncée.
+En réaction aux modifications de sélection dans un affichage Liste, gérez l’événement [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx). Dans le code du gestionnaire d’événements, vous pouvez obtenir la liste des éléments sélectionnés auprès de la propriété [**SelectionChangedEventArgs.AddedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.addeditems.aspx). Vous pouvez obtenir tous les éléments qui ont été désélectionnés à partir de la propriété [**SelectionChangedEventArgs.RemovedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.removeditems.aspx). Les collections AddedItems et RemovedItems contiennent au maximum 1élément, sauf si l’utilisateur sélectionne une plage d’éléments en maintenant la touche MAJ enfoncée.
 
 Cet exemple montre comment gérer l’événement **SelectionChanged** et accéder à des collections d’éléments différents.
 
@@ -388,7 +388,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 
 ### Mode clic
 
-Vous pouvez modifier un affichage Liste afin qu’un utilisateur clique sur des éléments tels que des boutons au lieu de les sélectionner. Cela est par exemple utile lorsque l’utilisateur de votre application accède à une nouvelle page en cliquant sur un élément dans une liste ou dans une grille. Pour activer ce comportement :
+Vous pouvez modifier un affichage Liste afin qu’un utilisateur clique sur des éléments tels que des boutons au lieu de les sélectionner. Cela est par exemple utile lorsque l’utilisateur de votre application accède à une nouvelle page en cliquant sur un élément dans une liste ou dans une grille. Pour activer ce comportement:
 - Définissez **SelectionMode** sur **Aucun**.
 - Définissez **IsItemClickEnabled** sur **true**.
 - Gérez l’événement **ItemClick** pour effectuer une action lorsque l’utilisateur clique sur un élément.

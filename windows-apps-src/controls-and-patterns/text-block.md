@@ -17,7 +17,7 @@ ms.openlocfilehash: 7666c7a82b2959aa1329bbfe2532dccdc7fb38a5
 -   [**Propriété Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)
 -   [**Propriété Inlines**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
 Un bloc de texte est généralement plus facile à utiliser et offre de meilleures performances en termes de rendu de texte qu’un bloc de texte enrichi. C’est pourquoi il est recommandé pour la plupart des textes d’interface utilisateur d’application. Vous pouvez facilement visualiser et utiliser le texte d’un bloc de texte dans votre application en obtenant la valeur de la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx). Il propose également de nombreuses options de mise en forme similaires pour personnaliser la manière dont votre texte est restitué. 
 
@@ -65,18 +65,12 @@ Les éléments dérivés de la classe Inline, tels que Bold, Italic, Run, Span e
 Dans la mesure du possible, XAML utilise un chemin de code plus efficace pour la disposition du texte. Ce chemin rapide permet à la fois de diminuer l’utilisation de mémoire globale et de réduire considérablement le temps processeur requis pour mesurer et organiser le texte. Ce chemin rapide s’applique uniquement au contrôle TextBlock. Celui-ci doit donc être préféré au contrôle RichTextBlock dans la mesure du possible.
 
 Certaines conditions exigent un contrôle TextBlock afin de revenir à un chemin de code plus riche en fonctionnalités et exigeant en ressources de processeur pour le rendu du texte. Pour conserver le rendu du texte sur le chemin rapide, veillez à suivre ces recommandations lors de la définition des propriétés répertoriées ici.
-- [
-            **Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) : la condition la plus importante est que le chemin rapide soit utilisé uniquement lorsque vous définissez le texte en définissant explicitement la propriété Text en XAML ou dans le code (comme illustré dans les exemples précédents). La définition du texte via la collection Inlines du contrôle TextBlock (telle que `<TextBlock>Inline text</TextBlock>`) désactive le chemin rapide en raison de la complexité potentielle liée à de multiples formats.
-- [
-            **CharacterSpacing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx) : seule la valeur par défaut 0 permet d’utiliser le chemin rapide.
-- [
-            **Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) : seules les valeurs par défaut des différentes propriétés Typography permettent d’utiliser le chemin rapide.
-- [
-            **TextTrimming**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx) : seules les valeurs **None**, **CharacterEllipsis** et **WordEllipsis** permettent d’utiliser le chemin rapide. La valeur **Clip** désactive le chemin rapide.
-- [
-            **LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx) : si [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) est différent de 0, les valeurs **BaselineToBaseline** et **MaxHeight** désactivent le chemin rapide.
-- [
-            **IsTextSelectionEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx) : seule la valeur **false** permet d’utiliser le chemin rapide. La définition de cette propriété sur **true** désactive le chemin rapide.
+- [**Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx): la condition la plus importante est que le chemin rapide soit utilisé uniquement lorsque vous définissez le texte en définissant explicitement la propriété Text en XAML ou dans le code (comme illustré dans les exemples précédents). La définition du texte via la collection Inlines du contrôle TextBlock (telle que `<TextBlock>Inline text</TextBlock>`) désactive le chemin rapide en raison de la complexité potentielle liée à de multiples formats.
+- [**CharacterSpacing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): seule la valeur par défaut0 permet d’utiliser le chemin rapide.
+- [**Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx): seules les valeurs par défaut des différentes propriétés Typography permettent d’utiliser le chemin rapide.
+- [**TextTrimming**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx): seules les valeurs **None**, **CharacterEllipsis** et **WordEllipsis** permettent d’utiliser le chemin rapide. La valeur **Clip** désactive le chemin rapide.
+- [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx): si [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) est différent de0, les valeurs **BaselineToBaseline** et **MaxHeight** désactivent le chemin rapide.
+- [**IsTextSelectionEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx): seule la valeur **false** permet d’utiliser le chemin rapide. La définition de cette propriété sur **true** désactive le chemin rapide.
 
 Vous pouvez définir la propriété [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) sur **true** pendant le débogage pour déterminer si le texte utilise le chemin rapide pour le rendu. Lorsque cette propriété est définie sur true, le texte qui utilise le chemin rapide s’affiche en vert clair. 
 
@@ -84,7 +78,7 @@ Vous pouvez définir la propriété [DebugSettings.IsTextPerformanceVisualizatio
 
  
 
-Les paramètres de débogage sont généralement définis dans la substitution de méthode [OnLaunched](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onlaunched.aspx) dans la page code-behind pour App.xaml, comme ceci :
+Les paramètres de débogage sont généralement définis dans la substitution de méthode [OnLaunched](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onlaunched.aspx) dans la page code-behind pour App.xaml, comme ceci:
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -108,7 +102,7 @@ Dans cet exemple, le premier contrôle TextBlock est affiché à l’aide du che
 <StackPanel/>
 ```
 
-Lorsque vous exécutez ce code XAML en mode débogage avec la propriété IsTextPerformanceVisualizationEnabled définie sur true, le résultat se présente ainsi :
+Lorsque vous exécutez ce code XAML en mode débogage avec la propriété IsTextPerformanceVisualizationEnabled définie sur true, le résultat se présente ainsi:
 
 ![Texte affiché en mode débogage](images/text-block-rendering-performance.png)
 
@@ -145,7 +139,7 @@ Voici comment définir, dans un contrôle TextBlock, plusieurs chaînes de texte
 </TextBlock>
 ```
 
-Résultat :
+Résultat:
 
 ![Texte mis en forme avec des éléments Run](images/text-block-run-examples.png)
 

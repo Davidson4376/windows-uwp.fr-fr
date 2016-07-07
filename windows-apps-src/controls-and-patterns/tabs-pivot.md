@@ -5,48 +5,48 @@ title: "Onglets et sélecteurs de vue"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6585a75f08a64b7bb8f27fd32a227fa49bb0f3f4
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
 
 ---
-# Sélecteur de vue et onglets
+# Sélecteurs de vue et onglets
 
-Les contrôles sélecteur de vue et le modèle onglets sont utilisés pour naviguer entre différentes catégories de contenu fréquemment consultées. Les sélecteurs de vue et les onglets sont constitués de plusieurs volets de contenu présentant les en-têtes de catégorie correspondants. Les en-têtes restent affichés à l’écran, et leur état de sélection est clairement indiqué. Les utilisateurs savent ainsi en permanence dans quelle catégorie ils se trouvent.
-![Exemples d’onglets](images/HIGSecOne_Tabs.png)
+Le contrôle Pivot et le modèle onglets associé sont utilisés pour naviguer entre différentes catégories de contenu fréquemment consultées. Les sélecteurs de vue permettent la navigation entre deux ou plusieurs volets de contenu et s’appuient sur les en-têtes de texte pour articuler les différentes sections de contenu.
 
-Les onglets sont une variante visuelle du sélecteur de vue et sont conçus à l’aide du contrôle [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx). [
-            **L’exemple de code**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlPivot) expliquant comment personnaliser le sélecteur de vue est disponible sur GitHub.
+![Exemples d’onglets](images/pivot_Hero_main.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+Les onglets sont une variante visuelle de Pivot, qui utilisent une combinaison d’icônes et de texte, voire juste des icônes, afin d’articuler le contenu de la section. Les onglets sont générés à l’aide du contrôle [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) L’[**exemple Pivot**](http://go.microsoft.com/fwlink/p/?LinkId=619903) montre comment personnaliser le contrôle Pivot dans le modèle onglets.
+
+
 
 -   [**Classe Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-## Modèle d’onglet/sélecteur de vue
+## Le modèle de sélecteur de vue
 
-Lorsque vous créez une application avec le modèle d’onglet/sélecteur de vue, vous devez prendre en compte certaines variables de conception clés.
+Lorsque vous créez une application avec le sélecteur de vue, vous devez prendre en compte certaines variables de conception clés.
 
-- **Étiquettes d’en-tête.**  Les en-têtes peuvent être associés à une icône avec du texte ou à du texte seulement.
+- **Étiquettes d’en-tête.**  Les en-têtes peuvent être associés à une icône, à du texte ou aux deux.
 - **Alignement de l’en-tête.**  Les en-têtes peuvent être alignés à gauche ou centrés.
-- **Navigation de niveau supérieur ou inférieur.**  Les onglets/sélecteurs de vue peuvent être utilisés pour les deux niveaux de navigation. Si vous le souhaitez, le [volet de navigation](nav-pane.md) peut servir de niveau principal avec des onglets/sélecteurs de vue servant de niveau secondaire.
-- **Prise en charge des entrées tactiles**  Pour les appareils qui prennent en charge les entrées tactiles, vous pouvez utiliser un des deux ensembles d’interactions pour naviguer entre les catégories de contenu :
+- **Navigation de niveau supérieur ou inférieur.**  Les sélecteurs de vue peuvent être utilisés pour les deux niveaux de navigation. Si vous le souhaitez, le [volet de navigation](nav-pane.md) peut servir de niveau principal avec des sélecteurs de vue servant de niveau secondaire.
+- **Prise en charge des entrées tactiles.**  Pour les appareils qui prennent en charge les entrées tactiles, vous pouvez utiliser un des deux ensembles d’interactions pour naviguer entre les catégories de contenu:
     1. Appuyez sur un en-tête d’onglet/sélecteur de vue pour accéder à cette catégorie.
     2. Balayez vers la gauche ou vers la droite sur la zone de contenu pour accéder à la catégorie adjacente.
 
 ## Exemples
 
-Contrôle Pivot par défaut dans les rappels Cortana.
+Contrôle Pivot sur téléphone
 
-![Un exemple de contrôle Pivot dans les rappels Cortana](images/pivot_cortana-reminders.png)
+![Exemple de Pivot](images/pivot_example.png)
 
 Modèle onglets dans l’application Alarmes et horloge.
 
-![Un exemple d’onglets dans les Alarmes et horloge](images/tabs_alarms-and-clock.png)
+![Un exemple de modèle onglets dans les Alarmes et horloge](images/tabs_alarms-and-clock.png)
 
 ## Créer un contrôle Pivot
 
 Le contrôle [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) est fourni avec les fonctionnalités de base décrites dans cette section.
 
-Ce code XAML crée un contrôle Pivot de base avec 3 sections de contenu.
+Ce code XAML crée un contrôle Pivot de base avec 3sections de contenu.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Pivot Title">
@@ -77,18 +77,23 @@ Vous pouvez utiliser les propriétés [**LeftHeader**](https://msdn.microsoft.co
 
 ### Interaction avec le sélecteur de vue
 
-Le contrôle offre les interactions d’entrée tactile suivantes :
+Le contrôle offre les interactions d’entrée tactile suivantes:
 
 -   Un appui sur un en-tête d’élément sélecteur de vue permet d’accéder au contenu de la section de cet en-tête.
 -   Un mouvement de balayage sur un en-tête d’élément sélecteur de vue vers la gauche ou la droite permet d’accéder à la section adjacente.
 -   Un mouvement de balayage sur une section vers la gauche ou la droite permet d’accéder à la section adjacente.
+![Exemple de balayage vers la gauche d’un contenu de section](images/pivot_w_hand.png)
 
-Le contrôle est disponible en deux modes :
+Le contrôle est disponible en deux modes:
 
 **Stationnaire**
 
 -   Les sélecteurs de vue sont stationnaires lorsque l’espace autorisé est suffisant pour contenir tous les en-têtes de sélecteur de vue.
 -   Un appui sur une étiquette de sélecteur de vue permet d’accéder à la page correspondante, bien que le sélecteur de vue proprement dit ne bouge pas. Le sélecteur de vue actif est mis en surbrillance.
+
+{{&gt; contenu interne="
+-   Nous vous recommandons tout particulièrement d’empêcher la rotation des éléments dans un environnement à 3mètres. Définissez la nouvelle propriété `IsHeaderItemsCarouselEnabled` sur False si votre application doit s’exécuter sur Xbox.
+"}}
 
 **Carrousel**
 
@@ -96,10 +101,21 @@ Le contrôle est disponible en deux modes :
 -   Un appui sur une étiquette de sélecteur de vue permet d’accéder à la page correspondante. L’étiquette du sélecteur de vue actif passe en première position par rotation.
 -   Placez les éléments sélecteur de vue dans une boucle carrousel de la dernière à la première section de sélecteur de vue.
 
+{{&gt; contenu interne="
+### Focus du sélecteur de vue
+
+Par défaut, le focus clavier sur un en-tête de sélecteur de vue est représenté par un souligné.
+
+![Le focus par défaut souligne l’en-tête sélectionné](images/pivot_focus_selectedHeader.png)
+
+Les applications possédant un sélecteur de vue personnalisé, et incorporant le souligné aux éléments visuels de sélection de l’en-tête, peuvent utiliser la nouvelle propriété `HeaderFocusVisualPlacement` afin de changer la valeur par défaut. Lorsque `HeaderFocusVisualPlacement=\"ItemHeaders\"`, le focus encadrera l’intégralité de l’en-tête.
+
+![L’option ItemsHeader dessine un rectangle de focus autour de tous les en-têtes Pivot](images/pivot_focus_headers.png) "}}
+
 ## Recommandations
 
--   Définissez l’alignement des en-têtes d’onglet/sélecteur de vue selon la taille de l’écran. Pour les largeurs d’écran inférieures à 720 epx, l’alignement au centre est généralement plus efficace. Dans la plupart des cas, l’alignement à gauche est recommandé pour les largeurs d’écran supérieures à 720 epx.
--   Évitez d’utiliser plus de 5 en-têtes en mode carrousel (rotation), afin de ne pas provoquer de désorientation.
+-   Définissez l’alignement des en-têtes d’onglet/sélecteur de vue selon la taille de l’écran. Pour les largeurs d’écran inférieures à 720epx, l’alignement au centre est généralement plus efficace. Dans la plupart des cas, l’alignement à gauche est recommandé pour les largeurs d’écran supérieures à 720epx.
+-   Évitez d’utiliser plus de 5en-têtes en mode carrousel (rotation), afin de ne pas provoquer de désorientation.
 -   Utilisez le modèle onglets uniquement si vos éléments sélecteur de vue comportent des icônes distinctes.
 -   Incluez du texte dans les en-têtes d’éléments sélecteur de vue pour aider les utilisateurs à comprendre la signification de chaque section de sélecteur de vue. Les icônes ne sont pas forcément explicites pour tous les utilisateurs.
 
@@ -107,10 +123,12 @@ Le contrôle est disponible en deux modes :
 
 ## Rubriques connexes
 
-[Informations de base relatives à la conception de la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438)
+- [Informations de base relatives à la conception de la navigation](../layout/navigation-basics.md)
+
+- [**Exemple Pivot**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

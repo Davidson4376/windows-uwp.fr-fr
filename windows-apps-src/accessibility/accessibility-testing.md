@@ -32,8 +32,7 @@ L’outil [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn43
 <span id="INSPECT"/>
 ### **Inspect**  
 
-[
-            **Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) vous permet de sélectionner n’importe quel élément d’interface utilisateur et d’afficher ses données d’accessibilité. Vous pouvez afficher les propriétés et modèles de contrôles Microsoft UI Automation, et tester la structure de navigation des éléments d’automatisation dans l’arborescence UI Automation. Utilisez **Inspect** lors du développement de l’interface utilisateur pour vérifier comment les attributs d’accessibilité sont exposés dans UI Automation. Dans certains cas, les attributs proviennent de la prise en charge UI Automation déjà implémentée pour les contrôles XAML par défaut. Dans d’autres cas, ils proviennent de valeurs spécifiques que vous avez définies dans votre balisage XAML, en tant que propriétés jointes [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties).
+[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) vous permet de sélectionner n’importe quel élément d’interface utilisateur et d’afficher ses données d’accessibilité. Vous pouvez afficher les propriétés et modèles de contrôles Microsoft UI Automation, et tester la structure de navigation des éléments d’automatisation dans l’arborescence UI Automation. Utilisez **Inspect** lors du développement de l’interface utilisateur pour vérifier comment les attributs d’accessibilité sont exposés dans UI Automation. Dans certains cas, les attributs proviennent de la prise en charge UI Automation déjà implémentée pour les contrôles XAML par défaut. Dans d’autres cas, ils proviennent de valeurs spécifiques que vous avez définies dans votre balisage XAML, en tant que propriétés jointes [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties).
 
 L’image suivante illustre l’outil [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) qui interroge les propriétés UI Automation de l’élément de menu **Modifier** dans le Bloc-notes.
 
@@ -46,14 +45,13 @@ L’image suivante illustre l’outil [**Inspect**](https://msdn.microsoft.com/l
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
-### **UI Automation Verify**  
+### **UIAutomationVerify**  
 **UI Automation Verify (UIA Verify)** est une infrastructure de vérification et de test automatisée pour les implémentations UI Automation. **UIA Verify** peut être intégré au code de test et effectuer des tests réguliers et automatisés ou des vérifications ponctuelles de scénarios UI Automation. Pour exécuter **UIA Verify**, exécutez VisualUIAVerifyNative.exe à partir du sous-répertoire UIAVerify.
 
 <span id="accessible_event_watcher"/>
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 ### **Accessible Event Watcher**  
-[
-            **Accessible Event Watcher (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) vérifie si les éléments d’interface utilisateur d’une application déclenchent les événements UI Automation et Microsoft Active Accessibility appropriés lorsque des modifications de l’interface utilisateur ont lieu. De telles modifications peuvent se produire quand le focus change ou quand un élément d’interface utilisateur est appelé, sélectionné ou subit une modification d’état ou de propriété.
+[**Accessible Event Watcher (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) vérifie si les éléments d’interface utilisateur d’une application déclenchent les événements UI Automation et Microsoft Active Accessibility appropriés lorsque des modifications de l’interface utilisateur ont lieu. De telles modifications peuvent se produire quand le focus change ou quand un élément d’interface utilisateur est appelé, sélectionné ou subit une modification d’état ou de propriété.
 
 > [!NOTE]
 > La plupart des outils de test d’accessibilité mentionnés dans la documentation s’exécutent sur un PC, et non sur un téléphone. Vous pouvez exécuter certains des outils tout en développant et en utilisant un émulateur, mais la plupart d’entre eux ne peuvent pas exposer l’arborescence UI Automation au sein de l’émulateur.
@@ -69,7 +67,7 @@ Le meilleur moyen de tester l’accessibilité de votre clavier consiste à déb
 Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Les exceptions comprennent les éléments d’interface utilisateur inactifs, ainsi que les logos et le texte décoratif qui ne transmettent pas d’informations et peuvent être réorganisés sans modifier la signification. Pour plus d’informations sur le coefficient de contraste et les exceptions, voir [Exigences de texte accessible](accessible-text-requirements.md). Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
-> Certains des outils répertoriés par la spécification « Techniques for WCAG 2.0 G18 » ne peuvent pas être utilisés de manière interactive avec une application du Windows Store. Vous pouvez être amené à entrer des valeurs de couleur de premier plan et d’arrière-plan manuellement dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran, ou à exécuter l’outil tout en ouvrant des fichiers bitmap sources dans un programme d’édition d’images plutôt que pendant que cette image est chargée par l’application.
+> Certains des outils répertoriés par la spécification «Techniques for WCAG2.0 G18» ne peuvent pas être utilisés de manière interactive avec une application du Windows Store. Vous pouvez être amené à entrer des valeurs de couleur de premierplan et d’arrière-plan manuellement dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran, ou à exécuter l’outil tout en ouvrant des fichiers bitmap sources dans un programme d’édition d’images plutôt que pendant que cette image est chargée par l’application.
 
 <span id="verify_your_app_in_high_contrast"/>
 <span id="VERIFY_YOUR_APP_IN_HIGH_CONTRAST"/>
@@ -128,7 +126,7 @@ Vous devez également envisager d’utiliser l’outil [**AccScope**](https://ms
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
 <span id="EXAMINE_THE_UI_AUTOMATION_REPRESENTATION_FOR_YOUR_APP"/>
-## Examiner la représentation UI Automation de votre application  
+## Examiner la représentation UIAutomation de votre application  
 Plusieurs des outils de test d’UI Automation mentionnés précédemment permettent d’afficher votre application d’une façon qui, délibérément, ne prend pas en compte son apparence, mais la représente sous la forme d’une structure d’éléments UI Automation. C’est ainsi que les clients UI Automation, principalement les technologies d’assistance, vont interagir avec votre application dans les scénarios d’accessibilité.
 
 L’outil [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) fournit une vue particulièrement intéressante de votre application, car vous pouvez voir les éléments UI Automation sous forme de représentation visuelle ou de liste. Si vous utilisez la visualisation, vous pouvez explorer les différents éléments d’une façon qui vous permettra de les mettre en corrélation avec l’apparence visuelle de l’interface utilisateur de votre application. Vous pouvez même tester l’accessibilité de vos premiers prototypes d’interface utilisateur avant d’avoir affecté toute la logique à l’interface utilisateur, ce qui garantit que l’interaction visuelle et la navigation dans les scénarios d’accessibilité dans votre application sont équilibrées.
@@ -144,6 +142,6 @@ La présence d’éléments apparaissant à tort dans l’affichage des élémen
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

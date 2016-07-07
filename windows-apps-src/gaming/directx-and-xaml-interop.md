@@ -12,7 +12,7 @@ ms.openlocfilehash: 97e694ae2fb8af30a35aa9ebdb714db50a506e6c
 # Technologie interop DirectX et XAML
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu de plateforme Windows universelle (UWP). En combinant XAML et DirectX, vous pouvez générer des infrastructures d’interface utilisateur flexibles qui interopèrent avec votre contenu DirectX, ce qui s’avère particulièrement utile dans le cas d’applications qui utilisent beaucoup de ressources graphiques. Cette rubrique décrit la structure d’une application UWP qui utilise DirectX et identifie les types qu’il est important d’utiliser au moment de générer votre application UWP pour la faire fonctionner avec DirectX.
 
@@ -45,8 +45,7 @@ Une fois que vous avez déterminé comment vous envisagez d’utiliser DirectX, 
 ## SurfaceImageSource
 
 
-[
-            **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) propose des surfaces partagées DirectX dans lesquelles il est possible de dessiner et compose les éléments de contenu de l’application.
+[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) propose des surfaces partagées DirectX dans lesquelles il est possible de dessiner et compose les éléments de contenu de l’application.
 
 Voici le processus de base de création et de mise à jour d’un objet [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) dans le code-behind :
 
@@ -131,11 +130,9 @@ Voici le processus de base de création et de mise à jour d’un objet [**Surfa
 ## VirtualSurfaceImageSource
 
 
-[
-            **VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) étend [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) lorsque le contenu est potentiellement plus volumineux pour l’écran et donc que le contenu doit être virtualisé pour un rendu optimal.
+[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) étend [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) lorsque le contenu est potentiellement plus volumineux pour l’écran et donc que le contenu doit être virtualisé pour un rendu optimal.
 
-[
-            **VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) est différent de [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) dans le sens où il utilise un rappel, [**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337), que vous implémentez pour mettre à jour des régions de la surface à mesure qu’elles s’affichent à l’écran. Vous n’avez pas besoin d’effacer les régions masquées, car l’infrastructure XAML s’en charge à votre place.
+[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) est différent de [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) dans le sens où il utilise un rappel, [**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337), que vous implémentez pour mettre à jour des régions de la surface à mesure qu’elles s’affichent à l’écran. Vous n’avez pas besoin d’effacer les régions masquées, car l’infrastructure XAML s’en charge à votre place.
 
 Voici le processus de base de création et de mise à jour d’un objet [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) dans le code-behind :
 
@@ -234,7 +231,7 @@ Voici le processus de base de création et de mise à jour d’un objet [**Virtu
     }
     ```
 
-6.  Enfin, pour chaque région à mettre à jour :
+6.  Enfin, pour chaque région à mettre à jour:
 
     1.  Fournissez un pointeur vers l’objet [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) à [**IVirtualSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) et dessinez dans cette surface à l’aide de DirectX. Seule sera dessinée la zone désignée pour la mise à jour dans le paramètre *updateRect*.
 
@@ -265,8 +262,7 @@ Voici le processus de base de création et de mise à jour d’un objet [**Virtu
 ## SwapChainPanel et jeux
 
 
-[
-            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) est le type Windows Runtime conçu pour prendre en charge les graphismes et les jeux élaborés, où vous gérez directement la chaîne de permutation. Dans ce cas, vous créez votre propre chaîne de permutation DirectX et gérez la présentation de votre contenu rendu. Vous pouvez ensuite ajouter des éléments XAML à l’objet **SwapChainPanel**, tels que des menus, des affichages tête haute et autres superpositions d’interface.
+[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) est le type Windows Runtime conçu pour prendre en charge les graphismes et les jeux élaborés, où vous gérez directement la chaîne de permutation. Dans ce cas, vous créez votre propre chaîne de permutation DirectX et gérez la présentation de votre contenu rendu. Vous pouvez ensuite ajouter des éléments XAML à l’objet **SwapChainPanel**, tels que des menus, des affichages tête haute et autres superpositions d’interface.
 
 Pour garantir les performances, le type [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) impose certaines limitations :
 
@@ -281,8 +277,7 @@ Vous mettez à jour [**SwapChainPanel**](https://msdn.microsoft.com/library/wind
 
 Il existe par ailleurs des recommandations générales à suivre au moment de concevoir votre application pour qu’elle utilise [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834).
 
--   [
-            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) hérite de [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) et prend en charge un comportement de mise en page similaire. Familiarisez-vous avec le type **Grid** et ses propriétés.
+-   [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) hérite de [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) et prend en charge un comportement de mise en page similaire. Familiarisez-vous avec le type **Grid** et ses propriétés.
 
 -   Une fois qu’une chaîne de permutation DirectX a été définie, tous les événements d’entrée déclenchés pour [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) opèrent de la même manière que pour tout autre élément XAML. Vous ne définissez pas de pinceau d’arrière-plan pour **SwapChainPanel** et vous n’avez pas besoin de gérer directement les événements d’entrée de l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de l’application comme c’est le cas dans les applications DirectX qui n’utilisent pas **SwapChainPanel**.
 

@@ -13,7 +13,7 @@ ms.openlocfilehash: ff3d49e098b0b9b0e7a58a7985c77ab8022eb661
 # Aide dans l’application et interface utilisateur d’instructions 
 
 
-\[ Mise à jour pour des applications Universal Windows Platform (UWP) sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour des applications UniversalWindowsPlatform (UWP) sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Proposez aux utilisateurs de votre application une aide et des conseils de dépannage, et expliquez-leur comment interagir efficacement avec l’application. Cette section décrit les meilleures pratiques à suivre pour guider les utilisateurs dans tous les aspects de l’utilisation de votre application.
 ## Dans cette section
@@ -46,6 +46,6 @@ Proposez aux utilisateurs de votre application une aide et des conseils de dépa
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

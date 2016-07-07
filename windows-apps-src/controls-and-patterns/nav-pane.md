@@ -21,9 +21,9 @@ Un volet de navigation est un modèle qui permet d’inclure de nombreux éléme
 
 -   [**Classe SplitView**](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
-## <span id="Is_this_the_right_pattern_"></span><span id="is_this_the_right_pattern_"></span><span id="IS_THIS_THE_RIGHT_PATTERN_"></span>Est-ce le modèle approprié ?
+## <span id="Is_this_the_right_pattern_"></span><span id="is_this_the_right_pattern_"></span><span id="IS_THIS_THE_RIGHT_PATTERN_"></span>Est-ce le modèle approprié?
 
-Le volet de navigation fonctionne bien pour :
+Le volet de navigation fonctionne bien pour:
 
 -   Les applications comportant de nombreux éléments de navigation de niveau supérieur ayant un type similaire. Par exemple, une application sportive avec des catégories comme Football américain, Baseball, Basketball, Football et ainsi de suite.
 -   La fourniture d’une expérience de navigation cohérente sur l’ensemble des applications. Un volet de navigation doit inclure uniquement les éléments de navigation, pas les actions.
@@ -51,7 +51,7 @@ La zone de contenu présente les informations relatives à l’emplacement de na
 
 ### <span id="Button"></span><span id="button"></span><span id="BUTTON"></span>Bouton
 
-Lorsqu’il est présent, le bouton permet aux utilisateurs d’ouvrir et de fermer le volet. Le bouton reste visible à un emplacement fixe et ne se déplace pas avec le volet. Nous recommandons de placer le bouton dans le coin supérieur gauche de votre application. Le bouton du volet de navigation est affiché sous la forme de trois lignes horizontales empilées. Il est communément appelé le bouton « hamburger ».
+Lorsqu’il est présent, le bouton permet aux utilisateurs d’ouvrir et de fermer le volet. Le bouton reste visible à un emplacement fixe et ne se déplace pas avec le volet. Nous recommandons de placer le bouton dans le coin supérieur gauche de votre application. Le bouton du volet de navigation est affiché sous la forme de trois lignes horizontales empilées. Il est communément appelé le bouton «hamburger».
 
 ![Exemple de bouton du volet de navigation](images/nav_button.png)
 
@@ -59,7 +59,7 @@ Le bouton est généralement associé à une chaîne de texte. Le titre de l’a
 
 ## <span id="Nav_pane_variations"></span><span id="nav_pane_variations"></span><span id="NAV_PANE_VARIATIONS"></span>Variantes du volet de navigation
 
-Le volet de navigation comporte trois modes : superposition, compact et inclus. En mode superposition, le volet peut être réduit ou développé au besoin. En mode compact, le volet est toujours affiché sous la forme d’une zone étroite qui peut être développée. Un volet inclus reste ouvert par défaut.
+Le volet de navigation comporte trois modes: superposition, compact et inclus. En mode superposition, le volet peut être réduit ou développé au besoin. En mode compact, le volet est toujours affiché sous la forme d’une zone étroite qui peut être développée. Un volet inclus reste ouvert par défaut.
 
 ### <span id="Overlay"></span><span id="overlay"></span><span id="OVERLAY"></span>Superposition
 
@@ -90,18 +90,18 @@ Le volet de navigation comporte trois modes : superposition, compact et inclus.
 
 Pour optimiser la facilité d’utilisation sur différents appareils, nous recommandons l’utilisation de [points d’arrêt](../layout/screen-sizes-and-breakpoints-for-responsive-design.md) et l’ajustement du mode du volet de navigation en fonction de la largeur de sa fenêtre d’application.
 -   Petite fenêtre
-   -   Inférieur ou égal à 640 pixels de large.
+   -   Inférieur ou égal à640pixels de large.
    -   Le volet de navigation doit être en mode superposition, fermé par défaut.
 -   Fenêtre de taille moyenne
-   -   Supérieure à 640 pixels et inférieure ou égale à 1 007 pixels de large.
+   -   Supérieure à 640pixels et inférieure ou égale à 1007pixels de large.
    -   Le volet de navigation doit être en mode zone étroite, fermé par défaut.
 -   Grande fenêtre
-   -   Supérieure à 1 007 pixels de large.
+   -   Supérieure à 1007pixels de large.
    -   Le volet de navigation doit être en mode ancré, ouvert par défaut.
 
 ## <span id="Tailoring"></span><span id="tailoring"></span><span id="TAILORING"></span>Personnalisation
 
-Pour optimiser [l’expérience d’interface utilisateur à 3 m](http://go.microsoft.com/fwlink/?LinkId=760736), envisagez de personnaliser le volet de navigation en changeant l’apparence visuelle de ses éléments de navigation. Selon le contexte d’interaction, il peut être plus important d’attirer l’attention de l’utilisateur sur l’élément de navigation sélectionné ou sur l’élément de navigation ciblé. Pour une expérience d’interface utilisateur à 3 m, dans laquelle le boîtier de commande est l’appareil d’entrée généralement utilisé, il est particulièrement important de s’assurer que l’utilisateur peut facilement suivre l’emplacement de l’élément sélectionné à l’écran.
+Pour optimiser [l’expérience d’interface utilisateur à 3m](http://go.microsoft.com/fwlink/?LinkId=760736), envisagez de personnaliser le volet de navigation en changeant l’apparence visuelle de ses éléments de navigation. Selon le contexte d’interaction, il peut être plus important d’attirer l’attention de l’utilisateur sur l’élément de navigation sélectionné ou sur l’élément de navigation ciblé. Pour une expérience d’interface utilisateur à 3m, dans laquelle le boîtier de commande est l’appareil d’entrée généralement utilisé, il est particulièrement important de s’assurer que l’utilisateur peut facilement suivre l’emplacement de l’élément sélectionné à l’écran.
 
 ![Exemple d’éléments du volet de navigation personnalisés](images/nav_item_states.png)
 

@@ -11,13 +11,12 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 # Détecter les visages dans des images ou des vidéos
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Cette rubrique montre comment utiliser [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) pour détecter des visages dans une image. [
-            **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
+Cette rubrique montre comment utiliser [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) pour détecter des visages dans une image. [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
 
 Pour une autre méthode de suivi des visages à l’aide de [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776), voir [Analyse de scène pour la capture multimédia](scene-analysis-for-media-capture.md).
 
@@ -47,7 +46,8 @@ Dans la version actuelle, la classe **FaceDetector** prend uniquement en charge 
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-Instanciez l’objet **FaceDetector** en appelant [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), puis appelez [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), en transmettant l’image bitmap mise à l’échelle à une taille raisonnable et convertie en un format de pixel pris en charge. Cette méthode renvoie une liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces** est une méthode d’assistance, indiquée ci-dessous, qui dessine des cadres autour des visages de l’image.
+Instanciez l’objet **FaceDetector** en appelant [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), puis appelez [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), en transmettant l’image bitmap mise à l’échelle à une taille raisonnable et convertie en un format de pixel pris en charge. Cette méthode renvoie une liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). 
+            **ShowDetectedFaces** est une méthode d’assistance, indiquée ci-dessous, qui dessine des cadres autour des visages de l’image.
 
 [!code-cs[Détecter](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 

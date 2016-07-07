@@ -11,7 +11,7 @@ ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
 
 # Profils d’appareil photo
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo.

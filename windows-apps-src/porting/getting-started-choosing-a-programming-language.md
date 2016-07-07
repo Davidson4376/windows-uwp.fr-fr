@@ -11,7 +11,7 @@ ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
 
 # Prise en main &#58; Choix d’un langage de programmation
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## Choix d’un langage de programmation
 

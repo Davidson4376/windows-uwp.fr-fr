@@ -20,7 +20,7 @@ Concevez votre application afin que les utilisateurs puissent interagir avec ell
 ![Pavé tactile](images/input-patterns/input-touchpad.jpg)
 
 
-Les interactions de pavé tactile nécessitent trois éléments :
+Les interactions de pavé tactile nécessitent trois éléments:
 
 -   Un pavé tactile standard ou un pavé tactile de précision Windows.
 
@@ -134,9 +134,9 @@ Pour obtenir des conseils plus généraux concernant le retour visuel, voir [Rec
 
 Un ensemble de curseurs standard est disponible pour servir de pointeurs de pavé tactile. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
 
-Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications du Windows Store spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
+Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications du WindowsStore spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
 
-Si vous avez besoin de personnaliser le curseur de la souris :
+Si vous avez besoin de personnaliser le curseur de la souris:
 
 -   Utilisez toujours le curseur en forme de flèche (![Curseur en forme de flèche](images/cursor-arrow.png)) pour les éléments interactifs. N’utilisez pas le curseur en forme de main (![Curseur en forme de main](images/cursor-pointinghand.png)) pour les liens ou pour d’autres éléments interactifs. À la place, utilisez les effets de pointage (décrits précédemment).
 -   Utilisez le curseur texte (![Curseur texte](images/cursor-text.png)) pour le texte sélectionnable.
@@ -155,7 +155,7 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
            **Exemples d’archive**
-* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée: exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
@@ -166,6 +166,6 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -11,7 +11,7 @@ ms.openlocfilehash: b1908e83ffcab562c12c82cfcf7b5fe281d7ada1
 
 # HttpClient
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -41,20 +41,13 @@ La classe [**Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/l
 
 L’espace de noms [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) représente le contenu HTTP comme corps d’entité HTTP et en-têtes, y compris les cookies. Le contenu HTTP peut être associé à une requête HTTP ou à une réponse HTTP. L’espace de noms **Windows.Web.Http** fournit plusieurs classes pour représenter le contenu HTTP.
 
--   [
-            **HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625). Contenu, en tant que mémoire tampon.
--   [
-            **HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685). Contenu en tant que tuples de nom et valeur encodés avec le type MIME **application/x-www-form-urlencoded**.
--   [
-            **HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708). Contenu sous la forme du type MIME **multipart/\***.
--   [
-            **HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596). Contenu encodé comme le type MIME **multipart/form-data**.
--   [
-            **HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649). Contenu en tant que flux (le type interne est utilisé par la méthode GET HTTP pour recevoir des données et par la méthode POST HTTP pour charger des données).
--   [
-            **HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661). Contenu en tant que chaîne.
--   [
-            **IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684). Interface de base permettant aux développeurs de créer leurs propres objets de contenu
+-   [**HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625). Contenu, en tant que mémoire tampon.
+-   [**HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685). Contenu en tant que tuples de nom et valeur encodés avec le type MIME **application/x-www-form-urlencoded**.
+-   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708). Contenu sous la forme du type MIME **multipart/\***.
+-   [**HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596). Contenu encodé comme le type MIME **multipart/form-data**.
+-   [**HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649). Contenu en tant que flux (le type interne est utilisé par la méthode GET HTTP pour recevoir des données et par la méthode POST HTTP pour charger des données).
+-   [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661). Contenu en tant que chaîne.
+-   [**IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684). Interface de base permettant aux développeurs de créer leurs propres objets de contenu
 
 L’extrait de code dans la section « Envoyer une requête GET simple sur HTTP » utilise la classe [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) pour représenter la réponse HTTP d’une requête GET HTTP sous forme de chaîne.
 
@@ -108,14 +101,13 @@ catch (Exception ex)
 
 Une exception est levée quand une chaîne d’URI non valide est transmise au constructeur pour l’objet [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998).
 
-**.NET :** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît en tant que [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
+**.NET:** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît en tant que [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
 
 En C# et Visual Basic, cette erreur peut être évitée en utilisant la classe [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) dans .NET 4.5 et l’une des méthodes [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) pour tester la chaîne envoyée par un utilisateur avant la construction de l’URI.
 
 En C++, aucune méthode ne permet d’essayer et d’analyser une chaîne passée à un URI. Si une application obtient une entrée de l’utilisateur pour la classe [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998), le constructeur doit se trouver dans un bloc try/catch. Si une exception est levée, l’application peut notifier l’utilisateur et demander un nouveau nom d’hôte.
 
-[
-            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) est dépourvu d’une fonction pratique. De ce fait, une application utilisant [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) et les autres classes de cet espace de noms doit utiliser la valeur **HRESULT**.
+[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) est dépourvu d’une fonction pratique. De ce fait, une application utilisant [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) et les autres classes de cet espace de noms doit utiliser la valeur **HRESULT**.
 
 Quand une exception se produit dans une application utilisant .NET Framework 4.5 en C#, VB.NET et que cette application est en cours d’exécution, [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) représente une erreur. La propriété [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) renvoie la valeur **HRESULT** affectée à l’exception spécifique. La propriété [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) renvoie le message de description de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Une application peut filtrer sur des valeurs **HRESULT** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 

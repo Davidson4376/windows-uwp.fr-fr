@@ -12,11 +12,11 @@ ms.openlocfilehash: 9a842c773ce16e1093a158426b89caf239858f05
 # Code complet de DDSTextureLoader
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.
 
-Cette rubrique contient les sections suivantes :
+Cette rubrique contient les sections suivantes:
 
 -   [Technologies](#technologies)
 -   [Configuration requise](#requirements)
@@ -30,13 +30,17 @@ Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
-**Langages de programmation** : C++    
-**Modèles de programmation** : Windows Runtime
+
+            **Langages de programmation**: C++    
+
+            **Modèles de programmation**: Windows Runtime
 
 ## Conditions requises
 
-**Client minimal pris en charge** : Windows 10                               
-**Serveur minimal pris en charge** : Windows Server 2016 Technical Preview
+
+            **Client minimal pris en charge**: Windows10                               
+
+            **Serveur minimal pris en charge**: Windows Server2016 Technical Preview
 
 
 

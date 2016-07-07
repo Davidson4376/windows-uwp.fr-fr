@@ -289,7 +289,7 @@ Fenêtre contextuelle qui affiche des informations pour un élément.
 
 Référence : [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
 
-Conception et procédure : Recommandations en matière d’info-bulles 
+Conception et procédure: Recommandations en matière d’info-bulles 
 
 ## Images
 
@@ -329,7 +329,7 @@ Objets graphiques conservés dans différents modes pouvant être présentés co
 <Rectangle/>
 ```
 
-Référence : [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
+Référence: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
 
 Procédure : [Dessiner des formes](../graphics/drawing-shapes.md) 
 
@@ -340,7 +340,7 @@ Exemple de code : [Exemple de dessin vectoriel XAML](http://go.microsoft.com/fwl
 ### Bordure
 Contrôle de conteneur qui dessine une bordure, un arrière-plan ou les deux, autour d’un autre objet.
 
-![Bordure autour de 2 rectangles](images/controls/border.png) 
+![Bordure autour de 2rectangles](images/controls/border.png) 
 
 ```xaml
 <Border BorderBrush="Blue" BorderThickness="4" 
@@ -552,7 +552,7 @@ Exemple de code : [Exemple de contrôle Hub XAML](http://go.microsoft.com/fwlink
 ### Pivot
 Modèle de navigation et conteneur plein écran qui permet aussi de passer rapidement d’un pivot à un autre (vue ou filtre), généralement dans le même jeu de données.
 
-La disposition du contrôle Pivot peut être définie en « onglets ».
+La disposition du contrôle Pivot peut être définie en «onglets».
 
 Référence : [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
 
@@ -610,7 +610,7 @@ Contrôle de conteneur qui héberge du contenu web.
 
 Référence : [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
 
-Conception et procédure : Recommandations pour l’affichage web 
+Conception et procédure: Recommandations pour l’affichage web 
 
 Exemple de code : [Exemple de contrôle d’affichage web XAML](http://go.microsoft.com/fwlink/p/?linkid=238582)
 
@@ -742,7 +742,7 @@ Exemple de code : [Exemple de texte XAML](http://go.microsoft.com/fwlink/p/?link
 ### Case à cocher
 Contrôle pouvant être activé ou désactivé.
 
-![Les 3 états d’une case à cocher](images/templates-checkbox-states-default.png)
+![Les 3états d’une case à cocher](images/templates-checkbox-states-default.png)
 
 ```xaml
 <CheckBox x:Name="checkbox1" Content="CheckBox" 

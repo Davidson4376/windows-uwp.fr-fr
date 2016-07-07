@@ -26,7 +26,7 @@ L’option de recherche est l’un des moyens les plus courants pour rechercher 
 
 **Entrée.**  La saisie de texte est le mode d’entrée de recherche le plus courant et le sujet principal de ce guide. Les modes d’entrée Voix et Webcam sont également couramment utilisés, mais ils nécessitent généralement de pouvoir communiquer avec le matériel et, dans certains cas, l’ajout de contrôles ou d’une interface utilisateur personnalisée au sein de l’application.
 
-**Entrée nulle.**  Lorsque le champ d’entrée est activé par l’utilisateur, mais qu’aucun texte n’a été saisi, vous pouvez afficher ce que l’on appelle un « canevas d’entrée nulle ». Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
+**Entrée nulle.**  Lorsque le champ d’entrée est activé par l’utilisateur, mais qu’aucun texte n’a été saisi, vous pouvez afficher ce que l’on appelle un «canevas d’entrée nulle». Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
 
 ![Exemple de Cortana dans un canevas d’entrée nulle](images/search-cortana-example.png)
 
@@ -49,9 +49,10 @@ L’affichage du jeu de résultats peut prendre différentes formes en fonction 
 
 La fonction recherche est d’utilisation. Les interfaces utilisateur de recherche sont intégrées à l’interpréteur de commandes et à de nombreuses applications. Bien que les points d’entrée de recherche présentent généralement un aspect similaire, ils permettent d’obtenir des résultats aussi larges (recherche sur le web ou sur un périphérique) que précis (liste de contacts d’un utilisateur). Le point d’entrée de recherche doit être juxtaposé au contenu en cours de recherche.
 
-Voici quelques exemples d’étendues de recherche courantes :
+Voici quelques exemples d’étendues de recherche courantes:
 
-**Global** et **contextuel/optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
+
+            **Global** et **contextuel/optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
 
 **Web.**  Rechercher dans un index Web. Les résultats peuvent contenir des pages, des entités et des réponses.
 
@@ -67,7 +68,7 @@ Utilisez un texte d’information afin d’indiquer l’étendue de la recherche
 
 « Rechercher dans les paramètres »
 
-« Rechercher un emplacement »
+«Rechercher un emplacement»
 
 ![Exemple de texte d’information de recherche](images/search-windowsandweb.png)
 
@@ -80,13 +81,13 @@ En délimitant précisément l’étendue d’un point d’entrée de recherche,
 
 Les champs d’entrée de texte sont recommandés pour la plupart des applications, car ils offrent un point d’entrée de recherche bien visible. Les textes d’information facilitent également la découverte et la communication avec l’étendue de la recherche. Lorsque la recherche est une fonction plus secondaire, ou lorsque l’espace est limité, l’icône de recherche peut servir de point d’entrée, sans qu’un champ d’entrée ne lui soit associé. Lorsque la recherche est affichée sous forme d’une icône, assurez-vous qu’il reste suffisamment d’espace pour afficher la zone de recherche modale, comme illustré dans les exemples ci-dessous.
 
-Avant de cliquer sur l’icône de recherche :
+Avant de cliquer sur l’icône de recherche:
 
 ![Exemple d’icône de recherche et de zone de recherche réduite](images/search-icon-collapsed.png)
 
  
 
-Après avoir cliqué sur l’icône de recherche :
+Après avoir cliqué sur l’icône de recherche:
 
 ![Exemple d’icône de recherche et de zone de recherche développée](images/search-icon-expanded.png)
 
@@ -107,25 +108,25 @@ Les fonctionnalités d’entrée nulle et de formulation de requêtes sont facul
 
 Cette section présente des exemples de recherche en contexte.
 
-Recherche en tant qu’action dans la barre d’outils Windows :
+Recherche en tant qu’action dans la barre d’outils Windows:
 
 ![Exemple de recherche en tant qu’action dans la barre d’outils Windows](images/search-toolbar-action.png)
 
  
 
-Recherche en tant qu’entrée sur le canevas d’application :
+Recherche en tant qu’entrée sur le canevas d’application:
 
 ![Exemple de recherche sur un canevas d’application](images/search-canvas-contacts.png)
 
  
 
-Recherche dans un volet de navigation :
+Recherche dans un volet de navigation:
 
 ![Exemple de recherche dans un menu de navigation](images/search-navmenu.png)
 
  
 
-La recherche en ligne est réservée au cas où la recherche est rarement utilisée ou est hautement contextuelle :
+La recherche en ligne est réservée au cas où la recherche est rarement utilisée ou est hautement contextuelle:
 
 ![Exemple de recherche en ligne](images/patterns-search-results-desktop.png)
 
@@ -164,31 +165,31 @@ La recherche dans la page permet aux utilisateurs de trouver des correspondances
 ## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>Exemples
 
 
-Fournissez un moyen facile d’accéder à la fonctionnalité de recherche dans la page. Dans cet exemple sur une interface utilisateur mobile, la fonctionnalité « Rechercher dans la page » s’affiche après deux commandes « Ajouter à... » dans un menu extensible :
+Fournissez un moyen facile d’accéder à la fonctionnalité de recherche dans la page. Dans cet exemple sur une interface utilisateur mobile, la fonctionnalité «Rechercher dans la page» s’affiche après deux commandes «Ajouter à...» dans un menu extensible:
 
-![Exemple de recherche dans la page 1](images/findinpage-01.png)
-
- 
-
-Après avoir sélectionné Rechercher dans la page, l’utilisateur entre un terme recherché. Des suggestions de texte peuvent apparaître lors de la saisie du terme recherché :
-
-![Exemple de recherche dans la page 2](images/findinpage-02.png)
+![Exemple de recherche dans la page1](images/findinpage-01.png)
 
  
 
-Si aucune correspondance de texte n’est trouvée dans la recherche, une chaîne de texte « Aucun résultat » doit s’afficher dans la zone de résultats :
+Après avoir sélectionné Rechercher dans la page, l’utilisateur entre un terme recherché. Des suggestions de texte peuvent apparaître lors de la saisie du terme recherché:
 
-![Exemple de recherche dans la page 3](images/findinpage-03.png)
-
- 
-
-Si la recherche trouve des correspondances de texte, le premier terme doit être surligné dans une couleur distincte, et les autres occurrences dans une couleur plus claire de la même nuance, comme illustré dans cet exemple :
-
-![Exemple de recherche dans la page 4](images/findinpage-04.png)
+![Exemple de recherche dans la page2](images/findinpage-02.png)
 
  
 
-La Recherche dans la page a un compteur de correspondances :
+Si aucune correspondance de texte n’est trouvée dans la recherche, une chaîne de texte «Aucun résultat» doit s’afficher dans la zone de résultats:
+
+![Exemple de recherche dans la page3](images/findinpage-03.png)
+
+ 
+
+Si la recherche trouve des correspondances de texte, le premier terme doit être surligné dans une couleur distincte, et les autres occurrences dans une couleur plus claire de la même nuance, comme illustré dans cet exemple:
+
+![Exemple de recherche dans la page4](images/findinpage-04.png)
+
+ 
+
+La Recherche dans la page a un compteur de correspondances:
 
 ![Exemple de compteur de recherche dans la page](images/findinpage-counter.png)
 

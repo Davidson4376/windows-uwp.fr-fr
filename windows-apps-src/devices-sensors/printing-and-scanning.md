@@ -10,7 +10,7 @@ ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
 ---
 # Impression et numérisation
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
 

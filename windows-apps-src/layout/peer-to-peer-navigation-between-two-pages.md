@@ -1,7 +1,7 @@
 ---
 author: Jwmsft
-Description: "Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP)."
-title: "Navigation pair à pair entre deux pages"
+Description: "Découvrez comment naviguer dans une application de base à deuxpages pair à pair de la plateforme Windows universelle (UWP)."
+title: "Navigation pair à pair entre deuxpages"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
@@ -11,9 +11,9 @@ ms.openlocfilehash: ec1c0339017fb60ed37f45dfa6f809a5eba6fbb1
 
 ---
 
-# <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"></span>Navigation pair à pair entre deux pages
+# <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"></span>Navigation pair à pair entre deuxpages
 
-Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
+Découvrez comment naviguer dans une application de base à deuxpages pair à pair de la plateforme Windows universelle (UWP).
 
 ![Exemple de navigation pair à pair sur deux pages](images/nav-peertopeer-2page.png)
 
@@ -35,7 +35,7 @@ Découvrez comment naviguer dans une application de base à deux pages pair à 
 
     La solution est créée, et les fichiers du projet apparaissent dans l’**Explorateur de solutions**.
 
-    **Important** Lorsque vous exécutez Visual Studio pour la première fois, vous êtes invité à vous procurer une licence de développeur. Pour plus d’informations, voir [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/dn706236).
+    **Important** Lorsque vous exécutez VisualStudio pour la première fois, vous êtes invité à vous procurer une licence de développeur. Pour plus d’informations, voir [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/dn706236).
 
      
 
@@ -318,7 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
  
 
-À présent, générez et exécutez l’application. Cliquez sur le lien « Click to go to page 2 ». La deuxième page indiquant « Page 2 » en haut doit être chargée et affichée dans le cadre.
+À présent, générez et exécutez l’application. Cliquez sur le lien «Click to go to page2». La deuxième page indiquant «Page2» en haut doit être chargée et affichée dans le cadre.
 
 ## <span id="Frame_and_Page_classes"></span><span id="frame_and_page_classes"></span><span id="FRAME_AND_PAGE_CLASSES"></span>Classes Frame et Page
 

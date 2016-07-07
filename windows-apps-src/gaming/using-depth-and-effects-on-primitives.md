@@ -12,7 +12,7 @@ ms.openlocfilehash: 47547a226a69b2631313972ed67b39b1f29de402
 # Utiliser la profondeur et les effets sur des primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur et d’autres effets sur des primitives.
 
@@ -111,7 +111,7 @@ En plus de créer la vue de la cible de rendu, nous devons créer une vue du ste
 
 ### 3. Mise à jour de la perspective avec la fenêtre
 
-Nous mettons à jour les paramètres de projection de la perspective pour la mémoire tampon constante en fonction des dimensions de la fenêtre. Nous corrigeons les paramètres pour appliquer un champ de vision de 70 degrés avec une plage de profondeur de 0,01 à 100.
+Nous mettons à jour les paramètres de projection de la perspective pour la mémoire tampon constante en fonction des dimensions de la fenêtre. Nous corrigeons les paramètres pour appliquer un champ de vision de 70degrés avec une plage de profondeur de 0,01 à 100.
 
 ```cpp
         // Finally, update the constant buffer perspective projection parameters

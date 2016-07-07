@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "Initialiser Direct3D 11"
+title: Initialiser Direct3D11
 description: "Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange."
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 translationtype: Human Translation
@@ -12,23 +12,23 @@ ms.openlocfilehash: f0e25e43633d895673d640f139af338f6f0713f2
 # Initialiser Direct3D 11
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
--   Partie 1 : initialiser Direct3D 11
+-   Partie1: initialiser Direct3D11
 -   [Partie 2 : convertir l’infrastructure de rendu](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   [Partie 3 : porter la boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
+-   [Partie3: porter la boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange. Partie 1 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et la plateforme Windows universelle (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
+Montre comment convertir du code d’initialisation Direct3D9 en Direct3D11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange. Partie 1 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et la plateforme Windows universelle (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
 ## Initialiser le périphérique Direct3D
 
 
 Dans Direct3D 9, nous avons créé un handle vers le périphérique Direct3D en appelant la méthode [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). Nous avons commencé en obtenant un pointeur vers l’[**interface IDirect3D9**](https://msdn.microsoft.com/library/windows/desktop/bb174300) et nous avons spécifié plusieurs paramètres pour contrôler la configuration du périphérique Direct3D et de la chaîne d’échange. Avant cela, nous avons appelé la fonction [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) pour vérifier que nous n’étions pas en train de demander au périphérique quelque chose qu’il ne pourrait pas faire.
 
-Direct3D 9
+Direct3D9
 
 ```cpp
 UINT32 AdapterOrdinal = 0;
@@ -68,13 +68,13 @@ Dans Direct3D 11, le contexte de périphérique et l’infrastructure graphique 
 
 Pour commencer, nous créons le périphérique. Nous obtenons la liste des niveaux de fonctionnalité que le périphérique prend en charge : celle-ci nous informe de presque tout ce que nous devons savoir sur l’unité de traitement graphique (GPU). En outre, nous n’avons pas besoin de créer une interface juste pour accéder à Direct3D. Nous utilisons plutôt l’API principale [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Cela nous permet d’obtenir un handle vers le périphérique et le contexte immédiat de périphérique. Le contexte de périphérique sert à définir l’état du pipeline et à générer des commandes de rendu.
 
-Après avoir créé le périphérique Direct3D 11 et le contexte, nous pouvons exploiter la fonctionnalité de pointeur COM pour obtenir la version la plus récente des interfaces, lesquelles incluent des fonctionnalités supplémentaires et sont toujours recommandées.
+Après avoir créé le périphérique Direct3D11 et le contexte, nous pouvons exploiter la fonctionnalité de pointeur COM pour obtenir la version la plus récente des interfaces, lesquelles incluent des fonctionnalités supplémentaires et sont toujours recommandées.
 
 > **Remarque** D3D\_FEATURE\_LEVEL\_9\_1 (qui correspond au modèle de nuanceur 2.0) est le niveau minimal que votre jeu du Windows Store doit prendre en charge. (Les packages ARM de votre jeu échouent à la certification si vous ne prenez pas en charge 9\_1.) Si votre jeu inclut également un chemin de rendu pour les fonctionnalités du modèle de nuanceur 3, alors vous devez inclure D3D\_FEATURE\_LEVEL\_9\_3 dans le tableau.
 
  
 
-Direct3D 11
+Direct3D11
 
 ```cpp
 // This flag adds support for surfaces with a different color channel 
@@ -126,7 +126,7 @@ Le périphérique Direct3D implémente une interface COM pour DXGI. Tout d’abo
 
  
 
-**Direct3D 11**
+**Direct3D11**
 
 ```cpp
 ComPtr<IDXGIDevice2> dxgiDevice;
@@ -150,7 +150,7 @@ Maintenant que nous avons la fabrique DXGI, nous pouvons l’utiliser pour crée
 
  
 
-**Direct3D 11**
+**Direct3D11**
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -164,13 +164,13 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-Pour nous assurer de ne pas générer le rendu plus souvent que ne le peut l’écran, nous affectons à la latence d’image la valeur 1 et nous utilisons [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). Cela permet d’économiser de l’énergie et constitue une exigence de certification du Windows Store. Nous en saurons plus sur la présentation à l’écran dans la partie 2 de cette procédure pas à pas.
+Pour nous assurer de ne pas générer le rendu plus souvent que ne le peut l’écran, nous affectons à la latence d’image la valeur 1 et nous utilisons [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). Cela permet d’économiser de l’énergie et constitue une exigence de certification du Windows Store. Nous en saurons plus sur la présentation à l’écran dans la partie2 de cette procédure pas à pas.
 
 > **Remarque** Vous pouvez utiliser le multithreading (par exemple, des éléments de travail [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642)) pour continuer un autre travail pendant que le thread de rendu est bloqué.
 
  
 
-**Direct3D 11**
+**Direct3D11**
 
 ```cpp
 dxgiDevice->SetMaximumFrameLatency(1);
@@ -183,7 +183,7 @@ Nous pouvons maintenant configurer la mémoire tampon d’arrière-plan pour le 
 
 Nous devons d’abord obtenir un handle vers la mémoire tampon d’arrière-plan. (Notez que la mémoire tampon d’arrière-plan appartient à la chaîne d’échange DXGI, alors que dans DirectX 9, elle appartenait au périphérique Direct3D.) Ensuite, nous demandons au périphérique Direct3D de l’utiliser en tant que cible de rendu en créant un *affichage* de cible de rendu à l’aide de la mémoire tampon d’arrière-plan.
 
-**Direct3D 11**
+**Direct3D11**
 
 ```cpp
 ComPtr<ID3D11Texture2D> backBuffer;

@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-Description: "Concevez une interface utilisateur d’instructions qui apprend aux utilisateurs comment utiliser votre application du Windows Store."
+Description: "Concevez une interface utilisateur d’instructions qui apprend aux utilisateurs comment utiliser votre application du WindowsStore."
 title: "Recommandations en matière de conception d’une interface utilisateur d’instructions"
 label: Instructional UI
 template: detail.hbs
@@ -26,31 +26,31 @@ L’interface utilisateur d’instructions doit permettre à l’utilisateur de 
 
 ## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>Principes de création d’une interface utilisateur d’instructions
 
-Une interface utilisateur d’instructions allie pertinence et pédagogie, et améliore l’expérience utilisateur. Elle doit présenter les caractéristiques suivantes :
+Une interface utilisateur d’instructions allie pertinence et pédagogie, et améliore l’expérience utilisateur. Elle doit présenter les caractéristiques suivantes:
 
--   **Simplicité :** les utilisateurs ne veulent pas que leur expérience soit interrompue par des informations complexes.
--   **Facilité de mémorisation :** les utilisateurs ne veulent pas voir s’afficher les mêmes instructions chaque fois qu’ils tentent d’exécuter une tâche spécifique. Les instructions doivent donc se révéler faciles à mémoriser.
--   **Pertinence immédiate :** si l’interface utilisateur d’instructions ne présente pas une procédure directement liée à la tâche que l’utilisateur souhaite exécuter, celui-ci n’aura pas de raison d’y prêter attention.
+-   **Simplicité:** les utilisateurs ne veulent pas que leur expérience soit interrompue par des informations complexes.
+-   **Facilité de mémorisation:** les utilisateurs ne veulent pas voir s’afficher les mêmes instructions chaque fois qu’ils tentent d’exécuter une tâche spécifique. Les instructions doivent donc se révéler faciles à mémoriser.
+-   **Pertinence immédiate:** si l’interface utilisateur d’instructions ne présente pas une procédure directement liée à la tâche que l’utilisateur souhaite exécuter, celui-ci n’aura pas de raison d’y prêter attention.
 
-N’abusez pas de l’interface utilisateur d’instructions et prenez soin de choisir les rubriques adéquates. N’abordez pas les éléments suivants :
+N’abusez pas de l’interface utilisateur d’instructions et prenez soin de choisir les rubriques adéquates. N’abordez pas les éléments suivants:
 
--   **Fonctionnalités fondamentales :** si les utilisateurs ont besoin de disposer d’instructions d’utilisation concernant votre application, envisagez de retravailler la conception de votre application pour la rendre plus intuitive.
--   **Fonctionnalités évidentes :** si un utilisateur peut comprendre le rôle d’une fonctionnalité sans aucune instruction, l’interface utilisateur d’instructions ne fera que le gêner.
--   **Fonctionnalités complexes :** l’interface utilisateur d’instructions doit rester concise, et les utilisateurs intéressés par des fonctionnalités complexes sont généralement disposés à rechercher les instructions correspondantes sans avoir besoin qu’on les leur présente spontanément.
+-   **Fonctionnalités fondamentales:** si les utilisateurs ont besoin de disposer d’instructions d’utilisation concernant votre application, envisagez de retravailler la conception de votre application pour la rendre plus intuitive.
+-   **Fonctionnalités évidentes:** si un utilisateur peut comprendre le rôle d’une fonctionnalité sans aucune instruction, l’interface utilisateur d’instructions ne fera que le gêner.
+-   **Fonctionnalités complexes:** l’interface utilisateur d’instructions doit rester concise, et les utilisateurs intéressés par des fonctionnalités complexes sont généralement disposés à rechercher les instructions correspondantes sans avoir besoin qu’on les leur présente spontanément.
 
-Évitez de déranger l’utilisateur avec votre interface utilisateur d’instructions. Pratiques déconseillées :
+Évitez de déranger l’utilisateur avec votre interface utilisateur d’instructions. Pratiques déconseillées:
 
--   **Masquer des informations importantes :** l’interface utilisateur d’instructions ne doit jamais occulter d’autres fonctionnalités de votre application.
--   **Exiger la participation des utilisateurs :** les utilisateurs doivent avoir la possibilité d’ignorer l’interface utilisateur d’instructions et de continuer à parcourir l’application.
--   **Afficher des informations répétées :** votre interface utilisateur d’instructions ne doit pas harceler l’utilisateur, même si ce dernier l’a ignorée la première fois. L’ajout d’un paramètre permettant de réafficher l’interface utilisateur d’instructions constitue une solution plus judicieuse.
+-   **Masquer des informations importantes:** l’interface utilisateur d’instructions ne doit jamais occulter d’autres fonctionnalités de votre application.
+-   **Exiger la participation des utilisateurs:** les utilisateurs doivent avoir la possibilité d’ignorer l’interface utilisateur d’instructions et de continuer à parcourir l’application.
+-   **Afficher des informations répétées:** votre interface utilisateur d’instructions ne doit pas harceler l’utilisateur, même si ce dernier l’a ignorée la première fois. L’ajout d’un paramètre permettant de réafficher l’interface utilisateur d’instructions constitue une solution plus judicieuse.
 
 ## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>Exemples d’interfaces utilisateur d’instructions
 
-Voici quelques exemples dans lesquels une interface utilisateur d’instructions peut se révéler utile pour vos utilisateurs :
+Voici quelques exemples dans lesquels une interface utilisateur d’instructions peut se révéler utile pour vos utilisateurs:
 
 -   **Aidez les utilisateurs à découvrir les interactions tactiles.** L’écran suivant illustre une interface utilisateur d’instruction qui apprend à un joueur à utiliser les interactions tactiles dans le jeu, Cut the Rope.
 
-    ![capture d’écran d’un jeu montrant un message d’interface utilisateur d’instruction, « Effectuer un balayage transversal pour couper la corde »](images/in-game-controls-3.png)
+    ![capture d’écran d’un jeu montrant un message d’interface utilisateur d’instruction, «Effectuer un balayage transversal pour couper la corde»](images/in-game-controls-3.png)
 
 -   **Faites une première impression favorable.** Quand l’application Instants vidéos est lancée pour la première fois, l’interface utilisateur d’instructions invite l’utilisateur à créer des films sans gêner son utilisation.
 

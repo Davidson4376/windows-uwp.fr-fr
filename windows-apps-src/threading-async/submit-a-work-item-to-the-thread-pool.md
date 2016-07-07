@@ -1,12 +1,16 @@
 ---
 author: TylerMSFT
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
-title: Envoyer un élément de travail au pool de threads
-description: Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads.
+title: "Envoyer un élément de travail au pool de threads"
+description: "Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads."
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
+
 ---
 # Envoyer un élément de travail au pool de threads
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -23,7 +27,7 @@ Trois versions de [**RunAsync**](https://msdn.microsoft.com/library/windows/apps
 
 **Remarque** Utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
-L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche :
+L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche:
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
@@ -195,7 +199,7 @@ Notez que l’élément de travail vérifie la propriété [**IAsyncInfo.Status*
 
 Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher le résultat.
 
-L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape 1 :
+L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape1:
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
@@ -258,6 +262,7 @@ Pour en savoir plus, vous pouvez télécharger le code de ce démarrage rapide �
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

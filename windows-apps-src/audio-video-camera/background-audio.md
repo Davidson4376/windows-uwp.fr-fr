@@ -10,16 +10,16 @@ ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
 
 # Contenu audio en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article décrit comment créer des applications UWP permettant de lire du contenu audio en arrière-plan. Cela signifie que même après que l’utilisateur a réduit votre application, est revenu à l’écran d’accueil ou a quitté votre application d’une autre manière, votre application peut continuer à lire le contenu audio. Cet article présente les composants d’une application de lecture audio en arrière-plan et leurs interactions.
 
 Scénarios de lecture audio en arrière-plan :
 
--   **Playslist de longue durée :** l’utilisateur affiche brièvement une application au premier plan pour sélectionner et lancer une playslist, puis veut que la lecture de la playslist continue en arrière-plan.
+-   **Playslist de longue durée:** l’utilisateur affiche brièvement une application au premier plan pour sélectionner et lancer une playslist, puis veut que la lecture de la playslist continue en arrière-plan.
 
--   **Utilisation du Sélecteur de tâches :** l’utilisateur affiche brièvement une application au premier plan pour démarrer la lecture d’un contenu audio, puis passe dans une autre application ouverte à l’aide du Sélecteur de tâches. Il veut que la lecture du contenu audio continue en arrière-plan.
+-   **Utilisation du Sélecteur de tâches:** l’utilisateur affiche brièvement une application au premier plan pour démarrer la lecture d’un contenu audio, puis passe dans une autre application ouverte à l’aide du Sélecteur de tâches. Il veut que la lecture du contenu audio continue en arrière-plan.
 
 L’implémentation audio en arrière-plan décrite dans cet article permettra à votre application de s’exécuter universellement sur tous les appareils Windows, y compris les appareils mobiles, de bureau et Xbox.
 
@@ -34,7 +34,7 @@ Une application exécutant la lecture en arrière-plan comprend deux processus. 
 
 Le diagramme suivant est une vue d’ensemble de la conception du système.
 
-![Architecture de la lecture audio en arrière-plan Windows 10](images/backround-audio-architecture-win10.png)
+![Architecture de la lecture audio en arrière-plan Windows10](images/backround-audio-architecture-win10.png)
 ## MediaPlayer
 
 L’espace de noms [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) contient les API utilisées pour la lecture audio en arrière-plan. Il existe une seule instance de [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) par application par le biais de laquelle la lecture s’effectue. Votre application de lecture audio en arrière-plan appelle des méthodes et configure des propriétés sur la classe **MediaPlayer** pour définir la piste actuelle, démarrer la lecture, mettre en pause, avancer, reculer, etc. L’instance d’objet de lecteur multimédia est toujours accessible via la propriété [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528).
@@ -80,7 +80,7 @@ Pour garder active une tâche en arrière-plan, votre application devra demander
 
 Votre tâche en arrière-plan obtient l’événement **Completed** lorsque la méthode **Run** est terminée et qu’aucun report n’est demandé. Dans certains cas, lorsque votre application obtient l’événement **Canceled**, il peut également être suivi de l’événement **Completed**. Votre tâche peut recevoir un événement **Canceled** pendant que **Run** est en cours d’exécution, veillez donc à gérer cette simultanéité potentielle.
 
-Une tâche en arrière-plan peut être annulée dans les situations suivantes :
+Une tâche en arrière-plan peut être annulée dans les situations suivantes:
 
 -   Une nouvelle application avec des fonctions de lecture audio démarre sur les systèmes qui appliquent la sous-stratégie d’exclusivité. Voir la section [Stratégies système pour la durée de vie de tâche audio en arrière-plan](#system-policies-for-background-audio-task-lifetime) ci-dessous.
 
@@ -142,6 +142,6 @@ Le tableau suivant répertorie les stratégies sont appliqués selon les types d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

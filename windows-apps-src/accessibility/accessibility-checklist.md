@@ -54,7 +54,7 @@ Nous fournissons ici une liste de vérification qui vous permet de garantir que 
 
 5.  Assurez-vous que vos paramètres de manifeste d’application respectent les recommandations en matière d’accessibilité.
 
-6.  Déclarez votre application comme accessible dans le Windows Store.
+6.  Déclarez votre application comme accessible dans le WindowsStore.
 
     Si vous avez implémenté la prise en charge de l’accessibilité de base, le fait de marquer votre application comme accessible dans le Windows Store peut vous permettre d’atteindre davantage de clients et d’obtenir davantage de bonnes évaluations.
 

@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "Réduire la latence avec des chaînes d’échange DXGI 1.3"
+title: "Réduire la latence avec des chaînes d’échange DXGI1.3"
 description: "Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image."
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
 translationtype: Human Translation
@@ -12,9 +12,9 @@ ms.openlocfilehash: 174e2918d54a2b03124752d009f43f0cb0c800ca
 # Réduire la latence avec des chaînes d’échange DXGI 1.3
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image. Normalement, les jeux doivent offrir la latence la plus faible possible entre le moment où l’entrée du joueur est reçue et le moment où le jeu répond à cette entrée en mettant à jour l’affichage. Cette rubrique décrit une technique disponible à partir de Direct3D 11.2, qui vous permet de réduire la latence d’image effective dans votre jeu.
+Utilisez DXGI1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image. Normalement, les jeux doivent offrir la latence la plus faible possible entre le moment où l’entrée du joueur est reçue et le moment où le jeu répond à cette entrée en mettant à jour l’affichage. Cette rubrique décrit une technique disponible à partir de Direct3D 11.2, qui vous permet de réduire la latence d’image effective dans votre jeu.
 
 ## Comment la mise en file d’attente en mémoire tampon d’arrière-plan peut-elle réduire la latence ?
 
@@ -23,7 +23,7 @@ Avec la chaîne de permutation de modèle de retournement, les « retournements 
 
 Créez une chaîne d’échange d’attente avec l’indicateur [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076). Les chaînes d’échange créées de cette manière peuvent informer votre boucle de rendu, une fois que le système est prêt à accepter une nouvelle image. Cela permet à votre jeu d’effectuer le rendu en fonction des données actuelles, puis de placer le résultat immédiatement en file d’attente de présentation.
 
-## Étape 1 : Créer une chaîne d’échange d’attente
+## Étape1: Créer une chaîne d’échange d’attente
 
 
 Spécifiez l’indicateur [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) quand vous appelez [**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559).
@@ -52,7 +52,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 
 Définissez la latence d’image avec l’API [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313), au lieu d’appeler [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334).
 
-Par défaut, la valeur de latence d’image pour les chaînes d’échange d’attente est égale à 1, ce qui correspond à la latence la plus faible. Toutefois, cela réduit également le parallélisme entre l’UC et le processeur graphique. Si vous avez besoin d’un parallélisme plus important entre l’UC et le processeur graphique afin d’atteindre 60 FPS (en d’autres termes, si l’UC et le processeur graphique consacrent chacun moins de 16,7 ms au rendu d’une image, mais qu’ils consacrent à eux deux plus de 16,7 ms), affectez la valeur 2 à la latence d’image. Cela permet au processeur graphique de traiter les travaux mis en file d’attente par l’UC durant le traitement de l’image précédente, tout en permettant à l’UC d’envoyer les commandes de rendu de l’image actuelle de façon indépendante.
+Par défaut, la valeur de latence d’image pour les chaînes d’échange d’attente est égale à 1, ce qui correspond à la latence la plus faible. Toutefois, cela réduit également le parallélisme entre l’UC et le processeur graphique. Si vous avez besoin d’un parallélisme plus important entre l’UC et le processeur graphique afin d’atteindre 60FPS (en d’autres termes, si l’UC et le processeur graphique consacrent chacun moins de 16,7ms au rendu d’une image, mais qu’ils consacrent à eux deux plus de 16,7ms), affectez la valeur2 à la latence d’image. Cela permet au processeur graphique de traiter les travaux mis en file d’attente par l’UC durant le traitement de l’image précédente, tout en permettant à l’UC d’envoyer les commandes de rendu de l’image actuelle de façon indépendante.
 
 ```cpp
 // Swapchains created with the DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT flag use their

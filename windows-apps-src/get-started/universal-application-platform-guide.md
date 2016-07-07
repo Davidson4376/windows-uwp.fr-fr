@@ -11,9 +11,9 @@ ms.openlocfilehash: 191a7aef1a027747379c991e17afc1580a9ec549
 # Guide des applications de plateforme Windows universelle (UWP)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Dans ce guide, vous allez découvrir ce qui suit :
+Dans ce guide, vous allez découvrir ce qui suit:
 
 -   Ce qu’est une *famille d’appareils* et comment choisir celle à cibler.
 -   Nouveaux contrôles et panneaux d’interface utilisateur qui vous permettent d’adapter votre interface utilisateur aux différents facteurs de forme d’appareil.
@@ -23,7 +23,7 @@ Windows 8 a introduit Windows Runtime (WinRT), qui était une évolution du mod�
 
 Lorsque Windows Phone 8.1 est devenue disponible, Windows Runtime a été aligné entre Windows Phone 8.1 et Windows. Cela a permis aux développeurs de créer des *applications Windows 8 universelles* ciblant Windows et Windows Phone à l’aide d’une base de code partagée.
 
-Windows 10 introduit la plateforme Windows universelle (UWP), qui développe le modèle Windows Runtime et l’intègre dans le noyau unifié Windows 10. Intégrée au noyau, l’UWP offre désormais une plateforme d’application commune disponible sur chaque appareil exécutant Windows 10. Avec cette évolution, les applications qui ciblent l’UWP peuvent appeler non seulement les API WinRT communes à tous les appareils, mais aussi des API (notamment des API Win32 et .NET) spécifiques de la famille d’appareils sur lesquels l’application s’exécute. L’UWP fournit une couche API de noyau garantie sur divers appareils. Cela signifie que vous pouvez créer un package d’application unique installable sur un vaste éventail d’appareils. Avec ce package d’application unique, le Windows Store fournit un canal de distribution unifié pour atteindre tous les types d’appareils sur lesquels votre application peut s’exécuter.
+Windows 10 introduit la plateforme Windows universelle (UWP), qui développe le modèle Windows Runtime et l’intègre dans le noyau unifié Windows 10. Intégrée au noyau, l’UWP offre désormais une plateforme d’application commune disponible sur chaque appareil exécutant Windows 10. Avec cette évolution, les applications qui ciblent l’UWP peuvent appeler non seulement les API WinRT communes à tous les appareils, mais aussi des API (notamment des API Win32 et .NET) spécifiques de la famille d’appareils sur lesquels l’application s’exécute. L’UWP fournit une couche API de noyau garantie sur divers appareils. Cela signifie que vous pouvez créer un package d’application unique installable sur un vaste éventail d’appareils. Avec ce package d’application unique, le WindowsStore fournit un canal de distribution unifié pour atteindre tous les types d’appareils sur lesquels votre application peut s’exécuter.
 
 ![Les applications de la plateforme Windows universelle s’exécutent sur divers appareils et prennent en charge l’interface utilisateur adaptative, l’entrée utilisateur naturelle, un Windows Store, un centre de développement et des services cloud.](images/universalapps-overview.png)
 
@@ -56,7 +56,7 @@ Voici quelques aspects à prendre en considération pour choisir la famille d’
 
 **Optimisation de la portée de votre application**
 
-Pour atteindre le plus grand éventail possible d’appareils avec votre application, et pour que celle-ci s’exécute sur autant de types d’appareils que possible, votre application doit cibler la famille d’appareils universelle. Ainsi, l’application cible automatiquement chaque famille d’appareils basée sur la famille universel (dans le diagramme, tous les enfants de la famille universelle). Cela signifie que l’application s’exécute sur tout système d’exploitation basé sur ces familles d’appareils, et sur tous les appareils exécutant ces systèmes d’exploitation. Les seules API dont la disponibilité est garantie sur tous ces appareils sont celles définies par la version particulière de la famille d’appareils universelle que vous ciblez. (Avec cette édition, la version est toujours 10.0.x.0.) Pour plus d’informations sur la façon dont une application peut appeler des API en dehors de sa version de famille d’appareils cible, voir la section « Écriture de code » plus loin dans cet article.
+Pour atteindre le plus grand éventail possible d’appareils avec votre application, et pour que celle-ci s’exécute sur autant de types d’appareils que possible, votre application doit cibler la famille d’appareils universelle. Ainsi, l’application cible automatiquement chaque famille d’appareils basée sur la famille universel (dans le diagramme, tous les enfants de la famille universelle). Cela signifie que l’application s’exécute sur tout système d’exploitation basé sur ces familles d’appareils, et sur tous les appareils exécutant ces systèmes d’exploitation. Les seules API dont la disponibilité est garantie sur tous ces appareils sont celles définies par la version particulière de la famille d’appareils universelle que vous ciblez. (Avec cette édition, la version est toujours 10.0.x.0.) Pour plus d’informations sur la façon dont une application peut appeler des API en dehors de sa version de famille d’appareils cible, voir la section «Écriture de code» plus loin dans cet article.
 
 **Limitation de votre application à un type d’appareil**
 
@@ -92,20 +92,19 @@ Windows 10 inclut de nouveaux contrôles tels que l’affichage du calendrier et
 
 Des contrôles ont été mis à jour pour fonctionner correctement sur des écrans plus grands, s’adapter en fonction du nombre de pixels disponibles sur l’écran de l’appareil, et fonctionner correctement avec plusieurs types d’entrées tels que clavier, souris, impulsions tactiles, stylet ou contrôleur de type manette Xbox.
 
-Il se peut que vous constatiez que vous avez besoin d’adapter la disposition globale de votre interface utilisateur en fonction de la résolution d’écran de l’appareil sur lequel votre application s’exécute. Par exemple, une application de communication s’exécutant sur le bureau peut inclure une image en incrustation de l’appelant et des contrôles particulièrement adaptés à l’entrée à la souris :
+Il se peut que vous constatiez que vous avez besoin d’adapter la disposition globale de votre interface utilisateur en fonction de la résolution d’écran de l’appareil sur lequel votre application s’exécute. Par exemple, une application de communication s’exécutant sur le bureau peut inclure une image en incrustation de l’appelant et des contrôles particulièrement adaptés à l’entrée à la souris:
 
 ![Interface utilisateur d’application de communication pour ordinateur de bureau](images/adaptiveux-desktop.png)
 
-Toutefois, lorsque l’application s’exécute sur un téléphone, en raison de la limitation de l’espace disponible sur l’écran, votre application peut éliminer l’image en incrustation et agrandir le bouton d’appel afin de faciliter la manipulation d’une seule main :
+Toutefois, lorsque l’application s’exécute sur un téléphone, en raison de la limitation de l’espace disponible sur l’écran, votre application peut éliminer l’image en incrustation et agrandir le bouton d’appel afin de faciliter la manipulation d’une seule main:
 
 ![Interface utilisateur d’application de communication pour téléphone](images/adaptiveux-phone.png)
 
-Pour vous aider à adapter la disposition globale de votre interface utilisateur en fonction de l’espace disponible sur l’écran, Windows 10 introduit des panneaux et des états de conception adaptatifs.
+Pour vous aider à adapter la disposition globale de votre interface utilisateur en fonction de l’espace disponible sur l’écran, Windows10 introduit des panneaux et des états de conception adaptatifs.
 
 ### Concevoir une interface utilisateur adaptative avec des panneaux adaptatifs
 
-Les panneaux de disposition attribuent des tailles et des positions à leurs enfants, en fonction de l’espace disponible. Par exemple, [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) organise ses enfants de façon séquentielle (horizontalement ou verticalement). [
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) est similaire à une grille CSS qui place ses enfants dans des cellules.
+Les panneaux de disposition attribuent des tailles et des positions à leurs enfants, en fonction de l’espace disponible. Par exemple, [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) organise ses enfants de façon séquentielle (horizontalement ou verticalement). [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) est similaire à une grille CSS qui place ses enfants dans des cellules.
 
 Le nouveau [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/dn879546) implémente un style de disposition défini par les relations entre ses éléments enfants. Il est conçu pour créer des dispositions d’application pouvant s’adapter aux changements de résolution de l’écran. Le **RelativePanel** facilite le processus de réorganisation des éléments en définissant les relations entre ces derniers, ce qui vous permet de générer une interface utilisateur plus dynamique sans utiliser de dispositions imbriquées.
 
@@ -167,9 +166,9 @@ Voici le code XAML pour les déclencheurs d’état visuel décrits ci-dessus. L
 
 ### Outils
 
-Par défaut, vous souhaitez probablement cibler la famille d’appareils la plus vaste possible. Lorsque vous êtes prêt à voir comment votre application se présente sur un appareil particulier, utilisez la barre d’outils de prévisualisation d’appareil dans Visual Studio pour afficher un aperçu de votre interface utilisateur sur un appareil mobile de taille petite ou moyenne, sur un PC ou sur un grand écran de téléviseur. Vous pouvez ainsi adapter et tester vos états visuels adaptatifs :
+Par défaut, vous souhaitez probablement cibler la famille d’appareils la plus vaste possible. Lorsque vous êtes prêt à voir comment votre application se présente sur un appareil particulier, utilisez la barre d’outils de prévisualisation d’appareil dans Visual Studio pour afficher un aperçu de votre interface utilisateur sur un appareil mobile de taille petite ou moyenne, sur un PC ou sur un grand écran de téléviseur. Vous pouvez ainsi adapter et tester vos états visuels adaptatifs:
 
-![Barre d’outils de prévisualisation d’appareil de Visual Studio 2015](images/vs2015-device-preview-toolbar.png)
+![Barre d’outils de prévisualisation d’appareil de VisualStudio2015](images/vs2015-device-preview-toolbar.png)
 
 Vous n’êtes pas obligé de décider à l’avance des différents types d’appareils à prendre en charge. Vous pouvez toujours ajouter ultérieurement une taille d’appareil à votre projet.
 
@@ -185,12 +184,9 @@ Vous pouvez créer une application Windows universelle utilisant des contrôles 
 
 Les API suivantes donnent accès à l’entrée :
 
--   [
-            **CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) est une nouvelle API permettant d’utiliser une entrée brute sur le thread principal ou sur un thread d’arrière-plan.
--   [
-            **PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) réunit les données brutes du stylet, de la souris et des impulsions tactiles dans un ensemble unique et cohérent d’interfaces et d’événements qui peuvent être utilisés sur le thread principal ou sur un thread d’arrière-plan à l’aide de **CoreInput**.
--   [
-            **PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) est une API d’appareil qui prend en charge l’interrogation des capacités d’un appareil afin de déterminer les modalités d’entrée disponibles sur celui-ci.
+-   [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) est une nouvelle API permettant d’utiliser une entrée brute sur le thread principal ou sur un thread d’arrière-plan.
+-   [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) réunit les données brutes du stylet, de la souris et des impulsions tactiles dans un ensemble unique et cohérent d’interfaces et d’événements qui peuvent être utilisés sur le thread principal ou sur un thread d’arrière-plan à l’aide de **CoreInput**.
+-   [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) est une API d’appareil qui prend en charge l’interrogation des capacités d’un appareil afin de déterminer les modalités d’entrée disponibles sur celui-ci.
 -   Le nouveau contrôle XAML [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) et les API Windows Runtime [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) permettent d’accéder aux données de traits d’encre.
 
 ## Écriture de code
@@ -234,7 +230,7 @@ Si vous voulez uniquement appeler un petit nombre d’API, vous pouvez utiliser 
     }
 ```
 
-Dans ce cas, nous pouvons être certains que la présence de la classe [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) implique la présence de l’événement [**CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805), car les informations de configuration requise sont identiques pour la classe et le membre. Toutefois, au fil du temps, de nouveaux membres seront ajoutés aux classes déjà introduites, et ces membres auront ultérieurement des numéros de version « introduite dans ». Dans ce cas, au lieu d’utiliser **IsTypePresent**, vous pouvez tester la présence de membres individuels à l’aide des méthodes **IsEventPresent**, **IsMethodPresent**, **IsPropertyPresent** et d’autres méthodes similaires. En voici un exemple :
+Dans ce cas, nous pouvons être certains que la présence de la classe [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) implique la présence de l’événement [**CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805), car les informations de configuration requise sont identiques pour la classe et le membre. Toutefois, au fil du temps, de nouveaux membres seront ajoutés aux classes déjà introduites, et ces membres auront ultérieurement des numéros de version «introduite dans». Dans ce cas, au lieu d’utiliser **IsTypePresent**, vous pouvez tester la présence de membres individuels à l’aide des méthodes **IsEventPresent**, **IsMethodPresent**, **IsPropertyPresent** et d’autres méthodes similaires. En voici un exemple:
 
 ```csharp
     bool isHardwareButtons_CameraPressedAPIPresent =
@@ -292,6 +288,6 @@ Pour savoir comment soumettre vos applications en vue de leur publication dans l
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

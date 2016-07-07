@@ -11,7 +11,7 @@ ms.openlocfilehash: 7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a
 
 # Graphiques audio
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article montre comment utiliser les API dans l’espace de noms [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) pour créer des graphiques pour le routage audio, le mixage et les scénarios de traitement audio.
@@ -42,8 +42,7 @@ La classe [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
 -   Tous les types de nœud audio sont créés en utilisant les méthodes Create\* de la classe **AudioGraph**.
--   La méthode [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) entraîne le graphique audio à traiter les données audio. La méthode [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) arrête le traitement audio. Chaque nœud du graphique peut être démarré et arrêté de façon indépendante lorsque le graphique est en cours d’exécution, mais aucun nœud n’est actif lorsque le graphique est arrêté. [
-            **ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) entraîne tous les nœuds du graphique à ignorer toutes les données actuellement présentes dans leurs mémoires tampons audio.
+-   La méthode [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) entraîne le graphique audio à traiter les données audio. La méthode [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) arrête le traitement audio. Chaque nœud du graphique peut être démarré et arrêté de façon indépendante lorsque le graphique est en cours d’exécution, mais aucun nœud n’est actif lorsque le graphique est arrêté. [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) entraîne tous les nœuds du graphique à ignorer toutes les données actuellement présentes dans leurs mémoires tampons audio.
 -   L’événement [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) se produit lorsque le graphique commence le traitement d’un nouveau quantum de données audio. L’événement [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) se produit lorsque le traitement d’un quantum est terminé.
 
 -   La seule propriété [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) requise est [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724). Cette valeur permet au système d’optimiser le pipeline audio pour la catégorie spécifiée.
@@ -88,7 +87,7 @@ Un nœud d’entrée de fichier permet de transmettre les données d’un fichie
 
 [!code-cs[CreateFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileInputNode)]
 
--   Les nœuds d’entrée de fichier prennent en charge les formats suivants : mp3, wav, wma et m4a.
+-   Les nœuds d’entrée de fichier prennent en charge les formats suivants: mp3, wav, wma et m4a.
 -   Définissez la propriété [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) pour spécifier le décalage dans le fichier où la lecture doit commencer. Si cette propriété est null, le début du fichier est utilisé. Définissez la propriété [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) pour spécifier le décalage dans le fichier où la lecture doit se terminer. Si cette propriété est null, la fin du fichier est utilisée. L’heure de début doit être antérieure à l’heure de fin, et l’heure de fin doit être inférieure ou égale à la durée du fichier audio, qui peut être déterminée en vérifiant la valeur de propriété [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn914116).
 -   Recherchez une position dans le fichier audio en appelant [**Seek**](https://msdn.microsoft.com/library/windows/apps/dn914127) et en spécifiant le décalage dans le fichier vers lequel la position de lecture doit être déplacée. La valeur spécifiée doit être comprise entre [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) et [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118). Obtenez la position de lecture actuelle du nœud avec la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/dn914124) en lecture seule.
 -   Activez la boucle du fichier audio en définissant la propriété [**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120). Lorsqu’elle n’est pas null, cette valeur indique le nombre de fois que le fichier est lu après la lecture initiale. Par exemple, la définition de **LoopCount** sur 1 entraîne la lecture du fichier 2 fois en tout, la définition sur 5 entraîne la lecture du fichier 6 fois en tout. Si vous définissez **LoopCount** sur null, le fichier sera lu en boucle indéfiniment. Pour arrêter la lecture en boucle, définissez la valeur sur 0.
@@ -103,7 +102,7 @@ Un nœud de sortie de fichier vous permet de diriger les données audio du graph
 
 [!code-cs[CreateFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileOutputNode)]
 
--   Les nœuds de sortie de fichier prennent en charge les formats suivants : mp3, wav, wma et m4a.
+-   Les nœuds de sortie de fichier prennent en charge les formats suivants: mp3, wav, wma et m4a.
 -   Vous devez appeler [**AudioFileOutputNode.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914144) pour arrêter le traitement du nœud avant d’appeler [**AudioFileOutputNode.FinalizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914140) ou une exception sera levée.
 
 ##  Nœud d’entrée de trame audio
@@ -193,7 +192,7 @@ L’API de graphique audio vous permet d’ajouter des effets audio pour chaque 
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
 -   Tous les effets audio implémentent [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044). Chaque nœud expose une propriété **EffectDefinitions** représentant la liste des effets appliqués à ce nœud. Ajoutez un effet en ajoutant son objet de définition à la liste.
--   Il existe plusieurs classes de définition d’effet fournies dans l’espace de noms **Windows.Media.Audio**. Les voici :
+-   Il existe plusieurs classes de définition d’effet fournies dans l’espace de noms **Windows.Media.Audio**. Les voici:
     -   [**EchoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914276)
     -   [**EqualizerEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914287)
     -   [**LimiterEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914306)

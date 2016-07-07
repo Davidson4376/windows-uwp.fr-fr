@@ -11,11 +11,11 @@ ms.openlocfilehash: 4e40ac413e021aba26776053871a4c6f1a215b2a
 
 # Contacts et calendriers
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Vous pouvez permettre aux utilisateurs d’accéder à leurs contacts et rendez-vous afin de partager du contenu, des courriers électroniques, des informations de calendrier ou des messages, ou toute autre fonctionnalité de votre conception.
 
-Pour en savoir plus sur les différentes façons d’accéder aux contacts et aux rendez-vous dans votre application, voir les rubriques suivantes :
+Pour en savoir plus sur les différentes façons d’accéder aux contacts et aux rendez-vous dans votre application, voir les rubriques suivantes:
 
 | Rubrique | Description |
 |-------|-------------|

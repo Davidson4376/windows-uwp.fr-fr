@@ -12,7 +12,7 @@ ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
 # Dessiner à l’écran
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -31,14 +31,10 @@ Pour résumer, les API DXGI contiennent principalement des API pour gérer les r
 
 Pour établir une comparaison dans le cadre de cet exemple, voici les types pertinents de chaque API :
 
--   [
-            **ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) : fournit une représentation virtuelle du périphérique graphique et de ses ressources.
--   [
-            **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) : fournit l’interface pour la configuration des tampons et l’envoi des commandes de rendu.
--   [
-            **IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) : la chaîne de permutation est analogue au tampon d’arrière-plan d’OpenGL ES 2.0. Il s’agit de la zone de mémoire de la carte graphique qui contient la ou les images de rendu final à afficher. Elle est appelée « chaîne de permutation », car elle contient plusieurs tampons modifiables et « permutables » pour présenter le dernier rendu à l’écran.
--   [
-            **ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) : cette API contient le tampon de bitmap 2D dans lequel l’appareil Direct3D écrit le contexte et qui est présenté par la chaîne de permutation. Comme dans OpenGL ES 2.0, vous pouvez avoir plusieurs cibles de rendu, dont certaines ne sont pas liées à la chaîne de permutation mais utilisées pour les techniques d’ombrage multipasse.
+-   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) : fournit une représentation virtuelle du périphérique graphique et de ses ressources.
+-   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) : fournit l’interface pour la configuration des tampons et l’envoi des commandes de rendu.
+-   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) : la chaîne de permutation est analogue au tampon d’arrière-plan d’OpenGL ES 2.0. Il s’agit de la zone de mémoire de la carte graphique qui contient la ou les images de rendu final à afficher. Elle est appelée « chaîne de permutation », car elle contient plusieurs tampons modifiables et « permutables » pour présenter le dernier rendu à l’écran.
+-   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) : cette API contient le tampon de bitmap 2D dans lequel l’appareil Direct3D écrit le contexte et qui est présenté par la chaîne de permutation. Comme dans OpenGL ES 2.0, vous pouvez avoir plusieurs cibles de rendu, dont certaines ne sont pas liées à la chaîne de permutation mais utilisées pour les techniques d’ombrage multipasse.
 
 Dans le modèle, l’objet de rendu contient les champs suivants :
 
@@ -72,7 +68,7 @@ Pour plus d’informations sur le contexte de périphérique Direct3D par rappor
 
 ## Instructions
 
-### Étape 1 : Rendu de la scène et affichage
+### Étape1: Rendu de la scène et affichage
 
 Après la mise à jour des données de cube (dans cet exemple, en le faisant pivoter légèrement autour de l’axe y), la méthode Render définit la fenêtre d’affichage sur les dimensions du contexte de dessin (EGLContext). Ce contexte contient le tampon de couleur qui sera affiché à la surface de la fenêtre (EGLSurface) sur l’écran configuré (EGLDisplay). À ce stade, l’exemple met à jour les attributs des données de vertex, relie le tampon d’index, dessine le cube et permute le tampon de couleur dessiné par le pipeline d’ombrage sur la surface de la fenêtre.
 
@@ -211,7 +207,7 @@ Cet exemple ne s’attarde pas sur la grande complexité de la configuration des
 ## Rubriques connexes
 
 
-* [Procédure : portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [Procédure: portage d’un convertisseur simple OpenGL ES2.0 sur Direct3D11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 * [Porter les objets nuanceur](port-the-shader-config.md)
 * [Porter le GLSL](port-the-glsl.md)
 * [Dessiner à l’écran](draw-to-the-screen.md)

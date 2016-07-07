@@ -11,7 +11,7 @@ ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 # Lancer l’application Paramètres Windows
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -75,9 +75,9 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |                    | Économiseur de batterie/paramètres d’économiseur de batterie | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes | ms-settings:batterysaver-settings         |
 |                    | Économiseur de batterie/utilisation de batterie            | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes    | ms-settings:batterysaver-usagedetails     |
 |                    | Alimentation et mise en veille                          | Bureau uniquement   | ms-settings:powersleep                    |
-|                    | Bureau : Informations système                         | Les deux           | ms-settings:deviceencryption              |
+|                    | Bureau: Informations système                         | Les deux           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
-|                    | Mobile : Chiffrement de l’appareil              |                |                                           |
+|                    | Mobile: Chiffrement de l’appareil              |                |                                           |
 |                    | Cartes hors connexion                           | Les deux           | ms-settings:maps                          |
 |                    | Informations système                                  | Les deux           | ms-settings:about                         |
 | Périphériques            | Appareil photo par défaut                         | Mobile uniquement    | ms-settings:camera                        |
@@ -127,6 +127,6 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

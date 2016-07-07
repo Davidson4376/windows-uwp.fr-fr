@@ -13,7 +13,7 @@ ms.openlocfilehash: 4a006cbd1a1f38e2410098d074a35df4a2468963
 # Guides de résolution des problèmes
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette section décrit les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft.
 

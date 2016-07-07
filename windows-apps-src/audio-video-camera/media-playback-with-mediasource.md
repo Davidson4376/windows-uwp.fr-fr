@@ -11,13 +11,12 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 # Lecture de contenu multimédia avec MediaSource
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-La classe [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent. La classe [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) étend les fonctionnalités de **MediaSource**, vous permettant ainsi de gérer et de sélectionner à partir de plusieurs pistes audio, vidéo et de métadonnées contenues dans un élément multimédia. [
-            **MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer des listes de lecture à partir d’un ou plusieurs éléments de la lecture de contenu multimédia.
+La classe [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent. La classe [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) étend les fonctionnalités de **MediaSource**, vous permettant ainsi de gérer et de sélectionner à partir de plusieurs pistes audio, vidéo et de métadonnées contenues dans un élément multimédia. [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer des listes de lecture à partir d’un ou plusieurs éléments de la lecture de contenu multimédia.
 
 Le code figurant dans cet article a été adapté à partir de l’exemple [Kit de développement logiciel (SDK) de lecture vidéo](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409). Vous pouvez télécharger cet exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
@@ -141,8 +140,7 @@ Cet exemple ajoute une piste de texte personnalisé en spécifiant **TimedMetada
 
 ## Lire une liste d’éléments multimédias avec MediaPlaybackList
 
-[
-            **MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer une playlist d’éléments multimédias, qui sont représentés par des objets **MediaPlaybackItem**.
+[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer une playlist d’éléments multimédias, qui sont représentés par des objets **MediaPlaybackItem**.
 
 **Remarque** Les éléments figurant dans [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) sont rendus à l’aide de la lecture sans blanc. Le système utilise les métadonnées fournies dans les fichiers codés MP3 ou AAC pour déterminer la compensation de délai ou de remplissage nécessaire pour la lecture sans blanc. Si les fichiers codés MP3 ou AAC ne fournissent pas ces métadonnées, le système détermine alors le délai ou le remplissage de manière heuristique. Pour les formats sans perte, tels que PCM, FLAC ou ALAC, le système n’exécute aucune action, car ces encodeurs n’introduisent ni retard ni remplissage.
 

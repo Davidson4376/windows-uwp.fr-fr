@@ -13,13 +13,13 @@ ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
 # Gestion des erreurs dans la procédure pas à pas pour XAML/C#
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique montre comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
 
 Ces exemples partent du principe que vous disposez d’une application XAML/C# qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
-1.  Dans votre fichier MainPage.xaml, recherchez la définition du contrôle **AdControl**. Ce code se présente ainsi :
+1.  Dans votre fichier MainPage.xaml, recherchez la définition du contrôle **AdControl**. Ce code se présente ainsi:
 
     ``` syntax
     <UI:AdControl
@@ -54,7 +54,7 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
 
 2.  Pour générer une erreur lors de l’exécution, créez un second contrôle **AdControl** avec un ID d’application différent. Comme tous les objets **AdControl** d’une application doivent utiliser le même ID d’application, la création d’un objet **AdControl** supplémentaire doté d’un autre ID d’application lève une erreur.
 
-    Définissez un second objet **AdControl** dans le fichier MainPage.xaml juste après le premier **AdControl**, puis définissez la propriété [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) sur zéro (« 0 »).
+    Définissez un second objet **AdControl** dans le fichier MainPage.xaml juste après le premier **AdControl**, puis définissez la propriété [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) sur zéro («0»).
 
     ``` syntax
     <UI:AdControl
@@ -68,7 +68,7 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
       ErrorOccurred="OnAdError" />
     ```
 
-3.  Dans MainPage.xaml.cs, ajoutez le gestionnaire d’événements **OnAdError** suivant à la classe **MainPage**. Ce gestionnaire d’événements écrit les informations dans la fenêtre **Sortie** de Visual Studio.
+3.  Dans MainPage.xaml.cs, ajoutez le gestionnaire d’événements **OnAdError** suivant à la classe **MainPage**. Ce gestionnaire d’événements écrit les informations dans la fenêtre **Sortie** de VisualStudio.
 
     ``` syntax
     private void OnAdError(object sender, AdErrorEventArgs e)
@@ -79,7 +79,7 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
 
 4.  Générez et exécutez le projet.
 
-Après l’exécution de l’application, un message semblable à celui qui suit s’affiche dans la fenêtre **Sortie** de Visual Studio.
+Après l’exécution de l’application, un message semblable à celui qui suit s’affiche dans la fenêtre **Sortie** de VisualStudio.
 
 ``` syntax
 AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration

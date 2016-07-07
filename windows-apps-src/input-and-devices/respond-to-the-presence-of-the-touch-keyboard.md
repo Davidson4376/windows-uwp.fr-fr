@@ -32,7 +32,7 @@ Pour prendre en charge le comportement de clavier tactile correspondant dans un 
 
 Une fois cette prise en charge ajoutée à votre contrôle personnalisé, vous pouvez répondre de manière appropriée à la présence du clavier tactile.
 
-**Éléments requis :  **
+**Éléments requis:  **
 
 Cette rubrique s’appuie sur l’article [Interactions avec le clavier](keyboard-interactions.md).
 
@@ -43,7 +43,7 @@ Si vous débutez dans le développement d’applications de plateforme Windows u
 -   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Recommandations en matière d’expérience utilisateur :  **
+**Recommandations en matière d’expérience utilisateur:  **
 
 Pour obtenir de précieux conseils concernant la conception d’une application optimisée pour la saisie au clavier à la fois utile et conviviale, voir [Recommandations en matière de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345).
 
@@ -66,7 +66,7 @@ Voici quelques recommandations de base concernant les contrôles de saisie de te
 
     ![Formulaire avec et sans clavier tactile apparent](images/touch-keyboard-pan1.png)
 
-    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple :
+    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple:
 
     ![formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
 
@@ -145,6 +145,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -10,7 +10,7 @@ ms.openlocfilehash: f201293d1288c8a065723ee2c05a7da45e5e95ab
 ---
 # ID de classe de service AEP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 <span class="sidebar_heading" style="font-weight: bold;">API importantes</span>

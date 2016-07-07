@@ -20,7 +20,7 @@ Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour 
 -   [**Propriété Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
 -   [**Événement DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 Utilisez un **sélecteur de dates du calendrier** pour permettre à un utilisateur de choisir une date unique à partir d’un affichage Calendrier contextuel. Utilisez-le pour des éléments tels que le choix d’une date de rendez-vous ou de départ.
 
 Pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important, pensez à utiliser un [**sélecteur de dates**](date-picker.md).
@@ -29,7 +29,7 @@ Pour plus d’informations sur le choix du contrôle approprié, voir l’articl
 
 ## Exemples
 
-Le point d’entrée affiche le texte de l’espace réservé si aucune date n’a été définie. Sinon, il affiche la date choisie. Lorsque l’utilisateur sélectionne le point d’entrée, un affichage de calendrier est développé pour que l’utilisateur sélectionne une date. Cet affichage de calendrier se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
+Le point d’entrée affiche le texte de l’espace réservé si aucune date n’a été définie. Sinon, il affiche la date choisie. Lorsque l’utilisateur sélectionne le point d’entrée, un affichage de calendrier est développé pour que l’utilisateur sélectionne une date. Cet affichage de calendrier se superpose aux autres éléments de l’interface utilisateur; il ne les ferme pas.
 
 ![Exemple de sélecteur de dates du calendrier](images/calendar-date-picker-2-views.png)
 
@@ -44,7 +44,7 @@ CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
 arrivalCalendarDatePicker.Header = "Arrival date";
 ```
 
-Le sélecteur de dates du calendrier qui en résulte se présente comme suit :
+Le sélecteur de dates du calendrier qui en résulte se présente comme suit:
 
 ![Exemple de sélecteur de dates du calendrier](images/calendar-date-picker-closed.png)
 
@@ -74,7 +74,7 @@ Vous pouvez gérer l’événement [**DateChanged**](https://msdn.microsoft.com/
 
 Vous pouvez ajouter un contrôle [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (ou étiquette) et un contrôle [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (ou filigrane) au sélecteur de date de calendrier pour indiquer à l’utilisateur son rôle. Si vous souhaitez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) au lieu de la propriété Header.
 
-Le texte d’espace réservé par défaut est « sélectionner une date ». Vous pouvez le supprimer en définissant la propriété PlaceholderText sur une chaîne vide, ou vous pouvez fournir un texte personnalisé comme illustré ici.
+Le texte d’espace réservé par défaut est «sélectionner une date». Vous pouvez le supprimer en définissant la propriété PlaceholderText sur une chaîne vide, ou vous pouvez fournir un texte personnalisé comme illustré ici.
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" 
@@ -91,6 +91,6 @@ Le texte d’espace réservé par défaut est « sélectionner une date ». Vo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

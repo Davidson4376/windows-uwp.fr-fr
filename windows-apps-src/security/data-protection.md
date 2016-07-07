@@ -12,7 +12,7 @@ ms.openlocfilehash: 958d5dd1c5f61078a0b288d53debe93875d65f06
 # Protection des données
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article explique comment utiliser la classe [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) dans l’espace de noms [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) pour chiffrer et déchiffrer des données numériques dans une application UWP.
 

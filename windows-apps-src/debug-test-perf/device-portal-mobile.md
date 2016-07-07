@@ -10,7 +10,7 @@ ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
 ---
 # Device Portal pour appareils mobiles
 
-À partir de Windows 10 version 1511, des fonctionnalités de développement supplémentaires sont disponibles pour la famille d’appareils mobiles. Ces fonctionnalités sont disponibles uniquement lorsque le mode développeur est activé sur l’appareil.
+À partir de Windows10 version1511, des fonctionnalités de développement supplémentaires sont disponibles pour la famille d’appareils mobiles. Ces fonctionnalités sont disponibles uniquement lorsque le mode développeur est activé sur l’appareil.
 
 Pour en savoir plus sur la façon d’activer le mode développeur, consultez [Activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
 
@@ -22,25 +22,25 @@ Pour en savoir plus sur la façon d’activer le mode développeur, consultez [A
 
 Pour vous connecter à Device Portal, vous devez activer la détection d’appareils. Cela vous permet de coupler votre téléphone avec un PC ou un autre appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB.
 
-La première fois que vous vous connectez à Device Portal, vous êtes invité à entrer un code de sécurité à 6 caractères (avec respect de la casse). Cela garantit votre accès au téléphone et vous préserve des attaques. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code, puis entrez les 6 caractères dans la zone de texte du navigateur.
+La première fois que vous vous connectez à Device Portal, vous êtes invité à entrer un code de sécurité à 6 caractères (avec respect de la casse). Cela garantit votre accès au téléphone et vous préserve des attaques. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code, puis entrez les 6caractères dans la zone de texte du navigateur.
 
 ![Paramètres de détection d’appareils en mode développeur](images/device-portal/mob-dev-mode-pairing.png)
 
-Vous pouvez vous connecter à Device Portal de 3 façons : USB, hôte local et sur le réseau local (y compris avec VPN et fonction modem).
+Vous pouvez vous connecter à Device Portal de 3façons: USB, hôte local et sur le réseau local (y compris avec VPN et fonction modem).
 
 **Pour se connecter à Device Portal**
 
 1. Dans votre navigateur, entrez l’adresse indiquée ici selon le type de connexion que vous utilisez.
 
-    - USB : `http://127.0.0.1:10080`
+    - USB: `http://127.0.0.1:10080`
 
-    utilisez cette adresse lorsque le téléphone est connecté à un PC par le biais d’une connexion USB. Les deux appareils doivent disposer de Windows 10 version 1511 ou ultérieure.
+    utilisez cette adresse lorsque le téléphone est connecté à un PC par le biais d’une connexion USB. Les deux appareils doivent disposer de Windows10 version1511 ou ultérieure.
     
-    - Hôte local : `http://127.0.0.1`
+    - Hôte local: `http://127.0.0.1`
 
-    utilisez cette adresse pour afficher Device Portal localement sur le téléphone dans Microsoft Edge pour Windows 10 Mobile.
+    utilisez cette adresse pour afficher Device Portal localement sur le téléphone dans Microsoft Edge pour Windows10 Mobile.
     
-    - Réseau local : `https://<The IP address of the phone>`
+    - Réseau local: `https://<The IP address of the phone>`
 
     utilisez cette adresse pour établir la connexion par le biais d’un réseau local.
 
@@ -48,7 +48,7 @@ Vous pouvez vous connecter à Device Portal de 3 façons : USB, hôte local et
 
 2. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code de sécurité requis.
 
-3. Entrez le code de sécurité à 6 caractères dans la zone de mot de passe de Device Portal, dans votre navigateur.
+3. Entrez le code de sécurité à 6caractères dans la zone de mot de passe de Device Portal, dans votre navigateur.
 
 4. (Facultatif) Activez la case à cocher Mémoriser mon ordinateur dans votre navigateur afin de mémoriser ce couplage.
 

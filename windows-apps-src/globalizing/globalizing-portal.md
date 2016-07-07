@@ -21,7 +21,7 @@ Windows est utilisé dans le monde entier, par des publics de diverses cultures,
 
 **La globalisation** consiste à concevoir et développer votre application de sorte qu’elle adapte son comportement aux différents marchés du monde entier sans aucune modification ou personnalisation.
 
-Vous pouvez par exemple :
+Vous pouvez par exemple:
 
 -   Concevoir la disposition de votre application pour qu’elle s’adapte aux différentes longueurs de texte et tailles de police des autres langues dans les libellés et les chaînes de texte.
 -   Récupérer du texte et des images liées à la culture à partir de ressources pouvant être adaptées à différents marchés locaux, au lieu de les coder en dur dans le code ou le balisage de votre application.
@@ -29,7 +29,7 @@ Vous pouvez par exemple :
 
 **La localisation** consiste à adapter votre application pour répondre aux besoins linguistiques, culturels et politiques d’un marché local spécifique.
 
-Par exemple :
+Par exemple:
 
 -   Traduire le texte et les libellés de l'application pour le nouveau marché et créer des ressources distinctes pour la langue utilisée sur ce marché.
 -   Modifier si besoin les images liées à la culture, puis les placer dans des ressources distincts.

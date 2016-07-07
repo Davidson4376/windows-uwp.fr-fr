@@ -47,18 +47,15 @@ La réponse du serveur cloud comprend le contenu téléchargé. Le contenu renvo
 
 Appelez l’une de ces méthodes pour lancer l’interrogation :
 
--   [
-            **StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (vignette)
--   [
-            **StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (badge)
--   [
-            **StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (vignette)
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (vignette)
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (badge)
+-   [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (vignette)
 
 Quand vous appelez l’une de ces méthodes, l’URI est immédiatement interrogé et la vignette ou le badge est mis à jour à l’aide du contenu reçu. Après cette interrogation initiale, Windows continue de fournir des mises à jour en fonction de l’intervalle demandé. L’interrogation se poursuit jusqu’à ce que vous l’arrêtiez explicitement (avec [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)), jusqu’à ce que votre application soit désinstallée, ou, dans le cas d’une vignette secondaire, jusqu’à ce que la vignette soit supprimée. Dans le cas contraire, Windows continue à rechercher des mises à jour pour votre vignette ou votre badge, même si votre application n’est jamais relancée.
 
 ### <span id="The_recurrence_interval"></span><span id="the_recurrence_interval"></span><span id="THE_RECURRENCE_INTERVAL"></span>Intervalle de récurrence
 
-Vous devez définir l’intervalle de récurrence sous forme de paramètre des méthodes indiquées ci-dessus. Note que même si Windows effectue l’interrogation en respectant au mieux ce qui est indiqué, l’intervalle n’est pas précis. L’intervalle d’interrogation demandé peut être retardé de 15 minutes au maximum en fonction de Windows.
+Vous devez définir l’intervalle de récurrence sous forme de paramètre des méthodes indiquées ci-dessus. Note que même si Windows effectue l’interrogation en respectant au mieux ce qui est indiqué, l’intervalle n’est pas précis. L’intervalle d’interrogation demandé peut être retardé de 15minutes au maximum en fonction de Windows.
 
 ### <span id="The_start_time"></span><span id="the_start_time"></span><span id="THE_START_TIME"></span>Heure de début
 

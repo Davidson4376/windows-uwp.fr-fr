@@ -12,7 +12,7 @@ ms.openlocfilehash: e0f993d703ccd3a4509de4350f07d50564893763
 # Faciliter la promotion de votre application
 
 
-Faites en sorte que votre application soit remarquée ! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention.
+Faites en sorte que votre application soit remarquée! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention.
 
 ## Conditions requises par le Windows Store pour les applications proposées
 
@@ -31,7 +31,7 @@ Le Windows Store présente différentes applications regroupées par catégorie 
 
 -   **Activer des filtres pour les applications comportant du contenu classifié 16+ et 18+**
 
-    Dans la plupart des cas, le Windows Store ne propose des applications comportant du contenu classifié 16+ que si l'application utilise le filtrage de contenu. Ainsi, tout le contenu destiné à un public âgé de plus de 16 ans sera masqué aux utilisateurs jusqu'à ce qu'ils décident explicitement de l'afficher. Le filtre de contenu doit être activé par défaut, protégé par mot de passe et disponible dans l'application proprement dite (et non pas sur un site web distinct).
+    Dans la plupart des cas, le WindowsStore ne propose des applications comportant du contenu classifié16+ que si l'application utilise le filtrage de contenu. Ainsi, tout le contenu destiné à un public âgé de plus de 16ans sera masqué aux utilisateurs jusqu'à ce qu'ils décident explicitement de l'afficher. Le filtre de contenu doit être activé pardéfaut, protégé par mot de passe et disponible dans l'application proprement dite (et non pas sur un site web distinct).
 
 -   **Répertorier votre application dans tous les marchés pertinents et la localiser dans les langues appropriées**
 

@@ -96,8 +96,11 @@ Le tableau suivant comporte les valeurs [**IsChecked**](https://msdn.microsoft.c
 
 |                     |                    |                         |
 |---------------------|--------------------|-------------------------|
-| Valeur de **IsChecked** | État de **CheckBox** | Apparence de **CheckBox** |
-| **true**            | `Checked`          | Contient un « X ».        |
+| 
+            Valeur de **IsChecked** | 
+            État de **CheckBox** | 
+            Apparence de **CheckBox** |
+| **true**            | `Checked`          | Contient un «X».        |
 | **false**           | `Unchecked`        | Vide.                  |
 | **null**            | `Indeterminate`    | Contient un cercle.      |
 
@@ -201,7 +204,7 @@ Les rubriques qui documentent les styles et les modèles des contrôles XAML vou
 Pour certains des attributs des exemples XAML, vous avez peut-être remarqué des références de ressources qui utilisent l’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md). Il s’agit d’une technique qui permet à un modèle de contrôle unique d’utiliser des ressources dont les valeurs peuvent être différentes selon le thème actif. Cela est particulièrement important pour les pinceaux et les couleurs, car le but principal des thèmes est de permettre aux utilisateurs de choisir s’ils veulent appliquer un thème foncé, clair ou à contraste élevé à l’ensemble du système. Les applications qui se servent du système de ressources XAML peuvent utiliser un ensemble de ressources approprié à ce thème, afin que les choix de thème dans l’interface utilisateur d’une application reflètent le choix de thème à l’échelle du système de l’utilisateur.
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui écrivent des applications de plateformeWindows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

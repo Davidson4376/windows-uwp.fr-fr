@@ -11,7 +11,7 @@ ms.openlocfilehash: 1b49c3f06456eef2f3e56227ecb5af5fc991fb13
 # Déboguer une tâche en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -25,8 +25,8 @@ Cette rubrique part du principe que vous disposez d’une application existante 
 ## Vérifier que le projet de tâche en arrière-plan est configuré comme il se doit
 
 
--   En C# et C++, vérifiez que le projet principal fait référence au projet de tâche en arrière-plan. En l’absence de cette référence, la tâche en arrière-plan n’est pas incluse dans le package d’application.
--   En C# et C++, vérifiez que le **Output type** du projet de tâches en arrière-plan est « Composant Windows Runtime ».
+-   En C# etC++, vérifiez que le projet principal fait référence au projet de tâche en arrière-plan. En l’absence de cette référence, la tâche en arrière-plan n’est pas incluse dans le package d’application.
+-   En C# et C++, vérifiez que le **Output type** du projet de tâches en arrière-plan est «Composant Windows Runtime».
 -   La classe en arrière-plan doit être déclarée dans l’attribut de point d’entrée dans le manifeste du package.
 
 ## Déclencher des tâches en arrière-plan manuellement pour déboguer le code de la tâche en arrière-plan
@@ -57,13 +57,13 @@ L’activation de la tâche en arrière-plan dépend de la correspondance correc
 -   attribut de point d’entrée spécifié dans le manifeste du package ;
 -   point d’entrée spécifié par votre application lors de l’inscription de la tâche en arrière-plan.
 
-1.  Utilisez Visual Studio pour noter le point d’entrée de la tâche en arrière-plan :
+1.  Utilisez Visual Studio pour noter le point d’entrée de la tâche en arrière-plan:
 
-    -   En C# et C++, notez le nom et l’espace de noms de la classe de tâche en arrière-plan spécifiée dans le projet de tâche en arrière-plan.
+    -   En C# etC++, notez le nom et l’espace de noms de la classe de tâche en arrière-plan spécifiée dans le projet de tâche en arrière-plan.
 
-2.  Utilisez le concepteur du manifeste pour vérifier que la tâche en arrière-plan est correctement déclarée dans le manifeste du package :
+2.  Utilisez le concepteur du manifeste pour vérifier que la tâche en arrière-plan est correctement déclarée dans le manifeste du package:
 
-    -   En C# et C++, l’attribut de point d’entrée doit correspondre à l’espace de noms de la tâche en arrière-plan suivi du nom de la classe. Par exemple : RuntimeComponent1.MyBackgroundTask.
+    -   En C# et C++, l’attribut de point d’entrée doit correspondre à l’espace de noms de la tâche en arrière-plan suivi du nom de la classe. Par exemple: RuntimeComponent1.MyBackgroundTask.
     -   Tous les types de déclencheurs utilisés avec la tâche doivent également être indiqués.
     -   Le fichier exécutable NE doit PAS être spécifié sauf si vous utilisez l’objet [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) ou [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543).
 
@@ -86,8 +86,8 @@ L’activation de la tâche en arrière-plan dépend de la correspondance correc
 Si vous déployez une application utilisant des tâches en arrière-plan à l’aide de Visual Studio et si vous mettez ensuite à jour la version (majeure et/ou mineure) précisée dans le concepteur du manifeste, le redéploiement de l’application avec Visual Studio qui s’ensuivra peut entraîner un blocage des tâches en arrière-plan de l’application. Vous pouvez remédier à ce problème de la manière suivante.
 
 -   Utilisez Windows PowerShell pour déployer l’application mise à jour (plutôt que Visual Studio). Pour cela, exécutez le script généré avec le package.
--   Si vous avez déjà déployé l’application à l’aide de Visual Studio et si ses tâches en arrière-plan sont maintenant bloquées, redémarrez ou bien déconnectez-vous et reconnectez-vous afin de relancer l’exécution des tâches en arrière-plan de l’application.
--   Vous pouvez sélectionner l’option de débogage « Toujours réinstaller mon package » pour éviter cela dans des projets C#.
+-   Si vous avez déjà déployé l’application à l’aide de VisualStudio et si ses tâches en arrière-plan sont maintenant bloquées, redémarrez ou bien déconnectez-vous et reconnectez-vous afin de relancer l’exécution des tâches en arrière-plan de l’application.
+-   Vous pouvez sélectionner l’option de débogage «Toujours réinstaller mon package» pour éviter cela dans des projetsC#.
 -   Patientez jusqu’à ce que l’application soit prête pour un déploiement final avant d’incrémenter la version du package (ne la changez pas pendant le débogage).
 
 ## Remarques
@@ -97,7 +97,7 @@ Si vous déployez une application utilisant des tâches en arrière-plan à l’
 -   Sur Windows, si la tâche en arrière-plan requiert un accès à l’écran de verrouillage, veillez à placer l’application sur l’écran de verrouillage avant d’essayer de déboguer la tâche en arrière-plan. Pour plus d’informations sur la spécification des options de manifeste pour les applications compatibles avec l’écran de verrouillage, voir [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 -   Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan, voir [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan, voir [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du WindowsStore](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
 
 ## Rubriques connexes
 
@@ -114,6 +114,6 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

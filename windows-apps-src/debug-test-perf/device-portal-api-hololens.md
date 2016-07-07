@@ -155,7 +155,7 @@ POST | /api/holographic/management/settings/https
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -191,7 +191,7 @@ POST | /api/holographic/os/settings/ipd
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -220,7 +220,7 @@ ipd   | (**requis**) Nouvelle valeur IPD à stocker. Cette valeur doit être exp
 
 **Requête**
 
-Vous pouvez accepter les mises à niveau websocket et exécuter un client mirage qui envoie des mises à jour à 30 fps en utilisant le format de requête suivant.
+Vous pouvez accepter les mises à niveau websocket et exécuter un client mirage qui envoie des mises à jour à 30fps en utilisant le format de requête suivant.
  
 Méthode      | URI de requête
 :------     | :-----
@@ -229,7 +229,7 @@ GET/WebSocket | /api/holographic/perception/client
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -306,7 +306,7 @@ POST | /api/holographic/simulation/control/stream
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -439,7 +439,7 @@ POST | /api/holographic/simluation/control/mode
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -477,7 +477,7 @@ DELETE | /api/holographic/simulation/playback/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -545,7 +545,7 @@ GET | /api/holographic/simulation/playback/session/types
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -613,7 +613,7 @@ GET | /api/holographic/simulation/playback/session
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -649,7 +649,7 @@ POST | /api/holographic/simulation/playback/session/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -685,7 +685,7 @@ POST | /api/holographic/simulation/playback/session/pause
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -721,7 +721,7 @@ POST | /api/holographic/simulation/playback/session/play
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -757,7 +757,7 @@ POST | /api/holographic/simulation/playback/session/stop
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -793,7 +793,7 @@ DELETE | /api/holographic/simulation/playback/session/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -895,7 +895,7 @@ POST | /api/holographic/simulation/recording/start
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -972,7 +972,7 @@ DELETE | /api/holographic/mrc/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1008,7 +1008,7 @@ GET | /api/holographic/mrc/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1271,7 +1271,7 @@ GET | /api/holographic/stream/live.mp4
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1310,7 +1310,7 @@ GET | /api/holographic/stream/live_high.mp4
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1349,7 +1349,7 @@ GET | /api/holographic/stream/live_low.mp4
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1388,7 +1388,7 @@ GET | /api/holographic/stream/live_med.mp4
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---

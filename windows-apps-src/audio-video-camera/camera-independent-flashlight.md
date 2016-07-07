@@ -11,7 +11,7 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 # Lampe torche indépendante de l’appareil photo
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo. En plus d’acquérir une référence à la lampe et d’apprendre à ajuster ses paramètres, cet article vous montre comment libérer la ressource de la lampe lorsqu’elle n’est pas utilisée et comment détecter les changements de disponibilité de la lampe lorsqu’elle est utilisée par une autre application.
@@ -66,7 +66,7 @@ Dans le gestionnaire de l’événement, vérifiez la propriété [**LampAvailab
 
 ## Libérer correctement la ressource de lampe quand elle n’est pas en cours d’utilisation
 
-Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisez C#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
+Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisezC#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 

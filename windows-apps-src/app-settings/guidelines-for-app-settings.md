@@ -22,9 +22,9 @@ Les paramètres d’application sont les parties de votre application qui sont p
 
 ![exemple de volet paramètres](images/app-settings.png)
 
-## <span id="Should_I_include_a_settings_page_in_my_app_"></span><span id="should_i_include_a_settings_page_in_my_app_"></span><span id="SHOULD_I_INCLUDE_A_SETTINGS_PAGE_IN_MY_APP_"></span>Dois-je inclure une page de paramètres dans mon application ?
+## <span id="Should_I_include_a_settings_page_in_my_app_"></span><span id="should_i_include_a_settings_page_in_my_app_"></span><span id="SHOULD_I_INCLUDE_A_SETTINGS_PAGE_IN_MY_APP_"></span>Dois-je inclure une page de paramètres dans mon application?
 
-Voici quelques exemples d’options d’application qui figurent dans une page de paramètres d’application : 
+Voici quelques exemples d’options d’application qui figurent dans une page de paramètres d’application: 
 
 -   options de configuration qui affectent le comportement de l’application et qui sont rarement modifiées, comme le choix de l’unité Celsius ou Fahrenheit comme unité de température par défaut dans une application météo, le changement de paramètres de compte dans une application de messagerie, les paramètres des notifications ou les options d’accessibilité ;
 -   options qui dépendent des préférences de l’utilisateur, comme la musique, les effets sonores ou les thèmes de couleur ;
@@ -49,13 +49,13 @@ La manière dont les utilisateurs accèdent à votre page de paramètres d’app
 
 **Volet de navigation**
 
-Pour une disposition de volet de navigation, les paramètres d’application doivent correspondre au dernier élément de la liste de choix de navigation et être épinglés dans la partie inférieure :
+Pour une disposition de volet de navigation, les paramètres d’application doivent correspondre au dernier élément de la liste de choix de navigation et être épinglés dans la partie inférieure:
 
 ![point d’entrée des paramètres d’application pour un volet de navigation](images/appsettings-entrypoint-navpane.png)
 
 **Barre de l’application**
 
-Si vous utilisez une barre d’application ou une barre d’outils, qui font généralement partie intégrante d’une disposition de navigation de type hub ou onglets/sélecteurs de vue, placez le dernier élément de point d’entrée dans le menu volant « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement sur la barre d’application plutôt que dans le menu volant « Plus ».
+Si vous utilisez une barre d’application ou une barre d’outils, qui font généralement partie intégrante d’une disposition de navigation de type hub ou onglets/sélecteurs de vue, placez le dernier élément de point d’entrée dans le menu volant « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement sur la barre d’application plutôt que dans le menu volant «Plus».
 
 ![point d’entrée des paramètres d’application pour une barre d’application](images/appsettings-entrypoint-tabs.png)
 
@@ -76,22 +76,22 @@ Plutôt que d’enfouir profondément le point d’entrée des paramètres d’a
 
 Sur les appareils de bureau et les appareils mobiles, la page de paramètres d’application doit s’ouvrir en mode plein écran et remplir l’intégralité de la fenêtre. Si votre menu de paramètres d’application comporte jusqu’à quatre groupes de niveau supérieur, ces groupes doivent s’afficher en cascade en descendant d’une colonne.
 
-Appareil de bureau :
+Appareil de bureau:
 
 ![disposition d’une page de paramètres d’application sur un appareil de bureau](images/appsettings-layout-navpane-desktop.png)
 
-Appareil mobile :
+Appareil mobile:
 
 ![disposition d’une page de paramètres d’application sur un téléphone](images/appsettings-layout-navpane-mobile.png)
 
-## <span id="_About__section_and__Give_feedback__button"></span><span id="_about__section_and__give_feedback__button"></span><span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON"></span>Section « À propos de » et bouton « Envoyer des commentaires »
+## <span id="_About__section_and__Give_feedback__button"></span><span id="_about__section_and__give_feedback__button"></span><span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON"></span>Section «À propos de» et bouton «Envoyer des commentaires»
 
 
 Si votre application doit comporter une section « À propos de cette application », créez une page de paramètres d’application dédiée à cette section. Si vous voulez inclure un bouton « Envoyer des commentaires », placez-le vers le bas de la page « À propos de cette application ».
 
-Les sections « Conditions d’utilisation » et « Déclaration de confidentialité » doivent être accessibles par le biais de [boutons de lien hypertexte](../controls-and-patterns/hyperlinks.md) avec renvoi à la ligne automatique.
+Les sections «Conditions d’utilisation» et «Déclaration de confidentialité» doivent être accessibles par le biais de [boutons de lien hypertexte](../controls-and-patterns/hyperlinks.md) avec renvoi à la ligne automatique.
 
-![section « à propos de cette application » avec bouton « envoyer des commentaires »](images/appsettings-about.png)
+![section «à propos de cette application» avec bouton «envoyer des commentaires»](images/appsettings-about.png)
 
 ## <span id="dos_and_donts"></span><span id="DOS_AND_DONTS"></span>Recommandations
 
@@ -99,13 +99,13 @@ Les sections « Conditions d’utilisation » et « Déclaration de confident
 ## <span id="add_entry_points"></span><span id="ADD_ENTRY_POINTS"></span>Contenu d’une page de paramètres d’application
 
 
-Une fois que vous disposez d’une liste d’éléments à inclure dans votre page de paramètres d’application, tenez compte des recommandations suivantes :
+Une fois que vous disposez d’une liste d’éléments à inclure dans votre page de paramètres d’application, tenez compte des recommandations suivantes:
 
 -   Regroupez les paramètres similaires ou connexes sous une même étiquette de paramètres.
 -   Faites en sorte que le nombre total de paramètres ne dépasse pas quatre ou cinq.
 -   Affichez les mêmes paramètres, quel que soit le contexte de l’application. Si certains paramètres ne sont pas pertinents dans un contexte spécifique, désactivez-les dans le menu volant de paramètres d’application.
 -   Utilisez des étiquettes descriptives composées d’un seul mot pour les paramètres. Par exemple, nommez l’entrée « Comptes » plutôt que « Paramètres de compte » pour les paramètres liés aux comptes. Si vous ne voulez qu’une seule option pour vos paramètres et que ces derniers ne se prêtent pas à une étiquette descriptive, utilisez « Options » ou « Par défaut ».
--   Si un paramètre est directement lié au web plutôt qu’à un menu volant, informez-en l’utilisateur à l’aide d’un indice visuel, par exemple « Aide (en ligne) » ou « Forums web », doté d’un style de [lien hypertexte](../controls-and-patterns/hyperlinks.md). Envisagez de regrouper plusieurs liens vers le web dans un menu volant constitué d’un seul paramètre. Par exemple, un paramètre « À propos de » peut ouvrir un menu volant proposant des liens vers vos conditions d’utilisation, votre déclaration de confidentialité et le support technique de votre application.
+-   Si un paramètre est directement lié au web plutôt qu’à un menu volant, informez-en l’utilisateur à l’aide d’un indice visuel, par exemple «Aide (en ligne)» ou «Forums web», doté d’un style de [lien hypertexte](../controls-and-patterns/hyperlinks.md). Envisagez de regrouper plusieurs liens vers le web dans un menu volant constitué d’un seul paramètre. Par exemple, un paramètre « À propos de » peut ouvrir un menu volant proposant des liens vers vos conditions d’utilisation, votre déclaration de confidentialité et le support technique de votre application.
 -   Combinez les paramètres peu utilisés dans une même entrée afin que chaque paramètre plus courant puisse disposer de sa propre entrée. Placez le contenu ou les liens qui contiennent uniquement des informations dans un paramètre « À propos de ».
 -   Ne dupliquez pas la fonctionnalité du volet « Autorisations ». Windows fournit ce volet par défaut et ne vous permet pas de le modifier.
 
@@ -115,11 +115,11 @@ Une fois que vous disposez d’une liste d’éléments à inclure dans votre pa
 -   Présentez le contenu de haut en bas dans une seule colonne que l’utilisateur pourra faire défiler, si nécessaire. Limitez le défilement à un maximum de deux fois la hauteur de l’écran.
 -   Utilisez les contrôles suivants pour les paramètres d’application :
 
-    -   [Boutons bascule](../controls-and-patterns/toggles.md) : pour permettre aux utilisateurs de définir des valeurs Activé ou Désactivé.
-    -   [Cases d’option](../controls-and-patterns/radio-button.md) : pour permettre à l’utilisateur de choisir un élément dans un ensemble de 5 options au maximum ayant un lien entre elles, mais mutuellement exclusives.
-    -   [Zone de texte](../controls-and-patterns/text-block.md) : pour permettre aux utilisateurs d’entrer du texte. Utilisez le type de zone de texte qui correspond au type de texte que vous obtenez de l’utilisateur, tel qu’un message électronique ou un mot de passe.
-    -   [Liens hypertexte](../controls-and-patterns/hyperlinks.md) : pour diriger l’utilisateur vers une autre page de l’application ou un site Web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
-    -   [Boutons](../controls-and-patterns/buttons.md) : pour permettre aux utilisateurs de lancer une action immédiate sans quitter le menu volant des paramètres actuel.
+    -   [Boutons bascule](../controls-and-patterns/toggles.md): pour permettre aux utilisateurs de définir des valeurs Activé ou Désactivé.
+    -   [Cases d’option](../controls-and-patterns/radio-button.md): pour permettre à l’utilisateur de choisir un élément dans un ensemble de 5 options au maximum ayant un lien entre elles, mais mutuellement exclusives.
+    -   [Zone de texte](../controls-and-patterns/text-block.md): pour permettre aux utilisateurs d’entrer du texte. Utilisez le type de zone de texte qui correspond au type de texte que vous obtenez de l’utilisateur, tel qu’un message électronique ou un mot de passe.
+    -   [Liens hypertexte](../controls-and-patterns/hyperlinks.md): pour diriger l’utilisateur vers une autre page de l’application ou un site Web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
+    -   [Boutons](../controls-and-patterns/buttons.md): pour permettre aux utilisateurs de lancer une action immédiate sans quitter le menu volant des paramètres actuel.
 -   Ajoutez un message descriptif si l’un des contrôles est désactivé. Placez ce message au-dessus du contrôle désactivé.
 -   Une fois l’animation du menu volant Paramètres et de l’en-tête terminée, animez le contenu et les contrôles dans un bloc unique. Animez le contenu à l’aide des animations [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) ou [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) avec un décalage gauche de 100 px.
 -   Utilisez des en-têtes de section, des paragraphes et des étiquettes pour faciliter l’organisation du contenu et apporter plus de clarté, si nécessaire.
@@ -127,7 +127,7 @@ Une fois que vous disposez d’une liste d’éléments à inclure dans votre pa
 -   Si le chargement des contrôles ou du contenu Web prend du temps, utilisez le contrôle de progression indéterminée pour indiquer aux utilisateurs que les informations sont en cours de chargement. Pour plus d’informations, consultez [Recommandations en matière de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/hh465469).
 -   N’utilisez pas de boutons pour la navigation ou pour valider des modifications. Utilisez des liens hypertexte pour accéder à d’autres pages et, au lieu d’utiliser un bouton pour valider les modifications, enregistrez automatiquement les modifications apportées aux paramètres d’application quand un utilisateur ferme le menu volant des paramètres.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows 8.1, téléchargez le [document PDF de recommandations pour Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows8.1, téléchargez le [document PDF de recommandations pour Windows8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
 
 ## <span id="related_topics"></span>Rubriques connexes
 
@@ -135,8 +135,7 @@ Une fois que vous disposez d’une liste d’éléments à inclure dans votre pa
 * [Recommandations en matière de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/hh465469) 
            **Pour les développeurs (XAML)**
 * [Stocker et récupérer des données d’application](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [
-            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) �
+* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) �
 
 �
 

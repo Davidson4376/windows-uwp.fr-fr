@@ -10,11 +10,11 @@ ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
 
 # Gestion des droits numériques en fonction du matériel
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
 
-> [!NOTE] La gestion des droits numériques en fonction du matériel par PlayReady est compatible avec une multitude d’appareils, y compris les appareils Windows et tiers tels que les téléviseurs, les tablettes et les téléphones. Pour qu’un appareil Windows prenne en charge la gestion des droits numériques en fonction du matériel par PlayReady, il doit exécuter Windows 10 et présente une configuration matérielle compatible.
+> [!NOTE] La gestion des droits numériques en fonction du matériel par PlayReady est compatible avec une multitude d’appareils, y compris les appareilsWindows et tiers tels que les téléviseurs, les tablettes et les téléphones. Pour qu’un appareil Windows prenne en charge la gestion des droits numériques en fonction du matériel par PlayReady, il doit exécuter Windows10 et présente une configuration matérielle compatible.
 
 Les fournisseurs de contenu se tournent de plus en plus vers des protections matérielles pour autoriser la lecture de contenu à valeur élevée complet dans les applications. La prise en charge robuste d’une implémentation matérielle de la base de chiffrement a été ajoutée à PlayReady pour répondre à ce besoin. Cette prise en charge permet la lecture sécurisée de contenu en haute définition (1080p) et ultra haute définition (UHD) sur plusieurs plateformes d’appareils. Le matériel de clé (y compris les clés privées, les clés de contenu et tout autre matériel de clé utilisé pour dériver ou déverrouiller ces clés) et les échantillons vidéo compressés et non compressés déchiffrés sont protégés en tirant parti de la sécurité matérielle.
 
@@ -28,15 +28,15 @@ Les détails de l’implémentation TEE Windows n’entrent pas dans le cadre de
 
 ## Considérations pour l’utilisation de la gestion des droits numériques en fonction du matériel
 
-Cette rubrique fournit une courte liste des éléments à prendre en compte lors du développement d’applications conçues pour utiliser la gestion des droits numériques en fonction du matériel. Comme expliqué dans [Gestion des droits numériques par PlayReady](playready-client-sdk.md#output-protection), avec la gestion des droits numériques en fonction du matériel par PlayReady pour Windows 10, toutes les protections de sortie sont appliquées à partir de l’implémentation TEE Windows, ce qui a des répercussions sur les comportements de protection de sortie :
+Cette rubrique fournit une courte liste des éléments à prendre en compte lors du développement d’applications conçues pour utiliser la gestion des droits numériques en fonction du matériel. Comme expliqué dans [Gestion des droits numériques par PlayReady](playready-client-sdk.md#output-protection), avec la gestion des droits numériques en fonction du matériel par PlayReady pour Windows10, toutes les protections de sortie sont appliquées à partir de l’implémentationTEEWindows, ce qui a des répercussions sur les comportements de protection de sortie:
 
--   **Prise en charge du niveau de protection de sortie (norme OPL) 270 pour la vidéo numérique non compressée :** La gestion des droits numériques en fonction du matériel par PlayReady pour Windows 10 n’accepte pas la résolution inférieure et s’assure que la protection HDCP est enclenchée. Microsoft recommande que le contenu haute définition pour la gestion des droits numériques en fonction du matériel présente une norme OPL supérieure à 270 (bien que cela ne soit pas obligatoire). En outre, Microsoft vous recommande de définir une restriction du type de protection HDCP dans la licence (HDCP version 2.2 sur Windows 10).
--   À la différence de la gestion des droits numériques en fonction du logiciel, les protections de sortie sont appliquées sur tous les moniteurs en fonction du moniteur le moins puissant. Par exemple, si l’utilisateur a deux moniteurs connectés dont un seul prend en charge la protection HDCP, la lecture échouera si la licence requiert la protection HDCP, même si le contenu est uniquement affiché sur l’écran qui prend en charge la protection HDCP. Avec la gestion des droits numériques en fonction du logiciel, le contenu est à condition qu’il soit affiché uniquement sur le moniteur qui prend en charge la protection HDCP.
--   L’utilisation par le client et la sécurisation de la gestion des droits numériques en fonction du matériel ne sont garanties que si les conditions suivantes soient remplies par les clés et les licences de contenu :
-    -   La licence utilisée pour la clé de contenu vidéo doit présenter un niveau de sécurité minimal de 3 000.
-    -   L’audio doit être chiffré selon une clé de contenu différente de celle de la vidéo, et la licence utilisée pour l’audio doit afficher un niveau de sécurité minimal de 2 000. Par ailleurs, l’audio peut rester en clair.
+-   **Prise en charge du niveau de protection de sortie (normeOPL) 270 pour la vidéo numérique non compressée:** La gestion des droits numériques en fonction du matériel par PlayReady pour Windows10 n’accepte pas la résolution inférieure et s’assure que la protectionHDCP est enclenchée. Microsoft recommande que le contenu haute définition pour la gestion des droits numériques en fonction du matériel présente une norme OPL supérieure à270 (bien que cela ne soit pas obligatoire). En outre, Microsoft vous recommande de définir une restriction du type de protectionHDCP dans la licence (HDCP version2.2 sur Windows10).
+-   À la différence de la gestion des droits numériques en fonction du logiciel, les protections de sortie sont appliquées sur tous les moniteurs en fonction du moniteur le moins puissant. Par exemple, si l’utilisateur a deux moniteurs connectés dont un seul prend en charge la protection HDCP, la lecture échouera si la licence requiert la protection HDCP, même si le contenu est uniquement affiché sur l’écran qui prend en charge la protection HDCP. Avec la gestion des droits numériques en fonction du logiciel, le contenu est à condition qu’il soit affiché uniquement sur le moniteur qui prend en charge la protectionHDCP.
+-   L’utilisation par le client et la sécurisation de la gestion des droits numériques en fonction du matériel ne sont garanties que si les conditions suivantes soient remplies par les clés et les licences de contenu:
+    -   La licence utilisée pour la clé de contenu vidéo doit présenter un niveau de sécurité minimal de 3000.
+    -   L’audio doit être chiffré selon une clé de contenu différente de celle de la vidéo, et la licence utilisée pour l’audio doit afficher un niveau de sécurité minimal de 2000. Par ailleurs, l’audio peut rester en clair.
     
-En outre, vous devez prendre les éléments suivants en considération lorsque vous utilisez la gestion des droits numériques en fonction du matériel :
+En outre, vous devez prendre les éléments suivants en considération lorsque vous utilisez la gestion des droits numériques en fonction du matériel:
 
 -   Le processus de média protégé (PMP) n’est pas pris en charge.
 -   Le format Windows Media Video (également connu sous le nom de VC-1) n’est pas pris en charge (voir [Contourner la gestion des droits numériques en fonction du matériel](#override-hardware-drm)).
@@ -50,7 +50,7 @@ Pour gérer les licences persistantes sur des ordinateurs dotés de plusieurs GP
 4.  Le client installe ensuite une nouvelle carte graphique.
 5.  Toutes les licences du magasin de données hachées (HDS) sont liées à la carte vidéo intégrée, mais le client souhaite maintenant lire du contenu protégé à l’aide de la carte graphique qu’il vient d’installer.
 
-Pour empêcher l’échec de la lecture dû au fait que les licences ne peuvent pas être déchiffrées par le matériel, PlayReady utilise un magasin HDS distinct pour chaque carte graphique rencontrée. PlayReady procédera ainsi à une tentative d’acquisition de licence pour un élément de contenu pour lequel PlayReady aurait normalement déjà une licence (autrement dit, en cas de gestion des droits numériques en fonction du logiciel ou dans toute situation n’impliquant pas de changement de matériel, PlayReady n’aurait pas besoin d’acquérir à nouveau une licence). Par conséquent, si l’application acquiert une licence persistante lors de l’utilisation de la gestion des droits numériques en fonction du matériel, votre application doit pouvoir gérer le cas où cette licence est effectivement « perdue » si l’utilisateur final installe (ou désinstalle) une carte graphique. Comme cela n’est pas un scénario courant, vous pouvez décider de gérer les appels au support lorsque le contenu n’est plus lu après un changement de matériel plutôt que de déterminer comment traiter un changement de matériel dans le code client/serveur.
+Pour empêcher l’échec de la lecture dû au fait que les licences ne peuvent pas être déchiffrées par le matériel, PlayReady utilise un magasinHDS distinct pour chaque carte graphique rencontrée. PlayReady procédera ainsi à une tentative d’acquisition de licence pour un élément de contenu pour lequel PlayReady aurait normalement déjà une licence (autrement dit, en cas de gestion des droits numériques en fonction du logiciel ou dans toute situation n’impliquant pas de changement de matériel, PlayReady n’aurait pas besoin d’acquérir à nouveau une licence). Par conséquent, si l’application acquiert une licence persistante lors de l’utilisation de la gestion des droits numériques en fonction du matériel, votre application doit pouvoir gérer le cas où cette licence est effectivement « perdue » si l’utilisateur final installe (ou désinstalle) une carte graphique. Comme cela n’est pas un scénario courant, vous pouvez décider de gérer les appels au support lorsque le contenu n’est plus lu après un changement de matériel plutôt que de déterminer comment traiter un changement de matériel dans le code client/serveur.
 
 ## Contourner la gestion des droits numériques en fonction du matériel
 
@@ -68,7 +68,7 @@ localSettings.values["SoftwareOverride"] = 1;
 
 Pour revenir à la gestion des droits numériques en fonction du matériel, définissez la valeur **SoftwareOverride** sur **0**.
 
-Pour chaque lecture multimédia, vous devez définir **MediaProtectionManager** sur :
+Pour chaque lecture multimédia, vous devez définir **MediaProtectionManager** sur:
 
 ```js
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;

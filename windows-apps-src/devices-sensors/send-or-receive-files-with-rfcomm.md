@@ -9,7 +9,7 @@ ms.openlocfilehash: 61e5844f18d09aa170498d261ca1a6fd60ef170c
 ---
 # RFCOMM Bluetooth
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -26,10 +26,10 @@ Les API RFCOMM utilisent le concept d’identificateurs de service. Bien qu’un
 
 L’application peut effectuer des opérations d’appareil en plusieurs étapes dans le cadre d’une tâche en arrière-plan, si bien qu’elle peut s’exécuter jusqu’au bout, même si elle est déplacée vers l’arrière-plan et suspendue. Cela permet d’effectuer des opérations de maintenance fiables pour les appareils telles que la modification de paramètres persistants ou de microprogrammes et la synchronisation du contenu, sans obliger l’utilisateur à observer une barre de progression pour patienter. Utilisez [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) pour la maintenance de l’appareil et [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) pour la synchronisation du contenu. Ces tâches en arrière-plan limitent la durée pendant laquelle l’application peut s’exécuter en arrière-plan et ne sont pas conçues pour autoriser une opération ou synchronisation illimitée.
 
-Pour un exemple de code complet détaillant l’opération RFCOMM, voir l’[**exemple de conversation RFCOMM Bluetooth**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) sur Github.  
+Pour un exemple de code complet détaillant l’opérationRFCOMM, voir l’[**exemple de conversation RFCOMM Bluetooth**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) sur Github.  
 ## Envoyer un fichier en tant que client
 
-Lors de l’envoi d’un fichier, le scénario d’application de base consiste à se connecter à un périphérique couplé en fonction d’un service souhaité. Les étapes à accomplir sont les suivantes :
+Lors de l’envoi d’un fichier, le scénario d’application de base consiste à se connecter à un périphérique couplé en fonction d’un service souhaité. Les étapes à accomplir sont les suivantes:
 
 -   Utilisez les fonctions **RfcommDeviceService.GetDeviceSelector\*** pour générer une requête AQS permettant d’énumérer les instances d’appareil couplé du service souhaité.
 -   Sélectionnez un appareil énuméré, créez un [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463), puis lisez les attributs SDP selon les besoins (en utilisant [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) pour analyser les données de l’attribut).
@@ -367,6 +367,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

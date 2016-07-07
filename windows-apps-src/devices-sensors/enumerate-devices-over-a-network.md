@@ -10,7 +10,7 @@ ms.openlocfilehash: 9d2d58f2423688f895da1de56eef6448bb42692d
 ---
 # Énumérer les appareils sur un réseau
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **

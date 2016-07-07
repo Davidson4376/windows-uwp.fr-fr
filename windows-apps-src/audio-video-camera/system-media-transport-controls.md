@@ -11,7 +11,7 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 # Contrôles de transport de média système
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 La classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) permet à votre application d’utiliser les contrôles de transport de média système intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application.
@@ -83,8 +83,7 @@ Les contrôles de transport système affichent des informations sur la chronolog
 
 -   Vous devez indiquer une valeur pour les propriétés [**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751), [**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747) et [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755) pour que les contrôles système affichent une chronologie relative à l’élément en cours de lecture.
 
--   [
-            **MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) et [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) vous permettent de spécifier la plage de la chronologie dans laquelle l’utilisateur peut effectuer une recherche. Le scénario classique dans ce cas consiste à permettre aux fournisseurs de contenus d’inclure des pauses publicitaires dans leur contenu multimédia.
+-   [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) et [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) vous permettent de spécifier la plage de la chronologie dans laquelle l’utilisateur peut effectuer une recherche. Le scénario classique dans ce cas consiste à permettre aux fournisseurs de contenus d’inclure des pauses publicitaires dans leur contenu multimédia.
 
     Vous devez définir [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) et [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) afin de déclencher l’événement [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755).
 

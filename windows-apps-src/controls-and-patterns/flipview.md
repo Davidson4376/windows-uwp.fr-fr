@@ -5,8 +5,8 @@ title: "Recommandations en matière de contrôles de vue symétrique"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
 
 ---
 # Vue symétrique
@@ -14,13 +14,13 @@ ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
 La vue symétrique permet d’afficher les images ou d’autres éléments d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, élément après élément. Pour les appareils tactiles, un mouvement de balayage sur un élément permet de parcourir la collection. Pour une souris, les boutons de navigation apparaissent au pointage de la souris. Pour un clavier, les touches de direction permettent de parcourir la collection.
 
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+
 
 -   [**Classe FlipView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
 -   [**Propriété ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
 -   [**Propriété ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
 La vue symétrique est appropriée pour l’examen des images des petites et moyennes collections (jusqu’à 25 éléments environ). Les exemples de telles collections comprennent les éléments d’une page de détails de produit ou les photos d’un album. Même si nous ne recommandons pas la vue symétrique pour la plupart des grandes collections, ce contrôle est souvent utilisé pour afficher les images individuelles d’un album photo.
 
@@ -185,13 +185,13 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 ## Pratiques conseillées et déconseillées
 
--   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25 éléments environ.
+-   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25éléments environ.
 -   Évitez d’utiliser un contrôle de vue symétrique pour les collections de grande taille, car le passage d’un élément à l’autre peut être fastidieux. Les albums photo, qui possèdent souvent des centaines, voire des milliers d’images, constituent une exception. Ils passent presque toujours en vue symétrique dès lors qu’une photo a été sélectionnée dans l’affichage Grille. Pour les autres collections de grande taille, pensez à [l’affichage Liste ou Grille](lists.md).
 -   Pour les indicateurs de contexte :
     -   L’ordre des points (ou n’importe quel marqueur visuel que vous choisissez) fonctionne mieux lorsqu’il est centré et placé sous une galerie avec un mouvement panoramique horizontal.
     -   Si vous souhaitez ajouter un indicateur de contexte dans une galerie avec un mouvement panoramique vertical, nous vous conseillons de le positionner au centre et à droite des images.
     -   Le point en surbrillance indique l’élément actuel. Généralement, le point en surbrillance est blanc et les autres points sont gris.
-    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10 points est généralement le nombre maximal à afficher.
+    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10points est généralement le nombre maximal à afficher.
 
 ## Liste de contrôle de globalisation et de localisation
 
@@ -205,12 +205,11 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 ## Articles connexes
 
-- [Recommandations en matière de listes](https://msdn.microsoft.com/library/windows/apps/mt186889)
-- [**Classe FlipView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
-- [**Classe CarouselPanel (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
+- [Recommandations en matière de listes](lists.md)
+- [**Classe FlipView**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

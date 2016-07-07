@@ -10,7 +10,7 @@ ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
 
 # Recevoir des données
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager.
@@ -35,11 +35,11 @@ Pour définir les types de fichier :
 2.  Dans la section **Types de fichiers pris en charge** de la page **Déclarations**, cliquez sur **Ajouter nouveau**.
 3.  Tapez l’extension de nom de fichier associée au type de fichiers à prendre en charge. Par exemple, .docx. Vous devez inclure le point. Pour prendre en charge tous les types de fichiers, activez la case à cocher **Prend en charge tout type de fichier**.
 
-Pour définir les formats de données :
+Pour définir les formats de données:
 
 1.  Ouvrez le fichier manifeste.
 2.  Ouvrez la section **Formats de données** de la page **Déclarations** et cliquez sur **Ajouter nouveau**.
-3.  Tapez le nom du format de données à prendre en charge. Par exemple, « Texte ».
+3.  Tapez le nom du format de données à prendre en charge. Par exemple, «Texte».
 
 ## Gestion de l’activation du partage
 
@@ -101,7 +101,7 @@ Généralement, vous appelez ces méthodes selon l’ordre indiqué, une seule f
 
 Lorsqu’un utilisateur sélectionne votre application pour recevoir du contenu, nous vous recommandons de créer un [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink). Un objet **QuickLink** est une sorte de raccourci qui permet à l’utilisateur de partager plus facilement des informations avec votre application. Par exemple, vous pouvez créer un **QuickLink** qui ouvre un nouveau message électronique dans lequel l’adresse de messagerie du destinataire est déjà indiquée.
 
-Un **QuickLink** doit comporter un titre, une icône et un ID. Le titre (par exemple, « Message pour maman ») et l’icône s’affichent lorsque l’utilisateur appuie sur l’icône Partager. L’ID est utilisé par l’application pour accéder à des informations personnalisées, telles qu’une adresse de messagerie ou des informations d’identification. Quand votre application crée un **QuickLink**, elle renvoie ce **QuickLink** au système en appelant [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
+Un **QuickLink** doit comporter un titre, une icône et un ID. Le titre (par exemple, «Message pour maman») et l’icône s’affichent lorsque l’utilisateur appuie sur l’icône Partager. L’ID est utilisé par l’application pour accéder à des informations personnalisées, telles qu’une adresse de messagerie ou des informations d’identification. Quand votre application crée un **QuickLink**, elle renvoie ce **QuickLink** au système en appelant [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
 
 Un **QuickLink** ne stocke pas de données. Cet objet contient à la place un identificateur qui, lorsqu’il est sélectionné, est envoyé à votre application. Votre application stocke l’ID de **QuickLink** ainsi que les données utilisateur correspondantes. Quand l’utilisateur appuie sur l’objet **QuickLink**, vous pouvez obtenir l’ID de ce dernier à l’aide de la propriété [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId).
 
@@ -140,6 +140,6 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

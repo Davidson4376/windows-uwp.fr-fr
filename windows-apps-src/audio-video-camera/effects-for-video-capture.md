@@ -11,7 +11,7 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 # Effets de capture vidéo
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo.
 
@@ -64,8 +64,7 @@ Définissez la propriété [**Video**](https://msdn.microsoft.com/library/window
 
 ### Gérer la désactivation de l’effet de stabilisation vidéo
 
-Le système peut désactiver automatiquement l’effet de stabilisation vidéo si le débit de pixels est trop élevé ou s’il détecte que l’effet s’exécute lentement. Dans ce cas, l’événement EnabledChanged est déclenché. L’instance **VideoStabilizationEffect** du paramètre *sender* indique le nouvel état de l’effet, activé ou désactivé. [
-            **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979)a une valeur [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) indiquant pourquoi l’effet a été activé ou désactivé. Cet événement est également déclenché si vous activez ou désactivez l’effet par programme, auquel cas la raison sera **Programmatic**.
+Le système peut désactiver automatiquement l’effet de stabilisation vidéo si le débit de pixels est trop élevé ou s’il détecte que l’effet s’exécute lentement. Dans ce cas, l’événement EnabledChanged est déclenché. L’instance **VideoStabilizationEffect** du paramètre *sender* indique le nouvel état de l’effet, activé ou désactivé. [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979)a une valeur [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) indiquant pourquoi l’effet a été activé ou désactivé. Cet événement est également déclenché si vous activez ou désactivez l’effet par programme, auquel cas la raison sera **Programmatic**.
 
 En règle générale, cet événement vous permet d’ajuster l’interface utilisateur de votre application pour indiquer l’état actuel de stabilisation vidéo.
 

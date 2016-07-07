@@ -30,7 +30,7 @@ Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mo
 
 Tailles d’écran
 -   De 4 à 5 pouces pour les téléphones
--   De 5,5 à 7 pouces pour les phablettes
+-   De 5,5 à 7pouces pour les phablettes
 
 ![windows Phone](images/device-primer/1894834-hig-device-primer-03.png)
 
@@ -102,7 +102,7 @@ Fonctionnalités de l’appareil type
 Les PC et portables Windows comprennent une large gamme d’appareils et de tailles d’écran. En règle générale, les PC et les portables peuvent afficher davantage d’informations que les téléphones ou les tablettes.
 
 Tailles d’écran
--   13 pouces et plus
+-   13pouces et plus
 
 ![pc](images/device-primer/1894834-hig-device-primer-06-349.png)
 
@@ -112,7 +112,7 @@ Utilisation type
 Considérations relatives à l’interface utilisateur
 -   Les applications peuvent inclure un affichage fenêtré, dont la taille est déterminée par l’utilisateur. Selon la taille des fenêtres, une à trois images peuvent s’afficher. Sur les moniteurs de grande taille, l’application peut inclure plus de trois images.
 
--   Lorsqu’il utilise une application sur un ordinateur de bureau ou portable, l’utilisateur contrôle les fichiers de l’application. En tant que concepteur d’applications, veillez à fournir les mécanismes permettant de gérer le contenu de votre application. Vous pouvez envisager d’inclure des fonctions et commandes comme « Enregistrer sous », « Fichiers récents », etc.
+-   Lorsqu’il utilise une application sur un ordinateur de bureau ou portable, l’utilisateur contrôle les fichiers de l’application. En tant que concepteur d’applications, veillez à fournir les mécanismes permettant de gérer le contenu de votre application. Vous pouvez envisager d’inclure des fonctions et commandes comme «Enregistrer sous», «Fichiers récents», etc.
 
 -   L’arrière-plan système est facultatif. Lorsqu’un développeur d’application choisit de l’afficher, celui-ci apparaît dans la barre de titre de l’application.
 
@@ -128,13 +128,13 @@ Fonctionnalités de l’appareil type
 
  
 
-## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Appareils Surface Hub
+## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Appareils SurfaceHub
 
 
-L’appareil de collaboration d’équipe à écran large Microsoft Surface Hub est conçu pour être utilisé simultanément par plusieurs personnes.
+L’appareil de collaboration d’équipe à écran large Microsoft SurfaceHub est conçu pour être utilisé simultanément par plusieurs personnes.
 
 Tailles d’écran
--   55 et 84 pouces
+-   55 et 84pouces
 
 ![surface hub](images/device-primer/1894834-hig-device-primer-07-349.png)
 
@@ -144,7 +144,7 @@ Utilisation type
 -   Les appareils Surface Hub sont généralement fixes et sont rarement déplacés.
 
 Considérations relatives à l’interface utilisateur
--   Les applications installées sur Surface Hub peuvent présenter quatre états : complet (affichage plein écran standard), arrière-plan (masqué lorsque l’application est en cours d’exécution, disponible dans le sélecteur de tâches) remplissage (affichage fixe occupant tout l’espace disponible à l’écran) et ancré (affichage variable occupant le côté gauche ou droit de l’écran).
+-   Les applications installées sur Surface Hub peuvent présenter quatre états: complet (affichage plein écran standard), arrière-plan (masqué lorsque l’application est en cours d’exécution, disponible dans le sélecteur de tâches) remplissage (affichage fixe occupant tout l’espace disponible à l’écran) et ancré (affichage variable occupant le côté gauche ou droit de l’écran).
 -   En mode ancré ou en mode remplissage, le système affiche la barre latérale Skype et réduit l’application horizontalement.
 -   L’arrière-plan système est facultatif. Lorsqu’un développeur d’application choisit de l’afficher, celui-ci apparaît dans la barre de titre de l’application.
 

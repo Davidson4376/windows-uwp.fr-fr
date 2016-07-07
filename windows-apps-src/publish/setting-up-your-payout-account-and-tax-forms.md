@@ -65,11 +65,11 @@ Selon votre pays ou votre région, vous avez la possibilité de créer un compte
 
 Questions courantes concernant l'utilisation de PayPal comme mode de paiement :
 
--   **Comment configurer les paramètres PayPal pour recevoir des paiements ?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](http://go.microsoft.com/fwlink/p/?linkid=513139).
--   **Mon pays ou ma région sont-ils pris en charge ?** Pour savoir si PayPal est un mode de paiement pris en charge, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
--   **Existe-t-il un montant maximal pour les paiements reçus sur mon compte PayPal ?** Oui. PayPal limite le montant que les utilisateurs peuvent percevoir au cours d’une même transaction. Ces seuils varient en fonction de la devise utilisée. Pour connaître les seuils de chaque devise, consultez la [page des seuils de transaction PayPal](http://go.microsoft.com/fwlink/p/?linkid=513108). Si vous pensez recevoir un paiement dépassant votre seuil de transaction PayPal, modifiez votre mode de paiement et optez pour le paiement par compte bancaire.
--   **Mon compte PayPal doit-il être enregistré dans le même pays ou la même région que mon compte du Centre de développement ?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
--   **Dois-je accepter les paiements PayPal manuellement ?** Non. Les comptes PayPal demandent par défaut de valider manuellement chaque paiement, ce qui signifie que si vous n’acceptez pas le paiement dans un délai de 30 jours, celui-ci est rejeté. Vous pouvez modifier ce paramètre en désactivant l'option « Me demander » sur la page des paramètres supplémentaires de votre compte PayPal.
+-   **Comment configurer les paramètres PayPal pour recevoir des paiements?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](http://go.microsoft.com/fwlink/p/?linkid=513139).
+-   **Mon pays ou ma région sont-ils pris en charge?** Pour savoir si PayPal est un mode de paiement pris en charge, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
+-   **Existe-t-il un montant maximal pour les paiements reçus sur mon compte PayPal?** Oui. PayPal limite le montant que les utilisateurs peuvent percevoir au cours d’une même transaction. Ces seuils varient en fonction de la devise utilisée. Pour connaître les seuils de chaque devise, consultez la [page des seuils de transaction PayPal](http://go.microsoft.com/fwlink/p/?linkid=513108). Si vous pensez recevoir un paiement dépassant votre seuil de transaction PayPal, modifiez votre mode de paiement et optez pour le paiement par compte bancaire.
+-   **Mon compte PayPal doit-il être enregistré dans le même pays ou la même région que mon compte du Centre de développement?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
+-   **Dois-je accepter les paiements PayPal manuellement?** Non. Les comptes PayPal demandent par défaut de valider manuellement chaque paiement, ce qui signifie que si vous n’acceptez pas le paiement dans un délai de 30 jours, celui-ci est rejeté. Vous pouvez modifier ce paramètre en désactivant l'option « Me demander » sur la page des paramètres supplémentaires de votre compte PayPal.
 
 ### Exigences spécifiques pour certains pays/régions
 
@@ -159,6 +159,6 @@ Si vous résidez en dehors des États-Unis, vous pouvez tirer parti d’avantage
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

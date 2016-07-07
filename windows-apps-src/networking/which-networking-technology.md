@@ -12,7 +12,7 @@ ms.openlocfilehash: d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd65
 
 # Quelle technologie de réseau ?
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
 

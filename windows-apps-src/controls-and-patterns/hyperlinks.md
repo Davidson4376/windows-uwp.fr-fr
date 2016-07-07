@@ -5,8 +5,8 @@ title: Liens hypertexte
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ---
 # Liens hypertexte
@@ -15,16 +15,16 @@ Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’app
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+
 
 -   [**Élément de texte Hyperlink|**](https://msdn.microsoft.com/library/windows/apps/dn279356)
 -   [**Contrôle HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
 Utilisez un lien hypertexte lorsque vous avez besoin de texte qui réponde lorsqu’il est sélectionné et dirige l’utilisateur vers plus d’informations.
 
-Choisissez le type de lien hypertexte approprié en fonction de vos besoins :
+Choisissez le type de lien hypertexte approprié en fonction de vos besoins:
 
 -   Utilisez un élément de texte **Hyperlink** inclus dans un contrôle de texte. Un élément Hyperlink comprend d’autres éléments de texte et vous pouvez l’utiliser dans toute collection InlineCollection. Utilisez un lien hypertexte de type texte si vous souhaitez un saut de ligne automatique et si vous n’avez pas nécessairement besoin d’une cible large. Le texte du lien hypertexte peut être petit et difficile à cibler, notamment pour les fonctions tactiles.
 -   Utilisez un contrôle **HyperlinkButton** pour les liens hypertexte autonomes. Un contrôle HyperlinkButton est un contrôle Button spécialisé que vous pouvez utiliser à tout endroit où vous utiliseriez un bouton.
@@ -49,7 +49,7 @@ Cet exemple montre comment utiliser un élément de texte Hyperlink à l’inté
 </StackPanel>
 
 ```
-Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure :
+Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure:
 
 ![Exemple de lien hypertexte en tant qu’élément de texte](images/controls_hyperlink-element.png) 
 
@@ -72,7 +72,7 @@ Voici comment utiliser un HyperlinkButton, avec un texte et une image.
 </StackPanel>
 
 ```
-Les boutons de lien hypertexte incluant du texte s’affichent en tant que texte marqué. L’image du logo Contoso est également un lien hypertexte sur lequel vous pouvez cliquer :
+Les boutons de lien hypertexte incluant du texte s’affichent en tant que texte marqué. L’image du logo Contoso est également un lien hypertexte sur lequel vous pouvez cliquer:
 
 ![Exemple de lien hypertexte en tant que contrôle de bouton](images/controls_hyperlink-button-image.png)
 
@@ -110,7 +110,7 @@ Vous pouvez définir la propriété [UnderlineStyle](https://msdn.microsoft.com/
 
 Par défaut, l’élément HyperlinkButton s’affiche sous forme de texte souligné lorsque vous définissez une chaîne comme valeur pour la propriété [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx).
 
-Le texte n’apparaît pas souligné dans les cas suivants :
+Le texte n’apparaît pas souligné dans les cas suivants:
 - Si vous définissez un [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) comme valeur pour la propriété Content et définissez la propriété [Text](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx) sur TextBlock.
 - Si vous redéfinissez le modèle de l’élément HyperlinkButton et modifiez le nom de la partie du modèle [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx).
 
@@ -137,7 +137,7 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 ## Recommandations
 
 -   Utilisez uniquement les liens hypertexte pour la navigation. Ne les utilisez pas pour d’autres actions.
--   Utilisez le style Body de la gamme de types pour les liens hypertexte de type texte. Voir [**fonts and the Windows 10 type ramp**](text-controls.md).
+-   Utilisez le style Body de la gamme de types pour les liens hypertexte de type texte. Voir [**fonts and the Windows 10 type ramp**](fonts.md).
 -   Gardez les liens hypertexte suffisamment éloignés les uns des autres pour que l’utilisateur puisse les distinguer et les sélectionner aisément.
 -   Ajoutez des info-bulles aux liens hypertexte pour indiquer à l’utilisateur l’emplacement vers lequel il va être dirigé. Si l’utilisateur est dirigé vers un site externe, insérez le nom de domaine de niveau supérieur dans l’info-bulle, puis appliquez un style au texte avec une couleur de police secondaire.
 
@@ -154,6 +154,6 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

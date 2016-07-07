@@ -11,7 +11,7 @@ ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
 
 # Transferts en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -86,7 +86,7 @@ Pour finir, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/
 
 [!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Créer et initialiser l’opération de chargement")]
 
-Notez les appels de méthode asynchrone définis à l’aide de promesses JavaScript. Examinons une ligne du dernier exemple :
+Notez les appels de méthode asynchrone définis à l’aide de promesses JavaScript. Examinons une ligne du dernier exemple:
 
 ```javascript
 promise = upload.startAsync().then(complete, error, progress);
@@ -164,7 +164,7 @@ upload.startMultipart = function (uriString, files) {
 
 Lors de l’achèvement ou de l’annulation d’une opération [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), toutes les ressources système associées sont libérées. Toutefois, si votre application est arrêtée avant que l’une de ces situations puisse se produire, toutes les opérations en cours sont suspendues et les ressources associées à chacune d’entre elles persistent. Si ces opérations ne sont pas énumérées et réintroduites dans la session d’application suivante, elles s’arrêteront et resteront présentes dans les ressources d’appareil.
 
-1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) que cette fonction renverra :
+1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) que cette fonction renverra:
 
 [!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "Rédémarrer l’opération de chargement interrompue")]
 
@@ -204,7 +204,7 @@ Le niveau de contrôle peut être augmenté en implémentant des méthodes [**Do
 
 Lors de l’achèvement ou de l’annulation d’une opération [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), toutes les ressources système associées sont libérées. Toutefois, si votre application est arrêtée avant que l’un de ces événements ne se produise, les téléchargements sont suspendus et persistent en arrière-plan. Les exemples qui suivent expliquent comment réintroduire des téléchargements persistants dans une nouvelle session d’application.
 
-1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) que cette fonction renverra :
+1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) que cette fonction renverra:
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
 
@@ -276,13 +276,13 @@ Il existe deux cas principaux de délai de connexion à prendre en considératio
 
 -   Lorsque vous établissez une nouvelle connexion pour un transfert, la demande de connexion est annulée si la connexion n’est pas établie dans un délai de cinq minutes.
 
--   Une fois la connexion établie, un message de requête HTTP qui n’a reçu aucune réponse au bout de deux minutes est annulé.
+-   Une fois la connexion établie, un message de requêteHTTP qui n’a reçu aucune réponse au bout de deux minutes est annulé.
 
-> **Réponse** Quel que soit le scénario, la fonctionnalité de transfert en arrière-plan part du principe qu’aucune connectivité Internet n’existe et tente jusqu’à trois fois de soumettre automatiquement une demande. Si aucune connectivité Internet n’est décelée, les demandes supplémentaires attendront jusqu’à ce qu’elle le soit.
+> **Réponse** Quel que soit le scénario, la fonctionnalité de transfert en arrière-plan part du principe qu’aucune connectivité Internet n’existe et tente jusqu’à trois fois de soumettre automatiquement une demande. Si aucune connectivitéInternet n’est décelée, les demandes supplémentaires attendront jusqu’à ce qu’elle le soit.
 
 ## Recommandations en matière de débogage
 
-L’arrêt d’une session de débogage dans Microsoft Visual Studio est comparable à la fermeture de votre application ; les chargements PUT sont mis en pause et les chargements POST sont arrêtés. Même pendant le débogage, votre application doit énumérer, puis redémarrer ou annuler les chargements persistants. Par exemple, votre application peut annuler l’énumération des opérations de chargement persistantes, au démarrage, si les opérations précédentes n’ont pas d’intérêt pour cette session de débogage.
+L’arrêt d’une session de débogage dans Microsoft Visual Studio est comparable à la fermeture de votre application; les chargements PUT sont mis en pause et les chargements POST sont arrêtés. Même pendant le débogage, votre application doit énumérer, puis redémarrer ou annuler les chargements persistants. Par exemple, votre application peut annuler l’énumération des opérations de chargement persistantes, au démarrage, si les opérations précédentes n’ont pas d’intérêt pour cette session de débogage.
 
 Vous pouvez faire en sorte que votre application annule l’énumération des opérations de téléchargement/chargement au démarrage durant une session de débogage, si les opérations précédentes n’ont pas d’intérêt pour cette session de débogage. Notez que s’il existe des mises à jour du projet Visual Studio, par exemple des modifications du manifeste de l’application, et si l’application est désinstallée et redéployée, [**GetCurrentUploadsAsync**](https://msdn.microsoft.com/library/windows/apps/hh701149) ne peut pas énumérer les opérations créées à l’aide du déploiement d’application précédent.
 
@@ -302,7 +302,7 @@ Pour contourner ce problème, désinstallez complètement toutes les versions de
 
 Une exception est levée quand une chaîne d’URI non valide est transmise au constructeur pour l’objet [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998).
 
-**.NET :** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît en tant que [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
+**.NET:** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît en tant que [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
 
 En C# et Visual Basic, cette erreur peut être évitée en utilisant la classe [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) dans .NET 4.5 et l’une des méthodes [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) pour tester la chaîne envoyée par l’utilisateur de l’application avant la construction de l’URI.
 

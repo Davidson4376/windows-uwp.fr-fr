@@ -10,7 +10,7 @@ ms.openlocfilehash: 7127b84ebcddc82f33e8284a7abdf26e4436e160
 ---
 # Propriétés d’informations d’appareil
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -60,8 +60,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 | **System.Devices.DeviceInstanceId**   | Chaîne     | Identité de l’appareil. Il s’agit également de la valeur de [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id).                                                                                                                                                                       |
 | **System.Devices.DeviceManufacturer** | Chaîne     | Fabricant de l’appareil.                                                                                                                                                                                                                                                          |
 | **System.Devices.HardwareIds**        | Chaîne\[\] | ID de matériel de l’appareil. Windows utilise ces ID pour déterminer le meilleur pilote à installer. Les fabricants d’appareils peuvent utiliser cette propriété pour identifier leur appareil à partir de leur application. Pour plus d’informations, voir [ID de matériel](https://msdn.microsoft.com/library/windows/hardware/Ff546152).                                         |
-| **System.Devices.Parent**             | Chaîne     | [
-            **DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) de l’appareil parent. Il s’agit du parent de la connexion, pas du **DeviceContainer** parent.                                                                                                                                 |
+| **System.Devices.Parent**             | Chaîne     | [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) de l’appareil parent. Il s’agit du parent de la connexion, pas du **DeviceContainer** parent.                                                                                                                                 |
 | **System.Devices.Present**            | Booléen    | Indique si l’appareil est actuellement présent et disponible.                                                                                                                                                                                                                         |
 | **System.ItemNameDisplay**            | Chaîne     | Meilleur nom d’affichage pour cet objet appareil. Dans ce cas, ce n’est pas nécessairement le meilleur nom pour les utilisateurs. Vous pouvez trouver un meilleur candidat pour un nom convivial en référençant la valeur **System.ItemNameDisplay** des **DeviceContainer** ou **DeviceInterface** associés. |
 
@@ -71,9 +70,9 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 
 | Nom                              | Type       | Description                                                                                                                                                        |
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **System.Devices.Category**       | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories singulières. Par exemple, « Affichage », « Téléphone » ou « Appareil audio ».  |
+| **System.Devices.Category**       | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories singulières. Par exemple, «Affichage», «Téléphone» ou «Appareil audio».  |
 | **System.Devices.CategoryIds**    | Chaîne\[\] | Contient la liste des catégories auxquelles cet appareil appartient. Par exemple, **Audio.Headphone**, **Display.Monitor** ou **Input.Gaming**.                                  |
-| **System.Devices.CateogryPlural** | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories plurielles. Par exemple, « Affichages », « Téléphones » ou « Appareils audio ». |
+| **System.Devices.CateogryPlural** | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories plurielles. Par exemple, «Affichages», «Téléphones» ou «Appareils audio». |
 | **System.Devices.CompatibleIds**  | Chaîne\[\] | Collection d’ID compatibles pour tous les objets **DeviceInformationKind.Device** enfants.                                                                       |
 | **System.Devices.Connected**      | Booléen    | Indique si l’appareil est connecté au système ou non.                                                                                          |
 | **System.Devices.GlyphIcon**      | Chaîne     | Chemin d’accès à l’icône pour le glyphe.                                                                                                                                           |

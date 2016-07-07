@@ -26,7 +26,7 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
 
    Si vous vous inscrivez en tant qu’entreprise, vous devez également entrer le nom, l’adresse de messagerie et le numéro de téléphone de la personne qui approuvera le compte de votre société.
 
-5.  Entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50 caractères maximum). Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à sélectionner ce nom. Pour les comptes d’entreprise, le nom complet de l’éditeur doit être la dénomination commerciale officielle de la structure. Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom.
+5.  Entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50caractères maximum). Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à sélectionner ce nom. Pour les comptes d’entreprise, le nom complet de l’éditeur doit être la dénomination commerciale officielle de la structure. Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom.
 
   >  **Remarque** Vérifiez que vous disposez des droits d’utilisation de ce nom. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, voir votre [Contrat du développeur d’applications](https://msdn.microsoft.com/library/windows/apps/Hh694058). Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
@@ -42,7 +42,7 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
 
 Lorsque vous créez un compte d’entreprise, suivez ces recommandations si plusieurs utilisateurs doivent accéder au compte à l’aide du compte Microsoft ayant ouvert ce dernier. 
 
-> **Important** Pour autoriser à plusieurs utilisateurs l’accès à votre compte de Centre de développement, nous vous recommandons d’utiliser Azure Active Directory afin d’attribuer des rôles aux utilisateurs individuels ; ces derniers peuvent accéder au compte en se connectant à l’aide de leurs informations d’identification Azure AD. Pour plus d’informations, voir [Gérer les utilisateurs de compte](manage-account-users.md).
+> **Important** Pour autoriser à plusieurs utilisateurs l’accès à votre compte de Centre de développement, nous vous recommandons d’utiliser Azure Active Directory afin d’attribuer des rôles aux utilisateurs individuels; ces derniers peuvent accéder au compte en se connectant à l’aide de leurs informations d’identification AzureAD. Pour plus d’informations, voir [Gérer les utilisateurs de compte](manage-account-users.md).
 
 -   Créez votre compte Microsoft en utilisant une adresse de messagerie appartenant au domaine de votre entreprise, et non à un individu unique (par exemple, windowsapps@fabrikam.com).
 -   Limitez l’accès à ce compte Microsoft au plus petit nombre possible de développeurs.
@@ -81,6 +81,6 @@ Lorsque vous fermez votre compte, il est important que vous en compreniez les r�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

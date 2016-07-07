@@ -1,13 +1,17 @@
 ---
 author: DelfCo
-description: Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms Windows.Web.Syndication.
+description: "Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms Windows.Web.Syndication."
 title: Flux RSS/Atom
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
+
 ---
 
 # Flux RSS/Atom
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -256,6 +260,7 @@ Comme mentionné plus haut, le type de contenu représenté par un objet [**Synd
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

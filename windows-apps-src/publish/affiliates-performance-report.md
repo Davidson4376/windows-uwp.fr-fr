@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Pour afficher les données de performances pour les annonces des affiliés dans vos applications, utilisez les rapports de performances des annonces des affiliés au niveau du compte et de l’application dans le tableau de bord du Centre de développement Windows."
+Description: "Pour afficher les données de performances pour les annonces des affiliés dans vos applications, utilisez les rapports de performances des annonces des affiliés au niveau du compte et de l’application dans le tableau de bord du Centre de développementWindows."
 title: "Rapport de performances des annonces des affiliés"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 translationtype: Human Translation
@@ -16,7 +16,7 @@ Si vous avez [accepté de participer au programme d’annonces des affiliés de 
 -   [Rapport de performances des annonces des affiliés au niveau de l’application](affiliates-performance-report.md#app-level-affiliates-performance-report). Ce rapport fournit des données de performances pour les annonces des affiliés dans l’application actuellement sélectionnée dans le tableau de bord.
 -   [Rapport de performances des annonces des affiliés au niveau du tableau de bord](affiliates-performance-report.md#dashboard-level-affiliates-performance-report). Ce rapport fournit un résumé des données de performances pour les annonces des affiliés dans toutes les applications que vous avez inscrites au programme d’annonces des affiliés de Microsoft.
 
-Ces rapports sont mis à jour quotidiennement. Par défaut, les rapports sont filtrés sur les performances des 30 derniers jours, sur tous les appareils. Pour modifier ces filtres, cliquez sur **Filtres de page** et choisissez une autre période ou un type d’appareil spécifique. Notez que toutes les données sont agrégées en fonction de l’heure UTC, et non de votre fuseau horaire particulier.
+Ces rapports sont mis à jour quotidiennement. Par défaut, les rapports sont filtrés sur les performances des 30derniers jours, sur tous les appareils. Pour modifier ces filtres, cliquez sur **Filtres de page** et choisissez une autre période ou un type d’appareil spécifique. Notez que toutes les données sont agrégées en fonction de l’heure UTC, et non de votre fuseau horaire particulier.
 
 Les sections suivantes fournissent plus d’informations sur ces rapports.
 
@@ -24,17 +24,17 @@ Les sections suivantes fournissent plus d’informations sur ces rapports.
 
 Ce rapport fournit, sous forme de graphiques et de tableaux, des données de performances pour les annonces des affiliés dans l’application actuellement sélectionnée dans le tableau de bord. Pour afficher ce rapport, sélectionnez l’une de vos applications dans le tableau de bord et cliquez sur **Analyse**&gt;**Performances des annonces des affiliés** dans le volet de navigation.
 
-Les données sont obtenues à partir des sept métriques de performances suivantes que nous suivons pour les publicités intégrées dans votre application :
+Les données sont obtenues à partir des sept métriques de performances suivantes que nous suivons pour les publicités intégrées dans votre application:
 
--   **Revenus estimés (approuvés)** : l’estimation des revenus sous forme de commissions que vous avez reçues pour les achats approuvés, faits par des utilisateurs ayant cliqué sur les annonces des affiliés dans votre application.
--   **Revenus estimés (en attente d’approbation)** : somme d’argent que vous pourriez recevoir en guise de commission pour les achats en attente d’approbation.
--   **Impressions** : nombre de fois où une annonce des affiliés a été affichée dans votre application.
+-   **Revenus estimés (approuvés)**: l’estimation des revenus sous forme de commissions que vous avez reçues pour les achats approuvés, faits par des utilisateurs ayant cliqué sur les annonces des affiliés dans votre application.
+-   **Revenus estimés (en attente d’approbation)**: somme d’argent que vous pourriez recevoir en guise de commission pour les achats en attente d’approbation.
+-   **Impressions**: nombre de fois où une annonce des affiliés a été affichée dans votre application.
 -   **Clics** : nombre de fois où quelqu’un a cliqué sur une annonce des affiliés dans votre application.
 -   **Taux de clic** : nombre de fois où quelqu’un a cliqué sur une annonce des affiliés divisé par le nombre d’impressions des annonces des affiliés.
 -   **Achats (approuvés)** : le nombre d’achats approuvés effectués par les utilisateurs ayant cliqué sur les annonces des affiliés dans votre application.
--   **Achats (en attente d’approbation)** : le nombre d’achats en attente d’approbation effectués par les utilisateurs ayant cliqué sur les annonces des affiliés dans votre application.
+-   **Achats (en attente d’approbation)**: le nombre d’achats en attente d’approbation effectués par les utilisateurs ayant cliqué sur les annonces des affiliés dans votre application.
 
-> **Remarque** Après qu’un utilisateur achète un produit dans le Windows Store, il existe un délai d’attente de 45 jours avant l’approbation de l’achat pour le programme d’annonce des affiliés. En raison de ce délai d’attente, les données **Revenus estimés (approuvés)**, **Revenus estimés (en attente d’approbation)**, **Achats (approuvés)** et **Achats (en attente d’approbation)** pour un jour donné peuvent changer après l’approbation ou le rejet des achats.
+> **Remarque** Après qu’un utilisateur achète un produit dans le Windows Store, il existe un délai d’attente de 45jours avant l’approbation de l’achat pour le programme d’annonce des affiliés. En raison de ce délai d’attente, les données **Revenus estimés (approuvés)**, **Revenus estimés (en attente d’approbation)**, **Achats (approuvés)** et **Achats (en attente d’approbation)** pour un jour donné peuvent changer après l’approbation ou le rejet des achats.
 
 ## Rapport de performances des annonces des affiliés au niveau du tableau de bord.
 

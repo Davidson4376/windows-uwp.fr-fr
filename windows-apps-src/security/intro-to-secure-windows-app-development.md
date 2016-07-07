@@ -12,7 +12,7 @@ ms.openlocfilehash: c09170042841dcff6625d1d236cf708c717301c5
 # Présentation du développement d’applications Windows sécurisées
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP). Il explique en détail comment utiliser les fonctionnalités de sécurité Windows disponibles à chacune des phases suivantes : authentification, données en transit et données au repos. Vous pourrez accéder à des informations plus détaillées sur les différents sujets en consultant les ressources supplémentaires mentionnées dans chaque chapitre.
@@ -166,7 +166,7 @@ Toutefois, Microsoft Passport n’est pas un simple substitut aux systèmes 2FA 
 
 Un appareil doit être inscrit auprès de Microsoft Passport pour que les utilisateurs puissent s’authentifier sur cet appareil. Microsoft Passport utilise un chiffrement asymétrique (clé publique/privée) dans le cadre duquel l’une des parties utilise une clé publique pour chiffrer des données que l’autre partie peut déchiffrer à l’aide d’une clé privée. Microsoft Passport crée un ensemble de paires de clés publique/privée et écrit les clés privées sur le processeur du module de plateforme sécurisée (TPM) de l’appareil. Une fois qu’un appareil est inscrit, les applications UWP peuvent appeler les API système pour récupérer la clé publique de l’utilisateur, qui peut être utilisée pour inscrire l’utilisateur sur le serveur.
 
-Le flux de travail d’inscription d’une application peut ressembler à ce qui suit :
+Le flux de travail d’inscription d’une application peut ressembler à ce qui suit:
 
 ![inscription auprès de Microsoft Passport](images/secure-passport.png)
 

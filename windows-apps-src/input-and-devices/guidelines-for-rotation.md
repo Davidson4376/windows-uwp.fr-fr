@@ -1,6 +1,6 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application du Windows Store."
+Description: "Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application du WindowsStore."
 title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
@@ -32,7 +32,7 @@ Cet article décrit la nouvelle interface utilisateur Windows pour la rotation e
 
 La rotation est une technique optimisée pour l’interaction tactile utilisée par les applications UWP pour permettre aux utilisateurs de faire tourner un objet dans une direction circulaire (dans le sens des aiguilles d’une montre ou contraire).
 
-Selon le périphérique d’entrée utilisé, l’interaction de rotation s’effectue via :
+Selon le périphérique d’entrée utilisé, l’interaction de rotation s’effectue via:
 
 -   une souris ou un stylo/stylet actif pour déplacer la barre de redimensionnement de rotation d’un objet sélectionné ;
 -   un stylo/stylet tactile ou passif pour tourner l’objet dans la direction souhaitée à l’aide du mouvement de rotation.
@@ -44,9 +44,9 @@ Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directemen
 ![schéma des différentes positions de doigts prises en charge par la rotation.](images/ux-rotate-positions.png)
 
 **Remarque**  
-Instinctivement, et dans la plupart des cas, le point de rotation est l’un des deux points tactiles, à moins que l’utilisateur ne spécifie un point de rotation qui n’est pas lié aux points de contact (par exemple, dans une application de dessin ou de mise en page). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
+Instinctivement, et dans la plupart des cas, le point de rotation est l’un des deuxpoints tactiles, à moins que l’utilisateur ne spécifie un point de rotation qui n’est pas lié aux points de contact (par exemple, dans une application de dessin ou de mise en page). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
 
-Cette première image montre le premier (le pouce) et le deuxième (l’index) points tactiles : l’index touche un arbre et le pouce touche un rondin de bois.
+Cette première image montre le premier (le pouce) et le deuxième (l’index) points tactiles: l’index touche un arbre et le pouce touche un rondin de bois.
 
 ![image des deux premiers points tactiles du geste de rotation.](images/ux-rotate-points1.png)
 Dans ce deuxième dessin, la rotation s’effectue autour du premier point tactile (le pouce). Après la rotation, l’index touche encore le tronc de l’arbre et le pouce touche encore le rondin de bois (le point de rotation).
@@ -61,7 +61,7 @@ Dans ce dernier dessin, le centre de la rotation a été défini par l’applica
 
  
 
-Windows 8 prend en charge trois types de rotations : libre, contrainte et combinée.
+Windows 8 prend en charge trois types de rotations: libre, contrainte et combinée.
 
 <table>
 <colgroup>
@@ -86,7 +86,7 @@ Windows 8 prend en charge trois types de rotations : libre, contrainte et combi
 </tr>
 <tr class="odd">
 <td align="left">Rotation combinée</td>
-<td align="left"><p>La rotation combinée prend en charge la rotation libre avec des zones (semblables aux rails dans les [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md)) à chacun des points d’ancrage à 90 degrés appliqués par la rotation contrainte. Si l’utilisateur relâche l’objet en dehors de l’une des zones à 90 degrés, l’objet reste dans cette position ; sinon, il pivote automatiquement vers un point d’ancrage.</p>
+<td align="left"><p>La rotation combinée prend en charge la rotation libre avec des zones (semblables aux rails dans les [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md)) à chacun des points d’ancrage à 90degrés appliqués par la rotation contrainte. Si l’utilisateur relâche l’objet en dehors de l’une des zones à 90degrés, l’objet reste dans cette position; sinon, il pivote automatiquement vers un point d’ancrage.</p>
 <div class="alert">
 <strong>Remarque</strong> Le rail d’interface utilisateur est une fonctionnalité dans laquelle une zone autour d’une cible contraint le mouvement vers une certaine valeur ou un certain emplacement pour influencer sa sélection.
 </div>
@@ -109,7 +109,7 @@ Windows 8 prend en charge trois types de rotations : libre, contrainte et combi
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -127,6 +127,6 @@ Windows 8 prend en charge trois types de rotations : libre, contrainte et combi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

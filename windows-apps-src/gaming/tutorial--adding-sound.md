@@ -12,7 +12,7 @@ ms.openlocfilehash: f9e536e71dd7b5c94d587a8bb66df3b41cc9a4ae
 # Ajouter du son
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée un objet pour la lecture audio avec les API [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
 
@@ -21,16 +21,19 @@ Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée
 
 -   Ajouter une sortie audio avec [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
 
-Dans l’exemple de jeu, les comportements et objets audio sont définis dans trois fichiers :
+Dans l’exemple de jeu, les comportements et objets audio sont définis dans trois fichiers:
 
--   **Audio.h/.cpp**. Ce fichier de code définit l’objet **Audio**, qui contient les ressources XAudio2 pour la lecture audio. Il définit également une méthode pour interrompre et reprendre la lecture audio si le jeu est en pause ou désactivé.
--   **MediaReader.h/.cpp**. Ce code définit les méthodes permettant de lire des fichiers .wav audio à partir du stockage local.
--   **SoundEffect.h/.cpp**. Ce code définit un objet pour la lecture audio dans le jeu.
+-   
+            **Audio.h/.cpp**. Ce fichier de code définit l’objet **Audio**, qui contient les ressources XAudio2 pour la lecture audio. Il définit également une méthode pour interrompre et reprendre la lecture audio si le jeu est en pause ou désactivé.
+-   
+            **MediaReader.h/.cpp**. Ce code définit les méthodes permettant de lire des fichiers.wav audio à partir du stockage local.
+-   
+            **SoundEffect.h/.cpp**. Ce code définit un objet pour la lecture audio dans le jeu.
 
 ## Définition du moteur audio
 
 
-Lorsque l’exemple de jeu démarre, il crée un objet **Audio** qui alloue les ressources audio pour le jeu. Le code qui déclare cet objet se présente comme suit :
+Lorsque l’exemple de jeu démarre, il crée un objet **Audio** qui alloue les ressources audio pour le jeu. Le code qui déclare cet objet se présente comme suit:
 
 ```cpp
 public:
@@ -260,9 +263,10 @@ myTarget->HitSound()->Initialize(
                 targetHitSound);
 ```
 
-**SoundEffect::Initialize** est appelé à partir de la méthode **Simple3DGame:Initialize** qui initialise l’objet jeu principal.
 
-Maintenant que l’exemple de jeu a un fichier audio en mémoire, voyons comment il le lit pendant le jeu !
+            **SoundEffect::Initialize** est appelé à partir de la méthode **Simple3DGame:Initialize** qui initialise l’objet jeu principal.
+
+Maintenant que l’exemple de jeu a un fichier audio en mémoire, voyons comment il le lit pendant le jeu!
 
 ## Lecture d’un fichier audio
 

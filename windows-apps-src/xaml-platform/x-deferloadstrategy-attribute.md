@@ -11,9 +11,9 @@ ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
 
 # Attribut x&#58;DeferLoadStrategy
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**x:DeferLoadStrategy="Lazy"** retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire. Plus l’arborescence d’éléments que vous différez est importante, plus vous gagnez du temps de démarrage, mais au prix d’un encombrement mémoire supérieur. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
+**x:DeferLoadStrategy="Lazy"** retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600octets à l’utilisation de la mémoire. Plus l’arborescence d’éléments que vous différez est importante, plus vous gagnez du temps de démarrage, mais au prix d’un encombrement mémoire supérieur. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
 
 ## Utilisation des attributs XAML
 

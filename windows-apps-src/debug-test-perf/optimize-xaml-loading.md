@@ -10,7 +10,7 @@ ms.openlocfilehash: c2131b084d8bb989f1f7767f54db697e1cdd8dcf
 ---
 # Optimiser votre balisage XAML
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application.
 
@@ -150,8 +150,8 @@ Recherchez également les pinceaux utilisant des couleurs prédéfinies : `"Oran
 
 Le surdessin désigne le fait de dessiner plusieurs objets dans les mêmes pixels d’un écran. Il est parfois nécessaire de trouver un compromis entre ces instructions et la volonté de réduire le nombre d’éléments.
 
--   Si un élément est invisible, car il est transparent ou masqué derrière d’autres éléments, et qu’il n’est pas utilisé pour la disposition, alors supprimez-le. Si l’élément n’est pas visible dans l’état visuel initial mais qu’il apparaît dans d’autres états visuels, alors définissez [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) sur **Collapsed** sur l’élément lui-même et modifiez la valeur sur **Visible** dans les états appropriés. Il y a toutefois des exceptions : en règle générale, la valeur d’une propriété dans la plupart des états visuels est mieux définie localement sur l’élément.
--   Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) et la moitié inférieure est grise (depuis le [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150 % des pixels nécessaires pour obtenir le résultat sont remplis.
+-   Si un élément est invisible, car il est transparent ou masqué derrière d’autres éléments, et qu’il n’est pas utilisé pour la disposition, alors supprimez-le. Si l’élément n’est pas visible dans l’état visuel initial mais qu’il apparaît dans d’autres états visuels, alors définissez [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) sur **Collapsed** sur l’élément lui-même et modifiez la valeur sur **Visible** dans les états appropriés. Il y a toutefois des exceptions: en règle générale, la valeur d’une propriété dans la plupart des états visuels est mieux définie localement sur l’élément.
+-   Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) et la moitié inférieure est grise (depuis le [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150% des pixels nécessaires pour obtenir le résultat sont remplis.
 
 **Inefficace.**
     
@@ -276,9 +276,11 @@ Notez l’utilisation du [**CacheMode**](https://msdn.microsoft.com/library/wind
 
 Les ResourceDictionaries sont généralement utilisés pour stocker vos ressources à un niveau global. Les ressources que votre application souhaite référencer sont stockées dans plusieurs endroits. Il s’agit par exemple, des styles, des pinceaux, des modèles et ainsi de suite. En règle générale, nous optimisons les ResourceDictionaries pour ne pas instancier de ressources sauf demande contraire. Cependant, vous devez être prudent dans quelques emplacements.
 
-**Ressource pourvue de x:Name**. Les ressources pourvues de x:Name ne bénéficient pas de l’optimisation de la plateforme, mais elles sont instanciées dès que le ResourceDictionary est créé. Cela se produit, car x:Name indique à la plateforme que votre application doit accéder à cette ressource. La plateforme doit donc créer un élément pour lequel une référence doit être créée.
 
-**ResourceDictionaries dans un UserControl**. Les ResourceDictionaries définis dans un UserControl entraînent une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si le UserControl est énormément utilisé, déplacez le ResourceDictionary en dehors du UserControl et placez-le au niveau de la page.
+            **Ressource pourvue de x:Name**. Les ressources pourvues de x:Name ne bénéficient pas de l’optimisation de la plateforme, mais elles sont instanciées dès que le ResourceDictionary est créé. Cela se produit, car x:Name indique à la plateforme que votre application doit accéder à cette ressource. La plateforme doit donc créer un élément pour lequel une référence doit être créée.
+
+
+            **ResourceDictionaries dans un UserControl**. Les ResourceDictionaries définis dans un UserControl entraînent une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si le UserControl est énormément utilisé, déplacez le ResourceDictionary en dehors du UserControl et placez-le au niveau de la page.
 
 ## Utiliser XBF2
 

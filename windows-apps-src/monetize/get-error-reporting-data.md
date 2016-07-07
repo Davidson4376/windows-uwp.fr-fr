@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs."
+description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs."
 title: "Obtenir les données de rapport d’erreurs"
 ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
 ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
@@ -11,20 +11,20 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 # Obtenir les données de rapport d’erreurs
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
 
 ## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit :
+Pour utiliser cette méthode, procédez comme suit:
 
 -   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
 -   Obtenez un jeton d’accès Azure AD pour votre application.
 
-Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md).
+Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du WindowsStore](access-analytics-data-using-windows-store-services.md).
 
 ## Requête
 
@@ -66,7 +66,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">chaîne</td>
-<td align="left">L’ID Windows Store de l’application pour laquelle vous souhaitez récupérer les données de rapport d’erreur. L’ID Windows Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8.</td>
+<td align="left">L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données de rapport d’erreur. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="even">
@@ -108,7 +108,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 <tr class="even">
 <td align="left">groupby</td>
 <td align="left">chaîne</td>
-<td align="left">Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants :
+<td align="left">Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants:
 <ul>
 <li><strong>failureName</strong></li>
 <li><strong>failureHash</strong></li>
@@ -157,12 +157,12 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
  
 ### Champs de filtrage
 
-Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter* :
+Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter*:
 
 -   *filter=market eq ’US’ and gender eq ’m’*
 -   *filter=(market ne ’US’) and (gender ne ’Unknown’) and (gender ne ’m’) and (market ne ’NO’) and (ageGroup ne ’greater than 55’ or ageGroup ne ‘less than 13’)*
 
-Pour obtenir la liste des champs pris en charge, consultez le tableau suivant : Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
+Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
 
 <table>
 <colgroup>
@@ -190,7 +190,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -204,7 +204,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="odd">
 <td align="left">eventType</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>crash</strong></li>
 <li><strong>hang</strong></li>
@@ -214,11 +214,11 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 </tr>
 <tr class="even">
 <td align="left">market</td>
-<td align="left">Chaîne contenant le code pays ISO 3166 du marché des appareils.</td>
+<td align="left">Chaîne contenant le code pays ISO3166 du marché des appareils.</td>
 </tr>
 <tr class="odd">
 <td align="left">deviceType</td>
-<td align="left">Une des chaînes suivantes :
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -245,7 +245,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant :
 
 ### Exemple de requête
 
-Les exemples suivants fournissent font figurer plusieurs requêtes de récupération des données de rapport d’erreurs. Remplacez la valeur *applicationId* par l’ID Windows Store de votre application.
+Les exemples suivants fournissent font figurer plusieurs requêtes de récupération des données de rapport d’erreurs. Remplacez la valeur *applicationId* par l’ID WindowsStore de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -263,25 +263,25 @@ Authorization: Bearer <your access token>
 | Valeur      | Type    | Description                                                                                                                                                                                                                                                                    |
 |------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Valeur      | tableau   | Tableau d’objets comportant les données agrégées de rapport d’erreurs. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs des erreurs](#error-values) ci-dessous.                                                                                                          |
-| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10 000 lignes d’erreurs sont associées à la requête. |
+| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000lignes d’erreurs sont associées à la requête. |
 | TotalCount | nombre entier | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                     |
 
  
 ### Valeurs des erreurs
 
-Les éléments du tableau *Value* comportent les valeurs suivantes :
+Les éléments du tableau *Value* comportent les valeurs suivantes:
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                              |
 |-----------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date            | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
-| applicationId   | chaîne  | L’ID Windows Store de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
+| applicationId   | chaîne  | L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
 | applicationName | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
 | failureName     | chaîne  | Le nom de l’erreur.                                                                                                                                                                                                                 |
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.                                                                                                                                                                                                   |
 | symbol          | chaîne  | Le symbole affecté à cette erreur.                                                                                                                                                                                                       |
 | osVersion       | chaîne  | La version de système d’exploitation sur laquelle l’erreur s’est produite. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                       |
 | eventType       | chaîne  | Le type d’événement d’erreur. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                                          |
-| market          | chaîne  | Code pays ISO 3166 du marché des appareils.                                                                                                                                                                                          |
+| market          | chaîne  | Code pays ISO3166 du marché des appareils.                                                                                                                                                                                          |
 | deviceType      | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
 | packageName     | chaîne  | Nom unique du package applicatif associé à cette erreur.                                                                                                                                                                 |
 | packageVersion  | chaîne  | Version du package applicatif associé à cette erreur.                                                                                                                                                                     |
@@ -330,6 +330,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

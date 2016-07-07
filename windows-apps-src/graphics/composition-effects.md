@@ -10,7 +10,7 @@ ms.openlocfilehash: 10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7
 ---
 # Effets de composition
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 L’API WinRT [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) autorise l’application d’effets en temps réel à des images et à l’interface utilisateur avec des propriétés d’effet animables. Dans cette vue d’ensemble, nous allons parcourir les fonctionnalités disponibles, qui permettent d’appliquer des effets à un élément visuel de composition.
 
@@ -25,7 +25,7 @@ Les pinceaux à effets sont utilisés sur les éléments visuels de l’arboresc
 -   [Bibliothèque d’effets](./composition-effects.md#effect-library)
 -   [Chaînage des effets](./composition-effects.md#chaining-effects)
 -   [Prise en charge de l’animation](./composition-effects.md#animation-support)
--   [Propriétés d’effet : comparaison entre effet constant et effet animé](./composition-effects.md#effect-properties-constant-vs-animated)
+-   [Propriétés d’effet: comparaison entre effet constant et effet animé](./composition-effects.md#effect-properties-constant-vs-animated)
 -   [Instances d’effet multiples avec des propriétés indépendantes](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### Bibliothèque d’effets
@@ -81,9 +81,9 @@ L’exemple ci-dessus décrit un effet composite arithmétique possédant deux e
 
 Les propriétés d’effet prennent en charge l’animation ; lors de la compilation d’effet, vous pouvez spécifier les propriétés d’effet qui peuvent être animées et celles qui peuvent être « intégrées » sous forme de constantes. Les propriétés animables sont spécifiées par le biais de chaînes de la forme « nom d’effet.nom de propriété ». Ces propriétés peuvent être animées indépendamment sur plusieurs instanciations de l’effet.
 
-### Propriétés d’effet : comparaison entre effet constant et effet animé
+### Propriétés d’effet: comparaison entre effet constant et effet animé
 
-Lors de la compilation d’effet, vous pouvez spécifier des propriétés d’effet comme étant dynamiques ou comme étant « intégrées » sous forme de constantes. Les propriétés dynamiques sont spécifiées par le biais de chaînes de la forme « <effect name>.<property name> ». Les propriétés dynamiques peuvent être définies sur une valeur spécifique ou être animées à l’aide du système d’animations de composition.
+Lors de la compilation d’effet, vous pouvez spécifier des propriétés d’effet comme étant dynamiques ou comme étant «intégrées» sous forme de constantes. Les propriétés dynamiques sont spécifiées par le biais de chaînes de la forme «<effect name>.<property name>». Les propriétés dynamiques peuvent être définies sur une valeur spécifique ou être animées à l’aide du système d’animations de composition.
 
 Lorsque vous compilez la description d’effet ci-dessus, vous avez la possibilité d’intégrer la saturation de sorte qu’elle soit égale à 0,5, ou de la rendre dynamique et de la définir de manière dynamique ou en l’animant.
 
@@ -224,12 +224,12 @@ if (result.Status == CompositionImageLoadStatus.Success)
 brush.Surface = imageSource.Surface;
 ```
 
-6.) Exécutez votre application : le résultat doit être une image de chat désaturée :
+6.) Exécutez votre application: le résultat doit être une image de chat désaturée:
 
 ![Image désaturée](images/composition-cat-desaturated.png)
 ## Plus d’informations
 
--   [Microsoft : GitHub Composition](https://github.com/Microsoft/composition)
+-   [Microsoft: GitHub Composition](https://github.com/Microsoft/composition)
 -   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
 -   [Équipe de composition Windows sur Twitter](https://twitter.com/wincomposition)
 -   [Vue d’ensemble de la composition](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)

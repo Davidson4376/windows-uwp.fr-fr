@@ -12,7 +12,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 # Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque, et découvrir des photos, de la musique et des vidéos.
@@ -143,7 +143,7 @@ Par défaut, les utilisateurs peuvent choisir de stocker les fichiers sur la car
 
 Il n’est pas nécessaire d’écrire d’autre code pour gérer cette possibilité. Les méthodes de l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) qui interrogent les dossiers connus combinent en toute transparence les résultats de requête issus de ces deux emplacements. De même, vous n’avez pas à spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour obtenir ces résultats combinés.
 
-Examinons l’état du stockage de l’appareil illustré dans l’image suivante :
+Examinons l’état du stockage de l’appareil illustré dans l’image suivante:
 
 ![Images sur le téléphone et la carte SD](images/phone-media-locations.png)
 
@@ -185,7 +185,7 @@ Utilisez des requêtes plates pour retourner les fichiers multimédias dont le t
 
 ### Exemple de requêtes
 
-Supposons que l’appareil et sa carte SD optionnelle contiennent les dossiers et fichiers représentés dans l’image suivante :
+Supposons que l’appareil et sa carte SD optionnelle contiennent les dossiers et fichiers représentés dans l’image suivante:
 
 ![Fichiers activés ](images/phone-media-queries.png)
 

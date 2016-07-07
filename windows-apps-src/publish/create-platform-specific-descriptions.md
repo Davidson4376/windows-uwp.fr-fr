@@ -27,7 +27,7 @@ En haut de votre page **Description**, figure le lien **créer une description d
 
 > **Remarque** Si vous n’avez pas fourni de packages ciblant plusieurs versions de système d’exploitation, ou que vous avez déjà créé des descriptions propres à la plateforme pour toutes les versions de système d’exploitation ciblées par votre application, vous ne pourrez pas effectuer de sélection.
 
-Vous pouvez choisir d’utiliser votre description par défaut comme point de départ, ce qui réaffichera l’ensemble du texte et des images que vous avez entrés pour cette description ; vous serez alors en mesure de modifier ces éléments à votre convenance avant d’enregistrer ces modifications.
+Vous pouvez choisir d’utiliser votre description par défaut comme point de départ, ce qui réaffichera l’ensemble du texte et des images que vous avez entrés pour cette description; vous serez alors en mesure de modifier ces éléments à votre convenance avant d’enregistrer ces modifications.
 
 Vous pouvez également choisir de partir d'une description vide.
 

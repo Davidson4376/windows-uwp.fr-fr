@@ -14,7 +14,7 @@ ms.openlocfilehash: 8a03ca36f6e306a03e8aec7b46e51bfff0079bf5
 
 Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours. Une barre de progression *déterminée* affiche le pourcentage d’achèvement d’une opération. Une barre de progression, ou un anneau de progression, *indéterminée* affiche qu’une opération est en cours d’exécution.
 
-Un contrôle de progression est en lecture seule ; il n’est pas interactif.
+Un contrôle de progression est en lecture seule; il n’est pas interactif.
 
 <span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
@@ -23,13 +23,13 @@ Un contrôle de progression est en lecture seule ; il n’est pas interactif.
 -   [**Classe ProgressRing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)
 -   [**Propriété IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
-![Application Windows : barre de progression indéterminée, anneau de progression et barre de progression déterminée](images/ProgressBar.png)
+![Application Windows: barre de progression indéterminée, anneau de progression et barre de progression déterminée](images/ProgressBar.png)
 
 Application Windows : barre de progression indéterminée, anneau de progression et barre de progression déterminée
 
 ![Application Windows Phone : indicateur de progression de la barre d’état et barres de progression](images/wp_progress_bar.png)
 
-Application Windows Phone : indicateur de progression de la barre d’état et barres de progression
+Application Windows Phone: indicateur de progression de la barre d’état et barres de progression
 
 ## Exemples
 
@@ -77,15 +77,11 @@ Il n’est pas systématiquement nécessaire de présenter un contrôle de progr
 
 Une barre de progression déterminée affiche l’état d’avancement de la tâche en cours de réalisation par l’application. La barre se remplit à mesure que la tâche progresse. Utilisez une barre de progression déterminée si vous pouvez évaluer la part de la tâche restant à réaliser en termes de temps, d’octets, de fichiers ou de toute autre unité de mesure quantifiable.
 
-La barre de progression fournit plusieurs propriétés qui permettent de définir et de déterminer la progression :
-- [
-            **IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx) : spécifie si la barre de progression est indéterminée. Appliquez la valeur **false** pour créer une barre de progression déterminée.
-- [
-            **Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx) : début de la plage de valeurs. La valeur par défaut est 0,0.
-- [
-            **Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx) : fin de la plage de valeurs. La valeur par défaut est 1,0. 
-- [
-            **Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx) : nombre qui spécifie la progression actuelle. Si vous affichez la progression du téléchargement d’un fichier, cette valeur peut être le nombre d’octets téléchargés (dans ce cas, vous définissez Maximum sur le nombre total d’octets à télécharger).
+La barre de progression fournit plusieurs propriétés qui permettent de définir et de déterminer la progression:
+- [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx): spécifie si la barre de progression est indéterminée. Appliquez la valeur **false** pour créer une barre de progression déterminée.
+- [**Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx): début de la plage de valeurs. La valeur par défaut est0,0.
+- [**Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx): fin de la plage de valeurs. La valeur par défaut est1,0. 
+- [**Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx): nombre qui spécifie la progression actuelle. Si vous affichez la progression du téléchargement d’un fichier, cette valeur peut être le nombre d’octets téléchargés (dans ce cas, vous définissez Maximum sur le nombre total d’octets à télécharger).
  
 L’exemple suivant montre une barre de progression déterminée basée sur la valeur. 
 
@@ -274,22 +270,22 @@ stackPanel1.Children.Add(progressRing1);
 
     Si la réponse est non, n’affichez pas de contrôle de progression.
 
--   **Des informations sur la durée de réalisation de la tâche sont-elles disponibles ?**
-    -   **Oui :** **la tâche nécessite-t-elle plus de deux secondes pour s’accomplir ?**
-        -   **Oui :** utilisez une barre de progression déterminée. Pour les tâches qui nécessitent plus de 10 secondes, fournissez un moyen d’annuler la tâche.
-        -   **Non :** ne présentez pas de contrôle de progression.
+-   **Des informations sur la durée de réalisation de la tâche sont-elles disponibles?**
+    -   **Oui:** **la tâche nécessite-t-elle plus de deux secondes pour s’accomplir?**
+        -   **Oui:** utilisez une barre de progression déterminée. Pour les tâches qui nécessitent plus de 10 secondes, fournissez un moyen d’annuler la tâche.
+        -   **Non:** ne présentez pas de contrôle de progression.
 
-    -   **Non :** **l’interaction avec l’interface utilisateur est-elle bloquée pour les utilisateurs tant que la tâche n’est pas terminée ?**
-        -   **Oui :** **cette tâche fait-elle partie d’un processus en plusieurs étapes qui implique que l’utilisateur connaisse des détails spécifiques de l’opération ?**
-            -   **Oui :** utilisez un anneau de progression indéterminée avec texte d’état centré horizontalement dans l’écran.
-            -   **Non :** utilisez un anneau de progression indéterminée sans texte au centre de l’écran.
-        -   **Non :** **s’agit-il d’une activité principale ?**
-            -   **Oui :** **la progression est-elle liée à un seul élément spécifique de l’interface utilisateur ?**
-                -   **Oui :** utilisez un anneau de progression indéterminée inséré avec texte d’état en regard de son élément d’interface utilisateur associé.
-                -   **Non :** **une grande quantité de données est-elle chargée dans une liste ?**
-                    -   **Oui :** utilisez la barre de progression indéterminée en haut avec des espaces réservés pour représenter le contenu entrant.
-                    -   **Non :** utilisez la barre de progression indéterminée en haut de l’écran ou de la surface.
-            -   **Non :** utilisez du texte d’état dans un angle supérieur de l’écran.
+    -   **Non:** **l’interaction avec l’interface utilisateur est-elle bloquée pour les utilisateurs tant que la tâche n’est pas terminée?**
+        -   **Oui:** **cette tâche fait-elle partie d’un processus en plusieurs étapes qui implique que l’utilisateur connaisse des détails spécifiques de l’opération?**
+            -   **Oui:** utilisez un anneau de progression indéterminée avec texte d’état centré horizontalement dans l’écran.
+            -   **Non:** utilisez un anneau de progression indéterminée sans texte au centre de l’écran.
+        -   **Non:** **s’agit-il d’une activité principale?**
+            -   **Oui:** **la progression est-elle liée à un seul élément spécifique de l’interface utilisateur?**
+                -   **Oui:** utilisez un anneau de progression indéterminée inséré avec texte d’état en regard de son élément d’interface utilisateur associé.
+                -   **Non:** **une grande quantité de données est-elle chargée dans une liste?**
+                    -   **Oui:** utilisez la barre de progression indéterminée en haut avec des espaces réservés pour représenter le contenu entrant.
+                    -   **Non:** utilisez la barre de progression indéterminée en haut de l’écran ou de la surface.
+            -   **Non:** utilisez du texte d’état dans un angle supérieur de l’écran.
 
 ## Articles connexes
 

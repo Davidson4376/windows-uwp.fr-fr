@@ -1,6 +1,13 @@
 ---
-Description: author: jnHs Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission.
-title: Soumissions d’applications ms.assetid &#58; 363BB9E4-4437-4238-A80F-ABDFC70D96E4 mots clés &#58; soumettre une application mots clés &#58; informations requises mots clés &#58; champs requis mots clés &#58; données requises mots clés &#58; liste de contrôle
+author: jnHs
+Description: "Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission."
+title: "Soumissions d’application"
+ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
+keywords: checklist
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 59f41b74ca264606b4668addf44a07c82e173579
+
 ---
 
 # Soumissions d’application
@@ -92,6 +99,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 **Remarque** Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

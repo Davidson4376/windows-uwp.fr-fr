@@ -11,7 +11,7 @@ ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
 # Gérer l’activation des URI
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -34,7 +34,7 @@ L’application reçoit des événements d’activation uniquement pour les noms
 
 1.  Dans l’**Explorateur de solutions**, double-cliquez sur package.appxmanifest pour ouvrir le concepteur de manifeste. Sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Protocole**, puis cliquez sur **Ajouter**.
 
-    Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste pour le protocole (voir [**Manifeste du package AppX**](https://msdn.microsoft.com/library/windows/apps/dn934791) pour plus de détails) :
+    Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste pour le protocole (voir [**Manifeste du package AppX**](https://msdn.microsoft.com/library/windows/apps/dn934791) pour plus de détails):
 
 | Champ | Description |
 |-------|-------------|
@@ -47,7 +47,7 @@ L’application reçoit des événements d’activation uniquement pour les noms
 | **Point d’entrée** | Spécifie la tâche qui gère l’extension de protocole. Il s’agit généralement du nom complet de l’espace de noms d’un type Windows Runtime. En l’absence de spécification, le point d’entrée de l’application est utilisé. |
 | **Page de démarrage** | La page web qui gère le point d’extensibilité. |
 | **Groupe de ressources** | Une balise que vous pouvez utiliser pour regrouper les activations d’extensions à des fins de gestion des ressources. |
-| **Affichage souhaité** (Windows uniquement) | Spécifiez le champ **Affichage souhaité** pour indiquer la quantité d’espace nécessaire à la fenêtre de l’application quand elle est lancée pour le nom de schéma d’URI. Les valeurs possibles du champ **Affichage souhaité** sont **Default**, **UseLess**, **UseHalf**, **UseMore** ou **UseMinimum**. <br/>**Remarque** Windows tient compte de différents facteurs pour déterminer la taille finale de la fenêtre de l’application cible, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, etc. La définition du champ **Affichage souhaité** ne garantit pas un comportement de fenêtrage spécifique pour l’application cible.<br/> **Famille d’appareils mobiles : Affichage souhaité** n’est pas pris en charge dans la famille d’appareils mobiles. |
+| **Affichage souhaité** (Windows uniquement) | Spécifiez le champ **Affichage souhaité** pour indiquer la quantité d’espace nécessaire à la fenêtre de l’application quand elle est lancée pour le nom de schéma d’URI. Les valeurs possibles du champ **Affichage souhaité** sont **Default**, **UseLess**, **UseHalf**, **UseMore** ou **UseMinimum**. <br/>**Remarque** Windows tient compte de différents facteurs pour déterminer la taille finale de la fenêtre de l’application cible, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, etc. La définition du champ **Affichage souhaité** ne garantit pas un comportement de fenêtrage spécifique pour l’application cible.<br/> **Famille d’appareils mobiles: Affichage souhaité** n’est pas pris en charge dans la famille d’appareils mobiles. |
 2.  Entrez `images\Icon.png` comme **Logo**.
 3.  Entrez `SDK Sample URI Scheme` comme **Nom d’affichage**.
 4.  Entrez `alsdk` comme **Nom**.
@@ -66,16 +66,16 @@ L’application reçoit des événements d’activation uniquement pour les noms
           </Extensions>
     ```
 
-## Étape 2 : Ajouter les icônes appropriées
+## Étape 2: Ajouter les icônes appropriées
 
 
 Les applications qui deviennent la valeur par défaut d’un nom de schéma d’URI ont leurs icônes affichées à différents emplacements dans l’ensemble du système, par exemple dans l’applet Programmes par défaut du Panneau de configuration.
 
 Nous vous recommandons d’inclure les icônes appropriées dans votre projet, afin que votre logo s’affiche correctement dans tous ces emplacements. Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Pour obtenir des exemples d’icônes, voir [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=620490).
 
-![l’Explorateur de solution avec une vue des fichiers dans le dossier Images. il existe des versions de 16, 32, 48 et 256 pixels de « icon.targetsize » et de « smalltile-sdk ».](images/seviewofimages.png)
+![l’Explorateur de solution avec une vue des fichiers dans le dossier Images. il existe des versions de 16, 32, 48 et 256pixels de «icon.targetsize» et de «smalltile-sdk».](images/seviewofimages.png)
 
-## Étape 3 : Gérer l’événement activé
+## Étape 3: Gérer l’événement activé
 
 
 Le gestionnaire d’événements [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) reçoit tous les événements d’activation. La propriété **Kind** indique le type d’événement d’activation. Cet exemple est défini pour gérer les événements d’activation [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol).
@@ -119,62 +119,62 @@ Le gestionnaire d’événements [**OnActivated**](https://msdn.microsoft.com/li
 > }
 > ```
 
-> **Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application.
+> [!div class="tabbedCodeSnippets"]
 
-Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, la pile arrière (« backstack ») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension. Les applications qui décident d’utiliser un seul **Frame** XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page.
+**Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application. Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, la pile arrière («backstack») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension.
 
-En cas de lancement via l’activation de protocole, les applications doivent envisager d’inclure une interface utilisateur permettant à l’utilisateur de revenir à la première page de l’application.
+Les applications qui décident d’utiliser un seul **Frame** XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page.
 
-## Remarques
-
-
-N’importe quelle application ou n’importe quel site web peut utiliser votre nom de schéma d’URI, y compris des applications et sites malveillants. Par conséquent, toute donnée reçue dans cet URI peut provenir d’une source non approuvée. Nous vous recommandons de ne jamais effectuer une action permanente en fonction des paramètres que vous recevez dans un URI. Par exemple, les paramètres d’URI peuvent être utilisés pour lancer l’application sur la page de compte d’un utilisateur, mais nous vous recommandons de ne jamais les utiliser pour modifier directement le compte de l’utilisateur.
-
-> **Remarque** Si vous créez un nom de schéma d’URI pour votre application, prenez soin de suivre les recommandations de la norme [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). Cela permet de garantir que votre nom respecte les normes applicables aux schémas d’URI.
-
-> **Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application.
-
-Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle cible d’URI. De cette façon, la pile arrière (« backstack ») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension.
-
-Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour le lancement et les contrats de protocole, effacez les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page. En cas de lancement via le contrat de protocole, envisagez d’inclure une interface utilisateur permettant à l’utilisateur de revenir en haut de l’application.
-
-> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Articles connexes
+## En cas de lancement via l’activation de protocole, les applications doivent envisager d’inclure une interface utilisateur permettant à l’utilisateur de revenir à la première page de l’application.
 
 
-**Exemple complet**
+Remarques N’importe quelle application ou n’importe quel site web peut utiliser votre nom de schéma d’URI, y compris des applications et sites malveillants. Par conséquent, toute donnée reçue dans cet URI peut provenir d’une source non approuvée. Nous vous recommandons de ne jamais effectuer une action permanente en fonction des paramètres que vous recevez dans un URI.
 
-* [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+> Par exemple, les paramètres d’URI peuvent être utilisés pour lancer l’application sur la page de compte d’un utilisateur, mais nous vous recommandons de ne jamais les utiliser pour modifier directement le compte de l’utilisateur. **Remarque** Si vous créez un nom de schéma d’URI pour votre application, prenez soin de suivre les recommandations de la norme [RFC4395](http://go.microsoft.com/fwlink/p/?LinkID=266550).
 
-**Concepts**
+> Cela permet de garantir que votre nom respecte les normes applicables aux schémas d’URI.
 
-* [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [Modèle d’associations de types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+**Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application. Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle cible d’URI.
 
-**Tâches**
+De cette façon, la pile arrière («backstack») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension. Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour le lancement et les contrats de protocole, effacez les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page.
 
-* [Lancer l’application par défaut pour un URI](launch-default-app.md)
-* [Gérer l’activation des fichiers](handle-file-activation.md)
-
-**Recommandations**
-
-* [Recommandations en matière de types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
-
-**Référence**
-
-* [**Manifeste du package AppX**](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
+> En cas de lancement via le contrat de protocole, envisagez d’inclure une interface utilisateur permettant à l’utilisateur de revenir en haut de l’application. **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP).
 
  
 
+## Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+
+**Articles connexes**
+
+* [Exemple complet](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+
+**Exemple de lancement d’association**
+
+* [Concepts](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+
+**Modèle d’associations de types de fichiers et d’URI**
+
+* [Tâches](launch-default-app.md)
+* [Lancer l’application par défaut pour un URI](handle-file-activation.md)
+
+**Gérer l’activation des fichiers**
+
+* [Recommandations](https://msdn.microsoft.com/library/windows/apps/hh700321)
+
+**Recommandations en matière de types de fichiers et d’URI**
+
+* [**Référence**](https://msdn.microsoft.com/library/windows/apps/dn934791)
+* [**Manifeste du package AppX**](https://msdn.microsoft.com/library/windows/apps/br224742)
+* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242330)
+
+ 
+
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

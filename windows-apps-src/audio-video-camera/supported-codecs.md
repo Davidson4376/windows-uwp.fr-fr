@@ -11,7 +11,7 @@ ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
 
 # Codecs pris en charge
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.

@@ -22,7 +22,7 @@ Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sél
 -   [**Propriété Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
 -   [**Événement ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
 Utilisez un curseur lorsque vous voulez donner la possibilité à l’utilisateur de spécifier des valeurs définies et contiguës (telles que le volume ou la luminosité) ou une plage de valeurs distinctes (comme les paramètres de résolution d’écran).
 
@@ -30,15 +30,15 @@ Un curseur représente un bon choix lorsque vous savez que les utilisateurs cons
 
 N’utilisez pas un curseur pour les paramètres binaires. Utilisez un [bouton bascule](toggles.md) à la place.
 
-Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur :
+Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur:
 
--   **Le paramètre s’apparente-t-il à une quantité relative ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
--   **Le paramètre est-il une valeur numérique exacte connue ?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
--   **Un utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres ?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
--   **Le paramètre a-t-il une plage de quatre valeurs ou plus ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
--   **L’utilisateur peut-il changer la valeur ?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
+-   **Le paramètre s’apparente-t-il à une quantité relative?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
+-   **Le paramètre est-il une valeur numérique exacte connue?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
+-   **Un utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
+-   **Le paramètre a-t-il une plage de quatre valeurs ou plus?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
+-   **L’utilisateur peut-il changer la valeur?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
 
-Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si :
+Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si:
 
 -   l’espace de l’écran est réduit ;
 -   l’utilisateur préfère probablement utiliser un clavier.
@@ -123,7 +123,7 @@ La direction de la plage est le sens dans lequel vous déplacez le curseur lorsq
 
 ### Étapes et graduations
 
--   Utilisez des points d’ancrage si vous ne souhaitez pas que le curseur autorise des valeurs arbitraires entre la valeur minimale et la valeur maximale. Par exemple, si vous utilisez un curseur pour spécifier le nombre de tickets de cinéma à acheter, n’autorisez pas les valeurs à virgule flottante. Définissez un point d’ancrage de valeur 1.
+-   Utilisez des points d’ancrage si vous ne souhaitez pas que le curseur autorise des valeurs arbitraires entre la valeur minimale et la valeur maximale. Par exemple, si vous utilisez un curseur pour spécifier le nombre de tickets de cinéma à acheter, n’autorisez pas les valeurs à virgule flottante. Définissez un point d’ancrage de valeur1.
 -   Si vous spécifiez des points d’ancrage, veillez à ce que le dernier point corresponde à la valeur maximale du curseur.
 -   Utilisez la graduation lorsque vous voulez indiquer aux utilisateurs l’emplacement de valeurs importantes ou significatives. Par exemple, un curseur qui contrôle un zoom pourrait être pourvu de graduations pour 50 %, 100 % et 200 %.
 -   Affichez des graduations lorsque les utilisateurs ont besoin de connaître la valeur approximative du paramètre.

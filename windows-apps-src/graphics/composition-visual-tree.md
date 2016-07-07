@@ -9,7 +9,7 @@ ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 ---
 # Arborescence d’éléments visuels de composition
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Les éléments visuels de composition constituent la structure de l’arborescence des éléments visuels sur laquelle reposent toutes les autres fonctionnalités de l’API Composition. L’API permet aux développeurs de définir et de créer un ou plusieurs objets visuels, qui représentent chacun un nœud unique dans une arborescence d’éléments visuels.
 
@@ -17,14 +17,10 @@ Les éléments visuels de composition constituent la structure de l’arborescen
 
 Il existe trois types d’élément visuel qui composent la structure de l’arborescence d’éléments visuels plus une classe de pinceau de base contenant plusieurs sous-classes qui affectent le contenu d’un élément visuel :
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), et ajoute la possibilité de créer des enfants.
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) : dérive de [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), et offre la possibilité d’associer un pinceau afin que l’élément visuel puisse rendre les pixels notamment des images, des effets ou une couleur unie.
--   [
-            **CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) : permet l’application d’un effet dans le contenu d’un élément visuel. Il existe plusieurs sous-classes de CompositionBrush.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), et ajoute la possibilité de créer des enfants.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) : dérive de [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), et offre la possibilité d’associer un pinceau afin que l’élément visuel puisse rendre les pixels notamment des images, des effets ou une couleur unie.
+-   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) : permet l’application d’un effet dans le contenu d’un élément visuel. Il existe plusieurs sous-classes de CompositionBrush.
 
 ## Exemple CompositionVisual
 
@@ -41,12 +37,9 @@ Cela illustre un certain nombre de concepts de base sur l’utilisation de l’A
 
 Cet exemple illustre également trois éléments visuels :
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de Visual et ajoute la possibilité de créer des enfants.
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) : dérive d’un élément visuel, et offre la possibilité d’associer un pinceau afin que l’élément visuel puisse rendre les pixels notamment des images, des effets ou une couleur unie.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de Visual et ajoute la possibilité de créer des enfants.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) : dérive d’un élément visuel, et offre la possibilité d’associer un pinceau afin que l’élément visuel puisse rendre les pixels notamment des images, des effets ou une couleur unie.
 
 Même si cet exemple ne couvre pas des concepts comme celui des animations ou des effets plus complexes, il contient les éléments fondamentaux utilisés par tous ces systèmes.
 
@@ -82,11 +75,11 @@ clip.BottomInset = 1.0f;
 _currentVisual.Clip = clip;
 ```
 
-Remarque : à l’instar des autres objets de l’API, des animations peuvent être appliquées aux propriétés de [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825).
+Remarque: à l’instar des autres objets de l’API, des animations peuvent être appliquées aux propriétés de [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825).
 
 ## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Rotation d’une découpe
 
-Un [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) peut être transformé à l’aide d’une rotation. Notez que [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) prend en charge les radians et les degrés. Les radians sont définis pas défaut, mais il est facile de spécifier des degrés, comme le montre l’extrait de code suivant :
+Un [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) peut être transformé à l’aide d’une rotation. Notez que [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) prend en charge les radians et les degrés. Les radians sont définis pas défaut, mais il est facile de spécifier des degrés, comme le montre l’extrait de code suivant:
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
@@ -96,7 +89,7 @@ Rotation n’est qu’un des exemples des composants de transformation fournis p
 
 ## Définition de l’opacité
 
-La définition de l’opacité d’un élément visuel est une opération simple utilisant une valeur flottante. Dans l’exemple suivant, tous les carrés sont définis au départ sur l’opacité 0,8 :
+La définition de l’opacité d’un élément visuel est une opération simple utilisant une valeur flottante. Dans l’exemple suivant, tous les carrés sont définis au départ sur l’opacité 0,8:
 
 ```cs
 visual.Opacity = 0.8f;
@@ -514,6 +507,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

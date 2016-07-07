@@ -12,7 +12,7 @@ ms.openlocfilehash: 37d6131891e93d73021c860df45d1b5fdd7cfa53
 # Restrictions à l’exportation liées à l’utilisation du chiffrement
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le Windows Store.
 
@@ -28,7 +28,7 @@ Pour plus d’informations sur la réglementation en vigueur aux États-Unis en 
 
 ## Utilisations régies
 
-Premièrement, déterminez si votre application utilise un type de chiffrement soumis à la réglementation en vigueur aux États-Unis en matière de contrôle des exportations (« Export Administration Regulations » ou EAR). La question inclut les exemples affichés dans la liste à cet endroit, mais rappelez-vous que cette liste ne reprend pas toutes les applications possibles du chiffrement.
+Premièrement, déterminez si votre application utilise un type de chiffrement soumis à la réglementation en vigueur aux États-Unis en matière de contrôle des exportations («Export Administration Regulations» ou EAR). La question inclut les exemples affichés dans la liste à cet endroit, mais rappelez-vous que cette liste ne reprend pas toutes les applications possibles du chiffrement.
 
 > **Important** Tenez compte, non seulement du code que vous avez écrit pour votre application, mais également de l’ensemble des bibliothèques logicielles, des utilitaires et des composants du système d’exploitation que votre application contient ou auxquels elle se réfère.
 

@@ -21,7 +21,7 @@ Pour commencer, envisagez les différentes situations dans lesquelles votre appl
 
 -   Les utilisateurs peuvent interagir avec l’application à l’aide de plusieurs périphériques d’entrée ?
 -   Toutes les méthodes d’entrée sont-elles prises en charge à tout moment ? Avec certains contrôles ? À des moments ou dans des circonstances spécifiques ?
--   Une méthode d’entrée a-t-elle la priorité ?
+-   Une méthode d’entrée a-t-elle la priorité?
 
 ## Interactions en mode unique (ou exclusif)
 
@@ -37,13 +37,13 @@ Reconnaissance vocale + mouvement
 L’utilisateur désigne un produit, puis dit « Ajouter au panier ».
 
 Reconnaissance vocale + interface tactile  
-L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, puis dit « Envoyer photo ».
+L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, puis dit «Envoyer photo».
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

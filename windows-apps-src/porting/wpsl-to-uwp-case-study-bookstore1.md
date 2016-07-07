@@ -11,9 +11,9 @@ ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
 
 # Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP &#58; Bookstore1
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP) Windows 10. Grâce à Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP) Windows10. Grâce à Windows10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
 L’application que nous porterons se compose d’une classe **ListBox** liée à un modèle d’affichage. Ce modèle comporte une liste de livres qui indique leur titre, leur auteur et leur couverture. Les images de couverture de livre possèdent l’attribut **Action de génération** défini sur **Contenu** et l’attribut **Copier dans le répertoire de sortie** défini sur **Ne pas copier**.
 
@@ -33,17 +33,17 @@ Voici à quoi ressemble Bookstore1WPSL8, l’application que nous allons porter.
 
 ![Apparence de l’application Bookstore1WPSL8](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## Portage d’une application vers un projet Windows 10
+## Portage d’une application vers un projet Windows10
 
 La procédure consistant à créer un projet dans Visual Studio, puis à copier des fichiers de Bookstore1WPSL8 dans ce nouveau projet, est très rapide. Commencez par créer un projet Application vide (universelle Windows). Nommez-le Bookstore1Universal\_10. Voici les fichiers à copier de Bookstore1WPSL8 dans Bookstore1Universal\_10.
 
--   Copiez le dossier contenant les fichiers PNG d’image de couverture de livre (dossier \\Assets\\CoverImages). Une fois le dossier copié, dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit de la souris sur le dossier que vous avez copié et sélectionnez **Inclure dans le projet**. Cette commande correspond à ce que nous avons voulu dire par « insertion » de fichiers ou de dossiers dans un projet. Chaque fois que vous copiez un fichier ou un dossier, sélectionnez **Actualiser** dans l’**Explorateur de solutions**, puis incluez le fichier ou dossier dans le projet. Cette opération n’est pas nécessaire pour les fichiers dont vous modifiez la destination.
+-   Copiez le dossier contenant les fichiers PNG d’image de couverture de livre (dossier \\Assets\\CoverImages). Une fois le dossier copié, dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit de la souris sur le dossier que vous avez copié et sélectionnez **Inclure dans le projet**. Cette commande correspond à ce que nous avons voulu dire par «insertion» de fichiers ou de dossiers dans un projet. Chaque fois que vous copiez un fichier ou un dossier, sélectionnez **Actualiser** dans l’**Explorateur de solutions**, puis incluez le fichier ou dossier dans le projet. Cette opération n’est pas nécessaire pour les fichiers dont vous modifiez la destination.
 -   Copiez le dossier contenant le fichier source de modèle d’affichage (dossier \\ViewModel).
 -   Copiez le fichier MainPage.xaml et remplacez le fichier dans la destination.
 
-Nous pouvons conserver les fichiers App.xaml et App.xaml.cs générés par Visual Studio dans le projet Windows 10.
+Nous pouvons conserver les fichiers App.xaml et App.xaml.cs générés par Visual Studio dans le projet Windows10.
 
-Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore1WPSL8 par Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Dans le code impératif du fichier source du modèle d’affichage, apportez les modifications de portage suivantes :
+Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore1WPSL8 par Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Dans le code impératif du fichier source du modèle d’affichage, apportez les modifications de portage suivantes:
 
 -   Remplacez `System.ComponentModel.DesignerProperties` par `DesignMode`, puis appliquez-lui la commande **Résoudre**. Supprimez la propriété `IsInDesignTool` et utilisez IntelliSense pour ajouter le nom de propriété correct : `DesignModeEnabled`.
 -   Utilisez la commande **Résoudre** sur `ImageSource`.
@@ -51,11 +51,11 @@ Modifiez les fichiers de code source et de balisage que vous venez de copier et 
 -   Supprimez using `System.Windows.Media;` et `using System.Windows.Media.Imaging;`.
 -   Modifiez la valeur renvoyée par la propriété **Bookstore1Universal\_10.BookstoreViewModel.AppName** en remplaçant « BOOKSTORE1WPSL8 » par « BOOKSTORE1UNIVERSAL ».
 
-Dans le fichier MainPage.xaml, apportez les modifications de portage suivantes :
+Dans le fichier MainPage.xaml, apportez les modifications de portage suivantes:
 
 -   Remplacez l’élément `phone:PhoneApplicationPage` par `Page` (en incluant les occurrences figurant dans la syntaxe des éléments de propriété).
 -   Supprimez les déclarations de préfixe d’espace de noms `phone` et `shell`.
--   Remplacez l’élément « clr-namespace » par « using » dans la déclaration de préfixe d’espace de noms restante.
+-   Remplacez l’élément «clr-namespace» par «using» dans la déclaration de préfixe d’espace de noms restante.
 
 Nous pouvons choisir de corriger les erreurs de compilation de balisage très facilement si nous voulons afficher les résultats le plus tôt possible, même si cela implique la suppression temporaire du balisage. Conservons néanmoins un enregistrement des éléments supprimés en procédant ainsi. Voici ce dont il s’agit dans notre cas.
 
@@ -75,7 +75,7 @@ L’association de l’affichage et du modèle d’affichage fonctionne correcte
 
 Par défaut, toutes les orientations sont prises en charge. L’application Silverlight pour Windows Phone se limite explicitement à l’orientation portrait. Les éléments supprimés n\º 1 et n\º 2 sont donc compensés par l’accès au manifeste du package d’application dans le nouveau projet et par la sélection de l’option **Portrait** sous **Orientations prises en charge**.
 
-Pour cette application, l’élément n\º 3 n’est pas manquant, puisque la barre d’état (appelée auparavant barre d’état système) est affichée par défaut. Pour les éléments n\º 4 et n\º 5, nous devons rechercher quatre styles  **TextBlock** de plateforme Windows universelle (UWP) correspondant aux styles que nous utilisions dans Silverlight pour Windows Phone. Vous pouvez exécuter l’application Silverlight pour Windows Phone dans l’émulateur et la comparer côte à côte avec l’illustration de la section [Texte](wpsl-to-uwp-porting-xaml-and-ui.md#text). À partir de là et en examinant les propriétés des styles système Silverlight pour Windows Phone, nous pouvons élaborer le tableau ci-après.
+Pour cette application, l’élément n\º3 n’est pas manquant, puisque la barre d’état (appelée auparavant barre d’état système) est affichée par défaut. Pour les éléments n\º 4 et n\º 5, nous devons rechercher quatre styles  **TextBlock** de plateforme Windows universelle (UWP) correspondant aux styles que nous utilisions dans Silverlight pour Windows Phone. Vous pouvez exécuter l’application Silverlight pour Windows Phone dans l’émulateur et la comparer côte à côte avec l’illustration de la section [Texte](wpsl-to-uwp-porting-xaml-and-ui.md#text). À partir de là et en examinant les propriétés des styles système Silverlight pour Windows Phone, nous pouvons élaborer le tableau ci-après.
 
 | Clé de style Silverlight pour Windows Phone | Clé de style UWP          |
 |-------------------------------------|------------------------|
@@ -101,7 +101,7 @@ Dans Bookstore1WPSL8, nous avons fait cela :
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-Dans Bookstore1Universal, nous utilisons le [schéma d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406) ms-appx. Pour laisser le reste de notre code inchangé, nous pouvons utiliser une surcharge différente du constructeur **System.Uri** pour placer le schéma d’URI dans un URI de base et y ajouter le reste du chemin d’accès. Comme ceci :
+Dans Bookstore1Universal, nous utilisons le [schéma d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406) ms-appx. Pour laisser le reste de notre code inchangé, nous pouvons utiliser une surcharge différente du constructeur **System.Uri** pour placer le schéma d’URI dans un URI de base et y ajouter le reste du chemin d’accès. Comme ceci:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
@@ -120,9 +120,9 @@ Dans le cas d’une application plus élaborée, le moment serait bien choisi po
 
 Pour connaître la procédure à suivre pour contrôler le thème de votre application, voir [Modifications de thème](wpsl-to-uwp-porting-xaml-and-ui.md#theme-changes).
 
-![Application Windows 10 portée](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
+![Application Windows10 portée](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil mobile
+Application Windows10 portée, exécutée sur un appareil mobile
 
 ## Ajustement facultatif de la zone de liste pour les appareils mobiles
 

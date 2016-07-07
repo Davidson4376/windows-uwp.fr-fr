@@ -12,7 +12,7 @@ ms.openlocfilehash: d7af6683ab2def1af62e73be008e9189190cde95
 # Ajouter une interface utilisateur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous venez de voir comment l’exemple de jeu implémente l’objet jeu principal ainsi que l’infrastructure de rendu de base. Examinons maintenant la façon dont l’exemple de jeu fournit des informations sur l’état du jeu au joueur. Ici, vous allez apprendre à ajouter de simples options de menu et composants d’affichage à tête haute sur la sortie de chaîne de transformations graphiques 3-D.
 
@@ -173,13 +173,13 @@ void GameHud::Render(
 
 Dans ce code, la cible de rendu Direct2D établie pour la superposition est mise à jour pour refléter les modifications du nombre de coups, du temps restant et du numéro de niveau. Les rectangles sont tracés avec des appels de [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902), et le réticule est tracé avec deux appels de [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
 
-> **Remarque** Vous avez probablement noté que l’appel de **GameHud::Render** utilise un paramètre [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994), qui contient la taille du rectangle de la fenêtre principale. Cela illustre une partie essentielle de la programmation de l’interface utilisateur : l’obtention de la taille d’une fenêtre dans une mesure appelée DIP (Device Independent Pixel, pixel indépendant des appareils), où une unité DIP est définie comme étant égale à 1/96e de pouce. Direct2D met à l’échelle les unités de dessin en pixels réel lors du dessin, en utilisant pour cela le paramètre PPP (Points Par Pouce) Windows. De même, lorsque vous écrivez un texte à l’aide de DirectWrite, vous indiquez des DIP plutôt que des points pour la taille de la police. Les DIP sont exprimés sous la forme de nombres à virgule flottante.
+> **Remarque** Vous avez probablement noté que l’appel de **GameHud::Render** utilise un paramètre [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994), qui contient la taille du rectangle de la fenêtre principale. Cela illustre une partie essentielle de la programmation de l’interface utilisateur: l’obtention de la taille d’une fenêtre dans une mesure appelée DIP (Device Independent Pixel, pixel indépendant des appareils), où une unité DIP est définie comme étant égale à 1/96e de pouce. Direct2D met à l’échelle les unités de dessin en pixels réel lors du dessin, en utilisant pour cela le paramètre PPP (Points Par Pouce) Windows. De même, lorsque vous écrivez un texte à l’aide de DirectWrite, vous indiquez des DIP plutôt que des points pour la taille de la police. Les DIP sont exprimés sous la forme de nombres à virgule flottante.
 
  
 
 ### Affichage des informations de l’état du jeu dans la superposition
 
-Outre cet affichage à tête haute, l’exemple de jeu montre une superposition représentant cinq états de jeu, tous dotés d’une primitive de grand rectangle noir contenant du texte que le joueur doit lire. (Gardez à l’esprit que les rectangles du contrôleur de déplacement/vue ne sont pas tracés, car ils ne sont pas actifs dans ces états.) Ces états de superposition sont les suivants :
+Outre cet affichage à tête haute, l’exemple de jeu montre une superposition représentant cinq états de jeu, tous dotés d’une primitive de grand rectangle noir contenant du texte que le joueur doit lire. (Gardez à l’esprit que les rectangles du contrôleur de déplacement/vue ne sont pas tracés, car ils ne sont pas actifs dans ces états.) Ces états de superposition sont les suivants:
 
 -   Superposition de démarrage du jeu. Elle s’affiche lorsque le joueur démarre le jeu. Elle contient les meilleurs scores des différentes sessions de parties.
 
@@ -207,7 +207,7 @@ Voyons comment initialiser et tracer la superposition pour ces cinq états.
 
 Les cinq états explicites ont des points communs : d’abord, ils utilisent tous un rectangle noir au centre de l’écran comme arrière-plan ; ensuite, le texte affiché est un texte de titre ou de corps ; enfin, le texte utilise la police Segoe UI et est écrit au-dessus du rectangle noir. Par conséquent, les ressources nécessaires et les méthodes qui les implémentent sont très semblables.
 
-L’exemple de jeu dispose de quatre méthodes (**GameInfoOverlay::Initialize**, **GameInfoOverlay::SetDpi**, **GameInfoOverlay::RecreateDirectXResources** et **GameInfoOverlay::RecreateDpiDependentResources**) qu’il utilise pour initialiser, définir les points par pouce, recréer les ressources DirectWrite (éléments texte) et construire cette superposition d’affichage, respectivement. Voici le code pour ces quatre méthodes :
+L’exemple de jeu dispose de quatre méthodes (**GameInfoOverlay::Initialize**, **GameInfoOverlay::SetDpi**, **GameInfoOverlay::RecreateDirectXResources** et **GameInfoOverlay::RecreateDpiDependentResources**) qu’il utilise pour initialiser, définir les points par pouce, recréer les ressources DirectWrite (éléments texte) et construire cette superposition d’affichage, respectivement. Voici le code pour ces quatre méthodes:
 
 ```cpp
 void GameInfoOverlay::Initialize(
@@ -368,11 +368,11 @@ La méthode **Initialize** obtient une fabrique de l’objet [**ID2D1Device**](h
 
 **RecreateDeviceResources** utilise l’objet de fabrique DirectWrite pour créer des formateurs (pinceaux) pour les chaînes de texte de titre et de corps qui s’affichent sur la superposition. Cette méthode crée un pinceau blanc pour dessiner le texte, un pinceau noir pour tracer l’arrière-plan et un pinceau orange pour dessiner des messages d’action. Elle appelle ensuite **RecreateDpiDependentResources** pour préparer une bitmap sur laquelle écrire le texte en appelant [**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480). Enfin, **RecreateDpiDependentResources** affecte à la cible de rendu du contexte de périphérique Direct2D la bitmap et l’efface, ce qui attribue la couleur noire à chaque pixel de la bitmap.
 
-Tout ce dont la superposition a besoin à présent est du texte à afficher !
+Tout ce dont la superposition a besoin à présent est du texte à afficher!
 
 ### Représentation de l’état du jeu dans la superposition
 
-Chacun des cinq états de superposition dans l’exemple de jeu a une méthode correspondante sur l’objet **GameInfoOverlay**. Ces méthodes tracent une variation de la superposition pour communiquer des informations explicites au joueur sur le jeu proprement dit. Cette communication est, bien sûr, représentée sous la forme de deux chaînes : une chaîne de titre et une chaîne de corps. Dans la mesure où l’exemple a déjà configuré les ressources et la disposition pour ces informations dans la méthode **RecreateDeviceResources**, il doit uniquement fournir les chaînes propres à l’état de superposition.
+Chacun des cinq états de superposition dans l’exemple de jeu a une méthode correspondante sur l’objet **GameInfoOverlay**. Ces méthodes tracent une variation de la superposition pour communiquer des informations explicites au joueur sur le jeu proprement dit. Cette communication est, bien sûr, représentée sous la forme de deux chaînes: une chaîne de titre et une chaîne de corps. Dans la mesure où l’exemple a déjà configuré les ressources et la disposition pour ces informations dans la méthode **RecreateDeviceResources**, il doit uniquement fournir les chaînes propres à l’état de superposition.
 
 Désormais, dans la définition de la classe **GameInfoOverlay**, l’exemple a déclaré trois zones rectangulaires qui correspondent à des zones spécifiques de la superposition, comme suit :
 
@@ -382,7 +382,7 @@ static const D2D1_RECT_F bodyRectangle = D2D1::RectF(50.0f, 110.0f, GameInfoOver
 static const D2D1_RECT_F actionRectangle = D2D1::RectF(50.0f, GameInfoOverlayConstant::Height - 45.0f, GameInfoOverlayConstant::Width - 50.0f, GameInfoOverlayConstant::Height - 5.0f);
 ```
 
-Ces zones ont chacune une finalité spécifique :
+Ces zones ont chacune une finalité spécifique:
 
 -   **titleRectangle** est l’emplacement d’écriture du texte du titre.
 -   **bodyRectangle** est l’emplacement d’écriture du texte du corps.
@@ -440,7 +440,7 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 }
 ```
 
-En utilisant le contexte de périphérique Direct2D que l’objet **GameInfoOverlay** a initialisé et configuré à l’aide d’**Initialize** et de **RecreateDirectXResources**, cette méthode remplit les rectangles de titre et de corps de noir avec le pinceau d’arrière-plan. Elle écrit le texte pour la chaîne « Meilleur score » dans le rectangle de titre, ainsi qu’une chaîne contenant les informations mises à jour sur l’état du jeu dans le rectangle de corps en utilisant le pinceau de texte blanc.
+En utilisant le contexte de périphérique Direct2D que l’objet **GameInfoOverlay** a initialisé et configuré à l’aide d’**Initialize** et de **RecreateDirectXResources**, cette méthode remplit les rectangles de titre et de corps de noir avec le pinceau d’arrière-plan. Elle écrit le texte pour la chaîne «Meilleur score» dans le rectangle de titre, ainsi qu’une chaîne contenant les informations mises à jour sur l’état du jeu dans le rectangle de corps en utilisant le pinceau de texte blanc.
 
 Le rectangle d’action est mis à jour par un appel ultérieur de **GameInfoOverlay::SetAction** à partir d’une méthode sur l’objet **DirectXApp**, qui fournit les informations sur l’état du jeu nécessaires à **SetAction** pour déterminer le message approprié à l’intention du joueur (par exemple, « Appuyez pour continuer »).
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 13dd6a9c38d85ead29a43f470b7c0f63d025d612
 # Soumettre votre application et configurer une médiation publicitaire
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Une fois que vous avez développé votre application pour inclure tous les réseaux publicitaires que vous voudrez peut-être utiliser et que vous l’avez testée pour vérifier son bon fonctionnement, vous êtes prêt à la soumettre. Lors du processus de soumission, vous pouvez configurer le comportement de médiation publicitaire que vous souhaitez. Vous pourrez l’ajuster ultérieurement sans devoir modifier le code ni soumettre de nouveaux packages.
@@ -28,12 +28,12 @@ Les étapes suivantes décrivent comment créer une configuration de base dans l
 
 1.  Sous **Configurer la médiation pour**, vérifiez que le package d’application que vous voulez configurer est sélectionné.
 2.  Sous **Cible**, assurez-vous que l’option **De base** est sélectionnée.
-3.  Sous **Fréquence d’actualisation**, définissez la durée du cycle de médiation (fréquence à laquelle les nouvelles publicités doivent être affichées). Cette durée doit être comprise entre 30 et 120 secondes.
+3.  Sous **Fréquence d’actualisation**, définissez la durée du cycle de médiation (fréquence à laquelle les nouvelles publicités doivent être affichées). Cette durée doit être comprise entre 30 et 120secondes.
   > **Remarque** Si vous avez déjà configuré une fréquence d’actualisation dans l’un de vos portails de réseau publicitaire, vérifiez que vous définissez la même fréquence d’actualisation ici.
 
 4.  Ensuite, la liste **Médiation publicitaire Windows** répertorie tous les réseaux publicitaires utilisés par votre application et propose deux façons de spécifier la fréquence à laquelle votre application doit utiliser chaque réseau. Choisissez l’une de ces options dans la liste déroulante **Type de médiation** :
 
-    -   **Classer par poids**. Choisissez cette option pour appliquer des valeurs de pourcentage à chaque réseau publicitaire pour indiquer à quelle fréquence l’application doit les utiliser. Le total des pourcentages que vous définissez pour tous les réseaux publicitaires doit correspondre exactement à 100 %. Pour en savoir plus, voir [Classer les réseaux publicitaires par poids](#order-ad-networks-by-weight).
+    -   **Classer par poids**. Choisissez cette option pour appliquer des valeurs de pourcentage à chaque réseau publicitaire pour indiquer à quelle fréquence l’application doit les utiliser. Le total des pourcentages que vous définissez pour tous les réseaux publicitaires doit correspondre exactement à 100%. Pour en savoir plus, voir [Classer les réseaux publicitaires par poids](#order-ad-networks-by-weight).
     -   **Classer par classement**. Choisissez cette option pour appliquer un numéro de classement à chaque réseau publicitaire, de 1 à *n*, qui spécifie la fréquence à laquelle votre application doit utiliser chaque réseau. Pour en savoir plus, voir [Classer les réseaux publicitaires par classement](#order-ad-networkds-by-rank).
 
     Le Centre de développement applique automatiquement les [paramètres par défaut](#default-ad-mediation-settings), qui spécifient la fréquence à laquelle votre application doit utiliser chaque réseau publicitaire.
@@ -42,7 +42,7 @@ Les étapes suivantes décrivent comment créer une configuration de base dans l
 
     Dans la liste développée des paramètres de chaque réseau, vous pouvez éventuellement utiliser le champ **Délai d’attente** pour spécifier le nombre de secondes (de 2 à 120) définissant le temps d’attente de la médiation publicitaire après qu’elle a demandé une publicité au réseau publicitaire, avant qu’elle n’abandonne cette demande et n’en adresse une autre à un autre réseau. Si vous avez déjà [spécifié cette valeur dans votre code](add-and-use-the-ad-mediator-control.md#set-timeouts), la valeur spécifiée dans le code remplace la valeur définie ici.
 
-    Si vous utilisez Microsoft Advertising, notez les éléments suivants :
+    Si vous utilisez Microsoft Advertising, notez les éléments suivants:
 
     -   Les paramètres de **Microsoft Advertising** sont renseignés pour vous en fonction du contenu de votre package d’application. Vous pouvez éventuellement spécifier vos propres valeurs d’**ID de l’application** et d’**ID de l’unité de publicité** pour **Microsoft Advertising**.
     -   Outre **Microsoft Advertising**, il existe aussi une ligne pour **les publicités maison Microsoft Advertising**. Les publicités maison permettent de créer des publicités gratuites qui promeuvent l’une de vos applications dans vos autres applications. Bien que les publicités maison soient gratuites, votre allocation provient du même pool que les autres réseaux publicitaires. Par conséquent, si vous allouez des demandes de publicité aux **Publicités maison Microsoft Advertising**, vous choisissez d’appliquer ce pourcentage de votre dotation publicitaire totale aux publicités maison. Si vous allouez des demandes de publicité pour les publicités maison, vous devez également créer une campagne de publicité maison pour au moins une autre application enregistrée dans votre compte de développeur. Pour plus d’informations, voir [À propos des publicités maison](https://msdn.microsoft.com/library/windows/apps/mt148566).
@@ -118,7 +118,7 @@ Pour consulter les rapports de médiation publicitaire, accédez à la section *
 
 Vous pouvez configurer vos réseaux publicitaires de différentes manières pour prendre en charge des scénarios et des objectifs variés. Les exemples ci-dessous montrent comment vous pouvez configurer votre médiation publicitaire à l’aide de **Classer par poids** lorsque vous avez inclus 3 réseaux publicitaires. Nous allons utiliser Microsoft Advertising, Inneractive et AdDuplex à titre d’exemples de réseau.
 
-### Exemple 1
+### Exemple1
 
 Vous voulez déterminer le taux de remplissage et le coût eCPM de tous les réseaux, avant de commencer l’optimisation.
 
@@ -126,7 +126,7 @@ Pour commencer, définissez chaque réseau pour utiliser une distribution égale
 
 Après quelques jours ou quelques semaines, vous vérifierez le taux de remplissage et le coût eCPM dans chaque portail de réseau publicitaire. Cela vous aidera à déterminer les meilleurs réseaux publicitaires de chaque marché. Vous pouvez ensuite effectuer des ajustements pour des marchés spécifiques (ou généraux) sans avoir à soumettre de nouveaux packages.
 
-### Exemple 2
+### Exemple2
 
 Vous voulez utiliser Microsoft Advertising en premier lieu autant que possible. Si Microsoft Advertising ne peut pas fournir de publicité, vous serez satisfait d’utiliser l’un de vos autres réseaux publicitaires en tant que réseau de réserve, sans aucune préférence pour un réseau particulier.
 
@@ -136,7 +136,7 @@ Vous voulez utiliser Microsoft Advertising en premier lieu autant que possible. 
 | Inneractive           | Sauvegarde        |
 | AdDuplex              | Sauvegarde        |
 
-### Exemple 3
+### Exemple3
 
 Vous souhaitez généralement utiliser Microsoft Advertising en premier. Si Microsoft Advertising ne peut pas fournir de publicité, vous voulez vous assurer qu’Inneractive sera appelé avant AdDuplex.
 

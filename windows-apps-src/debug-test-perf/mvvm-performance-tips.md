@@ -1,7 +1,7 @@
 ---
 author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
-title: "Conseils relatifs aux performances du langage de programmation et du modèle MVVM"
+title: "Conseils relatifs aux performances du langage de programmation et du modèleMVVM"
 description: "Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
@@ -10,7 +10,7 @@ ms.openlocfilehash: 77a162076e14b4726e1fb29673b14be65be37a16
 ---
 # Conseils relatifs aux performances du langage de programmation et du modèle MVVM
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation.
 

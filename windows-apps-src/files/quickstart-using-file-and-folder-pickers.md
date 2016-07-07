@@ -12,7 +12,7 @@ ms.openlocfilehash: efb0b106c779820b2dee48eff6f09b54ae9ef2c4
 # Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -64,7 +64,7 @@ Par exemple, vous pouvez appeler le sélecteur de fichiers dans votre applicatio
 
 ![Diagramme illustrant le processus au cours duquel une application obtient un fichier à ouvrir à partir d’une autre application en utilisant le sélecteur de fichiers en tant qu’interface entre les deux applications.](images/app-to-app-diagram-600px.png)
 
-## Sélectionner un fichier pour l’ouvrir : code complet
+## Sélectionner un fichier pour l’ouvrir: code complet
 
 
 ```CSharp
@@ -155,7 +155,7 @@ var files = await picker.PickMultipleFilesAsync();
         }
 ```
 
-## Sélectionner un dossier : code complet
+## Sélectionner un dossier: code complet
 
 
 ```CSharp

@@ -12,7 +12,7 @@ ms.openlocfilehash: cd70a84e498c390684a59b33ec8a34375e1eb863
 # Encoder et décoder des données
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cet exemple de code indique comment encoder et décoder des données base64 et hexadécimales dans une application de plateforme Windows universelle (UWP).
 

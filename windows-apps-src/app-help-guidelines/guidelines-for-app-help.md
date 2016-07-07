@@ -28,21 +28,21 @@ Une conception intuitive et conviviale constitue donc la première étape de la 
 
 Un utilisateur ne recherchera des informations d’aide que s’il a rencontré un problème. Votre contenu d’aide doit donc lui fournir une réponse rapide et efficace à ce problème. Si les informations d’aide ne sont pas immédiatement utiles ou se révèlent trop complexes, les utilisateurs seront plus susceptibles de les ignorer.
 
-Quel que soit le type de votre contenu d’aide, il doit présenter les caractéristiques suivantes :
+Quel que soit le type de votre contenu d’aide, il doit présenter les caractéristiques suivantes:
 
--   **Intelligibilité :** une aide incompréhensible se révèle plus perturbante qu’une aide inexistante.
+-   **Intelligibilité:** une aide incompréhensible se révèle plus perturbante qu’une aide inexistante.
 
--   **Simplicité :** les utilisateurs qui cherchent des informations d’aide veulent obtenir des réponses claires et directes.
+-   **Simplicité:** les utilisateurs qui cherchent des informations d’aide veulent obtenir des réponses claires et directes.
 
--   **Pertinence :** les utilisateurs ne veulent pas avoir besoin de rechercher leur problème spécifique. Ils souhaitent obtenir directement l’aide la plus pertinente (appelée « aide contextuelle ») ou une interface facile à parcourir.
+-   **Pertinence:** les utilisateurs ne veulent pas avoir besoin de rechercher leur problème spécifique. Ils souhaitent obtenir directement l’aide la plus pertinente (appelée «aide contextuelle») ou une interface facile à parcourir.
 
--   **Immédiateté :** lorsqu’un utilisateur recherche de l’aide, il veut la voir s’afficher instantanément. Si votre application comporte des pages permettant des signaler des bogues, de formuler des commentaires, de visualiser les Conditions de service ou d’autres fonctions similaires, vous pouvez inclure des liens vers ces pages dans votre contenu d’aide. Toutefois, ces informations doivent être proposées en tant que contenu secondaire sur la page d’aide principale, et non sous la forme d’éléments plus importants ou de même niveau.
+-   **Immédiateté:** lorsqu’un utilisateur recherche de l’aide, il veut la voir s’afficher instantanément. Si votre application comporte des pages permettant des signaler des bogues, de formuler des commentaires, de visualiser les Conditions de service ou d’autres fonctions similaires, vous pouvez inclure des liens vers ces pages dans votre contenu d’aide. Toutefois, ces informations doivent être proposées en tant que contenu secondaire sur la page d’aide principale, et non sous la forme d’éléments plus importants ou de même niveau.
 
--   **Cohérence :** quel que soit le type de votre contenu d’aide, ce dernier fait partie intégrante de votre application et doit donc être traité comme n’importe quelle autre partie de l’interface utilisateur. L’aide que vous proposez est soumise aux mêmes principes de facilité d’utilisation, d’accessibilité et de présentation graphique que le reste de votre application.
+-   **Cohérence:** quel que soit le type de votre contenu d’aide, ce dernier fait partie intégrante de votre application et doit donc être traité comme n’importe quelle autre partie de l’interface utilisateur. L’aide que vous proposez est soumise aux mêmes principes de facilité d’utilisation, d’accessibilité et de présentation graphique que le reste de votre application.
 
 ## <span id="types_of_help"></span><span id="TYPES_OF_HELP"></span>Types d’aide
 
-Il existe trois grandes catégories de contenu d’aide, chacune présentant des avantages variés et convenant à différents usages. Vous pouvez combiner ces différents types d’aide dans votre application selon vos besoins.
+Il existe troisgrandes catégories de contenu d’aide, chacune présentant des avantages variés et convenant à différents usages. Vous pouvez combiner ces différents types d’aide dans votre application selon vos besoins.
 
 #### <span id="instructional_ui"></span><span id="INSTRUCTIONAL_UI"></span>Interface utilisateur d’instructions
 

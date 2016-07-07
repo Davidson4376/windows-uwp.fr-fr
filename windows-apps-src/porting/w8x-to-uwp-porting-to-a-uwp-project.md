@@ -11,7 +11,7 @@ ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
 
 # Portage d’un projet Windows Runtime 8.x vers un projet UWP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Lorsque vous commencez le processus de portage, vous avez le choix entre deux options. La première consiste à modifier une copie de vos fichiers de projet existants, y compris le manifeste de package d’application (pour cette option, voir les informations sur la mise à jour de vos fichiers de projet dans [Migrer des applications vers la plateforme Windows universelle](https://msdn.microsoft.com/library/mt148501.aspx)). La seconde consiste à créer un projet Windows 10 dans Visual Studio et à copier vos fichiers dans ce projet. La première section de cette rubrique décrit la seconde option, mais le reste de la rubrique comporte des informations supplémentaires applicables aux deux options. Vous pouvez également décider de conserver votre nouveau projet Windows 10 dans la même solution que vos projets existants et de partager les fichiers de code source à l’aide d’un projet partagé. Ou vous pouvez conserver le nouveau projet dans une solution propre à celui-ci et partager les fichiers de code source à l’aide de la fonctionnalité de fichiers liés offerte par Visual Studio.
@@ -33,20 +33,20 @@ Vous constaterez qu’une légère refactorisation et/ou l’ajout de code adapt
 -   Les fichiers communs à toutes les familles d’appareils ne requièrent aucune considération particulière. Ces fichiers seront utilisés par l’application sur toutes les familles d’appareils sur lesquelles elle est exécutée. Cela inclut les fichiers de balisage XAML, les fichiers de code source impératif et les fichiers de ressources.
 -   Il est possible de faire en sorte que votre application détecte la famille d’appareils sur laquelle elle est exécutée et navigue vers une vue spécialement conçue pour cette famille d’appareils. Pour plus d’informations, voir [Détection de la plateforme d’exécution de votre application](w8x-to-uwp-input-and-sensors.md#detecting-the-platform).
 -   Une technique similaire qui peut se révéler utile s’il n’existe aucune autre solution consiste à donner à un fichier de balisage ou à un fichier **ResourceDictionary** (ou au dossier contenant le fichier) un nom spécifique, de manière qu’il soit chargé automatiquement à l’exécution uniquement lorsque votre application est exécutée sur une famille d’appareils particulière. Cette technique est illustrée dans l’étude de cas [Bookstore1](w8x-to-uwp-case-study-bookstore1.md#an-optional-adjustment).
--   Vous devriez être en mesure de supprimer une grande partie des directives de compilation conditionnelle du code source de votre application 8.1 universelle si vous avez uniquement besoin de prendre en charge Windows 10. Voir [Compilation conditionnelle et code adaptatif](#reviewing-conditional-compilation) dans cette rubrique.
+-   Vous devriez être en mesure de supprimer une grande partie des directives de compilation conditionnelle du code source de votre application8.1 universelle si vous avez uniquement besoin de prendre en charge Windows10. Voir [Compilation conditionnelle et code adaptatif](#reviewing-conditional-compilation) dans cette rubrique.
 -   Pour utiliser des fonctionnalités qui ne sont pas disponibles sur toutes les familles d’appareils (imprimantes, scanneurs, bouton de l’appareil photo, etc.), vous pouvez écrire du code adaptatif. Voir le troisième exemple de la section [Compilation conditionnelle et code adaptatif](#reviewing-conditional-compilation) dans cette rubrique.
 -   Si vous souhaitez prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10, vous pouvez conserver trois projets dans la même solution et partager le code à l’aide d’un projet partagé. Vous pouvez également partager des fichiers de code source entre des projets. Pour ce faire, procédez comme suit : dans Visual Studio, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions**, sélectionnez **Ajouter un élément existant**, sélectionnez les fichiers à partager, puis cliquez sur **Ajouter en tant que lien**. Stockez vos fichiers de code source dans un dossier commun sur le système de fichiers sur lequel les projets liés peuvent les voir. N’oubliez pas de les ajouter dans le contrôle de code source.
--   Pour effectuer une réutilisation au niveau binaire plutôt qu’au niveau du code source, consultez l’article [Création de composants Windows Runtime en C# et Visual Basic](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). Il existe également des bibliothèques de classes portables, qui prennent en charge le sous-ensemble d’API .NET disponibles dans .NET Framework pour les applications Windows 8.1, Windows Phone 8.1 et Windows 10 (.NET Core), ainsi que .NET Framework dans son ensemble. Les assemblies des bibliothèques de classes portables sont des fichiers binaires compatibles avec toutes ces plateformes. Utilisez Visual Studio pour créer un projet qui cible une bibliothèque de classes portable. Voir [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx).
+-   Pour effectuer une réutilisation au niveau binaire plutôt qu’au niveau du code source, consultez l’article [Création de composants Windows Runtime en C# et Visual Basic](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). Il existe également des bibliothèques de classes portables, qui prennent en charge le sous-ensemble d’API .NET disponibles dans .NET Framework pour les applications Windows 8.1, Windows Phone 8.1 et Windows 10 (.NET Core), ainsi que .NET Framework dans son ensemble. Les assemblies des bibliothèques de classes portables sont des fichiers binaires compatibles avec toutes ces plateformes. Utilisez VisualStudio pour créer un projet qui cible une bibliothèque de classes portable. Voir [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx).
 
 ## Kits de développement logiciel (SDK) d’extension
 
-La plupart des API Windows Runtime déjà appelées par votre application 8.1 universelle sont implémentées dans l’ensemble d’API désigné sous le terme de famille d’appareils universels. Toutefois, certaines d’entre elles sont implémentées dans des SDK d’extension, et Visual Studio ne reconnaît que les API implémentées par la famille d’appareils cible de votre application ou par les SDK d’extension que vous avez référencés.
+La plupart des API WindowsRuntime déjà appelées par votre application8.1 universelle sont implémentées dans l’ensemble d’API désigné sous le terme de famille d’appareils universels. Toutefois, certaines d’entre elles sont implémentées dans des SDK d’extension, et Visual Studio ne reconnaît que les API implémentées par la famille d’appareils cible de votre application ou par les SDK d’extension que vous avez référencés.
 
 Si vous obtenez des erreurs de compilation à propos d’espaces de noms, de types ou de membres introuvables, cela en est probablement la cause. Ouvrez la rubrique concernant l’API dans la documentation de référence sur les API et accédez à la section Configuration requise pour connaître la famille d’appareils d’implémentation. Si celle-ci ne correspond pas à votre famille d’appareils cible, vous avez besoin d’ajouter une référence au SDK d’extension pour cette famille d’appareils afin que l’API soit disponible pour votre projet.
 
 Cliquez sur **Projet**&gt;**Ajouter une référence**&gt;**Applications universelles Windows**&gt;**Extensions** et cochez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version 10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
 
-La référence suivante sera ajoutée à votre fichier de projet :
+La référence suivante sera ajoutée à votre fichier de projet:
 
 ```XML
 <ItemGroup>
@@ -68,7 +68,7 @@ Voir également [Manifeste du package de l’application](#appxpackage).
 
 Si vous utilisez la compilation conditionnelle (avec des directives de préprocesseur C#) afin que vos fichiers de code fonctionnent à la fois sur Windows 8.1 et sur Windows Phone 8.1, vous pouvez à présent revoir cette compilation conditionnelle à la lumière du travail de convergence effectué dans Windows 10. Cette convergence signifie que certaines conditions peuvent être complètement supprimées de votre application Windows 10. D’autres sont remplacées par des vérifications à l’exécution, comme illustré dans les exemples ci-dessous.
 
-**Remarque** Si vous le souhaitez, vous pouvez également prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10 dans un seul fichier de code. Si vous examinez les pages de propriétés de votre projet Windows 10, vous verrez que le projet définit WINDOWS\_UAP en tant que symbole de compilation conditionnelle. Par conséquent, vous pouvez l’utiliser en association avec WINDOWS\_APP et WINDOWS\_PHONE\_APP. Les exemples suivants illustrent le cas de figure plus simple impliquant la suppression de la compilation conditionnelle d’une application 8.1 universelle et le remplacement par le code équivalent pour une application Windows 10.
+**Remarque** Si vous le souhaitez, vous pouvez également prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10 dans un seul fichier de code. Si vous examinez les pages de propriétés de votre projet Windows10, vous verrez que le projet définit WINDOWS\_UAP en tant que symbole de compilation conditionnelle. Par conséquent, vous pouvez l’utiliser en association avec WINDOWS\_APP et WINDOWS\_PHONE\_APP. Les exemples suivants illustrent le cas de figure plus simple impliquant la suppression de la compilation conditionnelle d’une application8.1 universelle et le remplacement par le code équivalent pour une application Windows10.
 
 Le premier exemple illustre le modèle d’utilisation pour l’API **PickSingleFileAsync** (qui s’applique uniquement à Windows 8.1) et l’API **PickSingleFileAndContinue** (qui concerne uniquement Windows Phone 8.1).
 
@@ -86,7 +86,7 @@ Windows 10 converge vers l’API [**PickSingleFileAsync**](https://msdn.microsof
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
 ```
 
-Dans cet exemple, nous gérons le bouton matériel Précédent, mais uniquement sur Windows Phone.
+Dans cet exemple, nous gérons le bouton matériel Précédent, mais uniquement sur WindowsPhone.
 
 ```csharp
 #if WINDOWS_PHONE_APP
@@ -103,7 +103,7 @@ Dans cet exemple, nous gérons le bouton matériel Précédent, mais uniquement 
 #endif // WINDOWS_PHONE_APP
 ```
 
-Dans Windows 10, l’événement de bouton Précédent est un concept universel. Les boutons Précédent implémentés de manière matérielle ou logicielle déclenchent tous l’événement [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596), qui est donc l’élément à gérer.
+Dans Windows10, l’événement de bouton Précédent est un concept universel. Les boutons Précédent implémentés de manière matérielle ou logicielle déclenchent tous l’événement [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596), qui est donc l’élément à gérer.
 
 ```csharp
     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -117,7 +117,7 @@ private void ViewModelLocator_BackRequested(object sender, Windows.UI.Core.BackR
 }
 ```
 
-Ce dernier exemple est semblable au précédent. Ici, nous gérons le bouton matériel d’appareil photo, mais une fois encore, uniquement dans le code compilé dans le package d’application Windows Phone.
+Ce dernier exemple est semblable au précédent. Ici, nous gérons le bouton matériel d’appareil photo, mais une fois encore, uniquement dans le code compilé dans le package d’application WindowsPhone.
 
 ```csharp
 #if WINDOWS_PHONE_APP
@@ -134,7 +134,7 @@ void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input.CameraE
 #endif // WINDOWS_PHONE_APP
 ```
 
-Dans Windows 10, le bouton matériel d’appareil photo est un concept propre à la famille d’appareils mobiles. Comme un même package d’application s’exécutera sur tous les appareils, nous transformons notre condition de compilation en condition d’exécution en utilisant ce que l’on appelle du code adaptatif. Pour ce faire, nous utilisons la classe [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) afin d’envoyer une requête au moment de l’exécution pour vérifier si la classe [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) est présente. **HardwareButtons** étant défini dans le SDK d’extension mobile, nous devons ajouter une référence à ce SDK dans notre projet pour permettre la compilation de ce code. Notez cependant que le gestionnaire sera uniquement exécuté sur les appareils qui implémentent les types définis dans le SDK d’extension mobile, c’est-à-dire appartenant à la famille d’appareils mobiles. Ce code est donc moralement équivalent au code 8.1 universel en ce sens qu’il prend soin de n’utiliser que des fonctionnalités présentes, bien que la méthode utilisée pour y parvenir soit différente.
+Dans Windows10, le bouton matériel d’appareil photo est un concept propre à la famille d’appareils mobiles. Comme un même package d’application s’exécutera sur tous les appareils, nous transformons notre condition de compilation en condition d’exécution en utilisant ce que l’on appelle du code adaptatif. Pour ce faire, nous utilisons la classe [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) afin d’envoyer une requête au moment de l’exécution pour vérifier si la classe [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) est présente. **HardwareButtons** étant défini dans le SDK d’extension mobile, nous devons ajouter une référence à ce SDK dans notre projet pour permettre la compilation de ce code. Notez cependant que le gestionnaire sera uniquement exécuté sur les appareils qui implémentent les types définis dans le SDK d’extension mobile, c’est-à-dire appartenant à la famille d’appareils mobiles. Ce code est donc moralement équivalent au code 8.1 universel en ce sens qu’il prend soin de n’utiliser que des fonctionnalités présentes, bien que la méthode utilisée pour y parvenir soit différente.
 
 ```csharp
     // Note: Cache the value instead of querying it more than once.

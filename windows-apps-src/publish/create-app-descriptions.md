@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "La section Description du processus de soumission d’application vous permet de définir le texte et les images qui seront visibles par les clients dans la description de votre application dans le Windows Store."
+Description: "La section Description du processus de soumission d’application vous permet de définir le texte et les images qui seront visibles par les clients dans la description de votre application dans le WindowsStore."
 title: "Création des descriptions d’application"
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.sourcegitcommit: 447beeae917b03dea2538e74fd9cd8ef48b0f41f
@@ -42,13 +42,13 @@ Pour plus d’informations, voir [Créer des descriptions spécifiques de la pla
 
 ### Description
 
-Le champ de description est l’emplacement où vous pouvez indiquer aux clients ce que fait votre application. Ce champ obligatoire accepte jusqu’à 10 000 caractères.
+Le champ de description est l’emplacement où vous pouvez indiquer aux clients ce que fait votre application. Ce champ obligatoire accepte jusqu’à 10000 caractères.
 
 Pour obtenir des conseils sur la rédaction d’une description attrayante, consultez l’article [Rédiger une description convaincante de l’application](write-a-great-app-description.md).
 
 ### Notes de publication
 
-Si vous soumettez votre application pour la première fois, vous laisserez probablement ce champ vide. Si vous proposez une mise à jour d’une application existante, ce champ vous permet d’indiquer aux clients les modifications introduites dans la dernière version. Ce champ est limité à 1 500 caractères.
+Si vous soumettez votre application pour la première fois, vous laisserez probablement ce champ vide. Si vous proposez une mise à jour d’une application existante, ce champ vous permet d’indiquer aux clients les modifications introduites dans la dernière version. Ce champ est limité à 1500 caractères.
 
 ### Captures d’écran
 
@@ -62,7 +62,7 @@ L’icône de vignette d’application est utilisée en cas d’affichage de la 
 
 ### Fonctionnalités de l’application
 
-Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces dernières sont présentées et décrites au client sous la forme d’une liste à puce dans la description de votre application. Chacune de ces informations est limitée à 200 caractères. Vous pouvez spécifier jusqu’à 20 fonctionnalités.
+Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces dernières sont présentées et décrites au client sous la forme d’une liste à puce dans la description de votre application. Chacune de ces informations est limitée à 200 caractères. Vous pouvez spécifier jusqu’à 20fonctionnalités.
 
 **Remarque** Ces informations apparaissant sous la forme d’une liste à puces, n’ajoutez pas vos propres puces.
 
@@ -70,7 +70,7 @@ Il s’agit de courts résumés des principales fonctionnalités de votre applic
 
 ### Matériel recommandé
 
-Décrivez les configurations matérielles requises pour le fonctionnement de votre application. Ces informations sont particulièrement importantes si votre application nécessite du matériel qui peut ne pas être présent sur tous les ordinateurs. Les configurations matérielles sont présentées au client sous la forme d’une liste à puces dans la description de votre application. Chacune de ces informations est limitée à 200 caractères. Vous pouvez spécifier jusqu’à 11 éléments.
+Décrivez les configurations matérielles requises pour le fonctionnement de votre application. Ces informations sont particulièrement importantes si votre application nécessite du matériel qui peut ne pas être présent sur tous les ordinateurs. Les configurations matérielles sont présentées au client sous la forme d’une liste à puces dans la description de votre application. Chacune de ces informations est limitée à 200 caractères. Vous pouvez spécifier jusqu’à 11éléments.
 
 **Remarque** Ces informations apparaissant sous la forme d’une liste à puces, n’ajoutez pas vos propres puces.
 
@@ -89,7 +89,7 @@ Si vous voulez ajouter des mots clés, pensez aux termes que vos clients sont su
 
 ### Informations de copyright et de marque déposée
 
-Si vous voulez fournir des informations supplémentaires de droits d’auteur et/ou de marque, entrez-les ici. Ce champ est limité à 200 caractères.
+Si vous voulez fournir des informations supplémentaires de droits d’auteur et/ou de marque, entrez-les ici. Ce champ est limité à 200caractères.
 
 ### Termes de licence supplémentaires
 
@@ -121,6 +121,6 @@ Si vous disposez d’une politique de confidentialité pour votre application, e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

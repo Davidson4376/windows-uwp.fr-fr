@@ -11,7 +11,7 @@ ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
 
 # Prise en main &#58; Navigation
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## Ajout de la navigation
 
@@ -59,7 +59,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Exécutez le programme à présent. Appuyez sur le bouton « Go To Page » (Atteindre la page) pour accéder à l’autre page, puis appuyez sur le bouton doté de la flèche Précédent pour revenir à la page précédente.
+Exécutez le programme à présent. Appuyez sur le bouton «Go To Page» (Atteindre la page) pour accéder à l’autre page, puis appuyez sur le bouton doté de la flèche Précédent pour revenir à la page précédente.
 
 La navigation entre les pages est gérée par la classe [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). Tout comme la classe **UINavigationController** dans iOS utilise les méthodes **pushViewController** et **popViewController**, la classe **Frame** pour les applications du Windows Store fournit les méthodes [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) et [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568). La classe **Frame** possède également une méthode appelée [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), qui comblera vos attentes.
 

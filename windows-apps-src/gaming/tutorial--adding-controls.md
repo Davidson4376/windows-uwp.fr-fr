@@ -12,7 +12,7 @@ ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
 # Ajouter des contrôles
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
 
@@ -37,16 +37,11 @@ Les contrôles tactiles et les contrôles de souris/clavier ont une implémentat
 
 Lorsque la classe **MoveLookController** de l’exemple de jeu est initialisée, elle s’inscrit à quatre événements propres au pointeur et à un événement propre à la souris :
 
--   [
-            **CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278). Le bouton gauche ou droit de la souris a été enfoncé (et maintenu), ou la surface tactile a été touchée.
--   [
-            **CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276). La souris a été déplacée, ou une action de déplacement a été effectuée sur la surface tactile.
--   [
-            **CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279). Le bouton gauche de la souris a été relâché, ou l’objet au contact de la surface tactile a été retiré.
--   [
-            **CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275). Le pointeur est sorti de la fenêtre principale.
--   [
-            **Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) ; La souris a parcouru une certaine distance. Sachez que nous nous intéressons uniquement aux valeurs relatives de déplacement de la souris, et non pas à la position x-y en cours.
+-   [**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278). Le bouton gauche ou droit de la souris a été enfoncé (et maintenu), ou la surface tactile a été touchée.
+-   [**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276). La souris a été déplacée, ou une action de déplacement a été effectuée sur la surface tactile.
+-   [**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279). Le bouton gauche de la souris a été relâché, ou l’objet au contact de la surface tactile a été retiré.
+-   [**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275). Le pointeur est sorti de la fenêtre principale.
+-   [**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) ; La souris a parcouru une certaine distance. Sachez que nous nous intéressons uniquement aux valeurs relatives de déplacement de la souris, et non pas à la position x-y en cours.
 
 ```cpp
 void MoveLookController::Initialize(
@@ -470,7 +465,7 @@ void MoveLookController::OnPointerReleased(
 }
 ```
 
-Si l’ID du pointeur qui a déclenché l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est l’ID du pointeur de déplacement précédemment enregistré, **MoveLookController** affecte la valeur 0 à la vitesse, car le joueur a cessé de toucher le rectangle de déplacement. Si la valeur 0 n’était pas affectée à la vitesse, le joueur continuerait de se déplacer ! Si vous voulez implémenter une certaine forme d’inertie, ajoutez ici la méthode qui commence à redéfinir la vitesse sur 0 lors des futurs appels de la méthode **Update** à partir de la boucle de jeu.
+Si l’ID du pointeur qui a déclenché l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est l’ID du pointeur de déplacement précédemment enregistré, **MoveLookController** affecte la valeur 0 à la vitesse, car le joueur a cessé de toucher le rectangle de déplacement. Si la valeur0 n’était pas affectée à la vitesse, le joueur continuerait de se déplacer! Si vous voulez implémenter une certaine forme d’inertie, ajoutez ici la méthode qui commence à redéfinir la vitesse sur 0 lors des futurs appels de la méthode **Update** à partir de la boucle de jeu.
 
 Sinon, si l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) s’est déclenché dans le rectangle de tir ou la zone de vue, **MoveLookController** réinitialise les ID de pointeur spécifiques.
 
@@ -496,7 +491,7 @@ window->KeyUp +=
         ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &MoveLookController::OnKeyUp);
 ```
 
-La souris est traitée un peu différemment des contrôles tactiles, même si elle utilise un pointeur. Bien évidemment, elle n’utilise pas les rectangles de déplacement ni de tir, car le joueur serait très embarrassé : comment pourrait-il appuyer en même temps sur les contrôles de déplacement et de tir ? Comme mentionné plus tôt, le contrôleur **MoveLookController** lance les contrôles de vue chaque fois que la souris est déplacée, et les contrôles de tir chaque fois que le bouton gauche de la souris est enfoncé, comme illustré ici.
+La souris est traitée un peu différemment des contrôles tactiles, même si elle utilise un pointeur. Bien évidemment, elle n’utilise pas les rectangles de déplacement ni de tir, car le joueur serait très embarrassé: comment pourrait-il appuyer en même temps sur les contrôles de déplacement et de tir? Comme mentionné plus tôt, le contrôleur **MoveLookController** lance les contrôles de vue chaque fois que la souris est déplacée, et les contrôles de tir chaque fois que le bouton gauche de la souris est enfoncé, comme illustré ici.
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -802,7 +797,7 @@ void MoveLookController::UpdateGameController()
 }
 ```
 
-Si la manette de jeu présente l’état **Active**, cette méthode vérifie si un utilisateur a bougé le stick analogique gauche dans une direction spécifique. Toutefois, le mouvement effectué dans une direction spécifique sur le stick doit dépasser le rayon de la zone morte ; sinon, rien ne se produit. Cette zone morte est nécessaire pour gérer les « effleurements », c’est-à-dire lorsque la manette détecte des mini-mouvements effectués par le pouce du joueur lorsqu’il repose sur le stick. En l’absence de cette zone morte, le joueur peut s’énerver très rapidement, car les contrôles ne sont pas du tout stables.
+Si la manette de jeu présente l’état **Active**, cette méthode vérifie si un utilisateur a bougé le stick analogique gauche dans une direction spécifique. Toutefois, le mouvement effectué dans une direction spécifique sur le stick doit dépasser le rayon de la zone morte; sinon, rien ne se produit. Cette zone morte est nécessaire pour gérer les « effleurements », c’est-à-dire lorsque la manette détecte des mini-mouvements effectués par le pouce du joueur lorsqu’il repose sur le stick. En l’absence de cette zone morte, le joueur peut s’énerver très rapidement, car les contrôles ne sont pas du tout stables.
 
 La méthode **Update** effectue alors la même vérification sur le stick droit pour voir si le joueur a modifié la direction de la vue de la caméra, à condition que le mouvement sur le stick dépasse le rayon d’une autre zone morte.
 
@@ -1906,7 +1901,7 @@ void MoveLookController::UpdateGameController()
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

@@ -9,7 +9,7 @@ ms.openlocfilehash: e39752f9f13eaf93d23412252483093e704b1668
 
 ---
 
-# Créer une application « Hello World » en C++ (Windows 10)
+# Créer une application «Hello World» en C++ (Windows 10)
 
 Microsoft Visual Studio 2015 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows 10, y compris sur des téléphones. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
 
@@ -129,7 +129,7 @@ Presque toutes les classes Windows Runtime, qui incluent tous les types de l’A
     }
 ```    
 
-Tous les types Windows Runtime doivent être déclarés au sein d’un espace de noms alors qu’en C++ ISO, les types eux-mêmes possèdent un modificateur d’accessibilité. Le modificateur **public** rend la classe visible pour les composants Windows Runtime en dehors de l’espace de noms. Le mot clé **sealed** signifie que la classe ne peut pas servir de classe de base. Presque toutes les classes ref sont des classes « sealed » ; l’héritage de classe n’est pas largement utilisé, car JavaScript ne le comprend pas.
+Tous les types Windows Runtime doivent être déclarés au sein d’un espace de noms alors qu’en C++ ISO, les types eux-mêmes possèdent un modificateur d’accessibilité. Le modificateur **public** rend la classe visible pour les composants Windows Runtime en dehors de l’espace de noms. Le mot clé **sealed** signifie que la classe ne peut pas servir de classe de base. Presque toutes les classes ref sont des classes «sealed»; l’héritage de classe n’est pas largement utilisé, car JavaScript ne le comprend pas.
 
 -   **ref new** et **^ (hats)**
 
@@ -144,7 +144,7 @@ Tous les types Windows Runtime doivent être déclarés au sein d’un espace de
     bitmapImage->SetSource(fileStream);
     ```
 
-   En règle générale, dans un fichier .cpp, nous ajoutons une directive `using namespace  Windows::UI::Xaml::Media::Imaging` et le mot clé auto, pour que le même code ressemble à ce qui suit :
+   En règle générale, dans un fichier .cpp, nous ajoutons une directive `using namespace  Windows::UI::Xaml::Media::Imaging` et le mot clé auto, pour que le même code ressemble à ce qui suit:
 
 ```cpp
     auto bitmapImage = ref new BitmapImage();
@@ -206,7 +206,7 @@ Tous les types Windows Runtime doivent être déclarés au sein d’un espace de
 
 Ajoutons du contenu à l’application.
 
-**Étape 1 : modifier votre page de démarrage**
+**Étape 1: modifier votre page de démarrage**
 
 1.  Dans l’**Explorateur de solutions**, ouvrez MainPage.xaml.
 2.  Créez des contrôles pour l’interface utilisateur en ajoutant le code XAML suivant à la classe [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) racine, juste avant sa balise de fermeture. Il contient un [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) comportant un [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) qui demande le nom de l’utilisateur, un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) qui accepte le nom de l’utilisateur, un [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), puis un autre élément **TextBlock**.
@@ -280,11 +280,11 @@ Sur l’émulateur d’appareil mobile, l’application se présente comme suit.
 
 Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre votre application. La première chose que vous remarquerez est que la marge de gauche de 120 pixels qui s’affiche correctement sur l’ordinateur local fait disparaître le contenu de l’écran plus petit d’un appareil mobile. Dans la suite de ce didacticiel, vous apprendrez à adapter l’interface utilisateur à différentes tailles d’écran pour que votre application s’affiche correctement sur tous les appareils.
 
-## Étape 2 : créer un gestionnaire d’événements
+## Étape2: créer un gestionnaire d’événements
 
 1.  Dans MainPage.xaml, en mode XAML ou Création, sélectionnez le [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) « Say Hello » dans le [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) que vous avez ajouté précédemment.
 2.  Ouvrez la **Fenêtre Propriétés** en appuyant sur Alt+Entrée, puis choisissez le bouton Événements (![bouton Événements](images/eventsbutton.png)).
-3.  Recherchez l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). Dans sa zone de texte, tapez le nom de la fonction qui gère l’événement **Click**. Pour cet exemple, tapez « Button\_Click ».
+3.  Recherchez l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). Dans sa zone de texte, tapez le nom de la fonction qui gère l’événement **Click**. Pour cet exemple, tapez «Button\_Click».
 
 ![Fenêtre Propriétés, vue Événements](images/xaml-hw-event.png)
 
@@ -374,7 +374,7 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 
   **Conseil** Bien que le [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) ne contienne pas de texte, quand vous placez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique son emplacement pour vous permettre de le sélectionner.  
 
-  Votre code XAML doit maintenant se présenter ainsi :
+  Votre code XAML doit maintenant se présenter ainsi:
 
 ```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -430,7 +430,7 @@ Si vous avez utilisé un élément [**VisualStateManager**](https://msdn.microso
 
 L’élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) nommé `wideState` comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 641. Cela signifie que l’état ne doit s’appliquer que si la largeur de la fenêtre n’est pas inférieure à la valeur minimale de 641 DIP. Vous ne définissez aucun objet [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) pour cet état, de sorte qu’il utilise les propriétés de disposition que vous avez définies dans le code XAML pour le contenu de la page.
 
-Le second élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 0. Cet état est appliqué lorsque la largeur de la fenêtre est supérieure à 0, mais inférieure à 641 DIP. (À 641 DIP, l’état `wideState` s’applique.) Dans cet état, vous définissez certains objets [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) de façon à modifier les propriétés de disposition des contrôles dans l’interface utilisateur :
+Le second élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 0. Cet état est appliqué lorsque la largeur de la fenêtre est supérieure à 0, mais inférieure à 641DIP. (À 641 DIP, l’état `wideState` s’applique.) Dans cet état, vous définissez certains objets [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) de façon à modifier les propriétés de disposition des contrôles dans l’interface utilisateur :
 
 -   Vous réduisez la marge gauche de l’élément `contentPanel` de 120 à 20.
 -   Vous remplacez l’[**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) **Horizontal** de l’élément `inputPanel` par l’orientation **Vertical**.

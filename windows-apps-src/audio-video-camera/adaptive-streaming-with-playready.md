@@ -11,7 +11,7 @@ ms.openlocfilehash: d76f50e97f16699f34f138fcd25af8a90696085a
 
 # Diffusion en continu adaptative avec PlayReady
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP. 
 
@@ -19,13 +19,13 @@ Cette fonctionnalité prend actuellement en charge la lecture de contenu à diff
 
 HLS (la diffusion en continu HTTP d’Apple) n’est pas pris en charge par PlayReady.
 
-Smooth Streaming n’est pas non plus pris en charge en mode natif pour le moment ; toutefois, PlayReady est extensible et, à l’aide de code ou de bibliothèques supplémentaires, il est possible de prendre en charge Smooth Streaming protégé par PlayReady tirant parti de la gestion des droits numériques basée sur le logiciel ou même sur le matériel.
+Smooth Streaming n’est pas non plus pris en charge en mode natif pour le moment; toutefois, PlayReady est extensible et, à l’aide de code ou de bibliothèques supplémentaires, il est possible de prendre en charge Smooth Streaming protégé par PlayReady tirant parti de la gestion des droits numériques basée sur le logiciel ou même sur le matériel.
 
 Cet article traite uniquement des aspects de la diffusion en continu adaptative propre à PlayReady. Pour des informations plus générales sur l’implémentation de la diffusion en continu adaptative, voir [Diffusion en continu adaptative](adaptive-streaming.md).
 
-Cet article utilise le code de [l’exemple de diffusion en continu adaptative](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming) dans le référentiel **Windows-universal-samples** de Microsoft sur GitHub. Le scénario 4 traite de l’utilisation de la diffusion en continu adaptative avec PlayReady. Vous pouvez télécharger le référentiel dans un fichier ZIP en navigant jusqu’au niveau racine du référentiel et en cliquant sur le bouton **Télécharger le ZIP**.
+Cet article utilise le code de [l’exemple de diffusion en continu adaptative](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming) dans le référentiel **Windows-universal-samples** de Microsoft sur GitHub. Le scénario4 traite de l’utilisation de la diffusion en continu adaptative avec PlayReady. Vous pouvez télécharger le référentiel dans un fichier ZIP en navigant jusqu’au niveau racine du référentiel et en cliquant sur le bouton **Télécharger le ZIP**.
 
-Vous aurez besoin des instructions using suivantes :
+Vous aurez besoin des instructions using suivantes:
 
 ```csharp
 using LicenseRequest;
@@ -52,7 +52,7 @@ private string playReadyLicenseUrl = "";
 private string playReadyChallengeCustomData = "";
 ```
 
-Vous devrez également déclarer la constante suivante :
+Vous devrez également déclarer la constante suivante:
 
 ```csharp
 private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
@@ -138,7 +138,7 @@ private async void ProtectionManager_ServiceRequested(
 
 ## Demandes de service d’individualisation
 
-Le code suivant effectue de manière réactive une demande de service d’individualisation PlayReady. Nous transmettons la demande en tant que paramètre à la fonction. Nous insérons l’appel dans un bloc try/catch, et s’il n’y a aucune exception, nous supposons que la demande s’est déroulée correctement :
+Le code suivant effectue de manière réactive une demande de service d’individualisation PlayReady. Nous transmettons la demande en tant que paramètre à la fonction. Nous insérons l’appel dans un bloc try/catch, et s’il n’y a aucune exception, nous supposons que la demande s’est déroulée correctement:
 
 ```csharp
 async Task<bool> ReactiveIndivRequest(
@@ -189,7 +189,7 @@ async void ProActiveIndivRequest()
 
 ## Demandes de service d’acquisition de licence
 
-Si au lieu de cela, il s’agit d’une demande [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285), nous appelons la fonction ci-dessous pour demander et obtenir la licence PlayReady. Nous demandons à l’objet MediaProtectionServiceCompletion transmis d’indiquer si la demande a réussi ou non, et nous terminons la demande :
+Si au lieu de cela, il s’agit d’une demande [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285), nous appelons la fonction ci-dessous pour demander et obtenir la licence PlayReady. Nous demandons à l’objet MediaProtectionServiceCompletion transmis d’indiquer si la demande a réussi ou non, et nous terminons la demande:
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -271,7 +271,7 @@ async void LicenseAcquisitionRequest(
 
 ## Initialisation d’AdaptiveMediaSource
 
-Enfin, vous aurez besoin d’une fonction pour initialiser [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912), créée à partir d’un [URI](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) et d’un [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) donnés. L’**URI** doit être le lien vers le fichier multimédia (TLS ou DASH) ; l’élément **MediaElement** doit être défini dans votre code XAML.
+Enfin, vous aurez besoin d’une fonction pour initialiser [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912), créée à partir d’un [URI](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) et d’un [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) donnés. L’**URI** doit être le lien vers le fichier multimédia (TLS ou DASH); l’élément **MediaElement** doit être défini dans votre code XAML.
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)

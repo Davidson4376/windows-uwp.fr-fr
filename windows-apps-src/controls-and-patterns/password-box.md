@@ -24,7 +24,7 @@ Par défaut, la zone de mot de passe permet à l’utilisateur d’afficher son 
 -   [**Propriété PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)
 -   [**Événement PasswordChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
 Si vous souhaitez recueillir un mot de passe ou d’autres données confidentielles, telles qu’un numéro de sécurité sociale, utilisez un contrôle **PasswordBox**.
 
@@ -38,7 +38,7 @@ Une zone de mot de passe à l’état inactif peut afficher un texte d’informa
 
 ![Zone de mot de passe à l’état inactif avec texte d’information](images/passwordbox-rest-hinttext.png)
 
-Lorsque l’utilisateur effectue une saisie dans une zone de mot de passe, le comportement par défaut consiste à afficher des puces qui masquent le texte entré :
+Lorsque l’utilisateur effectue une saisie dans une zone de mot de passe, le comportement par défaut consiste à afficher des puces qui masquent le texte entré:
 
 ![État de focus de la zone de mot de passe pendant la saisie](images/passwordbox-focus-typing.png)
 
@@ -50,7 +50,7 @@ Le bouton d’« affichage » sur la droite permet de jeter un coup d’œil au 
 
 Utilisez la propriété [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) pour obtenir ou définir le contenu de PasswordBox. Vous pouvez effectuer cette opération dans le gestionnaire pour que l’événement [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) procède à la validation lorsque l’utilisateur entre le mot de passe. Vous pouvez aussi utiliser un autre événement, comme un bouton [Click](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx), pour effectuer la validation dès que l’utilisateur a fini de saisir du texte.
 
-Vous trouverez ci-dessous le code XAML d’un contrôle de zone de mot de passe montrant l’apparence par défaut de PasswordBox. Lorsque l’utilisateur saisit un mot de passe, vous vérifiez s’il s’agit de la valeur littérale « Password ». Si tel est le cas, vous affichez un message à l’attention de l’utilisateur.
+Vous trouverez ci-dessous le code XAML d’un contrôle de zone de mot de passe montrant l’apparence par défaut de PasswordBox. Lorsque l’utilisateur saisit un mot de passe, vous vérifiez s’il s’agit de la valeur littérale «Password». Si tel est le cas, vous affichez un message à l’attention de l’utilisateur.
 
 ```xaml
 <StackPanel>  
@@ -74,7 +74,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
     }
 }
 ```
-Résultat obtenu lorsque ce code est exécuté et que l’utilisateur saisit « Password » :
+Résultat obtenu lorsque ce code est exécuté et que l’utilisateur saisit «Password»:
 
 ![Zone de mot de passe avec un message de validation](images/passwordbox-revealed-validation.png)
 
@@ -86,7 +86,7 @@ Vous pouvez modifier le caractère utilisé pour masquer le mot de passe en déf
 <PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
 ```
 
-Le résultat se présente ainsi :
+Le résultat se présente ainsi:
 
 ![Zone de mot de passe avec un caractère personnalisé](images/passwordbox-custom-char.png)
 
@@ -112,7 +112,7 @@ PasswordBox dispose d’un bouton intégré sur lequel l’utilisateur peut appu
 
 ### Mode aperçu
 
-Par défaut, le bouton d’affichage du mot de passe (ou « bouton d’aperçu ») s’affiche. L’utilisateur doit rester appuyé sur le bouton pour afficher le mot de passe, afin de maintenir un niveau élevé de sécurité.
+Par défaut, le bouton d’affichage du mot de passe (ou «bouton d’aperçu») s’affiche. L’utilisateur doit rester appuyé sur le bouton pour afficher le mot de passe, afin de maintenir un niveau élevé de sécurité.
 
 La valeur de la propriété [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) n’est pas le seul facteur déterminant si un bouton d’affichage du mot de passe est visible à l’utilisateur. Parmi les autres facteurs, figurent ceux indiquant si le contrôle est affiché au-dessus d’une largeur minimale, si le focus porte sur PasswordBox et si le champ de texte contient au moins un caractère. Le bouton d’affichage du mot de passe apparaît uniquement lorsque le focus porte sur PasswordBox pour la première fois et si un caractère est saisi. Si PasswordBox perd le focus, puis le reprend, le bouton d’affichage n’apparaît plus, sauf si le mot de passe est effacé et que la saisie de caractères recommence.
 
@@ -152,7 +152,7 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 }
 ```
 
-Cet élément PasswordBox se présente comme suit :
+Cet élément PasswordBox se présente comme suit:
 
 ![Zone de mot de passe avec un bouton d’affichage personnalisé](images/passwordbox-custom-reveal.png)
     
@@ -167,7 +167,7 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 -   Utilisez un texte d’étiquette ou d’espace réservé si l’objectif de la zone de mot de passe n’est pas clair. Une étiquette reste toujours visible, qu’il y ait ou non une valeur dans la zone de saisie de texte. Le texte d’espace réservé s’affiche initialement dans la zone de saisie de texte, mais disparaît après qu’une valeur a été entrée.
 -   Attribuez à la zone de mot de passe une largeur appropriée pour la plage de valeurs qui peuvent être entrées. La longueur des mots varie selon la langue. Tenez compte de la localisation si vous souhaitez que votre application soit prête globalement.
 -   Ne placez pas d’autre contrôle juste à côté d’une zone de saisie de mot de passe. La zone de mot de passe comporte un bouton d’affichage du mot de passe permettant aux utilisateurs de vérifier les mots de passe qu’ils ont saisis, et le fait de prévoir un autre contrôle juste à côté peut amener les utilisateurs à révéler accidentellement leurs mots de passe quand ils tentent d’interagir avec l’autre contrôle. Pour empêcher que cela se produise, laissez suffisamment d’espace entre la zone de saisie du mot de passe et l’autre contrôle, ou placez celui-ci sur la ligne suivante.
--   Songez à présenter deux zones de mot de passe pour la création de compte : l’un pour le nouveau mot de passe et l’autre pour confirmer ce mot de passe.
+-   Songez à présenter deux zones de mot de passe pour la création de compte: l’un pour le nouveau mot de passe et l’autre pour confirmer ce mot de passe.
 -   Affichez une seule zone de mot de passe pour les connexions.
 -   Quand une zone de mot de passe est utilisée pour entrer un code confidentiel, pensez à fournir une réponse dès l’entrée du dernier chiffre au lieu d’utiliser un bouton de confirmation.
 

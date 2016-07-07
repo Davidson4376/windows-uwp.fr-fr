@@ -37,7 +37,7 @@ Cette rubrique présente des exemples de tâches de codage nécessaires pour ré
 ## Protéger un flux de données sous une identité d’entreprise
 
 
-**Remarque** Chaque fois que vous protégez un flux ou une mémoire tampon, il est vivement recommandé de vous abonner à l’événement [**ProtectionPolicyManager.PolicyChanged**](https://msdn.microsoft.com/library/windows/apps/mt608411) afin que votre application sache lorsque la fonctionnalité EDP est désactivée sur l’appareil. Le cas échéant, vous devez ôter la protection des flux et des mémoires tampons. Tous les flux ou mémoires tampons que vous laissez protégés peuvent être révoqués à condition que l’utilisateur annule l’inscription de l’appareil dans la gestion des périphériques mobiles (GPM). Si la fonctionnalité EDP a été désactivée lors de la création de la ressource, cette révocation est inappropriée. La suppression de la protection des ressources lorsque la fonctionnalité EDP est désactivée empêche cela.
+**Remarque** Chaque fois que vous protégez un flux ou une mémoire tampon, il est vivement recommandé de vous abonner à l’événement [**ProtectionPolicyManager.PolicyChanged**](https://msdn.microsoft.com/library/windows/apps/mt608411) afin que votre application sache lorsque la fonctionnalité EDP est désactivée sur l’appareil. Le cas échéant, vous devez ôter la protection des flux et des mémoires tampons. Tous les flux ou mémoires tampons que vous laissez protégés peuvent être révoqués à condition que l’utilisateur annule l’inscription de l’appareil dans la gestion des périphériques mobiles (GPM). Si la fonctionnalitéEDP a été désactivée lors de la création de la ressource, cette révocation est inappropriée. La suppression de la protection des ressources lorsque la fonctionnalitéEDP est désactivée empêche cela.
 
 
 
@@ -95,7 +95,7 @@ private async System.Threading.Tasks.Task<bool> ProtectStringAsStreamAsync
 
 Dans ce scénario, votre application a précédemment protégé un flux auquel vous devez empêcher tout accès non autorisé. Pour récupérer à nouveau le contenu du flux si nécessaire, votre application peut vérifier l’état du flux.
 
-Notez que l’état d’un flux est également retourné à partir de [**DataProtectionManager.UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/dn706023). Cette API ne retourne jamais l’état « Non protégé », car il nécessite que la ressource d’entrée soit protégée (il n’est pas possible de vérifier de manière fiable qu’une ressource n’est plus protégée). Sachez que si votre code compare le résultat à l’état « Non protégé », cela suggère la présence d’une faille dans la conception. Cela indique que votre code a perdu toute trace indiquant si le flux est protégé.
+Notez que l’état d’un flux est également retourné à partir de [**DataProtectionManager.UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/dn706023). CetteAPI ne retourne jamais l’état «Non protégé», car il nécessite que la ressource d’entrée soit protégée (il n’est pas possible de vérifier de manière fiable qu’une ressource n’est plus protégée). Sachez que si votre code compare le résultat à l’état «Non protégé», cela suggère la présence d’une faille dans la conception. Cela indique que votre code a perdu toute trace indiquant si le flux est protégé.
 
 ```CSharp
 using Windows.Storage.Streams;

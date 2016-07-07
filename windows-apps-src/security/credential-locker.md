@@ -12,10 +12,10 @@ ms.openlocfilehash: ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c
 # Stockage sécurisé des informations d’identification
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article décrit comment des applications de plateforme Windows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
+Cet article décrit comment des applications de plateformeWindows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
 
 Supposons que vous ayez une application qui se connecte à un service pour accéder à des ressources protégées telles que des fichiers multimédias ou des réseaux sociaux. Votre service exige des informations de connexion pour chaque utilisateur. Vous avez créé une interface utilisateur dans votre application, qui obtient le nom et le mot de passe de l’utilisateur. Ces données sont ensuite utilisées pour connecter l’utilisateur au service. L’API de stockage sécurisé des informations d’identification vous permet de stocker les nom et mot de passe de votre utilisateur, puis de les récupérer facilement pour connecter automatiquement l’utilisateur lors de la prochaine ouverture de l’application, quel que soit l’appareil utilisé.
 

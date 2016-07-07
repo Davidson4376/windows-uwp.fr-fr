@@ -11,16 +11,16 @@ ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 
 # Mappages des espaces de noms et des classes de Silverlight pour Windows Phone sur UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique présente le mappage complet des API de Silverlight pour Windows Phone sur leurs équivalents de la plateforme Windows universelle (UWP). Il ne s’agit généralement pas d’un mappage un-à-un des fonctionnalités : une plateforme peut comporter plus ou moins de fonctionnalités que l’autre dans un espace de noms ou dans une classe.
 
 La table de mappage vous aidera si vous travaillez dans un projet UWP et que vous réutilisez le code source d’un projet Silverlight pour Windows Phone. Il existe des différences dans les noms des espaces de noms et des classes (y compris dans les contrôles d’interface utilisateur) entre les deux plateformes. Dans de nombreux cas, pour effectuer un mappage, il suffit de modifier un nom d’espace de noms. Votre code est ensuite compilé. Parfois, un nom de classe ou d’API a changé, ainsi que le nom de l’espace de noms. D’autres fois, le mappage demande un peu plus de travail, et dans de rares cas, il nécessite un changement d’approche.
 
-**Utilisation de la table :** recherchez d’abord le nom de la classe que vous utilisez. Les classes sont indiquées lorsque le mappage est plus complexe qu’un simple changement de nom de l’espace de noms. Si votre classe n’est pas répertoriée, le mappage correspond simplement à une modification de l’espace de noms. Recherchez le nom de l’espace de noms de votre classe pour trouver son équivalent UWP. Votre classe figurera dans cet espace de noms. Si votre espace de noms n’est pas indiqué, son nom n’a pas changé.
+**Utilisation de la table:** recherchez d’abord le nom de la classe que vous utilisez. Les classes sont indiquées lorsque le mappage est plus complexe qu’un simple changement de nom de l’espace de noms. Si votre classe n’est pas répertoriée, le mappage correspond simplement à une modification de l’espace de noms. Recherchez le nom de l’espace de noms de votre classe pour trouver son équivalent UWP. Votre classe figurera dans cet espace de noms. Si votre espace de noms n’est pas indiqué, son nom n’a pas changé.
 
-**Remarque** Windows 10 prend en charge .NET Framework dans une bien plus large mesure qu’une application du Windows Phone Store. Par exemple, Windows 10 comporte plusieurs espaces de noms System.ServiceModel.\*, ainsi que System.Net, System.Net.NetworkInformation et System.Net.Sockets.
-En outre, dans une application Windows 10, vous bénéficierez du code natif .NET, dont une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET natives démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL.
+**Remarque** Windows 10 prend en charge .NET Framework dans une bien plus large mesure qu’une application du Windows Phone Store. Par exemple, Windows10 comporte plusieurs espaces de noms System.ServiceModel.\*, ainsi que System.Net, System.Net.NetworkInformation et System.Net.Sockets.
+En outre, dans une application Windows10, vous bénéficierez du code natif .NET, dont une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET natives démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL.
 
 | Silverlight pour Windows Phone | Windows Runtime |
 |---------------------------|-----------------|

@@ -75,7 +75,7 @@ private void OnFileLoaded(FileProtectionInfo fileProtectionInfo, string contents
 ## Cible de Presse-papiers simple
 
 
-Dans ce scénario, votre application est une application de messagerie électronique qui gère les comptes personnels et d’entreprise. L’utilisateur tente de coller des données dans une réponse par courrier électronique à l’aide de son compte personnel. Dans ce cas, avant que votre application récupère le contenu, elle doit simplement appeler [**DataPackage.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706636). Si l’accès est déjà possible, cette méthode est renvoyée une fois. Toutefois, si nous n’avez pas accès, la méthode entraîne l’affichage d’une boîte de dialogue demandant l’accord de l’utilisateur et « déverrouille » le package de données en cas d’accord. L’utilisateur peut ainsi annuler une opération de collage exécutée par erreur.
+Dans ce scénario, votre application est une application de messagerie électronique qui gère les comptes personnels et d’entreprise. L’utilisateur tente de coller des données dans une réponse par courrier électronique à l’aide de son compte personnel. Dans ce cas, avant que votre application récupère le contenu, elle doit simplement appeler [**DataPackage.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706636). Si l’accès est déjà possible, cette méthode est renvoyée une fois. Toutefois, si nous n’avez pas accès, la méthode entraîne l’affichage d’une boîte de dialogue demandant l’accord de l’utilisateur et «déverrouille» le package de données en cas d’accord. L’utilisateur peut ainsi annuler une opération de collage exécutée par erreur.
 
 ```CSharp
 using Windows.ApplicationModel.DataTransfer;

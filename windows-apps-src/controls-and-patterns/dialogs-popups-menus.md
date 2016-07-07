@@ -27,17 +27,17 @@ Les boîtes de dialogue sont des superpositions d’interface utilisateur modale
 Un menu volant est une fenêtre contextuelle légère qui affiche l’interface utilisateur liée à ce que l’utilisateur fait. Elle comprend une logique de placement et de dimensionnement, et peut être utilisée pour afficher un contrôle masqué, des détails supplémentaires sur un élément, ou pour demander à l’utilisateur de confirmer une action. Vous pouvez abandonner interactivement les menus volants en appuyant ou en cliquant sur un élément hors du menu contextuel.
 
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
-Les menus contextuels peuvent être utilisés pour les éléments suivants :
+Les menus contextuels peuvent être utilisés pour les éléments suivants:
 
 -   Actions contextuelles.
 -   Commandes associées à un objet qui doivent être exécutées, mais qui ne peuvent pas être sélectionnées.
 
-Les boîtes de dialogue peuvent être utilisées pour les actions suivantes :
+Les boîtes de dialogue peuvent être utilisées pour les actions suivantes:
 
-- afficher les informations importantes que l’utilisateur doit lire et accepter avant de poursuivre ;
-- demander à l’utilisateur d’effectuer une action précise, ou communiquer un message important que l’utilisateur doit confirmer. Par exemple :
+- afficher les informations importantes que l’utilisateur doit lire et accepter avant de poursuivre;
+- demander à l’utilisateur d’effectuer une action précise, ou communiquer un message important que l’utilisateur doit confirmer. Par exemple:
   - Utilisez ce type de contrôle pour indiquer à l’utilisateur toute situation d’atteinte possible à la sécurité.
   - Utilisez ce type de contrôle pour signaler à l’utilisateur qu’il s’apprête à modifier de manière irrémédiable un élément utile.
   - Utilisez ce type de contrôle pour signaler à l’utilisateur qu’il s’apprête à supprimer un élément utile.
@@ -45,7 +45,7 @@ Les boîtes de dialogue peuvent être utilisées pour les actions suivantes :
 - Les messages d’erreur qui s’appliquent au contexte global de l’application, liés par exemple à une erreur de connectivité.
 - Utilisez une boîte de dialogue à question pour indiquer que l’application doit poser à l’utilisateur une question bloquante, parce qu’elle ne peut pas choisir telle ou telle option à la place de l’utilisateur, par exemple. Une question bloquante ne peut pas être ignorée ni mise de côté, et doit offrir à l’utilisateur des options clairement définies.
 
-Les menus volants peuvent être utilisés pour les éléments suivants :
+Les menus volants peuvent être utilisés pour les éléments suivants:
 
 -   Interface utilisateur contextuelle, temporaire.
 -   Avertissements et confirmations, notamment ceux qui sont liés à des actions potentiellement destructrices.
@@ -108,7 +108,7 @@ Les menus volants et les menus contextuels sont des contrôles étroitement lié
 Un menu contextuel, implémenté avec la classe MenuFlyout, peut contenir [**MenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutitem.aspx), [**ToggleMenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.togglemenuflyoutitem.aspx), [**MenuFlyoutSubItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutsubitem.aspx) et [**MenuFlyoutSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutseparator.aspx). Pour afficher un autre type d’interface utilisateur, utilisez Flyout.
 
 - **Instructions d’utilisation**
-  - Utilisez un séparateur entre les groupes de commandes d’un menu contextuel pour effectuer les actions suivantes :
+  - Utilisez un séparateur entre les groupes de commandes d’un menu contextuel pour effectuer les actions suivantes:
     - différencier des groupes de commandes connexes ;
     - regrouper des ensembles de commandes ;
     - séparer un ensemble prédictible de commandes, telles que les commandes du Presse-papiers (Couper/Copier/Coller) des commandes propres à l’application ou à l’affichage.
@@ -142,7 +142,7 @@ Le code suivant affiche un paragraphe d’habillage de texte et rend le bloc de 
 
 ### Appel et placement
 
-Les menus volants et les menus contextuels sont attachés à des contrôles spécifiques. Lorsqu’ils sont visibles, ils doivent être ancrés à l’objet appelant et spécifier leur position relative à l’objet privilégiée : haut, gauche, bas ou droite. Le menu volant dispose également d’un mode de placement complet qui tente d’étirer le menu volant et de le centrer à l’intérieur de la fenêtre d’application.
+Les menus volants et les menus contextuels sont attachés à des contrôles spécifiques. Lorsqu’ils sont visibles, ils doivent être ancrés à l’objet appelant et spécifier leur position relative à l’objet privilégiée: haut, gauche, bas ou droite. Le menu volant dispose également d’un mode de placement complet qui tente d’étirer le menu volant et de le centrer à l’intérieur de la fenêtre d’application.
 
 La [classe Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) inclut une propriété `Flyout` qui vous permet de spécifier l’interface utilisateur temporaire qui s’ouvrira quand l’utilisateur cliquera ou appuiera sur le bouton.
 
@@ -156,7 +156,7 @@ La [classe Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xa
 </Button>
 ````
 
-Pour ouvrir un menu contextuel, les utilisateurs peuvent effectuer l’une des actions suivantes :
+Pour ouvrir un menu contextuel, les utilisateurs peuvent effectuer l’une des actions suivantes:
 - Effectuer un clic droit avec la souris
 - Appuyer longuement sur l’interface tactile
 - Taper Maj + F10

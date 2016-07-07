@@ -10,14 +10,14 @@ ms.openlocfilehash: c515d36c76a8363861a72cb58229ff857e1bb2b8
 ---
 # Accéder à la carte SD
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité.
 
 Dans la plupart des cas, vous devez spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour que votre application puisse stocker des fichiers sur la carte SD et y accéder. En général, vous devez également inscrire les types de fichier stockés et accessibles que votre application peut gérer.
 
-Utilisez les moyens suivants pour stocker des fichiers sur la carte SD en option et y accéder :
+Utilisez les moyens suivants pour stocker des fichiers sur la carteSD en option et y accéder:
 
 - Sélecteurs de fichiers.
 

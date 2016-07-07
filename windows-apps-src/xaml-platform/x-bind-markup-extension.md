@@ -11,9 +11,10 @@ ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 
 # Extension de balisage {x&#58;Bind}
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Remarque** Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+
+            **Remarque** Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 L’extension de balisage **{x:Bind}**, nouveauté de Windows 10, peut être utilisée en remplacement de la méthode **{Binding}**. L’extension de balisage **{x:Bind}** n’offre pas certaines des fonctionnalités de **{Binding}**, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}**, et prend mieux en charge le débogage.
 
@@ -41,23 +42,27 @@ Au chargement du XAML, **{x:Bind}** est converti en ce que vous voulez comme obj
 |------|-------------|
 | _propertyPath_ | Chaîne qui spécifie le chemin de propriété pour la liaison. Pour plus d’informations, voir la section [Chemin de propriété](#property-path) ci-dessous. |
 | _bindingProperties_ |
-| _propName_
+| 
+            _propName_
             =
             _value_\[, _propName_=_value_\]* | Une ou plusieurs propriétés de liaison spécifiées à l’aide d’une syntaxe constituée d’une ou plusieurs paires nom/valeur. |
-| _propName_ | Nom de chaîne de la propriété à définir sur l’objet de liaison. Par exemple, « Converter ». | 
+| _propName_ | Nom de chaîne de la propriété à définir sur l’objet de liaison. Par exemple, «Converter». | 
 | _value_ | Valeur à attribuer à la propriété. La syntaxe de l’argument dépend de la propriété définie. Voici un exemple d’utilisation de _propName_=_value_ dans lequel la valeur est elle-même une extension de balisage : `Converter={StaticResource myConverterClass}`. Pour plus d’informations, voir la section [Propriétés que vous pouvez définir avec {x:Bind}](#properties-you-can-set) ci-dessous. | 
 
 ## Chemin de propriété
 
-*PropertyPath* définit **Path** pour une expression **{x:Bind}**. **Path** est un chemin de propriété spécifiant la valeur de la propriété, de la sous-propriété, du champ ou de la méthode avec lesquels vous établissez la liaison (la source). Vous pouvez mentionner explicitement le nom de propriété **Path** : `{Binding Path=...}`. Ou vous pouvez l’omettre : `{Binding ...}`.
 
-**{x:Bind}** n’utilise pas le **DataContext** comme source par défaut. Au lieu de cela, elle utilise le contrôle de page ou d’utilisateur proprement dit. Par conséquent, elle apparaît dans le code-behind de votre contrôle de page ou d’utilisateur pour les propriétés, champs et méthodes. Pour exposer votre modèle d’affichage à **{x:Bind}**, vous devez généralement ajouter des champs ou propriétés au code-behind de votre contrôle de page ou d’utilisateur. Les étapes dans un chemin de propriété sont délimitées par des points (.), et vous pouvez inclure plusieurs délimiteurs pour parcourir des sous-propriétés successives. Utilisez le point délimiteur quel que soit le langage de programmation utilisé pour implémenter l’objet cible de la liaison.
+            *PropertyPath* définit **Path** pour une expression **{x:Bind}**. 
+            **Path** est un chemin de propriété spécifiant la valeur de la propriété, de la sous-propriété, du champ ou de la méthode avec lesquels vous établissez la liaison (la source). Vous pouvez mentionner explicitement le nom de propriété **Path** : `{Binding Path=...}`. Ou vous pouvez l’omettre : `{Binding ...}`.
 
-Par exemple : dans une page, **Text="{x:Bind Employee.FirstName}"** recherche un membre **Employee** sur la page, puis un membre **FirstName** sur l’objet renvoyé par **Employee**. Si vous liez un contrôle d’éléments à une propriété contenant des dépendances d’un employé, votre chemin de propriété pourrait être « Employee.Dependents », et le modèle d’élément du contrôle d’éléments se chargerait de l’affichage des éléments dans « Dependents ».
+
+            **{x:Bind}** n’utilise pas le **DataContext** comme source par défaut. Au lieu de cela, elle utilise le contrôle de page ou d’utilisateur proprement dit. Par conséquent, elle apparaît dans le code-behind de votre contrôle de page ou d’utilisateur pour les propriétés, champs et méthodes. Pour exposer votre modèle d’affichage à **{x:Bind}**, vous devez généralement ajouter des champs ou propriétés au code-behind de votre contrôle de page ou d’utilisateur. Les étapes dans un chemin de propriété sont délimitées par des points (.), et vous pouvez inclure plusieurs délimiteurs pour parcourir des sous-propriétés successives. Utilisez le point délimiteur quel que soit le langage de programmation utilisé pour implémenter l’objet cible de la liaison.
+
+Par exemple : dans une page, **Text="{x:Bind Employee.FirstName}"** recherche un membre **Employee** sur la page, puis un membre **FirstName** sur l’objet renvoyé par **Employee**. Si vous liez un contrôle d’éléments à une propriété contenant des dépendances d’un employé, votre chemin de propriété pourrait être «Employee.Dependents», et le modèle d’élément du contrôle d’éléments se chargerait de l’affichage des éléments dans «Dependents».
 
 Pour C++ / CX, **{x:Bind}** ne peut pas effectuer de liaison à des champs et propriétés privés dans la page ou le modèle de données. Vous devez avoir une propriété publique pour que la liaison soit possible. La surface d’exposition pour la liaison doit être exposée en tant que classes/interfaces CX pour que nous puissions obtenir les métadonnées pertinentes. L’attribut **\[Bindable\]** ne doit pas être nécessaire.
 
-Si la source de données est une collection, un chemin de propriété peut spécifier les éléments de la collection selon leur position ou index. Par exemple, « Teams\[0\].Players », où le littéral « \[\] » encadre le « 0 » qui demande le premier élément d’une collection ayant un index de base zéro.
+Si la source de données est une collection, un chemin de propriété peut spécifier les éléments de la collection selon leur position ou index. Par exemple, «Teams\[0\].Players», où le littéral «\[\]» encadre le «0» qui demande le premier élément d’une collection ayant un index de base zéro.
 
 Pour utiliser un indexeur, le modèle doit implémenter **IList&lt;T&gt;** or **IVector&lt;T&gt;** sur le type de la propriété à indexer. Si le type de la propriété indexée prend en charge **INotifyCollectionChanged** ou **IObservableVector**, et si la liaison est OneWay ou TwoWay, il s’inscrit pour écouter les notifications de modification sur ces interfaces. La logique de détection des modifications met à jour en fonction de tous les changements de collection, même si cela n’affecte pas la valeur indexée spécifique. En effet, la logique d’écoute est commune à toutes les instances de la collection.
 
@@ -71,7 +76,7 @@ Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans 
 
 La liaison d’événement est une nouvelle fonctionnalité pour une liaison compilée. Elle vous permet de spécifier le gestionnaire pour un événement à l’aide d’une liaison, au lieu d’une méthode dans le code-behind. Par exemple :**Click="{x:Bind rootFrame.GoForward}"**.
 
-Pour des événements, la méthode cible ne doit pas être surchargée et doit :
+Pour des événements, la méthode cible ne doit pas être surchargée et doit:
 
 -   correspondre à la signature de l’événement ;
 -   OU ne pas avoir de paramètres ;
@@ -84,7 +89,8 @@ Pour plus d’informations sur la syntaxe de chaîne pour un chemin de propriét
 ##  Propriétés que vous pouvez définir avec {x:Bind}
 
 
-**{x:Bind}** est illustrée avec la syntaxe de l’espace réservé *bindingProperties*, car plusieurs propriétés en lecture/écriture peuvent être définies dans l’extension de balisage. Les propriétés peuvent être définies dans n’importe quel ordre à l’aide de paires *propName*=*value* séparées par des virgules. Notez que vous ne pouvez pas inclure de saut de ligne dans l’expression de liaison. Certaines propriétés requièrent des types sans conversion de type. Elles nécessitent donc leurs propres extensions de balisage imbriquées dans l’extension de balisage **{x:Bind}**.
+
+            **{x:Bind}** est illustrée avec la syntaxe de l’espace réservé *bindingProperties*, car plusieurs propriétés en lecture/écriture peuvent être définies dans l’extension de balisage. Les propriétés peuvent être définies dans n’importe quel ordre à l’aide de paires *propName*=*value* séparées par des virgules. Notez que vous ne pouvez pas inclure de saut de ligne dans l’expression de liaison. Certaines propriétés requièrent des types sans conversion de type. Elles nécessitent donc leurs propres extensions de balisage imbriquées dans l’extension de balisage **{x:Bind}**.
 
 Ces propriétés fonctionnent essentiellement de la même manière que les propriétés de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820).
 
@@ -95,10 +101,11 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 | **ConverterLanguage** | Spécifie la culture que doit utiliser le convertisseur. (Si vous définissez **ConverterLanguage**, vous devez également définir **Converter**.) La culture est définie comme un identificateur basé sur des normes. Pour plus d’informations, voir [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880). |
 | **ConverterParameter** | Spécifie le paramètre de convertisseur qui peut être utilisé dans la logique du convertisseur. (Si vous définissez **ConverterParameter**, vous devez également définir **Converter**.) La plupart des convertisseurs utilisent une logique simple qui obtient toutes les informations de la valeur transmise à convertir et ne nécessitent pas de valeur **ConverterParameter**. Le paramètre **ConverterParameter** est destiné aux implémentations de convertisseur moyennement avancées qui comprennent plusieurs logiques basées sur ce qui est transmis dans **ConverterParameter**. Vous pouvez écrire un convertisseur qui utilise des valeurs qui ne sont pas des chaînes, mais il s’agit d’un scénario peu courant. Pour plus d’informations, voir la section Remarques dans [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827). |
 | **FallbackValue** | Spécifie une valeur à afficher quand la source ou le chemin ne peuvent pas être résolus. |
-| **Mode** | Spécifie le mode de liaison, sous la forme de l’une des chaînes suivantes : « OneTime », « OneWay » ou « TwoWay ». La valeur par défaut est « OneTime ». Notez qu’elle diffère de la valeur par défaut **{Binding}**, qui est « OneWay » dans la plupart des cas. |
+| **Mode** | Spécifie le mode de liaison, sous la forme de l’une des chaînes suivantes : «OneTime», «OneWay» ou «TwoWay». La valeur par défaut est «OneTime». Notez qu’elle diffère de la valeur par défaut **{Binding}**, qui est « OneWay » dans la plupart des cas. |
 | **TargetNullValue** | Spécifie une valeur à afficher quand la valeur de la source est résolue, mais est explicitement **null**. | 
 
-**Remarque** Si vous convertissez un balisage de **{Binding}** en **{x:Bind}**, soyez attentif aux différences de valeur par défaut de la propriété **Mode**.
+
+            **Remarque** Si vous convertissez un balisage de **{Binding}** en **{x:Bind}**, soyez attentif aux différences de valeur par défaut de la propriété **Mode**.
  
 ## Remarques
 
@@ -108,15 +115,19 @@ Lorsque vous utilisez **{x:Bind}** avec des modèles de données, vous devez ind
 
 Les liaisons compilées dépendent de la génération du code. Par conséquent, si vous utilisez **{x:Bind}** dans un dictionnaire de ressources, ce dernier doit comporter une classe code-behind. Pour un exemple de code, voir [Dictionnaires de ressources avec {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind).
 
-**Important** Si vous définissez une valeur locale pour une propriété qui avait auparavant une extension de balisage **{x:Bind}** pour fournir une valeur locale, la liaison est complètement supprimée.
 
-**Conseil** Si vous avez besoin de spécifier une accolade simple pour une valeur, comme dans [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) ou [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), faites-la précéder d’une barre oblique inverse : `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
+            **Important** Si vous définissez une valeur locale pour une propriété qui avait auparavant une extension de balisage **{x:Bind}** pour fournir une valeur locale, la liaison est complètement supprimée.
 
-[
+
+            **Conseil** Si vous avez besoin de spécifier une accolade simple pour une valeur, comme dans [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) ou [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), faites-la précéder d’une barre oblique inverse : `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
+
+
+            [
               **Converter**
             ](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de la rubrique [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-**{x:Bind}** est uniquement une extension de balisage. Il n’existe aucun moyen de créer ou manipuler de telles liaisons par programme. Pour plus d’informations sur les extensions de balisage, voir [Vue d’ensemble du langage XAML](xaml-overview.md).
+
+            **{x:Bind}** est uniquement une extension de balisage. Il n’existe aucun moyen de créer ou manipuler de telles liaisons par programme. Pour plus d’informations sur les extensions de balisage, voir [Vue d’ensemble du langage XAML](xaml-overview.md).
 
 ## Exemples
 

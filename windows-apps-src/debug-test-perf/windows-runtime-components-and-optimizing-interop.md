@@ -10,7 +10,7 @@ ms.openlocfilehash: b9300b3feb1e5229951f3e1ebe454b61ba8065ae
 ---
 # Composants UWP et optimisation de l’interopérabilité
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Créez des applications de plateforme Windows universelle (UWP) qui utilisent des composants UWP et l’interopérabilité entre les types natifs et managés, tout en évitant les problèmes de performances liés à l’interopérabilité.
 
@@ -24,10 +24,10 @@ L’interopérabilité peut avoir un impact important sur les performances et il
 
 l’UWP comporte une bibliothèque de types accessible à partir de tout langage permettant d’écrire une application UWP. Vous pouvez utiliser les types UWP dans C# ou Microsoft Visual Basic de la même manière que des objets .NET. Vous n’avez pas besoin de configurer la plateforme de sorte qu’elle invoque des appels de méthode pour accéder aux composants UWP. Cela rend l’écriture des applications beaucoup moins complexe mais sachez que l’interopérabilité peut être plus importante que prévu. Si un composant UWP est écrit dans un langage autre que C# ou Visual Basic, vous dépassez les limites de l’interopérabilité lorsque vous utilisez ce composant. Cela a un impact sur les performances d’une application.
 
-Quand vous développez une application UWP en C# ou Visual Basic, les deux types d’API les plus courants que vous utilisez sont les API UWP et les API .NET pour les applications UWP. En règle générale, les types qui sont définis dans UWP se trouvent dans des espaces de noms commençant par « Windows. », alors que les espaces de noms des types .NET commencent par « System. ». Il existe cependant quelques exceptions à cette règle. Les types dans .NET pour les applications UWP ne nécessitent pas d’interopérabilité quand ils sont utilisés. Si vous constatez de mauvaises performances pour des actions qui utilisent UWP, vous pouvez peut-être utiliser .NET pour les applications UWP à la place afin d’obtenir de meilleures performances.
+Quand vous développez une application UWP en C# ou Visual Basic, les deux types d’API les plus courants que vous utilisez sont les API UWP et les API .NET pour les applications UWP. En règle générale, les types qui sont définis dans UWP se trouvent dans des espaces de noms commençant par «Windows.», alors que les espaces de noms des types .NET commencent par «System.». Il existe cependant quelques exceptions à cette règle. Les types dans .NET pour les applications UWP ne nécessitent pas d’interopérabilité quand ils sont utilisés. Si vous constatez de mauvaises performances pour des actions qui utilisent UWP, vous pouvez peut-être utiliser .NET pour les applications UWP à la place afin d’obtenir de meilleures performances.
 
 **Remarque**  
-La plupart des composants UWP fournis avec Windows 10 étant implémentés en C++, vous dépassez les limites de l’interopérabilité lorsque vous les utilisez dans C# ou Visual Basic. Comme toujours, observez le comportement de votre application pour déterminer si l’utilisation de composants UWP nuit à ses performances avant de modifier le code.
+La plupart des composants UWP fournis avec Windows10 étant implémentés enC++, vous dépassez les limites de l’interopérabilité lorsque vous les utilisez dansC# ou Visual Basic. Comme toujours, observez le comportement de votre application pour déterminer si l’utilisation de composants UWP nuit à ses performances avant de modifier le code.
 
 Dans cette rubrique, l’expression « composants UWP » désigne les composants écrits dans un langage autre que C# ou Visual Basic.
 
@@ -73,7 +73,7 @@ Avec l’UWP, les développeurs peuvent choisir le langage dans lequel ils souha
 
 ![Les transitions d’interopérabilité ne doivent pas dominer la durée d’exécution du programme.](images/interop-transitions.png)
 
-Les types répertoriés dans [**.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) ne présentent pas ce coût d’interopérabilité lorsqu’ils sont utilisés en C# ou Visual Basic. En règle générale, vous pouvez supposer que les types dans les espaces de noms qui commencent par « Windows. » font partie de l’UWP, et que les types dans les espaces de noms qui commencent par « System. » sont des types .NET. Souvenez-vous qu’une utilisation même simple des types UWP, telle que l’allocation ou l’accès aux propriétés, a un coût en matière d’interopérabilité.
+Les types répertoriés dans [**.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) ne présentent pas ce coût d’interopérabilité lorsqu’ils sont utilisés enC# ou Visual Basic. En règle générale, vous pouvez supposer que les types dans les espaces de noms qui commencent par « Windows. » font partie de l’UWP, et que les types dans les espaces de noms qui commencent par « System. » sont des types .NET. Souvenez-vous qu’une utilisation même simple des types UWP, telle que l’allocation ou l’accès aux propriétés, a un coût en matière d’interopérabilité.
 
 Vous devez effectuer des mesures sur votre application et déterminer si l’interopérabilité requiert une partie significative de la durée d’exécution de votre application avant d’optimiser les coûts liés à l’interopérabilité. Lors de l’analyse de votre application avec Visual Studio, il est très facile d’obtenir une limite supérieure des coûts d’interopérabilité à l’aide de l’affichage **Fonctions**, en examinant la durée inclusive consacrée aux méthodes qui appellent l’UWP.
 

@@ -1,13 +1,16 @@
 ---
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Informations de référence sur les API principales Device Portal
-description: Découvrez les API REST principales Windows Device Portal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
+title: "Informations de référence sur les API principales Device Portal"
+description: "Découvrez les API REST principales WindowsDevicePortal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme."
+ms.sourcegitcommit: 0e36b2adbd0805d9c738de00959581417d2c1ee8
+ms.openlocfilehash: 364e19c723c6cf48a25104b5719735a533ae54a7
+
 ---
 
-# Référence sur les API principales Device Portal
+# Référence sur les API principales DevicePortal
 
-Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
+Dans WindowsDevicePortal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
 
 ## Déploiement des applications
 
@@ -24,7 +27,7 @@ POST | /api/app/packagemanager/package
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -331,7 +334,7 @@ GET | /api/debug/dump/usermode/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -382,7 +385,7 @@ DELETE | /api/debug/dump/usermode/crashdump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -429,7 +432,7 @@ DELETE | /api/debug/dump/usermode/crashcontrol
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -475,7 +478,7 @@ GET | /api/debug/dump/usermode/crashdump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -524,7 +527,7 @@ POST | /api/debug/dump/usermode/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -617,7 +620,7 @@ GET | /api/debug/dump/kernel/dump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -758,7 +761,7 @@ GET | /api/debug/dump/usermode/live
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -805,7 +808,7 @@ POST | /api/debug/dump/kernel/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -867,7 +870,7 @@ GET/WebSocket | /api/etw/session/realtime
 
 **Réponse**
 
-La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocket ETW ci-dessous. 
+La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocketETW ci-dessous. 
 
 **Code d’état**
 
@@ -914,7 +917,7 @@ Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous fo
 
 Les objets de charge utile sont des paires clé-valeur supplémentaires (chaîne:chaîne) qui sont fournies dans l’événement ETW d’origine.
 
-Exemple :
+Exemple:
 ```
 {
     "ID" : 42, 
@@ -1156,7 +1159,7 @@ POST | /api/os/machinename
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1446,7 +1449,7 @@ Méthode      | URI de la requête
 :------     | :-----
 GET | /api/power/cfg/*<power scheme path>*
 <br />
-Options :
+Options:
 - SCHEME_CURRENT
 
 **Paramètres d’URI**
@@ -1539,7 +1542,7 @@ POST | /api/power/activecfg
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1584,7 +1587,7 @@ POST | /api/power/cfg/*<power scheme path>*
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1855,7 +1858,7 @@ POST | /api/taskmanager/app
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1904,7 +1907,7 @@ DELETE | /api/taskmanager/app
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2103,7 +2106,7 @@ GET | /api/wifi/networks
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2173,14 +2176,14 @@ POST | /api/wifi/network
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
 interface   | (**requis**) GUID de l’interface réseau à utiliser pour se connecter au réseau.
 op   | (**requis**) Indique l’action à entreprendre. Les valeurs possibles sont connect ou disconnect.
-ssid   | (**requis si*op* == connecter**) Le SSID auquel se connecter.
-key   | (**requis si*op* == connecter et le réseau exige une authentification**) La clé partagée.
+ssid   | (*requis si *op* == connect***) SSID auquel se connecter.
+key   | (**requis si *op* == connecter et le réseau exige une authentification**) La clé partagée.
 createprofile | (**requis**) Créez un profil pour le réseau sur l’appareil.  Cela obligera l’appareil à se connecter automatiquement au réseau à l’avenir. Cela peut être **yes** ou **no**. 
 
 **En-têtes de requête**
@@ -2223,7 +2226,7 @@ DELETE | /api/wifi/network
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2272,7 +2275,7 @@ GET | /api/wer/report/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2323,7 +2326,7 @@ GET | /api/wer/report/files
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2490,7 +2493,7 @@ POST | /api/wpr/boottrace
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2591,7 +2594,7 @@ POST | /api/wpr/trace
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2730,7 +2733,456 @@ Code d’état HTTP      | Description
 * HoloLens
 * IoT
 
+---
+## BalisesDNS-SD 
+---
+### Afficher les balises
 
-<!--HONumber=May16_HO2-->
+**Requête**
+
+Affichez les balises actuellement appliquées pour l’appareil.  Ces balises sont annoncées par le biais d’enregistrementsDNS-SDTXT dans la cléT.  
+ 
+Méthode      | URI de la requête
+:------     | :-----
+GET | /api/dns-sd/tags
+<br />
+
+**Paramètres d’URI**
+
+- Aucun
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse** Balises actuellement appliquées au format suivant. 
+```
+ {
+    "tags": [
+        "tag1", 
+        "tag2", 
+        ...
+     ]
+}
+```
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+5XX | Erreur de serveur 
+
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+---
+### Supprimer des balises
+
+**Requête**
+
+Supprimez toutes les balises actuellement signalées parDNS-SD.   
+ 
+Méthode      | URI de requête
+:------     | :-----
+DELETE | /api/dns-sd/tags
+<br />
+
+**Paramètres d’URI**
+
+- Aucun
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+ - Aucun
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+5XX | Erreur de serveur 
+
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+---
+### Supprimer une balise
+
+**Requête**
+
+Supprimez une balise actuellement signalée parDNS-SD.   
+ 
+Méthode      | URI de requête
+:------     | :-----
+DELETE | /api/dns-sd/tag
+<br />
+
+**Paramètres d’URI**
+
+Paramètre d’URI | Description
+:------     | :-----
+tagValue | (**requis**) Balise à supprimer.
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+ - Aucun
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+ 
+---
+### Ajouter une balise
+
+**Requête**
+
+Ajoutez une balise à l’annonceDNS-SD.   
+ 
+Méthode      | URI de la requête
+:------     | :-----
+POST | /api/dns-sd/tag
+<br />
+
+**Paramètres d’URI**
+
+Paramètre d’URI | Description
+:------     | :-----
+tagValue | (**requis**) Balise à ajouter.
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+ - Aucun
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de serviceDNS-SD résultant.  
+
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+## Explorateur de fichiers de l’application
+
+---
+### Obtenir les dossiers connus
+
+**Requête**
+
+Obtenez la liste des dossiers de niveau supérieur accessibles.
+
+Méthode      | URI de la requête
+:------     | :-----
+GET | /api/filesystem/apps/knownfolders
+<br />
+
+**Paramètres d’URI**
+
+- Aucun
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse** Dossiers disponibles au format suivant. 
+```
+ {"KnownFolders": [
+    "folder0",
+    "folder1",...
+]}
+```
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | Requête de déploiement acceptée et traitée
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+<br />
+
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* Xbox
+* IoT
+
+---
+### Obtenir des fichiers
+
+**Requête**
+
+Obtenez la liste des fichiers d’un dossier.
+
+Méthode      | URI de la requête
+:------     | :-----
+GET | /api/filesystem/apps/files
+<br />
+
+**Paramètres d’URI**
+
+Paramètre d’URI | Description
+:------     | :-----
+knownfolderid | (**requis**) Répertoire de niveau supérieur dans lequel vous voulez faire apparaître la liste des fichiers. Utilisez **LocalAppData** pour accéder aux applications dont la version de test a été chargée par le développeur. 
+packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. 
+path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. 
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse** Dossiers disponibles au format suivant. 
+```
+{"Items": [
+    {
+        "CurrentDir": string (folder under the requested known folder),
+        "DateCreated": int,
+        "FileSize": int (bytes),
+        "Id": string,
+        "Name": string,
+        "SubPath": string (present if this item is a folder, this is the name of the folder),
+        "Type": int
+    },...
+]}
+```
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* Xbox
+* IoT
+
+---
+### Obtenir des fichiers
+
+**Requête**
+
+Obtenez la liste des fichiers d’un dossier.
+
+Méthode      | URI de la requête
+:------     | :-----
+GET | /api/filesystem/apps/file
+
+**Paramètres d’URI**
+
+Paramètre d’URI | Description
+:------     | :-----
+knownfolderid | (**requis**) Répertoire de niveau supérieur dans lequel vous voulez télécharger les fichiers. Utilisez **LocalAppData** pour accéder aux applications dont la version de test a été chargée par le développeur. 
+filename | (**requis**) Nom du fichier en cours de téléchargement. 
+packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package qui vous intéresse. 
+path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus.
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Fichier demandé, le cas échéant
+
+**Réponse**
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | Fichier demandé
+404 | Fichier introuvable
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* Xbox
+* IoT
+
+---
+### Supprimer un fichier
+
+**Requête**
+
+Supprimez un fichier dans un dossier.
+
+Méthode      | URI de requête
+:------     | :-----
+DELETE | /api/filesystem/apps/file
+<br />
+**Paramètres d’URI**
+
+Paramètre d’URI | Description
+:------     | :-----
+knownfolderid | (**requis**) Répertoire de niveau supérieur dans lequel vous voulez supprimer des fichiers. Utilisez **LocalAppData** pour accéder aux applications dont la version de test a été chargée par le développeur. 
+filename | (**requis**) Nom du fichier en cours de suppression. 
+packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. 
+path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus.
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK. Le fichier est supprimé.
+404 | Fichier introuvable
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* Xbox
+* IoT
+
+---
+### Charger un fichier
+
+**Requête**
+
+Chargez un fichier dans un dossier.  Ce fichier remplace un fichier existant du même nom, mais ne crée pas de dossier. 
+
+Méthode      | URI de la requête
+:------     | :-----
+POST | /api/filesystem/apps/file
+<br />
+**Paramètres d’URI**
+
+Paramètre d’URI | Description
+:------     | :-----
+knownfolderid | (**requis**) Répertoire de niveau supérieur dans lequel vous voulez charger les fichiers. Utilisez **LocalAppData** pour accéder aux applications dont la version de test a été chargée par le développeur.
+packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. 
+path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus.
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK. Le fichier est chargé
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* Xbox
+* IoT
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

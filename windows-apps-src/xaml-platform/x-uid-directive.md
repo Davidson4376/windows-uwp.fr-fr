@@ -11,7 +11,7 @@ ms.openlocfilehash: 4f8aa553c99b6071cedc4f9d93cf8258b75eca49
 
 # Directive x&#58;Uid
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Fournit un identificateur unique à des éléments de balisage. Pour le code XAML de plateforme Windows universelle (UWP), cet identificateur unique est utilisé par des processus ou outils de localisation XAML, comme l’utilisation des ressources d’un fichier de ressources .resw.
 
@@ -29,13 +29,13 @@ Fournit un identificateur unique à des éléments de balisage. Pour le code XAM
 
 ## Remarques
 
-Utilisez **x:Uid** pour identifier un élément objet dans votre code XAML. Cet élément objet est généralement une instance d’une classe de contrôle ou d’un autre élément affiché dans une interface utilisateur. La relation entre la chaîne utilisée dans **x:Uid** et les chaînes utilisées dans un fichier de ressources est que les chaînes du fichier de ressources sont la directive **x:Uid** suivie d’un point (.),puis du nom d’une propriété spécifique de l’élément en cours de localisation. Examinez cet exemple :
+Utilisez **x:Uid** pour identifier un élément objet dans votre code XAML. Cet élément objet est généralement une instance d’une classe de contrôle ou d’un autre élément affiché dans une interface utilisateur. La relation entre la chaîne utilisée dans **x:Uid** et les chaînes utilisées dans un fichier de ressources est que les chaînes du fichier de ressources sont la directive **x:Uid** suivie d’un point (.),puis du nom d’une propriété spécifique de l’élément en cours de localisation. Examinez cet exemple:
 
 ``` syntax
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-Pour spécifier le contenu devant remplacer le texte d’affichage **Go**, vous devez spécifier une nouvelle ressource provenant d’un fichier de ressources. Votre fichier de ressources doit contenir une entrée pour la ressource nommée « GoButton.Content ». Dans le cas présent, [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) est une propriété spécifique héritée par la classe [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). Vous pouvez également fournir des valeurs localisées pour d’autres propriétés de ce bouton ; par exemple, vous pouvez fournir une valeur basée sur les ressources pour « GoButton.FlowDirection ». Pour plus d’informations sur l’utilisation conjointe de **x:Uid** et de fichiers de ressources, voir [Démarrage rapide : traduction des ressources de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+Pour spécifier le contenu devant remplacer le texte d’affichage **Go**, vous devez spécifier une nouvelle ressource provenant d’un fichier de ressources. Votre fichier de ressources doit contenir une entrée pour la ressource nommée «GoButton.Content». Dans le cas présent, [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) est une propriété spécifique héritée par la classe [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). Vous pouvez également fournir des valeurs localisées pour d’autres propriétés de ce bouton; par exemple, vous pouvez fournir une valeur basée sur les ressources pour «GoButton.FlowDirection». Pour plus d’informations sur l’utilisation conjointe de **x:Uid** et de fichiers de ressources, voir [Démarrage rapide : traduction des ressources de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
 
 La validité des chaînes pouvant servir de valeur **x:Uid** est contrôlée dans un sens pratique par les chaînes légitimes en tant qu’identificateur dans un fichier de ressources et un chemin d’accès aux ressources.
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 15b5f83b45b928baaa484c10dc6e7bfe9c27a924
 # Créer des nuanceurs et tracer des primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez ensuite utiliser pour tracer des primitives à l’écran.
 
@@ -35,7 +35,7 @@ Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : con
 
 Microsoft Visual Studio utilise le compilateur de code HLSL [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) pour compiler les fichiers sources .hlsl (SimpleVertexShader.hlsl et SimplePixelShader.hlsl) en fichiers objets .cso de nuanceur binaire (SimpleVertexShader.cso et SimplePixelShader.cso). Pour plus d’informations sur le compilateur de code HLSL, voir Outil compilateur d’effet. Pour plus d’informations sur la compilation de code de nuanceurs, voir [Compilation de nuanceurs](https://msdn.microsoft.com/library/windows/desktop/bb509633).
 
-Le code suivant correspond au fichier SimpleVertexShader.hlsl :
+Le code suivant correspond au fichier SimpleVertexShader.hlsl:
 
 ```hlsl
 struct VertexShaderInput
@@ -59,7 +59,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-Le code suivant correspond au fichier SimplePixelShader.hlsl :
+Le code suivant correspond au fichier SimplePixelShader.hlsl:
 
 ```hlsl
 struct PixelShaderInput

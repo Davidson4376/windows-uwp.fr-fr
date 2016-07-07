@@ -11,7 +11,7 @@ ms.openlocfilehash: d454317d135e2b2b952c16fb00685e34b489865c
 # Lancer l’application par défaut pour un URI
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -25,7 +25,7 @@ Découvrez comment lancer l’application par défaut pour un URI (Uniform Resou
 ## Comment lancer un URI
 
 
-Les schémas d’URI permettent d’ouvrir des applications en cliquant sur des liens hypertexte. Tout comme vous pouvez commencer un nouveau message électronique à l’aide de **mailto:**, vous pouvez ouvrir le navigateur web par défaut à l’aide de **http:**. Cette rubrique décrit certains des schémas d’URI intégrés dans Windows :
+Les schémas d’URI permettent d’ouvrir des applications en cliquant sur des liens hypertexte. Tout comme vous pouvez commencer un nouveau message électronique à l’aide de **mailto:**, vous pouvez ouvrir le navigateur web par défaut à l’aide de **http:**. Cette rubrique décrit certains des schémas d’URI intégrés dans Windows:
 
 -   Le [schéma d’URI ms-settings:](#settings) lance l’application Paramètres Windows
 -   Le [schéma d’URI ms-store:](#store) lance l’application Windows Store
@@ -69,7 +69,7 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 
 Dans certains cas, le système d’exploitation invite l’utilisateur à confirmer qu’il veut réellement changer d’application.
 
-![boîte de dialogue d’avertissement sur un arrière-plan grisé de l’application. la boîte de dialogue demande à l’utilisateur s’il souhaite basculer entre les applications et a des boutons « oui » et « non » dans le coin inférieur droit. le bouton « non » est mis en surbrillance.](images/warningdialog.png)
+![boîte de dialogue d’avertissement sur un arrière-plan grisé de l’application. la boîte de dialogue demande à l’utilisateur s’il souhaite basculer entre les applications et a des boutons «oui» et «non» dans le coin inférieur droit. le bouton «non» est mis en surbrillance.](images/warningdialog.png)
 
 Si vous voulez que cette invite apparaisse toujours, utilisez la propriété [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) pour indiquer que le système d’exploitation doit afficher un avertissement.
 
@@ -225,6 +225,6 @@ Pour plus d’informations, voir [Lancer l’application Contacts](launch-people
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

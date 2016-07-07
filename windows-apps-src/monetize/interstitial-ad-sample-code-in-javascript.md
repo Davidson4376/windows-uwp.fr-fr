@@ -13,16 +13,16 @@ ms.openlocfilehash: d6a561aaff834cd782118abb72b4770985176bf0
 # Exemple de code pour spot publicitaire en JavaScript
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique montre comment lancer un spot publicitaire en JavaScript/HTML. Pour connaître les instructions pas à pas pour configurer votre projet pour qu’il utilise ce code, voir [Spots publicitaires](interstitial-ads.md). Pour un exemple de projet complet illustrant l’ajout de spots vidéo publicitaires à une application JavaScript/HTML, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
 ## Exemple de code
 
 
-Cet exemple HTML/JavaScript présente le code d’une application de plateforme Windows universelle (UWP) qui implémente un spot publicitaire. Pour cet exemple, créez un projet Visual Studio 2015 à l’aide du modèle d’application vide Windows universel pour JavaScript.
+Cet exemple HTML/JavaScript présente le code d’une application de plateforme Windows universelle (UWP) qui implémente un spot publicitaire. Pour cet exemple, créez un projet VisualStudio2015 à l’aide du modèle d’application vide Windows universel pour JavaScript.
 
-Ce code utilise un bouton pour déclencher un événement qui lance le spot publicitaire. Les fichiers default.html et default.js générés par Visual Studio ont été modifiés et sont présentés ci-dessous. Le fichier script.js, affiché ci-dessous, est ajouté au projet dans le dossier/chemin d’accès **js**.
+Ce code utilise un bouton pour déclencher un événement qui lance le spot publicitaire. Les fichiers default.html et default.js générés par VisualStudio ont été modifiés et sont présentés ci-dessous. Le fichier script.js, affiché ci-dessous, est ajouté au projet dans le dossier/chemin d’accès **js**.
 
 Remplacez le texte des affectations **applicationId** et **adUnitId** par des valeurs de travail.
 
@@ -172,7 +172,7 @@ ad.</b>");
 })();
 ```
 
-### default.html (Windows 10)
+### default.html (Windows10)
 
 ``` syntax
 <!DOCTYPE html>
@@ -201,7 +201,7 @@ ad.</b>");
 </html>
 ```
 
-### default.html (Windows 8.x)
+### default.html (Windows8.x)
 
 ``` syntax
 <!DOCTYPE html>

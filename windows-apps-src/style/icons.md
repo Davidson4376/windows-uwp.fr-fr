@@ -19,10 +19,10 @@ Des icônes efficaces s’harmonisent avec la typographie et avec le reste du la
 
 <table>
     <tr> 
-        <td>16 px x 16 px</td>
-        <td>24 px x 24 px</td>
-        <td>32 px x 32 px</td>
-        <td>48 px x 48 px</td>
+        <td>16pxx16px</td>
+        <td>24pxx24px</td>
+        <td>32pxx32px</td>
+        <td>48pxx48px</td>
     </tr>
     <tr> 
         <td>![Icons at 16x16 effective pixels](images/icons-16x16.png)</td>
@@ -36,7 +36,7 @@ Des icônes efficaces s’harmonisent avec la typographie et avec le reste du la
 
 Les icônes doivent généralement optimiser l’espace dont elles disposent et n’inclure qu’un remplissage minime. Ces formes fournissent des points de départ pour le dimensionnement des formes de base. 
 
-![Grille de 32 px par 32 px](images/icons-common-shapes.png)
+![Grille de 32px par 32px](images/icons-common-shapes.png)
 
 Utilisez la forme qui correspond à l’orientation de l’icône et créez votre composition autour de ces paramètres de base. Les icônes ne doivent pas nécessairement remplir la forme ou tenir entièrement à l’intérieur de cette dernière, et peuvent être ajustées selon les besoins pour garantir un équilibre optimal. 
 
@@ -125,13 +125,13 @@ Nous vous recommandons de n’utiliser que des formes géométriques pures lorsq
 
 ## Formes remplies 
 
-Les icônes peuvent contenir des formes remplies si nécessaire, mais elles ne doivent pas dépasser 4 px pour une grille de 32 px × 32px. La taille des cercles remplis ne doit pas être supérieure à 6 px x 6 px. 
+Les icônes peuvent contenir des formes remplies si nécessaire, mais elles ne doivent pas dépasser 4px pour une grille de 32px×32px. La taille des cercles remplis ne doit pas être supérieure à 6pxx6px. 
 
-![Remplissage 5 px par 8 px ](images/icons-filled-shapes.png)
+![Remplissage 5px par 8px ](images/icons-filled-shapes.png)
 
 ## Badges
 
-Un « badge » est un terme générique désignant un élément ajouté à une icône non destiné à être intégré à l’élément d’icône de base. Ces éléments véhiculent généralement d’autres informations concernant l’icône, comme un état ou une action. Les autres termes couramment employés pour désigner ce type d’élément sont : superposition, annotation ou modificateur. 
+Un «badge» est un terme générique désignant un élément ajouté à une icône non destiné à être intégré à l’élément d’icône de base. Ces éléments véhiculent généralement d’autres informations concernant l’icône, comme un état ou une action. Les autres termes couramment employés pour désigner ce type d’élément sont: superposition, annotation ou modificateur. 
 
 ![Badge d’état ](images/icons-badge-status.png)
 
@@ -156,8 +156,8 @@ Les badges d’état utilisent un objet coloré rempli surmontant l’icône, ta
 L’utilisation d’une couleur de badge ne doit être utilisée que pour communiquer l’état d’une icône. Les couleurs utilisées dans le badge d’état transmettent des messages émotionnels spécifiques à l’utilisateur. 
 
 <table>
-<tr><td>Vert : #128B44</td><td>Bleu : #2C71B9</td><td>Jaune : #FDC214</td></tr>
-<tr><td>Positif : effectué, terminé </td><td>Neutre : aide, notification </td><td>Mise en garde : alerte, avertissement </td></tr>
+<tr><td>Vert: #128B44</td><td>Bleu: #2C71B9</td><td>Jaune: #FDC214</td></tr>
+<tr><td>Positif: effectué, terminé </td><td>Neutre: aide, notification </td><td>Mise en garde: alerte, avertissement </td></tr>
 <tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
 <td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
 </table>
@@ -169,7 +169,7 @@ Par défaut, un badge d’état ou d’action est positionné dans le coin infé
 
 ### Dimensionnement de badge
 
-Les badges doivent présenter une taille de 10 à 18 px sur une grille de 32 px × 32 px. 
+Les badges doivent présenter une taille de 10 à 18px sur une grille de 32px × 32px. 
 
 ## Articles connexes
 

@@ -25,14 +25,14 @@ Une info-bulle est une brève description qui est liée à un autre contrôle ou
 -   [**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)
 -   [**Classe ToolTipService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
-## Est-ce le contrôle approprié ?
+## Est-ce le contrôle approprié?
 
 Utilisez une info-bulle pour fournir plus d’informations sur un contrôle avant d’inviter l’utilisateur à effectuer une action. Les info-bulles doivent être utilisées avec parcimonie, et uniquement quand elles aident l’utilisateur à accomplir une tâche. En règle générale, si les informations sont déjà disponibles autre part, n’ajoutez pas une info-bulle. Une info-bulle utile donne un éclairage sur une action qui n’est pas bien expliquée.
 
-Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suivantes :
+Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suivantes:
 
--   **Les informations doivent-elles devenir visibles lors du passage du pointeur ?**
-    Si ce n’est pas le cas, utilisez un autre contrôle. Les info-bulles doivent uniquement être affichées par une action de l’utilisateur ; ne les laissez jamais s’afficher d’elles-mêmes.
+-   **Les informations doivent-elles devenir visibles lors du passage du pointeur?**
+    Si ce n’est pas le cas, utilisez un autre contrôle. Les info-bulles doivent uniquement être affichées par une action de l’utilisateur; ne les laissez jamais s’afficher d’elles-mêmes.
 
 -   **Le contrôle a-t-il une étiquette avec un libellé ?**
     Si ce n’est pas le cas, utilisez une info-bulle pour l’indiquer. Attribuer une étiquette à la plus grande partie des contrôles est une bonne habitude de conception de l’expérience utilisateur et pour ceci, vous n’avez pas besoin d’info-bulles. Les contrôles et les commandes des barres d’outils affichant seulement des icônes doivent être accompagnés d’une info-bulle.

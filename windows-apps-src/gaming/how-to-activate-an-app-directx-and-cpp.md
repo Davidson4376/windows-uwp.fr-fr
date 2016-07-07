@@ -12,7 +12,7 @@ ms.openlocfilehash: 14859d03c7af45a17772c76f8c79b3c1bc56272c
 # Comment activer une application (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
 
@@ -39,7 +39,8 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## Activer l’instance CoreWindow pour l’application
 
 
-Au démarrage de votre application, vous devez obtenir une référence à l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de votre application. **CoreWindow** contient le répartiteur de message d’événement de fenêtre utilisé par votre application pour traiter les événements de fenêtre. Obtenez cette référence dans votre rappel pour l’événement d’activation d’application en appelant [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Après avoir obtenu cette référence, activez la fenêtre principale de l’application en appelant [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
+Au démarrage de votre application, vous devez obtenir une référence à l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de votre application. 
+            **CoreWindow** contient le répartiteur de message d’événement de fenêtre utilisé par votre application pour traiter les événements de fenêtre. Obtenez cette référence dans votre rappel pour l’événement d’activation d’application en appelant [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Après avoir obtenu cette référence, activez la fenêtre principale de l’application en appelant [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)

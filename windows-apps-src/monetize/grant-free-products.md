@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: "Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit intégré à l’application (PIA) gratuit à un utilisateur donné."
+description: "Utilisez cette méthode dans l’API d’achat du WindowsStore pour octroyer une application gratuite ou un produit intégré à l’application (PIA) gratuit à un utilisateur donné."
 title: Octroyer des produits gratuits
 ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
 ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
@@ -10,7 +10,7 @@ ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
 
 # Octroyer des produits gratuits
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit intégré à l’application (PIA) gratuit à un utilisateur donné.
 
@@ -18,10 +18,10 @@ Actuellement, vous ne pouvez octroyer que des produits gratuits. Si votre servic
 
 ## Conditions préalables
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants :
+Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
--   un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
--   une clé d’ID du Windows Store générée en appelant la méthode [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) à partir du code côté client de votre application.
+-   un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
+-   une clé d’ID du WindowsStore générée en appelant la méthode [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) à partir du code côté client de votre application.
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
@@ -57,7 +57,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | language       | chaîne | Langue de l’utilisateur.                                                                                                                                                                                                                                                                                              | Oui      |
 | market         | chaîne | Marché de l’utilisateur.                                                                                                                                                                                                                                                                                                | Oui      |
 | orderId        | GUID   | GUID généré pour la commande. Cette valeur doit être propre à l’utilisateur, mais il n’est pas impératif qu’elle soit unique dans toutes les commandes.                                                                                                                                                                                              | Oui      |
-| productId      | chaîne | L’ID Windows Store du catalogue du Windows Store. L’ID Windows Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8. | Oui      |
+| productId      | chaîne | L’ID WindowsStore du catalogue du WindowsStore. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. | Oui      |
 | quantity       | entier    | Quantité à acheter. Actuellement, la seule valeur prise en charge est 1. Si aucune valeur n’est spécifiée, la valeur par défaut est 1.                                                                                                                                                                                                                | Non       |
 | skuId          | chaîne | ID de référence du catalogue du Windows Store. Exemple d’ID de référence : 0010.                                                                                                                                                                                                                                                | Oui      |
 
@@ -89,7 +89,7 @@ Content-Type: application/json
 
 | Paramètre                 | Type                        | Description                                                                                                                                              | Obligatoire |
 |---------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| clientContext             | ClientContextV6             | Informations contextuelles client de cette commande. Ce paramètre est affecté à la valeur *clientID* du jeton Azure AD.                                     | Oui      |
+| clientContext             | ClientContextV6             | Informations contextuelles client de cette commande. Ce paramètre est affecté à la valeur *clientID* du jeton AzureAD.                                     | Oui      |
 | createdtime               | datetimeoffset              | Heure de création de la commande.                                                                                                                          | Oui      |
 | currencyCode              | chaîne                      | Code devise pour *totalAmount* et *totalTaxAmount*. Non applicable pour les articles gratuits.                                                                                | Oui      |
 | friendlyName              | chaîne                      | Nom convivial de la commande. Non applicable pour les commandes passées à l’aide de l’API d’achat du Windows Store.                                                               | Oui      |
@@ -154,7 +154,7 @@ L’objet IdentityV6 contient les paramètres ci-dessous.
 | Paramètre     | Type   | Description                                                                        | Obligatoire |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | chaîne | Contient la valeur **"pub"**.                                                      | Oui      |
-| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du Windows Store. | Oui      |
+| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du WindowsStore. | Oui      |
 
 <br/> 
 
@@ -226,7 +226,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 |------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
 | 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.                                                                                                   |
-| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store du corps de la demande et la revendication *appid* du jeton d’accès Azure AD de l’en-tête d’autorisation ne correspondent pas.                     |
+| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du WindowsStore du corps de la demande et la revendication *appid* du jeton d’accès AzureAD de l’en-tête d’autorisation ne correspondent pas.                     |
 | 400  | BadRequest   | InvalidParameter           | Les détails contiennent des informations relatives au corps de la requête et aux champs comprenant une valeur non valide.                                                                                    |
 
 <br/> 
@@ -244,6 +244,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

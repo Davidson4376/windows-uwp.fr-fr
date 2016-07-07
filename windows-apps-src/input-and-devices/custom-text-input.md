@@ -21,7 +21,7 @@ Les API Core Text de l’espace de noms [**Windows.UI.Text.Core**](https://msdn.
 -   [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 
-## Pourquoi utiliser les API Core Text ?
+## Pourquoi utiliser les API Core Text?
 
 
 Pour de nombreuses applications, les contrôles de zone de texte XAML ou HTML sont suffisants pour la saisie et l’édition de texte. Toutefois, si votre application gère les scénarios de texte complexes, comme une application de traitement de texte, vous aurez peut-être besoin d’un contrôle d’édition de texte personnalisé. Vous pouvez utiliser les API de clavier [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) pour créer votre système de contrôle d’édition de texte, mais elles ne permettent pas de recevoir du texte basé sur la composition, qui est requis pour prendre en charge des langues d’Asie orientale.
@@ -45,7 +45,7 @@ Les contrôles d’édition fournissent un espace pour la saisie de texte et les
 
 ### Position d’insertion de l’application
 
-Les plages de texte utilisées avec les API Core Text sont exprimées en termes de position d’insertion. La « position d’insertion de l’application (ACP) » est un nombre (basé sur zéro) indiquant le nombre de caractères à partir du début du texte, juste avant le point d’insertion, comme indiqué ici.
+Les plages de texte utilisées avec les API Core Text sont exprimées en termes de position d’insertion. La «position d’insertion de l’application (ACP)» est un nombre (basé sur zéro) indiquant le nombre de caractères à partir du début du texte, juste avant le point d’insertion, comme indiqué ici.
 
 ![exemple de diagramme de flux de texte](images/coretext/stream-1.png)
 ### Sélection et plages de texte
@@ -59,19 +59,19 @@ Les plages de texte et les sélections sont représentées par la structure [**C
 
  
 
-Par exemple, dans la plage de texte présentée précédemment, la plage \[0, 5\] correspond au mot « Hello ». **StartCaretPosition** doit toujours être inférieur ou égal à **EndCaretPosition**. La plage \[5, 0\] n’est pas valide.
+Par exemple, dans la plage de texte présentée précédemment, la plage \[0, 5\] correspond au mot «Hello». **StartCaretPosition** doit toujours être inférieur ou égal à **EndCaretPosition**. La plage \[5, 0\] n’est pas valide.
 
 ### Point d’insertion
 
-La position d’insertion actuelle, souvent appelée « point d’insertion », est représentée par la définition d’un champ **StartCaretPosition** égal au champ **EndCaretPosition**.
+La position d’insertion actuelle, souvent appelée «point d’insertion», est représentée par la définition d’un champ **StartCaretPosition** égal au champ **EndCaretPosition**.
 
 ### Sélection non contiguë
 
 Certains contrôles d’édition prennent en charge les sélections non contiguës. Par exemple, les applications Microsoft Office prennent en charge les sélections arbitraires multiples, et de nombreux éditeurs de code source permettent la sélection de colonnes. Toutefois, les API Core Text n’acceptent pas les sélections non contiguës. Les contrôles d’édition doivent uniquement signaler une sélection contiguë, qui correspond le plus souvent à la sous-plage active des sélections non contiguës.
 
-Prenons l’exemple du flux de texte suivant :
+Prenons l’exemple du flux de texte suivant:
 
-![exemple de diagramme de flux de texte](images/coretext/stream-2.png) Il existe deux sélections : \[0, 1\] et \[6, 11\]. Le contrôle d’édition doit signaler seulement l’une d’elles : soit \[0, 1\], soit \[6, 11\].
+![exemple de diagramme de flux de texte](images/coretext/stream-2.png) Il existe deux sélections: \[0, 1\] et \[6, 11\]. Le contrôle d’édition doit signaler seulement l’une d’elles: soit \[0, 1\], soit \[6, 11\].
 
 ## Utilisation du texte
 
@@ -92,16 +92,13 @@ Votre système de contrôle d’édition accepte généralement les demandes de 
 2.  Placer la sélection à la position indiquée dans [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233).
 3.  Indiquer au système que la mise à jour a été correctement effectuée en définissant [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) sur [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237).
 
-Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur tape « d ». Le point d’insertion est à \[10, 10\].
+Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur tape «d». Le point d’insertion est à \[10, 10\].
 
-![exemple de diagramme de flux de texte](images/coretext/stream-3.png) Lorsque l’utilisateur tape « d », un événement [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) est déclenché avec les données [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) suivantes :
+![exemple de diagramme de flux de texte](images/coretext/stream-3.png) Lorsque l’utilisateur tape «d», un événement [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) est déclenché avec les données [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) suivantes:
 
--   [
-            **Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [
-            **Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = « d »
--   [
-            **newSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = « d »
+-   [**newSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 Dans votre système de contrôle d’édition, appliquez les modifications indiquées et définissez [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) sur **Succeeded**. Voici l’état du contrôle une fois que les modifications sont appliquées.
 
@@ -116,11 +113,11 @@ Par exemple, imaginons un système de contrôle d’édition qui accepte uniquem
 
 Parfois, votre système de contrôle d’édition apporte des modifications au texte lorsque le texte est collé ou corrigé automatiquement. Dans ces cas, vous devez signaler ces modifications aux services de texte en appelant la méthode [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172).
 
-Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur colle le mot « World ». Le point d’insertion est à \[6, 6\].
+Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisateur colle le mot «World». Le point d’insertion est à \[6, 6\].
 
-![exemple de diagramme de flux de texte](images/coretext/stream-5.png) L’utilisateur exécute l’action Coller et le système de contrôle d’édition se retrouve avec le texte suivant :
+![exemple de diagramme de flux de texte](images/coretext/stream-5.png) L’utilisateur exécute l’action Coller et le système de contrôle d’édition se retrouve avec le texte suivant:
 
-![exemple de diagramme de flux de texte](images/coretext/stream-4.png) Lorsque cela se produit, vous devez appeler [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) avec ces arguments :
+![exemple de diagramme de flux de texte](images/coretext/stream-4.png) Lorsque cela se produit, vous devez appeler [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) avec ces arguments:
 
 -   *modifiedRange* = \[6, 6\]
 -   *newLength* = 5
@@ -138,7 +135,7 @@ Par exemple, imaginons un système de contrôle d’édition qui fournit une fon
 
 ![exemple de diagramme de flux de texte](images/coretext/stream-7.png) En dehors du gestionnaire d’événements [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176), le système de contrôle d’édition effectue la correction suivante. Voici l’état du contrôle d’édition après la fin de la correction. Le point d’insertion est à \[5, 5\].
 
-![exemple de diagramme de flux de texte](images/coretext/stream-8.png) Lorsque cela se produit, vous devez appeler [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) avec ces arguments :
+![exemple de diagramme de flux de texte](images/coretext/stream-8.png) Lorsque cela se produit, vous devez appeler [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) avec ces arguments:
 
 -   *modifiedRange* = \[1, 2\]
 -   *newLength* = 2
@@ -167,6 +164,6 @@ Il peut arriver que le champ [**Range**](https://msdn.microsoft.com/library/wind
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

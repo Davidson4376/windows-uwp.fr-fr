@@ -11,28 +11,28 @@ ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
 # Configurer votre plateforme UWP sur l’environnement de développement Xbox
 
 La plateforme Windows universelle (UWP) sur l’environnement de développement Xbox se compose d’un ordinateur dédié au développement connecté à une console Xbox One via un réseau local.
-L’ordinateur de développement requiert Windows 10, Visual Studio 2015 Update 2, la version d’évaluation 14295 du kit de développement logiciel (SDK) Windows 10 et divers outils de prise en charge.
+L’ordinateur de développement requiert Windows10, Visual Studio2015 Update2, la version d’évaluation14295 du kit de développement logiciel (SDK) Windows10 et divers outils de prise en charge.
 
 
 Cet article couvre les étapes relatives à la configuration et au test de votre environnement de développement.
 
 ## Installation de Visual Studio
 
-1. Installez Visual Studio 2015 Update 2 ou version ultérieure. Pour en savoir plus et pour l’installation, voir [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads).
+1. Installez Visual Studio2015 Update2 ou version ultérieure. Pour en savoir plus et pour l’installation, voir [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads).
 
 1. Lorsque vous installez Visual Studio 2015 Update 2, assurez-vous que la case **Outils de développement d’applications Windows universelles** est cochée.
 
-  ![Installer Visual Studio 2015 Update 2 ou version ultérieure.](images/vs_install_tools.png)
+  ![Installer Visual Studio2015 Update2 ou version ultérieure.](images/vs_install_tools.png)
 
-## Installation du Kit de développement logiciel (SDK) Windows 10
+## Installation du Kit de développement logiciel (SDK) Windows10
 
-Installez la dernière version d’évaluation du Kit de développement logiciel (SDK) Windows 10. Pour obtenir des informations sur l’installation, voir [Télécharger les mises à jour Insider Preview pour les développeurs](http://go.microsoft.com/fwlink/p/?LinkId=780552).
+Installez la dernière version d’évaluation du Kit de développement logiciel (SDK) Windows10. Pour obtenir des informations sur l’installation, voir [Télécharger les mises à jour Insider Preview pour les développeurs](http://go.microsoft.com/fwlink/p/?LinkId=780552).
 
   > **Important** &nbsp;&nbsp;Vous devez installer la dernière version du Kit de développement logiciel (SDK), toutefois, vous n’avez _pas_ à installer la dernière version de Windows Insider Preview du système d’exploitation.
 
-## Configuration de votre Xbox One
+## Configuration de votre XboxOne
 
-Avant de pouvoir déployer une application vers votre Xbox One, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte Xbox Live existant ou créer un compte pour votre console en Mode développeur. 
+Avant de pouvoir déployer une application vers votre XboxOne, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte XboxLive existant ou créer un compte pour votre console en Mode développeur. 
 
 ## Créer votre première application
 
@@ -50,7 +50,7 @@ Avant de pouvoir déployer une application vers votre Xbox One, un utilisateur 
 
 1. Sélectionnez les options par défaut dans la boîte de dialogue **Nouveau projet Windows universel**. Si la boîte de dialogue **Mode développeur** s’affiche, cliquez sur **OK**. Une nouvelle application vide est créée.
 
-1. Configurez votre environnement de développement pour le débogage à distance :
+1. Configurez votre environnement de développement pour le débogage à distance:
 
   1. Cliquez avec le bouton droit sur le projet, puis sélectionnez **Propriétés**.
   1. Sur l’onglet **Déboguer**, définissez **Périphérique cible** sur **Ordinateur distant**.
@@ -65,7 +65,7 @@ Avant de pouvoir déployer une application vers votre Xbox One, un utilisateur 
 
 1. Sélectionnez les options par défaut dans la boîte de dialogue **Nouveau projet Windows universel**. Si la boîte de dialogue **Mode développeur** s’affiche, cliquez sur **OK**. Une nouvelle application vide est créée.
 
-1. Configurez votre environnement de développement pour le débogage à distance :
+1. Configurez votre environnement de développement pour le débogage à distance:
 
    1. Cliquez avec le bouton droit sur le projet, puis sélectionnez **Propriétés**.
    1. Sur l’onglet **Débogage** et définissez **Débogueur à lancer** sur **Ordinateur distant**.
@@ -93,21 +93,21 @@ Avant de pouvoir déployer une application vers votre Xbox One, un utilisateur 
 
   1. Des erreurs de déploiement, le cas échéant, s’afficheront dans la fenêtre **Sortie**.
 
-Félicitations, vous avez correctement créé et déployé votre première application UWP sur Xbox !
+Félicitations, vous avez correctement créé et déployé votre première application UWP sur Xbox!
 
 
 
 ## Voir aussi
 - [Activation du Mode développeur sur Xbox One](devkit-activation.md)  
-- [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads)  
+- [Téléchargements et outils pour Windows10](https://dev.windows.com/downloads)  
 - [Télécharger les mises à jour Insider Preview pour les développeurs](http://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Présentation des outils Xbox One](introduction-to-xbox-tools.md) 
-- [UWP sur Xbox One](index.md)
+- [UWP sur XboxOne](index.md)
 
 ----
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

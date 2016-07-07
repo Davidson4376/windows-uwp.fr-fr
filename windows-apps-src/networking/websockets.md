@@ -11,7 +11,7 @@ ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
 
 # WebSockets
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -42,7 +42,7 @@ Le [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br2268
 
 Le code de cette section crée un objet [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), se connecte à un serveur WebSocket et envoie des données à celui-ci. Une fois qu’une connexion a été correctement établie, l’application attend le déclenchement de l’événement [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358), qui indique que des données ont été reçues.
 
-Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplement à l’expéditeur l’écho de toute chaîne qui lui est envoyée. Cet exemple utilise une connexion sécurisée pour envoyer et recevoir des messages à l’aide du spécificateur de protocole « wss: ».
+Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplement à l’expéditeur l’écho de toute chaîne qui lui est envoyée. Cet exemple utilise une connexion sécurisée pour envoyer et recevoir des messages à l’aide du spécificateur de protocole «wss:».
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -226,13 +226,10 @@ La fonction suivante envoie la chaîne donnée à un WebSocket connecté, et imp
 
 ## Utilisation de contrôles avancés avec des WebSockets
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) et [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) suivent le même modèle pour l’utilisation de contrôles avancés. Aux classes principales ci-dessus correspondent des classes associées permettant d’accéder à des contrôles avancés.
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) et [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) suivent le même modèle pour l’utilisation de contrôles avancés. Aux classes principales ci-dessus correspondent des classes associées permettant d’accéder à des contrôles avancés.
 
-[
-            **MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) fournit des données de contrôle de socket sur un objet [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
-[
-            **StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) fournit des données de contrôle de socket sur un objet [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
+[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) fournit des données de contrôle de socket sur un objet [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
+[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) fournit des données de contrôle de socket sur un objet [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 Le modèle de base pour l’utilisation des contrôles avancés est le même pour les deux types de WebSockets. La discussion suivante utilise un [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) comme exemple, mais le même processus peut être utilisé avec [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
 
 1.  Créez l’objet [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
@@ -246,14 +243,11 @@ Tant [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226
 
 ## Classes d’informations WebSocket
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) et [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) ont une classe correspondante qui fournit des informations supplémentaires sur une instance WebSocket.
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) et [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) ont une classe correspondante qui fournit des informations supplémentaires sur une instance WebSocket.
 
-[
-            **MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849)Fournit des informations sur un [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), et vous récupérez une instance de la classe d’informations à l’aide de la propriété [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861).
+[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849)Fournit des informations sur un [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), et vous récupérez une instance de la classe d’informations à l’aide de la propriété [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861).
 
-[
-            **StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929)Fournit des informations sur un [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), et vous récupérez une instance de la classe d’informations à l’aide de la propriété [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935).
+[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929)Fournit des informations sur un [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), et vous récupérez une instance de la classe d’informations à l’aide de la propriété [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935).
 
 Notez que toutes les propriétés des deux classes d’informations sont en lecture seule, et que vous pouvez récupérer les informations actuelles à tout moment pendant la durée de vie d’un objet socket web.
 

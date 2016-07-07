@@ -3,13 +3,13 @@ description: Cet article explique comment prendre en charge le copier-coller dan
 title: Copier et coller
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
-ms.sourcegitcommit: bf081c07f8235790b99b3c1037751f24a86bbc1f
-ms.openlocfilehash: ed1dc1ca0f34f0efafd14aa1cfd1e4b75351882c
+ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
+ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
 
 ---
 #Copier et coller
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article explique comment prendre en charge le copier-coller dans les applications UWP en utilisant le Presse-papiers. Le copier-coller est la méthode classique d’échanger des données entre les applications, ou dans une application, et presque chaque application peut prendre en charge les opérations du Presse-papiers dans une certaine mesure.
@@ -40,7 +40,7 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
-Glisser-déplacer Vous pouvez ensuite ajouter les données sélectionnées par l’utilisateur dans l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Si les données sont prises en charge par la classe **DataPackage**, utilisez l’une des méthodes correspondantes dans l’objet **DataPackage**. Voici comment ajouter du texte :
+Glisser-déplacer Vous pouvez ensuite ajouter les données sélectionnées par l’utilisateur dans l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Si les données sont prises en charge par la classe **DataPackage**, utilisez l’une des méthodes correspondantes dans l’objet **DataPackage**. Voici comment ajouter du texte:
 
 ```cs
 dataPackage.SetText("Hello World!");
@@ -53,7 +53,7 @@ Clipboard.SetContent(dataPackage);
 ```
 ## Coller
 
-Pour obtenir le contenu du Presse-papiers, appelez la méthode statique [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent). Cette méthode renvoie un objet [**DataPackageView**][DataPackageView] avec son contenu. Cet objet est identique à l’objet [**DataPackage**][DataPackage], sauf qu’il est en lecture seule. Avec cet objet, vous pouvez utiliser la propriété [**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) ou la méthode [**Contains**][Contains] pour identifier les formats disponibles. Ensuite, appelez la méthode **DataPackageView** correspondante pour obtenir les données.
+Pour obtenir le contenu du Presse-papiers, appelez la méthode statique [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent). Cette méthode renvoie un objet [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) avec son contenu. Cet objet est identique à l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage), sauf qu’il est en lecture seule. Avec cet objet, vous pouvez utiliser la propriété [**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) ou la méthode [**Contains**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.Contains(System.String)) pour identifier les formats disponibles. Ensuite, appelez la méthode [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) correspondante pour obtenir les données.
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
@@ -103,6 +103,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

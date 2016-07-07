@@ -12,7 +12,7 @@ ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
 # Modèles de projet et outils pour les jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique montre ce dont vous avez besoin pour commencer à programmer des jeux DirectX pour la plateforme Windows universelle (UWP).
@@ -22,7 +22,8 @@ Pour commencer, vous devez disposer de Visual Studio.
 ## Obtenir Visual Studio
 
 
-[Téléchargez et installez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
+
+            [Téléchargez et installez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
 
 <table>
 <colgroup>
@@ -67,7 +68,7 @@ Si vous créez un jeu DirectX, voir les rubriques suivantes.
 -   [Développement de Marble Maze, jeu pour la plateforme Windows universelle en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
