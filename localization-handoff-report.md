@@ -1,26 +1,42 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\imaging.md](https://github.com/Microsoft/windows-apps/blob/347f22d2a7ea68ffda18639a26b060398b217e91/windows-apps-src/audio-video-camera/imaging.md) | OutofSyncHandedBackSuccess | [Details](#e54e5b165d344d117b736d8e6ab9c5e964427604495)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/d16c19f27e2f350dd5859ac131da2d0c3bde2576/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | OutofSyncHandedBackSuccess | [Details](#cefe5b9606f1cedbab8ae38905f6137fc4da02cd3490)
+ [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/703d2fa52d829d0cbd2aa6b13402b8bf54e0476c/windows-apps-src/security/companion-device-unlock.md) | OutofSyncHandedBackSuccess | [Details](#864973a80cf2e5ce685135e15ae70fa339026d9b3715)
 
 ## Item Details
-##### <a name='e54e5b165d344d117b736d8e6ab9c5e964427604495'></a> Source: [windows-apps-src\audio-video-camera\imaging.md](https://github.com/Microsoft/windows-apps/blob/347f22d2a7ea68ffda18639a26b060398b217e91/windows-apps-src/audio-video-camera/imaging.md)
+##### <a name='cefe5b9606f1cedbab8ae38905f6137fc4da02cd3490'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/d16c19f27e2f350dd5859ac131da2d0c3bde2576/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/e1cb6ca44eaf43b4e554032827017edd42e2313d/ol-handoff/Microsoft/windows-apps.fr-fr/master/imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.fr-fr.xlf)
-* Handoff Datetime: 2016-07-13 22:49:59
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/9ac5feae27354dec76b77c7594a0e6e2eb143234/ol-handoff/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf)
+* Handoff Datetime: 2016-07-13 23:20:48
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\imaging.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/21e351b9eceff534fa9f8e598bf3aea2dcfc9ad7/windows-apps-src/audio-video-camera/imaging.md)
-* Current Handback File: [imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/5b2abfb406ce8dd8bef8aeb8faad9fbbffefc797/ol-handback/Microsoft/windows-apps.fr-fr/master/imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.fr-fr.xlf)
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/21e351b9eceff534fa9f8e598bf3aea2dcfc9ad7/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/5b2abfb406ce8dd8bef8aeb8faad9fbbffefc797/ol-handback/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf)
+* Current Handback Datetime: 2016-07-07 14:45:08
+* [Back to Top](#report-top)
+
+##### <a name='864973a80cf2e5ce685135e15ae70fa339026d9b3715'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/703d2fa52d829d0cbd2aa6b13402b8bf54e0476c/windows-apps-src/security/companion-device-unlock.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/9ac5feae27354dec76b77c7594a0e6e2eb143234/ol-handoff/Microsoft/windows-apps.fr-fr/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf)
+* Handoff Datetime: 2016-07-13 23:20:48
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/21e351b9eceff534fa9f8e598bf3aea2dcfc9ad7/windows-apps-src/security/companion-device-unlock.md)
+* Current Handback File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/5b2abfb406ce8dd8bef8aeb8faad9fbbffefc797/ol-handback/Microsoft/windows-apps.fr-fr/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-07 14:45:08
 * [Back to Top](#report-top)
 
