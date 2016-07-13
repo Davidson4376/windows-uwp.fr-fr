@@ -91,7 +91,7 @@ Le contrôle est disponible en deux modes:
 -   Les sélecteurs de vue sont stationnaires lorsque l’espace autorisé est suffisant pour contenir tous les en-têtes de sélecteur de vue.
 -   Un appui sur une étiquette de sélecteur de vue permet d’accéder à la page correspondante, bien que le sélecteur de vue proprement dit ne bouge pas. Le sélecteur de vue actif est mis en surbrillance.
 
-{{&gt; contenu interne="
+{{> contenu interne="
 -   Nous vous recommandons tout particulièrement d’empêcher la rotation des éléments dans un environnement à 3mètres. Définissez la nouvelle propriété `IsHeaderItemsCarouselEnabled` sur False si votre application doit s’exécuter sur Xbox.
 "}}
 
