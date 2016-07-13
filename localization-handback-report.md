@@ -1,11 +1,29 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://github.com/Microsoft/windows-apps/blob/a2f4e7a679ca47f2a034e19936c1115e87a2eb24/windows-apps-src/controls-and-patterns/tabs-pivot.md) | OutofSyncHandedBackSuccess | [Details](#b6cf34346ad557ce53d3009afe8bc83bc7ed21aa1924)
 
 ## Item Details
+##### <a name='b6cf34346ad557ce53d3009afe8bc83bc7ed21aa1924'></a> Source: [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://github.com/Microsoft/windows-apps/blob/a2f4e7a679ca47f2a034e19936c1115e87a2eb24/windows-apps-src/controls-and-patterns/tabs-pivot.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/c9c561da64abfa13f4a9765e955d8646f9b5a081/ol-handoff/Microsoft/windows-apps.fr-fr/master/tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.fr-fr.xlf)
+* Handoff Datetime: 2016-07-05 20:52:27
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/8b57a92fcc0d54334fc05805a77b03c12a504f57/windows-apps-src/controls-and-patterns/tabs-pivot.md)
+* Current Handback File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/4844f741d489d2e8d4cd1715b5f8bcbe353ee148/ol-handback/Microsoft/windows-apps.fr-fr/master/tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.fr-fr.xlf)
+* Current Handback Datetime: 2016-07-13 11:51:28
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
