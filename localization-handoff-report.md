@@ -1,19 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps/blob/270fcbc064f363cc6d238590682f9b1a3447648f/windows-apps-src/accessibility/high-contrast-themes.md) | OutofSyncHandedBackSuccess | [Details](#ed1f942ead13b39e2d398c067ed3a94a11a937e317)
+ [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps/blob/b062900db2daf817ef7ea088dbc102b693effef0/windows-apps-src/accessibility/high-contrast-themes.md) | OutofSyncHandedBackSuccess | [Details](#3c72cda9ef78734ba5ddae59b224fa32e937753c17)
+ [windows-apps-src\accessibility\images\high-contrast-calculators.png](https://github.com/Microsoft/windows-apps/blob/b062900db2daf817ef7ea088dbc102b693effef0/windows-apps-src/accessibility/images/high-contrast-calculators.png) | HandedOffSuccess | [Details](#1a6670c73eb8c2d056c6b9d12691da706d0771ef24)
 
 ## Item Details
-##### <a name='ed1f942ead13b39e2d398c067ed3a94a11a937e317'></a> Source: [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps/blob/270fcbc064f363cc6d238590682f9b1a3447648f/windows-apps-src/accessibility/high-contrast-themes.md)
+##### <a name='3c72cda9ef78734ba5ddae59b224fa32e937753c17'></a> Source: [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps/blob/b062900db2daf817ef7ea088dbc102b693effef0/windows-apps-src/accessibility/high-contrast-themes.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/27705c6a081c4b0364a510ed52bd4daef40c16c8/ol-handoff/Microsoft/windows-apps.fr-fr/master/high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.fr-fr.xlf)
-* Handoff Datetime: 2016-07-14 18:21:23
+* Handoff File: [high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/6e02748baa4447a82b1b2c260c272843118fe9f7/ol-handoff/Microsoft/windows-apps.fr-fr/master/high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.fr-fr.xlf)
+* Handoff Datetime: 2016-07-14 19:21:30
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,6 +23,19 @@
 * Current Target File: [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/21e351b9eceff534fa9f8e598bf3aea2dcfc9ad7/windows-apps-src/accessibility/high-contrast-themes.md)
 * Current Handback File: [high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/5b2abfb406ce8dd8bef8aeb8faad9fbbffefc797/ol-handback/Microsoft/windows-apps.fr-fr/master/high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-07 14:45:08
+* [Back to Top](#report-top)
+
+##### <a name='1a6670c73eb8c2d056c6b9d12691da706d0771ef24'></a> Source: [windows-apps-src\accessibility\images\high-contrast-calculators.png](https://github.com/Microsoft/windows-apps/blob/b062900db2daf817ef7ea088dbc102b693effef0/windows-apps-src/accessibility/images/high-contrast-calculators.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [1a6670c73eb8c2d056c6b9d12691da706d0771ef.png](https://github.com/Microsoft/WDG.handoff/blob/6e02748baa4447a82b1b2c260c272843118fe9f7/ol-handoff/Microsoft/windows-apps.fr-fr/master/1a6670c73eb8c2d056c6b9d12691da706d0771ef.png)
+* Handoff Datetime: 2016-07-14 19:21:30
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\accessibility\high-contrast-themes.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
