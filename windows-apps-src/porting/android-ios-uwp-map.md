@@ -3,8 +3,9 @@ author: GrantMeStrength
 Description: "Comparez les fonctionnalités de la plateforme sous iOS, Android et Windows10."
 Search.Product: eADQiWindows 10XVcnh
 title: "Mappage de concepts d’applications Windows pour développeurs iOS et Android"
-ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
-ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 
 ---
 
@@ -12,7 +13,7 @@ ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
 
 Si vous êtes un développeur doté de compétences relatives aux systèmes d’exploitation Android ou iOS et au code et que vous souhaitez migrer vers Windows10 et la plateforme Windows universelle (UWP), cette ressource vous permettra de mapper les fonctionnalités de la plateforme, et vos connaissances, entre les trois plateformes.
 
-Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-root.md). Ce document est également disponible en [téléchargement](https://www.microsoft.com/en-us/download/details.aspx?id=52041).
+Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-root.md). Ce document est également disponible en [téléchargement](https://www.microsoft.com/download/details.aspx?id=52041).
 
 ## Interface utilisateur (UI)
 
@@ -664,6 +665,6 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

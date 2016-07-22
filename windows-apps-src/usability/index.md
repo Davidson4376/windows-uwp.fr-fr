@@ -1,10 +1,11 @@
 ---
-description: "Grâce aux instructions de conception et de codage fournies dans cette section, vous pourrez personnaliser votre application UWP pour certains types de saisies et d’appareils."
+description: "Découvrez comment rendre votre application inclusive et accessible aux personnes dans le monde entier."
+keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
 title: "Facilité d’utilisation des apps UWP - Développement d’apps Windows"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: f02713dfee278866af53c6dd529d2faa3e9f625c
+ms.sourcegitcommit: 5370dd078db81de606b7a4bbfcf6dd36b2280a17
+ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ---
 
@@ -12,11 +13,10 @@ ms.openlocfilehash: f02713dfee278866af53c6dd529d2faa3e9f625c
 
 # Facilité d’utilisation des applications UWP
 
-Les applications UWP gèrent automatiquement un grand nombre de saisies et fonctionnent sur différents appareils. Aucune action supplémentaire de votre part n’est requise pour activer la saisie tactile ou la compatibilité avec un téléphone, par exemple. 
+Ce sont les petits détails qui peuvent transformer une bonne expérience utilisateur en une expérience utilisateur véritablement inclusive qui réponde aux besoins des utilisateurs du monde entier.
 
-Mais il peut arriver que vous souhaitiez optimiser votre application pour certains types de saisies ou d’appareils. Par exemple, si vous créez une application de peinture, vous voudrez peut-être personnaliser la gestion des saisies au stylet. 
+Grâce aux instructions de conception et de codage de cette section, vous pourrez rendre votre application UWP plus inclusive en incluant des fonctionnalités d’accessibilité, de globalisation et de localisation, la possibilité de personnaliser l’expérience utilisateur et l’aide fournie aux utilisateurs lorsqu’ils en ont besoin.
 
-Grâce aux instructions de conception et de codage fournies dans cette section, vous pourrez personnaliser votre application UWP pour certains types de saisies et d’appareils. 
 
 ## Accessibilité
 
@@ -198,6 +198,6 @@ Même si votre application a été très bien conçue, certains utilisateurs aur
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

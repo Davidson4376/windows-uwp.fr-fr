@@ -344,8 +344,7 @@ Du point de vue du traitement, vous effectuez un peu plus de travail que si vous
 
     La matrice correcte est sélectionnée en fonction des données fournies par Windows 10 (telles que les résultats de [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)) pour déterminer l’orientation de l’affichage et elle sera multipliée par les coordonnées de chaque pixel (Direct2D) ou vertex (Direct3D) dans la scène, ce qui entraîne leur rotation en vue de leur alignement avec l’orientation de l’écran. (Notez que dans Direct2D, l’origine de l’écran est définie comme le coin supérieur gauche, alors que dans Direct3D, elle est définie comme le centre logique de la fenêtre.)
 
-> 
-            **Remarque** Pour plus d’informations sur les transformations 2D utilisées pour la rotation et sur la façon de les définir, voir [Définition de matrices pour la rotation de l’écran (2D)](#defining_matrices_2d). Pour plus d’informations sur les transformations 3D utilisées pour la rotation, voir [Définition de matrices pour la rotation de l’écran (3D)](#defining_matrices_3d).
+> **Remarque** Pour plus d’informations sur les transformations 2D utilisées pour la rotation et sur la façon de les définir, voir [Définition de matrices pour la rotation de l’écran (2D)](#defining_matrices_2d). Pour plus d’informations sur les transformations 3D utilisées pour la rotation, voir [Définition de matrices pour la rotation de l’écran (3D)](#defining_matrices_3d).
 
  
 
@@ -447,8 +446,7 @@ default:
 
 Une fois que vous avez la matrice de rotation et l’origine correctes pour l’image 2D, définissez-la avec un appel à [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) entre vos appels à [**ID2D1DeviceContext::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371768) et [**ID2D1DeviceContext::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371924).
 
-
-            **Avertissement** Direct2D n’a pas de pile de transformations. Si votre application utilise également [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) dans le cadre de son code de dessin, cette matrice doit être post-multipliée en toute autre transformation que vous avez appliquée.
+**Avertissement** Direct2D n’a pas de pile de transformations. Si votre application utilise également [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) dans le cadre de son code de dessin, cette matrice doit être post-multipliée en toute autre transformation que vous avez appliquée.
 
  
 
@@ -489,7 +487,7 @@ La prochaine fois que vous présenterez la chaîne d’échange, votre image 2D 
 
 Dans l’exemple fourni dans [Optimisation du processus de rotation](#rotation) (et dans l’[exemple de rotation de chaîne d’échange DXGI](http://go.microsoft.com/fwlink/p/?linkid=257600)), nous avons défini une matrice de transformation spécifique pour chaque orientation d’écran possible. Examinons maintenant les matrices pour la rotation de scènes en 3D. Comme précédemment, vous créez un ensemble de matrices pour chacune des quatre orientations possibles. Pour éviter toute erreur d’arrondi et par conséquent les artefacts visuels mineurs, déclarez les matrices de manière explicite dans votre code.
 
-La configuration de ces matrices de rotation 3D s’effectue comme suit. Les matrices illustrées dans l’exemple de code suivant sont des matrices de rotation standard pour des rotations de 0, 90, 180 et 270degrés des vertex qui définissent des points dans l’espace de scène 3D de la caméra. La valeur de coordonnées \[x, y, z\] de chaque vertex dans la scène est multipliée par cette matrice de rotation lorsque la projection 2D de la scène est calculée.
+La configuration de ces matrices de rotation 3D s’effectue comme suit. Les matrices illustrées dans l’exemple de code suivant sont des matrices de rotation standard pour des rotations de 0, 90, 180 et 270degrés des vertex qui définissent des points dans l’espace de scène 3D de la caméra. La valeur de coordonnées [x, y, z] de chaque vertex dans la scène est multipliée par cette matrice de rotation lorsque la projection 2D de la scène est calculée.
 
 ```cpp
    

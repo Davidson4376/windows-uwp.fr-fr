@@ -3,6 +3,7 @@ author: msatranjr
 Description: "Le contrôle de carte peut afficher des cartes routières et des vues aériennes, des itinéraires, des résultats de recherche et des informations sur la circulation."
 title: Recommandations sur les cartes
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: 3c1d37a119eca88ee443772292f8cfe97cb3c1ac
 

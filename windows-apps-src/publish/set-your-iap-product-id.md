@@ -3,6 +3,7 @@ author: jnHs
 Description: "Lorsque vous créez un produit in-app dans le tableau de bord du Centre de développement Windows, spécifiez un type de produit et affectez-lui un ID de produit."
 title: "Définir le type de produit in-app et son ID de produit"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
+translationtype: Human Translation
 ms.sourcegitcommit: ae4727974af632a275c102a6328734597cee3e9b
 ms.openlocfilehash: 9faee009cd907cd8ccdeded019e23713cbc058f0
 

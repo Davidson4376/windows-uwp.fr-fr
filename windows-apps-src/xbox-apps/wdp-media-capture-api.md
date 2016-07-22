@@ -2,6 +2,7 @@
 author: WilliamsJason
 title: "Informations de référence sur les API de capture multimédia"
 description: "Découvrez comment accéder à l’API de capture multimédia par programmation."
+translationtype: Human Translation
 ms.sourcegitcommit: 4356bd2cfc7697905ed91d60b5829c06d850e109
 ms.openlocfilehash: 2e32c4d516a35b5f5bd8d57bce75ff8bdce6b461
 
@@ -55,6 +56,6 @@ Cette API comporte les codes d’état attendus suivants.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -4,8 +4,8 @@ title: "Animations par images clés et animations de fonctions d’accélératio
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: "Les animations par clés linéaires, les animations par clés avec KeySpline ou les animations de fonctions d’accélération sont utilisées avec le même scénario."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f2c6d6c0e1d11fee40440cae06d68907313f62dc
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
 
 ---
 # Animations par images clés et animations de fonctions d’accélération
@@ -34,7 +34,7 @@ En plus de l’élément [**Duration**](https://msdn.microsoft.com/library/windo
 -   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse) : une fois que la dernière image clé est atteinte, les images sont répétées dans l’ordre inverse à partir de la fin. Cela double la durée apparente de l’animation.
 -   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime) : retarde le démarrage de l’animation. La chronologie des valeurs **KeyTime** dans les images ne commence à compter que lorsque le **BeginTime** est atteint, il n’y a donc aucun risque de couper des images.
 -   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior) : détermine ce qui se produit lorsque la dernière image clé est atteinte. **FillBehavior** n’a aucun effet sur les images clés intermédiaires.
--   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)
+-   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty) :
     -   Si définie sur **Forever**, les images clés et leur chronologie se répètent indéfiniment.
     -   Si définie sur un nombre d’itérations, la chronologie se répète autant de fois que ce nombre d’itérations.
     -   Si définie sur un [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377), la chronologie se répète jusqu’à ce que cette durée soit atteinte. Cela risque de tronquer l’animation au cours de la séquence d’images clés, s’il ne s’agit pas d’un facteur entier de la durée implicite de la chronologie.
@@ -148,8 +148,8 @@ Les fonctions d’accélération vous permettent d’appliquer des formules math
 
 Les fonctions d’accélération peuvent être appliquées aux animations de trois manières:
 
--   En utilisant une image clé d’accélération dans une animation par images clés, comme il est expliqué dans la section précédente. Utilisez [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267), [**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) ou [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279).
--   En définissant la propriété **EasingFunction** sur l’un des types d’animation **From**/**To**/**By**. Utilisez [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075), [**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) ou [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354).
+-   En utilisant une image clé d’accélération dans une animation par images clés, comme il est expliqué dans la section précédente. Utilisez [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267), [**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) ou [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279).
+-   En définissant la propriété **EasingFunction** sur l’un des types d’animation **From**/**To**/**By**. Utilisez [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075), [**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) ou [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354).
 -   En définissant [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) comme faisant partie d’un élément [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034). Cela est spécifique à la définition des états visuels pour les contrôles. Pour plus d’informations, voir [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) ou [Tables de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
 Voici la liste des fonctions d’accélération:
@@ -166,7 +166,7 @@ Voici la liste des fonctions d’accélération:
 -   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407) : génère une animation qui accélère ou décélère d’après la formule f(t) = t5.
 -   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439) : génère une animation qui accélère ou décélère d’après une formule s’appuyant sur une fonction sinus.
 
-Certaines des fonctions d’accélération ont des propriétés qui leur sont propres. Par exemple, [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) a deux propriétés [**Bounces**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) et [**Bounciness**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx) qui modifient le comportement de la fonction dans le temps de cette fonction **BounceEase**. D’autres fonctions d’accélération telles que [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) n’ont pas d’autres propriétés que la propriété [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) propre à toutes les fonctions d’accélération et produisent toujours le même comportement de fonction dans le temps.
+Certaines des fonctions d’accélération ont des propriétés qui leur sont propres. Par exemple, [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) a deux propriétés [**Bounces**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) et [**Bounciness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx) qui modifient le comportement de la fonction dans le temps de cette fonction **BounceEase**. D’autres fonctions d’accélération telles que [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) n’ont pas d’autres propriétés que la propriété [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) propre à toutes les fonctions d’accélération et produisent toujours le même comportement de fonction dans le temps.
 
 Certaines de ces fonctions d’accélération se chevauchent quelque peu, en fonction de la manière dont vous définissez les propriétés des fonctions d’accélération qui ont des propriétés. Par exemple, [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) fait exactement la même chose que [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) avec la propriété [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) égale à 2. Et [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) est une fonction [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294) avec une valeur par défaut.
 
@@ -283,6 +283,6 @@ Vous pouvez utiliser plusieurs éléments [**DiscreteObjectKeyFrame**](https://m
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

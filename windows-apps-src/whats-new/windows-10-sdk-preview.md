@@ -3,21 +3,21 @@ author: QuinnRadich
 title: "Nouveautés de Windows10"
 description: "La version d’évaluationSDK Windows10Anniversary et les outils de développement offrent outils, fonctions et expertise sur la plateforme Windows universelle."
 translationtype: Human Translation
-ms.sourcegitcommit: 46b5ad404811894899810f83efb9970e338e7051
-ms.openlocfilehash: 5cce4a0fbfe85126f15cb013a9b46f058006a5e1
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6
 
 ---
 
 # Nouveautés de Windows
 
-La version préliminaire14295 du kit de développement logiciel (SDK) Windows10Anniversary et les mises à jour des outils de développeur Windows continuent de fournir les outils, les fonctionnalités et les expériences de la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/en-us/windows/downloads#_blank) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](https://msdn.microsoft.com/library/windows/apps/bg124288) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
+La version préliminaire14295 du kit de développement logiciel (SDK) Windows10Anniversary et les mises à jour des outils de développeur Windows continuent de fournir les outils, les fonctionnalités et les expériences de la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](https://msdn.microsoft.com/library/windows/apps/bg124288) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
 ## Version préliminaire12295 du kit de développement logiciel (SDK) Windows10Anniversary
 
 Fonctionnalité | Description
  :---- | :----
 Mise en réseau | Vous pouvez maintenant fournir votre propre validation personnalisée des certificats SSL/TLS de serveur en vous abonnant à l’événement [HttpBaseProtocolFilter.ServerCustomValidationRequest](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx#_blank). Vous pouvez aussi entièrement désactiver la lecture des réponses HTTP à partir du cache en spécifiant la valeur d’énumération [HttpCacheReadBehavior.NoCache](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpcachereadbehavior.aspx#_blank) dans une requêteHTTP. Il est désormais possible d’effacer les informations d’identification d’authentification pour rendre possible un scénario de «fin de session» en appelant la méthode [HttpBaseProtocolFilter.ClearAuthenticationCache](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx#_blank).
-Extensions | Microsoft Edge permet désormais d’utiliser des extensions. Avec les extensions, les utilisateurs peuvent étendre les capacités de MicrosoftEdge, fournissant ainsi une fonctionnalité de niche essentielle pour les audiences ciblées. Pour plus d’informations, consultez la [documentation sur les extensions](https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/extensions/#_blank).
+Extensions | Microsoft Edge permet désormais d’utiliser des extensions. Avec les extensions, les utilisateurs peuvent étendre les capacités de MicrosoftEdge, fournissant ainsi une fonctionnalité de niche essentielle pour les audiences ciblées. Pour plus d’informations, consultez la [documentation sur les extensions](https://developer.microsoft.com/microsoft-edge/platform/documentation/extensions/#_blank).
 API Bluetooth | Les applications peuvent maintenant accéder aux servicesRFCOMM sur des périphériques Bluetooth distants par le biais de [Windows.Devices.Bluetooth et Windows.Devices.Bluetooth.Rfcomm](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.aspx#_blank) sans avoir à s’associer d’abord avec le périphérique. De nouvelles méthodes permettent aux applications de rechercher et d’accéder aux services RFCOMM sur des appareils non associés.
 API de chat | Avec la nouvelle classe [ChatSyncManager](https://msdn.microsoft.com/library/windows/apps/mt414181.aspx#_blank), vous pouvez synchroniser des SMS à destination et à partir du cloud.
 [Mappage de concepts d’applications Windows pour développeurs iOS et Android](https://msdn.microsoft.com/windows/uwp/porting/android-ios-uwp-map#_blank) | Si vous êtes un développeur doté de compétences relatives aux systèmes d’exploitation Android ou iOS et au code et que vous souhaitez migrer vers Windows10 et la plateforme Windows universelle (UWP), cette ressource vous permettra de mapper les fonctionnalités de la plateforme, et vos connaissances, entre les trois plateformes.
@@ -29,6 +29,6 @@ API de cartes | Le contrôle [MapControl](https://msdn.microsoft.com/library/win
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

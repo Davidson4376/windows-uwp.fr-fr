@@ -3,8 +3,9 @@ author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "Vue d’ensemble des animations"
 description: "Utilisez les animations de la bibliothèque d’animations du Windows Runtime pour intégrer l’apparence de Windows dans votre application."
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 15fa3b33bf302633ef8cd51928e1af5ea726cc01
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 5d50bf2b24d134fd50ae2bea976509b30a511652
 
 ---
 # Vue d’ensemble des animations
@@ -24,6 +25,8 @@ Les animations de la bibliothèque d’animations Windows Runtime offrent les av
 
 Par exemple, quand l’utilisateur ajoute un élément à une liste, au lieu que ce nouvel élément apparaisse instantanément dans la liste, il se met en place par animation. Les autres éléments de la liste sont animés vers leur nouvelle position en peu de temps, faisant ainsi de la place pour le nouvel élément. Ce comportement de transition rend l’interaction du contrôle plus apparente à l’utilisateur.
 
+Windows10, version1607 introduit une nouvelle API [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) pour l’implémentation d’animations où un élément animé s’affiche entre les vues pendant une navigation. Cette API possède un modèle d’utilisation différente de celui des autres API de la bibliothèque d’animations. L’utilisation de **ConnectedAnimationService** est traitée dans la [page de référence](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx).
+
 La bibliothèque d’animations ne fournit pas des animations pour chaque scénario possible. Il peut arriver que vous souhaitiez créer une animation personnalisée en XAML. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md).
 
 En outre, pour certains scénarios avancés, tels que l’animation d’un élément en fonction de la position de défilement d’une visionneuse à défilement, les développeurs peuvent utiliser l’interopération de couche visuelle afin d’implémenter des animations personnalisées. Pour plus d’informations, voir [Couche visuelle](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer).
@@ -36,6 +39,7 @@ La bibliothèque d’animations et le système d’animations Windows Runtime on
 -   Les *animations thématiques* sont des animations appliquées à une ou plusieurs propriétés de types d’interface utilisateur XAML Windows Runtime prédéfinis. Elles diffèrent des transitions thématiques car elles ciblent un élément spécifique et existent dans des états visuels spécifiques dans un contrôle, alors que les transitions thématiques sont affectées à des propriétés du contrôle qui existent en dehors des états visuels et influencent les transitions entre ces états. Une grande partie des contrôles XAML Windows Runtime comprennent des animations thématiques dans des storyboards qui font partie de leur modèle de contrôle, les animations étant déclenchées par les états visuels. Du moment que vous ne changez pas les modèles, vous disposez de ces animations thématiques intégrées pour les contrôles dans votre interface utilisateur. En revanche, si vous remplacez des modèles, vous supprimez également les animations thématiques de contrôle intégrées. Pour les récupérer, vous devez définir une table de montage séquentiel qui comprend des animations thématiques dans le jeu d’états visuels du contrôle. Vous pouvez aussi exécuter des animations thématiques à partir de storyboards qui ne sont pas dans des états visuels et les démarrer avec la méthode [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), mais ce scénario est moins courant. Les animations thématiques font partie de la bibliothèque d’animations.
 -   Les *transitions visuelles* sont appliquées quand un contrôle passe de l’un de ses états visuels définis à un autre état. Il s’agit d’animations personnalisées que vous créez et elles sont généralement associées au modèle personnalisé que vous créez pour un contrôle et aux définitions d’état visuel de ce modèle. L’animation est exécutée uniquement pendant le délai entre les états et celui-ci est généralement court, quelques secondes au plus. Pour plus d’informations, voir la [section « VisualTransition » dans Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition).
 -   Les *animations dans une table de montage séquentiel* animent la valeur d’une propriété de dépendance WindowsRuntime au fil du temps. Les tables de montage séquentiel peuvent être définies dans le cadre d’une transition visuelle ou déclenchées par l’application lors de l’exécution. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md). Pour plus d’informations sur les propriétés de dépendance et sur l’emplacement où elles existent, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583).
+-   Les *animations connectées* fournies par la nouvelle API [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) permettent aux développeurs de créer facilement un effet où un élément animé s’affiche entre les vues pendant une navigation. Cette API est disponible à partir de Windows10, version1607. Pour plus d’informations, voir [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx).
 
 ## Animations disponibles dans la bibliothèque
 
@@ -380,6 +384,6 @@ Le scénario de définition d’interface utilisateur d’application le plus co
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

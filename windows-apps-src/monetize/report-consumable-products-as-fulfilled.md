@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "Utilisez cette méthode dans l’API de collection du WindowsStore pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur."
 title: "Signaler le traitement de la commande d’un produit consommable"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 5bd85c6ec9728a0dc08ab8ef4f586b0017510a74
 
 ---
 
@@ -37,9 +38,9 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 | Méthode | URI de la requête                                                   |
 |--------|---------------------------------------------------------------|
-| POST   | `https://collections.mp.microsoft.com/v6.0/collections/consume` |
+| POST   | ```https://collections.mp.microsoft.com/v6.0/collections/consume``` |
 
-<br/> 
+<span/> 
 
 ### En-tête de requête
 
@@ -50,7 +51,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
 
-<br/> 
+<span/>
 
 ### Corps de la requête
 
@@ -60,13 +61,10 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | itemId        | Chaîne       | Valeur itemId retournée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec trackingId.                                                                                                                                                                                                  | Non       |
 | trackingId    | GUID         | ID de suivi unique fourni par le développeur. Utilisez ce paramètre avec itemId.                                                                                                                                                                                                                                     | Non       |
 | productId     | Chaîne       | Valeur productId retournée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec transactionId.                                                                                                                                                                                            | Non       |
-| transactionId | GUID         | Valeur d’ID de transaction qui est obtenue à partir de l’une des sources suivantes:                                                                                                                                                                                                                                      | Non       |
-|               |              | * Propriété [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) de la classe [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).   |        |
-|               |              | * Accusé de réception de l’application ou du produit retourné par [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) ou [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).   |        |
-|               |              | * Paramètre transactionId retourné par une [demande de produits](query-for-products.md).   |        |        
-|               |              | Utilisez ce paramètre avec productId.   |        |
+| transactionId | GUID         | Valeur d’ID de transaction qui est obtenue à partir de l’une des sources suivantes. Utilisez ce paramètre avec productId.  <br/><br/><ul><li>Propriété [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) de la classe [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).</li><li>Accusé de réception de l’application ou du produit retourné par [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) ou [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).</li><li>Paramètre transactionId retourné par une [demande de produits](query-for-products.md).</li></ul>                                                                                                                                                                                                                                   | Non       |
+
  
-<br/>
+<span/>
 
 L’objet UserIdentity contient les paramètres ci-dessous.
 
@@ -76,7 +74,7 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 | identityValue        | chaîne | Valeur chaîne de la clé d’ID du Windows Store.                                                                                                   | Oui      |
 | localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du WindowsStore. | Oui      |
 
-<br/> 
+<span/> 
 
 ### Exemples de demande
 
@@ -146,7 +144,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 | 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.                                                                                                   |
 | 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du WindowsStore du corps de la requête et la revendication *appid* du jeton d’accès AzureAD de l’en-tête d’autorisation ne correspondent pas.                     |
 
-<br/> 
+<span/> 
 
 ## Rubriques connexes
 
@@ -160,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -5,6 +5,7 @@ title: Liens hypertexte
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
@@ -53,7 +54,7 @@ Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure:
 
 ![Exemple de lien hypertexte en tant qu’élément de texte](images/controls_hyperlink-element.png) 
 
-> **Conseil** &nbsp;&nbsp;Lorsque vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte dans le code XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut`xml:space="preserve"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
+> **Conseil** &nbsp;&nbsp;Lorsque vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte dans le code XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut`xml:space="default"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
 
 ## Créer un HyperlinkButton
 
@@ -154,6 +155,6 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

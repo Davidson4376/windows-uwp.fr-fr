@@ -4,8 +4,8 @@ ms.assetid: 2383296e-c3d7-4b49-bcd2-621391228fdb
 description: "Découvrez comment gérer les événements de la classe AdControl."
 title: "Événements AdControl en JavaScript"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 5a47915b0dd2792ed50cc5d556b1181ee2c259e1
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b3c41f38f42c390c52c96fa93cfce3fe9bbd181d
 
 
 ---
@@ -17,7 +17,7 @@ ms.openlocfilehash: 5a47915b0dd2792ed50cc5d556b1181ee2c259e1
 
 Les exemples suivants montrent comment gérer les événements de la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Ces exemples reposent sur le principe que vous avez déjà affecté les gestionnaires d’événements aux événements **AdControl**. Pour plus d’informations sur la procédure à suivre pour ce faire, voir [Exemple de propriétés HTML](html-properties-example.md).
 
-En JavaScript, les événements **AdControl** doivent être délimités par la fonction [MarkSupportedForProcessing](http://msdn.microsoft.com/en-us/library/windows/apps/Hh967819.aspx). Pour plus d’informations sur la gestion des événements en JavaScript, voir [Codage d’applications de base (HTML)](https://msdn.microsoft.com/en-us/library/windows/apps/hh780660.aspx#adding-event-handlers).
+En JavaScript, les événements **AdControl** doivent être délimités par la fonction [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx). Pour plus d’informations sur la gestion des événements en JavaScript, voir [Codage d’applications de base (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers).
 
 ## Exemples
 
@@ -48,7 +48,7 @@ window.myAdEngagedChanged = function (sender) {
 
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 * [Gestion des erreurs AdControl](adcontrol-error-handling.md)
-* [Classe RoutedEventArgs](http://msdn.microsoft.com/en-us/library/system.windows.routedeventargs.aspx)
+* [Classe RoutedEventArgs](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
@@ -56,6 +56,6 @@ window.myAdEngagedChanged = function (sender) {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

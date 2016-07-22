@@ -4,8 +4,8 @@ ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: "Créer une application « Hello World » (JS)"
 description: "Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &amp;\\#0034;Hello, world&amp;\\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10."
 translationtype: Human Translation
-ms.sourcegitcommit: f3cb50e5b0b0baa73431392a1f6854a62f3655de
-ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: be731072824e81eadc95cebd5855234f9331962b
 
 ---
 # Créer une application « Hello World » (JS)
@@ -50,6 +50,8 @@ Créons une application intitulée `HelloWorld`. Voici comment procéder:
     ![Fenêtre Nouveau projet ](images/js-tut-newproject.png)
 
     Pour ce didacticiel, nous utilisons le modèle **Application vide**. Ce modèle crée une application UWP dépouillée qui peut être compilée et exécutée, mais qui ne contient ni contrôles d’interface utilisateur, ni données. Dans le cadre de ce didacticiel, vous allez ajoutez des contrôles et des données à l’application.
+
+   (Si vous ne voyez pas ces options, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
 
 4.  Dans le volet central, sélectionnez le modèle **Application vide (Windows universel)**.
 
@@ -135,7 +137,9 @@ Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre 
 -   **Émulateur <SDK version> WVGA 4pouces 1Go**
 -   etc. (Divers émulateurs associés à d’autres configurations)
 
-Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
+(Si vous ne voyez pas les émulateurs, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
+
+Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.10240.0 WVGA 4pouces 512Mo**.
 **Pour démarrer le débogage sur un émulateur d’appareil mobile**
 
 1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) situé dans la barre d’outils **Standard**, choisissez **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
@@ -219,7 +223,7 @@ Avant d’ajouter notre propre code, examinons les premières et dernières lign
 
 Vous vous demandez peut-être ce à quoi tout ceci correspond. Ces lignes de code encapsulent le reste du code default.js dans une fonction anonyme qui s’exécute automatiquement. Une fonction anonyme s’exécutant automatiquement permet d’éviter plus facilement des conflits de noms ou des situations dans lesquelles vous modifiez accidentellement une valeur. De même, cela maintient les identificateurs inutiles à l’extérieur de l’espace de noms global, ce qui favorise les performances. Même si cela paraît un peu étrange, il s’agit d’une bonne pratique de programmation.
 
-La ligne de code suivante active le [mode strict](https://msdn.microsoft.com/en-us/library/windows/apps/br230269.aspx) pour votre code JavaScript. Le mode strict assure une vérification supplémentaire des erreurs au niveau de votre code. Par exemple, il vous empêche d’utiliser des variables déclarées implicitement ou d’assigner une valeur à une propriété en lecture seule.
+La ligne de code suivante active le [mode strict](https://msdn.microsoft.com/library/windows/apps/br230269.aspx) pour votre code JavaScript. Le mode strict assure une vérification supplémentaire des erreurs au niveau de votre code. Par exemple, il vous empêche d’utiliser des variables déclarées implicitement ou d’assigner une valeur à une propriété en lecture seule.
 
 Examinez le reste du code dans default.js. Il gère les événements [**activated**](https://msdn.microsoft.com/library/windows/apps/BR212679) et [**checkpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) de votre application. Nous nous pencherons plus en détail sur ces événements ultérieurement. Pour l’heure, sachez simplement que l’événement **activated** se déclenche au démarrage de votre application.
 
@@ -252,7 +256,7 @@ Examinez le reste du code dans default.js. Il gère les événements [**activate
 })();
 ```
 
-Définissons un gestionnaire d’événements pour votre objet [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017). Notre nouveau gestionnaire d’événements obtient le nom de l’utilisateur auprès du contrôle `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) et l’utilise pour sortir une salutation à destination de l’élément `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) que vous avez créé dans la section précédente.
+Définissons un gestionnaire d’événements pour votre objet [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017). Notre nouveau gestionnaire d’événements obtient le nom de l’utilisateur auprès du contrôle [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) `nameInput` et l’utilise pour générer une salutation à destination de l’élément [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) `greetingOutput` que vous avez créé dans la section précédente.
 
 ### Utilisation d’événements qui fonctionnent pour les entrées tactiles, de la souris et du stylet
 
@@ -271,7 +275,7 @@ Poursuivons en créant le gestionnaire d’événements.
         }
 ```
 
-2.  À l’intérieur du gestionnaire d’événements, récupérez le nom de l’utilisateur à partir du contrôle `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) et servez-vous en pour créer une salutation. Utilisez le contrôle `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) pour afficher le résultat.
+2.  À l’intérieur du gestionnaire d’événements, récupérez le nom de l’utilisateur à partir du contrôle [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) `nameInput` et servez-vous en pour créer une salutation. Utilisez le contrôle [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) `greetingOutput` pour afficher le résultat.
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -418,7 +422,7 @@ En plus des contrôles HTML standard, votre application peut utiliser tout contr
 
 Ajoutons un contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) à votre application.
 
-1.  Dans votre fichier default.html, ajoutez un élément [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) et un contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) après l’élément `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133).
+1.  Dans votre fichier default.html, ajoutez un élément [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) et un contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) après l’élément [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) `greetingOutput`.
 
     ```html
     <body class="win-type-body">
@@ -553,6 +557,6 @@ Félicitations, vous avez créé votre première application pour Windows 10 et 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

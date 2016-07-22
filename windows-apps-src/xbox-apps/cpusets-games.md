@@ -2,6 +2,7 @@
 title: "API CPUSets pour le développement de jeux"
 description: "Cet article présente la nouvelle APICPUSets disponible sur la plateformeUWP et aborde des informations clés sur le développement de jeux et d’applications."
 author: hammondsp
+translationtype: Human Translation
 ms.sourcegitcommit: 3cefaf4e527d2a0da412dab474a348b55ad409c9
 ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
 
@@ -16,10 +17,8 @@ La plateformeWindows universelle (UWP) est au cœur d’une large gamme d’appa
 ## APICPUSets
 
 L’API CPUSets vous permet de contrôler les jeux de processeurs disponibles pour la planification de threads. Deux fonctions sont disponibles pour déterminer à quel emplacement les threads sont planifiés:
-- 
-            **SetProcessDefaultCpuSets**: cette fonction peut être utilisée pour spécifier sur quels jeux de processeurs les nouveaux threads peuvent être exécutés, s’ils ne sont pas affectés à des jeux de processeurs spécifiques.
-- 
-            **SetThreadSelectedCpuSets**: cette fonction vous permet de limiter le nombre de jeux de processeurs sur lequel un thread spécifique peut s’exécuter.
+- **SetProcessDefaultCpuSets**: cette fonction peut être utilisée pour spécifier sur quels jeux de processeurs les nouveaux threads peuvent être exécutés, s’ils ne sont pas affectés à des jeux de processeurs spécifiques.
+- **SetThreadSelectedCpuSets**: cette fonction vous permet de limiter le nombre de jeux de processeurs sur lequel un thread spécifique peut s’exécuter.
 
 Si la fonction **SetProcessDefaultCpuSets** n’est pas utilisée, les nouveaux threads peuvent être planifiés sur n’importe quel jeu de processeurs disponible pour votre processus. Cette section décrit les concepts de base de l’APICPUSets.
 
@@ -97,9 +96,7 @@ Comme nous l’avons vu, l’API CPUSets fournit un grand nombre d’information
 
 Cette méthode est efficace si votre jeu possède quelques threads qui doivent être exécutés en temps réel, ainsi que d’autres threads de travail qui nécessitent relativement peu de tempsUC. Certaines tâches, comme la lecture de morceaux de musique en arrière-plan, doivent s’exécuter sans interruption pour assurer une expérience de jeu optimale. Il suffit qu’un thread audio soit privé d’une seule image pour que le jeu rencontre parfois des problèmes d’affichage ou techniques. Il est donc impératif que ce thread reçoive la quantité requise de tempsCPU pour chaque image.
 
-L’utilisation de l’élément **SetThreadSelectedCpuSets** avec l’élément **SetProcessDefaultCpuSets** permet d’assurer l’exécution des threads volumineux, sans qu’ils soient interrompus par d’autres threads de travail. 
-            L’élément **SetThreadSelectedCpuSets** peut être utilisé pour affecter vos threads volumineux à des jeux de processeurs spécifiques. 
-            L’élément **SetProcessDefaultCpuSets** peut ensuite être utilisé pour vous assurer que tous les threads créés et non assignés sont placés sur d’autres jeux de processeurs. Lorsque les UC utilisent l’hyperthreading, il est également important de tenir compte du nombre de cœurs logiques présents sur le même cœur physique. Les threads de travail ne doivent pas être autorisés à s’exécuter sur des cœurs logiques qui partagent le même cœur physique, comme un thread à exécuter avec une réactivité en temps réel. Le code suivant indique comment déterminer si un PC utilise l’hyperthreading.
+L’utilisation de l’élément **SetThreadSelectedCpuSets** avec l’élément **SetProcessDefaultCpuSets** permet d’assurer l’exécution des threads volumineux, sans qu’ils soient interrompus par d’autres threads de travail. L’élément **SetThreadSelectedCpuSets** peut être utilisé pour affecter vos threads volumineux à des jeux de processeurs spécifiques. L’élément **SetProcessDefaultCpuSets** peut ensuite être utilisé pour vous assurer que tous les threads créés et non assignés sont placés sur d’autres jeux de processeurs. Lorsque les UC utilisent l’hyperthreading, il est également important de tenir compte du nombre de cœurs logiques présents sur le même cœur physique. Les threads de travail ne doivent pas être autorisés à s’exécuter sur des cœurs logiques qui partagent le même cœur physique, comme un thread à exécuter avec une réactivité en temps réel. Le code suivant indique comment déterminer si un PC utilise l’hyperthreading.
 
 ```
 unsigned long retsize = 0;

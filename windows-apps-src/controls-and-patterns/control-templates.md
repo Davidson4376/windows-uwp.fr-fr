@@ -96,10 +96,7 @@ Le tableau suivant comporte les valeurs [**IsChecked**](https://msdn.microsoft.c
 
 |                     |                    |                         |
 |---------------------|--------------------|-------------------------|
-| 
-            Valeur de **IsChecked** | 
-            État de **CheckBox** | 
-            Apparence de **CheckBox** |
+| Valeur de **IsChecked** | État de **CheckBox** | Apparence de **CheckBox** |
 | **true**            | `Checked`          | Contient un «X».        |
 | **false**           | `Unchecked`        | Vide.                  |
 | **null**            | `Indeterminate`    | Contient un cercle.      |

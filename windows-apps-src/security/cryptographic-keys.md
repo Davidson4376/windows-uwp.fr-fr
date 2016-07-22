@@ -3,8 +3,9 @@ title: "Clés de chiffrement"
 description: "Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques."
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
-ms.sourcegitcommit: 4c8f586f711b1a9e2d2f252cf28a5239d9d68122
-ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
+translationtype: Human Translation
+ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
+ms.openlocfilehash: a86f31a0b62958f1300e386dfb99fd7fc1432fc5
 
 ---
 
@@ -14,7 +15,7 @@ ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques.
+Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques. 
 
 ## Clés symétriques
 
@@ -75,6 +76,6 @@ Il est souvent nécessaire de dériver des clés supplémentaires à partir d’
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -14,11 +14,9 @@ ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
 
 Plusieurs options s’offrent aux développeurs qui souhaitent automatiser le lancement des applications de plateforme Windows universelle (UWP). Dans ce livre blanc, nous allons étudier les méthodes de lancement d’une application à l’aide de l’activation de protocole et de l’activation de lancement.
 
+*L’activation de protocole* permet à une application de s’enregistrer en tant que gestionnaire pour un protocole donné. 
 
-            *L’activation de protocole* permet à une application de s’enregistrer en tant que gestionnaire pour un protocole donné. 
-
-
-            *L’activation de lancement* correspond au lancement normal de l’application, par exemple le lancement à partir de la vignette de l’application.
+*L’activation de lancement* correspond au lancement normal de l’application, par exemple le lancement à partir de la vignette de l’application.
 
 Pour chaque méthode d’activation, vous avez la possibilité d’utiliser la ligne de commande ou une application de lancement. Quelle que soit la méthode d’activation, si l’application est en cours d’exécution, l’activation amènera l’application au premier plan (ce qui la réactive) et fournira les nouveaux arguments d’activation. Cela offre la possibilité d’utiliser les commandes de l’activation pour fournir de nouveaux messages à l’application. Il est important de noter que le projet doit être compilé et déployé pour que la méthode d’activation exécute l’application récemment mise à jour. 
 

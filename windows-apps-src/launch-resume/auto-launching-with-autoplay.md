@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Démarrage automatique avec lecture automatique"
 description: "Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une cléUSB, une carte mémoireSD ou un DVD."
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 72e61f07c4b37488525d74ae28c9f605f20ca94c
 

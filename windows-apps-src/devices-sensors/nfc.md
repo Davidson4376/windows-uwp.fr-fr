@@ -2,6 +2,7 @@
 author: msatranjr
 title: Communication en champ proche (NFC)
 description: "Cette section contient des articles sur l’intégration de la technologieNFC dans les applications de plateforme Windows universelle (UWP)."
+translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
 ms.openlocfilehash: 2da839b282015c39bd0046d6cf60ce4f79fc485c
 

@@ -6,8 +6,9 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: bc3337101f0f2e8449d052743f7b3ce8d2dac516
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: 12f5905fce642a10656864e41325c8f4bd56c025
 
 ---
 # Zone de suggestion automatique
@@ -144,18 +145,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
     ![Exemple de zone de suggestion automatique sans résultat de recherche](images/controls_autosuggest_noresults.png)
 
-{{&gt; contenu interne="
-## Liste de contrôle de globalisation et de localisation
-
-<table>
-<tr>
-<th>Espacement vertical</th><td>Utilisez les caractères non latins d’espacement vertical pour assurer un affichage correct des scripts non latins, y compris les chiffres.</td>
-</tr>
-<tr>
-<th>Défilement</th><td>Lorsque la suggestion de texte automatique est sélectionnée, l’utilisateur doit pouvoir faire défiler la sélection jusqu’à la fin de la chaîne.</td>
-</tr>
-</table>
-"}}
 
 ## Articles connexes
 
@@ -168,6 +157,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

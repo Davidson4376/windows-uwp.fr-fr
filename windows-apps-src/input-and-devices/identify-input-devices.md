@@ -5,6 +5,7 @@ title: "Identifier des périphériques d’entrée"
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
 ms.openlocfilehash: 2ebef9767520d9f54f35ba22e2681cb41766e181
 

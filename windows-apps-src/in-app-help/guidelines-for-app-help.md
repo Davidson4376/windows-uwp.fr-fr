@@ -4,6 +4,7 @@ Description: "Ces recommandations décrivent comment concevoir un contenu d’ai
 title: "Recommandations en matière d’aide de l’application"
 label: Guidelines for app help
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 0aa2db498ab7ec25839da259dd0026b0a7cd2b13
 ms.openlocfilehash: f2522afa91abe26303a85cbfbabd5ec5b3dba59c
 

@@ -51,8 +51,7 @@ La fonction recherche est d’utilisation. Les interfaces utilisateur de recherc
 
 Voici quelques exemples d’étendues de recherche courantes:
 
-
-            **Global** et **contextuel/optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
+**Global** et **contextuel/optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
 
 **Web.**  Rechercher dans un index Web. Les résultats peuvent contenir des pages, des entités et des réponses.
 

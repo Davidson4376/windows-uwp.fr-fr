@@ -6,8 +6,8 @@ title: "Liste de vérification de l’accessibilité"
 label: Accessibility checklist
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
+ms.sourcegitcommit: 6ac5430a3e18a02d5f2fc82829631b7649ea547d
+ms.openlocfilehash: 2d632c524de8299378d8cc059d1c522080a2df2e
 
 ---
 
@@ -15,9 +15,9 @@ ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
 
 
 
-Fournit une liste de vérification pour vous aider à garantir que votre application UWP est accessible.
+Fournit une liste de vérification qui vous aide à vous assurer que votre application de plateforme Windows universelle (UWP) est accessible.
 
-Nous fournissons ici une liste de vérification qui vous permet de garantir que votre application est accessible.
+Nous fournissons ici une liste de vérification qui vous permet de vous assurer que votre application est accessible.
 
 1.  Définissez le nom accessible (obligatoire) et la description accessible (facultative) du contenu et des éléments d’interface utilisateur interactifs de votre application.
 
@@ -68,6 +68,6 @@ Nous fournissons ici une liste de vérification qui vous permet de garantir que 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

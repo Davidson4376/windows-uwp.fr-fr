@@ -3,6 +3,7 @@ author: msatranjr
 Description: "Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur."
 title: "Recommandations pour les applications avec la géolocalisation"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 

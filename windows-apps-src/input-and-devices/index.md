@@ -1,10 +1,11 @@
 ---
-description: "Personnalisez votre application UWP pour des types de saisie et d’appareils donnés."
-title: "Conception selon la saisie &amp; l’appareil - Développement d’apps Windows"
+description: "Personnalisez votre application UWP pour des types d’entrée et d’appareils donnés. Tirez parti des commandes tactiles et vocales. Exécutez vos applications sur des Xbox, des téléphones et même des TV."
+title: "Conception selon l’entrée et l’appareil pour les applications UWP - Développement d’applications Windows"
 author: mijacobs
+keywords: device primer, app inputs, customize UWP application
 translationtype: Human Translation
-ms.sourcegitcommit: fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9
-ms.openlocfilehash: f2055318fe67a0af2bcc009c6f9782029f9032f1
+ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
+ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
 
 ---
 

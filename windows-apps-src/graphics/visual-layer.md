@@ -4,8 +4,8 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: Couche visuelle
 description: "L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX)."
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1abb663d0ee27d7e57ab83dab2589557d1f9f29a
 
 ---
 # Couche visuelle
@@ -14,9 +14,9 @@ ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
 
 Dans Windows10, un travail considérable a été effectué pour créer un compositeur unifié et un moteur de rendu pour toutes les applications Windows, qu’elles soient pour ordinateurs de bureau ou pour appareils mobiles. Conséquence de ce travail, l’API WinRT Composition unifiée, appelée Windows.UI.Composition, qui permet d’accéder à de nouveaux objets de composition légers et aux animations et effets du nouveau compositeur.
 
-Windows.UI.Composition est une API déclarative [en mode retenu](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) qui peut être appelée à partir de toutes les applications UWP créer des objets, des animations et des effets de composition directement dans une application. L’API est un puissant complément des infrastructures existantes, par exemple XAML, qui fournit aux développeurs d’applications UWP une surface C# familière à ajouter dans leur application. Ces API peuvent être utilisées pour créer des applications reposant sur moins d’infrastructure de style DX.
+Windows.UI.Composition est une API déclarative [en mode retenu](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) qui peut être appelée à partir de toutes les applications UWP créer des objets, des animations et des effets de composition directement dans une application. L’API est un puissant complément des infrastructures existantes, par exemple XAML, qui fournit aux développeurs d’applications UWP une surface C# familière à ajouter dans leur application. Ces API peuvent également être utilisées pour créer des applications reposant sur moins d’infrastructure de style DX.
 
-Un développeur XAML peut « dérouler » jusqu’à la couche de composition en C# pour réaliser un travail personnalisé dans la couche de composition à l’aide de WinRT pour créer une composition d’objets dans l’application XAML au lieu d’atteindre la couche graphique et d’utiliser DirectX et C++ pour effectuer des tâches personnalisées de l’interface utilisateur.
+Un développeur XAML peut «dérouler» jusqu’à la couche de composition en C# pour réaliser un travail personnalisé dans la couche de composition à l’aide de WinRT au lieu d’atteindre la couche graphique et d’utiliser DirectX et C++ pour effectuer des tâches personnalisées de l’interface utilisateur. Cette technique peut être utilisée pour animer un élément existant à l’aide d’API Composition ou pour enrichir une interface utilisateur en créant une «île visuelle» de contenu Windows.UI.Composition au sein de l’arborescence d’éléments XAML.
 
 ![](images/layers-win-ui-composition.png)
 ## <span id="Composition_Objects_and_The_Compositor"></span><span id="composition_objects_and_the_compositor"></span><span id="COMPOSITION_OBJECTS_AND_THE_COMPOSITOR"></span>Objets de composition et compositeur
@@ -48,7 +48,11 @@ Pour plus d’informations, voir la vue d’ensemble [Animations de composition]
 
 ## <span id="XAML_Interoperation"></span><span id="xaml_interoperation"></span><span id="XAML_INTEROPERATION"></span>Interopérabilité de XAML
 
-En plus de créer depuis le début une arborescence d’éléments visuels, l’API Composition peut interopérer avec une interface utilisateur XAML existante à l’aide de la classe [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) dans [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908).
+En plus de créer une arborescence d’éléments visuels de toutes pièces, l’API Composition peut interopérer avec une interface utilisateur XAML existante à l’aide de la classe [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) dans [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908).
+
+- [**ElementCompositionPreview.GetElementVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): obtenez le visuel sous-jacent d’un élément pour l’animer à l’aide d’API Composition.
+- [**ElementCompositionPreview.SetChildVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): ajoutez une «île visuelle» de contenu de composition à une arborescence XAML.
+- [**ElementCompositionPreview.GetScrollViewerManipulationPropertySet()**](https://msdn.microsoft.com/library/windows/apps/mt608980.aspx): utilisez la manipulation d’un élément [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) comme entrée d’une animation de composition.
 
 
 **Remarque**  
@@ -58,8 +62,8 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 ## <span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>Ressources supplémentaires :
 
--   Article MSDN de Kenny Kerr portant sur cette API : [Graphics and Animation - Windows Composition Turns 10](https://msdn.microsoft.com/magazine/mt590968) (en anglais)
--   Exemples de composition dans [GitHub Composition](https://github.com/Microsoft/composition).
+-   Article MSDN de Kenny Kerr portant sur cette API: [Graphismes et animation: l’API Composition Windows passe à Windows10](https://msdn.microsoft.com/magazine/mt590968)
+-   Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
 -   [**Documentation de référence complète pour l’API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
 -   Problèmes connus : [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues).
 
@@ -73,6 +77,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

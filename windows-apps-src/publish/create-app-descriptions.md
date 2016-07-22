@@ -3,8 +3,9 @@ author: jnHs
 Description: "La section Description du processus de soumission d’application vous permet de définir le texte et les images qui seront visibles par les clients dans la description de votre application dans le WindowsStore."
 title: "Création des descriptions d’application"
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.sourcegitcommit: 447beeae917b03dea2538e74fd9cd8ef48b0f41f
-ms.openlocfilehash: ca85f55e12713903dbbee0a4e247cfb1a51c17d3
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: bd10b94cdb3e16e8a6165610fb77adcdaca5b0a4
 
 ---
 
@@ -117,10 +118,10 @@ Entrez l’URL de la page web où vos clients peuvent obtenir un support concern
 
 Si vous disposez d’une politique de confidentialité pour votre application, entrez son URL dans ce champ. Votre application doit respecter les lois et règles applicables et proposer une politique de confidentialité s’il y a lieu.
 
-**Important** Microsoft ne fournit aucune politique de confidentialité par défaut pour votre application. De même, votre application n’est couverte par aucune politique de confidentialité Microsoft. Pour déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [politiques du Windows Store](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_5_1).
+**Important** Microsoft ne fournit aucune politique de confidentialité par défaut pour votre application. De même, votre application n’est couverte par aucune politique de confidentialité Microsoft. Pour déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1).
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

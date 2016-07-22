@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Lancement, reprise et tâches en arrière-plan"
 description: "Cette section décrit ce qui se produit en cas de démarrage, de suspension, de reprise et d’arrêt d’une application de plateforme Windows universelle (UWP)."
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
+translationtype: Human Translation
 ms.sourcegitcommit: a8e6145f7a5c75d3b37277b80b07b0b3ad739d5c
 ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
 
@@ -101,6 +102,6 @@ De plus, vous pouvez utiliser la classe [**SplashScreen**](https://msdn.microsof
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

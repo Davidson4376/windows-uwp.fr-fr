@@ -3,8 +3,9 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Utiliser des pinceaux
 description: "Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur."
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 
 ---
 # Utiliser des pinceaux
@@ -164,7 +165,7 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 Pour [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) et [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101), utilisez le constructeur par défaut, puis appelez d’autres API avant d’essayer d’utiliser ce pinceau pour une propriété d’interface utilisateur.
 
--   La propriété [**ImageSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) requiert une classe [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (et non un URI) lorsque vous définissez une classe [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) à l’aide de code. Si votre source est un flux, utilisez la méthode [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) pour initialiser la valeur. Si votre source est un URI incluant du contenu de votre application qui utilise les modèles **ms-appx** ou **ms-resource**, utilisez le constructeur [**BitmapImage**](https://msdn.microsoft.com/en-us/library/windows/apps/br243238.aspx) qui prend un URI. Vous pouvez également envisager de gérer l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) s’il existe des problèmes de délai liés à la récupération ou au décodage de la source de l’image, auquel cas l’affichage d’un contenu alternatif peut se révéler nécessaire tant que la source de l’image n’est pas disponible.
+-   La propriété [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) requiert une classe [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (et non un URI) lorsque vous définissez une classe [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) à l’aide de code. Si votre source est un flux, utilisez la méthode [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) pour initialiser la valeur. Si votre source est un URI incluant du contenu de votre application qui utilise les modèles **ms-appx** ou **ms-resource**, utilisez le constructeur [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx) qui prend un URI. Vous pouvez également envisager de gérer l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) s’il existe des problèmes de délai liés à la récupération ou au décodage de la source de l’image, auquel cas l’affichage d’un contenu alternatif peut se révéler nécessaire tant que la source de l’image n’est pas disponible.
 -   Pour la classe [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703), vous pouvez avoir besoin d’appeler la méthode [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) si vous avez récemment réinitialisé la propriété [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) ou que le contenu de la classe [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) est également remplacé à l’aide de code.
 
 Pour obtenir des exemples de code, voir les pages de référence pour les classes [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) et [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101).
@@ -178,6 +179,6 @@ Pour obtenir des exemples de code, voir les pages de référence pour les classe
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO2-->
 
 

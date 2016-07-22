@@ -3,8 +3,9 @@ author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Informations de référence sur les API principales Device Portal"
 description: "Découvrez les API REST principales WindowsDevicePortal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme."
-ms.sourcegitcommit: 0e36b2adbd0805d9c738de00959581417d2c1ee8
-ms.openlocfilehash: 364e19c723c6cf48a25104b5719735a533ae54a7
+translationtype: Human Translation
+ms.sourcegitcommit: 30aeffcf090c881f84331ced4f7199fd0092b676
+ms.openlocfilehash: 0fa515d28431d4256b977ee3c3c41169661f129f
 
 ---
 
@@ -1137,6 +1138,60 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 <br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+---
+### Obtenir la famille d’appareils 
+
+**Requête**
+
+Vous pouvez obtenir la famille d’appareils (Xbox, téléphone, ordinateur de bureau, etc.) en utilisant le format de requête suivant.
+ 
+Méthode      | URI de la requête
+:------     | :-----
+GET | /api/os/devicefamily
+<br />
+
+**Paramètres d’URI**
+
+- Aucun
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+La réponse comprend la famille d’appareils (référence: ordinateur de bureau, Xbox, etc.).
+
+```
+{
+   "DeviceType" : string
+}
+```
+
+DeviceType aura pour valeur une chaîne du type «Windows.Xbox», «Windows.Desktop», etc. 
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+
 **Familles d’appareils disponibles**
 
 * Windows Mobile
@@ -2662,7 +2717,7 @@ GET | /api/wpr/trace
 
 **Réponse**
 
-- Renvoie le fichier ETL de suivi.
+- Aucune.  **Remarque:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
 
 **Code d’état**
 
@@ -2715,6 +2770,161 @@ L’état de la session de suivi WPR au format suivant.
     "State": string (normal or boot)
 }
 ```
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
+### Répertorier les sessions de suivi terminées (ETL)
+
+**Requête**
+
+Vous pouvez obtenir une liste des traces ETL sur l’appareil en utilisant le format de requête suivant. 
+
+Méthode      | URI de la requête
+:------     | :-----
+GET | /api/wpr/tracefiles
+<br />
+
+**Paramètres d’URI**
+
+- Aucun
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+La liste des sessions de suivi terminées est fournie dans le format suivant.
+
+```
+{"Items": [{
+    "CurrentDir": string (filepath),
+    "DateCreated": int (File CreationTime),
+    "FileSize": int (bytes),
+    "Id": string (filename),
+    "Name": string (filename),
+    "SubPath": string (filepath),
+    "Type": int
+}]}
+```
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
+### Télécharger une session de suivi (ETL)
+
+**Requête**
+
+Vous pouvez télécharger un fichier de suivi (suivi de démarrage ou suivi en mode utilisateur) en utilisant le format de requête suivant. 
+
+Méthode      | URI de la requête
+:------     | :-----
+GET | /api/wpr/tracefile
+<br />
+
+**Paramètres d’URI**
+
+Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête:
+
+Paramètre d’URI | Description
+:---          | :---
+filename   | (**requis**) Nom de la trace ETL à télécharger.  Les traces ETL se trouvent dans /api/wpr/tracefiles.
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+- Renvoie le fichier ETL de suivi.
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
+### Supprimer une session de suivi (ETL)
+
+**Requête**
+
+Vous pouvez supprimer un fichier de suivi (suivi de démarrage ou suivi en mode utilisateur) en utilisant le format de requête suivant. 
+
+Méthode      | URI de requête
+:------     | :-----
+DELETE | /api/wpr/tracefile
+<br />
+
+**Paramètres d’URI**
+
+Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête:
+
+Paramètre d’URI | Description
+:---          | :---
+filename   | (**requis**) Nom de la trace ETL à supprimer.  Les traces ETL se trouvent dans /api/wpr/tracefiles.
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+- Renvoie le fichier ETL de suivi.
 
 **Code d’état**
 
@@ -3039,11 +3249,11 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir des fichiers
+### Télécharger un fichier
 
 **Requête**
 
-Obtenez la liste des fichiers d’un dossier.
+Obtenir un fichier à partir d’un dossier connu ou d’appLocalData.
 
 Méthode      | URI de la requête
 :------     | :-----
@@ -3183,6 +3393,6 @@ Code d’état HTTP      | Description
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

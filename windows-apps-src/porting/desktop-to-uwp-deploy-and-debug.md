@@ -3,8 +3,9 @@ author: awkoren
 Description: "Déployez et déboguez une app UWP convertie à partir d’une application de bureau Windows (Win32, WPF, Windows Forms) avec les extensions de conversion de bureau."
 Search.Product: eADQiWindows 10XVcnh
 title: "Déployer et déboguer une app UWP convertie depuis une app de bureau Windows"
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
 
 ---
 
@@ -123,7 +124,7 @@ Voici comment débuter:
 
 10. Enfin, vous pouvez maintenant définir un point d’arrêt dans le code Win32 et appuyer sur F5 pour lancer le débogueur. Cela copiera toutes les mises à jour que vous avez apportées à votre application Win32 sur le package AppX, et vous permettra de déboguer directement depuis Visual Studio.
 
-11. Si vous mettez à jour votre application, vous devrez utiliser MakeAppX pour remettre en package votre application. Pour plus d’informations, consultez [Outil de création de packages (MakeAppx.exe)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh446767(v=vs.85).aspx). 
+11. Si vous mettez à jour votre application, vous devrez utiliser MakeAppX pour remettre en package votre application. Pour plus d’informations, consultez [Outil de création de packages (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx). 
 
 Si vous disposez de plusieurs configurations de build (par exemple, pour la sortie et le débogage), vous pouvez ajouter ce qui suit au fichier AppXFileList.xml pour copier la version Win32 depuis différents emplacements:
 
@@ -215,11 +216,11 @@ Toutefois, l’application s’exécute dans un environnement spécial dans lequ
 
 [Aperçu du Convertisseur d’applications de bureau (projet Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 
-[Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+[Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
 
 [Pont d’application de bureau pour les exemples de code UWP dans GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ author: jnHs
 Description: "Pour comprendre vos considérations fiscales pour la sélection des prix, les implications de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous."
 title: Informations fiscales pour les applications payantes
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
+translationtype: Human Translation
 ms.sourcegitcommit: a59d999ac36e04fbfa53d5b8992b235bff2d3818
 ms.openlocfilehash: 364608e1452ddff7aae261bb0f29ec14ee4fb0a3
 

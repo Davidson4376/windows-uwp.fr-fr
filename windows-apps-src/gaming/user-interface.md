@@ -21,8 +21,7 @@ Les modèles DirectX et de plateforme Windows universelle (UWP) vous permettent 
 
 Pour créer le projet, procédez comme suit :
 
--   
-            [Téléchargez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio2015 comprend des outils de programmation graphique, tels que des outils de débogage. Pour obtenir une vue d’ensemble des fonctionnalités et outils graphiques et de jeux DirectX, voir [Outils Visual Studio pour le développement de jeux DirectX](set-up-visual-studio-for-game-development.md).
+-   [Téléchargez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio2015 comprend des outils de programmation graphique, tels que des outils de débogage. Pour obtenir une vue d’ensemble des fonctionnalités et outils graphiques et de jeux DirectX, voir [Outils Visual Studio pour le développement de jeux DirectX](set-up-visual-studio-for-game-development.md).
 
 ## Choix d’un modèle
 

@@ -3,6 +3,7 @@ author: msatranjr
 title: "Diagnostic des conditions d’erreur d’un composant Windows Runtime"
 description: "Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants Windows Runtime écrits en code managé."
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
@@ -234,20 +235,20 @@ Dans l’UWP, les valeurs de retour sont considérées comme des paramètres de 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> [!div class="tabbedCodeSnippets"]
+> **Remarque** Si vous modifiez le nom de la valeur de retour, et que ce nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtenez l’erreur WME1091.
 
-**Remarque** Si vous modifiez le nom de la valeur de retour, et que ce nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtenez l’erreur WME1091. Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par nom, notamment la valeur de retour.
+Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par nom, notamment la valeur de retour. Pour obtenir un exemple, voir l’attribut [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx).
 
-| Pour obtenir un exemple, voir l’attribut [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx). | Numéro d’erreur |
+| Numéro d’erreur | Texte du message |
 |---------------|------------|
-| Texte du message | WME1091 La méthode «{0}» a la valeur de retour nommée «{1}» qui est identique à un nom de paramètre. |
-| Les paramètres de méthode Windows Runtime et la valeur de retour doivent avoir des noms uniques. | WME1092 La méthode «{0}» a un paramètre nommé «{1}» qui est identique au nom par défaut de la valeur de retour.<br/>Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour. |
+| WME1091 | La méthode «{0}» a la valeur de retour nommée «{1}» qui est identique à un nom de paramètre. Les paramètres de méthode Windows Runtime et la valeur de retour doivent avoir des noms uniques. |
+| WME1092 | La méthode «{0}» a un paramètre nommé «{1}» qui est identique au nom par défaut de la valeur de retour. Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour.<br/>**Remarque** Le nom par défaut est « returnValue » pour les accesseurs de propriété et « value » pour toutes les autres méthodes. |
  
 
-## **Remarque** Le nom par défaut est « returnValue » pour les accesseurs de propriété et « value » pour toutes les autres méthodes.
+## Rubriques connexes
 
-* [Rubriques connexes](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Création de composants Windows Runtime en C# et Visual Basic](https://msdn.microsoft.com/library/hh925576.aspx)
+* [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 

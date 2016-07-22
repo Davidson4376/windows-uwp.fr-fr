@@ -6,8 +6,8 @@ ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 ---
 # Panneaux de disposition
@@ -35,7 +35,7 @@ Voici un exemple de la façon dont vous pouvez définir la propriété jointe [*
 
 Pour plus d’informations sur les propriétés jointes, voir [Vue d’ensemble des propriétés jointes](../xaml-platform/attached-properties-overview.md).
 
-> **Remarque** &nbsp;&nbsp;Une propriété jointe est un concept XAML qui requiert une syntaxe spéciale à obtenir ou définir dans le code. Pour utiliser des propriétés jointes dans le code, voir la section *Propriétés jointes dans le code* de l’article *Vue d’ensemble des propriétés jointes*.
+> **Remarque**&nbsp;&nbsp;Une propriété jointe est un concept XAML qui requiert une syntaxe spéciale pour obtenir ou définir à partir du code. Pour utiliser des propriétés jointes dans le code, voir la section *Propriétés jointes dans le code* de l’article *Vue d’ensemble des propriétés jointes*.
 
 **Bordures des panneaux**
 
@@ -51,7 +51,7 @@ Voici un exemple illustrant comment définir les propriétés de bordure sur un 
 
 ![Un élément Grid avec des bordures](images/layout-panel-grid-border.png)
 
-L’utilisation des propriétés de bordure intégrées réduit le nombre d’éléments XAML, ce qui peut améliorer les performances de l’interface utilisateur de votre application. Pour plus d’informations sur les panneaux de disposition et les performances de l’interface utilisateur, voir [Optimiser votre disposition XAML](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx).
+L’utilisation des propriétés de bordure intégrées réduit le nombre d’éléments XAML, ce qui peut améliorer les performances de l’interface utilisateur de votre application. Pour plus d’informations sur les panneaux de disposition et les performances de l’interface utilisateur, voir [Optimiser votre disposition XAML](https://msdn.microsoft.com/library/windows/apps/mt404609.aspx).
 
 ## RelativePanel
 
@@ -225,6 +225,6 @@ Il existe plusieurs panneaux à usage spécifique qui peuvent être utilisés un
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

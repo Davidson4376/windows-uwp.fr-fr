@@ -2,6 +2,7 @@
 Description: Montre comment convertir manuellement une application de bureau Windows (Win32, WPF, Windows Forms) en une application de plateforme Windows universelle (UWP).
 Search.Product: eADQiWindows 10XVcnh
 title: Convertir manuellement une application de bureau Windows en appli UWP
+translationtype: Human Translation
 ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
 ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
 

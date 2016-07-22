@@ -3,8 +3,9 @@ author: msatranjr
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "Déclarations des fonctionnalités d’application"
 description: "Pour pouvoir accéder à certaines API, ressources (images ou musique) ou appareils (appareil photo ou microphone), les fonctionnalités doivent être déclarées dans le manifeste du package de votre application UWP."
-ms.sourcegitcommit: 747cdcecfa04005ee4512007bef95059bd81fb56
-ms.openlocfilehash: c3c70afbeab95fa967d5e7bb4b6dc9a9a66b6a39
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1ac48bd816cb2702adcb78ab00335d4f3533a1b3
 
 ---
 # Déclarations des fonctionnalités d’application
@@ -13,7 +14,7 @@ ms.openlocfilehash: c3c70afbeab95fa967d5e7bb4b6dc9a9a66b6a39
 
 Pour pouvoir accéder à certaines API, ressources (images ou musique) ou appareils (appareil photo ou microphone), les fonctionnalités doivent être déclarées dans le [manifeste du package](https://msdn.microsoft.com/library/windows/apps/BR211474) de votre application de plateforme Windows universelle (UWP).
 
-Vous demandez l’accès à des ressources ou API spécifiques en déclarant des fonctionnalités dans le [manifeste du package](https://msdn.microsoft.com/library/windows/apps/BR211474) de votre application. Vous pouvez déclarer les fonctionnalités générales à l’aide du [concepteur de manifeste](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx) de Microsoft Visual Studio, ou vous pouvez les ajouter manuellement. Pour plus d’informations, voir [Comment spécifier des fonctionnalités dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/BR211477). Il est important de savoir que lorsque des clients acquièrent votre application dans le Windows Store, toutes les fonctionnalités déclarées par l’application leur sont notifiées. Évitez de déclarer des fonctionnalités dont votre application n’a pas besoin.
+Vous demandez l’accès à des ressources ou API spécifiques en déclarant des fonctionnalités dans le [manifeste du package](https://msdn.microsoft.com/library/windows/apps/BR211474) de votre application. Vous pouvez déclarer les fonctionnalités générales à l’aide du [concepteur de manifeste](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx) de Microsoft Visual Studio, ou vous pouvez les ajouter manuellement. Pour plus d’informations, voir [Comment spécifier des fonctionnalités dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/BR211477). Il est important de savoir que lorsque des clients acquièrent votre application dans le Windows Store, toutes les fonctionnalités déclarées par l’application leur sont notifiées. Évitez de déclarer des fonctionnalités dont votre application n’a pas besoin.
 
 Certaines fonctionnalités permettent aux applications d’accéder à des *ressources sensibles*. Ces ressources sont considérées comme « sensibles » parce qu’elles ont accès aux données personnelles de l’utilisateur ou ont un coût pour celui-ci. Les paramètres de confidentialité, gérés par l’application Paramètres, permettent à l’utilisateur de contrôler de façon dynamique l’accès aux ressources sensibles. Il est donc important que votre application ne présume pas de la disponibilité d’une ressource sensible. Pour plus d’informations sur l’accès aux ressources sensibles, voir [Recommandations en matière d’applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/Hh768223). Les fonctionnalités qui permettent aux applications d’accéder à une *ressource sensible* sont marquées d’un astérisque (\*) en regard du scénario de fonctionnalité.
 
@@ -160,7 +161,7 @@ Cet article s’adresse aux développeurs de Windows10 qui écrivent des applica
 
 ## Rubriques connexes
 
-* [Concepteur du manifeste](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)
+* [Concepteur du manifeste](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)
 * [Recommandations en matière d’applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/Hh768223)
 * [Comment spécifier des fonctionnalités dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/BR211477)
 * [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/Dn263092)
@@ -168,6 +169,6 @@ Cet article s’adresse aux développeurs de Windows10 qui écrivent des applica
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

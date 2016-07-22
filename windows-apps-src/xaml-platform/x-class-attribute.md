@@ -33,8 +33,7 @@ Configure la compilation XAML afin de joindre des classes partielles entre le ba
 
 ## Remarques
 
-
-            Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’une racine de page ou une racine d’application, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
+Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’une racine de page ou une racine d’application, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
 
 La classe utilisée en tant que **x:Class** ne peut pas être une classe imbriquée.
 

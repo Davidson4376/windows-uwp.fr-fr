@@ -5,6 +5,7 @@ title: "Vue d’ensemble de la saisie de texte personnalisé"
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
 ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 

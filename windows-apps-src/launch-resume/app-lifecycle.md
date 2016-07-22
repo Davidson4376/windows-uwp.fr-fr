@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "Cycle de vie de l’application"
 description: "Cette rubrique décrit le cycle de vie d’une application de plateforme Windows universelle (UWP), de son activation jusqu’à sa fermeture."
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: c35f3c4bbc33d7202769badd7a0bcdc91f39bc84
 
 ---
 
@@ -75,7 +76,7 @@ Les données de l’événement [**OnActivated**](https://msdn.microsoft.com/lib
 
 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) pourrait également avoir la valeur **Running** ou **Suspended** mais, dans ce cas, votre application n’a pas été arrêtée précédemment et vous n’avez donc pas à restaurer de données, car tout est déjà en mémoire.
 
-**Note**  
+**Remarque**  
 
 Si vous ouvrez une session en utilisant le compte Administrateur de l’ordinateur, vous ne pouvez activer aucune application UWP.
 
@@ -102,7 +103,7 @@ Vous devez également libérer les ressources exclusives et les descripteurs de 
 
 En règle générale, votre application doit immédiatement enregistrer son état ainsi que libérer ses ressources et descripteurs de fichiers lors de la gestion de l’événement de suspension. L’exécution du code ne doit pas prendre plus d’une seconde. Si une application ne réagit pas dans les secondes suivant l’événement de suspension, Windows considère que l’application a cessé de répondre et l’arrête.
 
-Certaines applications doivent continuer de s’exécuter pour effectuer des tâches en arrière-plan. Par exemple, votre application peut continuer de lire du contenu audio en arrière-plan. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140). Les opérations de transfert en arrière-plan continuent même si votre application est suspendue, voire arrêtée. Pour plus d’informations, voir [Comment télécharger un fichier](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer).
+Certaines applications doivent continuer de s’exécuter pour effectuer des tâches en arrière-plan. Par exemple, votre application peut continuer de lire du contenu audio en arrière-plan. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140). Les opérations de transfert en arrière-plan continuent même si votre application est suspendue, voire arrêtée. Pour plus d’informations, voir [Comment télécharger un fichier](https://msdn.microsoft.com/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer).
 
 Pour obtenir des recommandations, voir [Recommandations en matière d’interruption et de reprise d’une application](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
@@ -179,7 +180,7 @@ Le code de base pertinent pour le cycle de vie de l’application est fourni dan
 -   Classe [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) (XAML)
 -   Classe [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) (XAML)
 
-**Note**  
+**Remarque**  
 Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
@@ -199,6 +200,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

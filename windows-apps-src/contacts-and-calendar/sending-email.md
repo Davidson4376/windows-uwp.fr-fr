@@ -4,6 +4,7 @@ description: "Montre comment lancer la boîte de dialogue de rédaction d’un m
 title: "Envoyer un courrier électronique"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, email, send
+translationtype: Human Translation
 ms.sourcegitcommit: 252e144b2436f047f7b0849bb6e5aee87b2e3464
 ms.openlocfilehash: ff0d2cd86f8ba422db7a26565c52293a3e21a018
 

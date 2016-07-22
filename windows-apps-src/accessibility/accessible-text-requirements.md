@@ -5,6 +5,7 @@ ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Exigences de texte accessible
 label: Accessible text requirements
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
 ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
 
@@ -39,22 +40,10 @@ Utilisez des outils de contraste des couleurs pour vérifier que le coefficient 
 ## Rôles d’éléments de texte  
 Une application UWP peut utiliser les éléments par défaut suivants (couramment appelés *éléments de texte* ou *contrôles d’édition de texte*) :
 
-* 
-            [
-              **TextBlock**
-            ](https://msdn.microsoft.com/library/windows/apps/BR209652) : le rôle est [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* 
-            [
-              **TextBox**
-            ](https://msdn.microsoft.com/library/windows/apps/BR209683) : le rôle est [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* 
-            [
-              **RichTextBlock**
-            ](https://msdn.microsoft.com/library/windows/apps/BR227565) (et classe de débordement [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)) : le rôle est [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* 
-            [
-              **RichEditBox**
-            ](https://msdn.microsoft.com/library/windows/apps/BR227548) : le rôle est [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [ **TextBlock** ](https://msdn.microsoft.com/library/windows/apps/BR209652) : le rôle est [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [ **TextBox** ](https://msdn.microsoft.com/library/windows/apps/BR209683) : le rôle est [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [ **RichTextBlock** ](https://msdn.microsoft.com/library/windows/apps/BR227565) (et classe de débordement [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)) : le rôle est [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [ **RichEditBox** ](https://msdn.microsoft.com/library/windows/apps/BR227548) : le rôle est [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
 Quand un contrôle signale qu’il a le rôle [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182), les technologies d’assistance supposent qu’il existe un ou plusieurs moyens pour l’utilisateur de modifier les valeurs. Par conséquent, si vous placez du texte statique dans un objet [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), vous signalez de manière incorrecte le rôle et donc la structure de votre application à l’utilisateur d’accessibilité.
 
@@ -110,21 +99,15 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-La valeur de TextScaleFactor est un double appartenant à la plage \[1,2\]. Le texte le plus petit subit un agrandissement de cette ampleur. Vous pouvez par exemple utiliser la valeur pour adapter des éléments graphiques au texte. Gardez toutefois à l’esprit que tout le texte n’est pas mis à l’échelle selon le même facteur. En règle générale, plus la taille du texte initial est élevée, moins le texte est affecté par la mise à l’échelle.
+La valeur de **TextScaleFactor** est un double appartenant à la plage [1,2]. Le texte le plus petit subit un agrandissement de cette ampleur. Vous pouvez par exemple utiliser la valeur pour adapter des éléments graphiques au texte. Gardez toutefois à l’esprit que tout le texte n’est pas mis à l’échelle selon le même facteur. En règle générale, plus la taille du texte initial est élevée, moins le texte est affecté par la mise à l’échelle.
 
 Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* 
-            [
-              **Control**
-            ](https://msdn.microsoft.com/library/windows/apps/BR209390) et classes dérivées
+* [ **Control** ](https://msdn.microsoft.com/library/windows/apps/BR209390) et classes dérivées
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 * [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* 
-            [
-              **TextElement**
-            ](https://msdn.microsoft.com/library/windows/apps/BR209967) et classes dérivées
+* [ **TextElement** ](https://msdn.microsoft.com/library/windows/apps/BR209967) et classes dérivées
 
 <span id="related_topics"/>
 ## Rubriques connexes  

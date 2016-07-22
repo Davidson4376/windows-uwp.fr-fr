@@ -4,8 +4,8 @@ ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "Se préparer"
 description: "Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et commencez à créer des applications de la plateforme Windows universelle (UWP) pour Windows 10."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8c5dfb692d647a25eea13036cd320366f3c5a09c
+ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
+ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
 
 ---
 # Préparation
@@ -28,7 +28,11 @@ Microsoft Visual Studio 2015 vous permet de concevoir, coder, tester et débogue
 
 Si vous ne possédez pas Visual Studio 2015, cliquez sur ce lien pour installer gratuitement Microsoft Visual Studio Community 2015. Ce téléchargement comprend des simulateurs d’appareil et de téléphone pour tester vos applications :
 
--   [Télécharger les outils de développement de Windows 10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [Télécharger les outils de développement de Windows10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+
+Lorsque vous installez Visual Studio, utilisez l’option personnalisée et assurez-vous que toutes les options d’outils de développement d’applications Windows universelles sont sélectionnées, comme illustré ici.
+
+![Outils Visual Studio pour UWP](images/vs-2015-community-setup.png)
 
 ## 3. Activer votre appareil pour le développement
 
@@ -56,6 +60,6 @@ Pour obtenir la liste complète des outils et des téléchargements, visitez la 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

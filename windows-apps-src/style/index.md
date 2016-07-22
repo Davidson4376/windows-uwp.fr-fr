@@ -1,10 +1,11 @@
 ---
-description: "Ces articles vous aident à concevoir et coder une app UWP intuitive qui s’affiche bien sur un grand nombre d’appareils et sur des écrans de différentes tailles."
+description: "Découvrez comment utiliser la couleur, la typographie et le mouvement pour définir la personnalité de votre application UWP avec le guide de style UWP du Centre de développement Windows."
+keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
 title: "Guide de style UWP - Développement d’applications Windows"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
+ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
+ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
 
 ---
 
@@ -20,7 +21,7 @@ ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
   <p>Conseils de conception et exemples de code qui vous aideront à définir la personnalité de votre application UWP par le biais de la couleur, de la typographie et du mouvement.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Color, icon, motion, sound, and typography guidelines](images/style-header-v2.png)
+    ![Recommandations en matière de couleurs, d’icônes, de mouvement, de son et de typographie](images/style-header-v2.png)
   </div>
 </div>
 </div>
@@ -56,8 +57,16 @@ Le son vient compléter l’expérience utilisateur d’une application et offre
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>[Typographie](typography.md)</b><br/>
-En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception.</p>
+En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Parallèlement, la typographie a un rôle important en tant que composant de disposition, en affectant considérablement la densité et la complexité de la conception, ainsi que l’expérience vécue par l’utilisateur de cette conception.</p>
+   <div class="uwpd-no-bullet-list">
+   <ul>
+    <li>[Polices](fonts.md)</li>
+    <li>[Icônes Segoe MDL2](segoe-ui-symbol-font.md)</li>
+   </ul>
+   </div>
   </div>
+  
+  
   <div class="side-by-side-content-right">
    <p><b>[Application de styles aux contrôles](../controls-and-patterns/styling-controls.md)</b><br/>
 Vous pouvez personnaliser l’apparence de vos applications de nombreuses manières à l’aide de l’infrastructure XAML. Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.</p>
@@ -68,6 +77,6 @@ Vous pouvez personnaliser l’apparence de vos applications de nombreuses maniè
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

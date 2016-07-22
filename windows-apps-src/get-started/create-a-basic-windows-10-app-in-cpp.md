@@ -4,8 +4,8 @@ ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: "Créer une application Hello World en C++ (Windows 10)"
 description: "Microsoft Visual Studio 2015 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language)."
 translationtype: Human Translation
-ms.sourcegitcommit: c26054867741934f87f189cc2c115dea9cf8daba
-ms.openlocfilehash: e39752f9f13eaf93d23412252483093e704b1668
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
 
 ---
 
@@ -24,8 +24,7 @@ Pour suivre des didacticiels dans d’autres langages de programmation, voir :
 ## Avant de commencer...
 
 -   Pour suivre ce didacticiel, vous devez utiliser Visual Studio 2015 Community ou version ultérieure, ou l’une des versions de Visual Studio 2015 autres que Community sur un ordinateur exécutant Windows 10 ou Windows 8.1. Pour télécharger les éléments nécessaires, voir [Obtenir les outils](http://go.microsoft.com/fwlink/p/?LinkId=532666).
--   Installez le [Kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=533049) pour le développement pour la plateforme Windows universelle.
--   Vous avez également besoin d’une licence de développeur. Pour obtenir des instructions, voir [Obtenir une licence de développeur](https://msdn.microsoft.com/library/windows/apps/Hh974578).
+-   Installez le [Kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=533049) destiné au développement pour la plateforme Windows universelle.
 -   Nous supposons que vous avez une connaissance de base du langage C++ standard, du code XAML et des concepts présentés dans [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   Nous partons du principe que vous utilisez la disposition de fenêtre par défaut dans Visual Studio. Pour rétablir la disposition par défaut, dans la barre de menus, choisissez **Fenêtre** > **Rétablir la disposition de la fenêtre**.
 -   Notez qu’il existe un problème connu avec Visual Studio 2015 qui peut provoquer une exception NullReferenceException lors du chargement du concepteur XAML. Ce problème bloque certaines étapes de ce didacticiel, sauf si vous appliquez la solution de contournement. Pour plus d’informations sur ce problème et la solution de contournement, consultez [ce billet sur le forum MSDN](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
@@ -54,7 +53,7 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 -   Bien que, sur les appareils Windows, Win32 soit toujours disponible pour certaines fonctionnalités, vous programmez avant tout dans une nouvelle API conviviale orientée objet : Windows Runtime.
 
--   Vous utilisez C++/CX pour consommer et créer des objets Windows Runtime. C++/CX autorise la gestion des exceptions, les délégués et les événements C++, ainsi que le décompte de références automatique des objets créés dynamiquement. Quand vous utilisez C++/CX, les détails des architectures COM et Windows sous-jacentes sont soustraits du code de votre application. Pour plus d’informations, voir les [Informations de référence en matière de langage C++/CX](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx).
+-   Vous utilisez C++/CX pour consommer et créer des objets Windows Runtime. C++/CX autorise la gestion des exceptions, les délégués et les événements C++, ainsi que le décompte de références automatique des objets créés dynamiquement. Quand vous utilisez C++/CX, les détails des architectures COM et Windows sous-jacentes sont soustraits du code de votre application. Pour plus d’informations, voir les [Informations de référence en matière de langage C++/CX](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx).
 
 -   Votre application est compilée dans un package qui contient aussi des métadonnées sur les types présents dans votre application, les ressources qu’elle utilise, ainsi que les capacités dont elle a besoin (accès aux fichiers, à Internet, à un appareil photo et ainsi de suite).
 
@@ -79,6 +78,8 @@ Commençons par les bases :
 2.  Dans la boîte de dialogue **Nouveau projet**, dans le volet gauche, développez **Installé** > **Visual C++** > **Windows** > **Universel**.
 
 3.  Dans le volet central, sélectionnez **Application vide (Windows universelle)**.
+
+   (Si vous ne voyez pas ces options, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
 
 4.  Entrez un nom pour le projet. Appelons-le HelloWorld.
 
@@ -254,7 +255,9 @@ Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre 
 -   **Émulateur 10.0.0.0 WVGA 4 pouces 512 Mo**
 -   Divers émulateurs associés à d’autres configurations
 
-Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.0.0 WVGA 4 pouces 512 Mo**.
+(Si vous ne voyez pas les émulateurs, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
+
+Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.0.0 WVGA 4pouces 512Mo**.
 **Conseil** Pour plus d’informations sur l’utilisation de l’émulateur de téléphone, voir [Exécuter des applications Windows Phone dans l’émulateur](http://go.microsoft.com/fwlink/p/?LinkId=394233).
 
  
@@ -428,9 +431,9 @@ Nous allons à présent adapter l’interface utilisateur à différentes taille
 
 Si vous avez utilisé un élément [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) dans des versions précédentes du langage XAML, vous pouvez remarquer que le code XAML spécifié ici utilise une syntaxe simplifiée.
 
-L’élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) nommé `wideState` comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 641. Cela signifie que l’état ne doit s’appliquer que si la largeur de la fenêtre n’est pas inférieure à la valeur minimale de 641 DIP. Vous ne définissez aucun objet [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) pour cet état, de sorte qu’il utilise les propriétés de disposition que vous avez définies dans le code XAML pour le contenu de la page.
+L’élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) nommé `wideState` comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 641. Cela signifie que l’état ne doit s’appliquer que si la largeur de la fenêtre n’est pas inférieure à la valeur minimale de 641 DIP. Vous ne définissez aucun objet [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) pour cet état, de sorte qu’il utilise les propriétés de disposition que vous avez définies dans le code XAML pour le contenu de la page.
 
-Le second élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 0. Cet état est appliqué lorsque la largeur de la fenêtre est supérieure à 0, mais inférieure à 641DIP. (À 641 DIP, l’état `wideState` s’applique.) Dans cet état, vous définissez certains objets [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) de façon à modifier les propriétés de disposition des contrôles dans l’interface utilisateur :
+Le second élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 0. Cet état est appliqué lorsque la largeur de la fenêtre est supérieure à 0, mais inférieure à 641DIP. (À 641 DIP, l’état `wideState` s’applique.) Dans cet état, vous définissez certains objets [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) de façon à modifier les propriétés de disposition des contrôles dans l’interface utilisateur :
 
 -   Vous réduisez la marge gauche de l’élément `contentPanel` de 120 à 20.
 -   Vous remplacez l’[**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) **Horizontal** de l’élément `inputPanel` par l’orientation **Vertical**.
@@ -449,6 +452,6 @@ Si vous disposez de code C++ existant que vous souhaitez intégrer avec une appl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

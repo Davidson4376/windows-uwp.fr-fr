@@ -59,9 +59,7 @@ CombiningCharacter::= none
 
 Les éléments enfants d’un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) incluent généralement un attribut **x:Key** qui spécifie une valeur de clé unique au sein de ce dictionnaire. L’unicité de la clé est appliquée au moment du chargement par le processeur XAML. Les valeurs **x:Key** non uniques engendrent des exceptions d’analyse XAML. Sur demande de l’[extension de balisage {StaticResource}](staticresource-markup-extension.md), toute clé non résolue engendre également des exceptions d’analyse XAML.
 
-
-            **x:Key** et [x:Name](x-name-attribute.md) ne sont pas des concepts identiques. 
-            **x:Key** est exclusivement utilisé dans les dictionnaires de ressources. x:Name est utilisé pour toutes les zones de code XAML. Un appel [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) utilisant une valeur de clé ne permet pas de récupérer une ressource à clé.
+**x:Key** et [x:Name](x-name-attribute.md) ne sont pas des concepts identiques. **x:Key** est exclusivement utilisé dans les dictionnaires de ressources. x:Name est utilisé pour toutes les zones de code XAML. Un appel [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) utilisant une valeur de clé ne permet pas de récupérer une ressource à clé.
 
 Notez que dans la syntaxe implicite présentée, l’objet [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) est implicite dans la manière dont le processeur XAML produit un nouvel objet pour renseigner une collection [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740).
 

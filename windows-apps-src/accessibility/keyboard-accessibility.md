@@ -5,8 +5,9 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: "Accessibilité du clavier"
 label: Keyboard accessibility
 template: detail.hbs
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: c5b5ca247e3999850d7bf9b81347c201204db7e8
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 6ac488b6db1ed838cc458c6adaa90dcca18d4c7d
 
 ---
 
@@ -155,7 +156,7 @@ Pour obtenir un exemple de code qui illustre l’écriture d’un gestionnaire d
 ## Navigation au clavier pour les contrôles personnalisés  
 Nous recommandons l’utilisation des touches de direction comme raccourcis clavier pour la navigation parmi les éléments enfants, dans les cas où ceux-ci entretiennent une relation spatiale. Si les nœuds de l’arborescence ont des sous-éléments distincts pour la gestion de la fonctionnalité développer-réduire et l’activation des nœuds, utilisez les touches de direction Gauche et Droite pour fournir au clavier la fonctionnalité développer-réduire. Si vous avez un contrôle orienté qui prend en charge la traversée directionnelle dans le contenu du contrôle, utilisez les touches de direction appropriées.
 
-En règle générale, on met en œuvre la gestion des touches personnalisée pour des contrôles personnalisés en incluant une substitution des méthodes [**OnKeyDown**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967982.aspx) et [**OnKeyUp**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967983.aspx) dans le cadre de la logique de classe.
+En règle générale, on met en œuvre la gestion des touches personnalisée pour des contrôles personnalisés en incluant une substitution des méthodes [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982.aspx) et [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983.aspx) dans le cadre de la logique de classe.
 
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
@@ -241,6 +242,6 @@ En règle générale, les raccourcis clavier ne concernent pas les applications 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

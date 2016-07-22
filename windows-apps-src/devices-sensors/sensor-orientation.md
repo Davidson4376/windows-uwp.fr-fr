@@ -4,8 +4,8 @@ ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: Orientation de capteur
 description: "Les données du capteur provenant des classes Accelerometer, Gyrometer, Compass, Inclinometer et OrientationSensor sont définies par leurs axes de référence. Ces axes sont définis par l’orientation paysage de l’appareil et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 0f1123d3be66973d5b56a4789b1ff6e171f94900
 
 ---
 # Orientation de capteur
@@ -33,7 +33,7 @@ L’image suivante montre l’orientation d’affichage en mode Landscape tandis
 
 ![Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
 
-Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) à l’aide de la méthode [**GetForCurrentView**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) avec la propriété [**CurrentOrientation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx). Vous pouvez ensuite créer une logique en comparant ces valeurs avec l’énumération [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142). Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
+Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) à l’aide de la méthode [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) avec la propriété [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx). Vous pouvez ensuite créer une logique en comparant ces valeurs avec l’énumération [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142). Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
 
 ## Appareils à priorité Paysage ou à priorité Portrait
 
@@ -171,6 +171,6 @@ Les données [**OrientationSensor**](https://msdn.microsoft.com/library/windows/
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

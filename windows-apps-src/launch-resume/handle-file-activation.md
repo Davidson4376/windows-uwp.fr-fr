@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Gérer l’activation des fichiers"
 description: "Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier."
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
 
@@ -110,42 +111,42 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
     > **Note**  When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-[!div class="tabbedCodeSnippets"] Nous recommandons que les applications créent une image XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, le backstack de navigation pour la nouvelle image XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension.
+Nous recommandons la création par les applications d’une image XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, le backstack de navigation pour la nouvelle image XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension. Les applications qui décident d’utiliser une seule image XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation de l’image avant de naviguer vers une nouvelle page.
 
-Les applications qui décident d’utiliser une seule image XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation de l’image avant de naviguer vers une nouvelle page.
+En cas de lancement via l’activation de fichier, les applications doivent envisager d’inclure une interface utilisateur permettant à l’utilisateur de revenir à la première page de l’application.
 
-## En cas de lancement via l’activation de fichier, les applications doivent envisager d’inclure une interface utilisateur permettant à l’utilisateur de revenir à la première page de l’application.
+## Remarques
 
 
-Remarques Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier.
+Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier. Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](http://go.microsoft.com/fwlink/p/?LinkID=142053).
 
-> Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](http://go.microsoft.com/fwlink/p/?LinkID=142053). **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP).
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+## Rubriques connexes
 
-**Rubriques connexes**
+**Exemple complet**
 
-* [Exemple complet](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=231484)
 
-**Exemple de lancement d’association**
+**Concepts**
 
-* [Concepts](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [Modèle d’associations de types de fichiers et de protocoles](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
-**Modèle d’associations de types de fichiers et de protocoles**
+**Tâches**
 
-* [Tâches](launch-the-default-app-for-a-file.md)
-* [Lancer l’application par défaut d’un fichier](handle-uri-activation.md)
+* [Lancer l’application par défaut d’un fichier](launch-the-default-app-for-a-file.md)
+* [Gérer l’activation des URI](handle-uri-activation.md)
 
-**Gérer l’activation des URI**
+**Recommandations**
 
-* [Recommandations](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Recommandations en matière de types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**Recommandations en matière de types de fichiers et d’URI**
-* [**Référence**](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242331)
+**Référence**
+* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
+* [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
 
  
 

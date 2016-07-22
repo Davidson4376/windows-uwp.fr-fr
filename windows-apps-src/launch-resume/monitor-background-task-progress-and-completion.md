@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "Surveiller la progression et l’achèvement des tâches en arrière-plan"
 description: "Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan."
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
+translationtype: Human Translation
+ms.sourcegitcommit: 6e6e28bc339364e70282a9db84593188c70a59c4
+ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 
 ---
 
@@ -26,97 +27,77 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
 ## Créer un gestionnaire d’événements pour gérer les tâches en arrière-plan achevées
 
-
 1.  Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778).
 
-    Utilisez l’empreinte suivante pour la méthode de gestionnaire d’événements de tâche en arrière-plan OnCompleted:
-
->  [!div class="tabbedCodeSnippets"]
->  ```cs
->  private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
->  {
->      // TODO: Add code that deals with background task completion.
->  }
->  ```
->  ```cpp
->  auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
->  {
->      // TODO: Add code that deals with background task completion.
->  };
->  ```
-
-2.  [!div class="tabbedCodeSnippets"]
-
-    Ajoutez du code au gestionnaire d’événements qui traite l’achèvement des tâches en arrière-plan.
+    Utilisez l’empreinte suivante pour la méthode de gestionnaire des événements de tâche en arrière-plan OnCompleted :
 
     > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > ```cs
+    >  private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
+    >  {
+    >      // TODO: Add code that deals with background task completion.
+    >  }
+    > ```
+    > ```cpp
+    >  auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
+    >  {
+    >      // TODO: Add code that deals with background task completion.
+    >  };
+    > ```
+
+2.  Ajoutez du code au gestionnaire des événements qui traite l’achèvement des tâches en arrière-plan.
+
+    Par exemple, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur.
+
+    > [!div class="tabbedCodeSnippets"]
+    > ```cs
     >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
     >     {
     >         UpdateUI();
     >     }
-    >     ```
-    >     ```cpp
+    > ```
+    > ```cpp
     >     auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
     >     {    
     >         UpdateUI();
     >     };
-    >     ```
+    > ```
 
-## Par exemple, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur.
+## Créer une fonction de gestionnaire des événements pour gérer la progression des tâches en arrière-plan
 
+1.  Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
-1.  [!div class="tabbedCodeSnippets"]     ```cs
-    private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
-    {
-        UpdateUI();
-    }
-    ```
-    ```cpp
-    auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
-    {    
-        UpdateUI();
-    };
-    ``` Créer une fonction de gestionnaire d’événements pour gérer la progression des tâches en arrière-plan
-
-    Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées.
+    Utilisez l’empreinte suivante pour la méthode de gestionnaire des événements de tâche en arrière-plan OnProgress :
 
     > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > ```cs
     >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
     >         // TODO: Add code that deals with background task progress.
     >     }
-    >     ```
-    >     ```cpp
+    > ```
+    > ```cpp
     >     auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
     >     {
     >         // TODO: Add code that deals with background task progress.
     >     };
-    >     ```
+    > ```
 
-2.  Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
+2.  Ajoutez du code au gestionnaire d’événements qui traite l’achèvement des tâches en arrière-plan.
 
-    Utilisez l’empreinte suivante pour la méthode de gestionnaire d’événements de tâche en arrière-plan OnProgress:
+    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args*:
 
     > [!div class="tabbedCodeSnippets"]
-    >     [!div class="tabbedCodeSnippets"]     ```cs
+    > ```cs
     >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
-    >         // TODO: Add code that deals with background task progress.
-    >     }
-    ```
-    ```cpp
-    auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-    {
-        // TODO: Add code that deals with background task progress.
-    };
-    ```
+    >         var progress = "Progress: " + args.Progress + "%";
+    >         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
     >
     >         UpdateUI();
     >     }
-    >     ```
-    >     ```cpp
+    > ```
+    > ```cpp
     >     auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
     >     {
     >         auto progress = "Progress: " + args->Progress + "%";
@@ -124,24 +105,32 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     >
     >         UpdateUI();
     >     };
-    >     ```
+    > ```
 
-## Ajoutez du code au gestionnaire d’événements qui traite l’achèvement des tâches en arrière-plan.
+## Inscrire les fonctions de gestionnaire d’événements auprès des tâches en arrière-plan nouvelles et existantes
 
 
-1.  Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args*:
+1.  Lorsque l’application inscrit une tâche en arrière-plan pour la première fois, elle doit s’inscrire pour recevoir les mises à jour de progression et d’achèvement de la tâche au cas où celle-ci s’exécuterait pendant que l’application est toujours active au premier plan.
 
-    [!div class="tabbedCodeSnippets"] ```cs private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args) { var progress = "Progress: " + args.Progress + "%"; BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
+    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) appelle la fonction suivante pour chaque tâche en arrière-plan qu’il inscrit :
 
     > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > ```cs
     >     private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
     >     {
     >         task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
     >         task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
     >     }
-    >     ```
-    >     Inscrivez les fonctions de gestionnaire d’événements auprès des tâches en arrière-plan nouvelles et existantes.
+    > ```
+    > ```cpp
+    >     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)
+    >     {
+    >         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
+    >         {
+    >             auto progress = "Progress: " + args->Progress + "%";
+    >             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;
+    >             UpdateUI();
+    >         };
     >
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
     >         
@@ -153,27 +142,29 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     >
     >         task->Completed += ref new BackgroundTaskCompletedEventHandler(completed);
     >     }
-    >     ```
+    > ```
 
-2.  Lorsque l’application inscrit une tâche en arrière-plan pour la première fois, elle doit s’inscrire pour recevoir les mises à jour de progression et d’achèvement de la tâche au cas où celle-ci s’exécuterait pendant que l’application est toujours active au premier plan. Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) appelle la fonction suivante pour chaque tâche en arrière-plan qu’il inscrit:
+2.  Lorsque l’application se lance ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire des événements de progression et d’achèvement. Cette liste est conservée dans la propriété [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
 
-    [!div class="tabbedCodeSnippets"]     ```cs
-    private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
-    {
-        task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
-        task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
-    }
-    ```
- ```cpp void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task) { auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-           { auto progress = "Progress: " + args-&gt;Progress + "%"; BackgroundTaskSample::SampleBackgroundTaskProgress = progress; UpdateUI(); };
+    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask:
 
     > [!div class="tabbedCodeSnippets"]
-    >     Lorsque l’application est lancée ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire d’événements de progression et d’achèvement.
+    > ```cs
+    >     protected override void OnNavigatedTo(NavigationEventArgs e)
+    >     {
+    >         foreach (var task in BackgroundTaskRegistration.AllTasks)
+    >         {
+    >             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)
+    >             {
+    >                 AttachProgressAndCompletedHandlers(task.Value);
+    >                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);
+    >             }
+    >         }
     >
     >         UpdateUI();
     >     }
-    >     ```
-    >     ```cpp
+    > ```
+    > ```cpp
     >     void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
     >     {
     >         // A pointer back to the main page.  This is needed if you want to call methods in MainPage such
@@ -200,35 +191,26 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
     >
     >         UpdateUI();
     >     }
-    >     ```
+    > ```
 
-## Cette liste est conservée dans la propriété [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
+## Rubriques connexes
 
-
-****
-
-* [Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask:](create-and-register-a-background-task.md)
-* [[!div class="tabbedCodeSnippets"] ```cs protected override void OnNavigatedTo(NavigationEventArgs e) { foreach (var task in BackgroundTaskRegistration.AllTasks) { if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName) { AttachProgressAndCompletedHandlers(task.Value); BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true); } }](declare-background-tasks-in-the-application-manifest.md)
-* [Rubriques connexes](handle-a-cancelled-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan](register-a-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](respond-to-system-events-with-background-tasks.md)
-* [Gérer une tâche en arrière-plan annulée](set-conditions-for-running-a-background-task.md)
-* [Inscrire une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
-* [Répondre aux événements système avec des tâches en arrière-plan](use-a-maintenance-trigger.md)
-* [Définir des conditions pour exécuter une tâche en arrière-plan](run-a-background-task-on-a-timer-.md)
-* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](guidelines-for-background-tasks.md)
-
-****
-
-* [Utiliser un déclencheur de maintenance](debug-a-background-task.md)
-* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
- 
-
- 
+* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
+* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
+* [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
+* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
+* [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Jul16_HO1-->
 
 

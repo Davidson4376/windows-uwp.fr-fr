@@ -4,8 +4,8 @@ ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: "Envoyer un élément de travail au pool de threads"
 description: "Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads."
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
 
 ---
 # Envoyer un élément de travail au pool de threads
@@ -197,7 +197,7 @@ Notez que l’élément de travail vérifie la propriété [**IAsyncInfo.Status*
 
 ## Gérer l’achèvement de l’élément de travail
 
-Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher le résultat.
+Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher le résultat.
 
 L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape1:
 
@@ -263,6 +263,6 @@ Pour en savoir plus, vous pouvez télécharger le code de ce démarrage rapide �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

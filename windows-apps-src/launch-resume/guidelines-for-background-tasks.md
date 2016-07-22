@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Recommandations pour les tâches en arrière-plan"
 description: "Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan."
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 3fb6884a968afb87e8de303bbd17feba4993c597
 

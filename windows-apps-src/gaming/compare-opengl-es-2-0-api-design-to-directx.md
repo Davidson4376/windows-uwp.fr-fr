@@ -4,8 +4,8 @@ title: "Planifier votre portage d’OpenGL ES2.0 vers Direct3D"
 description: "Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0."
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: f1119a9faed4fca7f0538a4c92c667e5b2ba559c
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
 **API importantes**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
--   [Visual C++](https://msdn.microsoft.com/en-us/library/windows/apps/60k1461a.aspx)
+-   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
 Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0. Avant de déplacer le code base de votre pipeline graphique vers Direct3D 11 et le Windows Runtime, certains points sont à prendre en compte.
 
@@ -73,7 +73,7 @@ Les API Windows Runtime essentielles utilisées dans le portage de votre pipelin
 -   [**Windows::ApplicationModel::Core::IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)
 -   [**Windows::ApplicationModel::Core::CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 
-Par ailleurs, la bibliothèque de modèles C++ Windows Runtime (WRL) est une bibliothèque de modèles qui fournit un moyen de bas niveau pour créer et utiliser des composants Windows Runtime. Les API Direct3D 11 pour les applications Windows Store doivent être utilisées de préférence avec les interfaces et types de cette bibliothèque, comme les pointeurs intelligents ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)). Pour plus d’informations sur WRL, voir [Bibliothèque de modèles C++ Windows Runtime (WRL)](https://msdn.microsoft.com/en-us/library/windows/apps/hh438466.aspx).
+Par ailleurs, la bibliothèque de modèles C++ Windows Runtime (WRL) est une bibliothèque de modèles qui fournit un moyen de bas niveau pour créer et utiliser des composants Windows Runtime. Les API Direct3D 11 pour les applications Windows Store doivent être utilisées de préférence avec les interfaces et types de cette bibliothèque, comme les pointeurs intelligents ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)). Pour plus d’informations sur WRL, voir [Bibliothèque de modèles C++ Windows Runtime (WRL)](https://msdn.microsoft.com/library/windows/apps/hh438466.aspx).
 
 ## Changer votre système de coordonnées
 
@@ -120,6 +120,6 @@ Toutefois, Direct3D peut prendre en charge un système de coordonnées droitier.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

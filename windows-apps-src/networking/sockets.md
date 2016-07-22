@@ -20,8 +20,7 @@ ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
 
 En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) que [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) pour communiquer avec d’autres appareils. Cette rubrique fournit des instructions détaillées sur l’utilisation de l’espace de noms **Windows.Networking.Sockets** pour les opérations réseau.
 
->
->            **Remarque** Dans le cadre de [l’isolement réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), le système refuse l’établissement de connexions de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur via soit l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Cela signifie que vous ne pouvez pas utiliser des sockets pour faire communiquer deux applications UWP. UWP fournit d’autres mécanismes permettant de faire communiquer les applications. Voir [Communication entre les applications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) pour plus d’informations.
+>**Remarque** Dans le cadre de [l’isolement réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), le système refuse l’établissement de connexions de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur via soit l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Cela signifie que vous ne pouvez pas utiliser des sockets pour faire communiquer deux applications UWP. UWP fournit d’autres mécanismes permettant de faire communiquer les applications. Voir [Communication entre les applications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) pour plus d’informations.
 
 ## Opérations de base d’un socket TCP
 
@@ -256,8 +255,7 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows10, le comportement a changé. 
-            Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
+Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows10, le comportement a changé. Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
 
 Certaines limitations importantes découlent de l’utilisation d’écritures par lot dans votre code.
 

@@ -17,8 +17,7 @@ ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
 
 Les jeux d’application de plateforme Windows universelle (UWP) s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes. Un appareil peut utiliser différents types de mécanismes de contrôle et d’entrée. Il est important de prendre en charge plusieurs périphériques d’entrée afin que votre jeu puisse fonctionner avec un plus grand nombre de préférences et de fonctionnalités choisies par vos utilisateurs. Ce document décrit les pratiques clés à prendre en compte quand vous utilisez des périphériques d’entrée et comment appliquer ces pratiques à l’exemple Marble Maze.
 
-> 
-            **Remarque** L’exemple de code correspondant à ce document est disponible dans l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
+> **Remarque** L’exemple de code correspondant à ce document est disponible dans l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
 
  
 Voici quelques éléments clés présentés dans ce document que vous devez prendre en compte quand vous travaillez avec les entrées dans votre jeu:
@@ -35,13 +34,11 @@ Voici quelques éléments clés présentés dans ce document que vous devez pren
 
 Marble Maze prend en charge les périphériques de manette Xbox 360 standard, la souris et les entrées tactiles pour sélectionner des éléments de menu, et la manette Xbox 360, la souris et les entrées tactiles et l’accéléromètre pour le contrôle du jeu. Marble Maze utilise l’API XInput pour interroger la manette sur les entrées. Les fonctions tactiles permettent aux applications de suivre et de répondre aux entrées tactiles. Un accéléromètre est un capteur qui mesure la force appliquée le long des axes x, y et z. En utilisant Windows Runtime, vous pouvez interroger l’état actuel de l’accéléromètre, et recevoir des événements tactiles via le mécanisme de gestion des événements du Windows Runtime.
 
-> 
-            **Remarque** Ce document utilise l’interaction tactile pour faire référence à la fois aux entrées tactiles et aux entrées de la souris, et le pointeur pour faire référence à tous les appareils qui utilisent des événements de pointeur. Dans la mesure où l’interaction tactile et la souris utilisent des événements de pointeur standards, vous pouvez utiliser l’un ou l’autre périphérique pour sélectionner les éléments de menu et contrôler le jeu.
+> **Remarque** Ce document utilise l’interaction tactile pour faire référence à la fois aux entrées tactiles et aux entrées de la souris, et le pointeur pour faire référence à tous les appareils qui utilisent des événements de pointeur. Dans la mesure où l’interaction tactile et la souris utilisent des événements de pointeur standards, vous pouvez utiliser l’un ou l’autre périphérique pour sélectionner les éléments de menu et contrôler le jeu.
 
  
 
-> 
-            **Remarque** Le manifeste du package définit Paysage comme la rotation prise en charge pour le jeu afin d’empêcher un changement d’orientation quand vous faites pivoter le périphérique pour faire rouler la bille.
+> **Remarque** Le manifeste du package définit Paysage comme la rotation prise en charge pour le jeu afin d’empêcher un changement d’orientation quand vous faites pivoter le périphérique pour faire rouler la bille.
 
  
 
@@ -449,17 +446,15 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 
 XInput définit la constante **XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE** pour le stick gauche. Il s’agit du seuil de zone morte approprié pour la plupart des jeux.
 
-> 
-            **Important** Quand vous utilisez la manette Xbox 360, n’oubliez pas la zone morte. La zone morte fait référence aux différences de sensibilité au mouvement initial des boîtiers de commande. Pour certaines manettes, un mouvement léger peut ne pas générer de lecture, pour d’autres, une lecture mesurable peut être obtenue. Pour tenir compte de cela dans votre jeu, créez une zone de non-mouvement pour le mouvement initial du stick. Pour plus d’informations sur la zone morte, voir [Prise en main de XInput.](https://msdn.microsoft.com/library/windows/desktop/ee417001)
+> **Important** Quand vous utilisez la manette Xbox 360, n’oubliez pas la zone morte. La zone morte fait référence aux différences de sensibilité au mouvement initial des boîtiers de commande. Pour certaines manettes, un mouvement léger peut ne pas générer de lecture, pour d’autres, une lecture mesurable peut être obtenue. Pour tenir compte de cela dans votre jeu, créez une zone de non-mouvement pour le mouvement initial du stick. Pour plus d’informations sur la zone morte, voir [Prise en main de XInput.](https://msdn.microsoft.com/library/windows/desktop/ee417001)
 
  
 
 ###  Application des entrées à l’état du jeu
 
-Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en les mettant à l’échelle dans la plage \[-1,0, 1,0\]. Pour normaliser les entrées de la manette Xbox 360, Marble Maze divise les valeurs d’entrée par 32768, car les valeurs d’entrée du stick sont toujours comprises entre -32768 et 32767. La fonction **PointToTouch**, décrite précédemment dans cette section, donne des résultats similaires, en convertissant les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
+Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en les mettant à l’échelle dans la plage [-1,0, 1,0]. Pour normaliser les entrées de la manette Xbox 360, Marble Maze divise les valeurs d’entrée par 32768, car les valeurs d’entrée du stick sont toujours comprises entre -32768 et 32767. La fonction **PointToTouch**, décrite précédemment dans cette section, donne des résultats similaires, en convertissant les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
 
-> 
-            **Conseil** Même si votre application utilise une méthode d’entrée, nous recommandons toujours de normaliser les valeurs d’entrée. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
+> **Conseil** Même si votre application utilise une méthode d’entrée, nous recommandons toujours de normaliser les valeurs d’entrée. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
 
  
 

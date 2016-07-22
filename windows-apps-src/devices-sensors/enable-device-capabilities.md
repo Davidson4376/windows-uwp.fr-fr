@@ -4,8 +4,8 @@ ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: "Activer les fonctionnalités d’un appareil"
 description: "Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des caméras, des microphones, des capteurs de localisation et d’autres appareils."
 translationtype: Human Translation
-ms.sourcegitcommit: 512b89027f6b707de346fffe104f165074fabcea
-ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 306e10ee9349f3742ac5a06229d22aad04457d7a
 
 ---
 # Activer les fonctionnalités d’un appareil
@@ -18,7 +18,7 @@ Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans 
 ## Spécifier les fonctionnalités d’appareil que votre application utilisera
 
 
-Avec des applications Windows , vous êtes tenu de spécifier dans le manifeste du package d’application quand vous utilisez certains types d’appareils. Dans Visual Studio, vous pouvez déclarer la plupart des fonctionnalités à l’aide du [concepteur du manifeste](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx) ou vous pouvez les ajouter manuellement comme indiqué dans [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package (manuellement)](https://msdn.microsoft.com/library/windows/apps/Dn263092). Ce didacticiel suppose que vous utilisez le concepteur du manifeste.
+Avec des applications Windows , vous êtes tenu de spécifier dans le manifeste du package d’application quand vous utilisez certains types d’appareils. Dans Visual Studio, vous pouvez déclarer la plupart des fonctionnalités à l’aide du [concepteur du manifeste](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx) ou vous pouvez les ajouter manuellement comme indiqué dans [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package (manuellement)](https://msdn.microsoft.com/library/windows/apps/Dn263092). Ce didacticiel suppose que vous utilisez le concepteur du manifeste.
 
 **Remarque**  
 Certains types d’appareils, tels que les imprimantes, les lecteurs et les capteurs, n’ont pas besoin d’être déclarés dans le manifeste du package de l’application.
@@ -35,8 +35,7 @@ Certains types d’appareils, tels que les imprimantes, les lecteurs et les capt
 | Génération de code | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Permet aux applications de générer du code de façon dynamique. |
 | Authentification en entreprise | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Cette fonctionnalité est régie par la politique du Windows Store. Elle offre la possibilité de se connecter à des ressources intranet d’entreprise qui nécessitent des informations d’identification de domaine. Cette fonctionnalité n’est généralement pas nécessaire pour la plupart des applications. | 
 | Internet (client) | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Fournit un accès sortant à Internet et aux réseaux dans des lieux publics tels que des aéroports et des cafés. Par exemple, des réseaux intranet où l’utilisateur a désigné le réseau comme étant public. La plupart des applications qui nécessitent un accès Internet doivent utiliser cette fonctionnalité. |
-| Internet (client &amp; serveur) | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Fournit un accès bidirectionnel à Internet et aux réseaux dans des lieux publics tels que des aéroports et des cafés. Cette fonctionnalité est un sur-ensemble de **Internet (Client)**. 
-            **Internet (Client)** n’a pas besoin d’être activé si cette fonctionnalité est activée. L’accès entrant aux ports critiques est toujours bloqué. |
+| Internet (client &amp; serveur) | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Fournit un accès bidirectionnel à Internet et aux réseaux dans des lieux publics tels que des aéroports et des cafés. Cette fonctionnalité est un sur-ensemble de **Internet (Client)**. **Internet (Client)** n’a pas besoin d’être activé si cette fonctionnalité est activée. L’accès entrant aux ports critiques est toujours bloqué. |
 | Emplacement| ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Donne accès à la localisation actuelle. Celle-ci est obtenue à partir d’un matériel dédié, tel que le capteur GPS du PC, ou est tirée des informations disponibles sur le réseau. | 
 | Microphone | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Donne accès au flux audio du microphone. Cela permet à l’application d’enregistrer à partir des microphones connectés. | 
 | Médiathèque | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Permet d’ajouter, de modifier ou de supprimer des fichiers dans la **médiathèque** pour le PC local et des PC de **groupe résidentiel**. | 
@@ -78,6 +77,6 @@ Le tableau suivant connecte certaines fonctionnalités à des API de Windows Run
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

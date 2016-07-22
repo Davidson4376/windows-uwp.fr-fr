@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Gérer l’activation des URI"
 description: "Découvrez comment inscrire une application afin qu’elle devienne le gestionnaire par défaut d’un nom de schéma d’URI (Uniform Resource Identifier)."
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
+translationtype: Human Translation
 ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
 ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
 
@@ -119,55 +120,55 @@ Le gestionnaire d’événements [**OnActivated**](https://msdn.microsoft.com/li
 > }
 > ```
 
-> [!div class="tabbedCodeSnippets"]
+> **Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application.
 
-**Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application. Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, la pile arrière («backstack») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension.
+Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, la pile arrière («backstack») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension. Les applications qui décident d’utiliser un seul **Frame** XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page.
 
-Les applications qui décident d’utiliser un seul **Frame** XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page.
+En cas de lancement via l’activation de protocole, les applications doivent envisager d’inclure une interface utilisateur permettant à l’utilisateur de revenir à la première page de l’application.
 
-## En cas de lancement via l’activation de protocole, les applications doivent envisager d’inclure une interface utilisateur permettant à l’utilisateur de revenir à la première page de l’application.
+## Remarques
 
 
-Remarques N’importe quelle application ou n’importe quel site web peut utiliser votre nom de schéma d’URI, y compris des applications et sites malveillants. Par conséquent, toute donnée reçue dans cet URI peut provenir d’une source non approuvée. Nous vous recommandons de ne jamais effectuer une action permanente en fonction des paramètres que vous recevez dans un URI.
+N’importe quelle application ou n’importe quel site web peut utiliser votre nom de schéma d’URI, y compris des applications et sites malveillants. Par conséquent, toute donnée reçue dans cet URI peut provenir d’une source non approuvée. Nous vous recommandons de ne jamais effectuer une action permanente en fonction des paramètres que vous recevez dans un URI. Par exemple, les paramètres d’URI peuvent être utilisés pour lancer l’application sur la page de compte d’un utilisateur, mais nous vous recommandons de ne jamais les utiliser pour modifier directement le compte de l’utilisateur.
 
-> Par exemple, les paramètres d’URI peuvent être utilisés pour lancer l’application sur la page de compte d’un utilisateur, mais nous vous recommandons de ne jamais les utiliser pour modifier directement le compte de l’utilisateur. **Remarque** Si vous créez un nom de schéma d’URI pour votre application, prenez soin de suivre les recommandations de la norme [RFC4395](http://go.microsoft.com/fwlink/p/?LinkID=266550).
+> **Remarque** Si vous créez un nom de schéma d’URI pour votre application, prenez soin de suivre les recommandations de la norme [RFC4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). Cela permet de garantir que votre nom respecte les normes applicables aux schémas d’URI.
 
-> Cela permet de garantir que votre nom respecte les normes applicables aux schémas d’URI.
+> **Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application.
 
-**Remarque** En cas de lancement via un contrat de protocole, assurez-vous que le bouton Précédent fait revenir l’utilisateur à l’écran qui a lancé l’application, et non au contenu précédent de l’application. Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle cible d’URI.
+Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle cible d’URI. De cette façon, la pile arrière («backstack») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension.
 
-De cette façon, la pile arrière («backstack») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension. Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour le lancement et les contrats de protocole, effacez les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page.
+Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour le lancement et les contrats de protocole, effacez les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page. En cas de lancement via le contrat de protocole, envisagez d’inclure une interface utilisateur permettant à l’utilisateur de revenir en haut de l’application.
 
-> En cas de lancement via le contrat de protocole, envisagez d’inclure une interface utilisateur permettant à l’utilisateur de revenir en haut de l’application. **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP).
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+## Articles connexes
 
 
-**Articles connexes**
+**Exemple complet**
 
-* [Exemple complet](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=231484)
 
-**Exemple de lancement d’association**
+**Concepts**
 
-* [Concepts](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [Modèle d’associations de types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
-**Modèle d’associations de types de fichiers et d’URI**
+**Tâches**
 
-* [Tâches](launch-default-app.md)
-* [Lancer l’application par défaut pour un URI](handle-file-activation.md)
+* [Lancer l’application par défaut pour un URI](launch-default-app.md)
+* [Gérer l’activation des fichiers](handle-file-activation.md)
 
-**Gérer l’activation des fichiers**
+**Recommandations**
 
-* [Recommandations](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Recommandations en matière de types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**Recommandations en matière de types de fichiers et d’URI**
+**Référence**
 
-* [**Référence**](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [**Manifeste du package AppX**](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242330)
+* [**Manifeste du package AppX**](https://msdn.microsoft.com/library/windows/apps/dn934791)
+* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
+* [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
 
  
 

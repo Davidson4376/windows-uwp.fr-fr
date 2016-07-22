@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Gérer le prélancement d’une application"
 description: "Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched."
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
+translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
 ms.openlocfilehash: d9d3bdf86d858367008a32d9d6a06ec9fc13787d
 

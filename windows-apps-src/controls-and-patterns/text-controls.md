@@ -5,6 +5,7 @@ title: "Contrôles de texte"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
@@ -187,6 +188,6 @@ Pour les contrôles TextBox et RichEditBox, la vérification orthographique est 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

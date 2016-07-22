@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Gérer l’activation d’une application"
 description: "Découvrez comment gérer l’activation d’une application en remplaçant la méthode OnLaunched."
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
+translationtype: Human Translation
 ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
 ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 
@@ -100,10 +101,10 @@ Remplacez la méthode [**OnLaunched**](https://msdn.microsoft.com/library/window
 > }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## Restaurer les données d’application en cas de suspension puis d’arrêt de l’application
 
 
-Restaurer les données d’application en cas de suspension puis d’arrêt de l’application Lorsque l’utilisateur bascule vers votre application arrêtée, le système envoie l’événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), avec [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) défini sur **Launch** et [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) sur **Terminated** ou **ClosedByUser**.
+Lorsque l’utilisateur bascule vers votre application arrêtée, le système envoie l’événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), avec [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) défini sur **Launch** et [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) sur **Terminated** ou **ClosedByUser**. L’application doit charger ses données d’application enregistrées et actualiser son contenu à l’écran.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -158,23 +159,23 @@ Restaurer les données d’application en cas de suspension puis d’arrêt de l
 > }
 > ```
 
-L’application doit charger ses données d’application enregistrées et actualiser son contenu à l’écran.
+Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) est **NotRunning**, l’application n’a pas réussi à enregistrer ses données d’application et doit redémarrer de zéro.
 
-## [!div class="tabbedCodeSnippets"]
+## Notes
 
-> Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) est **NotRunning**, l’application n’a pas réussi à enregistrer ses données d’application et doit redémarrer de zéro. Notes **Remarque** Dans les applications du Windows Phone Store, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications.
+> **Remarque** Dans les applications du Windows Phone Store, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications. Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.
 
-## Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active.
+## Rubriques connexes
 
-* [Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.](suspend-an-app.md)
-* [Rubriques connexes](resume-an-app.md)
-* [Gérer la suspension d’une application](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Gérer la reprise d’une application](app-lifecycle.md)
+* [Gérer la suspension d’une application](suspend-an-app.md)
+* [Gérer la reprise d’une application](resume-an-app.md)
+* [Recommandations pour la suspension et la reprise d’une application](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [Cycle de vie de l’application](app-lifecycle.md)
 
-**Recommandations pour la suspension et la reprise d’une application**
+**Référence**
 
-* [**Cycle de vie de l’application**](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [**Référence**](https://msdn.microsoft.com/library/windows/apps/br242324)
+* [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324)
 
  
 

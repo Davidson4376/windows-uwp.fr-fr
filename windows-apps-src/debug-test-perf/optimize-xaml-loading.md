@@ -276,11 +276,9 @@ Notez l’utilisation du [**CacheMode**](https://msdn.microsoft.com/library/wind
 
 Les ResourceDictionaries sont généralement utilisés pour stocker vos ressources à un niveau global. Les ressources que votre application souhaite référencer sont stockées dans plusieurs endroits. Il s’agit par exemple, des styles, des pinceaux, des modèles et ainsi de suite. En règle générale, nous optimisons les ResourceDictionaries pour ne pas instancier de ressources sauf demande contraire. Cependant, vous devez être prudent dans quelques emplacements.
 
+**Ressource pourvue de x:Name**. Les ressources pourvues de x:Name ne bénéficient pas de l’optimisation de la plateforme, mais elles sont instanciées dès que le ResourceDictionary est créé. Cela se produit, car x:Name indique à la plateforme que votre application doit accéder à cette ressource. La plateforme doit donc créer un élément pour lequel une référence doit être créée.
 
-            **Ressource pourvue de x:Name**. Les ressources pourvues de x:Name ne bénéficient pas de l’optimisation de la plateforme, mais elles sont instanciées dès que le ResourceDictionary est créé. Cela se produit, car x:Name indique à la plateforme que votre application doit accéder à cette ressource. La plateforme doit donc créer un élément pour lequel une référence doit être créée.
-
-
-            **ResourceDictionaries dans un UserControl**. Les ResourceDictionaries définis dans un UserControl entraînent une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si le UserControl est énormément utilisé, déplacez le ResourceDictionary en dehors du UserControl et placez-le au niveau de la page.
+**ResourceDictionaries dans un UserControl**. Les ResourceDictionaries définis dans un UserControl entraînent une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si le UserControl est énormément utilisé, déplacez le ResourceDictionary en dehors du UserControl et placez-le au niveau de la page.
 
 ## Utiliser XBF2
 

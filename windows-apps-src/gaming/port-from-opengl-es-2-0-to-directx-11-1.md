@@ -3,6 +3,7 @@ author: mtoepke
 title: "Portage d’OpenGL ES2.0 sur Direct3D11"
 description: "Cette section propose des articles, des vues d’ensemble et des procédures pas à pas concernant le portage d’un pipeline graphique d’OpenGL ES2.0 vers Direct3D11 et vers WindowsRuntime."
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
+translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
 ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
 

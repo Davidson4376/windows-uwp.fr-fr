@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "Utilisez cette méthode dans l’API de collection du WindowsStore pour obtenir tous les produits possédés par un client pour les applications associées à votre ID client AzureAD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres."
 title: Demander des produits
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
 
 ---
 
@@ -33,9 +34,9 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 | Méthode | URI de la requête                                                 |
 |--------|-------------------------------------------------------------|
-| POST   | `https://collections.mp.microsoft.com/v6.0/collections/query` |
+| POST   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
 
-<br/>
+<span/>
  
 ### En-tête de requête
 
@@ -46,7 +47,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
 
- <br/>
+<span/>
 
 ### Corps de la requête
 
@@ -61,7 +62,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | productTypes      | chaîne       | Si ce paramètre est spécifié, le service retourne uniquement les produits qui correspondent aux types de produit spécifiés. Types de produit pris en charge: **Application**, **Durable** et **UnmanagedConsumable**.                                                                                       | Non       |
 | validityType      | chaîne       | Si ce paramètre est défini sur **All**, tous les produits d’un utilisateur sont retournés, y compris les articles arrivés à expiration. S’il est défini sur **Valid**, seuls les produits qui sont valides à ce stade sont retournés (autrement dit, ils ont un état actif, une date de début &lt; maintenant et une date de fin &gt; maintenant). | Non       |
 
-<br/> 
+<span/>
 
 L’objet UserIdentity contient les paramètres ci-dessous.
 
@@ -71,7 +72,7 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 | identityValue        | chaîne | Valeur chaîne de la clé d’ID du Windows Store.                                                                                                                                                                                    | Oui      |
 | localTicketReference | chaîne | Identificateur demandé pour les produits retournés. Les articles retournés dans le corps de la réponse ont un paramètre *localTicketReference* correspondant. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du WindowsStore. | Oui      |
 
-<br/> 
+<span/> 
 
 L’objet ProductSkuId contient les paramètres ci-dessous.
 
@@ -80,7 +81,7 @@ L’objet ProductSkuId contient les paramètres ci-dessous.
 | productId | chaîne | L’ID WindowsStore du catalogue du WindowsStore. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. | Oui      |
 | skuID     | chaîne | ID de référence du catalogue du Windows Store. Exemple d’ID de référence : 0010.                                                                                                                                                                                                                                                | Oui      |
 
-<br/> 
+<span/>
 
 ### Exemple de requête
 
@@ -124,7 +125,7 @@ Content-Type: application/json
 | continuationToken | chaîne                   | S’il existe plusieurs ensembles de produits, ce jeton est retourné lorsque la limite de la page est atteinte. Vous pouvez spécifier ce jeton de continuation dans les appels ultérieurs pour récupérer les produits restants. | Non       |
 | Éléments             | CollectionItemContractV6 | Tableau de produits de l’utilisateur spécifié.                                                                                                                                               | Non       |
 
-<br/> 
+<span/> 
 
 L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 
@@ -154,7 +155,7 @@ L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 | Tags                 | chaîne             | Non applicable                                                                                                                                                | Oui      |
 | transactionId        | GUID               | ID de la transaction résultant de l’achat de cet article. Peut être utilisé pour signaler le traitement de la commande d’un article.                                       | Oui      |
 
-<br/> 
+<span/> 
 
 L’objet IdentityContractV6 contient les paramètres ci-dessous.
 
@@ -163,7 +164,7 @@ L’objet IdentityContractV6 contient les paramètres ci-dessous.
 | identityType  | chaîne | Contient la valeur **"pub"**.                                                      | Oui      |
 | identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du WindowsStore. | Oui      |
 
-<br/> 
+<span/> 
 
 ### Exemple de réponse
 
@@ -216,6 +217,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

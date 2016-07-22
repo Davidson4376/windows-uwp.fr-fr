@@ -2,8 +2,9 @@
 author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 01cd10c72745ff4bd8204a9adaa8eebf5a892efe
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: c7107599529d5af5b118a46cb065106f08afe113
 
 ---
 
@@ -93,7 +94,7 @@ Vous pouvez ajouter des commandes à la collection **SecondaryCommands**. Ces é
 
 Le style de la zone de dépassement par défaut est défini de manière à pouvoir être distingué de la barre. Vous pouvez ajuster les styles en définissant la propriété [**CommandBarOverflowPresenterStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) sur un [Style](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) qui cible [**CommandBarOverflowPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx).
 
-Vous pouvez déplacer par programme les commandes entre les propriétés PrimaryCommands et SecondaryCommands en fonction des besoins. {{&gt; contenu interne = «Les commandes peuvent également se déplacer automatiquement vers ou hors du dépassement au fur et à mesure que la largeur de la barre de commandes change, par exemple lorsque l’utilisateur redimensionne sa fenêtre d’application. Le débordement dynamique est activé par défaut, mais les applications peuvent désactiver ce comportement en modifiant la valeur de la propriété `IsDynamicOverflowEnabled`.»}}
+Vous pouvez déplacer par programme les commandes entre les propriétés PrimaryCommands et SecondaryCommands en fonction des besoins. 
 
 ### Boutons de la barre de l’application
 
@@ -139,7 +140,7 @@ Lorsque le libellé est renvoyé à la ligne à l’emplacement indiqué, cela s
 
 Vous pouvez ajouter n’importe quel élément XAML à la zone de contenu en définissant la propriété **Content**. Si vous voulez ajouter plusieurs éléments, vous devez les placer dans un conteneur de panneaux et faire en sorte que le panneau soit le seul enfant de la propriété Content.
 
-En présence de commandes principales et de contenu, les commandes principales sont prioritaires et peuvent provoquer la troncature du contenu. {{&gt; contenu interne = «Le contenu ne sera pas tronqué lorsque le dépassement dynamique est activé, car les commandes principales se déplacent ainsi dans le menu de dépassement, libérant de l’espace pour le contenu.»}}
+En présence de commandes principales et de contenu, les commandes principales sont prioritaires et peuvent provoquer la troncature du contenu. 
 
 Lorsque [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) est défini sur **Compact**, le contenu peut être tronqué s’il est plus grand que la taille compacte de la barre de commandes. Vous devez gérer les événements [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) et [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) pour afficher ou masquer des parties de l’interface utilisateur dans la zone de contenu afin qu’elles ne soient pas tronquées. Voir la section [États ouvert et fermé](#open-and-closed-states) pour plus d’informations.
 
@@ -286,6 +287,6 @@ Envisagez le regroupement logique des commandes; placez par exemple les commande
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

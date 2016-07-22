@@ -4,8 +4,8 @@ ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: Capteurs
 description: "Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil."
 translationtype: Human Translation
-ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
-ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
 
 ---
 # Capteurs
@@ -42,7 +42,7 @@ Le principal avantage du traitement par lot du capteur est de prolonger l’auto
 
 Vous pouvez modifier la fréquence à laquelle le capteur envoie les lots en ajustant la latence. Par exemple, le capteur [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) présente la propriété [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency). Lorsque cette propriété est définie pour une application, le capteur envoie les données après le laps de temps spécifié. Vous pouvez contrôler la quantité de données accumulée sur une période de latence donnée en définissant la propriété [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval).
 
-La définition de la latence s’accompagne néanmoins de quelques inconvénients. Le premier est que chaque capteur présente une valeur [**MaxBatchSize**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) qui varie selon ses caractéristiques. Cette valeur correspond au nombre d’événements que le capteur peut mettre en cache avant d’être obligé de les envoyer. Si vous multipliez **MaxBatchSize** par [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval), vous obtenez la valeur [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) maximale. Si vous spécifiez une valeur supérieure à celle-ci, la latence maximale est utilisée afin d’empêcher la perte de données. En outre, différentes applications peuvent chacune définir une latence spécifique. Pour répondre aux besoins de toutes les applications, la période de latence la plus courte est utilisée. Pour ces raisons, la latence que vous définissez dans votre application peut ne pas correspondre à la latence observée.
+La définition de la latence s’accompagne néanmoins de quelques inconvénients. Le premier est que chaque capteur présente une valeur [**MaxBatchSize**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) qui varie selon ses caractéristiques. Cette valeur correspond au nombre d’événements que le capteur peut mettre en cache avant d’être obligé de les envoyer. Si vous multipliez **MaxBatchSize** par [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval), vous obtenez la valeur [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) maximale. Si vous spécifiez une valeur supérieure à celle-ci, la latence maximale est utilisée afin d’empêcher la perte de données. En outre, différentes applications peuvent chacune définir une latence spécifique. Pour répondre aux besoins de toutes les applications, la période de latence la plus courte est utilisée. Pour ces raisons, la latence que vous définissez dans votre application peut ne pas correspondre à la latence observée.
 
 Si un capteur utilise la création de rapports par lot, l’appel de [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) permet d’effacer le lot actuel de données et de démarrer une nouvelle période de latence.
 
@@ -74,7 +74,7 @@ Le capteur [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872
 
 ## Boussole
 
-Le capteur [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) renvoie un cap 2D par rapport au Nord magnétique et au plan horizontal de la Terre. Le capteur de boussole ne doit pas être utilisé pour déterminer l’orientation spécifique de l’appareil ou pour représenter quoi que ce soit dans un espace en trois dimensions. Certaines caractéristiques géographiques pouvant provoquer une inclinaison naturelle du cap, certains systèmes prennent en charge à la fois [**HeadingMagneticNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) et [**HeadingTrueNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx). Réfléchissez à celle qui convient le mieux à votre application, mais souvenez-vous que les systèmes n’indiquent pas tous la valeur du Nord magnétique. Le gyromètre et le magnétomètre (un appareil mesurant la magnitude de la force magnétique) combinent leurs données pour générer le cap de la boussole, ce qui a comme effet net de stabiliser les données (la force du champ magnétique est très instable en raison des composants électriques du système).
+Le capteur [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) renvoie un cap 2D par rapport au Nord magnétique et au plan horizontal de la Terre. Le capteur de boussole ne doit pas être utilisé pour déterminer l’orientation spécifique de l’appareil ou pour représenter quoi que ce soit dans un espace en trois dimensions. Certaines caractéristiques géographiques pouvant provoquer une inclinaison naturelle du cap, certains systèmes prennent en charge à la fois [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) et [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx). Réfléchissez à celle qui convient le mieux à votre application, mais souvenez-vous que les systèmes n’indiquent pas tous la valeur du Nord magnétique. Le gyromètre et le magnétomètre (un appareil mesurant la magnitude de la force magnétique) combinent leurs données pour générer le cap de la boussole, ce qui a comme effet net de stabiliser les données (la force du champ magnétique est très instable en raison des composants électriques du système).
 
 ![Lectures de la boussole par rapport au Pôle Nord magnétique](images/compass.png)
 
@@ -118,7 +118,7 @@ Le capteur [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872
 
 ## Orientation simple
 
-Le [**SimpleOrientationSensor**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) détecte l’orientation de quadrant actuelle de l’appareil spécifié, ou s’il est face vers le haut ou face vers le bas. Il possède six états [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) possibles (**NotRotated**, **Rotated90**, **Rotated180**, **Rotated270**, **FaceUp**, **FaceDown**).
+Le [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) détecte l’orientation de quadrant actuelle de l’appareil spécifié, ou s’il est face vers le haut ou face vers le bas. Il possède six états [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) possibles (**NotRotated**, **Rotated90**, **Rotated180**, **Rotated270**, **FaceUp**, **FaceDown**).
 
 Une application de lecture qui change son affichage selon que l’appareil est tenu parallèlement ou perpendiculairement au sol utiliserait les valeurs de SimpleOrientationSensor pour déterminer comment l’appareil est tenu.
 
@@ -129,6 +129,6 @@ Pour découvrir certains exemples illustrant l’utilisation de deux capteurs di
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

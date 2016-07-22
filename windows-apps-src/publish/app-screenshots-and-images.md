@@ -3,6 +3,7 @@ author: jnHs
 Description: "Votre application doit inclure différents logos, différentes captures d’écran et différentes images."
 title: "Images et captures d’écran de l’application"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
+translationtype: Human Translation
 ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
 ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
 
@@ -106,6 +107,6 @@ Dans le Windows Store sur Windows8.1 et versions antérieures, les mises en form
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

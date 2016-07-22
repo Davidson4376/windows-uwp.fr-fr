@@ -3,20 +3,27 @@ author: v-angraf
 title: "Nouveautés de la plateformeUWP sur Xbox One"
 description: "Cette rubrique souligne les nouvelles fonctionnalités pour la plateformeUWP sur les applicationsXboxOne."
 area: Xbox
-ms.sourcegitcommit: 59019f209729b56e02ebdbdfd53a8fbf835c69f7
-ms.openlocfilehash: dfa94ad42a79d0f6b3f72fbf2efe9ce043532c56
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: edc9a914f200c643b1133cf07778e2ca3931d0d9
 
 ---
 
-# Nouveautés de la version préliminaire pour développeurs de juin2016 de la plateformeUWP sur XboxOne
+# Nouveautés de la version préliminaire pour développeurs de juillet2016 de la plateformeUWP sur XboxOne
 
-La version préliminaire pour développeurs de juin2016 de la plateformeUWP sur XboxOne contient les nouvelles fonctionnalités, mises à jours de fonctionnalités et résolutions de bug suivantes.
+La version préliminaire pour développeurs de juillet2016 de la plateformeUWP sur XboxOne contient les nouvelles fonctionnalités, mises à jour de fonctionnalités et résolutions de bogues suivantes.
 
-## Le modesouris est activé par défaut
+## Mise en réseau utilisant des sockets TCP/UDP maintenant disponible  
+Les accès réseau entrants et sortants de la console qui utilisent des sockets TCP/UDP traditionnels (WinSock, Windows.Networking.Sockets) sont désormais disponibles.
+
+## Prise en charge de Fiddler
+Vous pouvez désormais activer Fiddler en tant que proxy pour une console qui a activé la plateforme Windows universelle (UWP) sur XboxOne. Fiddler vous permet de consigner et d’inspecter tout le trafic HTTP/HTTPS vers et à partir de services Xbox et des services web des parties de confiance. Pour plus d’informations, voir [Utilisation de Fiddler avec XboxOne lors du développement pour UWP](uwp-fiddler.md).
+
+## Le modesouris est désormais activé par défaut
 Le modesouris est désormais activé par défaut pour les applications XAML et les applications web hébergées.
 Nous vous recommandons vivement de désactiver cette fonctionnalité et d’optimiser l’application pour la navigation de contrôleur directionnelle.
 Pour savoir comment désactiver le mode souris, voir [Comment désactiver le mode souris](how-to-disable-mouse-mode.md).
-Pour plus d’informations sur la façon de créer des applications réussies pour Xbox, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode).
+Pour plus d’informations sur la façon de créer des applications réussies pour Xbox, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode).
 
 ## La surface d’exposition d’APIUWP étendue est fonctionnelle sur la console
 Les APIUWP supplémentaires sont désormais fonctionnelles sur la consoleXbox. Pour en savoir plus sur la prise en charge des APIUWP, voir [FonctionnalitésUWP qui ne sont pas encore prises en charge surXbox](http://go.microsoft.com/fwlink/?LinkID=760755). 
@@ -47,6 +54,6 @@ Les améliorations suivantes ont été apportées à l’outil Windows Device Po
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "Présentation détaillée de la liaison de données"
 description: "La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données."
+translationtype: Human Translation
 ms.sourcegitcommit: ca92d44cc8e3fb7eaed5a522435efe9cb4796560
 ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 

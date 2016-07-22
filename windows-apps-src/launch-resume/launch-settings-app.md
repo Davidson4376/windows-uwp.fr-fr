@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Lancer l’application Paramètres Windows"
 description: "Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques."
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+translationtype: Human Translation
 ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
 ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 

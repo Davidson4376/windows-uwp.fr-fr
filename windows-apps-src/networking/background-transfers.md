@@ -4,8 +4,8 @@ description: "Utilisez l’API de transfert en arrière-plan pour copier des fic
 title: "Transferts en arrière-plan"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
+ms.sourcegitcommit: b15d01ec4fd41a8f03345a4416b4795455928533
+ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 ---
 
@@ -74,7 +74,7 @@ La création d’un chargement commence avec [**BackgroundUploader**](https://ms
 
 Avant de commencer avec la création d’un objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), nous devons avant tout identifier l’URI du lieu de chargement, ainsi que le fichier qui sera chargé. Dans l’exemple qui suit, la valeur *uriString* est remplie au moyen d’une chaîne issue d’entrées de l’interface utilisateur et la valeur *file* est remplie à l’aide de l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) renvoyé par une opération [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275).
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "Identifier le fichier et la destination du chargement")]
+[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "Identifier le fichier et la destination du chargement")]
 
 **Créer et initialiser l’opération de chargement**
 
@@ -84,21 +84,21 @@ Ensuite, les propriétés de l’objet [**StorageFile**](https://msdn.microsoft.
 
 Pour finir, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) crée l’objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*).
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Créer et initialiser l’opération de chargement")]
+[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Créer et initialiser l’opération de chargement")]
 
-Notez les appels de méthode asynchrone définis à l’aide de promesses JavaScript. Examinons une ligne du dernier exemple:
+Notez les appels de méthode asynchrone définis à l’aide de promesses JavaScript. Examinons une ligne du dernier exemple :
 
 ```javascript
 promise = upload.startAsync().then(complete, error, progress);
 ```
 
-    The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+L’appel de méthode asynchrone est suivi d’une instruction then indiquant les méthodes, définies par l’application, qui sont appelées lorsqu’un résultat de l’appel de méthode asynchrone est retourné. Pour plus d’informations sur ce modèle de programmation, voir [Programmation asynchrone en JavaScript à l’aide de promesses](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
 ### Chargement de plusieurs fichiers
 
 **Identifier les fichiers et la destination du chargement**
 
-    In a scenario involving multiple files transferred with a single [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), the process begins as it usually does by first providing the required destination URI and local file information. Similar to the example in the previous section, the URI is provided as a string by the end-user and [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) can be used to provide the ability to indicate files through the user interface as well. However, in this scenario the app should instead call the [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) method to enable the selection of multiple files through the UI.
+Dans un scénario impliquant plusieurs fichiers transférés avec une seule opération [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), le processus commence comme habituellement en fournissant tout d’abord l’URI de destination et les informations de fichier local requis. Comme dans l’exemple de la section précédente, l’URI est fourni sous forme de chaîne par l’utilisateur final et [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) peut être utilisé pour offrir la possibilité d’indiquer les fichiers par le biais de l’interface utilisateur également. Toutefois, dans ce scénario, l’application doit plutôt appeler la méthode [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) pour permettre la sélection de plusieurs fichiers par le biais de l’interface utilisateur.
 
 ```javascript
 function uploadFiles() {
@@ -123,12 +123,12 @@ function uploadFiles() {
 
 **Créer des objets pour les paramètres fournis**
 
-    The next two examples use code contained in a single example method, **startMultipart**, which was called at the end of the last step. For the purpose of instruction the code in the method that creates an array of [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects has been split from the code that creates the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224).
+Les deux prochains exemples utilisent du code contenu dans un exemple de méthode unique, **startMultipart**, qui a été appelée à la fin de la dernière étape. Pour les besoins de l’instruction, le code présent dans la méthode qui crée un tableau d’objets [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) a été séparé du code qui crée l’opération [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) résultante.
 
-    First, the URI string provided by the user is initialized as a [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998). Next, the array of [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) objects (**files**) passed to this method is iterated through, each object is used to create a new [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) object which is then placed in the **contentParts** array.
+D’abord, la chaîne d’URI fournie par l’utilisateur est initialisée en tant qu’[**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998). Ensuite, une itération est effectuée sur le tableau d’objets [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) (**files**) passés à cette méthode. Chaque objet est utilisé pour créer un nouvel objet [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) qui est ensuite placé dans le tableau de **contentParts**.
 
 ```javascript
-upload.startMultipart = function (uriString, files) {
+    upload.startMultipart = function (uriString, files) {
         try {
             var uri = new Windows.Foundation.Uri(uriString);
             var uploader = new Windows.Networking.BackgroundTransfer.BackgroundUploader();
@@ -143,7 +143,7 @@ upload.startMultipart = function (uriString, files) {
 
 **Créer et initialiser l’opération de chargement à parties multiples**
 
-    With our contentParts array populated with all of the [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects representing each [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) for upload, we are ready to call [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) using the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) to indicate where the request will be sent.
+Avec notre tableau de contentParts rempli avec tous les objets [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) représentant chaque [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) pour le chargement, nous sommes prêts à appeler [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) à l’aide de l’[**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) pour indiquer où la demande sera envoyée.
 
 ```javascript
         // Create a new upload operation.
@@ -166,11 +166,11 @@ Lors de l’achèvement ou de l’annulation d’une opération [**UploadOperati
 
 1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) que cette fonction renverra:
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "Rédémarrer l’opération de chargement interrompue")]
+    [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "Redémarrer l’opération de chargement interrompue")]
 
-2.  Il nous faut ensuite définir la fonction qui énumère les opérations persistantes et les stocke dans notre tableau. Notez que la méthode **load** appelée pour réaffecter les rappels vers [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), si elle persiste après l’arrêt de l’application, se trouve dans la classe UploadOp définie plus loin dans cette section.
+1.  Il nous faut ensuite définir la fonction qui énumère les opérations persistantes et les stocke dans notre tableau. Notez que la méthode **load** appelée pour réaffecter les rappels vers [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), si elle persiste après l’arrêt de l’application, se trouve dans la classe UploadOp définie plus loin dans cette section.
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "Énumérer des opérations persistantes au démarrage")]
+    [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "Énumérer des opérations persistantes au démarrage")]
 
 ## Téléchargement de fichiers
 
@@ -206,13 +206,13 @@ Lors de l’achèvement ou de l’annulation d’une opération [**DownloadOpera
 
 1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) que cette fonction renverra:
 
-[!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
+    [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
 
-2.  Il nous faut ensuite définir la fonction qui énumère les opérations persistantes et les stocke dans notre tableau. Notez que la méthode **load** appelée pour réaffecter les rappels pour une opération [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) persistante se trouve dans l’exemple DownloadOp défini plus loin dans cette section.
+1.  Il nous faut ensuite définir la fonction qui énumère les opérations persistantes et les stocke dans notre tableau. Notez que la méthode **load** appelée pour réaffecter les rappels pour une opération [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) persistante se trouve dans l’exemple DownloadOp défini plus loin dans cette section.
 
-[!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
+    [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
 
-3.  Vous pouvez désormais utiliser la liste remplie pour redémarrer des opérations en attente.
+1.  Vous pouvez désormais utiliser la liste remplie pour redémarrer des opérations en attente.
 
 ## Post-traitement
 
@@ -317,6 +317,6 @@ Pour les erreurs de validation de paramètre, une application peut également ut
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

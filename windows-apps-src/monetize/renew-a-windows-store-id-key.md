@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "Utilisez cette méthode pour renouveler une clé du Windows Store."
 title: "Renouveler une clé d’ID du Windows Store"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: a3cef13e84c5bb06be4f3e3d4b2db4e02650df62
 
 ---
 
@@ -32,10 +33,10 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 | Type de clé    | Méthode | URI de la requête                                              |
 |-------------|--------|----------------------------------------------------------|
-| Collections | POST   | `https://collections.mp.microsoft.com/v6.0/b2b/keys/renew` |
-| Achat    | POST   | `https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew`    |
+| Collections | POST   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
+| Achat    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
 
-<br/> 
+<span/>
 
 ### En-tête de requête
 
@@ -45,7 +46,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
 
-<br/> 
+<span/>
 
 ### Corps de la requête
 
@@ -54,7 +55,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | serviceTicket | chaîne | Jeton d’accès Azure AD.        | Oui      |
 | key           | chaîne | Clé d’ID du Windows Store arrivée à expiration. | Non       |
 
-<br/> 
+<span/> 
 
 ### Exemple de requête
 
@@ -79,7 +80,7 @@ Host: collections.mp.microsoft.com
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | key       | chaîne | Clé du Windows Store actualisée qui peut être utilisée dans les futurs appels de l’API de collection ou de l’API d’achat du Windows Store. | Non       |
 
-<br/> 
+<span/>
 
 ### Exemple de réponse
 
@@ -106,7 +107,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
 | 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store et la revendication *appid* dans le jeton d’accès Azure AD ne correspondent pas.                                                                     |
 
-<br/> 
+<span/>
 
 ## Rubriques connexes
 
@@ -118,6 +119,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

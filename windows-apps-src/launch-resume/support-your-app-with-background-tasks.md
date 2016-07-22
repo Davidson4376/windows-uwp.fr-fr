@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Prendre en charge votre application avec des tâches en arrière-plan"
 description: "Cette section explique comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan."
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 

@@ -13,8 +13,7 @@ ms.openlocfilehash: 7404a90fc9efc05d4e2bb83321bb2ba80b8378ce
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-
-            Le *bêta-test* vous donne la possibilité d’améliorer votre application en fonction des commentaires d’utilisateurs ne faisant pas partie de votre équipe de développement qui essaient la version non publiée de votre application sur leur propre appareil.
+Le *bêta-test* vous donne la possibilité d’améliorer votre application en fonction des commentaires d’utilisateurs ne faisant pas partie de votre équipe de développement qui essaient la version non publiée de votre application sur leur propre appareil.
 
 Cette section décrit les options qui s’offrent à vous pour le bêta-test des applications Windows universelles.
 

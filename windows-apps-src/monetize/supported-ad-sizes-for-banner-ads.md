@@ -39,8 +39,7 @@ MicrosoftAdvertising prend en charge les tailles de bannières publicitaires sui
 <td align="left"><img src="images/13-f6f413da-ddde-4424-9364-41d8ba536d21.jpg" alt="AdSizesPhone320x50" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>480x80</p><p>
-            **Remarque** Cette taille est prise en charge uniquement pour Silverlight WindowsPhone.</p></td>
+<td align="left"><p>480x80</p><p>**Remarque** Cette taille est prise en charge uniquement pour Silverlight WindowsPhone.</p></td>
 <td align="left"><img src="images/13-0f11f562-0624-40d6-9720-400420f0a486.jpg" alt="AdSizesPhone480x80" /></td>
 </tr>
 <tr class="even">

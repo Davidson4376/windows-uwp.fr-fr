@@ -6,18 +6,20 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Utiliser la protection des données d’entreprise (EDP) pour protéger des fichiers"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2d9b1ec4e39e5c8a100030184ee9287a0d97ea24
+ms.sourcegitcommit: 9b9e9ecb70f3a0bb92038ae94f45ddcee3357dbd
+ms.openlocfilehash: a31fc65599f43be5b302b568774a51ab77065300
 
 ---
 
-# Utiliser la protection des données d’entreprise (EDP) pour protéger des fichiers
+# Utiliser la protection des données d’entreprise (PDE) pour protéger des fichiers
 
-__Remarque__ La stratégie de protection des données d’entreprise (EDP) ne peut pas être appliquée sur Windows10, version1511 (build10586) ou antérieure.
+> [!NOTE]
+> La stratégie de protection des données d’entreprise (PDE) ne peut pas être appliquée sur Windows10, version1511 (build 10586) ou antérieure.
 
-Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs aux fichiers les plus courants. Pour un aperçu complet du point de vue des développeurs de la manière dont la fonctionnalité EDP est liée aux fichiers, aux flux, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées, voir [protection des données d’entreprise (EDP)](../enterprise/edp-hub.md).
+Cette rubrique présente des exemples des tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (PDE) relatifs aux fichiers les plus courants. Pour un aperçu complet du point de vue des développeurs de la manière dont la fonctionnalité EDP se rapporte aux fichiers, aux flux, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées, voir [Protection des données d’entreprise (PDE)](../enterprise/edp-hub.md).
 
-**Remarque** L’[exemple de protection des données d’entreprise (EDP)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) couvre nombre des scénarios expliqués dans cette rubrique.
+> [!NOTE]
+> L’[exemple de protection des données d’entreprise (EDP)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) couvre nombre des scénarios expliqués dans cette rubrique.
 
 ## Prérequis
 
@@ -44,7 +46,7 @@ Vous pouvez créer une application pour héberger les exemples de code dans cett
 string localFolderPath = ApplicationData.Current.LocalFolder.Path;
 ```
 
-Une fois que vous avez le chemin d’accès, vous êtes en mesure d’utiliser l’Explorateur de fichiers pour trouver facilement les fichiers que votre application crée. De cette façon, vous êtes en mesure de confirmer qu’ils sont protégés, et qu’ils sont protégés sur l’identité correcte.
+Une fois que vous connaissez le chemin d’accès, vous pouvez utiliser l’Explorateur de fichiers pour trouver facilement les fichiers créés par votre application. De cette façon, vous êtes en mesure de confirmer qu’ils sont protégés, et qu’ils sont protégés sur l’identité correcte.
 
 Dans l’Explorateur de fichiers, sélectionnez **Modifier les options des dossiers et de recherche** et dans l’onglet **Affichage**, cochez **Afficher les fichiers chiffrés en couleur**. Par ailleurs, utilisez la procédure **Affichage**&gt;**Ajouter des colonnes** de l’Explorateur de fichiers pour ajouter la colonne **Chiffrement sur** afin de voir l’identité d’entreprise sur laquelle vous protégez vos fichiers.
 
@@ -53,7 +55,7 @@ Dans l’Explorateur de fichiers, sélectionnez **Modifier les options des dossi
 
 Il existe de nombreuses manières dont les données d’entreprise peuvent accéder à votre application, par exemple, à partir de certains points de terminaison réseau, de fichiers, du Presse-papiers ou du contrat de partage. Votre application peut également créer des données d’entreprise. Quel que soit le moyen par lequel votre application spécifique se procure des données d’entreprise, elle doit veiller à protéger les données sur l’identité d’entreprise gérée lorsqu’elle conserve les données dans un nouveau fichier.
 
-Les étapes de base consistent à utiliser une API de stockage standard pour créer le fichier, une API EDP pour protéger le fichier sur l’identité d’entreprise, puis (là encore, à l’aide d’API de stockage standard) à écrire dans le fichier. Veillez à protéger le fichier avant d’écrire dessus (comme illustré dans l’exemple ci-dessous). Vous utilisez la méthode [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) pour protéger le fichier. Et, comme toujours, il est judicieux de protéger sur une identité seulement si cette identité est gérée. Pour plus d’informations sur les raisons qui expliquent cela et sur la manière dont votre application peut déterminer l’identité de l’entreprise dans laquelle elle est exécutée, voir [Confirmer qu’une identité est gérée](../enterprise/edp-hub.md#confirming_an_identity_is_managed).
+Les étapes de base consistent à utiliser une API de stockage standard pour créer le fichier, une API EDP pour protéger le fichier sur l’identité d’entreprise, puis (là encore, à l’aide d’API de stockage standard) à écrire dans le fichier. Veillez à protéger le fichier avant d’écrire dessus (comme illustré dans l’exemple ci-dessous). Vous utilisez la méthode [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) pour protéger le fichier. Et, comme toujours, il est judicieux de protéger sur une identité seulement si cette identité est gérée. Pour plus d’informations sur les raisons qui expliquent cela et sur la manière dont votre application peut déterminer l’identité de l’entreprise dans laquelle elle est exécutée, voir [Confirmer qu’une identité est gérée](../enterprise/edp-hub.md#confirming-an-identity-is-managed).
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -249,26 +251,23 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-**Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> '!REMARQUE] Cet article s’adresse aux développeurs de Windows10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, consultez la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
 ## Rubriques connexes
 
+- [Exemple de protection des données d’entreprise (PDE)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
 
-[exemple de protection des données d’entreprise (EDP)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
-
-[**Espace de noms Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
-
- 
-
- 
+- [**Espace de noms Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Jul16_HO1-->
 
 

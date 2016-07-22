@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Gérer une tâche en arrière-plan annulée"
 description: "Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant."
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 
@@ -46,7 +47,7 @@ La méthode OnCanceled doit avoir l’empreinte suivante:
 >    }
 > ```
 
-[!div class="tabbedCodeSnippets"] Ajoutez une variable d’indicateur appelée **\_CancelRequested** à la classe de tâche en arrière-plan.
+Ajoutez une variable d’indicateur appelée **\_CancelRequested** à la classe de tâche en arrière-plan. Cette variable servira à indiquer qu’une demande d’annulation a été effectuée.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -57,9 +58,9 @@ La méthode OnCanceled doit avoir l’empreinte suivante:
 >     volatile bool CancelRequested;
 > ```
 
-Cette variable servira à indiquer qu’une demande d’annulation a été effectuée.
+Dans la méthode OnCanceled que vous avez créée à l’étape1, attribuez à la variable d’indicateur **\_CancelRequested** la valeur **true**.
 
-[!div class="tabbedCodeSnippets"]
+La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) attribue à **_CancelRequested** la valeur **true** et écrit une sortie de débogage qui peut s’avérer utile:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -85,7 +86,7 @@ Cette variable servira à indiquer qu’une demande d’annulation a été effec
 >     }
 > ```
 
-Dans la méthode OnCanceled que vous avez créée à l’étape 1, attribuez à la variable d’indicateur **\_CancelRequested** la valeur **true**. La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) attribue à **_CancelRequested** la valeur **true** et écrit une sortie de débogage qui peut s’avérer utile :
+Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail. Par exemple, utilisez la ligne de code suivante:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -95,14 +96,14 @@ Dans la méthode OnCanceled que vous avez créée à l’étape 1, attribuez à 
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## Gérer une annulation en quittant la méthode Run
 
 
-Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail.
+Lors de la réception d’une demande d’annulation, la méthode Run doit arrêter le travail et quitter en reconnaissant que **_cancelRequested** a la valeur **true**.
 
-Par exemple, utilisez la ligne de code suivante: [!div class="tabbedCodeSnippets"]
+Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **_cancelRequested** a la valeur true, le travail s’arrête.
 
-gérer une annulation en quittant la méthode Run
+L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -132,11 +133,11 @@ gérer une annulation en quittant la méthode Run
 >     }
 > ```
 
-> Lors de la réception d’une demande d’annulation, la méthode Run doit arrêter le travail et quitter en reconnaissant que **_cancelRequested** a la valeur **true**. Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée.
+> **Remarque** L’exemple de code présenté ci-dessus utilise la propriété [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) qui sert à enregistrer la progression de la tâche en arrière-plan. La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
-Si **_cancelRequested** a la valeur true, le travail s’arrête.
+Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé).
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan :
+L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -200,15 +201,15 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 >     }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## Remarques
 
-**Remarque** L’exemple de code présenté ci-dessus utilise la propriété [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) qui sert à enregistrer la progression de la tâche en arrière-plan.
+Vous pouvez télécharger l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
 
-La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
+Pour des raisons d’illustration, l’exemple de code présente uniquement des portions de la méthode Run (et du minuteur de rappel) de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
-## Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé).
+## Exemple de méthode Run
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings :
+L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour plus de contexte:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -327,23 +328,23 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 > }
 > ```
 
-> [!div class="tabbedCodeSnippets"] Remarques
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Vous pouvez télécharger l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
+## Rubriques connexes
 
-* [Pour des raisons d’illustration, l’exemple de code présente uniquement des portions de la méthode Run (et du minuteur de rappel) de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).](create-and-register-a-background-task.md)
-* [Exemple de méthode Run](declare-background-tasks-in-the-application-manifest.md)
-* [L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour plus de contexte :](guidelines-for-background-tasks.md)
-* [[!div class="tabbedCodeSnippets"]](monitor-background-task-progress-and-completion.md)
-* [**Remarque** Cet article s’adresse aux développeurs de Windows 10 qui développent des applications pour la plateforme Windows universelle (UWP).](register-a-background-task.md)
-* [Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).](respond-to-system-events-with-background-tasks.md)
-* [Rubriques connexes](run-a-background-task-on-a-timer-.md)
-* [Créer et inscrire une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](update-a-live-tile-from-a-background-task.md)
-* [Recommandations pour les tâches en arrière-plan](use-a-maintenance-trigger.md)
+* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
+* [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
+* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 
-* [Surveiller la progression et l’achèvement des tâches en arrière-plan](debug-a-background-task.md)
-* [Inscrire une tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 

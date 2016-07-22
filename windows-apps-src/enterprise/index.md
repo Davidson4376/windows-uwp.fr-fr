@@ -4,8 +4,8 @@ description: "Cette feuille de route propose une vue d’ensemble sur les foncti
 title: Entreprise
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
-ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 58f7c9739a000b6cac1c000570807587233018ce
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
 
 Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windowsuniverselle(UWP) Windows10. Windows 10 vous permet d’écrire une application une seule fois, de la déployer sur tous les appareils, et se charge d’adapter cette application à tous les appareils. Vous pouvez ainsi concevoir des expériences exceptionnelles, à la hauteur des attentes de vos utilisateurs, tout en fournissant le contrôle que votre organisation exige en termes de sécurité, de gestion et de configuration.
 
-**Remarque** Cet article s’adresse aux développeurs qui écrivent des applications UWP d’entreprise. Pour le développement UWP général, voir les [guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Pour le développement WPF, Windows Forms ou Win32, voir le [Centre de développement-Bureau](https://dev.windows.com/en-us/desktop). Pour les ressources informatiques professionnelles, tels que le déploiement de Windows 10 ou la gestion des fonctionnalités de sécurité d’entreprise, voir [Windows 10 sur TechNet](https://msdn.microsoft.com/library/dn986868).
+**Remarque** Cet article s’adresse aux développeurs qui écrivent des applications UWP d’entreprise. Pour le développement UWP général, voir les [guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Pour le développement WPF, Windows Forms ou Win32, voir le [Centre de développement-Bureau](https://dev.windows.com/desktop). Pour les ressources informatiques professionnelles, tels que le déploiement de Windows 10 ou la gestion des fonctionnalités de sécurité d’entreprise, voir [Windows 10 sur TechNet](https://msdn.microsoft.com/library/dn986868).
 
  
 
@@ -95,7 +95,7 @@ Vous disposez d’options pour la distribution des applications aux utilisateurs
 | Rubrique | Description |
 |-------|-------------|
 | [Distribuer des applications métier aux entreprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à la disposition du grand public. |
-| [Charger de manière indépendante des applications](https://technet.microsoft.com/en-us/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
+| [Charger de manière indépendante des applications](https://technet.microsoft.com/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
 | [Publier des applications dans le Windows Store](https://dev.windows.com/publish) | Le Windows Store unifié vous permet de publier et de gérer toutes vos applications pour l’ensemble des appareils Windows. Personnalisez la disponibilité de votre application à l’aide d’une tarification par marché, de contrôles de distribution et de visibilité et d’autres options. |
 
  
@@ -116,6 +116,6 @@ Pour plus d’informations sur Prism, voir le [référentiel GitHub](https://git
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Problèmes connus avec UWP sur la version prélim. pour dév. XboxOne"
 description: 
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: 9a9180f8d6fcd51808310a7f8fbac986ca9c3817
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: e016be20af9a0d7a67fa383cbdc93083d12a1113
 
 ---
 
@@ -44,16 +45,18 @@ public App() {
 }
 ```
 
-Pour désactiver ce mode dans une applicationHTML/Javascript, appuyez-vous sur l’exemple suivant:
+Pour désactiver ce mode dans une applicationHTML/JavaScript, appuyez-vous sur l’exemple suivant:
 
 ```code
 // Turn off mouse mode
 navigator.gamepadInputEmulation = "keyboard";
 ```
 
-> **Remarque:** &nbsp;&nbsp;dans cette version préliminaire pour développeurs, lorsque le mode souris est activé, un mouvement panoramique effectué avec une manette de jeu sur le contrôleur peut entraîner le blocage de la console. Si vous rencontrez ce problème, vous devez redémarrer votre console.
+Pour plus d’informations, notamment sur la manière d’activer la navigation directionnelle dans une application HTML/JavaScript, voir [Comment désactiver le mode souris](how-to-disable-mouse-mode.md#html).
 
-Pour en savoir plus sur la prise en charge du modesouris, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode). Cette rubrique inclut des informations sur l’activation et la désactivation du modesouris, afin de vous permettre de choisir le comportement approprié pour votre application.
+> **Remarque**&nbsp;&nbsp;Dans cette version préliminaire pour développeurs, lorsque le mode souris est activé, un mouvement panoramique effectué avec une manette de jeu sur le contrôleur peut entraîner le blocage de la console. Si vous rencontrez ce problème, vous devez redémarrer votre console.
+
+Pour en savoir plus sur la prise en charge du modesouris, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode). Cette rubrique inclut des informations sur l’activation et la désactivation du modesouris, afin de vous permettre de choisir le comportement approprié pour votre application.
 
 ## Vous devez disposer d’un utilisateur connecté afin de déployer une application (erreur0x87e10008)
 
@@ -109,7 +112,7 @@ Please use the forum to report any issues you see.-->
 
 ## Prise en charge de DirectX12
 
-UWP sur XboxOne prend en charge la fonctionnalité DirectX11 niveau10. DirectX12 n’est pas pris en charge pour l’instant. À l’instar de toutes les consoles de jeu traditionnelles, XboxOne est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/en-us/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
+UWP sur XboxOne prend en charge la fonctionnalité DirectX11 niveau10. DirectX12 n’est pas pris en charge pour l’instant. À l’instar de toutes les consoles de jeu traditionnelles, XboxOne est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -120,7 +123,7 @@ To restore the game streaming feature, you must leave the developer preview. -->
 
 Par défaut, la zone d’affichage des applications UWP sur Xbox doit être insérée dans la zone adaptée à l’écran de TV. Toutefois, il existe un bogue connu dans la version préliminaire pour développeurs de XboxOne: la zone adaptée à l’écran de TV commence à [0, 0] plutôt qu’à [_décalage_, _décalage_].
 
-> **Remarque:** &nbsp;&nbsp;cela s’applique uniquement aux applicationsUWP qui utilisentJavascript.
+> **Remarque**&nbsp;&nbsp;Cela s’applique uniquement aux applicationsUWP qui utilisentJavaScript.
 
 La meilleure façon de contourner ce problème consiste à désactiver la zone adaptée à l’écran de TV, comme illustré dans l’exempleJavaScript suivant.
 
@@ -136,10 +139,12 @@ UWP apps and games running on Xbox One share resources with the system and other
 If you are running into memory or performance issues, this may be why. 
 For more details, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).-->
 
+<!--
+## Networking using traditional sockets
 
-## Mise en réseau à l’aide de sockets traditionnels
-
-Dans cette version préliminaire pour développeurs, les accès réseau entrants et sortants de la console qui utilisent des sockets TCP/UDP traditionnels (WinSock, Windows.Networking.Sockets) ne sont pas disponibles. Les développeurs peuvent toujours utiliser HTTP et WebSockets. 
+In this developer preview, inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is not available. 
+Developers can still use HTTP and WebSockets.
+--> 
 
 
 ## Couverture des API UWP
@@ -228,6 +233,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

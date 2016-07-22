@@ -21,15 +21,12 @@ Une fois que vous avez identifié la variante répondant le mieux à vos objecti
 
 Pour créer et exécuter un test A/B, procédez comme suit:
 
-1. 
-            [Définissez votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md). Chaque expérience se compose des éléments suivants:
+1. [Définissez votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md). Chaque expérience se compose des éléments suivants:
   * un *événement d’affichage*, indiquant que l’utilisateur commence à visualiser une variante faisant partie intégrante de votre expérience ,
   * un ou plusieurs objectifs avec des *événements de conversion* indiquant le moment où un objectif a été atteint ;
   * une ou plusieurs *variantes* définissant les paramètres utilisés par votre expérience.
-2. 
-            [Codez votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md). Utilisez une API du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft pour obtenir les paramètres de variante pour l’expérience, utiliser ces données pour modifier le comportement de la fonctionnalité que vous testez et envoyer des événements d’affichage et de conversion au Centre de développement.
-3. 
-            [Exécutez et gérez votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md). Utilisez le tableau de bord pour passer en revue les résultats de l’expérience et pour terminer cette dernière.
+2. [Codez votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md). Utilisez une API du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft pour obtenir les paramètres de variante pour l’expérience, utiliser ces données pour modifier le comportement de la fonctionnalité que vous testez et envoyer des événements d’affichage et de conversion au Centre de développement.
+3. [Exécutez et gérez votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md). Utilisez le tableau de bord pour passer en revue les résultats de l’expérience et pour terminer cette dernière.
 
 Pour découvrir une procédure pas à pas illustrant le processus de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 

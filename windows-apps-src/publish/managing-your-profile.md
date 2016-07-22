@@ -4,13 +4,13 @@ ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: "Gestion de vos paramètres de compte et des informations sur le profil"
 description: "Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3d82caac353eb7cb63692469c5951be1f392ff52
+ms.sourcegitcommit: a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f
+ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
 
 ---
 # Gestion de vos paramètres de compte et des informations sur le profil
 
-Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section **Paramètres du compte** du [tableau de bord unifié du Centre de développement Windows](https://msdn.microsoft.com/library/windows/apps/Mt169843).
+Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section **Paramètres du compte** du [tableau de bord du Centre de développement Windows](https://msdn.microsoft.com/library/windows/apps/Mt169843).
 
 ## Paramètres de compte
 
@@ -32,11 +32,11 @@ Si vous modifiez le nom complet de l’éditeur, nous devons vérifier de nouvea
 
 Cette section comprend également des liens dédiés à la [configuration de votre compte de revenu et de vos formulaires fiscaux](https://msdn.microsoft.com/library/windows/apps/Bg124529). Vous devez effectuer cette action avant de facturer les applications ou les produits dans l’application.
 
-Certains programmes peuvent fournir un code vous permettant d’étendre les fonctionnalités de votre compte ; le cas échéant, accédez aux **Paramètres du compte**. Cette page comporte également des détails sur les appareils [Windows Phone 8 ou Windows Phone 8.1 que vous avez déverrouillé pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897), et vous permet d’activer ou de désactiver la télémétrie d’utilisation des applications utilisées avec Visual Studio Application Insights.
+Certains programmes peuvent fournir un code vous permettant d’étendre les fonctionnalités de votre compte; le cas échéant, accédez aux **Paramètres du compte**. Cette page comporte également des détails sur les [appareils Windows Phone8 ou Windows Phone8.1 que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897), et vous permet de vous inscrire ou de vous désinscrire du [Programme Insider du Centre de développement](dev-center-insider-program.md).
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

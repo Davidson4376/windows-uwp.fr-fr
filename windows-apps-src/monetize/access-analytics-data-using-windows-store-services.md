@@ -3,6 +3,7 @@ author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Utilisez l’API d’analyse du WindowsStore pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows."
 title: "Accéder aux données d’analyse à l’aide des services du Windows Store"
+translationtype: Human Translation
 ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
 ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
 

@@ -2,8 +2,9 @@
 author: payzer
 title: "Référence des API des paramètres de développement Xbox Device Portal"
 description: "Découvrez comment accéder aux paramètres de développement Xbox."
-ms.sourcegitcommit: c392e6a2356d4180943c17d37512ef8ea35f5719
-ms.openlocfilehash: 52fb6e76bd7ad35127eeebeced8f6f8cc076fb7f
+translationtype: Human Translation
+ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
+ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
 
 ---
 
@@ -46,7 +47,7 @@ Cette API comporte les codes d’état attendus suivants.
 
 Code d’état HTTP      | Description
 :------     | :-----
-200 | La requête pour accéder aux informations d’identification pour le partage de fichiers a été accordée.
+200 | Demande réussie
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
@@ -87,7 +88,7 @@ Cette API comporte les codes d’état attendus suivants.
 
 Code d’état HTTP      | Description
 :------     | :-----
-200 | La requête pour accéder aux informations d’identification pour le partage de fichiers a été accordée.
+200 | Demande réussie
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
@@ -124,7 +125,7 @@ Cette API comporte les codes d’état attendus suivants.
 
 Code d’état HTTP      | Description
 :------     | :-----
-200 | La requête pour accéder aux informations d’identification pour le partage de fichiers a été accordée.
+200 | Demande réussie
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
@@ -136,6 +137,6 @@ Code d’état HTTP      | Description
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

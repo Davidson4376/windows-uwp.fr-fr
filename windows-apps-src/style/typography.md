@@ -8,8 +8,8 @@ template: detail.hbs
 extraBodyClass: style-typography
 brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 02d5149f945bb631e385e45a295fdfe08bd98fb0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7ec2c80fd571de98060282d2b321d1895e2b3dc8
 
 ---
 
@@ -39,7 +39,7 @@ Lorsque vous empilez une grande taille de caractère sur une taille de caractèr
 
 ![Mode d’empilement d’une grande taille de caractère sur une petite taille de caractère](images/line-height-stacking.png)
 
-En XAML, cette opération est effectuée par l’empilement de deux éléments [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) et par la définition de la marge appropriée.
+En XAML, cette opération est effectuée par l’empilement de deux éléments [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) et par la définition de la marge appropriée.
 
 ```xaml
 <StackPanel Width="200">
@@ -83,7 +83,7 @@ L’espacement entre les mots est toujours de 100% par défaut, et l’espacemen
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-Dans un contrôle de texteXAML, utilisez [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) pour contrôler le crénage et [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler le suivi. Par défaut, Typography.Kerning est défini sur «true», tandis que FontStretch est défini sur «Normal»; il s’agit des valeurs recommandées.
+Dans un contrôle de texteXAML, utilisez [Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) pour contrôler le crénage et [FontStretch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler le suivi. Par défaut, Typography.Kerning est défini sur «true», tandis que FontStretch est défini sur «Normal»; il s’agit des valeurs recommandées.
     </div>
 </aside>
 
@@ -129,7 +129,7 @@ Lorsque la hauteur du texte dépasse celle de l’icône, la première ligne de 
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du codeXAML fournit un accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
+La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du codeXAML fournit un accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
     </div>
 </aside>
 
@@ -154,7 +154,7 @@ Vous devez utiliser différentes tailles de caractères Segoe UI pour créer une
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-La plupart des niveaux de la gamme sont disponibles en tant que [ressources statiques](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (ex:`HeaderTextBlockStyle`). 
+La plupart des niveaux de la gamme sont disponibles en tant que [ressources statiques](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (ex:`HeaderTextBlockStyle`). 
     </div>
 </aside>
 
@@ -185,6 +185,6 @@ Toutefois, dans certaines langues, les noms propres changent de signification lo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ author: jnHs
 Description: "Si vous rencontrez des erreurs après avoir envoyé votre application au Windows Store, vous devez les résoudre pour poursuivre le processus de certification."
 title: "Résoudre les erreurs d’envoi"
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
+translationtype: Human Translation
 ms.sourcegitcommit: e295011db20d151f54e2581f8c67014b30261eb6
 ms.openlocfilehash: cd0e1011bd1f857d8c859428ae0ff7e755db842e
 
@@ -51,6 +52,6 @@ Si vous voyez une erreur indiquant: **Le nom trouvé dans le package ne fait pas
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

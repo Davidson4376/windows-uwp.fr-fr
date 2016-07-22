@@ -4,8 +4,8 @@ ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: Programmation asynchrone
 description: "Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C\\+\\+ (C\\+\\+/CX) et JavaScript."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
 
 ---
 # Programmation asynchrone
@@ -45,12 +45,9 @@ Avec le modèle asynchrone UWP, vous pouvez éviter complètement de gérer expl
 
 | Langage de programmation | Représentation asynchrone           |
 |----------------------|---------------------------------------|
-| C#                  | 
-            Mot clé **async**, opérateur **await** |
-| Visual Basic         | 
-            Mot clé **Async**, opérateur **Await** |
-| C++/CX               | 
-            classe **task**, méthode **.then**      |
+| C#                  | Mot clé **async**, opérateur **await** |
+| Visual Basic         | Mot clé **Async**, opérateur **Await** |
+| C++/CX               | classe **task**, méthode **.then**      |
 | JavaScript           | objet promise, fonction **then**     |
 
  
@@ -63,9 +60,9 @@ Un segment de code classique écrit en C# ou Visual Basic s’exécute de façon
 ## Modèles asynchrones dans UWP avec C++
 
 
-En C++/CX, la programmation asynchrone est basée sur la [**task class**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx) et sur sa méthode [**then method**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx). La syntaxe est similaire à celle des promesses JavaScript. La classe **task** et ses types associés fournissent également la fonctionnalité d’annulation et de gestion du contexte de thread. Pour plus d’informations, voir [Programmation asynchrone en C++](asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
+En C++/CX, la programmation asynchrone est basée sur la [**task class**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) et sur sa méthode [**then method**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx). La syntaxe est similaire à celle des promesses JavaScript. La classe **task** et ses types associés fournissent également la fonctionnalité d’annulation et de gestion du contexte de thread. Pour plus d’informations, voir [Programmation asynchrone en C++](asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
-La fonction [**create\_async function**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750102.aspx) fournit une prise en charge de la production d’API asynchrones qui peuvent être utilisées en JavaScript ou tout autre langage prenant en charge l’UWP. Pour plus d’informations, voir [Création d’opérations asynchrones en C++](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx).
+La fonction [**create\_async function**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) fournit une prise en charge de la production d’API asynchrones qui peuvent être utilisées en JavaScript ou tout autre langage prenant en charge l’UWP. Pour plus d’informations, voir [Création d’opérations asynchrones en C++](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx).
 
 ## Modèles asynchrones dans UWP utilisant JavaScript
 
@@ -79,11 +76,11 @@ Dans de nombreux cas, il est presque aussi simple d’appeler une fonction async
 
 * [Appeler des API asynchrones en C# ou Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [Programmation asynchrone avec Async et Await (C# et Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
-* [Exemple de scénarios de fonctionnalité Reversi : code asynchrone](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj712233.aspx#async)
+* [Exemple de scénarios de fonctionnalité Reversi : code asynchrone](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -2,8 +2,9 @@
 author: JordanRh1
 title: "Activer l’accès en mode utilisateur sur Windows10IoTStandard"
 description: "Ce didacticiel explique comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows10IoTStandard."
-ms.sourcegitcommit: f7d7dac79154b1a19eb646e7d29d70b2f6a15e35
-ms.openlocfilehash: eedabee593400ff0260b6d3468ac922285a034f8
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
 
 ---
 # Activer l’accès en mode utilisateur sur Windows10IoTStandard
@@ -38,7 +39,7 @@ Device(RHPX)
 * _CID: ID compatible. Il doit s’agir de «MSFT8000».  
 * _UID: ID unique. Définissez ce paramètre sur1.  
 
-Nous allons ensuite déclarer chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) et [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.spi.spicontroller.aspx). 
+Nous allons ensuite déclarer chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) et [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx). 
 
 ### SPI 
 
@@ -702,9 +703,9 @@ Des outils en ligne de commande simples pour Gpio, I2c, Spi et Série sont dispo
 
 | Outil | Lien |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/en-us/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/spitesttool |
 | MinComm (Série) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## Ressources
@@ -722,9 +723,9 @@ Des outils en ligne de commande simples pour Gpio, I2c, Spi et Série sont dispo
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | Tests MITT I2C | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/en-us/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/spitesttool |
 | MinComm (Série) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Kit d’évaluation de matériel en laboratoire (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
@@ -732,7 +733,7 @@ Des outils en ligne de commande simples pour Gpio, I2c, Spi et Série sont dispo
 
 ### AnnexeA - Liste d’ASL RaspberryPi
 
-Brochage d’en-tête: https://developer.microsoft.com/en-us/windows/iot/win10/samples/PinMappingsRPi2
+Brochage d’en-tête: https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -894,7 +895,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### AnnexeB - Liste d’ASL MinnowBoardMax
 
-Brochage d’en-tête: https://developer.microsoft.com/en-us/windows/iot/win10/samples/PinMappingsMBM
+Brochage d’en-tête: https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1085,6 +1086,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

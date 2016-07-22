@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: "Utilisez cette méthode dans l’API d’achat du WindowsStore pour octroyer une application gratuite ou un produit intégré à l’application (PIA) gratuit à un utilisateur donné."
 title: Octroyer des produits gratuits
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
 
 ---
 
@@ -32,9 +33,9 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 | Méthode | URI de la requête                                            |
 |--------|--------------------------------------------------------|
-| POST   | `https://purchase.mp.microsoft.com/v6.0/purchases/grant` |
+| POST   | ```https://purchase.mp.microsoft.com/v6.0/purchases/grant``` |
 
-<br/> 
+<span/> 
 
 ### En-tête de requête
 
@@ -45,7 +46,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
 
-<br/>
+<span/>
 
 ### Corps de la requête
 
@@ -61,7 +62,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | quantity       | entier    | Quantité à acheter. Actuellement, la seule valeur prise en charge est 1. Si aucune valeur n’est spécifiée, la valeur par défaut est 1.                                                                                                                                                                                                                | Non       |
 | skuId          | chaîne | ID de référence du catalogue du Windows Store. Exemple d’ID de référence : 0010.                                                                                                                                                                                                                                                | Oui      |
 
-<br/> 
+<span/>
 
 ### Exemple de requête
 
@@ -107,7 +108,7 @@ Content-Type: application/json
 | totalChargedToCsvTopOffPI | décimal                     | Si vous utilisez un instrument de paiement (PI) et une valeur de stockage (CSV) distincts, le montant est facturé au format CSV.                                                                | Oui      |
 | totalTaxAmount            | décimal                     | Montant total des taxes de tous les articles.                                                                                                              | Oui      |
 
-<br/> 
+<span/>
 
 L’objet ClientContext contient les paramètres ci-dessous.
 
@@ -115,7 +116,7 @@ L’objet ClientContext contient les paramètres ci-dessous.
 |-----------|--------|---------------------------------------|----------|
 | client    | chaîne | ID client qui a créé la commande. | Non       |
 
-<br/> 
+<span/>
 
 L’objet OrderLineItemV6 contient les paramètres ci-dessous.
 
@@ -147,7 +148,7 @@ L’objet OrderLineItemV6 contient les paramètres ci-dessous.
 | Title                   | chaîne         | Titre localisé de l’article.                                                                        | Oui      |
 | totalAmount             | décimal        | Montant total TTC d’achat de l’article.                                                    | Oui      |
 
-<br/> 
+<span/>
 
 L’objet IdentityV6 contient les paramètres ci-dessous.
 
@@ -156,7 +157,7 @@ L’objet IdentityV6 contient les paramètres ci-dessous.
 | identityType  | chaîne | Contient la valeur **"pub"**.                                                      | Oui      |
 | identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du WindowsStore. | Oui      |
 
-<br/> 
+<span/> 
 
 ### Exemple de réponse
 
@@ -229,7 +230,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du WindowsStore du corps de la demande et la revendication *appid* du jeton d’accès AzureAD de l’en-tête d’autorisation ne correspondent pas.                     |
 | 400  | BadRequest   | InvalidParameter           | Les détails contiennent des informations relatives au corps de la requête et aux champs comprenant une valeur non valide.                                                                                    |
 
-<br/> 
+<span/> 
 
 ## Rubriques connexes
 
@@ -244,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

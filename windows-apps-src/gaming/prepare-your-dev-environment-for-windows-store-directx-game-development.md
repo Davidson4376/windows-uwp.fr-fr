@@ -22,8 +22,7 @@ Pour commencer, vous devez disposer de Visual Studio.
 ## Obtenir Visual Studio
 
 
-
-            [Téléchargez et installez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
+[Téléchargez et installez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
 
 <table>
 <colgroup>

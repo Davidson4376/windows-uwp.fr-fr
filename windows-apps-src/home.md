@@ -2,10 +2,10 @@
 Description: "Voici les informations dont vous avez besoin pour créer une application UWP pouvant s’exécuter sur tout appareil basé sur Windows 10, notamment les téléphones,les tablettes et les PC."
 title: "Guides de procédure pour les applications Windows10 - Développement d’applicationsWindows"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
-redirect_url: https://developer.microsoft.com/en-us/windows/develop
+redirect_url: https://developer.microsoft.com/windows/develop
 translationtype: Human Translation
-ms.sourcegitcommit: 9be74892a98765a8a45482ce3f5cc5151ab772b1
-ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 654eac5df1bd3309714348dcfc511850234bb0ae
 
 ---
 
@@ -33,7 +33,7 @@ Si vous souhaitez une présentation de la plateforme Windows universelle (UWP) e
 | [Appareils, capteurs et alimentation](devices-sensors\index.md) | Intégrez différents appareils tels que des imprimantes, appareils photo et capteurs dans votre application Windows universelle pour offrir à vos utilisateurs une expérience d’appareil connecté robuste et flexible. | 
 | [Entreprise](enterprise/index.md) | Découvrez les fonctionnalités principales d’entreprise des applications de plateforme Windowsuniverselle(UWP) Windows10. |
 | [Fichiers, dossiers et bibliothèques](files/index.md) | Découvrez comment lire et écrire du texte et d’autres formats de données dans des fichiers, et gérer des fichiers et dossiers. Découvrez également des informations sur la lecture et l’écriture de paramètres d’application, sur les sélecteurs de fichiers et de dossiers, et sur les emplacements de bac à sable «sandbox» tels que la bibliothèque de musique/vidéos. |
-| [Jeux et DirectX](https://msdn.microsoft.com/en-us/library/windows/apps/mt228375.aspx) | Découvrez les notions de base de la création de jeux sur la nouvelle plateforme Windows universelle (UWP). |
+| [Jeux et DirectX](https://msdn.microsoft.com/library/windows/apps/mt228375.aspx) | Découvrez les notions de base de la création de jeux sur la nouvelle plateforme Windows universelle (UWP). |
 | [Graphismes et animation](graphics/index.md) | Améliorez votre application Windows universelle à l’aide de graphiques et d’animations d’interface utilisateur qui soutiennent visuellement l’intérêt et l’attention des utilisateurs. |
 | [Lancement, reprise et tâches en arrière-plan](launch-resume/index.md) | Créez des tâches en arrière-plan et inscrivez-les à des événements générés par le système afin d’offrir des fonctionnalités même quand votre application Windows universelle est suspendue ou ne s’exécute pas. |
 | [Cartes et emplacement](maps-and-location/index.md) | Découvrez comment votre application Windows universelle peut accéder au service Bing Cartes et produire des éléments visuels cartographiques qui incluent désormais une imagerie aérienne 3D et des vues au niveau rue. |
@@ -48,6 +48,6 @@ Si vous souhaitez une présentation de la plateforme Windows universelle (UWP) e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

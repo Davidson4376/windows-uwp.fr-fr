@@ -46,8 +46,7 @@ Dans la version actuelle, la classe **FaceDetector** prend uniquement en charge 
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-Instanciez l’objet **FaceDetector** en appelant [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), puis appelez [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), en transmettant l’image bitmap mise à l’échelle à une taille raisonnable et convertie en un format de pixel pris en charge. Cette méthode renvoie une liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). 
-            **ShowDetectedFaces** est une méthode d’assistance, indiquée ci-dessous, qui dessine des cadres autour des visages de l’image.
+Instanciez l’objet **FaceDetector** en appelant [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), puis appelez [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), en transmettant l’image bitmap mise à l’échelle à une taille raisonnable et convertie en un format de pixel pris en charge. Cette méthode renvoie une liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces** est une méthode d’assistance, indiquée ci-dessous, qui dessine des cadres autour des visages de l’image.
 
 [!code-cs[Détecter](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 

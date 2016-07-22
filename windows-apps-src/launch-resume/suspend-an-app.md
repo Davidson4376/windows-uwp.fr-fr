@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Gérer la suspension d’une application"
 description: "Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application."
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
+translationtype: Human Translation
 ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
 ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
 
@@ -66,10 +67,10 @@ Enregistrez-vous pour gérer l’événement [**Suspending**](https://msdn.micro
 > }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## Enregistrer des données d’application avant sa suspension
 
 
-Enregistrer des données d’application avant sa suspension Lorsque votre application traite l’événement [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341), elle a la possibilité d’enregistrer ses données d’application importantes dans la fonction du gestionnaire.
+Lorsque votre application traite l’événement [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341), elle a la possibilité d’enregistrer ses données d’application importantes dans la fonction du gestionnaire. L’application doit utiliser l’API de stockage [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) pour enregistrer les données d’application simples de manière synchrone.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -102,28 +103,28 @@ Enregistrer des données d’application avant sa suspension Lorsque votre appli
 > }
 > ```
 
-## L’application doit utiliser l’API de stockage [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) pour enregistrer les données d’application simples de manière synchrone.
+## Remarques
 
 
-[!div class="tabbedCodeSnippets"] Remarques Le système suspend votre application chaque fois que l’utilisateur passe à une autre application, au Bureau ou à l’écran d’accueil. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application.
+Le système suspend votre application chaque fois que l’utilisateur passe à une autre application, au Bureau ou à l’écran d’accueil. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan.
 
-Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan. Le système tente de conserver votre application et ses données en mémoire pendant sa suspension.
+Le système tente de conserver votre application et ses données en mémoire pendant sa suspension. Toutefois, si le système ne dispose pas des ressources pour conserver votre application en mémoire, il met fin à votre application. Lorsque l’utilisateur rebascule vers une application suspendue qui a été arrêtée, le système envoie un événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) et doit restaurer ses données d’application dans sa méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
-Toutefois, si le système ne dispose pas des ressources pour conserver votre application en mémoire, il met fin à votre application.
+Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit donc enregistrer ses données d’application et libérer les ressources exclusives et descripteurs de fichiers au moment où elle est mise en suspens pour ensuite les restaurer lorsque l’application est activée après avoir été arrêtée.
 
-> Lorsque l’utilisateur rebascule vers une application suspendue qui a été arrêtée, le système envoie un événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) et doit restaurer ses données d’application dans sa méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335). Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit donc enregistrer ses données d’application et libérer les ressources exclusives et descripteurs de fichiers au moment où elle est mise en suspens pour ensuite les restaurer lorsque l’application est activée après avoir été arrêtée.
+> **Remarque** Si vous devez effectuer des tâches asynchrones lorsque votre application est en cours de suspension, vous devez différer l’exécution de la suspension tant que vos tâches ne sont pas terminées. Vous pouvez utiliser la méthode [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) sur l’objet [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) (disponible via les arguments de l’événement) pour retarder la suspension jusqu’à ce que vous appeliez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) et qu’elle soit appliquée sur l’objet [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) retourné.
 
-> **Remarque** Si vous devez effectuer des tâches asynchrones lorsque votre application est en cours de suspension, vous devez différer l’exécution de la suspension tant que vos tâches ne sont pas terminées. Vous pouvez utiliser la méthode [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) sur l’objet [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) (disponible via les arguments de l’événement) pour retarder la suspension jusqu’à ce que vous appeliez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) et qu’elle soit appliquée sur l’objet [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) retourné. **Remarque** Pour améliorer la réactivité du système dans Windows 8.1, les applications disposent d’un accès à faible priorité aux ressources en cas de suspension.
+> **Remarque** Pour améliorer la réactivité du système dans Windows 8.1, les applications disposent d’un accès à faible priorité aux ressources en cas de suspension. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5secondes en priorité normale sur Windows ou de 1 à 10secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
 
-> Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5secondes en priorité normale sur Windows ou de 1 à 10secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai. **Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application.
+> **Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
 
-## Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio.
+## Rubriques connexes
 
 
-* [Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.](activate-an-app.md)
-* [Rubriques connexes](resume-an-app.md)
-* [Gérer l’activation d’une application](https://msdn.microsoft.com/library/windows/apps/dn611862)
-* [Gérer la reprise d’une application](app-lifecycle.md)
+* [Gérer l’activation d’une application](activate-an-app.md)
+* [Gérer la reprise d’une application](resume-an-app.md)
+* [Recommandations en matière d’expérience utilisateur pour le lancement, la suspension et la reprise](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [Cycle de vie de l’application](app-lifecycle.md)
 
  
 

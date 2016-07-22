@@ -3,8 +3,9 @@ author: TylerMSFT
 title: Guide des applications de plateforme Windows universelle (UWP)
 description: "Ce guide décrit les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un vaste éventail d’appareils."
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: 191a7aef1a027747379c991e17afc1580a9ec549
+translationtype: Human Translation
+ms.sourcegitcommit: 4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f
+ms.openlocfilehash: 8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c
 
 ---
 
@@ -31,18 +32,17 @@ Windows 10 introduit la plateforme Windows universelle (UWP), qui développe le 
 
 ## Familles d’appareils
 
-
 Les applications Windows 8.1 et Windows Phone 8.1 ciblent un système d’exploitation (SE) : Windows ou Windows Phone. Avec Windows 10, votre application ne cible plus un système d’exploitation, mais une ou plusieurs familles d’appareils. Une famille d’appareils identifie les API, les caractéristiques système et les comportements que vous pouvez attendre sur les différents appareils de cette famille. Elle détermine également l’ensemble des appareils sur lesquels votre application peut être installée à partir du Store. Voici la hiérarchie des familles d’appareils.
 
 ![Familles d’appareils](images/devicefamilytree.png)
 
 Une famille d’appareils est un ensemble d’API regroupées, doté d’un nom et d’un numéro de version. Une famille d’appareils constitue le fondement d’un SE. Les PC exécutent la version bureau du système d’exploitation, qui est basée sur la famille d’appareils de bureau. Les téléphones, tablettes, etc., exécutent la version mobile du système d’exploitation, qui est basée sur la famille d’appareils mobiles. Et ainsi de suite.
 
-La famille d’appareils universelle est spéciale. Elle ne constitue pas directement le fondement d’un système d’exploitation quelconque. Au lieu de cela, les API de la famille d’appareils universelle sont héritées par des familles d’appareils enfants. Il est ainsi garanti que les API de la famille d’appareils universelle sont présentes dans chaque système d’exploitation et, par conséquent, sur chaque appareil.
+La famille d’appareils universelle est spéciale. Elle ne constitue pas directement le fondement d’un système d’exploitation quelconque. Au lieu de cela, les API de la famille d’appareils universelle sont héritées par les familles d’appareils enfants. Il est ainsi garanti que les API de la famille d’appareils universelle sont présentes dans chaque système d’exploitation et sur chaque appareil.
 
-Chaque famille d’appareils enfant ajoute ses propres API à celles dont elle hérite. Il est garanti que l’union d’API ainsi obtenue dans une famille d’appareils enfant est présente dans le système d’exploitation basé sur celle-ci et, par conséquent, sur chaque appareil exécutant ce système d’exploitation.
+Chaque famille d’appareils enfant ajoute ses propres API à celles dont elle hérite. Il est garanti que l’union d’API ainsi obtenue dans une famille d’appareils enfant est présente dans le système d’exploitation basé sur celle-ci et sur chaque appareil exécutant ce système d’exploitation.
 
-Un avantage des familles d’appareils est que votre application peut s’exécuter sur toute une série d’appareils, des téléphones, tablettes et ordinateurs de bureau jusqu’aux Surface Hubs et autres consoles Xbox. Votre application peut également utiliser un code adaptatif pour détecter et utiliser de façon dynamique des fonctionnalités d’un appareil qui ne font pas partie de la famille d’appareils universelle.
+Un avantage des familles d’appareils est que votre application peut s’exécuter sur toute une série d’appareils, voire sur tous ces appareils: téléphones, tablettes, ordinateurs de bureau, Surface Hub, consoles Xbox et HoloLens. Votre application peut également utiliser un code adaptatif pour détecter et utiliser de façon dynamique des fonctionnalités d’un appareil qui ne font pas partie de la famille d’appareils universelle.
 
 La décision relative aux familles d’appareils que votre application cible vous appartient. Cette décision a une incidence sur votre application de plusieurs façon. Elle détermine ce qui suit :
 
@@ -64,16 +64,15 @@ Il se peut que vous ne vouliez pas que votre application s’exécute sur un vas
 
 **Limitation de votre application à un sous-ensemble de tous les appareils possibles**
 
-Au lieu de cibler la famille d’appareils universelle ou l’une des familles d’appareils enfants, vous pouvez cibler plusieurs familles d’appareils enfants. Le ciblage des appareils de bureau et mobiles peut s’avérer pertinent pour votre application. Ou bien, des appareils de bureau et de Xbox. Ou encore des appareils de bureau, de Xbox et de Surface Hub.
+Au lieu de cibler la famille d’appareils universelle ou l’une des familles d’appareils enfants, vous pouvez cibler plusieurs familles d’appareils enfants. Le ciblage des appareils de bureau et mobiles peut s’avérer pertinent pour votre application. Ou bien, des appareils de bureau et HoloLens. Ou encore des appareils de bureau, des Xbox et des Surface Hub, et ainsi de suite.
 
 **Exclusion de la prise en charge d’une version particulière d’une famille d’appareils**
 
-Dans de rares cas, vous pouvez souhaiter que votre application s’exécute partout, sauf sur des appareils d’une version particulière d’une famille d’appareils spécifique. Par exemple, imaginons que votre appareil cible la version 10.0.x.0 de la famille d’appareils universelle. En cas de changement ultérieur de la version du système d’exploitation à l’avenir, par exemple en version 10.0.x.2, vous pouvez spécifier que votre application s’exécute partout sauf sur la version 10.0.x.1 de Xbox en ciblant votre application sur la version universelle 10.0.x.0 et la version 10.0.x.1 de Xbox. Votre application sera alors inaccessible pour l’ensemble des versions de la famille d’appareils Xbox 10.0.x.1 (inclus) et pour les versions antérieures.
+Dans de rares cas, vous pouvez souhaiter que votre application s’exécute partout, sauf sur des appareils d’une version particulière d’une famille d’appareils spécifique. Par exemple, imaginons que votre appareil cible la version10.0.x.0 de la famille d’appareils universelle. En cas de changement ultérieur de la version du système d’exploitation à l’avenir, par exemple en version10.0.x.2, vous pouvez spécifier que votre application s’exécute partout sauf sur la version10.0.x.1 de Xbox en ciblant votre application sur la version10.0.x.0 de la famille universelle et la version10.0.x.2 de Xbox. Votre application sera alors inaccessible pour l’ensemble des versions de la famille d’appareils Xbox10.0.x.1 (inclus) et pour les versions antérieures.
 
 Par défaut, Microsoft Visual Studio spécifie **Windows.Universal** comme la famille d’appareils cibles dans le fichier manifeste du package d’applications cible. Pour spécifier la ou les familles d’appareils pour lesquelles votre application sera proposée dans le Windows Store, configurez manuellement l’élément [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) dans votre fichier Package.appxmanifest.
 
 ## Interface utilisateur et entrée universelle
-
 
 Une application UWP peut s’exécuter sur de nombreux types d’appareils qui ont différentes formes d’entrée, de résolutions d’écran, de densité PPP et d’autres caractéristiques uniques. Windows 10 comprend de nouveaux contrôles, panneaux de disposition et outils universels pour vous aider à adapter votre interface utilisateur aux appareils sur lesquels votre application peut s’exécuter. Par exemple, vous pouvez adapter l’interface utilisateur pour tirer de la différence de résolution d’écran lorsque votre application s’exécute sur un ordinateur de bureau ou sur un appareil mobile.
 
@@ -192,7 +191,7 @@ Les API suivantes donnent accès à l’entrée :
 ## Écriture de code
 
 
-Les options de langage de programmation pour votre [projet Windows 10 dans Visual Studio](https://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx#target_win10) incluent Visual C++, C#, Visual Basic et JavaScript. Pour Visual C++, C# et Visual Basic, vous pouvez utiliser XAML pour une expérience haute fidélité de l’interface utilisateur native. Pour Visual C++, vous pouvez choisir de dessiner avec DirectX, soit à la place de XAML, soit en même temps que XAML. Pour JavaScript, votre couche présentation sera au format HTML, qui est évidemment une norme web interplateforme. Votre code et l’interface utilisateur seront en grande partie universels et s’exécuteront partout de la même façon. En revanche, pour un code adapté à des familles d’appareils particulières, et pour une interface utilisateur adaptée à des facteurs de forme particuliers, vous avez la possibilité d’utiliser un code et une interface utilisateur adaptatifs. Examinons ces différents cas.
+Les options de langage de programmation pour votre [projet Windows 10 dans Visual Studio](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10) incluent Visual C++, C#, Visual Basic et JavaScript. Pour Visual C++, C# et Visual Basic, vous pouvez utiliser XAML pour une expérience haute fidélité de l’interface utilisateur native. Pour Visual C++, vous pouvez choisir de dessiner avec DirectX, soit à la place de XAML, soit en même temps que XAML. Pour JavaScript, votre couche présentation sera au format HTML, qui est évidemment une norme web interplateforme. Votre code et l’interface utilisateur seront en grande partie universels et s’exécuteront partout de la même façon. En revanche, pour un code adapté à des familles d’appareils particulières, et pour une interface utilisateur adaptée à des facteurs de forme particuliers, vous avez la possibilité d’utiliser un code et une interface utilisateur adaptatifs. Examinons ces différents cas.
 
 **Appel d’une API implémentée par votre famille d’appareils cible**
 
@@ -254,10 +253,9 @@ Pour obtenir la liste complète des API Win32 disponibles pour les applications 
 
 ## Expérience utilisateur
 
+Une application Windows universelle permet de tirer parti des fonctionnalités uniques de l’appareil sur lequel elle s’exécute. Votre application peut exploiter toute la puissance d’un appareil de bureau, l’interaction naturelle de la manipulation directe sur une tablette (y compris les entrées via impulsions tactiles et stylet), la portabilité et la commodité des appareils mobiles, la puissance collaborative de [Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) et les autres appareils prenant en charge les applications UWP.
 
-Une application Windows universelle permet de tirer parti des fonctionnalités uniques de l’appareil sur lequel elle s’exécute. Votre application peut exploiter toute la puissance d’un appareil de bureau, l’interaction naturelle de la manipulation directe sur une tablette (y compris les entrées via impulsions tactiles et stylet), la portabilité et la commodité des appareils mobiles, et la puissance collaborative de [Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365).
-
-Une bonne [conception](http://go.microsoft.com/fwlink/?LinkId=258848) est le processus consistant à décider comment les utilisateurs doivent interagir avec votre application, ainsi que la manière dont celle-ci se présentera et fonctionnera. L’expérience utilisateur jouant un rôle considérable dans la satisfaction que procurera votre application, ne lésinez pas sur cette étape. La rubrique [Notions de base de conception](https://dev.windows.com/en-us/design) présente la conception d’une application Windows universelle. Pour plus d’informations sur la conception d’applications UWP susceptibles d’enchanter les utilisateurs, voir [Présentation des applications de la plateforme Windows universelle (UWP) pour les concepteurs](https://msdn.microsoft.com/library/windows/apps/dn958439). Avant de commencer à coder, voir [Notions fondamentales sur les appareils](../input-and-devices/device-primer.md) pour réfléchir à l’expérience d’interaction de l’utilisation de votre application sur les différents facteurs de forme que vous voulez cibler.
+Une bonne [conception](http://go.microsoft.com/fwlink/?LinkId=258848) est le processus consistant à décider comment les utilisateurs doivent interagir avec votre application, ainsi que la manière dont celle-ci se présentera et fonctionnera. L’expérience utilisateur jouant un rôle considérable dans la satisfaction que procurera votre application, ne lésinez pas sur cette étape. La rubrique [Notions de base de conception](https://dev.windows.com/design) présente la conception d’une application Windows universelle. Pour plus d’informations sur la conception d’applications UWP susceptibles d’enchanter les utilisateurs, voir [Présentation des applications de la plateforme Windows universelle (UWP) pour les concepteurs](https://msdn.microsoft.com/library/windows/apps/dn958439). Avant de commencer à coder, voir [Notions fondamentales sur les appareils](../input-and-devices/device-primer.md) pour réfléchir à l’expérience d’interaction de l’utilisation de votre application sur les différents facteurs de forme que vous voulez cibler.
 
 ![Appareils fonctionnant sous Windows](images/1894834-hig-device-primer-01-500.png)
 
@@ -288,6 +286,6 @@ Pour savoir comment soumettre vos applications en vue de leur publication dans l
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

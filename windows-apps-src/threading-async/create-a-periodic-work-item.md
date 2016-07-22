@@ -4,8 +4,8 @@ ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: "Créer un élément de travail périodique"
 description: "Découvrez comment créer un élément de travail qui se reproduit régulièrement."
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
 
 ---
 # Créer un élément de travail périodique
@@ -23,7 +23,7 @@ Découvrez comment créer un élément de travail qui se reproduit régulièreme
 
 Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour créer un élément de travail périodique. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *period* pour spécifier l’intervalle entre les envois. La période est spécifiée à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). L’élément de travail est renvoyé chaque fois que la période est écoulée; vérifiez donc que la période est suffisamment longue pour que la tâche s’accomplisse.
 
-[**CreateTimer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) retourne un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Stockez cet objet au cas où le minuteur devrait être annulé.
+[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) retourne un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Stockez cet objet au cas où le minuteur devrait être annulé.
 
 > **Remarque** Évitez de spécifier la valeur zéro (ou toute valeur inférieure à une milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
 
@@ -182,7 +182,7 @@ L’exemple suivant crée un élément de travail périodique qui se reproduit t
 
 ## Annuler le minuteur
 
-Si nécessaire, appelez la méthode [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) pour mettre fin à la répétition de l’élément de travail périodique. Si l’élément de travail est en cours d’exécution lorsque le minuteur périodique est annulé, il est autorisé à se terminer. L’objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (s’il est fourni) est appelé lorsque toutes les instances de l’élément de travail périodique sont terminées.
+Si nécessaire, appelez la méthode [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) pour mettre fin à la répétition de l’élément de travail périodique. Si l’élément de travail est en cours d’exécution lorsque le minuteur périodique est annulé, il est autorisé à se terminer. L’objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (s’il est fourni) est appelé lorsque toutes les instances de l’élément de travail périodique sont terminées.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -206,6 +206,6 @@ Pour obtenir des informations sur les minuteurs à déclenchement unique, voir [
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

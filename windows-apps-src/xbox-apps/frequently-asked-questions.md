@@ -3,8 +3,9 @@ author: Mtoepke
 title: Forum Aux Questions
 description: Forum aux questions concernant UWP sur Xbox.
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: 34e186049039d5a8366f34e985ad7250ef664f00
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 01173aeabb74d6d703597a9bd7a48c179c688c07
 
 ---
 
@@ -20,7 +21,7 @@ Si vos jeux et applications ne fonctionnent pas ou que vous n’avez pas accès 
 
 Commencez par vérifier que vous travaillez en mode développeur, et non en mode commercial. Vous ne pouvez pas vous connecter à la console XboxOne en mode commercial. Pour connaître le mode actif, il vous suffit d’appuyer sur le bouton **Accueil** et de rechercher la vignette Accueil du développeur sur le côté droit de votre écran. Si cette vignette n’apparaît pas, mais que vous voyez le contenu Gold/Live, vous travaillez en mode commercial. Pour basculer en mode développeur, vous devez exécuter l’application Dev Mode Activation.
 
-> **Remarque** &nbsp;&nbsp;Un utilisateur doit être connecté afin de pouvoir déployer une application.
+> **Remarque**&nbsp;&nbsp;Un utilisateur doit être connecté afin de pouvoir déployer une application.
 
 Pour plus d’informations, voir [Résolution des problèmes de déploiement](frequently-asked-questions.md#fixing-deployment-failures) plus loin sur cette page.
 
@@ -63,9 +64,9 @@ La publication d’applications sera disponible par le biais du Centre de dével
 
 ### Puis-je publier mon jeu?
 
-Vous pouvez utiliser UWP et votre console XboxOne en mode développeur pour créer et tester vos jeux sur XboxOne. Pour publier des jeux UWP, vous devez vous inscrire auprès d’[ID@XBOX](http://www.xbox.com/en-us/Developers/id). 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) offre aux développeurs un accès complet aux API Xbox Live pour leurs jeux, notamment Scores du joueur et Succès, ainsi que la possibilité de tirer parti du mode multijoueur sur plusieurs appareils, des enregistrements dans le cloud et de toutes les fonctionnalités de Xbox Live sur Xbox One. 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) permet également d’accéder à des kits de développement Xbox One pour les jeux qui sollicitent les capacités maximales du matériel Xbox One.
+Vous pouvez utiliser UWP et votre console XboxOne en mode développeur pour créer et tester vos jeux sur XboxOne. Pour publier des jeux UWP, vous devez vous inscrire auprès d’[ID@XBOX](http://www.xbox.com/Developers/id). 
+[ID@XBOX](http://www.xbox.com/Developers/id) offre aux développeurs un accès complet aux API Xbox Live pour leurs jeux, notamment Scores du joueur et Succès, ainsi que la possibilité de tirer parti du mode multijoueur sur plusieurs appareils, des enregistrements dans le cloud et de toutes les fonctionnalités de Xbox Live sur Xbox One. 
+[ID@XBOX](http://www.xbox.com/Developers/id) permet également d’accéder à des kits de développement Xbox One pour les jeux qui sollicitent les capacités maximales du matériel Xbox One.
 
 ### Les moteurs de jeu standard fonctionneront-ils?
 
@@ -87,7 +88,7 @@ Consultez la page [Problèmes connus](known-issues.md) concernant cette version 
 
 Si vous ne parvenez pas à déployer votre application à partir de VisualStudio, les étapes suivantes peuvent vous aider à résoudre le problème. Si vous êtes bloqué, demandez de l’aide sur le forum.
 
-> **Remarque** &nbsp;&nbsp;Un utilisateur doit être connecté afin de pouvoir déployer une application. Si vous recevez un message d’erreur 0x87e10008, assurez-vous qu’un utilisateur est connecté, puis essayez de nouveau.
+> **Remarque**&nbsp;&nbsp;Un utilisateur doit être connecté afin de pouvoir déployer une application. Si vous recevez un message d’erreur 0x87e10008, assurez-vous qu’un utilisateur est connecté, puis essayez de nouveau.
 
 Si VisualStudio ne peut pas se connecter à votre console XboxOne:
 
@@ -97,7 +98,7 @@ Si VisualStudio ne peut pas se connecter à votre console XboxOne:
 3. Si vous ne l’avez pas encore fait, lisez les rubriques [Configuration de l’environnement de développement](development-environment-setup.md) et [Présentation des outils Xbox One](introduction-to-xbox-tools.md).
 
 4. Vérifiez que vous pouvez «effectuer un test ping» sur l’adresseIP de votre console à partir de votre PC de développement.
-> **Remarque** &nbsp;&nbsp;Pour des performances de déploiement optimales, nous vous recommandons d’utiliser une connexion câblée à votre console.
+> **Remarque**&nbsp;&nbsp;Pour des performances de déploiement optimales, nous vous recommandons d’utiliser une connexion câblée à votre console.
 
 5. Assurez-vous que vous utilisez l’option Universel (protocole non chiffré) dans la liste déroulante Authentification de l’onglet **Déboguer**. Pour plus d’informations, voir [Configuration de l’environnement de développement](development-environment-setup.md).
 
@@ -134,6 +135,6 @@ Pour plus d’informations, voir le projet [TVHelpers](https://github.com/Micros
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

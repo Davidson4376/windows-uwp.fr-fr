@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Afficher un écran de démarrage plus longtemps"
 description: "Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable."
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
 

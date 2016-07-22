@@ -4,6 +4,7 @@ Description: "Concevez une interface utilisateur d’instructions qui apprend au
 title: "Recommandations en matière de conception d’une interface utilisateur d’instructions"
 label: Instructional UI
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e
 ms.openlocfilehash: f9f1f34bb02cda89d31caa9453b6e3eb056e7bc9
 

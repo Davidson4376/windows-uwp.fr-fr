@@ -3,6 +3,7 @@ author: jnHs
 Description: "Les produits in-app sont publiés par le biais du tableau de bord du Centre de développement Windows."
 title: Soumissions des produits in-app
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
+translationtype: Human Translation
 ms.sourcegitcommit: 97f4aee47cab9064ac053e7a6e16441d6960d41f
 ms.openlocfilehash: 4a1764dfb8f94409aba973a28ba2999854179196
 

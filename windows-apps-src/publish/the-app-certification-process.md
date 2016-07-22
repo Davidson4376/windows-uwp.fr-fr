@@ -3,6 +3,7 @@ author: jnHs
 Description: "Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur Soumettre au Windows Store, l’application passe à l’étape de certification."
 title: Processus de certification des applications
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
+translationtype: Human Translation
 ms.sourcegitcommit: 4ea19e85d1e151dd1e03d5acf085c186613be35f
 ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
 

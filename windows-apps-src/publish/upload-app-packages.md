@@ -4,8 +4,8 @@ Description: "Sur la page Packages, vous pouvez charger tous les fichiers de pac
 title: "Chargement des packages d’application"
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
+ms.sourcegitcommit: 7f1a40f33a3137e4e0ded674b5bfdf35f11135dc
+ms.openlocfilehash: f628820747f51f7200e2748c2c3f41b58455b2fa
 
 ---
 
@@ -45,12 +45,6 @@ Si nous détectons qu’un ou plusieurs de vos packages sont redondants, nous af
 
 Si nous détectons la présence de packages redondants, nous vous offrons la possibilité de tous les supprimer automatiquement de cette soumission. Vous pouvez également supprimer des packages de la soumission individuellement.
 
-## Packages avec Visual Studio Application Insights
-
-
-Nous vous recommandons d’utiliser [Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086) dans vos packages (ou de l’activer en cochant la case « Afficher la télémétrie dans le Centre de développement Windows » lors de la construction de votre package). Nous pourrons ainsi vous fournir les [informations détaillées sur la télémétrie de l’utilisation des applications](usage-report.md). Si vous ne configurez pas ApplicationInsights dans Microsoft VisualStudio, lorsque nous détectons un package qui l’inclut, nous affichons un message confirmant qu’en soumettant votre package, vous acceptez d’activer la télémétrie de l’utilisation des applications pour votre compte de développeur. Vous pouvez désactiver la télémétrie de l’utilisation des applications à tout moment dans vos **Paramètres du compte**.
-
- 
 
  
 
@@ -60,6 +54,6 @@ Nous vous recommandons d’utiliser [Visual Studio Application Insights](http://
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

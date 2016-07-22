@@ -5,6 +5,7 @@ title: Images et pinceaux image
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 485f3069ff92995082550366839f14be50f674a5
 ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 

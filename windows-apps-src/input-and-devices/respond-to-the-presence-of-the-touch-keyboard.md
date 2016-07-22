@@ -5,6 +5,7 @@ title: "Répondre à la présence du clavier tactile"
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
 ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
 

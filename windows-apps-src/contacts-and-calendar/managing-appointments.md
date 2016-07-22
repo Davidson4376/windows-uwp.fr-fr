@@ -3,6 +3,7 @@ author: Xansky
 description: "L’espace de noms Windows.ApplicationModel.Appointments vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur."
 title: "Gérer des rendez-vous"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
+translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
 ms.openlocfilehash: 020b020d90a52d45fa989e0f630320b4630b955e
 

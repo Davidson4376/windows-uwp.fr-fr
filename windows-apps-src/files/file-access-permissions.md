@@ -4,8 +4,8 @@ ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "Autorisations d’accès aux fichiers"
 description: "Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
 
 ---
 # Autorisations d’accès aux fichiers
@@ -98,7 +98,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
 
     Vous ne pouvez pas accéder aux dossiers local, roaming ni temporary par le biais du sélecteur de fichiers.
 
--   **Périphériques amovibles** De plus, votre application peut accéder par défaut à certains fichiers sur les périphériques connectés. Cela est une option si votre application utilise l’[extension de lecture automatique](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464906.aspx#autoplay) pour se lancer automatiquement lorsque l’utilisateur connecte un appareil, tel qu’un appareil photo ou une cléUSB, à son système. Les fichiers auxquels votre application peut accéder sont limités aux types de fichiers spécifiques qui sont spécifiés par le biais de déclarations d’associations de types de fichiers dans le manifeste de votre application.
+-   **Périphériques amovibles** De plus, votre application peut accéder par défaut à certains fichiers sur les périphériques connectés. Cela est une option si votre application utilise l’[extension de lecture automatique](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay) pour se lancer automatiquement lorsque l’utilisateur connecte un appareil, tel qu’un appareil photo ou une cléUSB, à son système. Les fichiers auxquels votre application peut accéder sont limités aux types de fichiers spécifiques qui sont spécifiés par le biais de déclarations d’associations de types de fichiers dans le manifeste de votre application.
 
     Bien entendu, vous pouvez également accéder à des fichiers et dossiers sur un périphérique amovible en appelant le sélecteur de fichiers (en utilisant [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) et [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) et en laissant l’utilisateur sélectionner les fichiers et dossiers auxquels votre application pourra accéder. Découvrez comment utiliser le sélecteur de fichiers dans [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md).
 
@@ -112,7 +112,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
 
     Par défaut, votre application peut seulement accéder aux fichiers et dossiers situés dans le dossier Téléchargements de l’utilisateur que votre application a créé. Toutefois, vous pouvez accéder aux fichiers et dossiers situés dans le dossier Téléchargements de l’utilisateur en appelant un sélecteur de fichiers ([**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) ou [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) afin que les utilisateurs puissent parcourir et sélectionner les fichiers ou les dossiers auxquels votre application pourra accéder.
 
-    -   Vous pouvez créer un fichier dans le dossier Téléchargements de l’utilisateur comme suit:
+    -   Vous pouvez créer un fichier dans le dossier Téléchargements de l’utilisateur comme suit :
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -166,6 +166,6 @@ Le tableau qui suit dresse une liste d’emplacements supplémentaires auxquels 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

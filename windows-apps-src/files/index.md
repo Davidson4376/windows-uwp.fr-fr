@@ -4,8 +4,8 @@ ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "Fichiers, dossiers et bibliothèques"
 description: "Découvrez la lecture et l’écriture de paramètres d’application, les sélecteurs de fichiers et de dossiers, et les emplacements de bac à sable «sandbox» tels que la bibliothèque de musique/vidéos."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2056a5adee0ce6e65962eeba21fccbfe976c811a
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: ea52cafab084f202705282d63f4a37ec0d65bd03
 
 ---
  # Fichiers, dossiers et bibliothèques
@@ -24,7 +24,7 @@ Vous utilisez les API dans les espaces de noms [Windows.Storage](https://msdn.mi
 | [Utiliser la protection des données d’entreprise (EDP) pour protéger des fichiers](protect-your-enterprise-data-with-edp.md) | Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs aux fichiers les plus courants. |
 | [Utiliser la protection des données d’entreprise (EDP) pour protéger les flux et les mémoires tampons](use-edp-to-protect-streams-and-buffers.md) | Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs aux flux et mémoires tampons les plus courants. |
 | [Accès au contenu du Groupement résidentiel](quickstart-accessing-homegroup-content.md) | Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos. |
-| [Détermination de la disponibilité des fichiers Microsoft OneDrive](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété [StorageFile.isAvailable](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx). |
+| [Détermination de la disponibilité des fichiers Microsoft OneDrive](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété [StorageFile.isAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx). |
 | [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos. |
 | [Suivre les fichiers et dossiers récemment utilisés](how-to-track-recently-used-files-and-folders.md) | Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des éléments utilisés récemment de votre application. La plateforme gère les éléments récents pour vous, en les triant selon le critère du dernier accès, et en supprimant l’élément le plus ancien quand la limite de 25 éléments est atteinte. Toutes les applications ont leurs propres éléments utilisés récemment. |
 | [Accéder à la carte SD](access-the-sd-card.md) | Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité. |
@@ -46,6 +46,6 @@ Vous utilisez les API dans les espaces de noms [Windows.Storage](https://msdn.mi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

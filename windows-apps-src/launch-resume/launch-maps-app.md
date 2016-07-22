@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Lancer l’application Cartes Windows"
 description: "Découvrez comment lancer l’application Cartes Windows à partir de votre application."
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 0dcd15c7d04ed452f69208ad1e68a8949baf40dd
 

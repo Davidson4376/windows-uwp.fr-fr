@@ -5,6 +5,7 @@ title: "Recommandations en matière de conception d’entrées multiples"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
 ms.openlocfilehash: 71c5994e1a308993aef6603ba77ab5e695bde293
 

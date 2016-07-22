@@ -4,8 +4,8 @@ ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: Pinceaux de composition
 description: "Un pinceau peint la zone d’un Visual avec sa sortie. Des pinceaux différents ont différents types de sortie."
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a9f30ca041d320798c7ace596bd9be37f9712129
 
 ---
 # Pinceaux de composition
@@ -41,7 +41,7 @@ Les valeurs de couleur de [**CompositionColorBrush**](https://msdn.microsoft.com
 
 ## Utilisation d’un pinceau couleur
 
-Pour créer un pinceau couleur, appelez la méthode Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx), qui retourne un [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399). La couleur par défaut de **CompositionColorBrush** est \#00000000. L’illustration et le code suivants montrent une petite arborescence d’éléments visuels, et créent un rectangle tracé avec un pinceau de couleur noire et peint à l’aide d’un pinceau de couleur unie, dont la valeur de couleur est 0x9ACD32.
+Pour créer un pinceau couleur, appelez la méthode Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx), qui retourne un [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399). La couleur par défaut de **CompositionColorBrush** est \#00000000. L’illustration et le code suivants montrent une petite arborescence d’éléments visuels, et créent un rectangle tracé avec un pinceau de couleur noire et peint à l’aide d’un pinceau de couleur unie, dont la valeur de couleur est 0x9ACD32.
 
 ![CompositionColorBrush](images/composition-compositioncolorbrush.png)
 ```cs
@@ -79,7 +79,7 @@ LoadImage(Brush,
           "ms-appx:///Assets/liqorice.png");
 ```
 
-Pour créer le pinceau de surface, appelez la méthode Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx). Cette méthode renvoie un objet [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415). Le code ci-dessous illustre le code qui peut être utilisé pour peindre un élément visuel avec le contenu d’un **CompositionSurfaceBrush**.
+Pour créer le pinceau de surface, appelez la méthode Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx). Cette méthode renvoie un objet [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415). Le code ci-dessous illustre le code qui peut être utilisé pour peindre un élément visuel avec le contenu d’un **CompositionSurfaceBrush**.
 
 ```cs
 Compositor _compositor;
@@ -94,14 +94,14 @@ visual.Brush = _surfaceBrush;
 
 ## Configuration de l’étirement et de l’alignement
 
-Il arrive que le contenu de la [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) d’un [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) ne remplisse pas complètement les zones de l’élément visuel qui est peint. Le cas échéant, l’API Composition utilise les paramètres de mode [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) et [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) du pinceau pour déterminer comment remplir l’espace restant.
+Il arrive que le contenu de la [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) d’un [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) ne remplisse pas complètement les zones de l’élément visuel qui est peint. Le cas échéant, l’API Composition utilise les paramètres de mode [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) et [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) du pinceau pour déterminer comment remplir l’espace restant.
 
--   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) et [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) sont de type flottant, et peuvent être utilisés pour contrôler le positionnement du pinceau dans les limites de l’élément visuel.
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) et [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) sont de type flottant, et peuvent être utilisés pour contrôler le positionnement du pinceau dans les limites de l’élément visuel.
     -   La valeur 0,0 aligne le coin gauche/supérieur du pinceau sur le coin gauche/supérieur de l’élément visuel.
     -   La valeur 0,5 aligne le centre du pinceau sur le centre de l’élément visuel.
     -   La valeur 1 aligne le coin droit/inférieur du pinceau sur le coin droit/inférieur de l’élément visuel.
 -   La propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) accepte ces valeurs qui sont définies par l’énumération [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) :
-    -   None : le pinceau n’est pas étiré pour remplir les limites de l’élément visuel. Utilisez ce paramètre Stretch avec précaution : si le pinceau est plus large que les limites de l’élément visuel, le contenu du pinceau est tronqué. La partie du pinceau permettant de peindre les limites de l’élément visuel peut être contrôlée à l’aide des propriétés [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) et [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio).
+    -   None : le pinceau n’est pas étiré pour remplir les limites de l’élément visuel. Utilisez ce paramètre Stretch avec précaution : si le pinceau est plus large que les limites de l’élément visuel, le contenu du pinceau est tronqué. La partie du pinceau permettant de peindre les limites de l’élément visuel peut être contrôlée à l’aide des propriétés [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) et [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio).
     -   Uniform : le pinceau est mis à l’échelle pour s’adapter aux limites de l’élément visuel ; les proportions du pinceau sont conservées. Il s’agit de la valeur par défaut.
     -   UniformToFill : le pinceau est mis à l’échelle afin de remplir complètement les limites de l’élément visuel ; les proportions du pinceau sont conservées.
     -   Fill : le pinceau est mis à l’échelle pour s’adapter aux limites de l’élément visuel. Étant donné que la hauteur et la largeur du pinceau sont mises à l’échelle indépendamment, les proportions d’origine du pinceau risquent de ne pas être préservées. C’est-à-dire que le pinceau risque d’être déformé afin de remplir complètement les limites de l’élément visuel.
@@ -116,6 +116,6 @@ Il arrive que le contenu de la [**ICompositionSurface**](https://msdn.microsoft.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

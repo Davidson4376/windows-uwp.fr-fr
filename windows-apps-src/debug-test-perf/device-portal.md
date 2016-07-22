@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Vue d’ensemble de Windows Device Portal"
 description: "Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB."
-ms.sourcegitcommit: c6f00006e656970e4a5bb11e3368faa92cbb8eca
-ms.openlocfilehash: fe4945bf3048a0c38e844a74fa6fc46706085d6d
+translationtype: Human Translation
+ms.sourcegitcommit: 01e83c14304891ff5eaa895e98bbebac33ee7614
+ms.openlocfilehash: 55cbdc077f839166f32605bbada8e0cc707cf5b3
 
 ---
 # Vue d’ensemble de Windows Device Portal
@@ -156,6 +157,12 @@ Gère les connexions réseau sur l’appareil.  Sauf si vous êtes connecté à 
 
 ![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-network.png)
 
+### Explorateur de fichiers de l’application
+
+Permet d’afficher et de manipuler les fichiers stockés par vos applications chargées de manière indépendante.  Il s’agit d’une nouvelle version interplateforme de l’[outil d’exploration des stockages isolés](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx) de Windows Phone8.1. Pour en savoir plus sur l’explorateur de fichiers de l’application, voir [ce billet de blog](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/). 
+
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-AppFileExplorer.png)
+
 ## Remarques et fonctionnalités de service
 
 ### DNS-SD
@@ -183,10 +190,14 @@ Afin d’offrir une protection contre les [attaquesCSRF](https://wikipedia.org/w
  
 3. Désactivez l’authentification et utilisez le protocoleHTTP. La protectionCSRF s’applique uniquement aux points de terminaisonHTTPS: les connexions au niveau des points de terminaisonHTTP n’ont donc pas besoin de satisfaire les conditions ci-dessus. 
 
-**Remarque**: Un nom d’utilisateur qui commence par « auto-» ne permet pas de se connecter à DevicePortal par le biais du navigateur.  
+**Remarque**: un nom d’utilisateur qui commence par «auto-» ne permet pas de se connecter à DevicePortal par le biais du navigateur.  
+
+#### Protection CSWSH (Cross-Site WebSocket Hijacking)
+
+Afin d’éliminer les risques d’[attaques CSWSH](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), tous les clients ouvrant une connexion WebSocket à DevicePortal doivent également fournir un en-tête Origin correspondant à l’en-tête Host.  Cela prouve à DevicePortal que la requête provient soit de l’interface utilisateur de DevicePortal, soit d’une application cliente valide.  Si la requête ne présente pas d’en-tête Origin, elle sera rejetée. 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ author: msatranjr
 title: Mappages .NET Framework des types Windows Runtime
 description: "Le tableau suivant répertorie les mappages que .NET Framework effectue entre les types de plateforme Windows universelle (UWP) et les types .NET Framework."
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
 

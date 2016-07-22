@@ -3,6 +3,7 @@ author: jnHs
 Description: "Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires."
 title: "Configuration de votre compte de revenu et de vos déclarations fiscales"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
+translationtype: Human Translation
 ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
 ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
 

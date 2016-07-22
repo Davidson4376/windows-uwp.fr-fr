@@ -4,6 +4,7 @@ Description: "Concevez des pages d’aide externe pour obtenir des instructions 
 title: "Recommandations en matière de conception de pages d’aide externe"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 9da639dedf46068fb1f555f90b39ab979114ebf3
 ms.openlocfilehash: 0e21737e33f33d7239162ddcf9d4cdf39db17655
 

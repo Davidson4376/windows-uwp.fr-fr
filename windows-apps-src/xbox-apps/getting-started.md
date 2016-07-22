@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Prise en main du développement d’applications UWP sur XboxOne"
 description: "Procédure de configuration de votre PC et de votre console XboxOne pour le développement UWP."
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
+translationtype: Human Translation
+ms.sourcegitcommit: 5f050eee9430dc7aaa2738a4610a2c4f5083839d
+ms.openlocfilehash: 92a9cc54c6257c35b1e7ae19838b01c8452c4b36
 
 ---
 
@@ -25,7 +26,7 @@ Avant de commencer, vous devez effectuer les opérations suivantes:
 
 2.  Installez la dernière version d’évaluation du Kit de développement logiciel (SDK) Windows10. Vous pouvez l’obtenir à partir du [Programme Windows Insider](http://go.microsoft.com/fwlink/p/?LinkId=780552).
   
-  > **Important** &nbsp;&nbsp;L’installation de cette version d’évaluation du SDK sur votre PC n’autorisera pas la soumission d’applications créées sur ce PC au Windows Store ; par conséquent, n’installez pas cette version sur votre PC de développement de production. 
+  > **Important**&nbsp;&nbsp;L’installation de cette version d’évaluation du SDK sur votre PC n’autorisera pas la soumission d’applications créées sur ce PC au Windows Store; par conséquent, n’installez pas cette version sur votre PC de développement de production. 
 
 ## Configuration de votre console XboxOne
 1.  Activez le mode développeur sur votre console XboxOne. Téléchargez l’application, obtenez le code d’activation, puis entrez-le sur la page xboxactivate de votre compte du Centre de développement. Pour plus d’informations, voir [Activation du Mode développeur sur Xbox One](devkit-activation.md). 
@@ -34,9 +35,9 @@ Avant de commencer, vous devez effectuer les opérations suivantes:
 
 3.  Accédez à l’application Dev Mode Activation, puis sélectionnez **Basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console XboxOne en mode développeur!
   
-  > **Remarque** &nbsp;&nbsp;Vos applications et jeux commerciaux ne s’exécuteront pas en mode développeur, mais les applications ou jeux que vous créerez le feront sans problème. Pour exécuter vos applications et jeux favoris, rebasculez en mode commercial.
+  > **Remarque**&nbsp;&nbsp;Vos applications et jeux commerciaux ne s’exécuteront pas en mode développeur, mais les applications ou jeux que vous créerez le feront sans problème. Pour exécuter vos applications et jeux favoris, rebasculez en mode commercial.
   
-  > **Remarque** &nbsp;&nbsp;Avant de pouvoir déployer une application vers votre XboxOne en Mode développeur, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte XboxLive existant ou créer un compte pour votre console en Mode développeur. 
+  > **Remarque**&nbsp;&nbsp;Avant de pouvoir déployer une application vers votre XboxOne en Mode développeur, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte XboxLive existant ou créer un compte pour votre console en Mode développeur. 
 
 ## Création de votre premier projet dans VisualStudio2015
 
@@ -55,8 +56,10 @@ Pour plus d’informations, voir [Configuration de l’environnement de dévelop
 5.  Une fois cette opération effectuée, votre application commence à se déployer. La première exécution de cette procédure peut se révéler un peu lente (nous devons copier la totalité des outils sur votre console Xbox), mais ne devrait pas prendre plus de quelques minutes; dans le cas contraire, un problème est probablement survenu. Vérifiez que vous avez suivi toutes les étapes ci-dessus (notamment que vous avez défini le champ **Mode d’authentification** sur **Universel**) et que vous utilisez une connexion réseau câblée à votre console Xbox One.  
 
 6. Il ne vous reste plus qu’à vous détendre et à profiter de votre première application exécutée sur la console.  
-   ![Hello World](images/getting-started-hello-world.png)
-   
+
+## C’est tout!
+
+![Hello World](images/getting-started-hello-world.png)
 
 ## Voir aussi  
 - [Forum Aux Questions](frequently-asked-questions.md)  
@@ -65,6 +68,6 @@ Pour plus d’informations, voir [Configuration de l’environnement de dévelop
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

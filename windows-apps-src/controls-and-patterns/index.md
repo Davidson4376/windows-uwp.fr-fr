@@ -1,10 +1,11 @@
 ---
-description: "Bénéficiez de recommandations en matière de conception ainsi que des instructions de codage pour l’ajout de contrôles &amp; de modèles à votre application UWP."
-title: "Contrôles et modèles - Développement d’applications Windows"
+description: "Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45contrôles puissants utilisables avec votre application."
+title: "Contrôles et modèles UWP - Développement d’applications Windows"
 author: mijacobs
+keywords: uwp controls, user interface, app controls
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e
+ms.sourcegitcommit: 7c45a464be250e210df48d3fdef35f00d77e16d5
+ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -44,8 +45,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 <div class="uwpd-list-of-links">
 <ul>
 
-<li>[Zone de dessin active](active-canvas.md)</li>
-
 <li>[Zone de suggestion automatique](auto-suggest-box.md)</li>
 
 <li>[Barres](app-bars.md)</li>
@@ -80,11 +79,15 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 <li>[Listes](lists.md)</li>
 
+<li>[Contrôle de carte](../maps-and-location/controls-map.md)</li>
+
 <li>[Maître/détails](master-details.md)</li>
 
-<li>[Lecture de contenu multimédia](media-playback.md)</li>
-
+<li>[Lecture de contenu multimédia](media-playback.md)
+<ul>
 <li>[Contrôles de transport personnalisés](custom-transport-controls.md)</li>
+</ul>
+</li>
 
 <li>[Volet de navigation](nav-pane.md)</li>
 
@@ -107,7 +110,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 <li>[Contrôles de texte](text-controls.md)
 <ul>
 
-<li>[Polices](fonts.md)</li>
 <li>[Étiquettes](labels.md)</li>
 
 <li>[Zones de mot de passe](password-box.md)</li>
@@ -115,8 +117,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 <li>[Zones d’édition riche](rich-edit-box.md)</li>
 
 <li>[Zones de texte riche](rich-text-block.md)</li>
-
-<li>[Icônes Segoe MDL2](segoe-ui-symbol-font.md)</li>
 
 <li>[Vérification de l’orthographe et prédiction](spell-checking-and-prediction.md)</li>
 
@@ -167,6 +167,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

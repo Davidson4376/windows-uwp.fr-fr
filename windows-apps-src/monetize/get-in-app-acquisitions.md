@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’un produit in-app pour une plage de dates données, et en fonction de filtres facultatifs."
 title: Obtenir les acquisitions de produits in-app
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 ---
 
@@ -33,9 +34,9 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | Méthode | URI de la requête                                                                |
 |--------|----------------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions``` |
 
- 
+<span/> 
 
 ### En-tête de requête
 
@@ -43,9 +44,9 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
 
- 
+<span/> 
 
-### Corps de la demande
+### Paramètres de la requête
 
 Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer les données d’acquisition de l’ensemble desPIA inscrits dans l’application, spécifiez le paramètre *applicationId*. Pour récupérer les données d’acquisition d’unPIA donné, spécifiez le paramètre *inAppProductId*. Si vous spécifiez les deuxvaleurs, le paramètre *inAppProductId* est ignoré.
 
@@ -135,11 +136,11 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 </tbody>
 </table>
 
- 
+<span/>
 
 ### Champs de filtrage
 
-Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter*:
+Le paramètre *filter* de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter*:
 
 -   *filter=market eq ’US’ and gender eq ’m’*
 -   *filter=(market ne ’US’) and (gender ne ’Unknown’) and (gender ne ’m’) and (market ne ’NO’) and (ageGroup ne ’greater than 55’ or ageGroup ne ‘less than 13’)*
@@ -242,7 +243,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: L
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### Exemple de requête
 
@@ -270,6 +271,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000lignes de données d’acquisition dePIA sont associées à la requête. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                                 |
 
+<span/>
 
 ### Valeurs d’acquisition des produits in-app
 
@@ -292,7 +294,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | acquisitionType     | chaîne  | Le type d’acquisition (gratuite, payante, etc.). Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
 | acquisitionQuantity | nombre entier | Le nombre d’acquisitions qui se sont produites.                                                                                                                                                                                                |
 
- 
+<span/> 
 
 ### Exemple de réponse
 
@@ -337,6 +339,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

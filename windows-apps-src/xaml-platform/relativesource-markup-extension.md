@@ -3,6 +3,7 @@ author: jwmsft
 description: "Fournit un moyen de spécifier la source d’une liaison en termes de relation relative dans le graphique d’objet au moment de l’exécution."
 title: Extension de balisage RelativeSource
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
+translationtype: Human Translation
 ms.sourcegitcommit: ec4c9b87655425e82a1cb792d0acc6bee265e9d2
 ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 

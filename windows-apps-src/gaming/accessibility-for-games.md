@@ -3,6 +3,7 @@ author: joannaleecy
 title: Proposer des jeux accessibles
 description: "Découvrez comment assurer l’accessibilité de vos jeux. Appliquez le principe de conception de jeux inclusifs pour garantir l’accessibilité des jeux."
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
+translationtype: Human Translation
 ms.sourcegitcommit: 2492ff5c8b3ba0331e831234943a1db124f8fa4f
 ms.openlocfilehash: 2b78d767a7ac75e27f759c0eb06953e6158fb88b
 
@@ -216,6 +217,6 @@ Vous trouverez ci-après quelques sites externes fournissant des informations su
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Créer une application «Hello World» (XAML)"
 description: "Ce didacticiel vous apprend à utiliser le langage XAML (Extensible Application Markup Language) avec C# pour créer une application «Hello World» simple ciblant la plateforme Windows universelle (UWP) sur Windows10."
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 0a524d51f713c37ce2069b4e750bf3ed20fe19ab
 
 ---
 
@@ -45,6 +45,8 @@ Vous allez apprendre à effectuer les opérations suivantes :
 3.  Dans le volet gauche, développez **Installé &gt; Modèles &gt; Visual C# &gt; Windows**, puis sélectionnez le groupe de modèles **Universel**. Le volet central de la boîte de dialogue affiche une liste de modèles de projets pour les applications de plateforme Windows universelle (UWP).
 
    ![Fenêtre Nouveau projet ](images/newproject-cs.png)
+   
+   (Si vous ne voyez pas ces options, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
 
 4.  Dans le volet central, sélectionnez le modèle **Application vide (Windows universel)**.
 
@@ -212,7 +214,9 @@ Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre 
 -   **Émulateur <SDK version> WVGA 4pouces 1Go**
 -   etc. (Divers émulateurs associés à d’autres configurations)
 
-Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
+(Si vous ne voyez pas les émulateurs, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
+
+Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.10240.0 WVGA 4pouces 512Mo**.
 **Pour démarrer le débogage sur un émulateur d’appareil mobile**
 
 1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) situé dans la barre d’outils **Standard**, choisissez **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
@@ -239,7 +243,7 @@ Vous pouvez également remarquer que vous pouvez taper du texte dans la [**TextB
 
 Les éléments XAML peuvent envoyer des messages lorsque certains événements se produisent. Ces messages d’événement vous permettent de réagir en réponse à l’événement. Insérez votre code de réponse à l’événement dans une méthode de gestionnaire d’événements. L’un des événements les plus courants dans bon nombre d’applications est un clic d’utilisateur sur un [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265).
 
-Créons un gestionnaire d’événements pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) de votre bouton. Le gestionnaire d’événements obtient le nom de l’utilisateur auprès du contrôle `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) et l’utilise pour sortir des salutations dans [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) `greetingOutput`.
+Créons un gestionnaire d’événements pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) de votre bouton. Le gestionnaire d’événements obtient le nom de l’utilisateur auprès du contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) `nameInput` et l’utilise pour générer une salutation dans le contrôle [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) `greetingOutput`.
 
 ### Utilisation d’événements qui fonctionnent pour les entrées tactiles, de la souris et du stylet
 
@@ -261,7 +265,7 @@ Quels événements devez-vous gérer ? Sachant que vos applications du Windows S
    <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
 ```    
 
-5.  Ajoutez du code au gestionnaire d’événements que vous avez créé dans la page code-behind. Dans le gestionnaire d’événements, récupérez le nom de l’utilisateur à partir du contrôle `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) et servez-vous-en pour créer des salutations. Utilisez le contrôle `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) pour afficher le résultat.
+5.  Ajoutez du code au gestionnaire d’événements que vous avez créé dans la page code-behind. Dans le gestionnaire d’événements, récupérez le nom de l’utilisateur à partir du contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) `nameInput` et servez-vous-en pour créer une salutation. Utilisez le contrôle [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) `greetingOutput` pour afficher le résultat.
     
 ```csharp    
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -309,9 +313,9 @@ Nous allons à présent adapter l’interface utilisateur à différentes taille
 
 Si vous avez utilisé un élément [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) dans des versions précédentes du langage XAML, vous pouvez remarquer que le code XAML spécifié ici utilise une syntaxe simplifiée.
 
-L’élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) nommé `wideState` comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 641. Cela signifie que l’état ne doit s’appliquer que si la largeur de la fenêtre n’est pas inférieure à la valeur minimale de 641pixels. Vous ne définissez aucun objet [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) pour cet état, de sorte qu’il utilise les propriétés de disposition que vous avez définies dans le code XAML pour le contenu de la page.
+L’élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) nommé `wideState` comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 641. Cela signifie que l’état ne doit s’appliquer que si la largeur de la fenêtre n’est pas inférieure à la valeur minimale de 641pixels. Vous ne définissez aucun objet [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) pour cet état, de sorte qu’il utilise les propriétés de disposition que vous avez définies dans le code XAML pour le contenu de la page.
 
-Le second élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 0. Cet état est appliqué lorsque la largeur de la fenêtre est supérieure à0, mais inférieure à 641pixels. (À 641 pixels, l’état `wideState` s’applique.) Dans cet état, vous définissez certains objets [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) de façon à modifier les propriétés de disposition des contrôles dans l’interface utilisateur :
+Le second élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 0. Cet état est appliqué lorsque la largeur de la fenêtre est supérieure à0, mais inférieure à 641pixels. (À 641 pixels, l’état `wideState` s’applique.) Dans cet état, vous définissez certains objets [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) de façon à modifier les propriétés de disposition des contrôles dans l’interface utilisateur :
 
 -   Vous remplacez l’[**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) **Horizontal** de l’élément `inputPanel` par l’orientation **Vertical**.
 -   Vous ajoutez une marge supérieure de 4 à l’élément `inputButton`.
@@ -323,6 +327,6 @@ Félicitations ! Vous venez de créer votre première application pour Windows 1
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

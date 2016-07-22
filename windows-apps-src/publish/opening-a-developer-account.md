@@ -3,6 +3,7 @@ author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: "Ouverture d’un compte de développeur"
 description: "Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte."
+translationtype: Human Translation
 ms.sourcegitcommit: c4a753b7642354c4fe42cff721fb21337b14528f
 ms.openlocfilehash: 979df6390fef01a32fb1728956622fbfe38bafa9
 

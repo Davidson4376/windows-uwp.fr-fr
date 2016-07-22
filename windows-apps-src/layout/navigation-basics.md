@@ -23,8 +23,7 @@ Pour être réussie et sensée pour l’utilisateur, une expérience de navigati
 
     La création d’une structure de navigation logique pour l’utilisateur est essentielle pour assurer une expérience de navigation intuitive.
 
--   
-            **Éléments de navigation compatibles** qui prennent en charge la structure choisie.
+-   **Éléments de navigation compatibles** qui prennent en charge la structure choisie.
 
     Les éléments de navigation aident l’utilisateur à accéder au contenu souhaité et à savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 

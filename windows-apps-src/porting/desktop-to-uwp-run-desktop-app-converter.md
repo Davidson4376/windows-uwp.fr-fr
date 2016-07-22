@@ -3,8 +3,9 @@ author: awkoren
 Description: "Exécutez le Convertisseur d’applications de bureau pour convertir une application de bureau Windows (Win32, WPF, Windows Forms) en une application UWP."
 Search.Product: eADQiWindows 10XVcnh
 title: "Aperçu du Convertisseur d’applications de bureau (projet Centennial)"
-ms.sourcegitcommit: 07016fabb8b49e57dd0ae4ef68447451d31aa2dc
-ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8a22285467005722ad6ee5bf4f129a7dfdea944c
 
 ---
 
@@ -22,9 +23,14 @@ Le convertisseur exécute le programme d’installation de bureau dans un enviro
 
 Cette section présente les modifications entre les versions du Convertisseur d’applications de bureau. 
 
-### 6/16/2016
+### 07/07/2016 (v0.1.22)
 
-* Le Convertisseur d’applications de bureau (v0.1.20) résout les problèmes empêchant la réussite des conversions sur les dernières builds de Windows10InsiderPreview. 
+* Ajout de la prise en charge de la détection automatique des extensions d’environnement de votre application de bureau et de leur déclaration automatique dans le fichier AppXManifest de votre package UWP. Pour en savoir plus sur les extensions de bureau, voir [**Extensions d’applications de bureau converties**](desktop-to-uwp-extensions.md). 
+* Amélioration de la détection de la propriété AppExecutable pour un vaste ensemble d’applications. 
+
+### 16/06/2016 (v0.1.20)
+
+* Résolution de problèmes provoquant l’échec des conversions sur les dernières builds de Windows10InsiderPreview. 
 * Remplacement de ```–CreateX86Package``` par ```–PackageArch```, ce qui vous permet de préciser l’architecture du package généré. 
 
 ### 6/8/2016
@@ -61,7 +67,7 @@ Votre ordinateur doit disposer des fonctionnalités minimales suivantes:
 + Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
 
 ### Ressources recommandées
-+ [Kit de développement logiciel (SDK) Windows pour Windows10](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
++ [Kit de développement logiciel (SDK) Windows pour Windows10](http://go.microsoft.com/fwlink/?LinkId=615097)
 
 ## Configurer le Convertisseur d’applications de bureau   
 Le Convertisseur d’applications de bureau s’appuie sur les fonctionnalités de Windows 10 fournies comme versions d’évaluation des builds Windows Insider Preview. Assurez-vous que vous exécutez la dernière build pour utiliser le convertisseur.
@@ -114,7 +120,7 @@ PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe
 ```
 
 ## Déployer votre AppX converti
-Utilisez l’applet de commande [Add-AppxPackage](https://technet.microsoft.com/en-us/library/hh856048.aspx) dans PowerShell pour déployer un package de l’application (.appx) signé sur un compte d’utilisateur. Pour signer votre package .appx, consultez la section «Signature de votre package .Appx». En outre, vous pouvez inclure le paramètre *Register* de l’applet de commande pour effectuer l’installation à partir d’un dossier de fichiers non empaquetés au cours du processus de développement. Pour plus d’informations, voir [Déployer et déboguer votre application UWP convertie](desktop-to-uwp-deploy-and-debug.md).
+Utilisez l’applet de commande [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) dans PowerShell pour déployer un package de l’application (.appx) signé sur un compte d’utilisateur. Pour signer votre package .appx, consultez la section «Signature de votre package .Appx». En outre, vous pouvez inclure le paramètre *Register* de l’applet de commande pour effectuer l’installation à partir d’un dossier de fichiers non empaquetés au cours du processus de développement. Pour plus d’informations, voir [Déployer et déboguer votre application UWP convertie](desktop-to-uwp-deploy-and-debug.md).
 
 ## Signer votre package .Appx
 
@@ -224,7 +230,7 @@ L’aperçu du Convertisseur d’applications de bureau prend désormais en char
 
 ## Voir également
 + [Obtenir le Convertisseur d’applications de bureau](http://go.microsoft.com/fwlink/?LinkId=785437)
-+ [Porter votre application de bureau vers la plateforme Windows universelle](https://developer.microsoft.com/en-us/windows/bridges/desktop)
++ [Porter votre application de bureau vers la plateforme Windows universelle](https://developer.microsoft.com/windows/bridges/desktop)
 + [Porter les applications de bureau vers UWP à l’aide du Convertisseur d’applications de bureau](https://channel9.msdn.com/events/Build/2016/P504)
 + [Projet Centennial: Porter des applications de bureau existantes vers la plateforme Windows universelle](https://channel9.msdn.com/events/Build/2016/B829)  
 + [UserVoice pour Desktop Bridge (projet Centennial)](http://aka.ms/UserVoiceDesktopToUwp)
@@ -232,6 +238,6 @@ L’aperçu du Convertisseur d’applications de bureau prend désormais en char
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

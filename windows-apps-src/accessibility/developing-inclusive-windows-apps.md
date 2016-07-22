@@ -6,8 +6,8 @@ title: "Développement d’applications Windows10 inclusives"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 826c6984962ecbe3b49ba3753e9cc795344f5057
 
 ---
 
@@ -44,7 +44,7 @@ L’objectif est d’aider l’utilisateur à comprendre la façon dont l’inte
 
 Pour en savoir plus sur la navigation au clavier parmi les éléments de l’interface utilisateur, voir [Accessibilité du clavier](keyboard-accessibility.md).  
 
-En outre, le livre électronique [Engineering Software for Accessibility](https://www.microsoft.com/en-us/download/details.aspx?id=19262) (Conception de logiciels accessibles) comporte un chapitre sur ce sujet intitulé _Conception de la hiérarchie logique_.
+En outre, le livre électronique [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) (Conception de logiciels accessibles) comporte un chapitre sur ce sujet intitulé _Conception de la hiérarchie logique_.
 
 ## Couleur et contraste  
 L’une des fonctionnalités d’accessibilité intégrées dans Windows est le mode Contraste élevé, qui améliore le contraste de couleur du texte et des images sur l’écran de l’ordinateur. Pour certaines personnes, l’augmentation du contraste des couleurs permet de réduire la fatigue visuelle et de faciliter la lecture. Lorsque vous vérifiez votre interface utilisateur en mode de contraste élevé, vous souhaitez vous assurer que les contrôles ont été codés de manière cohérente et avec les couleurs système (pas à l’aide de couleurs codées en dur) pour vous assurer qu’ils seront en mesure de voir tous les contrôles de l’écran qu’un utilisateur n’utilisant pas le contraste élevé pourrait voir.  
@@ -53,7 +53,7 @@ XAML
 ```xml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-Pour plus d’informations sur l’utilisation des couleurs système et des ressources, voir [Ressources de thème XAML](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-theme-resources).
+Pour plus d’informations sur l’utilisation des couleurs système et des ressources, voir [Ressources de thème XAML](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources).
 
 Tant que vous n’avez pas remplacé les couleurs système, une application UWP prend en charge les thèmes à contraste élevé par défaut. Si un utilisateur a décidé que le système doit utiliser un thème à contraste élevé parmi les outils d’accessibilité ou les paramètres système, l’infrastructure utilise automatiquement des couleurs et des paramètres de style produisant une disposition à contraste élevé et un rendu pour les contrôles et les composants de l’interface utilisateur.   
 
@@ -80,11 +80,11 @@ Pour en savoir plus, consultez la rubrique [Liste de vérification de l’access
 * [Conception de logiciels inclusifs](designing-inclusive-software.md)  
 * [Conception inclusive](http://design.microsoft.com/inclusive)
 * [Pratiques d’accessibilité à éviter](practices-to-avoid.md)
-* [Conception de logiciels accessibles](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
+* [Conception de logiciels accessibles](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Hub de développeurs axés sur l’accessibilité Microsoft](https://msdn.microsoft.com/enable)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

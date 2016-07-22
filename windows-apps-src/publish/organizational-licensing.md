@@ -3,6 +3,7 @@ author: jnHs
 Description: "Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section Clés de produit réservées aux entreprises de la page Tarification et disponibilité relative à la soumission d’une application."
 title: Options de gestion des licences organisationnelles
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
+translationtype: Human Translation
 ms.sourcegitcommit: 13603b66bd6168073b855bbe37ea92763e14a5a0
 ms.openlocfilehash: e4adbc66b4b4a88ca3787737e9bbddf0d937b604
 

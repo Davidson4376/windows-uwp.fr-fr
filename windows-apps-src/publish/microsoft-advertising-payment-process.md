@@ -3,8 +3,8 @@ author: jnHs
 title: Processus de paiement de Microsoft Advertising
 description: Obtenez des informations sur le processus de paiement, les seuils et les devises pour les revenus Microsoft Advertising.
 translationtype: Human Translation
-ms.sourcegitcommit: 87b34cd37c7594bb76dbf0f1cd388dbba73ea456
-ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
+ms.sourcegitcommit: b54ea21d12f68830295f59af219c7fe811edd832
+ms.openlocfilehash: 5805f316ed7bc08268fd6c201d740f3a3222629e
 
 ---
 
@@ -17,7 +17,6 @@ Le paiement des revenus publicitaires est effectué chaque mois et est soumis à
 Une fois que le seuil est atteint et qu’un paiement devient visible dans la section **Paiement à venir** de votre [résumé de paiement](payout-summary.md), Microsoft effectue le paiement sous quinze jours. Si le solde de vos revenus est inférieur au seuil, les revenus continuent à s’accumuler jusqu'à ce que le seuil soit atteint.
 
 Les paiements sont effectués dans votre devise locale, à l’exception des pays/régions marqués d’un astérisque dans le tableau ci-dessous. Sur ces marchés, les paiements sont effectués en dollars américains (USD). Des frais peuvent être appliqués par votre banque ou par PayPal pour convertir les dollars américains dans votre devise locale. Nous vous encourageons à contacter votre banque ou PayPal pour connaître l’impact potentiel des frais ou les autres conditions relatives à la réception du paiement.
-
 
 
 |  Pays/région | Devise | Montant du seuil | 
@@ -51,7 +50,7 @@ Les paiements sont effectués dans votre devise locale, à l’exception des pay
 |  Tchad | XAF  | 30000XAF | 
 |  Chili* | USD  | 25000CLP | 
 |  Chine | USD  | 50USD | 
-|  Colombie* | USD  | 100000COP| 
+|  Colombie* | COP  | 100000COP| 
 |  Comores | USD  | 50USD | 
 |  Congo | XAF  | 30000XAF| 
 |  Congo (République démocratique du) | USD  | 50USD | 
@@ -60,7 +59,7 @@ Les paiements sont effectués dans votre devise locale, à l’exception des pay
 |  Croatie | HRK  | 350HRK | 
 |  Chypre | EUR  | 50EUR | 
 |  République tchèque| CZK  | 1000CZK | 
-|  Danemark | DKK  | 250DDK| 
+|  Danemark | DDK  | 250DDK| 
 |  Dominique | XCD  | 135XCD | 
 |  République dominicaine | DOP  | 2000DOP | 
 |  Équateur | USD  | 50USD | 
@@ -83,8 +82,8 @@ Les paiements sont effectués dans votre devise locale, à l’exception des pay
 |  Hong Kong (R.A.S.) | HKD  | 500HKD | 
 |  Hongrie | HUF  | 10000HUF | 
 |  Islande | USD  | 50USD | 
-|  Inde | INR  | Non | 
-|  Indonésie | IDR  | 2500INR | 
+|  Inde | INR  | 2500INR | 
+|  Indonésie | IDR  | 660000IDR | 
 |  Irak | USD  | 50USD | 
 |  Irlande | EUR  | 50EUR | 
 |  Israël | ILS  | 200ILS | 
@@ -94,9 +93,10 @@ Les paiements sont effectués dans votre devise locale, à l’exception des pay
 |  Jordanie | JOD  | 35JOD | 
 |  Kazakhstan | KZT  | 9200KZT | 
 |  Kenya | KES  | 5000KES | 
+|  Corée du Sud* | WON | 50000WON |
 |  Koweït | KWD  | 15KWD | 
 |  Laos | USD  | 50USD | 
-|  Lettonie | LVL | 30LVL | 
+|  Lettonie | EUR | 50EUR | 
 |  Liban | LBP  | 75000LBP | 
 |  Liberia | USD  | 50USD | 
 |  Liechtenstein | CHF  | 50CHF | 
@@ -144,7 +144,6 @@ Les paiements sont effectués dans votre devise locale, à l’exception des pay
 |  Slovénie | EUR  | 50EUR | 
 |  Somalie | USD  | 50USD | 
 |  Afrique du Sud | ZAR  | 500ZAR | 
-|  Corée du Sud* | WON | 50000WON |
 |  Espagne | EUR  | 50EUR | 
 |  Sri Lanka | LKR  | 6600LKR | 
 |  Suède | SEK  | 350SEK | 
@@ -161,7 +160,7 @@ Les paiements sont effectués dans votre devise locale, à l’exception des pay
 |  Turquie | TRY  | 130TRY | 
 |  Turkménistan | USD  | 50USD | 
 |  Ouganda | UGX  | 152000UGX | 
-|  Ukraine | USD  | | 
+|  Ukraine | USD  | 50USD | 
 |  Émirats arabes unis | EUR  | 50EUR | 
 |  Royaume-Uni | GBP  | 35GBP | 
 |  États-Unis | USD  | 50USD | 
@@ -176,13 +175,12 @@ Les paiements sont effectués dans votre devise locale, à l’exception des pay
 ## Rubriques connexes
 
 * [Configuration de votre compte de revenu et de vos déclarations fiscales](setting-up-your-payout-account-and-tax-forms.md)
-* [Rémunération](getting-paid-apps.md)
 * [Résumé du paiement](payout-summary.md)
 * [Monétisation à l’aide des publicités](monetize-with-ads.md)
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

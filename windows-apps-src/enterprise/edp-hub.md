@@ -6,16 +6,17 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Protection des données d’entreprise (EDP, EnterpriseDataProtection)"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 97bdbce8360fabad63f9fe7e85e5172ccd83f403
+ms.sourcegitcommit: 235a0d96c0cf86fdb16a0a6b933fc0f2bbed99f0
+ms.openlocfilehash: 2cae64ff234a4fb85fd6a3e50ade3b91480b36c8
 
 ---
 
-# Protection des données d’entreprise (EDP, EnterpriseDataProtection)
+# Protection des données d’entreprise (PDE)
 
-__Remarque__ La stratégie de protection des données d’entreprise (EDP) ne peut pas être appliquée sur Windows 10, version 1511 (build 10586) ou antérieure.
+> [!NOTE]
+> La stratégie de protection des données d’entreprise (PDE) ne peut pas être appliquée sur Windows10, version1511 (build 10586) ou antérieure.
 
-Cette rubrique fournit un aperçu complet du point de vue développeurs de la manière dont la fonctionnalité de protection des données d’entreprise (EDP) est liée aux fichiers, aux mémoires tampons, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées.
+Cette rubrique fournit un aperçu complet du point de vue des développeurs de la manière dont la protection des données d’entreprise (PDE) se rapporte aux fichiers, aux mémoires tampons, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées.
 
 Pour en savoir plus sur la protection EDP du point de vue des utilisateurs finaux et des administrateurs, voir [Vue d’ensemble de la protection des données d’entreprise](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx).
 
@@ -56,12 +57,13 @@ La tâche suivante consiste à créer une application prenant en charge l’iden
 
 Une fois votre application figurant dans la liste, celle-ci peut lire les données protégées. Et, par défaut, toutes les sorties de données de votre application sont automatiquement protégées par le système. Cette protection automatique est mise en place dans la mesure où l’entreprise de gestion, doit d’une manière ou une autre, s’assurer que les données d’entreprise restent sous son propre contrôle. Toutefois, seule une surveillance étroite de ce type permet d’atteindre cet objectif. Il est préférable de demander au système de vous faire suffisamment confiance pour vous donner plus de pouvoir et de flexibilité. Et, le prix à payer est de rendre votre application plus intelligente. Cela implique non seulement de faire figurer l’application sur la liste d’autorisation, mais également de la rendre spécifique aux entreprises et de la déclarer comme tel.
 
-Votre application est compatible dans la mesure où elle utilise les techniques que nous allons décrire pour protéger les données d’entreprise de manière autonome que les données soient au repos, en cours d’utilisation ou de transfert. Votre application compatible reconnaît les sources de données d’entreprise ainsi que les données d’entreprise et les protège lorsqu’elles arrivent dans votre application. Être compatible signifie également prendre en charge et obéir à la stratégie EDP chaque fois que des données quittent votre application. Cela implique d’empêcher le transfert de contenu vers un point de terminaison réseau n’appartenant pas à l’entreprise, en habillant les données sous forme chiffrée portable avant d’autoriser leur itinérance et en demandant potentiellement (selon les paramètres de stratégie) l’autorisation à l’utilisateur avant de coller les données d’entreprise dans une application qui ne figure pas sur la liste d’autorisation. Une fois votre application rendue compatible, celle-ci l’annonce au système en déclarant la fonctionnalité **enterpriseDataPolicy** restreinte. Pour en savoir plus sur l’utilisation des fonctionnalités restreintes, voir [Fonctionnalités restreintes et spécifiques](https://msdn.microsoft.com/library/windows/apps/mt270968#special_and_restricted_capabilities).
+Votre application est compatible dans la mesure où elle utilise les techniques que nous allons décrire pour protéger les données d’entreprise de manière autonome que les données soient au repos, en cours d’utilisation ou de transfert. Votre application compatible reconnaît les sources de données d’entreprise ainsi que les données d’entreprise et les protège lorsqu’elles arrivent dans votre application. Être compatible signifie également prendre en charge et obéir à la stratégie EDP chaque fois que des données quittent votre application. Cela implique d’empêcher le transfert de contenu vers un point de terminaison réseau n’appartenant pas à l’entreprise, en habillant les données sous forme chiffrée portable avant d’autoriser leur itinérance et en demandant potentiellement (selon les paramètres de stratégie) l’autorisation à l’utilisateur avant de coller les données d’entreprise dans une application qui ne figure pas sur la liste d’autorisation. Une fois votre application rendue compatible, celle-ci l’annonce au système en déclarant la fonctionnalité **enterpriseDataPolicy** restreinte. Pour en savoir plus sur l’utilisation des fonctionnalités restreintes, voir [Fonctionnalités restreintes et spécifiques](https://msdn.microsoft.com/library/windows/apps/mt270968#special-and-restricted-capabilities).
 
 Dans l’idéal, toutes les données d’entreprise sont protégées, à la fois au repos et en cours de transfert. Toutefois, Il existe inévitablement une brève période entre le moment où les données sont générées et celui où elles sont protégées. Parfois, les données d’entreprise peuvent se trouver sur un point de terminaison réseau d’entreprise sans être chiffrées. Une application compatible est capable de protéger de manière autonome de telles données. Les applications autorisées mains non compatibles devront avoir une protection imposée par le système.
 
 Cela vient du fait qu’une application non compatible s’exécute toujours en mode entreprise. Le système s’en assure. Toutefois, une application compatible est libre de passer du mode entreprise au mode personnel à tout moment et en fonction des données qu’elle utilise. Il est également important pour une application compatible de respecter les données personnelles et de ne pas les marquer comme des données d’entreprise. Une application compatible peut gérer simultanément des données d’entreprise et des données personnelles, tant que ces promesses sont tenues. La section suivante montre comment basculer entre ces modes dans le code.
 
+<span id="confirming-an-identity-is-managed"/>
 ## Confirmer la gestion d’une identité et déterminer le niveau de mise en œuvre d’une stratégie de protection
 
 En règle générale, votre application obtient une identité d’entreprise à partir d’une ressource externe telle qu’une adresse de messagerie, ou d’un domaine qui est géré ou d’un nom d’hôte d’uri. Vous pouvez appeler [**ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027) pour obtenir l’identité gérée, le cas échéant, pour un nom d’hôte de point de terminaison réseau.
@@ -99,15 +101,15 @@ Comme indiqué, vous déterminez d’abord si la stratégie EDP est définie pou
 
 L’étape suivante consiste à déterminer et mettre en œuvre le niveau de mise en œuvre de la stratégie. Pour déterminer le niveau de mise en œuvre de la stratégie, appelez la méthode [**GetEnforcementLevel**](https://msdn.microsoft.com/library/windows/apps/mt608406). Lorsqu’une stratégie d’entreprise est appliquée sur l’identité, votre application compatible doit aider le système à mettre en œuvre la stratégie en appelant les API [**ProtectionPolicyManager**](https://msdn.microsoft.com/library/windows/apps/dn705170) au cours des activités de l’interface utilisateur ou des accès au réseau pour s’assurer que le système marque les transferts de données avec cette identité si nécessaire. Vous en saurez plus sur la façon d’interpréter le niveau de mise en œuvre et de mettre en pratique en consultant ce guide. L’exemple de code montre également comment passer en mode entreprise et revenir au mode personnel, en définissant la valeur [**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) sur l’identité d’entreprise, ou sur la chaîne vide, respectivement. De nouveau, notez que l’entrée et la sortie du mode entreprise n’a de sens qu’avec une identité gérée.
 
-## Fonctionnalités EDP en un coup d’œil
+## Fonctionnalités PDE en un coup d’œil
 
 
-**Protection des fichiers et de la mémoire tampon.**
+**Protection des fichiers et des mémoires tampons**
 
 -   Votre application peut protéger, conteneuriser et effacer les données associées à une identité d’entreprise.
--   La gestion des clés est gérée par Windows. Windows utilise les clés RMS de l’entreprise lorsqu’elles sont disponibles sur l’appareil. Dans le cas contraire, Windows bascule en protection par réinitialisation sélective locale.
+-   La gestion des clés est gérée par Windows. Windows utilise les clés RMS de l’entreprise lorsqu’elles sont disponibles sur l’appareil. Dans le cas contraire, Windows revient à la protection par réinitialisation sélective locale.
 
-**Gestion des stratégies de l’appareil.**
+**Gestion des stratégies de l’appareil**
 
 -   Votre application peut demander l’identité (entreprise ou organisation) qui gère l’appareil.
 -   Votre application peut protéger les utilisateurs contre la divulgation accidentelle de données en associant une identité avec les données en question.
@@ -134,7 +136,7 @@ Voir [Marquage de connexions réseau avec l’identité EDP](../networking/taggi
 
 ## Protection des données verrouillées et tâches en arrière-plan
 
-Une organisation peut choisir d’administrer une stratégie sécurisée de protection des données verrouillées, dans laquelle les clés de chiffrement nécessaires pour accéder aux ressources protégées sont temporairement supprimées de la mémoire d’un appareil lorsqu’il est verrouillé. Pour préparer votre application à cette éventualité, consultez la section [Gérer les événements de verrouillage d’un appareil et éviter de laisser du contenu non protégé en mémoire](#handle_lock_events) de cette rubrique. En outre, si votre application a une tâche en arrière-plan qui nécessite de protéger les fichiers, voir [Protéger les données d’entreprise dans un nouveau fichier (pour une tâche en arrière-plan)](../files/protect-your-enterprise-data-with-edp.md#protect_data_new_file_bg).
+Une organisation peut choisir d’administrer une stratégie sécurisée de protection des données verrouillées, dans laquelle les clés de chiffrement nécessaires pour accéder aux ressources protégées sont temporairement supprimées de la mémoire d’un appareil lorsqu’il est verrouillé. Pour préparer votre application à cette éventualité, consultez la section [Gérer les événements de verrouillage d’un appareil et éviter de laisser du contenu non protégé en mémoire](#handle-lock-events) de cette rubrique. En outre, si votre application a une tâche en arrière-plan qui nécessite de protéger les fichiers, voir [Protéger les données d’entreprise dans un nouveau fichier (pour une tâche en arrière-plan)](../files/protect-your-enterprise-data-with-edp.md#protect-data-new-file-bg).
 
 ## Mise en œuvre de la stratégie de l’interface utilisateur
 
@@ -172,7 +174,7 @@ private void SwitchMailbox(Mailbox targetMailbox)
     }
 }
 ```
-
+<span id="handle-lock-events"/>
 ## Gérer les événements de verrouillage d’un appareil et éviter de laisser du contenu non protégé en mémoire
 
 
@@ -378,6 +380,6 @@ Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

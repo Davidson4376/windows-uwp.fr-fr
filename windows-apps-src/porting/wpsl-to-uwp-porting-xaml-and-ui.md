@@ -3,8 +3,9 @@ author: mcleblanc
 description: "La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif se transpose extrêmement bien entre les applications Silverlight pour Windows Phone et les applications de plateforme Windows universelle (UWP)."
 title: Portage du balisage XAML et de la couche interface utilisateur de Silverlight pour Windows Phone vers UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
-ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
-ms.openlocfilehash: a34133b42872ce949644dc951255e6214164adad
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7fa520443f242844cd661d70bad0fdeb2297fb1d
 
 ---
 
@@ -154,9 +155,9 @@ Les barres de l’application Silverlight pour Windows Phone et les boutons de l
 
 Les fonctionnalités associées aux liaisons des applications UWP présentent actuellement les limitations suivantes :
 
--   Il n’existe aucune prise en charge intégrée pour la validation de l’entrée des données et les interfaces [**IDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx) et [**INotifyDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifydataerrorinfo.aspx).
+-   Il n’existe aucune prise en charge intégrée pour la validation de l’entrée des données et les interfaces [**IDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.idataerrorinfo.aspx) et [**INotifyDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.inotifydataerrorinfo.aspx).
 -   La classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) n’inclut pas les propriétés de mise en forme étendues disponibles dans Silverlight pour Windows Phone. Toutefois, vous pouvez implémenter [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) pour produire une mise en forme personnalisée.
--   Les méthodes [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) acceptent des chaînes de langage comme paramètres au lieu d’objets [**CultureInfo**](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx).
+-   Les méthodes [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) acceptent des chaînes de langage comme paramètres au lieu d’objets [**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx).
 -   La classe [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) ne fournit pas de prise en charge intégrée pour le tri et le filtrage, et le regroupement fonctionne différemment. Pour plus d’informations, voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946) et [Exemple de liaison de données](http://go.microsoft.com/fwlink/p/?linkid=226854).
 
 Bien que les mêmes fonctionnalités de liaison soient toujours majoritairement prises en charge, Windows10 offre un nouveau mécanisme de liaison plus performant appelé liaisons compilées, qui utilisent l’extension de balisage {x:Bind}. Voir [Liaison de données : accroître les performances de votre application grâce aux nouvelles améliorations de la liaison de données XAML](http://channel9.msdn.com/Events/Build/2015/3-635) et [Exemple x:Bind](http://go.microsoft.com/fwlink/p/?linkid=619989) (en anglais).
@@ -394,6 +395,6 @@ Rubrique suivante : [Portage pour le modèle d’E/S, d’appareil et d’applic
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

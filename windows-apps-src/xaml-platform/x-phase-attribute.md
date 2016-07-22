@@ -13,8 +13,7 @@ ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Utilisez **x:Phase** avec l’[extension de balisage {x:Bind}](x-bind-markup-extension.md) pour rendre les éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) de façon incrémentielle et améliorer l’expérience de mouvement panoramique. 
-            **x:Phase** offre un moyen déclaratif d’obtenir le même effet que l’utilisation de l’événement [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) pour contrôler manuellement le rendu des éléments de liste. Voir aussi [Mettre à jour les éléments ListView et GridView de façon incrémentielle](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
+Utilisez **x:Phase** avec l’[extension de balisage {x:Bind}](x-bind-markup-extension.md) pour rendre les éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) de façon incrémentielle et améliorer l’expérience de mouvement panoramique. **x:Phase** offre un moyen déclaratif d’obtenir le même effet que l’utilisation de l’événement [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) pour contrôler manuellement le rendu des éléments de liste. Voir aussi [Mettre à jour les éléments ListView et GridView de façon incrémentielle](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
 
 ## Utilisation des attributs XAML
 

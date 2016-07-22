@@ -4,6 +4,7 @@ title: "Mettre à jour une vignette dynamique à partir d’une tâche en arriè
 description: "Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé."
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
 

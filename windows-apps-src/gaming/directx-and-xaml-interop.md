@@ -4,17 +4,19 @@ title: Technologie interop DirectX et XAML
 description: Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu de plateforme Windows universelle (UWP).
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 97e694ae2fb8af30a35aa9ebdb714db50a506e6c
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: dda452a6f9b2a47d7ddaee9732bb714f0f5dbe5d
 
 ---
 
 # Technologie interop DirectX et XAML
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu de plateforme Windows universelle (UWP). En combinant XAML et DirectX, vous pouvez générer des infrastructures d’interface utilisateur flexibles qui interopèrent avec votre contenu DirectX, ce qui s’avère particulièrement utile dans le cas d’applications qui utilisent beaucoup de ressources graphiques. Cette rubrique décrit la structure d’une application UWP qui utilise DirectX et identifie les types qu’il est important d’utiliser au moment de générer votre application UWP pour la faire fonctionner avec DirectX.
+Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu ou application de plateforme Windows universelle (UWP). En combinant XAML et DirectX, vous pouvez générer des infrastructures d’interface utilisateur flexibles qui interopèrent avec votre contenu DirectX, ce qui s’avère particulièrement utile dans le cas d’applications qui utilisent beaucoup de ressources graphiques. Cette rubrique décrit la structure d’une application UWP qui utilise DirectX et identifie les types qu’il est important d’utiliser au moment de générer votre application UWP pour la faire fonctionner avec DirectX.
+
+Si votre application se concentre principalement sur le rendu 2D, il peut être judicieux d’utiliser la bibliothèque Windows Runtime [**Win2D**](https://github.com/microsoft/win2d). Gérée par Microsoft, cette bibliothèque est basée sur les technologies Direct2D principales. Elle simplifie considérablement simplifie le modèle d’utilisation pour implémenter des graphismes 2D et comprend des abstractions utiles pour certaines des techniques décrites dans ce document. Pour en savoir plus, voir la page du projet. Ce document fournit des recommandations pour les développeurs d’applications qui choisissent de ne *pas* utiliser Win2D.
 
 > **Remarque** Les API DirectX n’étant pas définies en tant que types Windows Runtime, il est d’usage d’utiliser des extensions de composant Visual C++ (C++/CX) pour développer des composants XAMLUWP qui interopèrent avec DirectX. En outre, vous pouvez créer une application UWP en XAML et C# qui utilise DirectX, à condition d’inclure les appels DirectX dans un wrapper au sein d’un fichier de métadonnées Windows Runtime distinct.
 
@@ -22,25 +24,22 @@ Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft 
 
 ## XAML et DirectX
 
-
 DirectX fournit deux bibliothèques complètes pour les graphismes 2D et 3D : Direct2D et Microsoft Direct3D. Bien que XAML assure une prise en charge des primitives et des effets 2D de base, nombreuses sont les applications, notamment de modélisation et de jeux, qui nécessitent une prise en charge de graphismes plus complexes. Pour celles-ci, vous pouvez utiliser Direct2D et Direct3D pour restituer tout ou partie des graphismes et utiliser XAML pour tout le reste.
 
-Dans le scénario d’interopérabilité de XAML et DirectX, vous devez connaître les deux concepts suivants :
+Si vous implémentez une interopérabilité de XAML et DirectX personnalisée, vous devez connaître les deux concepts suivants:
 
--   Les surfaces partagées sont des régions dimensionnées de l’affichage, définies par XAML, dans lesquelles vous pouvez dessiner indirectement à l’aide de DirectX en utilisant les types [**Windows::UI::Xaml::Media::Brush**](https://msdn.microsoft.com/library/windows/apps/br228076). Pour les surfaces partagées, vous ne contrôlez pas les appels à présentation des chaînes de permutation. Les mises à jour appliquées à une surface partagée sont synchronisées avec les mises à jour de l’infrastructure XAML.
--   La chaîne de permutation proprement dite. Celle-ci fournit la mémoire tampon d’arrière-plan du pipeline de rendu DirectX, la zone de mémoire présentée à l’affichage, une fois la cible de rendu complète.
+-   Les surfaces partagées sont des régions dimensionnées de l’affichage, définies par XAML, dans lesquelles vous pouvez dessiner indirectement à l’aide de DirectX en utilisant les types [**Windows::UI::Xaml::Media::ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagesource.aspx). Pour les surfaces partagées, vous ne contrôlez pas le moment précis où le nouveau contenu s’affiche à l’écran. Au lieu de cela, les mises à jour appliquées à une surface partagée sont synchronisées avec les mises à jour de l’infrastructure XAML.
+-   Les [chaînes d’échange](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx) constituent une collection de mémoires tampons servant à afficher les graphismes avec une latence minimale. En règle générale, les chaînes d’échange sont mises à jour à une cadence de 60images par seconde séparément du thread d’interface utilisateur. Cependant, les chaînes d’échange consomment plus de mémoire et de ressources processeur pour prendre en charge des mises à jour rapides, et sont plus difficiles à utiliser dans la mesure où vous devez gérer plusieurs threads.
 
-Déterminez ce pour quoi vous utilisez DirectX. Voulez-vous l’utiliser pour composer ou animer un contrôle unique qui doit tenir dans les dimensions de la fenêtre d’affichage ? La surface composite créée peut-elle être masquée par d’autres surfaces ou par les bords de l’écran ? Contiendra-t-elle la sortie qui doit être rendue et contrôlée en temps réel, comme dans un jeu ?
+Déterminez à quelle fin vous utilisez la technologie DirectX. Voulez-vous l’utiliser pour composer ou animer un contrôle unique qui doit tenir dans les dimensions de la fenêtre d’affichage? Contiendra-t-elle une sortie qui doit être rendue et contrôlée en temps réel, comme dans un jeu? Si c’est le cas, vous devrez probablement implémenter une chaîne d’échange. Sinon, une surface partagée devrait faire l’affaire.
 
-Une fois que vous avez déterminé comment vous envisagez d’utiliser DirectX, utilisez l’un de ces types Windows Runtime pour incorporer le rendu DirectX dans votre application du Windows Store :
+Une fois que vous avez déterminé comment vous envisagez d’utiliser DirectX, utilisez l’un de ces types Windows Runtime pour incorporer le rendu DirectX dans votre application du Windows Store:
 
 -   Si vous voulez composer une image statique ou dessiner une image complexe selon des intervalles basés sur des événements, dessinez sur une surface partagée avec [**Windows::UI::Xaml::Media::Imaging::SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041). Ce type gère une surface de dessin DirectX dimensionnée. En général, ce type est utilisé pour composer une image ou une texture sous forme d’image bitmap à afficher dans un document ou un élément d’interface. En revanche, il s’avère peu efficace dans un contexte d’interactivité en temps réel, comme les jeux élaborés. Cela s’explique par le fait que les mises à jour appliquées à un objet **SurfaceImageSource** sont synchronisées avec les mises à jour de l’interface utilisateur XAML, ce qui peut introduire un temps de latence dans la rétroaction visuelle à l’utilisateur avec, par exemple, une fréquence d’images fluctuante ou un sentiment de faible réactivité aux entrées en temps réel. Les mises à jour restent néanmoins suffisamment rapides pour les contrôles dynamiques ou les simulations de données.
 
-    Les objets graphiques [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) peuvent être composés avec d’autres éléments d’interface XAML. Vous pouvez les transformer ou les projeter et l’infrastructure XAML respecte les valeurs d’opacité ou d’index-z.
-
 -   Si l’image est plus grande que l’espace fourni par l’écran et si elle peut être recentrée ou zoomée par l’utilisateur, utilisez [**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). Ce type gère une surface de dessin DirectX dimensionnée de format supérieur à l’écran. Tout comme [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041), il s’avère utile pour composer dynamiquement une image ou un contrôle complexe. De même, à la manière de **SurfaceImageSource**, il se révèle peu efficace pour les jeux élaborés. Parmi les éléments XAML susceptibles d’utiliser un **VirtualSurfaceImageSource**, citons les contrôles de carte ou une visionneuse de documents volumineux et riches en images.
 
--   Si vous utilisez DirectX pour présenter des graphismes mis à jour en temps réel ou dans un contexte où les mises à jour doivent se produire à intervalles réguliers et avec peu de latence, utilisez la classe [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834). Les graphismes seront ainsi actualisés sans être synchronisés avec le minuteur d’actualisation de l’infrastructure XAML. Ce type vous permet d’accéder directement à la chaîne de permutation du périphérique graphique ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) et de disposer la couche XAML sur la cible de rendu. Ce type est tout indiqué pour les jeux et autres applications DirectX plein écran qui nécessitent une interface utilisateur XAML. Pour utiliser cette approche, vous devez bien connaître DirectX, notamment les technologies Microsoft DXGI (DirectX Graphics Infrastructure), Direct2D et Direct3D. Pour plus d’informations, voir [Guide de programmation pour Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
+-   Si vous utilisez DirectX pour présenter des graphismes mis à jour en temps réel ou dans un contexte où les mises à jour doivent se produire à intervalles réguliers et avec peu de latence, utilisez la classe [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834). Les graphismes seront ainsi actualisés sans être synchronisés avec le minuteur d’actualisation de l’infrastructure XAML. Ce type vous permet d’accéder directement à la chaîne d’échange du périphérique graphique ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) et de disposer la couche XAML sur la cible de rendu. Ce type est tout indiqué pour les jeux et les applications DirectX en plein écran qui nécessitent une interface utilisateur XAML. Pour utiliser cette approche, vous devez bien connaître DirectX, notamment les technologies Microsoft DXGI (DirectX Graphics Infrastructure), Direct2D et Direct3D. Pour plus d’informations, voir [Guide de programmation pour Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
 
 ## SurfaceImageSource
 
@@ -111,7 +110,7 @@ Voici le processus de base de création et de mise à jour d’un objet [**Surfa
     }
     ```
 
-5.  Appelez [**ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) pour compléter l’image bitmap. Passez cette image bitmap à un [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101).
+5.  Appelez [**ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) pour compléter l’image bitmap. L’image bitmap peut être utilisée en tant que source pour un élément XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) ou [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101).
 
     ```cpp
     m_sisNative->EndDraw();
@@ -120,8 +119,6 @@ Voici le processus de base de création et de mise à jour d’un objet [**Surfa
     ImageBrush^ brush = ref new ImageBrush();
     brush->ImageSource = surfaceImageSource;
     ```
-
-6.  Utilisez [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) pour dessiner l’image bitmap.
 
 > **Remarque** L’appel de [**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255) (hérité de **IBitmapSource::SetSource**) lève actuellement une exception. Ne l’appelez pas à partir de votre objet [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041).
 
@@ -262,30 +259,23 @@ Voici le processus de base de création et de mise à jour d’un objet [**Virtu
 ## SwapChainPanel et jeux
 
 
-[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) est le type Windows Runtime conçu pour prendre en charge les graphismes et les jeux élaborés, où vous gérez directement la chaîne de permutation. Dans ce cas, vous créez votre propre chaîne de permutation DirectX et gérez la présentation de votre contenu rendu. Vous pouvez ensuite ajouter des éléments XAML à l’objet **SwapChainPanel**, tels que des menus, des affichages tête haute et autres superpositions d’interface.
+[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) est le type Windows Runtime conçu pour prendre en charge les graphismes et les jeux élaborés, où vous gérez directement la chaîne de permutation. Dans ce cas, vous devez créer votre propre chaîne d’échange DirectX et gérer la présentation du contenu rendu.
 
-Pour garantir les performances, le type [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) impose certaines limitations :
+Afin de garantir de bonnes performances, le type [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) impose certaines limitations:
 
 -   Le nombre maximal d’instances de [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) par application est de 4.
--   Les propriétés **Opacity**, **RenderTransform**, **Projection** et **Clip** héritées par [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) ne sont pas prises en charge.
--   Vous devez attribuer à la chaîne de permutation DirectX une hauteur et une largeur (dans [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) correspondant aux dimensions actuelles de la fenêtre d’application. À défaut, le contenu à afficher est mis à l’échelle (à l’aide de **DXGI\_SCALING\_STRETCH**).
+-   Vous devez attribuer à la chaîne de permutation DirectX une hauteur et une largeur (dans [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) correspondant aux dimensions actuelles de la chaîne d’échange. À défaut, le contenu à afficher est mis à l’échelle (à l’aide de **DXGI\_SCALING\_STRETCH**).
 -   Vous devez affecter au mode d’ajustement de la chaîne de permutation DirectX (dans [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) la valeur **DXGI\_SCALING\_STRETCH**.
 -   Vous ne pouvez pas affecter au mode alpha de la chaîne de permutation DirectX (dans [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) la valeur **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**.
 -   Vous devez créer la chaîne de permutation DirectX en appelant [**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558).
 
 Vous mettez à jour [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) en fonction des besoins de votre application et non des mises à jour de l’infrastructure XAML. Si vous avez besoin de synchroniser les mises à jour de **SwapChainPanel** avec celles de l’infrastructure XAML, inscrivez-vous à l’événement [**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127). Sinon, vous devez prévoir des problèmes inter-threads si vous essayez de mettre à jour les éléments XAML à partir d’un thread différent de celui qui met à jour **SwapChainPanel**.
 
-Il existe par ailleurs des recommandations générales à suivre au moment de concevoir votre application pour qu’elle utilise [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834).
+Si vous avez besoin de recevoir des entrées de pointeur à faible latence sur votre élément **SwapChainPanel**, utilisez [**SwapChainPanel::CreateCoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource). Cette méthode retourne un objet [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coreindependentinputsource) qui peut être utilisé pour recevoir les événements d’entrée avec une latence minimale sur un thread d’arrière-plan. Notez qu’une fois cette méthode appelée, les événements d’entrée de pointeur XAML normaux ne sont pas déclenchés pour l’élément **SwapChainPanel**, car toutes les entrées sont redirigées vers le thread d’arrière-plan.
 
--   [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) hérite de [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) et prend en charge un comportement de mise en page similaire. Familiarisez-vous avec le type **Grid** et ses propriétés.
 
--   Une fois qu’une chaîne de permutation DirectX a été définie, tous les événements d’entrée déclenchés pour [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) opèrent de la même manière que pour tout autre élément XAML. Vous ne définissez pas de pinceau d’arrière-plan pour **SwapChainPanel** et vous n’avez pas besoin de gérer directement les événements d’entrée de l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de l’application comme c’est le cas dans les applications DirectX qui n’utilisent pas **SwapChainPanel**.
+> **Remarque** En règle générale, vos applications DirectX doivent créer des chaînes d’échange dans l’orientation paysage et égales à la taille de la fenêtre d’affichage (qui correspond habituellement à la résolution d’écran native dans la plupart des jeux Windows Store). Cela garantit que votre application utilise l’implémentation de chaîne de permutation optimale lorsqu’elle ne possède aucune superposition XAML visible. Si l’application est pivotée en mode portrait, elle doit appeler [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) sur la chaîne de permutation existante, appliquer une transformation au contenu, si nécessaire, puis appeler de nouveau [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) sur la même chaîne de permutation. De même, votre application doit appeler de nouveau **SetSwapChain** sur la même chaîne de permutation chaque fois que celle-ci est redimensionnée à la suite d’un appel de [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577).
 
--   • L’ensemble du contenu de l’arborescence visuelle d’éléments XAML située sous un enfant direct d’un [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) est découpé à la taille de disposition de l’enfant immédiat de l’objet **SwapChainPanel**. Tout contenu transformé en dehors de ces limites de disposition n’est pas restitué. Par conséquent, placez le contenu XAML que vous animez à l’aide d’un élément [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) XAML dans l’arborescence visuelle située sous un élément dont les limites de disposition sont suffisamment étendues pour accueillir l’animation dans son ensemble.
-
--   Limitez le nombre d’éléments XAML visuels immédiats situés sous un [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834). Si possible, regroupez les éléments qui se trouvent très près les uns des autres sous un parent commun. Mais vous devez trouver un compromis entre le nombre d’enfants visuels immédiats et la taille des enfants. En effet, les performances globales peuvent pâtir de la présence d’éléments XAML trop nombreux ou inutilement grands. De même, ne créez pas d’élément XAML enfant unique en plein écran pour le **SwapChainPanel** de votre application, car cela accroît l’« overdraw » dans l’application et nuit aux performances. En règle générale, ne créez pas plus de 8 enfants visuels XAML immédiats pour le **SwapChainPanel** de votre application et attribuez à chaque élément une taille de disposition juste nécessaire pour accueillir le contenu visuel de l’élément. Toutefois, l’arborescence visuelle d’éléments située sous un élément enfant du **SwapChainPanel** peut être suffisamment complexe sans pour autant grever lourdement les performances.
-
-> **Remarque** En règle générale, vos applications DirectX doivent créer des chaînes de permutation dans l’orientation paysage, égales à la taille de la fenêtre d’affichage (qui correspond habituellement à la résolution d’écran native dans la plupart des jeux Windows Store). Cela garantit que votre application utilise l’implémentation de chaîne de permutation optimale lorsqu’elle ne possède aucune superposition XAML visible. Si l’application est pivotée en mode portrait, elle doit appeler [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) sur la chaîne de permutation existante, appliquer une transformation au contenu, si nécessaire, puis appeler de nouveau [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) sur la même chaîne de permutation. De même, votre application doit appeler de nouveau **SetSwapChain** sur la même chaîne de permutation chaque fois que celle-ci est redimensionnée à la suite d’un appel de [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577).
 
  
 
@@ -365,7 +355,7 @@ Voici le processus de base de création et de mise à jour d’un objet [**SwapC
 
 ## Rubriques connexes
 
-
+* [**Win2D**](http://microsoft.github.io/Win2D/html/Introduction.htm)
 * [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)
 * [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)
 * [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)
@@ -382,6 +372,6 @@ Voici le processus de base de création et de mise à jour d’un objet [**SwapC
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

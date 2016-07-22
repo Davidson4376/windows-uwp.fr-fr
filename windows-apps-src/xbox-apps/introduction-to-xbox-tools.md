@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Présentation des outils XboxOne"
 description: "Outil Accueil du développeur propre à XboxOne, utilisant Windows Device Portal."
 area: Xbox
-ms.sourcegitcommit: 914a1b76c6b502415bee36865af009a8dfe9bb53
-ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 
 ---
 
@@ -89,7 +90,7 @@ Lorsque vous communiquez avec la console à partir de votre PC de développement
 
 Pour définir un nom d’hôte pour un kit de développement, accédez à l’outil Paramètres de la console et tapez le nom d’hôte dans la zone __Nom d’hôte__.  
 
-  > **Remarque** &nbsp;&nbsp;L’unicité de nom n’est pas appliquée lorsque le nom d’hôte est créé. Veillez à éviter les doublons de nom. Une façon de procéder consiste à dériver le nom d’hôte du nom de votre ordinateur de développement, qui est généralement unique au sein d’une organisation.
+  > **Remarque**&nbsp;&nbsp;L’unicité de nom n’est pas appliquée lorsque le nom d’hôte est créé. Veillez à éviter les doublons de nom. Une façon de procéder consiste à dériver le nom d’hôte du nom de votre ordinateur de développement, qui est généralement unique au sein d’une organisation.
 
 ## WindowsDevicePortal
 Windows Device Portal (WDP) est un outil de gestion d’appareils OneCore basé sur le navigateur.
@@ -113,8 +114,9 @@ Pour activer WDP sur votre console XboxOne:
 
   ![Avertissement concernant le certificat de sécurité](images/security_cert_warning.jpg)
 
-## Voir aussi
-- [Technologies du développeur Microsoft: Windows Device Portal (en anglais)](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)
+## Voir également
+- [Utilisation de Fiddler avec XboxOne lors du développement pour UWP](uwp-fiddler.md)
+- [Technologies du développeur Microsoft: Windows Device Portal (en anglais)](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)
 - [UWP sur XboxOne](index.md)
 
 
@@ -123,6 +125,6 @@ Pour activer WDP sur votre console XboxOne:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

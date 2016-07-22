@@ -23,12 +23,9 @@ Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée
 
 Dans l’exemple de jeu, les comportements et objets audio sont définis dans trois fichiers:
 
--   
-            **Audio.h/.cpp**. Ce fichier de code définit l’objet **Audio**, qui contient les ressources XAudio2 pour la lecture audio. Il définit également une méthode pour interrompre et reprendre la lecture audio si le jeu est en pause ou désactivé.
--   
-            **MediaReader.h/.cpp**. Ce code définit les méthodes permettant de lire des fichiers.wav audio à partir du stockage local.
--   
-            **SoundEffect.h/.cpp**. Ce code définit un objet pour la lecture audio dans le jeu.
+-   **Audio.h/.cpp**. Ce fichier de code définit l’objet **Audio**, qui contient les ressources XAudio2 pour la lecture audio. Il définit également une méthode pour interrompre et reprendre la lecture audio si le jeu est en pause ou désactivé.
+-   **MediaReader.h/.cpp**. Ce code définit les méthodes permettant de lire des fichiers.wav audio à partir du stockage local.
+-   **SoundEffect.h/.cpp**. Ce code définit un objet pour la lecture audio dans le jeu.
 
 ## Définition du moteur audio
 
@@ -263,8 +260,7 @@ myTarget->HitSound()->Initialize(
                 targetHitSound);
 ```
 
-
-            **SoundEffect::Initialize** est appelé à partir de la méthode **Simple3DGame:Initialize** qui initialise l’objet jeu principal.
+**SoundEffect::Initialize** est appelé à partir de la méthode **Simple3DGame:Initialize** qui initialise l’objet jeu principal.
 
 Maintenant que l’exemple de jeu a un fichier audio en mémoire, voyons comment il le lit pendant le jeu!
 

@@ -3,8 +3,9 @@ author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: "Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe task qui est définie dans l’espace de noms concurrency dans ppltasks.h."
 title: Programmation asynchrone en C++
-ms.sourcegitcommit: c440d0dc2719a982a6b566c788d76111c40e263e
-ms.openlocfilehash: c33c05c6ec7f36b8ba7db840613fbfb7eb394c3f
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b0a3faa56249ccfe693438c1077b7500736f3ec5
 
 ---
 
@@ -132,7 +133,7 @@ Dans l’exemple précédent, notez que la tâche retourne un type **task<void>*
 
 ## Annulation de tâches
 
-Il est souvent conseillé de donner à l’utilisateur la possibilité d’annuler une opération asynchrone. Et dans certains cas, vous pouvez avoir besoin d’annuler une opération par programme depuis l’extérieur de la chaîne de tâches. Bien que chaque type de retour \***Async** ait une méthode [**Cancel**][IAsyncInfoCancel] qui hérite de l’objet [**IAsyncInfo**][IAsyncInfo], il est compliqué de l’exposer à des méthodes extérieures. Le meilleur moyen de prendre en charge l’annulation dans une chaîne de tâches consiste à utiliser un objet [**cancellation\_token\_source**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749985.aspx) pour créer un objet [**cancellation\_token**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749975.aspx), puis à transmettre le jeton au constructeur de la tâche initiale. Si une tâche asynchrone est créée avec un jeton d’annulation, et que la classe [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750076.aspx) est appelée, la tâche appelle automatiquement la méthode **Cancel** sur l’opération **IAsync\*** et transmet la demande d’annulation à sa chaîne de continuation. Le pseudo-code suivant présente l’approche de base.
+Il est souvent conseillé de donner à l’utilisateur la possibilité d’annuler une opération asynchrone. Et dans certains cas, vous pouvez avoir besoin d’annuler une opération par programme depuis l’extérieur de la chaîne de tâches. Bien que chaque type de retour \***Async** ait une méthode [**Cancel**][IAsyncInfoCancel] qui hérite de l’objet [**IAsyncInfo**][IAsyncInfo], il est compliqué de l’exposer à des méthodes extérieures. Le meilleur moyen de prendre en charge l’annulation dans une chaîne de tâches consiste à utiliser un objet [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) pour créer un objet [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx), puis à transmettre le jeton au constructeur de la tâche initiale. Si une tâche asynchrone est créée avec un jeton d’annulation, et que la classe [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx) est appelée, la tâche appelle automatiquement la méthode **Cancel** sur l’opération **IAsync\*** et transmet la demande d’annulation à sa chaîne de continuation. Le pseudo-code suivant présente l’approche de base.
 
 ``` cpp
 //Class member:
@@ -147,11 +148,11 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-Lorsqu’une tâche est annulée, une exception [**task\_canceled**][taskCanceled] est propagée vers la chaîne de tâches. Les continuations basées sur les valeurs ne s’exécutent simplement pas, mais les continuations basées sur les tâches entraînent la levée d’une exception lorsque la méthode [**task::get**][taskGet] est appelée. Si vous avez une continuation de gestion des erreurs, assurez-vous qu’elle intercepte l’exception **task\_canceled** de manière explicite. (Cette exception n’est pas dérivée de [**Platform::Exception**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh755825.aspx).)
+Lorsqu’une tâche est annulée, une exception [**task\_canceled**][taskCanceled] est propagée vers la chaîne de tâches. Les continuations basées sur les valeurs ne s’exécutent simplement pas, mais les continuations basées sur les tâches entraînent la levée d’une exception lorsque la méthode [**task::get**][taskGet] est appelée. Si vous avez une continuation de gestion des erreurs, assurez-vous qu’elle intercepte l’exception **task\_canceled** de manière explicite. (Cette exception n’est pas dérivée de [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx).)
 
-L’annulation est coopérative. Si votre continuation effectue un travail de longue durée au-delà du simple appel de méthode UWP, il vous incombe de vérifier régulièrement l’état du jeton d’annulation et d’arrêter l’exécution s’il est annulé. Après avoir nettoyé toutes les ressources qui ont été allouées dans la continuation, appelez [**cancel\_current\_task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx) pour annuler la tâche et propager l’annulation à toutes les continuations basées sur les valeurs qui la suivent. Voici un autre exemple : vous pouvez créer une chaîne de tâches qui représente le résultat d’une opération [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871). Si l’utilisateur choisit le bouton **Cancel**, la méthode [**IAsyncInfo::Cancel**][IAsyncInfoCancel] n’est pas appelée. Au lieu de cela, l’opération réussit mais renvoie **nullptr**. La continuation peut tester le paramètre d’entrée et appeler **cancel\_current\_task** si l’entrée est **nullptr**.
+L’annulation est coopérative. Si votre continuation effectue un travail de longue durée au-delà du simple appel de méthode UWP, il vous incombe de vérifier régulièrement l’état du jeton d’annulation et d’arrêter l’exécution s’il est annulé. Après avoir nettoyé toutes les ressources qui ont été allouées dans la continuation, appelez [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) pour annuler la tâche et propager l’annulation à toutes les continuations basées sur les valeurs qui la suivent. Voici un autre exemple : vous pouvez créer une chaîne de tâches qui représente le résultat d’une opération [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871). Si l’utilisateur choisit le bouton **Cancel**, la méthode [**IAsyncInfo::Cancel**][IAsyncInfoCancel] n’est pas appelée. Au lieu de cela, l’opération réussit mais renvoie **nullptr**. La continuation peut tester le paramètre d’entrée et appeler **cancel\_current\_task** si l’entrée est **nullptr**.
 
-Pour plus d’informations, voir [Annulation dans la bibliothèque de modèles parallèles](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd984117.aspx)
+Pour plus d’informations, voir [Annulation dans la bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
 
 ## Gestion des erreurs dans une chaîne de tâches
 
@@ -222,9 +223,9 @@ void App::SetFeedText()
 
 Si une tâche ne renvoie pas un objet [**IAsyncAction**][IAsyncAction] ou un objet [**IAsyncOperation**][IAsyncOperation], c’est qu’elle ne prend pas en charge le cloisonnement et, par défaut, ses continuations sont exécutées sur le premier thread d’arrière-plan disponible.
 
-Vous pouvez remplacer le contexte de thread par défaut pour n’importe quelle sorte de tâche en utilisant la surcharge de la fonction [**task::then**][taskThen] qui prend une classe [**task\_continuation\_context**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749968.aspx). Par exemple, dans certains cas, il peut être souhaitable de planifier la continuation d’une tâche prenant en charge le cloisonnement sur un thread d’arrière-plan. Si tel est le cas, vous pouvez transmettre la méthode [**task\_continuation\_context::use\_arbitrary**][useArbitrary] pour planifier le travail de la tâche sur le thread disponible suivant d’un multithread cloisonné. Cela peut améliorer les performances de la continuation, car son travail n’a pas besoin d’être synchronisé avec un autre travail qui se produit sur le thread d’interface utilisateur.
+Vous pouvez remplacer le contexte de thread par défaut pour n’importe quelle sorte de tâche en utilisant la surcharge de la fonction [**task::then**][taskThen] qui prend une classe [**task\_continuation\_context**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749968.aspx). Par exemple, dans certains cas, il peut être souhaitable de planifier la continuation d’une tâche prenant en charge le cloisonnement sur un thread d’arrière-plan. Si tel est le cas, vous pouvez transmettre la méthode [**task\_continuation\_context::use\_arbitrary**][useArbitrary] pour planifier le travail de la tâche sur le thread disponible suivant d’un multithread cloisonné. Cela peut améliorer les performances de la continuation, car son travail n’a pas besoin d’être synchronisé avec un autre travail qui se produit sur le thread d’interface utilisateur.
 
-L’exemple suivant montre quand il est utile de spécifier l’option [**task\_continuation\_context::use\_arbitrary**][useArbitrary], et comment le contexte de continuation par défaut est utile pour la synchronisation d’opérations simultanées sur des collections qui ne sont pas thread-safe. Dans ce code, nous parcourons en boucle une liste d’URL pour des flux RSS, et pour chaque URL, nous démarrons une opération asynchrone pour récupérer les données de flux. Nous ne pouvons pas contrôler l’ordre dans lequel les flux sont récupérés, et cela n’a pas vraiment d’importance. Quand chaque opération [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) se termine, la première continuation accepte l’objet [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) et l’utilise pour initialiser un objet `FeedData^` défini par l’application. Chacune de ces opérations étant indépendante des autres, nous pouvons éventuellement accélérer le processus en spécifiant le contexte de continuation **task\_continuation\_context::use\_arbitrary**. Toutefois, une fois chaque objet `FeedData` initialisé, nous devons l’ajouter à une classe [**Vector**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx), qui n’est pas une collection thread-safe. Par conséquent, nous créons une continuation et spécifions [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) pour garantir que tous les appels à la méthode [**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) se produisent dans le même contexte de cloisonnement de threads unique d’application (ASTA, Application Single-Threaded Apartment). Étant donné que la méthode [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) est le contexte par défaut, nous n’avons pas besoin de la spécifier explicitement, mais nous le faisons par souci de clarté.
+L’exemple suivant montre quand il est utile de spécifier l’option [**task\_continuation\_context::use\_arbitrary**][useArbitrary], et comment le contexte de continuation par défaut est utile pour la synchronisation d’opérations simultanées sur des collections qui ne sont pas thread-safe. Dans ce code, nous parcourons en boucle une liste d’URL pour des flux RSS, et pour chaque URL, nous démarrons une opération asynchrone pour récupérer les données de flux. Nous ne pouvons pas contrôler l’ordre dans lequel les flux sont récupérés, et cela n’a pas vraiment d’importance. Quand chaque opération [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) se termine, la première continuation accepte l’objet [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) et l’utilise pour initialiser un objet `FeedData^` défini par l’application. Chacune de ces opérations étant indépendante des autres, nous pouvons éventuellement accélérer le processus en spécifiant le contexte de continuation **task\_continuation\_context::use\_arbitrary**. Toutefois, une fois chaque objet `FeedData` initialisé, nous devons l’ajouter à une classe [**Vector**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx), qui n’est pas une collection thread-safe. Par conséquent, nous créons une continuation et spécifions [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) pour garantir que tous les appels à la méthode [**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) se produisent dans le même contexte de cloisonnement de threads unique d’application (ASTA, Application Single-Threaded Apartment). Étant donné que la méthode [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) est le contexte par défaut, nous n’avons pas besoin de la spécifier explicitement, mais nous le faisons par souci de clarté.
 
 ``` cpp
 #include <ppltasks.h>
@@ -289,35 +290,35 @@ Les tâches imbriquées, qui sont de nouvelles tâches créées à l’intérieu
 
 ## Gestion des mises à jour de l’avancement
 
-Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) ou [**IAsyncActionWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx) fournissent régulièrement des mises à jour de l’avancement pendant que l’opération est en cours, avant qu’elle ne se termine. Le signalement de l’avancement est indépendant de la notion de tâches et de continuations. Vous fournissez simplement le délégué pour la propriété [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) de l’objet. Le délégué est généralement utilisé pour mettre à jour une barre de progression dans l’interface utilisateur.
+Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) ou [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) fournissent régulièrement des mises à jour de l’avancement pendant que l’opération est en cours, avant qu’elle ne se termine. Le signalement de l’avancement est indépendant de la notion de tâches et de continuations. Vous fournissez simplement le délégué pour la propriété [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) de l’objet. Le délégué est généralement utilisé pour mettre à jour une barre de progression dans l’interface utilisateur.
 
 ## Rubriques connexes
 
-* [Création d’opérations asynchrones en C++ pour des applications du Windows Store] [createAsyncCpp]
+* [Création d’opérations asynchrones en C++ pour des applications du Windows Store][createAsyncCpp]
 * [Informations de référence en matière de langage Visual C++](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
-* [Programmation asynchrone] [AsyncProgramming]
-* [Parallélisme des tâches (runtime d’accès concurrentiel)] [taskParallelism]
-* [classe de tâche] [task-class]
+* [Programmation asynchrone][AsyncProgramming]
+* [Parallélisme des tâches (runtime d’accès concurrentiel)][taskParallelism]
+* [classe de tâche][task-class]
  
 <!-- LINKS -->
-[AsyncProgramming]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx>  "AsyncProgramming"
-[concurrencyNamespace]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx>  "Espace de noms Concurrency"
-[createTask]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh913025.aspx>  "CreateTask"
-[createAsyncCpp]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx>  "CreateAsync"
-[deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199>  "DeleteAsync"
-[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx>  "IAsyncAction"
-[IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598>  "IAsyncOperation"
-[IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587>  "IAsyncInfo"
-[IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel>  "IAsyncInfoCancel"
-[taskCanceled]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750106.aspx>  "TaskCancelled"
-[task-class]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx>  "Classe de tâche"
-[taskGet]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx>  "TaskGet"
-[taskParallelism]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx>  "Parallélisme des tâches"
-[taskThen]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx>  "TaskThen"
-[useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx>  "UseArbitrary"
+[AsyncProgramming]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
+[concurrencyNamespace]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492819.aspx> "Espace de noms concurrency"
+[createTask]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh913025.aspx> "CreateTask"
+[createAsyncCpp]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx> "CreateAsync"
+[deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
+[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx> "IAsyncAction"
+[IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598> "IAsyncOperation"
+[IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
+[IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
+[taskCanceled]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750106.aspx> "TaskCancelled"
+[task-class]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx> "Classe de tâche"
+[taskGet]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
+[taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "Parallélisme des tâches"
+[taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
+[useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

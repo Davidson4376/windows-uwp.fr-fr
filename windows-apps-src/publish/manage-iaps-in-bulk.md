@@ -2,6 +2,7 @@
 author: jnHs
 Description: "En gérant les produits in-app en bloc, vous pouvez modifier plusieurs produits in-app simultanément, plutôt que de soumettre chaque mise à jour séparément."
 title: "Gérer des produits in-app en bloc"
+translationtype: Human Translation
 ms.sourcegitcommit: 475371dd55aa111f3743c03dc1600e8cfdbeb5b0
 ms.openlocfilehash: ae4d4ed33b9bd10a2b01b336c942ad3212de6533
 
@@ -52,6 +53,6 @@ Une fois les modifications apportées, enregistrez le fichier .csv (avec le mêm
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

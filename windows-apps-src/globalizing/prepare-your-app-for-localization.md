@@ -6,8 +6,8 @@ ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: e52a5322767677859e32ccbecf4951745c49f36f
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4f9bc1d14db7c348e2b4dc9db2440f94d44ab4a5
 
 ---
 
@@ -121,13 +121,13 @@ Une fois que les chaînes ont été séparées en fichiers de ressources, elles 
 Considérez les options suivantes:
 
 -   **Les fichiers de ressources peuvent être traduits en étant ouverts directement dans le projet.** Cette approche fonctionne bien pour un projet qui possède un volume réduit de chaînes et qui a besoin d’être traduit en deux ou trois langues. Elle est adaptée pour un scénario dans lequel un développeur parlerait plusieurs langues et accepterait de traiter le processus de traduction. Cette approche a l’avantage d’être rapide, de ne requérir aucun outil et de minimiser les risques d’erreurs de traduction, mais elle n’est pas évolutive. En particulier, les ressources dans les différentes langues peuvent aisément se désynchroniser, ce qui peut entraîner de mauvaises expériences utilisateur et des difficultés de maintenance.
--   **Les fichiers de ressources de type chaîne sont au format texte XML ou ResJSON et peuvent être confiés pour traduction à l’aide d’un éditeur de texte. Les fichiers traduits pourront alors être copiés en retour dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
+-   **Les fichiers de ressources de type chaîne sont au format texte XML ou ResJSON et peuvent être confiés pour traduction à l’aide d’un éditeur de texte. Les fichiers traduits pourront alors être copiés en retour dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
 
 Un transfert vers des traducteurs peut être nécessaire pour d’autres fichiers, tels que des images ou des fichiers audio. En général, nous déconseillons de créer des fichiers dépendant de la culture, car ils peuvent s’avérer difficiles à localiser.
 
 De plus, considérez les suggestions suivantes:
 
--   **Utilisez un outil de localisation.** De nombreux outils de localisation sont disponibles pour analyser les fichiers de ressources et permettre la modification par les traducteurs des seules chaînes traduisibles. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
+-   **Utilisez un outil de localisation.** De nombreux outils de localisation sont disponibles pour analyser les fichiers de ressources et permettre la modification par les traducteurs des seules chaînes traduisibles. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx).
 -   **Faites appel à un prestataire de localisation.** Considérez l’utilisation d’un prestataire de localisation si votre projet contient un volume élevé de chaînes et doit être traduit en de nombreuses langues. Un prestataire de localisation peut conseiller des outils et des processus, ainsi que traduire vos fichiers de ressources. Il s’agit d’une solution idéale, mais c’est aussi l’option la plus coûteuse et elle peut augmenter le délai de traitement de votre contenu traduit.
 -   **Maintenez vos traducteurs informés.** Informez les traducteurs sur les chaînes pouvant être considérées comme un substantif ou un verbe. Expliquez les mots fabriqués aux traducteurs à l’aide d’outils terminologiques. Conservez des chaînes grammaticalement correctes, non ambiguës et aussi peu techniques que possible pour éviter les confusions.
 
@@ -192,6 +192,6 @@ Le classement suit le format de l’application **Région** du Panneau de config
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

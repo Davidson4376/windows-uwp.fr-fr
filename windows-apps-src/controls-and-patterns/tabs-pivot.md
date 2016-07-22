@@ -5,8 +5,9 @@ title: "Onglets et sélecteurs de vue"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: b6cf34346ad557ce53d3009afe8bc83bc7ed21aa
 
 ---
 # Sélecteurs de vue et onglets
@@ -91,9 +92,6 @@ Le contrôle est disponible en deux modes:
 -   Les sélecteurs de vue sont stationnaires lorsque l’espace autorisé est suffisant pour contenir tous les en-têtes de sélecteur de vue.
 -   Un appui sur une étiquette de sélecteur de vue permet d’accéder à la page correspondante, bien que le sélecteur de vue proprement dit ne bouge pas. Le sélecteur de vue actif est mis en surbrillance.
 
-{{> contenu interne="
--   Nous vous recommandons tout particulièrement d’empêcher la rotation des éléments dans un environnement à 3mètres. Définissez la nouvelle propriété `IsHeaderItemsCarouselEnabled` sur False si votre application doit s’exécuter sur Xbox.
-"}}
 
 **Carrousel**
 
@@ -101,16 +99,6 @@ Le contrôle est disponible en deux modes:
 -   Un appui sur une étiquette de sélecteur de vue permet d’accéder à la page correspondante. L’étiquette du sélecteur de vue actif passe en première position par rotation.
 -   Placez les éléments sélecteur de vue dans une boucle carrousel de la dernière à la première section de sélecteur de vue.
 
-{{&gt; contenu interne="
-### Focus du sélecteur de vue
-
-Par défaut, le focus clavier sur un en-tête de sélecteur de vue est représenté par un souligné.
-
-![Le focus par défaut souligne l’en-tête sélectionné](images/pivot_focus_selectedHeader.png)
-
-Les applications possédant un sélecteur de vue personnalisé, et incorporant le souligné aux éléments visuels de sélection de l’en-tête, peuvent utiliser la nouvelle propriété `HeaderFocusVisualPlacement` afin de changer la valeur par défaut. Lorsque `HeaderFocusVisualPlacement=\"ItemHeaders\"`, le focus encadrera l’intégralité de l’en-tête.
-
-![L’option ItemsHeader dessine un rectangle de focus autour de tous les en-têtes Pivot](images/pivot_focus_headers.png) "}}
 
 ## Recommandations
 
@@ -129,6 +117,6 @@ Les applications possédant un sélecteur de vue personnalisé, et incorporant l
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -3,6 +3,7 @@ author: jnHs
 Description: "Si votre application utilise AdMediatorControl ou AdControl pour afficher des bannières publicitaires, vous pourriez augmenter votre taux de remplissage et vos revenus publicitaires en présentant des annonces des affiliés Microsoft dans votre application."
 title: "Versions d’évaluation de package"
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
+translationtype: Human Translation
 ms.sourcegitcommit: 9e62a7aa18950f7e1cc26b42762e3bb937c389ac
 ms.openlocfilehash: c538da2a58f38925938b9e28ec7ca65cdb9858a3
 

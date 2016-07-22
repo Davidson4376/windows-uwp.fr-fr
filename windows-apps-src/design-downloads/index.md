@@ -1,10 +1,11 @@
 ---
-description: "Téléchargements liés à la conception et à l’interface utilisateur des applications UWP."
-title: "Téléchargements de conceptions d’applis UWP - Applications Windows"
+description: "Obtenez les derniers téléchargements et outils pour les conceptions de disposition et de contrôles d’interface utilisateur des applications UWP."
+keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
+title: "Téléchargements de conceptions pour les apps UWP - Dév. d’apps Windows"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
+ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
+ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 
 ---
 
@@ -108,6 +109,6 @@ Cet exemple intègre des fonctionnalités Windows avec une automatisation domest
 <b>Vous voulez plus de code?</b> Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. [Accédez au portail d’exemples](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -6,8 +6,8 @@ ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 989d810724c925a5bcbebf5f7fb301636905fff9
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a1b271360b84e670f0b28557ffc499436487ad5f
 
 ---
 
@@ -50,7 +50,7 @@ Assurez-vous que le fichier **ResW** de votre application possède une ressource
 
 ### <span id="HTML"></span><span id="html"></span>HTML
 
-Pour les applications du Windows Store en JavaScript, utilisez les mécanismes de mise en page des [feuilles de style en cascade (CSS)](https://msdn.microsoft.com/library/ms531209), tels que [-ms-grid](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) et [–ms-box](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section). Utilisez un remplissage et des marges symétriques pour permettre la localisation quel que soit le sens de la disposition.
+Pour les applications du Windows Store en JavaScript, utilisez les mécanismes de mise en page des [feuilles de style en cascade (CSS)](https://msdn.microsoft.com/library/ms531209), tels que [-ms-grid](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#g_section) et [–ms-box](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#f_section). Utilisez un remplissage et des marges symétriques pour permettre la localisation quel que soit le sens de la disposition.
 
 Votre application peut également utiliser le sélecteur de pseudo-classe [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) pour ajuster des propriétés CSS comme la largeur sur des éléments particuliers selon la langue de l’interface. Pour ce faire, l’hôte de l’application définit l’attribut **lang** de l’élément racine sur la langue de l’application.
 
@@ -119,6 +119,6 @@ Les applications qui affichent plusieurs langues sur une même page doivent déf
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

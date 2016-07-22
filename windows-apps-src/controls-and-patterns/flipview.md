@@ -5,6 +5,7 @@ title: "Recommandations en matière de contrôles de vue symétrique"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
 
@@ -210,6 +211,6 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

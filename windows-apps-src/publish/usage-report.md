@@ -4,15 +4,15 @@ Description: "Le rapport Utilisation disponible dans le tableau de bord du Centr
 title: "Rapport sur l’utilisation"
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 translationtype: Human Translation
-ms.sourcegitcommit: 056642044953bab02f78912c7611ddcf5d6d48e6
-ms.openlocfilehash: 476e7ee0c9c7ea7dce7f5e3a0389091ede9132c4
+ms.sourcegitcommit: 6dac44032ac217969148ff73c594f99d8a733355
+ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
 
 ---
 
 # Rapport sur l’utilisation
 
 
-Le rapport **Utilisation** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application et d’obtenir des informations sur les événements personnalisés que vous avez définis. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
+Le rapport **Utilisation** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients sur Windows10 utilisent votre application et d’obtenir des informations sur les événements personnalisés que vous avez définis. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
 
 > **Remarque** Par le passé, le rapport **Utilisation** ne contenait des données que si vous aviez activé le Kit de développement logiciel (SDK) VisualStudio Application Insights dans votre application. Avec le rapport **Utilisation** mis à jour, cela n’est plus nécessaire.
 
@@ -21,11 +21,13 @@ Le rapport **Utilisation** disponible dans le tableau de bord du Centre de déve
 
 Dans la zone supérieure de la page, vous pouvez développer la section **Appliquer les filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par groupe de produits (versions de système d’exploitation associées).
 
--   **Date** : la valeur par défaut de ce filtre est **30 derniers jours**, mais vous pouvez étendre cette période aux **12 derniers mois**.
--   **Version du package** : la valeur par défaut de ce filtre est **Toutes**. Si votre application comporte plusieurs packages, vous pouvez en choisir un ici.
+-   **Date**: la valeur par défaut de ce filtre est **30derniers jours**, mais vous pouvez étendre cette période aux **3derniers mois**.
+-   **Version du package**: la valeur par défaut de ce filtre est **Toutes**. Si votre application comporte plusieurs packages, vous pouvez en choisir un ici.
 -   **Type d’appareil** : le paramètre par défaut est **Tous**, mais vous pouvez choisir d’afficher les données pour un seul type d’appareil donné.
 
 Les informations figurant dans tous les graphiques répertoriés ci-après correspondent à la période sélectionnée dans **Appliquer les filtres**. Par défaut, ces données porteront sur toutes les versions de vos packages et sur tous les types d’appareils pris en charge, sauf si vous avez utilisé la section **Appliquer les filtres** pour ne visualiser que les données d’une version ou d’un type spécifique.
+
+> **Remarque** Seules les données d’utilisation des clients sur Windows 10 sont incluses dans ce rapport.
 
 ## Nombre total de sessions utilisateur
 
@@ -55,6 +57,6 @@ Les événements personnalisés sont implémentés à l’aide de [Journal](http
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

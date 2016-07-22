@@ -3,8 +3,9 @@ author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: "Créer une application de carte à puceNFC"
 description: "Auparavant, Windows Phone8.1 prenait en charge les applications d’émulation de carteNFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile."
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: f47303826b9d2d2040a2bd2f2dbd5e2da3dd3cd0
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1c131951d725107daffd8286e85c53acd9c0b88a
 
 ---
 # Créer une application de carte à puceNFC
@@ -103,7 +104,7 @@ Notez que le déclencheur de tâche est défini sur [**SmartCardTriggerType**](h
 
 ## Recevoir les commandes APDU et y répondre
 
-Quand une commande APDU est dirigée vers votre application, le système lance votre tâche en arrière-plan. Votre tâche en arrière-plan reçoit la commande APDU transmise via la propriété [**CommandApdu**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) de l’objet [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) et y répond via la méthode [**TryRespondAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/mt634299.aspx) du même objet. Pour des raisons de performance, songez à conserver votre tâche en arrière-plan pour les opérations légères. Par exemple, répondez immédiatement aux commandes APDU et fermez votre tâche en arrière-plan à l’issue du traitement. En raison de la nature des transactions NFC, les utilisateurs ont tendance à maintenir leur appareil contre le lecteur uniquement sur une courte période de temps. Votre tâche en arrière-plan continue de recevoir du trafic du lecteur jusqu’à la désactivation de votre connexion. À ce moment-là, vous recevez un objet [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644). Votre connexion peut être désactivée pour les raisons suivantes, telles qu’indiquées dans la propriété [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason).
+Quand une commande APDU est dirigée vers votre application, le système lance votre tâche en arrière-plan. Votre tâche en arrière-plan reçoit la commande APDU transmise via la propriété [**CommandApdu**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) de l’objet [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) et y répond via la méthode [**TryRespondAsync**](https://msdn.microsoft.com/library/windows/apps/mt634299.aspx) du même objet. Pour des raisons de performance, songez à conserver votre tâche en arrière-plan pour les opérations légères. Par exemple, répondez immédiatement aux commandes APDU et fermez votre tâche en arrière-plan à l’issue du traitement. En raison de la nature des transactions NFC, les utilisateurs ont tendance à maintenir leur appareil contre le lecteur uniquement sur une courte période de temps. Votre tâche en arrière-plan continue de recevoir du trafic du lecteur jusqu’à la désactivation de votre connexion. À ce moment-là, vous recevez un objet [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644). Votre connexion peut être désactivée pour les raisons suivantes, telles qu’indiquées dans la propriété [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason).
 
 -   Si la connexion est désactivée avec la valeur **ConnectionLost**, cela signifie que l’utilisateur a retiré son appareil du lecteur. Si votre application nécessite que l’utilisateur appuie plus longuement sur le terminal, vous pouvez envisager de lui transmettre des commentaires. Vous devez arrêter rapidement votre tâche en arrière-plan (en exécutant votre report), ceci pour garantir qu’aucun délai associé à la fermeture de la tâche en arrière-plan précédente ne sera respecté en cas de nouvel appui de l’utilisateur.
 -   Si la connexion est désactivée avec l’élément **ConnectionRedirected**, cela signifie que le terminal a dirigé une nouvelle commande SELECT AID APDU vers un identificateur d’applet différent. Dans ce cas, votre application doit fermer immédiatement la tâche en arrière-plan (en exécutant votre report) afin de permettre l’exécution d’une autre tâche en arrière-plan.
@@ -207,7 +208,7 @@ Durant la mise en service de la carte, intervenant lors du premier lancement de 
 
 La plupart des cartes de paiement sont inscrites auprès des mêmes identificateurs d’applet (PPSE) et identificateurs d’applet supplémentaires de carte réseau de paiement. Chaque groupe d’identificateurs d’applet représente une carte. Lorsque l’utilisateur active la carte, l’ensemble des identificateurs d’applet du groupe sont activés. De la même manière, lorsque l’utilisateur désactive la carte, l’ensemble des identificateurs d’applet du groupe sont désactivés.
 
-Pour inscrire un groupe, vous devez créer un objet [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) et définir ses propriétés conformément à sa qualité de carte de paiement HCE. Votre nom complet doit être descriptif pour l’utilisateur, car il apparaît dans le menu des paramètres NFC, ainsi que dans les invites utilisateur. Pour les cartes de paiement HCE, la propriété [**SmartCardEmulationCategory**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) doit être définie sur **Payment** et la propriété [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) doit être définie sur **Host**.
+Pour inscrire un groupe, vous devez créer un objet [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) et définir ses propriétés conformément à sa qualité de carte de paiement HCE. Votre nom complet doit être descriptif pour l’utilisateur, car il apparaît dans le menu des paramètres NFC, ainsi que dans les invites utilisateur. Pour les cartes de paiement HCE, la propriété [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) doit être définie sur **Payment** et la propriété [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) doit être définie sur **Host**.
 
 ```csharp
 public static byte[] AID_PPSE =
@@ -225,7 +226,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-Pour les cartes HCE sans paiement, la propriété [**SmartCardEmulationCategory**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) doit être définie sur **Other** et la propriété [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) doit être définie sur **Host**.
+Pour les cartes HCE sans paiement, la propriété [**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) doit être définie sur **Other** et la propriété [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) doit être définie sur **Host**.
 
 ```csharp
 public static byte[] AID_OTHER =
@@ -385,6 +386,6 @@ La prise en charge héritée de l’interception des SMS binaires de Windows Pho
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

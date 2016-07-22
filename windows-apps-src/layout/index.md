@@ -1,10 +1,11 @@
 ---
-description: "Ces articles vous aident à concevoir et coder une app UWP intuitive qui s’affiche bien sur un grand nombre d’appareils et sur des écrans de différentes tailles."
-title: "Conception de disposition - Développement d’applications Windows"
+description: "Découvrez comment concevoir et coder une application UWP intuitive qui s’affiche parfaitement sur un grand nombre d’appareils et sur des écrans de différentes tailles."
+title: "Conception de disposition pour les applications UWP - Développement d’applications Windows"
 author: mijacobs
+keywords: uwp app layout, universal windows platform, app design, interface
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 35a8f78420256cb2da02d7fd4720939a16676600
+ms.sourcegitcommit: fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9
+ms.openlocfilehash: 7a1233724b9b0fd9af709bbf114669fe102e6f0d
 
 ---
 
@@ -25,7 +26,7 @@ La structure de l’application, la mise en page et la navigation sont les trois
 Lorsque vous concevez une application UWP, vous créez une interface utilisateur adaptée à une multitude d’appareils dotés d’écrans de tailles différentes. Cet article fournit un aperçu des fonctionnalités et des avantages des applications UWP en matière d’interface utilisateur, ainsi que quelques conseils et astuces pour concevoir une interface utilisateur réactive. </p>
   </div>
   <div class="side-by-side-content-right">
-    ![An app running on multiple devices](images/rspd-reposition-type1-sm.png)
+    ![Application exécutée sur plusieurs appareils](images/rspd-reposition-type1-sm.png)
   </div>
 </div>
 </div>
@@ -85,6 +86,6 @@ Outre les propriétés de dimension (largeur, hauteur et contraintes), les élé
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

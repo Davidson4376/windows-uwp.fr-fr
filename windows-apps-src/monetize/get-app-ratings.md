@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données de classification agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs."
 title: Obtenir les classifications des applications
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 
 ---
 
@@ -33,7 +34,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings``` |
 
  
 
@@ -43,9 +44,9 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
 
- 
+<span/> 
 
-### Corps de la demande
+### Paramètres de la requête
 
 <table>
 <colgroup>
@@ -123,10 +124,11 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 </tbody>
 </table>
 
+<span/>
  
 ### Champs de filtrage
 
-Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**.
+Le paramètre *filter* de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**.
 
 Voici un exemple de chaîne *filter*: *filter=market eq ’US’ and deviceType eq ’phone’ and isRevised eq true*
 
@@ -183,7 +185,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: L
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### Exemple de requête
 
@@ -208,7 +210,8 @@ Authorization: Bearer <your access token>
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000 lignes de données d’acquisition sont associées à la requête. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                             |
 
- 
+<span/>
+
 ### Valeurs de classification
 
 Les éléments du tableau *Value* comportent les valeurs suivantes:
@@ -227,8 +230,8 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | threeStars      | nombre  | Le nombre de classifications à troisétoiles.                                                                                                                                                                                                    |
 | fourStars       | nombre  | Le nombre de classifications à quatreétoiles.                                                                                                                                                                                                     |
 | fiveStars       | nombre  | Le nombre de classifications à cinqétoiles.                                                                                                                                                                                                     |
-
  
+<span/>
 
 ### Exemple de réponse
 
@@ -268,6 +271,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

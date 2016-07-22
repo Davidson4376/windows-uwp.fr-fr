@@ -3,6 +3,7 @@ author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: Animations de composition
 description: "De nombreuses propriétés d’objet et d’effet de composition peuvent être animées à l’aide d’animations par images clés et expressions, ce qui permet aux propriétés d’un élément d’interface utilisateur de changer dans le temps ou en fonction d’un calcul."
+translationtype: Human Translation
 ms.sourcegitcommit: 62f0ea80940ff862d26feaa063414d95b048f685
 ms.openlocfilehash: e0088692b9de10c188f15b85b1f20b98cc113517
 
@@ -667,6 +668,6 @@ _target.StartAnimation(“Opacity”, exp);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

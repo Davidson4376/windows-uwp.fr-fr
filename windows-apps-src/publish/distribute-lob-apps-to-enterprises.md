@@ -3,6 +3,7 @@ author: jnHs
 Description: "Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Store de façon étendue."
 title: "Distribuer des applications métier aux entreprises"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
+translationtype: Human Translation
 ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
 ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 

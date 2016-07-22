@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’une application pour une plage de dates données, et en fonction de filtres facultatifs."
 title: "Obtenir des acquisitions d’applications"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: 7f87f931c92eca1f64fbd23b4fcba3359293f94a
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: e28c309a51d28e14e57b8bd027dc8c353311d89a
 
 ---
 
@@ -33,9 +34,9 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | Méthode | URI de la requête                                                              |
 |--------|--------------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions``` |
 
- 
+<span/>
 
 ### En-tête de requête
 
@@ -43,9 +44,9 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
 
- 
+<span/> 
 
-### Corps de la demande
+### Paramètres de la requête
 
 <table>
 <colgroup>
@@ -127,10 +128,11 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 </tbody>
 </table>
 
+<span/>
  
 ### Champs de filtrage
 
-Le paramètre *filter* du corps de la demande contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter*:
+Le paramètre *filter* de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter*:
 
 -   *filter=market eq ’US’ and gender eq ’m’*
 -   *filter=(market ne ’US’) and (gender ne ’Unknown’) and (gender ne ’m’) and (market ne ’NO’) and (ageGroup ne ’greater than 55’ or ageGroup ne ‘less than 13’)*
@@ -233,7 +235,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: L
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### Exemple de requête
 
@@ -258,6 +260,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000 lignes de données d’acquisition sont associées à la requête. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                             |
 
+<span/>
  
 ### Valeurs d’acquisition
 
@@ -278,7 +281,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | acquisitionType     | chaîne | Le type d’acquisition (gratuite, payante, etc.). Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
 | acquisitionQuantity | nombre | Le nombre d’acquisitions qui se sont produites durant le niveau d’agrégation spécifié.                                                                                                                                                         |
 
- 
+<span/> 
 
 ### Exemple de réponse
 
@@ -317,6 +320,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

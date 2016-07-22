@@ -3,8 +3,10 @@ author: TylerMSFT
 title: "Créer et utiliser un service d’application"
 description: "Découvrez comment écrire une application de plateforme Windows universelle (UWP) capable de fournir des services à d’autres applications UWP, et comment utiliser ces services."
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: ade51661fa6628c76b555316f645ec6622dd299a
+keywords: app to app
+translationtype: Human Translation
+ms.sourcegitcommit: d7d7edf8d1ed6ae1c4be504cd4827bb941f14380
+ms.openlocfilehash: 13b9456d1f6ee2b592db0e5e38b9f9e7fe41764c
 
 ---
 
@@ -21,7 +23,7 @@ Découvrez comment écrire une application de plateforme Windows universelle (UW
 
 Dans la procédure décrite ici, nous allons créer tous les éléments dans une seule solution par souci de simplicité.
 
--   Dans Microsoft Visual Studio2015, créez un projet d’application UWP et nommez-le AppServiceProvider. (Dans la boîte de dialogue Nouveau projet, sélectionnez Modèles  Autres langages  Visual C#  Windows  Windows universel  Application vide \[Windows universel\]). Il s’agira de l’application qui fournit le service d’application.
+-   Dans Microsoft Visual Studio2015, créez un projet d’application UWP et nommez-le AppServiceProvider. (Dans la boîte de dialogue **Nouveau projet**, sélectionnez **Modèles &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Application vide [Windows universel]**). Il s’agira de l’application qui fournit le service d’application.
 
 ## Ajouter une extension de service d’application à package.appxmanifest
 
@@ -98,17 +100,14 @@ L’attribut **EntryPoint** identifie la classe qui implémente le service, que 
 
     C’est dans cette classe que le service d’application effectuera son travail.
 
-    
-            **Run()** est appelé lorsque la tâche en arrière-plan est créée. Comme les tâches en arrière-plan sont arrêtées une fois **Run** terminé, le code effectue un report afin que la tâche en arrière-plan reste active pour traiter les demandes.
+    **Run()** est appelé lorsque la tâche en arrière-plan est créée. Comme les tâches en arrière-plan sont arrêtées une fois **Run** terminé, le code effectue un report afin que la tâche en arrière-plan reste active pour traiter les demandes.
 
-    
-            **OnTaskCanceled()** est appelé lorsque la tâche est annulée. La tâche est annulée lorsque l’application cliente supprime la classe [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704), l’application cliente est suspendue, le système d’exploitation est arrêté ou mis en veille ou lorsque le système d’exploitation manque de ressources pour exécuter la tâche.
+    **OnTaskCanceled()** est appelé lorsque la tâche est annulée. La tâche est annulée lorsque l’application cliente supprime la classe [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704), l’application cliente est suspendue, le système d’exploitation est arrêté ou mis en veille ou lorsque le système d’exploitation manque de ressources pour exécuter la tâche.
 
 ## Écrire le code du service d’application
 
 
-
-            **OnRequestedReceived()** est l’emplacement du code du service d’application. Remplacez le stub **OnRequestedReceived()** dans le fichier Class1.cs de MyAppService par le code de cet exemple. Ce code obtient un index pour un article en stock et le transmet au service avec une chaîne de commande pour récupérer le nom et le prix de l’article en stock spécifié. Le code de gestion des erreurs a été supprimé par souci de concision.
+**OnRequestedReceived()** est l’emplacement du code du service d’application. Remplacez le stub **OnRequestedReceived()** dans le fichier Class1.cs de MyAppService par le code de cet exemple. Ce code obtient un index pour un article en stock et le transmet au service avec une chaîne de commande pour récupérer le nom et le prix de l’article en stock spécifié. Le code de gestion des erreurs a été supprimé par souci de concision.
 
 ```cs
 private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
@@ -162,11 +161,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 Notez que **OnRequestedReceived()** a pour valeur **async**, car nous effectuons un appel de méthode awaitable à [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) dans cet exemple.
 
-Un report est effectué afin que le service puisse utiliser les méthodes **async** dans le gestionnaire OnRequestReceived. Cela permet de s’assurer que l’appel à OnRequestReceived ne se termine pas avant la fin du traitement du message. 
-            [
-              **SendResponseAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/dn921722) est utilisé pour envoyer une réponse parallèlement à l’achèvement. 
-            **SendResponseAsync** n’indique pas l’achèvement de l’appel. C’est l’achèvement du report qui indique à [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) que OnRequestReceived est terminé.
+Un report est effectué afin que le service puisse utiliser les méthodes **async** dans le gestionnaire OnRequestReceived. Cela permet de s’assurer que l’appel à OnRequestReceived ne se termine pas avant la fin du traitement du message. [ **SendResponseAsync** ](https://msdn.microsoft.com/library/windows/apps/dn921722) est utilisé pour envoyer une réponse parallèlement à l’achèvement. **SendResponseAsync** n’indique pas l’achèvement de l’appel. C’est l’achèvement du report qui indique à [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) que OnRequestReceived est terminé.
 
 Les services d’application utilisent une classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) pour échanger des informations. La taille des données que vous pouvez transmettre est limitée uniquement par les ressources système. Il n’y a aucune clé prédéfinie utilisable dans votre classe **ValueSet**. Vous devez déterminer quelles valeurs de clé vous allez utiliser pour définir le protocole de votre service d’application. L’appelant doit être écrit avec ce protocole à l’esprit. Dans cet exemple, nous avons choisi une clé nommée «Command» dont la valeur indique si nous voulons que le service d’application fournisse le nom de l’article en stock ou son prix. L’index du nom d’inventaire est stocké sous la clé «ID». La valeur renvoyée est stockée sous la clé «Result».
 
@@ -185,7 +180,7 @@ L’application qui fournit le service d’application doit être déployée ava
 ## Écrire un client pour appeler le service d’application
 
 
-1.  Ajoutez un nouveau projet d’application Windows universel vide nommé ClientApp à la solution (**Fichier &gt; Ajouter &gt; Nouveau projet**). (Dans la boîte de dialogue Ajouter un nouveau projet, choisissez Installé  Autres langages  Visual C#  Windows  Windows universel  Application vide \[Windows universel\]).
+1.  Ajoutez un nouveau projet d’application Windows universel vide nommé ClientApp à la solution (**Fichier &gt; Ajouter &gt; Nouveau projet**). (Dans la boîte de dialogue **Ajouter un nouveau projet**, choisissez **Installé &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Application vide [Windows universel]**).
 2.  Dans le projet ClientApp, ajoutez l’instruction **using** suivante au début du fichier MainPage.xaml.cs:
     ```cs
     >using Windows.ApplicationModel.AppService;
@@ -253,7 +248,7 @@ L’application qui fournit le service d’application doit être déployée ava
     }
     ```
 
-    Remplacez le nom de la famille de packages de la ligne  par le nom de la famille de packages du projet AppServiceProvider que vous avez obtenu à l’\[Étape 5 : Déployer l’application de service et obtenir le nom de la famille de packages\].
+    Remplacez le nom de la famille de packages de la ligne `this.inventoryService.PackageFamilyName = "replace with the package family name";` par le nom de la famille de packages du projet **AppServiceProvider** que vous avez obtenu à l’\[Étape 5 : Déployer l’application de service et obtenir le nom de la famille de packages].
 
     Le code établit tout d’abord une connexion avec le service d’application. La connexion reste alors ouverte jusqu’à ce que vous supprimiez **this.inventoryService**. Le nom du service d’application doit correspondre à l’attribut **AppService Name** que vous avez ajouté au fichier Package.appxmanifest du projet AppServiceProvider. Dans cet exemple, il s’agit de `<uap:AppService Name="com.microsoft.inventory"/>`.
 
@@ -396,6 +391,6 @@ namespace MyAppService
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -3,8 +3,9 @@ author: jnHs
 Description: "La page Résumé du paiement affiche le détail des sommes rapportées par vos applications et produits in-app. Elle vous permet également de connaître les délais et les montants de vos paiements."
 title: "Résumé du paiement"
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
-ms.sourcegitcommit: c626a828f9cee6b23ec26fc2eaa60a6477870baf
-ms.openlocfilehash: 773a072f5656068eb6e0b2d792cf73a7ff1d16f0
+translationtype: Human Translation
+ms.sourcegitcommit: 82ff562a192aa42d383f4cd7221c495c3bfbad0f
+ms.openlocfilehash: 86355a194eb61b8d13eba22d9f6e7c566339cd28
 
 ---
 
@@ -13,9 +14,9 @@ ms.openlocfilehash: 773a072f5656068eb6e0b2d792cf73a7ff1d16f0
 
 La page **Résumé du paiement** affiche le détail des sommes rapportées par vos applications et produits in-app. Elle vous permet également de connaître les délais et les montants de vos paiements.
 
-Si vous utilisez Microsoft Advertising pour générer des revenus, à partir du 1er avril 2016, la page **Résumé du paiement** vous donnera aussi des informations de paiement concernant vos revenus publicitaires. Nous allons montrer l’application dans laquelle ces revenus ont été gagnés ou «non mappé» pour les unités publicitaires utilisées dans plusieurs applications ou qui ne peuvent pas être mappées à une application spécifique. Pour plus d’informations sur les stratégies de paiement de publicité, voir [Stratégies de paiement pubCenter](http://go.microsoft.com/fwlink/p/?LinkID=624469).
+Si vous utilisez Microsoft Advertising pour générer des revenus, à partir du 1er avril 2016, la page **Résumé du paiement** vous donnera aussi des informations de paiement concernant vos revenus publicitaires. Nous allons montrer l’application dans laquelle ces revenus ont été gagnés ou «non mappés» pour les unités publicitaires utilisées dans plusieurs applications, ou qui ne peuvent pas être mappés à une application spécifique. Pour plus d’informations sur les paiements publicitaires, voir [Processus de paiement de Microsoft Advertising](https://msdn.microsoft.com/windows/uwp/publish/microsoft-advertising-payment-process).
 
-Si vous vendez des produits dans Azure Marketplace, la page **Résumé du paiement** vous présente également des informations sur les paiements qui vous ont été versés depuis le 1er novembre 2015. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](http://go.microsoft.com/fwlink/p/?LinkId=722436) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). Des détails supplémentaires concernant la visualisation des informations de paiement Azure Marketplace antérieures sont disponibles [ici](http://go.microsoft.com/fwlink/p/?LinkID=722439).
+Si vous vendez des produits dans Azure Marketplace, la page **Résumé du paiement** vous présente également des informations sur les paiements qui vous ont été versés depuis le 1ernovembre2015. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](http://go.microsoft.com/fwlink/p/?LinkId=722436) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). Des détails supplémentaires concernant la visualisation des informations de paiement Azure Marketplace antérieures sont disponibles [ici](http://go.microsoft.com/fwlink/p/?LinkID=722439).
 
 > **Remarque** Pour que vous soyez autorisé à percevoir des revenus, votre application doit atteindre le seuil de paiement applicable. Si vos revenus sont inférieurs au seuil fixé, le montant restera dans la catégorie Réservé jusqu’à ce que ce seuil soit atteint. Pour en savoir plus, voir le [Contrat du développeur d’applications](https://msdn.microsoft.com/library/windows/apps/hh694058).
 >

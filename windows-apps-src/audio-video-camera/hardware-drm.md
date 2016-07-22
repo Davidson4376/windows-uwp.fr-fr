@@ -3,8 +3,9 @@ author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: "Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP)."
 title: "Gestion des droits numériques en fonction du matériel"
-ms.sourcegitcommit: b782d1e3d4f5c90e4cac9fbad3877c5457a27c45
-ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
+translationtype: Human Translation
+ms.sourcegitcommit: 22ce05ab6f24c3ee41798732c35314b3dad87ea8
+ms.openlocfilehash: b7867317c37edf44d9edfaaf28d97a3f23b22814
 
 ---
 
@@ -14,7 +15,8 @@ ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
 
 Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
 
-> [!NOTE] La gestion des droits numériques en fonction du matériel par PlayReady est compatible avec une multitude d’appareils, y compris les appareilsWindows et tiers tels que les téléviseurs, les tablettes et les téléphones. Pour qu’un appareil Windows prenne en charge la gestion des droits numériques en fonction du matériel par PlayReady, il doit exécuter Windows10 et présente une configuration matérielle compatible.
+> [!NOTE] 
+> La gestion des droits numériques en fonction du matériel par PlayReady est compatible avec une multitude d’appareils, y compris les appareilsWindows et tiers tels que les téléviseurs, les tablettes et les téléphones. Pour qu’un appareil Windows prenne en charge la gestion des droits numériques en fonction du matériel par PlayReady, il doit exécuter Windows10 et présente une configuration matérielle compatible.
 
 Les fournisseurs de contenu se tournent de plus en plus vers des protections matérielles pour autoriser la lecture de contenu à valeur élevée complet dans les applications. La prise en charge robuste d’une implémentation matérielle de la base de chiffrement a été ajoutée à PlayReady pour répondre à ce besoin. Cette prise en charge permet la lecture sécurisée de contenu en haute définition (1080p) et ultra haute définition (UHD) sur plusieurs plateformes d’appareils. Le matériel de clé (y compris les clés privées, les clés de contenu et tout autre matériel de clé utilisé pour dériver ou déverrouiller ces clés) et les échantillons vidéo compressés et non compressés déchiffrés sont protégés en tirant parti de la sécurité matérielle.
 
@@ -97,6 +99,6 @@ Vous pouvez également utiliser la propriété [**PlayReadyStatics.PlayReadyCert
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

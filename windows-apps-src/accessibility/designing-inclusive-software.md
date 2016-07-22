@@ -5,8 +5,9 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Conception de logiciels inclusifs dans Windows10
 label: Designing inclusive software
 template: detail.hbs
-ms.sourcegitcommit: ea4d413e0b2ade1429d255afbc6a1a73ea308051
-ms.openlocfilehash: 6f1c0663034f81bb0ddfe42c04fbe60562b45c1c
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: cdd41595ee2727c0eeefab7b041c1adfefc15dfa
 
 ---
 
@@ -18,7 +19,7 @@ Chez Microsoft, nous faisons évoluer nos principes et pratiques de conception. 
 
 Cette nouvelle philosophie de conception est appelée conception inclusive. L’idée consiste à concevoir un logiciel qui s’adresse à tous dès le départ. Cela diffère du processus qui consiste à intégrer l’élément d’accessibilité à la toute fin du processus de développement, ce qui convient uniquement à un groupe d’utilisateurs restreint.
 
-«Nous définissons le handicap/invalidité comme l’incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. Tout le monde peut rencontrer un handicap/invalidité. L’exclusion est très courante dans notre société humaine.»  tiré de la vidéo [Inclusive](https://www.microsoft.com/en-us/design/inclusive)  
+«Nous définissons le handicap/invalidité comme l’incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. Tout le monde peut rencontrer un handicap/invalidité. L’exclusion est très courante dans notre société humaine.»  tiré de la vidéo [Inclusive](https://www.microsoft.com/design/inclusive)  
 
 La conception inclusive crée de meilleurs produits pour tout le monde. Il s’agit de créations pouvant s’appliquer à l’ensemble de la diversité humaine. Prenons l’exemple des abaissements de trottoir présents sur la plupart des trottoirs. À l’origine, ils étaient destinés aux personnes en fauteuil roulant. Mais presque tout le monde s’en sert à présent, y compris les personnes avec des poussettes, les cyclistes et les utilisateurs de skate-board. Même les piétons profitent souvent de ces aménagements qui facilitent la vie. La télécommande d’une TV peut être considérée comme une technologie d’assistance pour une personne atteinte d’un handicap moteur. Et pourtant, presque chaque télévision est accompagnée d’une télécommande. Avant que les enfants n’apprennent à lacer leurs chaussures, ils peuvent porter des chaussures simples à enfiler ou à fermeture facile. Les chaussures simples à enfiler et à enlever sont souvent préférées dans les cultures où l’on se déchausse avant d’entrer dans une maison. Elles sont également mieux adaptées aux personnes ayant des problèmes de dextérité et souffrant par exemple d’arthrite ou d’une fracture du poignet.
 
@@ -68,7 +69,7 @@ Une fois que vous avez votre infrastructure, concevez une hiérarchie logique po
 2.  pour identifier les frontières claires entre les contrôles personnalisés et les contrôles standard dans l’interface utilisateur;  
 3.  pour déterminer la façon dont les éléments de l’interface utilisateur interagissent.  
 
-Une hiérarchie logique est un excellent moyen de résoudre les problèmes potentiels liés à l’utilisation. Si vous ne pouvez pas structurer l’interface utilisateur d’une manière relativement simple, vous pouvez avoir des problèmes liés à l’utilisation. Une représentation logique d’une boîte de dialogue simple ne doit pas se traduire par plusieurs pages de diagrammes. Si votre hiérarchie logique devient trop longue ou trop large, vous devriez peut-être refaire votre interface utilisateur. Pour en savoir plus, téléchargez le livre électronique [Engineering Software for Accessibility (Conception de logiciels accessibles)](https://www.microsoft.com/en-us/download/details.aspx?id=19262).  
+Une hiérarchie logique est un excellent moyen de résoudre les problèmes potentiels liés à l’utilisation. Si vous ne pouvez pas structurer l’interface utilisateur d’une manière relativement simple, vous pouvez avoir des problèmes liés à l’utilisation. Une représentation logique d’une boîte de dialogue simple ne doit pas se traduire par plusieurs pages de diagrammes. Si votre hiérarchie logique devient trop longue ou trop large, vous devriez peut-être refaire votre interface utilisateur. Pour en savoir plus, téléchargez le livre électronique [Engineering Software for Accessibility (Conception de logiciels accessibles)](https://www.microsoft.com/download/details.aspx?id=19262).  
 
 ### Concevoir des paramètres appropriés de l’interface utilisateur visuelle  
 Lors de la conception de l’interface utilisateur visuelle, assurez-vous que votre produit dispose d’un paramètre de contraste élevé, utilise les polices système et les options de lissage par défaut et se met correctement à l’échelle par rapport aux paramètres PPP (points par pouce) de l’écran. Veillez également à ce que le coefficient de contraste du texte par défaut soit d’au moins 5:1 par rapport à l’arrière-plan et à ce que les combinaisons de couleurs soient faciles à distinguer pour les utilisateurs daltoniens.  
@@ -94,18 +95,18 @@ En résumé, suivez ces sept étapes pour vous assurer que votre logiciel est in
 2.  Lorsque vous concevez des solutions à vos besoins, utilisez les contrôles fournis par votre infrastructure (contrôles standard) autant que possible; évitez les efforts et les coûts inutiles liés aux contrôles personnalisés.  
 3.  Concevez une hiérarchie logique pour votre produit, en notant où se trouvent les contrôles standard, les contrôles personnalisés et le focus clavier dans l’interface utilisateur.  
 4.  Concevez des paramètres système utiles (par exemple, la navigation au clavier, le contraste élevé et la haute résolution) pour votre produit.  
-5.  Implémentez votre conception en utilisant le [Hub de développeurs axés sur l’accessibilitéMicrosoft](https://developer.microsoft.com/en-us/windows/accessible-apps) et la spécification d’accessibilité de votre infrastructure comme point de référence.  
+5.  Implémentez votre conception en utilisant le [Hub de développeurs axés sur l’accessibilitéMicrosoft](https://developer.microsoft.com/windows/accessible-apps) et la spécification d’accessibilité de votre infrastructure comme point de référence.  
 6.  Testez votre produit avec des utilisateurs ayant des besoins spécifiques pour vous assurer qu’ils pourront tirer parti des techniques de conception inclusive que vous avez implémentées.  
 7.  Livrez votre produit fini et documentez votre implémentation pour ceux qui travailleront sur le projet ultérieurement.  
 
 ## Rubriques connexes  
 * [Conception inclusive](http://design.microsoft.com/inclusive)
-* [Conception de logiciels accessibles](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
-* [Hub de développeurs axés sur l’accessibilité Microsoft](https://developer.microsoft.com/en-us/windows/accessible-apps)
+* [Conception de logiciels accessibles](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Hub de développeurs axés sur l’accessibilité Microsoft](https://developer.microsoft.com/windows/accessible-apps)
 * [Développement d’applications Windows inclusives](developing-inclusive-windows-apps.md)  
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

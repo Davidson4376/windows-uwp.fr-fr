@@ -3,8 +3,9 @@ author: awkoren
 Description: "Préparez votre application de bureau Windows (Win32, WPF, Windows Forms) pour convertir une application UWP en utilisant les extensions de conversion de bureau."
 Search.Product: eADQiWindows 10XVcnh
 title: Convertir votre application de bureau en une application UWP
-ms.sourcegitcommit: 37d4c8ef6178fe78c7333c47848177b5185c6d61
-ms.openlocfilehash: 16d75ebd2499e56af742c1c9994fd92cc320c22b
+translationtype: Human Translation
+ms.sourcegitcommit: 45b9170ed311e6f17d1c51c0b7d1d288e07184a9
+ms.openlocfilehash: c5ffb1e912c2953d5f813f099e036d2d7b395b69
 
 ---
 
@@ -90,11 +91,12 @@ Il est possible que n’ayez que peu à faire pour préparer votre application p
 |-------|-------------|
 | [Aperçu du Convertisseur d’applications de bureau (projet Centennial)](desktop-to-uwp-run-desktop-app-converter.md) | Montre comment exécuter le Convertisseur d’applications de bureau. Il est possible que n’ayez que peu (voire rien) à faire pour préparer votre application pour le processus de conversion. |
 | [Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)](desktop-to-uwp-manual-conversion.md) | Découvrez comment créer un package et un manifeste d’application manuellement. |
+| [Extensions d’application de bureau converties](desktop-to-uwp-extensions.md) | Vous pouvez améliorer votre application de bureau convertie avec un large éventail d’API de la plateforme Windows universelle (UWP). Toutefois, outre les API normales disponibles pour toutes les applications UWP, il existe certaines extensions et API disponibles uniquement pour les applications de bureau converties. Cet article décrit ces extensions et la manière de les utiliser. |
 | [Déployer et déboguer votre application UWP convertie](desktop-to-uwp-deploy-and-debug.md) | Contient des informations pour vous aider à réussir le déploiement et le débogage de votre application après sa conversion. En outre, si vous êtes curieux de connaître certains éléments internes des extensions de conversion de bureau, cette rubrique est faite pour vous. |
 | [Pont d’application de bureau pour les exemples de code UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Exemples de code sur GitHub illustrant les fonctionnalités d’applications converties. |
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

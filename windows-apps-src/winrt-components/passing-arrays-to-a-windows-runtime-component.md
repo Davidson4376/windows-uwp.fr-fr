@@ -3,6 +3,7 @@ author: msatranjr
 title: "Transmission de tableaux à un composant Windows Runtime"
 description: "Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie."
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
 
@@ -44,23 +45,23 @@ Si une méthode doit accepter un tableau pour l’entrée, modifier le contenu d
 > End Function
 > ```
 
-[!div class="tabbedCodeSnippets"] Nous vous conseillons d’effectuer une copie du tableau d’entrée immédiatement et de manipuler celle-ci.
+Nous vous conseillons d’effectuer une copie du tableau d’entrée immédiatement et de manipuler celle-ci. Cela permet de garantir que la méthode se comporte de la même façon que votre composant soit appelé ou non par du code .NET Framework.
 
-## Cela permet de garantir que la méthode se comporte de la même façon que votre composant soit appelé ou non par du code .NET Framework.
+## Utilisation des composants depuis du code managé et non managé
 
 
-Utilisation des composants depuis du code managé et non managé Les paramètres qui présentent l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute se comportent différemment selon que l’appelant est écrit en code natif ou en code managé.
+Les paramètres qui présentent l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute se comportent différemment selon que l’appelant est écrit en code natif ou en code managé. Si l’appelant est du code natif (JavaScript ou extensions des composants Visual C++), le contenu du tableau est traité comme suit :
 
--   Si l’appelant est du code natif (JavaScript ou extensions des composants Visual C++), le contenu du tableau est traité comme suit : ReadOnlyArrayAttribute : le tableau est copié lorsque l’appel traverse la limite de l’interface binaire d’application (ABI). Les éléments sont convertis si nécessaire.
--   Par conséquent, toute modification accidentelle que la méthode effectue dans un tableau d’entrée uniquement n’est pas visible pour l’appelant. WriteOnlyArrayAttribute : la méthode appelée ne peut pas faire d’hypothèses sur le contenu du tableau d’origine. Par exemple, le tableau que la méthode reçoit peut ne pas être initialisé ou peut contenir des valeurs par défaut.
+-   ReadOnlyArrayAttribute : le tableau est copié lorsque l’appel traverse la limite de l’interface binaire d’application (ABI). Les éléments sont convertis si nécessaire. Par conséquent, toute modification accidentelle que la méthode effectue dans un tableau d’entrée uniquement n’est pas visible pour l’appelant.
+-   WriteOnlyArrayAttribute : la méthode appelée ne peut pas faire d’hypothèses sur le contenu du tableau d’origine. Par exemple, le tableau que la méthode reçoit peut ne pas être initialisé ou peut contenir des valeurs par défaut. La méthode est censée définir les valeurs de tous les éléments du tableau.
 
-La méthode est censée définir les valeurs de tous les éléments du tableau. Si l’appelant est du code managé, le tableau d’origine est disponible pour la méthode appelée, comme il l’est dans un appel de méthode dans .NET Framework. Le contenu du tableau est mutable dans le code .NET Framework, de sorte que toutes les modifications que la méthode apporte au tableau sont visibles pour l’appelant. Il importe d’en tenir compte, car cela affecte les tests d’unité écrits pour un composant Windows Runtime.
+Si l’appelant est du code managé, le tableau d’origine est disponible pour la méthode appelée, comme il l’est dans un appel de méthode dans .NET Framework. Le contenu du tableau est mutable dans le code .NET Framework, de sorte que toutes les modifications que la méthode apporte au tableau sont visibles pour l’appelant. Il importe d’en tenir compte, car cela affecte les tests d’unité écrits pour un composant Windows Runtime. Si les tests sont écrits en code managé, le contenu d’un tableau apparaîtra mutable pendant le test.
 
-## Si les tests sont écrits en code managé, le contenu d’un tableau apparaîtra mutable pendant le test.
+## Rubriques connexes
 
-* [Rubriques connexes](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
-* [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [WriteOnlyArrayAttribute](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
+* [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
+* [Création de composants Windows Runtime enC# et VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 

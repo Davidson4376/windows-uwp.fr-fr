@@ -3,8 +3,9 @@ author: mtoepke
 title: "Guide de développement de jeux Windows10"
 description: "Guide complet sur les ressources et les informations nécessaires au développement de jeux de plateforme Windows universelle (UWP)."
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.sourcegitcommit: 35017dd14f873350d7e9d75ff6c5c519067547b5
-ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
+translationtype: Human Translation
+ms.sourcegitcommit: a9beb420ac13eb74c0109b30508e49d5305bc67c
+ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
 
 ---
 
@@ -30,12 +31,9 @@ Ce guide sera mis à jour lorsque des ressources et des documents relatifs au d�
 
 ## Ressources de développement de jeux
 
-
 De la documentation aux programmes de développement, en passant par les forums, les blogs et les exemples, de nombreuses ressources sont disponibles pour vous aider à développer des jeux. Voici un résumé des ressources à connaître lorsque vous commencez à développer votre jeu Windows 10.
 
 > **Remarque** Le développement de Xbox One et certaines fonctionnalités de jeux Windows 10 (les services Xbox Live par exemple) sont gérés via des programmes comme ID@Xbox et Microsoft Studios. Comme ce guide couvre une large gamme de ressources, vous pouvez donc constater que certaines ressources ne sont pas accessibles selon le programme que vous utilisez ou votre rôle de développement. Les exemples sont les liens developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com ou réseau GDN (Game Developer Network). Pour plus d’informations sur le partenariat avec Microsoft, voir [Programmes pour développeurs](#programs).
-
- 
 
 ### Documentation sur le développement de jeux
 
@@ -80,7 +78,6 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </tr>     
 </table>
 
-
 ### Programmes pour développeurs
 
 Microsoft propose plusieurs programmes pour développeurs pour vous aider à développer et à publier des jeux Windows. Pour publier un jeu dans le Windows Store, vous devez créer un compte de développeur dans le Centre de développement Windows. Les autres programmes peuvent être intéressants selon les besoins de votre jeu et de votre studio, et peuvent créer des opportunités comme le développement Xbox One et l’intégration Xbox Live.
@@ -97,7 +94,7 @@ L’inscription d’un compte de développeur dans le Centre de développement W
     <tr>
         <td>Inscrire un compte de développeur</td>
         <td>[Êtes-vous prêt à vous inscrire ?](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
-    </tr>
+    </tr> 
 </table>  
 
 
@@ -188,7 +185,7 @@ De nombreux exemples de jeu et d’application Windows10 sont disponibles pour v
     </tr>
     <tr>
         <td>Exemples de jeu Xbox One (GDN)</td>
-        <td>[Exemples](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[Exemples](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Exemples de jeu Windows 8 (MSDN Code Gallery)</td>
@@ -329,7 +326,27 @@ Ces trois vidéos du GDC 2015 constituent une bonne vue d’ensemble du dévelop
         <td>[L’avenir des jeux à travers l’écosystème Microsoft](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem)</td>
     </tr>
 </table>
- 
+
+### Planification de jeux
+
+Voici quelques concepts et questions d’ordre général à prendre en compte lors de la planification de votre jeu.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Rendre votre jeu accessible</td>
+        <td>[Accessibilité des jeux](https://msdn.microsoft.com/windows/uwp/gaming/accessibility-for-games)</td>
+    </tr>
+    <tr>
+        <td>Utilisation du cloud pour les jeux</td>
+        <td>[Cloud pour les jeux](https://msdn.microsoft.com/windows/uwp/gaming/cloud-for-games)</td>
+    </tr>
+</table>
+
+
 
 ### Choix de la technologie graphique et du langage de programmation
 
@@ -1028,7 +1045,7 @@ Découvrez ce qui a changé dans Direct3D12 et comment commencer à programmer �
  
 #### Kit de ressources et bibliothèques DirectX
 
-Le kit de ressources DirectX, la bibliothèque de traitement des textures DirectX et la bibliothèque de traitement des géométries DirectXMesh fournissent des fonctionnalités de texture, maillage, sprite etc., ainsi que des classes d’assistance pour le développement de DirectX. Ces bibliothèques vous permettent de gagner du temps et d’économiser vos efforts, comparé au travail que vous devriez fournir pour implémenter vous-même ces fonctionnalités. Même si elles sont implémentées essentiellement pour Direct3D 11, certaines parties de ces bibliothèques fonctionnent également dans Direct3D 12.
+Le kit de ressources DirectX, la bibliothèque de traitement des textures DirectX, la bibliothèque de traitement des géométries DirectXMesh, la bibliothèque UVAtlas et la bibliothèque DirectXMath fournissent des fonctionnalités de texture, maillage, sprite etc., ainsi que des classes d’assistance pour le développement avec DirectX. Ces bibliothèques peuvent vous faire gagner du temps et de l’énergie lors du développement.
 
 <table>
     <colgroup>
@@ -1036,11 +1053,15 @@ Le kit de ressources DirectX, la bibliothèque de traitement des textures Direct
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Obtenir le kit de ressources DirectX (DirectX 11)</td>
+        <td>Obtenir le kit de ressources DirectX pour DirectX11</td>
         <td>[DirectXTK](http://go.microsoft.com/fwlink/?LinkId=248929)</td>
     </tr>
     <tr>
-        <td>Obtenir la bibliothèque de traitement des textures DirectX (DirectX 11)</td>
+        <td>Obtenir le kit de ressources DirectX pour DirectX12</td>
+        <td>[DirectXTK12](http://go.microsoft.com/fwlink/?LinkID=615561)</td>
+    </tr>
+    <tr>
+        <td>Obtenir la bibliothèque de traitement des textures DirectX</td>
         <td>[DirectXTex](http://go.microsoft.com/fwlink/?LinkId=248926)</td>
     </tr>
     <tr>
@@ -1048,7 +1069,15 @@ Le kit de ressources DirectX, la bibliothèque de traitement des textures Direct
         <td>[DirectXMesh](http://go.microsoft.com/fwlink/?LinkID=324981)</td>
     </tr>
     <tr>
-        <td>Prise en charge de Direct3D 12 dans DirectXTK (billet de blog)</td>
+        <td>Obtenir UVAtlas pour la création et la compression d’atlas de textures isochart</td>
+        <td>[UVAtlas](http://go.microsoft.com/fwlink/?LinkID=512686)</td>
+    </tr>
+    <tr>
+        <td>Obtenir la bibliothèque DirectXMath</td>
+        <td>[DirectXMath](http://go.microsoft.com/fwlink/?LinkID=615560)</td>
+    </tr>
+    <tr>
+        <td>Prise en charge de Direct3D12 dans DirectXTK (billet de blog)</td>
         <td>[Prise en charge de DirectX12](https://github.com/Microsoft/DirectXTK/issues/2)</td>
     </tr>
 </table>
@@ -1072,11 +1101,11 @@ Voici des documentations supplémentaires sur DirectX, créées par des partenai
     </tr>
     <tr>
         <td>Intel: Multi adapter support in DirectX12 (en anglais)</td>
-        <td>[Implémentation d’une application explicite comportant plusieurs adaptateurs à l’aide de DirectX12](https://software.intel.com/en-us/articles/multi-adapter-support-in-directx-12)</td>
+        <td>[Implémentation d’une application explicite comportant plusieurs adaptateurs à l’aide de DirectX12](https://software.intel.com/articles/multi-adapter-support-in-directx-12)</td>
     </tr>
     <tr>
         <td>Intel: DirectX12 tutorial (en anglais)</td>
-        <td>[Livre blanc collaboratif, élaboré par Intel, SuzhouSnail et Microsoft](https://software.intel.com/en-us/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
+        <td>[Livre blanc collaboratif, élaboré par Intel, SuzhouSnail et Microsoft](https://software.intel.com/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
     </tr>
 </table>
 
@@ -1115,10 +1144,18 @@ Une vignette est la représentation de votre jeu dans le menu Démarrer. Les vig
         <td>Application Windows 10 pour le développement interactif des modèles de vignette dynamique</td>
         <td>[Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1)</td>
     </tr>
+    <tr>
+        <td>Extension UWP Tile Generator pour Visual Studio</td>
+        <td>[Outil permettant de créer toutes les vignettes requises à l’aide d’une image unique](https://visualstudiogallery.msdn.microsoft.com/09611e90-f3e8-44b7-9c83-18dba8275bb2)</td>
+    </tr>
+    <tr>
+        <td>Extension UWP Tile Generator pour Visual Studio (billet de blog)</td>
+        <td>[Conseils sur l’utilisation de l’outil UWP Tile Generator](https://blogs.windows.com/buildingapps/2016/02/15/uwp-tile-generator-extension-for-visual-studio/)</td>
+    </tr>
 </table>
  
 
-### Activer les achats de produits intégrés à l’application (in-app)
+### Activer les achats de produits dans l’application (in-app)
 
 Un PIA (produit intégré à l’application) est un article supplémentaire que les joueurs peuvent acheter dans le jeu. Il peut s’agir de nouveautés en matière d’extensions, de niveaux de jeu, d’articles ou de tout autre chose susceptibles de plaire à vos joueurs. Utilisés à bon escient, les PIA peuvent fournir des revenus tout en améliorant l’expérience de jeu. Vous pouvez définir et publier des PIA dans votre jeu via le tableau de bord du Centre de développement Windows, et activer les achats dans l’application dans le code de votre jeu.
 
@@ -1259,8 +1296,16 @@ Vous allez utiliser le nouveau tableau de bord unifié du Centre de développeme
     </tr>
     <tr>
         <td>Empaquetage de votre jeu en tant que développeur tiers (billet de blog)</td>
-        <td>[Créer des packages téléchargeables sans accès au compte Windows Store de l’éditeur du store](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/)</td>
+        <td>[Créer des packages téléchargeables sans accès au compte Windows Store de l’éditeur](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/)</td>
     </tr>
+    <tr>
+        <td>Création de packages d’application et d’ensembles de packages d’application à l’aide de MakeAppx</td>
+        <td>[Créer des packages à l’aide de l’outil de création de packages d’application MakeAppx.exe](https://msdn.microsoft.com/library/windows/desktop/hh446767)</td>
+    </tr>
+    <tr>
+        <td>Signature numérique des fichiers à l’aide de SignTool</td>
+        <td>[Signer les fichiers et vérifier les signatures dans les fichiers à l’aide de SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764)</td>
+    </tr>      
     <tr>
         <td>Chargement et contrôle de version de votre jeu</td>
         <td>[Charger des packages d’application](https://msdn.microsoft.com/library/windows/apps/mt148542)</td>
@@ -1313,13 +1358,17 @@ Le manifeste de magasin (StoreManifest.xml) est un fichier de configuration facu
 
 Vous n’avez pas terminé une fois que vous avez développé et fourni votre jeu. Si vous en avez fini avec le développement de la première version, le circuit de votre jeu sur le marché commence à peine quant à lui. Vous allez surveiller son utilisation et les rapports d’erreur, répondre aux commentaires des utilisateurs, et publier des mises à jour pour votre jeu.
 
-### Promotion et analyse du Centre de développement Windows
+### Promotion et analyses du Centre de développement Windows
 
 <table>
     <colgroup>
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>Application Centre de développement</td>
+        <td>[Application Centre de développement Windows10 permettant d’afficher les performances des applications publiées](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)</td>
+    </tr>  
     <tr>
         <td>Analyses du Centre de développement Windows</td>
         <td>[Analyses](https://msdn.microsoft.com/library/windows/apps/mt148522)</td>
@@ -1447,6 +1496,6 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

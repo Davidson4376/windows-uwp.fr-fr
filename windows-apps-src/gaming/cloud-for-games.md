@@ -3,8 +3,9 @@ author: joannaleecy
 title: Utilisation des services de cloud computing pour les jeux UWP
 description: "Apprenez-en davantage sur l’implémentation de services de cloud computing en tant que serveur principal pour vos jeux UWP."
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
-ms.sourcegitcommit: b25f02dc4ebcf960882e64f66f0306a8e584ebbd
-ms.openlocfilehash: d9b252783213f0c6a82944729f98c84e21d56535
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8bf42e9c2c2e074240eb8e7b94efdfbca65cc7f9
 
 ---
 #  Utilisation des services de cloud computing pour les jeux UWP
@@ -54,7 +55,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
         </td>
         <td>
             <ul>
-                <li>[Implémentation d’une expérience de jeu sur les réseaux sociaux avec AzureDocumentDB](https://azure.microsoft.com/en-us/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/)</td>
+                <li>[Implémentation d’une expérience de jeu sur les réseaux sociaux avec AzureDocumentDB](https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/)</td>
             </ul>
     </tr>
     <tr>
@@ -115,18 +116,18 @@ Alors que les fabricants et les concepteurs de jeu discutent des fonctions et fo
 ### Guides de formation étape par étape
 
 * [Build 2016 Codelabs: utilisation de Microsoft Azure App Service et du serveur principal Microsoft SQL Azure pour enregistrer le score du jeu](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* [Conception de la stratégie de mobile engagement de votre jeu](https://azure.microsoft.com/en-us/documentation/articles/mobile-engagement-gaming-scenario/)
-* [Prise en main d’Azure Mobile Engagement pour le déploiement de l’application Unity pour iOS](https://azure.microsoft.com/en-us/documentation/articles/mobile-engagement-unity-ios-get-started/)
+* [Conception de la stratégie de mobile engagement de votre jeu](https://azure.microsoft.com/documentation/articles/mobile-engagement-gaming-scenario/)
+* [Prise en main d’Azure Mobile Engagement pour le déploiement de l’application Unity pour iOS](https://azure.microsoft.com/documentation/articles/mobile-engagement-unity-ios-get-started/)
 
 ### Comprendre IaaS, PaaS ou SaaS
 
 Tout d’abord, vous devez prendre en considération le niveau de service le mieux adapté à votre jeu. Une bonne connaissance des trois services suivants et de leurs différences peut vous aider à déterminer l’approche à adopter pour créer votre serveur principal.
 
-* [Infrastructure en tant que service (IaaS)](https://azure.microsoft.com/en-us/overview/what-is-iaas/)
+* [Infrastructure en tant que service (IaaS)](https://azure.microsoft.com/overview/what-is-iaas/)
 
     L’infrastructure en tant que service (IaaS) est une infrastructure informatique instantanée, mise en service et gérée via Internet. Imaginez pouvoir utiliser de nombreuses machines immédiatement disponibles pour rapidement augmenter ou réduire votre offre, en fonction de la demande. L’infrastructure en tant que service vous permet d’éviter d’acheter vos propres serveurs physiques et toute autre infrastructure de centre de données, ainsi qu’elle vous libère de la complexité de tels systèmes.
 
-* [Plateforme en tant que service (PaaS)](https://azure.microsoft.com/en-us/overview/what-is-paas/)
+* [Plateforme en tant que service (PaaS)](https://azure.microsoft.com/overview/what-is-paas/)
 
     La plateforme en tant que service (PaaS) est comme l’infrastructure en tant que service, à ceci près qu’elle intègre également une gestion de l’infrastructure comme les serveurs, le stockage et la mise en réseau. Aussi, non seulement vous n’êtes pas obligé d’acheter des serveurs physiques et une infrastructure de base de données, mais vous n’êtes pas obligé non plus d’acheter ni de gérer des licences logicielles, une infrastructure applicative sous-jacente, un middleware, des outils de développement ou autres ressources.
 
@@ -201,6 +202,6 @@ Voici quelques sociétés qui proposent un serveur principal dans le cloud pour 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
 title: Impression3D
 description: "Cette section explique comment utiliser la fonctionnalité d’impression 3D dans votre application Windows universelle."
 translationtype: Human Translation
-ms.sourcegitcommit: 4b8125e064c4e2e6f4eeced50885ad352d4d6988
-ms.openlocfilehash: a56adc5c7bc3f2d5ec4976e4e5394ff26ea983dc
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: d06659defe0c866297049bb7a937d066f6afd6b7
 
 ---
 # Impression3D
@@ -23,12 +23,12 @@ Cette section explique comment utiliser la fonctionnalité d’impression 3D dan
 
 * [Exemple d’impression3DUWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [Exemple d’impression3DUWP à partir de Unity](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
-* [Matériel: impression3D avec Windows10](https://msdn.microsoft.com/en-us/windows/hardware/bg183398.aspx)
+* [Matériel: impression3D avec Windows10](https://msdn.microsoft.com/windows/hardware/bg183398.aspx)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

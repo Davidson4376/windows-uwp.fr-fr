@@ -3,6 +3,7 @@ author: msatranjr
 title: "Vue d’ensemble des cartes et de l’emplacement"
 description: "Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application CartesWindows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique."
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
+translationtype: Human Translation
 ms.sourcegitcommit: a3240047ec77ada0c5f6b5586eee2404353889f6
 ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
 

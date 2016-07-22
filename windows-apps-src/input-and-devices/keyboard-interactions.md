@@ -5,6 +5,7 @@ title: Interactions avec le clavier
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: d65e1315e83fef5e53771adad0943c9cb59d9139
 ms.openlocfilehash: 9de90236d94522f1b80309c3fec51ce59aee0319
 

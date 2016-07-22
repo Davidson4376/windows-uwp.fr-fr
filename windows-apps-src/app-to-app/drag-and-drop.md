@@ -3,6 +3,7 @@ description: "Cet article vous explique comment ajouter le glisser-déplacer dan
 title: "Glisser-déplacer"
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 03f3f86ed1310e6e3ac5f53cc5e81ebef708a1a2
 ms.openlocfilehash: ffa2f0f368a61ef4f3003c1fa03e143b26c6859b
 

@@ -3,6 +3,7 @@ author: msatranjr
 title: "Création de composants Windows Runtime en C++"
 description: "Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application UWP générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++."
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
 

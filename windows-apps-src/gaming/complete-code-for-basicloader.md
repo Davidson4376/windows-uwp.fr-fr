@@ -30,17 +30,13 @@ Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
-
-            **Langages de programmation**: C++  
-
-            **Modèles de programmation**: Windows Runtime
+**Langages de programmation**: C++  
+**Modèles de programmation**: Windows Runtime
 
 ## Conditions requises
 
-
-            **Client minimal pris en charge**: Windows10                              
-
-            **Serveur minimal pris en charge**: Windows Server2016 Technical Preview 
+**Client minimal pris en charge**: Windows10                              
+**Serveur minimal pris en charge**: Windows Server2016 Technical Preview 
 
 
 ## Afficher le code (C++)

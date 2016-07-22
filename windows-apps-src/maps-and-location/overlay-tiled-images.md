@@ -3,6 +3,7 @@ author: msatranjr
 title: Superposer des images sous forme de vignettes sur une carte
 description: "Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut."
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
 
@@ -143,36 +144,36 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## [!div class="tabbedCodeSnippets"]
+## Superposer des vignettes provenant d’un stockage local
 
 
-Superposer des vignettes provenant d’un stockage local Superposez des images sous forme de vignettes stockées en tant que fichiers dans le stockage local, à l’aide de la [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
+Superposez des images sous forme de vignettes stockées en tant que fichiers dans le stockage local, à l’aide de la [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). En règle générale, vous placez ces fichiers dans un package, puis vous les distribuez avec votre application.
 
-1.  En règle générale, vous placez ces fichiers dans un package, puis vous les distribuez avec votre application.
-2.  Instanciez une [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Spécifiez le format des noms de fichier en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Pour créer cette valeur, insérez les paramètres remplaçables dans le nom de fichier de base.
+1.  Instanciez une [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
+2.  Spécifiez le format des noms de fichier en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Pour créer cette valeur, insérez les paramètres remplaçables dans le nom de fichier de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est la suivante:
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    Par exemple, dans l’exemple de code suivant, la valeur de l’élément [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est la suivante: Si le format de nom de fichiers nécessite des arguments supplémentaires qui ne sont pas fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001).
+    Si le format de nom de fichiers nécessite des arguments supplémentaires qui ne sont pas fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Pour plus d’informations, voir la section [Fournir un URI personnalisé](#customuri) plus loin dans cette rubrique.
 
-3.  Pour plus d’informations, voir la section [Fournir un URI personnalisé](#customuri) plus loin dans cette rubrique.
+3.  Suivez ensuite les étapes restantes décrites précédemment dans [Vue d’ensemble des images sous forme de vignettes](#tileintro).
 
-Suivez ensuite les étapes restantes décrites précédemment dans [Vue d’ensemble des images sous forme de vignettes](#tileintro).
+Vous pouvez utiliser les protocoles et les emplacements suivants pour charger les vignettes à partir du stockage local :
 
-| Vous pouvez utiliser les protocoles et les emplacements suivants pour charger les vignettes à partir du stockage local : | URI |
+| URI | Informations supplémentaires |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| Informations supplémentaires | ms-appx:/// |
-|  | Pointe vers la racine du dossier d’installation de l’application. |
-| Il s’agit de l’emplacement référencé par la propriété [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681). | ms-appdata:///local |
-|  | Pointe vers la racine du stockage local de l’application. |
-| Il s’agit de l’emplacement référencé par la propriété [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). | ms-appdata:///temp |
-|  | Pointe vers le dossier temporaire de l’application. |
+| ms-appx:/// | Pointe vers la racine du dossier d’installation de l’application. |
+|  | Il s’agit de l’emplacement référencé par la propriété [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681). |
+| ms-appdata:///local | Pointe vers la racine du stockage local de l’application. |
+|  | Il s’agit de l’emplacement référencé par la propriété [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). |
+| ms-appdata:///temp | Pointe vers le dossier temporaire de l’application. |
+|  | Il s’agit de l’emplacement référencé par la propriété [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629). |
 
  
 
-Il s’agit de l’emplacement référencé par la propriété [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629). L’exemple suivant illustre le chargement de vignettes stockées en tant que fichiers dans le dossier d’installation de l’application, via le protocole `ms-appx:///`. La valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) est spécifiée dans le constructeur de la classe [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
+L’exemple suivant illustre le chargement de vignettes stockées en tant que fichiers dans le dossier d’installation de l’application, via le protocole `ms-appx:///`. La valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) est spécifiée dans le constructeur de la classe [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Dans cet exemple, les vignettes sont uniquement affichées lorsque le niveau de zoom de la carte est inclus dans la plage indiquée par la propriété facultative [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
 
 ```csharp
         void AddLocalMapTileSource()
@@ -194,15 +195,15 @@ Il s’agit de l’emplacement référencé par la propriété [ApplicationData.
         }
 ```
 
-## Dans cet exemple, les vignettes sont uniquement affichées lorsque le niveau de zoom de la carte est inclus dans la plage indiquée par la propriété facultative [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
+## Fournir un URI personnalisé
 
 
-Fournir un URI personnalisé Si les paramètres remplaçables fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) de la classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) ou la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) de la classe [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) ne sont pas suffisants pour récupérer vos vignettes, vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en proposant un gestionnaire personnalisé pour l’événement **UriRequested**.
+Si les paramètres remplaçables fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) de la classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) ou la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) de la classe [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) ne sont pas suffisants pour récupérer vos vignettes, vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en proposant un gestionnaire personnalisé pour l’événement **UriRequested**. L’événement **UriRequested** est déclenché pour chaque vignette individuelle.
 
-1.  L’événement **UriRequested** est déclenché pour chaque vignette individuelle.
-2.  Dans le gestionnaire personnalisé de l’événement **UriRequested**, combinez les arguments personnalisés requis avec les propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744)et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) de la classe [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) pour créer l’URI personnalisé.
+1.  Dans le gestionnaire personnalisé de l’événement **UriRequested**, combinez les arguments personnalisés requis avec les propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744)et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) de la classe [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) pour créer l’URI personnalisé.
+2.  Renvoyez l’URI personnalisé dans la propriété [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) de la classe [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), qui est contenue dans la propriété [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) de la classe [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
 
-Renvoyez l’URI personnalisé dans la propriété [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) de la classe [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), qui est contenue dans la propriété [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) de la classe [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177). L’exemple suivant explique comment fournir un URI personnalisé en créant un gestionnaire personnalisé pour l’événement **UriRequested**.
+L’exemple suivant explique comment fournir un URI personnalisé en créant un gestionnaire personnalisé pour l’événement **UriRequested**. Il indique également comment implémenter le modèle de report si vous devez exécuter une action asynchrone pour créer l’URI personnalisé.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -240,17 +241,17 @@ using System.Threading.Tasks;
         }
 ```
 
-## Il indique également comment implémenter le modèle de report si vous devez exécuter une action asynchrone pour créer l’URI personnalisé.
+## Superposer des vignettes provenant d’une source personnalisée
 
 
-Superposer des vignettes provenant d’une source personnalisée Superposez des vignettes personnalisées à l’aide de la [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983).
+Superposez des vignettes personnalisées à l’aide de la [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Créez des vignettes par programme en mémoire, à la volée, ou écrivez votre propre code pour charger les vignettes existantes à partir d’une autre source.
 
-Créez des vignettes par programme en mémoire, à la volée, ou écrivez votre propre code pour charger les vignettes existantes à partir d’une autre source. Pour créer ou charger des vignettes personnalisées, fournissez un gestionnaire personnalisé pour l’événement [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984).
+Pour créer ou charger des vignettes personnalisées, fournissez un gestionnaire personnalisé pour l’événement [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984). L’événement **BitmapRequested** est déclenché pour chaque vignette individuelle.
 
-1.  L’événement **BitmapRequested** est déclenché pour chaque vignette individuelle.
-2.  Dans le gestionnaire personnalisé de l’événement [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984), combinez les arguments personnalisés requis avec les propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) pour créer ou récupérer une vignette personnalisée. Renvoyez la vignette personnalisée dans la propriété [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) de la classe [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), qui est contenue dans la propriété [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132).
+1.  Dans le gestionnaire personnalisé de l’événement [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984), combinez les arguments personnalisés requis avec les propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) pour créer ou récupérer une vignette personnalisée.
+2.  Renvoyez la vignette personnalisée dans la propriété [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) de la classe [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), qui est contenue dans la propriété [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). La propriété **PixelData** présente le type [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
 
-La propriété **PixelData** présente le type [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664). L’exemple suivant indique comment fournir des vignettes personnalisées en créant un gestionnaire personnalisé pour l’événement **BitmapRequested**. Cet exemple permet de créer des vignettes rouges identiques, partiellement opaques. L’exemple ne tient pas compte des propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Cet exemple n’est pas concret, mais il indique comment créer des vignettes personnalisées en mémoire, à la volée.
+L’exemple suivant indique comment fournir des vignettes personnalisées en créant un gestionnaire personnalisé pour l’événement **BitmapRequested**. Cet exemple permet de créer des vignettes rouges identiques, partiellement opaques. L’exemple ne tient pas compte des propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Cet exemple n’est pas concret, mais il indique comment créer des vignettes personnalisées en mémoire, à la volée. Il indique également comment implémenter le modèle de report si vous devez exécuter une action asynchrone pour créer les vignettes personnalisées.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -349,21 +350,21 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 }
 ```
 
-## Il indique également comment implémenter le modèle de report si vous devez exécuter une action asynchrone pour créer les vignettes personnalisées.
+## Remplacer la carte par défaut
 
 
-Remplacer la carte par défaut
+Pour remplacer entièrement la carte par défaut par des vignettes personnalisées ou tierces, procédez comme suit:
 
--   Pour remplacer entièrement la carte par défaut par des vignettes personnalisées ou tierces, procédez comme suit:
 -   Spécifiez [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** en tant que valeur de la propriété [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) de la classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+-   Spécifiez [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** en tant que valeur de la propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) de la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-## Spécifiez [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** en tant que valeur de la propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) de la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+## Rubriques connexes
 
-* [Rubriques connexes](https://www.bingmapsportal.com/)
-* [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Exemple de carte UWP](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Recommandations en matière de conception pour les cartes](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
+* [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 
 
 

@@ -5,8 +5,8 @@ title: "Et après ?"
 description: "Maintenant que vous avez créé votre première application, consultez le reste du Centre de développement. Les différentes sections qu’il contient sont présentées ci-après."
 keywords: Dev Center, Getting started
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: cb77a32f99bc6e27cfe87af16d6cd4e08855d7b6
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 5d8f036b7dcaba1c697f574011875cadbf1970c1
 
 ---
 # Et après?
@@ -39,7 +39,7 @@ Accédez à [Publier](http://go.microsoft.com/fwlink/p/?linkid=268275).
 
 Cette section contient des informations détaillées sur les classes, les propriétés, les méthodes, les événements, les styles et les autres API que vous pouvez utiliser pour créer des applications de plateforme Windows universelle (UWP).
 
-Accéder à [Informations de référence sur les API](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx).
+Accéder à [Informations de référence sur les API](https://msdn.microsoft.com/library/windows/apps/br211369.aspx).
 
 ## Informations de référence sur les langages
 
@@ -72,6 +72,6 @@ Accéder à [Développer des applications IoT](http://go.microsoft.com/fwlink/p/
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

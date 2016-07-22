@@ -3,6 +3,7 @@ author: drewbatgit
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
 description: "Cet article décrit comment créer des applications UWP permettant de lire du contenu audio en arrière-plan."
 title: "Contenu audio en arrière-plan"
+translationtype: Human Translation
 ms.sourcegitcommit: 99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9
 ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
 

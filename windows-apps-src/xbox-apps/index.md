@@ -3,8 +3,9 @@ author: Mtoepke
 title: UWP sur XboxOne
 description: "Procédure de création d’applications pour la plateforme Windows universelle (UWP) sur XboxOne."
 area: Xbox
-ms.sourcegitcommit: b94df28172a0ffa33e69e7d20c83c715a1bfdb52
-ms.openlocfilehash: d50602cf6ba7041d34200e8bc93a14188038b5ae
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b615eaab90ef43026baedd0113ad28f43bede343
 
 ---
 
@@ -12,7 +13,7 @@ ms.openlocfilehash: d50602cf6ba7041d34200e8bc93a14188038b5ae
 
 Prise en main de la création d’applications pour la plateforme Windows universelle (UWP) sur XboxOne.
 
-Cette version d’évaluation prend en charge le développement d’applications et de jeux. Vous n’avez pas besoin d’être développeur [ID@Xbox](http://www.xbox.com/en-us/Developers/id) pour expérimenter, créer et tester des jeux ou des applications sur Xbox, mais vous devez vous inscrire sur [ID@Xbox](http://www.xbox.com/en-us/Developers/id) pour publier et vendre un jeu sur Xbox One ou tirer parti de Xbox Live sur Windows 10. Pour rejoindre notre communauté de développeurs indépendants et passionnés, inscrivez-vous sur [ID@Xbox](http://www.xbox.com/en-us/Developers/id). 
+Cette version d’évaluation prend en charge le développement d’applications et de jeux. Vous n’avez pas besoin d’être développeur [ID@Xbox](http://www.xbox.com/Developers/id) pour expérimenter, créer et tester des jeux ou des applications sur Xbox, mais vous devez vous inscrire sur [ID@Xbox](http://www.xbox.com/Developers/id) pour publier et vendre un jeu sur Xbox One ou tirer parti de Xbox Live sur Windows 10. Pour rejoindre notre communauté de développeurs indépendants et passionnés, inscrivez-vous sur [ID@Xbox](http://www.xbox.com/Developers/id). 
 
 Cette section comprend la procédure de configuration, un guide détaillant le processus d’authentification, des informations sur l’installation des versions requises de Visual Studio et des outils Windows 10, et la procédure de création, d’exécution et de débogage de votre première application simple. 
 
@@ -23,8 +24,8 @@ Cette section comprend la procédure de configuration, un guide détaillant le p
 |[Problèmes connus](known-issues.md)| Problèmes connus avec UWP sur XboxOne Developer Preview. |
 |[FAQ](frequently-asked-questions.md)| FAQ relative à UWP sur Xbox One. |
 |[Activation du Mode développeur XboxOne](devkit-activation.md)| Explique comment activer le Mode développeur sur XboxOne. |
-|[Présentation des outils XboxOne](introduction-to-xbox-tools.md)| Décrit l’outil _Dev Home_ spécifique à Xbox One, l’utilisation de Windows Device Portal et la configuration de Visual Studio pour le développement, et fournit des conseils aux nouveaux développeurs pour la création d’une première application UWP Xbox. |
-|[Configurer votre plateforme Windows universelle sur l’environnement de développement Xbox](development-environment-setup.md)| Décrit la procédure de configuration et de test de votre environnement de développement XboxOne. |
+|[Outils](introduction-to-xbox-tools.md)| Décrit l’outil XboxOne _Accueil du développeur_, l’utilisation de Windows Device Portal et la configuration de Visual Studio pour le développement. En outre, cette section guide les nouveaux développeurs pour leur première application UWP Xbox, et leur explique comment utiliser l’outil Fiddler pour afficher le trafic réseau. |
+|[Configurer votre plateforme UWP sur l’environnement de développement Xbox](development-environment-setup.md)| Décrit la procédure de configuration et de test de votre environnement de développement XboxOne. |
 |[Meilleures pratiques](tailoring-for-xbox.md)| Comment désactiver le mode souris, dessiner sur les bords de l’écran et désactiver la mise à l’échelle. |
 |[Ressources système pour les applications UWP et les jeux sur XboxOne](system-resource-allocation.md)| Décrit les ressources disponibles pour votre application quand elle s’exécute sur Xbox One. | 
 |[Conception pour Xbox et télévision](http://go.microsoft.com/fwlink/?LinkID=760736)| Décrit les meilleures pratiques de conception d’une application qui sera affichée sur un téléviseur et utilise un contrôleur pour les entrées. |  
@@ -42,6 +43,6 @@ Cette section comprend la procédure de configuration, un guide détaillant le p
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

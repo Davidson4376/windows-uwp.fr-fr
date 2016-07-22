@@ -2,6 +2,7 @@
 author: WilliamsJason
 title: "Infos de référence sur les API de chargement du dossier Device Portal"
 description: "Découvrez comment accéder par programme aux API de chargement des dossiers."
+translationtype: Human Translation
 ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
 ms.openlocfilehash: 942ddc13b0deba382ad7758bc30bd9a5b0cceb11
 
@@ -53,6 +54,6 @@ Code d’état HTTP      | Description
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

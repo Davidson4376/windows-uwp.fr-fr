@@ -3,6 +3,7 @@ author: jnHs
 Description: "Vous pouvez générer des codes promotionnels pour une application ou un produit in-app que vous avez publiés dans le Windows Store."
 title: "Générer des codes promotionnels"
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
+translationtype: Human Translation
 ms.sourcegitcommit: df994a3bbda9f6d4df0ee2dd6c2cb646d91a0bfc
 ms.openlocfilehash: bfea802fb4a6efcfe34121802ce49f20a9b0305e
 
@@ -138,6 +139,6 @@ Vous pouvez également télécharger une commande active à partir de ce tableau
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

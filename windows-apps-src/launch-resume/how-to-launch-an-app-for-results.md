@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "Lancer une application pour obtenir des résultats"
 description: "Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de «démarrage d’une application pour afficher les résultats»."
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
 ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
 
