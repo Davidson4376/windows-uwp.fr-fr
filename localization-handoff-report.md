@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\app-analysis.md](https://github.com/Microsoft/windows-apps/blob/06aed6e530d7f9dbcfb67d29545c26b63d93a559/windows-apps-src/debug-test-perf/app-analysis.md) | HandedOffSuccess | [Details](#30f8dd0171ed120733cc513bbf6d9ea40849584e1995)
+ [windows-apps-src\publish\app-package-requirements.md](https://github.com/Microsoft/windows-apps/blob/c15d4153f6ae83cc7bf1ae02d834bd07189e38ab/windows-apps-src/publish/app-package-requirements.md) | OutofSyncHandedBackSuccess | [Details](#9b4a8cd228fdbb4978b74f5d7773eaaf8a1a970d3653)
 
 ## Item Details
-##### <a name='30f8dd0171ed120733cc513bbf6d9ea40849584e1995'></a> Source: [windows-apps-src\debug-test-perf\app-analysis.md](https://github.com/Microsoft/windows-apps/blob/06aed6e530d7f9dbcfb67d29545c26b63d93a559/windows-apps-src/debug-test-perf/app-analysis.md)
-* Status: HandedOffSuccess
+##### <a name='9b4a8cd228fdbb4978b74f5d7773eaaf8a1a970d3653'></a> Source: [windows-apps-src\publish\app-package-requirements.md](https://github.com/Microsoft/windows-apps/blob/c15d4153f6ae83cc7bf1ae02d834bd07189e38ab/windows-apps-src/publish/app-package-requirements.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [app-analysis.5342254e750c7e0022473bb64f5ded310b2ea84b.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/9182fab73029add9851808842f4b4b859fc51eec/ol-handoff/Microsoft/windows-apps.fr-fr/master/app-analysis.5342254e750c7e0022473bb64f5ded310b2ea84b.fr-fr.xlf)
-* Handoff Datetime: 2016-07-26 16:43:26
+* Handoff File: [app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/759a7d88147664943e03fccb428faf483e184b1a/ol-handoff/Microsoft/windows-apps.fr-fr/master/app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.fr-fr.xlf)
+* Handoff Datetime: 2016-07-26 17:41:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\app-package-requirements.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/publish/app-package-requirements.md)
+* Current Handback File: [app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.fr-fr.xlf)
+* Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
 
