@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\create-app-descriptions.md](https://github.com/Microsoft/windows-apps/blob/40e55666581caba1b51dae8c05f67f9da18b3a49/windows-apps-src/publish/create-app-descriptions.md) | OutofSyncHandedBackSuccess | [Details](#9e59369a7450d9f2581071a9af34ec13344cf81e3664)
- [windows-apps-src\publish\iap-submissions.md](https://github.com/Microsoft/windows-apps/blob/93049c9f227ffb3610e165b6316fb3321d382131/windows-apps-src/publish/iap-submissions.md) | OutofSyncHandedBackSuccess | [Details](#a143d137a44463e34f00ec4dbf0d2614fa95c70d3683)
+ [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/92b878e88a32d95a70e31298f128f98751ddc7c1/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md) | OutofSyncHandedBackSuccess | [Details](#10eedba472e82c4d7608e6b4a9d74300e4bc60d65449)
 
 ## Item Details
-##### <a name='9e59369a7450d9f2581071a9af34ec13344cf81e3664'></a> Source: [windows-apps-src\publish\create-app-descriptions.md](https://github.com/Microsoft/windows-apps/blob/40e55666581caba1b51dae8c05f67f9da18b3a49/windows-apps-src/publish/create-app-descriptions.md)
+##### <a name='10eedba472e82c4d7608e6b4a9d74300e4bc60d65449'></a> Source: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/92b878e88a32d95a70e31298f128f98751ddc7c1/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/43e98279af500d8c7cde7c97c4117b1fdde9cacc/ol-handoff/Microsoft/windows-apps.fr-fr/master/create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.fr-fr.xlf)
-* Handoff Datetime: 2016-07-26 22:43:32
+* Handoff File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/13fab69a6b63139fe64aa18ed523cf447c4ecd4e/ol-handoff/Microsoft/windows-apps.fr-fr/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.fr-fr.xlf)
+* Handoff Datetime: 2016-07-26 23:13:45
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\create-app-descriptions.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/publish/create-app-descriptions.md)
-* Current Handback File: [create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.fr-fr.xlf)
-* Current Handback Datetime: 2016-07-22 14:30:38
-* [Back to Top](#report-top)
-
-##### <a name='a143d137a44463e34f00ec4dbf0d2614fa95c70d3683'></a> Source: [windows-apps-src\publish\iap-submissions.md](https://github.com/Microsoft/windows-apps/blob/93049c9f227ffb3610e165b6316fb3321d382131/windows-apps-src/publish/iap-submissions.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [iap-submissions.4390f9a7f4735787093413e410c6fabc886278df.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/43e98279af500d8c7cde7c97c4117b1fdde9cacc/ol-handoff/Microsoft/windows-apps.fr-fr/master/iap-submissions.4390f9a7f4735787093413e410c6fabc886278df.fr-fr.xlf)
-* Handoff Datetime: 2016-07-26 22:43:32
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\iap-submissions.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/publish/iap-submissions.md)
-* Current Handback File: [iap-submissions.4390f9a7f4735787093413e410c6fabc886278df.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/iap-submissions.4390f9a7f4735787093413e410c6fabc886278df.fr-fr.xlf)
+* Current Target File: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
+* Current Handback File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
