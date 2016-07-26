@@ -1,26 +1,42 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/2e7e409e0b69d973a3679f13703d6a4d0ec32494/windows-apps-src/publish/manage-account-users.md) | OutofSyncHandedBackSuccess | [Details](#c9d62266a91764c8dc0df7128bb9f0d2768c62433690)
+ [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/d14dd7fbfba59b9a06024dc010456982c5ecfcf5/windows-apps-src/monetize/get-in-app-acquisitions.md) | OutofSyncHandedBackSuccess | [Details](#61b971fba7510c410517e0e641a336c16ea5ff1c3428)
+ [windows-apps-src\monetize\grant-free-products.md](https://github.com/Microsoft/windows-apps/blob/d14dd7fbfba59b9a06024dc010456982c5ecfcf5/windows-apps-src/monetize/grant-free-products.md) | OutofSyncHandedBackSuccess | [Details](#24cb6953326bb9e6b2a01e081fb081bee314043c3430)
 
 ## Item Details
-##### <a name='c9d62266a91764c8dc0df7128bb9f0d2768c62433690'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/2e7e409e0b69d973a3679f13703d6a4d0ec32494/windows-apps-src/publish/manage-account-users.md)
+##### <a name='61b971fba7510c410517e0e641a336c16ea5ff1c3428'></a> Source: [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/d14dd7fbfba59b9a06024dc010456982c5ecfcf5/windows-apps-src/monetize/get-in-app-acquisitions.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/741440ef52ce46d8e571b2aa5c497daf68bc379f/ol-handoff/Microsoft/windows-apps.fr-fr/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.fr-fr.xlf)
-* Handoff Datetime: 2016-07-26 18:12:06
+* Handoff File: [get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/0edd00331ecd4d3cca8ce53efa863b80ddf90bec/ol-handoff/Microsoft/windows-apps.fr-fr/master/get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.fr-fr.xlf)
+* Handoff Datetime: 2016-07-26 19:43:49
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/publish/manage-account-users.md)
-* Current Handback File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.fr-fr.xlf)
+* Current Target File: [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/monetize/get-in-app-acquisitions.md)
+* Current Handback File: [get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.fr-fr.xlf)
+* Current Handback Datetime: 2016-07-22 14:30:38
+* [Back to Top](#report-top)
+
+##### <a name='24cb6953326bb9e6b2a01e081fb081bee314043c3430'></a> Source: [windows-apps-src\monetize\grant-free-products.md](https://github.com/Microsoft/windows-apps/blob/d14dd7fbfba59b9a06024dc010456982c5ecfcf5/windows-apps-src/monetize/grant-free-products.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [grant-free-products.9ce5dd681b14e8792e182d1e6176971dd69c3220.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/0edd00331ecd4d3cca8ce53efa863b80ddf90bec/ol-handoff/Microsoft/windows-apps.fr-fr/master/grant-free-products.9ce5dd681b14e8792e182d1e6176971dd69c3220.fr-fr.xlf)
+* Handoff Datetime: 2016-07-26 19:43:49
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\monetize\grant-free-products.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/monetize/grant-free-products.md)
+* Current Handback File: [grant-free-products.9ce5dd681b14e8792e182d1e6176971dd69c3220.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/grant-free-products.9ce5dd681b14e8792e182d1e6176971dd69c3220.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
