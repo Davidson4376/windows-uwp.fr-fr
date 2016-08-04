@@ -6,22 +6,19 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/754f3654a3d36e93efa357aef958a22743448813/windows-apps-src/get-started/enable-your-device-for-development.md) | OutofSyncHandedBackSuccess | [Details](#cb4d1e233bb734e92973b0a93e27ba9967551b293551)
+ [windows-apps-src\enterprise\wip-dev-guide.md](https://github.com/Microsoft/windows-apps/blob/0da731e1211544ce6b07e783ddc2407da57781c2/windows-apps-src/enterprise/wip-dev-guide.md) | HandedOffSuccess | [Details](#8ead30471371b9b6aca32088f115da9f687849223417)
 
 ## Item Details
-##### <a name='cb4d1e233bb734e92973b0a93e27ba9967551b293551'></a> Source: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/754f3654a3d36e93efa357aef958a22743448813/windows-apps-src/get-started/enable-your-device-for-development.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='8ead30471371b9b6aca32088f115da9f687849223417'></a> Source: [windows-apps-src\enterprise\wip-dev-guide.md](https://github.com/Microsoft/windows-apps/blob/0da731e1211544ce6b07e783ddc2407da57781c2/windows-apps-src/enterprise/wip-dev-guide.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/dd41531f9228f9958aec4bc27d61b1025d4aeb2b/ol-handoff/Microsoft/windows-apps.fr-fr/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf)
-* Handoff Datetime: 2016-08-04 22:08:45
+* Handoff File: [wip-dev-guide.c2e2fe40c6255bd8f5df75ee81adcc2c3bdffc9b.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/9551ba7a87c2c716ef8e3684205ff33f885adcc9/ol-handoff/Microsoft/windows-apps.fr-fr/master/wip-dev-guide.c2e2fe40c6255bd8f5df75ee81adcc2c3bdffc9b.fr-fr.xlf)
+* Handoff Datetime: 2016-08-04 22:37:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/get-started/enable-your-device-for-development.md)
-* Current Handback File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf)
-* Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
 
