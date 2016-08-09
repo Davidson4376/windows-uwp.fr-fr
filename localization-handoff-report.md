@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\apps-for-education\index.md](https://github.com/Microsoft/windows-apps/blob/a8baa3ef15bd521a3e53b35ebcb7f0914e76a5ba/windows-apps-src/apps-for-education/index.md) | HandedOffSuccess | [Details](#2b553e9adc0c31eed9266853a158c622dd4deb31154)
+ [windows-apps-src\enterprise\wip-hub.md](https://github.com/Microsoft/windows-apps/blob/1070561ea95cd1d884303fdd476b40a9ec88e390/windows-apps-src/enterprise/wip-hub.md) | HandedOffSuccess | [Details](#2beec354ed7dbb3cc2d4cb502977ce028b4eaf1d3419)
 
 ## Item Details
-##### <a name='2b553e9adc0c31eed9266853a158c622dd4deb31154'></a> Source: [windows-apps-src\apps-for-education\index.md](https://github.com/Microsoft/windows-apps/blob/a8baa3ef15bd521a3e53b35ebcb7f0914e76a5ba/windows-apps-src/apps-for-education/index.md)
+##### <a name='2beec354ed7dbb3cc2d4cb502977ce028b4eaf1d3419'></a> Source: [windows-apps-src\enterprise\wip-hub.md](https://github.com/Microsoft/windows-apps/blob/1070561ea95cd1d884303fdd476b40a9ec88e390/windows-apps-src/enterprise/wip-hub.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.2cc87043830bb9640c617568c764ed1059899790.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/ceb3b5ca46f61d46aa2c8e4c098c0a4cc2818668/ol-handoff/Microsoft/windows-apps.fr-fr/master/index.2cc87043830bb9640c617568c764ed1059899790.fr-fr.xlf)
-* Handoff Datetime: 2016-08-09 21:19:06
+* Handoff File: [wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/da3b42889ead12d81c221e0d98fd1ec8a4bd7712/ol-handoff/Microsoft/windows-apps.fr-fr/master/wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.fr-fr.xlf)
+* Handoff Datetime: 2016-08-09 21:49:18
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
