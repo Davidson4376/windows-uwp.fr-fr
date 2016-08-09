@@ -1,33 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\enterprise\images\wip-lifecycle.PNG](https://github.com/Microsoft/windows-apps/blob/8344f1d74fa7f7554a9f4bf30f06650363b63a7e/windows-apps-src/enterprise/images/wip-lifecycle.PNG) | HandedOffSuccess | [Details](#76aae435be958f1fcf52edecc0883ec51a96c29e3416)
- [windows-apps-src\enterprise\wip-hub.md](https://github.com/Microsoft/windows-apps/blob/8344f1d74fa7f7554a9f4bf30f06650363b63a7e/windows-apps-src/enterprise/wip-hub.md) | HandedOffSuccess | [Details](#3222d29ed7963f2fea7edeef350336f7461c1e153419)
+ [windows-apps-src\apps-for-education\index.md](https://github.com/Microsoft/windows-apps/blob/a8baa3ef15bd521a3e53b35ebcb7f0914e76a5ba/windows-apps-src/apps-for-education/index.md) | HandedOffSuccess | [Details](#2b553e9adc0c31eed9266853a158c622dd4deb31154)
 
 ## Item Details
-##### <a name='76aae435be958f1fcf52edecc0883ec51a96c29e3416'></a> Source: [windows-apps-src\enterprise\images\wip-lifecycle.PNG](https://github.com/Microsoft/windows-apps/blob/8344f1d74fa7f7554a9f4bf30f06650363b63a7e/windows-apps-src/enterprise/images/wip-lifecycle.PNG)
+##### <a name='2b553e9adc0c31eed9266853a158c622dd4deb31154'></a> Source: [windows-apps-src\apps-for-education\index.md](https://github.com/Microsoft/windows-apps/blob/a8baa3ef15bd521a3e53b35ebcb7f0914e76a5ba/windows-apps-src/apps-for-education/index.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [76aae435be958f1fcf52edecc0883ec51a96c29e.PNG](https://github.com/Microsoft/WDG.handoff/blob/0955beed1a42305a72df874d1d766b34682167a5/ol-handoff/Microsoft/windows-apps.fr-fr/master/76aae435be958f1fcf52edecc0883ec51a96c29e.PNG)
-* Handoff Datetime: 2016-08-09 20:50:35
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\enterprise\wip-hub.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='3222d29ed7963f2fea7edeef350336f7461c1e153419'></a> Source: [windows-apps-src\enterprise\wip-hub.md](https://github.com/Microsoft/windows-apps/blob/8344f1d74fa7f7554a9f4bf30f06650363b63a7e/windows-apps-src/enterprise/wip-hub.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/0955beed1a42305a72df874d1d766b34682167a5/ol-handoff/Microsoft/windows-apps.fr-fr/master/wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.fr-fr.xlf)
-* Handoff Datetime: 2016-08-09 20:50:35
+* Handoff File: [index.2cc87043830bb9640c617568c764ed1059899790.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/ceb3b5ca46f61d46aa2c8e4c098c0a4cc2818668/ol-handoff/Microsoft/windows-apps.fr-fr/master/index.2cc87043830bb9640c617568c764ed1059899790.fr-fr.xlf)
+* Handoff Datetime: 2016-08-09 21:19:06
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
