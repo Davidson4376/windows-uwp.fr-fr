@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\create-schedule-and-manage-media-breaks.md](https://github.com/Microsoft/windows-apps/blob/2e969e53a29a98223f26353a5444ca9d9ebe2641/windows-apps-src/audio-video-camera/create-schedule-and-manage-media-breaks.md) | HandedOffSuccess | [Details](#0fe495f3eb2c15ccff4a672abd904dc43cfdf1931614)
+ [windows-apps-src\audio-video-camera\capture-device-controls-for-video-capture.md](https://github.com/Microsoft/windows-apps/blob/daeb92e51a005825f1e410da9c924afc723297f1/windows-apps-src/audio-video-camera/capture-device-controls-for-video-capture.md) | HandedOffSuccess | [Details](#5a51ee9c67eb421c2478ca46f415879afb609210160)
 
 ## Item Details
-##### <a name='0fe495f3eb2c15ccff4a672abd904dc43cfdf1931614'></a> Source: [windows-apps-src\audio-video-camera\create-schedule-and-manage-media-breaks.md](https://github.com/Microsoft/windows-apps/blob/2e969e53a29a98223f26353a5444ca9d9ebe2641/windows-apps-src/audio-video-camera/create-schedule-and-manage-media-breaks.md)
+##### <a name='5a51ee9c67eb421c2478ca46f415879afb609210160'></a> Source: [windows-apps-src\audio-video-camera\capture-device-controls-for-video-capture.md](https://github.com/Microsoft/windows-apps/blob/daeb92e51a005825f1e410da9c924afc723297f1/windows-apps-src/audio-video-camera/capture-device-controls-for-video-capture.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-schedule-and-manage-media-breaks.6279db683a7da489cf01fd3b67e64b55324ebb69.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/c5a7eb0408f372d73e7bffea76b9545a890cc500/ol-handoff/Microsoft/windows-apps.fr-fr/master/create-schedule-and-manage-media-breaks.6279db683a7da489cf01fd3b67e64b55324ebb69.fr-fr.xlf)
-* Handoff Datetime: 2016-08-12 20:18:54
+* Handoff File: [capture-device-controls-for-video-capture.f49bb6514eeca0e936ee07fc1f7e3511f8b03edd.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/bce19398bcd31d74bfbc27e3afd75bc9867fbccb/ol-handoff/Microsoft/windows-apps.fr-fr/master/capture-device-controls-for-video-capture.f49bb6514eeca0e936ee07fc1f7e3511f8b03edd.fr-fr.xlf)
+* Handoff Datetime: 2016-08-12 20:48:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\audio-video-camera\capture-device-controls-for-video-capture.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/audio-video-camera/capture-device-controls-for-video-capture.md)
+* Current Handback File: [capture-device-controls-for-video-capture.f49bb6514eeca0e936ee07fc1f7e3511f8b03edd.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/capture-device-controls-for-video-capture.f49bb6514eeca0e936ee07fc1f7e3511f8b03edd.fr-fr.xlf)
+* Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
 
