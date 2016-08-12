@@ -6,50 +6,53 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\handle-device-orientation-with-mediacapture.md](https://github.com/Microsoft/windows-apps/blob/9f1d65d73bdf50697d75b0d57429aed66898e1b5/windows-apps-src/audio-video-camera/handle-device-orientation-with-mediacapture.md) | HandedOffSuccess | [Details](#eb6487e7f2c19a8227320c5a7f087e4b3c3c62701619)
- [windows-apps-src\layout\peer-to-peer-navigation-between-two-pages.md](https://github.com/Microsoft/windows-apps/blob/81972b1ec1b0d30c0d86049d814f8e4ed0236e73/windows-apps-src/layout/peer-to-peer-navigation-between-two-pages.md) | HandedOffSuccess | [Details](#4f0af9d1f40f393207c8506ddbb408a1949f28c24665)
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/625358f03d69e95abbd0015e0fb3381bdf2bdc3d/windows-apps-src/xbox-apps/known-issues.md) | HandedOffSuccess | [Details](#39a34552df2793a5d012130ae5abe41f365ddee28051)
+ [windows-apps-src\audio-video-camera\high-dynamic-range-hdr-photo-capture.md](https://github.com/Microsoft/windows-apps/blob/cd711c2a5eb718521e3bf04ea7d37929dec5fb05/windows-apps-src/audio-video-camera/high-dynamic-range-hdr-photo-capture.md) | HandedOffSuccess | [Details](#204e997ebb8484a7a661422b8060fe885bd561a21621)
+ [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps/blob/0725ba7bad3d218c0198114f853ff64eb1d42c63/windows-apps-src/gaming/cloud-for-games.md) | HandedOffSuccess | [Details](#a868dc76815a3c1e427198fde7217bb86ee69a2f3439)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/8ea3d33e6a973937fb46c67fe7415dd36406da6a/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#deed75e20256995ac9eb7d71d708e07df02b95e87927)
 
 ## Item Details
-##### <a name='eb6487e7f2c19a8227320c5a7f087e4b3c3c62701619'></a> Source: [windows-apps-src\audio-video-camera\handle-device-orientation-with-mediacapture.md](https://github.com/Microsoft/windows-apps/blob/9f1d65d73bdf50697d75b0d57429aed66898e1b5/windows-apps-src/audio-video-camera/handle-device-orientation-with-mediacapture.md)
+##### <a name='204e997ebb8484a7a661422b8060fe885bd561a21621'></a> Source: [windows-apps-src\audio-video-camera\high-dynamic-range-hdr-photo-capture.md](https://github.com/Microsoft/windows-apps/blob/cd711c2a5eb718521e3bf04ea7d37929dec5fb05/windows-apps-src/audio-video-camera/high-dynamic-range-hdr-photo-capture.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [handle-device-orientation-with-mediacapture.f695178c91976947783ff356b80e7473892b4032.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/184d58db1a670f534ecaebc15eeba2c91eb5cbe4/ol-handoff/Microsoft/windows-apps.fr-fr/master/handle-device-orientation-with-mediacapture.f695178c91976947783ff356b80e7473892b4032.fr-fr.xlf)
-* Handoff Datetime: 2016-08-12 21:50:28
+* Handoff File: [high-dynamic-range-hdr-photo-capture.d9915a949483b2b16ea0f80edb4661ca32cb5e81.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/26c850a0b8fa86936cb7fb3be704243f1f291587/ol-handoff/Microsoft/windows-apps.fr-fr/master/high-dynamic-range-hdr-photo-capture.d9915a949483b2b16ea0f80edb4661ca32cb5e81.fr-fr.xlf)
+* Handoff Datetime: 2016-08-12 22:18:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='4f0af9d1f40f393207c8506ddbb408a1949f28c24665'></a> Source: [windows-apps-src\layout\peer-to-peer-navigation-between-two-pages.md](https://github.com/Microsoft/windows-apps/blob/81972b1ec1b0d30c0d86049d814f8e4ed0236e73/windows-apps-src/layout/peer-to-peer-navigation-between-two-pages.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [peer-to-peer-navigation-between-two-pages.0300cf8a0fd1a68b83b643544575fdeec289c144.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/184d58db1a670f534ecaebc15eeba2c91eb5cbe4/ol-handoff/Microsoft/windows-apps.fr-fr/master/peer-to-peer-navigation-between-two-pages.0300cf8a0fd1a68b83b643544575fdeec289c144.fr-fr.xlf)
-* Handoff Datetime: 2016-08-12 21:50:28
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\layout\peer-to-peer-navigation-between-two-pages.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/layout/peer-to-peer-navigation-between-two-pages.md)
-* Current Handback File: [peer-to-peer-navigation-between-two-pages.0300cf8a0fd1a68b83b643544575fdeec289c144.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/peer-to-peer-navigation-between-two-pages.0300cf8a0fd1a68b83b643544575fdeec289c144.fr-fr.xlf)
+* Current Target File: [windows-apps-src\audio-video-camera\high-dynamic-range-hdr-photo-capture.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/audio-video-camera/high-dynamic-range-hdr-photo-capture.md)
+* Current Handback File: [high-dynamic-range-hdr-photo-capture.d9915a949483b2b16ea0f80edb4661ca32cb5e81.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/high-dynamic-range-hdr-photo-capture.d9915a949483b2b16ea0f80edb4661ca32cb5e81.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
-##### <a name='39a34552df2793a5d012130ae5abe41f365ddee28051'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/625358f03d69e95abbd0015e0fb3381bdf2bdc3d/windows-apps-src/xbox-apps/known-issues.md)
+##### <a name='a868dc76815a3c1e427198fde7217bb86ee69a2f3439'></a> Source: [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps/blob/0725ba7bad3d218c0198114f853ff64eb1d42c63/windows-apps-src/gaming/cloud-for-games.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/184d58db1a670f534ecaebc15eeba2c91eb5cbe4/ol-handoff/Microsoft/windows-apps.fr-fr/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf)
-* Handoff Datetime: 2016-08-12 21:50:28
+* Handoff File: [cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/26c850a0b8fa86936cb7fb3be704243f1f291587/ol-handoff/Microsoft/windows-apps.fr-fr/master/cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.fr-fr.xlf)
+* Handoff Datetime: 2016-08-12 22:18:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/xbox-apps/known-issues.md)
-* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf)
+* Current Target File: [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/gaming/cloud-for-games.md)
+* Current Handback File: [cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.fr-fr.xlf)
+* Current Handback Datetime: 2016-07-22 14:30:38
+* [Back to Top](#report-top)
+
+##### <a name='deed75e20256995ac9eb7d71d708e07df02b95e87927'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/8ea3d33e6a973937fb46c67fe7415dd36406da6a/windows-apps-src/TOC.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/26c850a0b8fa86936cb7fb3be704243f1f291587/ol-handoff/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
+* Handoff Datetime: 2016-08-12 22:18:14
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
