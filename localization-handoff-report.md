@@ -1,20 +1,36 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps/blob/6e27c815768d016af86fff618561037cd3144e66/windows-apps-src/get-started/application-development-for-windows-as-a-service.md) | HandedOffSuccess | [Details](#175467ac450831e13ab81f065c8f0125b870769b3545)
- [windows-apps-src\publish\beta-testing-and-targeted-distribution.md](https://github.com/Microsoft/windows-apps/blob/9b58f825518908a6b3942b2a80391234c7a4507c/windows-apps-src/publish/beta-testing-and-targeted-distribution.md) | HandedOffSuccess | [Details](#a7b582dd6f38e24c80300c48317e8242cd73176e4983)
+ [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/e0ba851c2329b9fef29df8d506a8cbb821b55562/windows-apps-src/launch-resume/launch-default-app.md) | HandedOffSuccess | [Details](#89ffba6a1d4eb2838d591a60ba61e7ffad1e61224394)
+ [windows-apps-src\launch-resume\launch-ringtone-picker.md](https://github.com/Microsoft/windows-apps/blob/7288927e1230cc96966e2616c1b0430f0057dd16/windows-apps-src/launch-resume/launch-ringtone-picker.md) | HandedOffSuccess | [Details](#4b7bbc5016af4506fbcc465227059b963c4c0b964397)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/b4138dc065b7b59a4d51fec279b3e4f590ffb8a2/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#bcba6f31e0f5ef25f7fb7ba85f0d388b5960925c7936)
 
 ## Item Details
-##### <a name='175467ac450831e13ab81f065c8f0125b870769b3545'></a> Source: [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://github.com/Microsoft/windows-apps/blob/6e27c815768d016af86fff618561037cd3144e66/windows-apps-src/get-started/application-development-for-windows-as-a-service.md)
+##### <a name='89ffba6a1d4eb2838d591a60ba61e7ffad1e61224394'></a> Source: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/e0ba851c2329b9fef29df8d506a8cbb821b55562/windows-apps-src/launch-resume/launch-default-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [application-development-for-windows-as-a-service.c15099eb2d254be26aa42260cb08f3c54a113b4e.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/e74019e7c00c64a36a2b68687a46367198bef343/ol-handoff/Microsoft/windows-apps.fr-fr/master/application-development-for-windows-as-a-service.c15099eb2d254be26aa42260cb08f3c54a113b4e.fr-fr.xlf)
-* Handoff Datetime: 2016-08-22 19:22:40
+* Handoff File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/8a3c4fb74be16c0133ec4d3bfd04eff25c711e1d/ol-handoff/Microsoft/windows-apps.fr-fr/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.fr-fr.xlf)
+* Handoff Datetime: 2016-08-22 20:22:00
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/launch-resume/launch-default-app.md)
+* Current Handback File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.fr-fr.xlf)
+* Current Handback Datetime: 2016-07-22 14:30:38
+* [Back to Top](#report-top)
+
+##### <a name='4b7bbc5016af4506fbcc465227059b963c4c0b964397'></a> Source: [windows-apps-src\launch-resume\launch-ringtone-picker.md](https://github.com/Microsoft/windows-apps/blob/7288927e1230cc96966e2616c1b0430f0057dd16/windows-apps-src/launch-resume/launch-ringtone-picker.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [launch-ringtone-picker.607755ecc68e95f8cec3518f5ffad51708dd64a8.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/8a3c4fb74be16c0133ec4d3bfd04eff25c711e1d/ol-handoff/Microsoft/windows-apps.fr-fr/master/launch-ringtone-picker.607755ecc68e95f8cec3518f5ffad51708dd64a8.fr-fr.xlf)
+* Handoff Datetime: 2016-08-22 20:22:00
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,18 +38,18 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='a7b582dd6f38e24c80300c48317e8242cd73176e4983'></a> Source: [windows-apps-src\publish\beta-testing-and-targeted-distribution.md](https://github.com/Microsoft/windows-apps/blob/9b58f825518908a6b3942b2a80391234c7a4507c/windows-apps-src/publish/beta-testing-and-targeted-distribution.md)
+##### <a name='bcba6f31e0f5ef25f7fb7ba85f0d388b5960925c7936'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/b4138dc065b7b59a4d51fec279b3e4f590ffb8a2/windows-apps-src/TOC.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [beta-testing-and-targeted-distribution.c67e1e6f8bc384fde280a22078ae75eedc4d25c5.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/e74019e7c00c64a36a2b68687a46367198bef343/ol-handoff/Microsoft/windows-apps.fr-fr/master/beta-testing-and-targeted-distribution.c67e1e6f8bc384fde280a22078ae75eedc4d25c5.fr-fr.xlf)
-* Handoff Datetime: 2016-08-22 19:22:40
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/8a3c4fb74be16c0133ec4d3bfd04eff25c711e1d/ol-handoff/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
+* Handoff Datetime: 2016-08-22 20:22:00
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\beta-testing-and-targeted-distribution.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/publish/beta-testing-and-targeted-distribution.md)
-* Current Handback File: [beta-testing-and-targeted-distribution.c67e1e6f8bc384fde280a22078ae75eedc4d25c5.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/beta-testing-and-targeted-distribution.c67e1e6f8bc384fde280a22078ae75eedc4d25c5.fr-fr.xlf)
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
