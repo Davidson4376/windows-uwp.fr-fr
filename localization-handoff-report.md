@@ -1,26 +1,42 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/ea5aea0a443b5f29383ca9bf2dde6f6ab2f454b1/windows-apps-src/porting/desktop-to-uwp-signing.md) | HandedOffSuccess | [Details](#ebe9f6e896a15be7d109527518ab9dcc4f75e8ce4849)
+ [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/76450022829680cbc4a183fb5c9c17e932b5f54e/windows-apps-src/devices-sensors/3d-print-from-app.md) | HandedOffSuccess | [Details](#caf1a161d486750a9981c809ff341d2fff35b1413315)
+ [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps/blob/c790d57e72a75ec28e376722f8d87c2655b18c42/windows-apps-src/devices-sensors/generate-3mf.md) | HandedOffSuccess | [Details](#1d291173cc68d4eedcbc2918f308be1489105a083355)
 
 ## Item Details
-##### <a name='ebe9f6e896a15be7d109527518ab9dcc4f75e8ce4849'></a> Source: [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/ea5aea0a443b5f29383ca9bf2dde6f6ab2f454b1/windows-apps-src/porting/desktop-to-uwp-signing.md)
+##### <a name='caf1a161d486750a9981c809ff341d2fff35b1413315'></a> Source: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/76450022829680cbc4a183fb5c9c17e932b5f54e/windows-apps-src/devices-sensors/3d-print-from-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/33abd4af91249f78d6de2061994f33b4f9530d1c/ol-handoff/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.fr-fr.xlf)
-* Handoff Datetime: 2016-08-26 18:17:18
+* Handoff File: [3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/2ae77c4e9014f4c08476a86e851bf1f81587c016/ol-handoff/Microsoft/windows-apps.fr-fr/master/3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.fr-fr.xlf)
+* Handoff Datetime: 2016-08-26 18:46:08
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/porting/desktop-to-uwp-signing.md)
-* Current Handback File: [desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.fr-fr.xlf)
+* Current Target File: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/devices-sensors/3d-print-from-app.md)
+* Current Handback File: [3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.fr-fr.xlf)
+* Current Handback Datetime: 2016-07-22 14:30:38
+* [Back to Top](#report-top)
+
+##### <a name='1d291173cc68d4eedcbc2918f308be1489105a083355'></a> Source: [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps/blob/c790d57e72a75ec28e376722f8d87c2655b18c42/windows-apps-src/devices-sensors/generate-3mf.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/2ae77c4e9014f4c08476a86e851bf1f81587c016/ol-handoff/Microsoft/windows-apps.fr-fr/master/generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.fr-fr.xlf)
+* Handoff Datetime: 2016-08-26 18:46:08
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/devices-sensors/generate-3mf.md)
+* Current Handback File: [generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
