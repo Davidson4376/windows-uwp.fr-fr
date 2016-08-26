@@ -1,40 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps/blob/9ef86dcd4ae3d922b713d585543f1def48fcb645/windows-apps-src/launch-resume/guidelines-for-background-tasks.md) | HandedOffSuccess | [Details](#57f4fd2beeb04db44804689e3e46744b4fc03ce54371)
- [windows-apps-src\launch-resume\web-to-app-linking.md](https://github.com/Microsoft/windows-apps/blob/9ef86dcd4ae3d922b713d585543f1def48fcb645/windows-apps-src/launch-resume/web-to-app-linking.md) | HandedOffSuccess | [Details](#c9833f29d6080509c849e9d624f2bfcd0b0af04c4414)
+ [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/ea5aea0a443b5f29383ca9bf2dde6f6ab2f454b1/windows-apps-src/porting/desktop-to-uwp-signing.md) | HandedOffSuccess | [Details](#ebe9f6e896a15be7d109527518ab9dcc4f75e8ce4849)
 
 ## Item Details
-##### <a name='57f4fd2beeb04db44804689e3e46744b4fc03ce54371'></a> Source: [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps/blob/9ef86dcd4ae3d922b713d585543f1def48fcb645/windows-apps-src/launch-resume/guidelines-for-background-tasks.md)
+##### <a name='ebe9f6e896a15be7d109527518ab9dcc4f75e8ce4849'></a> Source: [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/ea5aea0a443b5f29383ca9bf2dde6f6ab2f454b1/windows-apps-src/porting/desktop-to-uwp-signing.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/1c06956913f52cb3e520ac347b1e22216be61fdd/ol-handoff/Microsoft/windows-apps.fr-fr/master/guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.fr-fr.xlf)
-* Handoff Datetime: 2016-08-26 16:45:56
+* Handoff File: [desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/33abd4af91249f78d6de2061994f33b4f9530d1c/ol-handoff/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.fr-fr.xlf)
+* Handoff Datetime: 2016-08-26 18:17:18
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/launch-resume/guidelines-for-background-tasks.md)
-* Current Handback File: [guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.fr-fr.xlf)
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/porting/desktop-to-uwp-signing.md)
+* Current Handback File: [desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
-* [Back to Top](#report-top)
-
-##### <a name='c9833f29d6080509c849e9d624f2bfcd0b0af04c4414'></a> Source: [windows-apps-src\launch-resume\web-to-app-linking.md](https://github.com/Microsoft/windows-apps/blob/9ef86dcd4ae3d922b713d585543f1def48fcb645/windows-apps-src/launch-resume/web-to-app-linking.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [web-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/1c06956913f52cb3e520ac347b1e22216be61fdd/ol-handoff/Microsoft/windows-apps.fr-fr/master/web-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.fr-fr.xlf)
-* Handoff Datetime: 2016-08-26 16:45:56
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
