@@ -1,54 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\images\devcenter-topic1.png](https://github.com/Microsoft/windows-apps/blob/c30f7a4ecfbbda826307a50ea4c81d9e2f95c966/windows-apps-src/get-started/images/devcenter-topic1.png) | HandedOffSuccess | [Details](#5ce75833952694e1e7571fb49586917e375039ea3576)
- [windows-apps-src\get-started\images\devcenter-topic2.png](https://github.com/Microsoft/windows-apps/blob/c30f7a4ecfbbda826307a50ea4c81d9e2f95c966/windows-apps-src/get-started/images/devcenter-topic2.png) | HandedOffSuccess | [Details](#cb4b464035e0fc6d287c81ef81685d91502c0bc73577)
- [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/c30f7a4ecfbbda826307a50ea4c81d9e2f95c966/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#09f08bebdfc8355b05f36713e6e04ae80645cbb03933)
+ [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/9a6b72d17004615c02edf7235fd9327abb0c8ff8/windows-apps-src/publish/manage-account-users.md) | HandedOffSuccess | [Details](#b10e80eb833ae0a772d72951ca3c3b1076a8b1715071)
 
 ## Item Details
-##### <a name='5ce75833952694e1e7571fb49586917e375039ea3576'></a> Source: [windows-apps-src\get-started\images\devcenter-topic1.png](https://github.com/Microsoft/windows-apps/blob/c30f7a4ecfbbda826307a50ea4c81d9e2f95c966/windows-apps-src/get-started/images/devcenter-topic1.png)
+##### <a name='b10e80eb833ae0a772d72951ca3c3b1076a8b1715071'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/9a6b72d17004615c02edf7235fd9327abb0c8ff8/windows-apps-src/publish/manage-account-users.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [5ce75833952694e1e7571fb49586917e375039ea.png](https://github.com/Microsoft/WDG.handoff/blob/a2d5dc207a13276291323c5a3b062b72e7546bf8/ol-handoff/Microsoft/windows-apps.fr-fr/master/5ce75833952694e1e7571fb49586917e375039ea.png)
-* Handoff Datetime: 2016-08-31 22:09:01
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\get-started\learn-more.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='cb4b464035e0fc6d287c81ef81685d91502c0bc73577'></a> Source: [windows-apps-src\get-started\images\devcenter-topic2.png](https://github.com/Microsoft/windows-apps/blob/c30f7a4ecfbbda826307a50ea4c81d9e2f95c966/windows-apps-src/get-started/images/devcenter-topic2.png)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [cb4b464035e0fc6d287c81ef81685d91502c0bc7.png](https://github.com/Microsoft/WDG.handoff/blob/a2d5dc207a13276291323c5a3b062b72e7546bf8/ol-handoff/Microsoft/windows-apps.fr-fr/master/cb4b464035e0fc6d287c81ef81685d91502c0bc7.png)
-* Handoff Datetime: 2016-08-31 22:09:01
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\get-started\learn-more.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='09f08bebdfc8355b05f36713e6e04ae80645cbb03933'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/c30f7a4ecfbbda826307a50ea4c81d9e2f95c966/windows-apps-src/get-started/learn-more.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/a2d5dc207a13276291323c5a3b062b72e7546bf8/ol-handoff/Microsoft/windows-apps.fr-fr/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf)
-* Handoff Datetime: 2016-08-31 22:09:01
+* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/2dbaf92c2dbd0b68a26894313f83211082f541f8/ol-handoff/Microsoft/windows-apps.fr-fr/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.fr-fr.xlf)
+* Handoff Datetime: 2016-09-01 16:38:47
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/get-started/learn-more.md)
-* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf)
+* Current Target File: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/publish/manage-account-users.md)
+* Current Handback File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
