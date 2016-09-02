@@ -1,35 +1,48 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/1efb12b79e55b19f363c2f1c852b809e6789b672/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#71d60e1dfb4f6dbe9ff2fe1b0f893658a71297783933)
- [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/87ad884a1c8bed817bd35845d607b9ca2271a60c/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md) | HandedOffSuccess | [Details](#63ab2eb3b12c5c8552130846aa0e626b99b1b06d4743)
+ [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/e213453c41cadd32ebfde6829a658256c24ba669/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md) | HandedOffSuccess | [Details](#148e22f0b18f094b3dc25113b564e2f276ab4eab4743)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/6e52d7e485b9057774188595e89cd2289e6b2f1b/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#4ed7fca1cc5125d7df1a80c6ece20ec378fc07b44897)
+ [windows-apps-src\porting\desktop-to-uwp-supported-api.md](https://github.com/Microsoft/windows-apps/blob/3e8a09fcbbca130f0519aac2172e4b345959068a/windows-apps-src/porting/desktop-to-uwp-supported-api.md) | HandedOffSuccess | [Details](#b2500ea797329277c0f866294bcc04292238d18a4899)
 
 ## Item Details
-##### <a name='71d60e1dfb4f6dbe9ff2fe1b0f893658a71297783933'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/1efb12b79e55b19f363c2f1c852b809e6789b672/windows-apps-src/get-started/learn-more.md)
+##### <a name='148e22f0b18f094b3dc25113b564e2f276ab4eab4743'></a> Source: [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/e213453c41cadd32ebfde6829a658256c24ba669/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/ab9aa6736dfd7f3755ac19d07deb8c7a8c214d95/ol-handoff/Microsoft/windows-apps.fr-fr/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf)
-* Handoff Datetime: 2016-09-02 16:37:24
+* Handoff File: [create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/e2a95955365f1284cd953fb5e2e84f9ba9159751/ol-handoff/Microsoft/windows-apps.fr-fr/master/create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.fr-fr.xlf)
+* Handoff Datetime: 2016-09-02 17:07:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/get-started/learn-more.md)
-* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf)
+* [Back to Top](#report-top)
+
+##### <a name='4ed7fca1cc5125d7df1a80c6ece20ec378fc07b44897'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/6e52d7e485b9057774188595e89cd2289e6b2f1b/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/e2a95955365f1284cd953fb5e2e84f9ba9159751/ol-handoff/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf)
+* Handoff Datetime: 2016-09-02 17:07:40
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
-##### <a name='63ab2eb3b12c5c8552130846aa0e626b99b1b06d4743'></a> Source: [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/87ad884a1c8bed817bd35845d607b9ca2271a60c/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md)
+##### <a name='b2500ea797329277c0f866294bcc04292238d18a4899'></a> Source: [windows-apps-src\porting\desktop-to-uwp-supported-api.md](https://github.com/Microsoft/windows-apps/blob/3e8a09fcbbca130f0519aac2172e4b345959068a/windows-apps-src/porting/desktop-to-uwp-supported-api.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/ab9aa6736dfd7f3755ac19d07deb8c7a8c214d95/ol-handoff/Microsoft/windows-apps.fr-fr/master/create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.fr-fr.xlf)
-* Handoff Datetime: 2016-09-02 16:37:24
+* Handoff File: [desktop-to-uwp-supported-api.220ba582d79150eb52605ad0af9b424c0fb476ad.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/e2a95955365f1284cd953fb5e2e84f9ba9159751/ol-handoff/Microsoft/windows-apps.fr-fr/master/desktop-to-uwp-supported-api.220ba582d79150eb52605ad0af9b424c0fb476ad.fr-fr.xlf)
+* Handoff Datetime: 2016-09-02 17:07:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
