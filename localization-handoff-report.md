@@ -1,26 +1,39 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/fcff9982a0a4f42f864d1ade214b475458b7d37a/windows-apps-src/security/companion-device-unlock.md) | HandedOffSuccess | [Details](#04e68203367b2366fa64decd067dc6e8526ce71e5148)
+ [windows-apps-src\publish\payment-thresholds-methods-and-timeframes.md](https://github.com/Microsoft/windows-apps/blob/842221e9596f5bb132e9109a1c4f8a5d9e9439dd/windows-apps-src/publish/payment-thresholds-methods-and-timeframes.md) | HandedOffSuccess | [Details](#1513c5b7714a1f2169ad7f5b08819dd06448d58c5097)
+ [windows-apps-src\publish\respond-to-customer-reviews.md](https://github.com/Microsoft/windows-apps/blob/934715cc2681f613982d081335155e29fa7af775/windows-apps-src/publish/respond-to-customer-reviews.md) | HandedOffSuccess | [Details](#24d327a92a6a58ecf265f9cdadd5a49d24c0857d5107)
 
 ## Item Details
-##### <a name='04e68203367b2366fa64decd067dc6e8526ce71e5148'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/fcff9982a0a4f42f864d1ade214b475458b7d37a/windows-apps-src/security/companion-device-unlock.md)
+##### <a name='1513c5b7714a1f2169ad7f5b08819dd06448d58c5097'></a> Source: [windows-apps-src\publish\payment-thresholds-methods-and-timeframes.md](https://github.com/Microsoft/windows-apps/blob/842221e9596f5bb132e9109a1c4f8a5d9e9439dd/windows-apps-src/publish/payment-thresholds-methods-and-timeframes.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/6ae3c680eb5309d93b2685c5438517d432eacc83/ol-handoff/Microsoft/windows-apps.fr-fr/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf)
-* Handoff Datetime: 2016-09-14 03:08:39
+* Handoff File: [payment-thresholds-methods-and-timeframes.a7bdbb15553090183b0fa2cbdd54710d90be2ed3.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/5c7c94d761569d71489a96364782920eec9943cd/ol-handoff/Microsoft/windows-apps.fr-fr/master/payment-thresholds-methods-and-timeframes.a7bdbb15553090183b0fa2cbdd54710d90be2ed3.fr-fr.xlf)
+* Handoff Datetime: 2016-09-14 19:08:01
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/security/companion-device-unlock.md)
-* Current Handback File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.fr-fr.xlf)
+* [Back to Top](#report-top)
+
+##### <a name='24d327a92a6a58ecf265f9cdadd5a49d24c0857d5107'></a> Source: [windows-apps-src\publish\respond-to-customer-reviews.md](https://github.com/Microsoft/windows-apps/blob/934715cc2681f613982d081335155e29fa7af775/windows-apps-src/publish/respond-to-customer-reviews.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [respond-to-customer-reviews.8b15e11c210d9bb5ead696d30c383e78922f29c8.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/5c7c94d761569d71489a96364782920eec9943cd/ol-handoff/Microsoft/windows-apps.fr-fr/master/respond-to-customer-reviews.8b15e11c210d9bb5ead696d30c383e78922f29c8.fr-fr.xlf)
+* Handoff Datetime: 2016-09-14 19:08:01
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\respond-to-customer-reviews.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/402eb0dc49711783fdbd768a93aa5456388b34d9/windows-apps-src/publish/respond-to-customer-reviews.md)
+* Current Handback File: [respond-to-customer-reviews.8b15e11c210d9bb5ead696d30c383e78922f29c8.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e8019a4155f189676550d9d336a37921a9040b0d/ol-handback/Microsoft/windows-apps.fr-fr/master/respond-to-customer-reviews.8b15e11c210d9bb5ead696d30c383e78922f29c8.fr-fr.xlf)
 * Current Handback Datetime: 2016-07-22 14:30:38
 * [Back to Top](#report-top)
 
