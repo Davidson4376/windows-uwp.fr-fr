@@ -17,8 +17,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.fr-fr\\master\\7f841b27e736206c89bb3ad035f497991a01fc74.3961dd04b31be7752847bb64ba89fc107394a306.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\Microsoft\\windows-apps.fr-fr\\master\\pubcenter-dev-center-integration.2fbdc0127a3badf8294e0fe159809d48b2bf9fbc.fr-fr.xlf",
+      "LocXliffCommit": "6eb1957f9ff7a0ff1875f75ae861ff762a1d5d8d"
     },
     "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md.785790c36e620163b27fa3317f5820dc3fbd985a.HT": {
       "SourceFilename": "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md",
@@ -27,8 +27,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.fr-fr\\master\\9b97ab818fdc14d0354e5e9ba4809ac3401d6053.7a1cbf4d552d0f8891c1dd4ebbff9f019fbc5b1a.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\Microsoft\\windows-apps.fr-fr\\master\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.f640d4baee811687fb33824d7d8ea2d611b135fd.fr-fr.xlf",
+      "LocXliffCommit": "6eb1957f9ff7a0ff1875f75ae861ff762a1d5d8d"
     },
     "windows-apps-src\\whats-new\\windows-10-version-1607.md.4f1a5d7c1958dcf49f34b2163f3fd0cf0e608668.HT": {
       "SourceFilename": "windows-apps-src\\whats-new\\windows-10-version-1607.md",
@@ -37,8 +37,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.fr-fr\\master\\e9e381f3d01e2c0acc5c4ad55937fce3120a3249.aebe1c851c442a51e78de5635e761f63664baafc.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\Microsoft\\windows-apps.fr-fr\\master\\windows-10-version-1607.6bb58601464d15df4974464e6781e2d2b478becb.fr-fr.xlf",
+      "LocXliffCommit": "6eb1957f9ff7a0ff1875f75ae861ff762a1d5d8d"
     },
     "windows-apps-src\\get-started\\universal-application-platform-guide.md.02fcca405ce6e5757cf3053a5a4d54dc961911b8.HT": {
       "SourceFilename": "windows-apps-src\\get-started\\universal-application-platform-guide.md",
